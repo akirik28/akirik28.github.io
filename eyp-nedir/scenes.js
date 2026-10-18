@@ -225,6 +225,30 @@
     reset: function (c) { killWA(c.el); var d = c.$(".runner"); d.style.opacity = 0; }
   });
 
+  /* ---------- başarılar: sayaçlar gösterilen farklı öğrencileri sayar ---------- */
+  function names(root, upto) {   // upto: bu adıma kadar açılan isim kartları (undefined = hepsi)
+    var set = {};
+    Array.prototype.forEach.call(root.querySelectorAll(".bn li, .bn-in li"), function (li) {
+      var w = li.closest("[data-step]"), st = w ? parseInt(w.getAttribute("data-step"), 10) || 0 : 0;
+      if (upto == null || st <= upto) set[li.textContent.trim()] = 1;
+    });
+    return set;
+  }
+  function size(o) { return Object.keys(o).length; }
+  Deck.scene("basarilar", {
+    enter: function (c) { var n = c.$(".ba-n"); n.textContent = "0"; c.count(n, size(names(c.el, 0)), { from: 0, duration: 1.4, delay: .5 }); },
+    step: function (k, c) { c.count(c.$(".ba-n"), size(names(c.el, k)), { from: size(names(c.el, k - 1)), duration: 1, delay: .9 }); },
+    reset: function (c) { c.$(".ba-n").textContent = "0"; }
+  });
+  Deck.scene("uluslararasi", {
+    enter: function (c) {
+      var here = names(c.el), all = Object.assign({}, names(document.getElementById("basarilar")), here);
+      c.count(c.$(".ba-n"), size(here), { from: 0, duration: 1.2, delay: .6 });
+      c.count(c.$(".is-all"), size(all), { from: 0, duration: 1.2, delay: 1.9 });
+    },
+    reset: function (c) { c.$(".ba-n").textContent = "0"; c.$(".is-all").textContent = "0"; }
+  });
+
   /* ---------- 14 başvuru: ilerleme çizgisi, yazı, konfeti ---------- */
   function confetti(c) {
     var box = c.$(".confetti");

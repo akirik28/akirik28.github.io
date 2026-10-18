@@ -22,7 +22,7 @@ window.SUNUMLAR = [
     konuEn: "School presentation · European Youth Parliament (in Turkish)",
     tarih: "2026-10-16",
     sure: "≈10 dk", sureEn: "≈10 min",
-    ekran: 19,
+    ekran: 21,
     ekip: "4 kişilik grup", ekipEn: "group of 4",
     tur: "yeniden", dil: "TR", renk: "#2F7BFF",
     kareler: ["#2F7BFF", "#2F7BFF", "#2F7BFF", "#1C55E6", "#2F7BFF", "#8EC5FF", "#2F7BFF"],
