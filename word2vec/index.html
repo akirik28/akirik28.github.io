@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>word2vec — Efficient Estimation of Word Representations in Vector Space — Ada Sarp Kırık</title>
+<meta name="description" content="A group presentation of Mikolov et al. (2013), the word2vec paper: one-hot vectors vs embeddings, NNLM and RNNLM costs, CBOW and Skip-gram, the paper's results and our own small Python word-vector model. Data Science & AI, August 2025.">
+<meta property="og:title" content="Efficient Estimation of Word Representations in Vector Space">
+<meta property="og:description" content="word2vec, CBOW and Skip-gram explained with animated diagrams. Data Science & AI · August 2025.">
+<meta property="og:image" content="https://adasarpkirik.vercel.app/onizleme/word2vec/paylas.jpg">
+<meta name="theme-color" content="#F4F0E8">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/fonts/dosya-fonts.css">
+<link rel="stylesheet" href="/assets/deck/deck.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="deck">
+<div class="deck-stage">
+
+<!-- ========================================================== 01 · COVER -->
+<section class="scene" id="cover" data-title="Cover"
+  data-notes="Our group presents “Efficient Estimation of Word Representations in Vector Space” by Tomas Mikolov et al. (2013), the paper that introduced word2vec. The idea behind every slide: a word can be a point in space, and distance in that space can mean similarity.">
+  <svg class="field" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="cover-tx">
+    <p class="eb" data-a="up">Paper presentation · Tomas Mikolov et al., 2013</p>
+    <h1 class="cover-h" data-a="words" data-d=".15" data-gap=".05"><span class="hang">“</span>Efficient Estimation of Word Representations in Vector&nbsp;Space”</h1>
+    <div class="cover-meta" data-a="up" data-d=".9">
+      <p class="ctx">Data Science &amp; AI · August 2025</p>
+      <p class="team">Gonzalo, Ada, Kent, Fei Fei, Ismail, Elvin</p>
+    </div>
+  </div>
+  <p class="fig cover-fig" data-a="fade" data-d="1.6">fig. 0 · words as points in a 2-D vector space</p>
+</section>
+
+<!-- ========================================================== 02 · GOAL -->
+<section class="scene" id="goal" data-title="The goal"
+  data-notes="The paper's goal: build a fast, simple model that learns word meanings from massive text data. It has four parts: learn meaningful vectors from a huge corpus (around 1.6 billion words), capture syntax and semantics, replace the complex NNLM and RNNLM by removing the hidden layer, and scale: under a day of training, large vocabularies, distributed systems.">
+  <div class="rh"><span>§ 01 · The goal</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <div class="goal-l">
+    <p class="eb" data-a="up">The goal of the paper</p>
+    <p class="goal-st" data-a="words" data-d=".1">Build a <em>fast, simple</em> model that learns word meanings from <em>massive</em> text&nbsp;data.</p>
+  </div>
+  <svg class="goal-vec" viewBox="0 0 1920 1080" aria-hidden="true">
+    <g class="gv-arrows" data-a="draw" data-d=".9" data-dur="1" data-gap=".22">
+      <path d="M940 560 C 1000 560, 990 268, 1062 268"/>
+      <path d="M940 560 C 1000 560, 990 474, 1062 474"/>
+      <path d="M940 560 C 1000 560, 990 680, 1062 680"/>
+      <path d="M940 560 C 1000 560, 990 886, 1062 886"/>
+    </g>
+    <g class="gv-heads" data-stagger=".22" data-d="1.75" data-child="fade">
+      <path d="M1050 258 L1064 268 L1050 278"/>
+      <path d="M1050 464 L1064 474 L1050 484"/>
+      <path d="M1050 670 L1064 680 L1050 690"/>
+      <path d="M1050 876 L1064 886 L1050 896"/>
+    </g>
+    <circle class="gv-o" cx="940" cy="560" r="11" data-a="pop" data-d=".7"/>
+  </svg>
+  <ol class="goal-list">
+    <li data-a="left" data-d="1.2"><span class="n">01</span><h3>Learn meaningful word vectors</h3><p>Train on a huge corpus, e.g. <b>1.6 B</b> words</p></li>
+    <li data-a="left" data-d="1.42"><span class="n">02</span><h3>Capture word relationships</h3><p>Understand both syntax and semantics</p></li>
+    <li data-a="left" data-d="1.64"><span class="n">03</span><h3>Replace complex models</h3><p>Remove the hidden layer of NNLM and RNNLM</p></li>
+    <li data-a="left" data-d="1.86"><span class="n">04</span><h3>Scale efficiently</h3><p>Trains in <b>&lt; 1 day</b> · large vocabularies · suits distributed systems</p></li>
+  </ol>
+</section>
+
+<!-- ========================================================== 03 · ONE-HOT -->
+<section class="scene" id="onehot" data-steps="1" data-title="One-hot vs embedding"
+  data-notes="Traditional NLP stored each word as a one-hot vector: a long row of zeros with a single 1. It only says where the word sits in the vocabulary, so “cat” and “dog” look exactly as unrelated as any other pair. Click: an embedding gives each word a short row of real numbers instead, and similar words get similar numbers, so cat and dog end up close together.">
+  <div class="rh"><span>§ 02 · The problem</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">What’s the problem with traditional&nbsp;NLP?</h2>
+  <ul class="pts oh-pts">
+    <li data-a="up" data-d=".25">Words were <b>one-hot vectors</b>: just a position, no meaning.</li>
+    <li data-a="up" data-d=".4">This made NLP systems <b>rigid, hard to scale</b> and inefficient.</li>
+    <li data-a="up" data-d=".55">They capture <b>no information</b> about word similarity.</li>
+  </ul>
+  <div class="oh-viz">
+    <div class="oh-head"><span class="oh-mode oh-mode-a">One-hot encoding</span><span class="oh-mode oh-mode-b">Word embedding</span></div>
+    <div class="oh-row" data-hot="2"><span class="oh-lab">“cat”</span><span class="oh-eq">=</span><div class="oh-cells"></div><div class="oh-dense">[<b data-v="0.21">0.21</b>, <b data-v="0.97">0.97</b>, <b data-v="-0.33">−0.33</b>, …]</div></div>
+    <div class="oh-row" data-hot="4"><span class="oh-lab">“dog”</span><span class="oh-eq">=</span><div class="oh-cells"></div><div class="oh-dense">[<b data-v="0.24">0.24</b>, <b data-v="0.93">0.93</b>, <b data-v="-0.31">−0.31</b>, …]</div></div>
+    <div class="oh-low">
+      <svg class="oh-plot" viewBox="0 0 400 300" aria-hidden="true"></svg>
+      <div class="oh-verdict">
+        <div class="oh-st oh-st-a"><p class="oh-v"><span class="mk mk-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span>No semantic relationship</p><p class="oh-sub">Every pair of words is equally far apart.</p></div>
+        <div class="oh-st oh-st-b"><p class="oh-v"><span class="mk mk-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Close relationship</p><p class="oh-sub">Similar meaning → similar numbers → nearby points.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 04 · ANALOGY -->
+<section class="scene" id="analogy" data-steps="2" data-title="King − Man + Woman"
+  data-notes="The practical example from our deck: take the vector for King, subtract Man, add Woman, and the closest word vector is Queen. Click once: the step from Man to Woman is the same arrow in every part of the space. Click again: move that arrow to King and it lands on Queen. Relationships become directions.">
+  <div class="rh"><span>§ 03 · Vector embedding example</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <p class="eq an-eq" data-a="up"><span class="t" data-k="king">King</span><span class="op">−</span><span class="t" data-k="man">Man</span><span class="op">+</span><span class="t" data-k="woman">Woman</span><span class="op">=</span><span class="t" data-k="queen">Queen</span></p>
+  <p class="an-cap" data-a="up" data-d=".2">Meaning becomes <em>geometry</em>: a relationship is a direction you can add.</p>
+  <svg class="an-plot" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="an-legend">
+    <p class="an-l an-l1"><span class="sw sw-a"></span>Man → Woman</p>
+    <p class="an-l an-l2"><span class="sw sw-b"></span>the same arrow, moved to King</p>
+  </div>
+</section>
+
+<!-- ========================================================== 05 · HISTORY -->
+<section class="scene" id="history" data-title="Previous approaches"
+  data-notes="Before word2vec: N-gram models (Brants et al.) were simple and trainable on lots of data, but saw no similarity between words. Bengio's 2003 NNLM learned word vectors together with a language model, at a high computational cost. Mikolov's 2007 variant learned vectors with a single hidden layer first. Mnih and Hinton's log-bilinear models made predictions linear and faster. Each click adds one step on the road to word2vec.">
+  <div class="rh"><span>§ 04 · Before word2vec</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Previous approaches to word representation</h2>
+  <div class="tl">
+    <svg class="tl-svg" viewBox="0 0 1920 200" aria-hidden="true">
+      <line class="tl-base" x1="100" y1="100" x2="1820" y2="100"/>
+      <line class="tl-seg" x1="100" y1="100" x2="270" y2="100" data-a="draw" data-d=".2" data-dur=".7"/>
+      <line class="tl-seg" x1="270" y1="100" x2="614" y2="100" data-a="draw" data-step="1" data-dur=".7"/>
+      <line class="tl-seg" x1="614" y1="100" x2="958" y2="100" data-a="draw" data-step="2" data-dur=".7"/>
+      <line class="tl-seg" x1="958" y1="100" x2="1302" y2="100" data-a="draw" data-step="3" data-dur=".7"/>
+      <line class="tl-seg tl-seg-x" x1="1302" y1="100" x2="1646" y2="100" data-a="draw" data-step="4" data-dur=".7"/>
+      <circle class="tl-dot" cx="270" cy="100" r="16" data-a="pop" data-d=".6"/>
+      <circle class="tl-dot" cx="614" cy="100" r="16" data-a="pop" data-step="1" data-d=".45"/>
+      <circle class="tl-dot" cx="958" cy="100" r="16" data-a="pop" data-step="2" data-d=".45"/>
+      <circle class="tl-dot" cx="1302" cy="100" r="16" data-a="pop" data-step="3" data-d=".45"/>
+      <circle class="tl-dot tl-dot-x" cx="1646" cy="100" r="22" data-a="pop" data-step="4" data-d=".45"/>
+    </svg>
+    <div class="tl-n" style="--x:270px" data-a="up" data-d=".7">
+      <p class="tl-date">before 2007</p><h3>N-gram models</h3><p class="tl-by">Brants et al.</p>
+      <ul><li class="pro">Simpler models</li><li class="pro">Trainable on lots of data</li><li class="con">No similarity between words</li></ul>
+    </div>
+    <div class="tl-n" style="--x:614px" data-step="1"><div data-a="up" data-d=".5">
+      <p class="tl-date">2003</p><h3>NNLM</h3><p class="tl-by">Bengio et al.</p>
+      <ul><li class="pro">Feed-forward net: word vectors + language model</li><li class="con">High computational cost</li></ul>
+    </div></div>
+    <div class="tl-n" style="--x:958px" data-step="2"><div data-a="up" data-d=".5">
+      <p class="tl-date">2007</p><h3>NNLM variant</h3><p class="tl-by">Mikolov et al.</p>
+      <ul><li class="pro">Learns word vectors with a single hidden layer first</li><li class="pro">Then uses them to train the NNLM</li></ul>
+    </div></div>
+    <div class="tl-n" style="--x:1302px" data-step="3"><div data-a="up" data-d=".5">
+      <p class="tl-date">2007, 2009</p><h3>Log-bilinear</h3><p class="tl-by">Mnih &amp; Hinton</p>
+      <ul><li class="pro">Linear word-vector predictions: faster</li><li class="pro">Diagonal weight matrices: faster</li></ul>
+    </div></div>
+    <div class="tl-n tl-n-x" style="--x:1646px" data-step="4"><div data-a="up" data-d=".5">
+      <p class="tl-date">2013</p><h3>word2vec</h3><p class="tl-by">Mikolov et al. · this paper</p>
+      <ul><li class="pro">CBOW and Skip-gram: no hidden layer at all</li></ul>
+    </div></div>
+  </div>
+</section>
+
+<!-- ========================================================== 06 · COMPLEXITY -->
+<section class="scene" id="complexity" data-title="Training complexity"
+  data-notes="To compare architectures fairly, the paper counts training cost: O equals E times T times Q. E is the number of epochs, T the number of training words, and Q the cost of a single training step. Click: E and T are the same for every model, so Q is where the architectures differ, and the next slides compute Q for NNLM, RNNLM and the new log-linear models.">
+  <div class="rh"><span>§ 05 · Model architecture</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <p class="eb cx-eb" data-a="up">Model architecture</p>
+  <h2 class="h cx-h" data-a="up" data-d=".08">Training complexity</h2>
+  <p class="cx-f">
+    <span class="v" data-a="up" data-d=".3">O</span><span class="op" data-a="fade" data-d=".5">=</span><span class="v v-l" data-a="up" data-d=".65">E<small data-a="up" data-d="1.25">Epochs</small></span><span class="op" data-a="fade" data-d=".8">×</span><span class="v v-l" data-a="up" data-d=".95">T<small data-a="up" data-d="1.45">Training words</small></span><span class="op" data-a="fade" data-d="1.1">×</span><span class="v v-l v-q" data-a="up" data-d="1.2">Q<small data-a="up" data-d="1.65">Cost per training step</small></span>
+  </p>
+  <div class="cx-more" data-step="1">
+    <svg class="cx-arc" viewBox="0 0 1920 300" aria-hidden="true"><path data-a="draw" data-dur=".9" d="M1388 30 C 1388 120, 1180 120, 960 150"/></svg>
+    <p class="cx-q" data-a="up" data-d=".4"><em>Q</em> is what changes from one architecture to the next:</p>
+    <div class="chips" data-stagger=".12" data-d=".6"><span class="chip">NNLM</span><span class="chip">RNNLM</span><span class="chip chip-a">Log-linear · CBOW &amp; Skip-gram</span></div>
+  </div>
+</section>
+
+<!-- ========================================================== 07 · NNLM -->
+<section class="scene" id="nnlm" data-title="Feedforward NNLM"
+  data-notes="The feedforward NNLM: N previous words come in, are projected to N × D, pass through a hidden layer of H units, and the output layer scores all V words. Its cost per step is Q = N×D + N×D×H + H×V. Click: N×D×H, the projection-to-hidden connections, is the main complexity. Click: H×V is the dominating term. Click: “hidden” just means its values never appear in the input or output. They are learned features in between.">
+  <div class="rh"><span>§ 06 · Feedforward NNLM</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Feedforward NNLM</h2>
+  <p class="fx nn-fx" data-a="up" data-d=".15"><i>Q</i> = <span class="tm tm-1"><i>N</i>×<i>D</i></span> + <span class="tm tm-2"><i>N</i>×<i>D</i>×<i>H</i><span class="brc" data-step="1"><svg data-a="wipe" viewBox="0 0 100 24" preserveAspectRatio="none"><path d="M2 2 C2 12 8 12 18 12 L40 12 C47 12 50 16 50 22 C50 16 53 12 60 12 L82 12 C92 12 98 12 98 2"/></svg><em data-a="up" data-d=".25">main complexity</em></span></span> + <span class="tm tm-3"><i>H</i>×<i>V</i><span class="brc" data-step="2"><svg data-a="wipe" viewBox="0 0 100 24" preserveAspectRatio="none"><path d="M2 2 C2 12 8 12 18 12 L40 12 C47 12 50 16 50 22 C50 16 53 12 60 12 L82 12 C92 12 98 12 98 2"/></svg><em data-a="up" data-d=".25">dominating term</em></span></span></p>
+  <svg class="net nn-net" viewBox="0 0 1180 560" aria-hidden="true"></svg>
+  <div class="nn-side">
+    <dl class="layers" data-stagger=".1" data-d=".5">
+      <div><dt>Input</dt><dd><i>N</i> previous words</dd></div>
+      <div><dt>Projection</dt><dd><i>N</i> × <i>D</i></dd></div>
+      <div class="hl"><dt>Hidden layer</dt><dd><i>H</i> units</dd></div>
+      <div><dt>Output layer</dt><dd>size <i>V</i></dd></div>
+    </dl>
+    <div class="why" data-step="3" data-a="up">
+      <p class="why-q" data-a="up">Why “hidden”?</p>
+      <p class="why-a" data-a="up" data-d=".12">Its values never appear in the input or the output. They are intermediate, learned features.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 08 · RNNLM -->
+<section class="scene" id="rnnlm" data-title="Recurrent NNLM"
+  data-notes="The recurrent NNLM reads one word at a time and keeps a hidden state that remembers the previous context, so it needs no fixed input size. Its cost per step is Q = H×H + H×V, and the H×H term, the hidden state feeding back into itself, is the main complexity.">
+  <div class="rh"><span>§ 07 · Recurrent NNLM</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Recurrent NNLM</h2>
+  <ul class="pts rn-pts">
+    <li data-a="up" data-d=".2">Remembers previous context via its <b>hidden state</b>.</li>
+    <li data-a="up" data-d=".35">No fixed input size needed.</li>
+  </ul>
+  <p class="fx rn-fx" data-a="up" data-d=".5"><i>Q</i> = <span class="tm tm-r1"><i>H</i>×<i>H</i><span class="brc" data-a="none" data-d="0"><svg data-a="wipe" data-d="1.1" viewBox="0 0 100 24" preserveAspectRatio="none"><path d="M2 2 C2 12 8 12 18 12 L40 12 C47 12 50 16 50 22 C50 16 53 12 60 12 L82 12 C92 12 98 12 98 2"/></svg><em data-a="up" data-d="1.3">main complexity</em></span></span> + <span class="tm tm-r2"><i>H</i>×<i>V</i></span></p>
+  <dl class="layers rn-layers" data-stagger=".1" data-d=".8">
+    <div class="hl"><dt>Hidden layer</dt><dd><i>H</i> units</dd></div>
+    <div><dt>Output layer</dt><dd>size <i>V</i></dd></div>
+  </dl>
+  <svg class="net rn-net" viewBox="0 0 900 780" aria-hidden="true"></svg>
+</section>
+
+<!-- ========================================================== 09 · LOG-LINEAR -->
+<section class="scene" id="loglinear" data-title="New log-linear architectures"
+  data-notes="Why change the architecture? The hidden layer is expensive: its weight matrix has (N·D)·H entries, so it grows with the number of context words, the vector length (for example 300) and the number of hidden units. The authors wanted an equally efficient framework that is far cheaper, so it can train on billions of tokens. Click: the classic models struggle on all three problems. Click: single-CPU training, 56 days for the RNNLM versus 3 days for log-linear Skip-gram.">
+  <div class="rh"><span>§ 08 · New log-linear architectures</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">New log-linear architectures</h2>
+  <p class="ll-quote" data-a="up" data-d=".15">“We want an equally efficient framework that is more cost-effective, in order to train with <em>billions of tokens</em>.”</p>
+  <div class="ll-cost">
+    <p class="eb" data-a="up" data-d=".3">The cost of the hidden layer</p>
+    <p class="fx ll-fx" data-a="up" data-d=".4"><i>W</i><sub>h</sub> ∈ <span class="bb">ℝ</span><sup>(<i class="k-n">N</i>·<i class="k-d">D</i>)·<i class="k-h">H</i></sup></p>
+    <dl class="ll-keys" data-stagger=".14" data-d=".7">
+      <div><dt><i>N</i></dt><dd>number of words being analysed</dd></div>
+      <div><dt><i>D</i></dt><dd>length of each feature vector, e.g. 300 dimensions</dd></div>
+      <div><dt><i>H</i></dt><dd>number of hidden units (“thinking nodes”)</dd></div>
+    </dl>
+    <svg class="ll-mat" viewBox="0 0 760 200" aria-hidden="true"></svg>
+  </div>
+  <div class="ll-right">
+    <div class="ll-tab" data-step="1">
+      <div class="ll-tr ll-th" data-a="up"><span>Problem</span><span>Classic NNLM / RNNLM</span><span>Log-linear (CBOW / Skip-gram)</span></div>
+      <div class="ll-tr" data-a="up" data-d=".12"><span>Efficiency / time</span><span class="st st-m">costly</span><span class="st st-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+      <div class="ll-tr" data-a="up" data-d=".24"><span>Costly non-linear hidden layer</span><span class="st st-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span class="st st-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+      <div class="ll-tr" data-a="up" data-d=".36"><span>Hard to scale past 10<sup>8</sup> words</span><span class="st st-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span class="st st-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+    </div>
+    <div class="ll-bars" data-step="2">
+      <p class="eb" data-a="up">CPU training time · single CPU</p>
+      <div class="bar-row" data-a="up" data-d=".1"><span class="bl">RNNLM</span><span class="bar bar-r" data-a="wipe" data-d=".2" data-dur="1.4" style="--w:100%"></span><span class="bv"><b data-a="count" data-to="56" data-d=".2">56</b> days</span></div>
+      <div class="bar-row" data-a="up" data-d=".3"><span class="bl">Log-linear (Skip-gram)</span><span class="bar bar-a" data-a="wipe" data-d=".5" data-dur=".8" style="--w:5.36%"></span><span class="bv"><b data-a="count" data-to="3" data-d=".5">3</b> days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 10 · CBOW -->
+<section class="scene" id="cbow" data-title="CBOW"
+  data-notes="Continuous Bag-of-Words predicts the center word from its context. A window slides over the text, the N context words are embedded as N vectors of dimension D, averaged, and the center word is predicted with a hierarchical softmax, then the loss is computed and it repeats. Click: the cost per step is Q = N×D + D×log₂V. With V = 100,000 words, log₂V is only about 17, so the number of scores computed drops by 99.983%.">
+  <div class="rh"><span>§ 09 · Continuous Bag-of-Words</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Continuous Bag-of-Words <span class="h-tag">context → center word</span></h2>
+  <div class="sent cb-sent" data-a="up" data-d=".15"></div>
+  <svg class="net arch cb-net" viewBox="0 0 860 620" aria-hidden="true"></svg>
+  <div class="cb-right">
+    <ol class="steps cb-steps" data-hide="1">
+      <li data-a="up" data-d=".4"><span>1</span><p><i>N</i> context words as input, target word <i>w</i>(<i>t</i>)</p></li>
+      <li data-a="up" data-d=".5"><span>2</span><p>Embed each word: <i>N</i> vectors of dimension <i>D</i></p></li>
+      <li data-a="up" data-d=".6"><span>3</span><p>Average them: <span class="m">x̄ = <span class="frac"><b>1</b><b><i>N</i></b></span> Σ <i>e<sub>i</sub></i></span></p></li>
+      <li data-a="up" data-d=".7"><span>4</span><p>Predict the center word with a hierarchical softmax</p></li>
+      <li data-a="up" data-d=".8"><span>5</span><p>Compute the loss</p></li>
+      <li data-a="up" data-d=".9"><span>6</span><p>Repeat</p></li>
+    </ol>
+    <div class="cb-cost" data-step="1">
+      <p class="eb" data-a="up">Cost per training step</p>
+      <p class="fx cb-fx" data-a="up" data-d=".1"><i>Q</i> = <span class="tm"><i>N</i>×<i>D</i><span class="brc"><svg data-a="wipe" data-d=".5" viewBox="0 0 100 24" preserveAspectRatio="none"><path d="M2 2 C2 12 8 12 18 12 L40 12 C47 12 50 16 50 22 C50 16 53 12 60 12 L82 12 C92 12 98 12 98 2"/></svg><em data-a="up" data-d=".7">average<br>embedding</em></span></span> + <span class="tm"><i>D</i>×log<sub>2</sub><i>V</i><span class="brc"><svg data-a="wipe" data-d=".8" viewBox="0 0 100 24" preserveAspectRatio="none"><path d="M2 2 C2 12 8 12 18 12 L40 12 C47 12 50 16 50 22 C50 16 53 12 60 12 L82 12 C92 12 98 12 98 2"/></svg><em data-a="up" data-d="1">efficient<br>softmax</em></span></span></p>
+      <div class="cb-v" data-a="up" data-d="1.3">
+        <div class="cb-vv"><span class="m"><i>V</i> =</span> <b class="mono" data-a="count" data-to="100000" data-d="1.4" data-dur="1.4">100,000</b><small>vocabulary size</small></div>
+        <svg class="cb-arr" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 20 H70 M58 8 L72 20 L58 32"/></svg>
+        <div class="cb-vv"><span class="m">log<sub>2</sub><i>V</i> ≈</span> <b class="mono" data-a="count" data-to="17" data-d="1.8" data-dur="1.2">17</b><small>scores with a hierarchical softmax</small></div>
+      </div>
+      <p class="cb-cut" data-a="up" data-d="2.2"><b class="mono" data-a="count" data-to="99.983" data-dec="3" data-suf="%" data-d="2.3" data-dur="1.6">99.983%</b> fewer scores computed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 11 · SKIP-GRAM -->
+<section class="scene" id="skipgram" data-title="Skip-gram"
+  data-notes="Skip-gram flips CBOW around: the center word is the input and the model predicts the words around it. In “The cat was sat outside”, “was” is embedded as a vector in ℝᴰ, and the context words are predicted with the same hierarchical softmax as CBOW. Click: the loss is cross-entropy, minus the log of the probability of the correct word. The smaller that probability, the larger the loss. Then repeat.">
+  <div class="rh"><span>§ 10 · Skip-gram</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Skip-gram <span class="h-tag">center word → context</span></h2>
+  <div class="sent sg-sent" data-a="up" data-d=".15"></div>
+  <svg class="net arch sg-net" viewBox="0 0 860 620" aria-hidden="true" data-hide="1"></svg>
+  <div class="sg-right">
+    <ol class="flow">
+      <li data-a="up" data-d=".4"><p>Input: the <b>center word</b></p></li>
+      <li data-a="up" data-d=".55"><p>Vector embedding <span class="m"><b>x</b> = <b>e</b><sub>was</sub> ∈ <span class="bb">ℝ</span><sup><i>D</i></sup></span></p></li>
+      <li data-a="up" data-d=".7"><p>Predict the context words with a hierarchical softmax, as in CBOW</p></li>
+      <li data-step="1" data-a="up"><p>Cross-entropy loss: <span class="m">Loss = −log <i>P</i>(correct word | center word)</span></p></li>
+      <li data-step="1" data-a="up" data-d=".15"><p>Repeat</p></li>
+    </ol>
+    <div class="sg-loss" data-step="1" data-a="fade" data-dur=".7">
+      <svg class="sg-curve" viewBox="0 0 860 520" aria-hidden="true"></svg>
+      <p class="sg-note" data-a="up" data-d=".5">The smaller the probability, the larger the loss.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 12 · GAINS -->
+<section class="scene" id="gains" data-title="Main improvements"
+  data-notes="What CBOW and Skip-gram improve: lower computational complexity because there is no non-linear hidden layer; much faster training that scales to billions of words; higher-quality vectors that keep syntactic and semantic relationships linear; a flexible focus (CBOW for syntax, Skip-gram for semantics); an efficient softmax using Huffman trees; and better scaling to large vocabularies and huge datasets.">
+  <div class="rh"><span>§ 11 · What changed</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Main improvements of <span class="nw">CBOW and Skip-gram</span></h2>
+  <div class="gains" data-stagger=".1" data-d=".2" data-child="up">
+    <div class="gn"><svg class="gl gl-1" viewBox="0 0 120 90"></svg><h3>Lower computational complexity</h3><p>No more non-linear hidden layer</p></div>
+    <div class="gn"><svg class="gl gl-2" viewBox="0 0 120 90"></svg><h3>Much faster training</h3><p>Scalable to billions of words</p></div>
+    <div class="gn"><svg class="gl gl-3" viewBox="0 0 120 90"></svg><h3>Higher-quality vectors</h3><p>Preserve syntactic and semantic linear relationships</p></div>
+    <div class="gn"><svg class="gl gl-4" viewBox="0 0 120 90"></svg><h3>Flexible focus</h3><p>CBOW: syntax · Skip-gram: semantics</p></div>
+    <div class="gn"><svg class="gl gl-5" viewBox="0 0 120 90"></svg><h3>Efficient softmax</h3><p>Hierarchical softmax with Huffman trees</p></div>
+    <div class="gn"><svg class="gl gl-6" viewBox="0 0 120 90"></svg><h3>Better scaling</h3><p>Large vocabularies, huge datasets</p></div>
+  </div>
+</section>
+
+<!-- ========================================================== 13 · OUR MODEL -->
+<section class="scene" id="ourmodel" data-title="Our Python model"
+  data-notes="We also built a simple word-vector model in Python on a four-sentence corpus. Step one: tokenize into lowercase words and build a vocabulary. Click: fill a co-occurrence matrix with a window of 2 and reduce it with SVD. Click: run it. The vector for “dog” comes out 2-dimensional, and by cosine similarity its nearest words are cat (0.9995), tree and climbed.">
+  <div class="rh"><span>§ 12 · Our experiment</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">A simple word vector model</h2>
+  <div class="om-left">
+    <p class="eb" data-a="up" data-d=".1">Sample text corpus</p>
+    <ul class="corpus" data-stagger=".08" data-d=".15">
+      <li>“The quick brown fox jumps over the lazy dog.”</li>
+      <li>“The dog chased the cat.”</li>
+      <li>“The cat climbed the tree.”</li>
+      <li>“The fox is quick and the dog is lazy.”</li>
+    </ul>
+    <p class="eb om-eb2" data-a="up" data-d=".4">How it works</p>
+    <ol class="rail" data-stagger=".07" data-d=".45">
+      <li data-g="0"><span>1</span>Tokenize: split text into lowercase words</li>
+      <li data-g="0"><span>2</span>Build the vocabulary dictionary</li>
+      <li data-g="1"><span>3</span>Fill the co-occurrence matrix</li>
+      <li data-g="1"><span>4</span>Reduce dimensions with SVD</li>
+      <li data-g="2"><span>5</span>Compute cosine similarity</li>
+      <li data-g="2"><span>6</span>Find similar words</li>
+    </ol>
+  </div>
+  <div class="om-stage">
+    <div class="om-pane om-tok" data-hide="1">
+      <p class="pane-cap" data-a="up" data-d=".5">tokenize(text) → <span class="mono">['the', 'quick', …]</span></p>
+      <div class="tok-rows"></div>
+      <p class="pane-cap pane-cap2" data-a="up" data-d="1.6">vocabulary · sorted, unique</p>
+      <div class="vocab"></div>
+    </div>
+    <div class="om-pane om-mat" data-step="1" data-hide="2" data-a="fade" data-dur=".5">
+      <p class="pane-cap" data-a="up">co-occurrence matrix · window = 2</p>
+      <svg class="cooc" viewBox="0 0 620 620" aria-hidden="true" data-a="none"></svg>
+      <div class="svd" data-a="up" data-d="1.2">
+        <svg viewBox="0 0 120 60" aria-hidden="true"><path d="M6 30 H104 M90 16 L106 30 L90 44"/></svg>
+        <p><b>SVD</b><br>keep 2 dimensions</p>
+        <div class="svd-v"><i></i><i></i></div>
+        <p class="svd-l">one 2-D vector per word</p>
+      </div>
+    </div>
+    <div class="om-pane om-run" data-step="2" data-a="fade" data-dur=".5">
+      <div class="term" data-a="up">
+        <div class="term-bar"><i></i><i></i><i></i><span>Run · 2.py</span></div>
+        <pre class="term-out"></pre>
+      </div>
+      <div class="om-res">
+        <svg class="om-rays" viewBox="0 0 380 300" aria-hidden="true"></svg>
+        <table class="simtab">
+          <thead><tr><th>Similar to “dog”</th><th>Cosine similarity</th></tr></thead>
+          <tbody>
+            <tr><td>cat</td><td class="mono" data-v="0.9995004">0.9995004</td></tr>
+            <tr><td>tree</td><td class="mono" data-v="0.99785846">0.99785846</td></tr>
+            <tr><td>climbed</td><td class="mono" data-v="0.9960831">0.9960831</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 14 · TEST -->
+<section class="scene" id="test" data-title="The word-relationship test"
+  data-notes="To test the vectors, the paper asks analogy questions. For example, X = vector(biggest) − vector(big) + vector(small); the closest word to X should be “smallest”. This can answer very subtle semantic relationships and could improve many NLP applications. Click: the test set has 8,869 semantic and 10,675 syntactic questions. Word pairs were listed by hand, then joined into questions. Only the single closest word counts as correct, so even synonyms count as mistakes.">
+  <div class="rh"><span>§ 13 · Results: the test</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">The word-relationship test</h2>
+  <div class="ts-left">
+    <p class="ts-f" data-a="up" data-d=".15"><span class="mono">X</span> = vector(“biggest”) − vector(“big”) + vector(“small”)</p>
+    <p class="ts-ans" data-a="up" data-d=".45">closest word to <span class="mono">X</span> <svg viewBox="0 0 60 30" aria-hidden="true"><path d="M3 15 H50 M40 6 L52 15 L40 24"/></svg> <b data-a="chars" data-d=".75">smallest</b></p>
+    <ul class="pts ts-pts">
+      <li data-a="up" data-d=".9">Answers very subtle semantic relationships</li>
+      <li data-a="up" data-d="1.0">Could improve many existing NLP applications</li>
+    </ul>
+    <div class="ts-method" data-step="1">
+      <div class="ts-nums" data-a="fade">
+        <div data-a="up"><b class="mono" data-a="count" data-to="8869" data-d=".1">8,869</b><span>semantic questions</span></div>
+        <div data-a="up" data-d=".12"><b class="mono" data-a="count" data-to="10675" data-d=".22">10,675</b><span>syntactic questions</span></div>
+      </div>
+      <ol class="ts-how" data-stagger=".1" data-d=".45">
+        <li>Similar word pairs were listed by hand.</li>
+        <li>Questions are formed by connecting two word pairs.</li>
+        <li>Only the closest word counts as correct. Synonyms count as mistakes.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="ts-card" data-a="up" data-d=".3">
+    <p class="ts-cap">Table 1 · 5 semantic and 9 syntactic question types</p>
+    <div class="ts-type"><span class="ts-kind"></span><span class="ts-name"></span></div>
+    <svg class="ts-svg" viewBox="0 0 760 420" aria-hidden="true"></svg>
+    <div class="ts-dots"></div>
+  </div>
+</section>
+
+<!-- ========================================================== 15 · ACCURACY -->
+<section class="scene" id="accuracy" data-title="Maximizing accuracy"
+  data-notes="How to get the best result quickly? The authors tested CBOW on the most frequent 30,000 words while changing vector size and training data. Accuracy rises in both directions, but click: from some point, more dimensions or more data give diminishing improvements, and both must grow together. Click: training used three epochs of stochastic gradient descent and backpropagation, with a learning rate starting at 0.025 that decreases linearly to almost zero by the end.">
+  <div class="rh"><span>§ 14 · Results: accuracy</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Maximizing accuracy</h2>
+  <p class="ac-sub" data-a="up" data-d=".1">CBOW, most frequent <b class="mono">30k</b> words · accuracy [%] on the semantic-syntactic test</p>
+  <div class="hm" data-a="none">
+    <div class="hm-corner">dimensions ↓ / training words →</div>
+  </div>
+  <div class="ac-right">
+    <div class="ac-dim" data-step="1">
+      <p class="ac-big" data-a="up">From some point, more dimensions or more training data give <em>diminishing improvements</em>.</p>
+    </div>
+    <div class="ac-train" data-step="2">
+      <p class="eb" data-a="up">Training setup</p>
+      <ul class="pts ac-pts" data-stagger=".1" data-d=".1">
+        <li><b>3</b> training epochs</li>
+        <li>Stochastic gradient descent + backpropagation</li>
+      </ul>
+      <svg class="lr" viewBox="0 0 640 250" aria-hidden="true" data-a="fade" data-d=".3"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 16 · COMPARE -->
+<section class="scene" id="compare" data-title="Against public word vectors"
+  data-notes="Table 4 compares publicly available word vectors on the same test with full vocabularies. Older NNLM vectors score between 1.8 and 24.6 percent. The paper's own NNLM trained on 6 billion words reaches 50.8, CBOW 36.1, and Skip-gram, with 300 dimensions on 783 million words, gets the best total: 53.3 percent, and the best semantic score, 50.0.">
+  <div class="rh"><span>§ 15 · Results: comparison</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Against public word vectors</h2>
+  <p class="ac-sub" data-a="up" data-d=".1">Table 4 · semantic-syntactic test, full vocabularies · accuracy [%]</p>
+  <div class="cmp"></div>
+</section>
+
+<!-- ========================================================== 17 · MSR -->
+<section class="scene" id="msr" data-title="Sentence completion"
+  data-notes="The Microsoft Research Sentence Completion Challenge has 1,040 sentences, each with one word missing and five reasonable choices. Click: the authors trained a 640-dimensional Skip-gram model on 50 million words, scored each sentence by putting the candidate word in and predicting all the surrounding words, and summed those predictions. Click: Skip-gram alone scores 48.0%, but a weighted combination with RNNLMs reaches 58.9%, a new state of the art (59.2% on the development part, 58.7% on the test part).">
+  <div class="rh"><span>§ 16 · Results: sentence completion</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Microsoft Research Sentence Completion Challenge</h2>
+  <div class="ms-left">
+    <div class="ms-q" data-a="up" data-d=".15">
+      <p class="ms-s">I have seen it on him,<br>and could <span class="blank"><span class="blank-w">write</span></span> to it.</p>
+      <ol class="ms-ch"><li>write</li><li>migrate</li><li>climb</li><li>swear</li><li>contribute</li></ol>
+    </div>
+    <div class="ms-facts" data-stagger=".1" data-d=".4">
+      <p><b class="mono" data-a="count" data-to="1040" data-group="no">1040</b> sentences</p>
+      <p><b class="mono">1</b> missing word in each</p>
+      <p><b class="mono">5</b> reasonable choices</p>
+    </div>
+  </div>
+  <div class="ms-right">
+    <ol class="steps ms-steps" data-hide="2">
+      <li data-step="1" data-a="up"><span>1</span><p>Train a <b>640</b>-dimensional model on <b>50M</b> words</p></li>
+      <li data-step="1" data-a="up" data-d=".12"><span>2</span><p>Input the unknown word and predict all surrounding words</p></li>
+      <li data-step="1" data-a="up" data-d=".24"><span>3</span><p>Sentence score = sum of those predictions; pick the most likely sentence</p></li>
+    </ol>
+    <div class="ms-res" data-step="2">
+      <p class="eb" data-a="up">Table 7 · accuracy [%]</p>
+      <div class="ms-bars"></div>
+      <p class="ms-sota" data-a="up" data-d="1.4">A weighted combination sets a new state of the art: <b class="mono">58.9%</b> <span>(59.2% dev · 58.7% test)</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== 18 · CLOSING -->
+<section class="scene" id="closing" data-title="Final summary"
+  data-notes="To sum up: removing the hidden layer costs a little precision but makes training drastically more efficient, semantic analysis works, and the complexity drops to N×D + D×log₂V. The follow-up work released multi-threaded C++ code, trained at billions of words per hour on more than 100 billion words, and published 1.4 million+ named-entity vectors. The lesson for NLP: training efficiency is as critical as architecture.">
+  <svg class="field field-end" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="rh"><span>§ 17 · Final summary</span><span>word2vec · Mikolov et al. 2013</span></div>
+  <h2 class="h" data-a="up">Final summary</h2>
+  <div class="cl-sum" data-stagger=".14" data-d=".2">
+    <div><h3>Resolved trade-off</h3><p>Removing the hidden layer costs a little precision but drastically increases efficiency.</p></div>
+    <div><h3>Semantic analysis achieved</h3><p>Relationships survive as directions in the vector space.</p></div>
+    <div><h3>Lower complexity achieved</h3><p class="fx cl-fx"><i>O</i>(<i>N</i>×<i>D</i> + <i>D</i>×log<sub>2</sub><i>V</i>)</p></div>
+  </div>
+  <div class="cl-next">
+    <p class="eb" data-a="up" data-d=".7">Follow-up work</p>
+    <div class="cl-stats" data-stagger=".12" data-d=".8">
+      <div><b class="mono">C++</b><span>multi-threaded code released for CBOW and Skip-gram</span></div>
+      <div><b class="mono">10<sup>9</sup>/h</b><span>training speed: billions of words per hour</span></div>
+      <div><b class="mono"><em data-a="count" data-to="1.4" data-dec="1" data-d="1.1">1.4</em>M+</b><span>named-entity vectors released publicly</span></div>
+      <div><b class="mono"><em data-a="count" data-to="100" data-d="1.2">100</em>B+</b><span>words used for training</span></div>
+    </div>
+  </div>
+  <p class="cl-impact" data-a="up" data-d="1.4"><span>Impact in NLP</span>Training efficiency is as critical as architecture.</p>
+  <p class="cl-team" data-a="fade" data-d="1.8">Gonzalo, Ada, Kent, Fei Fei, Ismail, Elvin · Data Science &amp; AI · August 2025</p>
+</section>
+
+</div>
+<script src="/assets/js/motion.js"></script>
+<script src="/assets/deck/deck.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>

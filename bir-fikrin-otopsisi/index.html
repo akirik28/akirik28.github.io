@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bir Fikrin Otopsisi — 2. Grup</title>
+<meta name="description" content="Girişimci ve başarılı girişimcilerin özellikleri — interaktif sınıf sunumu">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="viewport">
+  <div id="stage">
+    <div id="bg"><div class="glow"></div><div class="grain"></div><div class="vignette"></div></div>
+    <main id="scenes"></main>
+    <div id="hud" class="off"></div>
+    <div id="keyhint" class="off"></div>
+    <div id="overview" hidden></div>
+    <div id="blackout"></div>
+  </div>
+</div>
+
+<noscript><p style="color:#fff;font:20px sans-serif;padding:40px">Bu sunum için JavaScript açık olmalıdır.</p></noscript>
+
+<!-- Sıra önemli: önce ayarlar ve metinler, sonra efektler, sahneler ve motor -->
+<script src="js/config.js"></script>
+<script src="js/content.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>

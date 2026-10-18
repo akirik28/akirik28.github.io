@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARC-AGI-3: Ne denedik, ne bozuldu, ne öğrendik — Ada Sarp Kırık</title>
+<meta name="description" content="Exposure AI Academy jüri sunumu (Ağustos 2026). Beş kişilik bir takımın ARC-AGI-3 serüveni: araştırma, strateji taraması, pipeline, Git orkestrasyonu, değerlendirme darboğazı, 0.11 ve son gece gelen pivot.">
+<meta property="og:title" content="ARC-AGI-3: Ne denedik, ne bozuldu, ne öğrendik">
+<meta property="og:description" content="5 kişi, tek codebase, tek deadline. 0.11'den 0.93'e giden yol ve ne zaman yön değiştirileceğine dair bir ders.">
+<meta property="og:image" content="https://adasarpkirik.vercel.app/onizleme/arc-agi-3/paylas.jpg">
+<meta name="theme-color" content="#0B0C14">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/fonts/dosya-fonts.css">
+<link rel="stylesheet" href="/assets/deck/deck.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="deck">
+<div class="deck-stage">
+  <div class="bgrid" aria-hidden="true"></div>
+
+  <!-- 01 · KAPAK -->
+  <section class="scene" id="kapak" style="--c:var(--y)" data-title="Kapak" data-notes="Exposure AI Academy jüri sunumu. Beş kişi, tek codebase, tek deadline: ARC-AGI-3'te ne denedik, ne bozuldu, ne öğrendik.">
+    <canvas class="amb" width="1920" height="1080" aria-hidden="true"></canvas>
+    <p class="k-eye" data-a="up">Exposure AI Academy · jüri sunumu · Ağustos 2026</p>
+    <h1 class="k-title" aria-label="ARC-AGI-3"><span class="pix" data-pix="ARC-AGI-3" data-pitch="36" data-gap="5"></span></h1>
+    <p class="k-sub" data-a="words" data-d="1.5"><span style="color:var(--s)">Ne denedik.</span> <span style="color:var(--r)">Ne bozuldu.</span> <span style="color:var(--g)">Ne öğrendik.</span></p>
+    <ul class="k-facts" data-stagger="0.12" data-child="up" data-d="2.0"><li>5 kişi</li><li>tek codebase</li><li>tek deadline</li></ul>
+    <div class="k-by" data-a="up" data-d="2.3"><b>Ada Sarp Kırık</b><span>5 kişilik takım</span></div>
+  </section>
+
+  <!-- 02 · 1. GÜN -->
+  <section class="scene" id="gun1" style="--c:var(--s)" data-steps="2" data-title="1. gün: beş kişi" data-notes="Birbirini tanımayan beş kişiydik ve problem hepimiz için yeniydi. Yeni ekip ve bilinmeyen problem: önce ortak dil kurduk. İlk çıktımız kod değil, problemi anlamaktı.">
+    <p class="eyebrow" data-a="up">1. gün</p>
+    <h2 class="h" data-a="words">Birbirini tanımayan beş kişi, bilmedikleri bir problemi nasıl plana dönüştürür?</h2>
+    <div class="g1-people" aria-hidden="true">
+      <i class="p5" style="--kc:var(--b)">1</i><i class="p5" style="--kc:var(--o)">2</i><i class="p5" style="--kc:var(--g)">3</i><i class="p5" style="--kc:var(--m)">4</i><i class="p5" style="--kc:var(--y)">5</i>
+    </div>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <path class="ln" d="M690 590H900" data-a="draw" data-step="1" data-dur="0.7" data-d="0.5"/>
+      <path class="ln" d="M1340 590H1440" data-a="draw" data-step="1" data-dur="0.5" data-d="1.0"/>
+    </svg>
+    <div class="bx g1-task" style="left:900px;top:530px;width:440px;height:120px" data-a="up" data-d="0.7"><span class="mini9" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>ARC-AGI-3<br>görevi</span></div>
+    <div class="bx bx-fill" style="left:1440px;top:542px;width:360px;height:96px;--kc:var(--s)" data-step="1" data-a="pop" data-d="1.3">Önce araştır</div>
+    <p class="g1-cap" data-step="1" data-a="up" data-d="0.9"><b>Başlangıç noktası</b>Yeni ekip + bilinmeyen problem → önce ortak dil.</p>
+    <p class="g1-big" data-step="2" data-a="words">İlk çıktımız kod değil, <em>problemi anlamaktı.</em></p>
+  </section>
+
+  <!-- 03 · PARALEL ARAŞTIRMA -->
+  <section class="scene" id="arastirma" style="--c:var(--g)" data-steps="1" data-title="Paralel araştırma" data-notes="Araştırmayı dört koldan paralel yaptık, çıkanları Claude ile tek bir strateji sentezinde birleştirdik. Ortaya çıkan strateji haritasıyla ikinci güne uygulamaya hazır girdik.">
+    <p class="eyebrow" data-a="up">1. gün → 2. gün</p>
+    <h2 class="h" data-a="words">Araştırmayı paralel yaptık, stratejiyi tek yerde birleştirdik.</h2>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <g data-a="draw" data-d="0.6" data-dur="1.1" data-gap="0.1">
+        <path class="ln" id="ar-p0" style="stroke:var(--b)" d="M500 478C680 478 660 610 820 618"/>
+        <path class="ln" id="ar-p1" style="stroke:var(--o)" d="M500 583C660 583 680 628 820 630"/>
+        <path class="ln" id="ar-p2" style="stroke:var(--m)" d="M500 688C660 688 680 644 820 642"/>
+        <path class="ln" id="ar-p3" style="stroke:var(--y)" d="M500 793C680 793 660 662 820 654"/>
+      </g>
+      <path class="ln" id="ar-p4" d="M1200 636H1400" data-a="draw" data-step="1" data-dur="0.6"/>
+      <path class="ln" id="ar-p5" d="M1600 760V830" data-a="draw" data-step="1" data-dur="0.5" data-d="1.3"/>
+      <g class="flow"></g>
+    </svg>
+    <div class="ar-lanes" data-stagger="0.1" data-child="left" data-d="0.2">
+      <div class="bx" style="left:120px;top:440px;width:380px;height:76px;--kc:var(--b)">Araştırma 01</div>
+      <div class="bx" style="left:120px;top:545px;width:380px;height:76px;--kc:var(--o)">Araştırma 02</div>
+      <div class="bx" style="left:120px;top:650px;width:380px;height:76px;--kc:var(--m)">Araştırma 03</div>
+      <div class="bx" style="left:120px;top:755px;width:380px;height:76px;--kc:var(--y)">Araştırma 04</div>
+    </div>
+    <p class="ar-x4" data-a="pop" data-d="1.2"><b>4×</b> paralel</p>
+    <div class="bx bx-big" style="left:820px;top:566px;width:380px;height:140px;--kc:var(--g)" data-a="pop" data-d="1.5">Claude<br>strateji sentezi</div>
+    <div class="bx ar-map" style="left:1400px;top:512px;width:400px;height:248px;--kc:var(--s)" data-step="1" data-a="up" data-d="0.5"><span>Strateji haritası</span><span class="ar-grid" aria-hidden="true"></span></div>
+    <div class="bx bx-fill" style="left:1400px;top:830px;width:400px;height:110px;--kc:var(--g)" data-step="1" data-a="pop" data-d="1.7">2. gün<br>uygulamaya hazır</div>
+  </section>
+
+  <!-- 04 · STRATEJİ TARAMASI -->
+  <section class="scene" id="tarama" style="--c:var(--o)" data-steps="2" data-title="Strateji taraması" data-notes="Zaman çok azdı. Stratejileri beklenen skor etkisi, uygulama süresi, teknik risk ve birlikte çalışabilme ölçütleriyle taradık; birlikte çalışabilecek olanları öne aldık. Duck başta seçilmedi. Bu karar son gece değişecek.">
+    <p class="eyebrow" data-a="up">Strateji taraması / Strategy scout</p>
+    <h2 class="h" data-a="words">Zaman çok azken her şeyi tek bir stratejiye yatırır mısın?</h2>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <g data-a="draw" data-d="0.9" data-dur="0.7" data-gap="0.12">
+        <path class="ln" id="ta-p0" d="M740 600L560 486"/>
+        <path class="ln" id="ta-p1" d="M1180 600L1360 486"/>
+        <path class="ln" id="ta-p2" d="M740 660L560 774"/>
+        <path class="ln" id="ta-p3" d="M1180 660L1360 774"/>
+      </g>
+      <g class="flow"></g>
+    </svg>
+    <div class="bx bx-big ta-core" style="left:740px;top:560px;width:440px;height:140px;--kc:var(--o)" data-a="pop" data-d="0.4">Strateji<br>taraması<i class="ta-scan" aria-hidden="true"></i></div>
+    <div class="ta-crit" data-stagger="0.14" data-child="pop" data-d="1.1">
+      <div class="bx" style="left:120px;top:440px;width:440px;height:92px">Beklenen skor etkisi</div>
+      <div class="bx" style="left:1360px;top:440px;width:440px;height:92px">Teknik risk</div>
+      <div class="bx" style="left:120px;top:728px;width:440px;height:92px">Uygulama süresi</div>
+      <div class="bx" style="left:1360px;top:728px;width:440px;height:92px">Birlikte çalışabilme</div>
+    </div>
+    <p class="ta-cap" data-step="1" data-a="up"><b>Ana kısıt</b>Zaman çok azdı; birlikte çalışabilecek stratejileri öne aldık.</p>
+    <div class="ta-duck" data-step="2" data-a="pop"><b>Duck</b><span>başta seçilmedi</span></div>
+    <p class="ta-note" data-step="2" data-a="up" data-d="0.5">Bu karar son gece değişecek.</p>
+  </section>
+
+  <!-- 05 · MİMARİ -->
+  <section class="scene" id="mimari" style="--c:var(--s)" data-steps="2" data-title="Pipeline mimarisi" data-notes="Stratejiler tek bir pipeline'da birleşti: durum ve bağlam, strateji katmanı, birleştirme, aksiyon, geri bildirim. Geri bildirim ceza mekanizmalarıyla başa döner. Stratejileri bağımsız geliştirip aynı akışta birleştirdik; geri bildirim geldikçe iterasyon yaptık.">
+    <p class="eyebrow" data-a="up">Mimari / Architecture</p>
+    <h2 class="h" data-a="words">Stratejiler tek bir pipeline'da birleşti.</h2>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <path class="ln" id="mi-main" d="M120 490H1800" data-a="draw" data-d="0.4" data-dur="1.6"/>
+      <path class="ln ln-red" id="mi-back" d="M1652 550V710H268V550" data-a="draw" data-step="1" data-dur="1.6"/>
+      <path class="ah ah-red" d="M268 552l-11 20h22z" data-a="fade" data-step="1" data-d="1.5"/>
+      <g class="flow"></g>
+    </svg>
+    <div class="mi-row" data-stagger="0.16" data-child="pop" data-d="0.5">
+      <div class="bx" style="left:120px;top:430px;width:296px;height:120px">Durum /<br>bağlam</div>
+      <div class="bx" style="left:466px;top:430px;width:296px;height:120px">Strateji<br>katmanı</div>
+      <div class="bx bx-hot" style="left:812px;top:430px;width:296px;height:120px;--kc:var(--s)">Birleştirme</div>
+      <div class="bx" style="left:1158px;top:430px;width:296px;height:120px">Aksiyon</div>
+      <div class="bx" style="left:1504px;top:430px;width:296px;height:120px">Geri<br>bildirim</div>
+    </div>
+    <div class="bx bx-red" style="left:690px;top:664px;width:540px;height:92px;--kc:var(--r)" data-step="1" data-a="pop" data-d="0.8">Ceza mekanizmaları</div>
+    <ul class="mi-tags" data-step="2" data-stagger="0.12" data-child="up"><li>Modüler</li><li>Birleşebilir</li><li>İteratif</li></ul>
+    <p class="mi-why" data-step="2" data-a="up" data-d="0.4"><b>Neden bu yapı?</b>Stratejileri bağımsız geliştirip aynı akışta birleştirdik; geri bildirim geldikçe iterasyon yaptık.</p>
+  </section>
+
+  <!-- 06 · GELİŞTİRME AKIŞI -->
+  <section class="scene" id="akis" style="--c:var(--b)" data-steps="1" data-title="Üç ortam" data-notes="Aynı kod üç ortamda ayakta kalmalıydı: Local'de hızlı iterasyon, Colab'de doğrulama, Kaggle'da gerçek değerlendirme. Repo içi MCP, tekrarlayan işleri azaltan kolaylıklar ve ortam farklarını erken yakalayan debug döngüsü: daha az sürtünme, daha hızlı iterasyon.">
+    <p class="eyebrow" data-a="up">Geliştirme akışı</p>
+    <h2 class="h" data-a="words">Geliştirme akışı üç farklı ortamda ayakta kalmalıydı.</h2>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <path class="ln" id="ak-p0" d="M620 530H710" data-a="draw" data-d="1.0" data-dur="0.4"/>
+      <path class="ln" id="ak-p1" d="M1210 530H1300" data-a="draw" data-d="1.3" data-dur="0.4"/>
+      <g class="flow"></g>
+    </svg>
+    <div class="ak-wins" data-stagger="0.22" data-child="up" data-d="0.4">
+      <div class="win" style="left:120px;--kc:var(--b)"><div class="win-bar"><i></i><i></i><i></i><b>Local</b></div><div class="win-body"><span>Hızlı<br>iterasyon</span><span class="ak-grid" aria-hidden="true"></span></div></div>
+      <div class="win" style="left:710px;--kc:var(--o)"><div class="win-bar"><i></i><i></i><i></i><b>Colab</b></div><div class="win-body"><span>Doğrulama</span><span class="ak-grid" aria-hidden="true"></span></div></div>
+      <div class="win" style="left:1300px;--kc:var(--g)"><div class="win-bar"><i></i><i></i><i></i><b>Kaggle</b></div><div class="win-body"><span>Gerçek<br>değerlendirme</span><span class="ak-grid" aria-hidden="true"></span></div></div>
+    </div>
+    <div class="ak-notes" data-step="1" data-stagger="0.14" data-child="up">
+      <div style="left:120px;--kc:var(--b)"><b>Repo içi MCP</b><p>Repo bağlamındaki araçlara daha az sürtünmeyle erişim.</p></div>
+      <div style="left:710px;--kc:var(--o)"><b>Quality of life</b><p>Tekrarlayan işleri azaltıp iterasyonu hızlandırma.</p></div>
+      <div style="left:1300px;--kc:var(--g)"><b>Debug döngüsü</b><p>Local → Colab → Kaggle arasında ortam farklarını erken yakalama.</p></div>
+    </div>
+    <p class="ak-sum" data-step="1" data-a="up" data-d="0.6">Daha az sürtünme, daha hızlı iterasyon.</p>
+  </section>
+
+  <!-- 07 · GITHUB ORKESTRASYONU -->
+  <section class="scene" id="gitsoru" style="--c:var(--g)" data-steps="1" data-title="Git orkestrasyonu" data-notes="Beş kişi aynı anda geliştiriyordu. Dört geliştirme hattı ve tek bir entegratörle ilerledik: feat ve fix dalları, PR, test, merge. Master'ı bozmadan nasıl ilerledik? Cevap Git geçmişinde.">
+    <p class="eyebrow" data-a="up">GitHub orkestrasyonu</p>
+    <h2 class="h" data-a="words">Beş kişi paralel geliştirirken master'ı nasıl bozmadan ilerler?</h2>
+    <div class="gs-eq">
+      <div class="gs-n" style="--kc:var(--s)" data-a="up" data-d="0.5"><b>4</b><span>geliştirme hattı</span></div>
+      <i class="gs-op" data-a="fade" data-d="0.8">+</i>
+      <div class="gs-n" style="--kc:var(--y)" data-a="up" data-d="1.0"><b>1</b><span>tek entegratör</span></div>
+      <i class="gs-op" data-a="fade" data-d="1.3">→</i>
+      <div class="gs-n gs-m" style="--kc:var(--g)" data-a="up" data-d="1.5"><b>master</b></div>
+    </div>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <g data-a="draw" data-d="0.6" data-dur="1.2" data-gap="0.08">
+        <path class="ln ln-th" id="gs-p0" style="stroke:#3DDC55" d="M120 742H560C680 742 700 778 820 778"/>
+        <path class="ln ln-th" id="gs-p1" style="stroke:#3BC6E0" d="M120 766H560C680 766 700 778 820 778"/>
+        <path class="ln ln-th" id="gs-p2" style="stroke:#A98BFF" d="M120 790H560C680 790 700 778 820 778"/>
+        <path class="ln ln-th" id="gs-p3" style="stroke:#FFB52E" d="M120 814H560C680 814 700 778 820 778"/>
+      </g>
+      <path class="ln ln-th" id="gs-p4" style="stroke:var(--y)" d="M820 778H1180" data-a="draw" data-d="1.5" data-dur="0.5"/>
+      <path class="ln ln-m" id="gs-p5" d="M1180 778H1800" data-a="draw" data-d="1.9" data-dur="0.7"/>
+      <rect class="gs-node" x="806" y="764" width="28" height="28" data-a="pop" data-d="1.5"/>
+      <rect class="gs-node gs-node-m" x="1166" y="764" width="28" height="28" data-a="pop" data-d="1.9"/>
+      <g class="flow"></g>
+    </svg>
+    <ul class="gs-chips" data-stagger="0.1" data-child="up" data-d="2.1"><li>feat/*</li><li>fix/*</li><li>PR</li><li>TEST</li><li>MERGE</li></ul>
+    <p class="gs-ans" data-step="1" data-a="up"><span class="prm">&gt;</span> Cevap Git geçmişinde.<i class="cur"></i></p>
+  </section>
+
+  <!-- 08 · GERÇEK GIT GEÇMİŞİ -->
+  <section class="scene" id="metro" style="--c:var(--y)" data-steps="1" data-title="Git metro haritası" data-notes="Bu gerçek Git geçmişimiz. 503bb90 commit'inde dörde ayrıldık: BASELINE-115, BASELINE-130, EXP-140 ve EXP-150. Dördü integration/day3 istasyonunda birleşti ve master'a girdi. Toplam 164 commit, 3–7 Ağustos; remote şu an master'da birleşmiş durumda.">
+    <p class="eyebrow" data-a="up">Gerçek Git geçmişi / 5 Ağustos</p>
+    <h2 class="h" data-a="words">Dört feature hattı tek integration istasyonunda birleşti.</h2>
+    <svg class="ov me-svg" viewBox="0 0 1920 1080" role="img" aria-label="Git geçmişi: 503bb90 commit'inden ayrılan dört feature hattı integration/day3'te birleşip 8a8a01a ile master'a giriyor."></svg>
+    <p class="me-foot" data-step="1" data-a="up" data-d="0.9"><b>164 commit</b><i></i>3–7 Ağustos<i></i>remote şu an master'da birleşmiş durumda</p>
+  </section>
+
+  <!-- 09 · GRAPHIFY -->
+  <section class="scene" id="graphify" style="--c:var(--m)" data-steps="2" data-title="Graphify: bilgi grafiği" data-notes="Claude her dosyayı tekrar okumak yerine ilişkileri görebilse? Graphify, modüller arasındaki ilişkileri grafikte tutarak Claude'un ihtiyaç duyduğu bağlama daha doğrudan ulaşmasını hedefledi: daha az dosya okuma, daha az token. Buradaki görünüm modül importlarından temsilidir.">
+    <p class="eyebrow" data-a="up">Graphify / Bilgi grafiği</p>
+    <h2 class="h" data-a="words">Claude her dosyayı tekrar okumak yerine ilişkileri görebilse?</h2>
+    <figure class="gr-shot" data-a="scale" data-d="0.5" data-hide="1"><img src="img/graf.webp" alt="Kod tabanının bilgi grafiği: koyu zeminde renkli düğümler ve bağlantılar" width="1048" height="824"><figcaption>Kod tabanının bilgi grafiği · ekran görüntüsü</figcaption></figure>
+    <p class="gr-tag" data-step="1" data-a="up">Mevcut modül importlarından temsili görünüm</p>
+    <svg class="ov gr-svg" viewBox="0 0 1920 1080" role="img" aria-label="policy.py merkezli modül grafiği"></svg>
+    <p class="gr-txt" data-step="2" data-a="up">Graphify, modüller arasındaki ilişkileri grafikte tutarak Claude'un ihtiyaç duyduğu bağlama daha doğrudan ulaşmasını hedefledi.</p>
+    <div class="gr-win" data-step="2" data-a="pop" data-d="0.4">Daha az dosya okuma<br>+ daha az token</div>
+  </section>
+
+  <!-- 10 · DEĞERLENDİRME DARBOĞAZI -->
+  <section class="scene" id="darbogaz" style="--c:var(--r)" data-steps="2" data-title="Değerlendirme darboğazı" data-notes="Skorlanan bir koşu 5–10 saat sürüyor, günde tek submission hakkı var; geri bildirim tek bir sayı ve log yok. Aynı kod bir koşuda üç oyunda, diğerinde iki oyunda puan aldı: küçük ama gerçek iyileştirmeler varyansın içinde kaybolabilir. Yarışmanın scoring koduyla offline scorer kurduk, Kaggle setup'ını yerelde yeniden kurup ortam farkını yakaladık.">
+    <p class="eyebrow" data-a="up">Değerlendirme darboğazı</p>
+    <h2 class="h" data-a="words">Tek sayı, sıfır log.</h2>
+    <p class="da-sub" data-a="up" data-d="0.4">Bir değişikliğin gerçekten işe yaradığını nasıl anlarsın?</p>
+    <div class="da-stats" data-stagger="0.14" data-child="up" data-d="0.6">
+      <div><b>5–10 sa</b><span>Skorlanan koşu</span></div>
+      <div><b>1 / gün</b><span>Submission hakkı</span></div>
+      <div><b>Tek sayı</b><span>Geri bildirim</span></div>
+      <div class="da-red"><b>Log yok</b><span>Tanı verisi</span></div>
+    </div>
+    <ol class="da-loop" data-stagger="0.1" data-child="up" data-d="1.2"><li>Fikir</li><li>Uygula</li><li>Doğrula</li><li>Kaggle</li><li class="da-wait">Bekle<i></i></li><li class="da-score">Skor</li></ol>
+    <i class="da-tok" aria-hidden="true"></i>
+    <div class="da-runs" data-step="1">
+      <p class="da-lbl" data-a="up">Aynı kod</p>
+      <p class="da-run" style="--kc:var(--g)" data-a="left" data-d="0.15"><b>Run A</b><i>→</i><span class="da-cells"><u></u><u></u><u></u></span>3 oyunda puan</p>
+      <p class="da-run" style="--kc:var(--o)" data-a="left" data-d="0.35"><b>Run B</b><i>→</i><span class="da-cells"><u></u><u></u></span>2 oyunda puan</p>
+    </div>
+    <p class="da-var" data-step="1" data-a="up" data-d="0.6">Küçük ama gerçek iyileştirmeler varyansın içinde kaybolabilir.</p>
+    <p class="da-env" data-step="2" data-a="up">Kaggle setup'ını yerelde yeniden kurup ortam farkını yakaladık.</p>
+    <ul class="da-fix" data-step="2" data-stagger="0.14" data-child="left" data-d="0.2">
+      <li style="--kc:var(--s)"><b>Offline scorer</b> → yarışmanın scoring kodu</li>
+      <li style="--kc:var(--r)"><b>Local ≠ Kaggle gateway</b></li>
+      <li style="--kc:var(--x)"><b>Doğrulama:</b> ~1 sa + kuyruk</li>
+    </ul>
+  </section>
+
+  <!-- 11 · AI ARAÇLARI -->
+  <section class="scene" id="araclar" style="--c:var(--b)" data-steps="1" data-title="AI geliştirme araçları" data-notes="Dört araç kullandık: Superpowers, Context7, Context-mode ve Caveman. Bu dört araç geliştirme sürecindeki hangi darboğazları çözdü? Bağlam, dokümantasyon, uygulama akışı, hız. Cevabı slayta sabitlemiyoruz; anlatırken örneklerle açıyoruz.">
+    <p class="eyebrow" data-a="up">AI geliştirme araçları</p>
+    <h2 class="h" data-a="words">Farklı darboğazlar. Farklı AI araçları.</h2>
+    <p class="to-lbl to-lbl-a" data-a="up" data-d="0.4">Kullandığımız araçlar</p>
+    <ul class="to-tools" data-stagger="0.12" data-child="left" data-d="0.5"><li>Superpowers</li><li>Context7</li><li>Context-mode</li><li>Caveman</li></ul>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true"><g data-a="fade" data-d="1.3" data-dur="1.2">
+      <path class="to-dash" d="M600 504C760 504 740 654 880 654"/><path class="to-dash" d="M600 604C740 604 760 654 880 654"/><path class="to-dash" d="M600 704C740 704 760 654 880 654"/><path class="to-dash" d="M600 804C760 804 740 654 880 654"/>
+      <path class="to-dash" d="M1040 654C1180 654 1160 504 1320 504"/><path class="to-dash" d="M1040 654C1160 654 1180 604 1320 604"/><path class="to-dash" d="M1040 654C1160 654 1180 704 1320 704"/><path class="to-dash" d="M1040 654C1180 654 1160 804 1320 804"/>
+    </g></svg>
+    <div class="to-q" data-a="pop" data-d="1.1" aria-hidden="true"><span class="pix" data-pix="?" data-pitch="22" data-gap="3"></span></div>
+    <p class="to-lbl to-lbl-b" data-a="up" data-d="1.0">Darboğazlar</p>
+    <ul class="to-tags" data-stagger="0.12" data-child="right" data-d="1.1"><li>Bağlam</li><li>Dokümantasyon</li><li>Uygulama akışı</li><li>Hız</li></ul>
+    <p class="to-ask" data-step="1" data-a="words">Bu dört araç geliştirme sürecindeki hangi darboğazları çözdü?</p>
+    <p class="to-note" data-step="1" data-a="up" data-d="0.7">Cevabı slayta sabitlemiyoruz; anlatımda örneklerle açıyoruz.</p>
+  </section>
+
+  <!-- 12 · 0.11 -->
+  <section class="scene" id="skor" style="--c:var(--r)" data-steps="1" data-title="0.11" data-notes="Sonra Kaggle'a submit ettik. Gelen skor 0.11. Tek bir sayı, bütün kararı değiştirdi.">
+    <div class="sk-flash" aria-hidden="true"></div>
+    <div class="sk-wrap">
+      <p class="sk-top" data-a="chars" data-gap="0.03">Sonra Kaggle'a submit ettik.</p>
+      <div class="sk-prog" aria-hidden="true"></div>
+      <div class="sk-num" role="img" aria-label="0.11"><span class="pix" data-pix="0.11" data-pitch="56" data-gap="8"></span></div>
+      <p class="sk-cap" data-step="1" data-a="words">Tek bir sayı, bütün kararı değiştirdi.</p>
+    </div>
+  </section>
+
+  <!-- 13 · SON GECE -->
+  <section class="scene" id="songece" style="--c:var(--o)" data-steps="1" data-title="Son gece: üç soru" data-notes="0.11'den sonra cevaplamamız gereken üç soru vardı: Neden 0.11? Neden Duck? Neden bu kadar geç? Mentorumuz da uyarmıştı: skor final sıralamasında kritikti.">
+    <p class="eyebrow" data-a="up">Son gece</p>
+    <h2 class="h" data-a="words">0.11'den sonra cevaplamamız gereken üç soru vardı.</h2>
+    <div class="sg-ghost" aria-hidden="true"><span class="pix" data-pix="0.11" data-pitch="40" data-gap="6"></span></div>
+    <ol class="sg-q">
+      <li style="--kc:var(--r)"><b data-a="fade" data-d="0.6">01</b><span data-a="chars" data-d="0.7" data-gap="0.035">Neden 0.11?</span></li>
+      <li style="--kc:var(--y)"><b data-a="fade" data-d="1.4">02</b><span data-a="chars" data-d="1.5" data-gap="0.035">Neden Duck?</span></li>
+      <li style="--kc:var(--s)"><b data-a="fade" data-d="2.2">03</b><span data-a="chars" data-d="2.3" data-gap="0.035">Neden bu kadar geç?</span></li>
+    </ol>
+    <p class="sg-mentor" data-step="1" data-a="up"><b>Mentor uyarısı</b>Skor final sıralamasında kritik.</p>
+  </section>
+
+  <!-- 14 · PIVOT -->
+  <section class="scene" id="pivot" style="--c:var(--g)" data-steps="2" data-title="Pivot: 0.11 → 0.93" data-notes="Yeni kanıt geldiğinde karar da değişmek zorunda. 0.11, sınırlı zaman, yavaş doğrulama ve kritik skor: bu kombinasyon bizi mimariyi tamir etmeye devam etmek yerine yeniden değerlendirmeye, oradan Duck'a götürdü. Sonraki sonuç 0.93 oldu. Karar prensibimiz: kanıt, fikre bağlılıktan önce gelir.">
+    <p class="eyebrow" data-a="up">Pivot</p>
+    <h2 class="h" data-a="words">Yeni kanıt geldiğinde karar da değişmek zorunda.</h2>
+    <div class="pv-sig"><b data-a="up" data-d="0.4">Pivot sinyalleri</b>
+      <ul data-stagger="0.22" data-child="pop" data-d="0.6"><li class="pv-r">0.11</li><li>Sınırlı zaman</li><li>Yavaş doğrulama</li><li>Kritik skor</li></ul>
+    </div>
+    <svg class="ov" viewBox="0 0 1920 1080" aria-hidden="true">
+      <path class="ln ln-th" id="pv-in" d="M120 700H500" data-a="draw" data-d="1.2" data-dur="0.6"/>
+      <path class="ln ln-th pv-old" id="pv-old" d="M500 700C600 700 620 580 720 580H800" data-a="draw" data-d="1.7" data-dur="0.7"/>
+      <path class="ln ln-th pv-new" id="pv-new" d="M500 700H1340" />
+      <g class="flow"></g>
+      <rect class="pv-sw" x="478" y="678" width="44" height="44"/>
+    </svg>
+    <div class="bx pv-oldbox" style="left:800px;top:526px;width:440px;height:108px" data-a="up" data-d="2.0"><span>Mimariyi tamir<br>etmeye devam et</span></div>
+    <p class="pv-swl" data-step="1" data-a="up">Yeniden değerlendir</p>
+    <div class="pv-score">
+      <b class="pv-duck" data-step="1" data-a="up" data-d="0.9">Duck</b>
+      <div class="pv-num" role="img" aria-label="0.93"><span class="pix pv-pix"></span></div>
+      <span class="pv-last" data-step="1" data-a="up" data-d="1.5">Son skor</span>
+    </div>
+    <p class="pv-txt" data-step="2" data-a="up">Bu kombinasyon Duck'a geçişi tetikledi; sonraki sonuç 0.93 oldu.</p>
+    <p class="pv-rule" data-step="2" data-a="wipe" data-d="0.4"><span>Karar prensibi</span><b>Kanıt &gt; fikre bağlılık</b></p>
+  </section>
+
+  <!-- 15 · NE ÖĞRENDİK -->
+  <section class="scene" id="dersler" style="--c:var(--s)" data-steps="2" data-title="Ne öğrendik?" data-notes="Tekrar başlasak neyi değiştirirdik? Araştır, geliştir, birlikte çalış, test et, yanıl, öğren, uyarla. En büyük hata Duck'a geç kalmamız değildi; sistemi gerçek değerlendirme döngüsünde yeterince erken doğrulamamaktı.">
+    <p class="eyebrow" data-a="up">Ne öğrendik?</p>
+    <h2 class="h" data-a="words">Tekrar başlasak neyi değiştirirdik?</h2>
+    <ol class="de-chain" data-stagger="0.13" data-child="pop" data-d="0.5">
+      <li style="--kc:var(--b)"><i></i>Araştır</li><li style="--kc:var(--s)"><i></i>Geliştir</li><li style="--kc:var(--m)"><i></i>Birlikte çalış</li><li style="--kc:var(--o)"><i></i>Test et</li><li style="--kc:var(--r)"><i></i>Yanıl</li><li style="--kc:var(--y)"><i></i>Öğren</li><li style="--kc:var(--g)"><i></i>Uyarla</li>
+    </ol>
+    <p class="de-not" data-step="1" data-a="words">En büyük hata Duck'a geç kalmamız değildi.</p>
+    <p class="de-yes" data-step="2" data-a="words">Sistemi gerçek değerlendirme döngüsünde yeterince erken doğrulamamaktı.</p>
+  </section>
+
+  <!-- 16 · KAPANIŞ -->
+  <section class="scene" id="kapanis" style="--c:var(--y)" data-title="Kapanış" data-notes="Ne zaman geliştireceğimizi değil, ne zaman yön değiştireceğimizi de öğrendik. Teşekkürler; sorularınızı alalım.">
+    <canvas class="amb" width="1920" height="1080" aria-hidden="true"></canvas>
+    <p class="eyebrow" data-a="up">ARC-AGI-3 · Ne denedik. Ne bozuldu. Ne öğrendik.</p>
+    <h2 class="kp-h" data-a="words">Ne zaman geliştireceğimizi değil, <em>ne zaman yön değiştireceğimizi</em> de öğrendik.</h2>
+    <div class="kp-q" aria-hidden="true"><span class="pix" data-pix="?" data-pitch="78" data-gap="10"></span></div>
+    <p class="kp-soru" data-a="up" data-d="1.6">Soru?</p>
+    <div class="kp-by" data-a="up" data-d="1.2"><b>Ada Sarp Kırık</b><span>5 kişilik takım · Exposure AI Academy · Ağustos 2026</span></div>
+  </section>
+</div>
+<script src="/assets/js/motion.js"></script>
+<script src="/assets/deck/deck.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>

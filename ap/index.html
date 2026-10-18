@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AP Çalışma Kitlerim</title>
+<meta name="description" content="AP derslerim için çalışma kitleri: ders ders, ünite ünite kısa videolar, sorular, ödevler ve deneme sınavları.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="canonical" href="https://adasarpkirik.vercel.app/ap/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AP Çalışma Kitlerim">
+<meta property="og:description" content="Ders ders, ünite ünite: videolar, sorular, deneme sınavları.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+:root{color-scheme:dark;--bg:#0B0B0C;--bg-2:#141416;--surface:#161618;--ink:#F3F1EC;--ink-2:#CDCAC3;--muted:#8E8C95;--line:#26262A;--line-2:#35353B;--accent:#7C95FF;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit;text-decoration:none}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.wrap{position:relative;z-index:1;width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.glow{position:fixed;z-index:0;inset:0 0 auto 0;height:76vh;pointer-events:none;background:radial-gradient(64% 88% at 86% -12%,color-mix(in oklab,var(--accent) 15%,transparent),transparent 70%)}
+.top{display:flex;align-items:center;justify-content:space-between;padding-top:calc(env(safe-area-inset-top,0px) + 14px)}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--muted);font-size:14.5px;font-weight:550}
+.back:hover{color:var(--ink)}
+.hero{display:grid;gap:22px;padding:clamp(26px,5.4vw,64px) 0 clamp(24px,4vw,44px)}
+.eyebrow{color:var(--muted)}
+.hero h1{font-size:clamp(40px,7vw,92px);font-weight:760;letter-spacing:-.05em;line-height:.96;text-wrap:balance}
+.hero h1 em{color:var(--accent);font-size:1.06em;letter-spacing:-.02em;padding-right:.04em}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--ink-2);max-width:640px;text-wrap:pretty}
+.course{padding:clamp(22px,3.4vw,38px) 0;border-top:1px solid var(--line)}
+.course-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:20px}
+.course-h h2{font-size:clamp(26px,3.6vw,42px);font-weight:720;letter-spacing:-.035em;line-height:1.05}
+.course-h .mono{color:var(--muted)}
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.unit{display:grid;grid-template-rows:auto 1fr auto;gap:10px;min-height:190px;padding:20px 22px;border-radius:24px;background:var(--surface);border:1px solid var(--line);transition:transform .3s var(--ease),border-color .2s,background-color .2s}
+a.unit:hover{transform:translateY(-3px);border-color:var(--c,var(--accent));background:var(--bg-2)}
+a.unit:focus-visible{outline:2px solid var(--c,var(--accent));outline-offset:3px}
+.unit .no{display:flex;align-items:center;justify-content:space-between;color:var(--c,var(--accent))}
+.unit h3{font-size:22px;font-weight:680;letter-spacing:-.025em;line-height:1.15;align-self:start}
+.unit h3 span{display:block;margin-top:4px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:19px;letter-spacing:-.005em;color:var(--ink-2)}
+.unit .meta{font-size:13.5px;color:var(--muted);line-height:1.45}
+.unit .go{display:inline-flex;align-items:center;gap:8px;font-weight:650;font-size:14.5px;color:var(--ink)}
+.unit .go i{font-style:normal;transition:transform .3s var(--ease)}
+a.unit:hover .go i{transform:translateX(4px)}
+.unit.soon{background:transparent;border-style:dashed;border-color:var(--line-2)}
+.unit.soon .no,.unit.soon h3{color:var(--muted)}
+.unit.soon h3 span{color:var(--muted)}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
+.chip.on{border-color:var(--c,var(--accent));color:var(--c,var(--accent))}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:26px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 34px);margin-top:10px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.foot a:hover{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="top wrap">
+  <a class="back" href="/"><span aria-hidden="true">←</span> Ana sayfa</a>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="baslik">
+    <p class="eyebrow mono" lang="en">Advanced Placement</p>
+    <h1 id="baslik"><span lang="en">AP</span> <em class="serif">Çalışma Kitlerim</em></h1>
+    <p class="lead">Ders ders, ünite ünite: kısa animasyonlu videolar, her videonun ardından sorular ve Bluebook ekranında süreli deneme sınavları.</p>
+  </section>
+
+  <div id="dersler"></div>
+  <noscript>
+    <p class="lead"><a href="/ap/human-geography/unit-1/" style="text-decoration:underline">Human Geography · Unit 1 çalışma kiti →</a></p>
+  </noscript>
+</main>
+
+<footer class="foot wrap">
+  <p>İlerleme her cihazda ayrı saklanır.</p>
+  <a href="/">Ana sayfa</a>
+</footer>
+
+<script>
+/* ==========================================================================
+   AP ÇALIŞMA KİTLERİ — liste buradan yönetilir.
+   Yeni ders eklemek için DERSLER dizisine bir nesne ekle.
+   Yeni ünite açmak için o ünitenin satırına  url  ve  meta  yaz;
+   url yoksa ünite "yakında" olarak görünür.
+   Ünite klasörü:  /ap/<ders>/unit-<no>/  (index.html + kit-data.js + video/);
+   bütün üniteler ortak kiti kullanır:  /ap/_kit/kit.js + kit.css
+   ========================================================================== */
+var DERSLER = [
+  {
+    id: "human-geography",
+    ad: "Human Geography",
+    renk: "#F6B94A",
+    uniteler: [
+      { no: 1, en: "Thinking Geographically", url: "/ap/human-geography/unit-1/", meta: "12 video · bölüm soruları · ödevler · 2 deneme sınavı" },
+      { no: 2, en: "Population and Migration" },
+      { no: 3, en: "Cultural Patterns and Processes" },
+      { no: 4, en: "Political Patterns and Processes" },
+      { no: 5, en: "Agriculture and Rural Land Use" },
+      { no: 6, en: "Cities and Urban Land Use" },
+      { no: 7, en: "Industrial and Economic Development" }
+    ]
+  },
+  {
+    id: "business-personal-finance",
+    ad: "Business with Personal Finance",
+    renk: "#3FE0A8",
+    uniteler: [
+      { no: 1, en: "Business, Competition, and New Ideas", url: "/ap/business-personal-finance/unit-1/", meta: "8 video · bölüm soruları · 5 süreli deneme" },
+      { no: 2, en: "Marketing", url: "/ap/business-personal-finance/unit-2/", meta: "7 video · bölüm soruları · 5 süreli deneme" },
+      { no: 3, en: "Saving, Borrowing, Business Finance and Accounting" },
+      { no: 4, en: "Management and Strategy" },
+      { no: 5, en: "Personal Goals, Budgeting, and Investing" }
+    ]
+  },
+  {
+    id: "statistics",
+    ad: "Statistics",
+    renk: "#5BC0EB",
+    uniteler: [
+      { no: 1, en: "Exploring One-Variable Data and Collecting Data", url: "/ap/statistics/unit-1/", meta: "17 video · bölüm soruları · 5 süreli deneme" },
+      { no: 2, en: "Probability, Random Variables, and Probability Distributions" },
+      { no: 3, en: "Inference for Categorical Data: Proportions" },
+      { no: 4, en: "Inference for Quantitative Data: Means" },
+      { no: 5, en: "Regression Analysis" }
+    ]
+  }
+];
+
+(function () {
+  var root = document.getElementById("dersler");
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  DERSLER.forEach(function (d) {
+    var sec = el("section", "course"), head = el("div", "course-h"), h2 = el("h2", null, d.ad), list = el("ul", "units"), hazir = 0;
+    sec.id = d.id; sec.style.setProperty("--c", d.renk || "");
+    h2.lang = "en";
+    d.uniteler.forEach(function (u) {
+      var card = el(u.url ? "a" : "div", "unit" + (u.url ? "" : " soon")), no = el("div", "no mono"), h3 = el("h3", null, "Unit " + u.no), en = el("span", null, u.en), li = el("li");
+      if (u.url) { card.href = u.url; hazir++; }
+      var noT = el("span", null, "Unit " + pad(u.no)); noT.lang = "en";   /* Türkçe büyük harf kuralı "UNİT" yapmasın */
+      no.appendChild(noT);
+      no.appendChild(el("span", "chip" + (u.url ? " on" : ""), u.url ? "hazır" : "yakında"));
+      h3.lang = "en"; if (u.en) h3.appendChild(en);
+      card.appendChild(no); card.appendChild(h3);
+      if (u.url) {
+        var bottom = el("div");
+        bottom.appendChild(el("p", "meta", u.meta || ""));
+        var go = el("p", "go", "Çalışmaya başla "); go.style.marginTop = "12px";
+        var arrow = el("i", null, "→"); arrow.setAttribute("aria-hidden", "true"); go.appendChild(arrow);
+        bottom.appendChild(go); card.appendChild(bottom);
+      }
+      li.appendChild(card); list.appendChild(li);
+    });
+    head.appendChild(h2);
+    head.appendChild(el("p", "mono", hazir + " / " + d.uniteler.length + " ünite hazır"));
+    sec.appendChild(head); sec.appendChild(list); root.appendChild(sec);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<title>Deneme 2 · Unit 1 · zor ve süreli</title>
+<style>
+:root{--blue:#324DC7;--blue-d:#2A3FA8;--ink:#1E1E1E;--bar:#E6EDF8;--line:#B2B2B2;--red:#C13145;--ok:#177A46;--bad:#B3261E;
+  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--serif:"Noto Serif",Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--ui);-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--blue)}
+.dash{height:3px;background:repeating-linear-gradient(90deg,#1E1E1E 0 28px,transparent 28px 34px,#324DC7 34px 62px,transparent 62px 68px,#F2B705 68px 96px,transparent 96px 102px,#C13145 102px 130px,transparent 130px 136px,#1F8A70 136px 164px,transparent 164px 170px)}
+.top{position:sticky;top:0;z-index:20;background:var(--bar)}
+.top-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:10px 28px;min-height:74px}
+.tl b{display:block;font-size:17px;line-height:1.25}
+.tl .sub{font-size:13px;color:#4a4a4a}
+.tc{text-align:center}
+.timer{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.01em;min-height:28px}
+.timer.warn{color:var(--red)}
+.pill{margin-top:2px;border:1px solid #333;background:transparent;border-radius:999px;padding:1px 12px;font-size:12px;font-weight:600}
+.pill:hover{background:#fff}
+.tr{display:flex;justify-content:flex-end;gap:10px}
+.tool{border:0;background:transparent;font-size:13px;font-weight:600;padding:6px 8px;border-radius:8px;text-decoration:none;color:var(--ink)}
+.tool:hover{background:#fff}
+.main{max-width:780px;margin:0 auto;padding:30px 22px 140px}
+.qh{display:flex;align-items:center;gap:12px;background:#F0F0F0;border-bottom:2px dashed #333}
+.qn{background:#1E1E1E;color:#fff;font-weight:700;min-width:32px;height:34px;display:grid;place-items:center;padding:0 8px}
+.mark{display:flex;align-items:center;gap:6px;border:0;background:transparent;font-size:14px;padding:6px 4px}
+.mark svg{width:16px;height:18px;fill:none;stroke:#1E1E1E;stroke-width:1.8}
+.mark.on svg{fill:var(--red);stroke:var(--red)}
+.mark.on{font-weight:700}
+.abc{margin-left:auto;margin-right:8px;border:1.5px solid #333;border-radius:6px;background:#fff;font-size:12px;font-weight:700;padding:3px 7px;text-decoration:line-through}
+.abc.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.qt{font-family:var(--serif);font-size:18.5px;line-height:1.6;margin:22px 0 20px}
+.orow{display:flex;align-items:center;gap:12px;margin:12px 0}
+.opt{position:relative;flex:1;display:flex;align-items:flex-start;gap:14px;text-align:left;background:#fff;border:1px solid #333;border-radius:10px;padding:13px 16px;font-family:var(--serif);font-size:17.5px;line-height:1.45}
+.opt:hover{background:#F6F8FD}
+.ltr{flex:none;width:28px;height:28px;border:1.5px solid #333;border-radius:50%;display:grid;place-items:center;font-family:var(--ui);font-size:14px;font-weight:700}
+.opt.sel{border-color:var(--blue);box-shadow:inset 0 0 0 2px var(--blue)}
+.opt.sel .ltr{background:var(--blue);border-color:var(--blue);color:#fff}
+.opt.x{color:#777;border-color:#999}
+.opt.x .ltr{border-color:#999}
+.opt.x::after{content:"";position:absolute;left:-7px;right:-7px;top:50%;border-top:2px solid #1E1E1E}
+.xb{flex:none;width:46px;height:30px;border:0;background:transparent;font-size:12.5px;font-weight:700;text-decoration:underline;padding:0}
+.xb .xl{display:inline-grid;place-items:center;width:24px;height:24px;border:1.5px solid #333;border-radius:50%;text-decoration:line-through;font-size:12px}
+.bot{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bar)}
+.bot-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:12px 28px}
+.who{font-size:16px;font-weight:600}
+.navpill{border:0;background:#1E1E1E;color:#fff;border-radius:8px;padding:9px 16px;font-weight:700;font-size:15px}
+.navpill .chev{display:inline-block;margin-left:6px;font-size:11px}
+.nb{display:flex;justify-content:flex-end;gap:10px}
+.btn{border:1.5px solid var(--blue);background:var(--blue);color:#fff;border-radius:999px;padding:9px 26px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--blue-d)}
+.btn.ghost{background:#fff;color:var(--blue)}
+.btn.ghost:hover{background:#EEF2FF}
+.btn[disabled]{opacity:.35;cursor:default}
+.pop{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);z-index:30;width:min(560px,94vw);background:#fff;border:1px solid #999;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:18px 20px 20px}
+.pop::after{content:"";position:absolute;left:50%;bottom:-9px;width:16px;height:16px;background:#fff;border-right:1px solid #999;border-bottom:1px solid #999;transform:translateX(-50%) rotate(45deg)}
+.ph{display:flex;align-items:center;justify-content:center;position:relative;font-size:16px;padding-bottom:12px;border-bottom:1px solid #ccc}
+.ph .x{position:absolute;right:0;top:-4px;border:0;background:transparent;font-size:24px;line-height:1}
+.lg{display:flex;justify-content:center;gap:20px;font-size:13px;padding:12px 0;border-bottom:1px solid #ccc;flex-wrap:wrap}
+.lg span{display:inline-flex;align-items:center;gap:6px}
+.lg i{display:inline-block}
+.lg .pin{width:10px;height:10px;border-radius:50% 50% 50% 0;background:#1E1E1E;transform:rotate(-45deg)}
+.lg .dsh{width:16px;height:16px;border:1.5px dashed #333}
+.lg .flag{width:10px;height:13px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 100%,50% 72%,0 100%)}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:16px 10px;padding:22px 4px 20px}
+.gq{position:relative;height:36px;border:1.5px dashed #333;background:#fff;color:var(--blue);font-weight:700;font-size:15px;border-radius:2px}
+.gq.ans{border:1.5px solid var(--blue);background:var(--blue);color:#fff}
+.gq.cur::before{content:"";position:absolute;left:50%;top:-13px;width:10px;height:10px;margin-left:-5px;border-radius:50% 50% 50% 0;background:#1E1E1E;transform:rotate(-45deg)}
+.gq.mk::after{content:"";position:absolute;right:-5px;top:-6px;width:10px;height:13px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 100%,50% 72%,0 100%)}
+.pc{text-align:center}
+.card{border:1px solid #ccc;border-radius:14px;padding:22px 24px;margin:18px 0;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+h1{font-size:30px;margin:8px 0 6px}
+h2{font-size:20px;margin:26px 0 8px}
+.lead{font-size:16.5px;line-height:1.55;color:#333}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.facts div{background:var(--bar);border-radius:12px;padding:14px 16px}
+.facts b{display:block;font-size:24px}
+.facts span{font-size:13px;color:#444}
+ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
+.names{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.names button{border:1.5px solid #333;background:#fff;border-radius:999px;padding:6px 16px;font-weight:600}
+.names button.on{background:#1E1E1E;color:#fff}
+.score{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.score b{font-size:56px;line-height:1}
+.score span{font-size:18px;color:#444}
+.tb{width:100%;border-collapse:collapse;font-size:15px}
+.tb td{padding:7px 4px;border-bottom:1px solid #e3e3e3}
+.tb td:last-child{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.meter{height:8px;background:#e6e6e6;border-radius:99px;overflow:hidden;min-width:90px}
+.meter i{display:block;height:100%;background:var(--blue)}
+.seg{display:inline-flex;border:1.5px solid #333;border-radius:999px;overflow:hidden;margin:6px 0 4px}
+.seg button{border:0;background:#fff;padding:6px 16px;font-weight:600;font-size:14px}
+.seg button.on{background:#1E1E1E;color:#fff}
+.rv{border:1px solid #ccc;border-radius:12px;padding:16px 18px;margin:14px 0}
+.rv .rh{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;margin-bottom:8px}
+.badge{border-radius:999px;padding:2px 10px;color:#fff;font-size:12px}
+.badge.ok{background:var(--ok)}.badge.no{background:var(--bad)}.badge.em{background:#666}
+.rv .rq{font-family:var(--serif);font-size:16.5px;line-height:1.5;margin:0 0 10px}
+.ro{display:flex;gap:10px;align-items:flex-start;font-family:var(--serif);font-size:15.5px;line-height:1.4;padding:6px 10px;border-radius:8px;margin:3px 0}
+.ro b{font-family:var(--ui);font-size:13px;min-width:16px}
+.ro.c{background:#E3F4EA;outline:1.5px solid var(--ok)}
+.ro.w{background:#FBE9E7;outline:1.5px solid var(--bad)}
+.ro .tag{margin-left:auto;font-family:var(--ui);font-size:11.5px;font-weight:700;white-space:nowrap;padding-left:8px}
+.why{margin:10px 0 0;padding:10px 12px;background:#F4F6FB;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;font-size:15px;line-height:1.55}
+.term{font-style:italic;font-weight:600}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.toast{position:fixed;left:50%;top:92px;transform:translateX(-50%);z-index:40;background:#1E1E1E;color:#fff;padding:10px 18px;border-radius:10px;font-weight:700;font-size:14px}
+:focus-visible{outline:3px solid #F2B705;outline-offset:2px}
+@media (max-width:640px){
+  .top-in{grid-template-columns:1fr auto;padding:8px 14px;min-height:0}
+  .tl .sub,.tr{display:none}
+  .tl b{font-size:14px}
+  .bot-in{grid-template-columns:auto 1fr;padding:10px 12px;gap:8px}
+  .who{display:none}
+  .btn{padding:9px 18px}
+  .navpill{padding:9px 10px;font-size:13.5px}
+  .grid{grid-template-columns:repeat(6,1fr)}
+  .facts{grid-template-columns:1fr}
+  .qt{font-size:17px}.opt{font-size:16px}
+  .main{padding:18px 14px 130px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(function () {
+  "use strict";
+  var MIN = 30;
+  /* t: konu · q: soru · o: şıklar · a: doğru şık (0=A) · w: açıklama (*yıldız* = İngilizce terim) */
+  var Q = [
+    { t: "Ölçek",
+      q: "Two maps are printed on sheets of the same size. Map 1 has a scale of 1:24,000 and Map 2 has a scale of 1:1,000,000. Which of the following statements is accurate?",
+      o: ["Map 2 is the larger-scale map because its scale contains the larger number.",
+          "Map 1 shows a larger portion of Earth's surface than Map 2 does.",
+          "Map 1 is the larger-scale map and shows a smaller area in greater detail.",
+          "Both maps show the same amount of detail because the sheets are the same size.",
+          "Map 2 would be the better choice for showing individual buildings and streets."],
+      a: 2,
+      w: "1:24.000 kesri 1:1.000.000'dan büyüktür; yani Map 1 *large scale*'dir: küçük alan, çok ayrıntı. Tuzak: paydadaki sayı büyüdükçe ölçek küçülür." },
+    { t: "Yayılma",
+      q: "A fashion trend first appears among designers in Paris, Milan, and New York, then in other large cities around the world, and only later in small towns located near Paris. Which type of diffusion does this sequence best illustrate?",
+      o: ["Contagious diffusion", "Relocation diffusion", "Stimulus diffusion", "Reverse hierarchical diffusion", "Hierarchical diffusion"],
+      a: 4,
+      w: "Önce büyük moda merkezleri, sonra diğer büyük şehirler, en son yakındaki küçük kasabalar: yayılma mesafeye göre değil, şehirlerin önem sırasına göre ilerliyor. Bu *hierarchical diffusion*. *Contagious* olsaydı önce Paris'in yanındaki kasabalara ulaşırdı." },
+    { t: "Konum",
+      q: "Singapore is a small, low-lying island with a deep natural harbor. Geographers, however, usually explain its rise as one of the world's busiest ports by pointing to its position on the Strait of Malacca, the main shipping route between the Indian Ocean and the South China Sea. The second explanation emphasizes Singapore's",
+      o: ["situation", "site", "absolute location", "toponym", "cultural landscape"],
+      a: 0,
+      w: "Doğal liman ve ada oluşu *site* özelliğidir; ama soru ikinci açıklamayı soruyor: Singapur'un ticaret yoluna göre konumu. Başka yerlere göre konum = *situation*." },
+    { t: "Harita türleri",
+      q: "A choropleth map shades each state according to its total number of flu cases. A critic argues that the map is misleading. Which of the following is the strongest basis for the criticism?",
+      o: ["Choropleth maps cannot be used to display quantitative data.",
+          "Flu cases are point data and can be shown only with isolines.",
+          "Totals largely reflect how many people live in each state, so the data should be mapped as a rate.",
+          "Choropleth maps distort the shapes of the states.",
+          "The map should have been drawn at a larger map scale."],
+      a: 2,
+      w: "Toplam vaka sayısı en çok kalabalık eyaletlerde çıkar; harita hastalığı değil nüfusu göstermiş olur. *Choropleth* haritada oran (100.000 kişi başına vaka gibi) kullanılmalıdır." },
+    { t: "Mesafe ve etkileşim",
+      q: "For decades, a factory town imported coal from a mine 900 kilometers away. After a new mine opened only 150 kilometers away, shipments from the distant mine stopped, even though that mine still produced coal at the same price. Which concept best explains the change?",
+      o: ["Complementarity", "Intervening opportunity", "Transferability", "Time-space compression", "Stimulus diffusion"],
+      a: 1,
+      w: "İki yer arasındaki arz-talep (*complementarity*) sürüyor, fiyat da aynı. Değişen tek şey araya daha yakın bir kaynağın girmesi: *intervening opportunity*." },
+    { t: "Projeksiyonlar",
+      q: "A navigator wants to plot a course of constant compass bearing as a straight line on a map. Which projection should the navigator use, and what is its main disadvantage?",
+      o: ["Robinson; it distorts direction near the equator",
+          "Mercator; it greatly exaggerates the size of areas at high latitudes",
+          "Gall-Peters; it distorts the shapes of landmasses",
+          "Goode homolosine; it interrupts the oceans",
+          "Azimuthal; it shows only one hemisphere accurately"],
+      a: 1,
+      w: "*Mercator*'da sabit pusula yönü düz çizgidir, bu yüzden denizcilikte kullanılır. Bedeli: kutuplara yaklaştıkça alanlar aşırı büyür (Grönland, Afrika kadar görünür)." },
+    { t: "Bölgeler",
+      q: "A geographer maps (1) the area in which more than half of households speak French at home, (2) the area served by a city's commuter rail network, and (3) the area that residents describe as “the South.” In order, these are examples of which types of regions?",
+      o: ["Functional, formal, perceptual", "Perceptual, functional, formal", "Formal, functional, perceptual", "Formal, perceptual, functional", "Functional, perceptual, formal"],
+      a: 2,
+      w: "Ortak bir özelliğin (dil) baskın olduğu alan *formal*; bir merkeze bağlanan ağın (banliyö treni) hizmet alanı *functional*; insanların zihnindeki “the South” ise *perceptual (vernacular)* region." },
+    { t: "Temel kavramlar",
+      q: "Which of the following statements would an environmental determinist be most likely to make?",
+      o: ["“Societies in similar climates often choose very different ways of farming.”",
+          "“Technology allows people to overcome many of the limits of their environment.”",
+          "“The environment offers a range of options, and culture decides among them.”",
+          "“Temperate climates produce more industrious and inventive societies than tropical climates do.”",
+          "“Human activity is the main force that reshapes natural landscapes.”"],
+      a: 3,
+      w: "*Environmental determinism* iklimin ve doğanın toplumun karakterini ve başarısını belirlediğini savunur (D). A, B ve C *possibilism*'dir: çevre seçenek sunar, insan seçer. E ise insanın doğayı biçimlendirmesini anlatır." },
+    { t: "Dağılım",
+      q: "A county's population doubles over twenty years, and all of the new residents move into a single new suburb in one corner of the county. The county's boundaries do not change. Which of the following describes the change in the county's population distribution?",
+      o: ["Density stayed the same, and the distribution became more dispersed.",
+          "Density increased, and the distribution became more clustered.",
+          "Density decreased, and the pattern became linear.",
+          "Density increased, and the distribution became more dispersed.",
+          "Neither density nor concentration changed, because the area is the same."],
+      a: 1,
+      w: "Alan aynı, nüfus iki katına çıktı: *density* arttı. Yeni gelenlerin hepsi tek bir köşeye yerleşti: dağılım daha *clustered* (kümelenmiş) oldu. *Density* ile *concentration* ayrı şeylerdir." },
+    { t: "Coğrafi araçlar",
+      q: "After a hurricane, an agency (1) acquires satellite images of the flooded coast, (2) sends workers whose handheld receivers record the precise coordinates of damaged bridges, and (3) overlays both data sets on a road map to plan repair routes. In order, the three steps rely on",
+      o: ["GIS, GPS, remote sensing", "GPS, remote sensing, GIS", "remote sensing, GPS, GIS", "remote sensing, GIS, GPS", "GPS, GIS, remote sensing"],
+      a: 2,
+      w: "Uydu görüntüsü = *remote sensing* (uzaktan veri toplama). El cihazıyla koordinat almak = *GPS*. Katmanları üst üste bindirip analiz etmek = *GIS*." },
+    { t: "Mesafe ve etkileşim",
+      q: "In the gravity model, interaction between two places is proportional to the product of their populations divided by the square of the distance between them. City A (population 2 million) and City B (population 1 million) are 100 kilometers apart. Which change would reduce their predicted interaction to one-fourth of its original value?",
+      o: ["Halving the population of City A",
+          "Halving the population of both cities and halving the distance between them",
+          "Doubling the population of City B",
+          "Reducing the distance between them to 50 kilometers",
+          "Increasing the distance between them to 200 kilometers"],
+      a: 4,
+      w: "Etkileşim mesafenin karesiyle ters orantılıdır: mesafe 2 katına çıkınca etkileşim 1/4'e düşer. A yalnızca yarıya indirir; B'de iki etki birbirini götürür; C ve D etkileşimi artırır." },
+    { t: "Yayılma",
+      q: "A discount retailer was founded in a small town in rural Arkansas, expanded first to other small towns, and reached large metropolitan areas only decades later. This pattern is best described as",
+      o: ["hierarchical diffusion", "reverse hierarchical diffusion", "stimulus diffusion", "relocation diffusion", "time-space compression"],
+      a: 1,
+      w: "Küçük kasabadan başlayıp sonradan büyük şehirlere çıkmak hiyerarşinin tersidir: *reverse hierarchical diffusion*. Normal *hierarchical diffusion* büyükten küçüğe iner." },
+    { t: "Ölçek",
+      q: "At the national scale, Country Z has one of the highest average incomes in its region. A map of the same data at the provincial scale shows that two provinces are very wealthy and the other eight are poor. The comparison best illustrates which of the following?",
+      o: ["Data mapped at the national scale are more accurate than data mapped at the provincial scale.",
+          "The national map uses a projection that distorts the area of the poorer provinces.",
+          "Provincial boundaries are an example of a perceptual region.",
+          "Income is qualitative data and cannot be compared across scales.",
+          "A pattern seen at one scale of analysis can hide variation that is visible at another scale."],
+      a: 4,
+      w: "*Scale of analysis* değişince görünen desen de değişir: ülke ortalaması, eyaletler arasındaki eşitsizliği gizler. Veri aynı; yalnızca toplandığı düzey farklı." },
+    { t: "Harita türleri",
+      q: "On an isoline map of elevation, the lines in one part of the map are spaced very close together. This indicates that in that area",
+      o: ["elevation changes rapidly over a short distance", "elevation is the highest on the map", "the land is nearly flat", "no data were collected", "the map scale is smaller than elsewhere on the map"],
+      a: 0,
+      w: "*Isoline* haritada çizgiler eşit değerleri birleştirir. Çizgiler sıklaşıyorsa değer kısa mesafede hızla değişiyordur: dik yamaç. Seyrek çizgi = düzlük." },
+    { t: "Konum",
+      q: "A live event begins in London (0° longitude) at 6:00 p.m. local time. Ignoring political adjustments to time zones, what is the local time at a location at 75° W longitude?",
+      o: ["1:00 p.m.", "11:00 p.m.", "6:00 p.m.", "11:00 a.m.", "5:00 p.m."],
+      a: 0,
+      w: "Her 15° boylam = 1 saat. 75 ÷ 15 = 5 saat. Batıya gidildikçe saat geri gelir: 18.00 − 5 = 13.00, yani 1:00 p.m. B şıkkı yönü ters alanların cevabıdır." },
+    { t: "Temel kavramlar",
+      q: "A researcher studies how farmers in the Andes reshape steep slopes with terraces and how those terraces in turn affect erosion. Within Pattison's four traditions of geography, this research fits best in the",
+      o: ["earth-science tradition", "locational (spatial) tradition", "area-analysis (regional) tradition", "culture-environment (man-land) tradition", "cartographic tradition"],
+      a: 3,
+      w: "İnsanın çevreyi değiştirmesi ve çevrenin insanı etkilemesi = *culture-environment (man-land) tradition*. E'deki “cartographic” Pattison'ın dört geleneğinden biri değildir (earth-science, culture-environment, locational, area-analysis)." },
+    { t: "Projeksiyonlar",
+      q: "Which of the following statements about map projections is accurate?",
+      o: ["The Robinson projection preserves area, shape, distance, and direction perfectly.",
+          "The Gall-Peters projection preserves the shapes of continents but distorts their relative sizes.",
+          "The Mercator projection is an equal-area projection.",
+          "The Robinson projection preserves no single property perfectly but keeps every type of distortion relatively low.",
+          "An azimuthal projection shows true direction from every point on the map."],
+      a: 3,
+      w: "*Robinson* bir uzlaşma projeksiyonudur: hiçbir özelliği tam korumaz ama hepsini az bozar. *Gall-Peters* alanı korur, şekli bozar (B tersini söylüyor). *Mercator* equal-area değildir. *Azimuthal* haritada doğru yön yalnızca merkez noktadan geçerlidir." },
+    { t: "Dağılım",
+      q: "A country has 80 million people and a total land area of 400,000 square kilometers, of which 100,000 square kilometers are arable. What is the country's arithmetic density?",
+      o: ["200 people per square kilometer", "800 people per square kilometer", "267 people per square kilometer", "0.005 people per square kilometer", "160 people per square kilometer"],
+      a: 0,
+      w: "*Arithmetic density* = toplam nüfus ÷ toplam kara alanı = 80.000.000 ÷ 400.000 = 200. Tarım alanına bölersen (800) o *physiological density* olur; soru onu sormuyor." },
+    { t: "Küreselleşme",
+      q: "In world-systems theory, which of the following best describes a semi-periphery country?",
+      o: ["A country that exports only raw materials and has very little industry",
+          "A country that dominates global finance and high-technology industries",
+          "A country with growing manufacturing that both draws on poorer countries and depends on wealthier ones",
+          "A country that takes no part in international trade",
+          "A country located physically between a core country and a periphery country"],
+      a: 2,
+      w: "*Semi-periphery* arada durur: sanayileşiyor, *periphery*'den ham madde ve ucuz emek alır ama sermaye ve teknolojide hâlâ *core*'a bağımlıdır. E tuzağı: kavram fiziksel konumla değil ekonomik rolle ilgilidir." },
+    { t: "Yayılma",
+      q: "Which of the following correctly pairs a type of diffusion with an example?",
+      o: ["Contagious diffusion: a religion carried overseas by migrants who settle in a new country",
+          "Hierarchical diffusion: a rumor passing from neighbor to neighbor through a village",
+          "Stimulus diffusion: a fast-food chain's concept adopted in India with the menu changed to remove beef",
+          "Relocation diffusion: a viral video spreading among classmates who sit near one another",
+          "Reverse hierarchical diffusion: a trend moving from a world city down to smaller regional cities"],
+      a: 2,
+      w: "Fikir alınıp yerel kültüre göre değiştirilerek benimseniyorsa *stimulus diffusion*. A aslında *relocation*, B ve D *contagious*, E ise normal *hierarchical diffusion* örneğidir." },
+    { t: "Mesafe ve etkileşim",
+      q: "City X has four times the population of City Y, and the two cities are 90 kilometers apart on a straight highway. According to Reilly's law of retail gravitation, the breaking point between their trade areas is located",
+      o: ["about 30 kilometers from City Y", "exactly halfway, 45 kilometers from each city", "about 30 kilometers from City X", "about 18 kilometers from City Y", "at City Y itself, because all shoppers choose the larger city"],
+      a: 0,
+      w: "*Breaking point* = mesafe ÷ (1 + √(büyük nüfus ÷ küçük nüfus)) = 90 ÷ (1 + 2) = 30 km; küçük şehirden ölçülür. Nokta her zaman küçük şehre yakındır. D, karekök almayı unutanların cevabıdır." },
+    { t: "Harita türleri",
+      q: "One map places a circle on each major city, with the size of each circle proportional to the city's population. A second map uses identical dots, each representing 50,000 people. Compared with the first map, the second map is better suited to showing",
+      o: ["the exact population of each city", "which city is the national capital", "the political boundaries of each city", "changes in population over time", "where population is clustered or dispersed within the country"],
+      a: 4,
+      w: "*Dot distribution map* noktaların sıklığıyla kümelenmeyi ve dağınıklığı gösterir. Şehirlerin büyüklüğünü karşılaştırmak içinse *graduated (proportional) symbol map* daha uygundur." },
+    { t: "Konum",
+      q: "Which of the following is a statement of relative location?",
+      o: ["“The city is at 33.9° S, 18.4° E.”",
+          "“The city is called Cape Town.”",
+          "“The city has a Mediterranean climate and sits beneath a flat-topped mountain.”",
+          "“The city is near the southern tip of Africa, roughly 1,300 kilometers southwest of Johannesburg.”",
+          "“The city covers about 400 square kilometers.”"],
+      a: 3,
+      w: "*Relative location* bir yeri başka yerlere göre tarif eder (D). A *absolute location*, B *toponym*, C *site* özellikleri, E ise yalnızca alan bilgisidir." },
+    { t: "Coğrafi araçlar",
+      q: "A city planner wants to know why residents avoid a new public park. Which research method would best help the planner answer this question, and what type of data would it produce?",
+      o: ["Interviews with nearby residents; qualitative data",
+          "Interviews with nearby residents; quantitative data",
+          "Satellite images of the park; qualitative data",
+          "Census counts of the neighborhood's population; qualitative data",
+          "GPS coordinates of the park's entrances; quantitative data"],
+      a: 0,
+      w: "“Neden” sorusunun cevabı insanların düşüncelerindedir; bunu röportaj verir ve söze dayalı veri *qualitative*'dir. E'deki eşleşme doğru olsa da koordinat, insanların parkı neden kullanmadığını açıklamaz." },
+    { t: "Projeksiyonlar",
+      q: "An airline wants a map centered on its hub that shows the shortest (great-circle) routes from the hub to other cities as straight lines, with correct distances from the hub. The most appropriate projection is",
+      o: ["Mercator", "Gall-Peters", "Goode homolosine", "Robinson", "azimuthal equidistant"],
+      a: 4,
+      w: "*Azimuthal equidistant* projeksiyonda merkez noktadan her yere yön ve mesafe doğrudur; merkezden çıkan büyük daire rotaları düz çizgi olur. Mercator'da düz çizgi en kısa yol değil, sabit pusula yönüdür." },
+    { t: "Mesafe ve etkileşim",
+      q: "A streaming platform releases a new series in 190 countries at the same moment, and viewers in Lagos, Seoul, and São Paulo are discussing it online within hours. For this kind of cultural product, which of the following has been weakened the most?",
+      o: ["Complementarity", "The hierarchy of world cities", "Absolute location", "The friction of distance", "The cultural landscape"],
+      a: 3,
+      w: "Mesafenin etkileşimi zorlaştırıcı etkisine *friction of distance* denir. İnternet sayesinde ürün her yere aynı anda ulaşıyor; mesafenin engeli neredeyse sıfırlanmış (*time-space compression*)." },
+    { t: "Dağılım",
+      q: "A map shows that neighborhoods with many fast-food restaurants also tend to have high rates of diabetes. A geographer would describe the two distributions as showing",
+      o: ["distance decay",
+          "spatial association, which suggests a possible relationship but does not by itself prove causation",
+          "hierarchical diffusion",
+          "a functional region",
+          "environmental determinism"],
+      a: 1,
+      w: "İki dağılımın mekânda örtüşmesi *spatial association*'dır. Örtüşme bir ilişki olabileceğini düşündürür ama tek başına neden-sonuç kanıtı değildir (gelir gibi üçüncü bir etken olabilir)." },
+    { t: "Harita türleri",
+      q: "A geographer wants readers to compare the total populations of countries at a glance, even if this greatly distorts the countries' shapes and sizes. Which type of map should the geographer use?",
+      o: ["Choropleth map", "Isoline map", "Dot distribution map", "Cartogram", "Reference map"],
+      a: 3,
+      w: "*Cartogram* alanları coğrafi büyüklüğe göre değil, gösterilen değişkene (burada nüfus) göre yeniden boyutlandırır; şekiller bozulur ama karşılaştırma anında yapılır." },
+    { t: "Temel kavramlar",
+      q: "Geographers distinguish between space and place. Which of the following best illustrates the concept of place?",
+      o: ["The 12 kilometers that separate two villages",
+          "The meanings and memories that residents attach to their town's central square",
+          "The coordinates 41° N, 29° E",
+          "The gap between two points on a grid",
+          "The area of a country in square kilometers"],
+      a: 1,
+      w: "*Space* soyut ve ölçülebilirdir (mesafe, koordinat, alan). *Place* ise insanların anlam ve duygu yüklediği yerdir: meydana bağlanan anılar *sense of place* oluşturur." },
+    { t: "Küreselleşme",
+      q: "A coastal town depends on fishing. Which of the following policies best reflects the principle of sustainable development?",
+      o: ["Banning all fishing permanently in order to protect fish stocks",
+          "Removing catch limits so that current incomes are as high as possible",
+          "Subsidizing larger boats so that more fish can be caught each season",
+          "Replacing the fishing fleet with a factory, regardless of the pollution it causes",
+          "Setting catch limits at the rate at which fish populations can reproduce, so that fishing can continue in the future"],
+      a: 4,
+      w: "*Sustainable development* bugünün ihtiyacını, gelecek kuşakların imkânını tüketmeden karşılamaktır. Avı balığın üreme hızında tutmak hem geçimi hem kaynağı korur. A ekonomiyi ve toplumu, B, C ve D çevreyi yok sayar." }
+  ];
+
+  var L = "ABCDE", N = Q.length;
+  var NAMES = { ada: "Ada", murad: "Murad", omer: "Ömer", daghan: "Dağhan", merve: "Merve" };
+  var STORE = "hg-kit:v2:";
+  function sGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function sSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+  var pid = sGet(STORE + "profile"); if (!NAMES[pid]) pid = null;
+  function key() { return STORE + (pid || "misafir") + ":deneme2"; }
+  function fresh() {
+    var a = [], m = [], x = [], i;
+    for (i = 0; i < N; i++) { a.push(-1); m.push(false); x.push([]); }
+    return { v: 1, started: 0, endAt: 0, i: 0, ans: a, mark: m, x: x, done: false, used: 0, elim: false, hideT: false, review: false, score: 0, auto: false };
+  }
+  function load() {
+    try { var s = JSON.parse(sGet(key()) || "null"); if (s && s.v === 1 && s.ans && s.ans.length === N) return s; } catch (e) {}
+    return fresh();
+  }
+  function save() { sSet(key(), JSON.stringify(S)); }
+  var S = load(), pop = false, showAll = false, warned = false, app = document.getElementById("app");
+
+  function h(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function rich(s) { return h(s).replace(/\*([^*]+)\*/g, '<em class="term" lang="en">$1</em>'); }
+  function fmt(ms) { var s = Math.max(0, Math.ceil(ms / 1000)), m = Math.floor(s / 60); s = s % 60; return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s; }
+  function who() { return pid ? NAMES[pid] : "Misafir"; }
+  function answered() { var c = 0, i; for (i = 0; i < N; i++) if (S.ans[i] >= 0) c++; return c; }
+
+  var BM = '<svg viewBox="0 0 16 18" aria-hidden="true"><path d="M2.5 1.5h11v15L8 12.5l-5.5 4z"/></svg>';
+
+  function top(showTimer) {
+    return '<header class="top"><div class="top-in">' +
+      '<div class="tl"><b>Section 1: Unit 1 — Thinking Geographically</b><span class="sub">Deneme 2 · zor sorular</span></div>' +
+      '<div class="tc">' + (showTimer ? '<div class="timer" id="tm" aria-live="off"></div><button class="pill" data-act="hide">' + (S.hideT ? "Show" : "Hide") + '</button>' : '') + '</div>' +
+      '<div class="tr"><a class="tool" href="../">Çalışma kitine dön</a></div>' +
+      '</div><div class="dash"></div></header>';
+  }
+  function grid() {
+    var s = '<div class="grid">', i;
+    for (i = 0; i < N; i++) s += '<button class="gq' + (S.ans[i] >= 0 ? " ans" : "") + (!S.review && i === S.i ? " cur" : "") + (S.mark[i] ? " mk" : "") + '" data-act="go" data-i="' + i + '" aria-label="Question ' + (i + 1) + (S.ans[i] >= 0 ? ", answered" : ", unanswered") + (S.mark[i] ? ", marked for review" : "") + '">' + (i + 1) + '</button>';
+    return s + '</div>';
+  }
+  var LEGEND = '<div class="lg"><span><i class="pin"></i> Current</span><span><i class="dsh"></i> Unanswered</span><span><i class="flag"></i> For Review</span></div>';
+
+  function vStart() {
+    var names = "", id;
+    for (id in NAMES) names += '<button data-act="who" data-id="' + id + '" class="' + (pid === id ? "on" : "") + '">' + h(NAMES[id]) + '</button>';
+    return top(false) + '<main class="main">' +
+      '<h1>Deneme 2 · Zor sorular</h1>' +
+      '<p class="lead">Unit 1 — Thinking Geographically. Bu deneme ilkinden zor: hesap, tuzak şık ve birbirine yakın kavramları ayırt etme soruları var. Ekran, gerçek dijital sınavdaki gibi çalışır.</p>' +
+      '<div class="facts"><div><b>' + N + '</b><span>çoktan seçmeli soru, 5 şıklı, İngilizce</span></div><div><b>' + MIN + ' dk</b><span>süre; bitince kendiliğinden teslim edilir</span></div><div><b>1 dk</b><span>soru başına ortalama</span></div></div>' +
+      '<div class="card"><b>Sınava kim giriyor?</b><div class="names">' + names + '</div>' +
+      '<ul class="how"><li><b>Mark for Review:</b> emin olmadığın soruyu işaretle, sonra dön.</li><li><b>ABC düğmesi:</b> şık elemeyi açar; elediğin şıkkın üstü çizilir.</li><li><b>Question … of ' + N + ':</b> soru haritasını açar, istediğin soruya atlarsın.</li><li>Klavye: A–E şık seçer, ← → sorular arasında gezer.</li><li>Cevaplar ve açıklamalar teslimden sonra gösterilir. Süre, sayfayı kapatsan da işlemeye devam eder.</li></ul>' +
+      '<div class="acts"><button class="btn" data-act="start">Sınavı başlat</button></div></div>' +
+      '</main>';
+  }
+  function vTest() {
+    var i = S.i, q = Q[i], o = "", k, sel, x;
+    for (k = 0; k < q.o.length; k++) {
+      sel = S.ans[i] === k; x = S.x[i].indexOf(k) >= 0;
+      o += '<div class="orow"><button class="opt' + (sel ? " sel" : "") + (x ? " x" : "") + '" data-act="opt" data-k="' + k + '" aria-pressed="' + sel + '"><span class="ltr">' + L[k] + '</span><span class="otx" lang="en">' + h(q.o[k]) + '</span></button>' +
+        (S.elim ? '<button class="xb" data-act="strike" data-k="' + k + '" aria-label="' + (x ? "Undo cross out " : "Cross out ") + L[k] + '">' + (x ? "Undo" : '<span class="xl">' + L[k] + '</span>') + '</button>' : '') + '</div>';
+    }
+    return top(true) + '<main class="main">' +
+      '<div class="qh"><span class="qn">' + (i + 1) + '</span>' +
+      '<button class="mark' + (S.mark[i] ? " on" : "") + '" data-act="mark" aria-pressed="' + S.mark[i] + '">' + BM + ' Mark for Review</button>' +
+      '<button class="abc' + (S.elim ? " on" : "") + '" data-act="elim" aria-pressed="' + S.elim + '" title="Şık eleme">ABC</button></div>' +
+      '<p class="qt" lang="en">' + h(q.q) + '</p>' + o + '</main>' +
+      (pop ? '<div class="pop" role="dialog" aria-label="Question navigator"><div class="ph"><b>Section 1: Unit 1 Questions</b><button class="x" data-act="nav" aria-label="Close">×</button></div>' + LEGEND + grid() + '<div class="pc"><button class="btn ghost" data-act="review">Go to Review Page</button></div></div>' : '') +
+      '<footer class="bot"><div class="dash"></div><div class="bot-in"><div class="who">' + h(who()) + '</div>' +
+      '<button class="navpill" data-act="nav" aria-expanded="' + pop + '">Question ' + (i + 1) + ' of ' + N + ' <span class="chev">' + (pop ? "▾" : "▴") + '</span></button>' +
+      '<div class="nb"><button class="btn ghost" data-act="back"' + (i === 0 ? " disabled" : "") + '>Back</button><button class="btn" data-act="next">Next</button></div></div></footer>';
+  }
+  function vReview() {
+    var left = N - answered();
+    return top(true) + '<main class="main"><h1>Check Your Work</h1>' +
+      '<p class="lead">Süre bitene kadar istediğin soruya dönüp cevabını değiştirebilirsin. ' + (left ? '<b>' + left + ' soru boş.</b> ' : 'Bütün soruları cevapladın. ') + 'Hazırsan teslim et.</p>' +
+      '<div class="card"><div class="ph"><b>Section 1: Unit 1 Questions</b></div>' + LEGEND + grid() + '</div></main>' +
+      '<footer class="bot"><div class="dash"></div><div class="bot-in"><div class="who">' + h(who()) + '</div><span></span>' +
+      '<div class="nb"><button class="btn ghost" data-act="unreview">Back</button><button class="btn" data-act="submit">Submit</button></div></div></footer>';
+  }
+  function vResult() {
+    var ok = S.score, i, k, topics = {}, order = [], t, rows = "", list = "", st, cls, n = 0;
+    for (i = 0; i < N; i++) {
+      t = Q[i].t; if (!topics[t]) { topics[t] = { ok: 0, n: 0 }; order.push(t); }
+      topics[t].n++; if (S.ans[i] === Q[i].a) topics[t].ok++;
+    }
+    for (i = 0; i < order.length; i++) { t = topics[order[i]]; rows += '<tr><td>' + h(order[i]) + '</td><td><div class="meter"><i style="width:' + Math.round(100 * t.ok / t.n) + '%"></i></div></td><td>' + t.ok + ' / ' + t.n + '</td></tr>'; }
+    for (i = 0; i < N; i++) {
+      st = S.ans[i] === Q[i].a ? "ok" : S.ans[i] < 0 ? "em" : "no";
+      if (!showAll && st === "ok") continue;
+      n++;
+      list += '<div class="rv"><div class="rh"><span class="qn">' + (i + 1) + '</span><span class="badge ' + st + '">' + (st === "ok" ? "Doğru" : st === "em" ? "Boş" : "Yanlış") + '</span><span>' + h(Q[i].t) + '</span></div><p class="rq" lang="en">' + h(Q[i].q) + '</p>';
+      for (k = 0; k < Q[i].o.length; k++) {
+        cls = k === Q[i].a ? " c" : k === S.ans[i] ? " w" : "";
+        list += '<div class="ro' + cls + '"><b>' + L[k] + '</b><span lang="en">' + h(Q[i].o[k]) + '</span>' + (k === Q[i].a ? '<span class="tag">doğru cevap</span>' : k === S.ans[i] ? '<span class="tag">senin cevabın</span>' : '') + '</div>';
+      }
+      list += '<p class="why">' + rich(Q[i].w) + '</p></div>';
+    }
+    if (!n) list = '<p class="lead">Yanlış ya da boş sorun yok. Hepsini görmek için “Bütün sorular”a bas.</p>';
+    return top(false) + '<main class="main"><h1>Sonuç · ' + h(who()) + '</h1>' +
+      '<div class="card"><div class="score"><b>' + ok + ' / ' + N + '</b><span>%' + Math.round(100 * ok / N) + ' · süre ' + fmt(S.used) + (S.auto ? ' · süre doldu, kendiliğinden teslim edildi' : '') + '</span></div>' +
+      '<div class="acts"><button class="btn" data-act="retry">Yeniden çöz</button><a class="btn ghost" href="../">Çalışma kitine dön</a></div></div>' +
+      '<h2>Konu konu</h2><div class="card"><table class="tb">' + rows + '</table></div>' +
+      '<h2>Sorular ve açıklamalar</h2><div class="seg"><button data-act="flt" data-v="0" class="' + (showAll ? "" : "on") + '">Yanlışlar ve boşlar</button><button data-act="flt" data-v="1" class="' + (showAll ? "on" : "") + '">Bütün sorular</button></div>' + list + '</main>';
+  }
+
+  function render() {
+    app.innerHTML = S.done ? vResult() : !S.started ? vStart() : S.review ? vReview() : vTest();
+    tick();
+  }
+  function finish(auto) {
+    if (S.done) return;
+    var sc = 0, i; for (i = 0; i < N; i++) if (S.ans[i] === Q[i].a) sc++;
+    S.done = true; S.auto = !!auto; S.score = sc; S.review = false; pop = false;
+    S.used = Math.min(MIN * 60000, Date.now() - S.started);
+    save(); render(); window.scrollTo(0, 0);
+  }
+  function toast(msg) {
+    var t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg;
+    document.body.appendChild(t); setTimeout(function () { t.remove(); }, 4000);
+  }
+  function tick() {
+    if (!S.started || S.done) return;
+    var r = S.endAt - Date.now(), el = document.getElementById("tm"), w = r <= 300000;
+    if (r <= 0) { finish(true); return; }
+    if (w && !warned) { warned = true; toast("5 dakika kaldı"); if (S.hideT) { S.hideT = false; save(); render(); return; } }
+    if (el) { el.textContent = S.hideT ? "⏱" : fmt(r); el.className = "timer" + (w ? " warn" : ""); }
+  }
+  setInterval(tick, 250);
+
+  function pick(k) {
+    var i = S.i, p;
+    if (k >= Q[i].o.length) return;
+    S.ans[i] = S.ans[i] === k ? -1 : k;
+    p = S.x[i].indexOf(k); if (p >= 0) S.x[i].splice(p, 1);
+  }
+  function move(d) {
+    pop = false;
+    if (d > 0 && S.i === N - 1) { S.review = true; return; }
+    S.i = Math.max(0, Math.min(N - 1, S.i + d));
+  }
+  app.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-act]") : null, a, k, p;
+    if (!b || b.disabled) return;
+    a = b.getAttribute("data-act"); k = parseInt(b.getAttribute("data-k"), 10);
+    if (a === "who") { pid = b.getAttribute("data-id"); sSet(STORE + "profile", pid); S = load(); }
+    else if (a === "start") { S = fresh(); S.started = Date.now(); S.endAt = S.started + MIN * 60000; warned = false; window.scrollTo(0, 0); }
+    else if (a === "opt") pick(k);
+    else if (a === "strike") { p = S.x[S.i].indexOf(k); if (p >= 0) S.x[S.i].splice(p, 1); else { S.x[S.i].push(k); if (S.ans[S.i] === k) S.ans[S.i] = -1; } }
+    else if (a === "mark") S.mark[S.i] = !S.mark[S.i];
+    else if (a === "elim") S.elim = !S.elim;
+    else if (a === "hide") S.hideT = !S.hideT;
+    else if (a === "nav") pop = !pop;
+    else if (a === "back") move(-1);
+    else if (a === "next") move(1);
+    else if (a === "go") { S.i = parseInt(b.getAttribute("data-i"), 10); S.review = false; pop = false; }
+    else if (a === "review") { S.review = true; pop = false; }
+    else if (a === "unreview") { S.review = false; S.i = N - 1; }
+    else if (a === "submit") { p = N - answered(); if (!window.confirm(p ? p + " soru boş. Yine de teslim edilsin mi?" : "Sınav teslim edilsin mi?")) return; finish(false); return; }
+    else if (a === "retry") { if (!window.confirm("Bu denemenin sonucu silinip sınav baştan başlasın mı?")) return; S = fresh(); showAll = false; window.scrollTo(0, 0); }
+    else if (a === "flt") { showAll = b.getAttribute("data-v") === "1"; }
+    save(); render();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (!S.started || S.done || S.review || e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = (e.key || "").toLowerCase(), n = "abcde".indexOf(k);
+    if (k.length === 1 && n >= 0) pick(n);
+    else if (k === "arrowright") move(1);
+    else if (k === "arrowleft") move(-1);
+    else if (k === "escape" && pop) pop = false;
+    else return;
+    e.preventDefault(); save(); render();
+  });
+  if (S.started && !S.done && Date.now() >= S.endAt) finish(true); else render();
+})();
+</script>
+</body>
+</html>

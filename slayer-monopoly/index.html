@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SLAYER: Monopoly oynayan yapay zekâ ajanı — Ada Sarp Kırık</title>
+<meta name="description" content="Exposure AI Academy final sunumu (Ağustos 2026). 5 gün, 3 kişi ve Google Colab ile Monopoly oynayan bir ajan: eğitilen modeller başarısız oldu, hedef fonksiyonu bulununca deterministik ajan SLAYER doğdu.">
+<meta property="og:title" content="SLAYER: Monopoly oynayan yapay zekâ ajanı">
+<meta property="og:description" content="5 gün, 3 kişi, Google Colab. Eğitilen ajanlar kaybetti; net değeri hedefleyen deterministik ajan 100 oyunun 72'sini kazandı.">
+<meta property="og:image" content="https://adasarpkirik.vercel.app/onizleme/slayer-monopoly/paylas.jpg">
+<meta name="theme-color" content="#0B4029">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/deck/deck.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="deck">
+<div class="deck-stage">
+  <div class="felt" aria-hidden="true"></div>
+
+  <!-- 01 · KAPAK -->
+  <section class="scene" id="kapak" data-title="Kapak" data-notes="Exposure AI Academy'nin final sunumu. Ali, Emir ve ben beş günde, Google Colab üzerinde Monopoly oynayan bir yapay zekâ ajanı geliştirdik. Adı SLAYER.">
+    <p class="eyebrow k-eye" data-a="up">Exposure AI Academy · Final sunumu · Ağustos 2026</p>
+    <h1 class="k-title" data-a="chars" data-gap="0.07" data-dur="1.1">Slayer</h1>
+    <p class="k-sub" data-a="words" data-d="0.55">Monopoly oynayan bir yapay zekâ ajanı.</p>
+    <ul class="k-facts" data-stagger="0.12" data-child="up" data-d="0.9">
+      <li><b>5</b> gün</li><li><b>3</b> kişi</li><li class="k-colab">Google Colab</li>
+    </ul>
+    <div class="k-by" data-a="up" data-d="1.3"><b>Ada Sarp Kırık</b><span>Ekip üyesi · Ali, Emir ve Ada ile</span></div>
+    <div class="k-table" aria-hidden="true">
+      <div class="k-deed">
+        <div class="k-deed-band"><small>Tapu senedi</small><strong>Net değer</strong></div>
+        <div class="k-deed-rows"><span>Hedef</span><span>Maksimum</span><span>Politika</span><span>Deterministik</span><span>Eğitim</span><span>Gerekmez</span></div>
+      </div>
+      <div class="k-chance"><span>?</span></div>
+      <div class="dice-spot" data-dice="kapak"></div>
+    </div>
+  </section>
+
+  <!-- 02 · GÖREV -->
+  <section class="scene" id="gorev" data-steps="1" data-title="Ne yapacağız?" data-notes="Görev netti, yol belli değildi: Monopoly oynayan bir yapay zekâ ajanı. İlk sorumuz şuydu: ne yapacağız? Kartı çekelim.">
+    <div class="qfield" aria-hidden="true"></div>
+    <p class="eyebrow" style="--c:var(--or)" data-a="up">İlk soru</p>
+    <h2 class="h-big g-title" data-a="words">Ne yapacağız?</h2>
+    <p class="lead g-lead" data-a="up" data-d="0.35">Desteden ilk kartı çekelim.</p>
+    <div class="g-deck" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="g-card card3d">
+      <div class="flip-in">
+        <div class="face back chance-back">
+          <span class="cb-q">?</span><span class="cb-l">Şans</span>
+        </div>
+        <div class="face front paper">
+          <div class="gc-head"><span>Görev kartı</span><i>Final</i></div>
+          <p class="gc-text">Monopoly oynayan bir yapay zekâ ajanı geliştir.</p>
+          <div class="gc-foot"><span>Süre · 5 gün</span><span>Ortam · Google Colab</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · KAYNAKLAR -->
+  <section class="scene" id="kaynaklar" data-title="Kaynaklar" data-notes="Başlangıç sermayemiz üç kalemdi: 5 gün, 3 kişi ve Google Colab. Her stratejiyi bu üç kaynağa sığıp sığmadığına göre tarttık.">
+    <p class="eyebrow" style="--c:var(--gr)" data-a="up">Başlangıç sermayesi</p>
+    <h2 class="h-big" data-a="words">Kaynaklar</h2>
+    <div class="notes">
+      <div class="bill bill-pink" style="left:170px;top:430px;--r:-6deg">
+        <div class="bill-in">
+          <span class="bc tl">5</span><span class="bc tr">5</span><span class="bc bl">5</span><span class="bc br">5</span>
+          <span class="bill-top">Süre</span>
+          <div class="bill-oval"><b class="bill-n" data-to="5">5</b></div>
+          <div class="bill-txt"><strong>Gün</strong><em>toplam süre</em></div>
+        </div>
+      </div>
+      <div class="bill bill-yel" style="left:690px;top:520px;--r:3deg">
+        <div class="bill-in">
+          <span class="bc tl">3</span><span class="bc tr">3</span><span class="bc bl">3</span><span class="bc br">3</span>
+          <span class="bill-top">Ekip</span>
+          <div class="bill-oval"><b class="bill-n" data-to="3">3</b></div>
+          <div class="bill-txt"><strong>Kişi</strong><em>Ali · Emir · Ada</em></div>
+        </div>
+      </div>
+      <div class="bill bill-grn" style="left:1210px;top:420px;--r:-2.5deg">
+        <div class="bill-in">
+          <span class="bc tl">1</span><span class="bc tr">1</span><span class="bc bl">1</span><span class="bc br">1</span>
+          <span class="bill-top">İşlem gücü</span>
+          <div class="bill-oval"><b class="bill-n" data-to="1">1</b></div>
+          <div class="bill-txt"><strong>Colab</strong><em>Google Colab</em></div>
+        </div>
+      </div>
+    </div>
+    <p class="k-rule" data-a="up" data-step="1">Her strateji bu üç kaynağa sığmak zorundaydı.</p>
+  </section>
+
+  <!-- 04 · TAHTA -->
+  <section class="scene" id="tahta" data-title="Strateji belirleme" data-notes="Strateji belirlemeyi tahtada yaptık. Her yaklaşım için gereklilikleri, avantajları ve dezavantajları yazdık. Her tahtanın en üstünde aynı satır vardı: kaynaklar.">
+    <p class="eyebrow" style="--c:var(--lb)" data-a="up">Strateji belirleme</p>
+    <h2 class="h-big" data-a="words">Önce tahtaya döktük.</h2>
+    <div class="photos">
+      <figure class="ph" style="left:196px;top:392px;width:500px;--r:-3deg">
+        <img src="img/tahta-1.webp" alt="Beyaz tahta: kaynaklar ve deterministik ile stokastik algoritmanın gereklilik, avantaj ve dezavantajları" width="753" height="588">
+        <i class="hl" data-a="wipe" data-step="1" data-dur="0.7" style="left:11%;top:12.5%;width:76%;height:11%"></i>
+      </figure>
+      <figure class="ph" style="left:712px;top:372px;width:420px;--r:2deg">
+        <img src="img/tahta-2.webp" alt="Beyaz tahta: stokastik algoritma ve reinforcement learning" width="651" height="621">
+        <i class="hl" data-a="wipe" data-step="1" data-d="0.35" data-dur="0.6" style="left:30%;top:5%;width:55%;height:8.5%"></i>
+      </figure>
+      <figure class="ph" style="left:1150px;top:400px;width:576px;--r:-1.5deg">
+        <img src="img/tahta-3.webp" alt="Beyaz tahta: fine-tuning gereklilikleri ve avantajları" width="931" height="669">
+        <i class="hl" data-a="wipe" data-step="1" data-d="0.7" data-dur="0.6" style="left:28%;top:9%;width:54%;height:9.5%"></i>
+      </figure>
+    </div>
+    <p class="t-note" data-a="up" data-step="1" data-d="0.9">Her tahtanın ilk satırı aynı: <b>Kaynaklar · Colab, 5 gün, 3 kişi</b></p>
+  </section>
+
+  <!-- 05 · DÖRT YOL -->
+  <section class="scene" id="yollar" data-steps="4" data-title="Dört yaklaşım" data-notes="Dört yol vardı: deterministik algoritma, stokastik algoritma, reinforcement learning ve fine-tuning. Deterministik en az kaynakla çalışıyordu ama esnek değildi; RL ve fine-tuning esnekti ama GPU, zaman ve veri istiyordu.">
+    <p class="eyebrow" style="--c:var(--ye)" data-a="up">Dört yaklaşım · tahtadan</p>
+    <h2 class="h-big" data-a="words">Hangi kartı çekelim?</h2>
+    <div class="ap-row">
+      <div class="ap card3d" style="left:152px">
+        <div class="flip-in">
+          <div class="face back chance-back sm"><span class="cb-q">?</span><span class="cb-l">01</span></div>
+          <div class="face front paper" style="--c:var(--ye)">
+            <div class="ap-band"><span>01</span></div>
+            <h3>Deterministik algoritma</h3>
+            <div class="ap-req"><span>CPU</span><span>7 saat</span><span>1 kişi</span></div>
+            <p class="pro"><i>+</i>Tahmini ve testi kolay, hızlı</p>
+            <p class="con"><i>−</i>Esneklik yok, optimal için uğraş</p>
+          </div>
+        </div>
+      </div>
+      <div class="ap card3d" style="left:564px">
+        <div class="flip-in">
+          <div class="face back chance-back sm"><span class="cb-q">?</span><span class="cb-l">02</span></div>
+          <div class="face front paper" style="--c:var(--or)">
+            <div class="ap-band"><span>02</span></div>
+            <h3>Stokastik algoritma</h3>
+            <div class="ap-req"><span>CPU</span><span>1 gün</span><span>1 kişi</span><span>veri</span></div>
+            <p class="pro"><i>+</i>Esnek, hızlı iterasyon, test 1 dk</p>
+            <p class="con"><i>−</i>Sonucu tahmin etmek daha zor</p>
+          </div>
+        </div>
+      </div>
+      <div class="ap card3d" style="left:976px">
+        <div class="flip-in">
+          <div class="face back chance-back sm"><span class="cb-q">?</span><span class="cb-l">03</span></div>
+          <div class="face front paper" style="--c:var(--lb)">
+            <div class="ap-band"><span>03</span></div>
+            <h3 lang="en">Reinforcement learning</h3>
+            <div class="ap-req"><span>GPU</span><span>2 gün</span><span>1 kişi</span></div>
+            <p class="pro"><i>+</i>Çok esnek, potansiyel çok yüksek</p>
+            <p class="con"><i>−</i>Eğitim uzun, test 45 dk, varyans</p>
+          </div>
+        </div>
+      </div>
+      <div class="ap card3d" style="left:1388px">
+        <div class="flip-in">
+          <div class="face back chance-back sm"><span class="cb-q">?</span><span class="cb-l">04</span></div>
+          <div class="face front paper" style="--c:var(--pk)">
+            <div class="ap-band"><span>04</span></div>
+            <h3 lang="en">Fine-tuning</h3>
+            <div class="ap-req"><span>GPU</span><span>1 gün</span><span>15–20k veri</span></div>
+            <p class="pro"><i>+</i>RL'den hızlı, eğitim kısa</p>
+            <p class="con"><i>−</i>Uyum daha kötü, varyans var</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · ROTA -->
+  <section class="scene" id="rota" data-steps="4" data-title="Rotamız" data-notes="Yolculuğumuz düz bir çizgi değil, bir turdu: deterministikten başladık, eğitime geçtik, başarısız olduk ve hedef fonksiyonunu keşfedince yeniden deterministiğe döndük.">
+    <p class="eyebrow" style="--c:var(--lb)" data-a="up">Rota</p>
+    <h2 class="h-big" data-a="words">Düz yol değil, bir tur.</h2>
+    <div class="route">
+      <div class="rsq" style="left:210px;--c:var(--ye)"><div class="rsq-band"><span>01</span></div>
+        <svg class="rsq-ic" viewBox="0 0 100 100"><rect x="18" y="18" width="64" height="64" rx="12"/><circle cx="36" cy="36" r="6"/><circle cx="64" cy="64" r="6"/><circle cx="50" cy="50" r="6"/></svg>
+        <strong>Deterministik</strong></div>
+      <div class="rsq" style="left:600px;--c:var(--lb)"><div class="rsq-band"><span>02</span></div>
+        <svg class="rsq-ic" viewBox="0 0 100 100"><circle cx="22" cy="30" r="7"/><circle cx="22" cy="70" r="7"/><circle cx="50" cy="20" r="7"/><circle cx="50" cy="50" r="7"/><circle cx="50" cy="80" r="7"/><circle cx="78" cy="50" r="7"/><path d="M29 30 43 20M29 30 43 50M29 70 43 50M29 70 43 80M57 20 71 50M57 50H71M57 80 71 50"/></svg>
+        <strong lang="en">Training</strong></div>
+      <div class="rsq rsq-fail" style="left:990px;--c:var(--rd)"><div class="rsq-band"><span>03</span></div>
+        <svg class="rsq-ic" viewBox="0 0 100 100"><path d="M14 78 34 50l14 14 18-30 20 22"/><path d="M60 22 84 46M84 22 60 46" class="x"/></svg>
+        <strong>Başarısızlık</strong></div>
+      <div class="rsq" style="left:1380px;--c:var(--gr)"><div class="rsq-band"><span>04</span></div>
+        <svg class="rsq-ic" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="20"/><circle cx="50" cy="50" r="5"/><path d="M50 8v12M50 80v12M8 50h12M80 50h12"/></svg>
+        <strong>Hedef fonksiyonunu keşfetme</strong></div>
+      <svg class="r-arrows" viewBox="0 0 1920 1080" aria-hidden="true">
+        <path d="M545 610H592M935 610H982M1325 610H1372"/>
+        <path d="M580 600l12 10-12 10M970 600l12 10-12 10M1360 600l12 10-12 10"/>
+        <path class="r-back" d="M1545 810V858Q1545 878 1525 878H395Q375 878 375 858V822"/>
+        <path class="r-back-head" d="M362 836l13-16 13 16"/>
+      </svg>
+      <p class="r-label">Yeniden deterministik, bu kez doğru hedefle: <b>SLAYER</b></p>
+      <div class="r-tag">SLAYER</div>
+      <div class="pawn-big"><div class="pawn-hop"></div></div>
+    </div>
+  </section>
+
+  <!-- 07 · EĞİTİM → BAŞARISIZLIK -->
+  <section class="scene" id="egitim" data-steps="1" data-title="Eğitim ve başarısızlık" data-notes="Önce yapay zekâyı eğittik. DDQN 200 oyunun hiçbirini kazanamadı. PPO 1,4 milyon eğitim adımından sonra yalnızca yüzde 2,5 kazanma oranına ulaştı.">
+    <p class="eyebrow" style="--c:var(--lb)" data-a="up"><span lang="en">Training</span> · Colab</p>
+    <h2 class="h-big" data-a="words">Önce yapay zekâyı eğittik.</h2>
+    <div class="panel p-ppo" data-a="up" data-d="0.2">
+      <div class="p-head"><strong>PPO</strong><span class="p-big red"><b class="ppo-rate" data-pre="%" data-dec="1">%2,5</b></span></div>
+      <p class="p-lab">Eğitim adımı</p>
+      <div class="p-steps"><b class="ppo-steps">1.400.000</b></div>
+      <div class="meter"><i class="meter-fill"></i></div>
+      <p class="p-lab">Kazanma oranı · %0–100</p>
+      <div class="rate"><i class="rate-fill"></i><span class="rate-tick" style="left:0">0</span><span class="rate-tick" style="left:50%">%50</span><span class="rate-tick" style="left:100%">%100</span></div>
+    </div>
+    <div class="panel p-ddqn" data-a="up" data-d="0.35">
+      <div class="p-head"><strong>DDQN</strong><span class="p-big red"><b class="ddqn-w">0</b>/200</span></div>
+      <p class="p-lab">200 oyun · her kare bir oyun</p>
+      <div class="games" data-n="200"></div>
+    </div>
+    <div class="stamp" aria-hidden="true"><span>Başarısızlık</span></div>
+  </section>
+
+  <!-- 08 · HEDEF FONKSİYONU -->
+  <section class="scene" id="hedef" data-steps="1" data-title="Hedef fonksiyonu" data-notes="Sorun modelde değil, hedefteydi: ajanın neyi maksimize etmesi gerektiğini bilmiyorduk. Hedef fonksiyonunu keşfettik: net değer.">
+    <p class="eyebrow" style="--c:var(--gr)" data-a="up">Hedef fonksiyonunu keşfetme</p>
+    <h2 class="h-big" data-a="words">Ajan neyi maksimize etmeli?</h2>
+    <div class="orbit" aria-hidden="true">
+      <span class="chip">Kazanmak?</span><span class="chip">Mülk sayısı?</span><span class="chip">Nakit?</span>
+      <span class="chip">Ev sayısı?</span><span class="chip">Kira?</span><span class="chip">Risk?</span><span class="chip">Rakibi batırmak?</span>
+    </div>
+    <div class="aha">
+      <div class="aha-rays"></div>
+      <p class="aha-k">Hedef fonksiyonu</p>
+      <p class="aha-main"><em>max</em> Net değer</p>
+      <p class="aha-eq">net değer = nakit + varlıklar − borçlar</p>
+    </div>
+  </section>
+
+  <!-- 09 · SLAYER -->
+  <section class="scene" id="slayer" data-title="SLAYER" data-notes="Böylece SLAYER doğdu: kurallarını bizim yazdığımız, eğitim gerektirmeyen deterministik bir ajan. Tek hedefi net değeri büyütmek.">
+    <p class="eyebrow" style="--c:var(--rd)" data-a="up">Deterministik ajan</p>
+    <h2 class="s-name" data-a="chars" data-gap="0.06" data-d="0.1">Slayer</h2>
+    <p class="lead s-lead" data-a="up" data-d="0.6">Eğitim yok. Kuralları biz yazdık.<br>Tek hedef: net değeri büyütmek.</p>
+    <div class="s-deed card3d">
+      <div class="flip-in">
+        <div class="face back deed-back"><span>S</span></div>
+        <div class="face front paper deed">
+          <div class="deed-head"><small>Tapu senedi</small><strong>Slayer</strong></div>
+          <dl class="deed-rows">
+            <div><dt>Oyun</dt><dd>Monopoly</dd></div>
+            <div><dt>Tür</dt><dd>Deterministik ajan</dd></div>
+            <div><dt>Hedef</dt><dd>Net değer</dd></div>
+            <div><dt>Eğitim</dt><dd>Gerekmez</dd></div>
+            <div><dt>Ekip</dt><dd>Ali · Emir · Ada</dd></div>
+          </dl>
+          <p class="deed-foot">Exposure AI Academy · 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · BEŞ İLKE -->
+  <section class="scene" id="ilkeler" data-title="Beş ilke" data-notes="SLAYER beş ilkeye dayanıyor: net değer optimizasyonu, kapalı form analizi, marjinal fayda optimizasyonu, fırsat maliyeti modeli ve deterministik karar politikası.">
+    <p class="eyebrow" style="--c:var(--rd)" data-a="up">SLAYER'ın eli</p>
+    <h2 class="h-big" data-a="words">Beş kart, tek strateji.</h2>
+    <div class="hand">
+      <div class="pc card3d" style="left:162px;--c:var(--rd)"><div class="flip-in">
+        <div class="face back pc-back"></div>
+        <div class="face front paper"><div class="pc-band"><span>I</span></div><h3>Net Değer Optimizasyonu</h3><span class="pc-g" aria-hidden="true">Σ</span><p>Tek hedef: toplam net değer.</p></div></div></div>
+      <div class="pc card3d" style="left:486px;--c:var(--or)"><div class="flip-in">
+        <div class="face back pc-back"></div>
+        <div class="face front paper"><div class="pc-band"><span>II</span></div><h3>Kapalı Form Analizi</h3><span class="pc-g" aria-hidden="true">f(x)</span><p>Tahmin etme, formülle hesapla.</p></div></div></div>
+      <div class="pc card3d" style="left:810px;--c:var(--ye)"><div class="flip-in">
+        <div class="face back pc-back"></div>
+        <div class="face front paper"><div class="pc-band"><span>III</span></div><h3>Marjinal Fayda Optimizasyonu</h3><span class="pc-g up" aria-hidden="true">Δ</span><p>Her hamlenin ek getirisi.</p></div></div></div>
+      <div class="pc card3d" style="left:1134px;--c:var(--gr)"><div class="flip-in">
+        <div class="face back pc-back"></div>
+        <div class="face front paper"><div class="pc-band"><span>IV</span></div><h3>Fırsat Maliyeti Modeli</h3><span class="pc-g" aria-hidden="true">⇄</span><p>Seçilmeyen yolun bedeli.</p></div></div></div>
+      <div class="pc card3d" style="left:1458px;--c:var(--db)"><div class="flip-in">
+        <div class="face back pc-back"></div>
+        <div class="face front paper"><div class="pc-band"><span>V</span></div><h3>Deterministik Karar Politikası</h3><span class="pc-g" aria-hidden="true">→</span><p>Aynı durum, her zaman aynı karar.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- 11 · NET DEĞER GRAFİĞİ (TEMSİLÎ) -->
+  <section class="scene" id="grafik" data-title="Net değer (temsilî)" data-notes="Bu grafik temsilîdir, gerçek oyun verisi değildir. Net değeri hedefleyen bir ajanın oyun boyunca rakiplerinden nasıl ayrıştığını anlatmak için çizildi.">
+    <p class="eyebrow" style="--c:var(--gr)" data-a="up">Net değer optimizasyonu</p>
+    <h2 class="h-big" data-a="words">Tur tur açılan fark.</h2>
+    <p class="illus" data-a="fade" data-d="0.3">Temsilî çizim · ölçek yok · gerçek oyun verisi değil</p>
+    <div class="chart">
+      <svg viewBox="0 0 1400 560" aria-label="Temsilî net değer grafiği: SLAYER yükselir, iki rakip geriler">
+        <g class="grid"><path d="M0 140H1400M0 280H1400M0 420H1400"/></g>
+        <path class="axis" d="M0 0V560H1400"/>
+        <path class="axis-head" d="M-10 14 0 0l10 14M1386 550l14 10-14 10"/>
+        <path class="ln ln-b" d="M0 400C80 390 120 370 190 372S300 340 360 352 470 330 540 360 650 368 720 392 830 400 900 420 1010 430 1080 452 1200 470 1260 486 1340 492 1380 498"/>
+        <path class="ln ln-a" d="M0 400C70 380 130 350 200 344S320 300 400 318 520 300 600 330 700 350 780 344 900 372 980 390 1100 402 1180 420 1300 428 1380 418"/>
+        <path class="ln ln-s" d="M0 400C70 392 130 372 200 360S300 330 380 318 480 286 560 262 660 240 740 206 860 170 940 150 1060 112 1140 96 1270 64 1380 44"/>
+        <circle class="tip tip-b" r="11"/><circle class="tip tip-a" r="11"/><circle class="tip tip-s" r="15"/>
+      </svg>
+      <span class="ax ax-y">Net değer</span><span class="ax ax-x">Tur</span>
+      <span class="lab lab-s">SLAYER</span><span class="lab lab-a">Rakip A</span><span class="lab lab-b">Rakip B</span>
+      <span class="start">Aynı başlangıç parası</span>
+    </div>
+  </section>
+
+  <!-- 12 · CHOOSE YOUR AGENT -->
+  <section class="scene" id="sec" data-steps="1" data-title="Choose your agent" data-notes="Aynı tahta, farklı ajanlar, tek kazanan. Seçimimiz belliydi: SLAYER.">
+    <p class="eyebrow" style="--c:var(--pk)" data-a="up">Aynı tahta · farklı ajanlar · tek kazanan</p>
+    <h2 class="h-big" lang="en" data-a="words">Choose your agent</h2>
+    <div class="agents">
+      <div class="agent" style="left:255px;--c:var(--lb)">
+        <div class="ag-band"></div>
+        <svg class="ag-em" viewBox="0 0 120 120"><circle cx="24" cy="34" r="9"/><circle cx="24" cy="86" r="9"/><circle cx="60" cy="22" r="9"/><circle cx="60" cy="60" r="9"/><circle cx="60" cy="98" r="9"/><circle cx="96" cy="60" r="9"/><path d="M33 34 51 22M33 34 51 60M33 86 51 60M33 86 51 98M69 22 87 60M69 60H87M69 98 87 60"/></svg>
+        <strong>Eğitilmiş AI</strong><span>DDQN · PPO</span>
+      </div>
+      <div class="agent" style="left:750px;--c:var(--ye)">
+        <div class="ag-band"></div>
+        <svg class="ag-em" viewBox="0 0 120 120"><rect x="22" y="22" width="76" height="76" rx="16"/><circle cx="42" cy="42" r="7"/><circle cx="78" cy="42" r="7"/><circle cx="60" cy="60" r="7"/><circle cx="42" cy="78" r="7"/><circle cx="78" cy="78" r="7"/></svg>
+        <strong>Determinist</strong><span>sabit kurallar</span>
+      </div>
+      <div class="agent ag-slayer" style="left:1245px;--c:var(--rd)">
+        <div class="ag-band"></div>
+        <svg class="ag-em" viewBox="0 0 120 120"><path d="M18 86 26 36l22 22 12-30 12 30 22-22 8 50Z"/><path d="M22 98H98"/><circle cx="26" cy="32" r="5"/><circle cx="60" cy="24" r="5"/><circle cx="94" cy="32" r="5"/></svg>
+        <strong>Slayer</strong><span>net değer odaklı</span>
+      </div>
+      <div class="cursor"><span>P1</span></div>
+      <div class="picked">Seçildi</div>
+    </div>
+  </section>
+
+  <!-- 13 · SKOR -->
+  <section class="scene" id="skor" data-steps="1" data-title="Kazanma oranı" data-notes="Sonuç: DDQN 200 oyunda 0 galibiyet. PPO 1,4 milyon adımdan sonra yüzde 2,5. Elle yazdığımız deterministik ajan ise 100 oyunun 72'sini kazandı.">
+    <p class="eyebrow" style="--c:var(--rd)" data-a="up">Sonuç</p>
+    <h2 class="h-big" data-a="words">Kazanma oranı</h2>
+    <div class="score">
+      <div class="sc-axis"><span style="left:0">0</span><span style="left:50%">%50</span><span style="left:100%">%100</span></div>
+      <div class="sc-row sc-ddqn">
+        <div class="sc-lab"><strong>DDQN</strong><span>eğitilmiş ajan<br>200 oyun</span></div>
+        <div class="sc-track"><i class="sc-fill"></i><b class="sc-val"><span class="v-ddqn">0</span>/200</b></div>
+      </div>
+      <div class="sc-row sc-ppo">
+        <div class="sc-lab"><strong>PPO</strong><span>eğitilmiş ajan<br>1,4M adım sonrası</span></div>
+        <div class="sc-track"><i class="sc-fill"></i><b class="sc-val v-ppo" data-pre="%" data-dec="1">%2,5</b></div>
+      </div>
+      <div class="sc-row sc-slayer">
+        <div class="sc-lab"><strong>Slayer</strong><span>elle yazılmış<br>deterministik ajan</span></div>
+        <div class="sc-track"><i class="sc-fill"></i><b class="sc-val"><span class="v-slayer">72</span>/100</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 · DOMINATION -->
+  <section class="scene" id="hakimiyet" data-title="The truth: Domination" data-notes="The truth: domination. Doğru hedef fonksiyonu, uzun eğitimden daha güçlü çıktı; tahtayı tek renge boyayan ajan SLAYER oldu.">
+    <div class="flood" aria-hidden="true"></div>
+    <p class="d-eye" lang="en">The truth</p>
+    <h2 class="d-title" lang="en" data-a="chars" data-gap="0.05" data-d="0.95">“Domination”</h2>
+    <p class="d-sub" data-a="up" data-d="1.7">Doğru hedef, uzun eğitimden güçlü çıktı.</p>
+  </section>
+
+  <!-- 15 · TEŞEKKÜRLER -->
+  <section class="scene" id="tesekkur" data-title="Teşekkürler" data-notes="Bizi dinlediğiniz için teşekkür ederiz. Ali, Emir ve Ada. Sorularınızı alabiliriz.">
+    <p class="eyebrow" style="--c:var(--rd)" data-a="up">Başlangıç noktasına döndük</p>
+    <h2 class="t-title" data-a="words" data-gap="0.06">Bizi dinlediğiniz için teşekkür ederiz.</h2>
+    <p class="t-team" data-a="up" data-d="0.8"><b>Ali · Emir · Ada</b><span>Exposure AI Academy · Ağustos 2026</span></p>
+    <div class="dice-spot" data-dice="son" aria-hidden="true"></div>
+  </section>
+</div>
+<script src="/assets/js/motion.js"></script>
+<script src="/assets/deck/deck.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>

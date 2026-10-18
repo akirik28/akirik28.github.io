@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motiv — Ada Sarp Kırık</title>
+<meta name="description" content="Motiv: the app that turns screen time into growth time. Startup pitch, Imperial Global Summer School, August 2025 — redesigned as an animated web presentation.">
+<meta property="og:title" content="Motiv — Break the Scroll">
+<meta property="og:description" content="Startup pitch · Imperial Global Summer School · August 2025">
+<meta property="og:image" content="https://adasarpkirik.vercel.app/onizleme/motiv/paylas.jpg">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/fonts/dosya-fonts.css">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/deck/deck.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="deck">
+
+<template id="toasty-tpl">
+  <svg viewBox="0 0 200 240" aria-hidden="true">
+    <defs>
+      <linearGradient id="tgO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC849"/><stop offset=".55" stop-color="#FF8A24"/><stop offset="1" stop-color="#F0561E"/></linearGradient>
+      <linearGradient id="tgI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF9A3C"/><stop offset="1" stop-color="#D9381A"/></linearGradient>
+    </defs>
+    <g class="bob">
+      <path fill="url(#tgO)" stroke="#B9340F" stroke-width="5" stroke-linejoin="round" d="M100 232 C48 232 18 196 22 150 C25 116 44 98 52 72 C56 92 64 102 74 106 C70 76 84 42 112 14 C110 44 126 62 140 76 C146 64 148 54 146 40 C170 70 182 104 178 146 C174 198 146 232 100 232 Z">
+        <animate attributeName="d" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" keyTimes="0;.5;1"
+          values="M100 232 C48 232 18 196 22 150 C25 116 44 98 52 72 C56 92 64 102 74 106 C70 76 84 42 112 14 C110 44 126 62 140 76 C146 64 148 54 146 40 C170 70 182 104 178 146 C174 198 146 232 100 232 Z;
+                  M100 232 C48 232 16 198 20 152 C24 118 40 100 46 76 C54 94 62 104 72 108 C66 78 88 38 106 8 C112 40 130 60 144 72 C150 60 154 50 156 34 C174 68 184 106 180 148 C176 200 146 232 100 232 Z;
+                  M100 232 C48 232 18 196 22 150 C25 116 44 98 52 72 C56 92 64 102 74 106 C70 76 84 42 112 14 C110 44 126 62 140 76 C146 64 148 54 146 40 C170 70 182 104 178 146 C174 198 146 232 100 232 Z"/>
+      </path>
+      <path fill="url(#tgI)" opacity=".9" d="M100 228 C70 228 56 206 60 180 C63 160 76 150 84 132 C90 150 98 156 104 158 C104 140 112 126 124 116 C126 134 140 150 142 174 C144 206 128 228 100 228 Z">
+        <animate attributeName="d" dur="1.7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" keyTimes="0;.5;1"
+          values="M100 228 C70 228 56 206 60 180 C63 160 76 150 84 132 C90 150 98 156 104 158 C104 140 112 126 124 116 C126 134 140 150 142 174 C144 206 128 228 100 228 Z;
+                  M100 228 C70 228 58 206 62 182 C66 162 78 152 82 128 C92 148 98 154 106 156 C108 136 116 124 120 110 C130 132 142 150 142 176 C142 206 128 228 100 228 Z;
+                  M100 228 C70 228 56 206 60 180 C63 160 76 150 84 132 C90 150 98 156 104 158 C104 140 112 126 124 116 C126 134 140 150 142 174 C144 206 128 228 100 228 Z"/>
+      </path>
+      <ellipse cx="70" cy="186" rx="10" ry="6" fill="#FF5E6B" opacity=".55"/>
+      <ellipse cx="130" cy="186" rx="10" ry="6" fill="#FF5E6B" opacity=".55"/>
+      <ellipse class="eye" cx="84" cy="172" rx="6" ry="7" fill="#2B1209"/>
+      <ellipse class="eye" cx="116" cy="172" rx="6" ry="7" fill="#2B1209"/>
+      <path d="M92 186 Q100 195 108 186" fill="none" stroke="#2B1209" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </svg>
+</template>
+
+<div class="deck-stage">
+
+  <!-- 01 KAPAK -->
+  <section class="scene" id="kapak" data-title="Motiv" data-notes="Hi, we're Motiv — the app that encourages productivity. One task closer.">
+    <canvas class="embers" data-n="70"></canvas>
+    <p class="lab abs ev" data-a="fade">Imperial Global Summer School · Enterprise · London · Aug 2025</p>
+    <h1 class="disp abs t1" data-a="chars" data-dur="1.1">Motiv</h1>
+    <div class="toasty" data-a="pop" data-d=".9"></div>
+    <p class="abs tsub" data-a="up" data-d=".5">The app to encourage productivity.<br><em>One task closer.</em></p>
+    <div class="abs who" data-a="up" data-d=".8">
+      <img src="img/flame-ada.webp" alt="">
+      <p><b>Ada Sarp K.</b> · Tech Consultant<br>Startup pitch · team of seven</p>
+    </div>
+    <div class="phone" data-a="up" data-d=".3" data-dur="1.3">
+      <div class="scr">
+        <div class="sb"><span>11:18</span><span>●●● 5G</span></div>
+        <div class="app">
+          <p class="sub" style="text-align:center;margin:0 0 6px">Your goal</p>
+          <h4 style="text-align:center;font-size:21px">Work focused for 4 hours without distractions</h4>
+          <div style="display:flex;gap:8px;justify-content:center;margin:12px 0 16px"><span class="pill b">Level 1 ProTime User</span><span class="pill">🔥 7 day streak</span></div>
+          <div class="grid2">
+            <div class="card stat"><i>⚡</i><b><span data-a="count" data-to="7" data-d="1">0</span> days</b><span>Current streak</span></div>
+            <div class="card stat"><i>◎</i><b data-a="count" data-to="65" data-suf="%" data-d="1.1">0</b><span>Today's progress</span></div>
+            <div class="card stat"><i>◷</i><b data-a="count" data-to="30" data-suf="m" data-d="1.2">0</b><span>Screen time earned</span></div>
+            <div class="card stat"><i>🏆</i><b data-a="count" data-to="1" data-d="1.3">0</b><span>Level</span></div>
+          </div>
+          <div class="card" style="margin-top:12px"><b style="font:700 17px Inter">☆ Level progress</b><div style="display:flex;justify-content:space-between;font-size:13px;color:#8A8F9B;margin:10px 0 8px"><span>Level 1</span><span>250/1000 XP</span></div><div class="xp"><i class="kxp"></i></div></div>
+        </div>
+        <div class="navb"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 DAKİKALAR -->
+  <section class="scene" id="dakika" data-title="1,440 minutes" data-notes="Every day you have 1,440 minutes — but how many of them are truly yours? On average, 2 hours 24 minutes a day are wasted per person. That is 504 million hours a year.">
+    <div class="abs q">
+      <p class="lab" data-a="fade">Every day you have 1,440 minutes</p>
+      <h2 class="disp" data-a="words" data-d=".1" style="margin-top:26px">How many of them are truly yours?</h2>
+    </div>
+    <div class="abs lost-l" data-step="1">
+      <b class="n" data-a="up">2 h 24 min</b>
+      <p class="big" data-a="up" data-d=".15" style="margin-top:18px">wasted per person, <b>every day</b>, on average. That's one tenth of your day.</p>
+    </div>
+    <p class="abs yr" data-step="2" data-a="up"><b><span data-a="count" data-to="504" data-dur="2">0</span> million hours</b> lost per year.</p>
+    <div class="ring" data-a="fade">
+      <svg viewBox="-450 -450 900 900"><g class="ticks"></g></svg>
+      <div class="mid">
+        <div data-hide="1"><b data-a="count" data-to="1440" data-dur="2.2">0</b><span>minutes a day</span></div>
+      </div>
+      <div class="mid" data-step="1" data-a="zoom" data-d=".6"><b style="color:var(--flame)">10%</b><span>lost to the scroll</span></div>
+    </div>
+  </section>
+
+  <!-- 03 AKIŞ -->
+  <section class="scene" id="akis" data-title="210 million" data-notes="People nowadays: 210 million people are addicted to social media worldwide. Feeds are designed to never end.">
+    <div class="abs h">
+      <p class="lab" data-a="fade">People nowadays</p>
+      <b class="disp n210" style="margin-top:26px"><span data-a="count" data-to="210" data-dur="2.4">0</span><small> million</small></b>
+    </div>
+    <p class="abs cap" data-a="up" data-d=".4">people are <b>addicted to social media</b> worldwide.<br>The feed is designed to never end.</p>
+    <div class="phone" data-a="up" data-d=".2">
+      <div class="scr" style="background:#0E1420">
+        <div class="feedwrap"><div class="feed"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 BEYİN -->
+  <section class="scene" id="beyin" data-title="Rewired" data-notes="Excessive screen time rewires the brain: it raises the risk of depression by 2.5 times and of anxiety by 2 times.">
+    <h2 class="disp abs h" data-a="words">Excessive screen time <span class="fl">rewires the brain.</span></h2>
+    <div class="bars">
+      <div class="row" data-a="up" data-d=".3"><span>Depression risk</span><div class="track"><div class="base">1× baseline</div><div class="fill" data-k="1" data-to="2.5"><span>2.5×</span></div><i class="mk">1×</i></div></div>
+      <div class="row" data-a="up" data-d=".45"><span>Anxiety risk</span><div class="track"><div class="base">1× baseline</div><div class="fill" data-k="2" data-to="2"><span>2×</span></div><i class="mk">1×</i></div></div>
+    </div>
+    <p class="abs note" data-step="2" data-a="fade">Risk relative to people without excessive screen time.</p>
+  </section>
+
+  <!-- 05 BULAŞICI -->
+  <section class="scene" id="bulas" data-title="It's contagious" data-notes="It's not just you. Social media addiction affects millions — and it's contagious. One person picks up a phone, and the whole table follows.">
+    <canvas class="crowd"></canvas>
+    <div class="q">
+      <h2 class="disp" data-a="words">It's not just you.<br>It's <span class="fl">contagious.</span></h2>
+      <p data-a="up" data-d=".6">One phone comes out, and the whole table follows.<i>— from our advert script</i></p>
+    </div>
+  </section>
+
+  <!-- 06 ATEŞ -->
+  <section class="scene" id="ates" data-title="We are Motiv" data-notes="That's why we created Motiv: your personal time coach that turns screen time into growth time.">
+    <div class="glow" data-a="scale" data-dur="1.8"></div>
+    <canvas class="embers" data-n="90"></canvas>
+    <div class="toasty" data-a="pop" data-d=".35"></div>
+    <h2 class="disp t" data-a="words" data-d=".7">We are <span class="fl">Motiv.</span></h2>
+    <p class="s" data-a="up" data-d="1.1">Your personal time coach that turns <b>screen time into growth time.</b></p>
+  </section>
+
+  <!-- 07 DÖNGÜ -->
+  <section class="scene" id="dongu" data-title="How it works" data-notes="Before you open social media, Motiv gives you a quick, healthy task. Do it, earn XP and screen time, keep your streak — and your flame grows.">
+    <div class="abs h">
+      <p class="lab" data-a="fade">How it works</p>
+      <h2 class="disp" data-a="words" style="margin-top:26px">Earn your screen time.</h2>
+      <p class="big" data-a="up" data-d=".5">Before you open social media, Motiv gives you a <b>quick, fun task</b> — a walk, a stretch, a focus session.</p>
+    </div>
+    <div class="loop">
+      <svg viewBox="0 0 940 940"><circle cx="470" cy="470" r="330" fill="none" stroke="#24395A" stroke-width="3" stroke-dasharray="4 14" stroke-linecap="round" data-a="fade"/><circle class="runner" cx="470" cy="140" r="14" fill="#FF7A1A"/></svg>
+      <div class="toasty" data-a="pop" data-d=".4"></div>
+      <div class="node" style="left:470px;top:140px" data-a="pop" data-d=".5"><b>Pick a task</b><span>suggested for you</span></div>
+      <div class="node" style="left:800px;top:470px" data-a="pop" data-d=".65"><b>Do it</b><span>walk · meditate · focus</span></div>
+      <div class="node" style="left:470px;top:800px" data-a="pop" data-d=".8"><b>Earn</b><span>XP + screen time</span></div>
+      <div class="node" style="left:140px;top:470px" data-a="pop" data-d=".95"><b>Keep the streak</b><span>your flame grows</span></div>
+    </div>
+  </section>
+
+  <!-- 08 HEDEF -->
+  <section class="scene appscene" id="hedef" data-title="1 · Set a goal" data-notes="Set-up takes a minute: a short Q&A personalises Motiv. Pick a main objective — for example, reduce social media to one hour a day.">
+    <div class="h">
+      <span class="num" data-a="fade">01</span>
+      <h2 class="disp" data-a="words">Set your goal.</h2>
+      <p class="big" data-a="up" data-d=".4">A short Q&amp;A personalises the app. <b>Minimal set-up</b>, then Motiv suggests tasks that fit your profile.</p>
+    </div>
+    <div class="phone" data-a="up" data-d=".15">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="app" style="text-align:left">
+          <div class="big-ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FF7A1A" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#FF7A1A"/></svg></div>
+          <h4 style="text-align:center;font-size:21px">Let's boost your productivity and reduce screen time!</h4>
+          <p class="sub" style="margin:16px 0 0;font-weight:600;color:#3B3F4A">What's your main objective?</p>
+          <div class="inp"><span class="ph" style="color:#A9ADB7">e.g., Reduce social media time and incr…</span><span class="typed"></span><span class="caret"></span></div>
+          <p class="sub" style="margin:12px 0 0">Popular objectives</p>
+          <div class="obj">
+            <div class="o1"><i></i>Reduce social media to 1 hour daily</div>
+            <div><i></i>Work focused for 4 hours without distractions</div>
+            <div><i></i>Replace scrolling with reading</div>
+            <div><i></i>Build a productive morning routine</div>
+          </div>
+          <a class="btnx startj" style="margin-top:18px">Start My Journey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 GÖREVLER -->
+  <section class="scene appscene" id="gorev" data-title="2 · Do a task" data-notes="Every task earns points and screen time. Easy, medium or hard: a 15-minute walk, a 10-minute meditation, an hour of deep work. Click to complete the walk.">
+    <div class="h">
+      <span class="num" data-a="fade">02</span>
+      <h2 class="disp" data-a="words">Do it. Earn it.</h2>
+      <p class="big" data-a="up" data-d=".4">Healthy tasks that <b>recharge body and mind</b>. Harder tasks earn more points and more screen time.</p>
+    </div>
+    <div class="chips" data-stagger=".08" data-d=".6"><span>Physical</span><span>Mental health</span><span>Deep focus</span></div>
+    <div class="phone" data-a="up" data-d=".15">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="bank"><span class="pill">⚡ <b class="bp">210</b></span><span class="pill b">◷ <b class="bm">10m</b></span></div>
+        <div class="app" style="padding-top:48px">
+          <div data-stagger=".12" data-d=".5">
+            <div class="card task t1">
+              <div class="top"><h5>Take a 15-Minute Walk</h5><span class="pill g">Easy</span></div>
+              <p>Step outside and get some fresh air and movement</p>
+              <div class="meta"><div><b>+40</b><span>Points</span></div><div><b class="g">+20m</b><span>Screen time</span></div><div><b class="k">15 min</b><span>Duration</span></div></div>
+              <div class="go"><em>Physical</em><a>Start Task</a></div>
+            </div>
+            <div class="card task">
+              <div class="top"><h5>Meditate for 10 Minutes</h5><span class="pill">Medium</span></div>
+              <p>Practice mindfulness and mental clarity</p>
+              <div class="meta"><div><b>+60</b><span>Points</span></div><div><b class="g">+30m</b><span>Screen time</span></div><div><b class="k">10 min</b><span>Duration</span></div></div>
+            </div>
+            <div class="card task">
+              <div class="top"><h5>Work for 60 Minutes</h5><span class="pill r">Hard</span></div>
+              <p>Deep focus session on important tasks</p>
+              <div class="meta"><div><b>+150</b><span>Points</span></div><div><b class="g">+45m</b><span>Screen time</span></div><div><b class="k">60 min</b><span>Duration</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="toast" data-step="1" data-a="pop"><b>Task completed!</b><span>Access granted</span><div class="plus"><i>+40 points</i><i>+20m screen time</i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 PANO -->
+  <section class="scene appscene" id="pano" data-title="3 · Grow" data-notes="The dashboard shows your goal, your streak, today's progress, the screen time you've earned, and your level.">
+    <div class="h">
+      <span class="num" data-a="fade">03</span>
+      <h2 class="disp" data-a="words">Watch yourself grow.</h2>
+      <p class="big" data-a="up" data-d=".4">Streaks for consistent focus. <b>XP for every task.</b> Weekly recaps of tasks, points and earned hours.</p>
+    </div>
+    <div class="phone" data-a="up" data-d=".15">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="app">
+          <div class="big-ic" style="width:74px;height:74px"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FF7A1A" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+          <h4 style="text-align:center">Your Goal</h4>
+          <p class="sub" style="text-align:center">Reduce social media to 1 hour daily</p>
+          <div style="display:flex;gap:8px;justify-content:center;margin:0 0 16px"><span class="pill b">Level 1 ProTime User</span><span class="pill">🔥 7 day streak</span></div>
+          <div class="grid2" data-stagger=".1" data-child="pop" data-d=".5">
+            <div class="card stat"><i>⚡</i><b><span data-a="count" data-to="7" data-d=".7">0</span> days</b><span>Current streak</span></div>
+            <div class="card stat"><i>◎</i><b data-a="count" data-to="65" data-suf="%" data-d=".8">0</b><span>Today's progress</span></div>
+            <div class="card stat"><i>◷</i><b data-a="count" data-to="30" data-suf="m" data-d=".9">0</b><span>Screen time earned</span></div>
+            <div class="card stat"><i>🏆</i><b data-a="count" data-to="1" data-d="1">0</b><span>Level</span></div>
+          </div>
+          <div class="card" style="margin-top:12px" data-a="up" data-d=".9"><b style="font:700 17px Inter">☆ Level progress</b><div style="display:flex;justify-content:space-between;font-size:13px;color:#8A8F9B;margin:10px 0 8px"><span>Level 1</span><span><span data-a="count" data-to="250" data-d="1.2">0</span>/1000 XP</span></div><div class="xp"><i class="pxp"></i></div><p style="margin:8px 0 0;font-size:12px;color:#9095A1">750 points until Level 2</p></div>
+        </div>
+        <div class="navb"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 SIRALAMA -->
+  <section class="scene appscene" id="sira" data-title="4 · Compete" data-notes="Climb the weekly leaderboard and challenge your friends.">
+    <div class="h">
+      <span class="num" data-a="fade">04</span>
+      <h2 class="disp" data-a="words">Compete with friends.</h2>
+      <p class="big" data-a="up" data-d=".4">A weekly leaderboard turns focus into a game you <b>actually want to win.</b></p>
+    </div>
+    <div class="phone" data-a="up" data-d=".15">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="app">
+          <h4 style="font-size:24px;margin-top:10px">🏆 Weekly Rankings</h4>
+          <div class="rank" data-stagger=".09" data-d=".5">
+            <div><em>1</em><i>AC</i><p>Alex Chen<small>Level 8 · 15🔥 streak</small></p><b><span data-a="count" data-to="2450" data-group="no" data-d=".7">0</span><small>points</small></b></div>
+            <div><em>2</em><i>SJ</i><p>Sarah Johnson<small>Level 7 · 12🔥 streak</small></p><b><span data-a="count" data-to="2380" data-group="no" data-d=".8">0</span><small>points</small></b></div>
+            <div><em>3</em><i>MR</i><p>Mike Rodriguez<small>Level 7 · 9🔥 streak</small></p><b><span data-a="count" data-to="2210" data-group="no" data-d=".9">0</span><small>points</small></b></div>
+            <div><em>4</em><i>EW</i><p>Emma Wilson<small>Level 6 · 22🔥 streak</small></p><b><span data-a="count" data-to="1980" data-group="no" data-d="1">0</span><small>points</small></b></div>
+            <div><em>5</em><i>DK</i><p>David Kim<small>Level 6 · 5🔥 streak</small></p><b><span data-a="count" data-to="1850" data-group="no" data-d="1.1">0</span><small>points</small></b></div>
+            <div><em>6</em><i>LT</i><p>Lisa Thompson<small>Level 5 · 18🔥 streak</small></p><b><span data-a="count" data-to="1720" data-group="no" data-d="1.2">0</span><small>points</small></b></div>
+            <div class="me"><em>7</em><i>YU</i><p>You<small>Level 5 · 7🔥 streak</small></p><b><span data-a="count" data-to="1650" data-group="no" data-d="1.3">0</span><small>points</small></b></div>
+          </div>
+        </div>
+        <div class="navb"><i></i><i></i><i></i><i class="on"></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ALEV -->
+  <section class="scene appscene" id="alev" data-title="5 · Your flame" data-notes="Your avatar is a Productivity Flame. It grows as you keep your streak — and shrinks if you lose it. Achievements and cosmetics are bought with points.">
+    <div class="h">
+      <span class="num" data-a="fade">05</span>
+      <h2 class="disp" data-a="words">Grow your flame.</h2>
+      <div class="swap"><p class="big" data-a="up" data-d=".4" data-hide="1">Your avatar grows with your streak, for up to four weeks. Unlock <b>achievements</b> and cosmetics with points.</p>
+      <p class="big" data-step="1" data-a="up" data-d=".2"><b style="color:var(--red)">Lose your streak and it shrinks.</b> Even the emergency bypass costs you the fire.</p></div>
+    </div>
+    <div class="phone" data-a="up" data-d=".15">
+      <div class="scr">
+        <div class="sb"><span>9:41</span><span>●●● 5G</span></div>
+        <div class="app">
+          <div class="card" style="text-align:center;padding-bottom:18px">
+            <div class="av-wrap"><div class="toasty av"></div></div>
+            <h4 style="margin-top:0">Productivity Flame</h4>
+            <p class="sub" style="margin:0 0 10px">⚡ <span class="axp">2450</span> / 3000 XP</p>
+            <div class="xp"><i class="fxp"></i></div>
+          </div>
+          <p class="sub" style="margin:16px 0 0;font-weight:700;color:#3B3F4A">🏅 Achievements</p>
+          <div class="ach" data-stagger=".1" data-child="pop" data-d=".8"><span>☆ First Steps</span><span>☆ Week Warrior</span><span>☆ Task Master</span><span>☆ Focus Fire</span></div>
+          <p class="sub" style="margin:16px 0 0;font-weight:700;color:#3B3F4A">✦ Customizations</p>
+          <div class="shop" data-stagger=".1" data-d="1.1">
+            <div><span>Golden Flames<small>Effect</small></span><a><i>⚡</i>100 · Buy</a></div>
+            <div><span>Crown of Focus<small>Accessory</small></span><a><i>⚡</i>250 · Buy</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 RAKİPLER -->
+  <section class="scene" id="rakip" data-title="Competition" data-notes="We compared Motiv with Forest, Flora and Offtime. Everyone blocks social media; only Motiv also does parental control, charges nothing for extra features and shares no data with third parties.">
+    <div class="abs h"><p class="lab" data-a="fade">Market opportunity &amp; competition</p><h2 class="disp" data-a="words" style="margin-top:22px">Everyone blocks. <span class="fl">We motivate.</span></h2></div>
+    <table>
+      <thead data-a="fade" data-d=".3"><tr><th>Company objectives</th><th>Forest</th><th>Flora</th><th>Offtime</th><th class="us">Motiv</th></tr></thead>
+      <tbody class="tb"></tbody>
+    </table>
+  </section>
+
+  <!-- 14 PAZAR -->
+  <section class="scene" id="pazar" data-title="Market" data-notes="Teenagers in the world: 1.2 billion. Teenagers in the UK: 8 million. Our first segment: 240,000 teenagers aged 14–18 in the UK — and parents. Schools are the end goal.">
+    <div class="abs h">
+      <p class="lab" data-a="fade">Customer segmentation</p>
+      <h2 class="disp" data-a="words" style="margin-top:22px">Start small. <span class="fl">Aim for schools.</span></h2>
+      <p class="big" data-a="up" data-d=".4">First: <b>teenagers in the UK and EU</b>, and their parents. Under-16s join with parental permission. <b>Schools</b> are the end goal.</p>
+    </div>
+    <div class="circ">
+      <div class="c c1" data-a="scale" data-d=".2"><b><span data-a="count" data-to="1.2" data-dec="1" data-d=".4">0</span> B</b><span>Teenagers in the world</span></div>
+      <div class="c c2" data-step="1" data-a="pop"><b><span data-a="count" data-to="8" data-d=".2">0</span> M</b><span>Teenagers in the UK</span></div>
+      <div class="c c3" data-step="2" data-a="pop"><b data-a="count" data-to="240000" data-d=".2">0</b><span>UK teens · 14–18</span></div>
+    </div>
+  </section>
+
+  <!-- 15 MODEL -->
+  <section class="scene" id="model" data-title="Business model" data-notes="A monthly or annual rolling subscription at £6.99, with a one-week free trial. £2.00 covers server maintenance; £4.99 covers salaries, advertising and profit. Key costs: programmers for constant updates, site maintenance and data storage.">
+    <div class="abs h"><p class="lab" data-a="fade">Pricing</p><h2 class="disp" data-a="words" style="margin-top:22px">One simple subscription.</h2></div>
+    <div class="price" data-a="up" data-d=".3"><b class="fl"><span data-a="count" data-to="6.99" data-dec="2" data-pre="£" data-d=".4" data-dur="1.6">£0.00</span></b><span>/ month · rolling, monthly or annual</span></div>
+    <div class="trial" data-a="pop" data-d="1.2">1 week free trial</div>
+    <div class="split" data-step="1" data-a="wipe" data-dur="1.4"><div class="a"><b>£2.00</b></div><div class="b"><b>£4.99</b></div></div>
+    <div class="lg" data-step="1" data-a="up" data-d=".6"><p>Server maintenance</p><p>Salary, advertisements, profit</p></div>
+    <div class="costs" data-step="2" data-stagger=".1"><p class="lab dim">Key costs</p><span>Programmers for constant app updates</span><span>Site maintenance</span><span>Data storage</span></div>
+  </section>
+
+  <!-- 16 YOL HARİTASI -->
+  <section class="scene" id="yol" data-title="Next steps" data-notes="Next steps: sponsorships with study-Tubers to advertise; partnerships with Skillshare, Brilliant and other skill-learning platforms to bring advanced learning tasks into the app; and schools as the final target.">
+    <div class="abs h"><p class="lab" data-a="fade">Next steps</p><h2 class="disp" data-a="words" style="margin-top:22px">Where Motiv goes next.</h2></div>
+    <svg class="road" viewBox="0 0 1660 120"><path d="M32 52 L1628 52" stroke="#2A4268" stroke-width="4" stroke-dasharray="2 16" stroke-linecap="round" fill="none"/><path class="roadfire" data-a="draw" data-dur="2.2" data-d=".3" d="M32 52 L1628 52" stroke="#FF7A1A" stroke-width="5" stroke-linecap="round" fill="none"/></svg>
+    <div class="ms" style="left:130px" data-a="up" data-d=".6"><div class="dot">1</div><h3>Study-Tubers</h3><p>Sponsorships with study and productivity creators to advertise Motiv.</p></div>
+    <div class="ms" style="left:720px" data-a="up" data-d=".8"><div class="dot">2</div><h3>Skill platforms</h3><p>Collaborate with Skillshare, Brilliant and other skill-learning platforms to add advanced learning tasks.</p></div>
+    <div class="ms end" style="left:1310px" data-a="up" data-d="1"><div class="dot">3</div><h3>Schools</h3><p>The end goal: Motiv in classrooms, with parents in the loop.</p></div>
+  </section>
+
+  <!-- 17 REKLAM -->
+  <section class="scene" id="reklam" data-title="Our advert" data-notes="We also wrote, storyboarded and filmed an advert: Break the Scroll. Four friends, one notification, a table gone silent — and then Motiv.">
+    <div class="abs h"><p class="lab" data-a="fade">Our advert</p><h2 class="disp" data-a="words">“Break the Scroll”</h2></div>
+    <div class="film" data-a="fade" data-d=".2">
+      <div class="strip">
+        <div class="fr" style="--bgc:radial-gradient(500px 300px at 50% 0%, #6B4A2E, #2A1C14)">
+          <div class="art up">
+            <div class="dude" style="left:150px;top:150px;--shirt:#3C6FD8"></div>
+            <div class="dude" style="left:310px;top:130px;--shirt:#E8452C;--skin:#D9A47A"></div>
+            <div class="dude" style="left:470px;top:140px;--shirt:#2FCB86;--skin:#F5D2B0"></div>
+            <div class="dude" style="left:630px;top:155px;--shirt:#B98CFF;--skin:#C98E62"></div>
+            <div class="table-top" style="z-index:2"></div>
+            <svg style="position:absolute;left:250px;top:60px" width="300" height="70"><g fill="#FFF3E2" opacity=".9"><rect x="0" y="10" rx="18" width="110" height="44"/><rect x="170" y="0" rx="18" width="130" height="44"/></g><g fill="#2A1C14"><circle cx="32" cy="32" r="5"/><circle cx="55" cy="32" r="5"/><circle cx="78" cy="32" r="5"/><circle cx="210" cy="22" r="5"/><circle cx="235" cy="22" r="5"/><circle cx="260" cy="22" r="5"/></g></svg>
+          </div>
+          <p class="cap"><em>Scene 1 · Restaurant</em>Friends catch up. Ding. “You've gotta see this reel!”</p>
+        </div>
+        <div class="fr" style="--bgc:radial-gradient(500px 300px at 50% 30%, #1E2D4A, #0B111C)">
+          <div class="art up">
+            <div class="dude" style="left:150px;top:160px;--shirt:#3C6FD8;box-shadow:0 30px 60px -10px rgba(127,184,255,.6)"></div>
+            <div class="dude" style="left:310px;top:150px;--shirt:#E8452C;--skin:#D9A47A;box-shadow:0 30px 60px -10px rgba(127,184,255,.6)"></div>
+            <div class="dude" style="left:470px;top:155px;--shirt:#2FCB86;--skin:#F5D2B0;box-shadow:0 30px 60px -10px rgba(127,184,255,.6)"></div>
+            <div class="dude" style="left:630px;top:165px;--shirt:#B98CFF;--skin:#C98E62;box-shadow:0 30px 60px -10px rgba(127,184,255,.6)"></div>
+            <div class="mini-ph" style="left:160px;top:250px;z-index:3"></div><div class="mini-ph" style="left:320px;top:240px;z-index:3"></div><div class="mini-ph" style="left:480px;top:245px;z-index:3"></div><div class="mini-ph" style="left:640px;top:255px;z-index:3"></div>
+            <div class="table-top" style="z-index:2;background:#4A3322"></div>
+          </div>
+          <p class="cap"><em>Scene 2 · The scroll</em>Laughter fades. Only swiping is left. “Minutes… sometimes hours.”</p>
+        </div>
+        <div class="fr" style="--bgc:radial-gradient(500px 300px at 70% 30%, #26304A, #0B111C)">
+          <div class="art up">
+            <div class="dude" style="left:120px;top:160px;--shirt:#3C6FD8"></div>
+            <div class="dude" style="left:270px;top:150px;--shirt:#E8452C;--skin:#D9A47A"></div>
+            <div class="dude" style="left:420px;top:155px;--shirt:#2FCB86;--skin:#F5D2B0"></div>
+            <div class="dude" style="left:640px;top:70px;--shirt:#FFB23F;--skin:#E8B88E;box-shadow:0 20px 60px -6px rgba(127,184,255,.8)"></div>
+            <div class="mini-ph" style="left:130px;top:250px;z-index:3"></div><div class="mini-ph" style="left:280px;top:240px;z-index:3"></div><div class="mini-ph" style="left:430px;top:245px;z-index:3"></div><div class="mini-ph" style="left:650px;top:170px;z-index:3"></div>
+            <div class="table-top" style="z-index:2;right:260px;background:#4A3322"></div>
+          </div>
+          <p class="cap"><em>Scene 3 · It's contagious</em>“See? Just like that… I'm gone.”</p>
+        </div>
+        <div class="fr" style="--bgc:radial-gradient(500px 300px at 50% 30%, #2A3F66, #0F213B)">
+          <div class="art"><div class="popup"><b>Walk 200 meters to unlock</b><span>Instagram · locked by Motiv</span><i></i></div></div>
+          <p class="cap"><em>Scene 5 · Rewind, with Motiv</em>Phones buzz — but a quick task comes first. “Okay, quick walk before reels?”</p>
+        </div>
+        <div class="fr" style="--bgc:linear-gradient(180deg, #8FD3FF 0%, #CDEFFF 52%, #5DBB63 52%, #3E9A4C 100%)">
+          <div class="art up">
+            <div style="position:absolute;right:110px;top:110px;width:110px;height:110px;border-radius:50%;background:#FFD45C;box-shadow:0 0 60px #FFE38A"></div>
+            <div class="dude" style="left:170px;top:120px;--shirt:#3C6FD8;width:70px;height:70px"></div>
+            <div class="dude" style="left:300px;top:110px;--shirt:#E8452C;--skin:#D9A47A;width:70px;height:70px"></div>
+            <div class="dude" style="left:430px;top:118px;--shirt:#2FCB86;--skin:#F5D2B0;width:70px;height:70px"></div>
+          </div>
+          <p class="cap"><em>Scene 6 · Outside</em>“We've still got our Motiv streaks going strong.”</p>
+        </div>
+        <div class="fr" style="--bgc:linear-gradient(135deg, #FFB23F, #FF7A1A 50%, #E8452C)">
+          <div class="art" style="display:grid;place-content:center;text-align:center;padding-bottom:80px"><b class="disp" style="font-size:150px;color:#fff">Motiv</b><span style="font:700 36px/1 Inter;color:#2A0E02;margin-top:16px">Break the Scroll.</span></div>
+          <p class="cap"><em>Scene 7 · Call to action</em>Turn your scrolling time into growth time.</p>
+        </div>
+      </div>
+    </div>
+    <p class="tc" data-a="fade" data-d=".6">Written, storyboarded and filmed by the team · <b class="tcn">SCENE 1 / 6</b></p>
+  </section>
+
+  <!-- 18 EKİP -->
+  <section class="scene" id="ekip" data-title="Team" data-notes="Seven of us, plus Toasty, our mascot. I was the team's tech consultant.">
+    <div class="abs h"><p class="lab" data-a="fade">Meet our team</p><h2 class="disp" data-a="words" style="margin-top:22px">Seven people. <span class="fl">One flame.</span></h2></div>
+    <div class="team" data-stagger=".09" data-child="up" data-d=".4">
+      <div class="m"><img src="img/flame-sofia.webp" alt=""><div><b>Sofia C</b><span>Lead Creative</span></div></div>
+      <div class="m"><img src="img/flame-tristan.webp" alt=""><div><b>Tristan G</b><span>Graphic Designer</span></div></div>
+      <div class="m"><img src="img/flame-enzo.webp" alt=""><div><b>Enzo H</b><span>Developer</span></div></div>
+      <div class="m"><img src="img/flame-thomas.webp" alt=""><div><b>Thomas L</b><span>General Consultant</span></div></div>
+      <div class="m ada"><img src="img/flame-ada.webp" alt=""><div><b>Ada Sarp K</b><span>Tech Consultant</span></div></div>
+      <div class="m"><img src="img/flame-anaaya.webp" alt=""><div><b>Anaaya G</b><span>Marketing</span></div></div>
+      <div class="m"><img src="img/flame-libby.webp" alt=""><div><b>Libby C</b><span>Business Analytics</span></div></div>
+      <div class="m"><img src="img/flame-toasty.webp" alt=""><div><b>Toasty</b><span>Mascot</span></div></div>
+    </div>
+  </section>
+
+  <!-- 19 KAPANIŞ -->
+  <section class="scene" id="son" data-title="Rekindle" data-notes="Motiv — rekindle your productivity. We placed second of about 25 teams. Thank you!">
+    <canvas class="embers" data-n="110"></canvas>
+    <h2 class="disp t" data-a="chars">Motiv</h2>
+    <p class="s" data-a="up" data-d=".5">Rekindle your <em>productivity.</em></p>
+    <div class="res" data-a="pop" data-d="1"><b>2nd</b><span>of ~25 teams · Imperial Global Summer School</span></div>
+    <p class="foot" data-a="fade" data-d="1.3">Thank you · Ada Sarp Kırık · adasarpkirik.vercel.app</p>
+  </section>
+
+</div>
+
+<script src="/assets/js/motion.js"></script>
+<script src="/assets/deck/deck.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>
