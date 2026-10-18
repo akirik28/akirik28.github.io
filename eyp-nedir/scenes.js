@@ -168,17 +168,6 @@
     reset: function (c) { killWA(c.el); }
   });
 
-  /* ---------- 07 ualef: dört gün dolar ---------- */
-  Deck.scene("ualef", {
-    enter: function (c) {
-      c.$$(".days-row i").forEach(function (d, i) {
-        wa(c, d, [{ scale: "1 0" }, { scale: "1 1" }], { pseudoElement: "::after", duration: 600, delay: 700 + i * 220 });
-        wa(c, d, [{ color: "rgba(255,255,255,.6)" }, { color: "#fff" }], { duration: 400, delay: 800 + i * 220 });
-      });
-    },
-    reset: function (c) { killWA(c.el); }
-  });
-
   /* ---------- 09 sorular: 300 kelimelik sayaç ---------- */
   Deck.scene("sorular", {
     enter: function (c) {
