@@ -13,6 +13,22 @@ window.SITE = {
 
 window.SUNUMLAR = [
   {
+    klasor: "eyp-nedir",
+    baslik: "EYP Nedir? · Avrupa Gençlik Parlamentosu rehberi",
+    baslikEn: "What is EYP? · A guide to the European Youth Parliament",
+    altBaslik: "Konferans nasıl işler, UALEF, unofficial ve official EYP, roller, başvuru adımları ve kulüp saatleri için bir plan",
+    altBaslikEn: "How a session works, UALEF, unofficial and official EYP, roles, how to apply and a plan for club hours",
+    konu: "Okul sunumu · Avrupa Gençlik Parlamentosu (EYP)",
+    konuEn: "School presentation · European Youth Parliament (in Turkish)",
+    tarih: "2026-10-16",
+    sure: "≈10 dk", sureEn: "≈10 min",
+    ekran: 19,
+    ekip: "4 kişilik grup", ekipEn: "group of 4",
+    tur: "yeniden", dil: "TR", renk: "#2F7BFF",
+    kareler: ["#2F7BFF", "#2F7BFF", "#2F7BFF", "#1C55E6", "#2F7BFF", "#8EC5FF", "#2F7BFF"],
+    notlar: ""
+  },
+  {
     klasor: "bir-fikrin-otopsisi",            // sitedeki adres: /bir-fikrin-otopsisi/
     baslik: "Bir Fikrin Otopsisi",
     altBaslik: "Bazı fikirler neden yaşar, bazıları neden ölür?",
