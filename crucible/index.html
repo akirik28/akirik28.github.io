@@ -155,7 +155,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 /* ---------- formula ---------- */
 .slotgrid{display:grid;grid-template-columns:repeat(25,1fr);gap:3px;margin:10px 0 4px}
 @media (max-width:640px){.slotgrid{grid-template-columns:repeat(13,1fr)}}
-.sg{aspect-ratio:1;border-radius:5px;background:var(--bg2);border:1px solid var(--line);font-family:var(--mono);font-size:10px;display:grid;place-items:center;color:var(--ink3);transition:background .4s}
+.sg{padding:0;cursor:pointer;aspect-ratio:1;border-radius:5px;background:var(--bg2);border:1px solid var(--line);font-family:var(--mono);font-size:10px;display:grid;place-items:center;color:var(--ink3);transition:background .4s}
 .sg.l1{background:#c98a5a33;border-color:#c98a5a;color:var(--ink)}
 .sg.l2{background:#b9c0c933;border-color:#9aa4b1;color:var(--ink)}
 .sg.l3{background:var(--brass2);border-color:var(--brass);color:var(--brassink);font-weight:500}
@@ -670,11 +670,16 @@ function F(){const f=S.formula;if(!f.queue)f.queue=buildQueue();if(!f.v2){[10,11
 function nextQ(){const f=F();let s,st;if(f.qi<f.queue.length){[s,st]=f.queue[f.qi];}else{f.doneAll=true;const w=SL.map((_,i)=>{const x=f.stats[i]||{};return 1+(x.bad||0)*2+((x.lvl||0)<3?4:0);});let r=Math.random()*w.reduce((a,b)=>a+b,0);s=0;for(;s<24;s++){r-=w[s];if(r<=0)break;}st=3;}
  f.cur={s,st,blanks:st===1?pickBlanks(SL[s].tpl):[],wrong:false,fb:null};save();}
 let fLock=false;
+function jumpTo(s){const f=F();s=Math.max(0,Math.min(24,s|0));const lv=(f.stats[s]||{}).lvl||0;const st=Math.min(3,lv+1);
+ if(st===3){const start=f.queue.findIndex(x=>x[1]===3);const tail=[];for(let k=0;k<25;k++)tail.push([(s+k)%25,3]);f.queue=f.queue.slice(0,start).concat(tail);f.qi=start;}
+ else f.qi=f.queue.findIndex(x=>x[0]===s&&x[1]===st);
+ f.cur=null;f.doneAll=false;f.pendingBreak=false;f.breakStart=null;save();if(S.view==='formul')RENDER.formul();else go('formul');toast('Slot '+(s+1)+'\'den devam (Aşama '+st+').');}
+document.addEventListener('click',e=>{const b=e.target.closest('#v-formul [data-js]');if(b&&!fLock)jumpTo(+b.dataset.js);});
 RENDER.formul=function(){
  const f=F();if(f.pendingBreak)return renderBreak();if(!f.cur)nextQ();
  const c=f.cur,sl=SL[c.s],gold=goldCount(),total=f.queue.length;
  const qnum=Math.min(f.qi+1,total);
- const grid=SL.map((x,i)=>`<div class="sg l${(f.stats[i]||{}).lvl||0} ${i===c.s?'now':''}" title="Slot ${i+1}">${i+1}</div>`).join('');
+ const grid=SL.map((x,i)=>`<button type="button" class="sg l${(f.stats[i]||{}).lvl||0} ${i===c.s?'now':''}" data-js="${i}" title="Slot ${i+1}: buradan devam et" aria-label="Slot ${i+1}: buradan devam et">${i+1}</button>`).join('');
  let body='';
  if(c.st===1){body=`<div class="qsent" id="qsent">${sl.tpl.split(' ').map((w,i)=>{if(c.blanks.includes(i)){const {pre,core,post}=splitW(w);return `${esc(pre)}<input class="bl" data-i="${i}" style="width:${core.length+2}ch" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Boşluk">${esc(post)}`;}return tplHTML(w);}).join(' ')}</div>`;}
  else if(c.st===2){const ws=sl.tpl.split(' ');body=`<p class="muted" style="margin:0 0 4px">Görev: <b style="color:var(--ink)">${esc(sl.task)}</b> · ${esc(PARAS[sl.p].t)} paragrafı</p><p class="tiny muted" style="margin:0 0 10px">İpucu: ilk kelime <b class="mono">${esc(splitW(ws[0]).core.replace(/\{N\}/,'(isim)'))}</b>, ${ws.length} kelime. Boşluklara ___ veya kendi içeriğini yazabilirsin.</p><textarea id="qin" rows="2" placeholder="Cümlenin tamamını yaz…" autocapitalize="off" spellcheck="false"></textarea>`;}
@@ -689,7 +694,7 @@ RENDER.formul=function(){
  <div class="row"><div><div class="eyebrow">Mod 1 · 30 dk</div><h2 class="h2">Formül ezberi</h2></div><div class="sp"></div>
   <span class="chip brass">${gold}/25 altın</span><span class="chip">Seri ${f.streak} · en iyi ${f.best}</span><span class="chip" title="Her 15 soruda mola">Mola'ya ${15-f.since} soru</span></div>
  <div class="slotgrid" aria-label="Slot ustalığı">${grid}</div>
- <div class="tiny muted">Kutular: gri = başlanmadı · bakır = aşama 1 · gümüş = aşama 2 · altın = numaradan ezber.</div><div class="small" style="margin-top:6px;padding:6px 10px;border-radius:8px;background:color-mix(in srgb,var(--brass) 12%,transparent)"><b>P2 → P3 → P4 tek kelime değişir.</b> ${esc(MNEMO.replace('Hafıza: ',''))}</div>
+ <div class="tiny" style="color:var(--brass);font-weight:700">Bir kutuya dokun → oradan devam et</div><div class="tiny muted">Kutular: gri = başlanmadı · bakır = aşama 1 · gümüş = aşama 2 · altın = numaradan ezber.</div><div class="small" style="margin-top:6px;padding:6px 10px;border-radius:8px;background:color-mix(in srgb,var(--brass) 12%,transparent)"><b>P2 → P3 → P4 tek kelime değişir.</b> ${esc(MNEMO.replace('Hafıza: ',''))}</div>
  <div class="card qcard" id="qcard" style="margin-top:12px">
   <div class="qtop"><span class="chip brass">${STAGE[c.st]}</span><span class="chip">Slot ${c.s+1}/25</span>${c.st<3?`<span class="chip">${esc(sl.task)}</span>`:''}<span class="sp"></span><span class="tiny muted">${f.doneAll?'Karışık tekrar':'Soru '+qnum+'/'+total}</span></div>
   ${body}
@@ -1063,8 +1068,8 @@ function setTopH(){document.documentElement.style.setProperty('--toph',$('#top')
 addEventListener('resize',setTopH);
 ensureAll();buildPlanbar();updThemeBtn();updXP();updNight();setTopH();
 if(!storageOK)$('#storagewarn').hidden=false;
-const h=location.hash.slice(1);go(RENDER[h]?h:(S.view||'plan'),true);
-addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(RENDER[v]&&v!==S.view)go(v);});
+const h=location.hash.slice(1),hm=h.match(/^formul\/(\d{1,2})$/);if(hm){go('formul',true);jumpTo(+hm[1]-1);}else go(RENDER[h]?h:(S.view||'plan'),true);
+addEventListener('hashchange',()=>{const v=location.hash.slice(1),m=v.match(/^formul\/(\d{1,2})$/);if(m){jumpTo(+m[1]-1);return;}if(RENDER[v]&&v!==S.view)go(v);});
 window.CRUCIBLE={get S(){return S;},pickTez,analyze,scoreOf,matchTpl,SL,CH};
 })();
 </script>
