@@ -1,0 +1,2344 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Crucible Savunma Masası</title>
+<meta name="description" content="The Crucible savunma konuşması için gece çalışma uygulaması: 25 slotluk formül, tez fabrikası, hızlı quiz, tam prova ve sabah kartı.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e3b1f'/%3E%3Cg fill='%23e2b746' transform='rotate(-40 30 30)'%3E%3Crect x='14' y='14' width='30' height='13' rx='3'/%3E%3Crect x='26.5' y='27' width='5' height='26' rx='2.5'/%3E%3C/g%3E%3Crect x='30' y='48' width='24' height='6' rx='2' fill='%23e2b746'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script>try{var t=localStorage.getItem('crucible-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+:root{
+  --bg:#f3ecdf;--bg2:#e9dfcc;--card:#fffaf1;--card2:#f7efe1;--ink:#2a2017;--ink2:#6a5a49;--ink3:#93826e;
+  --line:#dccdb3;--wood:#6e3b1f;--wood2:#8d4e27;--wood3:#4a2714;--brass:#a77a12;--brass2:#d3a531;--brassink:#3a2a05;
+  --ok:#2c7a4b;--okbg:#e3f1e6;--bad:#b0362a;--badbg:#f8e3df;--warn:#a8670f;--warnbg:#f8ecd6;
+  --seg1:#7a4122;--seg2:#9a5a2f;--seg3:#5a2f18;--segtxt:#f6e7c8;
+  --shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 30px -18px rgba(60,30,10,.45);
+  --r:14px;--serif:'Instrument Serif',Georgia,'Times New Roman',serif;--sans:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+  --line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+  --ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+  --seg1:#5c3018;--seg2:#7a4122;--seg3:#43220f;--segtxt:#f6e2b6;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+  --line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+  --ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+  --seg1:#5c3018;--seg2:#7a4122;--seg3:#43220f;--segtxt:#f6e2b6;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans);min-height:100vh;
+  background-image:radial-gradient(1200px 500px at 80% -10%,color-mix(in srgb,var(--brass) 10%,transparent),transparent 60%);}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--brass2);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+h1,h2,h3{margin:0;font-weight:400}
+.serif{font-family:var(--serif);font-style:italic}
+.mono{font-family:var(--mono)}
+a{color:var(--brass)}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:30;color:#f6e9cf;
+  background:linear-gradient(180deg,#3b1f0f,#5a2f17 55%,#4a2612);border-bottom:2px solid #c99a2e;
+  box-shadow:0 6px 18px -10px rgba(0,0,0,.6)}
+.top-in{max-width:1180px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.brand svg{width:34px;height:34px;flex:none;color:#e2b746}
+.brand b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:24px;line-height:1;letter-spacing:.2px}
+.brand span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.night{display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.22);border:1px solid rgba(226,183,70,.35);border-radius:999px;padding:4px 12px 4px 4px}
+.night button{width:30px;height:30px;border-radius:50%;border:0;background:#e2b746;color:#3a2405;display:grid;place-items:center}
+.night button svg{width:14px;height:14px}
+.nightinfo{display:flex;flex-direction:column;line-height:1.15}
+.nightinfo b{font-family:var(--mono);font-size:15px;font-weight:500}
+.nightinfo span{font-size:11px;opacity:.8;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.xpbox{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;min-width:92px;position:relative}
+.xpbox b{font-family:var(--mono);font-size:14px;font-weight:500}
+.xpbox span{font-size:11px;opacity:.8}
+.xpbar{width:92px;height:4px;border-radius:4px;background:rgba(0,0,0,.3);margin-top:4px;overflow:hidden}
+.xpbar i{display:block;height:100%;background:linear-gradient(90deg,#e2b746,#f6dc8a);width:0;transition:width .5s}
+.iconbtn{width:36px;height:36px;border-radius:10px;border:1px solid rgba(226,183,70,.4);background:rgba(0,0,0,.18);color:#f6e9cf;display:grid;place-items:center;flex:none}
+.iconbtn svg{width:18px;height:18px}
+.planbar{position:relative;height:18px;max-width:1180px;margin:0 auto;display:flex;gap:2px;padding:0 16px}
+.planbar .seg{position:relative;flex:var(--w);height:6px;margin-top:6px;border-radius:3px;background:rgba(0,0,0,.28);overflow:hidden;border:0;padding:0}
+.planbar .seg i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#c99a2e,#f3d27a)}
+.planbar .seg.cur{box-shadow:0 0 0 1px #e2b746}
+.planbar .lbl{position:absolute;top:-1px;font-size:0}
+.xpfloat{position:absolute;right:0;top:-4px;font-family:var(--mono);font-weight:500;color:#ffe08a;pointer-events:none;animation:xpf 1.1s ease-out forwards;white-space:nowrap}
+@keyframes xpf{0%{opacity:0;transform:translateY(8px)}20%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}
+
+/* ---------- tabs ---------- */
+.tabs{position:sticky;top:var(--toph,62px);z-index:25;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs-in{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid transparent;background:none;border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab .n{font-family:var(--mono);font-size:11px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);color:var(--ink2);font-weight:500}
+.tab:hover{color:var(--ink)}
+.tab[aria-current="page"]{background:var(--card);border-color:var(--line);color:var(--ink);box-shadow:var(--shadow)}
+.tab[aria-current="page"] .n{background:var(--brass);color:var(--brassink)}
+
+main{max-width:1180px;margin:0 auto;padding:18px 16px 80px}
+.view{display:none;animation:vin .35s ease}
+.view.on{display:block}
+@keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- generic ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.card+.card{margin-top:14px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.h1{font-family:var(--serif);font-style:italic;font-size:clamp(30px,6vw,48px);line-height:1.02;margin:4px 0 8px}
+.h2{font-family:var(--serif);font-style:italic;font-size:clamp(24px,4.4vw,32px);line-height:1.1}
+.lead{color:var(--ink2);margin:0 0 6px;max-width:62ch}
+.muted{color:var(--ink2)}
+.small{font-size:13px}
+.tiny{font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sp{flex:1}
+.btn{border:1px solid var(--line);background:var(--card2);border-radius:11px;padding:9px 15px;font-weight:650;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:transform .12s,background .2s,box-shadow .2s;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn.pri{background:linear-gradient(180deg,var(--brass2),var(--brass));border-color:color-mix(in srgb,var(--brass) 70%,#000);color:var(--brassink);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 6px 16px -8px var(--brass)}
+.btn.wood{background:linear-gradient(180deg,var(--wood2),var(--wood));border-color:var(--wood3);color:#f8ead0}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--bad);background:transparent;border-color:color-mix(in srgb,var(--bad) 40%,var(--line))}
+.btn.sm{padding:6px 11px;font-size:13px;border-radius:9px}
+.btn>svg{width:14px;height:14px;flex:none}
+.btn.wood .kbd,.btn.pri .kbd{color:inherit;border-color:currentColor;opacity:.7}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600;color:var(--ink2)}
+.chip.ok{color:var(--ok);background:var(--okbg);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.chip.bad{color:var(--bad);background:var(--badbg);border-color:color-mix(in srgb,var(--bad) 35%,transparent)}
+.chip.warn{color:var(--warn);background:var(--warnbg);border-color:color-mix(in srgb,var(--warn) 35%,transparent)}
+.chip.brass{color:var(--brassink);background:var(--brass2);border-color:var(--brass)}
+.blank{display:inline-block;min-width:2.4em;border-bottom:2px dotted var(--brass);color:transparent;line-height:1.1;height:1.05em;vertical-align:baseline;margin:0 1px}
+.tpl{font-family:var(--mono);font-size:14px;line-height:1.7}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+textarea,input[type=text],input[type=number],input:not([type]),select{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;outline:none;transition:border-color .2s,box-shadow .2s}
+textarea:focus,input:focus,select:focus{border-color:var(--brass);box-shadow:0 0 0 3px color-mix(in srgb,var(--brass) 22%,transparent)}
+textarea{resize:vertical;min-height:44px;line-height:1.5}
+label.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer}
+label.ck input{width:20px;height:20px;margin-top:2px;accent-color:var(--brass);flex:none}
+details>summary{cursor:pointer;font-weight:650;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";display:inline-block;margin-right:6px;transition:transform .2s;color:var(--brass)}
+details[open]>summary::before{transform:rotate(90deg)}
+.bar{height:10px;border-radius:6px;background:var(--bg2);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass),var(--brass2));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.rule{border:0;border-top:1px solid var(--line);margin:14px 0}
+.kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;color:var(--ink2)}
+
+/* ---------- plan ---------- */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:end;margin-bottom:16px}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:500}
+.stat span{font-size:12px;color:var(--ink2)}
+.steps{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;position:relative;overflow:hidden}
+.step.cur{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass),var(--shadow)}
+.step.cur::after{content:"ŞİMDİ";position:absolute;top:8px;right:-26px;transform:rotate(35deg);background:var(--brass);color:var(--brassink);font-size:10px;font-weight:800;letter-spacing:.1em;padding:2px 30px}
+.step .num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:26px;background:var(--bg2);color:var(--wood2)}
+.step.done .num{background:var(--okbg);color:var(--ok)}
+.step h3{font-weight:700;font-size:17px}
+.step p{margin:2px 0 0;font-size:14px;color:var(--ink2)}
+.step .meta{font-family:var(--mono);font-size:12px;color:var(--ink3)}
+@media (max-width:560px){.step{grid-template-columns:auto 1fr}.step .go{grid-column:1/-1}}
+
+/* ---------- formula ---------- */
+.slotgrid{display:grid;grid-template-columns:repeat(25,1fr);gap:3px;margin:10px 0 4px}
+@media (max-width:640px){.slotgrid{grid-template-columns:repeat(13,1fr)}}
+.sg{aspect-ratio:1;border-radius:5px;background:var(--bg2);border:1px solid var(--line);font-family:var(--mono);font-size:10px;display:grid;place-items:center;color:var(--ink3);transition:background .4s}
+.sg.l1{background:#c98a5a33;border-color:#c98a5a;color:var(--ink)}
+.sg.l2{background:#b9c0c933;border-color:#9aa4b1;color:var(--ink)}
+.sg.l3{background:var(--brass2);border-color:var(--brass);color:var(--brassink);font-weight:500}
+.sg.now{outline:2px solid var(--wood2);outline-offset:1px}
+.qcard{position:relative;padding:22px;min-height:260px}
+.qtop{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.qsent{font-size:clamp(18px,3.2vw,23px);line-height:2.1;font-family:var(--serif);margin:6px 0 14px}
+.qsent .blank{height:1.1em}
+input.bl{display:inline-block;width:auto;font-family:var(--mono);font-size:17px;padding:2px 6px;border-radius:7px;border:0;border-bottom:2px solid var(--brass);background:color-mix(in srgb,var(--brass) 10%,var(--card));margin:0 2px;line-height:1.3;vertical-align:baseline}
+input.bl.ok{border-color:var(--ok);background:var(--okbg)}
+input.bl.bad{border-color:var(--bad);background:var(--badbg)}
+.bignum{font-family:var(--serif);font-style:italic;font-size:72px;line-height:1;color:var(--wood2)}
+.fb{margin-top:14px;border-radius:12px;padding:14px 16px;border:1px solid;animation:vin .25s}
+.fb.ok{background:var(--okbg);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+.fb.bad{background:var(--badbg);border-color:color-mix(in srgb,var(--bad) 40%,transparent)}
+.fb h4{margin:0 0 6px;font-size:15px}
+.fb .tpl mark{background:color-mix(in srgb,var(--bad) 22%,transparent);color:inherit;border-radius:4px;padding:0 3px;font-weight:600}
+.shake{animation:shake .4s}
+@keyframes shake{20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(3px)}}
+.okpulse{animation:okp .6s}
+@keyframes okp{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}100%{box-shadow:0 0 0 18px transparent}}
+.breakscr{text-align:center;padding:26px 10px}
+.ring{width:140px;height:140px;margin:10px auto;display:block}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:var(--bg2)}
+.ring .fg{stroke:var(--brass);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1s linear}
+.ring text{font-family:var(--mono);font-size:22px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.reftable{display:grid;gap:8px;margin-top:10px}
+.refrow{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line)}
+.refrow .n{font-family:var(--mono);font-size:13px;width:30px;height:30px;border-radius:8px;background:var(--bg2);display:grid;place-items:center}
+.refrow .task{font-size:12px;font-weight:700;color:var(--brass);text-transform:uppercase;letter-spacing:.06em}
+.refrow .ex{font-size:13px;color:var(--ink2);font-style:italic}
+.ptitle{font-family:var(--serif);font-style:italic;font-size:21px;margin-top:12px;color:var(--wood2)}
+
+/* ---------- wheel ---------- */
+.wheelwrap{position:relative;max-width:330px;margin:0 auto}
+.wheel{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 18px rgba(40,20,5,.35))}
+.wheel .s1{fill:var(--seg1)}.wheel .s2{fill:var(--seg2)}.wheel .s3{fill:var(--seg3)}
+.wheel .segp{stroke:#c99a2e;stroke-width:1.2}
+.wheel .segp.ready{opacity:.38}
+.wheel text{fill:var(--segtxt);font-family:var(--sans);font-size:11.5px;font-weight:650;dominant-baseline:central}
+.wheel .rim{fill:none;stroke:#c99a2e;stroke-width:6}
+.wheel .rim2{fill:none;stroke:#7a5410;stroke-width:1.5}
+.wheel .hub{fill:#3b1f0f;stroke:#e2b746;stroke-width:3}
+.wheel .ptr{fill:#e2b746;stroke:#5a3a06;stroke-width:1.5}
+.wheel .stud{fill:#e2b746}
+.court{position:absolute;inset:auto 0 42%;text-align:center;pointer-events:none;opacity:0;transform:scale(.9);transition:opacity .3s,transform .3s}
+.court.on{opacity:1;transform:none}
+.court div{display:inline-block;background:rgba(25,12,4,.88);color:#f6e2b6;border:1px solid #e2b746;border-radius:10px;padding:8px 14px;box-shadow:0 10px 30px -10px #000}
+.court small{display:block;font-size:10px;letter-spacing:.3em;color:#e2b746;font-weight:800}
+.court span{font-family:var(--serif);font-style:italic;font-size:21px;white-space:nowrap}
+.gavel{color:var(--wood2)}
+.gavel .head{transform-origin:70% 85%;transform-box:fill-box}
+.gavel.strike .hit{animation:strike .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes strike{0%{transform:rotate(-35deg)}45%{transform:rotate(8deg)}70%{transform:rotate(-4deg)}100%{transform:rotate(0)}}
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.cbtn{display:flex;align-items:center;gap:9px;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:8px 10px;font-size:14px;font-weight:600;transition:transform .15s,border-color .2s}
+.cbtn:hover{transform:translateY(-1px);border-color:var(--brass)}
+.cbtn.sel{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass)}
+.cbtn .pr{width:28px;height:28px;flex:none}
+.cbtn .pr circle{fill:none;stroke-width:4}
+.cbtn .pr .bg{stroke:var(--bg2)}
+.cbtn .pr .fg{stroke:var(--brass);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+.cbtn.ready .pr .fg{stroke:var(--ok)}
+.cbtn small{display:block;font-weight:500;font-size:11.5px;color:var(--ink3)}
+.tezlayout{display:grid;grid-template-columns:minmax(260px,360px) 1fr;gap:16px;align-items:start}
+@media (max-width:900px){.tezlayout{grid-template-columns:1fr}}
+.dossier{position:relative}
+.dossier .acc{background:var(--card2);border-left:4px solid var(--bad);border-radius:8px;padding:10px 12px;margin:10px 0}
+.arg{border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:10px;background:var(--card)}
+.arg .ah{display:flex;gap:10px;align-items:flex-start}
+.arg .an{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1;color:var(--brass)}
+.qrow{display:grid;grid-template-columns:86px 1fr 26px;gap:8px;margin-top:8px;align-items:center}
+.qrow .pg{position:relative}
+.qrow .pg input{padding-left:28px;font-family:var(--mono)}
+.qrow .pg::before{content:"s.";position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:13px}
+.qrow .st{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:var(--bg2);color:var(--ink3)}
+.qrow .st.ok{background:var(--ok);color:#fff}
+.note{border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px;background:var(--warnbg);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent)}
+.stamp{position:absolute;top:14px;right:14px;border:3px double var(--ok);color:var(--ok);border-radius:8px;padding:4px 10px;font-weight:900;letter-spacing:.12em;font-size:15px;transform:rotate(-9deg);background:color-mix(in srgb,var(--card) 80%,transparent)}
+.stamp.anim{animation:stamp .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes stamp{0%{opacity:0;transform:rotate(-9deg) scale(2.6)}100%{opacity:1;transform:rotate(-9deg) scale(1)}}
+.timerchip{font-family:var(--mono)}
+.ev{border-top:1px dashed var(--line);margin-top:10px;padding-top:10px}
+.evh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.ev .find{font-size:14px;margin:2px 0 4px}
+.ev .find .mono{font-size:13.5px;background:color-mix(in srgb,var(--brass) 14%,transparent);padding:1px 5px;border-radius:5px;color:var(--ink)}
+.ev .use{font-size:13.5px;font-style:italic;margin-top:4px;color:var(--ink2)}
+.warnbox{margin-top:6px;border-radius:8px;padding:8px 10px;font-size:13.5px;background:var(--warnbg);border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-left:5px solid var(--warn);color:var(--ink)}
+.warnbox b{color:var(--warn);letter-spacing:.06em}
+.cortag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 50%,transparent);border-radius:999px;padding:0 7px;margin-left:4px;vertical-align:middle;font-style:normal}
+.pdfnote{margin-top:10px;font-size:13px}
+.sev{font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.sev .w{color:var(--warn);font-size:12px;margin-top:2px}
+
+
+/* ---------- quiz ---------- */
+.opts{display:grid;gap:8px;margin-top:12px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:11px 14px;display:flex;gap:12px;align-items:flex-start;font-size:15px;transition:transform .12s,border-color .2s,background .2s}
+.opt:hover{border-color:var(--brass);transform:translateX(2px)}
+.opt .k{font-family:var(--mono);font-size:12px;width:22px;height:22px;flex:none;border-radius:6px;display:grid;place-items:center;background:var(--bg2);margin-top:1px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.opt:disabled{cursor:default;transform:none}
+
+/* ---------- prova ---------- */
+.ptimer{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+.ptime{font-family:var(--mono);font-size:30px;font-weight:500;line-height:1}
+.ptimer>*{min-width:0}.phases .ph{min-width:0}
+@media (max-width:700px){.ptimer{grid-template-columns:1fr auto}.ptimer>div:nth-child(2){grid-column:1/-1;grid-row:2}}
+.phases{display:flex;gap:3px;margin-top:6px}
+.phases .ph{position:relative;height:22px;border-radius:6px;background:var(--bg2);overflow:hidden;font-size:11px;font-weight:700;display:flex;align-items:center;padding:0 8px;color:var(--ink2);border:1px solid var(--line)}
+.phases .ph i{position:absolute;inset:0;width:0;background:color-mix(in srgb,var(--brass) 35%,transparent);z-index:0}
+.phases .ph span{position:relative;z-index:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phases .ph.cur{border-color:var(--brass);color:var(--ink)}
+.counters{position:sticky;top:calc(var(--toph,62px) + 50px);z-index:15;display:flex;gap:6px;flex-wrap:wrap;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 0;margin:10px 0 0;border-bottom:1px solid var(--line)}
+.ctr{display:flex;flex-direction:column;align-items:flex-start;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:5px 10px;min-width:84px;transition:border-color .3s,background .3s}
+.ctr b{font-family:var(--mono);font-size:17px;font-weight:500;line-height:1.1}
+.ctr span{font-size:11px;color:var(--ink2);white-space:nowrap}
+.ctr.ok{border-color:color-mix(in srgb,var(--ok) 50%,transparent);background:var(--okbg)}
+.ctr.bad{border-color:color-mix(in srgb,var(--bad) 50%,transparent);background:var(--badbg)}
+.ctr.warn{border-color:color-mix(in srgb,var(--warn) 50%,transparent);background:var(--warnbg)}
+.ctr.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.08)}}
+.provalayout{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start;margin-top:12px}
+@media (max-width:980px){.provalayout{grid-template-columns:1fr}.side{order:-1}}
+.side{position:sticky;top:calc(var(--toph,62px) + 120px);max-height:calc(100vh - var(--toph,62px) - 140px);overflow:auto}
+@media (max-width:980px){.side{position:static;max-height:none}}
+.phead{display:flex;align-items:baseline;gap:10px;margin:18px 0 6px}
+.phead h3{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--wood2)}
+.slot{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line)}
+.slot .sn{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;background:var(--bg2);color:var(--ink2);transition:background .3s}
+.slot.filled .sn{background:var(--brass2);color:var(--brassink)}
+.slot.warn .sn{background:var(--warn);color:#fff}
+.slot .sm{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-bottom:5px}
+.slot .sm b{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass)}
+.slot .sm .tpl{font-size:12px;color:var(--ink2);line-height:1.4}
+.slot textarea{min-height:44px;font-size:15.5px}
+.slot .flags{font-size:12px;color:var(--warn);margin-top:4px;min-height:0}
+.slot .flags:empty{display:none}
+.slot.jump{animation:okp .9s}
+.sidebox h4{margin:12px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.qlist{margin:0;padding:0;list-style:none;font-size:13.5px}
+.qlist li{padding:5px 0;border-bottom:1px dashed var(--line)}
+.qlist .pgn{font-family:var(--mono);font-weight:500;color:var(--wood2)}
+.score{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.scorebig{font-family:var(--serif);font-style:italic;font-size:84px;line-height:.9;color:var(--wood2)}
+.scorebig small{font-size:34px;color:var(--ink3)}
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media (max-width:760px){.parts{grid-template-columns:1fr}.score{grid-template-columns:1fr}}
+.part{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--card2)}
+.part h4{margin:0;display:flex;justify-content:space-between;align-items:baseline;font-size:15px}
+.part h4 b{font-family:var(--mono);font-size:20px;font-weight:500}
+.part ul{margin:8px 0 0;padding:0;list-style:none;font-size:13.5px}
+.part li{display:grid;grid-template-columns:18px 1fr auto;gap:6px;padding:3px 0}
+.part li .pt{font-family:var(--mono);color:var(--ink2)}
+.yes{color:var(--ok);font-weight:800}.no{color:var(--bad);font-weight:800}
+.rules{font-size:13.5px;color:var(--ink2)}
+.rules li{margin:4px 0}
+.rules code{font-family:var(--mono);font-size:12.5px;background:var(--bg2);padding:0 4px;border-radius:4px;color:var(--ink)}
+
+/* ---------- badges ---------- */
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.badge{border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;background:var(--card);opacity:.5;filter:grayscale(1)}
+.badge.got{opacity:1;filter:none;border-color:var(--brass);box-shadow:0 0 0 1px color-mix(in srgb,var(--brass) 50%,transparent),var(--shadow)}
+.badge .ic{width:54px;height:54px;margin:0 auto 6px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:26px;background:radial-gradient(circle at 35% 30%,#f6dc8a,#c99a2e 60%,#8a6410);color:#3a2405;box-shadow:0 0 0 3px var(--card),0 0 0 4px #c99a2e}
+.badge.case .ic{background:radial-gradient(circle at 35% 30%,#d79a6b,#8d4e27 60%,#4a2612);color:#f8e3bd;font-style:italic}
+.badge b{display:block;font-size:14px}
+.badge span{font-size:12px;color:var(--ink2)}
+
+/* ---------- sabah kartı ---------- */
+.sheet{background:#fffdf8;color:#1d150e;border-radius:6px;padding:22px 24px;box-shadow:0 20px 40px -24px rgba(0,0,0,.5);max-width:820px;margin:14px auto 0;font-size:12.5px;line-height:1.35;border:1px solid #e3d6bd}
+.sheet h1{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1}
+.sheet .sub{font-size:11px;color:#6a5a49;margin:2px 0 8px}
+.sheet .cf{columns:2;column-gap:18px}
+.sheet .pb{break-inside:avoid;margin:0 0 6px}
+.sheet .pb h3{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8d4e27;margin:0 0 1px}
+.sheet .pb div{font-family:var(--mono);font-size:10.5px;line-height:1.38;padding-left:18px;text-indent:-18px}
+.sheet .pb div i{font-style:normal;color:#a67c1a;display:inline-block;width:18px;text-indent:0}
+.sheet .blank{color:transparent;border-bottom:1.5px dotted #a67c1a;min-width:1.8em;height:.9em}
+.sheet .rl{border-top:1.5px solid #1d150e;border-bottom:1px solid #d8c9ae;padding:4px 0;margin:6px 0 8px;font-size:10.5px}
+.sheet .ct{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+.sheet .cc{break-inside:avoid;border-left:3px solid #c99a2e;padding-left:7px}
+.sheet .cc b{font-size:12px}
+.sheet .cc .th{font-size:11px;margin:1px 0}
+.sheet .cc .pp{font-family:var(--mono);font-size:10.5px;color:#5a3a20}
+.sheet .empty{color:#a0907a;font-style:italic}
+
+/* ---------- overlays / toasts ---------- */
+#toasts{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;flex-direction:column;gap:8px;align-items:center;width:min(94vw,460px);pointer-events:none}
+.toast{pointer-events:auto;background:#2a1a0e;color:#f6e9cf;border:1px solid #c99a2e;border-radius:12px;padding:10px 14px;font-size:14px;box-shadow:0 14px 30px -12px rgba(0,0,0,.6);display:flex;gap:10px;align-items:center;animation:tin .3s cubic-bezier(.2,1.4,.4,1)}
+.toast button{border:0;background:#e2b746;color:#3a2405;border-radius:8px;padding:4px 10px;font-weight:700;font-size:13px}
+@keyframes tin{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+.ov{position:fixed;inset:0;z-index:70;background:rgba(12,6,2,.72);display:grid;place-items:center;padding:16px;animation:vin .3s}
+.ov .box{max-width:560px;width:100%;background:var(--card);border:1px solid var(--brass);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 30px 80px -20px #000;max-height:92vh;overflow:auto}
+.confetti{position:fixed;top:-12px;width:9px;height:14px;z-index:80;pointer-events:none;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.storagewarn{background:var(--warnbg);color:var(--warn);font-size:13px;padding:6px 16px;text-align:center}
+
+@media (max-width:640px){
+  .top-in{gap:8px;padding:7px 12px}
+  .brand span{display:none}
+  .brand b{font-size:20px}
+  .brand svg{width:28px;height:28px}
+  .nightinfo span{max-width:110px}
+  .xpbox{min-width:0}.xpbar{width:64px}.xpbox span{display:none}
+  main{padding:14px 16px 80px}
+  .card{padding:14px}
+  .qcard{padding:16px}
+  .ptime{font-size:24px}
+  .tabs-in{padding:7px 12px}
+}
+@media (max-width:520px){.brand>div{display:none}}
+@media (max-width:380px){.xpbox{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+@media print{
+  @page{size:A4;margin:9mm}
+  html,body{background:#fff!important;color:#000}
+  body{background-image:none}
+  .top,.planbar,.tabs,#toasts,.ov,.noprint,.storagewarn,.confetti{display:none!important}
+  main{padding:0;max-width:none}
+  main>section{display:none!important}
+  #v-kart{display:block!important;animation:none}
+  .sheet{box-shadow:none;border:0;padding:0;margin:0;max-width:none;border-radius:0;background:#fff}
+}
+</style>
+</head>
+<body>
+<div id="storagewarn" class="storagewarn" hidden>Tarayıcı kayda izin vermiyor: ilerlemen bu sekme kapanınca kaybolur.</div>
+<header class="top" id="top">
+  <div class="top-in">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="currentColor" transform="rotate(-40 30 30)"><rect x="12" y="14" width="34" height="14" rx="3"/><rect x="9" y="16" width="4" height="10" rx="1.5"/><rect x="45" y="16" width="4" height="10" rx="1.5"/><rect x="26.5" y="28" width="5.5" height="28" rx="2.75"/></g><rect x="30" y="50" width="26" height="7" rx="2" fill="currentColor"/></svg>
+      <div><b>Crucible</b><span>Savunma masası · gece çalışması</span></div>
+    </div>
+    <div class="night" title="Gece planı sayacı (3 saat)">
+      <button id="nightBtn" aria-label="Gece sayacını başlat"></button>
+      <div class="nightinfo"><b id="nightTime">0:00:00</b><span id="nightStep">Gece planı · başlat</span></div>
+    </div>
+    <div class="xpbox" id="xpbox"><b id="xpVal">0 XP</b><span id="xpLvl">Stajyer</span><div class="xpbar"><i id="xpFill"></i></div></div>
+    <button class="iconbtn" id="themeBtn" aria-label="Temayı değiştir"></button>
+  </div>
+  <div class="planbar" id="planbar"></div>
+</header>
+<nav class="tabs" aria-label="Modlar"><div class="tabs-in" id="tabs"></div></nav>
+<main>
+  <section class="view" id="v-plan"></section>
+  <section class="view" id="v-formul"></section>
+  <section class="view" id="v-tez"></section>
+  <section class="view" id="v-mola"></section>
+  <section class="view" id="v-prova"></section>
+  <section class="view" id="v-kart"></section>
+  <section class="view" id="v-rozet"></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<div id="ovroot"></div>
+
+<script id="kanit-data">
+/* === kanit-ipuclari.js (gömülü kopya; kaynak: crucible/kanit-ipuclari.js) === */
+// Kanıt ipuçları — The Crucible (PDF baskısı sayfa numaralarıyla). Otomatik doğrulandı: her 'find' ifadesi metinde ve belirtilen PDF sayfasında geçiyor.
+window.KANIT = {
+ "note": "pdfPage = bu kanıtın 'The Crucible full text.pdf' (PDF baskısı) içindeki basılı sayfa numarasıdır; senin sınıf kitabının sayfaları FARKLI (ör. 'I have known her' PDF'te s.110, öğretmenin modelinde s.103). Kitabında 'find' ifadesini ara ve (Miller __) boşluğuna KENDİ kitabının sayfasını yaz. 'find' yalnızca yer bulmak içindir (en fazla 8 kelime); 'what' açıklamaları oyunun özetidir, alıntı değildir; içlerindeki 's.X' göndermeleri de PDF sayfasıdır. 'warning' olan yerlerde metin SPEC'teki iddiayı tam desteklemiyor.",
+ "characters": {
+  "Abigail Williams": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 20,
+    "who": "Abigail",
+    "find": "smash my dear parents' heads",
+    "what": "Abigail ailesinin Kızılderililer tarafından yanı başında öldürüldüğünü gördüğünü anlatır; yetim ve travmalı bir gençtir (17 yaşında ve yetim olduğu Act 1 başındaki anlatıcı notunda, PDF s.8). Dikkat: bu cümleyi kızları tehdit ederken söyler.",
+    "use": "The record shows that Abigail is a seventeen-year-old orphan who watched her parents being killed beside her (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Three",
+    "pdfPage": 110,
+    "who": "Proctor",
+    "find": "I have known her, sir.",
+    "what": "Proctor mahkemede Abigail ile ilişkisini itiraf eder; Proctor otuzlarının ortasında evli bir çiftçidir (s.20), Abigail ise 17 yaşında ve evin eski hizmetçisidir (s.12) — güç yetişkindeydi.",
+    "use": "Even John Proctor, a married man in his thirties, confesses under oath to an affair with his seventeen-year-old servant (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 91,
+    "who": "Proctor",
+    "find": "It is the children only",
+    "what": "Proctor, Rebecca'ya karşı tek kanıtın kızların sözü olduğunu Danforth'a hatırlatır; mahkeme başka kanıt aramadan çocuklara inandı.",
+    "use": "As Proctor reminds the court, the only evidence came from the children themselves (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 100,
+    "who": "Danforth",
+    "find": "an invisible crime, is it not?",
+    "what": "Danforth cadılığın görünmez bir suç olduğunu, tanığın yalnızca 'cadı ve kurban' olabileceğini söyler; yani mahkeme kanıt yerine suçlayanın sözünü esas aldı ve Abigail'e bu gücü kendisi verdi.",
+    "use": "Judge Danforth himself calls witchcraft an invisible crime, so the court chose to rely on the accusers' word alone (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 43,
+    "who": "Abigail",
+    "find": "I'm a good girl! I'm a proper girl!",
+    "what": "Hale ve Parris dans ve kazan hakkında Abigail'i sıkıştırır, kendini Şeytan'a satıp satmadığını sorar; Abigail inkâr eder ve hemen ardından suçu Tituba'ya atar — suçlama köşeye sıkışmış birinin savunma hamlesidir.",
+    "use": "Cornered by Hale's questions about the dancing, Abigail's first instinct is to save herself (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 48,
+    "who": "Abigail",
+    "find": "I want to open myself!",
+    "what": "Tituba itiraf edip Hale'den övgü aldıktan sonra (s.47) Abigail de 'itiraf edip' isim saymaya başlar; suçlamanın onun için hayatta kalma yolu olduğu buradan çıkarılabilir (bu bir yorumdur, metin nedenini söylemez).",
+    "use": "Only after she sees Tituba praised for confessing does Abigail begin to cry out names (Miller __)."
+   },
+   {
+    "arg": "dikkat",
+    "act": "Act Four",
+    "pdfPage": 126,
+    "who": "Hathorne / Parris",
+    "find": "She have robbed you?",
+    "what": "Parris, Abigail'in Mercy Lewis ile kaybolduğunu, bir gemiye bindiklerini düşündüğünü ve kasasının kırıldığını söyler (otuz bir sterlin, aynı sayfa). Savcı bunu kullanacak: inkâr etme, hafiflet — bir sonraki sayfada (s.127) Parris'in kendisi kızların Salem'de kalmaktan korktukları için kaçtığını düşündüğünü söyler (bu Parris'in tahmini).",
+    "use": "Yes, Abigail fled with her uncle's money (Miller __), but running away is the act of a frightened girl, not proof that she planned every death."
+   }
+  ],
+  "Rev. John Hale": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 33,
+    "who": "Anlatıcı (Miller)",
+    "find": "the pride of the specialist",
+    "what": "Anlatıcı, Hale'in cadılığı saptamak için uzman olarak çağrıldığını yazar (Parris onu çağırdığını s.9'da söyler); Hale Salem'e kendi isteğiyle değil davetle geldi.",
+    "use": "Hale did not come to Salem on his own initiative; he was called in as a specialist (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 38,
+    "who": "Hale",
+    "find": "We cannot look to superstition in this.",
+    "what": "Hale işe başlarken batıl inançla değil kesin işaretlerle hareket edeceğini söyler; temkinli başlamıştır.",
+    "use": "Hale's very first instruction to the village is that they must not rely on superstition (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Two",
+    "pdfPage": 64,
+    "who": "Hale",
+    "find": "God forbid such a one be charged.",
+    "what": "Hale mahkemenin yetkisi olmadan, kendi isteğiyle Proctor'ları sorgulamaya gelir (s.63); Rebecca'nın adı geçtiğini söylerken onun gibi birinin suçlanmasını istemediğini belli eder.",
+    "use": "When Rebecca Nurse's name comes up, Hale himself says that such a woman should never be charged (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 120,
+    "who": "Hale",
+    "find": "I denounce these proceedings, I quit this court!",
+    "what": "Proctor tutuklanınca Hale mahkemeyi açıkça kınar ve görevini bırakıp çıkar; mahkemeye sırtını dönen tek yetkili odur.",
+    "use": "Hale is the only official who publicly denounces the proceedings and walks out of the court (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 131,
+    "who": "Hale",
+    "find": "I come to counsel Christians",
+    "what": "Hale Act 4'te geri döner, mahkûmları yalan itirafla hayatta kalmaya ikna etmeye geldiğini acı bir ironiyle söyler ve 'başımda kan var' diyerek suçluluğunu kabul eder.",
+    "use": "Hale returns to Salem, admitting that there is blood on his head, to try to save the condemned (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 132,
+    "who": "Hale",
+    "find": "Life, woman, life is God's most precious gift",
+    "what": "Hale Elizabeth'e hayatın her ilkeden değerli olduğunu söyleyip Proctor'u ölmemeye ikna etmesi için yalvarır; amacı idamları durdurmaktır (ama önerdiği şey yalan itiraftır).",
+    "use": "In the final act Hale begs Elizabeth to save her husband, arguing that life is God's most precious gift (Miller __)."
+   }
+  ],
+  "Rev. Samuel Parris": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 8,
+    "who": "Anlatıcı (Miller)",
+    "find": "then seems about to weep",
+    "what": "Oyun, Parris'in hareketsiz yatan kızının başında dua edip ağlamasıyla açılır; korkmuş bir babadır. Dikkat: anlatıcı Act 1'in ilk sayfasında (s.3) onun tarihte 'kötü' bir iz bıraktığını da yazar.",
+    "use": "The play opens with Parris weeping and praying over his motionless daughter (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 9,
+    "who": "Parris",
+    "find": "I have sent for Reverend Hale of Beverly",
+    "what": "Doktor Griggs'ten haber gelince Parris Hale'i çağırdığını söyler ve doktorun tıbbi bir neden aramasını ister; önce doktora, sonra uzmana başvurmuştur.",
+    "use": "Parris first waits for the doctor's opinion and then sends for an expert, Reverend Hale (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Four",
+    "pdfPage": 126,
+    "who": "Parris",
+    "find": "thirty-one pound is gone. I am penniless.",
+    "what": "Parris, Abigail'in kasasını kırıp kaçtığını anlatırken ağlar; kendi yeğeni tarafından kandırılmış ve soyulmuştur.",
+    "use": "Parris was deceived and robbed by his own niece, who left him penniless (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Four",
+    "pdfPage": 128,
+    "who": "Parris",
+    "find": "a dagger clattered to the ground",
+    "what": "Parris evden çıkmak için kapıyı açınca yere bir hançer düştüğünü söyler; hayatı tehdit altındadır.",
+    "use": "Parris himself becomes a target: a dagger falls at his door as he leaves his house (Miller __).",
+    "warning": "SPEC 'kapısına bıçak saplandı' diyor; metin sadece kapıyı açınca bir hançerin yere düştüğünü söyler. 'Saplandı' deme."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 127,
+    "who": "Parris",
+    "find": "I would postpone these hangin's for a time.",
+    "what": "Parris Danforth'tan idamları ertelemesini isteyen kişidir; Danforth reddeder.",
+    "use": "Parris is the one who asks Danforth to postpone the hangings (Miller __).",
+    "warning": "Metne göre gerekçesi merhamet değil: kasabada isyan çıkmasından ve Rebecca gibi saygın birinin asılmasının intikam doğurmasından korkar (s.127); s.128'de itirafların diğerlerini 'halkın gözünde' mahkûm edeceğini umduğunu söyler. 'Vicdanından erteleme istedi' deme; 'korku içinde, idamları durdurmaya çalıştı' de."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 144,
+    "who": "Parris",
+    "find": "Go to him, Goody Proctor!",
+    "what": "Proctor idama götürülürken Parris Elizabeth'e onu ikna etmesi için yalvarır; son ana kadar bu ölümü engellemeye çalışır.",
+    "use": "Even as Proctor is led to the gallows, Parris begs Elizabeth to save him (Miller __)."
+   },
+   {
+    "arg": "dikkat",
+    "act": "Act One",
+    "pdfPage": 29,
+    "who": "Parris",
+    "find": "Where is my wood?",
+    "what": "Parris Act 1'de maaşı ve odunu için tartışır; savcı onu açgözlü gösterecek. Önceden cevapla. Not: 'Worry is not a crime' senin kendi cümlen, oyunda geçmiyor; alıntı gibi sunma.",
+    "use": "Yes, Parris complained about his salary and firewood (Miller __), but worrying about money is not a crime."
+   },
+   {
+    "arg": "dikkat",
+    "act": "Act Three",
+    "pdfPage": 106,
+    "who": "Parris",
+    "find": "let her pretend she is attacked now",
+    "what": "Parris Act 3'te Mary Warren'ı mahkemede bayılma numarası yapmaya zorlayarak ifadesini çürütmeye çalışır; savunmanın en zayıf noktası — korku ve itibar kaygısıyla açıkla, inkâr etme.",
+    "use": "It is true that Parris pressed Mary Warren in court (Miller __), yet he was a frightened man defending what he believed."
+   }
+  ],
+  "Goody Ann Putnam": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 15,
+    "who": "Mrs. Putnam",
+    "find": "I have laid seven babies",
+    "what": "Ann Putnam yedi bebeğini vaftiz edilmeden toprağa verdiğini, her birinin doğduğu gece kollarında öldüğünü anlatır; derin bir yas içindedir.",
+    "use": "Ann Putnam buried seven babies, each of whom died the night it was born (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 15,
+    "who": "Mrs. Putnam",
+    "find": "my Ruth, my only",
+    "what": "Geriye kalan tek çocuğu Ruth'un da tuhaflaşıp eridiğini söyler; son çocuğunu da kaybetme korkusu onu Tituba'ya yöneltir.",
+    "use": "Her last living child, Ruth, was now wasting away before her eyes (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 15,
+    "who": "Mrs. Putnam",
+    "find": "Tituba knows how to speak to the dead",
+    "what": "Ann, ölülerle konuşabildiğine inandığı Tituba'ya Ruth'u gönderdiğini söyler; dönemin inancıyla hareket etmiştir, büyüyü kendisi yapmamıştır.",
+    "use": "Like many in Salem, Ann sincerely believed that Tituba could speak to the dead (Miller __).",
+    "warning": "Metin Ann'in Ruth'u bilerek ölü bebeklerle konuşması için Tituba'ya gönderdiğini açıkça söyler (aynı sayfa). 'Kendisi büyü yapmadı' teknik olarak doğru, ama savcı 'büyüyü o başlattı' diyebilir."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 16,
+    "who": "Mrs. Putnam",
+    "find": "It is a marvelous sign, Mr. Parris!",
+    "what": "Ann, Ruth'un konuşamamasını karanlık bir gücün kanıtı sayar ve bebeklerinin öldürüldüğüne gerçekten inanır; yas ve dönemin inancı onu yönlendirir.",
+    "use": "Ann genuinely believed her babies had been murdered by dark powers (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Three",
+    "pdfPage": 96,
+    "who": "Danforth (Giles'ın ifadesini okur)",
+    "find": "coldly prompted your daughter to cry witchery",
+    "what": "Giles'ın ifadesine göre kızına Jacobs'ı suçlatan ve toprak hırsıyla hareket eden Thomas Putnam'dır (aynı sayfada 'forfeit up his property'); ifadede Ann'in adı geçmez.",
+    "use": "Giles Corey's deposition accuses Thomas Putnam, not Ann, of using the accusations to gain land (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Two",
+    "pdfPage": 71,
+    "who": "Hale",
+    "find": "rest upon the justice of the court",
+    "what": "Rebecca'nın tutuklama emri 'Putnam bebeklerinin doğaüstü yolla öldürülmesi' suçlamasıyla çıkar (aynı sayfa); Hale ailesine mahkemenin adaletine güvenmelerini söyler — karar mahkemenindi.",
+    "use": "The warrant against Rebecca was issued by the court, and it was the court that decided her fate (Miller __).",
+    "warning": "Dikkat: Ann Act 1'de (s.28) Rebecca'ya iğneleyici biçimde onun hiç çocuk kaybetmediğini söyler; savcı bunu kıskançlık kanıtı olarak kullanabilir."
+   }
+  ],
+  "Tituba": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 8,
+    "who": "Anlatıcı (Miller)",
+    "find": "Parris brought her with him from Barbados",
+    "what": "Anlatıcı Tituba'yı Parris'in kölesi olarak tanıtır; Barbados'tan getirilmiştir.",
+    "use": "Tituba was Parris's slave, brought with him from Barbados (Miller __).",
+    "warning": "Metin onun 'hayır diyemeyeceğini' açıkça söylemez; bu köleliğe dayanan bir yorumdur, öyle sun."
+   },
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 8,
+    "who": "Anlatıcı (Miller)",
+    "find": "her slave sense has warned her",
+    "what": "Anlatıcı, Tituba'nın 'köle sezgisi'yle bu evdeki her belanın sonunda onun sırtına bineceğini bildiğini yazar; suçlanmadan önce bile günah keçisi olacağını sezer.",
+    "use": "Even before she is accused, Tituba knows that trouble in this house always lands on her (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 44,
+    "who": "Parris / Putnam",
+    "find": "whip you to your death, Tituba!",
+    "what": "Parris itiraf etmezse onu ölesiye kırbaçlatacağını söyler, Putnam da hemen asılması gerektiğini haykırır; itiraf tehdit altında gelir.",
+    "use": "The record shows that Tituba was threatened with being whipped to death and hanged before she confessed (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 46,
+    "who": "Hale",
+    "find": "Who came to you with the Devil?",
+    "what": "Hale 'Tanrı seni koruyacak' dedikten sonra 'İki mi? Üç mü? Dört mü?' diye sayı ister; Sarah Good ve Osburn isimlerini ilk söyleyen Putnam'dır (aynı sayfa) — isimler ona dikte edilmiştir.",
+    "use": "The names were put into Tituba's mouth: Putnam suggests Sarah Good and Osburn before she says them (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 15,
+    "who": "Mrs. Putnam",
+    "find": "I thought to send her to your Tituba",
+    "what": "Ann Putnam, Ruth'u ölü bebekleriyle konuşsun diye Tituba'ya kendisinin gönderdiğini söyler; fikir Tituba'dan çıkmamıştır.",
+    "use": "It was Ann Putnam who sent her daughter to Tituba, not the other way round (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 44,
+    "who": "Tituba",
+    "find": "You beg me to conjure!",
+    "what": "Tituba, Abigail'in kendisinden büyü ve tılsım için yalvardığını söyler; bir sayfa önce (s.43) Abigail ilk suçlayan olarak Tituba'yı göstermiştir ('She made me do it!').",
+    "use": "Abigail, the first accuser, was the one who begged Tituba for a charm (Miller __)."
+   }
+  ],
+  "Betty Parris": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 3,
+    "who": "Sahne yönergesi",
+    "find": "Betty Parris, aged ten",
+    "what": "Oyunun ilk sahne yönergesi Betty'nin on yaşında olduğunu söyler.",
+    "use": "The stage directions tell us that Betty is only ten years old (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 27,
+    "who": "Rebecca",
+    "find": "through their silly seasons",
+    "what": "Rebecca, Betty'nin durumunu çocukların geçici 'saçma dönemleri'ne benzetir; onu çocukça bir korku olarak görür.",
+    "use": "Rebecca Nurse, who raised eleven children, saw Betty's state as an ordinary childish phase (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 20,
+    "who": "Abigail",
+    "find": "I will bring a pointy reckoning",
+    "what": "Abigail, Betty dahil kızları tek kelime ederlerse gece gelip korkunç bir ceza vereceğini söyleyerek tehdit eder.",
+    "use": "Abigail threatened the girls, Betty included, with a terrible night-time revenge if they spoke (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 22,
+    "who": "Abigail",
+    "find": "She took fright, is all.",
+    "what": "Abigail Proctor'a Betty'nin durumunun sadece korkudan olduğunu söyler; bu, felcin korku kaynaklı olduğunu destekler.",
+    "use": "Abigail herself admits that Betty simply took fright (Miller __).",
+    "warning": "Metin Betty'nin durumuna tanı koymaz; 'korkudan' diyen Abigail'dir. Ayrıca Betty Act 1 sonunda (s.48) Abigail'in ardından isim sayar — savcının kozu."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 19,
+    "who": "Betty",
+    "find": "You drank a charm to kill Goody Proctor!",
+    "what": "Betty, Abigail'in Elizabeth Proctor'u öldürmek için tılsım içtiğini yüzüne söyler; gerçeği ilk söyleyen odur ve karşılığında Abigail onu tokatlar.",
+    "use": "Betty was the first to tell the truth: Abigail drank a charm to kill Elizabeth Proctor (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 19,
+    "who": "Betty",
+    "find": "You drank blood, Abby!",
+    "what": "Betty, Abigail'in Parris'e her şeyi anlatmadığını, kan içtiğini söyler; Abigail'in gizlediklerini açığa vurur.",
+    "use": "Betty exposes what Abigail tried to hide from her uncle (Miller __)."
+   }
+  ],
+  "Rebecca Nurse": [
+   {
+    "arg": 1,
+    "act": "Act One",
+    "pdfPage": 26,
+    "who": "Anlatıcı (Miller)",
+    "find": "a battle in the woods",
+    "what": "Anlatıcı, Rebecca'ya karşı 'sistematik kampanya'yı Nurse ailesinin bir Putnam'la toprak kavgasına ve Putnam'ın papaz adayı Bayley'i engellemelerine bağlar; suçlamanın arkasında eski husumet vardır.",
+    "use": "Miller's own commentary links the campaign against Rebecca to a land war with the Putnams (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 71,
+    "who": "Francis Nurse",
+    "find": "the marvelous and supernatural murder",
+    "what": "Tutuklama emri Rebecca'yı Putnam bebeklerini doğaüstü yolla öldürmekle suçlar; ortada hiçbir somut kanıt yoktur (Proctor Act 3'te tek kanıtın çocukların sözü olduğunu söyler, s.91).",
+    "use": "Rebecca was charged with the 'supernatural murder' of babies, with no evidence beyond the accusers' word (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 25,
+    "who": "Sahne yönergesi",
+    "find": "Rebecca Nurse, seventy-two, enters.",
+    "what": "Rebecca 72 yaşında, ak saçlı ve bastonludur; aynı sayfada Betty'nin başında durunca çocuk yavaş yavaş sakinleşir.",
+    "use": "Rebecca is a seventy-two-year-old woman whose mere presence calms the frightened Betty (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 28,
+    "who": "Rebecca",
+    "find": "prodigious danger in the seeking of loose spirits",
+    "what": "Rebecca ruh peşine düşmenin büyük tehlike olduğunu söyler ve suçu kendimizde aramayı önerir; bir sayfa önce (s.27) 11 çocuğu ve 26 torunu olduğunu anlatır.",
+    "use": "From the very beginning Rebecca warned the village against hunting for spirits (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 140,
+    "who": "Rebecca",
+    "find": "how may I damn myself?",
+    "what": "Danforth itiraf etmesini isteyince Rebecca yalan olduğu için kendini lanetleyemeyeceğini söyler; hayatı pahasına yalan söylemez.",
+    "use": "Offered her life in exchange for a lie, Rebecca refuses to damn herself (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 144,
+    "who": "Rebecca",
+    "find": "Another judgment waits us all!",
+    "what": "İdama götürülürken Rebecca çevresindekilere korkmamalarını, asıl yargının Tanrı'nın olduğunu söyler; sonuna kadar sakin ve imanlıdır.",
+    "use": "Even on her way to the gallows, Rebecca comforts others (Miller __)."
+   },
+   {
+    "arg": "pathos",
+    "act": "Act Four",
+    "pdfPage": 139,
+    "who": "Sahne yönergesi",
+    "find": "She is barely able to walk.",
+    "what": "Act 4'te Rebecca, Herrick'in desteğiyle içeri girer ve zar zor yürür; yaşlı ve bitkin bir kadının idama götürülmesi pathos için güçlü bir görüntüdür.",
+    "use": "A seventy-two-year-old woman, barely able to walk, is brought in to watch others confess (Miller __).",
+    "warning": "SPEC 'zincirli yaşlı kadın' diyor; metin Rebecca'nın zincirli olduğunu söylemez. Act 4'te zincir Proctor'un bileklerindedir (s.133), Act 2'de Elizabeth için geçer (s.78)."
+   }
+  ],
+  "Elizabeth Proctor": [
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 75,
+    "who": "Mary Warren",
+    "find": "I made it in the court, sir",
+    "what": "Mary Warren bebeği mahkemede kendisinin diktiğini ve o akşam Elizabeth'e verdiğini söyler; iğneyi sorunca 'sanırım ben taktım' der (aynı sayfa).",
+    "use": "Mary Warren openly states that she made the poppet in court and gave it to Elizabeth (Miller __).",
+    "warning": "İğne konusunda Mary kesin değil, tereddütlüdür ('I - I believe I did'). Act 3'te Danforth bunu 'iğneyi kendisi taktı' diye özetler (s.103)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 76,
+    "who": "Mary Warren",
+    "find": "Abby sat beside me when I made it.",
+    "what": "Mary, bebeği dikerken Abigail'in yanında oturduğunu söyler; yani Abigail iğneyi görmüş olabilir.",
+    "use": "Mary adds that Abigail was sitting beside her when she made the poppet (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 112,
+    "who": "Danforth / Elizabeth",
+    "find": "you dismissed your servant, Abigail Williams.",
+    "what": "Elizabeth Abigail'i evden kovduğunu doğrular; Abigail de Act 1'de Proctor'a 'beni o kovdu' der (s.22) — Abigail'in ona kin beslemek için nedeni vardı.",
+    "use": "Elizabeth had dismissed Abigail from her house, which gave Abigail every reason to hate her (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act One",
+    "pdfPage": 19,
+    "who": "Betty",
+    "find": "a charm to kill John Proctor's wife",
+    "what": "Betty, Abigail'in Elizabeth'i öldürmek için tılsım içtiğini açıklar; Abigail'in Elizabeth'i ortadan kaldırma isteği daha Act 1'de ortadadır.",
+    "use": "Long before any poppet, Betty reveals that Abigail drank a charm to kill Elizabeth (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Three",
+    "pdfPage": 113,
+    "who": "Danforth / Elizabeth",
+    "find": "is your husband a lecher!",
+    "what": "Elizabeth kocasının onurunu korumak için 'Hayır, efendim' der; oyundaki tek yalanı sevgiden doğar (Proctor ise s.92'de onun asla yalan söylemeyeceğini söyler).",
+    "use": "Elizabeth's only lie in the whole play was told out of love, to protect her husband's name (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 137,
+    "who": "Elizabeth",
+    "find": "It needs a cold wife to prompt lechery.",
+    "what": "Elizabeth Act 4'te kendi soğukluğunun da payı olduğunu itiraf eder; dürüst ve kendini sorgulayan bir kadındır.",
+    "use": "In the last act Elizabeth honestly admits her own coldness (Miller __)."
+   },
+   {
+    "arg": "pathos",
+    "act": "Act Four",
+    "pdfPage": 130,
+    "who": "Danforth / Herrick",
+    "find": "well on with child now",
+    "what": "Danforth Elizabeth'in hamileliğinin ilerlediğini söyler, Herrick doğrular; Act 3'te hamileliğini mahkemeye bildirmişti (s.92).",
+    "use": "The accused stands in a prison cell, pregnant with her husband's child (Miller __)."
+   }
+  ],
+  "Sarah Good": [
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 57,
+    "who": "Mary Warren",
+    "find": "whenever I turned her away empty, she mumbled",
+    "what": "Mary'ye göre Sarah Good kapıya ekmek ve elma şarabı dilenmeye gelir, eli boş gönderilince mırıldanırmış; suçlama yalnızca bu mırıltıya dayanır.",
+    "use": "The charge rests on nothing more than a hungry beggar mumbling when she was turned away (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 57,
+    "who": "Elizabeth",
+    "find": "She may mumble if she's hungry.",
+    "what": "Elizabeth hemen itiraz eder: aç biri mırıldanabilir; yoksulluk ve açlık suç değildir.",
+    "use": "As Elizabeth Proctor points out, a hungry woman may mumble without being a witch (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Two",
+    "pdfPage": 58,
+    "who": "Mary Warren",
+    "find": "of all the ten she could not",
+    "what": "Mary'nin anlatımına göre Sarah Good on emirden hiçbirini sayamadı ve bu 'yalan' sayıldı; bu eğitimsizliğin kanıtıdır, büyünün değil.",
+    "use": "Sarah Good was condemned partly because she could not recite the Commandments (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Two",
+    "pdfPage": 58,
+    "who": "Elizabeth",
+    "find": "and that's an upright answer",
+    "what": "Sarah'nın 'Sadece emirlerimi söylüyorum' cevabını Elizabeth dürüst bir cevap olarak görür.",
+    "use": "Even Elizabeth Proctor judged Sarah Good's answer to be an honest one (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Two",
+    "pdfPage": 59,
+    "who": "Mary Warren",
+    "find": "Sarah Good will only sit in jail",
+    "what": "Mary, itiraf edenlerin asılmadığını, Sarah Good'un itiraf ettiği için yalnızca hapis yatacağını anlatır (itiraf haberi s.56); itiraf hayatta kalma yoluydu.",
+    "use": "In this court, confession meant survival: Sarah Good confessed and was spared the rope (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 47,
+    "who": "Tituba",
+    "find": "and there was Goody Good",
+    "what": "Sarah Good'un adını ilk veren, tehdit ve yönlendirme altındaki Tituba'dır (s.44-46).",
+    "use": "Sarah Good was first named by Tituba, who spoke under threats of whipping and hanging (Miller __)."
+   },
+   {
+    "arg": "dikkat",
+    "act": "Act Four",
+    "pdfPage": 121,
+    "who": "Sahne yönergesi",
+    "find": "Sarah Good, rising in her rags",
+    "what": "Sarah Good sahnede yalnızca Act 4 başında, hücrede Tituba ile görünür; paçavralar içinde ve kafası karışıktır. Hakkındaki diğer her şey Mary'nin anlatımıdır; bilgi ekleme.",
+    "use": "Sarah Good, the woman in rags in the jail cell, is a victim of poverty, not a servant of the Devil (Miller __).",
+    "warning": "Mary s.59'da Sarah Good'un hamile olduğunu, Elizabeth 'altmışına yakın' olduğunu söyler — bunlar karakterlerin sözleridir, kesin bilgi gibi sunma."
+   }
+  ],
+  "Mary Warren": [
+   {
+    "arg": 1,
+    "act": "Act Two",
+    "pdfPage": 59,
+    "who": "Mary Warren",
+    "find": "I saved her life today!",
+    "what": "Mary mahkemede Elizabeth'in adı geçince onu savunduğunu söyler; bunu Proctor kırbacını kaldırmışken haykırır (aynı sayfada Proctor onu kırbaçla tehdit eder).",
+    "use": "Mary Warren defended Elizabeth in court and saved her life (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Three",
+    "pdfPage": 89,
+    "who": "Mary Warren",
+    "find": "It were pretense, sir.",
+    "what": "Mary Act 3'te mahkemede kızların numara yaptığını söyler; gerçeği söylemeye çalışan tek kızdır.",
+    "use": "Mary Warren was the only girl brave enough to tell the court it was all pretense (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 117,
+    "who": "Danforth",
+    "find": "You will confess yourself or you will hang!",
+    "what": "Danforth Mary'yi sert biçimde döndürüp itiraf etmezse asılacağını söyler; ifadesi ölüm tehdidi altında değişir.",
+    "use": "Mary changed her testimony only after Judge Danforth threatened her with hanging (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 115,
+    "who": "Mary Warren / kızlar",
+    "find": "Abby, you mustn't!",
+    "what": "'Kuş' sahnesinde kızlar Mary'nin her sözünü taklit ederek onu köşeye sıkıştırır; Mary kendini savunamaz hale gelir.",
+    "use": "In the 'bird' scene the girls mimic Mary's every word until she is trapped (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act One",
+    "pdfPage": 18,
+    "who": "Sahne yönergesi",
+    "find": "she is seventeen, a subservient, naive, lonely girl",
+    "what": "Sahne yönergesi Mary'yi 17 yaşında, boyun eğen, saf ve yalnız bir kız olarak tanıtır.",
+    "use": "Miller describes Mary as a seventeen-year-old, subservient, naive and lonely girl (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Three",
+    "pdfPage": 118,
+    "who": "Mary Warren",
+    "find": "I'll not hang with you!",
+    "what": "Mary çöker ve Proctor'u suçlar; hemen öncesinde asılmakla tehdit edilmiştir — çöküşü korkunun sonucudur.",
+    "use": "Mary's collapse is the cry of a terrified girl who does not want to hang (Miller __)."
+   }
+  ],
+  "Giles Corey": [
+   {
+    "arg": 1,
+    "act": "Act Three",
+    "pdfPage": 96,
+    "who": "Giles",
+    "find": "forfeit up his property",
+    "what": "Giles, Jacobs cadı diye asılırsa malının satılacağını ve onu alacak paranın yalnızca Putnam'da olduğunu söyler; Putnam'ın toprak hırsını ifşa eder.",
+    "use": "Giles exposed Putnam's motive: a hanged man's land could be bought by the only man with the money (Miller __)."
+   },
+   {
+    "arg": 1,
+    "act": "Act Three",
+    "pdfPage": 97,
+    "who": "Giles",
+    "find": "lay in jail if I give his name",
+    "what": "Giles tanığının adını vermez çünkü verirse o adam hapse girecektir; başkasını korumak için kendini riske atar.",
+    "use": "Giles refused to name his witness only because that man would be thrown in jail (Miller __)."
+   },
+   {
+    "arg": 2,
+    "act": "Act Two",
+    "pdfPage": 71,
+    "who": "Giles",
+    "find": "I never said my wife were a witch",
+    "what": "Giles karısına cadı demediğini, sadece kitap okuduğunu söylediğini belirtir.",
+    "use": "Giles never called his wife a witch; he only said she was reading books (Miller __).",
+    "warning": "Dikkat: Act 1'de (s.40) Giles kitap meselesini bizzat Hale'e açar ('It discomfits me!'); şüpheyi o başlatmış sayılabilir."
+   },
+   {
+    "arg": 2,
+    "act": "Act Three",
+    "pdfPage": 86,
+    "who": "Giles",
+    "find": "I have broke charity with the woman",
+    "what": "Giles mahkemede ağlayarak karısına haksızlık ettiğini söyler; pişmanlığı samimidir.",
+    "use": "Weeping in court, Giles admits he wronged his wife (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 135,
+    "who": "Elizabeth",
+    "find": "great stones they lay upon his chest",
+    "what": "Elizabeth, Giles'ın suçlamaya evet ya da hayır demediği için göğsüne ağır taşlar konarak öldürüldüğünü anlatır.",
+    "use": "Giles Corey was pressed to death under great stones rather than answer the charge (Miller __)."
+   },
+   {
+    "arg": 3,
+    "act": "Act Four",
+    "pdfPage": 135,
+    "who": "Elizabeth",
+    "find": "so his sons will have his farm",
+    "what": "Elizabeth, Giles susarak öldüğü için mahkûm edilmediğini ve çiftliğin oğullarına kaldığını anlatır; ölümünü ailesi için seçmiştir.",
+    "use": "By staying silent, Giles made sure that his sons would keep his farm (Miller __)."
+   },
+   {
+    "arg": "pathos",
+    "act": "Act One",
+    "pdfPage": 25,
+    "who": "Sahne yönergesi",
+    "find": "Giles Corey, eighty-three, enters.",
+    "what": "Sahne yönergesi Giles'ın 83 yaşında olduğunu söyler; seksenini geçmiş bir adamın taş altında ezilmesi pathos için güçlüdür.",
+    "use": "An eighty-three-year-old man was crushed under stones (Miller __)."
+   }
+  ]
+ }
+};
+</script>
+<script id="analiz-data">
+/* === karakter-analizleri.js (gömülü kopya; kaynak: crucible/karakter-analizleri.js). Güncellemek için bu bloğu dosyanın yeni içeriğiyle değiştir. === */
+// The Crucible – karakter analizleri (savunma açılış konuşması için). Otomatik üretildi.
+window.ANALIZ = {
+  "rules": [
+    "Jüriye hitap ederek başla, kendini ve müvekkilini tanıt, ilk iki cümlede TEK cümlelik bir tema ver (ör. \"Korku suç değildir\"). Tema kısa ve akılda kalıcı olmalı; metnin sonunda aynen tekrar et. (ABA, Pace)",
+    "Bir savunma teorisi kur: \"Ne oldu ve müvekkilim neden suçsuz ya da daha az suçlu?\" sorusunun tek paragraflık cevabı. Her paragraf bu tek hikâyeye hizmet etsin; tema = slogan, teori = açıklama. (UNC, Pace)",
+    "Olay örgüsünü baştan anlatma; kanıtları ÖNİZLE. \"Kanıtlar gösterecek ki…\" kalıbıyla 3 argümanı sırala ve her birine bir sahne bağla (Act + kim ne yaptı + sayfa no). Açılış konuşması bir deneme (tema analizi) değil, müvekkilin bakış açısından anlatılan bir hikâyedir. (Cornell LII, ABA)",
+    "Zayıf noktayı savcıdan ÖNCE sen söyle ve yeniden çerçevele: \"Savcı size … diyecek. Evet, … oldu; ama …\". Bu güvenilirlik kazandırır. (Commack Mock Trial Manual)",
+    "Kanıtlayamayacağın hiçbir şeyi vaat etme. Oyunda olmayan bilgi (tarihî Salem, internet yorumu, uydurma yaş/olay) savcının elinde silaha döner; açık kitap olduğu için her iddiaya sayfa numarası koy. (UNC, ABA)",
+    "Net bir taleple bitir: \"Sizden müvekkilim … için suçsuz kararı vermenizi istiyoruz\" (ya da hafifletme). İlk ve son cümle en çok hatırlananlardır; son cümlede temaya geri dön. (N.M. mock trial puanlama ölçütleri: talep edilen karar açılışta belirtilmeli)"
+  ],
+  "rulesKaynaklar": [
+    {
+      "title": "Cornell LII Wex – Opening statement",
+      "url": "https://www.law.cornell.edu/wex/opening_statement"
+    },
+    {
+      "title": "UNC School of Government – Defender Manual, Ch. 28 Opening Statements",
+      "url": "https://defendermanuals.sog.unc.edu/sites/default/files/pdf/Ch%2028%20Opening%20Statements.pdf"
+    },
+    {
+      "title": "American Bar Association – Tips for Developing an Effective Opening Statement",
+      "url": "https://www.americanbar.org/groups/litigation/resources/newsletters/trial-evidence/tips-developing-effective-opening-statement/"
+    },
+    {
+      "title": "Pace Haub Law Advocacy blog – Theme vs. theory",
+      "url": "https://haubadvocacy.blogs.pace.edu/?p=1072"
+    },
+    {
+      "title": "Commack Schools – Mock Trial Manual",
+      "url": "https://www.commackschools.org/Downloads/MOCK%20TRIAL%20MANUAL%2018-19.pdf"
+    },
+    {
+      "title": "U.S. District Court (N.M.) – Mock Trial Scoring Criteria",
+      "url": "https://www.nmid.uscourts.gov/sites/nmid/files/documents/events/2026-mock-trial-scoring-criteria.pdf"
+    }
+  ],
+  "characters": {
+    "Giles Corey": {
+      "motivasyon": [
+        "İnatçı, kavgacı ama özünde dürüst ve cesur yaşlı bir çiftçi; çok dava açtığı için yasayı iyi bilir (LitCharts, GradeSaver).",
+        "Adalet duygusu ve dostlarına sadakat: Thomas Putnam'ın suçlamaları toprak ele geçirmek için kullandığına inanır ve bunu ifşa etmek ister (GradeSaver, Wikipedia).",
+        "Son kararında ailesini korumak: susarak çiftliğin oğullarına kalmasını sağlar (Wikipedia, EBSCO)."
+      ],
+      "savunma": [
+        "Act 1: Hale'e yalnızca karısı Martha'nın sakladığı kitapların ne anlama geldiğini sorar ve onun Şeytan'la ilgisi olduğunu iddia etmediğini açıkça söyler; Act 2'de Martha tutuklanınca karısına cadı demediğini, sadece kitap okuduğunu söylediğini haykırır. Kötü niyet yok, bilgisiz bir merak var.",
+        "Act 2: Martha'yı resmen suçlayan Walcott'tur (domuz meselesi); tutuklama emrini mahkeme çıkarır. Giles'ın sorusu suçlamanın kendisi değildir.",
+        "Act 3: Putnam'ın kızına George Jacobs'ı suçlattığını, Jacobs asılırsa malının satılacağını ve onu alabilecek tek kişinin Putnam olduğunu söyleyen bir ifade getirir. Tanığın adını vermez, çünkü o kişi hapse girecektir; karısının adını bir kez söylemenin pişmanlığını taşıdığını ekler. Bu saygısızlık değil, bir masumu korumaktır.",
+        "Act 4 (Elizabeth anlatır): suçlamaya evet ya da hayır demez; inkâr etse asılacak ve malı satılacaktı. Susarak oğullarına çiftliği bırakır ve taşlarla ezilerek ölür. İtirafla kurtulma yolunu bile reddeden bir vicdan."
+      ],
+      "savci": [
+        {
+          "iddia": "Karısının tutuklanmasına kendisi yol açtı.",
+          "cevap": "Act 1'de soruyu bir uzmana iyi niyetle sordu, cadı demedi; Martha'yı Walcott suçladı, tutuklamayı mahkeme yaptı."
+        },
+        {
+          "iddia": "Mahkemeye saygısızlık etti, iddiasını kanıtlayamadı.",
+          "cevap": "Kanıt olarak istenen şey bir tanığı hapse göndermekti; Giles'ın suskunluğu korkudan değil, korumadan."
+        }
+      ],
+      "kontrol": [
+        "✔ Act 3 ifadesi (Putnam, kızı, George Jacobs, toprak) ve isim vermeme nedeni (o adam hapse girecek) metinle birebir uyumlu.",
+        "⚠ \"Sadece kitapları sordu\" sahnesi Act 1'dedir (Hale geldikten sonra). Act 2'de ise Martha'nın tutuklanması ve Giles'ın \"cadı demedim\" çıkışı var. Kitapta bul listesine Act 1'i ekle.",
+        "✔ \"Pişmanlığı samimi\": Act 3'te karısının adını bir kez ağzına aldığı için pişman olduğunu söyler; bunu kanıt olarak gösterebilirsin.",
+        "✔ Act 4 ezilerek ölüm ve gerekçesi (oğullarına toprak) Elizabeth'in anlatımında var. Yaş: Act 1 sahne notunda 83, \"seksenini geçmiş\" doğru.",
+        "⚠ \"More weight\" sözünü Act 4'te Elizabeth aktarır. Tarihî Giles hakkındaki tartışmalar (Wikipedia) oyuna ait değil; kullanma."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – Giles Corey Character Analysis",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters/giles-corey"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Rev. John Hale": {
+      "motivasyon": [
+        "Kendini bir bilim insanı, \"ruh hekimi\" olarak gören, kitaplarıyla Şeytan'ı tespit edebileceğine inanan uzman; başta dünyayı siyah-beyaz görür (LitCharts, GradeSaver).",
+        "Gerçeği bulma isteği: diğer din adamlarından farklı olarak kanıtlara bakmaya devam ettiği için masumiyeti görmezden gelemez (LitCharts).",
+        "Act 4'te suçluluk ve vicdan: masumların ölümüne katkıda bulunduğu duygusu; bazı yorumcular kendi vicdanını rahatlatma isteğini de görür (GradeSaver, PrepScholar)."
+      ],
+      "savunma": [
+        "Act 1: Parris onu davet eder; Hale uzman olarak gelir ve batıl inanca değil kesin işaretlere bakılacağını söyleyerek temkinli başlar.",
+        "Act 2: Kendi isteğiyle evleri dolaşıp Proctor'ları sorgular, çünkü suçlananlar hakkında kendi fikrini oluşturmak ister. Rebecca'nın suçlandığını öğrenince derinden sarsılır.",
+        "Act 3: Kesin kanıt olmadan can almayacağını söyleyip Proctor'un avukat getirmesini savunur; sonunda mahkemeyi kınayıp istifa eder. Sistemin içinden karşı çıkan tek yetkili odur.",
+        "Act 4: Kendi isteğiyle geri döner, mahkûmları yaşamaları için ikna etmeye çalışır ve idamların ertelenmesini ister. Pişmanlığını eylemiyle göstermiştir."
+      ],
+      "savci": [
+        {
+          "iddia": "Act 1'de Tituba'ya isim verdirdi.",
+          "cevap": "Hale koruma vaat edip kim olduklarını sordu, ama Sarah Good ve Osburn adlarını ilk ağzına alan Thomas Putnam'dı."
+        },
+        {
+          "iddia": "İdam emirleri imzaladı.",
+          "cevap": "Bunu Act 3'te kendisi açıkça söyler ve tam bu yüzden kesin kanıt ister; sonunda istifa eder."
+        },
+        {
+          "iddia": "Act 4'te insanları yalan söylemeye teşvik etti.",
+          "cevap": "Amacı can kurtarmaktı; hayatı korumayı seçmek suç değil, vicdandır."
+        }
+      ],
+      "kontrol": [
+        "✔ Act 1'deki \"batıl inanç değil\" tutumu, Act 3'teki kınama ve istifa, Act 4'teki dönüş metinle uyumlu.",
+        "⚠ Act 2: Elizabeth'in Rebecca'yla ilgili sorusuna Hale önce bunun \"mümkün\" olduğunu söyler; asıl sarsılma Francis suçlamayı okuyunca gelir ve yine de mahkemeye güvenmelerini öğütler. \"Rahatsız oldu\" doğru; \"Rebecca'yı savundu\" deme.",
+        "⚠ İmzaladığı idam emirlerinin sayısını (Act 3) Hale kendi ağzından söyler; savcı da kullanacak, önceden cevapla.",
+        "⚠ Wikipedia'da Hale \"genç\" diye geçer; oyunun sahne notu onu kırka yakın diye tanıtır. Yaş kullanma."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – Reverend Hale Character Analysis",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters/reverend-hale"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "PrepScholar – Why has Reverend Hale returned to Salem?",
+          "url": "https://blog.prepscholar.com/the-crucible-why-has-reverend-hale-returned-to-salem"
+        },
+        {
+          "title": "York Notes GCSE – The Crucible character revision cards",
+          "url": "https://yorknotes.com/gcse/english-literature/the-crucible-york-notes-for-gcse-new-edition/revision-cards/00_characters"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        }
+      ]
+    },
+    "Rev. Samuel Parris": {
+      "motivasyon": [
+        "İtibar ve mevki kaygısı: birilerinin onu kovmak, adını lekelemek için plan yaptığına dair neredeyse paranoyak bir inanç (LitCharts, eNotes).",
+        "Maddi güvenlik: maaş, odun, papaz evinin tapusu, altın şamdanlar (GradeSaver).",
+        "Kızının durumu ve ailesinin adı için korku; yorumcuların çoğu bunu itibar kaygısının gerisinde görür (eNotes)."
+      ],
+      "savunma": [
+        "Act 1 açılış: Kızının yatağı başında dua eden korkmuş bir baba; doktoru ve Beverly'den Hale'i çağırır. Açıklamayı kendisi uydurmadı, uzman getirdi.",
+        "Act 1: Abigail'i sorgulayıp ormanda ne olduğunu öğrenmeye çalışır; köyün dedikodusundan korkar. Korku ve endişe suç değildir.",
+        "Act 4: Abigail parasını çalıp Mercy Lewis ile kaçmıştır, kapısında bir bıçak bulmuştur. O da Abigail tarafından kandırılan bir kurbandır.",
+        "Act 4: Danforth'tan idamları ertelemesini ister, Proctor'a itiraf edip yaşaması için yalvarır. Ölümlerin durmasını isteyen adamdır."
+      ],
+      "savci": [
+        {
+          "iddia": "İtibarı için masumlara karşı tanıklık etti; Act 3'te Mary Warren'a ve Proctor'a saldırdı.",
+          "cevap": "Korkuyla hareket etti; karar veren o değil, Danforth ve Hathorne'du. Endişe suç değildir."
+        },
+        {
+          "iddia": "Act 1'de tek derdi maaşı, odunu ve tapusuydu.",
+          "cevap": "Açgözlülük bir karakter kusurudur; bu mahkemede yargılanan suç değildir."
+        },
+        {
+          "iddia": "Act 4'teki erteleme isteği vicdandan değil, isyan ve kendi canı korkusundan.",
+          "cevap": "Gerekçesi ne olursa olsun darağacını durdurmaya çalıştı; sonuç can kurtarmaktı."
+        }
+      ],
+      "kontrol": [
+        "✔ Doktor ve Hale'i çağırması (Act 1), Abigail'in parayı alıp kaçması ve kapıdaki bıçak (Act 4), erteleme isteği ve Proctor'a yalvarması (Act 4) metinde var.",
+        "⚠ Act 4'te Parris erteleme gerekçesini isyan korkusu (Andover söylentisi) ve saygın kişilerin asılmasının tepki çekeceği diye açıklar. \"Vicdan\" deme; \"ölümleri durdurmaya çalıştı\" de.",
+        "⚠ Kaçışın kesin olduğu doğru, ama \"gemiye bindiler\" Parris'in tahminidir. Paranın miktarını yazacaksan kitaptan kontrol et (Act 4).",
+        "⚠ \"Worry is not a crime\" senin cümlen; oyundan alıntıymış gibi tırnakla sunma."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – Reverend Parris Character Analysis",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters/reverend-parris"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "eNotes – Why does Parris care about his reputation?",
+          "url": "https://www.enotes.com/topics/crucible/questions/why-does-parris-care-about-his-reputation-status-176635"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Goody Ann Putnam": {
+      "motivasyon": [
+        "Yas: yedi bebeği doğdukları gece ölmüş, tek yaşayan çocuğu Ruth da tuhaflaşmıştır; analistler onu kasıtlı kötü değil, açıklama arayan öfkeli ve acılı bir anne olarak görür (Shmoop, CliffsNotes).",
+        "Rebecca'ya kıskançlık: Rebecca'nın 11 çocuğu var ve hiçbirini kaybetmemiştir (eNotes).",
+        "Kocası Thomas Putnam'ın toprak ve itibar hırsı ailenin tutumunu besler (LitCharts, eNotes)."
+      ],
+      "savunma": [
+        "Act 1: Yedi bebeğini kaybettiğini, Ruth'u ölü kardeşlerinin ruhuyla konuşsun diye Tituba'ya gönderdiğini anlatır. Amaç zarar vermek değil, bir annenin cevap arayışıdır.",
+        "Act 1: Doğaüstü açıklama arayan tek kişi o değildir; Parris, Hale ve sonra mahkeme aynı inancı resmî olarak benimser. Ann dönemin inancını paylaşan bir köylüdür.",
+        "Act 3: Giles'ın ifadesi toprak hırsını Thomas Putnam'a bağlar (kızına Jacobs'ı suçlatma); bu ifadede Ann'in adı geçmez.",
+        "Act 2: Rebecca'yı tutuklayan mahkemedir; tutuklama emri Putnam bebeklerinin \"doğaüstü\" ölümüne dayanır, yani somut kanıt yoktur. Kararı Ann değil mahkeme verdi."
+      ],
+      "savci": [
+        {
+          "iddia": "Ruth'u ölüleri çağırmaya gönderdi; büyüyü başlatan oydu.",
+          "cevap": "Kendisi büyü yapmadı; yasını, cevap vereceğini sandığı birine taşıdı. Bu umutsuzluk, cadılık değil."
+        },
+        {
+          "iddia": "Rebecca'yı kıskançlıktan suçladı.",
+          "cevap": "Act 1'de acısını açıkça dile getirir; yas ve öfke kötü niyetle aynı şey değildir, idamı mahkeme kararlaştırdı."
+        },
+        {
+          "iddia": "Act 1'de Goody Osburn'ü de hedef gösterdi.",
+          "cevap": "Osburn onun ebesiydi; aynı yas mantığıyla kaybının sebebini arıyordu."
+        }
+      ],
+      "kontrol": [
+        "✔ Yedi bebek doğdukları GECE öldü (Act 1); SPEC'teki \"doğduğu gün\" kabul edilebilir.",
+        "⚠ Oyunda Ann'in Rebecca'yı mahkemede suçladığı sahne yok. Act 2'de Francis tutuklama emrini okur (Putnam bebeklerinin doğaüstü ölümü); Ann'in sonradan Rebecca'yı suçladığı bilgisi Miller'ın Act 1 anlatıcı notundadır (tarihî bilgi). \"Suçlama Putnam bebekleriyle ilgiliydi\" de; Ann'in mahkemede ne dediğini uydurma.",
+        "⚠ LitCharts ve GradeSaver, Rebecca'nın Putnam doğumlarında ebe olduğunu yazar; oyunda bu YOK. Act 1'de Ann ebenin Goody Osburn olduğunu (üç doğumda) söyler. Kullanma.",
+        "✔ Toprak hırsının Thomas'a ait olduğu Act 3'teki Giles ifadesiyle uyumlu."
+      ],
+      "kaynaklar": [
+        {
+          "title": "Shmoop – Mrs. Ann Putnam",
+          "url": "https://www.shmoop.com/study-guides/literature/crucible/mrs-ann-putnam.html"
+        },
+        {
+          "title": "CliffsNotes – Act I Scene 4 Summary and Analysis",
+          "url": "https://cliffsnotes-v1.prod.webpr.hmhco.com/literature/c/the-crucible/summary-and-analysis/act-i-scene-4"
+        },
+        {
+          "title": "eNotes – The Crucible questions on Ann Putnam",
+          "url": "https://www.enotes.com/topics/crucible/questions/tags/characters/ann-putnam"
+        },
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        }
+      ]
+    },
+    "Tituba": {
+      "motivasyon": [
+        "Hayatta kalmak: Parris'in Barbados'tan getirdiği köle; evde her şeyden o sorumlu tutulur ve Parris'ten korkar; Salem toplumunun en alt basamağıdır (LitCharts).",
+        "İtiraf etmenin kurtulmanın en kesin yolu olduğunu görünce başkalarının adını verir (GradeSaver).",
+        "Kendi şarkı ve ritüellerini kötülük olarak görmez; yorumcular yargılanmasında önyargının ve ırkçılığın büyük payı olduğunu söyler (Shmoop)."
+      ],
+      "savunma": [
+        "Act 1: Önce Abigail, sorgudan kurtulmak için suçu Tituba'ya atar (ona kan içirdiğini iddia eder); Tituba ise asıl büyüyü Abigail'in istediğini söyler. İlk suçlayan Abigail'dir.",
+        "Act 1: Parris onu ölene kadar kırbaçlamakla, Putnam asılmakla tehdit eder; Tituba dizlerinin üstüne çöker. Bu itiraf korkuyla alınmıştır.",
+        "Act 1: Sarah Good ve Osburn adlarını önce Thomas Putnam söyler; Hale \"seni koruyacağız\" diyerek kim olduklarını sorar. İsimler ona dikte edilmiştir.",
+        "Act 1: Ruth'u ona Ann Putnam gönderdi; köle olan Tituba'nın efendisinin yeğenine ve bir köy ileri gelenine hayır deme imkânı yoktu."
+      ],
+      "savci": [
+        {
+          "iddia": "Ormanda büyü yaptı ve itiraf etti.",
+          "cevap": "İtiraf kırbaç ve idam tehdidi altında alındı; böyle bir itiraf delil değildir."
+        },
+        {
+          "iddia": "İki masum kadını ele verdi.",
+          "cevap": "İsimleri ona Putnam önerdi, Hale koruma vaadiyle istedi; Tituba yalnızca tekrarladı."
+        }
+      ],
+      "kontrol": [
+        "✔ Parris'in kırbaç, Putnam'ın asma tehdidi, Hale'in koruma vaadi ve Abigail'in Tituba'yı ilk suçlaması Act 1 metninde var.",
+        "⚠ SPEC'te \"Hale isimleri sordu\" yazıyor, doğru; ama isimleri ilk ağzına alan Thomas Putnam'dır. Bunu ekle, savunman güçlenir.",
+        "✔ \"Abigail tılsım için yalvardı\": Tituba bunu Act 1'de söyler; Betty de Abigail'in tılsım içtiğini açıklar.",
+        "⚠ Irkçılık bir yorumcu görüşüdür (Shmoop); oyunda açıkça söylenmez. \"Bazı yorumculara göre\" diye kullan. Act 4'teki hücre sahnesinden sonra akıbeti belirsizdir; uydurma."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "Shmoop – Tituba",
+          "url": "https://www.shmoop.com/study-guides/literature/crucible/tituba.html"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Betty Parris": {
+      "motivasyon": [
+        "Ceza korkusu: dans ortaya çıkınca babasından ve köyden korkup kendinden geçer; bazı yorumlar bunu korku, bazıları numara olarak okur (eNotes, Shmoop).",
+        "Abigail'in liderliğini izleyen bir takipçi; Abigail'in planına hızla uyar (LitCharts)."
+      ],
+      "savunma": [
+        "Act 1 sahne notu: Betty on yaşında bir çocuktur.",
+        "Act 1: Abigail, kızlardan biri konuşursa gece gelip korkunç bir intikam alacağını söyleyerek tehdit eder ve ailesinin gözü önünde öldürüldüğünü anlatır. Betty'nin felci korkunun kanıtıdır.",
+        "Act 1: Betty, Abigail'in Proctor'un karısını öldürmek için tılsım içtiğini açığa vurur. Abigail'in asıl niyetini ilk ortaya koyan odur.",
+        "Act 1 sonu: İsim sayma, Tituba tehditle konuşturulduktan ve Abigail isim saymaya başladıktan sonra, yetişkinlerin teşvikiyle olur; 10 yaşındaki bir çocuk ortamı taklit eder."
+      ],
+      "savci": [
+        {
+          "iddia": "Act 1 sonunda masum insanları (George Jacobs, Goody Howe) suçladı.",
+          "cevap": "Yetişkinlerin tehdit ve coşkuyla yönettiği bir odada 10 yaşındaki bir çocuk; sorumluluk yetişkinlerindir."
+        },
+        {
+          "iddia": "Hastalığı numaraydı.",
+          "cevap": "Numara bile olsa sebebi korkudur; bir çocuğun korkusu suç değildir."
+        }
+      ],
+      "kontrol": [
+        "✔ 10 yaş Act 1 sahne notunda. ⚠ LitCharts ve GradeSaver Betty'yi \"ergen (teenage)\" diye tanıtır; bu oyunla çelişir, 10 kullan.",
+        "✔ Abigail'in tehdidi ve Betty'nin tılsım açıklaması Act 1'de.",
+        "⚠ \"Gerçeği ilk söyleyen\" tartışmalı: Act 1'de Mary Warren, Betty'den önce Abigail'e gerçeği söylemeleri gerektiğini söyler. Daha güvenli ifade: \"Abigail'in tılsımını ilk açığa vuran\".",
+        "⚠ Betty'nin Act 1 sonunda isim verdiği metinde açıkça var; inkâr etme, hafiflet."
+      ],
+      "kaynaklar": [
+        {
+          "title": "Shmoop – Betty Parris",
+          "url": "https://www.shmoop.com/study-guides/literature/crucible/betty-parris.html"
+        },
+        {
+          "title": "eNotes – How are Betty's and Ruth's symptoms similar?",
+          "url": "https://www.enotes.com/homework-help/how-bettys-ruth-symptoms-similar-357532"
+        },
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Abigail Williams": {
+      "motivasyon": [
+        "Kendini koruma: dans ve büyü ortaya çıkınca cezadan kaçmak için suçu başkalarına atar (LitCharts, GradeSaver).",
+        "Proctor'a tutku: onu evden kovan Elizabeth'in yerini almak ister (GradeSaver, LitCharts).",
+        "Yorumculara göre çocuklukta yaşadığı travma (ailesinin öldürülmesi) ve yetimlik sertliğini kısmen açıklar (GradeSaver)."
+      ],
+      "savunma": [
+        "Act 1: 17 yaşında bir yetimdir, amcası Parris'in yanında yaşar; ailesinin yanındaki yastıkta öldürüldüğünü gördüğünü anlatır.",
+        "Act 1 Proctor sahnesi + Act 3 Proctor'un itirafı: evli ve yaşça büyük işvereni Proctor ilişkiyi mahkemede kabul eder; ilişki Abigail'in kovulmasıyla biter. Güç dengesizliği ve yetişkinin sorumluluğu.",
+        "Act 1: Parris onu sorgular, Hale gelince cadılık şüphesi doğrudan ona yönelir; Abigail ancak suçu Tituba'ya atınca sorgudan kurtulur. Suçlama bir hayatta kalma tepkisidir.",
+        "Act 2-3: Mahkeme ve yetişkinler maddi kanıt istemeden ona inandı; ona gücü Danforth ve mahkeme verdi."
+      ],
+      "savci": [
+        {
+          "iddia": "Elizabeth'e iğneli bebekle tuzak kurdu, Act 3'te kuş sahnesiyle Mary'yi çökertti.",
+          "cevap": "İnkâr etmiyoruz; ama 17 yaşındaki bir kızın sözünü kanıt sayan mahkemenin sorumluluğu daha büyüktür."
+        },
+        {
+          "iddia": "Act 4'te amcasının parasını çalıp kaçtı; suçlu olduğunu biliyordu.",
+          "cevap": "Korkudan kaçtı; bunu kabul ediyoruz ve hafifletme istiyoruz, inkâr değil."
+        },
+        {
+          "iddia": "Act 1'de diğer kızları tehdit etti.",
+          "cevap": "Köşeye sıkışmış bir gencin panik tepkisi; kabul et ve korku temasına bağla."
+        }
+      ],
+      "kontrol": [
+        "✔ 17 yaş, yetim, ailesinin öldürülüşü (Act 1), Proctor ilişkisi, Act 3 itiraf, Act 4'te parayla kaçış metinle uyumlu.",
+        "⚠ Aile hikâyesini Abigail, Act 1'de kızları TEHDİT ederken anlatır. Savcı bu bağlamı kullanır; sahneyi dürüstçe, tehdit kısmıyla birlikte an.",
+        "⚠ Wikipedia'daki \"gerçek Abigail 11-12 yaşındaydı\" bilgisi tarihseldir; oyunda 17. Kullanma.",
+        "✔ İğne: Act 3'teki ifadeye göre Abigail mahkemede Mary'nin yanında oturup bebeği yapışını ve iğneyi takışını görmüştür; suçlamanın dayanağı bu."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – Abigail Williams Character Analysis",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters/abigail-williams"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        },
+        {
+          "title": "York Notes GCSE – The Crucible character revision cards",
+          "url": "https://yorknotes.com/gcse/english-literature/the-crucible-york-notes-for-gcse-new-edition/revision-cards/00_characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Rebecca Nurse": {
+      "motivasyon": [
+        "Derin inanç ve sağduyu: köyün en saygın, en dindar kadınlarından biri (LitCharts, Shmoop, EBSCO).",
+        "Vicdan: Act 4'te yalan söyleyip yaşamaktansa ölmeyi seçer; oyunun en açık şehidi (GradeSaver)."
+      ],
+      "savunma": [
+        "Act 1 (Miller'ın anlatıcı notları): Nurse ailesi ile Putnam'lar arasında toprak kavgası ve Putnam'ın adayı Bayley'in köy papazı olmasının engellenmesi gibi eski düşmanlıklar var. Suçlamanın arkasında başka sebepler var.",
+        "Act 1: 72 yaşında; 11 çocuk ve 26 torun sahibi. Betty'nin yanına gidip onu sakinleştirir, cadı aramak yerine Tanrı'ya ve kendi kusurlarına bakmalarını öğütler.",
+        "Act 2: Hale bile Rebecca lekeliyse hiçbir şeyin güvende olmadığını söyler. Suçlama tamamen \"doğaüstü\" bir ölüme dayanır; somut kanıt yoktur.",
+        "Act 4: İtiraf etse yaşayacakken yalan söylemeyi reddeder; zar zor yürüyen yaşlı bir kadındır."
+      ],
+      "savci": [
+        {
+          "iddia": "Putnam bebekleri onun eli altında öldü.",
+          "cevap": "Oyunda Rebecca'nın ebe olduğuna dair tek satır yok; Ann'in kendisi ebenin Osburn olduğunu söyler. Ortada kanıt yok."
+        },
+        {
+          "iddia": "Act 1'de Ann Putnam'ı küçümsedi ve öfkesini çekti.",
+          "cevap": "Yalnızca ölüleri çağırmaya çocuk göndermenin yanlış olduğunu söyledi; bu ahlaki bir uyarıdır, büyü değil."
+        }
+      ],
+      "kontrol": [
+        "✔ 72 yaş, 11 çocuk ve 26 torun, Betty'yi sakinleştirme, uyarılar (Act 1); toprak ve papazlık kavgası Act 1 anlatıcı notlarında; Act 4'te itirafı reddetme.",
+        "⚠ \"Zincirli yaşlı kadın\": Act 4'te Rebecca, Herrick'in desteğiyle zar zor yürüyerek girer; zincir metinde Elizabeth ve Proctor için açıkça yazılı. Pathos için \"zar zor yürüyen 72 yaşındaki kadın\" de; zinciri kitapta bulamazsan yazma.",
+        "⚠ LitCharts ve GradeSaver'daki \"Rebecca ebeydi\" bilgisi oyunda YOK; kullanma.",
+        "⚠ Anlatıcı notları sahne değil, Miller'ın tarihî açıklamasıdır; \"Miller Act 1 notlarında belirtir\" diye kaynak göster."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "Shmoop – The Crucible Characters",
+          "url": "https://www.shmoop.com/study-guides/literature/crucible/characters"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        }
+      ]
+    },
+    "Elizabeth Proctor": {
+      "motivasyon": [
+        "Dürüstlük ve ilke: yalan söylemediğiyle tanınan iyi bir kadın (LitCharts, GradeSaver).",
+        "Kocasını derinden sever ama ona layık olmadığını hisseder; ihanet bu duyguyu doğrulamıştır, soğukluğu buradan gelir (LitCharts).",
+        "Kocasını ve onun adını korumak: Act 3'teki yalanın sebebi budur (eNotes, York Notes)."
+      ],
+      "savunma": [
+        "Act 2: Mary Warren bebeği mahkemede kendisinin yaptığını ve Elizabeth'e hediye ettiğini söyler; iğneyi de kendisinin taktığını kabul eder. Bebeği eve getiren Mary'dir.",
+        "Act 1 / Act 2: Elizabeth Abigail'i ilişki yüzünden evden kovmuştur; Act 1'de Betty, Abigail'in Elizabeth'i öldürmek için tılsım içtiğini açıklar. Suçlamanın motivasyonu Abigail'in kıskançlığıdır.",
+        "Act 3: Kocasının \"yalan söylemez\" dediği kadın, tek yalanını kocasını korumak için söyler. Bu sevgi ve sadakattir, kötülük değil.",
+        "Act 4: Kendi soğukluğunu itiraf eder, kocasını yargılamaz. Hamiledir."
+      ],
+      "savci": [
+        {
+          "iddia": "İğneli bebek onun evinde bulundu.",
+          "cevap": "Bebeği yapan ve iğneyi takan Mary olduğunu kendisi söyledi; Abigail bunu yanında oturup gördü (Act 3 ifadesi)."
+        },
+        {
+          "iddia": "Mahkemede yalan söyledi.",
+          "cevap": "Yalan kendini değil kocasını korumak içindi ve cadılıkla hiçbir ilgisi yok."
+        },
+        {
+          "iddia": "Soğuk ve affetmeyen bir kadın.",
+          "cevap": "Soğukluk suç değil; Act 4'te bunu kendisi kabul eder."
+        }
+      ],
+      "kontrol": [
+        "✔ Act 2 bebek ve iğne, Abigail'in kovulması, Betty'nin tılsım açıklaması (Act 1), Act 3 yalanı, Act 4 soğukluk itirafı metinle uyumlu.",
+        "⚠ Act 2'de Mary iğne konusunda tereddütlüdür (\"sanırım ben taktım\" der); kesin anlatım Act 3'teki ifadede (deposition) geçer. \"Kesin olarak söyledi\" deme.",
+        "⚠ Hamilelik Act 2'de geçmez; Act 3'te Danforth Elizabeth'in hamile olduğunu beyan ettiğini söyler, Act 4'te hamileliği ilerlemiştir.",
+        "Not: EBSCO \"ölüm cezası aldı\" der; doğru, ama infaz hamileliği nedeniyle ertelenmiştir (Wikipedia)."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – Elizabeth Proctor Character Analysis",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters/elizabeth-proctor"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "eNotes – What did Elizabeth Proctor do and why?",
+          "url": "https://www.enotes.com/topics/crucible/questions/what-did-elizabeth-proctor-do-and-why-did-she-do-47611"
+        },
+        {
+          "title": "York Notes GCSE – The Crucible character revision cards",
+          "url": "https://yorknotes.com/gcse/english-literature/the-crucible-york-notes-for-gcse-new-edition/revision-cards/00_characters"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Sarah Good": {
+      "motivasyon": [
+        "Yoksulluk ve hayatta kalma: kapı kapı dilenen evsiz bir kadın (GradeSaver, LitCharts).",
+        "İtiraf ederek kendini kurtarmak (GradeSaver).",
+        "Yorumculara göre toplumun en altında olduğu için kolay hedeftir (Shmoop)."
+      ],
+      "savunma": [
+        "Act 2 (Mary'nin anlatımı): Proctor'ların kapısına ekmek ve elma şarabı istemeye gelmiş, eli boş gönderilince mırıldanmıştır; Elizabeth aç biri mırıldanabilir diye karşılık verir. Yoksulluk ve açlık suç değildir.",
+        "Act 2: Hathorne, emirleri sayamadığı için onu yalancı ilan eder. Eğitimsizlik cadılık kanıtı değildir.",
+        "Act 2: Mary, Sarah Good'un itiraf ettiği için asılmayacağını söyler. İtiraf yaşama yoludur, delil değil.",
+        "Act 1: Adı önce Thomas Putnam'ın sorusunda geçer, Tituba tehdit altında tekrarlar, ardından Abigail de sayar. Kendini savunacak gücü olmayan bir kadın."
+      ],
+      "savci": [
+        {
+          "iddia": "Şeytan'la anlaşma yaptığını itiraf etti.",
+          "cevap": "İtiraf edenin asılmadığı bir mahkemede itiraf, yaşama isteğidir."
+        },
+        {
+          "iddia": "Act 4'te hâlâ Şeytan'ın onları Barbados'a götüreceğini söylüyor.",
+          "cevap": "Aylarca hücrede kalmış, aklı karışmış yoksul bir kadın; bu sahne mahkemenin ona ne yaptığını gösterir."
+        }
+      ],
+      "kontrol": [
+        "✔ Mırıldanma, emirleri sayamama ve itiraf Act 2'de Mary'nin anlatımında; Act 4 hücre sahnesi var.",
+        "⚠ SPEC: \"ismini ilk veren baskı altındaki Tituba\". Metinde Sarah Good'un adını ilk söyleyen Thomas Putnam'dır (Tituba'ya sorarken); Tituba tekrarlar. Düzelt: \"adı Tituba'ya Putnam tarafından önerildi\".",
+        "⚠ LitCharts onu \"kasabanın sarhoşu\", Shmoop \"akli dengesiz\" diye tanımlar; oyunda bu açıkça yok. Kullanma.",
+        "Not: Act 2'de Mary, Sarah Good'un hamile olduğunu söyler; Elizabeth onun altmışına yakın olduğunu ekler. Gerekirse kullan, yoksa ekleme."
+      ],
+      "kaynaklar": [
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "Shmoop – Sarah Good",
+          "url": "https://www.shmoop.com/study-guides/literature/crucible/sarah-good.html"
+        },
+        {
+          "title": "Wikipedia – The Crucible",
+          "url": "https://en.wikipedia.org/wiki/The_Crucible"
+        }
+      ]
+    },
+    "Mary Warren": {
+      "motivasyon": [
+        "Korku: yanlış yapmaktan korkar ama Abigail'den daha çok korkar (LitCharts).",
+        "Mahkemede \"görevli\" olmanın verdiği yeni önem duygusu (York Notes).",
+        "Kolay etkilenen, ezilen bir hizmetçi; çoğunluğun korkusuna teslim olur (GradeSaver, Shmoop, EBSCO)."
+      ],
+      "savunma": [
+        "Act 1 sahne notu: 17 yaşında, itaatkâr, saf ve yalnız bir kız. Act 1'de Abigail'e gerçeği söylemeleri gerektiğini söyleyen de odur.",
+        "Act 2: Mahkemede Elizabeth'in adı geçince onu savunduğunu, hayatını kurtardığını söyler; bebeği iyi niyetle hediye eder.",
+        "Act 3: Mahkemede kızların numara yaptığını söyler ve ifade imzalar. Bu büyük bir cesarettir.",
+        "Act 3 kuş sahnesi: Kızlar onun ruhunun kuş olup saldırdığını iddia eder, Danforth itiraf etmezse asılacağını söyler; Proctor da onu Act 1 ve Act 2'de kırbaçla tehdit etmiştir. Çöküşü korkunun kanıtıdır."
+      ],
+      "savci": [
+        {
+          "iddia": "Act 3'te Proctor'u Şeytan'ın adamı diye suçladı; yalancı tanıklık yaptı.",
+          "cevap": "Kabul ediyoruz; ama idam tehdidi altında söylenen söz özgür iradeyle söylenmiş sayılmaz."
+        },
+        {
+          "iddia": "Mahkeme görevliliğinden hoşlandı.",
+          "cevap": "Ömrü boyunca dinlenmemiş bir hizmetçi; buna rağmen doğruyu söylemeye çalışan tek kız oydu."
+        }
+      ],
+      "kontrol": [
+        "✔ 17 yaş (Act 1 sahne notu). ⚠ GradeSaver 18 der; oyuna göre 17.",
+        "✔ Proctor'un kırbaç tehdidi (Act 1 ve Act 2), Danforth'un asılma tehdidi (Act 3 kuş sahnesi), Act 2'de Elizabeth'i savunduğunu söylemesi, Act 3 itirafı metinle uyumlu.",
+        "SPEC'teki bilgilerin hepsi destekleniyor."
+      ],
+      "kaynaklar": [
+        {
+          "title": "LitCharts – The Crucible: Characters",
+          "url": "https://www.litcharts.com/lit/the-crucible/characters"
+        },
+        {
+          "title": "GradeSaver – The Crucible Character List",
+          "url": "https://www.gradesaver.com/the-crucible/study-guide/character-list"
+        },
+        {
+          "title": "Shmoop – Mary Warren Timeline",
+          "url": "https://www.shmoop.com/study-guides/crucible/mary-warren-timeline.html"
+        },
+        {
+          "title": "York Notes GCSE – The Crucible character revision cards",
+          "url": "https://yorknotes.com/gcse/english-literature/the-crucible-york-notes-for-gcse-new-edition/revision-cards/00_characters"
+        },
+        {
+          "title": "EBSCO Research Starters – The Crucible: Analysis of Major Characters",
+          "url": "https://www.ebsco.com/research-starters/literature-and-writing/crucible-analysis-major-characters"
+        }
+      ]
+    }
+  }
+};
+</script>
+<script>
+(function(){
+'use strict';
+/* ============ DATA (yalnızca SPEC'teki karakter verisi) ============ */
+const CH=[
+ {id:'abigail',name:'Abigail Williams',short:'Abigail',he:false,acc:"Yalan suçlamalar, yalancı tanıklık, Elizabeth'i iğneyle tuzağa düşürmek",
+  args:["17 yaşında yetim, ailesinin öldürülüşünü gördüğünü anlatır (Act 1); evli, yaşça büyük işvereni Proctor ile ilişki, güç dengesizliği.","Mahkeme ve yetişkinler kanıtsız inandı, gücü onlar verdi.","Act 1'de sorgu ve dans skandalıyla köşeye sıkıştı, suçlama hayatta kalma yoluydu."],
+  find:"Act 1 aile hikâyesi, Act 1 Proctor sahnesi, Act 3 Proctor'un itirafı",note:['Dikkat',"Act 4'te para çalıp kaçtı; inkâr değil hafifletme stratejisi."]},
+ {id:'hale',name:'Rev. John Hale',short:'Hale',he:true,acc:"Cadı avını meşrulaştırmak, Tituba'yı yönlendirip isim verdirmek, idam emirleri imzalamak",
+  args:["Uzman olarak davet edildi; Act 1'de batıl inanca değil kanıta bakılacağını söyleyerek temkinli başladı.","Act 2'de Proctor'ları kendisi sorguladı, Rebecca'nın adı geçince rahatsız oldu; Act 3'te mahkemeyi kınayıp istifa etti.","Act 4'te geri dönüp mahkûmları ölmemeleri için ikna etmeye çalıştı."],
+  find:"Act 1 gelişi, Act 3 kınama, Act 4 suçluluk konuşması",note:null},
+ {id:'parris',name:'Rev. Samuel Parris',short:'Parris',he:true,acc:"Dansı örtbas edip paniği başlatmak, itibar için masumlara karşı tanıklık",
+  args:["Kızı uyanmayan korkmuş baba; doktor ve uzman çağırdı.","Act 4'te Abigail parasını çalıp kaçtı; evden çıkarken kapıyı açınca yere bir hançer düştü; kandırılan taraf.","Act 4'te korku içinde idamları ertelemeye çalıştı (isyan ve intikamdan korktu), Proctor'un itirafı için yalvardı."],
+  find:"Act 1 açılış, Act 4",cor:[1,2],noteCor:1,note:['Dikkat',"Act 1 maaş/odun şikâyetleri ve Act 3'te Mary'ye saldırısı; önceden cevapla. \"Worry is not a crime\" senin kendi cümlen, oyunda geçmez: alıntı gibi sunma."]},
+ {id:'putnam',name:'Goody Ann Putnam',short:'Ann Putnam',he:false,acc:"Ruth'u Tituba'ya ölü bebekleri çağırtmaya göndermek, Rebecca'yı bebeklerini öldürmekle suçlamak",
+  args:["Yedi bebeğini doğduğu gün kaybetti (Act 1), yas.","Dönemin inancı; kendisi büyü yapmadı.","Toprak hırsı Thomas Putnam'ındı (Act 3 Giles'ın ifadesi), karar mahkemenindi."],
+  find:"Act 1 bebekler, Act 2 Rebecca'nın tutuklanma sebebi",note:null},
+ {id:'tituba',name:'Tituba',short:'Tituba',he:false,acc:"Ormanda büyü, itiraf, Sarah Good ve Goody Osburn'ü suçlamak",
+  cor:[0],args:["Parris'in Barbados'tan getirdiği köle; 'hayır diyemezdi' senin yorumun (metin bunu açıkça söylemez), öyle sun.","Act 1'de Parris kırbaçla, Putnam asılmakla tehdit etti; Hale itiraf ederse korunacağını söyledi ve isimleri sordu: zorlanmış itiraf.","Ann Putnam Ruth'u gönderdi, Abigail tılsım için yalvardı; ilk suçlayan Abigail."],
+  find:"Act 1 sorgu sahnesi",note:null},
+ {id:'betty',name:'Betty Parris',short:'Betty',he:false,acc:"Dansa katılmak, masumları suçlamak",
+  cor:[1],args:["10 yaşında çocuk.","Act 1'de Abigail kızları tehdit etti; Abigail bile Betty'nin sadece korktuğunu söyler (metin tanı koymaz).","Act 1'de Abigail'in Elizabeth'i öldürmek için tılsım içtiğini açıkladı, gerçeği ilk söyleyen."],
+  find:"Act 1 uyanma, tehdit, isim sayma",note:null},
+ {id:'rebecca',name:'Rebecca Nurse',short:'Rebecca',he:false,acc:"Putnam bebeklerini doğaüstü yolla öldürmek",
+  args:["Kanıt yok; Putnam–Nurse toprak ve seçim kavgaları var (Act 1 anlatıcı notları).","72 yaşında, saygın, çok çocuk ve torun sahibi; Betty'yi sakinleştirdi, cadı aramaya karşı uyardı.","Act 4'te yalan itirafı reddetti."],
+  find:"Act 1, Act 4",noteCor:1,note:['Pathos',"Act 4'te zar zor yürüyen 72 yaşında kadın (metinde zincirli değil; zincir yazma)."]},
+ {id:'elizabeth',name:'Elizabeth Proctor',short:'Elizabeth',he:false,acc:"İğneli bebekle Abigail'i öldürmeye çalışmak",
+  cor:[0],args:["Act 2'de Mary Warren bebeği mahkemede kendisinin diktiğini ve Elizabeth'e verdiğini söyler; iğneyi kendisinin taktığını tereddütle kabul eder ('sanırım').","Abigail'i evden kovdu, Abigail Proctor'u istiyordu; Betty'nin tılsım açıklaması.","Act 3'te tek yalanı kocasını korumak içindi; Act 4'te kendi soğukluğunu itiraf eder."],
+  find:"Act 2 bebek, Act 3 ifade, Act 4",note:['Pathos',"hamile."]},
+ {id:'sarah',name:'Sarah Good',short:'Sarah Good',he:false,acc:"Cadılık, Mary Warren'a lanet, itiraf",
+  args:["Act 2'de Mary'nin anlatımına göre kapıdan aç gönderilince mırıldandı; yoksulluk suç değil.","Emirleri sayamaması eğitimsizlik.","İtiraf edenin asılmadığı mahkemede itiraf hayatta kalmaktı; ismini ilk veren baskı altındaki Tituba."],
+  find:"Act 2 Mary'nin anlatımı, Act 4 hücre",note:['Dikkat',"sahnede az görünür, uydurma ekleme."]},
+ {id:'mary',name:'Mary Warren',short:'Mary Warren',he:false,acc:"Yalan suçlamalar, yalancı tanıklık, Proctor'u suçlamak",
+  args:["Act 2'de Elizabeth'i savundu; Act 3'te numara yaptıklarını mahkemede söyledi.","Proctor kırbaçla, Danforth asılmakla tehdit etti; kızlar \"kuş\" sahnesiyle köşeye sıkıştırdı.","17 yaşında hizmetçi; çöküşü korkunun kanıtı."],
+  find:"Act 2 dönüş ve bebek, Act 3 kuş sahnesi",note:null},
+ {id:'giles',name:'Giles Corey',short:'Giles',he:true,acc:"Mahkemeye saygısızlık (tanığının adını vermemek), Martha'nın kitaplarını söyleyip tutuklanmasına yol açmak",
+  args:["Act 3'te Putnam'ın kızına Jacobs'ı suçlattığını ve toprak istediğini ifade etti; adı verse o adam hapse girecekti.","Sadece kitapları sordu, karısını cadı demedi, pişmanlığı samimi.","Act 4'te Elizabeth anlatır: toprak oğullarına kalsın diye suçlamaya cevap vermedi, ezilerek öldürüldü."],
+  find:"Act 2, Act 3 ifade, Act 4",note:['Pathos',"seksenini geçmiş adam."]}
+];
+const CHI={};CH.forEach((c,i)=>CHI[c.id]=i);
+
+/* ============ FORMÜL: 25 slot ============ */
+const PARAS=[{t:'Giriş',from:0,n:4},{t:'Argüman 1',from:4,n:5},{t:'Argüman 2',from:9,n:5},{t:'Argüman 3',from:14,n:5},{t:'Pathos',from:19,n:3},{t:'Kapanış',from:22,n:3}];
+const SL=[];
+function add(p,task,tpl,why,ex){SL.push({n:SL.length+1,p,task,tpl,why,ex});}
+add(0,'Hitap + suçlama','Ladies and gentlemen of the jury, my client, {N}, stands accused of ___.','Jüriye resmi hitap mahkeme dilini kurar; suçlamayı ilk cümlede adlandırmak neyi çürüteceğini netleştirir.','Ladies and gentlemen of the jury, my client, Rebecca Nurse, stands accused of killing the Putnam babies by supernatural means.');
+add(0,'Kusur kabulü','I will not pretend that {N} is perfect; she ___.','Kusuru önce senin söylemen güvenilirlik (ethos) kazandırır ve savcının kozunu elinden alır: İkna puanındaki "kusur kabulü" budur.','I will not pretend that Rebecca Nurse is perfect; she belongs to a family that has quarrelled with the Putnams over land.');
+add(0,'Ret','But ___ is not a crime, and it is not witchcraft.','Kusuru suçtan ayırmak konuşmanın dönüm noktasıdır: kusur suç değildir.','But a land quarrel is not a crime, and it is not witchcraft.');
+add(0,'TEZ (3 sebep)','{N} is not guilty, because (1) ___, (2) ___, and (3) ___.','Tez üç sebebi sayar; P2, P3, P4 bu üç sebebin aynısı olur, puanlayıcı planını buradan görür.','Rebecca Nurse is not guilty, because (1) there is no evidence against her, (2) her whole life shows respect and care, and (3) she refused to lie even to save herself.');
+const ARGW=['First','Moreover','Finally'];
+const WHY={
+ claim:['"First" tezdeki 1. sebebi aynen tekrar eder; yapı görünür olur ve paragraf bağlaç kuralı sağlanır.','"Moreover" 2. sebebi açar; tezle birebir aynı olması konuşmayı planlı gösterir.','"Finally" son sebebi duyurur; jüri yapının bittiğini anlar.'],
+ ev:['Sayfa numaralı kanıt "(Miller __)" Kanıt puanını taşır: toplamda en az 6 tane gerekir.','Kanıtsız iddia sadece fikirdir; her argümanda iki "(Miller __)" olunca 6 alıntıya ulaşırsın.','Kitaptaki sahneye dayanmak "hiç uydurmadım" kuralını güvenceye alır.'],
+ exp:['"This proves that" kanıtı yoruma çevirir; yorum yoksa konuşma olay özeti gibi okunur ve 4 puan alır.','Açıklama cümlesi logos\'tur: kanıt ile iddia arasındaki köprü.','Açıklama, "who gains" (kim kazanır) motivini yazmak için en iyi yerdir: İkna puanı getirir.'],
+ ev2:['İkinci kanıt iddiayı tek alıntıya bağlı olmaktan kurtarır ve alıntı sayını yükseltir.','İki bağımsız kanıt jüriye tesadüf olmadığını gösterir.','Son argümanın ikinci kanıtıyla 6 alıntı hedefi tamamlanır.'],
+ q:['Retorik soru jüriyi kendi sonucuna yürütür; İkna için en az 3 soru gerekir ve cümle "?" ile bitmeli.','Her argümanı soruyla bitirmek 3 retorik soru hedefini otomatik tamamlar.','Üçüncü soru İkna puanındaki "en az 3 retorik soru" şartını kapatır.']
+};
+const EXA=[
+ ['First, there is no evidence against Rebecca Nurse.','The record shows that the Nurse and Putnam families have fought over land and elections (Miller __).','This proves that the accusation grows out of an old quarrel, and the only people who gain are her rivals.','Furthermore, the narrator explains these quarrels before the trials begin (Miller __).','Ask yourselves: is a family feud proof of murder?'],
+ ['Moreover, Rebecca Nurse has lived a life of respect and care.','The record shows that she calmed the frightened Betty Parris (Miller __).','This proves that she heals children; she does not harm them.','Furthermore, she warned the town against searching for witches (Miller __).','Ask yourselves: would a murderer try to stop a witch hunt?'],
+ ['Finally, Rebecca Nurse refused to buy her life with a lie.','The record shows that in Act 4 she would not give a false confession (Miller __).','This proves that she values the truth more than her own life.','Furthermore, she refused to confess even when she could barely walk (Miller __).','Ask yourselves: why would a liar choose death over a lie?']
+];
+for(let k=0;k<3;k++){
+ add(k+1,`İddia (${k+1}. sebep)`,`${ARGW[k]}, ___.`,WHY.claim[k],EXA[k][0]);
+ add(k+1,'Kanıt','The record shows that ___ (Miller __).',WHY.ev[k],EXA[k][1]);
+ add(k+1,'Açıklama','This proves that ___.',WHY.exp[k],EXA[k][2]);
+ add(k+1,'İkinci kanıt','Furthermore, ___ (Miller __).',WHY.ev2[k],EXA[k][3]);
+ add(k+1,'Jüriye bağla (soru)','Ask yourselves: ___?',WHY.q[k],EXA[k][4]);
+}
+add(4,'Pathos sahnesi','Picture {N} tonight.','"Picture" ile açılan paragraf pathos\'u başlatır ve bağlaç kuralına uyar.','Picture Rebecca Nurse, an old woman who can barely walk, tonight.');
+add(4,'Somut detay (kitaptan)','She is ___.','Somut bir detay (yaş, hamilelik) duyguyu gerçek yapar; ama yalnızca kitapta olanı yaz.','She is seventy-two years old, with many children and grandchildren.');
+add(4,'Sonuç','If you convict her, ___.','Mahkûmiyetin sonucunu göstermek jüriye kararın ağırlığını hissettirir.','If you convict her, you punish the most honest woman in Salem.');
+add(5,'Üçleme','Ultimately, the prosecution asks you to choose ___ over ___, ___ over ___, and ___ over ___.','Üçleme (tricolon) akılda kalır ve İkna puanındaki "1 üçleme" budur; "Ultimately" kapanış paragrafının bağlacıdır.','Ultimately, the prosecution asks you to choose rumor over evidence, fear over reason, and grudges over justice.');
+add(5,'Kusur + ret','{N} made mistakes, but she is no witch and no criminal.','Kusuru yeniden kabul edip suçu reddetmek girişteki çerçeveyi kapatır.','Rebecca Nurse made mistakes, but she is no witch and no criminal.');
+add(5,'Talep','Find {N} not guilty. Send her home.','Mahkeme konuşması her zaman jüriden net bir karar isteyerek biter.','Find Rebecca Nurse not guilty. Send her home.');
+
+/* ============ STATE ============ */
+const KEY='crucible-v1';
+let storageOK=true;
+function def(){return{v:1,view:'plan',xp:0,badges:{},plan:{start:null,pausedAt:null,acc:0,lastStep:-1,printed:false},
+ formula:{queue:null,qi:0,answered:0,since:0,stats:{},streak:0,best:0,cur:null,pendingBreak:false,breakStart:null,doneAll:false,firstOk:0},
+ tez:{},tezSel:null,tezTimer:null,quiz:{total:0,ok:0,best:0,rounds:0,streak:0,cur:null},
+ prova:{cur:null,history:[],showEx:false},mola:{start:null,done:false},finalShown:false,showEx:false};}
+function load(){let s=def();try{const raw=localStorage.getItem(KEY);if(raw){const o=JSON.parse(raw);for(const k in s){if(o[k]!==undefined){if(s[k]&&typeof s[k]==='object'&&!Array.isArray(s[k])&&o[k]&&typeof o[k]==='object')s[k]=Object.assign(s[k],o[k]);else s[k]=o[k];}}}}catch(e){storageOK=false;}return s;}
+let S=load();
+let saveT=null;
+function save(now){clearTimeout(saveT);const f=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){if(storageOK){storageOK=false;$('#storagewarn').hidden=false;}}};if(now)f();else saveT=setTimeout(f,200);}
+addEventListener('pagehide',()=>save(true));
+addEventListener('visibilitychange',()=>{if(document.hidden)save(true);});
+
+/* ============ helpers ============ */
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const escRe=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fmt(ms,h){ms=Math.max(0,ms);const t=Math.floor(ms/1000),hh=Math.floor(t/3600),mm=Math.floor(t%3600/60),ss=t%60;const p=n=>String(n).padStart(2,'0');return h?`${hh}:${p(mm)}:${p(ss)}`:`${hh*60+mm}:${p(ss)}`;}
+function tplHTML(t){return esc(t).replace(/\{N\}|_{2,}/g,'<span class="blank">___</span>');}
+function tplText(t){return t.replace(/\{N\}/g,'___');}
+function tplFor(t,c){let s=t.replace(/\{N\}/g,c.name);if(c.he)s=s.replace(/\bshe\b/g,'he').replace(/\bShe\b/g,'He').replace(/\bher\b/g,'him');return s;}
+const ICON={
+ play:'<svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>',
+ pause:'<svg viewBox="0 0 16 16"><rect x="3.5" y="2.5" width="3" height="11" rx="1" fill="currentColor"/><rect x="9.5" y="2.5" width="3" height="11" rx="1" fill="currentColor"/></svg>',
+ sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>',
+ moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>',
+ gavel:'<svg class="gavel" viewBox="0 0 64 64" aria-hidden="true"><g class="hit" style="transform-origin:22px 52px"><g fill="currentColor" transform="rotate(-40 30 30)"><rect x="12" y="14" width="34" height="14" rx="3"/><rect x="9" y="16" width="4" height="10" rx="1.5"/><rect x="45" y="16" width="4" height="10" rx="1.5"/><rect x="26.5" y="28" width="5.5" height="28" rx="2.75"/></g></g><rect x="30" y="50" width="26" height="7" rx="2" fill="currentColor"/></svg>'
+};
+
+/* ============ XP / badges ============ */
+const LEVELS=[[0,'Stajyer'],[250,'Avukat'],[700,'Kıdemli avukat'],[1400,'Baro yıldızı'],[2400,'Yüce Divan']];
+function lvl(x){let i=0;for(let k=0;k<LEVELS.length;k++)if(x>=LEVELS[k][0])i=k;const cur=LEVELS[i][0],nx=LEVELS[i+1]?LEVELS[i+1][0]:cur;return{i,name:LEVELS[i][1],pct:nx>cur?(x-cur)/(nx-cur):1};}
+function updXP(){const l=lvl(S.xp);$('#xpVal').textContent=S.xp+' XP';$('#xpLvl').textContent=l.name;$('#xpFill').style.width=Math.round(l.pct*100)+'%';}
+function addXP(n){if(!n)return;const before=lvl(S.xp).i;S.xp+=n;updXP();const f=document.createElement('span');f.className='xpfloat';f.textContent='+'+n+' XP';$('#xpbox').appendChild(f);setTimeout(()=>f.remove(),1200);const after=lvl(S.xp).i;if(after>before)toast('Rütbe atladın: '+LEVELS[after][1]+'!');save();}
+const BADGES=[
+ {id:'first',t:'İlk tokmak',d:'İlk doğru cevap',i:'§'},
+ {id:'streak10',t:'Seri 10',d:'Üst üste 10 doğru',i:'x10'},
+ {id:'rest',t:'Dinlenmiş beyin',d:'İlk molayı tamamla',i:'◷'},
+ {id:'formula',t:'Formül ezberde',d:'25 slotun hepsi altın',i:'25'},
+ {id:'quiz',t:'Isındım',d:'Bir quiz turunu bitir',i:'?'},
+ {id:'prova',t:'İlk prova',d:'Tam provayı puanla',i:'¶'},
+ {id:'perfect',t:'30/30',d:'Formül puanı tam',i:'★'},
+ {id:'all',t:'Savunma ekibi',d:'11/11 dava hazır',i:'11'}
+];
+function badge(id,silent){if(S.badges[id])return;S.badges[id]=Date.now();save();if(!silent){const b=BADGES.find(x=>x.id===id);if(b)toast('Rozet: '+b.t);}}
+
+/* ============ toasts / overlay ============ */
+function toast(msg,act,fn){const t=document.createElement('div');t.className='toast';t.innerHTML='<span>'+esc(msg)+'</span>'+(act?'<button>'+esc(act)+'</button>':'');if(act)t.querySelector('button').onclick=()=>{fn&&fn();t.remove();};const tc=$('#toasts');tc.appendChild(t);while(tc.children.length>3)tc.firstChild.remove();setTimeout(()=>t.remove(),act?7000:3200);}
+function overlay(html){const r=$('#ovroot');r.innerHTML='<div class="ov" role="dialog" aria-modal="true"><div class="box">'+html+'</div></div>';const o=r.firstChild;o.addEventListener('click',e=>{if(e.target===o||e.target.closest('[data-close]'))r.innerHTML='';});return o;}
+function confetti(n=70){if(RM)return;const cols=['#e2b746','#c99a2e','#8d4e27','#f6e2b6','#2c7a4b','#b0362a'];for(let i=0;i<n;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=rnd(cols);c.style.animationDuration=(2+Math.random()*2)+'s';c.style.animationDelay=(Math.random()*.6)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000);}}
+function strike(el){if(!el)return;el.classList.remove('strike');void el.offsetWidth;el.classList.add('strike');}
+
+/* ============ theme ============ */
+function effTheme(){const a=document.documentElement.getAttribute('data-theme');if(a)return a;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+function updThemeBtn(){const d=effTheme()==='dark';$('#themeBtn').innerHTML=d?ICON.sun:ICON.moon;$('#themeBtn').setAttribute('aria-label',d?'Açık temaya geç':'Koyu temaya geç');}
+$('#themeBtn').onclick=()=>{const n=effTheme()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('crucible-theme',n);}catch(e){}updThemeBtn();};
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',updThemeBtn);
+
+/* ============ night plan ============ */
+const STEPS=[
+ {v:'formul',t:'Formül ezberi',min:30,d:'25 slotun kalıbını boşluk → tüm cümle → numaradan ezberle.'},
+ {v:'tez',t:'Tez fabrikası',min:75,d:'11 karakter × ~7 dk: tez cümlesi + 6 sayfa numaralı alıntı.'},
+ {v:'mola',t:'Mola + ısınma',min:15,d:'15 dk ekrandan uzaklaş, sonra Hızlı quiz ile ısın.'},
+ {v:'prova',t:'Tam prova',min:60,d:'Çarkın seçtiği karakterle 25 slotu yaz, Formül puanını al.'},
+ {v:'kart',t:'Sabah: tezleri oku',min:10,d:'Sabah kartını yazdır; sabah 10 dk tezleri ve sayfaları oku.',morning:true}
+];
+const NIGHT=180*60000;
+function nightEl(){const p=S.plan;if(!p.start)return 0;return (p.pausedAt||Date.now())-p.start-p.acc;}
+function nightStep(el){let a=0;for(let i=0;i<4;i++){a+=STEPS[i].min*60000;if(el<a)return{i,left:a-el};}return{i:4,left:0};}
+function buildPlanbar(){$('#planbar').innerHTML=STEPS.slice(0,4).map((s,i)=>`<button class="seg" style="--w:${s.min}" data-go="${s.v}" title="${esc(s.t)} · ${s.min} dk" aria-label="${esc(s.t)}"><i></i></button>`).join('');}
+function updNight(){
+ const p=S.plan,el=nightEl(),run=p.start&&!p.pausedAt;
+ $('#nightTime').textContent=fmt(el,true);
+ const b=$('#nightBtn');b.innerHTML=run?ICON.pause:ICON.play;b.setAttribute('aria-label',run?'Gece sayacını duraklat':'Gece sayacını başlat');
+ let lbl;
+ if(!p.start)lbl='Gece planı · 3 saat · başlat';
+ else{const st=nightStep(el);lbl=st.i<4?`${st.i+1}/4 ${STEPS[st.i].t} · ${fmt(st.left)} kaldı`:'Gece bitti · sabah kartı';if(p.pausedAt)lbl='Duraklatıldı · '+lbl;
+  if(st.i!==p.lastStep){if(p.lastStep>=0&&run){const nx=STEPS[st.i];toast(`Süre doldu → sıradaki: ${nx.t}`,'Git',()=>go(nx.v));}p.lastStep=st.i;save();}}
+ $('#nightStep').textContent=lbl;
+ let acc=0;$$('#planbar .seg').forEach((sg,i)=>{const len=STEPS[i].min*60000;const f=Math.min(1,Math.max(0,(el-acc)/len));sg.firstChild.style.width=(f*100)+'%';sg.classList.toggle('cur',!!p.start&&el>=acc&&el<acc+len);acc+=len;});
+}
+$('#nightBtn').onclick=()=>{const p=S.plan,now=Date.now();if(!p.start){p.start=now;p.acc=0;p.pausedAt=null;p.lastStep=0;toast('Gece planı başladı: önce Formül ezberi (30 dk).');go('formul');}else if(p.pausedAt){p.acc+=now-p.pausedAt;p.pausedAt=null;}else p.pausedAt=now;save();updNight();if(S.view==='plan')renderPlan();};
+$('#planbar').addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g)go(g.dataset.go);});
+
+/* ============ router ============ */
+const VIEWS=[['plan','Plan','◆'],['formul','Formül ezberi','1'],['tez','Tez fabrikası','2'],['mola','Mola + Quiz','3'],['prova','Tam prova','4'],['kart','Sabah kartı','5'],['rozet','XP & rozetler','★']];
+$('#tabs').innerHTML=VIEWS.map(([v,t,n])=>`<button class="tab" data-v="${v}"><span class="n">${n}</span>${t}</button>`).join('');
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)go(b.dataset.v);});
+const RENDER={};
+function go(v,noScroll){if(!RENDER[v])v='plan';S.view=v;save();$$('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));$$('.tab').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v?'page':'false'));const tb=$(`.tab[data-v="${v}"]`);if(tb&&tb.scrollIntoView)tb.scrollIntoView({block:'nearest',inline:'nearest'});if(location.hash!=='#'+v)history.replaceState(null,'','#'+v);RENDER[v]();if(!noScroll)scrollTo(0,0);}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-goto]');if(g){e.preventDefault();go(g.dataset.goto);}});
+
+/* ============ shared metrics ============ */
+function tezOf(id){if(!S.tez[id])S.tez[id]={thesis:'',q:Array.from({length:6},()=>({p:'',t:''})),aw:{}};return S.tez[id];}
+const thesisOk=t=>{t=(t||'').trim();return t.split(/\s+/).filter(Boolean).length>=10&&/\bnot guilty\b/i.test(t)&&/\bbecause\b/i.test(t);};
+const quoteOk=q=>!!q&&/^\d{1,3}(\s*[-–]\s*\d{1,3})?$/.test(String(q.p).trim())&&parseInt(q.p,10)>0&&String(q.t).trim().length>=3;
+function tezProg(id){const z=S.tez[id];if(!z)return{th:false,qn:0,ready:false,pct:0};const th=thesisOk(z.thesis),qn=z.q.filter(quoteOk).length;return{th,qn,ready:th&&qn===6,pct:((th?1:0)+qn)/7};}
+const readyCount=()=>CH.filter(c=>tezProg(c.id).ready).length;
+const goldCount=()=>SL.filter((s,i)=>(S.formula.stats[i]||{}).lvl>=3).length;
+
+/* ============ PLAN view ============ */
+RENDER.plan=function(){
+ const el=nightEl(),st=S.plan.start?nightStep(el):null,best=S.prova.history.reduce((m,h)=>Math.max(m,h.score),0);
+ const prog=[goldCount()/25,readyCount()/11,(S.mola.done||S.quiz.rounds>0)?1:0,S.prova.history.length?1:0,S.plan.printed?1:0];
+ const meta=[`${goldCount()}/25 slot altın`,`${readyCount()}/11 dava hazır`,S.mola.done?'mola tamam':(S.quiz.rounds?'quiz tamam':'—'),S.prova.history.length?`${S.prova.history.length} prova · en iyi ${best}/30`:'henüz prova yok',S.plan.printed?'yazdırıldı':'yazdırılmadı'];
+ $('#v-plan').innerHTML=`
+ <div class="hero">
+  <div><div class="eyebrow">The Crucible · Defense opening statement</div>
+   <h1 class="h1">Bu gece: 3 saat,<br>1 formül, 11 dava.</h1>
+   <p class="lead">Yarın 80 dakikada elle yazacağın savunma konuşması burada matematiğe dönüşüyor: 6 paragraf, 25 cümle, sayılabilir hedefler ve 30 üzerinden puan.</p>
+   <div class="row" style="margin-top:12px"><button class="btn pri" id="planStart">${S.plan.start?(S.plan.pausedAt?ICON.play+' Sayacı sürdür':'Şu anki adıma git →'):ICON.play+' Gece planını başlat'}</button>
+   ${S.plan.start?'<button class="btn ghost sm" id="planReset">Sayacı sıfırla</button>':''}</div></div>
+  <div class="stats">
+   <div class="stat"><b>${goldCount()}<small class="muted">/25</small></b><span>formül slotu altın</span></div>
+   <div class="stat"><b>${readyCount()}<small class="muted">/11</small></b><span>dava hazır</span></div>
+   <div class="stat"><b>${S.quiz.best}<small class="muted">/12</small></b><span>en iyi quiz turu</span></div>
+   <div class="stat"><b>${best}<small class="muted">/30</small></b><span>en iyi Formül puanı</span></div>
+  </div>
+ </div>
+ <div class="steps">${STEPS.map((s,i)=>`
+  <div class="step ${prog[i]>=1?'done':''} ${st&&st.i===i&&!s.morning?'cur':''}">
+   <div class="num">${prog[i]>=1?'✓':i+1}</div>
+   <div><h3>${esc(s.t)} <span class="meta">· ${s.min} dk${s.morning?' · sabah':''}</span></h3><p>${esc(s.d)}</p>
+    <div class="bar" style="margin-top:8px;max-width:340px;height:6px"><i style="width:${Math.round(prog[i]*100)}%"></i></div><div class="tiny muted" style="margin-top:3px">${esc(meta[i])}</div></div>
+   <button class="btn ${st&&st.i===i?'pri':''} go" data-goto="${s.v}">Aç →</button>
+  </div>`).join('')}</div>
+ <div class="card" style="margin-top:16px"><div class="row"><div class="gavel" style="width:40px">${ICON.gavel}</div><div class="sp"><b>Kurallar üç satırda</b><div class="small muted">Metinde olmayan hiçbir şey yazılmaz · Kanıt sayfa numarasıyla: <span class="mono">(Miller 103)</span> · Sınavda teknoloji yok, bu uygulama sadece bu gece için. Verilerin yalnızca bu tarayıcıda saklanır.</div></div></div></div>`;
+ $('#planStart').onclick=()=>{if(!S.plan.start||S.plan.pausedAt){$('#nightBtn').click();if(S.plan.start&&!S.plan.pausedAt&&S.view==='plan')renderPlan();}else{const s=nightStep(nightEl());go(STEPS[s.i].v);}};
+ const r=$('#planReset');if(r)r.onclick=()=>{if(confirm('Gece sayacı sıfırlansın mı? (Diğer ilerlemen kalır.)')){S.plan.start=null;S.plan.pausedAt=null;S.plan.acc=0;S.plan.lastStep=-1;save();updNight();renderPlan();}};
+};
+const renderPlan=()=>RENDER.plan();
+
+/* ============ FORMÜL EZBERİ ============ */
+function toks(s){
+ s=String(s).toLowerCase().replace(/[’‘`]/g,"'").replace(/s\/he|she\/he|he\/she/g,'she').replace(/him\/her|her\/him/g,'her').replace(/_+/g,' ').replace(/'/g,'').replace(/[^a-z0-9*]+/g,' ').trim();
+ if(!s)return[];
+ return s.split(/\s+/).filter(w=>w&&!/^\d+$/.test(w)).map(w=>w==='he'?'she':(w==='him'||w==='his')?'her':w);
+}
+const tplToks=t=>toks(t.replace(/\{N\}|_{2,}/g,' * '));
+function matchTpl(tpl,text){const t=tplToks(tpl),u=toks(String(text).replace(/\*/g,' '));if(!u.length)return false;const re=new RegExp('^'+t.map(x=>x==='*'?'(?:\\S+ )*?':escRe(x)+' ').join('')+'$');return re.test(u.join(' ')+' ');}
+function missingIdx(tpl,text){const f=tplToks(tpl).filter(x=>x!=='*'),u=toks(text);const n=f.length,m=u.length,L=Array.from({length:n+1},()=>new Array(m+1).fill(0));for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)L[i][j]=f[i]===u[j]?L[i+1][j+1]+1:Math.max(L[i+1][j],L[i][j+1]);const miss=new Set();let i=0,j=0;while(i<n){if(j<m&&f[i]===u[j]){i++;j++;}else if(j<m&&L[i][j+1]>=L[i+1][j])j++;else{miss.add(i);i++;}}return miss;}
+function splitW(w){const m=w.match(/^([^A-Za-z{_]*)([A-Za-z{}_]*)(.*)$/);return{pre:m[1],core:m[2],post:m[3]};}
+function tplMarked(tpl,miss){let fi=0;return tpl.split(' ').map(w=>{const {core}=splitW(w);const tk=toks(core.replace(/\{N\}|_{2,}/g,''));let mk=false;tk.forEach(()=>{if(miss.has(fi))mk=true;fi++;});const h=tplHTML(w);return mk?'<mark>'+h+'</mark>':h;}).join(' ');}
+const STOP=new Set(['the','and','that','you','her','she','his','but','of','my','is','it','to','a']);
+function pickBlanks(tpl){const ws=tpl.split(' ');let c=[];ws.forEach((w,i)=>{const {core}=splitW(w);if(/^[A-Za-z]{3,}$/.test(core)&&!STOP.has(core.toLowerCase()))c.push(i);});if(!c.length)ws.forEach((w,i)=>{if(/^[A-Za-z]+$/.test(splitW(w).core))c.push(i);});const k=Math.min(3,Math.ceil(c.length/2));return shuffle(c.slice()).slice(0,k).sort((a,b)=>a-b);}
+function buildQueue(){const q=[];[[0,4],[4,19],[19,25]].forEach(([a,b])=>{for(let s=a;s<b;s++)q.push([s,1]);for(let s=a;s<b;s++)q.push([s,2]);});shuffle([...Array(25).keys()]).forEach(s=>q.push([s,3]));return q;}
+const STAGE=['','Aşama 1 · Boşlukları doldur','Aşama 2 · Tüm cümle','Aşama 3 · Numaradan hatırla'];
+function F(){const f=S.formula;if(!f.queue)f.queue=buildQueue();return f;}
+function nextQ(){const f=F();let s,st;if(f.qi<f.queue.length){[s,st]=f.queue[f.qi];}else{f.doneAll=true;const w=SL.map((_,i)=>{const x=f.stats[i]||{};return 1+(x.bad||0)*2+((x.lvl||0)<3?4:0);});let r=Math.random()*w.reduce((a,b)=>a+b,0);s=0;for(;s<24;s++){r-=w[s];if(r<=0)break;}st=3;}
+ f.cur={s,st,blanks:st===1?pickBlanks(SL[s].tpl):[],wrong:false,fb:null};save();}
+let fLock=false;
+RENDER.formul=function(){
+ const f=F();if(f.pendingBreak)return renderBreak();if(!f.cur)nextQ();
+ const c=f.cur,sl=SL[c.s],gold=goldCount(),total=f.queue.length;
+ const qnum=Math.min(f.qi+1,total);
+ const grid=SL.map((x,i)=>`<div class="sg l${(f.stats[i]||{}).lvl||0} ${i===c.s?'now':''}" title="Slot ${i+1}">${i+1}</div>`).join('');
+ let body='';
+ if(c.st===1){body=`<div class="qsent" id="qsent">${sl.tpl.split(' ').map((w,i)=>{if(c.blanks.includes(i)){const {pre,core,post}=splitW(w);return `${esc(pre)}<input class="bl" data-i="${i}" style="width:${core.length+2}ch" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Boşluk">${esc(post)}`;}return tplHTML(w);}).join(' ')}</div>`;}
+ else if(c.st===2){const ws=sl.tpl.split(' ');body=`<p class="muted" style="margin:0 0 4px">Görev: <b style="color:var(--ink)">${esc(sl.task)}</b> · ${esc(PARAS[sl.p].t)} paragrafı</p><p class="tiny muted" style="margin:0 0 10px">İpucu: ilk kelime <b class="mono">${esc(splitW(ws[0]).core.replace(/\{N\}/,'(isim)'))}</b>, ${ws.length} kelime. Boşluklara ___ veya kendi içeriğini yazabilirsin.</p><textarea id="qin" rows="2" placeholder="Cümlenin tamamını yaz…" autocapitalize="off" spellcheck="false"></textarea>`;}
+ else{body=`<div class="row" style="align-items:flex-end;gap:16px;margin-bottom:10px"><div class="bignum">${c.s+1}</div><p class="muted" style="margin:0 0 8px">Slot ${c.s+1}'in kalıbını ezberden yaz.<br><span class="tiny">Boşluklar için ___ veya gerçek içerik yazabilirsin.</span></p></div><textarea id="qin" rows="2" placeholder="Slot ${c.s+1}…" autocapitalize="off" spellcheck="false"></textarea>`;}
+ const fb=c.fb?`<div class="fb bad"><h4>Yanlış. Geçmiyoruz: önce doğrusuna bak.</h4>
+   <div class="small muted">Doğrusu (eksik/yanlış kelimeler işaretli):</div><div class="tpl" style="font-size:15px;margin:2px 0 8px">${tplMarked(sl.tpl,new Set(c.fb.miss))}</div>
+   ${c.fb.user?`<div class="small muted">Senin cevabın: <span class="mono">${esc(c.fb.user)}</span></div>`:''}
+   ${c.fb.extra?`<div class="small" style="color:var(--bad);margin-top:4px">${esc(c.fb.extra)}</div>`:''}
+   <div class="small" style="margin-top:8px"><b>Neden önemli:</b> ${esc(sl.why)}</div>
+   <div class="row" style="margin-top:12px"><button class="btn wood" id="retry">Aynı slotu tekrar sor <span class="kbd">Enter</span></button></div></div>`:'';
+ $('#v-formul').innerHTML=`
+ <div class="row"><div><div class="eyebrow">Mod 1 · 30 dk</div><h2 class="h2">Formül ezberi</h2></div><div class="sp"></div>
+  <span class="chip brass">${gold}/25 altın</span><span class="chip">Seri ${f.streak} · en iyi ${f.best}</span><span class="chip" title="Her 15 soruda mola">Mola'ya ${15-f.since} soru</span></div>
+ <div class="slotgrid" aria-label="Slot ustalığı">${grid}</div>
+ <div class="tiny muted">Kutular: gri = başlanmadı · bakır = aşama 1 · gümüş = aşama 2 · altın = numaradan ezber.</div>
+ <div class="card qcard" id="qcard" style="margin-top:12px">
+  <div class="qtop"><span class="chip brass">${STAGE[c.st]}</span><span class="chip">Slot ${c.s+1}/25</span>${c.st<3?`<span class="chip">${esc(sl.task)}</span>`:''}<span class="sp"></span><span class="tiny muted">${f.doneAll?'Karışık tekrar':'Soru '+qnum+'/'+total}</span></div>
+  ${body}
+  ${c.fb?'':`<div class="row" style="margin-top:12px"><button class="btn pri" id="qcheck">Kontrol et <span class="kbd">Enter</span></button><span class="tiny muted">she/he serbest · büyük-küçük harf ve noktalama önemsiz${c.st>1&&[8,13,18].includes(c.s)?' · bu slot "?" ile bitmeli':''}</span></div>`}
+  ${fb}<div id="okfb"></div>
+ </div>
+ <div class="row" style="margin-top:14px"><button class="btn sm ghost" id="refBtn">Formül tablosunu ${S.showRef?'gizle':'göster'}</button><span class="sp"></span><button class="btn sm danger" id="fReset">Formül ilerlemesini sıfırla</button></div>
+ <div id="refbox">${S.showRef?refTable():''}</div>`;
+ if(c.fb){if(c.fb.vals)$$('#qcard input.bl').forEach((x,k)=>{const v=c.fb.vals[k];if(v){x.value=v[0];x.classList.add(v[1]?'ok':'bad');}});else if($('#qin'))$('#qin').value=c.fb.user||'';$$('#qcard input,#qcard textarea').forEach(x=>x.disabled=true);$('#retry').onclick=retry;$('#retry').focus();}
+ else{const first=$('#qcard input.bl')||$('#qin');if(first)first.focus({preventScroll:true});$('#qcheck').onclick=checkF;
+  $$('#qcard input.bl').forEach((inp,k,arr)=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();if(k<arr.length-1&&!inp.value.trim())arr[k+1].focus();else checkF();}}));
+  const qi=$('#qin');if(qi)qi.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();checkF();}});}
+ $('#refBtn').onclick=()=>{S.showRef=!S.showRef;save();RENDER.formul();};
+ $('#fReset').onclick=()=>{if(confirm('Formül ezberi ilerlemesi sıfırlansın mı?')){S.formula=def().formula;save();RENDER.formul();}};
+};
+function refTable(){return `<div class="card"><div class="row"><b>25 slot · görev · kalıp</b><span class="sp"></span><label class="ck" style="padding:0"><input type="checkbox" id="exTog" ${S.showEx?'checked':''}> <span class="small">İngilizce örnekleri göster (Rebecca Nurse, sayfalar boş)</span></label></div>${PARAS.map(p=>`<div class="ptitle">P${PARAS.indexOf(p)+1} · ${p.t} (${p.n} cümle)</div>`+SL.slice(p.from,p.from+p.n).map(s=>`<div class="refrow"><div class="n">${s.n}</div><div><div class="task">${esc(s.task)}</div><div class="tpl">${tplHTML(s.tpl)}</div>${S.showEx?`<div class="ex">${esc(s.ex)}</div>`:''}<div class="tiny muted">${esc(s.why)}</div></div></div>`).join('')).join('')}</div>`;}
+document.addEventListener('change',e=>{if(e.target.id==='exTog'){S.showEx=e.target.checked;save();$('#refbox').innerHTML=refTable();}});
+function checkF(){
+ if(fLock)return;const f=F(),c=f.cur,sl=SL[c.s];let ok,user='',miss=new Set(),extra='';
+ if(c.st===1){const ins=$$('#qcard input.bl');if(ins.some(i=>!i.value.trim())){const e=ins.find(i=>!i.value.trim());e.focus();e.classList.add('shake');setTimeout(()=>e.classList.remove('shake'),400);return;}
+  const ws=sl.tpl.split(' ');ok=true;const wrongWords=[];
+  ins.forEach(inp=>{const w=splitW(ws[+inp.dataset.i]).core;const good=toks(inp.value).join(' ')===toks(w).join(' ');inp.classList.add(good?'ok':'bad');if(!good){ok=false;wrongWords.push(+inp.dataset.i);}});
+  user=ins.map(i=>i.value.trim()).join(' · ');
+  // build miss set by fixed-token index of wrong words
+  let fi=0;ws.forEach((w,i)=>{const tk=toks(splitW(w).core.replace(/\{N\}|_{2,}/g,''));tk.forEach(()=>{if(wrongWords.includes(i))miss.add(fi);fi++;});});
+ }else{const v=$('#qin').value;if(!v.trim()){$('#qin').focus();return;}user=v.trim();ok=matchTpl(sl.tpl,v);if(!ok)miss=missingIdx(sl.tpl,v);
+  if([8,13,18].includes(c.s)&&!/\?\s*["'”’)]*\s*$/.test(v.trim())){if(ok)extra='Soru işareti eksik: retorik soru "?" ile bitmeli, yoksa sayılmaz.';else extra='Ayrıca cümle "?" ile bitmeli.';ok=false;}}
+ f.answered++;f.since++;const st=f.stats[c.s]||(f.stats[c.s]={ok:0,bad:0,lvl:0});
+ if(ok){st.ok++;const gain=c.wrong?3:[0,5,10,15][c.st];if(c.st>(st.lvl||0)&&!c.wrong)st.lvl=c.st;else if(c.wrong&&c.st>(st.lvl||0)&&c.st<3)st.lvl=c.st;
+  f.streak++;f.best=Math.max(f.best,f.streak);if(f.streak>=10)badge('streak10');badge('first');
+  addXP(gain);if(f.qi<f.queue.length)f.qi++;f.cur=null;if(f.since>=15)f.pendingBreak=true;
+  if(goldCount()===25&&!S.badges.formula){badge('formula');confetti(50);}
+  save();fLock=true;const card=$('#qcard');card.classList.add('okpulse');$('#okfb').innerHTML=`<div class="fb ok"><h4 class="row" style="gap:8px"><span class="gavel" style="width:26px;display:inline-block">${ICON.gavel}</span> Doğru! +${gain} XP${c.wrong?' (tekrar sonrası)':''}</h4></div>`;strike($('#okfb .gavel'));
+  const b=$('#qcheck');if(b)b.disabled=true;
+  setTimeout(()=>{fLock=false;if(S.view==='formul')RENDER.formul();},RM?150:750);
+ }else{st.bad++;f.streak=0;c.wrong=true;c.fb={user,miss:[...miss],extra,vals:c.st===1?$$('#qcard input.bl').map(i=>[i.value,i.classList.contains('ok')]):null};save();RENDER.formul();const card=$('#qcard');card.classList.add('shake');}
+}
+function retry(){const f=F();f.cur.fb=null;if(f.since>=15)f.pendingBreak=true;save();RENDER.formul();}
+function renderBreak(){
+ const f=F();if(!f.breakStart){f.breakStart=Date.now();save();}
+ const recent=f.answered;$('#v-formul').innerHTML=`<div class="card breakscr"><div class="eyebrow">Mola · 15 soru bitti</div><h2 class="h2" style="margin:6px 0">Tokmak masada. 60 saniye nefes al.</h2>
+ <p class="muted">Toplam ${recent} cevap · altın slot ${goldCount()}/25 · seri ${f.streak}. Gözlerini ekrandan ayır, omuzlarını gevşet.</p>
+ <svg class="ring" viewBox="0 0 140 140"><circle class="bg" cx="70" cy="70" r="60"/><circle class="fg" id="brk" cx="70" cy="70" r="60" stroke-dasharray="377" stroke-dashoffset="0"/><text x="70" y="70" id="brkT">1:00</text></svg>
+ <button class="btn pri" id="brkGo">Devam et →</button></div>`;
+ $('#brkGo').onclick=()=>{f.pendingBreak=false;f.since=0;f.breakStart=null;badge('rest');save();RENDER.formul();};updBreak();}
+function updBreak(){const f=S.formula,el=$('#brk');if(!el||!f.breakStart)return;const left=Math.max(0,60000-(Date.now()-f.breakStart));el.style.strokeDashoffset=377*(1-left/60000);$('#brkT').textContent=left?fmt(left):'Hazır';}
+document.addEventListener('keydown',e=>{if(S.view==='formul'&&e.key==='Enter'&&$('#retry')&&document.activeElement&&document.activeElement.id!=='retry'){e.preventDefault();retry();}});
+
+/* ============ WHEEL ============ */
+function makeWheel(host,getReady){
+ const n=CH.length,step=360/n,R=140;let rot=0,busy=false;
+ const segs=CH.map((c,i)=>{const a0=(i*step-90)*Math.PI/180,a1=((i+1)*step-90)*Math.PI/180;const p=`M0 0 L${(R*Math.cos(a0)).toFixed(2)} ${(R*Math.sin(a0)).toFixed(2)} A${R} ${R} 0 0 1 ${(R*Math.cos(a1)).toFixed(2)} ${(R*Math.sin(a1)).toFixed(2)}Z`;const cdeg=(i+.5)*step;
+  return `<path class="segp s${i%3+1}" data-i="${i}" d="${p}"/>${cdeg>180?`<g transform="rotate(${(cdeg+90).toFixed(2)})"><text x="-40" y="0" text-anchor="end" data-t="${i}">${esc(c.short)}</text></g>`:`<g transform="rotate(${(cdeg-90).toFixed(2)})"><text x="40" y="0" data-t="${i}">${esc(c.short)}</text></g>`}`;}).join('');
+ const studs=Array.from({length:22},(_,k)=>{const a=k*(360/22)*Math.PI/180;return `<circle class="stud" cx="${(146*Math.cos(a)).toFixed(1)}" cy="${(146*Math.sin(a)).toFixed(1)}" r="2.2"/>`;}).join('');
+ host.innerHTML=`<div class="wheelwrap"><svg class="wheel" viewBox="-156 -162 312 318" role="img" aria-label="Kura çarkı"><circle r="150" fill="#3b1f0f"/><g class="wrot">${segs}</g><circle class="rim" r="146"/><circle class="rim2" r="141"/>${studs}<circle class="hub" r="30"/><g transform="translate(-17 -17) scale(.53)" style="color:#e2b746">${ICON.gavel.replace('class="gavel"','width="64" height="64"')}</g><path class="ptr" d="M-13 -160 L13 -160 L0 -134 Z"/></svg><div class="court"><div><small>ALL RISE</small><span>Court is now in session</span></div></div></div>`;
+ const g=host.querySelector('.wrot'),court=host.querySelector('.court');
+ function mark(){const rd=getReady();host.querySelectorAll('.segp').forEach(p=>p.classList.toggle('ready',rd.includes(CH[+p.dataset.i].id)));host.querySelectorAll('text[data-t]').forEach(t=>{const c=CH[+t.dataset.t];t.textContent=(rd.includes(c.id)?'✓ ':'')+c.short;});}
+ mark();
+ return{mark,busy:()=>busy,spin(i,cb){if(busy)return;busy=true;const cdeg=(i+.5)*step,j=(Math.random()-.5)*step*.6;const cur=((rot%360)+360)%360;const target=rot+360*5+((((-cdeg+j)-cur)%360)+360)%360;const from=rot,dur=RM?300:4200,t0=performance.now();court.querySelector('span').textContent='Court is now in session';court.querySelector('small').textContent='ALL RISE';court.classList.add('on');
+  const ease=t=>1-Math.pow(1-t,4);
+  function fr(now){const t=Math.min(1,(now-t0)/dur);rot=from+(target-from)*ease(t);g.setAttribute('transform',`rotate(${rot.toFixed(2)})`);if(t<1)requestAnimationFrame(fr);else{busy=false;court.querySelector('small').textContent='THE COURT CALLS';court.querySelector('span').textContent=CH[i].name;setTimeout(()=>court.classList.remove('on'),1600);cb&&cb(i);}}
+  requestAnimationFrame(fr);}};
+}
+function pickTez(){const nr=CH.map((c,i)=>i).filter(i=>!tezProg(CH[i].id).ready);const pool=nr.length?nr:CH.map((c,i)=>i);return rnd(pool);}
+
+/* ============ TEZ FABRİKASI ============ */
+let tezWheel=null;
+function ringSVG(p){const C=2*Math.PI*11;return `<svg class="pr" viewBox="0 0 28 28"><circle class="bg" cx="14" cy="14" r="11"/><circle class="fg" cx="14" cy="14" r="11" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${(C*(1-p)).toFixed(1)}"/></svg>`;}
+function charGrid(){return CH.map(c=>{const p=tezProg(c.id);return `<button class="cbtn ${p.ready?'ready':''} ${S.tezSel===c.id?'sel':''}" data-c="${c.id}">${ringSVG(p.pct)}<span>${esc(c.short)}<small>${p.ready?'Dava hazır':(p.th?'Tez ✓':'Tez —')+' · '+p.qn+'/6'}</small></span></button>`;}).join('');}
+RENDER.tez=function(){
+ const rc=readyCount();
+ $('#v-tez').innerHTML=`
+ <div class="row"><div><div class="eyebrow">Mod 2 · 75 dk · karakter başı ~7 dk</div><h2 class="h2">Tez fabrikası</h2></div><div class="sp"></div><span class="chip ${rc===11?'ok':'brass'}" id="tezCount">Dava hazır ${rc}/11</span></div>
+ <div class="bar" style="margin:10px 0 14px"><i id="tezBar" style="width:${rc/11*100}%"></i></div>
+ <div class="tezlayout">
+  <div class="card"><div id="wheelHost"></div>
+   <div class="row" style="justify-content:center;margin-top:12px"><button class="btn pri" id="spinBtn">Çarkı çevir</button></div>
+   <p class="tiny muted" style="text-align:center;margin:8px 0 0">Çark yalnızca <b>hazır olmayan</b> karakterlerden seçer (soluk + ✓ olanlar hazır). Hepsi hazırsa herkesten seçer.</p>
+   <hr class="rule"><div class="chars" id="charGrid">${charGrid()}</div>
+   <div class="row" style="margin-top:12px"><span class="sp"></span><button class="btn sm danger" id="tezReset">Tez fabrikasını sıfırla</button></div></div>
+  <div id="dossier">${S.tezSel?dossierHTML(S.tezSel):`<div class="card" style="text-align:center;padding:40px 18px"><div class="gavel" style="width:64px;margin:0 auto 8px">${ICON.gavel}</div><h3 class="h2">Mahkeme toplanıyor</h3><p class="muted">Çarkı çevir ya da soldan bir karakter seç. Dosya açılınca: (a) tez cümlesi, (b) her argüman için kitaptan 2 sayfa numarası + kısa alıntı. İkisi tamamlanınca <b>Dava hazır</b> damgası.</p></div>`}</div>
+ </div>`;
+ tezWheel=makeWheel($('#wheelHost'),()=>CH.filter(c=>tezProg(c.id).ready).map(c=>c.id));
+ $('#spinBtn').onclick=()=>{if(tezWheel.busy())return;const i=pickTez();$('#spinBtn').disabled=true;tezWheel.spin(i,()=>{$('#spinBtn').disabled=false;S.tezTimer={id:CH[i].id,start:Date.now()};openDossier(CH[i].id,true);});};
+ $('#charGrid').onclick=e=>{const b=e.target.closest('[data-c]');if(b)openDossier(b.dataset.c);};
+ $('#tezReset').onclick=()=>{if(confirm('Tüm tez ve alıntılar silinsin mi? (Bu geri alınamaz.)')){S.tez={};S.tezSel=null;S.tezTimer=null;save();RENDER.tez();}};
+ if(S.tezSel)bindDossier(S.tezSel);
+};
+function openDossier(id,fromWheel){S.tezSel=id;save();$('#dossier').innerHTML=dossierHTML(id);bindDossier(id);$('#charGrid').innerHTML=charGrid();const d=$('#dossier');if(innerWidth<900&&d.scrollIntoView)d.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});if(fromWheel)strike($('#dossier .gavel'));}
+const KN=(window.KANIT&&window.KANIT.characters)||{};
+const KNOTE=(window.KANIT&&window.KANIT.note)||'';
+function evAll(c){return (KN[c.name]||[]).map((e,i)=>Object.assign({i},e));}
+function argEv(c,k){return evAll(c).filter(e=>e.arg===k+1);}
+function extraEv(c){const used=new Set();for(let k=0;k<3;k++)argEv(c,k).slice(0,2).forEach(e=>used.add(e.i));return evAll(c).filter(e=>!used.has(e.i));}
+const EVLBL={dikkat:'Dikkat · savcının kozu',pathos:'Pathos'};
+function evLbl(e){return typeof e.arg==='number'?'Argüman '+e.arg+' (fazladan)':(EVLBL[e.arg]||String(e.arg));}
+function analizFor(c){const A=window.ANALIZ;if(!A||typeof A!=='object')return null;const src=A.characters||A;return src[c.name]||src[c.id]||src[c.short]||null;}
+function anyHTML(v){if(v==null)return'';if(typeof v!=='object')return '<p class="small" style="margin:4px 0">'+esc(v)+'</p>';if(Array.isArray(v))return '<ul class="small" style="margin:4px 0;padding-left:18px">'+v.map(x=>'<li>'+(x&&typeof x==='object'?anyHTML(x):esc(x))+'</li>').join('')+'</ul>';return Object.entries(v).map(([k,x])=>'<div style="margin-top:6px"><div class="eyebrow" style="font-size:10px">'+esc(k)+'</div>'+anyHTML(x)+'</div>').join('');}
+const ANL={motivasyon:'Motivasyon',savunma:'Savunma dayanakları',savci:'Savcı ne diyecek → cevabın',kontrol:'Kontrol (metinle doğrulama)',kaynaklar:'Kaynaklar'};
+function analizHTML(an){if(typeof an!=='object'||Array.isArray(an))return anyHTML(an);return Object.entries(an).map(([k,v])=>{let body;
+ if(k==='savci'&&Array.isArray(v))body='<ul class="small" style="margin:4px 0;padding-left:18px">'+v.map(x=>x&&typeof x==='object'?`<li><b>Savcı:</b> ${esc(x.iddia)}<br><b>Cevap:</b> ${esc(x.cevap)}</li>`:'<li>'+esc(x)+'</li>').join('')+'</ul>';
+ else if(k==='kaynaklar'&&Array.isArray(v))body='<div class="tiny muted">'+v.map(x=>x&&typeof x==='object'?esc(x.title||x.url):esc(x)).join(' · ')+'</div>';
+ else if(Array.isArray(v))body='<ul class="small" style="margin:4px 0;padding-left:18px">'+v.map(x=>typeof x==='string'&&/^\s*⚠/.test(x)?`<li class="warnbox" style="list-style:none;margin-left:-18px">${esc(x)}</li>`:'<li>'+(x&&typeof x==='object'?anyHTML(x):esc(x))+'</li>').join('')+'</ul>';
+ else body=anyHTML(v);
+ return `<div style="margin-top:8px"><div class="eyebrow" style="font-size:10.5px">${esc(ANL[k]||k)}</div>${body}</div>`;}).join('');}
+function evBox(e,inner){return `<div class="ev"><div class="evh"><span class="chip">${esc(e.act)} · PDF s.${esc(e.pdfPage)}</span><span class="tiny muted">${esc(e.who)}</span></div>
+ <div class="find">Kitabında ara: <span class="mono">“${esc(e.find)}”</span></div>
+ <div class="small">${esc(e.what)}</div>
+ <div class="use"><span class="tiny muted">Cümle başlangıcı:</span> ${esc(e.use)}</div>
+ ${e.warning?`<div class="warnbox"><b>UYARI:</b> ${esc(e.warning)}</div>`:''}${inner}</div>`;}
+function dossierHTML(id){const c=CH[CHI[id]],z=tezOf(id),p=tezProg(id),ex=extraEv(c),an=analizFor(c);if(!z.x)z.x={};
+ const corTag='<span class="cortag" title="SPEC metni oyunla karşılaştırılıp düzeltildi">metne göre düzeltildi</span>';
+ return `<div class="card dossier" id="dcard">
+  ${p.ready?'<div class="stamp">DAVA HAZIR</div>':''}
+  <div class="row" style="gap:10px;padding-right:110px"><div class="gavel" style="width:34px">${ICON.gavel}</div><div><div class="eyebrow">Dosya · ${esc(c.he?'he/him':'she/her')}</div><h3 class="h2">${esc(c.name)}</h3></div></div>
+  <div class="row" style="margin-top:6px"><span class="chip" id="dStat">${statTxt(p)}</span>${S.tezTimer&&S.tezTimer.id===id?'<span class="chip timerchip" id="tezTimer">7:00</span>':''}</div>
+  <div class="acc"><div class="eyebrow" style="color:var(--bad)">Suçlama (misconduct)</div>${esc(c.acc)}</div>
+  <div class="small muted"><b>Kitapta bul:</b> ${esc(c.find)}</div>
+  ${c.note?`<div class="note"><b>${esc(c.note[0])}:</b> ${esc(c.note[1])} ${c.noteCor?corTag:''}</div>`:''}
+  ${KNOTE?`<details class="pdfnote"><summary class="small">PDF sayfası ≠ senin kitabın (≈7–10 sayfa fark). Nasıl kullanılır?</summary><p class="small muted" style="margin:6px 0 0">${esc(KNOTE)}</p></details>`:''}
+  <div style="margin-top:14px"><label for="thIn" class="eyebrow">(a) Tez cümlesi · slot 4</label>
+   <div class="tpl tiny muted" style="margin:2px 0 6px">${esc(tplFor(SL[3].tpl,c))}</div>
+   <textarea id="thIn" rows="3" placeholder="${esc(c.name)} is not guilty, because (1) …, (2) …, and (3) …">${esc(z.thesis)}</textarea>
+   <div class="row" style="margin-top:6px"><button class="btn sm" id="thTpl">Kalıbı ekle</button><span class="tiny muted" id="thHint">Tamam sayılır: "not guilty" + "because" içerir ve en az 10 kelime.</span></div></div>
+  <div style="margin-top:14px" class="eyebrow">(b) Her argüman için 2 kanıt: "find" ifadesini kitabında bul, KENDİ kitabının sayfasını yaz</div>
+  ${c.args.map((a,k)=>{const evs=argEv(c,k);return `<div class="arg"><div class="ah"><span class="an">${k+1}</span><div class="small">${esc(a)} ${(c.cor||[]).includes(k)?corTag:''}</div></div>
+   ${[0,1].map(r=>{const qi=k*2+r,q=z.q[qi],e=evs[r];const row=`<div class="qrow"><div class="pg"><input inputmode="numeric" data-q="${qi}" data-f="p" value="${esc(q.p)}" placeholder="kitabım" aria-label="Argüman ${k+1} kanıt ${r+1}: kitabımdaki sayfa"></div><input data-q="${qi}" data-f="t" value="${esc(q.t)}" placeholder="${esc(e?e.find:'Kısa alıntı / yakın açıklama')}" ${e?`data-def="${esc(e.find)}"`:''} aria-label="Argüman ${k+1} kanıt ${r+1} alıntı"><span class="st ${quoteOk(q)?'ok':''}" data-st="${qi}">${quoteOk(q)?'✓':r+1}</span></div>`;return e?evBox(e,row):row;}).join('')}</div>`;}).join('')}
+  ${ex.length?`<div class="arg"><div class="eyebrow">Dikkat / Pathos kanıtları (6'ya sayılmaz, savunmanı güçlendirir)</div>${ex.map(e=>evBox(Object.assign({},e,{act:evLbl(e)+' · '+e.act}),`<div class="qrow" style="grid-template-columns:86px 1fr"><div class="pg"><input inputmode="numeric" data-x="${e.i}" value="${esc(z.x[e.i]||'')}" placeholder="kitabım" aria-label="${esc(evLbl(e))}: kitabımdaki sayfa"></div><span class="tiny muted">kitabındaki sayfa</span></div>`)).join('')}</div>`:''}
+  <p class="tiny muted" style="margin:10px 0 0">Kanıt tamam sayılır: KENDİ kitabından sayfa (1–999) + en az 3 karakterlik alıntı/açıklama. Sayfayı yazınca alıntı alanı boşsa "find" ifadesiyle dolar; istersen değiştir. Her şey otomatik kaydedilir.</p>
+  ${an?`<details class="arg"><summary class="eyebrow">Analiz · motivasyon, savunma, savcının kozları</summary>${analizHTML(an)}</details>`:''}
+ </div>`;}
+function statTxt(p){return p.ready?'Tez ✓ · Alıntı 6/6 · hazır':`Tez ${p.th?'✓':'—'} · Alıntı ${p.qn}/6`;}
+function bindDossier(id){const z=tezOf(id),c=CH[CHI[id]];const d=$('#dcard');if(!d)return;
+ const th=$('#thIn');th.addEventListener('input',()=>{z.thesis=th.value;tezChanged(id);});
+ $('#thTpl').onclick=()=>{if(!th.value.trim()){th.value=tplFor(SL[3].tpl,c);z.thesis=th.value;tezChanged(id);}th.focus();const i=th.value.indexOf('___');if(i>=0)th.setSelectionRange(i,i+3);};
+ d.addEventListener('input',e=>{const t=e.target;if(t.dataset.x!=null){if(!z.x)z.x={};z.x[t.dataset.x]=t.value;save();return;}if(t.dataset.q==null)return;const qi=+t.dataset.q;z.q[qi][t.dataset.f]=t.value;
+  if(t.dataset.f==='p'&&t.value.trim()&&!String(z.q[qi].t).trim()){const ti=d.querySelector(`input[data-q="${qi}"][data-f="t"]`);if(ti&&ti.dataset.def){ti.value=ti.dataset.def;z.q[qi].t=ti.value;}}
+  const ok=quoteOk(z.q[qi]);const st=d.querySelector(`[data-st="${qi}"]`);st.classList.toggle('ok',ok);st.textContent=ok?'✓':(qi%2+1);tezChanged(id);});
+ updTezTimer();}
+function tezChanged(id){const z=tezOf(id),p=tezProg(id),aw=z.aw||(z.aw={});
+ if(p.th&&!aw.th){aw.th=1;addXP(20);}
+ z.q.forEach((q,i)=>{if(quoteOk(q)&&!(aw['q'+i])){aw['q'+i]=1;addXP(5);}});
+ const st=$('#dStat');if(st)st.textContent=statTxt(p);
+ const d=$('#dcard');if(d){let s=d.querySelector('.stamp');if(p.ready&&!s){d.insertAdjacentHTML('afterbegin','<div class="stamp anim">DAVA HAZIR</div>');}else if(!p.ready&&s)s.remove();}
+ if(p.ready&&!aw.ready){aw.ready=1;addXP(50);badge('case-'+id,true);toast('Dava hazır: '+CH[CHI[id]].name+'!');confetti(30);strike($('#dcard .gavel'));}
+ const rc=readyCount();const cc=$('#tezCount');if(cc){cc.textContent='Dava hazır '+rc+'/11';cc.className='chip '+(rc===11?'ok':'brass');$('#tezBar').style.width=(rc/11*100)+'%';}
+ const g=$('#charGrid');if(g){const b=g.querySelector(`[data-c="${id}"]`);if(b){const tmp=document.createElement('div');tmp.innerHTML=charGrid();const nb=tmp.querySelector(`[data-c="${id}"]`);b.replaceWith(nb);}}
+ if(tezWheel)tezWheel.mark();
+ save();if(rc===11){badge('all');if(!S.finalShown){S.finalShown=true;save();setTimeout(showFinal,900);}}}
+function updTezTimer(){const el=$('#tezTimer');if(!el||!S.tezTimer)return;const left=7*60000-(Date.now()-S.tezTimer.start);el.textContent=left>=0?fmt(left)+' hedef':'+'+fmt(-left)+' aşım';el.className='chip timerchip '+(left>=0?'':'warn');}
+
+/* ============ MOLA + QUIZ ============ */
+const MOLA=15*60000;
+RENDER.mola=function(){
+ const q=S.quiz;
+ $('#v-mola').innerHTML=`
+ <div class="row"><div><div class="eyebrow">Plan adımı 3 · 15 dk</div><h2 class="h2">Mola, sonra ısınma</h2></div></div>
+ <div class="grid2" style="margin-top:12px">
+  <div class="card" style="text-align:center"><div class="eyebrow">Mola sayacı</div>
+   <svg class="ring" viewBox="0 0 140 140" style="width:170px;height:170px"><circle class="bg" cx="70" cy="70" r="60"/><circle class="fg" id="molaRing" cx="70" cy="70" r="60" stroke-dasharray="377" stroke-dashoffset="377"/><text x="70" y="70" id="molaT">15:00</text></svg>
+   <div class="row" style="justify-content:center"><button class="btn pri" id="molaBtn">${S.mola.start?'Molayı yeniden başlat':'15 dk molayı başlat'}</button></div>
+   <p class="small muted" style="margin:10px 0 0">Ekrandan uzaklaş, su iç, ayağa kalk. Kafanda 25 slotu bir kez say. Süre bitince aşağıdaki quiz ile ısın.</p></div>
+  <div class="card"><div class="eyebrow">Hızlı quiz · ısınma</div><p class="small muted" style="margin:4px 0 8px">Karakter → suçlama → argüman eşleştirme. Yanlışta geçmiyoruz: açıklama gelir, aynı soru tekrar sorulur.</p>
+   <div class="row"><span class="chip">İlk denemede doğru: ${q.ok}/${q.total}</span><span class="chip">En iyi tur ${q.best}/12</span><span class="chip">Tur ${q.rounds}</span></div>
+   <div id="quizBox" style="margin-top:12px"></div>
+   <div class="row" style="margin-top:12px"><span class="sp"></span><button class="btn sm danger" id="qReset">Quiz istatistiklerini sıfırla</button></div></div>
+ </div>`;
+ $('#molaBtn').onclick=()=>{S.mola.start=Date.now();save();updMola();};
+ $('#qReset').onclick=()=>{if(confirm('Quiz istatistikleri sıfırlansın mı?')){S.quiz=def().quiz;save();RENDER.mola();}};
+ updMola();renderQuiz();
+};
+function updMola(){const r=$('#molaRing');if(!r)return;if(!S.mola.start){$('#molaT').textContent='15:00';return;}const left=Math.max(0,MOLA-(Date.now()-S.mola.start));r.style.strokeDashoffset=377*(left/MOLA);$('#molaT').textContent=left?fmt(left):'Bitti';if(!left&&!S.mola.done){S.mola.done=true;addXP(10);badge('rest');toast('Mola bitti: şimdi Hızlı quiz ile ısın.');save();}}
+function genRound(){const cs=shuffle(CH.map((c,i)=>i)).slice(0,6),qs=[];cs.forEach(ci=>{qs.push({type:Math.random()<.5?'acc':'who',c:ci});qs.push({type:'arg',c:ci,a:Math.floor(Math.random()*3)});});return qs;}
+function genOpts(q){const others=shuffle(CH.map((c,i)=>i).filter(i=>i!==q.c)).slice(0,3);let opts;
+ if(q.type==='acc')opts=[{t:CH[q.c].acc,ok:1},...others.map(i=>({t:CH[i].acc,ok:0}))];
+ else if(q.type==='who')opts=[{t:CH[q.c].name,ok:1},...others.map(i=>({t:CH[i].name,ok:0}))];
+ else opts=[{t:CH[q.c].args[q.a],ok:1},...others.map(i=>({t:CH[i].args[Math.floor(Math.random()*3)],ok:0}))];
+ return shuffle(opts);}
+function qPrompt(q){const c=CH[q.c];if(q.type==='acc')return `<div class="eyebrow">Karakter → suçlama</div><b style="font-size:18px">${esc(c.name)}</b><div class="small muted">Bu karakterin suçlaması hangisi?</div>`;if(q.type==='who')return `<div class="eyebrow">Suçlama → karakter</div><b>“${esc(c.acc)}”</b><div class="small muted">Bu kimin dosyası?</div>`;return `<div class="eyebrow">Suçlama → argüman</div><b>${esc(c.name)}</b><div class="small">Suçlama: ${esc(c.acc)}</div><div class="small muted">Hangisi bu suçlamaya karşı savunma argümanlarından biri?</div>`;}
+function qWhy(q){const c=CH[q.c];if(q.type==='arg')return `Bu, ${c.name} dosyasının ${q.a+1}. argümanı. Kitapta bul: ${c.find}.`;return `${c.name}: suçlama “${c.acc}”. Kilit sahne: ${c.find}.`;}
+function renderQuiz(){const box=$('#quizBox');if(!box)return;const Q=S.quiz;
+ if(!Q.cur){box.innerHTML=`<div style="text-align:center;padding:18px 0"><button class="btn pri" id="qStart">12 soruluk tur başlat</button><div class="tiny muted" style="margin-top:6px">Kısayol: 1–4 tuşları</div></div>`;$('#qStart').onclick=()=>{Q.cur={qs:genRound(),i:0,ok:0,wrong:false,opts:null,fb:null};save();renderQuiz();};return;}
+ const R=Q.cur;if(R.i>=R.qs.length){const best=Math.max(Q.best,R.ok);box.innerHTML=`<div style="text-align:center;padding:10px 0"><div class="scorebig">${R.ok}<small>/12</small></div><p class="muted">ilk denemede doğru. ${R.ok>=10?'Mahkeme etkilendi.':'Bir tur daha: zayıf eşleşmeler güçlensin.'}</p><button class="btn pri" id="qAgain">Yeni tur</button></div>`;$('#qAgain').onclick=()=>{Q.cur=null;save();renderQuiz();$('#qStart').click();};return;}
+ const q=R.qs[R.i];if(!R.opts){R.opts=genOpts(q);save();}
+ box.innerHTML=`<div class="tiny muted">Soru ${R.i+1}/12 · doğru ${R.ok}</div><div class="bar" style="height:5px;margin:4px 0 10px"><i style="width:${R.i/12*100}%"></i></div>${qPrompt(q)}
+ <div class="opts" id="opts">${R.opts.map((o,k)=>`<button class="opt" data-k="${k}"><span class="k">${k+1}</span><span>${esc(o.t)}</span></button>`).join('')}</div>
+ ${R.fb?`<div class="fb bad"><h4>Yanlış. Doğrusu işaretli.</h4><div class="small">${esc(qWhy(q))}</div><div class="row" style="margin-top:10px"><button class="btn wood" id="qRetry">Aynı soruyu tekrar sor <span class="kbd">Enter</span></button></div></div>`:''}`;
+ if(R.fb){$$('#opts .opt').forEach((b,k)=>{b.disabled=true;if(R.opts[k].ok)b.classList.add('ok');if(k===R.fb.pick)b.classList.add('bad');});$('#qRetry').onclick=quizRetry;$('#qRetry').focus({preventScroll:true});}
+ else $('#opts').onclick=e=>{const b=e.target.closest('.opt');if(b)answerQ(+b.dataset.k);};}
+function answerQ(k){const Q=S.quiz,R=Q.cur;if(!R||R.fb||R.i>=R.qs.length)return;const o=R.opts[k];if(!o)return;
+ if(o.ok){if(!R.wrong){R.ok++;Q.ok++;addXP(5);Q.streak++;if(Q.streak>=10)badge('streak10');badge('first');}Q.total+=R.wrong?0:1;const b=$(`#opts .opt[data-k="${k}"]`);b.classList.add('ok');$$('#opts .opt').forEach(x=>x.disabled=true);
+  setTimeout(()=>{R.i++;R.wrong=false;R.opts=null;if(R.i>=R.qs.length){Q.rounds++;Q.best=Math.max(Q.best,R.ok);badge('quiz');addXP(15);}save();if(S.view==='mola')RENDER.mola();},RM?100:550);}
+ else{if(!R.wrong){Q.total++;}R.wrong=true;Q.streak=0;R.fb={pick:k};save();renderQuiz();const box=$('#opts');box.classList.add('shake');}}
+function quizRetry(){const R=S.quiz.cur;R.fb=null;R.opts=shuffle(R.opts.slice());save();renderQuiz();}
+document.addEventListener('keydown',e=>{if(S.view!=='mola'||!S.quiz.cur)return;if(/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName))return;const R=S.quiz.cur;if(R.fb&&e.key==='Enter'){e.preventDefault();quizRetry();}else if(!R.fb&&/^[1-4]$/.test(e.key))answerQ(+e.key-1);});
+
+/* ============ ANALYSIS (Tam prova) ============ */
+const CONN_RE=/^\s*["“]?(First|Moreover|Furthermore|Finally|Ultimately|Picture)\b/i,P1_RE=/^\s*["“]?Ladies and gentlemen\b/i;
+const CITE_RE=/\(\s*Miller\s+\d{1,4}(?:\s*[-–]\s*\d{1,4})?\s*\)/gi;
+const INFORMAL=['gonna','wanna','gotta','kinda','sorta','kids','kid','okay','ok','yeah','yep','nope','guys','stuff'];
+const CONTR_RES=[/\b[A-Za-z]+n['’]t\b/g,/\b(?:it|that|there|here|what|who|where|when|how|he|she|everyone|everybody|nobody|let)['’]s\b/gi,/\b[A-Za-z]+['’](?:re|ve|ll|d|m)\b/g,new RegExp('\\b(?:'+INFORMAL.join('|')+')\\b','gi')];
+function contractions(t){const out=[];CONTR_RES.forEach(re=>{re.lastIndex=0;let m;while((m=re.exec(t)))out.push(m[0]);});return out;}
+const countQ=t=>(t.match(/\?+(?=["'”’)\]]*(\s|$))/g)||[]).length;
+const countCite=t=>(t.match(CITE_RE)||[]).length;
+function paraTexts(slots){return PARAS.map(p=>slots.slice(p.from,p.from+p.n).map(s=>(s||'').trim()).filter(Boolean).join(' '));}
+function fullText(slots){return paraTexts(slots).filter(Boolean).join('\n\n');}
+function slotWarn(i,t){t=(t||'').trim();if(!t)return[];const w=[];const c=contractions(t);if(c.length)w.push('Kısaltma/gayriresmî: '+c.join(', '));
+ if([5,7,10,12,15,17].includes(i)&&!countCite(t))w.push('Kanıt slotu: "(Miller sayı)" yok');
+ if([8,13,18].includes(i)&&!/\?\s*["'”’)]*$/.test(t))w.push('Soru slotu "?" ile bitmeli');
+ if(i===22&&(t.match(/\bover\b/gi)||[]).length<3)w.push('Üçleme: 3× "over" bekleniyor');
+ if(i===3&&!thesisOk(t))w.push('Tez: "not guilty" + "because" + 3 sebep');
+ const P=PARAS.findIndex(p=>i>=p.from&&i<p.from+p.n);if(PARAS[P].from===i){if(P===0?!(P1_RE.test(t)||CONN_RE.test(t)):!CONN_RE.test(t))w.push(P===0?'P1 "Ladies and gentlemen" ile açılmalı':'Paragraf bağlaçla açılmalı (First, Moreover, Furthermore, Finally, Ultimately, Picture)');}
+ if(!w.length&&!matchTpl(SL[i].tpl,t))w.push('Kalıptan sapıyor (puanı etkilemez): '+tplText(SL[i].tpl));
+ return w;}
+function analyze(slots){const full=fullText(slots);const paras=paraTexts(slots).map((t,P)=>{const ok=!!t&&(P===0?(P1_RE.test(t)||CONN_RE.test(t)):CONN_RE.test(t));return{ok,empty:!t,first:t.split(/\s+/)[0]||''};});
+ return{full,words:full.split(/\s+/).filter(w=>/[A-Za-z0-9]/.test(w)).length,cites:countCite(full),q:countQ(full),contr:contractions(full),paras,paraFail:paras.filter(p=>!p.ok).length,missing:slots.map((s,i)=>(s||'').trim()?-1:i).filter(i=>i>=0),overs:((slots[22]||'').match(/\bover\b/gi)||[]).length};}
+function scoreOf(slots,chk){const a=analyze(slots);const f=i=>!!(slots[i]||'').trim();
+ const ws=chk.whoSlot===''||chk.whoSlot==null?-1:+chk.whoSlot;
+ const K=[{t:`"(Miller n)" alıntı: ${a.cites} (en az 6)`,ok:a.cites>=6,pt:Math.min(a.cites,6),max:6},{t:'Öz-kontrol: hiçbir şey uydurmadım',ok:!!chk.noInv,pt:chk.noInv?4:0,max:4}];
+ const I=[{t:`Retorik soru ("?" ile biten cümle): ${a.q} (en az 3)`,ok:a.q>=3,pt:Math.min(a.q,3),max:3},
+  {t:'Kusur kabulü: slot 2 dolu + onay',ok:f(1)&&chk.conc,pt:f(1)&&chk.conc?2:0,max:2},
+  {t:`"Who gains" motive: ${ws>=0?'slot '+(ws+1):'slot seçilmedi'}${ws>=0&&!f(ws)?' (boş)':''} + onay`,ok:ws>=0&&f(ws)&&chk.who,pt:ws>=0&&f(ws)&&chk.who?3:0,max:3},
+  {t:'Üçleme: slot 23 dolu + onay',ok:f(22)&&chk.tri,pt:f(22)&&chk.tri?2:0,max:2}];
+ const D=[{t:`Kısaltma/gayriresmî: ${a.contr.length}${a.contr.length?' ('+a.contr.join(', ')+')':''} · her biri −1`,ok:!a.contr.length,pt:Math.max(0,5-a.contr.length),max:5},
+  {t:`Bağlaçla açılan paragraf: ${6-a.paraFail}/6 · her eksik −1`,ok:!a.paraFail,pt:Math.max(0,5-a.paraFail),max:5}];
+ const sum=x=>x.reduce((s,y)=>s+y.pt,0);const k=sum(K),i=sum(I),d=sum(D);return{a,parts:[['Kanıt',K,k],['İkna',I,i],['Dil',D,d]],total:k+i+d};}
+
+/* ============ TAM PROVA ============ */
+let provaWheel=null;
+const P80=80*60000;
+function provaEl(c){if(!c.start)return 0;return (c.pausedAt||Date.now())-c.start-c.acc;}
+RENDER.prova=function(){const P=S.prova;if(!P.cur)return renderProvaSetup();renderProvaEditor();};
+function renderProvaSetup(){const H=S.prova.history;
+ $('#v-prova').innerHTML=`<div class="row"><div><div class="eyebrow">Mod 4 · 60 dk (gerçek sınav 80 dk)</div><h2 class="h2">Tam prova</h2></div></div>
+ <div class="tezlayout" style="margin-top:12px"><div class="card"><div id="pWheel"></div><div class="row" style="justify-content:center;margin-top:12px"><button class="btn pri" id="pSpin">Çarkı çevir: davayı al</button></div>
+  <details style="margin-top:12px"><summary class="small">Ya da karakteri kendin seç</summary><div class="chars" style="margin-top:8px">${CH.map(c=>`<button class="cbtn" data-pc="${c.id}"><span>${esc(c.short)}<small>${tezProg(c.id).ready?'Dava hazır':'tez '+tezProg(c.id).qn+'/6'}</small></span></button>`).join('')}</div></details></div>
+ <div class="card"><h3 class="h2">Nasıl işler?</h3><ol class="rules"><li>Çark bir karakter seçer; 25 slotluk editör açılır, Tez fabrikasındaki tezin ve sayfaların yan panelde durur.</li><li>80 dk sayaç: <b>0–10 plan</b>, <b>10–65 yaz</b> (55 dk / 25 cümle ≈ 2,2 dk/cümle), <b>65–80 kontrol</b>.</li><li>Canlı sayaçlar: kelime, <code>(Miller n)</code>, retorik soru, kısaltma, bağlaç.</li><li>Bitince <b>Formül puanı /30</b>, eksik slotlar ve kopyalanabilir metin (Claude'a puanlatmak için).</li></ol>
+  ${H.length?`<hr class="rule"><b>Geçmiş provalar</b><ul class="qlist">${H.slice().reverse().map(h=>`<li><span class="pgn">${h.score}/30</span> · ${esc(CH[CHI[h.id]]?CH[CHI[h.id]].name:h.id)} · <span class="tiny muted">${new Date(h.at).toLocaleString('tr-TR',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'})}</span></li>`).join('')}</ul>`:''}
+  <div class="row" style="margin-top:12px"><span class="sp"></span><button class="btn sm danger" id="pResetAll">Prova geçmişini sıfırla</button></div></div></div>`;
+ provaWheel=makeWheel($('#pWheel'),()=>[]);
+ $('#pSpin').onclick=()=>{if(provaWheel.busy())return;$('#pSpin').disabled=true;const i=Math.floor(Math.random()*CH.length);provaWheel.spin(i,()=>setTimeout(()=>startProva(CH[i].id),700));};
+ $$('[data-pc]').forEach(b=>b.onclick=()=>startProva(b.dataset.pc));
+ $('#pResetAll').onclick=()=>{if(confirm('Prova geçmişi ve açık prova silinsin mi?')){S.prova=def().prova;save();RENDER.prova();}};}
+function sideEvidence(c,z){const pg=v=>{v=String(v||'').trim();return v?'(Miller '+esc(v)+')':'<span style="color:var(--bad)">(Miller ?)</span>';};
+ const out=[0,1,2].map(k=>{const evs=argEv(c,k);return `<div class="sev"><b>A${k+1}</b> <span class="tiny muted">${esc(c.args[k])}</span>${[0,1].map(r=>{const q=z?z.q[k*2+r]:{p:'',t:''},e=evs[r];if(!e&&!(q.p||q.t))return'';const own=String(q.t||'').trim();return `<div style="margin-top:4px"><span class="qlist"><span class="pgn">${pg(q.p)}</span></span> ${e?'<span class="mono tiny">“'+esc(e.find)+'”</span>':''}${own&&(!e||own!==e.find)?' · '+esc(own):''}${e?`<div class="tiny muted" style="font-style:italic">${esc(e.use)}</div>`:''}${e&&e.warning?`<div class="w">UYARI: ${esc(e.warning)}</div>`:''}</div>`;}).join('')}</div>`;});
+ extraEv(c).forEach(e=>{const v=z&&z.x?z.x[e.i]:'';out.push(`<div class="sev"><b>${esc(evLbl(e))}</b> <span class="pgn mono">${pg(v)}</span> <span class="mono tiny">“${esc(e.find)}”</span><div class="tiny muted" style="font-style:italic">${esc(e.use)}</div>${e.warning?`<div class="w">UYARI: ${esc(e.warning)}</div>`:''}</div>`);});
+ return out.join('')+'<div class="tiny muted" style="margin-top:4px">Sayfalar Tez fabrikasında yazdığın KENDİ kitabının sayfaları; PDF sayfası değil.</div>';}
+function startProva(id){S.prova.cur={id,start:null,pausedAt:null,acc:0,slots:Array(25).fill(''),chk:{noInv:false,conc:false,who:false,whoSlot:'',tri:false},result:null};save();RENDER.prova();scrollTo(0,0);}
+function renderProvaEditor(){const P=S.prova,c=P.cur,ch=CH[CHI[c.id]],z=S.tez[c.id],p=tezProg(c.id);
+ const side=`<div class="card side sidebox" id="side"><details ${innerWidth>980?'open':''} id="sideD"><summary><span class="eyebrow">Dosya · ${esc(ch.name)}</span></summary>
+  <h4>Suçlama</h4><div class="small">${esc(ch.acc)}</div>
+  <h4>Tezin (Tez fabrikası)</h4>${z&&z.thesis.trim()?`<div class="small" style="font-style:italic">${esc(z.thesis)}</div><button class="btn sm" id="thCopy" style="margin-top:6px">Tezi slot 4'e koy</button>`:'<div class="small muted">Bu karakter için henüz tez yok.</div>'}
+  <h4>Kanıtların · (Miller kitabının sayfası)</h4>${sideEvidence(ch,z)}
+  <h4>Argümanlar (veriden)</h4><ol class="small" style="padding-left:18px;margin:0">${ch.args.map(a=>`<li>${esc(a)}</li>`).join('')}</ol>
+  <h4>Kitapta bul</h4><div class="small">${esc(ch.find)}</div>${ch.note?`<div class="note small"><b>${esc(ch.note[0])}:</b> ${esc(ch.note[1])}</div>`:''}
+  <div class="tiny muted" style="margin-top:8px">Durum: ${p.ready?'Dava hazır':'tez '+(p.th?'✓':'—')+' · alıntı '+p.qn+'/6'}</div></details></div>`;
+ const slotsHTML=PARAS.map((pp,P)=>`<div class="phead"><h3>P${P+1} · ${pp.t}</h3><span class="tiny muted">${pp.n} cümle · ${P===0?'"Ladies and gentlemen" ile açılır':'bağlaçla açılır'}</span></div>`+SL.slice(pp.from,pp.from+pp.n).map(s=>{const i=s.n-1;return `<div class="slot" id="slot${i}" data-i="${i}"><div class="sn">${s.n}</div><div><div class="sm"><b>${esc(s.task)}</b><span class="tpl">${esc(tplFor(s.tpl,ch))}</span></div>
+  <textarea rows="1" data-s="${i}" spellcheck="true" lang="en" aria-label="Slot ${s.n}: ${esc(s.task)}">${esc(c.slots[i])}</textarea>
+  <div class="row" style="gap:6px;margin-top:4px"><button class="btn sm ghost" data-tpl="${i}">Kalıbı ekle</button>${S.prova.showEx?`<span class="tiny muted" style="font-style:italic">Örnek: ${esc(s.ex)}</span>`:''}</div><div class="flags" data-fl="${i}"></div></div></div>`;}).join('')).join('');
+ $('#v-prova').innerHTML=`
+ <div class="card"><div class="ptimer"><div><div class="eyebrow">Tam prova · ${esc(ch.name)}</div><div class="ptime" id="pTime">80:00</div></div>
+  <div><div class="small" id="pPhase">Hazır olunca süreyi başlat.</div><div class="phases" id="phases"><div class="ph" style="flex:10"><i></i><span>0–10 Plan</span></div><div class="ph" style="flex:55"><i></i><span>10–65 Yaz (~2 dk/cümle)</span></div><div class="ph" style="flex:15"><i></i><span>65–80 Kontrol</span></div></div></div>
+  <div class="row" style="flex-direction:column;align-items:stretch;gap:6px"><button class="btn pri sm" id="pStart"></button><button class="btn sm ghost" id="pNew">Yeni prova</button></div></div></div>
+ <div class="counters" id="ctrs"></div>
+ <div class="provalayout"><div>
+  <details class="card" style="margin-top:0"><summary class="small">Nasıl sayılıyorum? (puan kuralları)</summary><ul class="rules">
+   <li><b>Kelime:</b> boşlukla ayrılan, harf/rakam içeren her parça. Hedef ≈ 500.</li>
+   <li><b>Alıntı:</b> tam olarak <code>(Miller 103)</code> biçimi (tire ile aralık da olur: <code>(Miller 103-104)</code>). Kanıt: her alıntı 1 puan (en çok 6) + "uydurmadım" onayı 4 puan.</li>
+   <li><b>Retorik soru:</b> "?" ile biten her cümle. İlk 3 soru 1'er puan.</li>
+   <li><b>Kusur kabulü</b> (2), <b>who gains</b> (3), <b>üçleme</b> (2): otomatik ölçülemez; ilgili slot dolu <i>ve</i> aşağıdaki onay kutusu işaretli olmalı.</li>
+   <li><b>Kısaltma/gayriresmî:</b> her <code>n't</code> (don't, can't, won't…), <code>it's / that's / there's / he's / she's / what's / let's…</code>, <code>'re 've 'll 'd 'm</code> ve <code>${INFORMAL.join(', ')}</code>. Her biri −1 (5'ten). İsim + 's (Abigail's) iyelik sayılır, uyarı vermez; "Abigail's lying" gibi kullanımları sen yakala.</li>
+   <li><b>Bağlaç:</b> P1 "Ladies and gentlemen" ile; P2–P6 şunlardan biriyle açılmalı: <code>First, Moreover, Furthermore, Finally, Ultimately, Picture</code>. Her eksik paragraf −1 (5'ten).</li></ul></details>
+  <div class="card" style="margin-top:12px"><div class="row"><b>Editör · 25 slot</b><span class="sp"></span><label class="ck" style="padding:0"><input type="checkbox" id="pEx" ${P.showEx?'checked':''}><span class="small">Örnekleri göster</span></label></div>${slotsHTML}</div>
+  <div class="card" id="chkCard"><h3 class="h2">Kontrol (65–80. dakika)</h3><p class="small muted">Otomatik ölçülemeyenler için dürüst öz-kontrol. Kutular puana bağlı slot doluysa sayılır.</p>
+   <label class="ck"><input type="checkbox" data-k="noInv" ${c.chk.noInv?'checked':''}><span><b>Hiçbir şey uydurmadım.</b> Her bilgi kitapta var, sayfalar doğru. <span class="tiny muted">(Kanıt +4)</span></span></label>
+   <label class="ck"><input type="checkbox" data-k="conc" ${c.chk.conc?'checked':''}><span><b>Slot 2 gerçek bir kusuru kabul ediyor.</b> <span class="tiny muted">(İkna +2)</span></span></label>
+   <label class="ck"><input type="checkbox" data-k="who" ${c.chk.who?'checked':''}><span><b>"Who gains" cümlem var:</b> suçlamadan kim kazanıyor, motivi söyledim. <span class="tiny muted">(İkna +3)</span><br><select id="whoSel" style="margin-top:6px;max-width:280px"><option value="">Hangi slotta? (seç)</option>${SL.map((s,i)=>`<option value="${i}" ${String(c.chk.whoSlot)===String(i)?'selected':''}>Slot ${s.n} · ${esc(s.task)}</option>`).join('')}</select></span></label>
+   <label class="ck"><input type="checkbox" data-k="tri" ${c.chk.tri?'checked':''}><span><b>Slot 23 gerçek bir üçleme:</b> 3 paralel parça. <span class="tiny muted" id="overHint"></span> <span class="tiny muted">(İkna +2)</span></span></label>
+   <div class="row" style="margin-top:10px"><button class="btn pri" id="pScore">Bitir ve puanla</button><span class="tiny muted">İstediğin kadar tekrar puanlayabilirsin.</span></div></div>
+  <div id="result"></div>
+ </div>${side}</div>`;
+ const ed=$('#v-prova');
+ $$('textarea[data-s]',ed).forEach(autoGrow);
+ ed.addEventListener('input',e=>{const t=e.target;if(t.dataset.s!=null){c.slots[+t.dataset.s]=t.value;autoGrow(t);updSlot(+t.dataset.s);updCounters(true);save();}});
+ ed.addEventListener('click',e=>{const b=e.target.closest('[data-tpl]');if(b){const i=+b.dataset.tpl,ta=$(`textarea[data-s="${i}"]`);if(!ta.value.trim()){ta.value=tplFor(SL[i].tpl,ch);c.slots[i]=ta.value;autoGrow(ta);updSlot(i);updCounters(true);save();}ta.focus();const k=ta.value.indexOf('__');if(k>=0){let e2=k;while(ta.value[e2]==='_')e2++;ta.setSelectionRange(k,e2);}}
+  const j=e.target.closest('[data-jump]');if(j){const el=$('#slot'+j.dataset.jump);el.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});el.classList.remove('jump');void el.offsetWidth;el.classList.add('jump');setTimeout(()=>$('textarea',el).focus({preventScroll:true}),300);}});
+ $$('#chkCard input[data-k]').forEach(x=>x.onchange=()=>{c.chk[x.dataset.k]=x.checked;save();});
+ $('#whoSel').onchange=e=>{c.chk.whoSlot=e.target.value;save();};
+ $('#pEx').onchange=e=>{P.showEx=e.target.checked;save();renderProvaEditor();};
+ $('#pStart').onclick=()=>{const now=Date.now();if(!c.start){c.start=now;c.acc=0;c.pausedAt=null;}else if(c.pausedAt){c.acc+=now-c.pausedAt;c.pausedAt=null;}else c.pausedAt=now;save();updProvaTimer();};
+ $('#pNew').onclick=()=>{if(confirm('Bu prova kapatılsın mı? (Puanlanmış sonuç geçmişte kalır; yazdıkların silinir.)')){P.cur=null;save();RENDER.prova();}};
+ $('#pScore').onclick=()=>doScore(true);
+ const tc=$('#thCopy');if(tc)tc.onclick=()=>{const ta=$('textarea[data-s="3"]');if(ta.value.trim()&&!confirm('Slot 4 dolu. Tezle değiştirilsin mi?'))return;ta.value=z.thesis.trim();c.slots[3]=ta.value;autoGrow(ta);updSlot(3);updCounters(true);save();};
+ for(let i=0;i<25;i++)updSlot(i);updCounters(false);updProvaTimer();if(c.result)doScore(false);
+}
+function autoGrow(t){t.style.height='auto';t.style.height=Math.max(44,t.scrollHeight+2)+'px';}
+function updSlot(i){const c=S.prova.cur,el=$('#slot'+i);if(!el)return;const t=c.slots[i]||'';const w=slotWarn(i,t);el.classList.toggle('filled',!!t.trim());el.classList.toggle('warn',!!t.trim()&&w.some(x=>!x.startsWith('Kalıptan')));$(`[data-fl="${i}"]`).innerHTML=w.map(esc).join('<br>');}
+let lastCtr={};
+function updCounters(bump){const c=S.prova.cur,a=analyze(c.slots),filled=25-a.missing.length;
+ const items=[['words',a.words,'kelime · hedef ≈500',a.words>=420&&a.words<=650?'ok':(a.words>0?'warn':'')],['cites',a.cites+'/6','(Miller n) alıntı',a.cites>=6?'ok':'warn'],['q',a.q+'/3','retorik soru',a.q>=3?'ok':'warn'],['contr',a.contr.length,a.contr.length?'kısaltma: '+a.contr.slice(0,3).join(', ')+(a.contr.length>3?'…':''):'kısaltma yok',a.contr.length?'bad':'ok'],['paras',(6-a.paraFail)+'/6','bağlaçla açılan paragraf',a.paraFail?'warn':'ok'],['filled',filled+'/25','dolu slot',filled===25?'ok':'']];
+ $('#ctrs').innerHTML=items.map(([k,v,l,cl])=>`<div class="ctr ${cl} ${bump&&lastCtr[k]!==undefined&&lastCtr[k]!==String(v)?'bump':''}" data-ctr="${k}"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join('');
+ items.forEach(([k,v])=>lastCtr[k]=String(v));
+ const oh=$('#overHint');if(oh)oh.textContent=`Otomatik ipucu: slot 23'te ${a.overs}× "over"${a.overs>=3?' ✓':''}.`;}
+function updProvaTimer(){const c=S.prova.cur;if(!c||!$('#pTime'))return;const el=provaEl(c),left=P80-el;$('#pTime').textContent=left>=0?fmt(left):'+'+fmt(-left);
+ const b=$('#pStart');b.innerHTML=!c.start?ICON.play.replace('<svg','<svg width="12" height="12"')+' 80 dk\'yı başlat':c.pausedAt?'Sürdür':'Duraklat';
+ const m=el/60000,ph=!c.start?-1:m<10?0:m<65?1:m<80?2:3;const bounds=[[0,10],[10,65],[65,80]];
+ $$('#phases .ph').forEach((d,k)=>{const [a,bb]=bounds[k];d.firstChild.style.width=Math.min(100,Math.max(0,(m-a)/(bb-a)*100))+'%';d.classList.toggle('cur',ph===k);});
+ const filled=c.slots.filter(s=>s.trim()).length;let txt;
+ if(ph<0)txt='Hazır olunca süreyi başlat. İlk 10 dk: tezi ve 6 sayfayı planla.';else if(ph===0)txt='Plan: tezini, 3 sebebi ve 6 sayfa numarasını yan panelden seç.';else if(ph===1){const exp=Math.min(25,Math.floor((m-10)/2.2)+1);txt=`Yaz: hedef slot ${exp} · sen ${filled}/25 doluyla ${filled>=exp?'tempodasın':'geridesin ('+(exp-filled)+' slot)'}.`;}else if(ph===2)txt='Kontrol: kısaltmaları sil, bağlaçları ve "(Miller n)" sayısını kontrol et, sonra puanla.';else txt='Süre doldu. Gerçek sınavda kalem bırakılır; şimdi puanla.';
+ if(c.pausedAt)txt='Duraklatıldı · '+txt;$('#pPhase').textContent=txt;
+ if(ph===3&&!c.timeUpToast){c.timeUpToast=1;save();toast('80 dakika doldu: konuşmayı puanla.');}}
+function doScore(user){const P=S.prova,c=P.cur;const r=scoreOf(c.slots,c.chk);const ch=CH[CHI[c.id]];
+ if(user){c.result={total:r.total,at:Date.now()};P.history.push({id:c.id,score:r.total,at:Date.now()});if(P.history.length>30)P.history.shift();addXP(50+r.total*5);badge('prova');if(r.total===30){badge('perfect');confetti(80);}save();}
+ const missing=r.a.missing;const warns=[];c.slots.forEach((t,i)=>{slotWarn(i,t).forEach(w=>warns.push([i,w]));});
+ $('#result').innerHTML=`<div class="card" id="resCard"><div class="score"><div class="scorebig">${r.total}<small>/30</small></div><div><div class="eyebrow">Formül puanı · ${esc(ch.name)}</div><h3 class="h2">${r.total===30?'Kusursuz formül. Mahkeme ayakta.':r.total>=24?'Güçlü savunma; birkaç vida eksik.':'Formül eksik: aşağıdaki maddeleri tamamla.'}</h3><p class="small muted" style="margin:4px 0 0">${r.a.words} kelime · ${25-missing.length}/25 slot dolu. Not: bu puan formülün sayılabilir kısmını ölçer; içerik kalitesini Claude'a ya da öğretmenine sor.</p></div></div>
+ <div class="parts">${r.parts.map(([name,items,pts])=>`<div class="part" data-part="${name}"><h4>${name} <b>${pts}/10</b></h4><ul>${items.map(x=>`<li><span class="${x.ok?'yes':'no'}">${x.ok?'✓':'✗'}</span><span>${esc(x.t)}</span><span class="pt">${x.pt}/${x.max}</span></li>`).join('')}</ul></div>`).join('')}</div>
+ <hr class="rule"><b>Eksik slotlar</b> ${missing.length?`<div class="row" style="margin-top:6px;gap:6px">${missing.map(i=>`<button class="chip bad" data-jump="${i}">Slot ${i+1} · ${esc(SL[i].task)}</button>`).join('')}</div>`:'<span class="chip ok">yok, 25/25</span>'}
+ ${warns.length?`<div style="margin-top:10px"><b>Slot uyarıları</b><ul class="rules">${warns.map(([i,w])=>`<li><button class="chip ${w.startsWith('Kalıptan')?'':'warn'}" data-jump="${i}">Slot ${i+1}</button> ${esc(w)}</li>`).join('')}</ul></div>`:''}
+ <hr class="rule"><div class="row"><b>Konuşmanın tam metni</b><span class="sp"></span><button class="btn sm pri" id="copyBtn">Metni kopyala</button></div><p class="tiny muted" style="margin:2px 0 6px">Claude'a yapıştırıp rubriğe göre puanlatabilirsin. Metin sadece senin panona kopyalanır.</p>
+ <textarea id="fullOut" readonly rows="10" style="font-size:14px">${esc(r.a.full)}</textarea></div>`;
+ $('#copyBtn').onclick=()=>copyText($('#fullOut').value);
+ if(user)$('#resCard').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});}
+function copyText(t){const done=()=>toast('Metin panoya kopyalandı.');const fb=()=>{const ta=$('#fullOut');ta.focus();ta.select();try{document.execCommand('copy');done();}catch(e){toast('Kopyalanamadı: metni seçip elle kopyala.');}};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(done,fb);else fb();}
+
+/* ============ SABAH KARTI ============ */
+RENDER.kart=function(){
+ $('#v-kart').innerHTML=`<div class="row noprint"><div><div class="eyebrow">Mod 5 · sabah 10 dk</div><h2 class="h2">Sabah kartı</h2></div><div class="sp"></div><button class="btn pri" id="printBtn">Yazdır</button></div>
+ <p class="small muted noprint" style="margin:4px 0 0">Tek sayfa (A4): formülün 25 slotu, 11 tez cümlen ve her karakterin KENDİ kitabındaki sayfa numaraları (PDF sayfaları değil). Sınava götürme kuralını öğretmenine göre kontrol et; bu kart sabah okumak için.</p>
+ <div class="sheet" id="card"><h1>Sabah kartı · The Crucible savunması</h1><div class="sub">Sayfalar: kendi kitabım · 6 paragraf · 25 cümle · ≈500 kelime · 80 dk: 0–10 plan, 10–65 yaz (≈2 dk/cümle), 65–80 kontrol · she/he karaktere göre</div>
+  <div class="cf">${PARAS.map((p,P)=>`<div class="pb"><h3>P${P+1} ${p.t}</h3>${SL.slice(p.from,p.from+p.n).map(s=>`<div><i>${s.n}</i>${tplHTML(s.tpl)}</div>`).join('')}</div>`).join('')}</div>
+  <div class="rl"><b>30 puan:</b> ≥6 <span class="mono">(Miller n)</span> + uydurma yok · ≥3 "?" + kusur kabulü + who gains + üçleme · 0 kısaltma (n't, it's, gonna, kids) · paragraflar: Ladies and gentlemen / First / Moreover / Finally / Picture / Ultimately</div>
+  <div class="ct">${CH.map(c=>{const z=S.tez[c.id];const th=z&&z.thesis.trim();const pg=[0,1,2].map(k=>{const ps=z?[z.q[k*2].p,z.q[k*2+1].p].map(x=>String(x||'').trim()).filter(Boolean):[];return `A${k+1}: ${ps.length?ps.join(', '):'—'}`;}).concat(extraEv(c).map(e=>{const v=z&&z.x?String(z.x[e.i]||'').trim():'';return v?`${e.arg==='pathos'?'Pathos':e.arg==='dikkat'?'Dikkat':'Ek'}: ${v}`:'';}).filter(Boolean)).join(' · ');return `<div class="cc"><b>${esc(c.name)}</b>${tezProg(c.id).ready?' ✓':''}<div class="th ${th?'':'empty'}">${th?esc(z.thesis.trim()):'tez yok'}</div><div class="pp">${esc(pg)}</div></div>`;}).join('')}</div></div>`;
+ $('#printBtn').onclick=()=>{S.plan.printed=true;save();window.print();};
+};
+
+/* ============ ROZETLER ============ */
+RENDER.rozet=function(){const l=lvl(S.xp),rc=readyCount();
+ $('#v-rozet').innerHTML=`<div class="row"><div><div class="eyebrow">Mod 6</div><h2 class="h2">XP ve rozetler</h2></div></div>
+ <div class="card" style="margin-top:12px"><div class="row"><div class="scorebig" style="font-size:60px">${S.xp}<small> XP</small></div><div class="sp"><b>${esc(l.name)}</b><div class="bar" style="margin-top:6px"><i style="width:${Math.round(l.pct*100)}%"></i></div><div class="tiny muted" style="margin-top:4px">Rütbeler: ${LEVELS.map(x=>x[1]+' '+x[0]).join(' · ')}</div></div></div>
+  <div class="tiny muted" style="margin-top:8px">XP: formül aşama 1/2/3 doğru +5/+10/+15 (tekrar sonrası +3) · tez +20, her kanıt +5, Dava hazır +50 · quiz doğru +5, tur +15 · mola +10 · prova +50 + puan×5.</div></div>
+ <h3 class="ptitle">Dava hazır · ${rc}/11</h3><div class="badges">${CH.map(c=>`<div class="badge case ${tezProg(c.id).ready?'got':''}"><div class="ic">${esc(c.short[0])}</div><b>${esc(c.short)}</b><span>${tezProg(c.id).ready?'Dava hazır':'hazır değil'}</span></div>`).join('')}</div>
+ <h3 class="ptitle">Rozetler</h3><div class="badges">${BADGES.map(b=>`<div class="badge ${S.badges[b.id]?'got':''}"><div class="ic">${esc(b.i)}</div><b>${esc(b.t)}</b><span>${esc(b.d)}</span></div>`).join('')}</div>
+ <div class="row" style="margin-top:14px">${rc===11?'<button class="btn pri" id="finBtn">Final ekranını aç</button>':''}</div>
+ <div class="card" style="margin-top:16px"><b>Sıfırlama</b><p class="small muted" style="margin:2px 0 8px">Her şey yalnızca bu tarayıcıda (localStorage) durur; hiçbir veri dışarı gönderilmez.</p><div class="row">
+  <button class="btn sm danger" data-reset="formula">Formül</button><button class="btn sm danger" data-reset="tez">Tez fabrikası</button><button class="btn sm danger" data-reset="quiz">Quiz</button><button class="btn sm danger" data-reset="prova">Prova</button><button class="btn sm danger" data-reset="plan">Gece sayacı</button><button class="btn sm danger" data-reset="xp">XP ve rozetler</button><button class="btn sm danger" data-reset="all">Hepsini sıfırla</button></div></div>`;
+ const fb=$('#finBtn');if(fb)fb.onclick=showFinal;
+ $$('[data-reset]').forEach(b=>b.onclick=()=>{const k=b.dataset.reset;if(!confirm(k==='all'?'HER ŞEY silinsin mi? Bu geri alınamaz.':'Bu bölüm sıfırlansın mı?'))return;const d=def();
+  if(k==='all'){S=d;}else if(k==='tez'){S.tez={};S.tezSel=null;S.tezTimer=null;}else if(k==='xp'){S.xp=0;S.badges={};S.finalShown=false;}else if(k==='plan'){S.plan=d.plan;S.mola=d.mola;}else S[k]=d[k];
+  save(true);updXP();updNight();RENDER.rozet();toast('Sıfırlandı.');});};
+
+function showFinal(){const best=S.prova.history.reduce((m,h)=>Math.max(m,h.score),0);
+ overlay(`<div class="gavel" style="width:80px;margin:0 auto" id="finGavel">${ICON.gavel}</div><div class="eyebrow" style="margin-top:8px">Final · 11/11</div><h2 class="h1" style="font-size:40px">Mahkeme ertelendi.<br>Bütün davalar hazır.</h2>
+ <p class="muted">11 tez, 66 sayfa numaralı kanıt. ${S.xp} XP · ${esc(lvl(S.xp).name)} · altın slot ${goldCount()}/25${best?' · en iyi prova '+best+'/30':''}.</p>
+ <p class="small">Şimdi: sabah kartını yazdır, bir tam prova daha yap, sonra uyu. Yarın kitap açık; formül kafanda.</p>
+ <div class="row" style="justify-content:center;margin-top:12px"><button class="btn pri" data-close data-goto="kart">Sabah kartı</button><button class="btn" data-close data-goto="prova">Tam prova</button><button class="btn ghost" data-close>Kapat</button></div>`);
+ confetti(120);setTimeout(()=>strike($('#finGavel .gavel')),200);}
+
+/* ============ tick & boot ============ */
+setInterval(()=>{updNight();if(S.view==='formul')updBreak();else if(S.view==='mola')updMola();else if(S.view==='prova')updProvaTimer();else if(S.view==='tez')updTezTimer();},1000);
+function setTopH(){document.documentElement.style.setProperty('--toph',$('#top').offsetHeight+'px');}
+addEventListener('resize',setTopH);
+buildPlanbar();updThemeBtn();updXP();updNight();setTopH();
+if(!storageOK)$('#storagewarn').hidden=false;
+const h=location.hash.slice(1);go(RENDER[h]?h:(S.view||'plan'),true);
+addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(RENDER[v]&&v!==S.view)go(v);});
+window.CRUCIBLE={get S(){return S;},pickTez,analyze,scoreOf,matchTpl,SL,CH};
+})();
+</script>
+</body>
+</html>
