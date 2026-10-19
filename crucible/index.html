@@ -296,6 +296,7 @@ input.bl.bad{border-color:var(--bad);background:var(--badbg)}
 .slot textarea{min-height:44px;font-size:15.5px}
 .slot .flags{font-size:12px;color:var(--warn);margin-top:4px;min-height:0}
 .slot .flags:empty{display:none}
+.slot .flags.rp{color:var(--warn);background:var(--warnbg);border-radius:6px;padding:3px 8px;margin-top:4px}
 .slot.jump{animation:okp .9s}
 .sidebox h4{margin:12px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
 .qlist{margin:0;padding:0;list-style:none;font-size:13.5px}
@@ -476,22 +477,28 @@ add(0,'TEZ (3 sebep)','{N} is not guilty, because (1) ___, (2) ___, and (3) ___.
 const ARGW=['First','Moreover','Finally'];
 const WHY={
  claim:['"First" tezdeki 1. sebebi aynen tekrar eder; yapı görünür olur ve paragraf bağlaç kuralı sağlanır.','"Moreover" 2. sebebi açar; tezle birebir aynı olması konuşmayı planlı gösterir.','"Finally" son sebebi duyurur; jüri yapının bittiğini anlar.'],
- ev:['Sayfa numaralı kanıt "(Miller __)" Kanıt puanını taşır: toplamda en az 6 tane gerekir.','Kanıtsız iddia sadece fikirdir; her argümanda iki "(Miller __)" olunca 6 alıntıya ulaşırsın.','Kitaptaki sahneye dayanmak "hiç uydurmadım" kuralını güvenceye alır.'],
- exp:['"This proves that" kanıtı yoruma çevirir; yorum yoksa konuşma olay özeti gibi okunur ve 4 puan alır.','Açıklama cümlesi logos\'tur: kanıt ile iddia arasındaki köprü.','Açıklama, "who gains" (kim kazanır) motivini yazmak için en iyi yerdir: İkna puanı getirir.'],
- ev2:['İkinci kanıt iddiayı tek alıntıya bağlı olmaktan kurtarır ve alıntı sayını yükseltir.','İki bağımsız kanıt jüriye tesadüf olmadığını gösterir.','Son argümanın ikinci kanıtıyla 6 alıntı hedefi tamamlanır.'],
- q:['Retorik soru jüriyi kendi sonucuna yürütür; İkna için en az 3 soru gerekir ve cümle "?" ile bitmeli.','Her argümanı soruyla bitirmek 3 retorik soru hedefini otomatik tamamlar.','Üçüncü soru İkna puanındaki "en az 3 retorik soru" şartını kapatır.']
+ ev:['"The record shows that" + "(Miller __)" Kanıt puanını taşır: toplamda en az 6 alıntı gerekir.','"The play shows that": kalıp aynı, tek kelime değişir (record → play → text); "(Miller __)" alıntı sayını artırır.','"The text shows that" üçüncü kanıt kalıbı (record → play → text); sayfa numarası uydurmadığını gösterir.'],
+ exp:['"This proves that" kanıtı yoruma çevirir; yorum yoksa konuşma olay özeti gibi okunur ve 4 puan alır.','"This shows that" kanıtı yoruma çevirir (proves → shows → means); yorum yoksa konuşma özet gibi okunur.','"This means that" kanıtı sade bir sonuca bağlar (proves → shows → means); "who gains" motivini yazmak için de iyi yer.'],
+ ev2:['"Furthermore," ikinci kanıtı ekler; iddia tek alıntıya bağlı kalmaz.','"In addition," ikinci kanıtı ekler (Furthermore → In addition → Most importantly) ve alıntı sayını artırır.','"Most importantly," en güçlü kanıtı sona saklar (Furthermore → In addition → Most importantly) ve 6 alıntı hedefini tamamlar.'],
+ q:['"Ask yourselves: ___?" jüriyi kendi sonucuna yürütür; İkna için en az 3 soru gerekir ve cümle "?" ile bitmeli.','"Is it fair to blame ___ for ___?" suçlamanın adaletsizliğini soruyla gösterir; "?" ile bitmeli.','"What would you have done ___?" jüriyi karakterin yerine koyar (pathos); üçüncü soru, "?" ile bitmeli.']
 };
+const MNEMO='Hafıza: Kanıt record → play → text · Açıklama proves → shows → means · 2. kanıt Furthermore → In addition → Most importantly · Soru: Ask yourselves …? / Is it fair to blame … for …? / What would you have done …?';
+const ATPL=[
+ ['The record shows that ___ (Miller __).','This proves that ___.','Furthermore, ___ (Miller __).','Ask yourselves: ___?'],
+ ['The play shows that ___ (Miller __).','This shows that ___.','In addition, ___ (Miller __).','Is it fair to blame ___ for ___?'],
+ ['The text shows that ___ (Miller __).','This means that ___.','Most importantly, ___ (Miller __).','What would you have done ___?']
+];
 const EXA=[
  ['First, there is no evidence against Rebecca Nurse.','The record shows that the Nurse and Putnam families have fought over land and elections (Miller __).','This proves that the accusation grows out of an old quarrel, and the only people who gain are her rivals.','Furthermore, the narrator explains these quarrels before the trials begin (Miller __).','Ask yourselves: is a family feud proof of murder?'],
- ['Moreover, Rebecca Nurse has lived a life of respect and care.','The record shows that she calmed the frightened Betty Parris (Miller __).','This proves that she heals children; she does not harm them.','Furthermore, she warned the town against searching for witches (Miller __).','Ask yourselves: would a murderer try to stop a witch hunt?'],
- ['Finally, Rebecca Nurse refused to buy her life with a lie.','The record shows that in Act 4 she would not give a false confession (Miller __).','This proves that she values the truth more than her own life.','Furthermore, she refused to confess even when she could barely walk (Miller __).','Ask yourselves: why would a liar choose death over a lie?']
+ ['Moreover, Rebecca Nurse has lived a life of respect and care.','The play shows that she calms the frightened Betty Parris (Miller __).','This shows that she heals children; she does not harm them.','In addition, she warns the town against searching for witches (Miller __).','Is it fair to blame a woman who calms children for killing them?'],
+ ['Finally, Rebecca Nurse refused to buy her life with a lie.','The text shows that she refuses to give a false confession in Act 4 (Miller __).','This means that she values the truth more than her own life.','Most importantly, she refuses to confess even when she can barely walk (Miller __).','What would you have done if your life depended on a lie?']
 ];
 for(let k=0;k<3;k++){
  add(k+1,`İddia (${k+1}. sebep)`,`${ARGW[k]}, ___.`,WHY.claim[k],EXA[k][0]);
- add(k+1,'Kanıt','The record shows that ___ (Miller __).',WHY.ev[k],EXA[k][1]);
- add(k+1,'Açıklama','This proves that ___.',WHY.exp[k],EXA[k][2]);
- add(k+1,'İkinci kanıt','Furthermore, ___ (Miller __).',WHY.ev2[k],EXA[k][3]);
- add(k+1,'Jüriye bağla (soru)','Ask yourselves: ___?',WHY.q[k],EXA[k][4]);
+ add(k+1,'Kanıt',ATPL[k][0],WHY.ev[k],EXA[k][1]);
+ add(k+1,'Açıklama',ATPL[k][1],WHY.exp[k],EXA[k][2]);
+ add(k+1,'İkinci kanıt',ATPL[k][2],WHY.ev2[k],EXA[k][3]);
+ add(k+1,'Jüriye bağla (soru)',ATPL[k][3],WHY.q[k],EXA[k][4]);
 }
 add(4,'Pathos sahnesi','Picture {N} tonight.','"Picture" ile açılan paragraf pathos\'u başlatır ve bağlaç kuralına uyar.','Picture Rebecca Nurse, an old woman who can barely walk, tonight.');
 add(4,'Somut detay (kitaptan)','She is ___.','Somut bir detay (yaş, hamilelik) duyguyu gerçek yapar; ama yalnızca kitapta olanı yaz.','She is seventy-two years old, with many children and grandchildren.');
@@ -648,7 +655,7 @@ const renderPlan=()=>RENDER.plan();
 function toks(s){
  s=String(s).toLowerCase().replace(/[’‘`]/g,"'").replace(/s\/he|she\/he|he\/she/g,'she').replace(/him\/her|her\/him/g,'her').replace(/_+/g,' ').replace(/'/g,'').replace(/[^a-z0-9*]+/g,' ').trim();
  if(!s)return[];
- return s.split(/\s+/).filter(w=>w&&!/^\d+$/.test(w)).map(w=>w==='he'?'she':(w==='him'||w==='his')?'her':w);
+ return s.split(/\s+/).filter(w=>w&&!/^\d+$/.test(w)).map(w=>w==='he'?'she':(w==='him'||w==='his')?'her':w==='an'?'a':w);
 }
 const tplToks=t=>toks(t.replace(/\{N\}|_{2,}/g,' * '));
 function matchTpl(tpl,text){const t=tplToks(tpl),u=toks(String(text).replace(/\*/g,' '));if(!u.length)return false;const re=new RegExp('^'+t.map(x=>x==='*'?'(?:\\S+ )*?':escRe(x)+' ').join('')+'$');return re.test(u.join(' ')+' ');}
@@ -659,7 +666,7 @@ const STOP=new Set(['the','and','that','you','her','she','his','but','of','my','
 function pickBlanks(tpl){const ws=tpl.split(' ');let c=[];ws.forEach((w,i)=>{const {core}=splitW(w);if(/^[A-Za-z]{3,}$/.test(core)&&!STOP.has(core.toLowerCase()))c.push(i);});if(!c.length)ws.forEach((w,i)=>{if(/^[A-Za-z]+$/.test(splitW(w).core))c.push(i);});const k=Math.min(3,Math.ceil(c.length/2));return shuffle(c.slice()).slice(0,k).sort((a,b)=>a-b);}
 function buildQueue(){const q=[];[[0,4],[4,19],[19,25]].forEach(([a,b])=>{for(let s=a;s<b;s++)q.push([s,1]);for(let s=a;s<b;s++)q.push([s,2]);});shuffle([...Array(25).keys()]).forEach(s=>q.push([s,3]));return q;}
 const STAGE=['','Aşama 1 · Boşlukları doldur','Aşama 2 · Tüm cümle','Aşama 3 · Numaradan hatırla'];
-function F(){const f=S.formula;if(!f.queue)f.queue=buildQueue();return f;}
+function F(){const f=S.formula;if(!f.queue)f.queue=buildQueue();if(!f.v2){[10,11,12,13,15,16,17,18].forEach(i=>{delete f.stats[i];});if(f.cur&&[10,11,12,13,15,16,17,18].includes(f.cur.s))f.cur=null;f.v2=1;save();}return f;}
 function nextQ(){const f=F();let s,st;if(f.qi<f.queue.length){[s,st]=f.queue[f.qi];}else{f.doneAll=true;const w=SL.map((_,i)=>{const x=f.stats[i]||{};return 1+(x.bad||0)*2+((x.lvl||0)<3?4:0);});let r=Math.random()*w.reduce((a,b)=>a+b,0);s=0;for(;s<24;s++){r-=w[s];if(r<=0)break;}st=3;}
  f.cur={s,st,blanks:st===1?pickBlanks(SL[s].tpl):[],wrong:false,fb:null};save();}
 let fLock=false;
@@ -682,7 +689,7 @@ RENDER.formul=function(){
  <div class="row"><div><div class="eyebrow">Mod 1 · 30 dk</div><h2 class="h2">Formül ezberi</h2></div><div class="sp"></div>
   <span class="chip brass">${gold}/25 altın</span><span class="chip">Seri ${f.streak} · en iyi ${f.best}</span><span class="chip" title="Her 15 soruda mola">Mola'ya ${15-f.since} soru</span></div>
  <div class="slotgrid" aria-label="Slot ustalığı">${grid}</div>
- <div class="tiny muted">Kutular: gri = başlanmadı · bakır = aşama 1 · gümüş = aşama 2 · altın = numaradan ezber.</div>
+ <div class="tiny muted">Kutular: gri = başlanmadı · bakır = aşama 1 · gümüş = aşama 2 · altın = numaradan ezber.</div><div class="small" style="margin-top:6px;padding:6px 10px;border-radius:8px;background:color-mix(in srgb,var(--brass) 12%,transparent)"><b>P2 → P3 → P4 tek kelime değişir.</b> ${esc(MNEMO.replace('Hafıza: ',''))}</div>
  <div class="card qcard" id="qcard" style="margin-top:12px">
   <div class="qtop"><span class="chip brass">${STAGE[c.st]}</span><span class="chip">Slot ${c.s+1}/25</span>${c.st<3?`<span class="chip">${esc(sl.task)}</span>`:''}<span class="sp"></span><span class="tiny muted">${f.doneAll?'Karışık tekrar':'Soru '+qnum+'/'+total}</span></div>
   ${body}
@@ -696,9 +703,9 @@ RENDER.formul=function(){
   $$('#qcard input.bl').forEach((inp,k,arr)=>inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();if(k<arr.length-1&&!inp.value.trim())arr[k+1].focus();else checkF();}}));
   const qi=$('#qin');if(qi)qi.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();checkF();}});}
  $('#refBtn').onclick=()=>{S.showRef=!S.showRef;save();RENDER.formul();};
- $('#fReset').onclick=()=>{if(confirm('Formül ezberi ilerlemesi sıfırlansın mı?')){S.formula=def().formula;save();RENDER.formul();}};
+ $('#fReset').onclick=()=>{if(confirm('Formül ezberi ilerlemesi sıfırlansın mı?')){S.formula=Object.assign(def().formula,{v2:1});save();RENDER.formul();}};
 };
-function refTable(){return `<div class="card"><div class="row"><b>25 slot · görev · kalıp</b><span class="sp"></span><label class="ck" style="padding:0"><input type="checkbox" id="exTog" ${S.showEx?'checked':''}> <span class="small">İngilizce örnekleri göster (Rebecca Nurse, sayfalar boş)</span></label></div>${PARAS.map(p=>`<div class="ptitle">P${PARAS.indexOf(p)+1} · ${p.t} (${p.n} cümle)</div>`+SL.slice(p.from,p.from+p.n).map(s=>`<div class="refrow"><div class="n">${s.n}</div><div><div class="task">${esc(s.task)}</div><div class="tpl">${tplHTML(s.tpl)}</div>${S.showEx?`<div class="ex">${esc(s.ex)}</div>`:''}<div class="tiny muted">${esc(s.why)}</div></div></div>`).join('')).join('')}</div>`;}
+function refTable(){return `<div class="card"><div class="small" style="margin-bottom:6px">${esc(MNEMO)}</div><div class="row"><b>25 slot · görev · kalıp</b><span class="sp"></span><label class="ck" style="padding:0"><input type="checkbox" id="exTog" ${S.showEx?'checked':''}> <span class="small">İngilizce örnekleri göster (Rebecca Nurse, sayfalar boş)</span></label></div>${PARAS.map(p=>`<div class="ptitle">P${PARAS.indexOf(p)+1} · ${p.t} (${p.n} cümle)</div>`+SL.slice(p.from,p.from+p.n).map(s=>`<div class="refrow"><div class="n">${s.n}</div><div><div class="task">${esc(s.task)}</div><div class="tpl">${tplHTML(s.tpl)}</div>${S.showEx?`<div class="ex">${esc(s.ex)}</div>`:''}<div class="tiny muted">${esc(s.why)}</div></div></div>`).join('')).join('')}</div>`;}
 document.addEventListener('change',e=>{if(e.target.id==='exTog'){S.showEx=e.target.checked;save();$('#refbox').innerHTML=refTable();}});
 function checkF(){
  if(fLock)return;const f=F(),c=f.cur,sl=SL[c.s];let ok,user='',miss=new Set(),extra='';
@@ -949,7 +956,7 @@ function renderProvaEditor(){const P=S.prova,c=P.cur,ch=CH[CHI[c.id]],z=S.tez[c.
   <div class="tiny muted" style="margin-top:8px">Durum: ${p.ready?'Dava hazır':'tez '+(p.th?'✓':'—')+' · alıntı '+p.qn+'/6'}</div></details></div>`;
  const slotsHTML=PARAS.map((pp,P)=>`<div class="phead"><h3>P${P+1} · ${pp.t}</h3><span class="tiny muted">${pp.n} cümle · ${P===0?'"Ladies and gentlemen" ile açılır':'bağlaçla açılır'}</span></div>`+SL.slice(pp.from,pp.from+pp.n).map(s=>{const i=s.n-1;return `<div class="slot" id="slot${i}" data-i="${i}"><div class="sn">${s.n}</div><div><div class="sm"><b>${esc(s.task)}</b><span class="tpl">${esc(tplFor(s.tpl,ch))}</span></div>
   <textarea rows="1" data-s="${i}" spellcheck="true" lang="en" aria-label="Slot ${s.n}: ${esc(s.task)}">${esc(c.slots[i])}</textarea>
-  <div class="row" style="gap:6px;margin-top:4px"><button class="btn sm ghost" data-tpl="${i}">Kalıbı ekle</button>${S.prova.showEx?`<span class="tiny muted" style="font-style:italic">Örnek: ${esc(s.ex)}</span>`:''}</div><div class="flags" data-fl="${i}"></div></div></div>`;}).join('')).join('');
+  <div class="row" style="gap:6px;margin-top:4px"><button class="btn sm ghost" data-tpl="${i}">Kalıbı ekle</button>${S.prova.showEx?`<span class="tiny muted" style="font-style:italic">Örnek: ${esc(s.ex)}</span>`:''}</div><div class="flags" data-fl="${i}"></div><div class="flags rp" data-rp="${i}"></div></div></div>`;}).join('')).join('');
  $('#v-prova').innerHTML=`
  <div class="card"><div class="ptimer"><div><div class="eyebrow">Tam prova · ${esc(ch.name)}</div><div class="ptime" id="pTime">80:00</div></div>
   <div><div class="small" id="pPhase">Hazır olunca süreyi başlat.</div><div class="phases" id="phases"><div class="ph" style="flex:10"><i></i><span>0–10 Plan</span></div><div class="ph" style="flex:55"><i></i><span>10–65 Yaz (~2 dk/cümle)</span></div><div class="ph" style="flex:15"><i></i><span>65–80 Kontrol</span></div></div></div>
@@ -986,10 +993,12 @@ function renderProvaEditor(){const P=S.prova,c=P.cur,ch=CH[CHI[c.id]],z=S.tez[c.
  const tc=$('#thCopy');if(tc)tc.onclick=()=>{const ta=$('textarea[data-s="3"]');if(ta.value.trim()&&!confirm('Slot 4 dolu. Tezle değiştirilsin mi?'))return;ta.value=z.thesis.trim();c.slots[3]=ta.value;autoGrow(ta);updSlot(3);updCounters(true);save();};
  for(let i=0;i<25;i++)updSlot(i);updCounters(false);updProvaTimer();if(c.result)doScore(false);
 }
+function repeats(slots){const map={};slots.forEach((t,i)=>{String(t||'').trim().split(/(?<=[.!?])\s+/).forEach(sn=>{const w=sn.toLowerCase().replace(/[^a-z0-9' ]+/g,' ').trim().split(/\s+/).filter(Boolean);if(w.length<4)return;const k=w.slice(0,3).join(' ');(map[k]=map[k]||[]).push(i);});});const out={};Object.entries(map).forEach(([k,a])=>{if(a.length>1)a.forEach(i=>{(out[i]=out[i]||[]).push({k,o:a.filter(j=>j!==i)});});});return out;}
+function updRepeats(){const c=S.prova.cur;if(!c)return;const r=repeats(c.slots);for(let i=0;i<25;i++){const el=$(`[data-rp="${i}"]`);if(!el)continue;const x=r[i];el.innerHTML=x?x.map(y=>`Tekrar: "${esc(y.k)}…" açılışı slot ${[...new Set(y.o)].map(j=>j+1).join(', ')} ile aynı (puanı etkilemez; çeşitlendir)`).join('<br>'):'';}}
 function autoGrow(t){t.style.height='auto';t.style.height=Math.max(44,t.scrollHeight+2)+'px';}
 function updSlot(i){const c=S.prova.cur,el=$('#slot'+i);if(!el)return;const t=c.slots[i]||'';const w=slotWarn(i,t);el.classList.toggle('filled',!!t.trim());el.classList.toggle('warn',!!t.trim()&&w.some(x=>!x.startsWith('Kalıptan')));$(`[data-fl="${i}"]`).innerHTML=w.map(esc).join('<br>');}
 let lastCtr={};
-function updCounters(bump){const c=S.prova.cur,a=analyze(c.slots),filled=25-a.missing.length;
+function updCounters(bump){const c=S.prova.cur,a=analyze(c.slots),filled=25-a.missing.length;updRepeats();
  const items=[['words',a.words,'kelime · hedef ≈500',a.words>=420&&a.words<=650?'ok':(a.words>0?'warn':'')],['cites',a.cites+'/6','(Miller n) alıntı',a.cites>=6?'ok':'warn'],['q',a.q+'/3','retorik soru',a.q>=3?'ok':'warn'],['contr',a.contr.length,a.contr.length?'kısaltma: '+a.contr.slice(0,3).join(', ')+(a.contr.length>3?'…':''):'kısaltma yok',a.contr.length?'bad':'ok'],['paras',(6-a.paraFail)+'/6','bağlaçla açılan paragraf',a.paraFail?'warn':'ok'],['filled',filled+'/25','dolu slot',filled===25?'ok':'']];
  $('#ctrs').innerHTML=items.map(([k,v,l,cl])=>`<div class="ctr ${cl} ${bump&&lastCtr[k]!==undefined&&lastCtr[k]!==String(v)?'bump':''}" data-ctr="${k}"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join('');
  items.forEach(([k,v])=>lastCtr[k]=String(v));
@@ -1004,7 +1013,7 @@ function updProvaTimer(){const c=S.prova.cur;if(!c||!$('#pTime'))return;const el
  if(ph===3&&!c.timeUpToast){c.timeUpToast=1;save();toast('80 dakika doldu: konuşmayı puanla.');}}
 function doScore(user){const P=S.prova,c=P.cur;const r=scoreOf(c.slots,c.chk);const ch=CH[CHI[c.id]];
  if(user){c.result={total:r.total,at:Date.now()};P.history.push({id:c.id,score:r.total,at:Date.now()});if(P.history.length>30)P.history.shift();addXP(50+r.total*5);badge('prova');if(r.total===30){badge('perfect');confetti(80);}save();}
- const missing=r.a.missing;const warns=[];c.slots.forEach((t,i)=>{slotWarn(i,t).forEach(w=>warns.push([i,w]));});
+ const missing=r.a.missing;const warns=[];c.slots.forEach((t,i)=>{slotWarn(i,t).forEach(w=>warns.push([i,w]));});const rp=repeats(c.slots);Object.keys(rp).forEach(i=>rp[i].forEach(y=>warns.push([+i,'Tekrar (puanı etkilemez): "'+y.k+'…" açılışı slot '+[...new Set(y.o)].map(j=>j+1).join(', ')+' ile aynı'])));
  $('#result').innerHTML=`<div class="card" id="resCard"><div class="score"><div class="scorebig">${r.total}<small>/30</small></div><div><div class="eyebrow">Formül puanı · ${esc(ch.name)}</div><h3 class="h2">${r.total===30?'Kusursuz formül. Mahkeme ayakta.':r.total>=24?'Güçlü savunma; birkaç vida eksik.':'Formül eksik: aşağıdaki maddeleri tamamla.'}</h3><p class="small muted" style="margin:4px 0 0">${r.a.words} kelime · ${25-missing.length}/25 slot dolu. Not: bu puan formülün sayılabilir kısmını ölçer; içerik kalitesini Claude'a ya da öğretmenine sor.</p></div></div>
  <div class="parts">${r.parts.map(([name,items,pts])=>`<div class="part" data-part="${name}"><h4>${name} <b>${pts}/10</b></h4><ul>${items.map(x=>`<li><span class="${x.ok?'yes':'no'}">${x.ok?'✓':'✗'}</span><span>${esc(x.t)}</span><span class="pt">${x.pt}/${x.max}</span></li>`).join('')}</ul></div>`).join('')}</div>
  <hr class="rule"><b>Eksik slotlar</b> ${missing.length?`<div class="row" style="margin-top:6px;gap:6px">${missing.map(i=>`<button class="chip bad" data-jump="${i}">Slot ${i+1} · ${esc(SL[i].task)}</button>`).join('')}</div>`:'<span class="chip ok">yok, 25/25</span>'}
@@ -1021,7 +1030,7 @@ RENDER.kart=function(){ensureAll();
  <p class="small muted noprint" style="margin:4px 0 0">Tek sayfa (A4): formülün 25 slotu, 11 tez cümlen ve her karakterin KENDİ kitabındaki sayfa numaraları (PDF sayfaları değil). Sınava götürme kuralını öğretmenine göre kontrol et; bu kart sabah okumak için.</p>
  <div class="sheet" id="card"><h1>Sabah kartı · The Crucible savunması</h1><div class="sub">Sayfalar: kendi kitabım · 6 paragraf · 25 cümle · ≈500 kelime · 80 dk: 0–10 plan, 10–65 yaz (≈2 dk/cümle), 65–80 kontrol · she/he karaktere göre</div>
   <div class="cf">${PARAS.map((p,P)=>`<div class="pb"><h3>P${P+1} ${p.t}</h3>${SL.slice(p.from,p.from+p.n).map(s=>`<div><i>${s.n}</i>${tplHTML(s.tpl)}</div>`).join('')}</div>`).join('')}</div>
-  <div class="rl"><b>30 puan:</b> ≥6 <span class="mono">(Miller n)</span> + uydurma yok · ≥3 "?" + kusur kabulü + who gains + üçleme · 0 kısaltma (n't, it's, gonna, kids) · paragraflar: Ladies and gentlemen / First / Moreover / Finally / Picture / Ultimately</div>
+  <div class="rl" style="margin-bottom:2px;border-bottom:0"><b>${esc(MNEMO)}</b></div><div class="rl" style="margin-top:0;border-top:0"><b>30 puan:</b> ≥6 <span class="mono">(Miller n)</span> + uydurma yok · ≥3 "?" + kusur kabulü + who gains + üçleme · 0 kısaltma (n't, it's, gonna, kids) · paragraflar: Ladies and gentlemen / First / Moreover / Finally / Picture / Ultimately</div>
   <div class="ct">${CH.map(c=>{const z=S.tez[c.id];const th=z&&z.thesis.trim();if(z)prepZ(c,z);const pv=e=>z?String(z.pg[e.find]||'').trim():'';const pg=[0,1,2].map(k=>{const evs=argEv(c,k);let ps=evs.map(pv).filter(Boolean);if(!ps.length)ps=evs.filter(e=>e.bookPage!=null).map(e=>'≈'+e.bookPage);return `A${k+1}: ${ps.length?ps.join(', '):'—'}`;}).concat(extraEv(c).map(e=>{const v=pv(e);return v?`${e.arg==='pathos'?'Pathos':e.arg==='dikkat'?'Dikkat':'Ek'}: ${v}`:'';}).filter(Boolean)).join(' · ');return `<div class="cc"><b>${esc(c.name)}</b>${tezProg(c.id).ready?' ✓':''}<div class="th ${th?'':'empty'}">${th?esc(z.thesis.trim()):'tez yok'}</div><div class="pp">${esc(pg)}</div></div>`;}).join('')}</div></div>`;
  $('#printBtn').onclick=()=>{S.plan.printed=true;save();window.print();};
 };
