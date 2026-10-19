@@ -249,6 +249,7 @@
     { n: "Ankara", lon: 32.86, lat: 39.93, t: "s", lx: 0, ly: 46, a: "middle" },
     { n: "Çanakkale", lon: 26.41, lat: 40.15, t: "s", lx: -16, ly: 44, a: "end" },
     { n: "Novi Sad", sub: "IS · NATIONAL SELECTION", lon: 19.84, lat: 45.27, t: "y", lx: 0, ly: -66, a: "middle" },
+    { n: "Niš", lon: 21.90, lat: 43.32, t: "s", lx: 18, ly: 9, a: "start" },
     { n: "Pordenone", lon: 12.66, lat: 45.96, t: "y", lx: -14, ly: -26, a: "end" },
     { n: "Strasbourg", sub: "EUROSCOLA", lon: 7.75, lat: 48.58, t: "y", lx: 0, ly: -50, a: "middle" },
     { n: "Málaga", lon: -4.42, lat: 36.72, t: "y", lx: 20, ly: 8, a: "start" }
