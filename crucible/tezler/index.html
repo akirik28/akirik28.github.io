@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crucible · 11 savunma</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#17110c;--panel:#221912;--line:#3a2b1f;--ink:#f4ead9;--dim:#c9b79c;--gold:#e9b949;--amber:#f0a33a;--accent:#7fd1b9}
+  @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f7f1e6;--panel:#fffaf1;--line:#e3d3ba;--ink:#2a1e14;--dim:#6f5a43;--gold:#a8741a;--amber:#b5651d;--accent:#1f7a64}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 16px 64px}
+  a{color:var(--gold)}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:clamp(30px,6vw,46px);margin:0;line-height:1.1}
+  .back{font-weight:600;text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+  .lead{color:var(--dim);margin:6px 0 22px}
+  video{width:100%;border-radius:14px;border:1px solid var(--line);background:#000;display:block}
+  .order{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:22px 0 8px;color:var(--dim)}
+  .order b{color:var(--ink)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;margin:14px 0}
+  .card h2{margin:0 0 2px;font-size:21px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .num{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--gold);border:1px solid var(--line);border-radius:8px;padding:1px 7px}
+  .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .acc{margin:8px 0 10px;color:var(--dim)}
+  .acc b{color:var(--ink);font-weight:600}
+  blockquote{margin:0;padding:12px 14px;border-left:3px solid var(--gold);background:rgba(233,185,73,.08);border-radius:0 10px 10px 0;font-family:Georgia,serif;font-size:18px}
+  .warn{margin-top:10px;font-size:14.5px;color:var(--amber)}
+  .copy{margin-top:10px;font:600 13px/1 inherit;color:var(--gold);background:none;border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
+  footer{margin-top:28px;color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>On bir müvekkil, on bir savunma</h1>
+    <a class="back" href="../">← Çalışma uygulaması</a>
+  </header>
+  <p class="lead">Her karakterin neyle suçlandığı ve üç sebepli savunma tezi. Önce videoyu izle (7 dk 50 sn), sonra tezleri sesli oku. Sebepler (1)(2)(3) = paragraf 2, 3, 4.</p>
+
+  <video controls preload="metadata" poster="../video/poster.jpg" playsinline>
+    <source src="../video/crucible-11-savunma.mp4" type="video/mp4">
+  </video>
+
+  <div class="order"><b>Kolaydan zora:</b> Betty → Rebecca → Elizabeth → Tituba → Hale → Mary Warren → Giles → Sarah Good → Ann Putnam → Parris → Abigail</div>
+
+  <div id="list"></div>
+
+  <footer>Tezler kitaptaki olaylara dayanır; uydurma bilgi yoktur. Sınavda parantez içine kendi kitabının sayfa numarasını yaz: (Miller 18).</footer>
+</div>
+<script>
+const T = [
+ ["Betty Parris","en kolay","dancing in the forest and accusing innocent people","Betty Parris is not guilty, because (1) she is only ten years old, (2) Abigail threatened the girls and Betty was terrified, and (3) she was the one who revealed that Abigail drank a charm to kill Elizabeth Proctor.",""],
+ ["Rebecca Nurse","","killing the Putnam babies with witchcraft","Rebecca Nurse is not guilty, because (1) there is no evidence against her, only an old land quarrel between the Putnams and the Nurses, (2) she is a respected seventy-two-year-old woman who calmed Betty and warned against hunting for witches, and (3) she refused to save her own life with a lie.","Kitapta zincirli olduğu yazmıyor; Act 4'te güçlükle yürüyor."],
+ ["Elizabeth Proctor","","using a needle in a poppet to kill Abigail","Elizabeth Proctor is not guilty, because (1) Mary Warren made the poppet and gave it to her, (2) Abigail wanted Elizabeth dead because she wanted John Proctor for herself, and (3) the only lie Elizabeth ever told was to protect her husband.","Hamileliği Act 3'te ortaya çıkıyor; bebeği ölür deme, idamı erteleniyor."],
+ ["Tituba","","witchcraft in the forest and naming innocent women","Tituba is not guilty, because (1) as an enslaved woman in Parris's house she had almost no power, (2) she confessed only after she was threatened with whipping and hanging, and (3) the first names she gave, Sarah Good and Goody Osburn, were suggested to her by Mr. Putnam.","“Hayır diyemezdi” bir yorumdur; yorum olarak söyle."],
+ ["Rev. John Hale","","helping to start the witch trials and signing death warrants","Reverend Hale is not guilty, because (1) he came to Salem as an expert and promised to follow evidence, not superstition, (2) he began to doubt the court and publicly quit it, and (3) he came back to the prison to try to save innocent lives.","Act 2'de Rebecca'yı savunmuyor, sadece rahatsız oluyor."],
+ ["Mary Warren","","lying in court and accusing John Proctor","Mary Warren is not guilty, because (1) she tried to tell the truth by defending Elizabeth and admitting that the girls were pretending, (2) she was threatened by Proctor, by the judge and by the other girls, and (3) she is a frightened seventeen-year-old servant who broke down under pressure.",""],
+ ["Giles Corey","","contempt of court and causing his wife's arrest","Giles Corey is not guilty, because (1) he refused to name his witness only to protect an innocent man from prison, (2) he only asked a question about his wife's books and never called her a witch, and (3) he chose to die in silence so that his sons could keep his land.","Kitap sorusunu Hale'e Act 1'de soruyor."],
+ ["Sarah Good","","witchcraft and cursing Mary Warren","Sarah Good is not guilty, because (1) she only mumbled after she was sent away hungry, and being poor is not a crime, (2) not knowing the commandments shows a lack of education, not a pact with the Devil, and (3) she confessed only to save her life in a court that did not hang people who confessed.","Sahnede çok az görünür; bunları Act 2'de Mary anlatır. Uydurma ekleme."],
+ ["Goody Ann Putnam","","sending her daughter Ruth to Tituba to speak to the dead","Ann Putnam is not guilty, because (1) she lost seven babies on the day they were born and was broken by grief, (2) in 1692 almost everyone believed in spirits, and she wanted answers, not harm, and (3) the hunger for land belonged to her husband, and the court, not Ann, decided who was guilty.","Ruth'u bilerek gönderdi: inkâr etme, kederle açıkla."],
+ ["Rev. Samuel Parris","","hiding the dancing and starting the panic to protect his name","Reverend Parris is not guilty, because (1) he was a frightened father whose daughter would not wake, so he called a doctor and an expert, (2) Abigail lied to him and later stole his money and ran away, and (3) the judges, not Parris, decided who was guilty and who would hang.","Act 4'te idamları korkudan ertelemek istedi, merhametten değil. Bıçak kapıya saplanmadı, düştü."],
+ ["Abigail Williams","en zor","lying in court and accusing innocent people","Abigail Williams is not guilty, because (1) she is a seventeen-year-old orphan who saw her parents killed, (2) the adults and the court believed her without any proof, and (3) after the dancing she was trapped, and blaming others was the only way she saw to survive.","İnkâr değil, hafifletme: Act 4'te para çalıp kaçtı."]
+];
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+document.getElementById("list").innerHTML = T.map((t, i) => `
+  <section class="card">
+    <h2><span class="num">${String(i + 1).padStart(2, "0")}</span>${esc(t[0])}${t[1] ? ` <span class="tag">${t[1]}</span>` : ""}</h2>
+    <div class="acc">Suçlama: <b lang="en">${esc(t[2])}</b></div>
+    <blockquote lang="en">${esc(t[3])}</blockquote>
+    ${t[4] ? `<div class="warn">Dikkat: ${esc(t[4])}</div>` : ""}
+    <button class="copy" data-i="${i}">Tezi kopyala</button>
+  </section>`).join("");
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const txt = T[+b.dataset.i][3];
+  (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => { b.textContent = "Kopyalandı ✓"; setTimeout(() => b.textContent = "Tezi kopyala", 1500); }).catch(() => {});
+});
+</script>
+</body>
+</html>
