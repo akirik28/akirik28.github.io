@@ -226,8 +226,8 @@
   });
 
   /* ---------- öğrenci başarıları: noktalı harita (İstanbul → Avrupa) ---------- */
-  // eşdikdörtgen izdüşüm: boylam -8…36, enlem 34…52 → x 120…1300, y 320…981
-  function prj(lon, lat) { return [120 + (lon + 8) * 26.8, 320 + (52 - lat) * 36.7]; }
+  // eşdikdörtgen izdüşüm: boylam -8…36, enlem 34…52 → x 120…1079, y 330…868
+  function prj(lon, lat) { return [120 + (lon + 8) * 21.8, 330 + (52 - lat) * 29.9]; }
   var LAND = [
     [[-1.8,43.4],[-8,43.7],[-9.3,42.9],[-8.9,42],[-8.7,40.8],[-9.5,38.8],[-8.8,38.7],[-8.9,37],[-7.4,37.2],[-6.3,36.8],[-5.6,36],[-4.4,36.7],[-2.1,36.7],[-.7,37.6],[.2,38.7],[-.3,39.4],[.8,40.7],[3.2,41.9],[3.2,42.4],[4.5,43.4],[6.2,43.1],[7.5,43.8],[8.8,44.4],[10.2,43.9],[10.5,43],[11.1,42.4],[12.3,41.6],[13.7,41.2],[14.3,40.6],[15.6,40],[15.7,38.9],[16.1,38],[16.6,38.5],[17.1,39],[16.5,39.7],[17,40.5],[18.5,40.1],[18,40.7],[16,41.5],[15.1,41.9],[14,42.7],[13.6,43.6],[12.3,44.5],[12.4,45.4],[13.6,45.8],[13.9,44.8],[15.2,44.3],[16.5,43.5],[18.5,42.5],[19.4,41.8],[19.4,40.5],[20,39.7],[20.7,38.8],[21.1,38.3],[21.7,36.8],[22.5,36.4],[23,38],[24,38.2],[22.9,39.4],[22.6,40.3],[23.7,40.2],[24.4,40.9],[26,40.8],[27,40.9],[28,41],[29,41.2],[28.1,41.6],[27.9,42.2],[28,43.2],[28.6,43.8],[29.7,45.2],[30.7,46.5],[31.9,46.6],[33.6,46.1],[36,46.8],[36,52],[4.6,52],[3.6,51.4],[2.5,51.1],[1.6,50.9],[1.6,50.2],[.2,49.7],[-1.3,49.6],[-1.9,48.7],[-4.7,48.4],[-4.4,47.8],[-2.2,47.1],[-1.2,46],[-1.4,44.5]],
     [[26.1,40],[26.7,39.3],[26.8,38.4],[27.3,37],[28.2,36.7],[29.7,36.2],[30.6,36.8],[32,36.6],[33.7,36.2],[34.7,36.8],[36,36.8],[36,41.3],[35,42],[33.3,42],[31.4,41.2],[29.2,41.2],[29,40.9],[27.5,40.5],[26.4,40.3]],
@@ -245,29 +245,29 @@
     return ins;
   }
   var PTS = [   // t: y = uluslararası, s = ulusal seçim, h = okulumuz; lx/ly: etiket konumu, a: hizalama
-    { n: "İstanbul", sub: "OKULUMUZ", lon: 28.98, lat: 41.01, t: "h", lx: 20, ly: -22, a: "start" },
-    { n: "Ankara", lon: 32.86, lat: 39.93, t: "s", lx: 0, ly: 46, a: "middle" },
-    { n: "Çanakkale", lon: 26.41, lat: 40.15, t: "s", lx: -16, ly: 44, a: "end" },
-    { n: "Novi Sad", sub: "IS · NATIONAL SELECTION", lon: 19.84, lat: 45.27, t: "y", lx: 0, ly: -66, a: "middle" },
-    { n: "Niš", lon: 21.90, lat: 43.32, t: "s", lx: 18, ly: 9, a: "start" },
-    { n: "Pordenone", lon: 12.66, lat: 45.96, t: "y", lx: -14, ly: -26, a: "end" },
-    { n: "Strasbourg", sub: "EUROSCOLA", lon: 7.75, lat: 48.58, t: "y", lx: 0, ly: -50, a: "middle" },
-    { n: "Málaga", lon: -4.42, lat: 36.72, t: "y", lx: 20, ly: 8, a: "start" }
+    { n: "İstanbul", sub: "OKULUMUZ", lon: 28.98, lat: 41.01, t: "h", lx: 18, ly: -20, a: "start" },
+    { n: "Novi Sad", sub: "IS · NATIONAL SELECTION", lon: 19.84, lat: 45.27, t: "y", lx: 0, ly: -54, a: "middle" },
+    { n: "Pordenone", lon: 12.66, lat: 45.96, t: "y", lx: -14, ly: -20, a: "end" },
+    { n: "Strasbourg", sub: "EUROSCOLA", lon: 7.75, lat: 48.58, t: "y", lx: 0, ly: -44, a: "middle" },
+    { n: "Málaga", lon: -4.42, lat: 36.72, t: "y", lx: 18, ly: 8, a: "start" },
+    { n: "Niš", lon: 21.90, lat: 43.32, t: "s", lx: 16, ly: 8, a: "start" },
+    { n: "Çanakkale", lon: 26.41, lat: 40.15, t: "s", lx: -14, ly: 38, a: "end" },
+    { n: "Ankara", lon: 32.86, lat: 39.93, t: "s", lx: 0, ly: 40, a: "middle" }
   ];
   function buildMap(sc) {
     var dg = sc.querySelector(".m-dots"), ag = sc.querySelector(".m-arcs"), pg = sc.querySelector(".m-pts");
     if (dg.__built) return;
-    for (var y = 327; y < 981; y += 15) for (var x = 127; x < 1300; x += 15) {
-      for (var k = 0; k < LAND.length; k++) if (inPoly(x, y, LAND[k])) { svgEl("circle", { cx: x, cy: y, r: 2.9 }, dg); break; }
+    for (var y = 336; y < 868; y += 13) for (var x = 126; x < 1079; x += 13) {
+      for (var k = 0; k < LAND.length; k++) if (inPoly(x, y, LAND[k])) { svgEl("circle", { cx: x, cy: y, r: 2.5 }, dg); break; }
     }
     var home = prj(PTS[0].lon, PTS[0].lat);
     PTS.forEach(function (p, i) {
       var q = prj(p.lon, p.lat);
       if (i > 0) {
         var mx = (home[0] + q[0]) / 2, my = (home[1] + q[1]) / 2, d = Math.hypot(q[0] - home[0], q[1] - home[1]);
-        svgEl("path", { d: "M" + home[0] + " " + home[1] + " Q " + mx + " " + (my + (p.t === "s" ? d * .45 : -d * .32)) + " " + q[0] + " " + q[1], class: p.t === "s" ? "ns" : "" }, ag);
+        var ap = svgEl("path", { d: "M" + home[0] + " " + home[1] + " Q " + mx + " " + (my + (p.t === "s" ? d * .4 : -d * .3)) + " " + q[0] + " " + q[1], class: p.t === "s" ? "ns" : "" }, ag); ap.__t = p.t;
       }
-      var g = svgEl("g", { class: p.t === "s" ? "ns" : (p.t === "h" ? "home" : "") }, pg);
+      var g = svgEl("g", { class: p.t === "s" ? "ns" : (p.t === "h" ? "home" : "") }, pg); g.__t = p.t;
       svgEl("circle", { cx: q[0], cy: q[1], r: 18, class: "ring" }, g);
       svgEl("circle", { cx: q[0], cy: q[1], r: p.t === "h" ? 8 : 10, class: "core" }, g);
       var t = svgEl("text", { x: q[0] + p.lx, y: q[1] + p.ly, "text-anchor": p.a }, g); t.textContent = p.n;
@@ -275,31 +275,47 @@
     });
     dg.__built = true;
   }
+  function revealMap(c, type, base) {
+    var k = 0;
+    Array.prototype.forEach.call(c.$(".m-arcs").children, function (p) {
+      if (p.__t !== type) return;
+      var L = p.getTotalLength(); p.style.strokeDasharray = L;
+      wa(c, p, [{ strokeDashoffset: L, opacity: 1 }, { strokeDashoffset: 0, opacity: 1 }], { duration: 1000, delay: base + k * 150 });
+      k++;
+    });
+    k = 0;
+    Array.prototype.forEach.call(c.$(".m-pts").children, function (g) {
+      if (g.__t !== type) return;
+      wa(c, g, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: base + 600 + k * 150 });
+      k++;
+    });
+  }
+  function shown(c, upto) {   // bu adıma kadar açılan konferans sayısı (listeden sayılır)
+    var n = 0;
+    c.$$(".blk").forEach(function (b) { var st = parseInt(b.getAttribute("data-step"), 10) || 0; if (st <= upto) n += b.querySelectorAll(".tiles > li, .rows > li").length; });
+    return n;
+  }
   Deck.scene("basarilar", {
     enter: function (c) {
       buildMap(c.el);
-      Array.prototype.forEach.call(c.$(".m-dots").children, function (d, i) {
+      Array.prototype.forEach.call(c.$(".m-arcs").children, function (p) { p.style.opacity = 0; });
+      Array.prototype.forEach.call(c.$(".m-pts").children, function (g) { g.style.opacity = 0; });
+      Array.prototype.forEach.call(c.$(".m-dots").children, function (d) {
         wa(c, d, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 100 + (+d.getAttribute("cx")) * .45 });
       });
-      Array.prototype.forEach.call(c.$(".m-arcs").children, function (p, i) {
-        var L = p.getTotalLength(); p.style.strokeDasharray = L;
-        wa(c, p, [{ strokeDashoffset: L }, { strokeDashoffset: 0 }], { duration: 1100, delay: 900 + i * 160 });
-      });
-      Array.prototype.forEach.call(c.$(".m-pts").children, function (g, i) {
-        wa(c, g, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: i === 0 ? 700 : 1500 + i * 160 });
-      });
+      revealMap(c, "h", 300);
+      revealMap(c, "y", 800);
       var n = c.$(".ba-n"); n.textContent = "0";
-      c.count(n, c.$$(".ach-l li").length, { from: 0, duration: 1.4, delay: .5 });
+      c.count(n, shown(c, 0), { from: 0, duration: 1.2, delay: .6 });
     },
-    reset: function (c) { killWA(c.el); c.$(".ba-n").textContent = "0"; }
-  });
-  Deck.scene("uluslararasi", {
-    enter: function (c) {
-      var tot = document.querySelectorAll("#basarilar .ach-l li").length + c.$$(".ses").length;
-      var n = c.$(".ba-n"); n.textContent = "0";
-      c.count(n, tot, { from: 0, duration: 1.4, delay: .5 });
+    step: function (k, c) {
+      if (k === 1) revealMap(c, "s", 200);
+      c.count(c.$(".ba-n"), shown(c, k), { from: shown(c, k - 1), duration: 1, delay: .5 });
     },
-    reset: function (c) { c.$(".ba-n").textContent = "0"; }
+    reset: function (c) {
+      killWA(c.el); c.$(".ba-n").textContent = "0";
+      c.$$(".m-arcs path, .m-pts > g").forEach(function (e) { e.style.opacity = ""; });
+    }
   });
 
   /* ---------- 14 başvuru: ilerleme çizgisi, yazı, konfeti ---------- */
