@@ -225,17 +225,15 @@
     reset: function (c) { killWA(c.el); var d = c.$(".runner"); d.style.opacity = 0; }
   });
 
-  /* ---------- öğrenci başarıları: noktalı harita (İstanbul → Avrupa) ---------- */
-  // eşdikdörtgen izdüşüm: boylam -8…36, enlem 34…52 → x 120…1079, y 330…868
-  function prj(lon, lat) { return [120 + (lon + 8) * 21.8, 330 + (52 - lat) * 29.9]; }
-  var LAND = [
+  /* ---------- öğrenci başarıları: noktalı harita + Türkiye yakın planı ---------- */
+  var LAND = [   // kaba kıyı çizgileri (boylam, enlem); noktalara dönüşünce ayrıntı kaybolur
     [[-1.8,43.4],[-8,43.7],[-9.3,42.9],[-8.9,42],[-8.7,40.8],[-9.5,38.8],[-8.8,38.7],[-8.9,37],[-7.4,37.2],[-6.3,36.8],[-5.6,36],[-4.4,36.7],[-2.1,36.7],[-.7,37.6],[.2,38.7],[-.3,39.4],[.8,40.7],[3.2,41.9],[3.2,42.4],[4.5,43.4],[6.2,43.1],[7.5,43.8],[8.8,44.4],[10.2,43.9],[10.5,43],[11.1,42.4],[12.3,41.6],[13.7,41.2],[14.3,40.6],[15.6,40],[15.7,38.9],[16.1,38],[16.6,38.5],[17.1,39],[16.5,39.7],[17,40.5],[18.5,40.1],[18,40.7],[16,41.5],[15.1,41.9],[14,42.7],[13.6,43.6],[12.3,44.5],[12.4,45.4],[13.6,45.8],[13.9,44.8],[15.2,44.3],[16.5,43.5],[18.5,42.5],[19.4,41.8],[19.4,40.5],[20,39.7],[20.7,38.8],[21.1,38.3],[21.7,36.8],[22.5,36.4],[23,38],[24,38.2],[22.9,39.4],[22.6,40.3],[23.7,40.2],[24.4,40.9],[26,40.8],[27,40.9],[28,41],[29,41.2],[28.1,41.6],[27.9,42.2],[28,43.2],[28.6,43.8],[29.7,45.2],[30.7,46.5],[31.9,46.6],[33.6,46.1],[36,46.8],[36,52],[4.6,52],[3.6,51.4],[2.5,51.1],[1.6,50.9],[1.6,50.2],[.2,49.7],[-1.3,49.6],[-1.9,48.7],[-4.7,48.4],[-4.4,47.8],[-2.2,47.1],[-1.2,46],[-1.4,44.5]],
     [[26.1,40],[26.7,39.3],[26.8,38.4],[27.3,37],[28.2,36.7],[29.7,36.2],[30.6,36.8],[32,36.6],[33.7,36.2],[34.7,36.8],[36,36.8],[36,41.3],[35,42],[33.3,42],[31.4,41.2],[29.2,41.2],[29,40.9],[27.5,40.5],[26.4,40.3]],
     [[12.4,38.1],[15.6,38.3],[15.1,36.7],[12.6,37.6]], [[8.4,41],[9.8,41.1],[9.6,39.1],[8.5,38.9]], [[8.6,43],[9.5,42.9],[9.3,41.4],[8.6,41.8]],
     [[23.5,35.6],[26.3,35.3],[26,35],[23.6,35.2]],
     [[-8,34],[-6.8,34.1],[-6.2,35.8],[-5.3,35.9],[-2,35.1],[1,36.5],[3,36.8],[6.5,37.1],[8.6,36.9],[10.3,37.3],[11.1,36.9],[10.5,36],[11.1,35.2],[10.1,34]],
     [[-5.7,50.1],[-3,50.6],[1.4,51.2],[1.7,52],[-4.5,52],[-5.2,51.7],[-3.3,51.4],[-4.5,51]]
-  ].map(function (poly) { return poly.map(function (p) { return prj(p[0], p[1]); }); });
+  ];
   function inPoly(x, y, pts) {
     var ins = false;
     for (var i = 0, j = pts.length - 1; i < pts.length; j = i++) {
@@ -244,49 +242,66 @@
     }
     return ins;
   }
-  var PTS = [   // t: y = uluslararası, s = ulusal seçim, h = okulumuz; lx/ly: etiket konumu, a: hizalama
-    { n: "İstanbul", sub: "OKULUMUZ", lon: 28.98, lat: 41.01, t: "h", lx: 18, ly: -20, a: "start" },
-    { n: "Novi Sad", sub: "IS · NATIONAL SELECTION", lon: 19.84, lat: 45.27, t: "y", lx: 0, ly: -54, a: "middle" },
-    { n: "Pordenone", lon: 12.66, lat: 45.96, t: "y", lx: -14, ly: -20, a: "end" },
-    { n: "Strasbourg", sub: "EUROSCOLA", lon: 7.75, lat: 48.58, t: "y", lx: 0, ly: -44, a: "middle" },
-    { n: "Málaga", lon: -4.42, lat: 36.72, t: "y", lx: 18, ly: 8, a: "start" },
-    { n: "Niš", lon: 21.90, lat: 43.32, t: "s", lx: 16, ly: 8, a: "start" },
-    { n: "Çanakkale", lon: 26.41, lat: 40.15, t: "s", lx: -14, ly: 38, a: "end" },
-    { n: "Ankara", lon: 32.86, lat: 39.93, t: "s", lx: 0, ly: 40, a: "middle" }
+  // eşdikdörtgen izdüşümler: ana harita (boylam -8…36, enlem 34…52) ve Türkiye yakın planı (25.6…36.6, 36.2…41.6)
+  var MAPS = {
+    m: { prj: function (lo, la) { return [120 + (lo + 8) * 21.8, 330 + (52 - la) * 29.9]; }, box: [120, 330, 1079, 868], gap: 13, r: 2.5,
+         skip: [[322, 668, 818, 1038], [770, 312, 1090, 440]] },
+    i: { prj: function (lo, la) { return [345 + (lo - 25.6) * 40.9, 716 + (41.6 - la) * 54.5]; }, box: [345, 716, 795, 1010], gap: 11, r: 2.4, skip: [] }
+  };
+  // t: y uluslararası · s National Selection · r Regional · n National Session · h okulumuz (yay başlangıcı); st: hangi adımda yanar
+  var PTS = [
+    { m: "m", t: "h", st: 0, lon: 28.98, lat: 41.01 },
+    { m: "m", t: "y", st: 0, n: "Novi Sad", sub: "IS · NATIONAL SELECTION", lon: 19.84, lat: 45.27, lx: 0, ly: -54, a: "middle" },
+    { m: "m", t: "y", st: 0, n: "Pordenone", lon: 12.66, lat: 45.96, lx: -14, ly: -20, a: "end" },
+    { m: "m", t: "y", st: 0, n: "Strasbourg", sub: "EUROSCOLA", lon: 7.75, lat: 48.58, lx: 0, ly: -44, a: "middle" },
+    { m: "m", t: "y", st: 0, n: "Málaga", lon: -4.42, lat: 36.72, lx: 18, ly: 8, a: "start" },
+    { m: "m", t: "s", st: 1, n: "Niš", lon: 21.90, lat: 43.32, lx: 16, ly: 8, a: "start" },
+    { m: "i", t: "h", st: 0, n: "İstanbul", sub: "OKULUMUZ", lon: 28.98, lat: 41.01, lx: 16, ly: -6, a: "start" },
+    { m: "i", t: "s", st: 1, n: "Çanakkale", lon: 26.41, lat: 40.15, lx: 0, ly: -18, a: "middle" },
+    { m: "i", t: "s", st: 1, n: "Ankara", lon: 32.86, lat: 39.93, lx: 0, ly: 36, a: "middle" },
+    { m: "i", t: "n", st: 2, sub: "NATIONAL SESSION", lon: 28.98, lat: 41.01, lx: 16, ly: 30, a: "start" },
+    { m: "i", t: "r", st: 2, n: "Eskişehir", sub: "REGIONAL", lon: 30.52, lat: 39.78, lx: -6, ly: 36, a: "end" },
+    { m: "i", t: "r", st: 2, n: "Alanya", sub: "REGIONAL", lon: 32.0, lat: 36.54, lx: 16, ly: -4, a: "start" }
   ];
+  var CLS = { y: "", s: "ns", r: "rg", n: "nt", h: "home" };
   function buildMap(sc) {
-    var dg = sc.querySelector(".m-dots"), ag = sc.querySelector(".m-arcs"), pg = sc.querySelector(".m-pts");
+    var dg = sc.querySelector(".m-dots"), ig = sc.querySelector(".m-inset"), ag = sc.querySelector(".m-arcs"), pg = sc.querySelector(".m-pts");
     if (dg.__built) return;
-    for (var y = 336; y < 868; y += 13) for (var x = 126; x < 1079; x += 13) {
-      for (var k = 0; k < LAND.length; k++) if (inPoly(x, y, LAND[k])) { svgEl("circle", { cx: x, cy: y, r: 2.5 }, dg); break; }
-    }
-    var home = prj(PTS[0].lon, PTS[0].lat);
-    PTS.forEach(function (p, i) {
-      var q = prj(p.lon, p.lat);
-      if (i > 0) {
-        var mx = (home[0] + q[0]) / 2, my = (home[1] + q[1]) / 2, d = Math.hypot(q[0] - home[0], q[1] - home[1]);
-        var ap = svgEl("path", { d: "M" + home[0] + " " + home[1] + " Q " + mx + " " + (my + (p.t === "s" ? d * .4 : -d * .3)) + " " + q[0] + " " + q[1], class: p.t === "s" ? "ns" : "" }, ag); ap.__t = p.t;
+    ["m", "i"].forEach(function (key) {
+      var M = MAPS[key], polys = LAND.map(function (poly) { return poly.map(function (q) { return M.prj(q[0], q[1]); }); });
+      for (var y = M.box[1] + 6; y < M.box[3]; y += M.gap) for (var x = M.box[0] + 6; x < M.box[2]; x += M.gap) {
+        if (M.skip.some(function (b) { return x > b[0] && x < b[2] && y > b[1] && y < b[3]; })) continue;
+        for (var k = 0; k < polys.length; k++) if (inPoly(x, y, polys[k])) { svgEl("circle", { cx: x, cy: y, r: M.r, class: key === "i" ? "in" : "" }, key === "i" ? ig : dg); break; }
       }
-      var g = svgEl("g", { class: p.t === "s" ? "ns" : (p.t === "h" ? "home" : "") }, pg); g.__t = p.t;
-      svgEl("circle", { cx: q[0], cy: q[1], r: 18, class: "ring" }, g);
-      svgEl("circle", { cx: q[0], cy: q[1], r: p.t === "h" ? 8 : 10, class: "core" }, g);
-      var t = svgEl("text", { x: q[0] + p.lx, y: q[1] + p.ly, "text-anchor": p.a }, g); t.textContent = p.n;
-      if (p.sub) { var s2 = svgEl("text", { x: q[0] + p.lx, y: q[1] + p.ly + (p.ly < 0 ? 22 : 22), "text-anchor": p.a, class: "sm" }, g); s2.textContent = p.sub; }
+    });
+    var home = { m: MAPS.m.prj(28.98, 41.01), i: MAPS.i.prj(28.98, 41.01) };
+    PTS.forEach(function (p) {
+      var q = MAPS[p.m].prj(p.lon, p.lat), h = home[p.m];
+      if (p.t !== "h" && p.t !== "n") {
+        var mx = (h[0] + q[0]) / 2, my = (h[1] + q[1]) / 2, d = Math.hypot(q[0] - h[0], q[1] - h[1]);
+        var ap = svgEl("path", { d: "M" + h[0] + " " + h[1] + " Q " + mx + " " + (my + (p.t === "y" ? -d * .3 : d * .35)) + " " + q[0] + " " + q[1], class: CLS[p.t] }, ag);
+        ap.__st = p.st;
+      }
+      var g = svgEl("g", { class: CLS[p.t] }, pg); g.__st = p.st;
+      svgEl("circle", { cx: q[0], cy: q[1], r: p.t === "h" ? 15 : 18, class: "ring" }, g);
+      svgEl("circle", { cx: q[0], cy: q[1], r: p.t === "h" ? 7 : 9, class: "core" }, g);
+      if (p.n) { var t = svgEl("text", { x: q[0] + p.lx, y: q[1] + p.ly, "text-anchor": p.a }, g); t.textContent = p.n; }
+      if (p.sub) { var s2 = svgEl("text", { x: q[0] + p.lx, y: q[1] + p.ly + (p.n ? 19 : 0), "text-anchor": p.a, class: "sm" }, g); s2.textContent = p.sub; }
     });
     dg.__built = true;
   }
-  function revealMap(c, type, base) {
+  function revealMap(c, st, base) {
     var k = 0;
     Array.prototype.forEach.call(c.$(".m-arcs").children, function (p) {
-      if (p.__t !== type) return;
+      if (p.__st !== st) return;
       var L = p.getTotalLength(); p.style.strokeDasharray = L;
       wa(c, p, [{ strokeDashoffset: L, opacity: 1 }, { strokeDashoffset: 0, opacity: 1 }], { duration: 1000, delay: base + k * 150 });
       k++;
     });
     k = 0;
     Array.prototype.forEach.call(c.$(".m-pts").children, function (g) {
-      if (g.__t !== type) return;
-      wa(c, g, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: base + 600 + k * 150 });
+      if (g.__st !== st) return;
+      wa(c, g, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: base + 500 + k * 150 });
       k++;
     });
   }
@@ -298,18 +313,16 @@
   Deck.scene("basarilar", {
     enter: function (c) {
       buildMap(c.el);
-      Array.prototype.forEach.call(c.$(".m-arcs").children, function (p) { p.style.opacity = 0; });
-      Array.prototype.forEach.call(c.$(".m-pts").children, function (g) { g.style.opacity = 0; });
-      Array.prototype.forEach.call(c.$(".m-dots").children, function (d) {
+      c.$$(".m-arcs path, .m-pts > g").forEach(function (e) { e.style.opacity = 0; });
+      c.$$(".m-dots circle, .m-inset circle").forEach(function (d) {
         wa(c, d, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 100 + (+d.getAttribute("cx")) * .45 });
       });
-      revealMap(c, "h", 300);
-      revealMap(c, "y", 800);
+      revealMap(c, 0, 600);
       var n = c.$(".ba-n"); n.textContent = "0";
       c.count(n, shown(c, 0), { from: 0, duration: 1.2, delay: .6 });
     },
     step: function (k, c) {
-      if (k === 1) revealMap(c, "s", 200);
+      revealMap(c, k, 200);
       c.count(c.$(".ba-n"), shown(c, k), { from: shown(c, k - 1), duration: 1, delay: .5 });
     },
     reset: function (c) {

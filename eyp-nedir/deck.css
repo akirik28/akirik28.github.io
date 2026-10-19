@@ -16,6 +16,7 @@
   --ice-2: #DCE7FB;
   --star: #FFCE3A;
   --coral: #FF6B57;
+  --mint: #5EEAD4;
   --tx: #0A1B4D;
   --mute: #4A5A80;
 
@@ -476,9 +477,9 @@ em { font-family: var(--f-s); font-style: italic; font-weight: 400; letter-spaci
 .ph-b figcaption { font-size: 15px; letter-spacing: .05em; white-space: nowrap; }
 
 /* ---------- öğrenci başarıları (tek sahne) ---------- */
-.ba-count { position: absolute; left: 120px; top: 900px; display: flex; align-items: center; gap: 18px; }
-.ba-n { font-size: 120px; line-height: .8; font-weight: 880; font-stretch: 118%; letter-spacing: -.04em; color: var(--star); font-variant-numeric: tabular-nums; }
-.ba-count span { font: italic 400 44px/1.05 var(--f-s); color: #fff; }
+.ba-count { position: absolute; left: 790px; top: 330px; display: flex; align-items: center; gap: 14px; }
+.ba-n { font-size: 104px; line-height: .8; font-weight: 880; font-stretch: 118%; letter-spacing: -.04em; color: var(--star); font-variant-numeric: tabular-nums; }
+.ba-count span { font: italic 400 38px/1.05 var(--f-s); color: #fff; }
 .map { position: absolute; inset: 0; width: 1920px; height: 1080px; }
 .m-dots circle { fill: rgba(198,224,255,.3); }
 .m-arcs path { fill: none; stroke: rgba(255,206,58,.75); stroke-width: 2.2; stroke-linecap: round; }
@@ -496,7 +497,7 @@ em { font-family: var(--f-s); font-style: italic; font-weight: 400; letter-spaci
 .m-leg span, .ach-h { display: flex; align-items: center; gap: 10px; }
 .m-leg i, .ach-h i { width: 14px; height: 14px; border-radius: 50%; }
 .lg-y { background: var(--star); } .lg-s { background: var(--sky); } .lg-h { background: #fff; }
-.role-key { position: absolute; left: 540px; top: 918px; width: 560px; font: 500 18px/1.4 var(--f-m); letter-spacing: .04em; color: rgba(198,224,255,.8); }
+.role-key { margin-top: 12px; font: 500 15px/1.4 var(--f-m); letter-spacing: .03em; color: rgba(198,224,255,.75); }
 .ach { position: absolute; left: 1130px; top: 146px; width: 670px; display: flex; flex-direction: column; gap: 20px; }
 .blk { padding: 20px 22px 22px; border-radius: 24px; background: rgba(4,13,51,.42); border: 1px solid rgba(198,224,255,.22); }
 .ach-h { font: 500 18px/1 var(--f-m); letter-spacing: .14em; text-transform: uppercase; color: var(--sky-2); }
@@ -510,3 +511,17 @@ em { font-family: var(--f-s); font-style: italic; font-weight: 400; letter-spaci
 .rows li small { margin-top: 0; }
 .pills { display: flex; gap: 6px; flex: none; }
 .pills li { padding: 6px 12px !important; border-radius: 20px !important; font-size: 17px; font-weight: 700; background: var(--ice) !important; color: var(--royal); min-height: 0 !important; }
+.m-arcs path.rg { stroke: rgba(255,255,255,.8); }
+.m-arcs path.ns { stroke: rgba(142,197,255,.9); }
+.m-pts .home .core { fill: #fff; stroke: var(--sky); }
+.m-pts .rg .core { fill: #fff; } .m-pts .rg .ring { stroke: #fff; }
+.m-pts .nt .core { fill: var(--mint); } .m-pts .nt .ring { stroke: var(--mint); } .m-pts .nt text.sm { fill: var(--mint); }
+.m-inset circle { fill: rgba(198,224,255,.3); }
+.z-src { fill: rgba(255,255,255,.04); stroke: rgba(198,224,255,.6); stroke-width: 1.5; stroke-dasharray: 5 5; }
+.z-lead { fill: none; stroke: rgba(198,224,255,.45); stroke-width: 1.5; }
+.z-frame { fill: rgba(4,13,51,.55); stroke: rgba(198,224,255,.3); stroke-width: 1.5; }
+.z-title { font: 500 14px var(--f-m); letter-spacing: .14em; fill: var(--sky-2); }
+.lg-n { background: var(--mint); } .lg-o { background: transparent; border: 2px solid rgba(198,224,255,.6); }
+.dt { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: none; align-self: center; }
+.ach-k { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 15px; letter-spacing: .1em; }
+.ach-k i { width: 11px; height: 11px; border-radius: 50%; margin-left: 8px; }
