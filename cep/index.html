@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Cep Kitleri</title>
+<title>Kit Rafı</title>
 <meta name="description" content="Tek bir sınav ya da tek bir konu için hazırlanmış küçük çalışma paketleri: videolar, kanıt listeleri, provalar ve süreli denemeler.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="canonical" href="https://akirik28.github.io/cep/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cep Kitleri">
+<meta property="og:title" content="Kit Rafı">
 <meta property="og:description" content="Küçük, tek işe odaklı çalışma paketleri.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -44,6 +44,11 @@ button{font:inherit;color:inherit}
 .mode[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .mode:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+.shelf{padding:clamp(18px,3vw,30px) 0 6px;border-top:1px solid var(--line)}
+.shelf-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;margin-bottom:18px}
+.shelf-h h2{font-size:clamp(26px,3.6vw,42px);font-weight:720;letter-spacing:-.035em;line-height:1.05}
+.shelf-h p{color:var(--muted);font-size:15px}
+.lead b{color:var(--ink);font-weight:650}
 .packs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px;padding-bottom:20px}
 .pack{display:grid;grid-template-rows:auto auto 1fr auto;gap:14px;padding:22px;border-radius:26px;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);transition:opacity .25s,border-color .2s}
 .pack.off{opacity:.32}
@@ -78,8 +83,8 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 <main class="wrap">
   <section class="hero" aria-labelledby="baslik">
     <p class="eyebrow mono">Çalışma paketleri</p>
-    <h1 id="baslik">Cep <em class="serif">Kitleri</em></h1>
-    <p class="lead">Her paket tek bir sınav ya da tek bir konu için hazır. İçinde ne varsa sırayla aç; ne kadar vaktin olduğuna göre aşağıdan seç.</p>
+    <h1 id="baslik">Kit <em class="serif">Rafı</em></h1>
+    <p class="lead"><b>Sınav kitleri</b> belli bir sınava göre hazırlandı. <b>Cep kitleri</b> tek bir üniteyi anlatır ve her zaman işine yarar. Ne kadar vaktin olduğuna göre aşağıdan seç.</p>
   </section>
 
   <section class="need" aria-label="Ne lazım?">
@@ -87,7 +92,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
     <div class="modes" id="modes"></div>
   </section>
 
-  <ul class="packs" id="packs"></ul>
+  <div id="raf"></div>
   <noscript><p class="lead"><a href="/crucible/" style="text-decoration:underline">Crucible savunma paketi →</a> · <a href="/ap/" style="text-decoration:underline">AP kitleri →</a></p></noscript>
 </main>
 
@@ -110,9 +115,15 @@ var MODLAR = [
   { id: "test",   ad: "Kendimi test edeyim" }
 ];
 
+/* grup: "sinav" = belli bir sınav için · "cep" = tek ünite/konu (varsayılan) */
+var GRUPLAR = [
+  { id: "sinav", ad: "Sınav Kitleri", not: "Belli bir sınav için: kanıt, prova, hızlı tekrar." },
+  { id: "cep",   ad: "Cep Kitleri",   not: "Tek ünite, tek konu: video, soru, deneme." }
+];
+
 var PAKETLER = [
   {
-    ad: "The Crucible", alt: "Savunma paketi", etiket: "Sınav · English", renk: "#E9B949",
+    grup: "sinav", ad: "The Crucible", alt: "Savunma paketi", etiket: "English", renk: "#E9B949",
     ana: "/crucible/", not: "Misconduct trial yazılısı",
     icerik: [
       { ad: "Savunma masası", url: "/crucible/", not: "Formül, kanıt kartları, tez fabrikası", mod: ["ogren", "tekrar"] },
@@ -156,10 +167,15 @@ var PAKETLER = [
 ];
 
 (function () {
-  var modesEl = document.getElementById("modes"), packsEl = document.getElementById("packs");
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  var modesEl = document.getElementById("modes"), raf = document.getElementById("raf"), packsEl = raf, lists = {};
+  GRUPLAR.forEach(function (g) {
+    var sec = el("section", "shelf"), head = el("div", "shelf-h"), ul = el("ul", "packs");
+    sec.id = g.id; head.appendChild(el("h2", null, g.ad)); head.appendChild(el("p", null, g.not));
+    sec.appendChild(head); sec.appendChild(ul); raf.appendChild(sec); lists[g.id] = ul;
+  });
   var KEY = "cep:mod", aktif = "hepsi";
   try { var k = localStorage.getItem(KEY); if (MODLAR.some(function (m) { return m.id === k; })) aktif = k; } catch (e) {}
-  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
 
   MODLAR.forEach(function (m) {
     var b = el("button", "mode", m.ad); b.type = "button"; b.dataset.mod = m.id;
@@ -185,7 +201,7 @@ var PAKETLER = [
     var i = el("span", null, "→"); i.setAttribute("aria-hidden", "true"); open.appendChild(i);
     foot.appendChild(open);
     li.appendChild(head); li.appendChild(h2); li.appendChild(list); li.appendChild(foot);
-    packsEl.appendChild(li);
+    lists[p.grup || "cep"].appendChild(li);
   });
 
   function uygula() {
