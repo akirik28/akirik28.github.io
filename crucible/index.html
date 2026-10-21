@@ -589,7 +589,7 @@ $('#planbar').addEventListener('click',e=>{const g=e.target.closest('[data-go]')
 
 /* ============ router ============ */
 const VIEWS=[['plan','Plan','◆'],['formul','Formül ezberi','1'],['tez','Tez fabrikası','2'],['mola','Mola + Quiz','3'],['prova','Tam prova','4'],['kart','Sabah kartı','5'],['rozet','XP & rozetler','★']];
-$('#tabs').innerHTML=VIEWS.map(([v,t,n])=>`<button class="tab" data-v="${v}"><span class="n">${n}</span>${t}</button>`+(v==='kart'?'<a class="tab tablink" href="tezler/">▶ Video + 11 tez</a>':'')).join('');
+$('#tabs').innerHTML=VIEWS.map(([v,t,n])=>`<button class="tab" data-v="${v}"><span class="n">${n}</span>${t}</button>`+(v==='kart'?'<a class="tab tablink" href="tezler/">▶ Video + 11 tez</a><a class="tab tablink" href="notlar/">✎ Altını çiz</a>':'')).join('');
 $('#tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b&&b.dataset.v)go(b.dataset.v);});
 const RENDER={};
 function go(v,noScroll){if(!RENDER[v])v='plan';S.view=v;save();$$('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));$$('.tab').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v?'page':'false'));const tb=$(`.tab[data-v="${v}"]`);if(tb&&tb.scrollIntoView)tb.scrollIntoView({block:'nearest',inline:'nearest'});if(location.hash!=='#'+v)history.replaceState(null,'','#'+v);RENDER[v]();if(!noScroll)scrollTo(0,0);}
