@@ -84,7 +84,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   <section class="hero" aria-labelledby="baslik">
     <p class="eyebrow mono">Çalışma paketleri</p>
     <h1 id="baslik">Kit <em class="serif">Rafı</em></h1>
-    <p class="lead"><b>Sınav kitleri</b> belli bir sınava göre hazırlandı. <b>Cep kitleri</b> tek bir üniteyi anlatır ve her zaman işine yarar. Ne kadar vaktin olduğuna göre aşağıdan seç.</p>
+    <p class="lead"><b>Sınav kitleri</b> AP sınavlarına ünite ünite hazırlar. <b>Cep kitleri</b> okul yazılıları için küçük, tek işe odaklı paketler. Ne kadar vaktin olduğuna göre aşağıdan seç.</p>
   </section>
 
   <section class="need" aria-label="Ne lazım?">
@@ -115,15 +115,15 @@ var MODLAR = [
   { id: "test",   ad: "Kendimi test edeyim" }
 ];
 
-/* grup: "sinav" = belli bir sınav için · "cep" = tek ünite/konu (varsayılan) */
+/* grup: "sinav" = AP sınavları (varsayılan) · "cep" = okul yazılısı / tek konu */
 var GRUPLAR = [
-  { id: "sinav", ad: "Sınav Kitleri", not: "Belli bir sınav için: kanıt, prova, hızlı tekrar." },
-  { id: "cep",   ad: "Cep Kitleri",   not: "Tek ünite, tek konu: video, soru, deneme." }
+  { id: "sinav", ad: "Sınav Kitleri", not: "AP sınavları için: ünite ünite video, soru, süreli deneme." },
+  { id: "cep",   ad: "Cep Kitleri",   not: "Okul yazılıları için küçük paketler: kanıt, prova, hızlı tekrar." }
 ];
 
 var PAKETLER = [
   {
-    grup: "sinav", ad: "The Crucible", alt: "Savunma paketi", etiket: "English", renk: "#E9B949",
+    grup: "cep", ad: "The Crucible", alt: "Savunma paketi", etiket: "English", renk: "#E9B949",
     ana: "/crucible/", not: "Misconduct trial yazılısı",
     icerik: [
       { ad: "Savunma masası", url: "/crucible/", not: "Formül, kanıt kartları, tez fabrikası", mod: ["ogren", "tekrar"] },
@@ -201,7 +201,7 @@ var PAKETLER = [
     var i = el("span", null, "→"); i.setAttribute("aria-hidden", "true"); open.appendChild(i);
     foot.appendChild(open);
     li.appendChild(head); li.appendChild(h2); li.appendChild(list); li.appendChild(foot);
-    lists[p.grup || "cep"].appendChild(li);
+    lists[p.grup || "sinav"].appendChild(li);
   });
 
   function uygula() {
