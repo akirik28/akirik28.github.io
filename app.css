@@ -568,3 +568,17 @@ a.card:hover, article.card:hover { transform: translateY(-4px); box-shadow: var(
 
 @media (max-width: 1080px) { .talks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .talks { grid-template-columns: minmax(0, 1fr); } }
+
+/* Kitora kartı: görsel solda, telefon sağ altta */
+.kit { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); background: radial-gradient(90% 120% at 100% 0%, color-mix(in oklab, var(--c) 12%, var(--surface)), var(--surface) 60%); }
+.kit .feat-vis { padding: 0 9% 6% 0; }
+.kit .b-bar { background: #F6F1E7; border-color: #DCD2BC; }
+.kit .b-view { aspect-ratio: 1440 / 936; background: #F6F1E7; }
+.kit .cyc > .fr img { object-position: top; }
+.kit .kit-phone { position: absolute; right: 0; bottom: -4%; width: 24%; border-radius: 22px; border-width: 4px; border-color: #1F2A44; outline-color: color-mix(in oklab, var(--c) 40%, transparent); rotate: 4deg; z-index: 2; animation: bob 7s ease-in-out infinite; }
+.kit-name { display: flex; align-items: center; gap: 14px; }
+.kit-name img { width: clamp(36px, 3.4vw, 48px); height: auto; border-radius: 12px; }
+@media (max-width: 900px) {
+  .kit { grid-template-columns: minmax(0, 1fr); }
+  .kit .feat-vis { order: 2; }
+}
