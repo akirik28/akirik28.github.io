@@ -9,7 +9,7 @@
 <link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/kitora/kitora.css?v=2">
-<script src="/ap/_kit/hesap.js?v=4"></script>
+<script src="/ap/_kit/hesap.js?v=5"></script>
 <script src="/kitora/dersler.js?v=1"></script>
 <script>
   /* oturum yoksa önce giriş */
@@ -55,19 +55,12 @@
     </section>
 
     <section class="card">
-      <h2><span class="step">3</span>Araştırmaya katılmak ister misin?</h2>
-      <p class="sub">Kitora, onu hazırlayan öğrencinin okul araştırma projesinin bir parçası. Okuyup seçimini yap.</p>
+      <h2><span class="step">3</span>Quiz notların</h2>
+      <p class="sub">Gelişimini takip edebilmen için quiz notlarını da Kitora'da tutuyoruz.</p>
       <ul class="info">
-        <li><span>Katılırsan <b>sınıfın, derslerin ve okulda aldığın quiz notları</b> araştırmada kullanılır. Notlarını sen girersin.</span></li>
-        <li><span><b>Adın ve e-postan araştırmada görünmez.</b> Notların rastgele bir kodla saklanır.</span></li>
-        <li><span>Katılırsan, bir quizin not giriş tarihi geçince notunu girmeden kitler açılmaz.</span></li>
-        <li><span><b>Katılmak zorunlu değil.</b> Katılmasan da Kitora'yı aynen kullanırsın; senden not istenmez.</span></li>
-        <li><span>Fikrini istediğin zaman <b>Notlarım</b> sayfasından değiştirebilirsin. Vazgeçersen girdiğin notlar silinir.</span></li>
+        <li><span>Derslerinde quiz olunca <b>notunu Kitora'ya girersin</b>; hepsini Notlarım sayfasında görürsün.</span></li>
+        <li><span>Not giriş tarihi geçince, notunu girmeden kitler açılmaz.</span></li>
       </ul>
-      <div class="choice" role="radiogroup" aria-label="Araştırmaya katılım">
-        <label class="opt"><input type="radio" name="katilim" value="1"><span><b>Katılıyorum</b><small>Quiz notlarımı girerim; isimsiz olarak araştırmada kullanılabilir.</small></span></label>
-        <label class="opt"><input type="radio" name="katilim" value="0"><span><b>Katılmak istemiyorum</b><small>Kitora'yı yalnızca çalışmak için kullanırım.</small></span></label>
-      </div>
     </section>
 
     <p class="msg" id="msg" role="alert"></p>
@@ -109,7 +102,6 @@
     if (!p) return;
     if (p.sinif) f.sinif.value = String(p.sinif);
     (p.secmeliler || []).forEach(function (d) { f.querySelectorAll('input[type=checkbox]').forEach(function (x) { if (x.value === d) x.checked = true; }); });
-    if (p.katilim != null) f.querySelector('input[name=katilim][value="' + (p.katilim ? "1" : "0") + '"]').checked = true;
   }
   doldur(H.profil());
   H.profilYenile().then(function (p) { if (!f.dataset.dokunuldu) doldur(p); }, function () {});
@@ -119,12 +111,11 @@
     e.preventDefault();
     var sinif = parseInt(f.sinif.value, 10);
     var dersler = Array.prototype.map.call(f.querySelectorAll("input[type=checkbox]:checked"), function (x) { return x.value; });
-    var k = f.querySelector("input[name=katilim]:checked");
+    var onceki = H.profil(), takip = !(onceki && onceki.katilim === false);   /* not takibi varsayılan olarak açık */
     if (!(sinif >= 9 && sinif <= 12)) { msg.textContent = "Kaçıncı sınıf olduğunu seç."; f.sinif.setAttribute("aria-invalid", "true"); f.sinif.focus(); return; }
     if (!dersler.length) { msg.textContent = "En az bir ders seç."; sec.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
-    if (!k) { msg.textContent = "Araştırmaya katılıp katılmayacağını seç."; f.querySelector("input[name=katilim]").focus(); return; }
     go.disabled = true; go.textContent = "Kaydediliyor…"; msg.textContent = "";
-    H.profilKaydet(sinif, dersler, k.value === "1").then(function (p) {
+    H.profilKaydet(sinif, dersler, takip).then(function (p) {
       var e2 = H.engel(p);
       location.replace(e2 && e2 !== "/kitora/baslangic/" ? e2 + "?devam=" + encodeURIComponent(devam) : devam);
     }, function (err) {

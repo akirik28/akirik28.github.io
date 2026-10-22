@@ -1,6 +1,6 @@
 /* Kitora kapısı (kitler, denemeler, cep kitleri):
    - oturum yoksa giriş sayfasına gider, giriş yapınca bu sayfaya döner
-   - kurulum (sınıf, dersler, araştırma onayı) eksikse ya da son tarihi geçmiş quiz notu varsa önce o sayfaya gider
+   - kurulum (sınıf, dersler) eksikse ya da son tarihi geçmiş quiz notu varsa önce o sayfaya gider
    - oturum varsa bu kitin son açılış zamanını hesaba yazar
    /ap/_kit/hesap.js'ten SONRA, <head> içinde yüklenir. */
 (function () {

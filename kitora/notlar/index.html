@@ -9,7 +9,7 @@
 <link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/kitora/kitora.css?v=2">
-<script src="/ap/_kit/hesap.js?v=4"></script>
+<script src="/ap/_kit/hesap.js?v=5"></script>
 <script>
   if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname + location.search));
 </script>
@@ -113,9 +113,9 @@
     app.textContent = "";
 
     if (!p.katilim) {
-      document.getElementById("lead").textContent = "Araştırmaya katılmadığın için senden not istenmiyor.";
-      var c0 = kart("Araştırmaya katılmıyorsun", "Fikrini değiştirirsen katılabilirsin; o zaman quiz notlarını buradan girersin. Adın araştırmada görünmez.");
-      var kb = el("button", "btn ghost", "Araştırmaya katılmak istiyorum"); kb.type = "button";
+      document.getElementById("lead").textContent = "Not takibin kapalı.";
+      var c0 = kart("Not takibi kapalı", "Açarsan quiz notlarını buradan girer, gelişimini takip edersin.");
+      var kb = el("button", "btn ghost", "Not takibini aç"); kb.type = "button";
       kb.addEventListener("click", function () { kb.disabled = true; H.katilim(true).then(ciz, function () { kb.disabled = false; }); });
       c0.appendChild(kb); app.appendChild(c0);
       return;
@@ -143,16 +143,6 @@
     if (done.length) done.forEach(function (n) { c3.appendChild(satir({ id: n.quiz_id, baslik: n.baslik, ders: n.ders, son_tarih: n.son_tarih, max_puan: n.max_puan }, "done", n.puan)); });
     else c3.appendChild(el("p", "empty", "Henüz not girmedin."));
     app.appendChild(c3);
-
-    var c4 = el("section", "card");
-    c4.appendChild(el("h2", null, "Araştırma"));
-    c4.appendChild(el("p", "sub", "Araştırmaya katılıyorsun. Notların isimsiz bir kodla saklanır. Vazgeçersen girdiğin notlar silinir ve senden not istenmez."));
-    var cb = el("button", "btn danger sm", "Araştırmadan çık"); cb.type = "button";
-    cb.addEventListener("click", function () {
-      if (!window.confirm("Araştırmadan çıkılsın mı? Girdiğin bütün notlar silinecek.")) return;
-      cb.disabled = true; H.katilim(false).then(ciz, function () { cb.disabled = false; });
-    });
-    c4.appendChild(cb); app.appendChild(c4);
   }
 
   ciz(H.profil());

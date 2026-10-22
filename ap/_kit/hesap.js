@@ -133,7 +133,7 @@
   }
   ld("ap-hesap:v1:aktif");                                /* şifresiz sürümün oturum anahtarı */
 
-  /* ---------------- profil: seçmeliler, araştırma katılımı, quiz notları ---------------- */
+  /* ---------------- profil: sınıf, seçmeliler, not takibi, quiz notları ---------------- */
   function aktifId() { var h = bul(lg(AKTIF)); return h ? h.id : null; }
   function profilKey(id) { return P + "profil:" + id; }
   function profil() { var id = aktifId(); return id ? oku(lg(profilKey(id)), null) : null; }
@@ -204,7 +204,7 @@
         gecersiz_puan: "Not, 0 ile quizin tam puanı arasında olmalı.",
         secmeli_gerekli: "En az bir ders seç.",
         sinif_gerekli: "Kaçıncı sınıf olduğunu seç.",
-        katilim_gerekli: "Araştırmaya katılıp katılmayacağını seç.",
+        katilim_gerekli: "Bir şeyler eksik; sayfayı yenileyip tekrar dene.",
         yetki_yok: "Bu işlem için yönetici hesabı gerekiyor.",
         gecersiz_max: "Tam puan 1 ile 1000 arasında olmalı.",
         eksik: "Başlık, ders ve son tarihi doldur."

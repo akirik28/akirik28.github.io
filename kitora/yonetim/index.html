@@ -9,7 +9,7 @@
 <link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/kitora/kitora.css?v=2">
-<script src="/ap/_kit/hesap.js?v=4"></script>
+<script src="/ap/_kit/hesap.js?v=5"></script>
 <script src="/kitora/dersler.js?v=1"></script>
 <script>
   if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname));
@@ -56,7 +56,7 @@ td.none{color:var(--muted)}
   <section class="hero">
     <p class="eyebrow">Yönetim</p>
     <h1>Quizler ve <em>notlar</em></h1>
-    <p class="lead">Quiz aç, not giriş tarihini ve kaç üzerinden olduğunu belirle. Tarih geçince katılımcılar notlarını girmeden kitleri açamaz. Notlar isim yerine kodla görünür.</p>
+    <p class="lead">Quiz aç, not giriş tarihini ve kaç üzerinden olduğunu belirle. Tarih geçince öğrenciler notlarını girmeden kitleri açamaz. Notlar isim yerine kodla görünür.</p>
   </section>
   <div id="app"><section class="card"><p class="sub">Yükleniyor…</p></section></div>
 </main>
@@ -93,7 +93,7 @@ td.none{color:var(--muted)}
 
   /* yeni quiz formu */
   function yeniQuiz(yenile) {
-    var c = kart("Yeni quiz aç", "Son tarih, öğrencilerin notunu girmesi gereken son an. Geçince katılımcılar not girmeden kitleri açamaz.");
+    var c = kart("Yeni quiz aç", "Son tarih, öğrencilerin notunu girmesi gereken son an. Geçince öğrenciler not girmeden kitleri açamaz.");
     var f = el("form", "newq"); f.noValidate = true;
     function alan(etiket, input) { var l = el("label", "f", etiket); l.appendChild(input); f.appendChild(l); return input; }
     var bas = el("input"); bas.type = "text"; bas.maxLength = 120; bas.placeholder = "Ör. Unit 1 Quiz"; alan("Başlık", bas);
@@ -156,7 +156,7 @@ td.none{color:var(--muted)}
       gor.disabled = true;
       getir().then(function (rows) {
         gor.disabled = false; gor.textContent = "Gizle"; tw.textContent = ""; tw.hidden = false;
-        if (!rows.length) { tw.appendChild(el("p", "sub", "Bu derste araştırmaya katılan öğrenci yok.")); return; }
+        if (!rows.length) { tw.appendChild(el("p", "sub", "Bu dersi alan öğrenci yok.")); return; }
         var t = el("table"), th = el("tr");
         ["Kod", "Sınıf", "Not", "Yüzde", "Girilme"].forEach(function (x) { th.appendChild(el("th", null, x)); });
         t.appendChild(th);
@@ -187,7 +187,7 @@ td.none{color:var(--muted)}
   function ciz(o) {
     app.textContent = "";
     var stats = el("div", "stats");
-    [[o.hesap, "hesap"], [o.katilimci, "araştırmaya katılan"], [(o.quizler || []).length, "quiz"]].forEach(function (s) {
+    [[o.hesap, "hesap"], [o.katilimci, "not takibi açık"], [(o.quizler || []).length, "quiz"]].forEach(function (s) {
       var d = el("div", "stat"); d.appendChild(el("b", null, String(s[0]))); d.appendChild(el("span", null, s[1])); stats.appendChild(d);
     });
     app.appendChild(stats);
@@ -206,7 +206,7 @@ td.none{color:var(--muted)}
     (o.quizler || []).forEach(function (q) { cq.appendChild(quizKarti(q, yukle)); });
     app.appendChild(cq);
 
-    var cd = kart("Katılımcılar", "Yalnızca araştırmaya katılanlar sayılır.");
+    var cd = kart("Öğrenciler", "Not takibi açık olan öğrenciler.");
     function barlar(baslik, obj, sira) {
       var keys = Object.keys(obj || {}); if (!keys.length) return;
       keys.sort(sira || function (a, b) { return obj[b] - obj[a]; });
@@ -223,7 +223,7 @@ td.none{color:var(--muted)}
     var sn = {}; Object.keys(o.siniflar || {}).forEach(function (k) { sn[k + ". sınıf"] = o.siniflar[k]; });
     barlar("Sınıflar", sn, function (a, b) { return parseInt(a, 10) - parseInt(b, 10); });
     barlar("Dersler", o.dersler);
-    if (!Object.keys(sn).length && !Object.keys(o.dersler || {}).length) cd.appendChild(el("p", "sub", "Henüz katılımcı yok."));
+    if (!Object.keys(sn).length && !Object.keys(o.dersler || {}).length) cd.appendChild(el("p", "sub", "Henüz öğrenci yok."));
     app.appendChild(cd);
   }
 
