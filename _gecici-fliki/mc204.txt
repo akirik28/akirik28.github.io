@@ -1,0 +1,21 @@
+Bir fabrika boya üretiyor ve atığını dereye döküyor. Boyalar satıldı: üretim arttı. Dere kirlendi, balıklar öldü. Sonra belediye dereyi temizlemesi için bir şirkete para ödüyor: üretim yine arttı. Yani kirlilik, ülkenin üretim sayacını iki kez yukarı itti. Kimse bunu kutlamaz ama sayaç kutlar. Peki ülke gerçekten daha mı iyi durumda?
+
+GDP bir ekonominin ne kadar ürettiğini ölçer, ne kadar iyi yaşadığını değil. Bu farka limitations of GDP, yani GDP'nin sınırları denir. Altı kör noktayı tek tek açalım: piyasa dışı üretim, kayıt dışı ekonomi, boş zaman, kalite, çevre ve gelirin dağılımı. Her birinde kendine şunu sor: GDP refahı olduğundan büyük mü gösteriyor, küçük mü?
+
+Birinci kart: non-market production, yani piyasa dışı üretim. Annenin pişirdiği mercimek çorbası, dedeye bakan torun, parkta ağaç diken gönüllüler. Bunlar gerçek üretim ama satılmadığı için GDP'ye girmez. Aynı ev bir bakıcı tutup ona maaş öderse bakım aynı kalır, ama GDP artar. Demek ki burada GDP refahı olduğundan küçük gösterir.
+
+İkinci kart: underground economy, yani kayıt dışı ekonomi. Fişsiz yapılan bir tamirat, kayda girmeyen bir özel ders, vergisi ödenmeyen nakit satış. Yasa dışı işler de buradadır. Üretim var ama devletin kayıtlarında yok; GDP bunu göremez. Kayıt dışı ekonomisi büyük ülkelerde GDP gerçek üretimi olduğundan daha küçük gösterir.
+
+Üçüncü kart: leisure, yani boş zaman. İki ülke düşün: ikisi de aynı GDP'yi üretiyor. Birinde insanlar haftada 40 saat çalışıyor, ötekinde 55 saat. Hangisinde yaşamak istersin? Hafta sonu maç, arkadaşlar, uyku. GDP bu farkı hiç görmez. Herkes cumartesi de çalışsa GDP artar ama hayat güzelleşmez.
+
+Dördüncü kart: kalite ve yeni ürünler. Bugünkü bir telefonla on yıl öncekinin fiyatı aynı olsa bile, bugünkü çok daha iyi: kamera, hız, harita, çeviri. Ücretsiz kullandığın uygulamalar ise piyasa fiyatı neredeyse sıfır olduğu için GDP'de çok küçük görünür. Daha güvenli arabalar ve daha uzun ömürlü ampuller de öyle. GDP lirayı sayar, hayatına kattığı faydayı değil.
+
+Beşinci kart: çevre. Girişteki dereyi hatırla. GDP kirliliği eksi olarak yazmaz; temizlik masrafını ise artı yazar. İstanbul trafiğinde saatlerce yanan benzin, kaza sonrası tamir edilen arabalar: hepsi GDP'yi büyütür. Kirli havanın yol açtığı hastalıkların tedavisi bile sayaca artı yazılır. Burada GDP refahı olduğundan büyük gösterir.
+
+Altıncı kart: gelirin dağılımı. Bir köyde 10 kişi var ve toplam gelir bin lira. Herkes 100 lira alıyor olabilir. Ya da biri 910 lira alırken öteki dokuz kişiye 10'ar lira kalıyor olabilir. Toplam ikisinde de bin lira, ortalama 100. GDP pastanın büyüklüğünü söyler, kimin hangi dilimi aldığını söylemez. Ülke zenginleşirken çoğu insanın geliri yerinde sayabilir.
+
+Peki ülkeleri nasıl karşılaştırırız? GDP per capita, yani kişi başına GDP: GDP bölü nüfus. A ülkesi: 800 milyar lira, 40 milyon kişi. Kişi başına 20 bin lira. B ülkesi: bin 200 milyar lira ama 120 milyon kişi. Kişi başına 10 bin. B'nin ekonomisi daha büyük, ama ortalama vatandaş A'da iki kat fazla üretime sahip. Yaşam standardını kıyaslarken toplama değil, kişi başına bakılır. Daha da iyisi, fiyat artışlarını ayıkladığımız real GDP per capita; onu birkaç bölüm sonra göreceğiz.
+
+Toparlayalım. GDP üretimi ölçer, refahı değil. Piyasa dışı üretimi, kayıt dışı ekonomiyi, boş zamanı ve kalite artışını göremez; burada refahı küçük gösterir. Kirliliği düşmez, temizliği ekler; burada büyük gösterir. Toplamı verir, dağılımı vermez. Ülkeleri karşılaştırırken GDP per capita kullan.
+
+Şimdi bir soru. Hangisi GDP'nin bir ülkedeki gerçek üretimi olduğundan düşük göstermesine yol açar? Cevap: B. Gönüllülerin parkta ağaç dikmesi. Bu bir üretim, ama piyasada satılmadığı için GDP'ye girmez. Benzin ve tedavi harcamaları sayılır; hisse senedi zaten üretim değildir.

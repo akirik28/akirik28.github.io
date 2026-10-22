@@ -1,0 +1,21 @@
+Cebindeki 200 liralık banknotu takip edelim. Okul çıkışı Mehmet Usta'dan bir dürüm alıyorsun; banknot kasaya giriyor. Akşam Mehmet Usta çırağı Can'a haftalığını veriyor; senin 200 liran artık Can'ın cebinde. Can hafta sonu o parayla konser bileti alıyor. Banknot hiç kaybolmadı, sadece el değiştirdi. Peki bütün bir ülkede bu dönüş neye benzer?
+
+Ekonomistler bu dönüşü bir çemberle çizer: circular flow model, yani döngüsel akım modeli. Bir yanda households, yani hane halkları: sen, ailen, Can. Üretim faktörlerinin, yani emeğin, toprağın, sermayenin ve girişimciliğin sahibi onlar. Öbür yanda firms, yani firmalar: Mehmet Usta'nın dükkânı, bir fabrika, bir uygulama şirketi. Mal ve hizmetleri onlar üretir.
+
+İki taraf iki pazarda buluşur. Birincisi product market, yani mal ve hizmet piyasası. Burada hane halkı alır, firma satar. Dürüm sana doğru gider; 200 lira ise ters yönde, firmaya. Senin için bu consumer spending, yani tüketim harcaması; firma için revenue, yani satış geliri. Aynı para, iki ayrı isim.
+
+İkincisi factor market, ya da resource market: üretim faktörlerinin piyasası. Burada roller yer değiştirir: hane halkı satar, firma alır. Can emeğini satar, karşılığında wages, yani ücret alır. Dükkânın yerini kiraya veren rent alır; parasını bankaya yatıran interest, yani faiz alır; girişimci Mehmet Usta da profit, yani kâr alır. Dikkat: bu piyasada satıcı hane halkıdır.
+
+Şimdi çembere iki kat çiz. İç halkada gerçek şeyler döner: emek firmaya gider, dürüm hane halkına. Buna real flow denir. Dış halkada para döner, ters yönde: ücret hane halkına, harcama firmaya. Buna money flow denir. Kısa yol: para hangi yöne gidiyorsa, mal ya da emek tam tersine gider. Soruda önce hangi piyasa, sonra kim satıyor diye sor.
+
+Gerçek ekonomide çembere üç oyuncu daha eklenir. Birincisi government, yani devlet. Hane halkından ve firmalardan taxes, yani vergi alır. Mal piyasasından okul sırası alır, faktör piyasasından öğretmen işe alır. Bir de karşılıksız ödemeler yapar: emekli maaşı, burs gibi. Bunlara transfer payments denir; karşılığında mal ya da hizmet alınmaz.
+
+İkincisi dış dünya. Türk fındığı Almanya'ya satılınca para içeri girer: bu exports, yani ihracat. Yurt dışından telefon alınca para dışarı çıkar: bu imports, yani ithalat. Üçüncüsü financial sector, yani bankalar. Harçlığından artırdığın parayı bankaya koyarsın; banka onu Mehmet Usta'ya kredi verir, o da yeni bir fırın alır. Tasarruf çemberden çıkar, investment, yani yatırım olarak geri döner.
+
+İşte büyük fikir. Harcanan her lira, başka birinin geliridir. Diyelim bir kasabada bir yıl boyunca yalnızca dürüm satılıyor: bin dürüm, tanesi 200 lira. Toplam harcama 200 bin lira. Bu para nereye gitti? 120 bini ücret, 30 bini kira, 10 bini faiz, 40 bini kâr: toplam yine 200 bin. Harcamaları da toplasan gelirleri de, aynı sayıyı bulursun. Bu sayının adı GDP; sıradaki bölümlerin yıldızı.
+
+Bir AP sorusu gibi çözelim. Bir yazılım şirketi Elif'i işe alıyor ve maaşını ödüyor. Hangi piyasa? Emek satılıyor, o hâlde factor market. Para hangi yöne? Firmadan hane halkına; emek ise hane halkından firmaya. Elif maaşıyla kablosuz kulaklık alıyor. Bu kez product market; para hane halkından firmaya, kulaklık ters yöne. Aynı para iki piyasayı dolaşıp çemberi tamamladı.
+
+Toparlayalım. Circular flow'un iki ana oyuncusu var: households ve firms. Product market'te hane halkı alır, factor market'te satar. Para bir yöne akar, mal ve emek ters yöne. Devlet vergi alır, mal ve emek satın alır, transfer yapar; dış dünya ve bankalar da çembere bağlanır. Toplam harcama toplam gelire eşittir; ikisi de GDP'yi verir.
+
+Şimdi bir soru. Döngüsel akım modelinde hane halkları factor market'te ne yapar? Cevap: B. Emek, toprak, sermaye ve girişimcilik satarlar; karşılığında ücret, kira, faiz ve kâr alırlar. Mal ve hizmet satın almak ise product market'in işi.

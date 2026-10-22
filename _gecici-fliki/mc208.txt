@@ -1,0 +1,21 @@
+2024'te deden sana bisiklet almak için yastığın altına 10 bin lira koydu. İki yıl bekledi. Para hâlâ orada, tek kuruşu eksilmedi. 2026'da bisikletçiye gidiyorsunuz: aynı bisiklet artık 15 bin lira. Dedenin parası kaybolmadı, ama gücü kayboldu. Peki bu kayıp kimin cebinden çıkıyor, kimin cebine giriyor?
+
+Bunun adı purchasing power, yani satın alma gücü: bir liranın ne kadar mal alabildiği. Önceki bölümdeki gibi CPI 100'den 150'ye çıktıysa, eskiden bir liraya alınan şey artık bir buçuk lira. Elindeki her lira, eski değerinin ancak üçte ikisini alır. Dedenin 10 bin lirası artık 2024'ün yaklaşık 6 bin 700 lirası gibi. Enflasyonun ilk maliyeti bu: aynı para, daha küçük bir sepet.
+
+Şimdi iki çeşit gelir ayıralım. Nominal income: cebine giren lira. Real income: o liranın satın alma gücü. Formül: nominal gelir bölü CPI, çarpı 100. Harçlığın 2024'te bin lira, CPI 100. 2026'da harçlığın bin 350 lira, CPI 150. Real harçlık: bin 350 bölü 150, çarpı 100: 900 lira. Harçlığın yüzde 35 arttı, ama aslında yüzde 10 fakirleştin.
+
+Kısa yoldan tahmin: real gelirdeki değişim, aşağı yukarı nominal artış eksi enflasyondur. Maaşına yüzde 30 zam geldi, enflasyon yüzde 20: real olarak yaklaşık yüzde 10 kazandın. Zam yüzde 15'te kaldıysa ve enflasyon yüzde 20'yse, real olarak yaklaşık yüzde 5 kaybettin. Zammın büyüklüğü değil, enflasyonu geçip geçmediği önemlidir.
+
+Şimdi kaybedenler. Burada kilit kelime unanticipated inflation, yani beklenmeyen enflasyon. Bir: sabit gelirliler. Kira sözleşmesi iki yıl boyunca aynı 10 bin liraya sabitlenmiş bir ev sahibi, her ay daha az mal alır. İki: tasarruf edenler. Faizi enflasyonun altında kalan hesaptaki ya da yastık altındaki para erir. Üç: borç verenler. Bunu bir örnekle görelim.
+
+Abinden bin lira borç alıyorsun; bir yıl sonra bin 100 lira geri vereceksin. Bu yüzde 10'luk bir nominal interest rate, yani nominal faiz. Ama o yıl enflasyon beklenmedik şekilde yüzde 25 çıkıyor. Geri verdiğin bin 100 lira, bir yıl önceki bin liradan daha az mal alır. Kazanan sensin, yani borçlu. Kaybeden abin, yani borç veren.
+
+Bunu ölçen sayı: real interest rate, yani reel faiz. Nominal faiz eksi enflasyon. 10 eksi 25: eksi yüzde 15. Abin parasını kiraya verdi ve üstüne para ödedi. Ama enflasyonu önceden bilseydi? Yüzde 10 reel kazanç istediği için yüzde 35 isterdi. İşte fark: beklenen enflasyon sözleşmelere yazılır; asıl zararı beklenmeyen enflasyon verir.
+
+Enflasyonun gündelik maliyetleri de var. Menu costs: lokantanın menüyü, marketin etiketleri sürekli yenilemesi. QR menü bile birinin saatlerini alır. Shoe-leather costs: parayı elde tutmamak için harcanan zaman ve emek; sürekli bankaya, döviz bürosuna, kuyumcuya koşmak. Bir de belirsizlik: fiyatlar hızla değişince ne tasarruf etmek, ne yatırım planlamak kolaydır. Fiyatlar ayda yüzde 50'den fazla artarsa buna hyperinflation denir; o noktada para neredeyse işe yaramaz.
+
+Bir AP sorusu gibi çözelim. Ayşe'nin maaşı geçen yıl 20 bin lira, bu yıl 24 bin. CPI aynı dönemde 100'den 125'e çıktı. Bu yılki real maaşı: 24 bin bölü 125, çarpı 100: 19 bin 200 lira. Geçen yıl 20 bindi. Yani Ayşe'nin satın alma gücü yüzde 4 azaldı. Maaşı yüzde 20 arttı ama fiyatlar yüzde 25 arttı; zam enflasyona yetişemedi.
+
+Toparlayalım. Enflasyon paranın purchasing power'ını azaltır. Real gelir: nominal gelir bölü CPI, çarpı 100. Beklenmeyen enflasyonda sabit gelirliler, tasarruf edenler ve borç verenler kaybeder; borçlular kazanır. Real interest rate: nominal faiz eksi enflasyon. Menu costs ve shoe-leather costs da enflasyonun gündelik bedelleridir.
+
+Şimdi bir soru. Beklenmedik yüksek bir enflasyondan en çok kim kazançlı çıkar? Cevap: B. Sabit faizle konut kredisi çeken aile. Borcunu, değeri düşmüş liralarla geri öder. Sabit faizle borç veren banka, sabit maaşlı emekli ve düşük faizle tasarruf eden kaybeder.

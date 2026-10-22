@@ -1,0 +1,19 @@
+Mezuniyet hoodie'leri satışa çıktı: tanesi 400 lira. Elif içinden "900 liraya bile alırdım" diyor. Kasadan 500 lira kârlı çıkmış gibi hissediyor. Hoodie'yi diken Kerem de mutlu; o 150 liraya bile satardı, 400 aldı. Aynı alışverişte iki taraf da kazandı. Kimse kimseyi kandırmadı. Bu kazancın ekonomide bir adı var ve grafikte bir üçgen olarak görünüyor.
+
+Önce willingness to pay, yani ödemeye razı olduğun en yüksek fiyat. Talep eğrisi aslında bunların sırası: Elif 900, Mert 700, Zeynep 500, Can 300 liraya kadar verir. Fiyat 400 olunca Can almaz; onun için hoodie 400 lira etmiyor. Arz eğrisi de satıcıların razı olduğu en düşük fiyatların sırası. Kerem 150, Deniz 250, Ali 350, Ece 450 lira ister. Ece 400'e satmaz.
+
+Consumer surplus, yani tüketici artığı: ödemeye razı olduğun fiyat eksi ödediğin fiyat. Elif'in artığı 500, Mert'in 300, Zeynep'in 100. Can almadığı için artığı sıfır. Bütün alıcıları topla: talep eğrisinin altında, fiyatın üstünde bir üçgen. Alanı yarım çarpı taban çarpı yükseklik. Taban 60 hoodie, yükseklik bin eksi 400, yani 600 lira. Yarım çarpı 60 çarpı 600: 18 bin lira.
+
+Producer surplus, yani üretici artığı: aldığın fiyat eksi satmaya razı olduğun en düşük fiyat. Kerem'in artığı 250, Deniz'in 150, Ali'nin 50. Ece satmadığı için sıfır. Toplamı: fiyatın altında, arz eğrisinin üstünde bir üçgen. Taban yine 60. Yükseklik 400 eksi 100, yani 300. Yarım çarpı 60 çarpı 300: 9 bin lira. Kural: alınıp satılmayan bir hoodie'den kimse artık kazanamaz.
+
+İki üçgeni birleştir: total surplus, yani toplam artık. 18 bin artı 9 bin, 27 bin lira. Dengede bu toplam olabilecek en büyük değerdedir. Buna allocative efficiency denir. Neden? Her hoodie, ona en çok değer veren alıcıya gidiyor ve onu en ucuza yapabilen satıcı yapıyor. Altmışıncı hoodie'de alıcının değeri tam maliyete eşit: bir tane daha yapmak artık değmez.
+
+Şimdi okul yönetimi "en fazla 40 hoodie" diyor. 40'ıncı hoodie için alıcı 600 lira vermeye razı, maliyeti ise yalnızca 300. Arada değerli alışverişler var ama yapılamıyor. Kaybolan bu üçgene deadweight loss denir: kimsenin cebine girmeyen, havaya uçan artık. Taban 60 eksi 40, 20 hoodie. Yükseklik 600 eksi 300, 300 lira. Yarım çarpı 20 çarpı 300: 3 bin lira.
+
+Peki tersi? Kulüp coşup 80 hoodie dikiyor. Seksenincisi 500 liraya mal oluyor ama alıcılar ona en fazla 200 lira biçiyor. Altmıştan sonraki her hoodie, değerinden pahalıya üretiliyor; yine bir deadweight loss. Taban 20, yükseklik 500 eksi 200, 300. Yine 3 bin lira. Ders: az üretmek de çok üretmek de israf. En iyisi denge miktarı.
+
+Denge değişince artıklar da değişir. Okulda yeni moda: herkes kolej ceketi istiyor. Hoodie talebi sola kayar. Yeni denge: 300 lira, 40 hoodie. Tüketici artığı 18 binden 8 bine düşer. Üretici artığı 9 binden 4 bine. Dikkat: toplam artık 12 bine indi ama bu bir deadweight loss değil. Piyasa yine dengede ve verimli; yalnızca daha küçük. Sorularda hep bunu yap: yeni üçgenleri çiz, eskileriyle karşılaştır.
+
+Toparlayalım. Consumer surplus: ödemeye razı olunan fiyat eksi ödenen fiyat; talebin altında, fiyatın üstünde üçgen. Producer surplus: alınan fiyat eksi razı olunan en düşük fiyat; fiyatın altında, arzın üstünde üçgen. Alanı yarım çarpı taban çarpı yükseklik. Dengede total surplus en büyük: allocative efficiency. Dengeden az ya da çok üretim deadweight loss yaratır.
+
+Şimdi bir soru. Konser tişörtü piyasasında denge fiyatı 500 lira, denge miktarı 20 tişört. Talep eğrisi fiyat eksenini 800 lirada, arz eğrisi 100 lirada kesiyor. Tüketici artığı kaç liradır? Cevap: 3 bin lira. Yükseklik 800 eksi 500, 300. Yarım çarpı 20 çarpı 300, 3 bin. Üretici artığı ise yarım çarpı 20 çarpı 400, 4 bin lira olurdu.

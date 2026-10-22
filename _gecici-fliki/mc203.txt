@@ -1,0 +1,21 @@
+Türkiye'nin bir yılda ürettiği her şeyi saymak zorunda olduğunu düşün. Milyonlarca simit, telefon, köprü, saç kesimi. Bütün hayatın boyunca saysan bitmez. Nereden başlarsın? Hileli bir yol var: neyin üretildiğini değil, kimin satın aldığını sor. Satın alan yalnızca dört grup olabilir: aileler, firmalar, devlet ve yabancılar. Dördünün harcamasını topla, bitti.
+
+Bu yola expenditure approach, yani harcama yöntemi denir. İlk harf C: consumption, yani hane halklarının tüketim harcaması. Simit gibi hemen tükenen mallar, telefon gibi dayanıklı mallar ve saç kesimi, dizi aboneliği gibi hizmetler. Sen kantinde tost aldığında, ailen market alışverişi yaptığında C büyür. C en büyük parçadır; ABD'de GDP'nin yaklaşık üçte ikisi.
+
+İkinci harf I: investment. Dikkat, burada yatırım hisse senedi almak değil. Firmaların yeni sermaye malları: makine, fabrika, kargo kamyoneti. Mehmet Usta'nın aldığı yeni döner ocağı da bir yatırım. Yeni yapılan konutlar da buraya girer; evi bir aile alsa bile. Bir de stok değişimi, yani inventory. Hisse senedi ve tahvil mi? Onlar sadece sahiplik devri; GDP'ye hiç girmez.
+
+Stok kısmı en kafa karıştıranı. Bir kazak firması bu yıl bin kazak üretti ama yalnızca 900 tane sattı. Kalan 100 kazak depoda bekliyor. Sayılmayacak mı? Sayılır: bu yıl üretildiler. Stok artışı investment olarak eklenir. Gelecek yıl o 100 kazak satılınca yeniden sayılmaz; stok azalır ve eksi olarak düşülür. Yani GDP satışları değil, üretimi ölçer; satılmasa bile.
+
+Üçüncü harf G: government spending, yani devletin mal ve hizmet alımı. Yeni yol, okul sırası, hastane, itfaiye aracı, öğretmen ve doktor maaşları. Emekli maaşı ve burs ise transfer payments; G'ye girmez, çünkü karşılığında bir şey üretilmez. Emekli dede o parayla market alışverişi yaptığında zaten C'nin içinde sayılacak.
+
+Son parça net exports, yani net ihracat: ihracat eksi ithalat. Türkiye'de üretilip Almanya'ya satılan fındık burada üretildi; eklenir. Ama yurt dışında üretilip senin aldığın telefon C'nin içinde saklı. Burada üretilmediği için çıkarılır. Bir de şunu bil: Alman turistin Antalya'da otelde kalması da ihracattır; Türkiye'de üretilen bir hizmeti yabancı satın alıyor. İthalat ihracattan büyükse net ihracat eksidir ve GDP'yi aşağı çeker.
+
+Şimdi bir AP sorusu gibi çözelim. Hayali Simitistan'ın bir yılı, milyar lira olarak. Önce tuzakları kalemle çiz: 90 milyarlık transfer ödemeleri, 70 milyarlık hisse ve tahvil, 30 milyarlık ikinci el araba satışı. Üçü de dışarı. Yatırımı topla: yeni makineler 120, yeni konutlar 50, stok artışı 10. I eşittir 180.
+
+Net ihracat: 150 eksi 180, yani eksi 30. Hepsini yerine koy: C 600, I 180, G 200, net ihracat eksi 30. 600 artı 180 artı 200, eksi 30: GDP 950 milyar lira. En sık hata ne biliyor musun? İthalatı çıkarmayı unutmak ya da transferi G'ye eklemek. İthalatı unutursan 980, transferi de G'ye eklersen 1.040 bulursun.
+
+Aynı ekonomiye öbür taraftan bak: income approach, yani gelir yöntemi. Harcanan her lira birinin geliri olduğuna göre gelirleri de toplayabiliriz. Ücretler 550, kira 60, faiz 90, kâr 250 milyar. Unit 1'deki dört faktörü hatırla: emek, toprak, sermaye ve girişimcilik. Toplam? Yine 950. Harcama, gelir ve katma değer: üç yol, tek sayı.
+
+Toparlayalım. GDP eşittir C artı I artı G artı net ihracat. I, yeni sermaye, yeni konut ve stok değişimidir; hisse senedi değildir. Satılmayan üretim stok olarak sayılır; GDP üretimi ölçer. G'ye transfer payments girmez. İthalat çıkarılır; income approach da aynı sayıyı verir.
+
+Şimdi bir soru. Hangisi GDP hesabında investment, yani I olarak sayılır? Cevap: B. Bir ailenin yeni inşa edilmiş bir evi satın alması. Yeni konut, alan bir aile olsa bile yatırıma girer. Hisse senedi sayılmaz; buzdolabı C'ye, okul otobüsü G'ye girer.

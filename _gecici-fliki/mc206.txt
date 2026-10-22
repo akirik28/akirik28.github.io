@@ -1,0 +1,23 @@
+Ekonominin en parlak gününde bile işsizlik sıfır olmaz. ABD'de 2020'nin başında işsizlik yüzde 3 virgül 5'e indi; yaklaşık 50 yılın en düşüğü. Yine de milyonlarca kişi iş arıyordu. Dört kişiyle tanış: yeni mezun ablan, Antalya'da kışın işsiz kalan garson Kemal, otoyol gişesinde çalışan Ayten Hanım ve Bursa'da fabrikadan çıkarılan Murat. Dördü de işsiz, ama dördünün sebebi farklı.
+
+Ablanla başlayalım: frictional unemployment, yani geçiş işsizliği. İşler var, ama doğru işi bulmak zaman alıyor. Yeni mezunlar, işini bırakıp daha iyisini arayanlar, şehir değiştirenler. Bu kötü bir şey değil: ablan ilk gelen işe değil, kendine uyan işe girerse ekonomi de kazanır. Frictional işsizlik kısa sürelidir ve her zaman vardır.
+
+Ayten Hanım'ın hikâyesi farklı. Otoyollara otomatik geçiş sistemi geldi; gişe memurluğu neredeyse yok oldu. Bu structural unemployment, yani yapısal işsizlik: işçinin becerisi ile ekonominin istediği beceri uyuşmuyor. Teknoloji, bir sektörün küçülmesi ya da işlerin başka şehre taşınması buna yol açar. Yeni beceri öğrenmeden bu iş geri gelmez; o yüzden structural işsizlik uzun sürebilir.
+
+Kemal ise her kasım işsiz kalıyor, çünkü turistler gidiyor. Buna seasonal unemployment, yani mevsimlik işsizlik denir. Yazın işsiz kalan kayak hocası da öyle. Bazı kitaplar bunu ayrı bir tür sayar, bazıları frictional'ın içine koyar. Sınavda bilmen gereken: o da her yıl tekrar eden, doğal işsizliğin bir parçasıdır.
+
+Murat'ın işsizliği bambaşka. Ekonomi durgunluğa girdi, insanlar daha az araba alıyor. Fabrika satamadığı arabaları üretmek istemiyor ve vardiyaları kesiyor. Bu cyclical unemployment, yani konjonktürel işsizlik: ekonominin iniş dönemlerinden doğar. Murat'ın becerisi hâlâ değerli; ekonomi toparlanınca fabrika onu geri çağırır.
+
+Şimdi büyük fikir. Frictional artı structural işsizlik, ekonominin natural rate of unemployment'ını, yani doğal işsizlik oranını verir. İşsizlik doğal orandaysa ekonomi full employment'tadır, yani tam istihdamda. Dikkat: tam istihdam sıfır işsizlik değildir; geçiş ve yapısal işsizlik orada hâlâ var. ABD'nin doğal oranı genellikle yüzde 4 ile 6 arasında sayılır.
+
+Peki cyclical işsizliği nasıl bulursun? Gerçek oran eksi doğal oran. Durgunlukta işsizlik yüzde 9, doğal oran yüzde 5 ise cyclical işsizlik yüzde 4. Tersi de olur: ekonomi aşırı ısınır, işsizlik yüzde 3 virgül 5'e iner, doğal oran yüzde 4 virgül 5. Cyclical işsizlik eksi 1 olur. Bu, ekonominin tam istihdamın üstünde çalıştığı, fiyatların ısınmaya başladığı bir dönemdir.
+
+Doğal oran sabit değildir; zamanla değişebilir. İş ilanı uygulamaları işçiyle işi daha hızlı buluşturursa frictional işsizlik azalır, doğal oran düşer. Hızlı bir teknoloji dalgası birçok beceriyi eskitirse structural işsizlik artar, doğal oran yükselir. İşgücüne bir anda çok sayıda genç girerse de geçiş işsizliği artar.
+
+Unit 1'deki PPC'yi hatırla. Cyclical işsizlik varsa ekonomi eğrinin içindeki bir noktadadır: boşta kalan işçiler, üretilmeyen mallar. Doğal orandaysa eğrinin üzerindedir; doğal işsizlik hâlâ olsa bile. İşsizliğin asıl bedeli bu kayıp üretim ve kişinin kaybettiği gelirdir. Unutma: işsizlik eğriyi içeri kaydırmaz, sadece noktayı içeri iter.
+
+Bir AP sorusu gibi hesaplayalım. Bir ülkede işsizlik oranı yüzde 7. Bunun yüzde 2'si frictional, yüzde 3'ü structural, gerisi cyclical. Doğal oran: 2 artı 3, yüzde 5. Cyclical: 7 eksi 5, yüzde 2. Ekonomi tam istihdamın altında, yani PPC'nin içinde çalışıyor. Durgunluk geçince oranın yüzde 5'e inmesini bekleriz, sıfıra değil.
+
+Toparlayalım. Frictional: işler arası geçiş ve arama; kısa ve sağlıklı. Structural: beceri uyuşmazlığı ve teknoloji; uzun. Cyclical: durgunluktan doğar; gerçek oran eksi doğal oran. Doğal oran, frictional artı structural; tam istihdam sıfır işsizlik değildir. Cyclical işsizlik, ekonomiyi PPC'nin içine iter.
+
+Şimdi bir soru. Yapay zekâ destekli bir sistem, çağrı merkezlerinde binlerce çalışanın yerini alıyor ve bu çalışanlar yeni beceriler öğrenmeden iş bulamıyor. Bu hangi tür işsizlik? Cevap: B, structural. Sebep durgunluk değil, teknoloji yüzünden becerinin artık istenmemesi.

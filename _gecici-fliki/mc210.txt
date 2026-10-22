@@ -1,0 +1,21 @@
+Lunaparktaki hız trenini düşün, ama rayları yokuş yukarı döşenmiş. Vagon çıkıyor, iniyor, yine çıkıyor. Her inişte midene kramp giriyor. Ama uzaktan bakınca vagonun her tur bir öncekinden daha yükseğe çıktığını görürsün. Bir ülkenin ekonomisi de tam olarak böyle hareket eder.
+
+Buna business cycle, yani iş çevrimi denir: real GDP'nin kısa dönemde inip çıkması. Ortadaki yukarı eğimli çizgi uzun dönem eğilim; ekonominin yıllar içindeki büyümesi. Neden real GDP? Çünkü fiyat artışını değil, gerçekten üretilen mal ve hizmeti izlemek istiyoruz. Yani iki hikâye var: uzun dönemde büyüme, kısa dönemde dalgalanma.
+
+Çevrimin dört evresi var. Peak, yani zirve: real GDP'nin geçici olarak en yüksek noktası. Contraction, yani daralma: real GDP düşüyor. Trough, yani dip: düşüşün bittiği en alçak nokta. Expansion, yani genişleme: real GDP yeniden artıyor ve bir sonraki zirveye tırmanıyor. Sonra döngü baştan başlar.
+
+Daralma derin ya da uzun olursa adı recession, yani durgunluk olur. Yaygın bir kural: real GDP üst üste iki çeyrek düşerse ekonomi durgunluktadır. Şu tabloya bak: birinci çeyrekte 2 bin, ikincide 2 bin 40, üçüncüde 2 bin 10, dördüncüde bin 980, beşincide 2 bin, altıncıda 2 bin 60 milyar lira. İkinci çeyrek zirve, üçüncü ve dördüncü çeyrekte iki düşüş: durgunluk. Dördüncü çeyrek dip; beşinci çeyrekle genişleme başlar.
+
+Evreler sokakta nasıl görünür? Daralmada AVM'ler tenhalaşır, fabrikalar vardiya keser, iş ilanları azalır. İşsizlik artar; artan kısım cyclical unemployment. Fiyat artışları da genellikle yavaşlar. Genişlemede kafeler dolar, "eleman aranıyor" yazıları çoğalır, işsizlik düşer. Zirveye yaklaşırken talep o kadar güçlenir ki fiyatlar hızla tırmanabilir.
+
+Şimdi o kesikli çizgiye yakından bak. Ona potential output ya da full-employment output denir: işsizlik doğal orandayken ekonominin üretebileceği real GDP. Önceki bölümü hatırla: tam istihdam sıfır işsizlik değil, doğal oran demekti. Bu çizginin yükselmesi uzun dönem ekonomik büyümedir; PPC'nin dışa kayması gibi.
+
+Gerçek üretim ile potansiyel arasındaki farka output gap denir. Gerçek real GDP potansiyelin altındaysa recessionary gap, yani durgunluk açığı: işsizlik doğal oranın üstünde. Potansiyel 2 bin, gerçek bin 900 milyar ise açık eksi 100 milyar; yüzde eksi 5. Gerçek, potansiyelin üstündeyse inflationary gap: işsizlik doğal oranın altında, fiyatlar ısınıyor. Gerçek 2 bin 100 ise açık artı 100.
+
+Bir AP sorusu gibi okuyalım. Ekonomi dipte, real GDP potansiyelin altında. İşsizlik? Doğal oranın üstünde, çünkü cyclical işsizlik var. PPC'de bu, eğrinin içindeki bir nokta. Ekonomi zirvede, gerçek üretim potansiyelin üstünde. İşsizlik doğal oranın altında; fiyatlar hızla artıyor. Kural basit: üretim ile işsizlik ters yönde, üretim ile fiyat baskısı aynı yönde hareket eder.
+
+Peki ekonomi neden böyle dalgalanır? Kısa cevap: toplam harcamadaki ve üretim maliyetlerindeki değişimler. Aileler ve firmalar harcamayı bir anda kısarsa üretim düşer. Petrol fiyatı birden fırlarsa firmaların maliyeti artar, üretim yavaşlar. Bunların ayrıntısı bir sonraki ünitenin, aggregate demand ve aggregate supply modelinin konusu.
+
+Toparlayalım. Business cycle: real GDP'nin uzun dönem eğilimi etrafındaki inip çıkışları. Dört evre: peak, contraction, trough, expansion. Üst üste iki çeyrek düşen real GDP, yaygın bir recession işaretidir. Potansiyelin altında recessionary gap ve yüksek işsizlik; üstünde inflationary gap ve fiyat baskısı. Potansiyelin yükselmesi uzun dönem büyümedir.
+
+Şimdi bir soru. Real GDP iki çeyrektir düşüyor ve işten çıkarmalar artıyor. Ekonomi hangi evrede, hangi işsizlik türü artıyor? Cevap: B. Contraction evresi ve cyclical işsizlik. Üretim düştüğü için firmalar işçi çıkarıyor; sebep beceri uyuşmazlığı ya da iş değiştirme değil.

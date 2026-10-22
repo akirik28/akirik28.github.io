@@ -1,0 +1,19 @@
+Enerji içeceğinin kutusu 40 lira. Haber geliyor: devlet her kutuya 30 lira vergi koyuyor. Sınıfta herkes emin: fiyat 70 lira olacak. Ertesi gün raf etiketine bak: 60 lira. Peki 30 liralık verginin 20 lirasını alıcı ödüyorsa, kalan 10 lirayı kim ödüyor? Ve neden bazı vergilerde alıcı neredeyse hepsini öderken bazılarında satıcı ödüyor?
+
+Bu bir excise tax, yani satılan her birim için alınan per-unit tax. Vergiyi kanunen satıcı öder; her kutunun maliyetine 30 lira eklenmiş gibi olur. Bu yüzden arz eğrisi tam 30 lira yukarı kayar; yani sola. Dikkat: iki arz eğrisi arasındaki dikey mesafe vergiye eşittir. Fiyatın ne kadar arttığı değil, bu mesafe.
+
+Yeni dengeye bak. Satılan miktar 300 kutudan 200 kutuya düştü. Alıcıların ödediği fiyat 60 lira. Satıcı bu 60 liradan 30 lirayı devlete verir; eline 30 lira kalır. Alıcı fiyatı ile satıcı fiyatı arasındaki bu 30 liralık boşluğa tax wedge, yani vergi kaması denir. Artık alışverişte üç taraf var: alıcı, satıcı ve devlet.
+
+Devletin vergi geliri bir dikdörtgendir: vergi çarpı yeni miktar. 30 çarpı 200, 6 bin lira. Bu yükün kime düştüğüne tax incidence, yani vergi yükü denir. Alıcılar kutu başına 40 yerine 60 ödüyor: 20 lira fazla. 20 çarpı 200, 4 bin lira. Satıcılar 40 yerine 30 alıyor: 10 lira eksik. 10 çarpı 200, 2 bin lira. Yükün üçte ikisi alıcıda.
+
+Artıklara ne oldu? Tüketici artığı 9 bin liradan 4 bin liraya indi. Üretici artığı 4 bin 500 liradan 2 bin liraya. Satılmayan 100 kutunun yeri ise bir üçgen: deadweight loss. Taban 100, yükseklik 30: yarım çarpı 100 çarpı 30, bin 500 lira. Sağlama yap: 4 bin artı 2 bin artı 6 bin vergi artı bin 500, yine 13 bin 500. Vergi geliri devlete geçti; üçgen ise kimseye geçmeden kayboldu.
+
+Peki yük neden alıcıda daha ağır? Çünkü bu grafikte talep arzdan daha dik, yani daha inelastic. Kural: daha inelastic olan taraf yükün daha büyük kısmını öder. Hafıza cümlesi: kaçamayan öder. Enerji içeceğine bağımlı alıcı kaçamaz, öder. Talep tamamen dikeyse, insülin gibi, verginin hepsi alıcıya geçer. Bir de şunu bil: vergiyi kanunen alıcı mı öder satıcı mı, sonuç değişmez. Yükü kanun değil, esneklik belirler.
+
+Devletler bu yüzden en çok sigara, akaryakıt ve alkol gibi inelastic malları vergilendirir. Talep katı olunca miktar az düşer; vergi geliri büyük, deadweight loss küçük kalır. Talep esnekse insanlar malı bırakır; satış çöker, gelir az toplanır, deadweight loss büyür. Sigara gibi zararlı mallarda amaç bazen tam da tüketimi azaltmaktır; bunu dışsallıklar konusunda göreceksin.
+
+Şimdi vergiyi ters çevir: per-unit subsidy, yani birim başına sübvansiyon. Devlet satıcıya her birim için para öder. Aynı eğrilere sahip şehir bisikleti kiralamayı düşün; kiralama başına 30 lira destek. Arz 30 lira aşağı, yani sağa kayar. Miktar 300'den 400'e çıkar; alıcı 20 lira öder, satıcının eline 50 lira geçer. Devletin maliyeti 30 çarpı 400, 12 bin lira. Burada da bin 500 liralık deadweight loss var; bu kez fazla üretimden.
+
+Toparlayalım. Excise tax arzı vergi kadar yukarı kaydırır; iki eğri arasındaki dikey mesafe vergidir. Alıcı fiyatı yükselir, satıcının eline geçen fiyat düşer, miktar azalır. Vergi geliri, vergi çarpı yeni miktar; yükü daha inelastic taraf daha çok taşır. Vergi tüketici ve üretici artığını küçültür ve deadweight loss yaratır. Subsidy arzı aşağı kaydırır; miktar artar, devlete maliyeti olur, fazla üretim deadweight loss yaratır.
+
+Şimdi bir soru. Bir mala birim başına 5 lira vergi konuyor. Alıcıların ödediği fiyat 20 liradan 24 liraya çıkıyor. Satıcının eline birim başına kaç lira geçer ve yükü kim daha çok taşır? Cevap: 19 lira; yükün çoğunu alıcılar taşır. 24 eksi 5, 19. Alıcılar 4 lira, satıcılar 1 lira yük üstleniyor; demek ki talep arzdan daha inelastic.

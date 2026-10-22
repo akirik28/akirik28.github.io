@@ -1,0 +1,21 @@
+Kantinin satış defterinde üç gizem var. Simit zamlandı; poğaça satışı arttı. Oyun konsolu pahalandı; mahalledeki oyun dükkânında oyun satışı düştü. Velilerin maaşına zam geldi; marketteki en ucuz erişte satışı düştü. Üçünü de çözen tek bir anahtar var: başka bir şey değişince bir malın talebi ne kadar ve hangi yöne tepki veriyor? Bu kez işaret, yani artı mı eksi mi, her şey.
+
+Birinci araç cross-price elasticity of demand, yani çapraz fiyat esnekliği. Formül: bir malın talep edilen miktarındaki yüzde değişim bölü başka bir malın fiyatındaki yüzde değişim. Pay ve payda farklı mallardan gelir. Dur, burada çoğu kişi yanılıyor. Talep esnekliğinde eksiyi atıyorduk; burada atmıyoruz. Çünkü işaret, iki malın ilişkisini söyler.
+
+İlk gizem. Simit 20 liradan 30 liraya çıktı: midpoint ile yüzde 40 artış. Poğaça satışı 180'den 220'ye çıktı: değişim 40, ortalama 200, yüzde 20 artış. Artı 20 bölü artı 40: artı 0 virgül 5. Sonuç pozitif: biri pahalanınca ötekinin talebi artıyor. Demek ki bunlar substitutes, yani ikame mallar. İkisi de aynı yöne gittiği için işaret artı.
+
+İkinci gizem. Konsol 20 bin liradan 30 bin liraya çıktı; yine yüzde 40. Oyun satışı 900'den 600'e indi: değişim 300, ortalama 750, yüzde 40 düşüş. Eksi 40 bölü artı 40: eksi 1. Sonuç negatif: biri pahalanınca ötekinin talebi düşüyor. Bunlar complements, yani tamamlayıcı mallar. Konsol olmadan oyunun ne anlamı var?
+
+Sayının büyüklüğü de bir şey söyler. İki marka kola arasında çapraz esneklik artı 3 olabilir: biri azıcık pahalanınca herkes ötekine koşar. Çok yakın ikameler. Simit ile poğaça artı 0 virgül 5: ikame ama o kadar da yakın değil. Tost ile şampuan? Şampuan pahalansa tost talebi kıpırdamaz. Esneklik sıfıra yakın: bu mallar unrelated, yani ilişkisiz.
+
+İkinci araç income elasticity of demand, yani gelir esnekliği. Formül: talep edilen miktardaki yüzde değişim bölü gelirdeki yüzde değişim. Burada da işaret önemli. Pozitifse mal normal good: gelir artınca daha çok alınır. Negatifse inferior good: gelir artınca daha az alınır. Bunları talebi kaydıran etkenlerde görmüştün; şimdi bir sayıyla ölçüyoruz.
+
+Örnekle görelim. Senin harçlığın ayda bin liradan bin 500 liraya çıksın: midpoint ile yüzde 40. Ayda 2 kez sinemaya gidiyordun, şimdi 4 kez: yüzde 66 virgül 7. Bölü 40: artı 1 virgül 67. Birden büyük: luxury, yani lüks mal. Gelirden daha hızlı artıyor. Ayda aldığın simit ise 20'den 22'ye çıktı: yaklaşık yüzde 9 virgül 5. Bölü 40: artı 0 virgül 24. Sıfır ile bir arasında: necessity, yani ihtiyaç malı. Normal ama yavaş artıyor.
+
+Üçüncü gizem. En ucuz erişteden ayda 10 paket alıyordun. Harçlık yüzde 40 artınca 6 pakete düştü. Değişim 4, ortalama 8: yüzde 50 düşüş. Eksi 50 bölü 40: eksi 1 virgül 25. Negatif: inferior good. Gelirin artınca erişte yerine dürüme geçtin. Şirketler bu sayılara bakar: ekonomi kötüleşince lüks malların satışı en çok düşer, inferior good'ların satışı ise artar.
+
+İşaret kuralını tek cümleye sığdıralım. Kendi fiyat esnekliğinde, talepte ve arzda, işaret önemsiz; büyüklüğe bakarsın. Çapraz ve gelir esnekliğinde ise önce işarete bakarsın. Çapraz: artı ikame, eksi tamamlayıcı. Gelir: artı normal, eksi düşük mal. Sonra büyüklük: gelirde birden büyükse lüks, sıfır ile bir arasıysa ihtiyaç.
+
+Toparlayalım. Cross-price elasticity: bir malın miktarındaki yüzde değişim bölü başka malın fiyatındaki yüzde değişim. Pozitifse substitutes, negatifse complements, sıfıra yakınsa ilişkisiz. Income elasticity: miktardaki yüzde değişim bölü gelirdeki yüzde değişim. Pozitifse normal good, negatifse inferior good; birden büyükse lüks, sıfır ile bir arası ihtiyaç. Bu ikisinde eksiyi asla atma.
+
+Şimdi bir soru. Kahvenin fiyatı yüzde 10 artınca şeker talebi yüzde 5 düşüyor. Kahve ile şeker arasındaki çapraz fiyat esnekliği ve ilişki nedir? Cevap: eksi 0 virgül 5; bunlar complements. Eksi 5 bölü artı 10, eksi 0 virgül 5. İşaret negatif olduğu için biri pahalanınca öteki daha az alınıyor.
