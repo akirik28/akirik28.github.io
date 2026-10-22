@@ -123,82 +123,39 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   <a href="/ap/">Bütün AP üniteleri →</a>
 </footer>
 
-<script src="/ap/_kit/hesap.js?v=2"></script>
+<script src="/ap/_kit/hesap.js?v=3"></script>
 <script>
-/* Hesap kutusu: bir kez ad + e-posta → hesap açılır; bu sekmede açılan her kit sormadan bu hesapla açılır */
+/* Hesap kutusu: oturum açıksa selam + çıkış; değilse giriş / hesap aç düğmeleri. Oturumsuz kit tıklaması giriş sayfasına gider. */
 (function () {
   var H = window.HESAP, box = document.getElementById("hesap");
   if (!H || !box) { if (box) box.hidden = true; return; }
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
-  /* hesapsız açılmak istenen kit: ?devam=/crucible/ (kapi.js yollar) ya da bu sayfada tıklanan kit */
-  var bekleyen = (function () {
-    var m = /[?&]devam=([^&#]*)/.exec(location.search), u = "";
-    if (m) { try { u = decodeURIComponent(m[1]); } catch (e) {} }
-    return /^\/(?!\/)/.test(u) ? u : "";
-  })();
-  function devam() { if (!bekleyen) return false; var u = bekleyen; bekleyen = ""; location.assign(u); return true; }
+  function girisUrl(devam, kayit) { return "/kitora/giris/?" + (kayit ? "mod=kayit&" : "") + "devam=" + encodeURIComponent(devam || "/kitora/"); }
   document.addEventListener("click", function (e) {
     var a = e.target.closest ? e.target.closest("#raf a[href], .foot a[href]") : null;
     if (!a || H.aktif() || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    bekleyen = a.getAttribute("href");
-    ciz();
-    try { box.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (x) { box.scrollIntoView(); }
-    var i = box.querySelector("input, button"); if (i) setTimeout(function () { i.focus({ preventScroll: true }); }, 350);
+    location.assign(girisUrl(a.getAttribute("href")));
   });
-  function form() {
-    var f = el("form"), nm = el("input"), em = el("input"), go = el("button", "go", "Hesabını aç"), msg = el("p", "msg"), l1 = el("label", null, "Ad"), l2 = el("label", null, "E-posta");
-    f.noValidate = true;
-    nm.type = "text"; nm.autocomplete = "given-name"; nm.maxLength = 40; nm.placeholder = "Adın";
-    em.type = "email"; em.autocomplete = "email"; em.inputMode = "email"; em.maxLength = 254; em.placeholder = "ornek@mail.com";
-    go.type = "submit";
-    l1.appendChild(nm); l2.appendChild(em);
-    f.appendChild(l1); f.appendChild(l2); f.appendChild(go);
-    msg.setAttribute("role", "status");
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ad = nm.value.trim(), mail = em.value.trim();
-      if (!ad) { msg.textContent = "Adını yaz."; nm.focus(); return; }
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { msg.textContent = "E-posta adresi eksik ya da hatalı görünüyor."; em.focus(); return; }
-      go.disabled = true; go.textContent = "Açılıyor…"; msg.textContent = "";
-      H.giris(mail, ad).then(ciz, function () {
-        go.disabled = false; go.textContent = "Hesabını aç";
-        msg.textContent = "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
-      });
-    });
-    return [f, msg];
-  }
   function ciz() {
     box.textContent = "";
-    var a = H.aktif(), l = H.hesaplar();
-    if (a && devam()) { box.appendChild(el("p", "sm", "Kit açılıyor…")); return; }
-    if (!a && bekleyen) box.appendChild(el("p", "need-acct", "Kitleri açmak için önce hesabını aç ya da seç."));
+    var a = H.aktif();
     if (a) {
-      var hi = el("div", "hi"), t = el("div");
+      var hi = el("div", "hi"), t = el("div"), b = el("button", "ghost", "Çıkış yap");
       t.appendChild(el("h2", null, "Merhaba, " + a.name));
       t.appendChild(el("p", "sm", "Açtığın her kit bu hesapla açılır; ilerlemen kaydedilir."));
-      var b = el("button", "ghost", "Hesap değiştir"); b.type = "button";
+      b.type = "button";
       b.addEventListener("click", function () { H.cikis(); ciz(); });
       hi.appendChild(t); hi.appendChild(b); box.appendChild(hi);
       return;
     }
-    if (l.length) {
-      box.appendChild(el("h2", null, "Kim çalışıyor?"));
-      var w = el("div", "who");
-      l.forEach(function (p) {
-        var c = el("button", "ghost", p.name); c.type = "button";
-        c.addEventListener("click", function () { c.disabled = true; H.sec(p.id).then(ciz, ciz); });
-        w.appendChild(c);
-      });
-      box.appendChild(w);
-      var yeni = el("button", "ghost", "+ Yeni hesap"); yeni.type = "button"; yeni.style.justifySelf = "start";
-      yeni.addEventListener("click", function () { yeni.remove(); var x = form(); box.appendChild(el("p", "sm", "Başka cihazda açtığın hesap için de aynı e-postayı yaz.")); box.appendChild(x[0]); box.appendChild(x[1]); x[0].querySelector("input").focus(); });
-      box.appendChild(yeni);
-      return;
-    }
-    box.appendChild(el("h2", null, "Hesabını aç, ilerlemen kaybolmasın"));
-    box.appendChild(el("p", null, "Adını ve e-postanı bir kez yaz, yeter. Şifre ya da doğrulama yok; başka cihazdan aynı e-postayla girince kaldığın yerden devam edersin."));
-    var x = form(); box.appendChild(x[0]); box.appendChild(x[1]);
+    box.appendChild(el("h2", null, "Kitlere başlamak için giriş yap"));
+    box.appendChild(el("p", null, "Hesabın varsa e-postan ve şifrenle gir. Yoksa bir dakikada aç; ilerlemen hesabına kaydedilir, hangi cihazdan girersen gir kaldığın yerden devam edersin."));
+    var row = el("div", "who"), g = el("a", "go", "Giriş yap"), k = el("a", "ghost", "Hesap aç");
+    g.href = girisUrl(); k.href = girisUrl("", true);
+    g.style.textDecoration = k.style.textDecoration = "none";
+    g.style.display = k.style.display = "inline-flex"; g.style.alignItems = k.style.alignItems = "center";
+    row.appendChild(g); row.appendChild(k); box.appendChild(row);
   }
   ciz();
 })();

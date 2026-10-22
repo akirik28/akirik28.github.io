@@ -32,7 +32,6 @@
   /* Hesaplar: kişi bir kez adını ve e-postasını yazar (_kit/hesap.js). Her hesabın ilerlemesi ünite başına
      ayrı saklanır (localStorage: <KIT.store><hesap kimliği>:state) ve hesaba eşitlenir; başka cihazdan da açılır. */
   var H = window.HESAP || null;
-  function profiles() { return H ? H.hesaplar() : []; }
 
   var KIT = window.KIT || {};
   var EPS = Array.isArray(KIT.episodes) ? KIT.episodes : [];
@@ -226,7 +225,23 @@
     }
     return cache[id];
   }
-  function save() { if (active) sSet(stateKey(active.id), JSON.stringify(state)); }
+  function save() { if (active) { sSet(stateKey(active.id), JSON.stringify(state)); ozet(); } }
+  /* Gelişimim sayfası için ünite özeti: <ön ek><hesap>:ozet — yalnızca değişince yazılır */
+  var lastOzet = "";
+  function ozet() {
+    if (!active || active.id === "misafir") return;
+    var r = { v: 1, course: COURSE, unit: UNIT, url: window.location.pathname, n: N, done: 0, watched: 0, q: 0, ans: 0, ok: 0, cur: state.cur, curTitle: "" }, i, s;
+    for (i = 0; i < N; i++) {
+      s = quizStat(i); r.q += s.n; r.ans += s.ans; r.ok += s.ok;
+      if (s.done) r.done++;
+      if (epState(i).watched) r.watched++;
+    }
+    if (state.cur >= 0 && state.cur < N) r.curTitle = metin(EPS[state.cur].title);
+    var js = JSON.stringify(r);
+    if (js === lastOzet) return;
+    lastOzet = js; r.t = Date.now();
+    sSet(STORE + active.id + ":ozet", JSON.stringify(r));
+  }
   (function cleanOld() {
     /* Yayın sırasında bütün ilerlemeler sıfırlandı: eski sürümlerin kayıtları taşınmaz, silinir.
        Bu kayıtlar yalnızca Human Geography'ye aittir; başka ön ekle çalışan ünitede dokunulmaz. */
@@ -1225,7 +1240,7 @@
       try { window.scrollTo(0, 0); } catch (e) {}
     });
     var no = btn("linkish", "Vazgeç", function () { closeAsk(); focusNode(resetBtn); });
-    var others = profiles().length > 1 ? " Diğer hesaplara dokunulmaz." : "";
+    var others = "";
     resetBtn.hidden = true;
     resetBox.appendChild(el("span", { class: "ask reset" }, [el("span", { text: "Yalnızca “" + active.name + "” hesabının bu ünitedeki ilerlemesi silinecek." + others + (DEN ? " Deneme sonuçların yerinde kalır." : "") }), yes, no]));
     focusNode(no);
@@ -1244,94 +1259,34 @@
     });
     return touched ? done + " / " + N + " bölüm tamamlandı" : "Henüz başlamadı";
   }
-  /* hesap seçme ekranına dön: etkin profilin kaydı saklanır, video durur */
-  function leave() {
-    save(); closeMenu(); if (H) H.cikis();
-    try { var v = document.querySelector(".frame video"); if (v) v.pause(); } catch (e) {}
-    document.documentElement.classList.remove("hg-wide");
-    showPicker();
-    try { window.history.replaceState(null, "", window.location.pathname + window.location.search); } catch (e) {}
-    try { window.scrollTo(0, 0); } catch (e) {}
-  }
-  var backBtn = null;
-  if (whoBox && whoBox.parentNode) {
-    backBtn = btn("who-back", "Hesaplar", leave);
-    backBtn.setAttribute("aria-label", "Hesap seçme ekranına dön");
-    backBtn.hidden = true;
-    whoBox.parentNode.appendChild(backBtn);
+  /* oturum yoksa giriş sayfasına git; giriş yapınca bu kite dönülür */
+  function toLogin() {
+    var u = window.location.pathname + window.location.hash;
+    try { window.location.replace("/kitora/giris/?devam=" + encodeURIComponent(u)); } catch (e) { window.location.href = "/kitora/giris/"; }
   }
   function showPicker() {
     active = null; ui.pick = null;
-    if (backBtn) backBtn.hidden = true;
     if (kitEl) kitEl.hidden = true;
     if (whoBox) whoBox.hidden = true;
     if (resetBox) resetBox.hidden = true;
-    root.style.setProperty("--accent", "#7C95FF");
-    if (!H || !whoEl || !whoList) { enter({ id: "misafir", name: "Misafir" }, { hash: true }); return; }
-    whoList.textContent = "";
-    profiles().forEach(function (p) {
-      var card = btn("who-card", [
-        el("span", { class: "who-i", "aria-hidden": "true", text: p.name.charAt(0).toLocaleUpperCase("tr") }),
-        el("span", { class: "who-n", text: p.name }),
-        el("span", { class: "who-s", text: profileLine(profileState(p.id)) })
-      ], function () { choose(p, card); });
-      whoList.appendChild(card);
-    });
-    whoList.appendChild(newForm(!profiles().length));
-    whoEl.hidden = false;
+    if (whoEl) whoEl.hidden = true;
+    if (!H) { enter({ id: "misafir", name: "Misafir" }, { hash: true }); return; }
+    toLogin();
   }
-  /* bu cihazdaki hesabı seç: önce sunucudaki son hali gelir, sonra kit açılır */
-  function choose(p, node) {
-    if (node) { node.disabled = true; node.setAttribute("aria-busy", "true"); }
-    H.sec(p.id).then(function (h) {
-      delete cache[h.id];
-      enter(h, { hash: !active, top: true });
-    }, function () { if (node) { node.disabled = false; node.removeAttribute("aria-busy"); } });
-  }
-  /* yeni hesap ya da başka cihazdan giriş: ad + e-posta, doğrulama yok */
-  function newForm(first) {
-    var nm = el("input", { type: "text", name: "ad", autocomplete: "given-name", maxlength: "40", required: true, placeholder: "Adın" });
-    var em = el("input", { type: "email", name: "email", autocomplete: "email", inputmode: "email", maxlength: "254", required: true, placeholder: "E-posta adresin" });
-    var go = el("button", { type: "submit", class: "who-go", text: first ? "Başla" : "Hesabı aç" });
-    var msg = el("p", { class: "who-msg", role: "status", "aria-live": "polite" });
-    var f = el("form", { class: "who-card who-new", novalidate: true }, [
-      el("span", { class: "who-n who-nt", text: first ? "Hoş geldin" : "Yeni hesap" }),
-      el("span", { class: "who-s", text: first ? "Bir kez adını ve e-postanı yaz; ilerlemen hesabına kaydedilir." : "Başka cihazda açtığın hesap için de aynı e-postayı yaz." }),
-      el("label", { class: "who-f" }, [el("span", { text: "Ad" }), nm]),
-      el("label", { class: "who-f" }, [el("span", { text: "E-posta" }), em]),
-      go, msg
-    ]);
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ad = nm.value.trim(), mail = em.value.trim();
-      if (!ad) { msg.textContent = "Adını yaz."; focusNode(nm); return; }
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { msg.textContent = "E-posta adresi eksik ya da hatalı görünüyor."; focusNode(em); return; }
-      go.disabled = true; go.textContent = "Açılıyor…"; msg.textContent = "";
-      H.giris(mail, ad).then(function (h) {
-        delete cache[h.id];
-        enter(h, { hash: true, top: true });
-      }, function (err) {
-        go.disabled = false; go.textContent = first ? "Başla" : "Hesabı aç";
-        msg.textContent = /gecersiz_email/.test(String(err && err.message)) ? "E-posta adresi hatalı görünüyor." : "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
-      });
-    });
-    return f;
+  /* çıkış: kayıt saklanır, video durur, giriş sayfasına gidilir */
+  function logout() {
+    save(); closeMenu();
+    try { var v = document.querySelector(".frame video"); if (v) v.pause(); } catch (e) {}
+    if (H) H.cikis();
+    try { window.location.assign("/kitora/giris/"); } catch (e) { window.location.href = "/kitora/giris/"; }
   }
   function closeMenu() { if (whoMenu) whoMenu.hidden = true; if (whoBtn) whoBtn.setAttribute("aria-expanded", "false"); }
   function openMenu() {
-    if (!whoMenu || !whoBtn) return;
+    if (!whoMenu || !whoBtn || !active) return;
     whoMenu.textContent = "";
-    profiles().forEach(function (p) {
-      var on = !!active && p.id === active.id;
-      var b = btn("who-item" + (on ? " on" : ""), [el("span", { text: p.name }), el("span", { class: "who-s", text: on ? "açık" : profileLine(profileState(p.id)) })], function () {
-        closeMenu();
-        if (!on) choose(p);
-        focusNode(whoBtn);
-      });
-      if (on) b.setAttribute("aria-current", "true");
-      whoMenu.appendChild(b);
-    });
-    whoMenu.appendChild(btn("who-item who-all", [el("span", { text: "← Hesaplar · yeni hesap" })], function () { leave(); }));
+    var me = el("div", { class: "who-item on", "aria-current": "true" }, [el("span", { text: active.name }), el("span", { class: "who-s", text: profileLine(state) })]);
+    whoMenu.appendChild(me);
+    whoMenu.appendChild(btn("who-item who-all", [el("span", { text: "Çıkış yap" })], logout));
     whoMenu.hidden = false;
     whoBtn.setAttribute("aria-expanded", "true");
   }
@@ -1352,9 +1307,8 @@
     if (kitEl) kitEl.hidden = false;
     if (resetBox) resetBox.hidden = false;
     if (whoBox) whoBox.hidden = !H;
-    if (backBtn) backBtn.hidden = !H;
     if (whoName) whoName.textContent = p.name;
-    if (whoBtn) whoBtn.setAttribute("aria-label", "Etkin hesap: " + p.name + ". Hesap değiştir");
+    if (whoBtn) whoBtn.setAttribute("aria-label", "Hesap: " + p.name + ". Gelişim ve çıkış menüsü");
     var v = opt.hash ? viewFromHash() : null;
     ui.view = v != null ? v : state.cur;
     if (!(ui.view >= 0 && ui.view <= MAXV)) ui.view = 0;
@@ -1378,7 +1332,7 @@
     window.addEventListener("pageshow", function (e) { if (e.persisted && active) refresh(); });
     window.addEventListener("storage", function (e) { if (active && e.key && e.key.indexOf(STORE + active.id + ":deneme:") === 0) refresh(); });
   }
-  /* aynı sekmede seçilmiş hesap varsa (ör. denemeden dönüş) sormadan aç; yeni ziyarette hesap sorulur */
+  /* açık oturum varsa önce sunucudaki son hali gelir, sonra kit açılır; yoksa giriş sayfasına gidilir */
   var last = H ? H.aktif() : null;
   if (last) H.sec(last.id).then(function (h) { delete cache[h.id]; enter(h, { hash: true }); }, showPicker);
   else showPicker();

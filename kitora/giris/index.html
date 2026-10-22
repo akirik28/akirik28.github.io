@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Giriş · Kitora</title>
+<meta name="description" content="Kitora hesabına giriş yap ya da yeni hesap aç. İlerlemen hesabına kaydedilir.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script src="/ap/_kit/hesap.js?v=3"></script>
+<style>
+:root{color-scheme:dark;--bg:#0B0B0C;--bg-2:#141416;--surface:#161618;--ink:#F3F1EC;--ink-2:#CDCAC3;--muted:#8E8C95;--line:#26262A;--line-2:#35353B;--accent:#E9B949;--bad:#FF9B85;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:"DM Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,p,ul{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+.glow{position:fixed;inset:0 0 auto 0;height:80vh;pointer-events:none;background:radial-gradient(60% 80% at 15% -10%,color-mix(in oklab,var(--accent) 16%,transparent),transparent 70%)}
+.page{position:relative;min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;max-width:1160px;margin:0 auto;padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px);gap:clamp(24px,5vw,72px);align-items:center}
+.brand{display:inline-flex;align-items:center;gap:12px;font-weight:760;font-size:24px;letter-spacing:-.03em;text-decoration:none}
+.brand img{display:block;border-radius:12px}
+.side{display:grid;gap:28px;align-content:center}
+.side h1{font-size:clamp(40px,5.6vw,72px);font-weight:760;letter-spacing:-.05em;line-height:.98;text-wrap:balance}
+.side h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--accent);letter-spacing:-.02em}
+.pts{display:grid;gap:14px}
+.pts li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;color:var(--ink-2)}
+.pts b{display:block;color:var(--ink);font-weight:650}
+.ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:color-mix(in oklab,var(--accent) 14%,var(--surface));color:var(--accent)}
+.ic svg{width:18px;height:18px}
+.card{width:100%;max-width:440px;justify-self:center;padding:clamp(22px,3.4vw,34px);border-radius:28px;background:var(--surface);border:1px solid var(--line);box-shadow:0 30px 80px -40px rgba(0,0,0,.8)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:999px;background:var(--bg);border:1px solid var(--line);margin-bottom:24px}
+.tab{min-height:42px;border:0;border-radius:999px;background:transparent;color:var(--muted);font-weight:650;font-size:15px;transition:background-color .2s,color .2s}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card h2{font-size:26px;font-weight:720;letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.sub{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.field{position:relative}
+input{width:100%;min-height:50px;padding:12px 16px;border-radius:14px;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s}
+input:hover{border-color:#4a4a52}
+input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+input[aria-invalid="true"]{border-color:var(--bad)}
+.field input{padding-right:84px}
+.eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);min-height:38px;padding:0 12px;border:0;border-radius:10px;background:transparent;color:var(--muted);font-size:13px;font-weight:650}
+.eye:hover{color:var(--ink);background:var(--bg-2)}
+.hint{font-size:12.5px;color:var(--muted);font-weight:500}
+.go{min-height:52px;margin-top:6px;border:0;border-radius:999px;background:var(--accent);color:#17110C;font-weight:760;font-size:16px;transition:transform .2s var(--ease),filter .2s}
+.go:hover{filter:brightness(1.06)}
+.go:active{transform:scale(.98)}
+.go:disabled{opacity:.6;cursor:progress}
+.msg{min-height:1.3em;font-size:14px;color:var(--bad);font-weight:550}
+.alt{margin-top:18px;font-size:14px;color:var(--muted);text-align:center}
+.alt button{border:0;background:none;padding:4px;color:var(--accent);font-weight:650;text-decoration:underline;text-underline-offset:3px}
+.note{margin-top:14px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.45}
+[hidden]{display:none!important}
+@media (max-width:860px){
+  .page{grid-template-columns:1fr;align-items:start;gap:26px;padding-top:calc(env(safe-area-inset-top,0px) + 18px)}
+  .side{gap:18px}
+  .side h1{font-size:clamp(34px,9vw,48px)}
+  .pts{display:none}
+  .card{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="page">
+  <section class="side">
+    <a class="brand" href="/kitora/" aria-label="Kitora"><img src="/kitora/logo.svg?v=3" alt="" width="44" height="44"><span>Kitora</span></a>
+    <h1>Hazır kitler, <em>tek rafta.</em></h1>
+    <ul class="pts">
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span><b>Kısa videolar, hemen sorular</b>Her bölümün ardından konuyu pekiştiren sorular.</span></li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></span><span><b>Süreli denemeler</b>Gerçek dijital sınav ekranında, puanınla birlikte.</span></li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M21 16V5"/></svg></span><span><b>Gelişimin kaydedilir</b>Hangi cihazdan girersen gir, kaldığın yerden devam.</span></li>
+    </ul>
+  </section>
+
+  <main class="card">
+    <div class="tabs" role="tablist" aria-label="Giriş ya da yeni hesap">
+      <button class="tab" role="tab" id="tGiris" aria-controls="fGiris" aria-selected="true">Giriş yap</button>
+      <button class="tab" role="tab" id="tKayit" aria-controls="fKayit" aria-selected="false">Hesap aç</button>
+    </div>
+
+    <section id="fGiris" role="tabpanel" aria-labelledby="tGiris">
+      <h2>Tekrar hoş geldin</h2>
+      <p class="sub">E-postan ve şifrenle giriş yap.</p>
+      <form novalidate data-mod="giris">
+        <label>E-posta<input name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="ornek@mail.com" required></label>
+        <label>Şifre<span class="field"><input name="sifre" type="password" autocomplete="current-password" maxlength="72" placeholder="Şifren" required><button type="button" class="eye" aria-label="Şifreyi göster">Göster</button></span></label>
+        <p class="msg" role="alert"></p>
+        <button class="go" type="submit">Giriş yap</button>
+      </form>
+      <p class="alt">Hesabın yok mu? <button type="button" data-git="kayit">Hesap aç</button></p>
+    </section>
+
+    <section id="fKayit" role="tabpanel" aria-labelledby="tKayit" hidden>
+      <h2>Hesabını aç</h2>
+      <p class="sub">Bir dakika sürer. İlerlemen hesabına kaydedilir.</p>
+      <form novalidate data-mod="kayit">
+        <label>Adın<input name="ad" type="text" autocomplete="given-name" maxlength="40" placeholder="Adın" required></label>
+        <label>E-posta<input name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="ornek@mail.com" required></label>
+        <label>Şifre<span class="field"><input name="sifre" type="password" autocomplete="new-password" maxlength="72" placeholder="En az 6 karakter" required><button type="button" class="eye" aria-label="Şifreyi göster">Göster</button></span><span class="hint">Başka cihazdan girerken bu şifreyi kullanacaksın.</span></label>
+        <p class="msg" role="alert"></p>
+        <button class="go" type="submit">Hesabı aç</button>
+      </form>
+      <p class="alt">Zaten hesabın var mı? <button type="button" data-git="giris">Giriş yap</button></p>
+    </section>
+
+    <p class="note">Şifren güvenli biçimde (şifrelenmiş olarak) saklanır.</p>
+  </main>
+</div>
+
+<script>
+(function () {
+  var H = window.HESAP;
+  var devam = (function () {
+    var m = /[?&]devam=([^&#]*)/.exec(location.search), u = "";
+    if (m) { try { u = decodeURIComponent(m[1]); } catch (e) {} }
+    return /^\/(?!\/)/.test(u) ? u : "/kitora/";
+  })();
+  if (H && H.aktif()) { location.replace(devam); return; }
+
+  var tG = document.getElementById("tGiris"), tK = document.getElementById("tKayit");
+  var fG = document.getElementById("fGiris"), fK = document.getElementById("fKayit");
+  function sec(mod, odak) {
+    var k = mod === "kayit";
+    tG.setAttribute("aria-selected", String(!k)); tK.setAttribute("aria-selected", String(k));
+    fG.hidden = k; fK.hidden = !k;
+    if (odak !== false) { var i = (k ? fK : fG).querySelector("input"); if (i) i.focus(); }
+  }
+  tG.addEventListener("click", function () { sec("giris"); });
+  tK.addEventListener("click", function () { sec("kayit"); });
+  document.addEventListener("click", function (e) {
+    var g = e.target.closest("[data-git]"); if (g) sec(g.getAttribute("data-git"));
+    var eye = e.target.closest(".eye");
+    if (eye) {
+      var inp = eye.parentNode.querySelector("input"), acik = inp.type === "password";
+      inp.type = acik ? "text" : "password";
+      eye.textContent = acik ? "Gizle" : "Göster";
+      eye.setAttribute("aria-label", acik ? "Şifreyi gizle" : "Şifreyi göster");
+    }
+  });
+  [tG, tK].forEach(function (t) {
+    t.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); var n = t === tG ? tK : tG; n.focus(); n.click(); }
+    });
+  });
+  sec(/[?&]mod=kayit/.test(location.search) ? "kayit" : "giris", false);
+
+  document.querySelectorAll("form").forEach(function (f) {
+    var msg = f.querySelector(".msg"), go = f.querySelector(".go"), etiket = go.textContent;
+    f.addEventListener("input", function (e) { e.target.removeAttribute("aria-invalid"); msg.textContent = ""; });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!H) { msg.textContent = "Sayfa tam yüklenemedi. Yenileyip tekrar dene."; return; }
+      var kayit = f.getAttribute("data-mod") === "kayit";
+      var ad = kayit ? f.ad.value.trim() : "", mail = f.email.value.trim(), sifre = f.sifre.value;
+      function hata(inp, t) { msg.textContent = t; if (inp) { inp.setAttribute("aria-invalid", "true"); inp.focus(); } }
+      if (kayit && !ad) return hata(f.ad, "Adını yaz.");
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return hata(f.email, "E-posta adresi eksik ya da hatalı görünüyor.");
+      if (kayit && sifre.length < 6) return hata(f.sifre, "Şifre en az 6 karakter olmalı.");
+      if (!kayit && !sifre) return hata(f.sifre, "Şifreni yaz.");
+      go.disabled = true; go.textContent = kayit ? "Hesap açılıyor…" : "Giriş yapılıyor…"; msg.textContent = "";
+      (kayit ? H.kayit(ad, mail, sifre) : H.giris(mail, sifre)).then(function () {
+        go.textContent = "Açılıyor…";
+        location.replace(devam);
+      }, function (err) {
+        go.disabled = false; go.textContent = etiket;
+        var kod = String(err && err.message || "");
+        hata(kod === "email_kayitli" || kod === "gecersiz_email" ? f.email : (kod === "hatali_giris" || kod === "kisa_sifre" ? f.sifre : null), H.hataMetni(err));
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

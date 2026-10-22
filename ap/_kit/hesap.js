@@ -1,28 +1,26 @@
 /* ==========================================================================
-   AP HESAPLARI — kit.js, bluebook.js ve Deneme 2 sayfası bunu kullanır.
-   Kişi bir kez adını ve e-postasını yazar (doğrulama yok); hesap açılır.
-   - Bu cihazda açılmış hesaplar:  localStorage  "ap-hesap:v1:hesaplar"
-   - Sekmede etkin hesap:          sessionStorage "ap-hesap:v1:aktif"
-     (yeni ziyarette yeniden sorulur, kit ↔ deneme geçişinde sorulmaz)
+   KİTORA HESAPLARI — Kitora sayfaları, kit.js, bluebook.js ve Deneme 2 bunu kullanır.
+   Hesap: ad + e-posta + şifre (ap_kayit), giriş: e-posta + şifre (ap_giris).
+   - Bu cihazda giriş yapılmış hesaplar: localStorage "ap-hesap:v1:hesaplar"
+   - Açık oturum:                        localStorage "ap-hesap:v1:oturum"
+     ("Çıkış yap"a kadar açık kalır)
    - İlerleme kayıtları localStorage'da kalır; anahtarında hesap kimliği geçen
      her kayıt Supabase'e (ap_kayitlar) eşitlenir. Başka cihazda aynı
-     e-postayla girince hepsi geri yüklenir.
-   Sunucu: Supabase "satist" projesi · fonksiyonlar ap_giris / ap_cek / ap_yaz
+     e-posta ve şifreyle girince hepsi geri yüklenir.
+   Sunucu: Supabase "satist" projesi · fonksiyonlar ap_kayit / ap_giris / ap_cek / ap_yaz
    ========================================================================== */
 (function () {
   "use strict";
   if (window.HESAP) return;                               /* sayfada iki kez yüklendiyse ikinciyi atla */
   var API = "https://injjkkulpcvinrglzhjd.supabase.co/rest/v1/rpc/";
   var KEY = "sb_publishable_ESPPnGFiTXokLqmql-zPTg_siER2Hjp";   /* herkese açık anahtar; tablolar yalnızca fonksiyonlarla açılır */
-  var P = "ap-hesap:v1:", LISTE = P + "hesaplar", AKTIF = P + "aktif", BEK = P + "bekleyen";
+  var P = "ap-hesap:v1:", LISTE = P + "hesaplar", AKTIF = P + "oturum", BEK = P + "bekleyen";
   /* hesaplardan önceki sabit profiller: aynı adla açılan hesap bu cihazdaki eski ilerlemeyi devralır */
   var ESKI = { ada: 1, murad: 1, omer: 1, daghan: 1, merve: 1 };
 
   function lg(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function ls(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
-  function sg(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
-  function ss(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
-  function sd(k) { try { window.sessionStorage.removeItem(k); } catch (e) {} }
+  function ld(k) { try { window.localStorage.removeItem(k); } catch (e) {} }
   function oku(s, d) { try { var v = JSON.parse(s); return v == null ? d : v; } catch (e) { return d; } }
   function anahtarlar() { var a = [], k; try { for (k = 0; k < window.localStorage.length; k++) a.push(window.localStorage.key(k)); } catch (e) {} return a; }
 
@@ -124,28 +122,49 @@
     ls(P + "devralindi:" + eski, h.id);
   }
 
+  /* sunucu yanıtı { id, ad } ya da { hata } → oturumu aç, kayıtları indir */
+  function oturumAc(d, email, yeni) {
+    if (!d || d.hata) throw new Error((d && d.hata) || "sunucu");
+    if (typeof d.id !== "string") throw new Error("sunucu");
+    var h = { id: d.id, name: String(d.ad || ""), email: String(email).trim().toLowerCase() };
+    ekle(h); ls(AKTIF, h.id);
+    if (yeni) devral(h);
+    return sinirli(cek(h.id), 4000).then(function () { return h; });
+  }
+  ld("ap-hesap:v1:aktif");                                /* şifresiz sürümün oturum anahtarı */
+
   window.HESAP = {
     hesaplar: hesaplar,
     bul: bul,
-    aktif: function () { return bul(sg(AKTIF)); },
-    /* bu cihazdaki bir hesabı seç: sunucudaki son hali indirilir (en çok 3 sn beklenir) */
+    aktif: function () { return bul(lg(AKTIF)); },
+    /* açık oturumun sunucudaki son halini indir (en çok 3 sn beklenir) */
     sec: function (id) {
       var h = bul(id);
-      if (!h) return Promise.reject(new Error("hesap_yok"));
-      ss(AKTIF, id);
+      if (!h || lg(AKTIF) !== id) return Promise.reject(new Error("oturum_yok"));
       return sinirli(cek(id), 3000).then(function () { return h; });
     },
-    /* ad + e-posta: hesap yoksa açılır, varsa (başka cihazdan) aynı hesaba girilir */
-    giris: function (email, ad) {
-      return rpc("ap_giris", { p_email: email, p_ad: ad }).then(function (d) {
-        if (!d || typeof d.id !== "string") throw new Error("sunucu");
-        var h = { id: d.id, name: String(d.ad || ad), email: String(email).trim().toLowerCase() };
-        ekle(h); ss(AKTIF, h.id); devral(h);
-        return sinirli(cek(h.id), 4000).then(function () { return h; });
-      });
+    yenile: function () { var h = bul(lg(AKTIF)); return h ? sinirli(cek(h.id), 3000).then(function () { return h; }) : Promise.resolve(null); },
+    /* yeni hesap: ad + e-posta + şifre (en az 6 karakter) */
+    kayit: function (ad, email, sifre) {
+      return rpc("ap_kayit", { p_email: email, p_ad: ad, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, true); });
     },
-    cikis: function () { sd(AKTIF); },
-    unut: function (id) { ls(LISTE, JSON.stringify(hesaplar().filter(function (x) { return x.id !== id; }))); if (sg(AKTIF) === id) sd(AKTIF); },
+    /* giriş: e-posta + şifre; başka cihazdaki ilerleme de gelir */
+    giris: function (email, sifre) {
+      return rpc("ap_giris", { p_email: email, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, false); });
+    },
+    cikis: function () { if (Object.keys(bekleyen()).length) gonder(true); ld(AKTIF); },
+    /* hata kodu → kullanıcıya gösterilecek cümle */
+    hataMetni: function (e) {
+      var k = String(e && e.message || "");
+      return ({
+        gecersiz_email: "E-posta adresi hatalı görünüyor.",
+        ad_gerekli: "Adını yaz.",
+        kisa_sifre: "Şifre en az 6 karakter olmalı.",
+        email_kayitli: "Bu e-postayla zaten bir hesap var. Giriş yap'ı dene.",
+        hatali_giris: "E-posta ya da şifre yanlış.",
+        kilitli: "Çok fazla yanlış deneme oldu. 15 dakika sonra tekrar dene."
+      })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
+    },
     yaz: isaretle,
     sil: isaretle
   };
