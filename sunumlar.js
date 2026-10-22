@@ -13,6 +13,22 @@ window.SITE = {
 
 window.SUNUMLAR = [
   {
+    klasor: "stem-buds-tanitim",
+    baslik: "STEM & BUDS'a Hoş Geldin · 6. ve 7. sınıf tanıtım toplantısı",
+    baslikEn: "Welcome to STEM & BUDS · intro meeting for grades 6 and 7",
+    altBaslik: "Altı Chapter, 10 haftalık yolculuk, lise mentorları, final günü ve “Hangi Chapter sana göre?” oyunu",
+    altBaslikEn: "Six Chapters, a 10-week journey, high-school mentors, final day and a “Which Chapter fits you?” game",
+    konu: "STEM & BUDS Türkiye · ortaokul öğrencilerine tanıtım",
+    konuEn: "STEM & BUDS Türkiye · intro for middle-school students (in Turkish)",
+    tarih: "2026-10-22",
+    sure: "≈15 dk", sureEn: "≈15 min",
+    ekran: 15,
+    ekip: "Hande Özcan, Murad Öztürk, Ada Sarp Kırık", ekipEn: "Hande Özcan, Murad Öztürk, Ada Sarp Kırık",
+    tur: "web", dil: "TR", renk: "#8DC63F",
+    kareler: ["#8DC63F", "#1E8C6B", "#4C6FFF", "#8DC63F", "#A35BFF", "#8DC63F", "#1E8C6B"],
+    notlar: ""
+  },
+  {
     klasor: "eyp-nedir",
     baslik: "EYP Nedir? · Avrupa Gençlik Parlamentosu rehberi",
     baslikEn: "What is EYP? · A guide to the European Youth Parliament",

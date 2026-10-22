@@ -1,0 +1,328 @@
+/* ============================================================
+   STEM & BUDS Türkiye · 6. ve 7. sınıf tanıtım toplantısı
+   Kimlik: lacivert + yaprak yeşili (program sunumuyla aynı), her Chapter'a bir renk.
+   Yazı: Bricolage Grotesque (ses), Archivo (marka), DM Mono (etiket)
+   ============================================================ */
+:root {
+  --navy: #0B356D; --navy-9: #061A3A; --navy-8: #0A2B59;
+  --leaf: #8DC63F; --leaf-2: #B9E07A; --leaf-3: #DDEFC4;
+  --emer: #1E8C6B;
+  --paper: #F3F5EC; --paper-2: #E8EDDF;
+  --ink: #0B1F3F; --mute: #4C5B70;
+  --cs: #4C6FFF; --math: #FF8A3D; --bio: #22A861; --chem: #A35BFF; --eng: #E8A800; --soc: #FF5D8F;
+
+  --f-d: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
+  --f-w: "Archivo", "Bricolage Grotesque", system-ui, sans-serif;
+  --f-m: "DM Mono", ui-monospace, Menlo, monospace;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --pop: cubic-bezier(.34, 1.56, .64, 1);
+
+  --deck-bg: #061A3A; --deck-fg: #fff; --ui-accent: #8DC63F;
+}
+body.deck { position: fixed; inset: 0; }
+.deck-stage, .scene { font-family: var(--f-d); font-optical-sizing: auto; }
+:where(.scene) :where(p, h1, h2, h3, ol, ul) { margin: 0; padding: 0; }
+:where(.scene) :where(ol, ul) { list-style: none; }
+.scene p { text-wrap: pretty; }
+.amp { font-family: var(--f-d); font-weight: 760; font-style: normal; }
+.scene.instant *, .scene.instant *::before, .scene.instant *::after { transition: none !important; }
+
+.c-cs { --c: var(--cs); } .c-math { --c: var(--math); } .c-bio { --c: var(--bio); }
+.c-chem { --c: var(--chem); } .c-eng { --c: var(--eng); } .c-soc { --c: var(--soc); }
+
+/* ---------- zeminler ---------- */
+.scene.paper { background: var(--paper); color: var(--ink); }
+.scene.navy  { background: radial-gradient(130% 100% at 80% 0%, #134283 0%, #0A2B59 48%, #061A3A 100%); color: #fff; }
+.scene.navy.deep { background: radial-gradient(90% 80% at 50% 28%, #12417F 0%, #0A2B59 42%, #05142E 100%); }
+.scene.lime  { background: radial-gradient(120% 100% at 88% 0%, #A8D962 0%, #8DC63F 46%, #7AB52F 100%); color: var(--navy); }
+.scene::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image: radial-gradient(circle, rgba(11,53,109,.13) 1.6px, transparent 2.3px);
+  background-size: 48px 48px; background-position: 24px 24px;
+  -webkit-mask-image: linear-gradient(115deg, #000 0%, rgba(0,0,0,.35) 55%, #000 100%);
+          mask-image: linear-gradient(115deg, #000 0%, rgba(0,0,0,.35) 55%, #000 100%); }
+.scene.navy::before { background-image: radial-gradient(circle, rgba(255,255,255,.075) 1.6px, transparent 2.3px); }
+.scene.lime::before { background-image: radial-gradient(circle, rgba(11,53,109,.14) 1.6px, transparent 2.3px); }
+.scene > * { z-index: 1; }
+
+/* ---------- ortak ---------- */
+.run { position: absolute; left: 120px; right: 120px; top: 50px; display: flex; align-items: center; gap: 12px;
+  font: 700 17px/1 var(--f-w); font-stretch: 115%; letter-spacing: .18em; text-transform: uppercase; opacity: .72; }
+.run svg { width: 22px; height: 22px; fill: var(--emer); color: var(--emer); }
+.navy .run svg { fill: var(--leaf); color: var(--leaf); }
+.lime .run svg { fill: var(--navy); color: var(--navy); }
+.run img { width: 24px; height: 32px; }
+.run span { margin-left: auto; font: 500 18px/1 var(--f-m); letter-spacing: .16em; }
+
+.hd { position: absolute; left: 120px; top: 124px; width: 1680px; }
+.hd.center { text-align: center; }
+.h1 { font-size: 100px; line-height: 1.0; font-weight: 760; letter-spacing: -.022em; color: var(--navy); }
+.navy .h1 { color: #fff; }
+.h1.big { font-size: 150px; }
+.h1.huge { font-size: 210px; letter-spacing: -.03em; }
+.sub { margin-top: 26px; font-size: 38px; line-height: 1.3; color: var(--mute); }
+.navy .sub { color: rgba(255,255,255,.76); }
+.lime .sub { color: rgba(11,53,109,.82); }
+.sub b { font-weight: 680; color: var(--emer); }
+.navy .sub b { color: var(--leaf); }
+.lime .sub b { color: var(--navy); }
+.hl { background: linear-gradient(transparent 58%, rgba(141,198,63,.55) 58%, rgba(141,198,63,.55) 92%, transparent 92%); color: inherit; padding: 0 .08em; }
+
+/* ============================================================ 01 KAPAK */
+.cover-text { position: absolute; left: 120px; top: 190px; width: 1060px; }
+.kick { display: flex; align-items: center; gap: 16px; font: 500 26px/1 var(--f-m); letter-spacing: .14em; text-transform: uppercase; color: var(--emer); }
+.kick .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 6px rgba(141,198,63,.22); }
+.wordmark { margin-top: 40px; font-family: var(--f-w); color: var(--navy); line-height: .9; }
+.wm-1 { display: block; font-size: 150px; font-weight: 850; font-stretch: 108%; letter-spacing: -.02em; white-space: nowrap; }
+.wm-2 { display: inline-block; margin-top: 8px; padding-top: 10px; font-size: 46px; line-height: 1.2; font-weight: 700; font-stretch: 125%; letter-spacing: .58em; color: var(--emer); }
+.cover-title { margin-top: 56px; font-size: 64px; line-height: 1.1; font-weight: 720; letter-spacing: -.012em; color: var(--ink); }
+.presenters { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 64px; }
+.presenters li { display: flex; align-items: center; gap: 14px; padding: 10px 28px 10px 10px; border-radius: 60px; background: #fff;
+  box-shadow: 0 10px 30px -12px rgba(11,53,109,.35); font-size: 30px; font-weight: 650; color: var(--navy); }
+.presenters li i { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; font-style: normal; font-size: 28px; font-weight: 800; color: #fff; background: var(--emer); }
+.presenters li:nth-child(2) i { background: #7AB52F; }
+.presenters li:nth-child(3) i { background: var(--navy); }
+.presenters.dark { justify-content: center; margin-top: 40px; }
+.presenters.dark li { background: rgba(255,255,255,.1); color: #fff; box-shadow: none; }
+
+.sprout-wrap { position: absolute; left: 1200px; top: 140px; width: 640px; height: 780px; }
+.sprout { position: absolute; left: 20px; top: 30px; width: 600px; height: 720px; overflow: visible; }
+.sprout .halo { opacity: .8; }
+.sprout .soil { fill: #6B4F2C; opacity: .9; transform-box: fill-box; transform-origin: center; }
+.sprout .stem { fill: none; stroke: url(#gStem); stroke-width: 16; stroke-linecap: round; }
+.sprout .lf path, .sprout .bud path:first-child { fill: url(#gLeaf); }
+.sprout .lf, .sprout .bud { transform-box: fill-box; scale: 0; }
+.sprout .lf1 { transform-origin: 100% 100%; }
+.sprout .lf2 { transform-origin: 0% 100%; }
+.sprout .bud { transform-origin: 50% 100%; }
+.sprout .bud-line { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 4; stroke-linecap: round; }
+.orbit { position: absolute; inset: 0; }
+.ob { position: absolute; left: 0; top: 0; width: 104px; height: 104px; margin: -52px 0 0 -52px; border-radius: 50%;
+  display: grid; place-items: center; background: #fff; border: 4px solid var(--c); box-shadow: 0 14px 30px -14px rgba(11,53,109,.45); }
+.ob svg { width: 54px; height: 54px; fill: none; stroke: var(--c); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================================================ 02 MERAK */
+#merak .h1 { font-size: 110px; }
+.qm { display: inline-block; color: var(--leaf); }
+.bubbles { position: absolute; inset: 0; }
+.bq { position: absolute; width: 640px; padding: 30px 36px 30px 112px; border-radius: 34px; background: #fff; color: var(--ink);
+  font-size: 35px; line-height: 1.25; box-shadow: 0 24px 50px -24px rgba(0,0,0,.6); }
+.bq::after { content: ""; position: absolute; left: 70px; bottom: -22px; border: 14px solid transparent; border-top: 18px solid #fff; border-left-width: 0; }
+.bq b { color: var(--c); font-weight: 720; }
+.bq svg { position: absolute; left: 30px; top: 30px; width: 60px; height: 60px; padding: 8px; border-radius: 16px; background: var(--c);
+  fill: none; stroke: #fff; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.b1 { left: 110px; top: 330px; } .b2 { left: 1170px; top: 320px; } .b3 { left: 640px; top: 505px; }
+.b4 { left: 110px; top: 700px; } .b5 { left: 1170px; top: 690px; }
+.seed-line { position: absolute; left: 0; right: 0; top: 920px; display: flex; justify-content: center; align-items: center; gap: 18px;
+  font-size: 56px; font-weight: 720; color: #fff; }
+.seed-line svg { width: 56px; height: 56px; fill: var(--leaf); color: var(--leaf); }
+.seed-line b { color: var(--leaf); }
+
+/* ============================================================ 03 STEM */
+.letters { position: absolute; left: 120px; top: 360px; width: 1680px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.lt { position: relative; padding: 18px 0 30px 0; border-top: 6px solid var(--c); }
+.lt b { display: block; font: 850 230px/1 var(--f-w); color: var(--c); letter-spacing: -.04em; transform-origin: 20% 80%; }
+.lt span { display: block; margin-top: 4px; font-size: 52px; font-weight: 760; color: var(--navy); letter-spacing: -.015em; }
+.lt small { display: block; margin-top: 10px; font-size: 29px; line-height: 1.3; color: var(--mute); }
+.bonus { position: absolute; left: 120px; top: 830px; width: 1680px; height: 140px; display: flex; align-items: center; gap: 30px; padding: 0 40px;
+  border-radius: 28px; background: #fff; border: 3px dashed var(--c); }
+.bonus svg { flex: none; width: 84px; height: 84px; padding: 12px; border-radius: 22px; background: var(--c); fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.bonus p { font-size: 32px; color: var(--mute); }
+.bonus p b { display: block; font-size: 44px; color: var(--c); font-weight: 780; }
+
+/* ============================================================ 04 NEDİR */
+.grow { position: absolute; left: 120px; top: 390px; width: 1680px; display: flex; align-items: flex-start; justify-content: space-between; }
+.gs { width: 440px; }
+.gi { display: block; width: 200px; height: 200px; padding: 18px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.g-soil { fill: #6B4F2C; opacity: .85; } .g-seed { fill: #8B6A3E; }
+.g-stem { stroke: var(--emer); stroke-width: 6; stroke-linecap: round; fill: none; }
+.g-leaf { fill: var(--emer); } .g-bud { fill: #FF8FB1; }
+.gs p { margin-top: 26px; font-size: 30px; line-height: 1.3; color: rgba(11,53,109,.85); }
+.gs p em { display: block; font: 500 22px/1 var(--f-m); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); opacity: .7; }
+.gs p b { display: block; margin: 10px 0 8px; font-size: 56px; line-height: 1; font-weight: 800; color: var(--navy); }
+.gs p u { text-decoration: none; font-weight: 720; background: rgba(255,255,255,.6); padding: 0 .15em; border-radius: 6px; }
+.ga { flex: none; width: 140px; height: 8px; margin-top: 100px; border-radius: 4px; position: relative;
+  background: repeating-linear-gradient(90deg, var(--navy) 0 16px, transparent 16px 28px); opacity: .5; }
+.ga::after { content: ""; position: absolute; right: -6px; top: -10px; border: 14px solid transparent; border-left: 18px solid var(--navy); border-right: 0; }
+.bud-def { position: absolute; right: 120px; top: 160px; font: 500 26px/1.2 var(--f-m); color: var(--navy); text-align: right; }
+.bud-def span { display: block; font: 800 72px/1 var(--f-w); letter-spacing: -.02em; margin-bottom: 6px; }
+
+/* ============================================================ 05 TAKIM */
+.team-lines { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.team-lines path { fill: none; stroke: var(--emer); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 2 16; }
+.pg { fill: url(#gGlow); } .pc { fill: #5FB548; }
+.node { position: absolute; width: 420px; text-align: center; }
+.node i { display: grid; place-items: center; width: 160px; height: 160px; margin: 0 auto; border-radius: 50%; font-style: normal;
+  background: #fff; border: 5px solid var(--emer); box-shadow: 0 20px 40px -18px rgba(11,53,109,.4); }
+.node i svg { width: 74px; height: 74px; fill: var(--emer); stroke: var(--emer); color: var(--emer); stroke-width: 2.6; stroke-linecap: round; }
+.node.mentor i svg { fill: none; }
+.node b { display: block; margin-top: 18px; font-size: 44px; font-weight: 780; color: var(--navy); }
+.node small { display: block; margin-top: 6px; font-size: 27px; line-height: 1.3; color: var(--mute); }
+.node.you { left: 750px; top: 640px; }
+.node.you i { width: 200px; height: 200px; margin-top: -20px; background: var(--leaf); border-color: var(--navy); font: 850 56px/1 var(--f-w); color: var(--navy); }
+.node.mentor { left: 220px; top: 440px; }
+.node.head { left: 1280px; top: 440px; }
+.node.head i { border-color: var(--navy); } .node.head i svg { fill: var(--navy); color: var(--navy); }
+.team-note { position: absolute; left: 1290px; top: 805px; width: 520px; padding: 26px 30px; border-radius: 24px; background: var(--navy); color: #fff; font-size: 30px; line-height: 1.3; }
+.team-note b { color: var(--leaf); }
+
+/* ============================================================ 06 CHAPTER'LAR */
+.cards { position: absolute; left: 120px; top: 370px; width: 1680px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.card { position: relative; height: 270px; }
+.cf, .cb { position: absolute; inset: 0; border-radius: 28px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  transition: transform .9s var(--ease); }
+.cf { display: flex; flex-direction: column; justify-content: center; padding: 0 36px 0 170px; background: rgba(255,255,255,.07);
+  border: 2px solid rgba(255,255,255,.14); transform: perspective(1400px) rotateY(0deg); }
+.cf svg { position: absolute; left: 36px; top: 50%; width: 106px; height: 106px; margin-top: -53px; padding: 18px; border-radius: 26px; background: var(--c);
+  fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.cf b { font-size: 42px; line-height: 1.05; font-weight: 780; color: #fff; }
+.cf small { margin-top: 10px; font: 500 22px/1.2 var(--f-m); letter-spacing: .06em; color: rgba(255,255,255,.62); }
+.cb { display: flex; flex-direction: column; justify-content: center; padding: 0 40px; background: var(--c); color: #fff;
+  font-size: 36px; line-height: 1.22; font-weight: 520; transform: perspective(1400px) rotateY(180deg); box-shadow: 0 30px 60px -30px var(--c); }
+.cb em { font: 500 22px/1 var(--f-m); font-style: normal; letter-spacing: .16em; text-transform: uppercase; opacity: .8; margin-bottom: 14px; }
+.cb b { font-weight: 800; }
+.card.on .cf { transform: perspective(1400px) rotateY(-180deg); }
+.card.on .cb { transform: perspective(1400px) rotateY(0deg); }
+
+/* ============================================================ 07 YOLCULUK */
+.map { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+.road-bg { fill: none; stroke: var(--paper-2); stroke-width: 54; stroke-linecap: round; }
+.road { fill: none; stroke: var(--leaf); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 0; }
+.flag { transform-box: fill-box; transform-origin: 20% 100%; }
+.flag use { fill: none; stroke: var(--navy); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.flag text { font: 600 24px var(--f-m); fill: var(--navy); }
+.w-glow { fill: url(#gGlow); } .w-dot { fill: var(--navy); } .w-leaf { fill: var(--leaf); color: var(--leaf); }
+.stop { position: absolute; width: 310px; }
+.stop em { display: block; font: 500 22px/1 var(--f-m); font-style: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--emer); }
+.stop b { display: block; margin-top: 8px; font-size: 50px; line-height: 1; font-weight: 800; color: var(--navy); }
+.stop small { display: block; margin-top: 8px; font-size: 26px; line-height: 1.25; color: var(--mute); }
+.stop.s1 { left: 90px; top: 875px; } .stop.s2 { left: 440px; top: 430px; } .stop.s3 { left: 840px; top: 880px; }
+.stop.s4 { left: 1240px; top: 430px; } .stop.s5 { left: 1600px; top: 810px; }
+.cp-q { position: absolute; left: 1240px; top: 150px; width: 560px; display: flex; gap: 18px; align-items: flex-start; padding: 22px 26px;
+  border-radius: 22px; background: var(--navy); color: #fff; font-size: 27px; line-height: 1.3; }
+.cp-q svg { flex: none; width: 46px; height: 46px; fill: none; stroke: var(--leaf); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.cp-q b { color: var(--leaf); }
+
+/* ============================================================ 08 HAFTA */
+.cycle { position: absolute; left: 150px; top: 330px; width: 640px; height: 640px; }
+.ring { position: absolute; inset: 0; width: 640px; height: 640px; overflow: visible; }
+.ring-bg { fill: none; stroke: rgba(255,255,255,.1); stroke-width: 16; }
+.ring-fg { fill: none; stroke: var(--leaf); stroke-width: 5; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 320px 320px; }
+.orb-c { fill: #C9F07F; }
+.cy-mid { position: absolute; left: 220px; top: 220px; width: 200px; height: 200px; border-radius: 50%; display: grid; place-content: center; text-align: center;
+  background: rgba(141,198,63,.14); }
+.cy-mid b { font: 850 96px/1 var(--f-w); color: var(--leaf); }
+.cy-mid small { font: 500 22px/1 var(--f-m); letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.cy { position: absolute; width: 250px; margin-left: -125px; padding: 16px 18px; border-radius: 22px; text-align: center; background: #fff; color: var(--navy);
+  box-shadow: 0 24px 40px -22px rgba(0,0,0,.7); transition: box-shadow .4s, background .4s; }
+.cy i { position: absolute; left: -16px; top: -16px; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font: 800 24px/1 var(--f-w);
+  font-style: normal; background: var(--leaf); color: var(--navy); }
+.cy b { display: block; font-size: 38px; font-weight: 800; }
+.cy small { display: block; margin-top: 4px; font-size: 22px; color: var(--mute); }
+.cy.c1 { left: 320px; top: 20px; } .cy.c2 { left: 600px; top: 270px; } .cy.c3 { left: 320px; top: 520px; } .cy.c4 { left: 40px; top: 270px; }
+.cy.lit { background: var(--leaf); box-shadow: 0 0 0 8px rgba(141,198,63,.3), 0 24px 40px -22px rgba(0,0,0,.7); }
+.ex-task { position: absolute; left: 1060px; top: 400px; width: 740px; padding: 40px 46px; border-radius: 30px; background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.12); }
+.ex-task em { font: 500 22px/1 var(--f-m); font-style: normal; letter-spacing: .16em; text-transform: uppercase; color: var(--leaf); }
+.ex-task li { display: flex; align-items: center; gap: 20px; margin-top: 26px; font-size: 38px; }
+.ex-task li svg { flex: none; width: 48px; height: 48px; padding: 6px; border-radius: 12px; background: var(--leaf); fill: none; stroke: var(--navy); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================================================ 09 ÖRNEK */
+.sci { position: absolute; left: 120px; top: 350px; width: 780px; counter-reset: s; }
+.sci li { position: relative; padding: 18px 0 18px 0; border-bottom: 2px solid var(--paper-2); font-size: 32px; line-height: 1.25; color: var(--ink); }
+.sci li em { display: block; font: 500 21px/1 var(--f-m); font-style: normal; letter-spacing: .16em; text-transform: uppercase; color: var(--bio); margin-bottom: 8px; }
+.lab { position: absolute; left: 980px; top: 330px; width: 820px; height: 650px; border-radius: 34px; background: #fff; box-shadow: 0 30px 60px -36px rgba(11,53,109,.45); overflow: hidden; }
+.pots { position: absolute; left: 40px; right: 40px; bottom: 60px; top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.pot { position: relative; --lc: #fff; }
+.p-w { --lc: #FFE9A8; } .p-p { --lc: #B26BFF; } .p-g { --lc: #39C46E; }
+.lamp { position: absolute; left: 50%; top: 0; width: 150px; height: 36px; margin-left: -75px; border-radius: 0 0 80px 80px; background: var(--navy); }
+.lamp::after { content: ""; position: absolute; left: -40px; right: -40px; top: 36px; height: 420px;
+  background: linear-gradient(var(--lc), transparent); opacity: .35; clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%); }
+.plant { position: absolute; left: 50%; bottom: 110px; width: 0; height: 0; }
+.plant i { position: absolute; left: -5px; bottom: 0; width: 10px; height: calc(var(--h, 0) * 22px + 6px); border-radius: 5px; background: var(--emer); transition: height .15s linear; }
+.plant b { position: absolute; left: -36px; bottom: calc(var(--h, 0) * 22px - 6px); width: 72px; height: 40px; transition: bottom .15s linear; }
+.plant b::before, .plant b::after { content: ""; position: absolute; top: 0; width: 34px; height: 22px; background: var(--leaf); border-radius: 0 100% 0 100%; }
+.plant b::before { left: 0; border-radius: 100% 0 100% 0; }
+.plant b::after { right: 0; }
+.pbase { position: absolute; left: 50%; bottom: 40px; width: 140px; height: 76px; margin-left: -70px; background: #C9743E; clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%); border-radius: 6px; }
+.ph { position: absolute; left: 0; right: 0; bottom: 0; text-align: center; font: 600 28px/1 var(--f-m); color: var(--navy); }
+.pot em { position: absolute; left: 0; right: 0; top: 50px; text-align: center; font: 500 22px/1 var(--f-m); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.pot.win .ph { color: #fff; background: var(--chem); border-radius: 30px; padding: 8px 0; bottom: -8px; }
+.day { position: absolute; right: 30px; bottom: 16px; font: 600 22px/1 var(--f-m); color: var(--mute); }
+.demo { position: absolute; left: 30px; bottom: 16px; font: 500 20px/1 var(--f-m); letter-spacing: .12em; text-transform: uppercase; color: #9AA5B5; }
+
+/* ============================================================ 10 FİNAL */
+.spots { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+.sp { transform-origin: 600px 0; animation: sweep 7s ease-in-out infinite alternate; mix-blend-mode: screen; }
+.sp2 { transform-origin: 1320px 0; animation-duration: 8.5s; animation-direction: alternate-reverse; }
+@keyframes sweep { from { transform: rotate(-12deg); } to { transform: rotate(12deg); } }
+.stage-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 200px; background: linear-gradient(transparent, rgba(141,198,63,.18)); }
+#final .hd { top: 150px; }
+.podium { position: absolute; left: 740px; top: 520px; width: 440px; }
+.screen { width: 440px; height: 250px; border-radius: 18px; background: #0E2A52; border: 6px solid #fff; padding: 20px; }
+.screen svg { width: 100%; height: 100%; }
+.chart { fill: none; stroke: var(--leaf); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 400; stroke-dashoffset: 400; }
+.scene.is-on .chart { animation: drawc 2s 1.2s var(--ease) forwards; }
+.chart-dot { fill: #fff; }
+@keyframes drawc { to { stroke-dashoffset: 0; } }
+.desk { width: 300px; height: 150px; margin: 30px auto 0; border-radius: 14px 14px 0 0; background: linear-gradient(#fff, #DDE6F0); }
+.jury { position: absolute; left: 170px; top: 760px; display: flex; gap: 40px; }
+.jury span { position: relative; width: 120px; height: 160px; }
+.jury span::before { content: ""; position: absolute; left: 30px; top: 0; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.85); }
+.jury span::after { content: ""; position: absolute; left: 0; top: 70px; width: 120px; height: 90px; border-radius: 60px 60px 10px 10px; background: rgba(255,255,255,.85); }
+.final-pts { position: absolute; left: 1300px; top: 560px; width: 520px; }
+.final-pts li { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; font-size: 32px; line-height: 1.25; }
+.final-pts svg { flex: none; width: 46px; height: 46px; padding: 6px; border-radius: 12px; background: var(--leaf); fill: none; stroke: var(--navy); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.applause { position: absolute; left: 150px; top: 640px; font-size: 76px; letter-spacing: .05em; }
+
+/* ============================================================ 11 KAZANIM */
+.badges { position: absolute; left: 120px; top: 380px; width: 1680px; display: flex; flex-wrap: wrap; justify-content: center; gap: 46px 70px; }
+.bdg { width: 260px; text-align: center; }
+.bdg i { display: grid; place-items: center; width: 190px; height: 190px; margin: 0 auto; border-radius: 50%; font-style: normal; font-size: 84px; font-weight: 850; color: var(--navy);
+  background: #fff; border: 8px solid var(--navy); box-shadow: 0 0 0 10px rgba(255,255,255,.35), 0 26px 40px -24px rgba(11,53,109,.7); }
+.bdg b { display: block; margin-top: 18px; font-size: 32px; line-height: 1.1; font-weight: 780; color: var(--navy); }
+
+/* ============================================================ 12 OYUN */
+.quiz { position: absolute; left: 120px; top: 360px; width: 1680px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px 40px; }
+.qz { position: relative; height: 180px; padding: 26px 32px; border-radius: 26px; background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.13); }
+.qz p { font-size: 34px; line-height: 1.25; color: #fff; }
+.qz p b { color: var(--leaf); }
+.tag { position: absolute; right: 24px; bottom: 20px; display: flex; align-items: center; gap: 12px; padding: 10px 22px 10px 12px; border-radius: 40px; background: var(--c);
+  font-size: 26px; font-weight: 750; color: #fff; box-shadow: 0 10px 30px -10px var(--c); }
+.tag svg { width: 38px; height: 38px; fill: none; stroke: #fff; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================================================ 13 BEKLENTİ */
+.checks { position: absolute; left: 120px; top: 380px; width: 1060px; }
+.checks li { display: grid; grid-template-columns: 110px 1fr; grid-template-rows: auto auto; column-gap: 26px; padding: 20px 0; border-bottom: 2px solid var(--paper-2); }
+.checks .box { grid-row: 1 / 3; width: 88px; height: 88px; border-radius: 22px; background: var(--leaf); display: grid; place-items: center; }
+.checks .box svg { width: 58px; height: 58px; fill: none; stroke: var(--navy); stroke-width: 5.5; stroke-linecap: round; stroke-linejoin: round; }
+.checks b { font-size: 50px; font-weight: 800; color: var(--navy); line-height: 1.05; }
+.checks small { font-size: 28px; color: var(--mute); margin-top: 6px; }
+.stamp { position: absolute; left: 1290px; top: 560px; padding: 30px 46px; border: 10px solid var(--emer); border-radius: 26px; color: var(--emer);
+  font: 900 92px/1 var(--f-w); letter-spacing: .04em; transform: rotate(-12deg); background: rgba(141,198,63,.1); }
+
+/* ============================================================ 14 BAŞVURU */
+.apply { position: absolute; left: 120px; top: 470px; width: 1680px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.apply li { position: relative; z-index: 1; text-align: center; }
+.apply i { display: grid; place-items: center; width: 150px; height: 150px; margin: 0 auto; border-radius: 50%; background: var(--navy); color: var(--leaf);
+  font: 850 76px/1 var(--f-w); font-style: normal; box-shadow: 0 0 0 12px rgba(255,255,255,.35); }
+.apply b { display: block; margin-top: 26px; font-size: 44px; font-weight: 800; color: var(--navy); }
+.apply small { display: block; margin-top: 8px; font-size: 27px; line-height: 1.3; color: rgba(11,53,109,.8); }
+.apply-path { position: absolute; inset: 0; width: 1920px; height: 1080px; z-index: 0; }
+.apply-path path { fill: none; stroke: var(--navy); stroke-width: 6; stroke-linecap: round; opacity: .35; }
+.qr-box { position: absolute; left: 1380px; top: 330px; width: 420px; padding: 34px; border-radius: 32px; background: #fff; box-shadow: 0 30px 60px -30px rgba(11,53,109,.6); text-align: center; }
+.qr { width: 300px; height: 300px; margin: 0 auto; border-radius: 18px; display: grid; place-items: center;
+  background: repeating-conic-gradient(var(--navy) 0 25%, #fff 0 50%) 0 0 / 40px 40px; position: relative; }
+.qr span { padding: 10px 20px; border-radius: 12px; background: #fff; font: 700 30px/1 var(--f-m); color: var(--navy); }
+.qr-box p { margin-top: 24px; }
+.qr-box em { display: block; font: 500 20px/1 var(--f-m); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--emer); }
+.qr-box .link { display: block; margin-top: 10px; font-size: 30px; color: var(--navy); word-break: break-all; }
+
+/* ============================================================ 15 SORULAR */
+.qms { position: absolute; inset: 0; pointer-events: none; }
+.qms span { position: absolute; left: 0; top: 0; font: 850 120px/1 var(--f-w); color: rgba(141,198,63,.18); }
+.ask, .thanks { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.ask .h1 { color: #fff; }
+.logo-disc { display: grid; place-items: center; width: 210px; height: 210px; border-radius: 50%; background: var(--paper); box-shadow: 0 0 0 14px rgba(141,198,63,.18), 0 0 80px rgba(141,198,63,.35); }
+.logo-disc img { width: 120px; height: 160px; }
+.thanks .h1 { margin-top: 10px; font-size: 170px; }
+.thanks .org { margin-top: 30px; font: 500 24px/1 var(--f-m); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+.confetti { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; z-index: 5; }

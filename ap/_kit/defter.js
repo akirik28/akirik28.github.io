@@ -30,6 +30,8 @@
      tuzak     { baslik?, metin, yanlis?, dogru? }                    sınav tuzağı
      ozet      { maddeler[] }                                         işaretlenen özet listesi
      ders      { tarih?, baslik?, bloklar[] }                         derste işlenen ek notlar (sonradan eklenir)
+   Kiti olmayan ünitelerde (KIT.kitYok) defter kendi sorularını taşır:
+     sorular   [{ q, opts:[4 şık], a: doğru şık 0–3, why, fig? }]      5 soru; "Kendini dene"de çıkar
    Defterin sonunda bölümün "Kendini dene" soruları otomatik gelir; cevaplar kitteki ilerlemeye yazılır.
    ========================================================================== */
 (function () {
@@ -39,6 +41,8 @@
   if (!KIT.store) KIT.store = "hg-kit:v2:";                 /* kit.js ile aynı varsayılanlar (Human Geography) */
   var COURSE = KIT.course || "Human Geography", UNIT = KIT.unitLabel || "Unit 1";
   var APC = /^AP\b/.test(COURSE) ? COURSE : "AP " + COURSE;
+  /* KIT.kitYok: bu ünitenin video kiti yok; liste defter/defter-liste.js'ten gelir, sorular defter dosyasındadır (DEFTER.sorular) */
+  var KY = !!KIT.kitYok, HUB = "/ap/defterler/";
   var H = window.HESAP || null;
   var M = window.Motion || null;
   var RM = false;
@@ -135,7 +139,7 @@
     var hero = el("section", { class: "d-hero" }, [
       el("p", { class: "eyebrow mono", lang: "en", text: APC + " · " + UNIT }),
       el("h1", { class: "d-hand" }, [el("span", { text: "Not defterleri" })]),
-      el("p", { class: "lead", text: "Video izlemeden çalışmak isteyenler için: her bölüm, hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzaklarıyla tek sayfalık bir defter. Defterin sonundaki sorular kitteki ilerlemene sayılır." })
+      el("p", { class: "lead", text: KY ? "Her konu için tek sayfalık bir defter: hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzakları. Her defterin sonunda beş soru var." : "Video izlemeden çalışmak isteyenler için: her bölüm, hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzaklarıyla tek sayfalık bir defter. Defterin sonundaki sorular kitteki ilerlemene sayılır." })
     ]);
     var grid = el("div", { class: "d-grid" });
     EPS.forEach(function (ep, i) {
@@ -159,7 +163,7 @@
     add(root, [hero, grid]);
     stag([].slice.call(grid.children)).forEach(function (c) { watch(c); });
     var back = document.getElementById("dBack");
-    if (back) back.href = "../";
+    if (back) { back.href = KY ? HUB : "../"; if (KY) back.lastChild.textContent = " Bütün dersler"; }
   }
 
   /* ======================= DEFTER GÖRÜNÜMÜ ======================= */
@@ -177,7 +181,8 @@
     var acc2 = ep.accent || "#7C95FF";
     document.documentElement.style.setProperty("--acc", acc2);
     var back = document.getElementById("dBack");
-    if (back) { back.href = "../#" + ep.slug; back.lastChild.textContent = " Kite dön"; }
+    if (back) { back.href = KY ? "./" : "../#" + ep.slug; back.lastChild.textContent = KY ? " Ünitenin defterleri" : " Kite dön"; }
+    if ((!ep.questions || !ep.questions.length) && Array.isArray(D.sorular)) ep.questions = D.sorular.filter(function (q) { return q && q.q && Array.isArray(q.opts) && typeof q.a === "number"; });
 
     /* ilerleme çubuğu */
     var prog = el("div", { class: "d-prog", "aria-hidden": "true" }, el("i"));
@@ -191,7 +196,7 @@
     var hero = el("section", { class: "d-hero nb" }, [
       el("p", { class: "d-course" }, [
         el("span", { text: APC + " · " + UNIT.split(" — ")[0] + " · Konu " + epNo(ep) }),
-        el("a", { href: "../#" + ep.slug, text: "▶ Videosu" })
+        KY ? null : el("a", { href: "../#" + ep.slug, text: "▶ Videosu" })
       ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
@@ -232,7 +237,7 @@
         el("span", { class: "d-sec-no mono", text: "✎" }),
         el("h2", { id: "sorulart", text: "Kendini dene" })
       ])));
-      qsec.appendChild(watch(el("p", { class: "d-p muted", text: "Bu sorular kitteki sorularla aynı; cevapların ilerlemene sayılır." })));
+      qsec.appendChild(watch(el("p", { class: "d-p muted", text: KY ? "Konuyu anladığını beş soruyla dene; cevapların hesabına kaydedilir." : "Bu sorular kitteki sorularla aynı; cevapların ilerlemene sayılır." })));
       quiz(ep, qsec);
       root.appendChild(qsec);
       secs.push(qsec); names.push("Kendini dene");
@@ -243,7 +248,7 @@
     root.appendChild(el("nav", { class: "d-pn", "aria-label": "Öbür defterler" }, [
       prev ? el("a", { class: "d-pn-b", href: locked(idx - 1) ? loginUrl() : "?b=" + prev.slug }, [el("small", { class: "mono", text: "← " + epNo(prev) }), el("span", { text: prev.title })]) : el("span"),
       el("a", { class: "d-pn-b mid", href: "./" }, [el("small", { class: "mono", text: "Bütün defterler" })]),
-      next ? el("a", { class: "d-pn-b r", href: locked(idx + 1) ? loginUrl() : "?b=" + next.slug }, [el("small", { class: "mono", text: epNo(next) + " →" }), el("span", { text: next.title })]) : el("a", { class: "d-pn-b r", href: KIT.denemeler ? "../" + KIT.denemeler.url : "../" }, [el("small", { class: "mono", text: "Sırada →" }), el("span", { text: KIT.denemeler ? "Denemeler" : "Kite dön" })])
+      next ? el("a", { class: "d-pn-b r", href: locked(idx + 1) ? loginUrl() : "?b=" + next.slug }, [el("small", { class: "mono", text: epNo(next) + " →" }), el("span", { text: next.title })]) : el("a", { class: "d-pn-b r", href: KY ? HUB : KIT.denemeler ? "../" + KIT.denemeler.url : "../" }, [el("small", { class: "mono", text: "Sırada →" }), el("span", { text: KY ? "Bütün dersler" : KIT.denemeler ? "Denemeler" : "Kite dön" })])
     ]));
 
     /* kaydırma: ilerleme + çubukta etkin başlık + okundu işareti */
