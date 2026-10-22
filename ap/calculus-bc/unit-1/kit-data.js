@@ -550,6 +550,84 @@ window.KIT = {
           "why": "Son seçenekte yerine koyunca 0/0 çıkar; payda sıfır olduğu için bölüm kuralı kullanılamaz (önce sadeleştirilir, limit 6). Diğerleri sırasıyla 5/5 = 1, 3 ve cos π = −1."
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "1.8",
+      "slug": "cb105",
+      "title": "Sıkıştırma Teoremi ve Trigonometrik Limitler",
+      "en": "The Squeeze Theorem",
+      "accent": "#A98BFF",
+      "seconds": 265,
+      "terms": [
+        "Squeeze theorem",
+        "Upper bound",
+        "Lower bound",
+        "Oscillating factor",
+        "sin x / x",
+        "Radian",
+        "Unit circle",
+        "tan x / x",
+        "(1 − cos x) / x",
+        "Limit at infinity"
+      ],
+      "questions": [
+        {
+          "q": "Her x için −x² + 6x − 4 ≤ f(x) ≤ x² − 2x + 4 olduğu biliniyor. lim (x → 2) f(x) kaçtır?",
+          "opts": [
+            "0",
+            "2",
+            "4",
+            "Belirlenemez"
+          ],
+          "a": 2,
+          "why": "Alt sınırın limiti −4 + 12 − 4 = 4, üst sınırın limiti 4 − 4 + 4 = 4. İki sınır aynı sayıya gittiği için *squeeze theorem* ile limit 4. (Fark 2(x − 2)² ≥ 0, eşitsizlik gerçekten her yerde doğru.)"
+        },
+        {
+          "q": "lim (x → 0) x⁴ cos(2/x) kaçtır?",
+          "opts": [
+            "0",
+            "1",
+            "Limit yoktur, kosinüs salınır",
+            "−1"
+          ],
+          "a": 0,
+          "why": "−1 ≤ cos(2/x) ≤ 1, x⁴ ≥ 0 ile çarpınca −x⁴ ≤ x⁴cos(2/x) ≤ x⁴. İki sınır da 0'a gider; salınan çarpan sıfıra giden bir çarpanla bastırılır, limit 0."
+        },
+        {
+          "q": "lim (x → 0) sin(3x)/sin(5x) kaçtır?",
+          "opts": [
+            "1",
+            "3/5",
+            "5/3",
+            "15"
+          ],
+          "a": 1,
+          "why": "Pay ve paydayı x'e böl: [sin(3x)/x] / [sin(5x)/x]. Pay 3'e, payda 5'e gider (sin(kx)/x → k). Sonuç 3/5."
+        },
+        {
+          "q": "lim (x → 0) tan(5x)/(2x) kaçtır?",
+          "opts": [
+            "2/5",
+            "5",
+            "1",
+            "5/2"
+          ],
+          "a": 3,
+          "why": "tan(5x)/(2x) = (5/2)·[sin(5x)/(5x)]·[1/cos(5x)]. Köşeli parantezler 1'e gider; sonuç 5/2."
+        },
+        {
+          "q": "Aşağıdaki bilgilerden hangisi tek başına lim (x → 3) f(x) = 2 sonucunu verir?",
+          "opts": [
+            "3'ün çevresinde 1 ≤ f(x) ≤ 3",
+            "3'ün çevresinde 2 − |x − 3| ≤ f(x) ≤ 2 + (x − 3)²",
+            "3'ün çevresinde f(x) ≤ 2",
+            "3'ün çevresinde 0 ≤ f(x) ≤ 2x − 4"
+          ],
+          "a": 1,
+          "why": "Yalnızca B'de iki sınır da x → 3 iken aynı sayıya, 2'ye gider. A'da sınırlar 1 ve 3'e, D'de 0 ve 2'ye gider; C'de alt sınır yok. Teorem için iki sınır ve aynı limit gerekir."
+        }
+      ]
     }
   ],
   "final": []
