@@ -38,6 +38,7 @@
 #f .card:nth-of-type(3) .step{background:color-mix(in oklab,var(--c2) 22%,var(--surface));color:var(--c2)}
 #mat .chip input:checked+span{background:var(--c4);border-color:var(--c4);color:#0B0B0C}
 #sec .chip input:checked+span{background:var(--c3);border-color:var(--c3);color:#0B0B0C}
+#apx .chip input:checked+span{background:var(--c5);border-color:var(--c5);color:#0B0B0C}
 .chip input:checked+span{animation:k-pop .4s var(--spring)}
 .chip span{transition:border-color .2s,background-color .25s,color .2s,transform .3s var(--spring)}
 .chip span:hover{transform:translateY(-2px)}

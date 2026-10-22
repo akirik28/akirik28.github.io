@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/kitora/kitora.css?v=2">
 <script src="/ap/_kit/hesap.js?v=6"></script>
-<script src="/kitora/dersler.js?v=1"></script>
+<script src="/kitora/dersler.js?v=2"></script>
 <script>
   /* oturum yoksa önce giriş */
   if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname + location.search));
 </script>
-<link rel="stylesheet" href="/kitora/canli.css?v=1">
+<link rel="stylesheet" href="/kitora/canli.css?v=2">
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -52,6 +52,8 @@
       <div class="chips" id="mat"></div>
       <p class="eyebrow" style="margin:22px 0 10px">Seçmeli dersler</p>
       <div class="chips" id="sec"></div>
+      <p class="eyebrow" style="margin:22px 0 10px">Gireceğin AP sınavları (okulda dersi olmayan)</p>
+      <div class="chips" id="apx"></div>
     </section>
 
     <section class="card">
@@ -95,6 +97,8 @@
   var mat = document.getElementById("mat"), sec = document.getElementById("sec");
   D.matematik.forEach(function (d) { mat.appendChild(chip("mat", "checkbox", d)); });
   D.secmeli.forEach(function (d) { sec.appendChild(chip("sec", "checkbox", d)); });
+  var apx = document.getElementById("apx");
+  (D.ap || []).forEach(function (d) { apx.appendChild(chip("apx", "checkbox", d)); });
   /* matematikte tek seçim */
   mat.addEventListener("change", function (e) { if (e.target.checked) mat.querySelectorAll("input").forEach(function (x) { if (x !== e.target) x.checked = false; }); });
 

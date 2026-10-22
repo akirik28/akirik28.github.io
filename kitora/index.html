@@ -66,6 +66,9 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 .item small{grid-column:1;font-size:13px;color:var(--muted);line-height:1.35}
 .item i{grid-row:1/span 2;grid-column:2;font-style:normal;color:var(--c)}
 .item.off{opacity:.3}
+.pack.soon{grid-template-rows:auto auto 1fr;background:transparent;border-style:dashed;border-top-style:solid;border-color:var(--line-2);border-top-color:var(--c)}
+.pack.soon .pack-h .mono{color:var(--c)}
+.soon-t{color:var(--muted);font-size:14.5px;line-height:1.5}
 .pack-f{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted)}
 .open{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-weight:650;font-size:14.5px;color:var(--ink)}
 .open:hover{color:var(--c)}
@@ -92,7 +95,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 @media (max-width:640px){.acct form{grid-template-columns:1fr}.go{justify-self:start}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<link rel="stylesheet" href="/kitora/canli.css?v=1">
+<link rel="stylesheet" href="/kitora/canli.css?v=2">
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -244,7 +247,14 @@ var PAKETLER = [
       { ad: "Çalışma kiti", url: "/ap/business-personal-finance/unit-2/", not: "7 video · bölüm soruları", mod: ["ogren", "tekrar"] },
       { ad: "Denemeler", url: "/ap/business-personal-finance/unit-2/deneme/", not: "5 süreli deneme", mod: ["test"] }
     ]
-  }
+  },
+  /* hazırlanan kitler: yakinda: true → kart soluk görünür, içerik yerine kısa açıklama */
+  { yakinda: true, grup: "sinav", ad: "Macroeconomics", alt: "AP · 6 ünite", etiket: "11 · AP", renk: "#5BB6FF", not: "Okulda dersi yok; kit dersin kendisi olacak. Unit 1'den başlıyoruz." },
+  { yakinda: true, grup: "sinav", ad: "Microeconomics", alt: "AP · 6 ünite", etiket: "11 · AP", renk: "#5FE3C0", not: "Macro ile ortak kavramlar; arka arkaya hazırlanıyor." },
+  { yakinda: true, grup: "sinav", ad: "Calculus BC", alt: "AP · Limits'ten başlayarak", etiket: "11 · AP", renk: "#A78BFA", not: "Ünite ünite video, soru ve süreli deneme." },
+  { yakinda: true, grup: "cep", ad: "Precalculus", alt: "Exam 1 · Functions", etiket: "10. sınıf", renk: "#FF7759", not: "İlk büyük sınav için konu özeti, çözümlü sorular ve süreli prova." },
+  { yakinda: true, grup: "cep", ad: "Oedipus", alt: "Literary analysis paketi", etiket: "10 · English", renk: "#FF7EB6", not: "Karakterler, alıntılar, tez kalıpları ve boş sayfa provası." },
+  { yakinda: true, grup: "cep", ad: "The Catcher in the Rye", alt: "Literary analysis paketi", etiket: "10 · English", renk: "#E9B949", not: "Holden'ı anlamak: temalar, semboller, alıntılar ve deneme kalıpları." }
 ];
 
 (function () {
@@ -265,6 +275,15 @@ var PAKETLER = [
   });
 
   PAKETLER.forEach(function (p) {
+    if (p.yakinda) {                                      /* hazırlanan kit: içerik yok, yalnızca duyuru */
+      var sl = el("li", "pack soon"), sh = el("div", "pack-h"), s2 = el("h2", null, p.ad), sa = el("span", null, p.alt);
+      sl.style.setProperty("--c", p.renk);
+      sh.appendChild(el("span", "mono", "Yakında")); sh.appendChild(el("span", "chip", p.etiket));
+      sa.lang = "en"; s2.appendChild(sa);
+      sl.appendChild(sh); sl.appendChild(s2); sl.appendChild(el("p", "soon-t", p.not));
+      lists[p.grup || "sinav"].appendChild(sl);
+      return;
+    }
     var li = el("li", "pack"), head = el("div", "pack-h"), h2 = el("h2", null, p.ad), alt = el("span", null, p.alt), list = el("div", "items"), foot = el("div", "pack-f");
     li.style.setProperty("--c", p.renk);
     head.appendChild(el("span", "mono", p.icerik.length + " parça"));
