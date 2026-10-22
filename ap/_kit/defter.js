@@ -131,7 +131,7 @@
     var read = readMap();
     var hero = el("section", { class: "d-hero" }, [
       el("p", { class: "eyebrow mono", lang: "en", text: APC + " · " + UNIT }),
-      el("h1", {}, [el("span", { text: "Not " }), el("em", { class: "serif", text: "defterleri" })]),
+      el("h1", { class: "d-hand" }, [el("span", { text: "Not defterleri" })]),
       el("p", { class: "lead", text: "Video izlemeden çalışmak isteyenler için: her bölüm, hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzaklarıyla tek sayfalık bir defter. Defterin sonundaki sorular kitteki ilerlemene sayılır." })
     ]);
     var grid = el("div", { class: "d-grid" });
@@ -142,11 +142,14 @@
         href: lk ? loginUrl() : "?b=" + ep.slug,
         style: "--acc:" + (ep.accent || "var(--accent)")
       }, [
-        el("span", { class: "d-card-no mono", text: epNo(ep) }),
-        el("span", { class: "d-card-t", text: ep.title }),
-        el("span", { class: "d-card-en mono", lang: "en", text: ep.en || "" }),
-        el("span", { class: "d-card-f mono", html: lk ? LOCK + " hesapla açılır" : read[ep.slug] ? "✓ okundu" : (ep.terms ? ep.terms.length + " kavram" : "") }),
-        el("i", { class: "d-card-glow", "aria-hidden": "true" })
+        el("i", { class: "d-card-spine", "aria-hidden": "true" }),
+        el("span", { class: "d-card-lbl" }, [
+          el("span", { class: "d-card-no", text: "No. " + epNo(ep) }),
+          el("span", { class: "d-card-t", text: ep.title }),
+          el("span", { class: "d-card-en", lang: "en", text: ep.en || "" })
+        ]),
+        el("span", { class: "d-card-f", html: lk ? LOCK + " hesapla açılır" : read[ep.slug] ? "✓ okundu" : (ep.terms ? ep.terms.length + " kavram" : "") }),
+        el("i", { class: "d-card-band", "aria-hidden": "true" })
       ]);
       grid.appendChild(card);
     });
@@ -178,7 +181,11 @@
     document.body.appendChild(prog);
 
     var hero = el("section", { class: "d-hero nb" }, [
-      el("p", { class: "eyebrow mono", lang: "en", text: APC + " · " + epNo(ep) + " · Not defteri" }),
+      el("div", { class: "d-fields" }, [
+        field("Ders", APC + " · " + UNIT.split(" — ")[0]),
+        field("Konu", epNo(ep)),
+        field("Tarih", today())
+      ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en serif", lang: "en", text: ep.en }) : null,
       D.ozet ? el("p", { class: "lead", html: md(D.ozet) }) : null,
@@ -252,6 +259,9 @@
     window.addEventListener("resize", onScroll);
     setTimeout(onScroll, 50);
   }
+
+  function field(k, v) { return el("p", { class: "d-field" }, [el("span", { class: "k", text: k + ":" }), el("span", { class: "v", text: v })]); }
+  function today() { try { return new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return ""; } }
 
   function splitTitle(n) {
     if (!n || RM) return;
@@ -712,7 +722,14 @@
   }
 
   /* ---------------- başlat ---------------- */
+  function sketchFilter() {
+    if (document.getElementById("d-kaba")) return;
+    var s2 = sv("svg", { width: 0, height: 0, style: "position:absolute", "aria-hidden": "true" });
+    s2.innerHTML = '<defs><filter id="d-kaba" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></defs>';
+    document.body.appendChild(s2);
+  }
   function start() {
+    sketchFilter();
     if (idx < 0) { listView(); return; }
     var ep = EPS[idx];
     if (locked(idx)) { lockView(ep); return; }

@@ -536,6 +536,478 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "1.3-1",
+      "slug": "mc104",
+      "title": "Mutlak ve Karşılaştırmalı Üstünlük",
+      "en": "Absolute vs Comparative Advantage",
+      "accent": "#FF6F61",
+      "seconds": 268,
+      "terms": [
+        "Absolute advantage",
+        "Comparative advantage",
+        "Opportunity cost",
+        "Per-unit opportunity cost",
+        "Reciprocal",
+        "Output question",
+        "Input question",
+        "Other goes Over (O.O.O.)",
+        "Other goes Under (I.O.U.)",
+        "Specialization",
+        "Terms of trade"
+      ],
+      "questions": [
+        {
+          "q": "Tabloda iki ülkenin aynı kaynaklarla bir günde üretebileceği en fazla miktar var. Hangisi doğrudur?",
+          "opts": [
+            "Mısır'da 1 ton portakalın *opportunity cost*'u 1/4 ton pamuktur",
+            "Mısır pamukta, İspanya portakalda *comparative advantage*'a sahiptir",
+            "İspanya iki üründe de *absolute advantage*'a sahiptir",
+            "İspanya pamukta *comparative advantage*'a sahiptir"
+          ],
+          "a": 1,
+          "why": "Bu bir *output question*; diğer ürün üste. Mısır'da 1 pamuk 3/12 = 1/4 portakal, İspanya'da 5/10 = 1/2 portakal; düşük olan Mısır. Mısır'da 1 portakal 12/3 = 4 pamuk, İspanya'da 10/5 = 2 pamuk; düşük olan İspanya. 1/4 pamuk cevabı kesri ters kurmaktan gelir; İspanya da pamukta 10 < 12 olduğu için iki üründe üstün değildir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Pamuk (ton)",
+              "Portakal (ton)"
+            ],
+            "rows": [
+              [
+                "Mısır",
+                "12",
+                "3"
+              ],
+              [
+                "İspanya",
+                "10",
+                "5"
+              ]
+            ],
+            "caption": "Aynı kaynaklarla bir günde üretilebilecek en fazla miktar (output)"
+          }
+        },
+        {
+          "q": "Tablo, bir birim üretmek için gereken işçi saatini gösteriyor. Ülkeler *comparative advantage*'a göre uzmanlaşırsa hangisi doğrudur?",
+          "opts": [
+            "X iki ürünü de ihraç eder, çünkü iki üründe de *absolute advantage* onda",
+            "X ayakkabı, Y çanta ihraç eder",
+            "Ticaret olmaz, çünkü Y hiçbir ürünü daha hızlı yapmıyor",
+            "X çanta, Y ayakkabı ihraç eder"
+          ],
+          "a": 3,
+          "why": "Bu bir *input question*; diğer ürün alta. X'te 1 ayakkabı 2/4 = 1/2 çanta, Y'de 3/9 = 1/3 çanta: ayakkabıda Y daha ucuz. X'te 1 çanta 4/2 = 2 ayakkabı, Y'de 9/3 = 3 ayakkabı: çantada X daha ucuz. X iki üründe de daha az saat harcasa da yalnız çantayı üretip ihraç eder.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Ayakkabı (1 çift)",
+              "Çanta (1 adet)"
+            ],
+            "rows": [
+              [
+                "X ülkesi",
+                "2 saat",
+                "4 saat"
+              ],
+              [
+                "Y ülkesi",
+                "3 saat",
+                "9 saat"
+              ]
+            ],
+            "caption": "Bir birim üretmek için gereken işçi saati (input)"
+          }
+        },
+        {
+          "q": "Grafikte Elif ve Can'ın bir saatte yapabileceği kurabiye ve kek miktarlarını gösteren doğrusal *PPC*'ler var. Elif 8 kurabiye ya da 8 kek, Can 2 kurabiye ya da 6 kek yapabiliyor. Hangisi doğrudur?",
+          "opts": [
+            "Elif iki üründe de *absolute advantage*'a sahip; kekte *comparative advantage* ise Can'da",
+            "Elif iki üründe de *comparative advantage*'a sahip, çünkü *PPC*'si daha dışarıda",
+            "Can için 1 kek yapmanın *opportunity cost*'u 3 kurabiyedir",
+            "Can kurabiyede *comparative advantage*'a sahiptir"
+          ],
+          "a": 0,
+          "why": "Ham sayılar: kurabiyede 8 > 2, kekte 8 > 6; Elif ikisinde de üstün. Can'da 1 kek 2/6 = 1/3 kurabiye, Elif'te 8/8 = 1 kurabiye; kekte düşük maliyet Can'da. Can'da 1 kurabiye 3 kek, Elif'te 1 kek; kurabiyede Elif. 3 kurabiye cevabı kesri ters kurmaktır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Kurabiye",
+            "ylabel": "Kek",
+            "xmax": 10,
+            "ymax": 10,
+            "ppc": [
+              {
+                "qmax": 8,
+                "pmax": 8,
+                "k": 1,
+                "label": "Elif"
+              },
+              {
+                "qmax": 2,
+                "pmax": 6,
+                "k": 1,
+                "label": "Can"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 6,
+                "label": "6"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ]
+          }
+        },
+        {
+          "q": "M ülkesi aynı kaynaklarla hem araba hem buğdayda N ülkesinden daha fazla üretebiliyor. Hangi ifade doğrudur?",
+          "opts": [
+            "M ticaretten kazanamaz, çünkü her şeyi kendisi daha iyi üretiyor",
+            "M iki üründe de *comparative advantage*'a sahiptir",
+            "M, *opportunity cost*'u daha düşük olan üründe uzmanlaşırsa iki ülke de ticaretten kazanabilir",
+            "Ticaret olursa yalnız N kazanır, M kaybeder"
+          ],
+          "a": 2,
+          "why": "M'nin iki üründe de *absolute advantage*'ı var; ama *comparative advantage* ham sayıya değil *opportunity cost*'a bakar ve bir ülke ikisinde birden sahip olamaz. M kendi *opportunity cost*'u düşük olan ürüne uzmanlaşıp diğerini N'den daha ucuza alırsa iki ülke de kazanır."
+        },
+        {
+          "q": "A ülkesinde 1 bisiklet üretmenin *opportunity cost*'u 4 scooter, B ülkesinde 2 scooter. Hangisi doğrudur?",
+          "opts": [
+            "A bisiklette *comparative advantage*'a sahiptir",
+            "B bisiklette, A scooterda *comparative advantage*'a sahiptir",
+            "B iki üründe de *comparative advantage*'a sahiptir",
+            "Karar vermek için önce *absolute advantage* bilinmelidir"
+          ],
+          "a": 1,
+          "why": "Bisiklet B'ye 2, A'ya 4 scootera mal oluyor; düşük olan B. Ters çevirirsen 1 scooter A'da 1/4, B'de 1/2 bisiklet; scooterda A daha ucuz. *Comparative advantage* için *opportunity cost* yeter; ham sayılar gerekmez ve bir ülke ikisinde birden üstün olamaz."
+        }
+      ]
+    },
+    {
+      "no": 5,
+      "code": "1.3-2",
+      "slug": "mc105",
+      "title": "Uzmanlaşma ve Ticaretten Kazanç",
+      "en": "Specialization and Gains from Trade",
+      "accent": "#A98BFF",
+      "seconds": 257,
+      "terms": [
+        "Specialization",
+        "Comparative advantage",
+        "Opportunity cost",
+        "Terms of trade",
+        "Mutually beneficial trade",
+        "Gains from trade",
+        "Production possibilities curve (PPC)",
+        "Consumption beyond the PPC",
+        "Reciprocal",
+        "Export",
+        "Import",
+        "Standard of living"
+      ],
+      "questions": [
+        {
+          "q": "Tabloda iki ülkenin aynı kaynaklarla bir günde üretebileceği en fazla miktar var. Ülkeler uzmanlaşıp ticaret yapacak. Hangi takas oranı iki ülkeye de yarar?",
+          "opts": [
+            "1 ton zeytin = 1/2 ton balık",
+            "1 ton zeytin = 1 ton balık",
+            "4 ton zeytin = 6 ton balık",
+            "1 ton zeytin = 2,5 ton balık"
+          ],
+          "a": 2,
+          "why": "Norveç'te 1 zeytin 20/10 = 2 balık, Fas'ta 6/6 = 1 balık; zeytinde Fas, balıkta Norveç uzmanlaşır. Kazançlı oran: 1 zeytin, 1 ile 2 balık arası. 4 zeytin = 6 balık, bir birime çevrilince 1 zeytin = 1,5 balık; aralıkta. 1 balık uç değer olduğu için Fas'a kazanç getirmez, 2,5 balık Norveç'in kendi maliyetinden pahalı.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Balık (ton)",
+              "Zeytin (ton)"
+            ],
+            "rows": [
+              [
+                "Norveç",
+                "20",
+                "10"
+              ],
+              [
+                "Fas",
+                "6",
+                "6"
+              ]
+            ],
+            "caption": "Aynı kaynaklarla bir günde üretilebilecek en fazla miktar (output)"
+          }
+        },
+        {
+          "q": "Grafik K ülkesinin *PPC*'sini gösteriyor. Ticaretten önce K, A noktasında tüketiyordu. Uzmanlaşıp ticaret yaptıktan sonra C noktasında tüketiyor. Hangisi doğrudur?",
+          "opts": [
+            "K, A'ya göre 2 birim daha çok buğday tüketiyor; üretim kapasitesi değişmedi",
+            "K'nin *PPC*'si sağa kaydığı için C'ye ulaşabildi",
+            "C ulaşılamaz bir nokta olduğu için K orada tüketemez",
+            "C *PPC*'nin üstünde olmadığı için K kaynaklarını verimsiz kullanıyor"
+          ],
+          "a": 0,
+          "why": "A noktası 4 buğday ve 4 kumaş, C noktası 6 buğday ve 4 kumaş: aynı kumaşla 2 birim fazla buğday. C, K'nin tek başına üretemeyeceği bir nokta; ama ticaret sayesinde orada tüketebilir. *PPC* üretim kapasitesini gösterir ve ticaretle kaymaz; dışarı çıkan yalnız tüketim noktasıdır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Buğday",
+            "ylabel": "Kumaş",
+            "xmax": 10,
+            "ymax": 10,
+            "ppc": [
+              {
+                "qmax": 8,
+                "pmax": 8,
+                "k": 1,
+                "label": "PPC"
+              }
+            ],
+            "points": [
+              {
+                "q": 4,
+                "p": 4,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 6,
+                "p": 4,
+                "label": "C",
+                "guides": true
+              }
+            ],
+            "xticks": [
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ]
+          }
+        },
+        {
+          "q": "A ülkesi bir günde ya 12 bilgisayar ya da 6 tablet üretebiliyor ve bilgisayarda uzmanlaşıyor. 1 tablet = 1,5 bilgisayar oranıyla 6 bilgisayar verip tablet alıyor. Hangisi doğrudur?",
+          "opts": [
+            "3 tablet ve 6 bilgisayar tüketir; kendi *PPC*'sinde 3 tabletle en fazla 6 bilgisayar",
+            "4 tablet ve 6 bilgisayar tüketir; kendi *PPC*'sinde 4 tabletle en fazla 8 bilgisayar",
+            "6 tablet ve 6 bilgisayar tüketir; kendi *PPC*'sinde 6 tabletle hiç bilgisayar kalmaz",
+            "4 tablet ve 6 bilgisayar tüketir; kendi *PPC*'sinde 4 tabletle en fazla 4 bilgisayar"
+          ],
+          "a": 3,
+          "why": "6 bilgisayar bölü 1,5, 4 tablet eder; elde 12 eksi 6, yani 6 bilgisayar kalır. A'da 1 tablet 12/6 = 2 bilgisayar; tek başına 4 tablet yapsa 8 bilgisayardan vazgeçer, geriye 4 bilgisayar kalır. Ticaretle 2 bilgisayar fazla tüketir; nokta *PPC*'nin dışındadır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Bilgisayar",
+              "Tablet"
+            ],
+            "rows": [
+              [
+                "A ülkesi (bir günde, ya o ya bu)",
+                "12",
+                "6"
+              ]
+            ],
+            "caption": "A ülkesinin doğrusal PPC'sinin uç noktaları"
+          }
+        },
+        {
+          "q": "H ülkesi kendi ürettiğinde 1 traktör ona 6 ton pirince mal oluyor. G ülkesi 1 traktörü 5 ton pirince, F ülkesi 4 ton pirince satmayı teklif ediyor. H ne yapar?",
+          "opts": [
+            "Traktörü kendisi üretir, çünkü iki teklif de kazanç sağlamaz",
+            "F'den alır, çünkü traktör ona en az pirince mal olur",
+            "G'den alır, çünkü G'nin teklifi kendi maliyetine daha yakın",
+            "İki teklifi de reddeder, çünkü ikisi de uç değerde"
+          ],
+          "a": 1,
+          "why": "İki teklif de H'nin kendi maliyeti olan 6 tondan ucuz, yani ikisi de kazançlı. Daha iyi teklif gelince ülke ona gider: F'den alırsa her traktör için 2 ton pirinç kazanır, G'den alırsa yalnız 1 ton."
+        },
+        {
+          "q": "X ülkesinde 1 kutu çikolatanın *opportunity cost*'u 3 kavanoz bal, Y ülkesinde 6 kavanoz bal. Hangi teklif iki ülkeye de yarar?",
+          "opts": [
+            "1 kavanoz bal = 1/7 kutu çikolata",
+            "1 kavanoz bal = 1/3 kutu çikolata",
+            "1 kavanoz bal = 1/4 kutu çikolata",
+            "1 kutu çikolata = 2 kavanoz bal"
+          ],
+          "a": 2,
+          "why": "Çikolatada X uzmanlaşır: 3 baldan fazlasını ister; Y 6 baldan azını öder. Aralık 1 çikolata için 3 ile 6 bal arası. Teklifleri bir çikolataya çevir: 1/7 demek 7 bal, Y için pahalı; 1/3 demek 3 bal, uç değer; 1/4 demek 4 bal, aralıkta; 2 bal ise X için zararlı."
+        }
+      ]
+    },
+    {
+      "no": 6,
+      "code": "1.4-1",
+      "slug": "mc106",
+      "title": "Talep Yasası",
+      "en": "The Law of Demand",
+      "accent": "#B9E552",
+      "seconds": 267,
+      "terms": [
+        "Demand",
+        "Quantity demanded",
+        "Willing and able",
+        "Law of demand",
+        "Ceteris paribus",
+        "Demand schedule",
+        "Demand curve",
+        "Substitution effect",
+        "Income effect",
+        "Purchasing power",
+        "Diminishing marginal utility",
+        "Change in quantity demanded"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, okul takımının basketbol maçı biletleri için *demand schedule*'ı gösteriyor. Başka hiçbir şey değişmeden bilet fiyatı 150 liradan 100 liraya inerse ne olur?",
+          "opts": [
+            "*Demand* 100 bilet artar; talep eğrisi sağa kayar",
+            "*Quantity demanded* 100 bilet azalır; eğri üzerinde yukarı hareket edilir",
+            "*Quantity demanded* 100 bilet artar; eğri üzerinde aşağı hareket edilir",
+            "*Quantity demanded* 300 bilet artar; eğri üzerinde aşağı hareket edilir"
+          ],
+          "a": 2,
+          "why": "Tablodan okunur: 150 lirada 200 bilet, 100 lirada 300 bilet. 300 eksi 200, 100 bilet artış. Değişen yalnızca biletin kendi fiyatı olduğu için bu bir *change in quantity demanded*'dır; eğri kaymaz, nokta eğri üzerinde aşağı iner.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL)",
+              "Quantity demanded (bilet)"
+            ],
+            "rows": [
+              [
+                "200",
+                "100"
+              ],
+              [
+                "150",
+                "200"
+              ],
+              [
+                "100",
+                "300"
+              ],
+              [
+                "50",
+                "400"
+              ]
+            ],
+            "caption": "Demand schedule · basketbol maçı bileti"
+          }
+        },
+        {
+          "q": "Grafikte bir tüketicinin bir maldaki durumu A noktasından B noktasına geçiyor. Bu hareketi en iyi hangisi açıklar?",
+          "opts": [
+            "Tüketicinin gelirinin artması",
+            "Malın kendi fiyatının düşmesi",
+            "İkame bir malın fiyatının artması",
+            "Malın kendi fiyatının artması"
+          ],
+          "a": 1,
+          "why": "A ve B aynı D eğrisinin üzerinde; B'de fiyat daha düşük, miktar daha fazla. Aynı eğri üzerinde hareket yalnızca malın kendi fiyatı değişince olur; burada fiyat düşmüş. Gelir ya da ikame malın fiyatı değişseydi eğrinin kendisi kayardı.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  1,
+                  9
+                ],
+                "to": [
+                  9,
+                  1
+                ],
+                "label": "D"
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 8,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 6,
+                "p": 4,
+                "label": "B",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Netflix öğrenci paketinin fiyatı düşünce bazı öğrenciler başka bir dizi platformundaki aboneliğini iptal edip Netflix'e geçiyor. Netflix'te *quantity demanded*'ın artmasını en iyi hangisi açıklar?",
+          "opts": [
+            "*Substitution effect*",
+            "*Income effect*",
+            "*Diminishing marginal utility*",
+            "*Increase in demand*"
+          ],
+          "a": 0,
+          "why": "Netflix ucuzlayınca rakip platform göreceli olarak pahalı kalır; öğrenciler göreceli olarak ucuz olan mala kayar. Bu *substitution effect*'tir. Talep eğrisi kaymadı; değişen Netflix'in kendi fiyatı, yani bu bir *increase in demand* değil."
+        },
+        {
+          "q": "Haftalık dondurma bütçen 120 lira. Dondurmanın fiyatı 40 liradan 30 liraya iniyor. Aynı bütçeyle alabileceğin dondurma sayısı nasıl değişir ve bu hangi etkinin örneğidir?",
+          "opts": [
+            "3'ten 4'e çıkar; *substitution effect*",
+            "4'ten 3'e iner; *income effect*",
+            "3'ten 4'e çıkar; *diminishing marginal utility*",
+            "3'ten 4'e çıkar; *income effect*"
+          ],
+          "a": 3,
+          "why": "120 bölü 40, 3 dondurma; 120 bölü 30, 4 dondurma. Bütçen değişmedi ama fiyat düşünce paranın *purchasing power*'ı arttı ve daha çok alabildin. Bu *income effect*'tir."
+        },
+        {
+          "q": "Aşağıdaki ifadelerden hangisi doğrudur?",
+          "opts": [
+            "Bir malın fiyatı düşünce o malın *demand*'i artar ve talep eğrisi sağa kayar.",
+            "*Diminishing marginal utility* yüzünden tüketici aynı maldan daha çok alması için daha düşük fiyat ister.",
+            "Bir malı çok isteyen ama alacak parası olmayan biri de o malın *demand*'ine dahildir.",
+            "*Law of demand*'e göre fiyat ile *quantity demanded* aynı yönde hareket eder."
+          ],
+          "a": 1,
+          "why": "Aynı maldan her ek birim daha az ek tatmin verdiği için tüketici ek birimlere daha az öder; daha çok alması için fiyat düşmelidir. Kendi fiyatı eğriyi kaydırmaz, yalnızca *quantity demanded*'ı değiştirir; talep için *willing and able* ikisi birden gerekir; *law of demand* ters ilişkidir."
+        }
+      ]
     }
   ],
   "final": []
