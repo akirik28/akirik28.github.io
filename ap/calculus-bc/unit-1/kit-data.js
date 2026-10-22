@@ -709,6 +709,169 @@ window.KIT = {
     },
     {
       "no": 6,
+      "code": "1.10–1.11",
+      "slug": "cb106",
+      "title": "Süreklilik ve Süreksizlik Türleri",
+      "en": "Continuity at a Point",
+      "accent": "#B9E552",
+      "seconds": 266,
+      "terms": [
+        "Continuous",
+        "Continuity at a point",
+        "Discontinuity",
+        "Removable discontinuity",
+        "Hole",
+        "Jump discontinuity",
+        "Infinite discontinuity",
+        "Non-removable",
+        "Oscillating discontinuity",
+        "Justification"
+      ],
+      "questions": [
+        {
+          "q": "f'nin grafiğinde sol parça (0, 1)'den (2, 3)'e çıkar ve (2, 3)'te açık daireyle biter; sağ parça (2, 5)'te dolu noktayla başlayıp (4, 3)'e iner. x = 2'de f için hangisi doğru?",
+          "opts": [
+            "Giderilebilir süreksizlik",
+            "Sıçrama süreksizliği",
+            "Sonsuz süreksizlik",
+            "Süreklidir"
+          ],
+          "a": 1,
+          "why": "Soldan limit 3, sağdan limit 5: ikisi de var ama farklı, yani limit yok. Bu bir *jump discontinuity*; tek bir nokta eklemek iki ucu birleştiremez.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 5,
+            "ymax": 6,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  2,
+                  3
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  5
+                ],
+                "to": [
+                  4,
+                  3
+                ],
+                "label": "f"
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 5,
+                "label": "(2, 5) dolu"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 5,
+                "label": "5"
+              }
+            ],
+            "caption": "(2, 3)'te açık daire"
+          }
+        },
+        {
+          "q": "f(x) = 3x − 2 (x < 1) ve f(x) = x² (x ≥ 1) olsun. x = 1'de f için hangisi doğru?",
+          "opts": [
+            "Giderilebilir süreksizlik",
+            "Sıçrama süreksizliği",
+            "Sonsuz süreksizlik",
+            "Süreklidir"
+          ],
+          "a": 3,
+          "why": "f(1) = 1² = 1. Soldan 3·1 − 2 = 1, sağdan 1² = 1, yani limit 1. Limit = f(1) olduğu için üç şart da sağlanır: f, x = 1'de süreklidir."
+        },
+        {
+          "q": "Tabloda f'nin x = 1, 2, 3'teki değerleri ve tek taraflı limitleri var. f bu noktalardan hangisinde süreklidir?",
+          "opts": [
+            "Yalnız x = 1",
+            "Yalnız x = 2",
+            "Yalnız x = 3",
+            "x = 2 ve x = 3"
+          ],
+          "a": 2,
+          "why": "x = 1'de sol ve sağ farklı (sıçrama). x = 2'de limit 1 var ama f(2) = 4 (yerinden oynamış nokta, giderilebilir). x = 3'te limit 0 = f(3): yalnız burada sürekli.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "c",
+              "f(c)",
+              "lim x→c⁻ f(x)",
+              "lim x→c⁺ f(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "2",
+                "3"
+              ],
+              [
+                "2",
+                "4",
+                "1",
+                "1"
+              ],
+              [
+                "3",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "caption": "f fonksiyonunun özellikleri"
+          }
+        },
+        {
+          "q": "f(x) = (x² − 4)/(x − 2) fonksiyonu x = 2'de sürekli değildir. Süreklilik şartlarından hangisi bozulmuştur?",
+          "opts": [
+            "f(2) tanımlı değil",
+            "x → 2 iken limit yok",
+            "Soldan ve sağdan limitler farklı",
+            "f(x) x → 2 iken sonsuza gidiyor"
+          ],
+          "a": 0,
+          "why": "x = 2'de 0/0, yani f(2) tanımsız: birinci şart bozuk. Limit ise vardır: x ≠ 2 için f(x) = x + 2 → 4. Bu bir delik, yani *removable discontinuity*."
+        },
+        {
+          "q": "Bir öğrenci h(x) = |x − 2| + 1 grafiğinin x = 2'de sivri bir köşesi olduğu için \"h orada süreksiz\" diyor. Doğru değerlendirme hangisi?",
+          "opts": [
+            "Doğru; sıçrama süreksizliği var",
+            "Doğru; giderilebilir süreksizlik var",
+            "Doğru; sonsuz süreksizlik var",
+            "Yanlış; limit 1 = h(2), h süreklidir"
+          ],
+          "a": 3,
+          "why": "Soldan ve sağdan |x − 2| + 1 → 1 ve h(2) = 1. Üç şart da tamam: h süreklidir. Köşe süreklilik değil, türevlenebilirlik sorunudur (Unit 2)."
+        }
+      ]
+    },
+    {
+      "no": 7,
       "code": "1.12–1.13",
       "slug": "cb107",
       "title": "Aralıkta Süreklilik ve Süreksizliği Giderme",
