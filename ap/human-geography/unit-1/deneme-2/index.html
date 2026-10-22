@@ -129,6 +129,7 @@ ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
 </head>
 <body>
 <div id="app"></div>
+<script src="/ap/_kit/hesap.js?v=1"></script>
 <script>
 (function () {
   "use strict";
@@ -348,11 +349,13 @@ ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
   ];
 
   var L = "ABCDE", N = Q.length;
-  var NAMES = { ada: "Ada", murad: "Murad", omer: "Ömer", daghan: "Dağhan", merve: "Merve" };
+  /* hesaplar kit ile ortak (/ap/_kit/hesap.js) */
+  var HS = window.HESAP || null, NAMES = {};
+  (HS ? HS.hesaplar() : []).forEach(function (p) { NAMES[p.id] = p.name; });
   var STORE = "hg-kit:v2:";
   function sGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
-  function sSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
-  var pid = sGet(STORE + "profile"); if (!NAMES[pid]) pid = null;
+  function sSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} if (HS) HS.yaz(k); }
+  var pid = HS && HS.aktif() ? HS.aktif().id : null; if (!NAMES[pid]) pid = null;
   function key() { return STORE + (pid || "misafir") + ":deneme2"; }
   function fresh() {
     var a = [], m = [], x = [], i;
@@ -390,7 +393,8 @@ ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
 
   function vStart() {
     var names = "", id;
-    for (id in NAMES) names += '<button data-act="who" data-id="' + id + '" class="' + (pid === id ? "on" : "") + '">' + h(NAMES[id]) + '</button>';
+    for (id in NAMES) names += '<button data-act="who" data-id="' + h(id) + '" class="' + (pid === id ? "on" : "") + '">' + h(NAMES[id]) + '</button>';
+    if (!names) names = '<span class="note">Sonucun kaydedilsin diye önce <a href="../">çalışma kitinde</a> adını ve e-postanı yazıp hesabını aç.</span>';
     return top(false) + '<main class="main">' +
       '<h1>Deneme 2 · Zor sorular</h1>' +
       '<p class="lead">Unit 1 — Thinking Geographically. Bu deneme ilkinden zor: hesap, tuzak şık ve birbirine yakın kavramları ayırt etme soruları var. Ekran, gerçek dijital sınavdaki gibi çalışır.</p>' +
@@ -490,7 +494,7 @@ ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
     var b = e.target.closest ? e.target.closest("[data-act]") : null, a, k, p;
     if (!b || b.disabled) return;
     a = b.getAttribute("data-act"); k = parseInt(b.getAttribute("data-k"), 10);
-    if (a === "who") { pid = b.getAttribute("data-id"); sSet(STORE + "profile", pid); S = load(); }
+    if (a === "who") { pid = b.getAttribute("data-id"); if (!NAMES[pid]) pid = null; S = load(); if (pid && HS) HS.sec(pid).then(function () { if (!S.started || S.done) { S = load(); render(); } }); }
     else if (a === "start") { S = fresh(); S.started = Date.now(); S.endAt = S.started + MIN * 60000; warned = false; window.scrollTo(0, 0); }
     else if (a === "opt") pick(k);
     else if (a === "strike") { p = S.x[S.i].indexOf(k); if (p >= 0) S.x[S.i].splice(p, 1); else { S.x[S.i].push(k); if (S.ans[S.i] === k) S.ans[S.i] = -1; } }

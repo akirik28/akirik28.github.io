@@ -28,15 +28,9 @@
 (function () {
   "use strict";
 
-  /* Profiller: _kit/kit.js içindeki PROFILES listesiyle AYNI olmalı (id + ad).
-     Birini değiştirirsen ötekini de değiştir; yoksa kit bu sayfanın kayıtlarını bulamaz. */
-  var PROFILES = [
-    { id: "ada", name: "Ada" },
-    { id: "murad", name: "Murad" },
-    { id: "omer", name: "Ömer" },
-    { id: "daghan", name: "Dağhan" },
-    { id: "merve", name: "Merve" }
-  ];
+  /* Hesaplar kit ile ortaktır (_kit/hesap.js): bu cihazda açılmış hesaplar ve sekmede etkin olan */
+  var H = window.HESAP || null;
+  function profiles() { return H ? H.hesaplar() : []; }
 
   var app = document.getElementById("app");
   if (!app) return;
@@ -70,10 +64,11 @@
 
   /* ---------------- kayıt ---------------- */
   function sGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
-  function sSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
-  function sDel(k) { try { window.localStorage.removeItem(k); } catch (e) {} }
-  function nameOf(id) { for (var k = 0; k < PROFILES.length; k++) if (PROFILES[k].id === id) return PROFILES[k].name; return ""; }
-  var pid = sGet(STORE + "profile"); if (!nameOf(pid)) pid = null;
+  function sSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} if (H) H.yaz(k); }
+  function sDel(k) { try { window.localStorage.removeItem(k); } catch (e) {} if (H) H.sil(k); }
+  function nameOf(id) { var p = H && id ? H.bul(id) : null; return p ? p.name : ""; }
+  function activeId() { var a = H ? H.aktif() : null; return a ? a.id : null; }
+  var pid = activeId();
   function key(no) { return STORE + (pid || "misafir") + ":deneme:" + no; }
   function fresh(t) {
     var a = [], m = [], x = [], i, s;
@@ -117,8 +112,9 @@
     return s + '</span>';
   }
   function names() {
-    var s = '<div class="names">', k, p;
-    for (k = 0; k < PROFILES.length; k++) { p = PROFILES[k]; s += '<button data-act="who" data-id="' + h(p.id) + '" class="' + (pid === p.id ? "on" : "") + '" aria-pressed="' + (pid === p.id) + '">' + h(p.name) + '</button>'; }
+    var s = '<div class="names">', k, p, l = profiles();
+    if (!l.length) return '<p class="note">Sonucun kaydedilsin diye önce <a href="../">çalışma kitinde</a> adını ve e-postanı yazıp hesabını aç.</p>';
+    for (k = 0; k < l.length; k++) { p = l[k]; s +='<button data-act="who" data-id="' + h(p.id) + '" class="' + (pid === p.id ? "on" : "") + '" aria-pressed="' + (pid === p.id) + '">' + h(p.name) + '</button>'; }
     return s + '</div>';
   }
 
@@ -311,9 +307,10 @@
     if (a === "who") {                                      /* profil değişti: kit de bu profille açılır */
       if (T && S.started && !S.done) return;
       pid = b.getAttribute("data-id"); if (!nameOf(pid)) pid = null;
-      if (pid) sSet(STORE + "profile", pid);
       if (T) S = load(T);
-      render(); return;
+      render();
+      if (pid) H.sec(pid).then(function () { if (!T || !S.started || S.done) { if (T) S = load(T); render(); } });
+      return;
     }
     if (!T) return;
     if (a === "start") { S = fresh(T); S.started = Date.now(); S.endAt = S.started + MIN * 60000; warned = false; window.scrollTo(0, 0); }
@@ -344,7 +341,7 @@
     e.preventDefault(); save(); render();
   });
   /* başka sekmede profil ya da kayıt değişirse seçme ekranı tazelensin */
-  window.addEventListener("pageshow", function (e) { if (e.persisted && !T) { pid = sGet(STORE + "profile"); if (!nameOf(pid)) pid = null; render(); } });
+  window.addEventListener("pageshow", function (e) { if (e.persisted && !T) { pid = activeId(); render(); } });
 
   /* ---------------- başlangıç ---------------- */
   if (T) { try { if (/^Denemeler\b/.test(document.title)) document.title = document.title.replace(/^Denemeler\b/, "Deneme " + T.no); } catch (e) {} }
