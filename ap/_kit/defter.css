@@ -111,13 +111,13 @@ html[data-tema="koyu"] .d-about { background: rgba(255,255,255,.03); }
 .d-meta a:hover { background: var(--hl3); }
 
 /* ---------------- ince çubuk: hangi başlıktasın ---------------- */
-.d-bar { position: sticky; top: 0; z-index: 30; display: flex; align-items: baseline; gap: 12px; margin: 0 -44px 0 -104px; padding: 8px 44px 8px 104px; height: 0; overflow: hidden; opacity: 0;
-  background: color-mix(in srgb, var(--pp) 94%, transparent); border-bottom: 1.5px solid var(--rule); font-family: var(--hand); transition: opacity .3s, height .3s; }
-.d-bar.on { opacity: 1; height: auto; }
+.d-bar { position: sticky; top: 0; z-index: 30; display: flex; align-items: baseline; gap: 12px; height: 42px; margin: 0 -44px -42px -104px; padding: 6px 44px 0 104px; box-sizing: border-box; overflow: hidden;
+  opacity: 0; pointer-events: none; transform: translateY(-6px); background: color-mix(in srgb, var(--pp) 95%, transparent); border-bottom: 1.5px solid var(--rule); font-family: var(--hand); transition: opacity .3s, transform .3s; }
+.d-bar.on { opacity: 1; transform: none; }
 .d-bar .n { color: var(--rd); font-size: 20px; font-weight: 700; white-space: nowrap; }
 .d-bar .t { font-size: 23px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .d-bar .t .en { color: var(--pen); }
-@media (max-width: 640px) { .d-bar { margin: 0 -16px 0 -50px; padding: 6px 16px 6px 50px; } }
+@media (max-width: 640px) { .d-bar { margin: 0 -16px -42px -50px; padding: 6px 16px 0 50px; } }
 
 /* ---------------- başlıklar: yazılırken beliren ---------------- */
 .d-sec { padding: var(--ln) 0 0; scroll-margin-top: 64px; max-width: none; }

@@ -1010,6 +1010,163 @@ window.KIT = {
       ]
     },
     {
+      "no": 7,
+      "code": "1.4-2",
+      "slug": "mc107",
+      "title": "Talebi Kaydıran Etkenler",
+      "en": "Demand Shifters",
+      "accent": "#FF7DB8",
+      "seconds": 274,
+      "terms": [
+        "Change in demand",
+        "Increase in demand",
+        "Decrease in demand",
+        "Demand shifters",
+        "Tastes and preferences",
+        "Number of consumers",
+        "Substitutes",
+        "Complements",
+        "Normal good",
+        "Inferior good",
+        "Expectations",
+        "Change in quantity demanded"
+      ],
+      "questions": [
+        {
+          "q": "Grafik bir şehirdeki pizza piyasasını gösteriyor. Piyasanın A noktasından C noktasına geçmesini en iyi hangisi açıklar?",
+          "opts": [
+            "Pizzanın kendi fiyatının düşmesi",
+            "İkame bir mal olan hamburgerin fiyatının artması",
+            "Tamamlayıcı bir mal olan kolanın fiyatının artması",
+            "Pizza fiyatının gelecek hafta düşeceğinin beklenmesi"
+          ],
+          "a": 1,
+          "why": "A ve C aynı fiyatta ama C'de miktar daha fazla; C, sağa kaymış D₂ üzerinde. Yani talep arttı. İkame malın, hamburgerin pahalanması insanları pizzaya kaydırır ve talebi sağa iter. Pizzanın kendi fiyatı düşseydi D₁ üzerinde B'ye inilirdi; kola pahalanması ve fiyat düşüşü beklentisi ise talebi sola kaydırır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  2,
+                  8
+                ],
+                "to": [
+                  8,
+                  2
+                ],
+                "label": "D₁"
+              },
+              {
+                "from": [
+                  4,
+                  8
+                ],
+                "to": [
+                  10,
+                  2
+                ],
+                "label": "D₂"
+              }
+            ],
+            "points": [
+              {
+                "q": 3,
+                "p": 7,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 5,
+                "p": 5,
+                "label": "B",
+                "guides": true
+              },
+              {
+                "q": 5,
+                "p": 7,
+                "label": "C",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Tablo, okul kulübünün sattığı kurabiyelerde bir değişiklikten önceki ve sonraki talebi gösteriyor. Bu değişikliğe hangisi yol açmış olabilir?",
+          "opts": [
+            "Kurabiyenin fiyatı 30 liradan 10 liraya indi",
+            "Kurabiyeyle birlikte içilen sütün fiyatı düştü",
+            "Öğrencilerin harçlığı arttı ve kurabiye bir *normal good*",
+            "Kurabiyenin yerine alınabilen kekin fiyatı düştü"
+          ],
+          "a": 3,
+          "why": "Her fiyatta talep edilen miktar 10 azalmış: 20'den 10'a, 40'tan 30'a, 60'tan 50'ye. Bu, talebin sola kayması, yani *decrease in demand*. İkame malın, kekin ucuzlaması öğrencileri keke kaydırır. Süt ucuzlaması ve *normal good* için gelir artışı talebi sağa iter; kurabiyenin kendi fiyatı ise eğriyi kaydırmaz.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL)",
+              "Önce: Qd",
+              "Sonra: Qd"
+            ],
+            "rows": [
+              [
+                "30",
+                "20",
+                "10"
+              ],
+              [
+                "20",
+                "40",
+                "30"
+              ],
+              [
+                "10",
+                "60",
+                "50"
+              ]
+            ],
+            "caption": "Kurabiye talebi · değişiklikten önce ve sonra"
+          }
+        },
+        {
+          "q": "Hangisi soğuk limonatanın talep eğrisini sağa kaydırır?",
+          "opts": [
+            "Sıcak hava dalgası yüzünden herkes serin içecek istiyor",
+            "Limonatanın fiyatı 40 liradan 30 liraya iniyor",
+            "Limon pahalanınca limonata üretiminin maliyeti artıyor",
+            "Gelecek hafta limonatanın ucuzlayacağı duyuruluyor"
+          ],
+          "a": 0,
+          "why": "Sıcak hava tüketicilerin zevk ve tercihlerini serin içeceklere çevirir; her fiyatta daha çok limonata istenir, talep sağa kayar. Fiyatın düşmesi yalnızca eğri üzerinde hareket; limon maliyeti satıcıyı, yani arzı etkiler; ucuzlama beklentisi ise bugünkü talebi sola kaydırır."
+        },
+        {
+          "q": "Aşağıdakilerden hangisi pizza talebinin belirleyicilerinden biri DEĞİLDİR?",
+          "opts": [
+            "Tüketicilerin zevk ve tercihleri",
+            "Şehirdeki alıcı sayısı",
+            "Pizzacıların kullandığı peynirin fiyatı",
+            "Pizza fiyatıyla ilgili gelecek beklentileri"
+          ],
+          "a": 2,
+          "why": "Peynir pizzacının girdisidir; fiyatı üretim maliyetini, yani arzı değiştirir. Talep alıcılarla ilgilidir: zevkler, alıcı sayısı, ilişkili malların fiyatları, gelir ve beklentiler."
+        },
+        {
+          "q": "Aşağıdaki ifadelerden hangisi doğrudur?",
+          "opts": [
+            "Tamamlayıcı bir malın fiyatı artarsa bu malın talebi sağa kayar.",
+            "Fiyatın gelecek ay artacağı beklentisi bugünkü talebi sağa kaydırır.",
+            "Gelir artınca bütün malların talep eğrisi sağa kayar.",
+            "Bir malın kendi fiyatı düşerse o malın talep eğrisi sağa kayar."
+          ],
+          "a": 1,
+          "why": "Yarın pahalanacak malı insanlar bugünden alır; bugünkü talep sağa kayar. *Complement* pahalanırsa talep sola kayar; gelir artınca *inferior good*'un talebi sola kayar, tuvalet kâğıdı gibi bazı mallarda ise pek değişmez; kendi fiyatı yalnızca *quantity demanded*'ı değiştirir."
+        }
+      ]
+    },
+    {
       "no": 8,
       "code": "1.5",
       "slug": "mc108",
