@@ -1008,6 +1008,415 @@ window.KIT = {
           "why": "Aynı maldan her ek birim daha az ek tatmin verdiği için tüketici ek birimlere daha az öder; daha çok alması için fiyat düşmelidir. Kendi fiyatı eğriyi kaydırmaz, yalnızca *quantity demanded*'ı değiştirir; talep için *willing and able* ikisi birden gerekir; *law of demand* ters ilişkidir."
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "1.5",
+      "slug": "mc108",
+      "title": "Arz Yasası ve Arzı Kaydıranlar",
+      "en": "Supply",
+      "accent": "#5C8DFF",
+      "seconds": 276,
+      "terms": [
+        "Supply",
+        "Quantity supplied",
+        "Law of supply",
+        "Supply schedule",
+        "Supply curve",
+        "Change in quantity supplied",
+        "Increase in supply",
+        "Decrease in supply",
+        "Determinants of supply",
+        "Input prices",
+        "Excise tax",
+        "Subsidy"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir tost atölyesinin arzını bir olaydan önce ve sonra gösteriyor. Bu değişikliği en iyi hangi olay açıklar?",
+          "opts": [
+            "Tostun fiyatı 60 liradan 40 liraya düştü",
+            "Waffle'ın fiyatı düştü, makineler tosta döndü",
+            "Devlet tost başına 5 lira vergi koydu",
+            "Atölyeye daha hızlı bir tost makinesi geldi"
+          ],
+          "a": 2,
+          "why": "Her fiyatta sunulan miktar 10 tost azalmış; demek ki bütün eğri sola kaymış, yani *decrease in supply*. Tost başına vergi maliyeti artırır ve arzı sola kaydırır. Fiyat düşüşü yalnızca eğri boyunca hareket ettirir; waffle'ın ucuzlaması ve yeni makine ise arzı sağa kaydırır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL)",
+              "Qs önce (tost)",
+              "Qs sonra (tost)"
+            ],
+            "rows": [
+              [
+                "20",
+                "10",
+                "0"
+              ],
+              [
+                "40",
+                "20",
+                "10"
+              ],
+              [
+                "60",
+                "30",
+                "20"
+              ],
+              [
+                "80",
+                "40",
+                "30"
+              ],
+              [
+                "100",
+                "50",
+                "40"
+              ]
+            ],
+            "caption": "Tost atölyesi · günlük arz"
+          }
+        },
+        {
+          "q": "Grafikte tost piyasası A noktasında. Diğer her şey sabitken tostun fiyatı 60 liradan 80 liraya çıkarsa ne olur?",
+          "opts": [
+            "A'dan B'ye, S bir boyunca hareket: *change in quantity supplied*",
+            "A'dan C'ye hareket: arz sağa kayar, *increase in supply*",
+            "A'dan C'ye hareket: arz sola kayar, *decrease in supply*",
+            "Hiçbir hareket olmaz; arz eğrisi yalnızca kayabilir"
+          ],
+          "a": 0,
+          "why": "Ürünün kendi fiyatı değişince eğri kaymaz; nokta aynı eğri üzerinde ilerler. 60 liradan 80 liraya çıkınca S bir üzerinde 30 tosttan 40 tosta, yani A'dan B'ye gidilir. A'dan C'ye geçmek için eğrinin kendisinin kayması, yani bir *determinant*'ın değişmesi gerekir.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity (tost)",
+            "ylabel": "Price (TL)",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0.5,
+                  0.5
+                ],
+                "to": [
+                  8,
+                  8
+                ],
+                "label": "S1"
+              },
+              {
+                "from": [
+                  2.5,
+                  0.5
+                ],
+                "to": [
+                  9.5,
+                  7.5
+                ],
+                "label": "S2",
+                "dash": true
+              }
+            ],
+            "points": [
+              {
+                "q": 3,
+                "p": 3,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 4,
+                "p": 4,
+                "label": "B",
+                "guides": true
+              },
+              {
+                "q": 5,
+                "p": 3,
+                "label": "C",
+                "guides": true
+              }
+            ],
+            "xticks": [
+              {
+                "v": 3,
+                "label": "30"
+              },
+              {
+                "v": 4,
+                "label": "40"
+              },
+              {
+                "v": 5,
+                "label": "50"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "60"
+              },
+              {
+                "v": 4,
+                "label": "80"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Bir öğrenci grafikte arz eğrisini S bir'den S iki'ye kaydırıyor. S iki, S bir'in solunda ve bu yüzden daha yukarıda duruyor. Hangisi doğrudur?",
+          "opts": [
+            "Eğri yukarı çıktığı için *supply* artmıştır",
+            "Yalnızca *quantity supplied* azalmış, *supply* aynı kalmıştır",
+            "Kaymanın nedeni ürünün kendi fiyatının artmasıdır",
+            "Her fiyatta daha az sunulur; bu bir *decrease in supply*'dır"
+          ],
+          "a": 3,
+          "why": "Arzda yön yatay okunur: sola kayma, her fiyatta daha az miktar demektir, yani *decrease in supply*. Eğrinin yukarıda görünmesi, aynı miktar için daha yüksek fiyat istendiğini gösterir; bu artış değil azalıştır. Kendi fiyatı ise eğriyi hiç kaydırmaz.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0.5,
+                  0.5
+                ],
+                "to": [
+                  8,
+                  8
+                ],
+                "label": "S1",
+                "dash": true
+              },
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  7,
+                  8
+                ],
+                "label": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Bir çiftçi aynı tarlaya buğday da mısır da ekebiliyor. Mısırın fiyatı belirgin biçimde artarsa, diğer her şey sabitken çiftçinin buğday arzına ne olur?",
+          "opts": [
+            "Buğday arzı sağa kayar, çünkü mısır buğdayın ikamesidir",
+            "Buğday arzı sola kayar, çünkü tarlalar mısıra ayrılır",
+            "Buğdayın *quantity supplied*'ı eğri boyunca artar",
+            "Hiçbir şey olmaz, çünkü buğdayın kendi fiyatı değişmedi"
+          ],
+          "a": 1,
+          "why": "Bu *prices of other goods* kaydırıcısıdır: aynı kaynakla yapılabilecek diğer mal pahalanınca üretici kaynağı ona kaydırır. Mısır kârlılaşınca tarlalar mısıra döner ve her fiyatta daha az buğday sunulur; buğday arzı sola kayar. Talepteki ikame mantığı burada ters sonuç verir, karıştırma."
+        },
+        {
+          "q": "Aşağıdaki olaylardan hangisi tost piyasasında arzı değil, talebi kaydırır?",
+          "opts": [
+            "Kaşar peynirinin fiyatı ikiye katlanıyor",
+            "Tost makinelerinde yeni bir teknoloji çıkıyor",
+            "Öğrencilerin harçlıkları artıyor",
+            "Devlet tost üreticilerine sübvansiyon veriyor"
+          ],
+          "a": 2,
+          "why": "Önce sor: olay kimi etkiliyor? Harçlık, yani alıcının geliri, tüketiciyi etkiler; bu bir *demand* kaydırıcısıdır. Peynir fiyatı *input prices*, makine *technology*, sübvansiyon *taxes and subsidies* maddesidir; üçü de üreticiyi etkiler ve arzı kaydırır."
+        }
+      ]
+    },
+    {
+      "no": 9,
+      "code": "1.6-1",
+      "slug": "mc109",
+      "title": "Denge, Fazla ve Kıtlık",
+      "en": "Equilibrium and Disequilibrium",
+      "accent": "#F6B94A",
+      "seconds": 241,
+      "terms": [
+        "Equilibrium",
+        "Equilibrium price",
+        "Equilibrium quantity",
+        "Market-clearing price",
+        "Disequilibrium",
+        "Surplus",
+        "Shortage",
+        "Quantity demanded",
+        "Quantity supplied",
+        "Bid up",
+        "Price signals"
+      ],
+      "questions": [
+        {
+          "q": "Okul basketbol kulübü taraftar tişörtü satıyor. Tabloya göre fiyat 300 lira olursa ne olur?",
+          "opts": [
+            "30 tişörtlük *shortage* oluşur ve fiyat yükselir",
+            "75 tişörtlük *surplus* oluşur ve fiyat düşer",
+            "30 tişörtlük *surplus* oluşur ve fiyat düşer",
+            "30 tişörtlük *surplus* oluşur ve fiyat yükselir"
+          ],
+          "a": 2,
+          "why": "300 lirada *quantity demanded* 45, *quantity supplied* 75. Arz edilen daha fazla olduğu için *surplus* var: 75 eksi 45, 30 tişört. Fiyat 250 liralık dengenin üstünde; satıcılar elde kalan tişörtleri satmak için fiyatı düşürür.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Fiyat (TL)",
+              "Quantity demanded",
+              "Quantity supplied"
+            ],
+            "rows": [
+              [
+                "150",
+                "90",
+                "30"
+              ],
+              [
+                "200",
+                "75",
+                "45"
+              ],
+              [
+                "250",
+                "60",
+                "60"
+              ],
+              [
+                "300",
+                "45",
+                "75"
+              ],
+              [
+                "350",
+                "30",
+                "90"
+              ]
+            ],
+            "caption": "Taraftar tişörtü piyasası (adet)"
+          }
+        },
+        {
+          "q": "Grafikte telefon kılıfı piyasası gösteriliyor. Fiyat 30 lirada kalırsa hangisi doğrudur?",
+          "opts": [
+            "400 kılıflık *shortage* olur",
+            "400 kılıflık *surplus* olur",
+            "700 kılıflık *shortage* olur",
+            "300 kılıflık *shortage* olur"
+          ],
+          "a": 0,
+          "why": "30 lira çizgisi talep eğrisini 700'de, arz eğrisini 300'de keser. Talep edilen miktar daha fazla, yani *shortage* var: 700 eksi 300, 400 kılıf. 700 ya da 300 tek başına açığın büyüklüğü değildir; aynı fiyattaki iki miktarın farkına bakılır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity (adet)",
+            "ylabel": "Price (TL)",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  1,
+                  9
+                ],
+                "to": [
+                  9,
+                  1
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "to": [
+                  9,
+                  9
+                ],
+                "label": "S",
+                "dash": false
+              }
+            ],
+            "points": [
+              {
+                "q": 5,
+                "p": 5,
+                "label": "E",
+                "guides": true
+              }
+            ],
+            "hlines": [
+              {
+                "p": 3,
+                "label": "30 TL"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 3,
+                "label": "300"
+              },
+              {
+                "v": 5,
+                "label": "500"
+              },
+              {
+                "v": 7,
+                "label": "700"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "30"
+              },
+              {
+                "v": 5,
+                "label": "50"
+              }
+            ]
+          }
+        },
+        {
+          "q": "*Market equilibrium* ile ilgili hangi ifade doğrudur?",
+          "opts": [
+            "Denge fiyatı, alıcıların bir ürün için ödemeye razı olduğu en yüksek fiyattır",
+            "Fiyat denge fiyatının üstündeyse alıcılar fiyatı yukarı iter",
+            "*Shortage*, fiyat denge fiyatının üstünde olduğunda ortaya çıkar",
+            "Denge fiyatında *quantity demanded* ile *quantity supplied* eşittir ve piyasa temizlenir"
+          ],
+          "a": 3,
+          "why": "Dengede talep edilen ve arz edilen miktar eşittir; satılmayan mal da eli boş dönen alıcı da kalmaz. Fiyat dengenin üstündeyse *surplus* olur ve fiyat düşer; *shortage* ise fiyat dengenin altındayken oluşur."
+        },
+        {
+          "q": "Kantinci tostu 40 liradan 30 liraya indirince kuyruk uzadı ve tostlar yetişmedi. Arkadaşın \"Tostun *demand*'i arttı, talep eğrisi sağa kaydı\" diyor. En doğru açıklama hangisi?",
+          "opts": [
+            "Arkadaşın haklı; fiyat düşüşü *demand*'i artırır ve talep eğrisi sağa kayar",
+            "Eğri kaymadı; *quantity demanded* arttı, *quantity supplied* azaldı ve *shortage* oluştu",
+            "Arz eğrisi sola kaydı; kuyruğun nedeni *supply*'ın azalması",
+            "Fiyat düşünce *surplus* oluştu; bu yüzden tostlar yetişmedi"
+          ],
+          "a": 1,
+          "why": "Ürünün kendi fiyatı eğrileri kaydırmaz; yalnızca eğriler üzerinde hareket ettirir. 30 lirada öğrenciler daha çok, kantinci daha az tost ister; talep edilen miktar arz edilenden fazla olduğu için *shortage* oluşur."
+        },
+        {
+          "q": "Simidin denge fiyatı 15 lira. Bir kural, simidin 20 liranın altında satılmasını yasaklıyor. 20 lirada 300 simit isteniyor, 500 simit üretiliyor. Ne olur?",
+          "opts": [
+            "200 simitlik *surplus* oluşur ama fiyat düşerek kısa sürede kapanır",
+            "200 simitlik *shortage* oluşur ve alıcılar fiyatı yukarı iter",
+            "200 simitlik *surplus* oluşur ve kural sürdükçe kapanmaz",
+            "Fiyat dengenin üstünde olduğu için piyasa temizlenir"
+          ],
+          "a": 2,
+          "why": "20 lirada arz edilen 500, talep edilen 300: 500 eksi 300, 200 simitlik *surplus*. Normalde satıcılar fiyatı düşürüp fazlayı eritirdi; ama kural fiyatın 20 liranın altına inmesine izin vermediği için fazla kalıcı olur."
+        }
+      ]
     }
   ],
   "final": []
