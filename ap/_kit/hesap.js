@@ -153,7 +153,8 @@
   /* kitler açılmadan önce tamamlanması gereken adım: kurulum ya da süresi geçen quiz notu */
   function engel(p) {
     if (!p) return "/kitora/baslangic/";
-    if (!p.onay || !p.sinif || !p.secmeliler || !p.secmeliler.length || p.katilim == null) return "/kitora/baslangic/";
+    if (!p.onay || !p.sinif || p.katilim == null) return "/kitora/baslangic/";
+    if (p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "/kitora/baslangic/";   /* seçmeliler yalnızca 11. sınıftan istenir */
     if (p.katilim && p.bekleyen && p.bekleyen.length) return "/kitora/notlar/";
     return null;
   }

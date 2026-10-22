@@ -9,7 +9,7 @@
 <link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/kitora/kitora.css?v=2">
-<script src="/ap/_kit/hesap.js?v=5"></script>
+<script src="/ap/_kit/hesap.js?v=6"></script>
 <script>
   if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname + location.search));
 </script>
@@ -29,6 +29,7 @@
 .done-card .big{font-size:40px}
 @media (max-width:560px){.q{grid-template-columns:1fr}.score{text-align:left}}
 </style>
+<link rel="stylesheet" href="/kitora/canli.css?v=1">
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -151,5 +152,6 @@
   });
 })();
 </script>
+<script src="/kitora/canli.js?v=2"></script>
 </body>
 </html>
