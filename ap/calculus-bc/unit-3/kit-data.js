@@ -237,6 +237,84 @@ window.KIT = {
           "why": "2x − 3y − 3x·y′ + 2y·y′ = 0 ⇒ y′(2y − 3x) = 3y − 2x ⇒ y′ = (3y − 2x)/(2y − 3x). (2, 1)'de (3 − 4)/(2 − 6) = (−1)/(−4) = 1/4."
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "3.2-2",
+      "slug": "cb305",
+      "title": "Kapalı Eğrilerde Teğet Doğruları",
+      "en": "Tangent Lines to Implicit Curves",
+      "accent": "#A98BFF",
+      "seconds": 279,
+      "terms": [
+        "Implicit differentiation",
+        "Tangent line",
+        "Point-slope form",
+        "Horizontal tangent",
+        "Vertical tangent",
+        "Normal line",
+        "Ellipse",
+        "Undefined slope",
+        "Indeterminate 0/0",
+        "Perpendicular"
+      ],
+      "questions": [
+        {
+          "q": "x² + 2y² = 9 eğrisine (1, 2) noktasında çizilen teğet doğrusunun denklemi hangisidir?",
+          "opts": [
+            "y − 2 = −(1/4)(x − 1)",
+            "y − 2 = −(1/2)(x − 1)",
+            "y − 2 = 4(x − 1)",
+            "y − 1 = −(1/4)(x − 2)"
+          ],
+          "a": 0,
+          "why": "2x + 4y·y′ = 0 ⇒ y′ = −x/(2y). (1, 2)'de −1/4. Nokta-eğim: y − 2 = −(1/4)(x − 1). Son şık x ile y'nin yerini karıştırır."
+        },
+        {
+          "q": "x² + 4y² − 4x = 0 eğrisinin dikey teğetleri hangi x değerlerindedir?",
+          "opts": [
+            "x = 2",
+            "x = 0 ve x = 4",
+            "x = −2 ve x = 2",
+            "Yalnızca x = 4"
+          ],
+          "a": 1,
+          "why": "2x + 8y·y′ − 4 = 0 ⇒ y′ = (4 − 2x)/(8y). Payda 0 ⇒ y = 0; denklemde x² − 4x = 0 ⇒ x = 0 ya da 4. Pay bu noktalarda 4 ve −4, sıfır değil: iki dikey teğet. (x = 2'de pay 0: orada yatay teğet var.)"
+        },
+        {
+          "q": "y³ + xy = 10 eğrisinin (1, 2) noktasındaki normal doğrusunun eğimi kaçtır?",
+          "opts": [
+            "−2/13",
+            "2/13",
+            "13/2",
+            "−13/2"
+          ],
+          "a": 2,
+          "why": "3y²·y′ + y + x·y′ = 0 ⇒ y′ = −y/(3y² + x) = −2/13. Normal eğimi −1/m = 13/2."
+        },
+        {
+          "q": "f'nin grafiği merkezi orijin, yarıçapı 5 olan üst yarım çemberdir: f(x) = √(25 − x²). f′(−4) kaçtır?",
+          "opts": [
+            "−4/3",
+            "3/4",
+            "−3/4",
+            "4/3"
+          ],
+          "a": 3,
+          "why": "x² + y² = 25 ⇒ y′ = −x/y. x = −4'te y = 3 (üst yarı). y′ = −(−4)/3 = 4/3. Grafikte de sol tarafta eğri yükseliyor, eğim pozitif."
+        },
+        {
+          "q": "y² + x²y = 10 eğrisinde y = 1 olan noktalardaki dy/dx değerleri nelerdir?",
+          "opts": [
+            "Yalnızca −6/11",
+            "6/11 ve −6/11",
+            "Yalnızca 6/11",
+            "3/11 ve −3/11"
+          ],
+          "a": 1,
+          "why": "y = 1 ⇒ 1 + x² = 10 ⇒ x = ±3: iki nokta. 2y·y′ + 2xy + x²·y′ = 0 ⇒ y′ = −2xy/(2y + x²). (3, 1)'de −6/11, (−3, 1)'de 6/11."
+        }
+      ]
     }
   ],
   "final": []
