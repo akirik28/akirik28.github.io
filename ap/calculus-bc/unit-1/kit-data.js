@@ -1155,6 +1155,106 @@ window.KIT = {
           "why": "−1/x ≤ (sin x)/x ≤ 1/x olduğundan *squeeze theorem* ile (sin x)/x → 0, yani g → 2. sin x = 0 olan her x = kπ'de g = 2: grafik asimptotu sonsuz kez keser. Yatay asimptot kesilebilir."
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "1.16",
+      "slug": "cb110",
+      "title": "Ara Değer Teoremi",
+      "en": "The Intermediate Value Theorem",
+      "accent": "#2FD6B9",
+      "seconds": 274,
+      "terms": [
+        "Intermediate Value Theorem (IVT)",
+        "Continuous on [a, b]",
+        "Closed interval",
+        "Intermediate value",
+        "Root (zero)",
+        "Sign change",
+        "At least one",
+        "Justification",
+        "Bisection",
+        "Fixed point"
+      ],
+      "questions": [
+        {
+          "q": "Bir parçacığın hızı v(t) sürekli ve tabloda bazı değerleri var. 0 ≤ t ≤ 8 aralığında v(t) = 4 en az kaç kez olur?",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "a": 2,
+          "why": "Her ardışık aralıkta 4, uç değerlerin arasında mı bak: [0, 2] 3 → 7 evet; [2, 4] 7 → 2 evet; [4, 6] 2 → 6 evet; [6, 8] 6 → 1 evet. IVT her aralıkta en az bir çözüm garanti eder: en az 4.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "t (s)",
+              "0",
+              "2",
+              "4",
+              "6",
+              "8"
+            ],
+            "rows": [
+              [
+                "v(t) (m/s)",
+                "3",
+                "7",
+                "2",
+                "6",
+                "1"
+              ]
+            ],
+            "caption": "v sürekli bir fonksiyon"
+          }
+        },
+        {
+          "q": "IVT, aşağıdakilerden hangisinde verilen aralıkta bir kök (sıfır) olduğunu garanti eder?",
+          "opts": [
+            "h(x) = x³ − 2x − 1, [1, 2]",
+            "f(x) = 1/x, [−1, 1]",
+            "g(x) = x² + 1, [−2, 2]",
+            "k(x) = tan x, [π/4, 3π/4]"
+          ],
+          "a": 0,
+          "why": "h polinom, sürekli; h(1) = −2 < 0 < 3 = h(2). f ve k'nın uçlarda işaret değişse de aralıkta süreksizlikleri var (x = 0 ve x = π/2); g'nin uç değerleri 5 ve 5, sıfır aralarında değil."
+        },
+        {
+          "q": "f, [2, 5]'te sürekli; f(2) = 6 ve f(5) = −1. Hangisi kesinlikle doğrudur?",
+          "opts": [
+            "f(3) = 4",
+            "f'nin (2, 5)'te en az bir kökü vardır",
+            "f, [2, 5]'te azalandır",
+            "f(x) = 7 denkleminin çözümü yoktur"
+          ],
+          "a": 1,
+          "why": "0, 6 ile −1 arasında; IVT ile f(c) = 0 olan bir c ∈ (2, 5) vardır. Teorem f(3)'ü, artış-azalışı söylemez; 7 aralığın dışında olduğu için IVT 7 hakkında bir şey demez (çözüm olabilir de)."
+        },
+        {
+          "q": "g(0) = −1 ve g(2) = 3, ama g(x) = 1 denkleminin [0, 2]'de hiç çözümü yok. Buna göre hangisi doğrudur?",
+          "opts": [
+            "IVT yanlıştır",
+            "IVT yalnız polinomlar için geçerlidir",
+            "1, −1 ile 3 arasında değildir",
+            "g, [0, 2]'de sürekli olamaz"
+          ],
+          "a": 3,
+          "why": "1, −1 ile 3 arasında. g sürekli olsaydı IVT bir çözüm garanti ederdi. Çözüm olmadığına göre g [0, 2]'de bir yerde süreksizdir (ör. sıçrama ile 1'i atlıyor)."
+        },
+        {
+          "q": "f, [1, 4]'te sürekli; f(1) = 5 ve f(4) = 3. Aşağıdakilerden hangisi IVT ile kesinlikle garanti edilir?",
+          "opts": [
+            "(1, 4)'te f(c) = 2c olan bir c vardır",
+            "(1, 4)'te f(c) = 6 olan bir c vardır",
+            "(1, 4)'te f(c) = 0 olan bir c vardır",
+            "(1, 4)'te f(c) = 2,5 olan bir c vardır"
+          ],
+          "a": 0,
+          "why": "g(x) = f(x) − 2x sürekli; g(1) = 5 − 2 = 3 > 0, g(4) = 3 − 8 = −5 < 0. IVT ile g(c) = 0, yani f(c) = 2c. 6, 0 ve 2,5 ise 3 ile 5 arasında değil; garanti yok."
+        }
+      ]
     }
   ],
   "final": []
