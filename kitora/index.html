@@ -72,6 +72,23 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:26px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 34px);margin-top:10px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
 .foot a:hover{color:var(--ink)}
+/* hesap kutusu */
+.acct{display:grid;gap:14px;max-width:640px;margin-bottom:clamp(22px,3vw,34px);padding:22px;border-radius:24px;background:var(--surface);border:1px solid var(--line)}
+.acct h2{font-size:22px;font-weight:700;letter-spacing:-.025em;line-height:1.15}
+.acct p{color:var(--ink-2);font-size:15px}
+.acct .sm{color:var(--muted);font-size:13.5px}
+.acct form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}
+.acct label{display:grid;gap:5px;font-size:13px;font-weight:600;color:var(--muted)}
+.acct input{width:100%;min-height:46px;padding:10px 14px;border-radius:12px;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+.acct input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.go{min-height:46px;padding:10px 20px;border-radius:999px;border:0;background:var(--accent);color:#17110C;font-weight:700;font-size:15px;cursor:pointer;white-space:nowrap}
+.go:disabled{opacity:.6}
+.ghost{min-height:40px;padding:8px 16px;border-radius:999px;border:1px solid var(--line-2);background:transparent;font-weight:600;font-size:14px;cursor:pointer}
+.ghost:hover{border-color:var(--ink-2)}
+.who{display:flex;flex-wrap:wrap;gap:8px}
+.msg{min-height:1.2em;font-size:13.5px;color:#FF9B85}
+.hi{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+@media (max-width:640px){.acct form{grid-template-columns:1fr}.go{justify-self:start}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -89,6 +106,8 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
     <p class="lead"><b>Sınav kitleri</b> AP sınavlarına ünite ünite hazırlar. <b>Cep kitleri</b> okul yazılıları için küçük, tek işe odaklı paketler. Ne kadar vaktin olduğuna göre aşağıdan seç.</p>
   </section>
 
+  <section class="acct" id="hesap" aria-live="polite"></section>
+
   <section class="need" aria-label="Ne lazım?">
     <p class="mono">Ne lazım?</p>
     <div class="modes" id="modes"></div>
@@ -103,6 +122,68 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   <a href="/ap/">Bütün AP üniteleri →</a>
 </footer>
 
+<script src="/ap/_kit/hesap.js?v=1"></script>
+<script>
+/* Hesap kutusu: bir kez ad + e-posta → hesap açılır; bu sekmede açılan her kit sormadan bu hesapla açılır */
+(function () {
+  var H = window.HESAP, box = document.getElementById("hesap");
+  if (!H || !box) { if (box) box.hidden = true; return; }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function form() {
+    var f = el("form"), nm = el("input"), em = el("input"), go = el("button", "go", "Hesabını aç"), msg = el("p", "msg"), l1 = el("label", null, "Ad"), l2 = el("label", null, "E-posta");
+    f.noValidate = true;
+    nm.type = "text"; nm.autocomplete = "given-name"; nm.maxLength = 40; nm.placeholder = "Adın";
+    em.type = "email"; em.autocomplete = "email"; em.inputMode = "email"; em.maxLength = 254; em.placeholder = "ornek@mail.com";
+    go.type = "submit";
+    l1.appendChild(nm); l2.appendChild(em);
+    f.appendChild(l1); f.appendChild(l2); f.appendChild(go);
+    msg.setAttribute("role", "status");
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ad = nm.value.trim(), mail = em.value.trim();
+      if (!ad) { msg.textContent = "Adını yaz."; nm.focus(); return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { msg.textContent = "E-posta adresi eksik ya da hatalı görünüyor."; em.focus(); return; }
+      go.disabled = true; go.textContent = "Açılıyor…"; msg.textContent = "";
+      H.giris(mail, ad).then(ciz, function () {
+        go.disabled = false; go.textContent = "Hesabını aç";
+        msg.textContent = "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
+      });
+    });
+    return [f, msg];
+  }
+  function ciz() {
+    box.textContent = "";
+    var a = H.aktif(), l = H.hesaplar();
+    if (a) {
+      var hi = el("div", "hi"), t = el("div");
+      t.appendChild(el("h2", null, "Merhaba, " + a.name));
+      t.appendChild(el("p", "sm", "Açtığın her kit bu hesapla açılır; ilerlemen kaydedilir."));
+      var b = el("button", "ghost", "Hesap değiştir"); b.type = "button";
+      b.addEventListener("click", function () { H.cikis(); ciz(); });
+      hi.appendChild(t); hi.appendChild(b); box.appendChild(hi);
+      return;
+    }
+    if (l.length) {
+      box.appendChild(el("h2", null, "Kim çalışıyor?"));
+      var w = el("div", "who");
+      l.forEach(function (p) {
+        var c = el("button", "ghost", p.name); c.type = "button";
+        c.addEventListener("click", function () { c.disabled = true; H.sec(p.id).then(ciz, ciz); });
+        w.appendChild(c);
+      });
+      box.appendChild(w);
+      var yeni = el("button", "ghost", "+ Yeni hesap"); yeni.type = "button"; yeni.style.justifySelf = "start";
+      yeni.addEventListener("click", function () { yeni.remove(); var x = form(); box.appendChild(el("p", "sm", "Başka cihazda açtığın hesap için de aynı e-postayı yaz.")); box.appendChild(x[0]); box.appendChild(x[1]); x[0].querySelector("input").focus(); });
+      box.appendChild(yeni);
+      return;
+    }
+    box.appendChild(el("h2", null, "Hesabını aç, ilerlemen kaybolmasın"));
+    box.appendChild(el("p", null, "Adını ve e-postanı bir kez yaz, yeter. Şifre ya da doğrulama yok; başka cihazdan aynı e-postayla girince kaldığın yerden devam edersin."));
+    var x = form(); box.appendChild(x[0]); box.appendChild(x[1]);
+  }
+  ciz();
+})();
+</script>
 <script>
 /* ==========================================================================
    CEP KİTLERİ — paketler buradan yönetilir.
