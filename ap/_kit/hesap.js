@@ -11,6 +11,7 @@
    ========================================================================== */
 (function () {
   "use strict";
+  if (window.HESAP) return;                               /* sayfada iki kez yüklendiyse ikinciyi atla */
   var API = "https://injjkkulpcvinrglzhjd.supabase.co/rest/v1/rpc/";
   var KEY = "sb_publishable_ESPPnGFiTXokLqmql-zPTg_siER2Hjp";   /* herkese açık anahtar; tablolar yalnızca fonksiyonlarla açılır */
   var P = "ap-hesap:v1:", LISTE = P + "hesaplar", AKTIF = P + "aktif", BEK = P + "bekleyen";
