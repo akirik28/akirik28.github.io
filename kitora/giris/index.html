@@ -40,6 +40,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .card h2{font-size:26px;font-weight:720;letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
 .sub{color:var(--muted);font-size:14.5px;margin-bottom:20px}
 form{display:grid;gap:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 label{display:grid;gap:6px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
 .field{position:relative}
 input{width:100%;min-height:50px;padding:12px 16px;border-radius:14px;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s}
@@ -104,7 +105,10 @@ input[aria-invalid="true"]{border-color:var(--bad)}
       <h2>Hesabını aç</h2>
       <p class="sub">Bir dakika sürer. İlerlemen hesabına kaydedilir.</p>
       <form novalidate data-mod="kayit">
-        <label>Adın<input name="ad" type="text" autocomplete="given-name" maxlength="40" placeholder="Adın" required></label>
+        <div class="row2">
+          <label>Adın<input name="ad" type="text" autocomplete="given-name" maxlength="20" placeholder="Adın" required></label>
+          <label>Soyadın<input name="soyad" type="text" autocomplete="family-name" maxlength="19" placeholder="Soyadın" required></label>
+        </div>
         <label>E-posta<input name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="ornek@mail.com" required></label>
         <label>Şifre<span class="field"><input name="sifre" type="password" autocomplete="new-password" maxlength="72" placeholder="En az 6 karakter" required><button type="button" class="eye" aria-label="Şifreyi göster">Göster</button></span><span class="hint">Başka cihazdan girerken bu şifreyi kullanacaksın.</span></label>
         <p class="msg" role="alert"></p>
@@ -161,9 +165,11 @@ input[aria-invalid="true"]{border-color:var(--bad)}
       e.preventDefault();
       if (!H) { msg.textContent = "Sayfa tam yüklenemedi. Yenileyip tekrar dene."; return; }
       var kayit = f.getAttribute("data-mod") === "kayit";
-      var ad = kayit ? f.ad.value.trim() : "", mail = f.email.value.trim(), sifre = f.sifre.value;
+      var ad = kayit ? f.ad.value.trim() : "", soyad = kayit ? f.soyad.value.trim() : "", mail = f.email.value.trim(), sifre = f.sifre.value;
       function hata(inp, t) { msg.textContent = t; if (inp) { inp.setAttribute("aria-invalid", "true"); inp.focus(); } }
       if (kayit && !ad) return hata(f.ad, "Adını yaz.");
+      if (kayit && !soyad) return hata(f.soyad, "Soyadını yaz.");
+      if (kayit) ad = ad + " " + soyad;                     /* hesapta "Ad Soyad" olarak saklanır */
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) return hata(f.email, "E-posta adresi eksik ya da hatalı görünüyor.");
       if (kayit && sifre.length < 6) return hata(f.sifre, "Şifre en az 6 karakter olmalı.");
       if (!kayit && !sifre) return hata(f.sifre, "Şifreni yaz.");
