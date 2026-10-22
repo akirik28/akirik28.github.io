@@ -25,7 +25,7 @@ body { background: #16130F radial-gradient(120% 80% at 50% 0%, #2A2219 0%, #1613
 
 /* ---------------- sayfa ---------------- */
 .d-root {
-  position: relative; max-width: 960px !important; margin: 10px auto 30px !important;
+  position: relative; width: auto !important; max-width: 960px !important; margin: 10px auto 30px !important;
   padding: 34px 44px 60px 104px !important;
   color: var(--nk); font-family: var(--note); font-size: 20px; line-height: var(--ln);
   background:
@@ -66,7 +66,7 @@ body { background: #16130F radial-gradient(120% 80% at 50% 0%, #2A2219 0%, #1613
 
 /* ---------------- ortak yazı ---------------- */
 .d-root .lead { font-family: var(--note); font-size: 21px; line-height: var(--ln); color: var(--nk); max-width: none; }
-.d-root .en { color: var(--pen); font-style: normal; font-weight: 400; }
+.d-root .en { color: var(--pen); font: inherit; font-style: normal; }
 .d-root b { color: inherit; font-weight: 700; }
 mark.hl { color: inherit; padding: 0 .18em; margin: 0 -.05em; border-radius: .8em .3em .9em .25em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
   background: linear-gradient(100deg, transparent .2em, rgba(255,228,92,.85) .35em, rgba(255,222,70,.95) 60%, rgba(255,228,92,.7) calc(100% - .3em), transparent) no-repeat 0 60% / 0% 78%;
@@ -451,3 +451,5 @@ mark.hl { color: inherit; padding: 0 .18em; margin: 0 -.05em; border-radius: .8e
   .dv, .d-term, .d-vs-c, .d-vs-c li, .d-tbl tbody tr, .d-fx-p, .d-fx-op, .d-map-n, .d-time li, .d-list li, .d-story .ln, .d-sec-h { opacity: 1 !important; transform: none !important; clip-path: none !important; }
   .d-ex-s li[hidden], .d-ex-r[hidden] { display: block !important; }
 }
+
+.d-root .mono { text-transform: none; letter-spacing: 0; }

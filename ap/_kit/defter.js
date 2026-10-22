@@ -726,7 +726,7 @@
   function sketchFilter() {
     if (document.getElementById("d-kaba")) return;
     var s2 = sv("svg", { width: 0, height: 0, style: "position:absolute", "aria-hidden": "true" });
-    s2.innerHTML = '<defs><filter id="d-kaba" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></defs>';
+    s2.innerHTML = '<defs><filter id="d-kaba" filterUnits="userSpaceOnUse" x="-80" y="-80" width="3000" height="3000"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></defs>';
     document.body.appendChild(s2);
   }
   function start() {
