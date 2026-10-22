@@ -291,6 +291,198 @@ window.KIT = {
           "why": "f(x) = x² − 3x'in tamamı çıkarılmalı: −(x² − 3x) = −x² + 3x. O zaman pay 2xh + h² − 3h, h'ye bölüp h → 0: 2x − 3. Öğrencinin yazdığıyla −6x sabit terimi kalır ve h'ye bölünce limit sonsuza kaçar."
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "2.3",
+      "slug": "cb203",
+      "title": "Türevi Tahmin Etmek",
+      "en": "Estimating Derivatives",
+      "accent": "#58C9FF",
+      "seconds": 267,
+      "terms": [
+        "Estimate",
+        "Difference quotient",
+        "Secant line",
+        "Tangent line",
+        "Units",
+        "Differentiable",
+        "Graph of f′",
+        "Numerical derivative",
+        "Calculator active"
+      ],
+      "questions": [
+        {
+          "q": "Bir fırının sıcaklığı H(t) (°C), t dakika olmak üzere tabloda verilmiştir. H türevlenebilir. H′(5) için en iyi tahmin hangisidir?",
+          "opts": [
+            "16 °C/dakika",
+            "40 °C/dakika",
+            "20 °C/dakika",
+            "30 °C/dakika"
+          ],
+          "a": 2,
+          "why": "5'i içine alan en dar aralık [4, 6]: (140 − 100)/(6 − 4) = 40/2 = 20 °C/dakika. 16, bütün aralığın ortalaması ((180 − 20)/10); 40 ise bölmeyi unutmak.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "t (dakika)",
+              "0",
+              "4",
+              "6",
+              "10"
+            ],
+            "rows": [
+              [
+                "H(t) (°C)",
+                "20",
+                "100",
+                "140",
+                "180"
+              ]
+            ],
+            "caption": "Fırının sıcaklığı"
+          }
+        },
+        {
+          "q": "f'nin grafiği iki doğru parçasından oluşuyor. f′(4) kaçtır?",
+          "opts": [
+            "4",
+            "−1/2",
+            "1/2",
+            "−2"
+          ],
+          "a": 1,
+          "why": "x = 4, (2, 5)'ten (6, 3)'e giden parçanın üzerinde. Doğru parçasında türev, parçanın eğimidir: (3 − 5)/(6 − 2) = −1/2. 4 ise f(4)'tür, eğim değil.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 7,
+            "ymax": 6,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  2,
+                  5
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  5
+                ],
+                "to": [
+                  6,
+                  3
+                ],
+                "label": "f"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 1,
+                "label": "(0, 1)"
+              },
+              {
+                "q": 2,
+                "p": 5,
+                "label": "(2, 5)"
+              },
+              {
+                "q": 6,
+                "p": 3,
+                "label": "(6, 3)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 5,
+                "label": "5"
+              }
+            ],
+            "caption": "f'nin grafiği"
+          }
+        },
+        {
+          "q": "f′'nin grafiği x = 1'de x eksenini yukarıdan aşağıya doğru kesiyor (x < 1 için f′ > 0, x > 1 için f′ < 0). f için x = 1 civarında hangisi doğrudur?",
+          "opts": [
+            "f, x = 1'de bir tepe yapar: önce artar, sonra azalır",
+            "f, x = 1'de bir çukur yapar: önce azalır, sonra artar",
+            "f(1) = 0'dır",
+            "f, x = 1'in iki yanında da azalandır"
+          ],
+          "a": 0,
+          "why": "f′ > 0 iken f artar, f′ < 0 iken f azalır. Önce artıp sonra azalan fonksiyon x = 1'de tepe yapar; orada teğet yataydır (f′(1) = 0). f′(1) = 0 olması f(1) = 0 demek değildir."
+        },
+        {
+          "q": "Hesap makinesi serbest. f(x) = x·eˣ ise f′(1)'in üç ondalık basamaklı değeri nedir?",
+          "opts": [
+            "2.718",
+            "5.437",
+            "8.155",
+            "1.000"
+          ],
+          "a": 1,
+          "why": "Hesap makinesinin sayısal türevi: d/dx(x·eˣ) x = 1'de ≈ 5.437 (tam değeri 2e; çarpım kuralını cb208'de göreceğiz). 2.718 ise f(1) = e'dir, türev değil."
+        },
+        {
+          "q": "f, x = 6'da sıçrama yapan parçalı bir fonksiyon; x ≥ 6 için sağ parça geçerli ve türevlenebilir. Tablodaki verilerle f′(6,5) için uygun tahmin hangisidir?",
+          "opts": [
+            "1,27",
+            "2,3",
+            "0",
+            "−0,8"
+          ],
+          "a": 3,
+          "why": "Sıçramanın iki yanını birleştirmek yanlış olur. Sağ parçadaki noktaları kullan: (f(7) − f(6))/(7 − 6) = (4,2 − 5)/1 = −0,8 ([6, 6,5] ve [6,5, 7] de −0,8 verir). 1,27, sıçramanın üstünden atlayan (4,2 − 2,3)/1,5'tir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "5",
+              "5,5",
+              "6",
+              "6,5",
+              "7"
+            ],
+            "rows": [
+              [
+                "f(x)",
+                "2,0",
+                "2,3",
+                "5",
+                "4,6",
+                "4,2"
+              ]
+            ],
+            "caption": "x = 6'da sıçrama: f(6) = 5 sağ parçaya ait"
+          }
+        }
+      ]
     }
   ],
   "final": []
