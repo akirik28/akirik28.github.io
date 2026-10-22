@@ -1198,6 +1198,83 @@ window.KIT = {
           "why": "Pay \"alt çarpı üstün türevi eksi üst çarpı altın türevi\": (x + 1)(2x) − x²(1) = x² + 2x. Öğrencinin sırası tersti; bu yüzden işaret tam tersi çıkar (ilk şık)."
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "2.10",
+      "slug": "cb210",
+      "title": "tan x, cot x, sec x ve csc x'in Türevleri",
+      "en": "Derivatives of tan x, cot x, sec x, and csc x",
+      "accent": "#2FD6B9",
+      "seconds": 272,
+      "terms": [
+        "Derivative of tan x",
+        "Derivative of sec x",
+        "Derivative of cot x",
+        "Derivative of csc x",
+        "Quotient rule",
+        "Pythagorean identity",
+        "Unit circle",
+        "Tangent line",
+        "Horizontal tangent"
+      ],
+      "questions": [
+        {
+          "q": "y = 2 tan x − sec x ise x = 0'da dy/dx kaçtır?",
+          "opts": [
+            "1",
+            "0",
+            "3",
+            "2"
+          ],
+          "a": 3,
+          "why": "y′ = 2 sec² x − sec x tan x. x = 0'da sec 0 = 1, tan 0 = 0: 2 · 1 − 1 · 0 = 2."
+        },
+        {
+          "q": "y = cos x/(1 + sin x) ise y′ hangisine sadeleşir?",
+          "opts": [
+            "1/(1 + sin x)",
+            "−1/(1 + sin x)",
+            "−sin x/cos x",
+            "−1/(1 + sin x)²"
+          ],
+          "a": 1,
+          "why": "*Quotient rule*: [(1 + sin x)(−sin x) − cos x · cos x]/(1 + sin x)² = (−sin x − sin² x − cos² x)/(1 + sin x)² = −(1 + sin x)/(1 + sin x)² = −1/(1 + sin x). sin² x + cos² x = 1 kullanıldı."
+        },
+        {
+          "q": "y = sec x eğrisinin x = π/3'teki teğet doğrusu hangisidir?",
+          "opts": [
+            "y − 2 = 2√3(x − π/3)",
+            "y − 2 = √3(x − π/3)",
+            "y − 1/2 = 2√3(x − π/3)",
+            "y − 2 = 4(x − π/3)"
+          ],
+          "a": 0,
+          "why": "cos(π/3) = 1/2 ⇒ sec(π/3) = 2 (nokta). Eğim sec x tan x = 2 · √3 = 2√3. 4 ise sec²(π/3): tanjantın türevini sekanta uygulamak."
+        },
+        {
+          "q": "lim (h → 0) [cot(π/4 + h) − 1]/h kaçtır?",
+          "opts": [
+            "2",
+            "−1",
+            "−2",
+            "Limit yoktur"
+          ],
+          "a": 2,
+          "why": "cot(π/4) = 1, yani bu cot x'in π/4'teki türevi: −csc²(π/4) = −(√2)² = −2. \"Ko\"lu fonksiyonun türevinde eksi var."
+        },
+        {
+          "q": "f(x) = eˣ tan x ise f′(0) kaçtır?",
+          "opts": [
+            "1",
+            "0",
+            "2",
+            "e"
+          ],
+          "a": 0,
+          "why": "*Product rule*: f′(x) = eˣ tan x + eˣ sec² x. x = 0'da 1 · 0 + 1 · 1 = 1."
+        }
+      ]
     }
   ],
   "final": []
