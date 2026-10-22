@@ -22,7 +22,7 @@
   var gun = new Date().toISOString().slice(0, 10).replace(/-/g, "");   /* günde bir önbellek tazelemesi */
   window.CERCEVE = { v2: location.href, kok: KOK, taban: KOK + yol + "defter/", u: p.get("u") || "", b: b, misafir: p.get("misafir") === "1" };
   if (p.get("tema") === "koyu") document.documentElement.setAttribute("data-tema", "koyu");
-  var hesap = new URL("../assets/hesap.js?v=21", location.href).href;
+  var hesap = new URL("../assets/hesap.js?v=22", location.href).href;
   var w = [];
   w.push('<base href="' + window.CERCEVE.taban + '">');
   w.push('<link rel="stylesheet" href="/assets/fonts/fonts.css">');

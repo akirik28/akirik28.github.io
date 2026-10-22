@@ -164,17 +164,14 @@
       '<a href="' + ROOT + 'notlarim/"' + (active === "notlarim" ? ' aria-current="page"' : "") + '>Notlarım</a>' +
       '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a></nav>';
     var html = "";
-    if (v === "public") {
-      html = '<div class="k-header__left">' + brand + '<nav class="nav" aria-label="Ana menü"><a href="' + ROOT + 'index.html#sinav">Sınav Kitleri</a><a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a><a href="' + ROOT + 'index.html#cep">Cep Kitleri</a></nav></div>' +
-        '<div class="k-header__right">' + toggleBtn + (HESAPLI
-          ? '<a class="btn btn--primary btn--sm" href="' + ROOT + 'panel/">Panelim</a>' + avatar
-          : '<a class="btn btn--link hide-sm" href="' + ROOT + 'giris/?mod=giris">Giriş yap</a><a class="btn btn--primary btn--sm" href="' + ROOT + 'giris/">Hesap aç</a>') + '</div>';
-    } else if (v === "app") {
-      html = '<div class="k-header__left">' + brand + appNav + '</div><div class="k-header__right">' + streak + toggleBtn + avatar + '</div>';
-    } else if (v === "unit") {
-      var guest = !HESAPLI;
-      html = '<div class="k-header__left">' + brand + '<nav class="crumbs hide-sm" aria-label="Konum"><a href="' + ROOT + 'index.html#sinav">SINAV KİTLERİ</a><span aria-hidden="true">/</span><span>' + esc(body.dataset.crumb || "MACROECONOMICS") + '</span><span aria-hidden="true">/</span><span aria-current="page">' + esc(body.dataset.crumbUnit || "UNIT 1") + '</span></nav></div>' +
-        '<div class="k-header__right">' + (guest ? toggleBtn + '<a class="btn btn--primary btn--sm" href="' + ROOT + 'giris/">Hesap aç</a>' : streak + toggleBtn + avatar) + '</div>';
+    /* tek menü: giriş yapılmışsa her sayfada aynı uygulama menüsü, yapılmamışsa aynı herkese açık menü */
+    if (v === "public" || v === "app" || v === "unit") {
+      var acikNav = '<nav class="nav" aria-label="Ana menü">' +
+        '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a>' +
+        '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a></nav>';
+      html = HESAPLI
+        ? '<div class="k-header__left">' + brand + appNav + '</div><div class="k-header__right">' + streak + toggleBtn + avatar + '</div>'
+        : '<div class="k-header__left">' + brand + acikNav + '</div><div class="k-header__right">' + toggleBtn + '<a class="btn btn--link hide-sm" href="' + ROOT + 'giris/?mod=giris">Giriş yap</a><a class="btn btn--primary btn--sm" href="' + ROOT + 'giris/">Hesap aç</a></div>';
     } else if (v === "admin") {
       html = '<div class="k-header__left">' + brand + '<span class="badge-admin">YÖNETİM</span></div><div class="k-header__right">' + toggleBtn + '<a class="btn btn--ghost btn--sm" href="' + ROOT + 'panel/">Öğrenci görünümü</a></div>';
     } else if (v === "plain") {
@@ -280,8 +277,6 @@
     var ders = C.DERSLER[k.ders], col = COLORS[ders.renk || ders.art];
     var main = $("main");
     if (col !== COLORS.macro) body.style.setProperty("--macro", col);
-    body.dataset.crumb = ders.title.toUpperCase();
-    body.dataset.crumbUnit = "UNIT " + k.unit;
     header();
     var gb = $('[data-k="guest-bar"]');
     if (gb) gb.hidden = HESAPLI;
@@ -854,7 +849,6 @@
   function trSade(s) { return String(s || "").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i"); }
   pages.defterler = function () {
     if (!C || !window.KDEFTER) return;
-    if (!HESAPLI) { var hd = $('[data-k="header"]'); hd.dataset.variant = "public"; header(); }
     var kok = $('[data-k="df-kok"]'), uid = param("u"), slug = param("b");
     var u = uid ? C.defterUnite(uid) : null;
     if (engelKontrol()) return;
