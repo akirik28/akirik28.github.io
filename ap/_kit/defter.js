@@ -40,7 +40,9 @@
   var EPS = KIT.episodes || [];
   if (!KIT.store) KIT.store = "hg-kit:v2:";                 /* kit.js ile aynı varsayılanlar (Human Geography) */
   var COURSE = KIT.course || "Human Geography", UNIT = KIT.unitLabel || "Unit 1";
-  var APC = /^AP\b/.test(COURSE) ? COURSE : "AP " + COURSE;
+  var APC = KIT.okul || /^AP\b/.test(COURSE) ? COURSE : "AP " + COURSE;
+  /* KIT.okul: okul dersi (AP değil); KIT.not: başlıkta gösterilen kısa not (ör. "Geçen yılın müfredatına göre") */
+  var NOT = KIT.not || "";
   /* KIT.kitYok: bu ünitenin video kiti yok; liste defter/defter-liste.js'ten gelir, sorular defter dosyasındadır (DEFTER.sorular) */
   var KY = !!KIT.kitYok, HUB = "/ap/defterler/";
   var H = window.HESAP || null;
@@ -141,6 +143,7 @@
     var hero = el("section", { class: "d-hero" }, [
       el("p", { class: "eyebrow mono", lang: "en", text: APC + " · " + UNIT }),
       el("h1", { class: "d-hand" }, [el("span", { text: "Not defterleri" })]),
+      NOT ? el("p", { class: "d-not", text: NOT }) : null,
       el("p", { class: "lead", text: KY ? "Her konu için tek sayfalık bir defter: hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzakları. Her defterin sonunda beş soru var." : "Video izlemeden çalışmak isteyenler için: her bölüm, hareketli şekiller, kavram kartları, adım adım örnekler ve sınav tuzaklarıyla tek sayfalık bir defter. Defterin sonundaki sorular kitteki ilerlemene sayılır." })
     ]);
     var grid = el("div", { class: "d-grid" });
@@ -202,6 +205,7 @@
       ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
+      NOT ? el("p", { class: "d-not", text: NOT }) : null,
       el("div", { class: "d-about" }, [
         el("p", { class: "d-about-k", text: "Bu defterde" }),
         el("p", { class: "d-about-t", html: md(D.amac || D.ozet || "") }),
@@ -630,15 +634,43 @@
       if (o.tip === "cizgi") { g.firstChild.setAttribute("d", "M" + X(o.from[0]) + " " + Y(o.from[1]) + " L" + X(o.to[0]) + " " + Y(o.to[1])); end = o.to; }
       else if (o.tip === "egri") { g.firstChild.setAttribute("d", smooth(o.noktalar)); end = o.noktalar[o.noktalar.length - 1]; }
       else if (o.tip === "ppc") { p = ppcPts(o); g.firstChild.setAttribute("d", "M" + p.map(function (q) { return X(q[0]) + " " + Y(q[1]); }).join(" L")); end = [o.qmax * 0.72, o.pmax * 0.72]; }
-      if (end) { var t = g.lastChild; t.textContent = plain(o.etiket); t.setAttribute("x", X(end[0]) + 6); t.setAttribute("y", Y(end[1]) - 6); }
+      if (end) { var t = g.lastChild; t.textContent = plain(o.etiket); t.setAttribute("x", X(end[0]) + 6); t.setAttribute("y", Y(end[1]) - 6); t.setAttribute("text-anchor", "start"); }
       if (o.tip === "alan") g.firstChild.setAttribute("d", "M" + o.noktalar.map(function (q) { return X(q[0]) + " " + Y(q[1]); }).join(" L") + "Z");
       if (o.tip === "ok") g.firstChild.setAttribute("d", "M" + X(o.from[0]) + " " + Y(o.from[1]) + " L" + X(o.to[0]) + " " + Y(o.to[1]));
       if (o.tip === "nokta") {
         g.childNodes[0].setAttribute("d", o.kilavuz ? "M" + X(0) + " " + Y(o.y) + " H" + X(o.x) + " V" + Y(0) : "");
         g.childNodes[1].setAttribute("cx", X(o.x)); g.childNodes[1].setAttribute("cy", Y(o.y));
-        var lb = g.childNodes[2]; lb.textContent = plain(o.etiket); lb.setAttribute("x", X(o.x) + 10); lb.setAttribute("y", Y(o.y) - 10);
+        var lb = g.childNodes[2]; lb.textContent = plain(o.etiket); lb.setAttribute("x", X(o.x) + 10); lb.setAttribute("y", Y(o.y) - 10); lb.setAttribute("text-anchor", "start");
       }
       if (o.tip === "yazi") { var tx = g.firstChild; tx.textContent = plain(o.metin); tx.setAttribute("x", X(o.x)); tx.setAttribute("y", Y(o.y)); tx.setAttribute("text-anchor", o.hiza || "middle"); }
+    }
+    /* etiket yerleşimi: kenardan taşanı içeri al, üst üste binenleri dikeyde kaydır */
+    function yerlesim() {
+      if (!svg.isConnected) return;
+      var engel = [], L = [];
+      [].forEach.call(svg.querySelectorAll(".g-tk, .g-al"), function (t) { if (t.textContent && !t.getAttribute("transform")) engel.push(t.getBBox()); });
+      order.forEach(function (id) {
+        if (nodes[id].classList.contains("off")) return;
+        [].forEach.call(nodes[id].querySelectorAll("text"), function (t) { if (t.textContent) { t.removeAttribute("dy"); L.push(t); } });
+      });
+      function carp(a, dy) {
+        return engel.some(function (q) { return a.x < q.x + q.width - 3 && q.x < a.x + a.width - 3 && a.y + dy < q.y + q.height - 3 && q.y < a.y + dy + a.height - 3; });
+      }
+      L.forEach(function (t) {
+        var b = t.getBBox();
+        if (b.x + b.width > W - 2) { t.setAttribute("text-anchor", "end"); t.setAttribute("x", W - 2); }
+        else if (b.x < 2) { t.setAttribute("text-anchor", "start"); t.setAttribute("x", 2); }
+        b = t.getBBox();
+        var h = b.height * 0.45, adim = [0], dy = 0, k;
+        for (k = 1; k <= 14; k++) adim.push(k * h, -k * h);
+        for (k = 0; k < adim.length; k++) {
+          var d = adim[k];
+          if (b.y + d < 0 || b.y + b.height + d > Hh) continue;
+          if (!carp(b, d)) { dy = d; break; }
+        }
+        if (dy) t.setAttribute("dy", dy);
+        engel.push({ x: b.x, y: b.y + dy, width: b.width, height: b.height });
+      });
     }
     var shown = -1, raf = 0;
     function go(i, instant) {
@@ -660,6 +692,7 @@
         if (t0 == null) t0 = t;
         var p = dur ? Math.min(1, (t - t0) / dur) : 1, e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
         order.forEach(function (id) { paint(mix(from && from.o[id], to.o[id], e), nodes[id]); });
+        yerlesim();
         if (p < 1) raf = requestAnimationFrame(f);
       }
       raf = requestAnimationFrame(f);
@@ -684,6 +717,7 @@
     order.forEach(function (id) { nodes[id].classList.add("pre"); });
     return watch(wrap, function () {
       order.forEach(function (id) { nodes[id].classList.remove("pre"); nodes[id].classList.add("drawn"); });
+      if (shown >= 0) { order.forEach(function (id) { paint(full[shown].o[id], nodes[id]); }); yerlesim(); }
       if (full.length > 1 && !RM) { play.classList.add("on"); auto(); }
     });
   };

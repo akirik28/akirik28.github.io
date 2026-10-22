@@ -518,3 +518,7 @@ html[data-tema="koyu"] .d-lock .btn.primary { background: var(--nk); color: #1F2
   color: #F3EBD6; border: 1.5px solid rgba(243,235,214,.45); border-radius: var(--sk); transition: background .2s, transform .2s; }
 .d-tema:hover { background: rgba(255,255,255,.08); transform: rotate(-2deg); }
 .d-tema:focus-visible { outline: 2px solid #8DB6FF; outline-offset: 2px; }
+
+/* okul dersleri: "geçen yılın müfredatına göre" notu */
+.d-not { display: inline-block; margin: 6px 0 0; padding: 0 10px; font-family: var(--hand); font-size: 20px; color: var(--rd); border: 2px dashed var(--rd); border-radius: var(--sk); }
+.d-list-v .d-not { color: #FF9C9C; border-color: #FF9C9C; }

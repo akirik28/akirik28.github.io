@@ -45,7 +45,7 @@ window.DEFTER = {
           ] },
         { tip: "grafik", baslik: "Mesafe aynı, süre kısalır", xlabel: "Teknoloji", ylabel: "Ulaşma süresi", xmax: 5, ymax: 10,
           xticks: [{ v: 1, label: "Gemi" }, { v: 2, label: "Uçak" }, { v: 3, label: "Telefon" }, { v: 4, label: "İnternet" }],
-          yticks: [{ v: 9, label: "haftalar" }, { v: 5, label: "saatler" }, { v: 1, label: "saniye" }],
+          yticks: [{ v: 9, label: "hafta" }, { v: 5, label: "saatler" }, { v: 1, label: "saniye" }],
           ogeler: [
             { id: "e", tip: "egri", renk: 0, noktalar: [[1, 9], [2, 5], [3, 1.4], [4, 0.8]], gizli: true },
             { id: "p1", tip: "nokta", x: 1, y: 9, etiket: "Gemiyle mektup", kilavuz: true, gizli: true },
