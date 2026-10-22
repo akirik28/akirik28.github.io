@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AP Calculus BC · Unit 1 · Kitora</title>
+<meta name="description" content="AP Calculus BC Unit 1 için çalışma kiti: kısa animasyonlu videolar, her videonun ardından beş soru ve gitgide zorlaşan beş süreli deneme.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="canonical" href="https://akirik28.github.io/ap/calculus-bc/unit-1/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AP Calculus BC Çalışma Kiti">
+<meta property="og:description" content="AP Calculus BC · Unit 1 — Limits and Continuity. Video, sorular, deneme sınavı.">
+<link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/ap/_kit/kit.css?v=15">
+</head>
+<body>
+
+<a class="skip-link" href="#sahne">İçeriğe geç</a>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="top wrap">
+  <a class="back" href="/ap/"><span aria-hidden="true">←</span> AP kitleri</a>
+  <div class="top-r">
+    <span class="mono top-meta" id="topMeta"></span>
+    <!-- etkin profil + değiştirici (kit.js doldurur) -->
+    <div class="who-box" id="whoBox" hidden>
+      <button class="who-btn" id="whoBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="whoMenu"><span id="whoName"></span> <span aria-hidden="true">▾</span></button>
+      <div class="who-menu" id="whoMenu" hidden></div>
+    </div>
+  </div>
+</header>
+
+<noscript>
+  <div class="wrap"><div class="card note"><p>Bu sayfa videoları, soruları ve ilerlemeni göstermek için JavaScript kullanır. Tarayıcında JavaScript'i açıp sayfayı yenile.</p></div></div>
+</noscript>
+
+<!-- ===================== KİM ÇALIŞIYOR? (profil seçimi) ===================== -->
+<section class="who wrap" id="kim" hidden aria-labelledby="kimT">
+  <p class="eyebrow mono" lang="en">AP Calculus BC · Unit 1 — Limits and Continuity</p>
+  <h1 id="kimT" tabindex="-1">Kim <em class="serif">çalışıyor?</em></h1>
+  <div class="who-list" id="kimList"></div>
+  <p class="fine">İlerlemen hesabına kaydedilir. Başka cihazdan aynı e-postayla girince kaldığın yerden devam edersin.</p>
+</section>
+
+<main class="wrap" id="kit" hidden>
+
+  <!-- ===================== GİRİŞ ===================== -->
+  <section class="hero" aria-labelledby="baslik">
+    <p class="eyebrow mono" lang="en">AP Calculus BC · Unit 1 — Limits and Continuity</p>
+    <h1 id="baslik"><span lang="en">Calculus BC</span> <em class="serif">Çalışma Kiti</em></h1>
+    <p class="lead">Kısa animasyonlu videolarla AP Calculus BC Unit 1: limitin ne olduğundan grafik, tablo ve cebirle limite, <span lang="en">squeeze theorem</span>'den süreklilik ve asimptotlara, <span lang="en">Intermediate Value Theorem</span>'e. Her videoda adım adım çözülen AP tarzı bir örnek, ardından beş soru.</p>
+
+    <div class="hero-row">
+      <dl class="stats" aria-label="Genel ilerleme">
+        <div><dt id="stCh">0</dt><dd>bölüm tamamlandı</dd></div>
+        <div><dt id="stOk">0</dt><dd>doğru · Kendini dene</dd></div>
+        <!-- ödev kutusu: bu derste ödev yok, kit.js gizli bırakır -->
+        <div id="stHwBox" hidden><dt id="stHw">0</dt><dd id="stHwL">doğru · ödev</dd></div>
+        <div><dt id="stEx">—</dt><dd>deneme sınavı</dd></div>
+      </dl>
+      <div class="hero-cta">
+        <button class="btn primary" id="resume" type="button">Kaldığın yerden devam et <i aria-hidden="true">→</i></button>
+        <p class="fine" id="resumeHint"></p>
+      </div>
+    </div>
+
+    <div class="bar" id="bar" role="progressbar" aria-label="Genel ilerleme" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="barFill"></i></div>
+  </section>
+
+  <!-- ===================== BÖLÜMLER + SAHNE ===================== -->
+  <div class="layout">
+    <nav class="steps" aria-label="Bölümler ve deneme sınavı">
+      <p class="mono steps-t">Bölümler</p>
+      <ol id="navList"></ol>
+    </nav>
+
+    <section class="stage" id="sahne" aria-label="Seçili bölüm"></section>
+  </div>
+
+</main>
+
+<footer class="foot wrap">
+  <p class="credit">Bölümler, AP Calculus BC Unit 1 konu sırasını izler. Ses efektleri: Pixabay.</p>
+  <div class="foot-r">
+    <span class="reset" id="resetBox" hidden>
+      <button class="linkish" id="reset" type="button">İlerlemeyi sıfırla</button>
+    </span>
+    <a class="linkish" href="/ap/">AP kitleri</a>
+    <a class="linkish" href="/kitora/">Kitora</a>
+  </div>
+</footer>
+
+<script src="/assets/js/motion.js"></script>
+<script src="kit-data.js?v=1"></script>
+<script src="/ap/_kit/figs.js?v=4"></script>
+<script src="/ap/_kit/hesap.js?v=6"></script>
+<script src="/ap/_kit/kit.js?v=21"></script>
+</body>
+</html>
