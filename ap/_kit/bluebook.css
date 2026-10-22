@@ -81,9 +81,9 @@ h2{font-size:20px;margin:26px 0 8px}
 .facts b{display:block;font-size:24px}
 .facts span{font-size:13px;color:#444}
 ul.how{padding-left:20px;line-height:1.6;font-size:15.5px}
-.names{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
-.names button{border:1.5px solid #333;background:#fff;border-radius:999px;padding:6px 16px;font-weight:600}
-.names button.on{background:#1E1E1E;color:#fff}
+.who-line{font-size:14.5px;color:#444;margin:6px 0 14px}
+.who-line b{color:#1E1E1E}
+.who-line a{color:#1E1E1E;font-weight:700}
 .score{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .score b{font-size:56px;line-height:1}
 .score span{font-size:18px;color:#444}

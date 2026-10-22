@@ -429,3 +429,14 @@ html.hg-wide .top, html.hg-wide .glow { visibility: hidden; }
 .who-back[hidden] { display: none; }
 .who-all { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 10px; color: var(--muted); }
 @media (max-width: 520px) { .top-meta { display: none; } }
+
+/* misafir: kilitli bölümler (zincir + kilit) */
+.nav-b.locked { color: color-mix(in oklab, var(--muted) 70%, transparent); }
+.nav-b.locked .nav-t { opacity: .75; }
+.nav-lock { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lock-view { display: grid; justify-items: center; text-align: center; gap: 12px; padding: clamp(28px, 5vw, 56px) clamp(18px, 4vw, 40px); border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); }
+.lock-view .ch-no { justify-content: center; }
+.lock-art { width: min(220px, 60%); color: var(--accent); margin-bottom: 6px; }
+.lock-art svg { display: block; width: 100%; height: auto; }
+.lock-t { max-width: 520px; color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.lock-acts { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 8px 0 4px; }

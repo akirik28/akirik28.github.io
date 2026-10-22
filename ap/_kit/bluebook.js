@@ -30,7 +30,6 @@
 
   /* Hesaplar kit ile ortaktır (_kit/hesap.js): bu cihazda açılmış hesaplar ve sekmede etkin olan */
   var H = window.HESAP || null;
-  function profiles() { return H ? H.hesaplar() : []; }
 
   var app = document.getElementById("app");
   if (!app) return;
@@ -111,11 +110,10 @@
     for (k = 1; k <= 5; k++) s += '<i' + (k <= v ? ' class="on"' : '') + '></i>';
     return s + '</span>';
   }
-  function names() {
-    var s = '<div class="names">', k, p, l = profiles();
-    if (!l.length) return '<p class="note">Sonucun kaydedilsin diye önce <a href="../">çalışma kitinde</a> adını ve e-postanı yazıp hesabını aç.</p>';
-    for (k = 0; k < l.length; k++) { p = l[k]; s +='<button data-act="who" data-id="' + h(p.id) + '" class="' + (pid === p.id ? "on" : "") + '" aria-pressed="' + (pid === p.id) + '">' + h(p.name) + '</button>'; }
-    return s + '</div>';
+  /* giriş yapan hesap: tek satır; hesap değiştirmek için Kitora'dan çıkış yapılır */
+  function whoLine() {
+    return pid ? '<p class="who-line">Sonuçlar <b>' + h(nameOf(pid)) + '</b> hesabına kaydedilir.</p>'
+               : '<p class="who-line">Sonucun kaydedilsin diye <a href="/kitora/giris/?devam=' + encodeURIComponent(location.pathname + location.search) + '">giriş yap</a>.</p>';
   }
 
   var BM = '<svg viewBox="0 0 16 18" aria-hidden="true"><path d="M2.5 1.5h11v15L8 12.5l-5.5 4z"/></svg>';
@@ -157,9 +155,8 @@
     return top(false) + '<main class="main">' +
       '<h1>Denemeler</h1>' +
       '<p class="lead"><span class="unit" lang="en">' + h(UNIT) + '</span>' + (UNIT ? '. ' : '') + 'Süreli ve İngilizce ' + TESTS.length + ' deneme; ekran, gerçek dijital sınavdaki gibi çalışır.</p>' +
-      '<div class="card"><b>Sınava kim giriyor?</b>' + names() +
-      '<p class="note">Sonuçlar ve süren denemeler seçtiğin isme göre gösterilir.</p></div>' +
-      '<h2>' + h(who()) + ' için denemeler</h2>' +
+      whoLine() +
+      '<h2>Denemelerin</h2>' +
       '<ol class="tests">' + cards + '</ol>' +
       '<p class="note">Denemeler giderek zorlaşır; sırayla çözmen önerilir. Hepsi açık, istediğinden başlayabilirsin.</p>' +
       '<div class="acts"><a class="btn ghost" href="../">Çalışma kitine dön</a></div>' +
@@ -178,7 +175,7 @@
       '<div class="facts"><div><b>' + N + '</b><span>çoktan seçmeli soru' + (same ? ', ' + Q[0].o.length + ' şıklı' : '') + ', İngilizce</span></div>' +
       '<div><b>' + MIN + ' dk</b><span>süre; bitince kendiliğinden teslim edilir</span></div>' +
       '<div><b>' + (per >= 60 ? (Math.round(per / 6) / 10 + " dk").replace(".", ",") : per + " sn") + '</b><span>soru başına ortalama</span></div></div>' +
-      '<div class="card"><b>Sınava kim giriyor?</b>' + names() +
+      '<div class="card">' + whoLine() +
       '<ul class="how"><li><b>Mark for Review:</b> emin olmadığın soruyu işaretle, sonra dön.</li><li><b>ABC düğmesi:</b> şık elemeyi açar; elediğin şıkkın üstü çizilir.</li><li><b>Question … of ' + N + ':</b> soru haritasını açar, istediğin soruya atlarsın.</li><li>Klavye: A–' + L.charAt(T.maxO - 1) + ' şık seçer, ← → sorular arasında gezer.</li><li>Cevaplar ve açıklamalar teslimden sonra gösterilir. Süre, sayfayı kapatsan da işlemeye devam eder.</li></ul>' +
       '<div class="acts"><button class="btn" data-act="start">Sınavı başlat</button><a class="btn ghost" href="./">Denemeler</a></div></div>' +
       '</main>';

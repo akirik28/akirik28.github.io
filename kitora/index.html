@@ -134,6 +134,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   document.addEventListener("click", function (e) {
     var a = e.target.closest ? e.target.closest("#raf a[href], .foot a[href]") : null;
     if (!a || H.aktif() || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (/^\/ap\/[^/]+\/unit-\d+\/$/.test(a.getAttribute("href"))) return;   /* çalışma kitleri hesapsız açılır: ilk bölüm ücretsiz */
     e.preventDefault();
     location.assign(girisUrl(a.getAttribute("href")));
   });

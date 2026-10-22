@@ -375,11 +375,57 @@
     drawNav();
   }
 
+  /* misafir (hesapsız): yalnızca ilk bölüm açık; gerisi zincirli kilitle görünür */
+  function isGuest() { return !!(active && active.misafir); }
+  function locked(view) { return isGuest() && view !== 0; }
+  function loginUrl(view, kayit) {
+    var d = window.location.pathname + (view == null ? "" : "#" + (view >= N ? "sinav" : EPS[view].slug));
+    return "/kitora/giris/?" + (kayit ? "mod=kayit&" : "") + "devam=" + encodeURIComponent(d);
+  }
+  var LOCK_SVG = '<svg viewBox="0 0 160 120" aria-hidden="true">' +
+    '<g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity=".55">' +
+    '<rect x="6" y="20" width="34" height="20" rx="10" transform="rotate(-22 23 30)"/>' +
+    '<rect x="30" y="34" width="34" height="20" rx="10" transform="rotate(-22 47 44)"/>' +
+    '<rect x="96" y="34" width="34" height="20" rx="10" transform="rotate(22 113 44)"/>' +
+    '<rect x="120" y="20" width="34" height="20" rx="10" transform="rotate(22 137 30)"/></g>' +
+    '<path d="M62 56v-12a18 18 0 0 1 36 0v12" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>' +
+    '<rect x="50" y="54" width="60" height="50" rx="12" fill="currentColor"/>' +
+    '<circle cx="80" cy="74" r="7" fill="var(--bg, #0B0B0C)"/><rect x="77" y="76" width="6" height="14" rx="3" fill="var(--bg, #0B0B0C)"/></svg>';
+  var LOCK_MINI = "M7 11V8a5 5 0 0 1 10 0v3M6 11h12v9H6z";
+  function viewLock(view) {
+    var ep = view < N ? EPS[view] : null;
+    var art = el("div", { class: "lock-art" }); art.innerHTML = LOCK_SVG;
+    var title = el("h2", { class: "ch-title", tabindex: "-1", text: ep ? ep.title : "Deneme sınavı" });
+    var g = el("a", { class: "btn primary", href: loginUrl(view) }, "Giriş yap");
+    var k = el("a", { class: "btn ghost", href: loginUrl(view, true) }, "Ücretsiz hesap aç");
+    stage.appendChild(el("article", { class: "chapter lock-view" }, [
+      art,
+      el("p", { class: "mono ch-no" }, el("b", { text: ep ? "Bölüm " + (epCode(ep) || pad(ep.no) + " / " + pad(N)) : "Sınav" })),
+      title,
+      el("p", { class: "lock-t", text: "Bu bölüm kilitli. İlk bölüm herkese açık; geri kalan bölümler, sorular ve denemeler hesabınla açılır. Hesap açmak bir dakika sürer ve ilerlemen kaydedilir." }),
+      el("div", { class: "lock-acts" }, [g, k]),
+      el("button", { class: "linkish", type: "button", text: "← İlk bölüme dön" })
+    ]));
+    stage.querySelector(".lock-view .linkish").addEventListener("click", function () { go(0, { scroll: true }); });
+    return title;
+  }
+
   function drawNav() {
     if (!navList) return;
     navList.textContent = "";
     EPS.forEach(function (ep, i) {
       var q = quizStat(i), h = hwStat(i), st = epState(i), on = ui.view === i;
+      if (locked(i)) {
+        var lb = btn("nav-b locked" + (on ? " on" : ""), [
+          el("span", { class: "nav-no", text: epNo(ep) }),
+          el("span", { class: "nav-t", text: ep.title }),
+          el("span", { class: "nav-m" }, icon(LOCK_MINI, "nav-lock"))
+        ], function () { go(i, { scroll: true }); });
+        lb.setAttribute("aria-label", "Bölüm " + epSay(ep) + ": " + ep.title + ", kilitli, hesapla açılır");
+        if (on) lb.setAttribute("aria-current", "true");
+        navList.appendChild(el("li", null, lb));
+        return;
+      }
       var cls = "nav-b" + (on ? " on" : "") + (q.done ? " done" : (q.ans || st.watched || h.n - h.open ? " part" : ""));
       var label = "Bölüm " + epSay(ep) + ": " + ep.title +
         (q.done ? ", tamamlandı, " + q.ok + "/" + q.n + " doğru" : q.ans ? ", " + q.ans + "/" + q.n + " soru çözüldü" : st.watched ? ", video izlendi" : "") +
@@ -396,6 +442,12 @@
     if (DEN) {
       /* denemeler: sayfa içi sınav yerine Denemeler sayfasına bağlantı; "k / 5" = bu profilin bitirdiği deneme sayısı */
       var ds = denStat();
+      if (isGuest()) {
+        navList.appendChild(el("li", { class: "nav-final" }, el("a", { class: "nav-b locked", href: loginUrl(null), "aria-label": "Denemeler, kilitli, hesapla açılır" }, [
+          el("span", { class: "nav-no", text: "Sınav" }), el("span", { class: "nav-t", text: "Denemeler" }), el("span", { class: "nav-m" }, icon(LOCK_MINI, "nav-lock"))
+        ])));
+        return;
+      }
       navList.appendChild(el("li", { class: "nav-final" }, el("a", {
         class: "nav-b" + (DEN_N && ds.done >= DEN_N ? " done" : ds.done || ds.open ? " part" : ""), href: DEN_URL,
         "aria-label": "Denemeler" + (DEN_N ? ", " + ds.done + " / " + DEN_N + " deneme tamamlandı" : "") + (ds.open ? ", " + ds.open + " deneme devam ediyor" : "")
@@ -417,6 +469,12 @@
     }
     /* Deneme 2 (yalnızca KIT.deneme2 verilmişse): ayrı sayfa (süreli, zor); sonucu aynı profilin kaydından okunur */
     if (!DENEME2) return;
+    if (isGuest()) {
+      navList.appendChild(el("li", { class: "nav-final nav-d2" }, el("a", { class: "nav-b locked", href: loginUrl(null), "aria-label": "Deneme 2, kilitli, hesapla açılır" }, [
+        el("span", { class: "nav-no", text: "Sınav 2" }), el("span", { class: "nav-t", text: "Deneme 2 · zor, süreli" }), el("span", { class: "nav-m" }, icon(LOCK_MINI, "nav-lock"))
+      ])));
+      return;
+    }
     var d2 = null;
     try { d2 = JSON.parse(sGet(STORE + (active ? active.id : "misafir") + ":deneme2") || "null"); } catch (e) { d2 = null; }
     var d2n = d2 && Array.isArray(d2.ans) ? d2.ans.length : 0;   /* soru sayısı o sayfanın kaydından gelir */
@@ -456,7 +514,7 @@
     ui.token++; ui.pick = null;
     stage.textContent = "";
     root.style.setProperty("--accent", ui.view === N ? FINAL_ACCENT : (EPS[ui.view].accent || "#7C95FF"));
-    var title = ui.view === N ? viewFinal(opt) : viewChapter(ui.view, opt);
+    var title = locked(ui.view) ? viewLock(ui.view) : ui.view === N ? viewFinal(opt) : viewChapter(ui.view, opt);
     refresh();
     if (opt.scroll) { scrollToNode(stage, true); focusNode(title); }
     if (!opt.initial) fx(stage.firstElementChild, "in");
@@ -1283,6 +1341,7 @@
   function closeMenu() { if (whoMenu) whoMenu.hidden = true; if (whoBtn) whoBtn.setAttribute("aria-expanded", "false"); }
   function openMenu() {
     if (!whoMenu || !whoBtn || !active) return;
+    if (isGuest()) { window.location.assign(loginUrl(ui.view)); return; }
     whoMenu.textContent = "";
     var me = el("div", { class: "who-item on", "aria-current": "true" }, [el("span", { text: active.name }), el("span", { class: "who-s", text: profileLine(state) })]);
     whoMenu.appendChild(me);
@@ -1305,9 +1364,9 @@
     closeAsk(); closeMenu();
     if (whoEl) whoEl.hidden = true;
     if (kitEl) kitEl.hidden = false;
-    if (resetBox) resetBox.hidden = false;
+    if (resetBox) resetBox.hidden = !!p.misafir;
     if (whoBox) whoBox.hidden = !H;
-    if (whoName) whoName.textContent = p.name;
+    if (whoName) whoName.textContent = p.misafir ? "Giriş yap" : p.name;
     if (whoBtn) whoBtn.setAttribute("aria-label", "Hesap: " + p.name + ". Gelişim ve çıkış menüsü");
     var v = opt.hash ? viewFromHash() : null;
     ui.view = v != null ? v : state.cur;
@@ -1335,5 +1394,6 @@
   /* açık oturum varsa önce sunucudaki son hali gelir, sonra kit açılır; yoksa giriş sayfasına gidilir */
   var last = H ? H.aktif() : null;
   if (last) H.sec(last.id).then(function (h) { delete cache[h.id]; enter(h, { hash: true }); }, showPicker);
+  else if (H) enter({ id: "misafir", name: "Misafir", misafir: true }, { hash: true });   /* hesapsız: ilk bölüm açık */
   else showPicker();
 })();
