@@ -728,6 +728,84 @@ window.KIT = {
           "why": "2x + 6 = 4 ⇒ x = −1, yani f⁻¹(4) = −1 (1/f(4) = 1/14 değil). f′ her yerde 2 ⇒ (f⁻¹)′(4) = 1/2. Kontrol: f⁻¹(x) = (x − 6)/2, eğimi 1/2."
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "3.5–3.6",
+      "slug": "cb308",
+      "title": "Yöntem Seçimi ve Yüksek Mertebeden Türevler",
+      "en": "Selecting Procedures; Higher-Order Derivatives",
+      "accent": "#5C8DFF",
+      "seconds": 277,
+      "terms": [
+        "Selecting procedures",
+        "Higher-order derivatives",
+        "Second derivative",
+        "Third derivative",
+        "Leibniz notation",
+        "Acceleration",
+        "Implicit second derivative",
+        "Product rule",
+        "Chain rule",
+        "Simplify first"
+      ],
+      "questions": [
+        {
+          "q": "f(x) = x²·eˣ ise f″(0) kaçtır?",
+          "opts": [
+            "0",
+            "2",
+            "1",
+            "4"
+          ],
+          "a": 1,
+          "why": "f′ = 2x·eˣ + x²·eˣ. f″ = 2eˣ + 2x·eˣ + 2x·eˣ + x²·eˣ = (2 + 4x + x²)eˣ. x = 0'da 2."
+        },
+        {
+          "q": "y² = 4x eğrisi için (1, 2) noktasında d²y/dx² kaçtır?",
+          "opts": [
+            "−1/2",
+            "1",
+            "−4",
+            "1/2"
+          ],
+          "a": 0,
+          "why": "2y·y′ = 4 ⇒ y′ = 2/y. y″ = −2y′/y² = −2(2/y)/y² = −4/y³. (1, 2)'de −4/8 = −1/2."
+        },
+        {
+          "q": "dy/dx = xy olduğu biliniyor. (1, 2) noktasında d²y/dx² kaçtır?",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "a": 2,
+          "why": "d²y/dx² = y + x·dy/dx = y + x(xy) = y + x²y. (1, 2)'de 2 + 1·2 = 4. dy/dx'i yerine koymadan 2 + 1·(?) diye bırakmak eksik kalır."
+        },
+        {
+          "q": "d²²/dx²² (cos x) hangisidir?",
+          "opts": [
+            "cos x",
+            "−sin x",
+            "sin x",
+            "−cos x"
+          ],
+          "a": 3,
+          "why": "cos x → −sin x → −cos x → sin x → cos x: döngü 4. 22 = 4·5 + 2; iki adım: −cos x."
+        },
+        {
+          "q": "f(x) = ln(x²·eˣ), x > 0 ise f′(x) hangisidir?",
+          "opts": [
+            "1/(x²·eˣ)",
+            "2/x + 1",
+            "2x + eˣ",
+            "(2 + x)/x²"
+          ],
+          "a": 1,
+          "why": "Önce sadeleştir: ln(x²eˣ) = 2 ln x + x. Türev 2/x + 1. (Zincirle de aynı: (2xeˣ + x²eˣ)/(x²eˣ) = 2/x + 1.)"
+        }
+      ]
     }
   ],
   "final": []
