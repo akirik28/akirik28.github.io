@@ -46,7 +46,8 @@ window.DEFTER = (function () {
     AD("AD", 11), SR("S", -1), LR("L", 6), EQ("E", 11, -1, "E₀", { renk: 0, p: "r" })
   ], [
     ["Üç eğri: *AD* (aşağı), *SRAS* (yukarı) ve *LRAS* (dikey, Y∗'da). Sınavda üçünü de çizip etiketlersin.", ["AD", "S", "L"]],
-    ["AD ve SRAS'ın kesişimi **tam LRAS üzerinde**: reel çıktı Y∗'a eşit, işsizlik doğal oranda. Bu, ==uzun dönem dengesidir==.", ["AD", "S", "L", "E"]]
+    ["AD ve SRAS'ın kesişimi **tam LRAS üzerinde**: reel çıktı Y∗'a eşit, işsizlik doğal oranda. Bu, ==uzun dönem dengesidir==.", ["AD", "S", "L", "E"]],
+    ["Bu tek noktada üç şey birden doğru: **talep = arz**, **çıktı = Y∗** ve **işsizlik = doğal oran**. Başka bir şok gelmedikçe ekonomi burada kalır.", ["AD", "S", "L", "E"]]
   ], { xt: [{ v: 6, label: "Y*" }], yt: [{ v: 5, label: "P₀" }] });
 
   /* Grafik 3: durgunluk açığı ve enflasyon açığı */

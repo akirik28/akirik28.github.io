@@ -5,8 +5,11 @@ window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */
   function graf(o) {
     var ids = o.ogeler.map(function (e) { return e.id; });
+    var eslik = o.ogeler.filter(function (e) { return e.pair; }); /* pair: bağlı olduğu ögeyle birlikte görünen etiket */
     o.durumlar = o.durumlar.map(function (d) {
-      var r = { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) };
+      var g = d[1].slice();
+      eslik.forEach(function (e) { if (g.indexOf(e.pair) >= 0 && g.indexOf(e.id) < 0) g.push(e.id); });
+      var r = { metin: d[0], goster: g, gizle: ids.filter(function (i) { return g.indexOf(i) < 0; }) };
       if (d[2]) r.set = d[2];
       return r;
     });
@@ -23,11 +26,12 @@ window.DEFTER = (function () {
         baslik: "Piyasa dengesi: arz ve talebin buluştuğu nokta",
         kisa: "Denge fiyatında alıcıların istediği miktar, satıcıların sunduğu miktara eşittir.",
         bloklar: [
-          graf({ baslik: "Denge: Qd = Qs", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: TIK, yticks: TIK,
+          graf({ baslik: "Denge: Qd = Qs", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: [{ v: 5, label: "50" }], yticks: TIK,
             ogeler: [
               { id: "D", tip: "cizgi", renk: 0, from: [0, 10], to: [10, 0], etiket: "D" },
               { id: "S", tip: "cizgi", renk: 1, from: [0, 0], to: [10, 10], etiket: "S" },
-              { id: "E", tip: "nokta", renk: 3, x: 5, y: 5, etiket: "Denge", kilavuz: true }
+              { id: "E", tip: "nokta", renk: 3, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tE", tip: "yazi", pair: "E", x: 5, y: 5.8, metin: "denge" }
             ],
             durumlar: [
               ["Kampüs konserinin bilet talebi: P = 100 − Q. Fiyat düştükçe talep edilen miktar artar.", ["D"]],
@@ -71,7 +75,7 @@ window.DEFTER = (function () {
         baslik: "Rantları grafikte görmek ve hesaplamak",
         kisa: "CS fiyatın üstünde talebin altındaki, PS fiyatın altında arzın üstündeki alandır.",
         bloklar: [
-          graf({ baslik: "Denge fiyatında iki üçgen", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: TIK, yticks: TIK,
+          graf({ baslik: "Denge fiyatında iki üçgen", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: [{ v: 5, label: "50" }], yticks: TIK,
             ogeler: [
               { id: "cs", tip: "alan", renk: 0, noktalar: [[0, 10], [0, 5], [5, 5]] },
               { id: "ps", tip: "alan", renk: 1, noktalar: [[0, 0], [0, 5], [5, 5]] },
@@ -98,7 +102,7 @@ window.DEFTER = (function () {
         baslik: "Denge neden verimli? Toplam rantı en büyük yapar",
         kisa: "Rekabetçi piyasada denge miktarı toplam ekonomik rantı en büyük yapar.",
         bloklar: [
-          graf({ baslik: "Denge dışında rant kaybı", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: TIK, yticks: TIK,
+          graf({ baslik: "Denge dışında rant kaybı", xlabel: "Miktar (bilet)", ylabel: "Fiyat (TL)", xmax: 11, ymax: 11, xticks: [{ v: 5, label: "50" }], yticks: TIK,
             ogeler: [
               { id: "ts", tip: "alan", renk: 0, noktalar: [[0, 10], [5, 5], [5, 5], [0, 0]] },
               { id: "dwl", tip: "alan", renk: 3, noktalar: [[3, 7], [5, 5], [3, 3]] },

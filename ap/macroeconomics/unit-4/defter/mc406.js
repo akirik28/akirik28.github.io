@@ -114,25 +114,25 @@ window.DEFTER = (function () {
           { tip: "grafik", baslik: "Rezerv piyasası: kıttan bola", xlabel: "Rezerv miktarı (milyar TL)", ylabel: "Gecelik faiz", xmax: 11, ymax: 10,
             xticks: [{ v: 4, label: "400" }, { v: 6, label: "600" }, { v: 9, label: "900" }], yticks: [{ v: 3, label: "%3" }, { v: 5, label: "%5" }, { v: 6, label: "%6" }, { v: 8, label: "%8" }],
             ogeler: [
-              { id: "Dsl", tip: "cizgi", renk: 0, from: [2, 8], to: [7, 3], etiket: "" },
-              { id: "Dfl", tip: "cizgi", renk: 0, from: [7, 3], to: [10.5, 3], etiket: "D" },
-              { id: "Dsk", tip: "cizgi", renk: 0, kesik: true, from: [2, 8], to: [7, 3], etiket: "", gizli: true },
+              { id: "Dsl", tip: "cizgi", renk: 0, from: [7, 3], to: [2, 8], etiket: "D" },
+              { id: "Dfl", tip: "cizgi", renk: 0, from: [7, 3], to: [10.5, 3], etiket: "" },
+              { id: "Dsk", tip: "cizgi", renk: 0, kesik: true, from: [7, 3], to: [2, 8], etiket: "", gizli: true },
               { id: "Dfk", tip: "cizgi", renk: 0, kesik: true, from: [7, 3], to: [10.5, 3], etiket: "", gizli: true },
               { id: "disc", tip: "cizgi", renk: 2, kesik: true, from: [0, 8], to: [10.5, 8], etiket: "" },
               { id: "dt", tip: "yazi", x: 10.8, y: 8.5, metin: "Discount rate %8", hiza: "end" },
-              { id: "it", tip: "yazi", x: 9.2, y: 3.8, metin: "IORB %3", hiza: "middle" },
-              { id: "S", tip: "cizgi", renk: 1, from: [4, 0], to: [4, 9], etiket: "S", gizli: true },
-              { id: "Sk", tip: "cizgi", renk: 1, kesik: true, from: [4, 0], to: [4, 9], etiket: "", gizli: true },
+              { id: "it", tip: "yazi", x: 8.0, y: 2.1, metin: "IORB %3", hiza: "middle" },
+              { id: "S", tip: "cizgi", renk: 1, from: [4, 0], to: [4, 7.4], etiket: "S", gizli: true },
+              { id: "Sk", tip: "cizgi", renk: 1, kesik: true, from: [4, 0], to: [4, 7.4], etiket: "", gizli: true },
               { id: "okS", tip: "ok", renk: 1, from: [4.2, 1.2], to: [5.8, 1.2], gizli: true },
               { id: "E", tip: "nokta", renk: 3, x: 4, y: 6, etiket: "%6", kilavuz: true, gizli: true }
             ],
             durumlar: [
               acRez("Rezerv piyasası: yatay eksen rezerv miktarı, dikey eksen bankalar arası gecelik faiz. Faiz yüksekken bankalar az rezerv ister; faiz IORB'ye inince talep ==yataylaşır==: banka rezervini bundan ucuza ödünç vermez, çünkü IORB'yi merkez bankasından alır. Discount rate üstte bir tavandır.", ["Dsl", "Dfl", "disc", "dt", "it"]),
               acRez("**Kıt rezerv:** rezerv arzı (S) talebin eğimli kısmında kesişir. Denge faizi **%6**.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "E"]),
-              acRez("Merkez Bankası tahvil alır, rezerv 400'den 600'e çıkar: S sağa kayar. Faiz **%4**'e düşer. Kıt rezervde açık piyasa işlemi faizi ==etkiler==.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [6, 0], to: [6, 9] }, E: { x: 6, y: 4, etiket: "%4" } }),
-              acRez("**Bol rezerv:** rezerv 900'e çıkınca S, talebin yatay kısmında kesişir. Faiz **IORB = %3**'e iner ve orada kalır.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [9, 0], to: [9, 9] }, Sk: { from: [6, 0], to: [6, 9] }, okS: { from: [6.2, 1.2], to: [8.8, 1.2] }, E: { x: 9, y: 3, etiket: "%3" } }),
-              acRez("Bir alım daha: rezerv 1.000'e çıkar. Faiz ==hâlâ %3==: bol rezervde para arzını değiştirmek faizi etkili biçimde oynatmaz.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [10, 0], to: [10, 9] }, Sk: { from: [9, 0], to: [9, 9] }, okS: { from: [9.2, 1.2], to: [9.8, 1.2] }, E: { x: 10, y: 3, etiket: "%3" } }),
-              acRez("Faizi yükseltmek için **IORB %3'ten %5'e** artırılır: talep eğrisi yukarı kayar (eski talep kesikli). Rezerv aynı kalsa da faiz **%5** olur.", ["Dsl", "Dfl", "Dsk", "Dfk", "disc", "dt", "it", "S", "E"], { Dsl: { from: [4, 8], to: [7, 5] }, Dfl: { from: [7, 5], to: [10.5, 5] }, it: { y: 5.8, metin: "IORB %5" }, E: { x: 10, y: 5, etiket: "%5" } })
+              acRez("Merkez Bankası tahvil alır, rezerv 400'den 600'e çıkar: S sağa kayar. Faiz **%4**'e düşer. Kıt rezervde açık piyasa işlemi faizi ==etkiler==.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [6, 0], to: [6, 7.4] }, E: { x: 6, y: 4, etiket: "%4" } }),
+              acRez("**Bol rezerv:** rezerv 900'e çıkınca S, talebin yatay kısmında kesişir. Faiz **IORB = %3**'e iner ve orada kalır.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [9, 0], to: [9, 7.4] }, Sk: { from: [6, 0], to: [6, 7.4] }, okS: { from: [6.2, 1.2], to: [8.8, 1.2] }, E: { x: 9, y: 3, etiket: "%3" } }),
+              acRez("Bir alım daha: rezerv 1.000'e çıkar. Faiz ==hâlâ %3==: bol rezervde para arzını değiştirmek faizi etkili biçimde oynatmaz.", ["Dsl", "Dfl", "disc", "dt", "it", "S", "Sk", "okS", "E"], { S: { from: [10, 0], to: [10, 7.4] }, Sk: { from: [9, 0], to: [9, 7.4] }, okS: { from: [9.2, 1.2], to: [9.8, 1.2] }, E: { x: 10, y: 3, etiket: "%3" } }),
+              acRez("Faizi yükseltmek için **IORB %3'ten %5'e** artırılır: talep eğrisi yukarı kayar (eski talep kesikli). Rezerv aynı kalsa da faiz **%5** olur.", ["Dsl", "Dfl", "Dsk", "Dfk", "disc", "dt", "it", "S", "E"], { Dsl: { from: [7, 5], to: [4, 8] }, Dfl: { from: [7, 5], to: [10.5, 5] }, it: { y: 4.1, metin: "IORB %5" }, E: { x: 10, y: 5, etiket: "%5" } })
             ] },
           { tip: "not", metin: "Bu grafikte talep, faiz IORB'ye inince yataylaşır. Discount rate üstte tavan görevi görür: banka merkez bankasından bu faizle borç alabilirken bundan pahalıya rezerv almaz. Bol rezervde faizi belirleyen, kayan arz değil, bu idari faizlerdir." }
         ]
@@ -215,7 +215,7 @@ window.DEFTER = (function () {
       {
         q: "Grafik, bol rezervli bir bankacılık sistemini gösteriyor (S rezerv arzı, D rezerv talebi). Merkez bankası açık piyasada tahvil alarak S'yi sağa kaydırırsa gecelik faize ne olur?",
         fig: { type: "graph", xlabel: "Rezerv miktarı", ylabel: "Gecelik faiz", xmax: 11, ymax: 10,
-          lines: [{ from: [2, 8], to: [7, 3] }, { from: [7, 3], to: [10.5, 3], label: "D" }, { from: [9, 0], to: [9, 9], label: "S", color: 1 }],
+          lines: [{ from: [2, 8], to: [7, 3] }, { from: [7, 3], to: [10.5, 3], label: "D" }, { from: [9, 0], to: [9, 7.4], label: "S", color: 1 }],
           hlines: [{ p: 8, label: "Discount rate" }], points: [{ q: 9, p: 3, label: "E", guides: true }],
           xticks: [{ v: 9, label: "900" }], yticks: [{ v: 3, label: "IORB" }, { v: 8, label: "%8" }] },
         opts: ["Belirgin biçimde düşer", "Yükselir", "Yaklaşık değişmez; çünkü S, talebin yatay kısmında kesişir ve faizi IORB belirler", "Belirsizdir"],

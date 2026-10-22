@@ -4,8 +4,11 @@ window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */
   function graf(o) {
     var ids = o.ogeler.map(function (e) { return e.id; });
+    var eslik = o.ogeler.filter(function (e) { return e.pair; }); /* pair: bağlı olduğu ögeyle birlikte görünen etiket */
     o.durumlar = o.durumlar.map(function (d) {
-      var r = { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) };
+      var g = d[1].slice();
+      eslik.forEach(function (e) { if (g.indexOf(e.pair) >= 0 && g.indexOf(e.id) < 0) g.push(e.id); });
+      var r = { metin: d[0], goster: g, gizle: ids.filter(function (i) { return g.indexOf(i) < 0; }) };
       if (d[2]) r.set = d[2];
       return r;
     });
@@ -44,9 +47,10 @@ window.DEFTER = (function () {
             ogeler: [
               { id: "v", tip: "cizgi", renk: 1, from: [5, 0], to: [5, 9], etiket: "E_s = 0" },
               { id: "h", tip: "cizgi", renk: 1, from: [0, 5], to: [9, 5], etiket: "E_s = ∞" },
-              { id: "dik", tip: "cizgi", renk: 1, from: [3.5, 2], to: [7, 9], etiket: "dik: daha inelastik" },
-              { id: "yat", tip: "cizgi", renk: 2, from: [1, 3], to: [9, 7], etiket: "yatık: daha elastik" },
-              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "N" }
+              { id: "dik", tip: "cizgi", renk: 1, from: [3.5, 2], to: [7, 9], etiket: "dik: inelastik" },
+              { id: "yat", tip: "cizgi", renk: 2, from: [1, 3], to: [9, 7], etiket: "yatık: elastik" },
+              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "" },
+              { id: "tN", tip: "yazi", pair: "N", x: 5.35, y: 4.55, metin: "N", hiza: "start" }
             ],
             durumlar: [
               ["**Dikey** arz: fiyat ne olursa miktar sabit. E_s = 0, *perfectly inelastic*. Örnek: kısa dönemde stadyumdaki koltuk sayısı.", ["v"]],
@@ -60,12 +64,13 @@ window.DEFTER = (function () {
         baslik: "Doğrusal arzda esnekliği kesişim noktası belirler",
         kisa: "Orijinden geçen doğrusal arz, eğimi ne olursa olsun her noktada birim elastiktir.",
         bloklar: [
-          graf({ baslik: "Üç doğrusal arz eğrisi, ortak nokta N (5, 5)", xlabel: "Miktar", ylabel: "Fiyat", xmax: 12, ymax: 11, xticks: [], yticks: [],
+          graf({ baslik: "Üç doğrusal arz eğrisi, ortak nokta N (5, 5)", xlabel: "Miktar", ylabel: "Fiyat", xmax: 13, ymax: 12, xticks: [], yticks: [],
             ogeler: [
-              { id: "Sb", tip: "cizgi", renk: 1, from: [0, 0], to: [10, 10], etiket: "E_s = 1" },
-              { id: "Sa", tip: "cizgi", renk: 2, from: [0, 2], to: [10, 8], etiket: "E_s > 1" },
+              { id: "Sb", tip: "cizgi", renk: 1, from: [0, 0], to: [11, 11], etiket: "E_s = 1" },
+              { id: "Sa", tip: "cizgi", renk: 2, from: [0, 2], to: [11, 8.6], etiket: "E_s > 1" },
               { id: "Sc", tip: "cizgi", renk: 3, from: [2, 0], to: [8, 10], etiket: "E_s < 1" },
-              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "N", kilavuz: true }
+              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tN", tip: "yazi", pair: "N", x: 5.35, y: 4.4, metin: "N", hiza: "start" }
             ],
             durumlar: [
               ["Orijinden geçen doğru: fiyat ile miktar orantılı artar; her noktada E_s = 1.", ["Sb"]],
@@ -96,10 +101,13 @@ window.DEFTER = (function () {
             ogeler: [
               { id: "Sk", tip: "cizgi", renk: 1, from: [3, 1], to: [7, 9], etiket: "kısa dönem" },
               { id: "Su", tip: "cizgi", renk: 2, from: [1, 3], to: [9, 7], etiket: "uzun dönem" },
-              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "N", kilavuz: true },
+              { id: "N", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tN", tip: "yazi", pair: "N", x: 5.35, y: 4.4, metin: "N", hiza: "start" },
               { id: "h", tip: "cizgi", renk: 0, kesik: true, from: [0, 7], to: [10, 7] },
-              { id: "pk", tip: "nokta", renk: 1, x: 6, y: 7, etiket: "6", kilavuz: true },
-              { id: "pu", tip: "nokta", renk: 2, x: 9, y: 7, etiket: "9", kilavuz: true }
+              { id: "pk", tip: "nokta", renk: 1, x: 6, y: 7, etiket: "", kilavuz: true },
+              { id: "lpk", tip: "yazi", pair: "pk", x: 6.15, y: 6.4, metin: "6", hiza: "start" },
+              { id: "pu", tip: "nokta", renk: 2, x: 9, y: 7, etiket: "", kilavuz: true },
+              { id: "lpu", tip: "yazi", pair: "pu", x: 9.15, y: 6.4, metin: "9", hiza: "start" }
             ],
             durumlar: [
               ["Kısa dönemde arz dik: fabrika büyütülemez, işçi bulmak zor.", ["Sk", "N"]],
@@ -127,9 +135,11 @@ window.DEFTER = (function () {
               { id: "D1", tip: "cizgi", renk: 3, from: [3, 10], to: [10, 3], etiket: "D₁" },
               { id: "Ss", tip: "cizgi", renk: 1, from: [2.5, 0], to: [7.5, 10], etiket: "S (inelastik)" },
               { id: "Sf", tip: "cizgi", renk: 2, from: [0, 2.5], to: [10, 7.5], etiket: "S (elastik)" },
-              { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "E₀", kilavuz: true },
+              { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tE0", tip: "yazi", pair: "E0", x: 5.05, y: 5.75, metin: "E₀" },
               { id: "Es", tip: "nokta", renk: 1, x: 6, y: 7, etiket: "E₁", kilavuz: true },
-              { id: "Ef", tip: "nokta", renk: 2, x: 7, y: 6, etiket: "E₁", kilavuz: true }
+              { id: "Ef", tip: "nokta", renk: 2, x: 7, y: 6, etiket: "", kilavuz: true },
+              { id: "tEf", tip: "yazi", pair: "Ef", x: 7, y: 6.8, metin: "E₁" }
             ],
             durumlar: [
               ["**Dik (inelastik) arz:** başlangıç dengesi E₀ (5, 5).", ["D", "Ss", "E0"]],

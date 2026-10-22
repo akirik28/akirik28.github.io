@@ -78,7 +78,7 @@
   function md(s) {
     return esc(s)
       .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
-      .replace(/==([^=]+)==/g, '<mark class="hl">$1</mark>')
+      .replace(/==(?!=)(.+?)==/g, '<mark class="hl">$1</mark>')
       .replace(/\*([^*]+)\*/g, '<span class="en" lang="en">$1</span>');
   }
   function T(s) { return { html: md(s) }; }

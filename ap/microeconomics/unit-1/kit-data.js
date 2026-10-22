@@ -151,136 +151,137 @@ window.KIT = {
     },
     {
       "no": 2,
-      "code": "1.5",
-      "slug": "mi102",
-      "title": "Fayda-Maliyet Analizi",
-      "en": "Cost-Benefit Analysis",
-      "accent": "#FF7DB8",
-      "seconds": 244,
+      "code": "1.2",
+      "slug": "mi101",
+      "title": "Ekonomik Sistemler ve Kaynak Dağılımı",
+      "en": "Resource Allocation and Economic Systems",
+      "accent": "#B9E552",
+      "seconds": 263,
       "terms": [
-        "Rational decision-making",
-        "Cost-benefit analysis",
-        "Net benefit",
-        "Explicit costs",
-        "Implicit costs",
-        "Total revenue",
-        "Accounting profit",
-        "Economic profit",
-        "Economic loss",
-        "Normal profit",
-        "Sunk cost"
+        "Resource allocation",
+        "Economic system",
+        "Command economy",
+        "Free market economy",
+        "Mixed economy",
+        "Profit motive",
+        "Invisible hand",
+        "Property rights",
+        "Incentives",
+        "Public goods",
+        "Circular flow",
+        "Factor market / Product market"
       ],
       "questions": [
         {
-          "q": "Selin yazın 4 haftalık bir yazılım kursuna gitmeyi düşünüyor. Tabloya göre kursa gitmenin Selin için toplam ekonomik maliyeti (explicit artı implicit) kaç liradır?",
+          "q": "Tablodaki üç ülkenin ekonomik sistemlerini doğru eşleştiren seçenek hangisidir?",
           "opts": [
-            "8.300 lira",
-            "3.500 lira",
-            "4.000 lira",
-            "7.500 lira"
+            "K: *mixed economy* · L: *command economy* · M: *free market economy*",
+            "K: *free market economy* · L: *mixed economy* · M: *command economy*",
+            "K: *command economy* · L: *mixed economy* · M: *free market economy*",
+            "K: *command economy* · L: *free market economy* · M: *mixed economy*"
           ],
           "a": 3,
-          "why": "*Explicit costs*: 3.000 ücret artı 500 kitap, 3.500. *Implicit cost*: vazgeçilen yaz işi, 4.000. Toplam 7.500. Öğle yemeği iki durumda da harcanacağı için kararın maliyeti değil; onu eklersen 8.300 tuzağına düşersin.",
+          "why": "K'de kaynaklar devletin ve kararı plan kurulu veriyor: *command economy*. L'de kaynaklar özel, kararı fiyatlar ve kâr veriyor, devlet yalnız mülkiyeti koruyor: *free market economy*. M ikisini karıştırıyor: *mixed economy*.",
           "fig": {
             "type": "table",
             "head": [
-              "Kalem",
-              "Tutar (lira)"
+              "Ülke",
+              "Kaynakların sahibi",
+              "Ne üretileceğine kim karar verir?",
+              "Devletin rolü"
             ],
             "rows": [
               [
-                "Kurs ücreti",
-                "3.000"
+                "K",
+                "Devlet",
+                "Planlama kurulu",
+                "Fiyatları ve iş yerlerini belirler"
               ],
               [
-                "Kitap ve malzeme",
-                "500"
+                "L",
+                "Özel kişiler",
+                "Fiyatlar ve kâr",
+                "Yalnız mülkiyeti ve sözleşmeleri korur"
               ],
               [
-                "Kursa gitmezse yapacağı yaz işinden kazanç",
-                "4.000"
-              ],
-              [
-                "Kurs boyunca öğle yemeği (kursa gitmese de aynı tutarı harcayacak)",
-                "800"
+                "M",
+                "Çoğunlukla özel kişiler",
+                "Çoğunlukla fiyatlar",
+                "Okul, hastane, tekel denetimi, vergiyle yardım"
               ]
             ],
-            "caption": "Selin'in kurs kararı"
+            "caption": "Üç ülkenin ekonomik düzeni"
           }
         },
         {
-          "q": "Bir fırın sahibi kendi binasında çalışıyor. Aşağıdakilerden hangisi fırının *implicit costs*'una bir örnektir?",
+          "q": "Bir fırın, simitleri ustaların elle mi yoksa yeni aldığı otomatik makineyle mi yapacağına karar veriyor. Bu karar, her toplumun cevapladığı üç temel sorudan hangisine aittir?",
           "opts": [
-            "Sahibin, binayı başkasına kiraya verseydi alacağı kira",
-            "Fırının bir depoya her ay ödediği kira",
-            "Çırağa ödenen haftalık ücret",
-            "Fırının elektrik ve doğalgaz faturası"
-          ],
-          "a": 0,
-          "why": "*Implicit cost*, cebinden para çıkmadan vazgeçilen seçeneğin değeridir. Sahip binayı kendisi kullandığı için kiraya veremiyor; kaçan kira *implicit*. Diğer üçü gerçek ödemeler, yani *explicit costs*."
-        },
-        {
-          "q": "Tabloda bir girişimcinin bir yıllık verileri var (bin lira). Bu işin *accounting profit*'i ve *economic profit*'i nedir?",
-          "opts": [
-            "*Accounting profit* 200 bin, *economic profit* 50 bin",
-            "*Accounting profit* 200 bin, *economic profit* 20 bin",
-            "*Accounting profit* 20 bin, *economic profit* 200 bin",
-            "*Accounting profit* 320 bin, *economic profit* 20 bin"
+            "Ne üretilecek?",
+            "Nasıl üretilecek?",
+            "Kimin için üretilecek?",
+            "Hangi kaynak kıt?"
           ],
           "a": 1,
-          "why": "*Explicit costs* 200 artı 100, yani 300; *accounting profit* 500 eksi 300, 200 bin. *Implicit costs* 150 artı 30, yani 180; *economic profit* 200 eksi 180, 20 bin.",
+          "why": "Ürün zaten belli: simit. Soru, onu hangi kaynak bileşimiyle üreteceği; emek mi, sermaye mi. Bu, nasıl üretilecek sorusudur."
+        },
+        {
+          "q": "Aşağıdaki ifadelerden hangisi doğrudur?",
+          "opts": [
+            "Bir ülkeyi komünist bir parti yönetiyorsa ekonomisi mutlaka *command economy*'dir.",
+            "*Free market economy*'de devletin hiçbir rolü yoktur; mülkiyet kendiliğinden korunur.",
+            "*Free market economy*, kâr getirmeyen *public goods*'u yeterince üretmeyebilir.",
+            "*Command economy*'de fiyatları tüketicilerin ödemeye razı olduğu miktar belirler."
+          ],
+          "a": 2,
+          "why": "Sokak lambası ya da park gibi *public goods* kâr getirmediği için piyasa onları az üretir. Siyasi sistem ekonomik sistemle aynı değildir (Çin karma ekonomidir); piyasa bile mülkiyeti koruyacak bir devlete ihtiyaç duyar; *command economy*'de fiyatları plan belirler."
+        },
+        {
+          "q": "Bir köyde ortak bir mera var; herkes hayvanını otlatıyor ve ot hızla tükeniyor. Mera ailelere parsel parsel dağıtılınca her aile kendi parselini dinlendiriyor ve ot yeniden çıkıyor. Bu değişim en iyi hangisiyle açıklanır?",
+          "opts": [
+            "*Property rights*, kaynağı korumak için bir *incentive* yarattı.",
+            "Köy *command economy*'ye geçtiği için ot bollaştı.",
+            "Mera bir *public good* hâline geldiği için korundu.",
+            "*Invisible hand* ortadan kalktığı için aileler daha dikkatli oldu."
+          ],
+          "a": 0,
+          "why": "Parsel sahibi olan aile, otu koruyunca faydayı kendisi alacak; bu bir *incentive*. Ortak merada ise kimse korumanın karşılığını alamaz. Kararlar hâlâ ailelerin, yani plan değil mülkiyet hakkı işe yaradı."
+        },
+        {
+          "q": "Tablodaki işlemlerden hangileri *circular flow* modelinde *factor market*'te gerçekleşir?",
+          "opts": [
+            "Yalnız 1",
+            "1 ve 3",
+            "2 ve 4",
+            "1, 2 ve 3"
+          ],
+          "a": 1,
+          "why": "*Factor market*'te üretim faktörleri alınıp satılır. 1'de Ece emeğini satıyor (*labor*), 3'te fırın dükkân binası için kira ödüyor (*capital*'in kullanımı). 2 ve 4 ise hanelerin mal alması, yani *product market*.",
           "fig": {
             "type": "table",
             "head": [
-              "Kalem",
-              "Bin lira"
+              "No",
+              "İşlem"
             ],
             "rows": [
               [
-                "Total revenue",
-                "500"
+                "1",
+                "Ece hafta sonu kafede çalışıp 2.000 lira ücret alıyor."
               ],
               [
-                "Çalışan ücretleri",
-                "200"
+                "2",
+                "Ece 300 liraya kablosuz kulaklık alıyor."
               ],
               [
-                "Malzeme",
-                "100"
+                "3",
+                "Bir fırın, dükkân binası için aylık kira ödüyor."
               ],
               [
-                "Sahibin bıraktığı işteki maaşı",
-                "150"
-              ],
-              [
-                "Sahibin işe koyduğu birikimin bankada getireceği faiz",
-                "30"
+                "4",
+                "Bir aile manavdan meyve alıyor."
               ]
             ],
-            "caption": "Bir işletmenin yıllık verileri"
+            "caption": "Dört ekonomik işlem"
           }
-        },
-        {
-          "q": "Deniz, iade edilmeyen bir yaz kampına 2.000 lira ödedi. Sonra kampla aynı haftaya denk gelen ve 3.000 lira ödeyen bir staj teklifi aldı. Akılcı bir karar için Deniz nasıl düşünmelidir?",
-          "opts": [
-            "2.000 lira boşa gitmesin diye kampa gitmelidir.",
-            "Kampa ödediği 2.000 lirayı stajın kazancından çıkarıp öyle karşılaştırmalıdır.",
-            "2.000 lira bir *sunk cost*; yalnız kampın ve stajın bundan sonraki fayda ve maliyetlerini tartmalıdır.",
-            "*Sunk cost* en büyük maliyet olduğu için kampa gitmesi kesin olarak doğrudur."
-          ],
-          "a": 2,
-          "why": "2.000 lira hangi seçeneği seçerse seçsin geri gelmez; bu bir *sunk cost* ve karara girmez. Deniz yalnız kampın ona vereceği fayda ile stajın 3.000 lirası ve diğer faydalarını karşılaştırmalı."
-        },
-        {
-          "q": "Bir firmanın *economic profit*'i sıfırsa aşağıdakilerden hangisi doğrudur?",
-          "opts": [
-            "Firma *normal profit* elde ediyor; kaynakları en iyi alternatifleri kadar kazanıyor.",
-            "Firma zarar ediyor ve hemen kapanmalıdır.",
-            "Firmanın *accounting profit*'i de sıfırdır.",
-            "Firmanın hiç *implicit cost*'u yoktur."
-          ],
-          "a": 0,
-          "why": "*Economic profit* sıfır demek, gelir hem *explicit* hem *implicit costs*'u tam karşılıyor demek: *normal profit*. *Implicit costs* pozitifse *accounting profit* sıfırdan büyüktür."
         }
       ]
     },
@@ -1006,6 +1007,339 @@ window.KIT = {
     },
     {
       "no": 7,
+      "code": "1.5",
+      "slug": "mi102",
+      "title": "Fayda-Maliyet Analizi",
+      "en": "Cost-Benefit Analysis",
+      "accent": "#FF7DB8",
+      "seconds": 244,
+      "terms": [
+        "Rational decision-making",
+        "Cost-benefit analysis",
+        "Net benefit",
+        "Explicit costs",
+        "Implicit costs",
+        "Total revenue",
+        "Accounting profit",
+        "Economic profit",
+        "Economic loss",
+        "Normal profit",
+        "Sunk cost"
+      ],
+      "questions": [
+        {
+          "q": "Selin yazın 4 haftalık bir yazılım kursuna gitmeyi düşünüyor. Tabloya göre kursa gitmenin Selin için toplam ekonomik maliyeti (explicit artı implicit) kaç liradır?",
+          "opts": [
+            "8.300 lira",
+            "3.500 lira",
+            "4.000 lira",
+            "7.500 lira"
+          ],
+          "a": 3,
+          "why": "*Explicit costs*: 3.000 ücret artı 500 kitap, 3.500. *Implicit cost*: vazgeçilen yaz işi, 4.000. Toplam 7.500. Öğle yemeği iki durumda da harcanacağı için kararın maliyeti değil; onu eklersen 8.300 tuzağına düşersin.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Tutar (lira)"
+            ],
+            "rows": [
+              [
+                "Kurs ücreti",
+                "3.000"
+              ],
+              [
+                "Kitap ve malzeme",
+                "500"
+              ],
+              [
+                "Kursa gitmezse yapacağı yaz işinden kazanç",
+                "4.000"
+              ],
+              [
+                "Kurs boyunca öğle yemeği (kursa gitmese de aynı tutarı harcayacak)",
+                "800"
+              ]
+            ],
+            "caption": "Selin'in kurs kararı"
+          }
+        },
+        {
+          "q": "Bir fırın sahibi kendi binasında çalışıyor. Aşağıdakilerden hangisi fırının *implicit costs*'una bir örnektir?",
+          "opts": [
+            "Sahibin, binayı başkasına kiraya verseydi alacağı kira",
+            "Fırının bir depoya her ay ödediği kira",
+            "Çırağa ödenen haftalık ücret",
+            "Fırının elektrik ve doğalgaz faturası"
+          ],
+          "a": 0,
+          "why": "*Implicit cost*, cebinden para çıkmadan vazgeçilen seçeneğin değeridir. Sahip binayı kendisi kullandığı için kiraya veremiyor; kaçan kira *implicit*. Diğer üçü gerçek ödemeler, yani *explicit costs*."
+        },
+        {
+          "q": "Tabloda bir girişimcinin bir yıllık verileri var (bin lira). Bu işin *accounting profit*'i ve *economic profit*'i nedir?",
+          "opts": [
+            "*Accounting profit* 200 bin, *economic profit* 50 bin",
+            "*Accounting profit* 200 bin, *economic profit* 20 bin",
+            "*Accounting profit* 20 bin, *economic profit* 200 bin",
+            "*Accounting profit* 320 bin, *economic profit* 20 bin"
+          ],
+          "a": 1,
+          "why": "*Explicit costs* 200 artı 100, yani 300; *accounting profit* 500 eksi 300, 200 bin. *Implicit costs* 150 artı 30, yani 180; *economic profit* 200 eksi 180, 20 bin.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Bin lira"
+            ],
+            "rows": [
+              [
+                "Total revenue",
+                "500"
+              ],
+              [
+                "Çalışan ücretleri",
+                "200"
+              ],
+              [
+                "Malzeme",
+                "100"
+              ],
+              [
+                "Sahibin bıraktığı işteki maaşı",
+                "150"
+              ],
+              [
+                "Sahibin işe koyduğu birikimin bankada getireceği faiz",
+                "30"
+              ]
+            ],
+            "caption": "Bir işletmenin yıllık verileri"
+          }
+        },
+        {
+          "q": "Deniz, iade edilmeyen bir yaz kampına 2.000 lira ödedi. Sonra kampla aynı haftaya denk gelen ve 3.000 lira ödeyen bir staj teklifi aldı. Akılcı bir karar için Deniz nasıl düşünmelidir?",
+          "opts": [
+            "2.000 lira boşa gitmesin diye kampa gitmelidir.",
+            "Kampa ödediği 2.000 lirayı stajın kazancından çıkarıp öyle karşılaştırmalıdır.",
+            "2.000 lira bir *sunk cost*; yalnız kampın ve stajın bundan sonraki fayda ve maliyetlerini tartmalıdır.",
+            "*Sunk cost* en büyük maliyet olduğu için kampa gitmesi kesin olarak doğrudur."
+          ],
+          "a": 2,
+          "why": "2.000 lira hangi seçeneği seçerse seçsin geri gelmez; bu bir *sunk cost* ve karara girmez. Deniz yalnız kampın ona vereceği fayda ile stajın 3.000 lirası ve diğer faydalarını karşılaştırmalı."
+        },
+        {
+          "q": "Bir firmanın *economic profit*'i sıfırsa aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "Firma *normal profit* elde ediyor; kaynakları en iyi alternatifleri kadar kazanıyor.",
+            "Firma zarar ediyor ve hemen kapanmalıdır.",
+            "Firmanın *accounting profit*'i de sıfırdır.",
+            "Firmanın hiç *implicit cost*'u yoktur."
+          ],
+          "a": 0,
+          "why": "*Economic profit* sıfır demek, gelir hem *explicit* hem *implicit costs*'u tam karşılıyor demek: *normal profit*. *Implicit costs* pozitifse *accounting profit* sıfırdan büyüktür."
+        }
+      ]
+    },
+    {
+      "no": 8,
+      "code": "1.6-1",
+      "slug": "mi103",
+      "title": "Marjinal Analiz ve Fayda",
+      "en": "Marginal Analysis and Utility",
+      "accent": "#5C8DFF",
+      "seconds": 257,
+      "terms": [
+        "Marginal",
+        "Marginal analysis",
+        "Utility",
+        "Util",
+        "Total utility",
+        "Marginal utility",
+        "Law of diminishing marginal utility",
+        "Marginal benefit",
+        "Marginal cost",
+        "Net benefit",
+        "Diamond-water paradox"
+      ],
+      "questions": [
+        {
+          "q": "Tabloda Efe'nin lahmacundan aldığı *total utility* var. Aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "Dördüncü lahmacunun *marginal utility*'si 10 util'dir.",
+            "*Marginal utility* en yüksek değerine beşinci lahmacunda ulaşır.",
+            "*Total utility* en yüksek değerine altıncı lahmacunda ulaşır.",
+            "Üçüncü lahmacunun *marginal utility*'si 90 util'dir."
+          ],
+          "a": 0,
+          "why": "*Marginal utility* toplamdaki değişimdir: 40, 30, 20, 10, 0, eksi 10. Dördüncüsü 100 eksi 90, yani 10. En yüksek MU ilk lahmacunda; toplam 4. ve 5.'de 100 ile zirvede, 6.'da düşüyor; 90 ise üç lahmacunun toplamı.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Lahmacun",
+              "Total utility (util)"
+            ],
+            "rows": [
+              [
+                "1",
+                "40"
+              ],
+              [
+                "2",
+                "70"
+              ],
+              [
+                "3",
+                "90"
+              ],
+              [
+                "4",
+                "100"
+              ],
+              [
+                "5",
+                "100"
+              ],
+              [
+                "6",
+                "90"
+              ]
+            ],
+            "caption": "Efe'nin lahmacun faydası"
+          }
+        },
+        {
+          "q": "Grafik, bir öğrencinin her ek saat ders çalışmasının *marginal benefit*'ini (MB) ve *marginal cost*'unu (MC) gösteriyor. Net faydayı en büyük yapan çalışma süresi kaç saattir?",
+          "opts": [
+            "2 saat",
+            "4 saat",
+            "6 saat",
+            "9 saat"
+          ],
+          "a": 1,
+          "why": "En iyi miktar MB ile MC'nin kesiştiği yerdir: 4 saat. 4 saatten önce MB, MC'den büyük; sonra küçük. 9 saat, MB'nin sıfır olduğu yer; orada çalışmak fazladan maliyete katlanmak demek.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Hours of study",
+            "ylabel": "Benefit and cost",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  9
+                ],
+                "to": [
+                  9,
+                  0
+                ],
+                "label": "MB"
+              },
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  8,
+                  9
+                ],
+                "label": "MC"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              },
+              {
+                "v": 9,
+                "label": "9"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Melis'in pizza dilimlerinden aldığı *marginal utility* her dilimde azalıyor ama hâlâ pozitif. Bu durumda Melis'in *total utility*'si için ne söylenebilir?",
+          "opts": [
+            "Azalmaktadır, çünkü *marginal utility* azalıyor.",
+            "Sabit kalmaktadır.",
+            "Sıfıra inmiştir.",
+            "Artmaya devam eder, ama giderek daha yavaş artar."
+          ],
+          "a": 3,
+          "why": "Her dilim toplama pozitif bir miktar ekliyor, o yüzden toplam artar. *Marginal utility* azaldığı için artış giderek küçülür. Toplam ancak MU negatif olunca düşer."
+        },
+        {
+          "q": "Kerem Cumartesi basketbol sahası kiralayacak; saati 100 lira. Tabloda her ek saatin ona sağladığı *marginal benefit* var. *Net benefit*'ini en büyük yapmak için kaç saat kiralamalı?",
+          "opts": [
+            "5 saat",
+            "4 saat",
+            "3 saat",
+            "2 saat"
+          ],
+          "a": 2,
+          "why": "MB, MC'den büyük olduğu sürece devam: 250, 180 ve 120 hepsi 100'den büyük. Dördüncü saat 90, yani 100'den az; kiralamamalı. Net fayda 3 saatte 550 eksi 300, 250; 4 saatte 640 eksi 400, 240.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Saat",
+              "Marginal benefit (lira)",
+              "Marginal cost (lira)"
+            ],
+            "rows": [
+              [
+                "1",
+                "250",
+                "100"
+              ],
+              [
+                "2",
+                "180",
+                "100"
+              ],
+              [
+                "3",
+                "120",
+                "100"
+              ],
+              [
+                "4",
+                "90",
+                "100"
+              ],
+              [
+                "5",
+                "60",
+                "100"
+              ]
+            ],
+            "caption": "Kerem'in basketbol kararı"
+          }
+        },
+        {
+          "q": "Su yaşam için elmastan çok daha önemlidir, ama elmasın fiyatı çok daha yüksektir. Bunun en iyi açıklaması hangisidir?",
+          "opts": [
+            "Elmasın *total utility*'si suyunkinden büyüktür.",
+            "Su bol olduğu için son biriminin *marginal utility*'si düşüktür; fiyatı *marginal utility* belirler.",
+            "Suyun üretimi daha pahalı olduğu için talebi düşüktür.",
+            "Elmas *law of diminishing marginal utility*'ye uymaz."
+          ],
+          "a": 1,
+          "why": "Suyun *total utility*'si çok büyüktür, ama o kadar bol tüketiriz ki bir bardak daha neredeyse hiç fayda katmaz. Elmas kıt olduğu için bir tane daha çok değerlidir. İnsanlar ek birime göre öder."
+        }
+      ]
+    },
+    {
+      "no": 9,
       "code": "1.6-2",
       "slug": "mi104",
       "title": "Tüketici Seçimi ve Fayda Maksimizasyonu",

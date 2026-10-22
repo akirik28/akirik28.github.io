@@ -62,12 +62,12 @@ window.DEFTER = (function () {
               ["0", "Tam inelastik (*perfectly inelastic*)", "Fiyat ne olursa miktar sabit; dikey eğri"],
               ["∞", "Tam elastik (*perfectly elastic*)", "Fiyat az artsa talep sıfıra iner; yatay eğri"]
             ] },
-          graf({ baslik: "Uç durumlar ve eğim", xlabel: "Miktar", ylabel: "Fiyat", xmax: 11, ymax: 10, xticks: [], yticks: [],
+          graf({ baslik: "Uç durumlar ve eğim", xlabel: "Miktar", ylabel: "Fiyat", xmax: 12, ymax: 10, xticks: [], yticks: [],
             ogeler: [
               { id: "v", tip: "cizgi", renk: 0, from: [5, 0], to: [5, 9], etiket: "|E| = 0" },
               { id: "h", tip: "cizgi", renk: 0, from: [0, 5], to: [9, 5], etiket: "|E| = ∞" },
-              { id: "dik", tip: "cizgi", renk: 0, from: [4, 9], to: [6, 1], etiket: "dik: daha inelastik" },
-              { id: "yat", tip: "cizgi", renk: 3, from: [1, 7], to: [9, 3], etiket: "yatık: daha elastik" },
+              { id: "dik", tip: "cizgi", renk: 0, from: [4, 9], to: [6, 1], etiket: "dik: inelastik" },
+              { id: "yat", tip: "cizgi", renk: 3, from: [1, 7], to: [9, 3], etiket: "yatık: elastik" },
               { id: "N", tip: "nokta", renk: 1, x: 5, y: 5, etiket: "N" }
             ],
             durumlar: [

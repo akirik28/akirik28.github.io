@@ -103,7 +103,7 @@ window.DEFTER = (function () {
               { id: "MDk", tip: "cizgi", renk: 0, kesik: true, from: [1, 9], to: [9, 1], etiket: "", gizli: true },
               { id: "MSk", tip: "cizgi", renk: 1, kesik: true, from: [5, 0], to: [5, 9.5], etiket: "", gizli: true },
               { id: "MD1", tip: "cizgi", renk: 3, from: [3, 9], to: [10, 2], etiket: "MD₁", gizli: true },
-              { id: "MD2", tip: "cizgi", renk: 3, from: [0, 8], to: [8, 0], etiket: "MD₂", gizli: true },
+              { id: "MD2", tip: "cizgi", renk: 3, from: [0, 8], to: [7.6, 0.4], etiket: "MD₂", gizli: true },
               { id: "MS1", tip: "cizgi", renk: 2, from: [7, 0], to: [7, 9.5], etiket: "MS₁", gizli: true },
               { id: "MS2", tip: "cizgi", renk: 2, from: [3, 0], to: [3, 9.5], etiket: "MS₂", gizli: true },
               { id: "okDR", tip: "ok", renk: 3, from: [3.2, 7], to: [4.8, 7], gizli: true },

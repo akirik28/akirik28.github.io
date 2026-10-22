@@ -55,19 +55,19 @@ window.DEFTER = (function () {
           graf({ baslik: "Aynı gelir artışı, üç mal", xlabel: "Miktar", ylabel: "Fiyat", xmax: 12, ymax: 10, xticks: [], yticks: [],
             ogeler: [
               { id: "D", tip: "cizgi", renk: 0, from: [2, 8], to: [8, 2], etiket: "D" },
-              { id: "Dk", tip: "cizgi", renk: 0, kesik: true, from: [2, 8], to: [8, 2] },
-              { id: "D1", tip: "cizgi", renk: 3, from: [3, 8], to: [9, 2], etiket: "D₁ zorunlu" },
-              { id: "D3", tip: "cizgi", renk: 2, from: [5, 8], to: [11, 2], etiket: "D₃ lüks" },
-              { id: "D2", tip: "cizgi", renk: 1, from: [0, 8], to: [6, 2], etiket: "D₂ inferior" },
+              { id: "Dk", tip: "cizgi", renk: 0, kesik: true, from: [2, 8], to: [8, 2], etiket: "D" },
+              { id: "D1", tip: "cizgi", renk: 3, from: [3, 8], to: [9, 2], etiket: "D₁" },
+              { id: "D3", tip: "cizgi", renk: 2, from: [5, 8], to: [11, 2], etiket: "D₃" },
+              { id: "D2", tip: "cizgi", renk: 1, from: [0, 8], to: [6, 2], etiket: "D₂" },
               { id: "ok1", tip: "ok", renk: 3, from: [3.15, 7], to: [3.85, 7] },
               { id: "ok3", tip: "ok", renk: 2, from: [7.2, 3], to: [9.8, 3] },
               { id: "ok2", tip: "ok", renk: 1, from: [2.85, 7], to: [1.15, 7] }
             ],
             durumlar: [
               ["Başlangıç talebi D. Şimdi tüketicilerin geliri artıyor.", ["D"]],
-              ["Zorunlu normal mal (0 < E_I < 1): talep ==sağa== kayar ama az.", ["Dk", "D1", "ok1"]],
-              ["Lüks mal (E_I > 1): aynı gelir artışında kayma yüzde olarak ==daha büyüktür==.", ["Dk", "D1", "D3", "ok1", "ok3"]],
-              ["*Inferior* mal (E_I < 0): talep ==sola== kayar.", ["Dk", "D2", "ok2"]]
+              ["Zorunlu normal mal (0 < E_I < 1): talep D₁'e, ==sağa== kayar ama az.", ["Dk", "D1", "ok1"]],
+              ["Lüks mal (E_I > 1): aynı gelir artışında talep D₃'e kayar; kayma yüzde olarak ==daha büyüktür==.", ["Dk", "D1", "D3", "ok1", "ok3"]],
+              ["*Inferior* mal (E_I < 0): talep D₂'ye, ==sola== kayar.", ["Dk", "D2", "ok2"]]
             ] }),
           { tip: "ikili", sol: { ikon: "📈", baslik: "*Normal good*", maddeler: ["E_I > 0", "Gelir artınca talep sağa"] },
             sag: { ikon: "📉", baslik: "*Inferior good*", maddeler: ["E_I < 0", "Gelir artınca talep sola"] },

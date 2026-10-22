@@ -16,7 +16,7 @@ window.DEFTER = (function () {
   function OK(id, x1, y1, x2, y2, renk) { return { id: id, tip: "ok", renk: renk == null ? 3 : renk, from: [R(x1), R(y1)], to: [R(x2), R(y2)], gizli: true }; }
   function SH(id, p, xa, xb, renk) { var s = xb > xa ? 1 : -1; return OK(id, xa + 0.3 * s, p, xb - 0.3 * s, p, renk); }
   function TX(id, x, y, metin, hiza) { return { id: id, tip: "yazi", x: x, y: y, metin: metin, hiza: hiza, gizli: true }; }
-  function GAP(id, ye, ys, metin) { return [OK(id + "k", ye + (ys > ye ? 0.1 : -0.1), 0.5, ys, 0.5, 2), TX(id + "t", (ye + ys) / 2, 1, metin)]; }
+  function GAP(id, ye, ys, metin) { var sol = ye < ys; return [OK(id + "k", ye + (sol ? 0.1 : -0.1), 0.5, ys, 0.5, 2), { id: id + "t", tip: "yazi", x: R(sol ? ys - 0.15 : ys + 0.15), y: 1.1, metin: metin, hiza: sol ? "end" : "start", gizli: true }]; }
   function graf(baslik, ogeler, durumlar, o) { o = o || {};
     var og = [].concat.apply([], ogeler), ids = og.map(function (g) { return g.id; });
     return { tip: "grafik", baslik: baslik, xlabel: o.x || "Reel GSYİH (Y)", ylabel: o.y || "Fiyat düzeyi (P)", xmax: 11, ymax: 10,

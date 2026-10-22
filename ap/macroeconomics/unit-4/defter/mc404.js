@@ -100,7 +100,7 @@ window.DEFTER = {
             { t: "Maksimum para çarpanı", alt: "money multiplier" }, "=",
             { t: "1 ÷ rr", alt: "zorunlu karşılık oranının tersi" }
           ], aciklama: "CED'e göre para çarpanı, para arzının para tabanına oranıdır (para arzı ÷ para tabanı). Yalnızca zorunlu rezerv tutulursa ve halk nakit tutmazsa üst sınıra, 1 ÷ rr'ye ulaşır. En fazla para yaratımı = fazla rezerv × çarpan." },
-        { tip: "tablo", baslik: "Zorunlu karşılık oranı küçüldükçe çarpan büyür", head: ["Zorunlu karşılık (rr)", "Maks. çarpan (1 ÷ rr)", "800 TL fazla rezervden en fazla yeni para"], rows: [
+        { tip: "tablo", baslik: "Zorunlu karşılık oranı küçüldükçe çarpan büyür", head: ["Zorunlu karşılık (rr)", "Maks. çarpan (1 ÷ rr)", "Fazla rezerv 800 ise yeni para"], rows: [
             ["%10", "10", "8.000"],
             ["%20", "5", "4.000"],
             ["%25", "4", "3.200"],

@@ -5,8 +5,11 @@ window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */
   function graf(o) {
     var ids = o.ogeler.map(function (e) { return e.id; });
+    var eslik = o.ogeler.filter(function (e) { return e.pair; }); /* pair: bağlı olduğu ögeyle birlikte görünen etiket */
     o.durumlar = o.durumlar.map(function (d) {
-      var r = { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) };
+      var g = d[1].slice();
+      eslik.forEach(function (e) { if (g.indexOf(e.pair) >= 0 && g.indexOf(e.id) < 0) g.push(e.id); });
+      var r = { metin: d[0], goster: g, gizle: ids.filter(function (i) { return g.indexOf(i) < 0; }) };
       if (d[2]) r.set = d[2];
       return r;
     });
@@ -27,19 +30,21 @@ window.DEFTER = (function () {
             ogeler: [
               { id: "D", tip: "cizgi", renk: 0, from: [0, 10], to: [10, 0], etiket: "D" },
               { id: "S", tip: "cizgi", renk: 1, from: [0, 2], to: [10, 12], etiket: "S" },
-              { id: "E0", tip: "nokta", renk: 3, x: 4, y: 6, etiket: "Denge", kilavuz: true },
+              { id: "E0", tip: "nokta", renk: 3, x: 4, y: 6, etiket: "", kilavuz: true },
+              { id: "tE0", tip: "yazi", pair: "E0", x: 4, y: 6.75, metin: "denge" },
               { id: "h", tip: "cizgi", renk: 2, kesik: true, from: [0, 8], to: [6, 8] },
               { id: "qd", tip: "nokta", renk: 0, x: 2, y: 8, etiket: "Qd" },
-              { id: "qs", tip: "nokta", renk: 1, x: 6, y: 8, etiket: "Qs" },
+              { id: "qs", tip: "nokta", renk: 1, x: 6, y: 8, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 6.25, y: 7.35, metin: "Qs", hiza: "start" },
               { id: "bk", tip: "yazi", x: 4, y: 8.7, metin: "fazlalık: 40 bilet" },
               { id: "okd", tip: "ok", renk: 3, from: [9, 7.8], to: [9, 6.2] },
               { id: "oku", tip: "ok", renk: 3, from: [9, 4.2], to: [9, 5.8] }
             ],
             durumlar: [
               ["Denge: 60 TL ve 40 bilet. Talep P = 100 − Q, arz P = Q + 20.", ["D", "S", "E0"]],
-              ["Fiyat 80 TL'ye çıkarılırsa alıcılar 20 bilet ister (Qd), satıcılar 60 bilet sunar (Qs). ==Fazlalık== = Qs − Qd = 40 bilet.", ["D", "S", "E0", "h", "qd", "qs", "bk"], { h: { from: [0, 8], to: [6, 8] }, qd: { x: 2, y: 8 }, qs: { x: 6, y: 8 }, bk: { x: 4, y: 8.7, metin: "fazlalık: 40 bilet" } }],
+              ["Fiyat 80 TL'ye çıkarılırsa alıcılar 20 bilet ister (Qd), satıcılar 60 bilet sunar (Qs). ==Fazlalık== = Qs − Qd = 40 bilet.", ["D", "S", "E0", "h", "qd", "qs", "bk"], { h: { from: [0, 8], to: [6, 8] }, qd: { x: 2, y: 8 }, qs: { x: 6, y: 8 }, lqs: { x: 6.25, y: 7.35 }, bk: { x: 4, y: 8.7, metin: "fazlalık: 40 bilet" } }],
               ["Satıcılar elde kalan biletlerle karşılaşır ve indirim yapar: fiyat düşer. Fiyat düştükçe Qd artar, Qs azalır; fazlalık kapanana kadar sürer. Denge 60 TL'de bulunur.", ["D", "S", "E0", "okd"]],
-              ["Fiyat 40 TL'ye çekilirse alıcılar 60 bilet ister, satıcılar 20 bilet sunar. ==Kıtlık== = Qd − Qs = 40 bilet.", ["D", "S", "E0", "h", "qd", "qs", "bk"], { h: { from: [0, 4], to: [6, 4] }, qd: { x: 6, y: 4 }, qs: { x: 2, y: 4 }, bk: { x: 4, y: 3.2, metin: "kıtlık: 40 bilet" } }],
+              ["Fiyat 40 TL'ye çekilirse alıcılar 60 bilet ister, satıcılar 20 bilet sunar. ==Kıtlık== = Qd − Qs = 40 bilet.", ["D", "S", "E0", "h", "qd", "qs", "bk"], { h: { from: [0, 4], to: [6, 4] }, qd: { x: 6, y: 4 }, qs: { x: 2, y: 4 }, lqs: { x: 2.25, y: 3.35 }, bk: { x: 4, y: 3.2, metin: "kıtlık: 40 bilet" } }],
               ["Alıcılar bilete ulaşmak için daha fazla ödemeye razı olur, satıcılar zam yapar: fiyat yükselir ve denge 60 TL'ye döner.", ["D", "S", "E0", "oku"]]
             ] }),
           { tip: "ikili", sol: { ikon: "📦", baslik: "Fazlalık (*surplus*)", maddeler: ["Fiyat dengenin ÜSTÜNDE", "Qs > Qd; fiyat düşme baskısında"] },
@@ -97,11 +102,16 @@ window.DEFTER = (function () {
               { id: "okDL", tip: "ok", renk: 3, from: [2.7, 7], to: [1.3, 7] },
               { id: "okSR", tip: "ok", renk: 2, from: [7.3, 9], to: [8.7, 9] },
               { id: "okSL", tip: "ok", renk: 2, from: [6.7, 9], to: [5.3, 9] },
-              { id: "E0", tip: "nokta", renk: 0, x: 4, y: 6, etiket: "E₀", kilavuz: true },
-              { id: "E1", tip: "nokta", renk: 3, x: 5, y: 7, etiket: "E₁", kilavuz: true },
-              { id: "E2", tip: "nokta", renk: 3, x: 3, y: 5, etiket: "E₂", kilavuz: true },
-              { id: "E3", tip: "nokta", renk: 2, x: 5, y: 5, etiket: "E₃", kilavuz: true },
-              { id: "E4", tip: "nokta", renk: 2, x: 3, y: 7, etiket: "E₄", kilavuz: true }
+              { id: "E0", tip: "nokta", renk: 0, x: 4, y: 6, etiket: "", kilavuz: true },
+              { id: "E1", tip: "nokta", renk: 3, x: 5, y: 7, etiket: "", kilavuz: true },
+              { id: "E2", tip: "nokta", renk: 3, x: 3, y: 5, etiket: "", kilavuz: true },
+              { id: "E3", tip: "nokta", renk: 2, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "E4", tip: "nokta", renk: 2, x: 3, y: 7, etiket: "", kilavuz: true },
+              { id: "tE0", tip: "yazi", pair: "E0", x: 4, y: 6.7, metin: "E₀" },
+              { id: "tE1", tip: "yazi", pair: "E1", x: 5, y: 7.7, metin: "E₁" },
+              { id: "tE2", tip: "yazi", pair: "E2", x: 3, y: 5.7, metin: "E₂" },
+              { id: "tE3", tip: "yazi", pair: "E3", x: 5, y: 5.7, metin: "E₃" },
+              { id: "tE4", tip: "yazi", pair: "E4", x: 3, y: 7.7, metin: "E₄" }
             ],
             durumlar: [
               ["Başlangıç: E₀ = 60 TL, 40 bilet. CS = ½ × 40 × 40 = 800 TL; PS = ½ × 40 × (60 − 20) = 800 TL.", ["D", "S", "E0"]],
@@ -126,9 +136,12 @@ window.DEFTER = (function () {
               { id: "S", tip: "cizgi", renk: 1, from: [0, 0], to: [10, 10], etiket: "S" },
               { id: "S2", tip: "cizgi", renk: 2, from: [0, 3], to: [7, 10], etiket: "S₂" },
               { id: "okSL", tip: "ok", renk: 2, from: [7.6, 8], to: [5.4, 8] },
-              { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "E₀", kilavuz: true },
-              { id: "E1", tip: "nokta", renk: 1, x: 4, y: 7, etiket: "E₁", kilavuz: true },
-              { id: "E2", tip: "nokta", renk: 1, x: 3, y: 6, etiket: "E₁", kilavuz: true }
+              { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "E1", tip: "nokta", renk: 1, x: 4, y: 7, etiket: "", kilavuz: true },
+              { id: "E2", tip: "nokta", renk: 1, x: 3, y: 6, etiket: "", kilavuz: true },
+              { id: "tE0", tip: "yazi", pair: "E0", x: 5.15, y: 5.7, metin: "E₀" },
+              { id: "tE1", tip: "yazi", pair: "E1", x: 4.2, y: 7.7, metin: "E₁" },
+              { id: "tE2", tip: "yazi", pair: "E2", x: 3, y: 6.7, metin: "E₁" }
             ],
             durumlar: [
               ["**Dik (inelastik) talep:** başlangıç dengesi E₀ (5, 5).", ["Dd", "S", "E0"]],

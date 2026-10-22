@@ -6,8 +6,11 @@ window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */
   function graf(o) {
     var ids = o.ogeler.map(function (e) { return e.id; });
+    var eslik = o.ogeler.filter(function (e) { return e.pair; }); /* pair: bağlı olduğu ögeyle birlikte görünen etiket */
     o.durumlar = o.durumlar.map(function (d) {
-      var r = { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) };
+      var g = d[1].slice();
+      eslik.forEach(function (e) { if (g.indexOf(e.pair) >= 0 && g.indexOf(e.id) < 0) g.push(e.id); });
+      var r = { metin: d[0], goster: g, gizle: ids.filter(function (i) { return g.indexOf(i) < 0; }) };
       if (d[2]) r.set = d[2];
       return r;
     });
@@ -17,10 +20,11 @@ window.DEFTER = (function () {
   var TX = [{ v: 3, label: "30" }, { v: 5, label: "50" }, { v: 7, label: "70" }];
   var TY3 = [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 5, label: "50" }];
   var TY7 = [{ v: 5, label: "50" }, { v: 7, label: "70" }];
-  function DS() {
+  function DS(ust) { /* ust: eğrilerin çizileceği en yüksek fiyat birimi (10 ya da yakınlaştırmak için 8) */
+    ust = ust || 10;
     return [
-      { id: "D", tip: "cizgi", renk: 0, from: [0, 10], to: [10, 0], etiket: "D" },
-      { id: "S", tip: "cizgi", renk: 1, from: [0, 0], to: [10, 10], etiket: "S" }
+      { id: "D", tip: "cizgi", renk: 0, from: [10 - ust, ust], to: [10, 0], etiket: "D" },
+      { id: "S", tip: "cizgi", renk: 1, from: [0, 0], to: [ust, ust], etiket: "S" }
     ];
   }
 
@@ -53,11 +57,13 @@ window.DEFTER = (function () {
               { id: "B", tip: "alan", renk: 3, noktalar: [[3, 3], [5, 5], [5, 3]] },
               { id: "C", tip: "alan", renk: 3, noktalar: [[5, 5], [7, 3], [5, 3]] }
             ].concat(DS()).concat([
-              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "otarşi", kilavuz: true },
+              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tEa", tip: "yazi", pair: "Ea", x: 5, y: 5.85, metin: "otarşi" },
               { id: "pw", tip: "cizgi", renk: 2, kesik: true, from: [0, 3], to: [10, 3], etiket: "Pw" },
-              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "Qs" },
+              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 3.25, y: 2.4, metin: "Qs", hiza: "start" },
               { id: "qd", tip: "nokta", renk: 0, x: 7, y: 3, etiket: "Qd" },
-              { id: "tim", tip: "yazi", x: 5, y: 2.1, metin: "ithalat = 40" },
+              { id: "tim", tip: "yazi", x: 5.4, y: 2.0, metin: "ithalat = 40" },
               { id: "tA", tip: "yazi", x: 1.4, y: 4, metin: "A" },
               { id: "tB", tip: "yazi", x: 4.45, y: 3.75, metin: "B" },
               { id: "tC", tip: "yazi", x: 5.6, y: 3.6, metin: "C" }
@@ -85,10 +91,12 @@ window.DEFTER = (function () {
               { id: "B", tip: "alan", renk: 3, noktalar: [[3, 7], [5, 7], [5, 5]] },
               { id: "C", tip: "alan", renk: 3, noktalar: [[5, 5], [5, 7], [7, 7]] }
             ].concat(DS()).concat([
-              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "otarşi", kilavuz: true },
+              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tEa", tip: "yazi", pair: "Ea", x: 5, y: 4.15, metin: "otarşi" },
               { id: "pw", tip: "cizgi", renk: 2, kesik: true, from: [0, 7], to: [10, 7], etiket: "Pw" },
               { id: "qd", tip: "nokta", renk: 0, x: 3, y: 7, etiket: "Qd" },
-              { id: "qs", tip: "nokta", renk: 1, x: 7, y: 7, etiket: "Qs" },
+              { id: "qs", tip: "nokta", renk: 1, x: 7, y: 7, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 7.25, y: 6.35, metin: "Qs", hiza: "start" },
               { id: "tim", tip: "yazi", x: 5, y: 7.9, metin: "ihracat = 40" },
               { id: "tA", tip: "yazi", x: 1.7, y: 6, metin: "A" },
               { id: "tB", tip: "yazi", x: 4.35, y: 6.4, metin: "B" },
@@ -114,22 +122,24 @@ window.DEFTER = (function () {
         baslik: "Gümrük vergisi (*tariff*)",
         kisa: "Tarife iç fiyatı yükseltir, ithalatı azaltır, devlete gelir sağlar, toplam rantı düşürür.",
         bloklar: [
-          graf({ baslik: "İthal mala 10 TL tarife", xlabel: "Miktar (adet)", ylabel: "Fiyat (TL)", xmax: 12, ymax: 11, xticks: [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 5, label: "50" }, { v: 6, label: "60" }, { v: 7, label: "70" }], yticks: TY3,
+          graf({ baslik: "İthal mala 10 TL tarife", xlabel: "Miktar (adet)", ylabel: "Fiyat (TL)", xmax: 12, ymax: 9, xticks: [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 5, label: "50" }, { v: 6, label: "60" }, { v: 7, label: "70" }], yticks: TY3,
             ogeler: [
               { id: "rev", tip: "alan", renk: 2, noktalar: [[4, 3], [6, 3], [6, 4], [4, 4]] },
               { id: "dl", tip: "alan", renk: 3, noktalar: [[3, 3], [4, 4], [4, 3]] },
               { id: "dr", tip: "alan", renk: 3, noktalar: [[6, 4], [7, 3], [6, 3]] }
-            ].concat(DS()).concat([
+            ].concat(DS(8)).concat([
               { id: "pw", tip: "cizgi", renk: 2, kesik: true, from: [0, 3], to: [10, 3], etiket: "Pw" },
               { id: "pt", tip: "cizgi", renk: 2, from: [0, 4], to: [10, 4], etiket: "Pw + t" },
-              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "Qs" },
+              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 2.75, y: 3.45, metin: "Qs", hiza: "end" },
               { id: "qd", tip: "nokta", renk: 0, x: 7, y: 3, etiket: "Qd" },
-              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "iç denge", kilavuz: true },
+              { id: "Ea", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
+              { id: "tEa", tip: "yazi", pair: "Ea", x: 5, y: 5.85, metin: "iç denge" },
               { id: "tr", tip: "yazi", x: 5, y: 3.35, metin: "gelir" }
             ]),
             durumlar: [
-              ["Serbest ticaret: Pw = 30. Üretim 30, tüketim 70, ithalat 40.", ["D", "S", "pw", "qs", "qd"], { qs: { x: 3, y: 3 }, qd: { x: 7, y: 3 } }],
-              ["Hükümet ithal mala adet başına ==10 TL tarife== koyuyor: iç fiyat 40 TL olur. Yerli üretim 40'a çıkar, iç tüketim 60'a düşer; ==ithalat 20 adede iner==.", ["D", "S", "pw", "pt", "qs", "qd"], { qs: { x: 4, y: 4 }, qd: { x: 6, y: 4 } }],
+              ["Serbest ticaret: Pw = 30. Üretim 30, tüketim 70, ithalat 40.", ["D", "S", "pw", "qs", "qd"], { qs: { x: 3, y: 3 }, lqs: { x: 2.75, y: 3.45 }, qd: { x: 7, y: 3 } }],
+              ["Hükümet ithal mala adet başına ==10 TL tarife== koyuyor: iç fiyat 40 TL olur. Yerli üretim 40'a çıkar, iç tüketim 60'a düşer; ==ithalat 20 adede iner==.", ["D", "S", "pw", "pt", "qs", "qd"], { qs: { x: 4, y: 4 }, lqs: { x: 3.75, y: 4.45 }, qd: { x: 6, y: 4 } }],
               ["Devletin tarife geliri = tarife × ithalat = 10 × 20 = ==200 TL== (dikdörtgen).", ["D", "S", "pw", "pt", "qs", "qd", "rev", "tr"]],
               ["İki küçük üçgen ==DWL==: soldaki, ithalat varken daha pahalıya üretilen yerli birimler (½ × 10 × 10 = 50); sağdaki, kaçan alımlar (50). Toplam DWL = 100 TL.", ["D", "S", "pw", "pt", "qs", "qd", "rev", "tr", "dl", "dr"]],
               ["Tarife 20 TL olsaydı iç fiyat 50 TL (otarşi fiyatı) olur ve ==ithalat sıfırlanır==. Buna yasaklayıcı tarife denir; devlet geliri de sıfırdır.", ["D", "S", "pw", "pt", "Ea"], { pt: { from: [0, 5], to: [10, 5] } }]
@@ -145,22 +155,23 @@ window.DEFTER = (function () {
         baslik: "Kota (*quota*) ve tarife karşılaştırması",
         kisa: "Kota, ithalat miktarını sınırlayarak tarife gibi iç fiyatı yükseltir.",
         bloklar: [
-          graf({ baslik: "İthalat kotası: en fazla 20 adet", xlabel: "Miktar (adet)", ylabel: "Fiyat (TL)", xmax: 12, ymax: 11, xticks: [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 7, label: "70" }], yticks: TY3,
+          graf({ baslik: "İthalat kotası: en fazla 20 adet", xlabel: "Miktar (adet)", ylabel: "Fiyat (TL)", xmax: 12, ymax: 9, xticks: [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 7, label: "70" }], yticks: TY3,
             ogeler: [
               { id: "rent", tip: "alan", renk: 2, noktalar: [[4, 3], [6, 3], [6, 4], [4, 4]] },
               { id: "dl", tip: "alan", renk: 3, noktalar: [[3, 3], [4, 4], [4, 3]] },
               { id: "dr", tip: "alan", renk: 3, noktalar: [[6, 4], [7, 3], [6, 3]] }
-            ].concat(DS()).concat([
+            ].concat(DS(8)).concat([
               { id: "pw", tip: "cizgi", renk: 2, kesik: true, from: [0, 3], to: [10, 3], etiket: "Pw" },
               { id: "pi", tip: "cizgi", renk: 2, from: [0, 4], to: [10, 4], etiket: "iç fiyat" },
-              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "Qs" },
+              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 2.75, y: 3.45, metin: "Qs", hiza: "end" },
               { id: "qd", tip: "nokta", renk: 0, x: 7, y: 3, etiket: "Qd" },
               { id: "kq", tip: "yazi", x: 5, y: 2.1, metin: "ithalat = 40" },
               { id: "tr", tip: "yazi", x: 5, y: 3.35, metin: "kota rantı" }
             ]),
             durumlar: [
-              ["Serbest ticaret: Pw = 30, ithalat 40 adet.", ["D", "S", "pw", "qs", "qd", "kq"], { qs: { x: 3, y: 3 }, qd: { x: 7, y: 3 }, kq: { metin: "ithalat = 40" } }],
-              ["Devlet ithalatı en fazla 20 adetle sınırlıyor. Yurt içinde Qd − Qs = 20 olduğu fiyat ==40 TL==: yerli üretim 40'a çıkar, tüketim 60'a düşer.", ["D", "S", "pw", "pi", "qs", "qd", "kq"], { qs: { x: 4, y: 4 }, qd: { x: 6, y: 4 }, kq: { metin: "kota: 20" } }],
+              ["Serbest ticaret: Pw = 30, ithalat 40 adet.", ["D", "S", "pw", "qs", "qd", "kq"], { qs: { x: 3, y: 3 }, lqs: { x: 2.75, y: 3.45 }, qd: { x: 7, y: 3 }, kq: { metin: "ithalat = 40" } }],
+              ["Devlet ithalatı en fazla 20 adetle sınırlıyor. Yurt içinde Qd − Qs = 20 olduğu fiyat ==40 TL==: yerli üretim 40'a çıkar, tüketim 60'a düşer.", ["D", "S", "pw", "pi", "qs", "qd", "kq"], { qs: { x: 4, y: 4 }, lqs: { x: 3.75, y: 4.45 }, qd: { x: 6, y: 4 }, kq: { metin: "kota: 20" } }],
               ["Dikdörtgen (40 − 30) × 20 = 200 TL, ithalat iznine sahip olanlara kalır: ==kota rantı==. Tarifede aynı alan devlete gider.", ["D", "S", "pw", "pi", "qs", "qd", "kq", "rent", "tr"]],
               ["Yerli üretimin artması ve tüketimin azalması aynı iki üçgeni doğurur: DWL = ==100 TL==.", ["D", "S", "pw", "pi", "qs", "qd", "kq", "rent", "tr", "dl", "dr"]]
             ] }),

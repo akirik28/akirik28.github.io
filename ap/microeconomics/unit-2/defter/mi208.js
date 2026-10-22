@@ -5,8 +5,11 @@ window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */
   function graf(o) {
     var ids = o.ogeler.map(function (e) { return e.id; });
+    var eslik = o.ogeler.filter(function (e) { return e.pair; }); /* pair: bağlı olduğu ögeyle birlikte görünen etiket */
     o.durumlar = o.durumlar.map(function (d) {
-      var r = { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) };
+      var g = d[1].slice();
+      eslik.forEach(function (e) { if (g.indexOf(e.pair) >= 0 && g.indexOf(e.id) < 0) g.push(e.id); });
+      var r = { metin: d[0], goster: g, gizle: ids.filter(function (i) { return g.indexOf(i) < 0; }) };
       if (d[2]) r.set = d[2];
       return r;
     });
@@ -45,8 +48,9 @@ window.DEFTER = (function () {
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
               { id: "pc", tip: "cizgi", renk: 2, from: [0, 7], to: [10, 7], etiket: "tavan" },
               { id: "qd", tip: "nokta", renk: 0, x: 7, y: 3, etiket: "Qd" },
-              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "Qs" },
-              { id: "bk", tip: "yazi", x: 5, y: 2.2, metin: "kıtlık: 40 bilet" },
+              { id: "qs", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 3.25, y: 2.4, metin: "Qs", hiza: "start" },
+              { id: "bk", tip: "yazi", x: 5.7, y: 2.2, metin: "kıtlık: 40 bilet" },
               { id: "pd", tip: "nokta", renk: 3, x: 3, y: 7, etiket: "70", kilavuz: true },
               { id: "td", tip: "yazi", x: 3.7, y: 4.85, metin: "DWL" }
             ],
@@ -75,8 +79,9 @@ window.DEFTER = (function () {
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
               { id: "pf", tip: "cizgi", renk: 2, from: [0, 3], to: [10, 3], etiket: "taban" },
               { id: "qd", tip: "nokta", renk: 0, x: 3, y: 7, etiket: "Qd" },
-              { id: "qs", tip: "nokta", renk: 1, x: 7, y: 7, etiket: "Qs" },
-              { id: "bk", tip: "yazi", x: 5, y: 7.8, metin: "fazlalık: 40 bilet" },
+              { id: "qs", tip: "nokta", renk: 1, x: 7, y: 7, etiket: "" },
+              { id: "lqs", tip: "yazi", pair: "qs", x: 7.25, y: 6.35, metin: "Qs", hiza: "start" },
+              { id: "bk", tip: "yazi", x: 5.2, y: 8.3, metin: "fazlalık: 40 bilet" },
               { id: "td", tip: "yazi", x: 3.7, y: 4.85, metin: "DWL" }
             ],
             durumlar: [
@@ -108,9 +113,11 @@ window.DEFTER = (function () {
               { id: "St", tip: "cizgi", renk: 2, from: [0, 2], to: [10, 12], etiket: "S + vergi" },
               { id: "oks", tip: "ok", renk: 2, from: [3, 3.3], to: [3, 4.7] },
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
-              { id: "pb", tip: "nokta", renk: 0, x: 4, y: 6, etiket: "alıcı öder", kilavuz: true },
-              { id: "ps", tip: "nokta", renk: 1, x: 4, y: 4, etiket: "satıcı alır", kilavuz: true },
-              { id: "tr", tip: "yazi", x: 2, y: 5, metin: "vergi geliri" },
+              { id: "pb", tip: "nokta", renk: 0, x: 4, y: 6, etiket: "", kilavuz: true },
+              { id: "ps", tip: "nokta", renk: 1, x: 4, y: 4, etiket: "", kilavuz: true },
+              { id: "tpb", tip: "yazi", pair: "pb", x: 0.15, y: 5.7, metin: "alıcı: 60", hiza: "start" },
+              { id: "tps", tip: "yazi", pair: "ps", x: 0.15, y: 4.2, metin: "satıcı: 40", hiza: "start" },
+              { id: "tr", tip: "yazi", x: 1.5, y: 5, metin: "vergi geliri" },
               { id: "td", tip: "yazi", x: 6.3, y: 5, metin: "DWL" }
             ],
             durumlar: [
@@ -139,9 +146,11 @@ window.DEFTER = (function () {
               { id: "Ss", tip: "cizgi", renk: 2, from: [2, 0], to: [12, 10], etiket: "S_s" },
               { id: "oks", tip: "ok", renk: 2, from: [8, 7.7], to: [8, 6.3] },
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
-              { id: "pb", tip: "nokta", renk: 0, x: 6, y: 4, etiket: "alıcı öder", kilavuz: true },
-              { id: "ps", tip: "nokta", renk: 1, x: 6, y: 6, etiket: "satıcı alır", kilavuz: true },
-              { id: "tm", tip: "yazi", x: 2.8, y: 5, metin: "devletin maliyeti" },
+              { id: "pb", tip: "nokta", renk: 0, x: 6, y: 4, etiket: "", kilavuz: true },
+              { id: "ps", tip: "nokta", renk: 1, x: 6, y: 6, etiket: "", kilavuz: true },
+              { id: "tpb", tip: "yazi", pair: "pb", x: 0.15, y: 4.2, metin: "alıcı: 40", hiza: "start" },
+              { id: "tps", tip: "yazi", pair: "ps", x: 0.15, y: 5.7, metin: "satıcı: 60", hiza: "start" },
+              { id: "tm", tip: "yazi", x: 2.4, y: 5, metin: "devletin maliyeti" },
               { id: "td", tip: "yazi", x: 7.1, y: 5, metin: "DWL" }
             ],
             durumlar: [
@@ -160,7 +169,7 @@ window.DEFTER = (function () {
         baslik: "Verginin yükünü kim taşır? (*tax incidence*)",
         kisa: "Piyasadan daha zor vazgeçen, yani daha inelastik taraf verginin çoğunu taşır.",
         bloklar: [
-          graf({ baslik: "Aynı 30 TL'lik vergi, iki farklı talep", xlabel: "Miktar", ylabel: "Fiyat", xmax: 12, ymax: 12, xticks: [], yticks: [{ v: 5, label: "P₀" }],
+          graf({ baslik: "Aynı 30 TL'lik vergi, iki farklı talep", xlabel: "Miktar", ylabel: "Fiyat", xmax: 12, ymax: 12, xticks: [], yticks: [{ v: 3, label: "30" }, { v: 4, label: "40" }, { v: 5, label: "P₀" }, { v: 6, label: "60" }, { v: 7, label: "70" }],
             ogeler: [
               { id: "bB", tip: "alan", renk: 3, noktalar: [[0, 5], [4, 5], [4, 7], [0, 7]] },
               { id: "bS", tip: "alan", renk: 2, noktalar: [[0, 4], [4, 4], [4, 5], [0, 5]] },
@@ -169,16 +178,16 @@ window.DEFTER = (function () {
               { id: "S", tip: "cizgi", renk: 1, from: [0, 0], to: [10, 10], etiket: "S" },
               { id: "St", tip: "cizgi", renk: 2, from: [0, 3], to: [7, 10], etiket: "S + vergi" },
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
-              { id: "pb", tip: "nokta", renk: 0, x: 4, y: 7, etiket: "alıcı 70", kilavuz: true },
-              { id: "ps", tip: "nokta", renk: 1, x: 4, y: 4, etiket: "satıcı 40", kilavuz: true },
+              { id: "pb", tip: "nokta", renk: 0, x: 4, y: 7, etiket: "", kilavuz: true },
+              { id: "ps", tip: "nokta", renk: 1, x: 4, y: 4, etiket: "", kilavuz: true },
               { id: "tb", tip: "yazi", x: 2, y: 6, metin: "alıcı +20" },
               { id: "tsat", tip: "yazi", x: 2, y: 4.5, metin: "satıcı −10" }
             ],
             durumlar: [
               ["**İnelastik talep:** denge 50 TL, 50 bilet. Sonra satıcıdan adet başına 30 TL vergi alınıyor.", ["Dd", "S", "E0"]],
-              ["Yeni denge: alıcı 70 öder (+20), satıcı 40 alır (−10). Verginin ==2/3'ünü alıcı== taşır; talep inelastik olduğundan alıcı vazgeçemez.", ["Dd", "S", "St", "pb", "ps", "bB", "bS", "tb", "tsat"], { pb: { x: 4, y: 7, etiket: "alıcı 70" }, ps: { x: 4, y: 4, etiket: "satıcı 40" }, bB: { noktalar: [[0, 5], [4, 5], [4, 7], [0, 7]] }, bS: { noktalar: [[0, 4], [4, 4], [4, 5], [0, 5]] }, tb: { x: 2, y: 6, metin: "alıcı +20" }, tsat: { x: 2, y: 4.5, metin: "satıcı −10" } }],
+              ["Yeni denge: alıcı 70 öder (+20), satıcı 40 alır (−10). Verginin ==2/3'ünü alıcı== taşır; talep inelastik olduğundan alıcı vazgeçemez.", ["Dd", "S", "St", "pb", "ps", "bB", "bS", "tb", "tsat"], { pb: { x: 4, y: 7 }, ps: { x: 4, y: 4 }, bB: { noktalar: [[0, 5], [4, 5], [4, 7], [0, 7]] }, bS: { noktalar: [[0, 4], [4, 4], [4, 5], [0, 5]] }, tb: { x: 2, y: 6, metin: "alıcı +20" }, tsat: { x: 2, y: 4.5, metin: "satıcı −10" } }],
               ["**Elastik talep:** aynı başlangıç dengesi.", ["Df", "S", "E0"]],
-              ["Aynı vergi: miktar 30'a düşer, alıcı 60 öder (+10), satıcı 30 alır (−20). Bu sefer ==2/3'ünü satıcı== taşır; alıcı kolayca vazgeçebildiği için fiyat artışını satıcıya geri yansıtamaz.", ["Df", "S", "St", "pb", "ps", "bB", "bS", "tb", "tsat"], { pb: { x: 3, y: 6, etiket: "alıcı 60" }, ps: { x: 3, y: 3, etiket: "satıcı 30" }, bB: { noktalar: [[0, 5], [3, 5], [3, 6], [0, 6]] }, bS: { noktalar: [[0, 3], [3, 3], [3, 5], [0, 5]] }, tb: { x: 1.5, y: 5.5, metin: "alıcı +10" }, tsat: { x: 1.5, y: 4, metin: "satıcı −20" } }]
+              ["Aynı vergi: miktar 30'a düşer, alıcı 60 öder (+10), satıcı 30 alır (−20). Bu sefer ==2/3'ünü satıcı== taşır; alıcı kolayca vazgeçebildiği için fiyat artışını satıcıya geri yansıtamaz.", ["Df", "S", "St", "pb", "ps", "bB", "bS", "tb", "tsat"], { pb: { x: 3, y: 6 }, ps: { x: 3, y: 3 }, bB: { noktalar: [[0, 5], [3, 5], [3, 6], [0, 6]] }, bS: { noktalar: [[0, 3], [3, 3], [3, 5], [0, 5]] }, tb: { x: 1.5, y: 5.5, metin: "alıcı +10" }, tsat: { x: 1.5, y: 4, metin: "satıcı −20" } }]
             ] }),
           { tip: "ikili", sol: { ikon: "🛍️", baslik: "Alıcı daha çok yük taşır", maddeler: ["Talep inelastik", "Arz elastik"] },
             sag: { ikon: "🏭", baslik: "Satıcı daha çok yük taşır", maddeler: ["Talep elastik", "Arz inelastik"] },
@@ -204,7 +213,8 @@ window.DEFTER = (function () {
               { id: "vq", tip: "cizgi", renk: 2, from: [3, 0], to: [3, 9], etiket: "kota 30" },
               { id: "E0", tip: "nokta", renk: 0, x: 5, y: 5, etiket: "", kilavuz: true },
               { id: "pb", tip: "nokta", renk: 0, x: 3, y: 7, etiket: "alıcı 70", kilavuz: true },
-              { id: "ps", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "maliyet 30" },
+              { id: "ps", tip: "nokta", renk: 1, x: 3, y: 3, etiket: "" },
+              { id: "lps", tip: "yazi", pair: "ps", x: 3.2, y: 2.5, metin: "maliyet 30", hiza: "start" },
               { id: "tr", tip: "yazi", x: 1.5, y: 5, metin: "kota rantı" },
               { id: "td", tip: "yazi", x: 3.7, y: 4.85, metin: "DWL" }
             ],

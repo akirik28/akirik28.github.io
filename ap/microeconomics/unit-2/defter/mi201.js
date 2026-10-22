@@ -42,7 +42,7 @@ window.DEFTER = (function () {
               { id: "A", tip: "nokta", renk: 1, x: 3, y: 7, etiket: "70 TL · 30", kilavuz: true },
               { id: "B", tip: "nokta", renk: 1, x: 5, y: 5, etiket: "50 TL · 50", kilavuz: true },
               { id: "ok", tip: "ok", renk: 3, from: [3.4, 6.6], to: [4.6, 5.4] },
-              { id: "mb", tip: "yazi", x: 7.3, y: 5.2, metin: "D = MB" }
+              { id: "mb", tip: "yazi", x: 7.6, y: 6.6, metin: "D = MB" }
             ],
             durumlar: [
               ["Talep eğrisi: her nokta bir fiyat–miktar çiftidir. Fiyat **dikey**, miktar **yatay** eksendedir; eğri aşağı iner.", ["D"]],
