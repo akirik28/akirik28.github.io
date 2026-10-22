@@ -1,0 +1,21 @@
+Bir metro hattı düşün. Hat iki istasyonda bakım yüzünden kapalı. Soru şu: hangi duraklar arasında aktarmasız, kesintisiz gidebilirsin? Fonksiyonlarda da aynı soru var: f hangi aralıklarda sürekli? Cevap bir aralık listesi. Sonra da bozuk istasyonları nasıl tamir edeceğimizi göreceğiz; bazılarını tek bir parçayla onarabiliyoruz, bazılarını asla.
+
+Müjde: tanıdığın fonksiyonların hepsi, tanımlı oldukları her yerde süreklidir. Polinomlar her yerde. Rasyonel fonksiyonlar, paydayı sıfır yapan noktalar hariç. Karekök, içi sıfır ya da pozitifken. Sinüs ve kosinüs her yerde; tanjant ise kosinüsün sıfır olduğu yerlerde kopuk. e üzeri x her yerde; doğal logaritma yalnızca pozitif x'lerde. Bunların toplamı, çarpımı, bölümü ve bileşkesi de tanım kümelerinde süreklidir.
+
+Örnek: karekök 10 eksi 2 x. İçi sıfırdan küçük olamaz: 10 eksi 2 x, sıfırdan büyük eşit. Buradan x, 5'ten küçük eşit. Yani f, eksi sonsuzdan 5'e kadar, 5 dahil, süreklidir. 5'te yalnızca soldan yaklaşabiliyoruz. Uç noktada süreklilik tek taraflı limitle kontrol edilir: soldan limit sıfır, f 5 de sıfır.
+
+Şimdi bir AP örneği. g x eşittir x artı 1, bölü x kare eksi 4 x eksi 5. g hangi aralıklarda sürekli? Paydayı sıfırla: x eksi 5 çarpı x artı 1; kökler 5 ve eksi 1. g, bu iki nokta dışında her yerde sürekli: eksi sonsuzdan eksi 1'e, eksi 1'den 5'e ve 5'ten sonsuza; üç açık aralık. Bonus: eksi 1'de x artı 1 sadeleşiyor, orada bir delik var. 5'te ise sadeleşme yok: dikey asimptot. Delikteki limit de kolay: 1 bölü eksi 1 eksi 5, yani eksi altıda bir.
+
+Kapalı bir aralıkta, mesela 0 ile 4 arasında, sürekli demek iki şey demek: içerideki her noktada sürekli, uçlarda da tek taraflı: 0'da sağdan limit f 0'a, 4'te soldan limit f 4'e eşit. Bu tanım önemli, çünkü birazdan göreceğimiz ara değer teoremi gibi büyük teoremler, kapalı aralıkta süreklilik ister. Örnek: karekök x, 0 ile 4 arasındaki kapalı aralıkta sürekli; 0'da sağdan limit 0, karekök 0 da 0.
+
+Şimdi onarım zamanı. f x eşittir x kare eksi 2 x eksi 8, bölü x eksi 4. 4'te tanımsız: bir delik. Pay x eksi 4 çarpı x artı 2; sadeleşince x artı 2, limit 6. Yeni bir tanım yap: x 4 değilken eski formül, x eşittir 4'te 6. Delik doldu; artık fonksiyon 4'te sürekli. Kural basit: süreksizliği gidermek için f c'yi limitin değeri yap.
+
+AP'nin klasik sorusu: k kaç olmalı ki f sürekli olsun? f x, 2 ve öncesinde k x artı 1; 2'den sonra x kare eksi k. Soldan, ve f 2: 2 k artı 1. Sağdan: 4 eksi k. Eşitle: 2 k artı 1 eşittir 4 eksi k; 3 k eşittir 3, yani k eşittir 1. Kontrol: soldan 3, sağdan 4 eksi 1, yine 3. İki parça 3'te el sıkışıyor.
+
+Bir tane de trigonometrik: f x, x sıfırdan farklıyken sinüs 3 x bölü x; sıfırda ise a. Limit, sinüs k x bölü x kuralıyla 3. Grafikte dalga, sıfırın üstünde 3 yüksekliğinde bir delik bırakıyor; sürekli olması için a eşittir 3 olmalı. Gördün mü? Hep aynı tarif: limiti bul, değeri ona eşitle.
+
+Dikkat: her süreksizlik giderilmez. f x, 1'den önce x, 1'den sonra x artı 2 olsun: soldan 1, sağdan 3. f 1'e hangi sayıyı verirsen ver, iki taraf hâlâ farklı. Yalnızca limiti var olan, yani removable süreksizlikler doldurulabilir. Jump ve infinite süreksizlikler doldurulamaz, çünkü orada hedeflenecek tek bir yükseklik yok.
+
+Toparlayalım. Polinom, rasyonel, kök, trigonometrik, üstel ve logaritmik fonksiyonlar tanım kümelerinde süreklidir. Süreklilik aralığını bulmak için tanımsız noktaları çıkar. Kapalı aralıkta uçlarda tek taraflı limit yeter. Deliği doldurmak için f c'yi limite eşitle. Parçalı fonksiyonda k bulmak için soldan, sağdan ve f c'yi eşitle.
+
+Şimdi bir soru. f x, 2'den küçükken a x kare eksi 1; 2 ve sonrasında 3 x artı 1. f her yerde sürekliyse a kaçtır? Cevap: A. 2'de iki parça buluşmalı: 4 a eksi 1 eşittir 6 artı 1, yani 7. 4 a eşittir 8, a eşittir 2.

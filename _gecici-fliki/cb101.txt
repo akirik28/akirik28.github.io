@@ -1,0 +1,21 @@
+Telefonun balkondan düştü. Kamera tam birinci saniyede bir kare yakaladı. Soru şu: telefon tam o anda ne kadar hızlıydı? Tek bir karede hiçbir şey hareket etmiyor: yol sıfır, zaman sıfır. Hız da yol bölü zaman. Sıfır bölü sıfır! Anlamsız mı? Hayır. Bütün kalkülüsü başlatan soru bu, ve cevabın adı limit.
+
+Düşen bir cisim t saniyede yaklaşık 5 t kare metre yol alır. Birinci ile ikinci saniye arasında 20 eksi 5, yani 15 metre gitti: ortalama hız saniyede 15 metre. Buna average rate of change denir: iki an arasındaki ortalama değişim. Aralığı küçült: 1 ile 1 virgül 1 arası 10 virgül 5. 1 ile 1 virgül 01 arası 10 virgül 05. Sayılar 10'a yaklaşıyor. Anlık hız saniyede 10 metre.
+
+Grafikte bu ortalamalar, iki noktayı birleştiren secant line eğimleri. İkinci noktayı birinciye doğru kaydır: doğru döner, döner ve sonunda eğriye tek noktada dokunan tangent line'a oturur. Onun eğimi instantaneous rate of change, yani anlık değişim hızı. Bunu yapmak için tek bir alete ihtiyacımız var: yaklaşmak. Unit 1'in konusu tam olarak bu.
+
+Şu fonksiyona bak: f x eşittir x kare eksi 9, bölü x eksi 3. x yerine 3 koy: sıfır bölü sıfır. Fonksiyon 3'te tanımsız. Ama 3 dışında pay, x eksi 3 çarpı x artı 3; sadeleşir ve grafik x artı 3 doğrusu olur, tam 3'te küçük bir delikle. Noktayı soldan kaydır: 2 virgül 9'da 5 virgül 9, 2 virgül 99'da 5 virgül 99. Sağdan: 3 virgül 1'de 6 virgül 1. İkisi de deliğe, 6'ya gidiyor.
+
+Bunu şöyle yazarız: x üçe yaklaşırken f x'in limiti 6. Ekranda lim yazılır; altına x okla 3, yanına f x, eşittir 6. Anlamı: x'i 3'e yeterince yakın seçersen, f x'i 6'ya istediğin kadar yaklaştırabilirsin. Önemli ayrıntı: x 3'e yaklaşır ama 3 olmaz. Limit, oraya giderken ne olduğunu sorar; varınca ne olduğunu değil. Bir de şu: limit, bir gerçel sayıdır.
+
+Bir deney yapalım: üç grafik, üçü de aynı doğru. Birincisinde 3'te delik var, f 3 tanımsız. İkincisinde delik var ama nokta aşağıda: g 3 eşittir 2. Üçüncüsünde delik dolu: h 3 eşittir 6. Üçünün de limiti 6! Dur, burada çoğu kişi yanılıyor: limit, fonksiyonun o noktadaki değeri değildir. Değer bir nokta; limit, yaklaşırken gidilen yer.
+
+Yaklaşmanın iki yolu var. Soldan, yani 3'ten küçük sayılarla: buna left-hand limit denir, 3'ün üstüne küçük bir eksi konur. Sağdan, 3'ten büyük sayılarla: right-hand limit, üstte artı. Kural basit: limit ancak iki taraf aynı gerçel sayıya gidiyorsa vardır. İki taraf farklı yerlere giderse ne olur? Onu bir sonraki bölümde grafiklerle göreceğiz.
+
+Şimdi bir AP örneği. Konum s t eşittir 5 t kare. Hangi limit t eşittir 1'deki anlık hızı verir? Ortalama hız: s 1 artı h eksi s 1, bölü h. Açarsak pay 5 artı 10 h artı 5 h kare eksi 5, yani 10 h artı 5 h kare. h sıfır değil, o yüzden h'ye bölebiliriz: 10 artı 5 h. h sıfıra yaklaşırken limit 10. Tablodaki 10 virgül 5 ve 10 virgül 05 de tam bunu söylüyordu.
+
+Bir örnek daha: g x, x 2'den farklıyken x kare eksi 4 bölü x eksi 2; x eşittir 2'de ise 1. Önce limit. Yerine koyunca sıfır bölü sıfır: demek ki bir delik saklı. Pay x eksi 2 çarpı x artı 2; sadeleşince x artı 2. x ikiye yaklaşırken limit 4. Değer ise tanımdan: g 2 eşittir 1. Limit 4, değer 1. İkisi farklı olabilir ve bu tamamen normal.
+
+Toparlayalım. Kalkülüs anlık değişimi sorar; ortalama hızların gittiği yer anlık hızdır. Limit, x c'ye yaklaşırken f x'in yaklaştığı gerçel sayıdır. x c'ye yaklaşır ama c olmaz; f c ne olursa olsun limit değişmez. Soldan ve sağdan limit aynı sayıya gidiyorsa limit vardır. Sıfır bölü sıfır bir cevap değil, bir ipucu: sadeleştir ve yeniden bak.
+
+Şimdi bir soru. Ekrandaki grafikte doğru, x eşittir 4'te 2 yüksekliğindeki bir delikten geçiyor; dolu nokta ise 5 yüksekliğinde. Hangisi doğru? Cevap: B. Yaklaşırken gidilen yer delik, yani limit 2; dolu nokta yalnızca değeri, f 4 eşittir 5'i verir.

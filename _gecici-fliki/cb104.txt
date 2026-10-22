@@ -1,0 +1,23 @@
+Hesap makinesine sıfır bölü sıfır yaz: hata. Ama sıfır bölü sıfır bir maske gibidir: altında gerçek bir limit saklanıyor olabilir. Bu bölümde maskeyi düşürmenin dört aletini göreceğiz, ve hangi limitte hangi aleti seçeceğini. Çünkü sınavda kimse sana hangi yöntemi kullanacağını söylemez; ifadeye bakıp karar vermek senin işin.
+
+Her limitte ilk adım aynı: yerine koy. Bir sayı çıktıysa, mesela 5 bölü 2, bitti; cevap o. Sıfır olmayan bir sayı bölü sıfır çıktıysa, fonksiyon patlıyor: sonsuz limit ya da limit yok. Onu asimptot bölümünde göreceğiz. Sıfır bölü sıfır çıktıysa, buna indeterminate form denir, yani belirsiz şekil. Cevap değil; çalışmaya devam sinyali.
+
+Alet bir: çarpanlara ayır. x eksi 3'e yaklaşırken x kare artı x eksi 6, bölü x kare artı 2 x eksi 3. Yerine koy: pay sıfır, payda sıfır. Pay x artı 3 çarpı x eksi 2; payda x artı 3 çarpı x eksi 1. x artı 3'ler sadeleşir; x eksi 3 olmadığı için bu serbest. Kalan x eksi 2 bölü x eksi 1; eksi 3 koy: eksi 5 bölü eksi 4, yani 5 bölü 4.
+
+Küplerde de aynı: x bire yaklaşırken x küp eksi 1, bölü x eksi 1. Küp farkı formülü: x eksi 1 çarpı x kare artı x artı 1. x eksi 1 gider. Kalan x kare artı x artı 1; 1 koy: 3. Toplamı hatırla: x küp artı 8 de x artı 2 çarpı x kare eksi 2 x artı 4 diye ayrılır.
+
+Alet iki: köklü ifadede conjugate, yani eşlenik. x dokuza yaklaşırken karekök x eksi 3, bölü x eksi 9. Yerine koy: sıfır bölü sıfır. Pay ve paydayı karekök x artı 3 ile çarp. Pay iki kare farkı olur: x eksi 9. Paydadaki x eksi 9 ile sadeleşir; kalan 1 bölü karekök x artı 3. 9 koy: 1 bölü 6.
+
+Alet üç: kesirli kesir. x sıfıra yaklaşırken: 1 bölü x artı 2, eksi yarım; hepsi bölü x. Üstteki iki kesri ortak paydada birleştir: pay 2 eksi parantez x artı 2, payda 2 çarpı parantez x artı 2; yani eksi x bölü 2 çarpı parantez x artı 2. x'e bölünce x'ler gider: eksi 1 bölü 2 çarpı x artı 2. Sıfır koy: eksi 1 bölü 4.
+
+Alet dört: mutlak değer. Burada iki tarafa ayrı bak. x üçe yaklaşırken mutlak x eksi 3, bölü x eksi 3. Sağda x eksi 3 pozitif, kesir 1. Solda negatif; mutlak değer işareti çevirir, kesir eksi 1. Soldan eksi 1, sağdan 1: limit yok. Grafik iki basamaklı bir merdiven.
+
+Parçalı fonksiyonda da aynı yöntem: f x, 1'in solunda x kare artı 1, sağında 3 x eksi 1. Soldan, sol formülü kullan: 1 artı 1, yani 2. Sağdan, sağ formül: 3 eksi 1, yine 2. İki taraf eşit: x bire yaklaşırken limit 2. Eşitlik işaretinin hangi tarafta olduğu da önemli değil; limit için yalnızca iki kolun gittiği yer önemli.
+
+Şimdi bir AP örneği. x ikiye yaklaşırken x kare artı k x eksi 10, bölü x eksi 2'nin limiti var. k kaç, limit kaç? Payda sıfıra gidiyor. Limit olsun istiyorsak pay da sıfıra gitmeli; yoksa ifade sonsuza kaçar. 4 artı 2 k eksi 10 eşittir sıfır: k eşittir 3. Pay x kare artı 3 x eksi 10, yani x artı 5 çarpı x eksi 2. Sadeleşir, x artı 5 kalır; limit 7.
+
+Hızlı tur: hangi alet? Bir: x ikiye yaklaşırken x artı 1 bölü x artı 3. Yerine koy, 3 bölü 5; alet gerekmez. İki: x sıfıra yaklaşırken karekök x artı 4 eksi 2, bölü x. Sıfır bölü sıfır ve kök var: eşlenik. Sonuç 1 bölü 4. Üç: x eksi 1'e yaklaşırken x kare eksi 1 bölü x artı 1. Sıfır bölü sıfır, polinom: çarpanlara ayır; x eksi 1 kalır, sonuç eksi 2. Sıra hep aynı: önce yerine koy, sonra aleti seç.
+
+Toparlayalım. Önce yerine koy: sayı çıkarsa cevap o; sıfır olmayan bir sayı bölü sıfır, asimptot işareti. Sıfır bölü sıfır bir indeterminate form; sadeleştirmeden karar verme. Polinomda çarpanlara ayır, kökte eşlenikle çarp, kesirli kesirde ortak payda kullan. Mutlak değer ve parçalı fonksiyonda iki tarafı ayrı hesapla. Limit varsa ve payda sıfıra gidiyorsa, pay da sıfıra gitmeli.
+
+Şimdi bir soru. x dörde yaklaşırken x eksi 4, bölü karekök x eksi 2; limit kaç? Cevap: C. Eşlenikle çarp ya da paydaki x eksi 4'ü karekök x eksi 2 çarpı karekök x artı 2 diye yaz. Sadeleşince karekök x artı 2 kalır; 4 koy: 2 artı 2, yani 4.

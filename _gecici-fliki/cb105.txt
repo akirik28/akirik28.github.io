@@ -1,0 +1,21 @@
+Koridorda iki arkadaşının arasında yürüyorsun; biri sağ koluna, biri sol koluna girmiş. İkisi de aynı kapıya, 3 numaralı sınıfa gidiyor. Sen nereye gidiyorsun? Arada sıkıştığın için sen de o kapıya! Matematikte bunun adı squeeze theorem, yani sıkıştırma teoremi. Limitini doğrudan bulamadığın bir fonksiyonu, limitini bildiğin iki fonksiyonun arasına hapset.
+
+Teorem şöyle: c'nin çevresinde g x, f x'ten küçük ya da eşit; f x de h x'ten küçük ya da eşit olsun. x c'ye yaklaşırken g'nin de h'nin de limiti aynı sayı, L olsun. O zaman f'nin limiti de L. Grafikte alttaki ve üstteki eğri aynı noktada birleşiyor; aradaki f'nin kaçacak yeri kalmıyor. İki şart var: eşitsizlik c'nin çevresinde doğru olmalı, ve iki sınırın limiti eşit olmalı.
+
+Örnek: x sıfıra yaklaşırken x kare çarpı sinüs bir bölü x. Yerine koyamazsın, sinüs bir bölü x sıfırda tanımsız; cebir de işe yaramaz. Ama sinüs her zaman eksi 1 ile 1 arasında. x kareyle çarp: ifade eksi x kare ile x kare arasına girer. Eksi x karenin limiti sıfır, x karenin limiti de sıfır. Sıkıştırma teoremine göre limit sıfır. Grafikte dalgalar iki parabolün arasında boğuluyor.
+
+Şimdi bir AP örneği. Her x için 4 x eksi 3, f x'ten küçük eşit; f x de x kare artı 1'den küçük eşit. x ikiye yaklaşırken f x'in limiti kaç? Alt sınır: 4 çarpı 2 eksi 3, yani 5. Üst sınır: 2'nin karesi artı 1, yine 5. İki sınırın limiti eşit, cevap 5. Aslında doğru, parabole tam 2'de teğet; f orada ikisinin arasına kilitleniyor. Sınırlar farklı sayılara gitseydi teorem hiçbir şey söylemezdi.
+
+Şimdi Unit 1'in yıldız limiti: x sıfıra yaklaşırken sinüs x bölü x. Yerine koy: sıfır bölü sıfır. Çarpan yok, kök yok. Tabloya bak, x radyan: 0 virgül 1'de 0 virgül 9983, 0 virgül 01'de 0 virgül 99998. Değerler 1'e yaklaşıyor. Negatif taraf da aynı, çünkü fonksiyon simetrik. Dikkat: bu sonuç yalnızca radyanda geçerli; AP'de açılar hep radyan.
+
+Neden 1? Birim çemberde küçük bir x açısı çiz. Üç alan iç içe: küçük üçgen, daire dilimi ve büyük üçgen. Bu alanlardan şu çıkar: kosinüs x, sinüs x bölü x'ten küçük; o da 1'den küçük. x sıfıra yaklaşırken kosinüs x 1'e gidiyor; 1 zaten 1. Sıkıştırma teoremi: sinüs x bölü x'in limiti 1. Bir teoremle ötekini kanıtlamış olduk.
+
+Bu limit bir anahtar. Mesela sinüs 4 x bölü 3 x. İçerdeki 4 x'i paydada da görmek istiyoruz: 4 bölü 3 çarpı, sinüs 4 x bölü 4 x. x sıfıra giderken 4 x de sıfıra gider; parantezin limiti 1. Sonuç 4 bölü 3. Tanjant x bölü x de 1: sinüs x bölü x, çarpı 1 bölü kosinüs x; 1 çarpı 1. Kısa yol olarak aklında kalsın: sinüs k x bölü x'in limiti k.
+
+Bir kardeşi daha var: x sıfıra yaklaşırken 1 eksi kosinüs x, bölü x. Eşlenikle çarp: 1 artı kosinüs x. Pay 1 eksi kosinüs kare x olur, yani sinüs kare x. İkiye ayır: sinüs x bölü x, çarpı sinüs x bölü 1 artı kosinüs x. İlki 1'e, ikincisi sıfır bölü 2'ye gidiyor. Sonuç: sıfır. Bu ikisini ezbere bil; sınavda kılık değiştirip tekrar tekrar gelirler.
+
+Son bir sürpriz: aynı sinüs x bölü x, ama bu sefer x sonsuza giderken. Pay eksi 1 ile 1 arasında sallanıyor, payda büyüyor; ifade eksi 1 bölü x ile 1 bölü x arasında kalıyor. İkisi de sıfıra gidiyor; sıkıştırma: limit sıfır. Aynı fonksiyon: sıfırda 1, sonsuzda 0. Nereye yaklaştığın her şeyi değiştirir.
+
+Toparlayalım. Squeeze theorem: f iki fonksiyonun arasında ve ikisi aynı L'ye gidiyorsa, f de L'ye gider. Salınan çarpanlarda sinüsün eksi 1 ile 1 arasında olmasını kullan. x sıfıra yaklaşırken sinüs x bölü x 1'dir; yalnızca radyanda. Sinüs k x bölü x, k'ya gider; tanjant x bölü x 1, 1 eksi kosinüs x bölü x sıfır. Aynı ifade x sonsuza giderken bambaşka bir limite gidebilir.
+
+Şimdi bir soru. x sıfıra yaklaşırken sinüs 6 x bölü 2 x'in limiti kaç? Cevap: D. 6 bölü 2 çarpı, sinüs 6 x bölü 6 x diye yaz. Parantez 1'e gider; sonuç 6 bölü 2, yani 3.
