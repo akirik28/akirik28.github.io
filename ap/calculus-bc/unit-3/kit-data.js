@@ -315,6 +315,146 @@ window.KIT = {
           "why": "y = 1 ⇒ 1 + x² = 10 ⇒ x = ±3: iki nokta. 2y·y′ + 2xy + x²·y′ = 0 ⇒ y′ = −2xy/(2y + x²). (3, 1)'de −6/11, (−3, 1)'de 6/11."
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "3.3",
+      "slug": "cb306",
+      "title": "Ters Fonksiyonların Türevi",
+      "en": "Differentiating Inverse Functions",
+      "accent": "#B9E552",
+      "seconds": 281,
+      "terms": [
+        "Inverse function",
+        "Reciprocal",
+        "One-to-one",
+        "Reflection over y = x",
+        "Derivative of an inverse",
+        "Chain rule",
+        "Tangent line",
+        "Increasing function",
+        "Vertical tangent",
+        "Input / output"
+      ],
+      "questions": [
+        {
+          "q": "Tablodaki türevlenebilir f için g = f⁻¹ olsun. g′(9) kaçtır?",
+          "opts": [
+            "1/5",
+            "1/2",
+            "2",
+            "1/3"
+          ],
+          "a": 1,
+          "why": "f(3) = 9 ⇒ g(9) = 3. g′(9) = 1/f′(g(9)) = 1/f′(3) = 1/2. (2, f′(3)'ün kendisidir; ters çevrilmemiş.)",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "4",
+                "1"
+              ],
+              [
+                "2",
+                "6",
+                "3"
+              ],
+              [
+                "3",
+                "9",
+                "2"
+              ],
+              [
+                "4",
+                "13",
+                "5"
+              ]
+            ],
+            "caption": "f'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "Aynı tabloya göre g = f⁻¹'in grafiğine x = 6'da çizilen teğet doğrusu hangisidir?",
+          "opts": [
+            "y − 6 = 3(x − 2)",
+            "y − 2 = 3(x − 6)",
+            "y − 6 = (1/3)(x − 2)",
+            "y − 2 = (1/3)(x − 6)"
+          ],
+          "a": 3,
+          "why": "f(2) = 6 ⇒ g(6) = 2: nokta (6, 2). Eğim g′(6) = 1/f′(2) = 1/3. Doğru: y − 2 = (1/3)(x − 6).",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "4",
+                "1"
+              ],
+              [
+                "2",
+                "6",
+                "3"
+              ],
+              [
+                "3",
+                "9",
+                "2"
+              ],
+              [
+                "4",
+                "13",
+                "5"
+              ]
+            ],
+            "caption": "f'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "f(x) = x³ + 4x + 3 ve g, f'nin tersi ise g′(−2) kaçtır?",
+          "opts": [
+            "1/7",
+            "1/16",
+            "7",
+            "−1/7"
+          ],
+          "a": 0,
+          "why": "f(a) = −2 ⇒ a³ + 4a + 3 = −2 ⇒ a = −1. f′(x) = 3x² + 4 ⇒ f′(−1) = 7. g′(−2) = 1/7. (1/16, f′(−2)'yi kullanan tuzaktır.)"
+        },
+        {
+          "q": "f artan ve türevlenebilir; f(4) = 1 ve f′(4) = 2/3. g = f⁻¹ ise hangisi doğrudur?",
+          "opts": [
+            "g′(4) = 3/2",
+            "g′(1) = 2/3",
+            "g′(1) = 3/2",
+            "g′(4) = −3/2"
+          ],
+          "a": 2,
+          "why": "(4, 1) f'nin üzerinde ⇒ (1, 4) g'nin üzerinde. g′(1) = 1/f′(4) = 3/2. Ters fonksiyonun türevi çıktı değerinde (1'de) sorulur."
+        },
+        {
+          "q": "f(x) = 2x + 6 için f⁻¹(4) ve (f⁻¹)′(4) sırasıyla kaçtır?",
+          "opts": [
+            "1/14 ve 1/2",
+            "−1 ve 1/2",
+            "−1 ve 2",
+            "5 ve 1/2"
+          ],
+          "a": 1,
+          "why": "2x + 6 = 4 ⇒ x = −1, yani f⁻¹(4) = −1 (1/f(4) = 1/14 değil). f′ her yerde 2 ⇒ (f⁻¹)′(4) = 1/2. Kontrol: f⁻¹(x) = (x − 6)/2, eğimi 1/2."
+        }
+      ]
     }
   ],
   "final": []
