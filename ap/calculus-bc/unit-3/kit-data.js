@@ -162,6 +162,279 @@ window.KIT = {
     },
     {
       "no": 3,
+      "code": "3.1-3",
+      "slug": "cb303",
+      "title": "Tablo ve Grafikle Zincir Kuralı",
+      "en": "Chain Rule with Tables and Graphs",
+      "accent": "#58C9FF",
+      "seconds": 292,
+      "terms": [
+        "Chain rule",
+        "Composite function",
+        "Table of values",
+        "Inner function",
+        "Outer function",
+        "Product rule",
+        "Piecewise linear",
+        "Corner",
+        "Tangent line",
+        "Slope"
+      ],
+      "questions": [
+        {
+          "q": "Tablodaki değerlere göre h(x) = f(g(x)) ise h′(2) kaçtır?",
+          "opts": [
+            "18",
+            "−6",
+            "6",
+            "3"
+          ],
+          "a": 0,
+          "why": "h′(2) = f′(g(2))·g′(2). g(2) = 1, f′(1) = 3, g′(2) = 6 ⇒ 3·6 = 18. (−6, f′(2)·g′(2) hatasıdır.)",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "3",
+                "3",
+                "−2"
+              ],
+              [
+                "2",
+                "4",
+                "−1",
+                "1",
+                "6"
+              ],
+              [
+                "3",
+                "3",
+                "5",
+                "4",
+                "1"
+              ],
+              [
+                "4",
+                "1",
+                "2",
+                "2",
+                "3"
+              ]
+            ],
+            "caption": "f ve g'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "Aynı tabloya göre k(x) = g(f(x)) ise k′(4) kaçtır?",
+          "opts": [
+            "6",
+            "−2",
+            "−4",
+            "4"
+          ],
+          "a": 2,
+          "why": "k′(4) = g′(f(4))·f′(4). f(4) = 1, g′(1) = −2, f′(4) = 2 ⇒ −4. (6, g′(4)·f′(4) hatasıdır: içe değer yerine x konmuş.)",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "3",
+                "3",
+                "−2"
+              ],
+              [
+                "2",
+                "4",
+                "−1",
+                "1",
+                "6"
+              ],
+              [
+                "3",
+                "3",
+                "5",
+                "4",
+                "1"
+              ],
+              [
+                "4",
+                "1",
+                "2",
+                "2",
+                "3"
+              ]
+            ],
+            "caption": "f ve g'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "Aynı tabloya göre m(x) = √(g(x)) ise m′(3) kaçtır?",
+          "opts": [
+            "1/2",
+            "1/4",
+            "2",
+            "1/8"
+          ],
+          "a": 1,
+          "why": "m′(x) = g′(x)/(2√g(x)). g(3) = 4, g′(3) = 1 ⇒ 1/(2·2) = 1/4.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "3",
+                "3",
+                "−2"
+              ],
+              [
+                "2",
+                "4",
+                "−1",
+                "1",
+                "6"
+              ],
+              [
+                "3",
+                "3",
+                "5",
+                "4",
+                "1"
+              ],
+              [
+                "4",
+                "1",
+                "2",
+                "2",
+                "3"
+              ]
+            ],
+            "caption": "f ve g'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "f'nin grafiği iki doğru parçasından oluşur: (0, 4)'ten (3, 1)'e ve (3, 1)'den (5, 5)'e. h(x) = f(x²) ise h′(2) kaçtır?",
+          "opts": [
+            "2",
+            "4",
+            "16",
+            "8"
+          ],
+          "a": 3,
+          "why": "h′(2) = f′(2²)·2·2 = f′(4)·4. x = 4 ikinci parçada; eğim (5 − 1)/(5 − 3) = 2. h′(2) = 2·4 = 8.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 5,
+            "ymax": 5,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  4
+                ],
+                "to": [
+                  3,
+                  1
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  3,
+                  1
+                ],
+                "to": [
+                  5,
+                  5
+                ],
+                "label": "f"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Tablodaki f ve g için G(x) = f(x)·[g(x)]² ise G′(1) kaçtır?",
+          "opts": [
+            "27",
+            "51",
+            "3",
+            "−21"
+          ],
+          "a": 2,
+          "why": "G′ = f′·g² + f·2g·g′. x = 1'de 3·3² + 2·2·3·(−2) = 27 − 24 = 3.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "2",
+                "3",
+                "3",
+                "−2"
+              ],
+              [
+                "2",
+                "4",
+                "−1",
+                "1",
+                "6"
+              ],
+              [
+                "3",
+                "3",
+                "5",
+                "4",
+                "1"
+              ],
+              [
+                "4",
+                "1",
+                "2",
+                "2",
+                "3"
+              ]
+            ],
+            "caption": "f ve g'nin seçilmiş değerleri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 4,
       "code": "3.2-1",
       "slug": "cb304",
       "title": "Kapalı Türev",
@@ -239,7 +512,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 4,
+      "no": 5,
       "code": "3.2-2",
       "slug": "cb305",
       "title": "Kapalı Eğrilerde Teğet Doğruları",
@@ -317,7 +590,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 5,
+      "no": 6,
       "code": "3.3",
       "slug": "cb306",
       "title": "Ters Fonksiyonların Türevi",
