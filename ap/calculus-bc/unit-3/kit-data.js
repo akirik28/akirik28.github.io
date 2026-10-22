@@ -159,6 +159,84 @@ window.KIT = {
           "why": "y′ = e^(−2x) + x·e^(−2x)·(−2) = e^(−2x)(1 − 2x). e^(−2x) hiç sıfır olmaz; 1 − 2x = 0 ⇒ x = 1/2."
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "3.2-1",
+      "slug": "cb304",
+      "title": "Kapalı Türev",
+      "en": "Implicit Differentiation",
+      "accent": "#FF6F61",
+      "seconds": 274,
+      "terms": [
+        "Implicit differentiation",
+        "Explicit equation",
+        "Implicit equation",
+        "Chain rule",
+        "Product rule",
+        "dy/dx",
+        "Tangent line",
+        "Slope",
+        "Circle",
+        "Constant"
+      ],
+      "questions": [
+        {
+          "q": "y, x'in türevlenebilir bir fonksiyonu ise d/dx (y³) hangisidir?",
+          "opts": [
+            "3y²",
+            "3y²·dy/dx",
+            "3x²",
+            "y³·dy/dx"
+          ],
+          "a": 1,
+          "why": "Dış fonksiyon küp, iç fonksiyon y. Zincir kuralıyla 3y²·dy/dx. y'nin x'e göre türevi dy/dx'tir, 1 değildir."
+        },
+        {
+          "q": "xy² = 4 eğrisinde (1, 2) noktasında dy/dx kaçtır?",
+          "opts": [
+            "−1",
+            "−4",
+            "1",
+            "−1/2"
+          ],
+          "a": 0,
+          "why": "Çarpım kuralı: y² + x·2y·dy/dx = 0 ⇒ dy/dx = −y/(2x). (1, 2)'de −2/2 = −1."
+        },
+        {
+          "q": "sin y + x = y ise dy/dx hangisidir?",
+          "opts": [
+            "1/(cos y − 1)",
+            "−1/cos y",
+            "1/(1 − cos y)",
+            "cos y − 1"
+          ],
+          "a": 2,
+          "why": "cos y·dy/dx + 1 = dy/dx ⇒ 1 = dy/dx − cos y·dy/dx = dy/dx(1 − cos y) ⇒ dy/dx = 1/(1 − cos y)."
+        },
+        {
+          "q": "y, x'in fonksiyonu olsun. Aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "d/dx e^(2y) = 2e^(2y)",
+            "d/dx (xy) = x·dy/dx",
+            "d/dx (π²) = 2π",
+            "d/dx e^(2y) = 2e^(2y)·dy/dx"
+          ],
+          "a": 3,
+          "why": "e^(2y)'de iç fonksiyon 2y, türevi 2·dy/dx. xy'nin türevi y + x·dy/dx (çarpım); π² bir sabit, türevi 0."
+        },
+        {
+          "q": "x² − 3xy + y² = −1 eğrisi (2, 1) noktasından geçer. Bu noktada dy/dx kaçtır?",
+          "opts": [
+            "−1/4",
+            "1/4",
+            "4",
+            "−4"
+          ],
+          "a": 1,
+          "why": "2x − 3y − 3x·y′ + 2y·y′ = 0 ⇒ y′(2y − 3x) = 3y − 2x ⇒ y′ = (3y − 2x)/(2y − 3x). (2, 1)'de (3 − 4)/(2 − 6) = (−1)/(−4) = 1/4."
+        }
+      ]
     }
   ],
   "final": []
