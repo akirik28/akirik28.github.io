@@ -729,8 +729,29 @@
     s2.innerHTML = '<defs><filter id="d-kaba" filterUnits="userSpaceOnUse" x="-80" y="-80" width="3000" height="3000"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></defs>';
     document.body.appendChild(s2);
   }
+  /* açık / koyu tema düğmesi (seçim bu cihazda hatırlanır; sayfa başındaki satır ilk boyamadan önce uygular) */
+  var TEMA = "kitora-defter-tema";
+  function temaButonu() {
+    var yer = document.querySelector(".top-r");
+    if (!yer) return;
+    var b = el("button", { class: "d-tema", type: "button" });
+    function yaz() {
+      var koyu = document.documentElement.getAttribute("data-tema") === "koyu";
+      b.textContent = koyu ? "☀️ Açık defter" : "🌙 Koyu defter";
+      b.setAttribute("aria-label", koyu ? "Açık temaya geç" : "Koyu temaya geç");
+    }
+    b.addEventListener("click", function () {
+      var koyu = document.documentElement.getAttribute("data-tema") !== "koyu";
+      if (koyu) document.documentElement.setAttribute("data-tema", "koyu"); else document.documentElement.removeAttribute("data-tema");
+      try { window.localStorage.setItem(TEMA, koyu ? "koyu" : "acik"); } catch (e) {}
+      yaz();
+    });
+    yaz();
+    yer.insertBefore(b, yer.firstChild);
+  }
   function start() {
     sketchFilter();
+    temaButonu();
     if (idx < 0) { listView(); return; }
     var ep = EPS[idx];
     if (locked(idx)) { lockView(ep); return; }

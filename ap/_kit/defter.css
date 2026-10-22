@@ -453,3 +453,68 @@ mark.hl { color: inherit; padding: 0 .18em; margin: 0 -.05em; border-radius: .8e
 }
 
 .d-root .mono { text-transform: none; letter-spacing: 0; }
+
+/* =====================================================================
+   KOYU TEMA — siyah defter, jel kalem. <html data-tema="koyu"> (sağ üstteki düğme; seçim hatırlanır)
+   ===================================================================== */
+html[data-tema="koyu"] {
+  --pp: #1F2229; --rule: rgba(160,190,255,.09); --mar: rgba(255,110,110,.42);
+  --nk: #ECE6D6; --pen: #8DB6FF; --rd: #FF8585; --gr: #72E3A3; --pc: #A1A6B3;
+  --hl: rgba(255,214,0,.30); --hl2: rgba(80,220,140,.26); --hl3: rgba(255,110,170,.28); --hl4: rgba(90,170,255,.28);
+  --tape: rgba(255,236,170,.2); --card: #282C35; --card2: #22262E;
+  color-scheme: dark;
+}
+html[data-tema="koyu"] body { background: #0D0E11 radial-gradient(120% 80% at 50% 0%, #1A1C22 0%, #0D0E11 60%) fixed; }
+html[data-tema="koyu"] .d-root { box-shadow: 0 30px 60px -20px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.5), 8px 8px 0 -2px #2A2D35, 8px 8px 0 -1px rgba(0,0,0,.4), 16px 16px 0 -4px #23262D; }
+html[data-tema="koyu"] .d-root::before { background-image: radial-gradient(circle at 30px 16px, #0D0E11 0 7px, rgba(0,0,0,.4) 7.5px, transparent 9px); }
+html[data-tema="koyu"] mark.hl { background-image: linear-gradient(100deg, transparent .2em, rgba(255,214,0,.34) .35em, rgba(255,214,0,.4) 60%, rgba(255,214,0,.3) calc(100% - .3em), transparent); }
+html[data-tema="koyu"] .d-sec-h h2 { background-image: linear-gradient(transparent 62%, color-mix(in srgb, var(--acc) 38%, transparent) 62%, color-mix(in srgb, var(--acc) 38%, transparent) 90%, transparent 90%); }
+html[data-tema="koyu"] .d-toc li:nth-child(5n+5) a { --t: rgba(255,160,80,.3); }
+html[data-tema="koyu"] .d-toc a { box-shadow: 0 2px 0 rgba(0,0,0,.4); }
+/* yapıştırılmış kâğıtlar: koyu kâğıt */
+html[data-tema="koyu"] .d-story, html[data-tema="koyu"] .d-map-n, html[data-tema="koyu"] .d-pn-b, html[data-tema="koyu"] .d-g-b, html[data-tema="koyu"] .d-game-bin li { background: var(--card); }
+html[data-tema="koyu"] .d-story, html[data-tema="koyu"] .d-gw, html[data-tema="koyu"] .d-term-f, html[data-tema="koyu"] .d-term-b { box-shadow: 0 10px 22px -12px rgba(0,0,0,.9), 0 1px 2px rgba(0,0,0,.5); }
+html[data-tema="koyu"] .d-term-f { background: linear-gradient(transparent 24px, rgba(255,120,120,.5) 24px, rgba(255,120,120,.5) 26px, transparent 26px), repeating-linear-gradient(transparent 0 25px, rgba(160,190,255,.08) 25px 26px) 0 26px, var(--card); }
+html[data-tema="koyu"] .d-term-b { background: repeating-linear-gradient(transparent 0 23px, rgba(255,255,255,.05) 23px 24px) 0 6px, #3A3420; }
+html[data-tema="koyu"] .d-term-ex, html[data-tema="koyu"] .d-map-n span { color: var(--pc); }
+html[data-tema="koyu"] .d-term-ex { border-top-color: rgba(255,255,255,.2); }
+/* yapışkan not: sönük hardal */
+html[data-tema="koyu"] .d-game { background: linear-gradient(180deg, #4D4418, #3F3713); color: #FFF1B0; box-shadow: 0 14px 20px -12px rgba(0,0,0,.9); }
+html[data-tema="koyu"] .d-game::after { background: linear-gradient(135deg, #5C5220 50%, rgba(0,0,0,.25) 50%); }
+html[data-tema="koyu"] .d-game .d-kick { color: #E8C547; }
+html[data-tema="koyu"] .d-game-s { color: #FFF4C2; }
+html[data-tema="koyu"] .d-game-a .btn { color: #FFF4C2; background: rgba(255,255,255,.06); border-color: #FFF1B0; }
+html[data-tema="koyu"] .d-game-a .btn:hover { background: rgba(255,255,255,.14); }
+html[data-tema="koyu"] .d-game-a .btn .en { color: #A9C8FF; }
+html[data-tema="koyu"] .d-game-w { color: #FFF1B0; } html[data-tema="koyu"] .d-game-w.ok { color: var(--gr); } html[data-tema="koyu"] .d-game-w.bad { color: var(--rd); }
+html[data-tema="koyu"] .d-game-bin li { color: var(--nk); }
+/* adımlar, tablo, örnek */
+html[data-tema="koyu"] .d-steps-rail { background: repeating-linear-gradient(transparent 0 6px, rgba(255,255,255,.2) 6px 10px); }
+html[data-tema="koyu"] .d-tbl { background: rgba(255,255,255,.02); }
+html[data-tema="koyu"] .d-tbl tr.hi td { background: rgba(255,214,0,.2); }
+html[data-tema="koyu"] .d-ex { background: linear-gradient(rgba(140,180,255,.09) 1px, transparent 1px) 0 0 / 20px 20px, linear-gradient(90deg, rgba(140,180,255,.09) 1px, transparent 1px) 0 0 / 20px 20px, var(--card2); }
+html[data-tema="koyu"] .d-ex-r { background: rgba(110,231,160,.1); }
+html[data-tema="koyu"] .d-ex > .d-kick { color: #1F2229; }
+html[data-tema="koyu"] .d-trap { background: rgba(255,110,150,.07); }
+/* ders notu */
+html[data-tema="koyu"] .d-lec { background: #2A2436; box-shadow: 0 8px 16px -10px rgba(0,0,0,.9); }
+html[data-tema="koyu"] .d-lec-k { color: #CDA8FF; }
+/* grafik ve şekiller */
+html[data-tema="koyu"] .d-gw { background: linear-gradient(rgba(140,180,255,.08) 1px, transparent 1px) 0 0 / 22px 22px, linear-gradient(90deg, rgba(140,180,255,.08) 1px, transparent 1px) 0 0 / 22px 22px, var(--card2); }
+html[data-tema="koyu"] .d-g .g-pt { stroke: var(--card2); }
+html[data-tema="koyu"] .d-fig .apfig, html[data-tema="koyu"] .d-q .apfig { background: var(--card2); --ink: var(--nk); --muted: var(--pc); --line-2: #444956; --surface: var(--card2); --accent: var(--pen); color: var(--nk); box-shadow: 0 10px 20px -12px rgba(0,0,0,.9); }
+/* sorular */
+html[data-tema="koyu"] .d-q { border-bottom-color: rgba(255,255,255,.15); }
+html[data-tema="koyu"] .d-q-o .k { background: var(--card); }
+html[data-tema="koyu"] .d-q-o:hover:not(:disabled) { background: rgba(255,214,0,.12); }
+html[data-tema="koyu"] .d-q-o.ok .k, html[data-tema="koyu"] .d-q-o.bad .k { background: var(--nk); color: #1F2229; border-color: var(--nk); }
+html[data-tema="koyu"] .d-q-o.ok { color: var(--gr); }
+html[data-tema="koyu"] .d-q-why { background: rgba(90,170,255,.1); }
+html[data-tema="koyu"] .d-root .btn.primary { background: var(--nk); color: #1F2229; }
+html[data-tema="koyu"] .d-lock .btn.primary { background: var(--nk); color: #1F2229; }
+
+/* tema düğmesi (üst çubuk) */
+.d-tema { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin-right: 14px; padding: 2px 12px; font-family: var(--hand); font-size: 20px; line-height: 30px;
+  color: #F3EBD6; border: 1.5px solid rgba(243,235,214,.45); border-radius: var(--sk); transition: background .2s, transform .2s; }
+.d-tema:hover { background: rgba(255,255,255,.08); transform: rotate(-2deg); }
+.d-tema:focus-visible { outline: 2px solid #8DB6FF; outline-offset: 2px; }
