@@ -553,6 +553,84 @@ window.KIT = {
     },
     {
       "no": 4,
+      "code": "1.6–1.7",
+      "slug": "cb104",
+      "title": "Cebirsel Teknikler ve Yöntem Seçimi",
+      "en": "Algebraic Manipulation",
+      "accent": "#FF6F61",
+      "seconds": 290,
+      "terms": [
+        "Indeterminate form",
+        "Direct substitution",
+        "Factoring",
+        "Difference of cubes",
+        "Conjugate",
+        "Common denominator",
+        "Absolute value",
+        "Piecewise function",
+        "One-sided limit",
+        "Selecting procedures"
+      ],
+      "questions": [
+        {
+          "q": "lim (x → 2) (x² − 5x + 6)/(x² − 4) kaçtır?",
+          "opts": [
+            "0",
+            "1/4",
+            "−1/4",
+            "Limit yoktur"
+          ],
+          "a": 2,
+          "why": "Yerine koyunca 0/0. (x − 2)(x − 3)/((x − 2)(x + 2)) = (x − 3)/(x + 2); x = 2 koyunca −1/4."
+        },
+        {
+          "q": "lim (x → 0) (√(9 + x) − 3)/x kaçtır?",
+          "opts": [
+            "1/3",
+            "1/6",
+            "0",
+            "3"
+          ],
+          "a": 1,
+          "why": "*Conjugate* ile çarp: ((9 + x) − 9)/(x(√(9 + x) + 3)) = 1/(√(9 + x) + 3). x = 0 koyunca 1/(3 + 3) = 1/6."
+        },
+        {
+          "q": "lim (x → −1) (x² + ax + 5)/(x + 1) limitinin var olduğu biliniyor. Bu limitin değeri kaçtır?",
+          "opts": [
+            "6",
+            "−4",
+            "5",
+            "4"
+          ],
+          "a": 3,
+          "why": "Payda 0'a gittiği için pay da 0'a gitmeli: 1 − a + 5 = 0, a = 6. (x² + 6x + 5)/(x + 1) = (x + 1)(x + 5)/(x + 1) = x + 5 → −1 + 5 = 4. (6, a'nın değeri; limit değil.)"
+        },
+        {
+          "q": "lim (x → −2⁻) (x² − 4)/|x + 2| kaçtır?",
+          "opts": [
+            "4",
+            "−4",
+            "0",
+            "Limit yoktur"
+          ],
+          "a": 0,
+          "why": "x < −2 iken x + 2 < 0, yani |x + 2| = −(x + 2). İfade (x − 2)(x + 2)/(−(x + 2)) = −(x − 2) = 2 − x olur; x → −2 iken 4. (Sağdan limit −4 olduğu için iki taraflı limit yok, ama soru soldan limiti soruyor.)"
+        },
+        {
+          "q": "Bir öğrenci lim (x → 3) (x² − 9)/(x − 3)² için yerine koyup 0/0 buluyor ve \"0/0 olduğu için limit yok\" diyor. Doğru değerlendirme hangisi?",
+          "opts": [
+            "0/0 olduğu için limit 1'dir",
+            "Sadeleşince (x + 3)/(x − 3) olur; limit 0'dır",
+            "Sadeleşince 6/0 biçimi kalır; soldan −∞, sağdan +∞, limit yoktur",
+            "Sadeleşince limit 6'dır"
+          ],
+          "a": 2,
+          "why": "0/0 karar değil, *indeterminate form*. (x − 3)(x + 3)/(x − 3)² = (x + 3)/(x − 3). Şimdi pay 6'ya, payda 0'a gidiyor: soldan −∞, sağdan +∞. Sonuç doğru (limit yok) ama gerekçe sadeleştirmeden sonra gelir."
+        }
+      ]
+    },
+    {
+      "no": 5,
       "code": "1.8",
       "slug": "cb105",
       "title": "Sıkıştırma Teoremi ve Trigonometrik Limitler",
@@ -630,7 +708,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 5,
+      "no": 6,
       "code": "1.12–1.13",
       "slug": "cb107",
       "title": "Aralıkta Süreklilik ve Süreksizliği Giderme",
