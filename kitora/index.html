@@ -257,7 +257,14 @@ var PAKETLER = [
       { ad: "Denemeler", url: "/ap/macroeconomics/unit-1/deneme/", not: "5 süreli deneme · 100 soru", mod: ["test"] }
     ]
   },
-  { yakinda: true, grup: "sinav", ad: "Microeconomics", alt: "AP · 6 ünite", etiket: "11 · AP", renk: "#5FE3C0", not: "Macro ile ortak kavramlar; arka arkaya hazırlanıyor." },
+  {
+    grup: "sinav", ad: "Microeconomics", alt: "Unit 1 · Basic Economic Concepts", etiket: "11 · AP", renk: "#5FE3C0",
+    ana: "/ap/microeconomics/unit-1/", not: "yeni bölümler ekleniyor",
+    icerik: [
+      { ad: "Çalışma kiti", url: "/ap/microeconomics/unit-1/", not: "animasyonlu videolar · bölüm soruları · Macro ile ortak konular dahil", mod: ["ogren", "tekrar"] },
+      { ad: "Denemeler", url: "/ap/microeconomics/unit-1/deneme/", not: "5 süreli deneme · 100 soru", mod: ["test"] }
+    ]
+  },
   { yakinda: true, grup: "sinav", ad: "Calculus BC", alt: "AP · Limits'ten başlayarak", etiket: "11 · AP", renk: "#A78BFA", not: "Ünite ünite video, soru ve süreli deneme." },
   { yakinda: true, grup: "sinav", ad: "Psychology", alt: "AP · 5 ünite", etiket: "AP", renk: "#FF7EB6", not: "Beyin ve davranıştan sosyal psikolojiye; ünite ünite video, soru ve süreli deneme." },
   { yakinda: true, grup: "cep", ad: "Precalculus", alt: "Unit 1 · Functions", etiket: "10. sınıf", renk: "#FF7759", not: "Konu özeti, çözümlü sorular ve süreli prova. Geçen yılın müfredatına göre; sınav konularını öğretmeninden kontrol et." },

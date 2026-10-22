@@ -725,7 +725,7 @@
       el("p", { class: "ch-en serif", lang: "en", text: ep.en || "" }),
       (ep.terms && ep.terms.length) ? el("ul", { class: "chips", lang: "en", "aria-label": "Anahtar terimler" },
         ep.terms.map(function (t) { return el("li", { class: "chip", text: t }); })) : null,
-      DEFTER ? el("p", { style: "margin:6px 0 0" }, el("a", { class: "btn ghost sm", href: "defter/?b=" + ep.slug }, "📓 Bu bölümü videosuz çalış: not defteri →")) : null
+      DEFTER ? el("p", { style: "margin:6px 0 0" }, el("a", { class: "btn ghost sm", href: "defter/?b=" + (ep.defter || ep.slug) }, "📓 Bu bölümü videosuz çalış: not defteri →")) : null
     ]);
     var flow = el("div", { class: "flow", role: "group", "aria-label": "Bölüm adımları" });
     var panel = el("div", { class: "panel" });

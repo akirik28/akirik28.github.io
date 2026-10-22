@@ -3,6 +3,10 @@ window.KIT = {
   "store": "micro-u1:v1:",
   "course": "Microeconomics",
   "unitLabel": "Unit 1 — Basic Economic Concepts",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
@@ -862,6 +866,160 @@ window.KIT = {
           ],
           "a": 2,
           "why": "Çikolatada X uzmanlaşır: 3 baldan fazlasını ister; Y 6 baldan azını öder. Aralık 1 çikolata için 3 ile 6 bal arası. Teklifleri bir çikolataya çevir: 1/7 demek 7 bal, Y için pahalı; 1/3 demek 3 bal, uç değer; 1/4 demek 4 bal, aralıkta; 2 bal ise X için zararlı."
+        }
+      ]
+    },
+    {
+      "no": 6,
+      "code": "1.6-2",
+      "slug": "mi104",
+      "title": "Tüketici Seçimi ve Fayda Maksimizasyonu",
+      "en": "Consumer Choice and Utility Maximization",
+      "accent": "#FF6F61",
+      "seconds": 260,
+      "terms": [
+        "Budget constraint",
+        "Budget line",
+        "Income",
+        "Marginal utility",
+        "Marginal utility per dollar",
+        "Utility-maximizing rule",
+        "Consumer equilibrium",
+        "Total utility",
+        "Law of diminishing marginal utility",
+        "Law of demand"
+      ],
+      "questions": [
+        {
+          "q": "Atari salonunda Can'ın 18 jetonu var. Yarış oyunu 2 jeton, VR oyunu 4 jeton. Tabloda her oyunun ek faydası var. Can *total utility*'sini en büyük yapmak için hangi kombinasyonu oynamalı?",
+          "opts": [
+            "5 yarış ve 2 VR",
+            "1 yarış ve 4 VR",
+            "3 yarış ve 3 VR",
+            "4 yarış ve 3 VR"
+          ],
+          "a": 2,
+          "why": "Jeton başına fayda: yarış 8, 6, 4, 3, 2; VR 10, 6, 4, 3, 2. Sırayla VR 1 (10), yarış 1 (8), ikisinden 6'lar, ikisinden 4'ler: 3 yarış, 3 VR, tam 18 jeton, 116 util. 5 yarış 2 VR 110, 1 yarış 4 VR 108 util verir; 4 yarış 3 VR ise 20 jeton, bütçeyi aşar.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kaçıncı oyun",
+              "Yarış oyunu MU (2 jeton)",
+              "VR oyunu MU (4 jeton)"
+            ],
+            "rows": [
+              [
+                "1",
+                "16",
+                "40"
+              ],
+              [
+                "2",
+                "12",
+                "24"
+              ],
+              [
+                "3",
+                "8",
+                "16"
+              ],
+              [
+                "4",
+                "6",
+                "12"
+              ],
+              [
+                "5",
+                "4",
+                "8"
+              ]
+            ],
+            "caption": "Can'ın atari salonundaki ek faydası (util)"
+          }
+        },
+        {
+          "q": "Grafik Zeynep'in sinema bileti ve kitap için *budget line*'ını gösteriyor. Zeynep'in geliri 120 lira. Bir sinema biletinin fiyatı ve bir biletin *opportunity cost*'u nedir?",
+          "opts": [
+            "30 lira; 1,5 kitap",
+            "20 lira; 1,5 kitap",
+            "30 lira; üçte iki kitap",
+            "40 lira; 2 kitap"
+          ],
+          "a": 0,
+          "why": "Bütün gelirle en fazla 4 bilet alınıyor: 120 bölü 4, bilet 30 lira. En fazla 6 kitap: kitap 20 lira. Bir bilet için vazgeçilen kitap 30 bölü 20, yani 1,5 kitap; doğrunun eğimi de 6 bölü 4.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Movie tickets",
+            "ylabel": "Books",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  6
+                ],
+                "to": [
+                  8,
+                  0
+                ],
+                "label": "Budget line"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 4,
+                "label": "2"
+              },
+              {
+                "v": 8,
+                "label": "4"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Ahmet bütün gelirini X ve Y mallarına harcıyor. Aşağıdaki durumlardan hangisinde Ahmet *utility*'sini maksimize ediyor?",
+          "opts": [
+            "X'in MU'su 20, fiyatı 5 lira; Y'nin MU'su 30, fiyatı 10 lira",
+            "X'in MU'su 24, fiyatı 6 lira; Y'nin MU'su 36, fiyatı 9 lira",
+            "X'in MU'su 10, fiyatı 2 lira; Y'nin MU'su 10, fiyatı 5 lira",
+            "X'in MU'su 15, fiyatı 3 lira; Y'nin MU'su 15, fiyatı 5 lira"
+          ],
+          "a": 1,
+          "why": "*Utility-maximizing rule* lira başına ek faydaların eşit olmasını ister. B'de 24 bölü 6, 4; 36 bölü 9, yine 4. A'da 4 ve 3, C'de 5 ve 2, D'de 5 ve 3. D'de MU'lar eşit ama fiyatlar farklı; asıl ölçü lira başına fayda."
+        },
+        {
+          "q": "Bir tüketici *consumer equilibrium*'dayken, diğer her şey sabitken meyve suyunun fiyatı düşüyor. Tüketicinin vereceği tepki en iyi hangisiyle açıklanır?",
+          "opts": [
+            "Meyve suyunun *marginal utility*'si artar, bu yüzden daha az meyve suyu alır.",
+            "Bütçesi değişmediği için hiçbir şeyi değiştirmez.",
+            "Meyve suyunu bırakıp bütün parasını diğer mala harcar.",
+            "Meyve suyunun lira başına *marginal utility*'si artar, bu yüzden daha çok meyve suyu alır."
+          ],
+          "a": 3,
+          "why": "Fiyat düşünce MU bölü P büyür; meyve suyu artık lira başına daha çok fayda veriyor. Eşitliği yeniden kurmak için daha çok meyve suyu alır, ta ki azalan MU oranı yeniden eşitleyene kadar. Bu, *law of demand*'in fayda tarafındaki açıklamasıdır."
+        },
+        {
+          "q": "Ece şöyle düşünüyor: İlk dilim pizza bana 50 util, ilk hamburger 40 util veriyor; o hâlde önce pizza almalıyım. Bu akıl yürütmedeki hata nedir?",
+          "opts": [
+            "*Total utility*'yi değil *marginal utility*'yi karşılaştırıyor.",
+            "*Law of diminishing marginal utility*'yi yanlış uyguluyor.",
+            "Fiyatları hesaba katmıyor; lira başına *marginal utility* karşılaştırılmalı.",
+            "Util'ler ölçülemediği için böyle bir karşılaştırma yapılamaz."
+          ],
+          "a": 2,
+          "why": "Pizza 50 lira, hamburger 25 lira olsaydı pizza lira başına 1, hamburger 1,6 util verirdi; hamburger daha iyi seçim olurdu. Karar MU'ya değil, MU bölü fiyata göre verilir. İlk birimlerde *marginal utility*'ye bakmak doğru; eksik olan fiyat."
         }
       ]
     }
