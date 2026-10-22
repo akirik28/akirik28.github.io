@@ -13,13 +13,17 @@
 (function () {
   "use strict";
   var KOK = /(^|\.)akirik28\.github\.io$/.test(location.hostname) ? "/" : "https://akirik28.github.io/";
+  /* yerel deneme: kitora-ui-v2/_test/ayna/ sitenin aynası (kitora/, ap/, okul/, assets/); yayına girmemiş içerik burada denenir */
+  var AYNA = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && location.pathname.match(/^.*\/_test\/ayna\//);
+  if (AYNA) KOK = location.origin + AYNA[0];
 
   var DERSLER = {
     macro: { title: "Macroeconomics", code: "AP · ECON", art: "macro", rot: "-1.4deg", video: true, ad: "AP Macroeconomics" },
     micro: { title: "Microeconomics", code: "AP · ECON", art: "macro", renk: "micro", rot: ".8deg", video: true, ad: "AP Microeconomics" },
     stats: { title: "Statistics", code: "AP · STAT", art: "stats", rot: "1deg", video: true, ad: "AP Statistics" },
     hug: { title: "Human Geography", code: "AP · HUG", art: "hug", rot: "-.6deg", video: true, ad: "AP Human Geography" },
-    bpf: { title: "Business with Personal Finance", code: "AP · BPF", art: "bpf", rot: "1.3deg", video: true, ad: "AP Business with Personal Finance" }
+    bpf: { title: "Business with Personal Finance", code: "AP · BPF", art: "bpf", rot: "1.3deg", video: true, ad: "AP Business with Personal Finance" },
+    calc: { title: "Calculus BC", code: "AP · MATH", art: "calc", rot: "1deg", video: true, ad: "AP Calculus BC" }
   };
   var KITLER = [
     { id: "macro-u1", ders: "macro", unit: 1, path: "ap/macroeconomics/unit-1/", store: "macro-u1:v1:" },
@@ -27,7 +31,8 @@
     { id: "stat-u1", ders: "stats", unit: 1, path: "ap/statistics/unit-1/", store: "stat-u1:v1:" },
     { id: "hug-u1", ders: "hug", unit: 1, path: "ap/human-geography/unit-1/", store: "hg-kit:v2:" },
     { id: "bpf-u1", ders: "bpf", unit: 1, path: "ap/business-personal-finance/unit-1/", store: "bpf-u1:v1:" },
-    { id: "bpf-u2", ders: "bpf", unit: 2, path: "ap/business-personal-finance/unit-2/", store: "bpf-u2:v1:" }
+    { id: "bpf-u2", ders: "bpf", unit: 2, path: "ap/business-personal-finance/unit-2/", store: "bpf-u2:v1:" },
+    { id: "calc-u1", ders: "calc", unit: 1, path: "ap/calculus-bc/unit-1/", store: "calcbc-u1:v1:" }
   ];
   /* veritabanındaki ders adları (ap_profil_kaydet ve quizler bunlarla eşleşir; canlı kitora/dersler.js ile aynı) */
   var OKUL = {
@@ -43,23 +48,35 @@
   /* veritabanı ders adı → renk anahtarı */
   function dersRengi(ad) {
     var a = String(ad || "").toLowerCase();
+    if (/precalc/.test(a)) return "precalc";
     if (/calculus/.test(a)) return "calc";
     if (/statistic/.test(a)) return "stats";
     if (/micro/.test(a)) return "micro";
     if (/macro|ekonomi/.test(a)) return "macro";
     if (/geograph/.test(a)) return "hug";
     if (/business|finance/.test(a)) return "bpf";
+    if (/chemistry/.test(a)) return "chem";
+    if (/physics/.test(a)) return "phys";
+    if (/biology/.test(a)) return "bio";
+    if (/^english/.test(a)) return "eng";
     return "cep";
   }
 
-  /* Defterler: canlı sitede defteri olan bütün üniteler. liste = bölüm listesinin dosyası (kitli ünitede kit-data.js). */
+  /* Defterler: canlı sitede defteri olan bütün üniteler. liste = bölüm listesinin dosyası (kitli ünitede kit-data.js).
+     grup: Defterler'deki AP / Okul ayrımı; kisa: ders çipindeki ad. */
   var DEFTER_DERS = {
-    macro: { ad: "Macroeconomics", renk: "macro", art: "macro" },
-    micro: { ad: "Microeconomics", renk: "micro", art: "macro" },
-    stats: { ad: "Statistics", renk: "stats", art: "stats" },
-    hug: { ad: "Human Geography", renk: "hug", art: "hug" },
-    bpf: { ad: "Business with Personal Finance", renk: "bpf", art: "bpf" },
-    psych: { ad: "Psychology", renk: "psych", art: "cep" }
+    macro: { ad: "Macroeconomics", renk: "macro", art: "macro", grup: "ap" },
+    micro: { ad: "Microeconomics", renk: "micro", art: "macro", grup: "ap" },
+    stats: { ad: "Statistics", renk: "stats", art: "stats", grup: "ap" },
+    hug: { ad: "Human Geography", renk: "hug", art: "hug", grup: "ap" },
+    bpf: { ad: "Business with Personal Finance", kisa: "Business", renk: "bpf", art: "bpf", grup: "ap" },
+    psych: { ad: "Psychology", renk: "psych", art: "cep", grup: "ap" },
+    /* 10. sınıf okul dersleri (okul/<ders>/unit-N/, geçen yılın müfredatı) */
+    precalc: { ad: "Precalculus and Trigonometry", kisa: "Precalculus", renk: "precalc", art: "calc", grup: "okul" },
+    chem: { ad: "Chemistry", renk: "chem", art: "cep", grup: "okul" },
+    phys: { ad: "Physics", renk: "phys", art: "cep", grup: "okul" },
+    bio: { ad: "Biology", renk: "bio", art: "cep", grup: "okul" },
+    eng: { ad: "English", renk: "eng", art: "cep", grup: "okul" }
   };
   var DEFTER_UNITELER = [
     ["macro-u1", "macro", 1, "ap/macroeconomics/unit-1/", "kit-data.js", "Basic Economic Concepts"],
@@ -92,7 +109,30 @@
     ["psych-u2", "psych", 2, "ap/psychology/unit-2/", "defter/defter-liste.js", "Cognition"],
     ["psych-u3", "psych", 3, "ap/psychology/unit-3/", "defter/defter-liste.js", "Development and Learning"],
     ["psych-u4", "psych", 4, "ap/psychology/unit-4/", "defter/defter-liste.js", "Social Psychology and Personality"],
-    ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"]
+    ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"],
+    /* 10. sınıf okul defterleri (kitsiz; listede KIT.okul ve KIT.not var) */
+    ["pre-u1", "precalc", 1, "okul/precalculus/unit-1/", "defter/defter-liste.js", "Functions"],
+    ["pre-u2", "precalc", 2, "okul/precalculus/unit-2/", "defter/defter-liste.js", "Quadratics"],
+    ["pre-u3", "precalc", 3, "okul/precalculus/unit-3/", "defter/defter-liste.js", "Polynomials"],
+    ["pre-u4", "precalc", 4, "okul/precalculus/unit-4/", "defter/defter-liste.js", "Trigonometry"],
+    ["pre-u5", "precalc", 5, "okul/precalculus/unit-5/", "defter/defter-liste.js", "Exponential and Logarithmic Functions"],
+    ["pre-u6", "precalc", 6, "okul/precalculus/unit-6/", "defter/defter-liste.js", "Numbers and Algorithms"],
+    ["chem-u1", "chem", 1, "okul/chemistry/unit-1/", "defter/defter-liste.js", "Interparticle Forces"],
+    ["chem-u2", "chem", 2, "okul/chemistry/unit-2/", "defter/defter-liste.js", "Chemical Reactions"],
+    ["chem-u3", "chem", 3, "okul/chemistry/unit-3/", "defter/defter-liste.js", "Mole Concept and Stoichiometry"],
+    ["chem-u4", "chem", 4, "okul/chemistry/unit-4/", "defter/defter-liste.js", "Gases"],
+    ["chem-u5", "chem", 5, "okul/chemistry/unit-5/", "defter/defter-liste.js", "Solutions and Colligative Properties"],
+    ["phys-u1", "phys", 1, "okul/physics/unit-1/", "defter/defter-liste.js", "Force and Motion"],
+    ["phys-u2", "phys", 2, "okul/physics/unit-2/", "defter/defter-liste.js", "Energy"],
+    ["phys-u3", "phys", 3, "okul/physics/unit-3/", "defter/defter-liste.js", "Electricity"],
+    ["phys-u4", "phys", 4, "okul/physics/unit-4/", "defter/defter-liste.js", "Waves"],
+    ["bio-u1", "bio", 1, "okul/biology/unit-1/", "defter/defter-liste.js", "Theme 1: Energy"],
+    ["bio-u2", "bio", 2, "okul/biology/unit-2/", "defter/defter-liste.js", "Theme 2: Ecology"],
+    ["eng-u1", "eng", 1, "okul/english/unit-1/", "defter/defter-liste.js", "Cultural Perspectives · Passage Analysis"],
+    ["eng-u2", "eng", 2, "okul/english/unit-2/", "defter/defter-liste.js", "Oedipus Rex"],
+    ["eng-u3", "eng", 3, "okul/english/unit-3/", "defter/defter-liste.js", "The Catcher in the Rye"],
+    ["eng-u4", "eng", 4, "okul/english/unit-4/", "defter/defter-liste.js", "Research and Argument"],
+    ["eng-u5", "eng", 5, "okul/english/unit-5/", "defter/defter-liste.js", "MEB Skills Exams"]
   ].map(function (r) { return { id: r[0], ders: r[1], unit: r[2], path: r[3], liste: r[4], baslik: r[5] }; });
   function defterUnite(id) { var i; for (i = 0; i < DEFTER_UNITELER.length; i++) if (DEFTER_UNITELER[i].id === id) return DEFTER_UNITELER[i]; return null; }
   /* ünitenin bölüm listesi (window.KIT); kitsiz ünitede KIT.kitYok = true */
@@ -101,6 +141,16 @@
     return onbellek[key] || (onbellek[key] = genel(KOK + u.path + u.liste, "KIT").then(function (K) { if (!K.store) K.store = "hg-kit:v2:"; return K; }));
   }
   function defterOku(u, slug) { var key = "def:" + u.id + slug; return onbellek[key] || (onbellek[key] = genel(KOK + u.path + "defter/" + slug + ".js", "DEFTER")); }
+  /* bir dersin bütün ünitelerinde kaç defter var, kaçı okundu (Kitlerim ve panel kartları için) */
+  function defterDurumu(ders, hepsi) {
+    var us = DEFTER_UNITELER.filter(function (u) { return u.ders === ders && (hepsi || u.unit === 1); });
+    return Promise.all(us.map(function (u) { return defterListesi(u).then(null, function () { return null; }); })).then(function (ls) {
+      var r = { n: 0, o: 0 };
+      ls.forEach(function (K) { if (!K) return; var m = okunanlar(K.store); (K.episodes || []).forEach(function (e) { r.n++; if (m[e.slug]) r.o++; }); });
+      r.pct = r.n ? Math.round(100 * r.o / r.n) : 0;
+      return r;
+    });
+  }
   function okunanlar(store) { var m = oku(store + kim() + ":defter"); return m && typeof m === "object" ? m : {}; }
   function okundu(store, slug) { var key = store + kim() + ":defter", m = okunanlar(store); if (!m[slug]) { m[slug] = Date.now(); yaz(key, m); } }
   /* panel için: son açılan defter ve hangi bölümde kalındığı */
@@ -108,14 +158,20 @@
   function sonDefter(v) { if (v === undefined) return oku(sonDefterKey()); yaz(sonDefterKey(), v); }
 
   /* "Kit ekle" kataloğu: rafa eklenebilen her kit. ders = DERSLER anahtarı (hazırsa), renk = kitora.js COLORS anahtarı.
-     okul = bu kiti varsayılan yapan veritabanı ders adları (onboarding seçimi). */
+     okul = bu kiti varsayılan yapan veritabanı ders adları (onboarding seçimi); sinif = bu sınıftaki herkese varsayılan
+     (10. sınıfın dersleri veritabanına yazılmıyor). defter = DEFTER_DERS anahtarı: kit yerine o dersin defterleri açılır. */
   var KATALOG = [
     { id: "macro", tur: "ap", title: "AP Macroeconomics", code: "AP · ECON", renk: "macro", ders: "macro", okul: ["AP Macroeconomics"], ara: "macro ekonomi economics opportunity cost scarcity ppc supply demand comparative advantage arz talep" },
     { id: "stats", tur: "ap", title: "AP Statistics", code: "AP · STAT", renk: "stats", ders: "stats", okul: ["AP Statistics"], ara: "stat statistics istatistik standard deviation distribution sampling mean median histogram" },
     { id: "hug", tur: "ap", title: "AP Human Geography", code: "AP · HUG", renk: "hug", ders: "hug", okul: ["Honours Human Geography"], ara: "hug human geography coğrafya beşeri migration diffusion population scale map göç nüfus" },
     { id: "bpf", tur: "ap", title: "AP Business with Personal Finance", code: "AP · BPF", renk: "bpf", ders: "bpf", okul: [], ara: "bpf business personal finance budget credit interest marketing competition bütçe" },
-    { id: "calc", tur: "ap", title: "AP Calculus BC", code: "AP · MATH", renk: "calc", ders: null, okul: ["AP Calculus BC/AB"], ara: "calc calculus bc ab derivative integral limit türev integral" },
+    { id: "calc", tur: "ap", title: "AP Calculus BC", code: "AP · MATH", renk: "calc", ders: "calc", okul: ["AP Calculus BC/AB"], ara: "calc calculus bc ab derivative integral limit türev integral" },
     { id: "micro", tur: "ap", title: "AP Microeconomics", code: "AP · ECON", renk: "micro", ders: "micro", okul: ["AP Microeconomics"], ara: "micro mikro economics elasticity market firm" },
+    { id: "okul-precalc", tur: "okul", title: "Precalculus and Trigonometry", code: "10. SINIF · MATH", renk: "precalc", ders: null, defter: "precalc", sinif: 10, okul: ["Precalculus and Trigonometry"], ara: "precalculus trigonometry matematik math function quadratic polynomial logarithm fonksiyon trigonometri" },
+    { id: "okul-chem", tur: "okul", title: "Chemistry 10", code: "10. SINIF · KİMYA", renk: "chem", ders: null, defter: "chem", sinif: 10, okul: ["Chemistry 10"], ara: "chemistry kimya mole stoichiometry gases solutions reaction mol gaz çözelti" },
+    { id: "okul-phys", tur: "okul", title: "Physics 10", code: "10. SINIF · FİZİK", renk: "phys", ders: null, defter: "phys", sinif: 10, okul: ["Physics 10"], ara: "physics fizik force motion energy electricity waves kuvvet hareket enerji elektrik dalga" },
+    { id: "okul-bio", tur: "okul", title: "Biology 10", code: "10. SINIF · BİYOLOJİ", renk: "bio", ders: null, defter: "bio", sinif: 10, okul: ["Biology 10"], ara: "biology biyoloji energy ecology photosynthesis respiration ekoloji fotosentez" },
+    { id: "okul-eng", tur: "okul", title: "English 10", code: "10. SINIF · İNGİLİZCE", renk: "eng", ders: null, defter: "eng", sinif: 10, okul: ["English 10"], ara: "english ingilizce oedipus catcher in the rye passage analysis research argument" },
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" }
   ];
   function rafKey(id) { return "kitora:v1:" + (id || kim()) + ":kitlerim"; }
@@ -123,10 +179,10 @@
     var r = oku(rafKey()) || {}, eklenen = Array.isArray(r.eklenen) ? r.eklenen : [], gizli = Array.isArray(r.gizli) ? r.gizli : [];
     var sec = (profil && profil.secmeliler) || [];
     return KATALOG.map(function (k) {
-      var varsayilan = k.okul.some(function (d) { return sec.indexOf(d) > -1; });
+      var varsayilan = k.okul.some(function (d) { return sec.indexOf(d) > -1; }) || (!!k.sinif && !!profil && profil.sinif === k.sinif);
       var basladi = !!k.ders && KITLER.some(function (x) { return x.ders === k.ders && ozet(x); });
       var rafta = (varsayilan && gizli.indexOf(k.id) < 0) || eklenen.indexOf(k.id) > -1 || (basladi && !varsayilan && gizli.indexOf(k.id) < 0);
-      return { kit: k, varsayilan: varsayilan, eklendi: !varsayilan && eklenen.indexOf(k.id) > -1, rafta: rafta, hazir: !!k.ders || !!k.href };
+      return { kit: k, varsayilan: varsayilan, eklendi: !varsayilan && eklenen.indexOf(k.id) > -1, rafta: rafta, hazir: !!k.ders || !!k.href || !!k.defter };
     });
   }
   function rafYaz(f) {
@@ -338,7 +394,7 @@
   }
 
   window.KICERIK = {
-    DEFTER_DERS: DEFTER_DERS, DEFTER_UNITELER: DEFTER_UNITELER, defterUnite: defterUnite, defterListesi: defterListesi, defterOku: defterOku, okunanlar: okunanlar, okundu: okundu, sonDefter: sonDefter,
+    DEFTER_DERS: DEFTER_DERS, DEFTER_UNITELER: DEFTER_UNITELER, defterUnite: defterUnite, defterListesi: defterListesi, defterDurumu: defterDurumu, defterOku: defterOku, okunanlar: okunanlar, okundu: okundu, sonDefter: sonDefter,
     KATALOG: KATALOG, raf: raf, rafaEkle: rafaEkle, raftanCikar: raftanCikar,
     KOK: KOK, DERSLER: DERSLER, KITLER: KITLER, OKUL: OKUL, SECMELI: SECMELI, dersRengi: dersRengi,
     kit: kit, url: url, kitVerisi: kitVerisi, denemeVerisi: denemeVerisi, defterVerisi: defterVerisi, sekiller: sekiller,

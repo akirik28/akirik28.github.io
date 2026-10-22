@@ -11,7 +11,8 @@
   var C = window.KICERIK || null;
   var body = document.body;
   var ROOT = body.dataset.root || "";
-  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B" };
+  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B",
+    precalc: "#E0A43F", chem: "#E0534A", phys: "#5A67D8", bio: "#5FA83A", eng: "#9A6A45" };
   var HESAPLI = !!(H && H.aktif());
   var ME = HESAPLI ? H.aktif() : null;
 
@@ -683,7 +684,7 @@
     var calisilan = hafta.filter(function (v) { return v > 0; }).length;
     fill('[data-k="w-not"]', calisilan >= 5 ? "efsane bir hafta!" : calisilan ? "bu hafta " + calisilan + " gün, devam!" : "bu hafta henüz çalışmadın, bugün başla");
     fill('[data-k="mini-kits"]', kits.length ? kits.slice(0, 4).map(function (k) {
-      return '<a class="mini-kit" href="' + k.href + '">' + halka(k.pct, k.renk) + '<span class="stack" style="gap:2px;min-width:0"><strong>' + esc(k.ad) + '</strong><span class="mono muted" style="font-size:12px">%' + k.pct + '</span></span></a>';
+      return '<a class="mini-kit" href="' + k.href + '"' + (k.defter ? ' data-df-mini="' + k.defter + '"' : "") + '>' + halka(k.pct, k.renk) + '<span class="stack" style="gap:2px;min-width:0"><strong>' + esc(k.ad) + '</strong><span class="mono muted" style="font-size:12px">' + (k.defter ? "defter" : "%" + k.pct) + '</span></span></a>';
     }).join("") : '<a class="mini-kit" href="' + ROOT + 'kitlerim/"><span class="kit-add-card__plus" aria-hidden="true">+</span><strong>Rafına kit ekle</strong></a>');
     var sd = C ? C.sonDefter() : null;
     if (!HESAPLI) sd = { u: "macro-u1", b: "mc102", ders: "macro", baslik: "Fırsat Maliyeti ve PPC", unite: 1, bolum: 1, toplam: 4 };
@@ -756,10 +757,18 @@
     }
     fill('[data-k="quizzes"]', yak.length ? yak.slice(0, 3).map(quizSatiri).join("") : bosQuiz());
     panelP = p;
-    panelEk(r, C.takvim(), C.raf(p).filter(function (x) { return x.rafta && x.hazir; }).map(function (x) {
+    panelEk(r, C.takvim(), C.raf(p).filter(function (x) { return x.rafta && x.hazir; }).sort(function (a, b) { return b.varsayilan - a.varsayilan; }).map(function (x) {
       var d = x.kit.ders ? dersler().filter(function (y) { return y.id === x.kit.ders; })[0] : null;
-      return { ad: x.kit.title.replace(/^AP\s+/, "").replace(/:.*$/, ""), renk: COLORS[x.kit.renk], pct: d ? d.pct : 0, href: d ? ROOT + d.href : C.KOK + x.kit.href };
+      return { ad: x.kit.title.replace(/^AP\s+/, "").replace(/:.*$/, "").replace(/ and Trigonometry$| 10$/, ""), renk: COLORS[x.kit.renk], pct: d ? d.pct : 0, defter: x.kit.defter, href: d ? ROOT + d.href : x.kit.defter ? ROOT + "defterler/?ders=" + x.kit.defter : C.KOK + x.kit.href };
     }), C.rozetler(r));
+    /* defter kitlerinin halkası: okunan defter oranı */
+    $$("[data-df-mini]").forEach(function (a) {
+      C.defterDurumu(a.dataset.dfMini, true).then(function (o) {
+        var renk = COLORS[C.DEFTER_DERS[a.dataset.dfMini].renk], h = $(".ring-mini", a);
+        if (h) h.outerHTML = halka(o.pct, renk);
+        fill($(".mono", a), o.n ? o.o + "/" + o.n + " defter" : "yakında");
+      });
+    });
   }
 
   /* ---------- Kitlerim: varsayılanlar (onboarding seçimi) + elle eklenenler; "Kit ekle" arama penceresi ---------- */
@@ -767,8 +776,8 @@
   function kitKarti(r) {
     var k = r.kit, col = COLORS[k.renk], d = k.ders ? dersler().filter(function (x) { return x.id === k.ders; })[0] : null;
     var o = d && d.son && d.son.o, pct = d ? d.pct : 0;
-    var alt = !r.hazir ? "Kiti yolda; hazır olunca burada açılır." : d ? (o ? (o.bitenler >= o.n ? "Unit " + d.son.k.unit + " bitti!" : "Sıradaki: Bölüm " + (o.cur + 1) + " · " + o.curTitle) : "Henüz başlamadın") : "Yazılıdan önce tek, odaklı paket.";
-    var href = d ? ROOT + d.href : k.href ? C.KOK + k.href : null;
+    var alt = !r.hazir ? "Kiti yolda; hazır olunca burada açılır." : d ? (o ? (o.bitenler >= o.n ? "Unit " + d.son.k.unit + " bitti!" : "Sıradaki: Bölüm " + (o.cur + 1) + " · " + o.curTitle) : "Henüz başlamadın") : k.defter ? "Not defterleri · geçen yılın müfredatı" : "Yazılıdan önce tek, odaklı paket.";
+    var href = d ? ROOT + d.href : k.defter ? ROOT + "defterler/?ders=" + k.defter : k.href ? C.KOK + k.href : null;
     var chips = (r.varsayilan ? '<span class="chip chip--info" style="font-size:11px">sınıfından</span>' : "") + (r.eklendi ? '<span class="chip chip--ok" style="font-size:11px">eklendi</span>' : "") + (!r.hazir ? '<span class="chip chip--warn" style="font-size:11px">yakında</span>' : "");
     var ad = k.title.replace(/^AP\s+/, "").replace(/:.*$/, "");
     /* elle eklenen: köşede ×; sınıfından gelen ya da başlanmış kit: ⋯ → gizle / kaldır */
@@ -776,11 +785,12 @@
       ? '<button type="button" class="kit-slot__more" data-kit-cikar="' + k.id + '" data-ad="' + esc(ad) + '" aria-label="' + esc(ad) + ' kitini raftan kaldır">×</button>'
       : '<button type="button" class="kit-slot__more" data-kit-menu="' + k.id + '" aria-haspopup="menu" aria-expanded="false" aria-label="' + esc(ad) + ' seçenekleri">⋯</button>' +
         '<div class="kit-menu" role="menu" hidden><button type="button" role="menuitem" data-kit-cikar="' + k.id + '" data-ad="' + esc(ad) + '" data-gizle="' + r.varsayilan + '">' + (r.varsayilan ? "Raftan gizle" : "Raftan kaldır") + '</button></div>';
-    var cizim = k.ders ? C.DERSLER[k.ders].art : ({ calc: "calc", micro: "macro" })[k.id] || "cep";
+    var cizim = k.ders ? C.DERSLER[k.ders].art : k.defter ? C.DEFTER_DERS[k.defter].art : ({ calc: "calc", micro: "macro" })[k.id] || "cep";
     var ic = '<div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">' + esc(k.code) + '</span>' + art(cizim, col) + '</div>' +
       '<div class="kit-card__body">' + (chips ? '<div class="kit-card__chips">' + chips + '</div>' : "") +
       '<span class="kit-card__title">' + esc(k.title.replace(/^AP\s+/, "")) + '</span><span class="kit-card__meta">' + esc(alt) + '</span>' +
-      (d ? '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="' + esc(k.title) + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div>' : "") + '</div>';
+      (d ? '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="' + esc(k.title) + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div>' : "") +
+      (k.defter ? '<div class="kit-card__progress" data-df-durum="' + k.defter + '"><div class="progress progress--thin" role="progressbar" aria-label="' + esc(k.title) + ' okunan defterler" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><span style="--w:0%"></span></div><span class="mono muted">…</span></div>' : "") + '</div>';
     var stil = ' style="--c:' + col + ';--rot:0deg"';
     return '<div class="kit-slot">' + (href ? '<a class="kit-card" href="' + href + '"' + stil + '>' + ic + '</a>' : '<div class="kit-card" data-yakinda="true"' + stil + '>' + ic + '</div>') +
       kose + '</div>';
@@ -789,6 +799,17 @@
     var raf = C.raf(panelP).filter(function (r) { return r.rafta; });
     fill('[data-k="my-courses"]', raf.map(kitKarti).join("") +
       '<button type="button" class="kit-add-card" data-k="kit-ekle" aria-haspopup="dialog"><svg class="kit-add-card__ants" aria-hidden="true"><rect x="1" y="1" rx="23" ry="23"/></svg><span class="kit-add-card__plus" aria-hidden="true">+</span><strong>Kit ekle</strong><span class="muted" style="font-size:13px">' + (raf.length ? "Başka bir dersi de rafına koy" : "Rafın boş; aradığın kiti bul") + '</span></button>');
+    defterDurumlari();
+  }
+  /* defter kartları: "x/y defter okundu" (defter listeleri canlı siteden gelir) */
+  function defterDurumlari() {
+    $$("[data-df-durum]").forEach(function (el) {
+      C.defterDurumu(el.dataset.dfDurum, HESAPLI).then(function (r) {
+        var pb = $(".progress", el);
+        $("span", pb).style.setProperty("--w", r.pct + "%"); pb.setAttribute("aria-valuenow", r.pct);
+        fill($(".mono", el), r.n ? r.o + "/" + r.n + " okundu" : "yakında");
+      });
+    });
   }
   function kitAra(s) { return String(s || "").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i"); }
   function kitEkleAc(acan) {
@@ -798,7 +819,7 @@
     m.innerHTML = '<div class="kit-modal__bg" data-kapat></div><div class="kit-modal__box card" role="dialog" aria-modal="true" aria-labelledby="ke-h">' +
       '<div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3" id="ke-h">Kit ekle</h2><button type="button" class="btn btn--ghost btn--sm" data-kapat>Kapat</button></div>' +
       '<label class="field"><span class="sr-only">Kit ara</span><input type="search" data-k="kit-q" placeholder="Ders, kod ya da terim: macro, stat, crucible, migration…" autocomplete="off"></label>' +
-      '<div class="row" style="gap:6px" role="group" aria-label="Kit türü"><button type="button" class="filter" data-kf="hepsi" aria-pressed="true">Hepsi</button><button type="button" class="filter" data-kf="ap" aria-pressed="false">Sınav kitleri (AP)</button><button type="button" class="filter" data-kf="cep" aria-pressed="false">Cep kitleri</button></div>' +
+      '<div class="row" style="gap:6px" role="group" aria-label="Kit türü"><button type="button" class="filter" data-kf="hepsi" aria-pressed="true">Hepsi</button><button type="button" class="filter" data-kf="ap" aria-pressed="false">Sınav kitleri (AP)</button><button type="button" class="filter" data-kf="okul" aria-pressed="false">10. sınıf</button><button type="button" class="filter" data-kf="cep" aria-pressed="false">Cep kitleri</button></div>' +
       '<div class="kit-results" data-k="kit-sonuc" aria-live="polite"></div></div>';
     body.appendChild(m);
     var inp = $('[data-k="kit-q"]', m);
@@ -807,8 +828,8 @@
       var t = kitAra(q).trim();
       var l = C.raf(panelP).filter(function (r) { return (f === "hepsi" || r.kit.tur === f) && (!t || kitAra(r.kit.title + " " + r.kit.code + " " + r.kit.ara).indexOf(t) > -1); });
       fill($('[data-k="kit-sonuc"]', m), l.length ? l.map(function (r) {
-        var k = r.kit, d = k.ders ? C.KITLER.filter(function (x) { return x.ders === k.ders; }).length : 0;
-        return '<div class="kit-result"><span class="kit-result__sq" style="--c:' + COLORS[k.renk] + '" aria-hidden="true"></span><span class="stack" style="gap:2px;flex:1;min-width:0"><strong>' + esc(k.title) + '</strong><span class="mono muted" style="font-size:12px">' + esc(k.code) + ' · ' + (r.hazir ? (d ? d + " ünite hazır" : "hazır") : "yakında") + '</span></span>' +
+        var k = r.kit, d = k.ders ? C.KITLER.filter(function (x) { return x.ders === k.ders; }).length : 0, du = k.defter ? C.DEFTER_UNITELER.filter(function (x) { return x.ders === k.defter; }).length : 0;
+        return '<div class="kit-result"><span class="kit-result__sq" style="--c:' + COLORS[k.renk] + '" aria-hidden="true"></span><span class="stack" style="gap:2px;flex:1;min-width:0"><strong>' + esc(k.title) + '</strong><span class="mono muted" style="font-size:12px">' + esc(k.code) + ' · ' + (r.hazir ? (d ? d + " ünite hazır" : du ? du + " ünite defteri" : "hazır") : "yakında") + '</span></span>' +
           (r.rafta ? '<span class="chip chip--ok">Rafında ✓</span>' : '<button type="button" class="btn btn--primary btn--sm" data-kit-ekle="' + k.id + '">Ekle</button>') + '</div>';
       }).join("") : '<div class="stack" style="gap:10px;align-items:flex-start;padding:12px 0"><span class="hand" style="font-size:26px">bulamadık…</span><span class="muted">Hangi kit lazım? İstek bırak, hazırlanırsa rafına düşsün.</span><button type="button" class="btn btn--ghost btn--sm" data-k="kit-istek">İstek bırak</button></div>');
     }
@@ -868,15 +889,27 @@
   };
 
   function uniteRengi(u) { return COLORS[C.DEFTER_DERS[u.ders].renk]; }
+  /* "AP Macroeconomics" ya da "10. sınıf · Chemistry" */
+  function dersEtiketi(d) { return d.grup === "okul" ? "10. sınıf · " + d.ad : "AP " + d.ad; }
   function defterMerkezi(kok, bitti) {
-    var dersler_ = Object.keys(C.DEFTER_DERS), son = C.sonDefter(), f = param("ders") || (son && son.ders) || "macro";
-    if (dersler_.indexOf(f) < 0) f = "macro";
+    var tum = Object.keys(C.DEFTER_DERS), son = C.sonDefter(), f = param("ders") || (son && son.ders) || "";
+    if (tum.indexOf(f) < 0) f = param("grup") === "okul" || (!param("grup") && HESAPLI && (H.profil() || {}).sinif === 10) ? "precalc" : "macro";
+    var grup = C.DEFTER_DERS[f].grup, secili = {}, dersler_;
+    secili[grup] = f;
+    function grupDersleri(g) { return tum.filter(function (d) { return C.DEFTER_DERS[d].grup === g; }); }
     document.title = "Defterler · Kitora";
     kok.innerHTML = '<section class="hello rise"><h1 class="display" style="font-size:clamp(44px,5vw,60px)"><span class="hl">Defterler</span></h1><span class="hand" style="font-size:24px;rotate:-2deg">videosuz çalışmak isteyene</span></section>' +
-      '<label class="df-ara rise d1"><span class="sr-only">Defterlerde ara</span>' + I.ara + '<input type="search" data-k="df-q" placeholder="Terim ya da konu ara: opportunity cost, GDP, migration…" autocomplete="off"></label>' +
-      '<div class="seg tabs-row rise d1" role="tablist" aria-label="Ders" data-k="df-dersler">' + dersler_.map(function (d) { return '<button type="button" role="tab" data-ders="' + d + '" aria-selected="' + (d === f) + '">' + esc(C.DEFTER_DERS[d].ad.replace(" with Personal Finance", "")) + '</button>'; }).join("") + '</div>' +
+      '<label class="df-ara rise d1"><span class="sr-only">Defterlerde ara</span>' + I.ara + '<input type="search" data-k="df-q" placeholder="Terim ya da konu ara: opportunity cost, GDP, function, mole…" autocomplete="off"></label>' +
+      '<div class="row rise d1" style="gap:6px" role="group" aria-label="Defter türü" data-k="df-grup"><button type="button" class="filter" data-grup="ap">AP sınavları</button><button type="button" class="filter" data-grup="okul">10. sınıf okul dersleri</button></div>' +
+      '<div class="seg tabs-row rise d1" role="tablist" aria-label="Ders" data-k="df-dersler"></div><p class="muted" style="font-size:13px;margin:-12px 0 0" data-k="df-grup-not" hidden>Geçen yılın (2025-26) müfredatına göre; bu yıl konular farklı olabilir.</p>' +
       '<div class="kit-grid df-units rise d2" data-k="df-uniteler"></div><div class="df-sonuc" data-k="df-sonuc" hidden></div>';
     var grid = $('[data-k="df-uniteler"]'), sonuc = $('[data-k="df-sonuc"]'), inp = $('[data-k="df-q"]');
+    function cipler() {
+      dersler_ = grupDersleri(grup);
+      $$("[data-grup]", kok).forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.grup === grup)); });
+      $('[data-k="df-grup-not"]').hidden = grup !== "okul";
+      fill('[data-k="df-dersler"]', dersler_.map(function (d) { return '<button type="button" role="tab" data-ders="' + d + '" aria-selected="' + (d === f) + '">' + esc(C.DEFTER_DERS[d].kisa || C.DEFTER_DERS[d].ad) + '</button>'; }).join(""));
+    }
     function kartlar() {
       $$("[data-ders]", kok).forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.ders === f)); });
       var us = C.DEFTER_UNITELER.filter(function (x) { return x.ders === f; });
@@ -898,7 +931,12 @@
         });
       });
     }
-    $('[data-k="df-dersler"]').addEventListener("click", function (e) { var b = e.target.closest("[data-ders]"); if (!b) return; f = b.dataset.ders; history.replaceState(null, "", "?ders=" + f); kartlar(); if (inp.value.trim()) ara(); });
+    $('[data-k="df-dersler"]').addEventListener("click", function (e) { var b = e.target.closest("[data-ders]"); if (!b) return; f = secili[grup] = b.dataset.ders; history.replaceState(null, "", "?ders=" + f); kartlar(); if (inp.value.trim()) ara(); });
+    $('[data-k="df-grup"]').addEventListener("click", function (e) {
+      var b = e.target.closest("[data-grup]"); if (!b || b.dataset.grup === grup) return;
+      grup = b.dataset.grup; f = secili[grup] || grupDersleri(grup)[0]; secili[grup] = f;
+      history.replaceState(null, "", "?ders=" + f); cipler(); kartlar(); if (inp.value.trim()) ara();
+    });
     /* arama: önce başlık/terim, sonra (3+ harfte) seçili dersin defterlerinin içinde bölüm bölüm */
     var jeton = 0, zam = null;
     function ara() {
@@ -946,7 +984,7 @@
       });
     }
     inp.addEventListener("input", function () { clearTimeout(zam); zam = setTimeout(ara, 280); });
-    kartlar(); bitti();
+    cipler(); kartlar(); bitti();
   }
 
   function defterUnitesi(kok, u, bitti, hata) {
@@ -955,7 +993,8 @@
     C.defterListesi(u).then(function (K) {
       var oku_ = C.okunanlar(K.store), eps = K.episodes || [], o = eps.filter(function (e) { return oku_[e.slug]; }).length;
       kok.innerHTML = '<a class="btn btn--link" style="align-self:flex-start" href="' + ROOT + 'defterler/?ders=' + u.ders + '">← Defterler</a>' +
-        '<section class="hello rise" style="--macro:' + col + '"><div class="stack" style="gap:6px"><span class="eyebrow accent">// AP ' + esc(d.ad) + ' · Unit ' + u.unit + '</span><h1 class="display" style="font-size:clamp(36px,4.5vw,52px)">' + esc(u.baslik) + '</h1></div>' +
+        '<section class="hello rise" style="--macro:' + col + '"><div class="stack" style="gap:6px"><span class="eyebrow accent">// ' + esc(dersEtiketi(d)) + ' · Unit ' + u.unit + '</span><h1 class="display" style="font-size:clamp(36px,4.5vw,52px)">' + esc(u.baslik) + '</h1>' +
+          (K.not ? '<span class="muted" style="font-size:13px">' + esc(K.not) + '</span>' : "") + '</div>' +
         '<div class="stack" style="gap:6px;min-width:180px"><span class="mono muted">' + o + ' / ' + eps.length + ' OKUNDU</span><div class="progress"><span style="--w:' + (eps.length ? Math.round(100 * o / eps.length) : 0) + '%;--c:' + col + '"></span></div></div></section>' +
         '<div class="df-eps rise d1">' + eps.map(function (e, i) {
           return '<a class="df-ep card" href="' + ROOT + 'defterler/?u=' + u.id + '&b=' + e.slug + '" style="--c:' + col + '"><span class="df-ep__no">' + esc(e.code || i + 1) + '</span><span class="stack" style="gap:3px;min-width:0"><strong>' + esc(e.title) + '</strong><span class="mono muted" style="font-size:12px" lang="en">' + esc(e.en || "") + '</span></span>' + (oku_[e.slug] ? '<span class="chip chip--ok">okundu ✓</span>' : '<span class="df-ep__go" aria-hidden="true">→</span>') + '</a>';
@@ -980,7 +1019,7 @@
     var url; try { url = new URL(d.href); } catch (x) { return; }
     var yol = url.pathname, hedefU = C.DEFTER_UNITELER.filter(function (x) { return yol.indexOf("/" + x.path) === 0; })[0];
     if (/\/kitora\/giris\//.test(yol)) { location.href = ROOT + "giris/?mod=giris&devam=" + encodeURIComponent(buradan()); return; }
-    if (yol === "/ap/defterler/") { location.href = ROOT + "defterler/" + (hedefU ? "?ders=" + hedefU.ders : ""); return; }
+    if (/\/(ap|okul)\/defterler\/$/.test(yol)) { location.href = ROOT + "defterler/?ders=" + (hedefU || cb.u).ders; return; }
     if (hedefU && /\/defter\/$/.test(yol)) { location.href = ROOT + "defterler/?u=" + hedefU.id + (url.searchParams.get("b") ? "&b=" + encodeURIComponent(url.searchParams.get("b")) : ""); return; }
     if (hedefU && C.kit(hedefU.id) && /\/deneme\//.test(yol)) { location.href = ROOT + "unite/?kit=" + hedefU.id + "&sekme=deneme"; return; }
     if (hedefU && C.kit(hedefU.id) && yol === "/" + hedefU.path) { location.href = ROOT + "unite/?kit=" + hedefU.id + (url.hash ? "&slug=" + encodeURIComponent(url.hash.slice(1)) : ""); return; }
@@ -1034,7 +1073,7 @@
       var ep = (K.episodes || []).filter(function (e) { return e.slug === slug; })[0];
       if (!ep) { hata(); return; }
       document.title = ep.title + " · Defter · Kitora";
-      kok.innerHTML = '<div class="row" style="align-items:center;justify-content:space-between;gap:12px"><a class="btn btn--link" href="' + ROOT + 'defterler/?u=' + u.id + '">← Unit ' + u.unit + ' defterleri</a><span class="mono muted">AP ' + esc(C.DEFTER_DERS[u.ders].ad.toUpperCase()) + ' · UNIT ' + u.unit + ' · ' + esc(ep.code || "") + '</span></div>';
+      kok.innerHTML = '<div class="row" style="align-items:center;justify-content:space-between;gap:12px"><a class="btn btn--link" href="' + ROOT + 'defterler/?u=' + u.id + '">← Unit ' + u.unit + ' defterleri</a><span class="mono muted">' + esc(dersEtiketi(C.DEFTER_DERS[u.ders]).toLocaleUpperCase("tr-TR")) + ' · UNIT ' + u.unit + ' · ' + esc(ep.code || "") + '</span></div>';
       defterCercevesi(kok, u, slug, ep.title, "df-kutu--sayfa");
       if (param("bolum") !== null) history.replaceState(null, "", "?u=" + u.id + "&b=" + slug);
       bitti();
