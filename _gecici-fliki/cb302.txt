@@ -1,0 +1,21 @@
+Matruşka bebeklerini bilirsin: bebeği aç, içinden bir bebek daha çıkar, onu aç, bir tane daha. Şu fonksiyon da öyle: e üzeri sinüs pi x. En dışta e üzeri, içinde sinüs, en içte pi x. Zincir kuralı burada da aynı: her katmanı açtığında bir türev çarpanı kazanırsın. Önce tek katmanlı üstel ve logaritmalara bakalım, sonra bebekleri sırayla açalım.
+
+e üzeri x'in türevi kendisi; bunu biliyorsun. Üs daha karmaşıksa: e üzeri u'nun türevi, e üzeri u çarpı u türev. Yani kendisi, çarpı üssün türevi. Örnek: e üzeri 3 x kare. Kendisini aynen yaz, sonra üssün türevi ile çarp: 6 x. Sonuç: 6 x çarpı e üzeri 3 x kare. Üs aşağı inmez, üs aynen kalır; bu, kuvvet kuralı değil.
+
+Taban e değilse, mesela 2 üzeri x, tek fark bir doğal logaritma çarpanı. a üzeri u'nun türevi: a üzeri u, çarpı doğal logaritma a, çarpı u türev. Örnek: 2 üzeri x kare. Türev: 2 üzeri x kare, çarpı doğal logaritma 2, çarpı 2 x. Neden doğal logaritma 2? Çünkü 2 aslında e üzeri doğal logaritma 2; yani her üstel fonksiyon gizli bir e üzeri.
+
+Doğal logaritmada kural: doğal logaritma u'nun türevi, u türev bölü u. Doğal logaritma x kare artı 1: 2 x bölü x kare artı 1. Doğal logaritma x üzeri 5'i iki yoldan dene. Zincirle: 5 x üzeri 4 bölü x üzeri 5, yani 5 bölü x. Logaritma kuralıyla: önce 5 çarpı doğal logaritma x yaz, türev yine 5 bölü x. Bir sürpriz: doğal logaritma 7 x'in türevi 7 bölü 7 x, yani 1 bölü x. 7 bir sabit olarak ayrılıp gidiyor.
+
+Şimdi matruşkaya dönelim: e üzeri sinüs pi x. Dış bebek, e üzeri: kendisini yaz. Ortanca, sinüs: türevi kosinüs pi x. En içteki, pi x: türevi pi. Hepsini çarp: e üzeri sinüs pi x, çarpı kosinüs pi x, çarpı pi. x eşittir 1'de: sinüs pi sıfır, e üzeri sıfır 1; kosinüs pi eksi 1. Türev eksi pi.
+
+Gerçek sorularda zincir yalnız gelmez. f x eşittir x çarpı 2 x artı 1, üzeri 3. Dışta bir çarpım var: önce çarpım kuralı. Birincinin türevi 1, çarpı ikinci; artı birinci, çarpı ikincinin türevi. İkincinin türevi zincirle: 3 çarpı 2 x artı 1 üzeri 2, çarpı 2. x eşittir 1'de: 27 artı 1 çarpı 3 çarpı 9 çarpı 2. 27 artı 54, 81.
+
+Bir de teğet doğrusu: y eşittir doğal logaritma x kare eksi 3, x eşittir 2'de. Nokta: 4 eksi 3, 1; doğal logaritma 1 sıfır. Nokta: x 2, y sıfır. Eğim: u türev bölü u, yani 2 x bölü x kare eksi 3. x eşittir 2'de 4 bölü 1, eğim 4. Doğru: y eşittir 4 çarpı x eksi 2. Bir uyarı: bu fonksiyon yalnızca x kare 3'ten büyükken tanımlı; x eşittir 1'de türev sorulsa, cevap tanımsız olurdu.
+
+Şimdi bir AP örneği. f x eşittir e üzeri x kare eksi 4 x. f'nin grafiğinin yatay teğeti nerede? Yatay teğet, türev sıfır demek. Türev: e üzeri x kare eksi 4 x, çarpı 2 x eksi 4. Bu çarpım ne zaman sıfır? e üzeri herhangi bir şey asla sıfır olmaz, hep pozitif. O zaman 2 x eksi 4 sıfır: x eşittir 2. Nokta: x 2, y e üzeri eksi 4.
+
+Bu bölümün tuzağı: değişken tabanda mı, üste mi? x kare: değişken tabanda, kuvvet kuralı; türev 2 x. 2 üzeri x: değişken üste, üstel kural; türev 2 üzeri x çarpı doğal logaritma 2. Sık görülen yanlış: 2 üzeri x'in türevine x çarpı 2 üzeri x eksi 1 demek. Üs aşağı yalnızca taban değişken, üs sabitken iner. Aynı hata e üzeri x karede de yapılıyor; doğrusu 2 x çarpı e üzeri x kare.
+
+Toparlayalım. e üzeri u'nun türevi: kendisi çarpı u türev. a üzeri u'da bir de doğal logaritma a çarpanı gelir. Doğal logaritma u'nun türevi u türev bölü u; logaritma kuralları önce sadeleştirmeye yarar. İç içe fonksiyonda bebekleri dıştan içe aç, her katmanın türevini çarp. Yatay teğet için türevi sıfıra eşitle; e üzeri bir ifade asla sıfır olmaz.
+
+Şimdi bir soru. Doğal logaritma kosinüs x'in türevi hangisi? Cevap: D. Doğal logaritma u'nun türevi u türev bölü u. Burada u kosinüs x, u türev eksi sinüs x. Eksi sinüs x bölü kosinüs x, yani eksi tanjant x.

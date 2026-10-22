@@ -1,0 +1,19 @@
+Bir karınca, yarıçapı 5 olan bir çemberin üstünde yürüyor. Bu çember bir fonksiyon değil: dikey bir çizgi onu iki noktada kesiyor. Ama karıncanın her adımda net bir yönü var; o yön, o noktadaki teğet. Peki y'yi tek başına yazamadığımız bir denklemin eğimini nasıl buluruz? Cevabın adı implicit differentiation, yani kapalı türev. Ve aslında yeni bir kural değil; kılık değiştirmiş zincir kuralı.
+
+y eşittir x kare artı 1: y yalnız başına, eşitliğin bir tarafında. Buna explicit, yani açık denklem denir. x kare artı y kare eşittir 25: x ve y karışık. Bu implicit, yani kapalı denklem. Çemberi çözmeye kalksan y eşittir artı eksi karekök 25 eksi x kare, iki ayrı yarım çember. x küp artı y küp eşittir 6 x y gibi bir eğride ise y'yi çözmek neredeyse imkânsız. O yüzden çözmeden, olduğu gibi türev alacağız.
+
+Bütün sır şu: y, x'in gizli bir fonksiyonu. x karenin türevi 2 x, her zamanki gibi. Ama y karenin türevi 2 y değil. Dış fonksiyon kare, iç fonksiyon y; zincir kuralı: 2 y çarpı d y bölü d x. Aynı mantıkla e üzeri 3 y'nin türevi 3 e üzeri 3 y, çarpı d y bölü d x. Sinüs y'nin türevi kosinüs y çarpı d y bölü d x. Kural: y içeren her terimin türevine bir d y bölü d x etiketi yapışır.
+
+Çembere dön: x kare artı y kare eşittir 25. İki tarafın da türevini al: 2 x artı 2 y çarpı d y bölü d x eşittir sıfır; 25 sabit, türevi sıfır. d y bölü d x'i yalnız bırak: eksi x bölü y. x 3, y 4 noktasında eğim eksi 3 bölü 4. Grafiğe bak: yarıçapın eğimi 4 bölü 3, teğetin eğimi eksi 3 bölü 4; birbirine dik. Noktayı kaydır: tepede, x sıfır, y 5'te eğim sıfır; sağ uçta y sıfır, teğet dikey.
+
+Şimdi dört adımlı yöntem, x kare artı x y artı y kare eşittir 7 üzerinde. Adım bir: her terimin türevi. x y bir çarpım; türevi y artı x çarpı d y bölü d x. Toplam: 2 x, artı y artı x d y bölü d x, artı 2 y d y bölü d x, eşittir sıfır. Adım iki: d y bölü d x'li terimler bir yana, diğerleri öbür yana. Adım üç: d y bölü d x parantezine al: x artı 2 y. Adım dört: böl. d y bölü d x eşittir eksi 2 x artı y, bölü x artı 2 y. x 1, y 2 noktasında: eksi 4 bölü 5.
+
+Şimdi bir AP örneği. e üzeri y artı x y eşittir e. x sıfır, y 1 noktasında d y bölü d x kaç? Önce nokta eğri üstünde mi: e üzeri 1 artı sıfır, e. Evet. Türev: e üzeri y çarpı d y bölü d x, artı y artı x d y bölü d x, eşittir sıfır. Sağdaki e bir sayı, türevi sıfır. Topla ve böl: d y bölü d x eşittir eksi y bölü e üzeri y artı x. Yerine koy: eksi 1 bölü e.
+
+Bir de trigonometrik bir örnek, ileride işimize yarayacak. Tanjant y eşittir x. Sol tarafın türevi: sekant kare y çarpı d y bölü d x. Sağ taraf: 1. d y bölü d x eşittir 1 bölü sekant kare y, yani kosinüs kare y. Bunu x cinsinden yazmak için bir dik üçgen çiz: karşı kenar x, komşu kenar 1, hipotenüs karekök 1 artı x kare. Kosinüs kare y eşittir 1 bölü 1 artı x kare. Bu, arktanjant x'in türevi; ters trigonometri bölümünde tekrar karşılaşacağız.
+
+Puan kaybettiren dört küçük hata. Bir: y karenin türevine yalnızca 2 y demek; etiketi unutmak. İki: x y'yi tek bir değişken sanmak; o bir çarpım. Üç: sağdaki sabiti unutmak; e, pi ya da 25, türevi sıfır. Dört: cevapta hem x hem y olmasından korkmak. Bu normal; noktada iki koordinatı da yerine koyarsın.
+
+Toparlayalım. Kapalı denklemde y'yi çözmeden iki tarafın türevini al. y'li her terimde zincir kuralı: türevin sonuna d y bölü d x eklenir. x y gibi terimlerde çarpım kuralı. Dört adım: türev al, d y bölü d x'leri topla, parantezine al, böl. Noktada eğim için x'i de y'yi de yerine koy.
+
+Şimdi bir soru. x küp artı y küp eşittir 9 eğrisinde, x 1, y 2 noktasında d y bölü d x kaç? Cevap: A. Türev: 3 x kare artı 3 y kare çarpı d y bölü d x eşittir sıfır. d y bölü d x eşittir eksi x kare bölü y kare. Bu noktada eksi 1 bölü 4.

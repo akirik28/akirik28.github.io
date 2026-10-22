@@ -1,0 +1,19 @@
+Elips biçiminde bir yarış pisti, üstünde bir araba. Araba bir noktada tam doğuya gidiyor: yönü yatay. Başka bir noktada tam kuzeye: yönü dikey. Bu noktaları formülle bulabilir misin? Bu bölümde kapalı türevle teğet doğrusu yazacağız, yatay ve dikey teğetleri yakalayacağız ve teğete dik olan doğruyu, yani normal doğrusunu bulacağız.
+
+Isınma: x kare artı y kare eşittir 10 çemberi, x eşittir 1'de. Önce y'yi bul: 1 artı y kare eşittir 10, y kare 9; y artı 3 ya da eksi 3. İki nokta, yani iki teğet. Kapalı türevden eğim eksi x bölü y. Üstteki noktada eksi 1 bölü 3, alttakinde artı 1 bölü 3. Doğrular: y eksi 3 eşittir eksi üçte bir çarpı x eksi 1; ve y artı 3 eşittir üçte bir çarpı x eksi 1. Soru x eşittir 1'deki bütün teğetleri istiyorsa, yalnızca birini yazan yarı yolda kalır. İki doğru simetrik; x ekseni bir ayna gibi.
+
+Kapalı türevde eğim genelde bir kesir çıkar: pay bölü payda. Yatay teğet: eğim sıfır, yani pay sıfır, payda sıfır değil. Dikey teğet: payda sıfır, pay sıfır değil; eğim tanımsız. Kritik adım: bulduğun koşulu, örneğin x eşittir sıfır, orijinal denkleme geri koyup noktaları bulmak. Koşul tek başına cevap değildir.
+
+Pistimiz: 4 x kare artı 9 y kare eşittir 36. Türev: 8 x artı 18 y çarpı d y bölü d x eşittir sıfır. Eğim eksi 4 x bölü 9 y. Yatay: pay sıfır, x sıfır. Denkleme koy: 9 y kare 36, y artı eksi 2. Yatay teğetler y eşittir 2 ve y eşittir eksi 2. Dikey: payda sıfır, y sıfır. 4 x kare 36, x artı eksi 3. Dikey teğetler x eşittir 3 ve x eşittir eksi 3. Araba tam bu dört noktada yön değiştiriyor.
+
+Şimdi bir AP örneği. x kare artı x y artı y kare eşittir 3. Yatay teğetin olduğu bütün noktaları bul. Önceki bölümden eğim: eksi 2 x artı y, bölü x artı 2 y. Pay sıfır: y eşittir eksi 2 x. Bunu eğri denklemine koy: x kare eksi 2 x kare artı 4 x kare eşittir 3. 3 x kare 3, x artı eksi 1. Noktalar: x 1, y eksi 2; ve x eksi 1, y 2. Paydayı kontrol et: 1 eksi 4, eksi 3; sıfır değil. İkisi de geçerli.
+
+Aynı eğride dikey teğetler: bu sefer payda sıfır. x artı 2 y sıfır, yani x eşittir eksi 2 y. Eğriye koy: 4 y kare eksi 2 y kare artı y kare eşittir 3. 3 y kare 3, y artı eksi 1. Noktalar: x eksi 2, y 1; ve x 2, y eksi 1. Pay burada eksi 3 ve 3; sıfır değil. Dört noktayı çizince, eğik elipsin etrafına teğet bir paralelkenar çıkıyor.
+
+Teğete dik olan doğruya normal line, yani normal doğrusu denir. Eğimi, teğet eğiminin ters işaretli tersi. Aynı eğride x 1, y 1 noktası: 1 artı 1 artı 1, 3; nokta eğri üstünde. Teğet eğimi: eksi 3 bölü 3, eksi 1. Normal eğimi: artı 1. Normal doğrusu: y eksi 1 eşittir x eksi 1, yani y eşittir x. Bak, normal doğrusu eğrinin tam merkezinden, başlangıç noktasından geçiyor.
+
+Bir tuzak daha: soru sadece y eşittir 1 derse, birden fazla nokta olabilir. x kare artı x artı 1 eşittir 3: x kare artı x eksi 2 sıfır, x eşittir 1 ya da eksi 2. x 1'de eğim eksi 1. x eksi 2'de pay eksi 3, payda sıfır: dikey teğet, eğim tanımsız. Bir de pay ve payda aynı anda sıfırsa, sıfır bölü sıfır; bu tek başına ne yatay ne dikey der, eğriyi ayrıca incelemek gerekir.
+
+Toparlayalım. Teğet doğrusu için nokta ve kapalı türevden eğim; y eksi y sıfır eşittir m çarpı x eksi x sıfır. Aynı x için birden çok y olabilir; her noktanın kendi teğeti var. Yatay teğet: pay sıfır; dikey teğet: payda sıfır. Koşulu mutlaka orijinal denkleme geri koyup noktaları bul. Normal doğrusunun eğimi, eksi 1 bölü teğet eğimi.
+
+Şimdi bir soru. x kare artı y kare eksi 6 y eşittir sıfır eğrisinin yatay teğetleri hangi noktalarda? Cevap: B. Türev: 2 x artı 2 y d y bölü d x eksi 6 d y bölü d x eşittir sıfır; eğim eksi x bölü y eksi 3. Pay sıfır: x sıfır. Denkleme koy: y kare eksi 6 y sıfır, y sıfır ya da 6. Payda iki noktada da sıfır değil.

@@ -1,0 +1,21 @@
+Üç dişli çark düşün. Büyük çark bir tur dönünce ortanca çark 3 tur dönüyor. Ortanca bir tur dönünce küçük çark 2 tur. Büyük çark bir tur dönerse küçük kaç tur atar? 3 çarpı 2, yani 6. Hızlar toplanmaz, çarpılır. Bu bölümün bütün fikri bu cümlede: iç içe geçmiş fonksiyonların türevi, değişim hızlarının çarpımıdır.
+
+Önce bileşke fonksiyonu tanıyalım; composite function, yani bir fonksiyonun içine başka bir fonksiyon konmuş hali. x önce içteki kutuya girer: g. Çıkan sonuç dıştaki kutuya girer: f. Sonuç f g x. Sinüs 3 x'te dış fonksiyon sinüs, iç fonksiyon 3 x. Karekök x kare artı 9'da dış karekök, iç x kare artı 9. Türev almadan önce hep şunu sor: en dışta ne var, içinde ne var?
+
+Chain rule şöyle der: f g x'in türevi, f türev g x çarpı g türev x. Türkçesi: dıştakinin türevini al, içini olduğu gibi bırak, sonra içtekinin türevi ile çarp. Aynı şeyin ikinci yazılışı: u iç fonksiyon olsun. d y bölü d x, eşittir d y bölü d u çarpı d u bölü d x. Dişlilerdeki gibi: iki hız çarpılıyor, arada u sanki sadeleşiyor.
+
+İlk örnek: y eşittir x kare artı 3, üzeri 5. Dış fonksiyon beşinci kuvvet. Türevi: 5 çarpı parantez içi, üzeri 4. İçi hiç değişmedi. Şimdi içtekinin türevi: x kare artı 3'ün türevi 2 x. Çarp: 10 x çarpı x kare artı 3, üzeri 4. Dur, burada çoğu kişi 2 x'i unutuyor. Parantezi açıp beşinci kuvvetini hesaplamaya da kalkma; zincir kuralı tam bunun için var.
+
+İkinci örnek kökle: y eşittir karekök 4 x artı 1. Kökü kuvvet olarak yaz: 4 x artı 1, üzeri yarım. Dış türev: yarım çarpı içi, üzeri eksi yarım. İç türev: 4. Çarpınca: 2 bölü karekök 4 x artı 1. x eşittir 2'de: 2 bölü karekök 9, yani 2 bölü 3. Yani o noktada eğri, her bir birim sağa gidişte üçte iki birim yükseliyor.
+
+Payda bir kuvvet varsa bölüm kuralına koşma. y eşittir 1 bölü x kare artı 1, üzeri 3. Önce yukarı taşı: x kare artı 1, üzeri eksi 3. Dış türev: eksi 3 çarpı içi, üzeri eksi 4. İç türev: 2 x. Sonuç: eksi 6 x bölü x kare artı 1, üzeri 4. x sıfırken türev sıfır; grafiğe bak, eğri tam orada tepe yapıyor, teğet yatay. İşaret de mantıklı: sağda eğri iniyor, türev negatif.
+
+Trigonometride en sık hata, karenin yerini karıştırmak. Üç ifadeye bak. Sinüs 3 x: dış sinüs, türev kosinüs 3 x çarpı 3. Sinüs kare x: bu aslında sinüs x'in karesi; dış fonksiyon kare. Türev 2 sinüs x çarpı kosinüs x. Sinüs x kare: kare açının içinde; dış sinüs. Türev kosinüs x kare çarpı 2 x. Kural hep aynı; değişen tek şey hangi kutunun dışta olduğu.
+
+Şimdi bir AP örneği. y eşittir x kare eksi 3, üzeri 4 eğrisine x eşittir 2'de teğet doğrusunun denklemini yaz. Önce nokta: 4 eksi 3, 1; üzeri 4 yine 1. Nokta: x 2, y 1. Türev: 4 çarpı x kare eksi 3 üzeri 3, çarpı 2 x; yani 8 x çarpı x kare eksi 3, üzeri 3. x eşittir 2 koy: 8 çarpı 2 çarpı 1, eğim 16. Doğru: y eksi 1 eşittir 16 çarpı x eksi 2.
+
+Son bir ayrım: zincir mi, çarpım mı? x kare çarpı sinüs x'te iki fonksiyon yan yana duruyor: product rule, yani çarpım kuralı. Türev 2 x sinüs x artı x kare kosinüs x. Sinüs x karede ise biri ötekinin içinde: chain rule. Türev kosinüs x kare çarpı 2 x. Test basit: bir fonksiyonun girdisi x değil de başka bir ifade mi? O zaman zincir. Çoğu soruda ikisi birlikte de gelir; onu bir sonraki bölümde göreceğiz.
+
+Toparlayalım. Bileşke fonksiyonda önce dış ve iç fonksiyonu ayır. Türev: dıştakinin türevi, iç aynen kalır, çarpı içtekinin türevi. Leibniz yazılışı: d y bölü d x, d y bölü d u çarpı d u bölü d x; hızlar çarpılır. Kök ve kesirli ifadeleri kuvvet olarak yaz. Sinüs kare x ile sinüs x kare farklı: karenin nerede olduğuna bak.
+
+Şimdi bir soru. Kosinüs 5 x karenin türevi hangisi? Cevap: B. Dış fonksiyon kosinüs, türevi eksi sinüs; içi aynen kalır. İç fonksiyon 5 x kare, türevi 10 x. Çarpınca eksi 10 x çarpı sinüs 5 x kare.
