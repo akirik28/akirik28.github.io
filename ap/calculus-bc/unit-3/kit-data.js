@@ -731,6 +731,84 @@ window.KIT = {
     },
     {
       "no": 7,
+      "code": "3.4",
+      "slug": "cb307",
+      "title": "Ters Trigonometrik Fonksiyonların Türevi",
+      "en": "Differentiating Inverse Trigonometric Functions",
+      "accent": "#FF7DB8",
+      "seconds": 269,
+      "terms": [
+        "Inverse trigonometric function",
+        "Arcsine",
+        "Arccosine",
+        "Arctangent",
+        "Arcsecant",
+        "Restricted domain",
+        "Range",
+        "Implicit differentiation",
+        "Chain rule",
+        "Difference quotient"
+      ],
+      "questions": [
+        {
+          "q": "d/dx arccos(2x) hangisidir?",
+          "opts": [
+            "−2/√(1 − 4x²)",
+            "2/√(1 − 4x²)",
+            "−1/√(1 − 4x²)",
+            "−2/√(1 − 2x²)"
+          ],
+          "a": 0,
+          "why": "(arccos u)′ = −u′/√(1 − u²). u = 2x, u′ = 2, u² = 4x². Sonuç −2/√(1 − 4x²). \"ko\" olduğu için eksi; iç türev 2 de unutulmamalı."
+        },
+        {
+          "q": "y = arcsin x eğrisine x = 1/2'de çizilen teğetin eğimi kaçtır?",
+          "opts": [
+            "1/2",
+            "2/√3",
+            "√3/2",
+            "π/6"
+          ],
+          "a": 1,
+          "why": "y′ = 1/√(1 − x²) = 1/√(1 − 1/4) = 1/√(3/4) = 2/√3 ≈ 1,155. (π/6 eğim değil, noktanın y değeridir.)"
+        },
+        {
+          "q": "d/dx (arctan x)² hangisidir?",
+          "opts": [
+            "2 arctan x",
+            "2/(1 + x²)",
+            "2 arctan x/(1 + x²)",
+            "2x/(1 + x²)²"
+          ],
+          "a": 2,
+          "why": "Dış fonksiyon kare, iç fonksiyon arctan x: 2(arctan x)·1/(1 + x²) = 2 arctan x/(1 + x²)."
+        },
+        {
+          "q": "lim (h → 0) [arcsin(a + h) − arcsin(a)]/h = 2 ise a aşağıdakilerden hangisi olabilir?",
+          "opts": [
+            "1/2",
+            "2",
+            "√2/2",
+            "√3/2"
+          ],
+          "a": 3,
+          "why": "Limit, arcsin'in a'daki türevi: 1/√(1 − a²) = 2 ⇒ 1 − a² = 1/4 ⇒ a² = 3/4 ⇒ a = ±√3/2. Şıklarda √3/2 var. (a = 2 arcsin'in tanım kümesinde değil.)"
+        },
+        {
+          "q": "arctan y = x² ise dy/dx hangisidir?",
+          "opts": [
+            "2x/(1 + y²)",
+            "2x(1 + y²)",
+            "2x·tan(x²)",
+            "(1 + y²)/(2x)"
+          ],
+          "a": 1,
+          "why": "Kapalı türev: (1/(1 + y²))·dy/dx = 2x ⇒ dy/dx = 2x(1 + y²). (Kontrol: y = tan(x²) ⇒ y′ = 2x·sec²(x²) = 2x(1 + tan²(x²)) = 2x(1 + y²).)"
+        }
+      ]
+    },
+    {
+      "no": 8,
       "code": "3.5–3.6",
       "slug": "cb308",
       "title": "Yöntem Seçimi ve Yüksek Mertebeden Türevler",
