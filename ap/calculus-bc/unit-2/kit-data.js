@@ -642,6 +642,83 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "2.5",
+      "slug": "cb205",
+      "title": "Kuvvet Kuralı",
+      "en": "The Power Rule",
+      "accent": "#A98BFF",
+      "seconds": 282,
+      "terms": [
+        "Power rule",
+        "Exponent",
+        "Negative exponent",
+        "Rational exponent",
+        "Rewrite before differentiating",
+        "Constant",
+        "Tangent line",
+        "Parallel lines",
+        "Derivative at a point"
+      ],
+      "questions": [
+        {
+          "q": "y = 6∛x ise dy/dx nedir?",
+          "opts": [
+            "6x^(−2/3)",
+            "2x^(−2/3)",
+            "2x^(2/3)",
+            "(9/2)x^(4/3)"
+          ],
+          "a": 1,
+          "why": "Önce yaz: 6x^(1/3). Sabit bekler, kural x^(1/3)'e: 6 · (1/3) · x^(1/3 − 1) = 2x^(−2/3)."
+        },
+        {
+          "q": "y = 1/(2x)² fonksiyonunun türevi hangisidir?",
+          "opts": [
+            "−1/(4x³)",
+            "−2/x³",
+            "−1/(2x³)",
+            "−1/(8x³)"
+          ],
+          "a": 2,
+          "why": "Önce aç: (2x)² = 4x², yani y = (1/4)x^(−2). Türev: (1/4)(−2)x^(−3) = −1/(2x³). −1/(4x³), parantezin içindeki 2'yi unutarak (2x)^(−2) → −2(2x)^(−3) yazmaktan gelir."
+        },
+        {
+          "q": "lim (h → 0) [(3 + h)⁴ − 81]/h kaçtır?",
+          "opts": [
+            "81",
+            "108",
+            "27",
+            "0"
+          ],
+          "a": 1,
+          "why": "Bu, f(x) = x⁴ için f′(3)'ün tanımı (3⁴ = 81). f′(x) = 4x³, f′(3) = 4 · 27 = 108."
+        },
+        {
+          "q": "y = x³ eğrisinin hangi noktalarında teğet doğrusu y = 12x + 5 doğrusuna paraleldir?",
+          "opts": [
+            "(2, 8) ve (−2, −8)",
+            "Yalnız (2, 8)",
+            "(4, 64)",
+            "(2, 8) ve (−2, 8)"
+          ],
+          "a": 0,
+          "why": "Paralel ⇒ eğim 12. y′ = 3x² = 12 ⇒ x² = 4 ⇒ x = 2 veya x = −2. Noktalar (2, 8) ve (−2, (−2)³) = (−2, −8). Negatif kökü unutma."
+        },
+        {
+          "q": "Bir öğrenci d/dx (1/x⁴) = 1/(4x³) yazıyor. Doğru değerlendirme hangisi?",
+          "opts": [
+            "Doğru",
+            "Yanlış; doğrusu −4/x³",
+            "Yanlış; doğrusu −4/x⁵",
+            "Yanlış; doğrusu 4/x⁵"
+          ],
+          "a": 2,
+          "why": "Kural paydaya ters yönde uygulanmaz. Önce yaz: x^(−4). Türev: −4x^(−5) = −4/x⁵. Üs −4'ten bir azalınca −5 olur."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "2.6",
       "slug": "cb206",
       "title": "Temel Türev Kuralları",
