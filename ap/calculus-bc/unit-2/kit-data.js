@@ -871,6 +871,165 @@ window.KIT = {
           "why": "Değişken üsteyken kuvvet kuralı çalışmaz. aˣ'in türevi aˣ ln a: 3ˣ ln 3. Yalnız taban e olunca ln e = 1 olduğu için türev kendisine eşit kalır."
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "2.9",
+      "slug": "cb209",
+      "title": "Bölüm Kuralı",
+      "en": "The Quotient Rule",
+      "accent": "#F6B94A",
+      "seconds": 286,
+      "terms": [
+        "Quotient rule",
+        "Numerator",
+        "Denominator",
+        "Low d-high minus high d-low",
+        "Rewrite before differentiating",
+        "Table of values",
+        "Instantaneous rate of change",
+        "Horizontal tangent",
+        "Tangent line"
+      ],
+      "questions": [
+        {
+          "q": "y = (2x + 1)/(x − 3) ise dy/dx nedir?",
+          "opts": [
+            "7/(x − 3)²",
+            "−7/(x − 3)²",
+            "2",
+            "(4x − 5)/(x − 3)²"
+          ],
+          "a": 1,
+          "why": "*Quotient rule*: [2(x − 3) − (2x + 1)(1)]/(x − 3)² = (2x − 6 − 2x − 1)/(x − 3)² = −7/(x − 3)². Paydaki terimlerin yerini değiştirirsen işaret döner ve 7 bulursun."
+        },
+        {
+          "q": "Tablodaki değerlere göre h(x) = f(x)/g(x) ise h′(1) kaçtır?",
+          "opts": [
+            "0",
+            "−2",
+            "4/3",
+            "2/3"
+          ],
+          "a": 2,
+          "why": "h′(1) = [f′(1)g(1) − f(1)g′(1)]/[g(1)]² = [(2)(3) − (6)(−1)]/9 = (6 + 6)/9 = 4/3. Eksiyi artı yazarsan 0; f′/g′ yaparsan −2 bulursun.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "1",
+                "6",
+                "2",
+                "3",
+                "−1"
+              ]
+            ],
+            "caption": "f ve g türevlenebilir"
+          }
+        },
+        {
+          "q": "g'nin grafiği bir doğrudur. w(x) = x²/g(x) ise w′(2) kaçtır?",
+          "opts": [
+            "8/9",
+            "4/3",
+            "−8/9",
+            "4"
+          ],
+          "a": 0,
+          "why": "Grafikten g(2) = 3, g′ = (4 − 1)/3 = 1. w′(2) = [(2·2)(3) − (2²)(1)]/3² = (12 − 4)/9 = 8/9. 4/3 ise w(2) = 4/3.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 4,
+            "ymax": 5,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  3,
+                  4
+                ],
+                "label": "g"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 1,
+                "label": "(0, 1)"
+              },
+              {
+                "q": 2,
+                "p": 3,
+                "label": "(2, 3)"
+              },
+              {
+                "q": 3,
+                "p": 4,
+                "label": "(3, 4)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 3,
+                "label": "3"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 1,
+                "label": "1"
+              },
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "caption": "g'nin grafiği"
+          }
+        },
+        {
+          "q": "y = x/(x² + 9) fonksiyonunun grafiği hangi x değerlerinde yatay teğete sahiptir?",
+          "opts": [
+            "Yalnız x = 0",
+            "x = 9 ve x = −9",
+            "Yalnız x = 3",
+            "x = 3 ve x = −3"
+          ],
+          "a": 3,
+          "why": "y′ = [(x² + 9)(1) − x(2x)]/(x² + 9)² = (9 − x²)/(x² + 9)². Payda hiç sıfır olmaz; pay sıfır: x² = 9, x = ±3."
+        },
+        {
+          "q": "Bir öğrenci y = x²/(x + 1) için türevin payını x² · 1 − 2x(x + 1) yazıyor. Doğru türev hangisi?",
+          "opts": [
+            "−(x² + 2x)/(x + 1)²",
+            "(x² + 2x)/(x + 1)²",
+            "2x",
+            "(3x² + 2x)/(x + 1)²"
+          ],
+          "a": 1,
+          "why": "Pay \"alt çarpı üstün türevi eksi üst çarpı altın türevi\": (x + 1)(2x) − x²(1) = x² + 2x. Öğrencinin sırası tersti; bu yüzden işaret tam tersi çıkar (ilk şık)."
+        }
+      ]
     }
   ],
   "final": []
