@@ -113,7 +113,7 @@ window.DEFTER = (function () {
               { id: "pavc", tip: "nokta", renk: 2, x: 3, y: 5, etiket: "AVC min = 5", kilavuz: true, gizli: true },
               { id: "patc", tip: "nokta", renk: 0, x: 4.5, y: 20.8, etiket: "ATC min ≈ 21", kilavuz: true, gizli: true },
               { id: "g2", tip: "cizgi", renk: 1, kesik: true, from: [2, 6], to: [2, 36], etiket: "AFC = 30", gizli: true },
-              { id: "g5", tip: "cizgi", renk: 1, kesik: true, from: [5, 9], to: [5, 21], etiket: "AFC = 12", gizli: true }
+              { id: "g5", tip: "cizgi", renk: 1, kesik: true, from: [5, 21], to: [5, 9], etiket: "AFC = 12", gizli: true }
             ],
             durumlar: [
               { metin: "==MC:== ilk partilerde düşer (uzmanlaşma), sonra yükselir (azalan marjinal getiri). Eğri partilerin ortasına çizilir: 9, 3, 3, 9, 21, 39." },

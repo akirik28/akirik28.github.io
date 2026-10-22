@@ -516,7 +516,7 @@
 
   B.tuzak = function (b) {
     var n = el("div", { class: "d-trap" }, [
-      el("p", { class: "d-trap-k mono", text: "⚠ " + (b.baslik || "Sınav tuzağı") }),
+      el("p", { class: "d-trap-k mono", html: "⚠ " + md(b.baslik || "Sınav tuzağı") }),
       el("p", { html: md(b.metin || "") }),
       b.yanlis ? el("p", { class: "d-trap-x", html: "<span>✗</span> " + md(b.yanlis) }) : null,
       b.dogru ? el("p", { class: "d-trap-o", html: "<span>✓</span> " + md(b.dogru) }) : null
