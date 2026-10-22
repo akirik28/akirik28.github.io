@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notlarım · Kitora</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<script src="../assets/tema.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kitora.css?v=21">
+</head>
+<body data-page="notlarim" data-root="../">
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="wrap">
+  <header class="k-header" data-k="header" data-variant="app" data-active="notlarim"></header>
+
+  <main id="main" class="stack" style="gap:32px;padding-bottom:64px">
+    <section class="hello rise">
+      <h1 class="display" style="font-size:clamp(44px,5vw,60px)"><span class="hl">Notlarım</span></h1>
+      <span class="hand" style="font-size:26px;rotate:-2deg">hocandan gelen quizler burada</span>
+    </section>
+    <section class="alert rise" role="alert" data-k="alert" hidden>
+      <svg class="a-sway" width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="32" width="40" height="30" rx="7"/><path d="M24 32v-8a12 12 0 0 1 24 0v8"/><circle cx="36" cy="46" r="4" fill="currentColor"/><path d="M36 50v5"/></svg>
+      <div class="alert__body"></div>
+      <span class="chip chip--plain mono">NOT BEKLENİYOR</span>
+    </section>
+    <section class="card quiz-list rise d1">
+      <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3">Yaklaşan quizler</h2><span class="mono muted">HOCANDAN</span></div>
+      <div class="stack" style="gap:12px" data-k="quizzes"></div>
+    </section>
+    <section class="card card--pad stack rise d2" style="gap:14px" aria-labelledby="not-h">
+      <div class="section__head">
+        <h2 class="h3" id="not-h" style="font-size:24px">Bütün notlar</h2>
+        <div class="row" style="gap:6px" data-k="filters"></div>
+      </div>
+      <div class="table-box"><table class="table" style="min-width:520px"><thead><tr><th>Quiz</th><th>Tarih</th><th>Durum</th><th style="text-align:right">Not</th></tr></thead><tbody data-k="grades"></tbody></table></div>
+    </section>
+  </main>
+</div>
+<nav data-k="bottom-nav" data-active="notlarim"></nav>
+<script src="../assets/data.js?v=21"></script>
+<script src="../assets/hesap.js?v=21"></script>
+<script src="../assets/icerik.js?v=21"></script>
+<script src="../assets/kitora.js?v=21"></script>
+</body>
+</html>

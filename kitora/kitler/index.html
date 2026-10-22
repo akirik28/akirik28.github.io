@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tüm kitler · Kitora</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<script src="../assets/tema.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kitora.css?v=21">
+</head>
+<body data-page="kitler" data-root="../">
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="wrap">
+  <header class="k-header" data-k="header" data-variant="app" data-active="kitler"></header>
+
+  <main id="main" class="stack" style="gap:24px;padding-bottom:64px">
+    <section class="hello rise">
+      <h1 class="display" style="font-size:clamp(44px,5vw,60px)"><span class="hl">Tüm kitler</span></h1>
+      <div class="seg tabs-row" role="tablist" aria-label="Kit türü"><button type="button" role="tab" data-tgo="sinav" aria-selected="true">Sınav Kitleri</button><button type="button" role="tab" data-tgo="cep" aria-selected="false">Cep Kitleri</button></div>
+    </section>
+    <div class="kit-grid rise d1" data-k="courses" data-tpanel="sinav"></div>
+    <div data-tpanel="cep" hidden>
+    <a class="card cep-card" href="#">
+        <span class="cep-card__icon" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h26l8 8v28H16z"/><path d="M24 30h18M24 38h18M24 46h10"/></svg></span>
+        <span class="cep-card__body">
+          <span class="mono muted">CEP KİTİ · İNGİLİZCE</span>
+          <span class="h3" style="font-size:28px">The Crucible: savunma paketi</span>
+          <span class="muted" style="font-size:15px">Yazılıdan önceki akşam için tek, odaklı bir paket.</span>
+        </span>
+        <span class="btn btn--primary btn--sm">Aç →</span>
+      </a>
+    </div>
+  </main>
+</div>
+<nav data-k="bottom-nav" data-active="kitler"></nav>
+<script src="../assets/data.js?v=21"></script>
+<script src="../assets/hesap.js?v=21"></script>
+<script src="../assets/icerik.js?v=21"></script>
+<script src="../assets/kitora.js?v=21"></script>
+</body>
+</html>

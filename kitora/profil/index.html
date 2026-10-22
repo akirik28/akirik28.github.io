@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profilim · Kitora</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<script src="../assets/tema.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kitora.css?v=21">
+</head>
+<body data-page="profil" data-root="../">
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="wrap">
+  <header class="k-header" data-k="header" data-variant="app" data-active="profil"></header>
+
+  <main id="main" class="profile" style="padding-bottom:64px">
+    <aside class="card profile__side rise">
+      <div class="big-avatar"><span aria-hidden="true" data-k="p-avatar">AK</span></div>
+      <div class="stack" style="gap:4px">
+        <h1 class="display" style="font-size:34px;letter-spacing:-.03em" data-k="p-ad">Ada Kırık</h1>
+        <span class="muted" data-k="p-sinif">11. sınıf · UAA</span>
+        <span class="mono muted" data-k="p-eposta">ada.kirik@uaa.k12.tr</span>
+      </div>
+      <div class="row" style="gap:8px" data-k="p-dersler">
+        <span class="chip" style="--c:#E0A43F;font-size:13px;font-weight:500">AP Calculus BC</span>
+        <span class="chip" style="--c:#2FA37A;font-size:13px;font-weight:500">AP Statistics</span>
+      </div>
+      <hr style="border:0;height:1px;background:var(--line);margin:0;width:100%">
+      <h2 class="h3" style="font-size:20px">Ayarlar</h2>
+      <div class="stack" style="gap:8px">
+        <span id="tema-l" style="font-size:13px;font-weight:600">Tema</span>
+        <div class="seg" role="radiogroup" aria-labelledby="tema-l">
+          <button type="button" role="radio" data-k-theme-pick="acik" aria-checked="false">Açık</button>
+          <button type="button" role="radio" data-k-theme-pick="koyu" aria-checked="false">Koyu</button>
+          <button type="button" role="radio" data-k-theme-pick="cihaz" aria-checked="true">Cihaza göre</button>
+        </div>
+      </div>
+      <div class="stack" style="gap:8px">
+        <span id="sinif-l" style="font-size:13px;font-weight:600">Sınıf</span>
+        <div class="seg" role="radiogroup" aria-labelledby="sinif-l">
+          <button type="button" role="radio" data-grade-pick="10" aria-checked="false">10. sınıf</button>
+          <button type="button" role="radio" data-grade-pick="11" aria-checked="true">11. sınıf</button>
+        </div>
+      </div>
+      <div class="stack" style="gap:6px;padding-top:6px">
+        <a class="btn btn--ghost btn--block" href="../giris/?mod=giris" data-k="cikis">Çıkış yap</a>
+        <button type="button" class="btn--danger-link" data-k="reset">İlerlemeyi sıfırla…</button>
+      </div>
+    </aside>
+
+    <div class="profile__main">
+      <div class="stats rise d1">
+        <div class="card stat"><b data-k="s-bolum">7</b><span class="muted" style="font-size:13px">bölüm bitti</span></div>
+        <div class="card stat"><b data-k="s-soru">85</b><span class="muted" style="font-size:13px">soru çözüldü</span></div>
+        <div class="card stat"><b data-k="s-oran">%78</b><span class="muted" style="font-size:13px">doğru oranı</span></div>
+        <div class="card stat"><b data-k="s-seri">5 gün</b><span class="muted" style="font-size:13px">en uzun seri</span></div>
+      </div>
+
+      <div class="seg tabs-row rise d2" role="tablist" aria-label="Profil sekmeleri"><button type="button" role="tab" data-tgo="seri" aria-selected="true">Seri</button><button type="button" role="tab" data-tgo="rozet" aria-selected="false">Rozetler</button></div>
+      <section class="card card--pad stack rise d2" style="gap:14px" aria-labelledby="seri-h" data-tpanel="seri">
+        <div class="section__head"><h2 class="h3" id="seri-h" style="font-size:24px">Çalışma serisi</h2><span class="hand" style="color:var(--macro);font-size:24px" data-k="seri-not">şu an 3 gün, rekor 5!</span></div>
+        <div class="cal" style="overflow-x:auto">
+          <div class="cal__days" aria-hidden="true"><span>Pzt</span><span></span><span>Çar</span><span></span><span>Cum</span><span></span><span>Paz</span></div>
+          <div class="cal__grid" data-k="cal" role="img" aria-label="Son 6 haftanın çalışma takvimi"></div>
+        </div>
+        <div class="legend" aria-hidden="true">Az<i style="background:var(--track)"></i><i style="background:#F4C9A9"></i><i style="background:#EC9E6C"></i><i style="background:var(--macro)"></i>Çok</div>
+      </section>
+
+      <section class="card card--pad stack rise d3" style="gap:14px" aria-labelledby="roz-h" data-tpanel="rozet" hidden>
+        <h2 class="h3" id="roz-h" style="font-size:24px">Rozetler <span class="mono muted" style="font-size:13px" data-k="roz-sayi">3 / 8</span></h2>
+        <div class="badges" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:16px" data-k="badges"></div>
+      </section>
+
+    </div>
+  </main>
+</div>
+<nav data-k="bottom-nav" data-active="profil"></nav>
+<script src="../assets/data.js?v=21"></script>
+<script src="../assets/hesap.js?v=21"></script>
+<script src="../assets/icerik.js?v=21"></script>
+<script src="../assets/kitora.js?v=21"></script>
+</body>
+</html>
