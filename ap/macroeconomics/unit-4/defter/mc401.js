@@ -68,21 +68,21 @@ window.DEFTER = {
             { baslik: "Faiz yükselir", metin: "Yeni kâğıtlar ve mevduat artık %50 getiriyor. Alıcı eski tahvile 1.000 TL vermez: aynı 1.000 TL'yi %50 faizle yatırsa 1.500 TL alır." },
             { baslik: "Fiyat düşer", metin: "Alıcı ancak 1.200 TL'nin bugünkü karşılığına razı olur: 1.200 ÷ 1,5 = 800 TL. Faiz yükseldi, eski tahvilin fiyatı düştü." }
           ] },
-        { tip: "grafik", baslik: "Piyasa faizi arttıkça eski tahvilin fiyatı düşer", xlabel: "Piyasa faizi", ylabel: "Tahvil fiyatı (TL)", xmax: 11, ymax: 13,
+        { tip: "grafik", baslik: "Eski tahvilin fiyatı (TL), piyasa faizi arttıkça düşer", xlabel: "Piyasa faizi", ylabel: "", xmax: 12, ymax: 13,
           xticks: [{ v: 2, label: "%20" }, { v: 5, label: "%50" }, { v: 10, label: "%100" }],
           yticks: [{ v: 6, label: "600" }, { v: 8, label: "800" }, { v: 10, label: "1.000" }, { v: 12, label: "1.200" }],
           ogeler: [
-            { id: "fiy", tip: "egri", renk: 0, noktalar: [[0, 12], [1, 10.91], [2, 10], [3, 9.23], [4, 8.57], [5, 8], [7, 7.06], [10, 6]], etiket: "Fiyat" },
-            { id: "P", tip: "nokta", renk: 1, x: 2, y: 10, etiket: "%20 → 1.000 TL", kilavuz: true, gizli: true },
-            { id: "y1", tip: "yazi", x: 7.3, y: 10.6, metin: "Faiz ↑ → fiyat ↓", gizli: true },
-            { id: "y2", tip: "yazi", x: 7.3, y: 10.6, metin: "Faiz ↓ → fiyat ↑", gizli: true }
+            { id: "fiy", tip: "egri", renk: 0, noktalar: [[0, 12], [1, 10.91], [2, 10], [3, 9.23], [4, 8.57], [5, 8], [7, 7.06], [10, 6], [11, 5.71]], etiket: "" },
+            { id: "P", tip: "nokta", renk: 1, x: 2, y: 10, etiket: "1.000 TL", kilavuz: true, gizli: true },
+            { id: "y1", tip: "yazi", x: 8.4, y: 11.6, metin: "Faiz ↑ → fiyat ↓", gizli: true },
+            { id: "y2", tip: "yazi", x: 8.4, y: 11.6, metin: "Faiz ↓ → fiyat ↑", gizli: true }
           ],
           durumlar: [
             { metin: "Bir yıl sonra 1.200 TL ödeyen eski tahvil. Eğri, farklı piyasa faizlerinde ona verilebilecek fiyatı gösterir: fiyat = 1.200 ÷ (1 + faiz). Grafikte 1 birim = %10 ve 100 TL." },
             { metin: "Piyasa faizi %20: 1.200 ÷ 1,2 = **1.000 TL**.", goster: ["P"] },
-            { metin: "Faiz %50'ye çıkar: 1.200 ÷ 1,5 = **800 TL**. Faiz ==yukarı==, eski tahvilin fiyatı ==aşağı==.", set: { P: { x: 5, y: 8, etiket: "%50 → 800 TL" } }, goster: ["y1"] },
-            { metin: "Faiz %100'e çıkarsa fiyat 1.200 ÷ 2 = **600 TL**'ye iner.", set: { P: { x: 10, y: 6, etiket: "%100 → 600 TL" } } },
-            { metin: "Faiz tekrar %20'ye inerse fiyat 800'den 1.000 TL'ye ==çıkar==. Faiz ↓, fiyat ↑.", set: { P: { x: 2, y: 10, etiket: "%20 → 1.000 TL" } }, gizle: ["y1"], goster: ["y2"] }
+            { metin: "Faiz %50'ye çıkar: 1.200 ÷ 1,5 = **800 TL**. Faiz ==yukarı==, eski tahvilin fiyatı ==aşağı==.", set: { P: { x: 5, y: 8, etiket: "800 TL" } }, goster: ["y1"] },
+            { metin: "Faiz %100'e çıkarsa fiyat 1.200 ÷ 2 = **600 TL**'ye iner.", set: { P: { x: 10, y: 6, etiket: "600 TL" } } },
+            { metin: "Faiz tekrar %20'ye inerse fiyat 800'den 1.000 TL'ye ==çıkar==. Faiz ↓, fiyat ↑.", set: { P: { x: 2, y: 10, etiket: "1.000 TL" } }, gizle: ["y1"], goster: ["y2"] }
           ] },
         { tip: "tuzak", metin: "Burada söz edilen, daha önce çıkarılmış (*previously issued*) tahvildir. Ödemesi sabit olduğu için fiyatı yalnızca piyasa faizine göre oynar.", yanlis: "Faizler yükselirse tahvil fiyatları da yükselir.", dogru: "Piyasa faizi ↑ ise eski tahvilin fiyatı ↓; faiz ↓ ise fiyat ↑. Aynı 1.200 TL'yi 1.000 TL'ye alırsan getirin %20, 800 TL'ye alırsan %50: fiyat düştükçe getiri artar." }
       ]

@@ -151,6 +151,141 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "1.5",
+      "slug": "mi102",
+      "title": "Fayda-Maliyet Analizi",
+      "en": "Cost-Benefit Analysis",
+      "accent": "#FF7DB8",
+      "seconds": 244,
+      "terms": [
+        "Rational decision-making",
+        "Cost-benefit analysis",
+        "Net benefit",
+        "Explicit costs",
+        "Implicit costs",
+        "Total revenue",
+        "Accounting profit",
+        "Economic profit",
+        "Economic loss",
+        "Normal profit",
+        "Sunk cost"
+      ],
+      "questions": [
+        {
+          "q": "Selin yazın 4 haftalık bir yazılım kursuna gitmeyi düşünüyor. Tabloya göre kursa gitmenin Selin için toplam ekonomik maliyeti (explicit artı implicit) kaç liradır?",
+          "opts": [
+            "8.300 lira",
+            "3.500 lira",
+            "4.000 lira",
+            "7.500 lira"
+          ],
+          "a": 3,
+          "why": "*Explicit costs*: 3.000 ücret artı 500 kitap, 3.500. *Implicit cost*: vazgeçilen yaz işi, 4.000. Toplam 7.500. Öğle yemeği iki durumda da harcanacağı için kararın maliyeti değil; onu eklersen 8.300 tuzağına düşersin.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Tutar (lira)"
+            ],
+            "rows": [
+              [
+                "Kurs ücreti",
+                "3.000"
+              ],
+              [
+                "Kitap ve malzeme",
+                "500"
+              ],
+              [
+                "Kursa gitmezse yapacağı yaz işinden kazanç",
+                "4.000"
+              ],
+              [
+                "Kurs boyunca öğle yemeği (kursa gitmese de aynı tutarı harcayacak)",
+                "800"
+              ]
+            ],
+            "caption": "Selin'in kurs kararı"
+          }
+        },
+        {
+          "q": "Bir fırın sahibi kendi binasında çalışıyor. Aşağıdakilerden hangisi fırının *implicit costs*'una bir örnektir?",
+          "opts": [
+            "Sahibin, binayı başkasına kiraya verseydi alacağı kira",
+            "Fırının bir depoya her ay ödediği kira",
+            "Çırağa ödenen haftalık ücret",
+            "Fırının elektrik ve doğalgaz faturası"
+          ],
+          "a": 0,
+          "why": "*Implicit cost*, cebinden para çıkmadan vazgeçilen seçeneğin değeridir. Sahip binayı kendisi kullandığı için kiraya veremiyor; kaçan kira *implicit*. Diğer üçü gerçek ödemeler, yani *explicit costs*."
+        },
+        {
+          "q": "Tabloda bir girişimcinin bir yıllık verileri var (bin lira). Bu işin *accounting profit*'i ve *economic profit*'i nedir?",
+          "opts": [
+            "*Accounting profit* 200 bin, *economic profit* 50 bin",
+            "*Accounting profit* 200 bin, *economic profit* 20 bin",
+            "*Accounting profit* 20 bin, *economic profit* 200 bin",
+            "*Accounting profit* 320 bin, *economic profit* 20 bin"
+          ],
+          "a": 1,
+          "why": "*Explicit costs* 200 artı 100, yani 300; *accounting profit* 500 eksi 300, 200 bin. *Implicit costs* 150 artı 30, yani 180; *economic profit* 200 eksi 180, 20 bin.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Bin lira"
+            ],
+            "rows": [
+              [
+                "Total revenue",
+                "500"
+              ],
+              [
+                "Çalışan ücretleri",
+                "200"
+              ],
+              [
+                "Malzeme",
+                "100"
+              ],
+              [
+                "Sahibin bıraktığı işteki maaşı",
+                "150"
+              ],
+              [
+                "Sahibin işe koyduğu birikimin bankada getireceği faiz",
+                "30"
+              ]
+            ],
+            "caption": "Bir işletmenin yıllık verileri"
+          }
+        },
+        {
+          "q": "Deniz, iade edilmeyen bir yaz kampına 2.000 lira ödedi. Sonra kampla aynı haftaya denk gelen ve 3.000 lira ödeyen bir staj teklifi aldı. Akılcı bir karar için Deniz nasıl düşünmelidir?",
+          "opts": [
+            "2.000 lira boşa gitmesin diye kampa gitmelidir.",
+            "Kampa ödediği 2.000 lirayı stajın kazancından çıkarıp öyle karşılaştırmalıdır.",
+            "2.000 lira bir *sunk cost*; yalnız kampın ve stajın bundan sonraki fayda ve maliyetlerini tartmalıdır.",
+            "*Sunk cost* en büyük maliyet olduğu için kampa gitmesi kesin olarak doğrudur."
+          ],
+          "a": 2,
+          "why": "2.000 lira hangi seçeneği seçerse seçsin geri gelmez; bu bir *sunk cost* ve karara girmez. Deniz yalnız kampın ona vereceği fayda ile stajın 3.000 lirası ve diğer faydalarını karşılaştırmalı."
+        },
+        {
+          "q": "Bir firmanın *economic profit*'i sıfırsa aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "Firma *normal profit* elde ediyor; kaynakları en iyi alternatifleri kadar kazanıyor.",
+            "Firma zarar ediyor ve hemen kapanmalıdır.",
+            "Firmanın *accounting profit*'i de sıfırdır.",
+            "Firmanın hiç *implicit cost*'u yoktur."
+          ],
+          "a": 0,
+          "why": "*Economic profit* sıfır demek, gelir hem *explicit* hem *implicit costs*'u tam karşılıyor demek: *normal profit*. *Implicit costs* pozitifse *accounting profit* sıfırdan büyüktür."
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "1.3-1",
       "slug": "mc102",
       "title": "Fırsat Maliyeti ve PPC",
@@ -358,7 +493,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 3,
+      "no": 4,
       "code": "1.3-2",
       "slug": "mc103",
       "title": "PPC'nin Şekli ve Kayması",
@@ -538,7 +673,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 4,
+      "no": 5,
       "code": "1.4-1",
       "slug": "mc104",
       "title": "Mutlak ve Karşılaştırmalı Üstünlük",
@@ -700,7 +835,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 5,
+      "no": 6,
       "code": "1.4-2",
       "slug": "mc105",
       "title": "Uzmanlaşma ve Ticaretten Kazanç",
@@ -870,7 +1005,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "1.6-2",
       "slug": "mi104",
       "title": "Tüketici Seçimi ve Fayda Maksimizasyonu",

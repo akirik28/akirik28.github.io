@@ -7,19 +7,22 @@ window.DEFTER = (function () {
   function R(x) { return Math.round(x * 100) / 100; }
   function AD(id, a, o) { o = o || {}; var u = o.u || 8.8, y1 = Math.min(a - 2.5, 9.5), y2 = Math.max(a - u, 0.4), f = [R(y1), R(a - y1)], t = [R(y2), R(a - y2)];
     return { id: id, tip: "cizgi", renk: o.renk == null ? 0 : o.renk, kesik: !!o.kesik, from: o.alt ? t : f, to: o.alt ? f : t, etiket: o.e == null ? "AD" : o.e, gizli: true }; }
-  function SR(id, c, o) { o = o || {}; var y1 = Math.max(0.4, 0.5 - c), y2 = Math.min(9.5, 9.3 - c);
+  function SR(id, c, o) { o = o || {}; var y1 = Math.max(0.4, 0.5 - c), y2 = Math.min(9.5, (o.top || 9.3) - c);
     return { id: id, tip: "cizgi", renk: o.renk == null ? 2 : o.renk, kesik: !!o.kesik, from: [R(y1), R(y1 + c)], to: [R(y2), R(y2 + c)], etiket: o.e == null ? "SRAS" : o.e, gizli: true }; }
   function LR(id, y, o) { o = o || {}; return { id: id, tip: "cizgi", renk: o.renk == null ? 1 : o.renk, kesik: !!o.kesik, from: [y, 0], to: [y, 10], etiket: o.e == null ? "LRAS" : o.e, gizli: true }; }
-  function EQ(id, a, c, e, o) { o = o || {}; return { id: id, tip: "nokta", renk: o.renk == null ? 3 : o.renk, x: R((a - c) / 2), y: R((a + c) / 2), etiket: e, kilavuz: true, gizli: true }; }
+  function EQ(id, a, c, e, o) { o = o || {}; var x = R((a - c) / 2), y = R((a + c) / 2), d = { t: [0, 0.95], r: [0.9, -0.25], l: [-0.9, -0.25], b: [0, -1] }[o.p || "t"];
+    return [{ id: id, tip: "nokta", renk: o.renk == null ? 3 : o.renk, x: x, y: y, etiket: "", kilavuz: true, gizli: true },
+      { id: id + "t", tip: "yazi", x: R(x + d[0]), y: R(y + d[1]), metin: e, gizli: true }]; }
   function OK(id, x1, y1, x2, y2, renk) { return { id: id, tip: "ok", renk: renk == null ? 3 : renk, from: [R(x1), R(y1)], to: [R(x2), R(y2)], gizli: true }; }
   function SH(id, p, xa, xb, renk) { var s = xb > xa ? 1 : -1; return OK(id, xa + 0.3 * s, p, xb - 0.3 * s, p, renk); }
   function TX(id, x, y, metin, hiza) { return { id: id, tip: "yazi", x: x, y: y, metin: metin, hiza: hiza, gizli: true }; }
   function GAP(id, ye, ys, metin) { return [OK(id + "k", ye + (ys > ye ? 0.1 : -0.1), 0.5, ys, 0.5, 2), TX(id + "t", (ye + ys) / 2, 1, metin)]; }
   function graf(baslik, ogeler, durumlar, o) { o = o || {};
-    var ids = ogeler.map(function (g) { return g.id; });
+    var og = [].concat.apply([], ogeler), ids = og.map(function (g) { return g.id; });
     return { tip: "grafik", baslik: baslik, xlabel: o.x || "Reel GSYİH (Y)", ylabel: o.y || "Fiyat düzeyi (P)", xmax: 11, ymax: 10,
-      xticks: o.xt || [{ v: 6, label: "Y*" }], yticks: o.yt || [{ v: 5, label: "P₀" }], ogeler: ogeler,
-      durumlar: durumlar.map(function (d) { return { metin: d[0], goster: d[1], gizle: ids.filter(function (i) { return d[1].indexOf(i) < 0; }) }; }) }; }
+      xticks: o.xt || [{ v: 6, label: "Y*" }], yticks: o.yt || [{ v: 5, label: "P₀" }], ogeler: og,
+      durumlar: durumlar.map(function (d) { var on = []; d[1].forEach(function (i) { on.push(i); if (/^E/.test(i) && ids.indexOf(i + "t") >= 0) on.push(i + "t"); });
+        return { metin: d[0], goster: on, gizle: ids.filter(function (i) { return on.indexOf(i) < 0; }) }; }) }; }
   /* Çubuk (alan) yardımcıları: x merkezi r, yükseklik h; sıfır yükseklikle başlar, durumlarda set ile büyür. */
   function bar(id, x0, x1, renk) { return { id: id, tip: "alan", renk: renk, noktalar: [[x0, 0], [x1, 0], [x1, 0], [x0, 0]] }; }
   function up(x0, x1, h) { return [[x0, 0], [x1, 0], [x1, h], [x0, h]]; }
@@ -68,7 +71,7 @@ window.DEFTER = (function () {
   /* Grafik 3: çarpan AD'yi kaydırır; denge çıktısı daha az artar (MPC = 0,75, ΔG = 1 birim) */
   var adkay = graf("AD kayması ve gerçek çıktı artışı", [
     AD("A0", 11, { e: "AD₀" }), AD("A0k", 11, { kesik: true, e: "" }), AD("A1", 15, { renk: 3, e: "AD₁" }), AD("A2", 14, { renk: 1, e: "AD₂", alt: true }),
-    SR("S", -1), EQ("E0", 11, -1, "E₀", { renk: 0 }), EQ("E1", 15, -1, "E₁"), EQ("E2", 14, -1, "E₂"),
+    SR("S", -1), EQ("E0", 11, -1, "E₀", { renk: 0 }), EQ("E1", 15, -1, "E₁"), EQ("E2", 14, -1, "E₂", { p: "b" }),
     SH("sh", 7.5, 3.5, 7.5, 3), TX("sht", 5.5, 7.9, "4 birim")
   ], [
     ["Başlangıç denge E₀. MPC = 0,75 ise çarpan 4. Devlet **1 birim** ek harcıyor (ΔG = 1).", ["A0", "S", "E0"]],

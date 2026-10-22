@@ -5,7 +5,7 @@
    Grafikte 1 birim = 200 milyar TL → MB = 400, M1 = 1.000, M2 = 2.400. */
 window.DEFTER = (function () {
   /* sütun parçası: başta sıfır yükseklikte (a'da), durumda b'ye kadar büyür */
-  function parca(id, x0, x1, a, renk) { return { id: id, tip: "alan", renk: renk, noktalar: [[x0, a], [x1, a], [x1, a], [x0, a]] }; }
+  function parca(id, x0, x1, a, renk) { return { id: id, tip: "alan", renk: renk, noktalar: [[x0, a], [x1, a], [x1, a], [x0, a]], gizli: true }; }
   function tam(x0, x1, a, b) { return { noktalar: [[x0, a], [x1, a], [x1, b], [x0, b]] }; }
   function yaz(id, x, a, b, metin) { return { id: id, tip: "yazi", x: x, y: (a + b) / 2 - 0.3, metin: metin, gizli: true }; }
   /* sütunlar: MB [0.3, 3.5], M1 [3.9, 7.1], M2 [7.5, 10.7] */
@@ -57,7 +57,7 @@ window.DEFTER = (function () {
               ["**M1**", "Halkın elindeki nakit (*currency*) + vadesiz (çek yazılabilir) mevduat (*demand deposits*)", "En likit"],
               ["**M2**", "M1 + tasarruf mevduatı + küçük tutarlı vadeli mevduat + perakende para piyasası fonları", "Biraz daha az likit"]
             ], not: "M2, M1'i içerdiği için her zaman M1'den büyük ya da ona eşittir. Hangi kalemin hangi grupta sayıldığı verilerde değişebilir; sınavda soru kalemleri verir, sen soruya göre topla." },
-          { tip: "grafik", baslik: "Para tabanı, M1 ve M2 yan yana (milyar TL)", xlabel: "", ylabel: "Milyar TL", xmax: 11, ymax: 13,
+          { tip: "grafik", baslik: "Para tabanı, M1 ve M2 yan yana (milyar TL)", xlabel: "", ylabel: "", xmax: 11, ymax: 13,
             xticks: [{ v: cx1, label: "MB" }, { v: cx2, label: "M1" }, { v: cx3, label: "M2" }],
             yticks: [{ v: 2, label: "400" }, { v: 4, label: "800" }, { v: 6, label: "1.200" }, { v: 8, label: "1.600" }, { v: 10, label: "2.000" }, { v: 12, label: "2.400" }],
             ogeler: [
@@ -73,11 +73,11 @@ window.DEFTER = (function () {
             ],
             durumlar: [
               { metin: "**Para tabanı (MB):** halkın elindeki 200 milyar TL nakit + bankaların 200 milyar TL rezervi = **400**. Grafikte 1 birim = 200 milyar TL.",
-                set: { mbC: tam(MB0, MB1, 0, 1), mbR: tam(MB0, MB1, 1, 2) }, goster: ["lmbC", "lmbR", "tMB"] },
+                set: { mbC: tam(MB0, MB1, 0, 1), mbR: tam(MB0, MB1, 1, 2) }, goster: ["mbC", "mbR", "lmbC", "lmbR", "tMB"] },
               { metin: "**M1:** aynı 200 nakit + 800 vadesiz mevduat = **1.000**. Bankaların rezervi M1'e girmez.",
-                set: { m1C: tam(M10, M11, 0, 1), m1D: tam(M10, M11, 1, 5) }, goster: ["lm1C", "lm1D", "tM1"] },
+                set: { m1C: tam(M10, M11, 0, 1), m1D: tam(M10, M11, 1, 5) }, goster: ["m1C", "m1D", "lm1C", "lm1D", "tM1"] },
               { metin: "**M2:** M1 + 1.000 tasarruf mevduatı + 400 küçük vadeli mevduat = **2.400**.",
-                set: { m2C: tam(M20, M21, 0, 1), m2D: tam(M20, M21, 1, 5), m2S: tam(M20, M21, 5, 10), m2T: tam(M20, M21, 10, 12) }, goster: ["lm2C", "lm2D", "lm2S", "lm2T", "tM2"] },
+                set: { m2C: tam(M20, M21, 0, 1), m2D: tam(M20, M21, 1, 5), m2S: tam(M20, M21, 5, 10), m2T: tam(M20, M21, 10, 12) }, goster: ["m2C", "m2D", "m2S", "m2T", "lm2C", "lm2D", "lm2S", "lm2T", "tM2"] },
               { metin: "Sıralama: para tabanı < M1 < M2. Nakit her sütunda var; rezerv yalnızca para tabanında." }
             ] },
           { tip: "tuzak", baslik: "Neyi sayma?", metin: "Para arzı, bankacılık sisteminin dışındakilerin, yani halkın elindeki paradır. Bankaların kasasındaki nakit ve Merkez Bankası'ndaki rezervleri M1'e girmez; kredi kartı limiti de para değildir.", yanlis: "Bankaların rezervleri de M1'e eklenir.", dogru: "M1 = halkın elindeki nakit + vadesiz mevduat. Rezerv yalnızca ==para tabanına== girer." }

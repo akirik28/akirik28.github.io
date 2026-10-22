@@ -78,7 +78,7 @@ window.DEFTER = (function () {
               ["Orijinden", "= 1, her noktada", "(0, 0)'dan çıkan çizgi"],
               ["Miktar (yatay) ekseninde pozitif bir noktadan", "< 1, inelastik", "(2, 0)'dan çıkan çizgi"]
             ] },
-          { tip: "tuzak", metin: "Orijinden geçen eğriye bakıp eğimle karar verme.", yanlis: "Orijinden geçen eğri dikse inelastik, yatıksa elastiktir.", dogru: "Orijinden geçen her doğrusal arz eğrisinde, eğimi ne olursa olsun ==E_s = 1=='dir. Önce eğrinin eksenleri nerede kestiğine bak." }
+          { tip: "tuzak", metin: "Orijinden geçen eğriye bakıp eğimle karar verme.", yanlis: "Orijinden geçen eğri dikse inelastik, yatıksa elastiktir.", dogru: "Orijinden geçen her doğrusal arz eğrisinde, eğimi ne olursa olsun E_s = ==1=='dir. Önce eğrinin eksenleri nerede kestiğine bak." }
         ]
       },
       {

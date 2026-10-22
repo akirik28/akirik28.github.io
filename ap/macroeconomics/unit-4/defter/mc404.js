@@ -57,24 +57,27 @@ window.DEFTER = {
       baslik: "Para yaratma zinciri",
       kisa: "Her kredi başka bir bankada yeni mevduata dönüşür; toplam para büyür.",
       bloklar: [
-        { tip: "grafik", baslik: "Toplam mevduat tur tur büyür ve 5.000 TL'ye yaklaşır", xlabel: "Tur", ylabel: "Toplam mevduat", xmax: 11, ymax: 6,
+        { tip: "grafik", baslik: "Toplam mevduat (TL) tur tur büyür ve 5.000 TL'ye yaklaşır", xlabel: "Tur", ylabel: "", xmax: 11, ymax: 6,
           xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }, { v: 5, label: "5" }, { v: 6, label: "6" }, { v: 10, label: "10" }],
           yticks: [{ v: 1, label: "1.000" }, { v: 3, label: "3.000" }, { v: 5, label: "5.000" }],
           ogeler: [
             { id: "lim", tip: "cizgi", renk: 2, kesik: true, from: [0, 5], to: [10.5, 5], etiket: "", gizli: true },
             { id: "lt", tip: "yazi", x: 5.5, y: 5.4, metin: "Sınır: 5.000 TL", gizli: true },
             { id: "cv", tip: "egri", renk: 0, noktalar: [[0, 0], [1, 1], [2, 1.8], [3, 2.44], [4, 2.952], [5, 3.3616], [6, 3.689], [7, 3.951], [8, 4.161], [9, 4.329], [10, 4.463]], etiket: "Toplam", gizli: true },
-            { id: "n1", tip: "nokta", renk: 1, x: 1, y: 1, etiket: "1.000", gizli: true },
-            { id: "n2", tip: "nokta", renk: 1, x: 2, y: 1.8, etiket: "1.800", gizli: true },
-            { id: "n3", tip: "nokta", renk: 1, x: 3, y: 2.44, etiket: "2.440", gizli: true },
+            { id: "n1", tip: "nokta", renk: 1, x: 1, y: 1, etiket: "", gizli: true },
+            { id: "l1", tip: "yazi", x: 1.9, y: 0.45, metin: "1.000", gizli: true },
+            { id: "n2", tip: "nokta", renk: 1, x: 2, y: 1.8, etiket: "", gizli: true },
+            { id: "l2", tip: "yazi", x: 2.9, y: 1.25, metin: "1.800", gizli: true },
+            { id: "n3", tip: "nokta", renk: 1, x: 3, y: 2.44, etiket: "", gizli: true },
+            { id: "l3", tip: "yazi", x: 3.9, y: 1.9, metin: "2.440", gizli: true },
             { id: "n4", tip: "nokta", renk: 1, x: 4, y: 2.952, etiket: "", gizli: true },
             { id: "n5", tip: "nokta", renk: 1, x: 5, y: 3.3616, etiket: "", gizli: true },
             { id: "n6", tip: "nokta", renk: 1, x: 6, y: 3.689, etiket: "", gizli: true }
           ],
           durumlar: [
-            { metin: "**1. tur:** Selin 1.000 TL nakdi A Bankası'na yatırır. Toplam mevduat 1.000 TL; zorunlu karşılık oranı %20. Grafikte 1 birim = 1.000 TL.", goster: ["n1"] },
-            { metin: "**2. tur:** A Bankası 200 TL ayırır, 800 TL kredi verir. Kredi alan harcar, para B Bankası'na mevduat olur. Toplam **1.800 TL**.", goster: ["n2"] },
-            { metin: "**3. tur:** B Bankası 160 TL ayırır, 640 TL kredi verir. Toplam **2.440 TL**.", goster: ["n3"] },
+            { metin: "**1. tur:** Selin 1.000 TL nakdi A Bankası'na yatırır. Toplam mevduat 1.000 TL; zorunlu karşılık oranı %20. Grafikte 1 birim = 1.000 TL.", goster: ["n1", "l1"] },
+            { metin: "**2. tur:** A Bankası 200 TL ayırır, 800 TL kredi verir. Kredi alan harcar, para B Bankası'na mevduat olur. Toplam **1.800 TL**.", goster: ["n2", "l2"] },
+            { metin: "**3. tur:** B Bankası 160 TL ayırır, 640 TL kredi verir. Toplam **2.440 TL**.", goster: ["n3", "l3"] },
             { metin: "Zincir sürer: 4. turda 2.952, 5. turda 3.362, 6. turda 3.689 TL.", goster: ["n4", "n5", "n6"] },
             { metin: "Her tur öncekinin %80'i kadar yeni mevduat ekler: toplam artar ama yavaşlar, bir üst sınıra yaklaşır.", goster: ["cv", "lim", "lt"] },
             { metin: "Sınır = ilk mevduat × 1 ÷ rr = 1.000 × 5 = **5.000 TL** toplam mevduat. Bunun 4.000 TL'si zincirle yaratılan yeni paradır." }
@@ -114,8 +117,8 @@ window.DEFTER = {
       baslik: "Basit çarpan neden en fazlayı verir?",
       kisa: "Fazla rezerv tutan bankalar ve nakit tutan halk gerçek çarpanı küçültür.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "📉", baslik: "Gerçek çarpanı küçültür", maddeler: ["Zincirde bir halka kopar", "Daha az mevduat, daha az kredi", "Basit çarpan (1 ÷ rr) abartılı kalır"] },
-          sag: { ikon: "📈", baslik: "Çarpanı büyütür", maddeler: ["Zincir her turda daha çok yeni mevduat taşır", "Daha çok kredi, daha çok mevduat", "Örnek: rr düşünce 1 ÷ rr büyür"] },
+        { tip: "ikili", sol: { ikon: "📉", baslik: "Çarpanı küçültür", maddeler: ["Fazla rezerv ya da nakit tutmak zinciri kısaltır", "Zorunlu karşılık oranı yükselirse 1 ÷ rr küçülür", "Daha az mevduat, daha az kredi"] },
+          sag: { ikon: "📈", baslik: "Çarpanı büyütür", maddeler: ["Zorunlu karşılık oranı düşerse 1 ÷ rr büyür", "Her turda daha çok kredi, daha çok yeni mevduat", "Örnek: rr %20'den %10'a inerse çarpan 5'ten 10'a çıkar"] },
           oyun: [
             { metin: "Banka, kredi vermek yerine fazla rezerv tutuyor.", cevap: "sol", neden: "Kredi azalır, zincir kısalır." },
             { metin: "Halk, parayı bankaya yatırmak yerine cebinde tutuyor.", cevap: "sol", neden: "Nakit zincire girmez; mevduat azalır." },
@@ -156,7 +159,7 @@ window.DEFTER = {
       q: "Merkez Bankası bankacılık sistemine 500 TL yeni rezerv ekliyor. Sistemde başka fazla rezerv yok ve zorunlu karşılık oranı %10. Para arzı en fazla ne kadar artabilir?",
       opts: ["500 TL", "1.000 TL", "4.500 TL", "5.000 TL"],
       a: 3,
-      why: "Yeni rezervin hepsi fazla rezervdir. Çarpan = 1 ÷ 0,10 = 10; en fazla artış = 500 × 10 = 5.000 TL. Merkez Bankası'ndan gelen rezervde ilk tutarı düşmek gerekmez; o, nakit yatırıldığında dikkat edilecek bir ayrıntıdır."
+      why: "Yeni rezervin hepsi fazla rezervdir. Çarpan = 1 ÷ 0,10 = 10; en fazla artış = 500 × 10 = 5.000 TL. 4.500 TL, ilk tutarın düşüldüğü hatalı bir hesaptır; yeni rezerv Merkez Bankası'ndan geldiği için hepsi fazla rezervdir ve çarpana girer."
     },
     {
       q: "Bankalar fazla rezerv biriktirmeye başlıyor ve halk daha çok nakit tutuyor. Bu durum gerçek para çarpanını, basit çarpan 1 ÷ rr ile karşılaştırınca nasıl etkiler?",
@@ -171,10 +174,10 @@ window.DEFTER = {
       why: "Mevduat, bankanın müşteriye geri ödemesi gereken bir borçtur. Krediler, rezervler ve elindeki tahviller ise bankanın varlıklarıdır; kredi müşterinin bankaya borcudur."
     },
     {
-      q: "Bankacılık sisteminde 1.000 TL fazla rezerv var. Zorunlu karşılık oranı %20'den %10'a indirilirse (başka bir şey değişmeden) en fazla yaratılabilecek para ne olur?",
-      opts: ["5.000 TL'den 10.000 TL'ye çıkar", "10.000 TL'den 5.000 TL'ye düşer", "4.000 TL'den 9.000 TL'ye çıkar", "Değişmez"],
+      q: "Merkez Bankası bankalara 1.000 TL yeni rezerv ekliyor; hepsi fazla rezerv. Zorunlu karşılık oranı %20 yerine %10 olsaydı, bu rezervden en fazla yaratılacak para ne olurdu?",
+      opts: ["5.000 TL yerine 10.000 TL", "10.000 TL yerine 5.000 TL", "4.000 TL yerine 9.000 TL", "Aynı: 5.000 TL"],
       a: 0,
-      why: "En fazla para = fazla rezerv × 1 ÷ rr. rr %20 iken 1.000 × 5 = 5.000; rr %10 iken 1.000 × 10 = 10.000 TL. Oran düşünce çarpan büyür; B yönü ters çevirir."
+      why: "En fazla para = fazla rezerv × 1 ÷ rr. rr %20 iken 1.000 × 5 = 5.000; rr %10 iken 1.000 × 10 = 10.000 TL. Oran düşünce çarpan büyür; B yönü ters çevirir, D ise çarpanın rr'den bağımsız olduğunu varsayar."
     }
   ]
 };
