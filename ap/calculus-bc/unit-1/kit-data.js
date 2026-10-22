@@ -3,6 +3,10 @@ window.KIT = {
   "store": "calcbc-u1:v1:",
   "course": "Calculus BC",
   "unitLabel": "Unit 1 — Limits and Continuity",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
@@ -945,6 +949,108 @@ window.KIT = {
           ],
           "a": 2,
           "why": "|x|/x soldan −1'e, sağdan 1'e gider: *jump*, limit yok, giderilemez. Diğerlerinin limiti var (2, 1 ve 1/4); f(c) bu değerlere eşitlenerek süreksizlik giderilir."
+        }
+      ]
+    },
+    {
+      "no": 8,
+      "code": "1.14",
+      "slug": "cb108",
+      "title": "Sonsuz Limitler ve Dikey Asimptotlar",
+      "en": "Infinite Limits and Vertical Asymptotes",
+      "accent": "#5C8DFF",
+      "seconds": 260,
+      "terms": [
+        "Infinite limit",
+        "Unbounded",
+        "Vertical asymptote",
+        "One-sided limit",
+        "Sign analysis",
+        "Nonzero over zero",
+        "Hole",
+        "Common factor",
+        "Natural logarithm",
+        "Tangent function"
+      ],
+      "questions": [
+        {
+          "q": "f(x) = (x² − 9)/(x² − 2x − 3) fonksiyonunun dikey asimptotları hangileridir?",
+          "opts": [
+            "x = 3 ve x = −1",
+            "Yalnız x = −1",
+            "Yalnız x = 3",
+            "Dikey asimptotu yoktur"
+          ],
+          "a": 1,
+          "why": "(x − 3)(x + 3)/((x − 3)(x + 1)) = (x + 3)/(x + 1), x ≠ 3. x = 3'te ortak çarpan sadeleşir: delik (3, 3/2). x = −1'de pay 2, payda 0: dikey asimptot."
+        },
+        {
+          "q": "lim (x → 2⁺) (1 − x)/(x − 2)² nedir?",
+          "opts": [
+            "+∞",
+            "0",
+            "−∞",
+            "−1"
+          ],
+          "a": 2,
+          "why": "Pay 1 − 2 = −1'e gider. Payda (x − 2)² her iki taraftan küçük pozitif bir sayıdır. −1 bölü küçük pozitif → −∞ (soldan da −∞)."
+        },
+        {
+          "q": "Tabloda g'nin x = 4 civarındaki değerleri var. Tabloya göre en makul sonuç hangisi?",
+          "opts": [
+            "x = 4 dikey asimptot; soldan +∞, sağdan −∞",
+            "lim (x → 4) g(x) = +∞",
+            "x = 4'te delik vardır",
+            "lim (x → 4) g(x) = 0"
+          ],
+          "a": 0,
+          "why": "Soldaki değerler 120 → 1 200 → 12 000 diye sınırsız büyüyor, sağdakiler −80 → −800 → −8 000 diye sınırsız küçülüyor. Tek taraflı limitler ±∞: x = 4 dikey asimptot. İki taraf zıt yönde olduğu için tek bir \"+∞\" yazılamaz.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "3,9",
+              "3,99",
+              "3,999",
+              "4,001",
+              "4,01",
+              "4,1"
+            ],
+            "rows": [
+              [
+                "g(x)",
+                "120",
+                "1 200",
+                "12 000",
+                "−8 000",
+                "−800",
+                "−80"
+              ]
+            ],
+            "caption": "g fonksiyonunun seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "f bir rasyonel fonksiyon ve x = 2'de dikey asimptotu var. Aşağıdakilerden hangisi kesinlikle YANLIŞTIR?",
+          "opts": [
+            "lim (x → 2⁻) f(x) = +∞",
+            "lim (x → 2⁺) f(x) = −∞",
+            "f(0) = 2",
+            "lim (x → 2) f(x) = 5"
+          ],
+          "a": 3,
+          "why": "Dikey asimptot, en az bir tek taraflı limitin ±∞ olması demektir; rasyonel fonksiyonda iki taraf da ±∞'a gider, bu yüzden limit 5 gibi bir gerçel sayı olamaz. A, B ve C mümkündür."
+        },
+        {
+          "q": "y = ln(x − 3) fonksiyonunun dikey asimptotu hangisidir?",
+          "opts": [
+            "x = 0",
+            "x = 3",
+            "x = −3",
+            "Dikey asimptotu yoktur"
+          ],
+          "a": 1,
+          "why": "ln yalnız pozitif sayılarda tanımlı: x − 3 > 0, x > 3. x → 3⁺ iken x − 3 → 0⁺ ve ln(x − 3) → −∞. Tek taraf yeterli: x = 3 dikey asimptot."
         }
       ]
     }
