@@ -169,6 +169,128 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "2.2",
+      "slug": "cb202",
+      "title": "Türevin Tanımı ve Gösterimleri",
+      "en": "Defining the Derivative",
+      "accent": "#2FD6B9",
+      "seconds": 278,
+      "terms": [
+        "Derivative",
+        "Definition of the derivative",
+        "Differentiable",
+        "Lagrange notation",
+        "Leibniz notation",
+        "Tangent line",
+        "Point-slope form",
+        "Rate of change",
+        "Units"
+      ],
+      "questions": [
+        {
+          "q": "lim (h → 0) [(x + h)² + 4(x + h) − x² − 4x]/h ifadesi neye eşittir?",
+          "opts": [
+            "2x",
+            "2x + 4",
+            "x² + 4x",
+            "2x + 4h"
+          ],
+          "a": 1,
+          "why": "Bu, f(x) = x² + 4x için türevin tanımı. Pay 2xh + h² + 4h; h'ye bölünce 2x + h + 4; h → 0 iken 2x + 4."
+        },
+        {
+          "q": "V(t), bir havuzdaki su miktarıdır (litre), t dakika. V′(5) = −3 ifadesinin anlamı nedir?",
+          "opts": [
+            "5. dakikada havuzda 3 litre su vardır",
+            "İlk 5 dakikada havuzdan 3 litre su boşalmıştır",
+            "t = 5 dakikada havuzdaki su miktarı dakikada 3 litre hızla azalmaktadır",
+            "t = 5 dakikada su seviyesi 3 metre düşmüştür"
+          ],
+          "a": 2,
+          "why": "Türev bir hızdır: birimi litre/dakika. Eksi işaret azalma demek. V′(5), 5. dakikadaki anlık hızı verir; toplam miktarı ya da toplam değişimi değil."
+        },
+        {
+          "q": "f(−1) = 4 ve f′(x) = x² + 3 olduğuna göre, f'nin x = −1'deki teğet doğrusunun denklemi hangisidir?",
+          "opts": [
+            "y − 4 = 4(x − 1)",
+            "y − 4 = 2(x + 1)",
+            "y − 4 = 4(x + 1)",
+            "y + 1 = 4(x − 4)"
+          ],
+          "a": 2,
+          "why": "Nokta (−1, 4), eğim f′(−1) = (−1)² + 3 = 4. y − 4 = 4(x − (−1)) = 4(x + 1). (−1)²'yi −1 sanırsan eğimi yanlışlıkla 2 bulursun."
+        },
+        {
+          "q": "Şekildeki doğru, f'nin grafiğine x = 0'da teğettir ve (0, 3) ile (3, 0) noktalarından geçer. Hangisi doğrudur?",
+          "opts": [
+            "f(0) = 3 ve f′(0) = −1",
+            "f(0) = 3 ve f′(0) = 3",
+            "f(0) = 0 ve f′(0) = −1",
+            "f(0) = 3 ve f′(0) = 1"
+          ],
+          "a": 0,
+          "why": "Teğet, eğriye (0, f(0))'da dokunur, yani f(0) = 3. Teğetin eğimi (0 − 3)/(3 − 0) = −1 = f′(0).",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 4,
+            "ymax": 4,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  3
+                ],
+                "to": [
+                  3,
+                  0
+                ],
+                "label": "teğet"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 3,
+                "label": "(0, 3)"
+              },
+              {
+                "q": 3,
+                "p": 0,
+                "label": "(3, 0)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 3,
+                "label": "3"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 3,
+                "label": "3"
+              }
+            ],
+            "caption": "f'nin x = 0'daki teğet doğrusu"
+          }
+        },
+        {
+          "q": "Bir öğrenci f(x) = x² − 3x için türevi tanımla bulurken f(x + h) − f(x) = (x + h)² − 3(x + h) − x² − 3x yazıyor. Değerlendirme hangisi?",
+          "opts": [
+            "Doğru; sonuç 2x − 3 çıkar",
+            "f(x) parantez içinde çıkarılmadı; doğrusu ... − x² + 3x ve f′(x) = 2x − 3",
+            "Hata yok ama sonuç 2x + 3'tür",
+            "f(x + h) yanlış açılmış; doğrusu x² + h² − 3x − 3h"
+          ],
+          "a": 1,
+          "why": "f(x) = x² − 3x'in tamamı çıkarılmalı: −(x² − 3x) = −x² + 3x. O zaman pay 2xh + h² − 3h, h'ye bölüp h → 0: 2x − 3. Öğrencinin yazdığıyla −6x sabit terimi kalır ve h'ye bölünce limit sonsuza kaçar."
+        }
+      ]
     }
   ],
   "final": []
