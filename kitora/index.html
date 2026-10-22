@@ -249,7 +249,13 @@ var PAKETLER = [
     ]
   },
   /* hazırlanan kitler: yakinda: true → kart soluk görünür, içerik yerine kısa açıklama */
-  { yakinda: true, grup: "sinav", ad: "Macroeconomics", alt: "AP · 6 ünite", etiket: "11 · AP", renk: "#5BB6FF", not: "Okulda dersi yok; kit dersin kendisi olacak. Unit 1'den başlıyoruz." },
+  {
+    grup: "sinav", ad: "Macroeconomics", alt: "Unit 1 · Basic Economic Concepts", etiket: "11 · AP", renk: "#5BB6FF",
+    ana: "/ap/macroeconomics/unit-1/", not: "yeni bölümler ekleniyor",
+    icerik: [
+      { ad: "Çalışma kiti", url: "/ap/macroeconomics/unit-1/", not: "animasyonlu videolar · bölüm soruları · bölümler eklendikçe büyüyor", mod: ["ogren", "tekrar"] }
+    ]
+  },
   { yakinda: true, grup: "sinav", ad: "Microeconomics", alt: "AP · 6 ünite", etiket: "11 · AP", renk: "#5FE3C0", not: "Macro ile ortak kavramlar; arka arkaya hazırlanıyor." },
   { yakinda: true, grup: "sinav", ad: "Calculus BC", alt: "AP · Limits'ten başlayarak", etiket: "11 · AP", renk: "#A78BFA", not: "Ünite ünite video, soru ve süreli deneme." },
   { yakinda: true, grup: "sinav", ad: "Psychology", alt: "AP · 5 ünite", etiket: "AP", renk: "#FF7EB6", not: "Beyin ve davranıştan sosyal psikolojiye; ünite ünite video, soru ve süreli deneme." },
