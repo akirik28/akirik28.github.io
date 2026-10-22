@@ -302,6 +302,11 @@
   var bar = $("bar"), barFill = $("barFill"), resumeBtn = $("resume"), resumeHint = $("resumeHint");
   var navList = $("navList"), topMeta = $("topMeta");
   var lastBar = -1;
+  /* not defterleri (defter/): videodan çalışmak istemeyenler için ayrı yol; KIT.defter === false ise gösterilmez */
+  var DEFTER = KIT.defter !== false;
+  if (DEFTER && resumeBtn && resumeBtn.parentNode) {
+    resumeBtn.parentNode.insertBefore(el("a", { class: "btn ghost", href: "defter/", style: "margin-top:8px" }, "📓 Videosuz çalış: not defterleri"), resumeBtn.nextSibling);
+  }
   if (DEN && stEx && stEx.parentNode) {               /* sayfadaki "deneme sınavı" kutusu biten deneme sayısını gösterir */
     var stExL = stEx.parentNode.querySelector("dd");
     if (stExL) stExL.textContent = "deneme tamamlandı";
@@ -719,7 +724,8 @@
       title,
       el("p", { class: "ch-en serif", lang: "en", text: ep.en || "" }),
       (ep.terms && ep.terms.length) ? el("ul", { class: "chips", lang: "en", "aria-label": "Anahtar terimler" },
-        ep.terms.map(function (t) { return el("li", { class: "chip", text: t }); })) : null
+        ep.terms.map(function (t) { return el("li", { class: "chip", text: t }); })) : null,
+      DEFTER ? el("p", { style: "margin:6px 0 0" }, el("a", { class: "btn ghost sm", href: "defter/?b=" + ep.slug }, "📓 Bu bölümü videosuz çalış: not defteri →")) : null
     ]);
     var flow = el("div", { class: "flow", role: "group", "aria-label": "Bölüm adımları" });
     var panel = el("div", { class: "panel" });

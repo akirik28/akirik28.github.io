@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Kıtlık ve Ekonomist Gibi Düşünmek",
       "en": "Scarcity",
       "accent": "#F6B94A",
-      "seconds": 315,
+      "seconds": 276,
       "terms": [
         "Scarcity",
         "Shortage",
@@ -156,7 +156,7 @@ window.KIT = {
       "title": "Fırsat Maliyeti ve PPC",
       "en": "Opportunity Cost and the PPC",
       "accent": "#2FD6B9",
-      "seconds": 273,
+      "seconds": 239,
       "terms": [
         "Opportunity cost",
         "Trade-offs",
@@ -354,6 +354,186 @@ window.KIT = {
           ],
           "a": 2,
           "why": "Uç nokta eğrinin üstünde olduğu için kaynak israfı yoktur, yani *productively efficient*'tır; ama toplum iki maldan da istiyorsa *allocatively efficient* değildir. Model kaynakları ve teknolojiyi sabit varsayar. İçeriden eğriye çıkarken iki maldan da fazla üretildiği için fırsat maliyeti sıfırdır."
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "code": "1.2-2",
+      "slug": "mc103",
+      "title": "PPC'nin Şekli ve Kayması",
+      "en": "PPC Shape and Shifts",
+      "accent": "#58C9FF",
+      "seconds": 263,
+      "terms": [
+        "Constant opportunity cost",
+        "Law of increasing opportunity cost",
+        "Bowed out PPC",
+        "Not perfectly adaptable resources",
+        "Economic growth",
+        "Physical capital",
+        "Human capital",
+        "Technology",
+        "Consumer goods",
+        "Capital goods",
+        "Productive efficiency",
+        "Allocative efficiency"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir ülkenin robot ve domates üretim olanaklarını gösteriyor. Ülke 2 robottan 3 robota geçerse, 3. robotun *opportunity cost*'u kaç ton domatestir?",
+          "opts": [
+            "4 ton domates",
+            "8 ton domates",
+            "6 ton domates",
+            "14 ton domates"
+          ],
+          "a": 2,
+          "why": "2 robotta 14, 3 robotta 8 ton domates üretilir: 14 eksi 8, 6 ton. Robot başına maliyetler 2, 4, 6, 8 diye artıyor; bu *law of increasing opportunity cost*'tur ve bu ülkenin *PPC*'si dışa büküktür.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kombinasyon",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "rows": [
+              [
+                "Robot",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              [
+                "Domates (ton)",
+                "20",
+                "18",
+                "14",
+                "8",
+                "0"
+              ]
+            ],
+            "caption": "Bir ülkenin üretim olanakları"
+          }
+        },
+        {
+          "q": "Grafikte bir ülkenin *PPC*'si *PPC₁*'den *PPC₂*'ye geçiyor. Bu değişikliği en iyi hangisi açıklar?",
+          "opts": [
+            "Balıkçılıkta kullanılan yeni bir sonar teknolojisi",
+            "Hem balıkçıların hem çiftçilerin daha iyi eğitim alması",
+            "Buğday talebinin düşmesi ve halkın daha çok balık istemesi",
+            "İşsiz balıkçıların yeniden işe başlaması"
+          ],
+          "a": 0,
+          "why": "Buğday ekseninin ucu 7'de sabit kaldı; yalnızca balık ekseninin ucu 5'ten 8'e çıktı. Bu yalnız balık üretimini iyileştiren bir gelişmedir. Herkesin eğitimi iki ekseni de kaydırırdı; talep değişimi ve işsizlerin işe dönmesi ise eğriyi hiç kaydırmaz.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Fish",
+            "ylabel": "Wheat",
+            "xmax": 10,
+            "ymax": 10,
+            "ppc": [
+              {
+                "qmax": 5,
+                "pmax": 7,
+                "k": 2,
+                "label": "PPC₁",
+                "dash": true
+              },
+              {
+                "qmax": 8,
+                "pmax": 7,
+                "k": 2,
+                "label": "PPC₂"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 5,
+                "label": "5"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 7,
+                "label": "7"
+              }
+            ]
+          }
+        },
+        {
+          "q": "X ve Y ülkelerinin bugünkü *PPC*'leri aynı. X bu yıl üretiminin çoğunu *capital goods*'a, Y ise *consumer goods*'a ayırıyor. Diğer her şey sabitken hangisi doğrudur?",
+          "opts": [
+            "Y'nin gelecekteki *PPC*'si daha çok dışa kayar, çünkü bugün daha çok tüketiyor",
+            "X'in gelecekteki *PPC*'si yalnızca *capital goods* ekseninde dışa kayar",
+            "X bugün eğrinin içinde bir noktada üretiyor, çünkü daha az tüketiyor",
+            "X bugün daha az tüketir ama gelecekteki *PPC*'si daha çok dışa kayar"
+          ],
+          "a": 3,
+          "why": "*Capital goods* mal üretmek için kullanılan mallardır; makine ve fabrika stoku büyüyen X, ileride iki maldan da daha çok üretebilir, yani eğrisi iki eksende de dışa kayar. Bedeli bugünkü tüketimden vazgeçmektir. X'in noktası yine eğrinin üzerindedir, verimsiz değildir."
+        },
+        {
+          "q": "Moda değişti: insanlar yün kazak yerine pamuklu tişört istiyor ve yün talebi düşüyor. Bir öğrenci \"Ülkenin *PPC*'si yün ekseninde içe kayar\" diyor. Doğru düzeltme hangisi?",
+          "opts": [
+            "Öğrenci haklı; talep düşünce o malı üretme kapasitesi de düşer",
+            "Eğri kaymaz; ülke eğri üzerinde daha az yün, daha çok pamuk olan bir noktaya geçer",
+            "Eğri kaymaz; ama ülkenin noktası kalıcı olarak eğrinin içine düşer",
+            "Eğri iki eksende de içe kayar, çünkü toplam talep azalır"
+          ],
+          "a": 1,
+          "why": "*PPC* ne yapabileceğimizi gösterir, ne istediğimizi değil. Talep değişince kaynaklar ve teknoloji aynı kalır; kaynaklar yünden pamuğa kayar ve ülke eğri üzerindeki başka bir kombinasyonu seçer."
+        },
+        {
+          "q": "Grafikte bütün kaynaklarını telefona ayıran bir ülke K noktasında üretiyor ve hiç gıda üretmiyor. Hangisi doğrudur?",
+          "opts": [
+            "K eğrinin ucunda olduğu için *productively efficient* değildir",
+            "K, M ve I noktalarının üçü de *productively efficient*'tir",
+            "K *productively efficient*'tir ama büyük olasılıkla *allocatively efficient* değildir",
+            "K hem *productively* hem *allocatively efficient*'tir, çünkü eğrinin üzerindedir"
+          ],
+          "a": 2,
+          "why": "Eğrinin üzerindeki her nokta, uçlar da dahil, kaynakları boşa harcamadan üretir: K ve M *productively efficient*'tir, içerideki I değildir. *Allocative efficiency* toplumun en çok istediği kombinasyondur; hiç gıdası olmayan bir ülkeyi kimse istemez, bu yüzden K büyük olasılıkla bu koşulu sağlamaz.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Phones",
+            "ylabel": "Food",
+            "xmax": 10,
+            "ymax": 10,
+            "ppc": [
+              {
+                "qmax": 8,
+                "pmax": 8,
+                "k": 2,
+                "label": "PPC"
+              }
+            ],
+            "points": [
+              {
+                "q": 8,
+                "p": 0,
+                "label": "K"
+              },
+              {
+                "q": 4.8,
+                "p": 6.4,
+                "label": "M"
+              },
+              {
+                "q": 3,
+                "p": 3,
+                "label": "I"
+              }
+            ]
+          }
         }
       ]
     }
