@@ -639,6 +639,84 @@ window.KIT = {
           "why": "Eğimler iki taraftan zıt sonsuzlara kaçıyor: iki kol dikleşerek bir sivri uçta birleşiyor (cusp). Köşede eğimler sonlu iki farklı sayıdır; dikey teğette ise iki taraf aynı sonsuza gider. f sürekli olduğu için sıçrama yok."
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "2.6",
+      "slug": "cb206",
+      "title": "Temel Türev Kuralları",
+      "en": "Constant, Sum, Difference, and Constant Multiple Rules",
+      "accent": "#B9E552",
+      "seconds": 278,
+      "terms": [
+        "Constant rule",
+        "Constant multiple rule",
+        "Sum rule",
+        "Difference rule",
+        "Rewrite before differentiating",
+        "Horizontal tangent",
+        "Normal line",
+        "Perpendicular slopes",
+        "Piecewise function",
+        "Differentiable"
+      ],
+      "questions": [
+        {
+          "q": "y = (x² − 4)(x + 1) ise x = 1'de dy/dx kaçtır?",
+          "opts": [
+            "2",
+            "1",
+            "0",
+            "−6"
+          ],
+          "a": 1,
+          "why": "Önce aç: x³ + x² − 4x − 4. Türev: 3x² + 2x − 4; x = 1'de 3 + 2 − 4 = 1. Türevleri çarpmak (2x · 1 = 2) yanlıştır; −6 ise y(1)'dir."
+        },
+        {
+          "q": "f(x) = 10 − x² ve g(x) = 2√x. 0 ≤ x ≤ 2 aralığında f'nin grafiği g'ninkinin üstünde. h(x) = f(x) − g(x) iki grafik arasındaki dikey uzaklıktır. x = 1'de h'nin değişim hızı kaçtır?",
+          "opts": [
+            "7",
+            "−1",
+            "3",
+            "−3"
+          ],
+          "a": 3,
+          "why": "Fark kuralı: h′(x) = f′(x) − g′(x) = −2x − 1/√x. x = 1'de −2 − 1 = −3. 7, h(1) = 9 − 2 değeridir; hız değil."
+        },
+        {
+          "q": "f(x) = x³ − 3x² − 9x + 2 fonksiyonunun grafiği hangi x değerlerinde yatay teğete sahiptir?",
+          "opts": [
+            "x = −1 ve x = 3",
+            "x = 1 ve x = −3",
+            "x = 0 ve x = 2",
+            "Yalnız x = 3"
+          ],
+          "a": 0,
+          "why": "f′(x) = 3x² − 6x − 9 = 3(x² − 2x − 3) = 3(x − 3)(x + 1). Sıfır olduğu yerler x = 3 ve x = −1."
+        },
+        {
+          "q": "f(x) = 2√x fonksiyonunun x = 4'teki *normal line* denklemi hangisidir?",
+          "opts": [
+            "y − 4 = (1/2)(x − 4)",
+            "y − 4 = −2(x − 4)",
+            "y − 4 = 2(x − 4)",
+            "y − 2 = −2(x − 4)"
+          ],
+          "a": 1,
+          "why": "f(4) = 2 · 2 = 4. f′(x) = 2 · (1/2)x^(−1/2) = 1/√x, f′(4) = 1/2 (teğet eğimi). Normal eğimi −1/(1/2) = −2: y − 4 = −2(x − 4)."
+        },
+        {
+          "q": "f(x) = ax³ (x < 1) ve f(x) = 6x + b (x ≥ 1). f'nin x = 1'de türevlenebilir olması için a ve b ne olmalıdır?",
+          "opts": [
+            "a = 2, b = 4",
+            "a = 6, b = 0",
+            "a = 2, b = −4",
+            "a = 3, b = −3"
+          ],
+          "a": 2,
+          "why": "Eğimler: soldan 3ax² → 3a, sağdan 6; 3a = 6 ⇒ a = 2. Süreklilik: a · 1³ = 6 + b ⇒ 2 = 6 + b ⇒ b = −4. a = 6, b = 0 yalnız sürekliliği sağlar (köşe kalır)."
+        }
+      ]
     }
   ],
   "final": []
