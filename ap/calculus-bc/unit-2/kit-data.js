@@ -874,6 +874,174 @@ window.KIT = {
     },
     {
       "no": 8,
+      "code": "2.8",
+      "slug": "cb208",
+      "title": "Çarpım Kuralı",
+      "en": "The Product Rule",
+      "accent": "#5C8DFF",
+      "seconds": 289,
+      "terms": [
+        "Product rule",
+        "Factor",
+        "Table of values",
+        "Line segment slope",
+        "Tangent line",
+        "Sign of the derivative",
+        "Constant multiple",
+        "Simplify"
+      ],
+      "questions": [
+        {
+          "q": "y = x²eˣ ise x = 1'de dy/dx kaçtır?",
+          "opts": [
+            "2e",
+            "3e",
+            "e",
+            "2"
+          ],
+          "a": 1,
+          "why": "*Product rule*: y′ = 2x · eˣ + x² · eˣ. x = 1'de 2e + e = 3e. 2e, yalnız türevleri çarpmaktan (2x · eˣ) gelir."
+        },
+        {
+          "q": "Tablodaki değerlere göre h(x) = 3f(x)g(x) ise h′(2) kaçtır?",
+          "opts": [
+            "11",
+            "−6",
+            "24",
+            "33"
+          ],
+          "a": 3,
+          "why": "h′(x) = 3[f′(x)g(x) + f(x)g′(x)]. x = 2'de 3[(−1)(−3) + (4)(2)] = 3(3 + 8) = 33. −6, 3 · f′(2) · g′(2)'dir: türevleri çarpmak yanlış.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "f(x)",
+              "f′(x)",
+              "g(x)",
+              "g′(x)"
+            ],
+            "rows": [
+              [
+                "2",
+                "4",
+                "−1",
+                "−3",
+                "2"
+              ]
+            ],
+            "caption": "f ve g türevlenebilir"
+          }
+        },
+        {
+          "q": "f ve g'nin grafikleri doğrulardır. h(x) = f(x)g(x) ise h′(2) kaçtır?",
+          "opts": [
+            "1",
+            "−1",
+            "7",
+            "12"
+          ],
+          "a": 0,
+          "why": "Grafikten f(2) = 3, f′ = 1 (eğim (5 − 1)/4); g(2) = 4, g′ = −1 (eğim −6/6). h′(2) = f′g + fg′ = (1)(4) + (3)(−1) = 1. 12 ise h(2) = 3 · 4.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 6,
+            "ymax": 6,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  4,
+                  5
+                ],
+                "label": "f"
+              },
+              {
+                "from": [
+                  0,
+                  6
+                ],
+                "to": [
+                  6,
+                  0
+                ],
+                "label": "g"
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 3,
+                "label": "(2, 3)"
+              },
+              {
+                "q": 2,
+                "p": 4,
+                "label": "(2, 4)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 1,
+                "label": "1"
+              },
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              }
+            ],
+            "caption": "f: (0, 1)'den (4, 5)'e; g: (0, 6)'dan (6, 0)'a"
+          }
+        },
+        {
+          "q": "f(1) = 2 ve f′(1) = −3. g(x) = 4x·f(x) ise g'nin x = 1'deki teğet doğrusu hangisidir?",
+          "opts": [
+            "y − 8 = −12(x − 1)",
+            "y − 2 = −4(x − 1)",
+            "y − 8 = −4(x − 1)",
+            "y − 8 = 20(x − 1)"
+          ],
+          "a": 2,
+          "why": "Nokta: g(1) = 4 · 1 · 2 = 8. g′(x) = 4f(x) + 4x f′(x); g′(1) = 4(2) + 4(−3) = 8 − 12 = −4. Teğet y − 8 = −4(x − 1). −12, ilk terimi (4f) unutmaktan gelir."
+        },
+        {
+          "q": "Bir öğrenci d/dx (x sin x) = cos x yazıyor. Doğru değerlendirme hangisi?",
+          "opts": [
+            "Doğru",
+            "Yanlış; doğrusu sin x + x cos x",
+            "Yanlış; doğrusu x cos x",
+            "Yanlış; doğrusu sin x − x cos x"
+          ],
+          "a": 1,
+          "why": "Öğrenci türevleri çarpmış: (1)(cos x). *Product rule*: (x)′ sin x + x (sin x)′ = sin x + x cos x."
+        }
+      ]
+    },
+    {
+      "no": 9,
       "code": "2.9",
       "slug": "cb209",
       "title": "Bölüm Kuralı",
