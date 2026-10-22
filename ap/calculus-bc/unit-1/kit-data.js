@@ -390,6 +390,166 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "1.5, 1.9",
+      "slug": "cb103",
+      "title": "Limit Kuralları ve Gösterimleri Bağlamak",
+      "en": "Limit Properties and Representations",
+      "accent": "#58C9FF",
+      "seconds": 280,
+      "terms": [
+        "Limit properties",
+        "Sum rule",
+        "Product rule",
+        "Constant multiple rule",
+        "Quotient rule",
+        "Power rule",
+        "Direct substitution",
+        "Composite function",
+        "Multiple representations",
+        "Polynomial"
+      ],
+      "questions": [
+        {
+          "q": "lim (x → 0) f(x) = 3 ve lim (x → 0) g(x) = −1 ise lim (x → 0) [f(x)² − 4g(x)] / [g(x) + 2] kaçtır?",
+          "opts": [
+            "5",
+            "13",
+            "9",
+            "−13"
+          ],
+          "a": 1,
+          "why": "Pay: 3² − 4(−1) = 9 + 4 = 13. Payda: −1 + 2 = 1, sıfır değil. Bölüm kuralıyla 13/1 = 13."
+        },
+        {
+          "q": "Tabloda f ve g'nin x = 2 civarındaki değerleri var; h(x) = x³. lim (x → 2) [f(x)·g(x) − h(x)] için en iyi tahmin hangisi?",
+          "opts": [
+            "2",
+            "10",
+            "−3",
+            "18"
+          ],
+          "a": 0,
+          "why": "Tablodan f → 2 ve g → 5; h için doğrudan yerine koyma: 2³ = 8. Çarpım ve fark kurallarıyla 2·5 − 8 = 2.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "1,9",
+              "1,99",
+              "2,01",
+              "2,1"
+            ],
+            "rows": [
+              [
+                "f(x)",
+                "2,1",
+                "2,01",
+                "1,99",
+                "1,9"
+              ],
+              [
+                "g(x)",
+                "4,8",
+                "4,98",
+                "5,02",
+                "5,2"
+              ]
+            ],
+            "caption": "f ve g'nin seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "x → c iken ne f'nin ne de g'nin limiti var. lim (x → c) [f(x) + g(x)] için hangisi doğru?",
+          "opts": [
+            "Kesinlikle yoktur",
+            "Var olabilir; tek taraflı limitlerle kontrol edilmeli",
+            "Her zaman 0'dır",
+            "Her zaman f(c) + g(c)'dir"
+          ],
+          "a": 1,
+          "why": "Toplam kuralı yalnız iki limit de varsa kullanılır. Örneğin f soldan 1, sağdan 3'e; g soldan 3, sağdan 1'e gidiyorsa f + g iki yandan da 4'e gider ve limit vardır."
+        },
+        {
+          "q": "Grafikte f var: sol parça (1, 2)'de açık daireyle biter, sağ parça (1, 4)'te açık daireyle başlar, f(1) = 3. g(x) = 1 + (x − 2)² ise lim (x → 2) f(g(x)) kaçtır?",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "Limit yoktur"
+          ],
+          "a": 2,
+          "why": "x → 2 iken g(x) → 1, ama hep 1'in üstünden (x ≠ 2 için (x − 2)² > 0). Yani f'ye 1'e sağdan yaklaşan değerler girer: lim (u → 1⁺) f(u) = 4. f(1) = 3 kullanılmaz.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "u",
+            "ylabel": "f(u)",
+            "xmax": 4,
+            "ymax": 5,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  1,
+                  4
+                ],
+                "to": [
+                  4,
+                  1
+                ],
+                "label": "f"
+              }
+            ],
+            "points": [
+              {
+                "q": 1,
+                "p": 3,
+                "label": "f(1) = 3"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 1,
+                "label": "1"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "caption": "(1, 2) ve (1, 4) açık daire"
+          }
+        },
+        {
+          "q": "Aşağıdaki limitlerden hangisi doğrudan yerine koyma (*direct substitution*) ile bulunamaz?",
+          "opts": [
+            "lim (x → 2) (x² + 1)/(x + 3)",
+            "lim (x → 1) √(x + 8)",
+            "lim (x → 0) cos(x + π)",
+            "lim (x → 3) (x² − 9)/(x − 3)"
+          ],
+          "a": 3,
+          "why": "Son seçenekte yerine koyunca 0/0 çıkar; payda sıfır olduğu için bölüm kuralı kullanılamaz (önce sadeleştirilir, limit 6). Diğerleri sırasıyla 5/5 = 1, 3 ve cos π = −1."
+        }
+      ]
     }
   ],
   "final": []
