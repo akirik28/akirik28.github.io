@@ -3,7 +3,9 @@
    Sayfa: /ap/<ders>/unit-N/defter/            → ünitenin defter listesi
           /ap/<ders>/unit-N/defter/?b=mc101    → mc101 defteri (mc101.js yüklenir)
    Bölüm bilgisi (başlık, renk, sorular) ../kit-data.js'teki window.KIT'ten gelir.
-   Defter verisi: window.DEFTER = { slug, ozet?, bolumler:[ { baslik, bloklar:[ … ] } ] }
+   Defter verisi: window.DEFTER = { slug, amac, bolumler:[ { baslik, kisa, bloklar:[ … ] } ] }
+     amac = defterin başındaki "Bu defterde" cümlesi (konu ne, neyi öğreneceksin; 1–2 sade cümle)
+     kisa = başlığın altındaki "Kısaca:" satırı (o başlığın tek cümlelik özü, ≤ 14 kelime)
 
    Metin işaretleri (her metin alanında):  *English term*   ==vurgu==   **kalın**
 
@@ -181,44 +183,46 @@
     var prog = el("div", { class: "d-prog", "aria-hidden": "true" }, el("i"));
     document.body.appendChild(prog);
 
+    /* üst: ders satırı, konu başlığı, "Bu defterde" kutusu (konunun ne olduğu + başlıkların listesi) */
+    var B0 = D.bolumler || [];
+    var list = el("ol", { class: "d-plan" }, B0.map(function (b, i) {
+      return el("li", {}, el("a", { href: "#b" + (i + 1) }, [el("span", { html: md(b.baslik) }), b.kisa ? el("small", { html: md(b.kisa) }) : null]));
+    }));
     var hero = el("section", { class: "d-hero nb" }, [
-      el("div", { class: "d-fields" }, [
-        field("Ders", APC + " · " + UNIT.split(" — ")[0]),
-        field("Konu", epNo(ep)),
-        field("Tarih", today())
+      el("p", { class: "d-course" }, [
+        el("span", { text: APC + " · " + UNIT.split(" — ")[0] + " · Konu " + epNo(ep) }),
+        el("a", { href: "../#" + ep.slug, text: "▶ Videosu" })
       ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
-      ep.en ? el("p", { class: "d-en serif", lang: "en", text: ep.en }) : null,
-      D.ozet ? el("p", { class: "lead", html: md(D.ozet) }) : null,
-      el("div", { class: "d-meta mono" }, [
-        el("span", { text: (D.bolumler || []).length + " başlık" }),
-        el("span", { text: (ep.terms || []).length + " kavram" }),
-        el("span", { text: (ep.questions || []).length + " soru" }),
-        el("a", { href: "../#" + ep.slug, class: "d-meta-l", text: "▶ Videosu" })
+      ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
+      el("div", { class: "d-about" }, [
+        el("p", { class: "d-about-k", text: "Bu defterde" }),
+        el("p", { class: "d-about-t", html: md(D.amac || D.ozet || "") }),
+        list
       ])
     ]);
     root.appendChild(hero);
     splitTitle(hero.querySelector(".d-ttl"));
 
-    /* içindekiler */
-    var toc = el("nav", { class: "d-toc", "aria-label": "Defterin başlıkları" });
-    var tocL = el("ol");
-    toc.appendChild(tocL);
-    root.appendChild(toc);
+    /* yapışkan ince çubuk: hangi başlıktasın */
+    var bar = el("div", { class: "d-bar", "aria-hidden": "true" }, [el("span", { class: "n" }), el("span", { class: "t" })]);
+    root.appendChild(bar);
 
-    var secs = [];
-    (D.bolumler || []).forEach(function (b, i) {
+    var secs = [], names = [];
+    B0.forEach(function (b, i) {
       var id = "b" + (i + 1);
       var sec = el("section", { class: "d-sec", id: id, "aria-labelledby": id + "t" });
       var head = el("header", { class: "d-sec-h" }, [
-        el("span", { class: "d-sec-no mono", text: String(i + 1).padStart(2, "0") }),
-        el("h2", { id: id + "t", html: md(b.baslik) })
+        el("span", { class: "d-sec-no", text: String(i + 1) }),
+        el("div", {}, [
+          el("h2", { id: id + "t", html: md(b.baslik) }),
+          b.kisa ? el("p", { class: "d-kisa", html: "<b>Kısaca:</b> " + md(b.kisa) }) : null
+        ])
       ]);
       sec.appendChild(watch(head));
       (b.bloklar || []).forEach(function (bl) { var n = block(bl); if (n) sec.appendChild(n); });
       root.appendChild(sec);
-      secs.push(sec);
-      tocL.appendChild(el("li", {}, el("a", { href: "#" + id, html: md(b.baslik) })));
+      secs.push(sec); names.push(b.baslik);
     });
 
     /* Kendini dene */
@@ -231,8 +235,7 @@
       qsec.appendChild(watch(el("p", { class: "d-p muted", text: "Bu sorular kitteki sorularla aynı; cevapların ilerlemene sayılır." })));
       quiz(ep, qsec);
       root.appendChild(qsec);
-      secs.push(qsec);
-      tocL.appendChild(el("li", { class: "q" }, el("a", { href: "#sorular", text: "Kendini dene" })));
+      secs.push(qsec); names.push("Kendini dene");
     }
 
     /* önceki / sonraki */
@@ -243,16 +246,20 @@
       next ? el("a", { class: "d-pn-b r", href: locked(idx + 1) ? loginUrl() : "?b=" + next.slug }, [el("small", { class: "mono", text: epNo(next) + " →" }), el("span", { text: next.title })]) : el("a", { class: "d-pn-b r", href: KIT.denemeler ? "../" + KIT.denemeler.url : "../" }, [el("small", { class: "mono", text: "Sırada →" }), el("span", { text: KIT.denemeler ? "Denemeler" : "Kite dön" })])
     ]));
 
-    /* kaydırma: ilerleme + içindekilerde etkin başlık + okundu işareti */
-    var tocA = [].slice.call(tocL.querySelectorAll("a"));
-    var markedRead = false;
+    /* kaydırma: ilerleme + çubukta etkin başlık + okundu işareti */
+    var markedRead = false, lastCur = -2;
     function onScroll() {
       var h = document.documentElement, max = h.scrollHeight - window.innerHeight;
       var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
       prog.firstChild.style.transform = "scaleX(" + p + ")";
-      var cur = 0;
+      var cur = -1;
       secs.forEach(function (s, i) { if (s.getBoundingClientRect().top < window.innerHeight * 0.35) cur = i; });
-      tocA.forEach(function (a, i) { a.classList.toggle("on", i === cur); });
+      bar.classList.toggle("on", cur >= 0);
+      if (cur !== lastCur && cur >= 0) {
+        lastCur = cur;
+        bar.firstChild.textContent = (cur < B0.length ? (cur + 1) + " / " + B0.length : "✎");
+        bar.lastChild.innerHTML = md(names[cur]);
+      }
       if (!markedRead && p > 0.92) { markedRead = true; markRead(ep); }
       steppers.forEach(function (f) { f(); });
     }
@@ -260,9 +267,6 @@
     window.addEventListener("resize", onScroll);
     setTimeout(onScroll, 50);
   }
-
-  function field(k, v) { return el("p", { class: "d-field" }, [el("span", { class: "k", text: k + ":" }), el("span", { class: "v", text: v })]); }
-  function today() { try { return new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return ""; } }
 
   function splitTitle(n) {
     if (!n || RM) return;

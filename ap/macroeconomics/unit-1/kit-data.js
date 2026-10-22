@@ -1417,6 +1417,173 @@ window.KIT = {
           "why": "20 lirada arz edilen 500, talep edilen 300: 500 eksi 300, 200 simitlik *surplus*. Normalde satıcılar fiyatı düşürüp fazlayı eritirdi; ama kural fiyatın 20 liranın altına inmesine izin vermediği için fazla kalıcı olur."
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "1.6-2",
+      "slug": "mc110",
+      "title": "Dengenin Değişmesi ve Çift Kayma",
+      "en": "Changes in Equilibrium",
+      "accent": "#2FD6B9",
+      "seconds": 254,
+      "terms": [
+        "Change in demand",
+        "Change in supply",
+        "Shifter",
+        "Input price",
+        "Technology",
+        "Substitute",
+        "Complement",
+        "Related markets",
+        "Double shift rule",
+        "Indeterminate"
+      ],
+      "questions": [
+        {
+          "q": "Okulun tam karşısına ikinci bir tostçu açıldı. Bölgedeki tost piyasasında ne olur?",
+          "opts": [
+            "*Demand* sağa kayar; fiyat ve miktar artar",
+            "*Supply* sağa kayar; fiyat düşer, miktar artar",
+            "*Supply* sola kayar; fiyat artar, miktar düşer",
+            "*Supply* sağa kayar; fiyat ve miktar artar"
+          ],
+          "a": 1,
+          "why": "Yeni tostçu satıcı sayısını artırır; bu bir *supply* kaydırıcısıdır (*number of sellers*) ve arz sağa kayar. Arz kayınca fiyat ve miktar zıt yöne gider: fiyat düşer, miktar artar."
+        },
+        {
+          "q": "Grafikte konser tişörtü piyasası gösteriliyor. Arz eğrisinin S'den S1'e geçmesini en iyi hangi olay açıklar?",
+          "opts": [
+            "Tişörtün kendi fiyatı yükseldi",
+            "Grup çok popüler oldu ve hayran sayısı arttı",
+            "Tişört basan yeni bir makine üretimi hızlandırdı",
+            "Tişörtlerde kullanılan pamuğun fiyatı arttı"
+          ],
+          "a": 3,
+          "why": "Eğri sola kaymış: arz azalmış, yeni denge E1'de fiyat yükselmiş, miktar düşmüş. Bunu bir girdi fiyatının artması, yani pahalanan pamuk açıklar. Ürünün kendi fiyatı eğriyi kaydırmaz; hayran artışı talebi, yeni makine arzı sağa kaydırırdı.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  2,
+                  8
+                ],
+                "to": [
+                  8,
+                  2
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "to": [
+                  8,
+                  8
+                ],
+                "label": "S",
+                "dash": true
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  6,
+                  8
+                ],
+                "label": "S1",
+                "dash": false
+              }
+            ],
+            "points": [
+              {
+                "q": 5,
+                "p": 5,
+                "label": "E",
+                "guides": true
+              },
+              {
+                "q": 4,
+                "p": 6,
+                "label": "E1",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Şekerli içeceklerin sağlığa zararını gösteren büyük bir araştırma yayımlandı; aynı ay şeker de ucuzladı. Kola piyasası için hangisi doğrudur?",
+          "opts": [
+            "Fiyat kesin düşer; miktar belirsizdir",
+            "Miktar kesin düşer; fiyat belirsizdir",
+            "Fiyat da miktar da kesin düşer",
+            "Fiyat kesin artar; miktar belirsizdir"
+          ],
+          "a": 0,
+          "why": "Araştırma talebi sola kaydırır: fiyat aşağı, miktar aşağı. Ucuzlayan şeker bir girdi olduğu için arzı sağa kaydırır: fiyat aşağı, miktar yukarı. İkisi de fiyatı aşağı ittiği için fiyat kesin düşer; miktar ters yönlere çekildiği için *indeterminate* olur."
+        },
+        {
+          "q": "Süt fiyatı önemli ölçüde arttı. Dondurmayla birlikte kullanılan dondurma külahı piyasasında ne olur?",
+          "opts": [
+            "Külahın *supply*'ı sola kayar; fiyat artar, miktar düşer",
+            "Külahın *demand*'i sağa kayar; fiyat ve miktar artar",
+            "Külahın *demand*'i sola kayar; fiyat ve miktar düşer",
+            "Külah piyasası etkilenmez, çünkü külahın içinde süt yok"
+          ],
+          "a": 2,
+          "why": "Süt dondurmanın girdisidir: dondurmanın arzı sola kayar ve dondurma pahalanır. Külah dondurmanın *complement*'idir; dondurma pahalanınca daha az külah istenir, külahın talebi sola kayar ve hem fiyatı hem miktarı düşer."
+        },
+        {
+          "q": "Tabloda dört piyasada denge fiyatı ve denge miktarının nasıl değiştiği verilmiş. Hangi piyasada değişimin tek nedeni arzın azalması olabilir?",
+          "opts": [
+            "Piyasa A",
+            "Piyasa B",
+            "Piyasa C",
+            "Piyasa D"
+          ],
+          "a": 1,
+          "why": "Arz sola kayınca fiyat ve miktar zıt yöne gider: fiyat artar, miktar düşer; bu Piyasa B. Fiyatın artması tek başına talebin arttığını göstermez: Piyasa C'de ikisi birlikte arttığı için o talep artışıdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Piyasa",
+              "Denge fiyatı",
+              "Denge miktarı"
+            ],
+            "rows": [
+              [
+                "A",
+                "düştü",
+                "düştü"
+              ],
+              [
+                "B",
+                "arttı",
+                "düştü"
+              ],
+              [
+                "C",
+                "arttı",
+                "arttı"
+              ],
+              [
+                "D",
+                "düştü",
+                "arttı"
+              ]
+            ],
+            "caption": "Her piyasada tek bir eğri kaydı"
+          }
+        }
+      ]
     }
   ],
   "final": []
