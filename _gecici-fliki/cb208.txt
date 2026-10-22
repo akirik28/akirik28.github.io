@@ -1,0 +1,21 @@
+Bir dikdörtgen düşün: genişliği f, yüksekliği g, alanı f çarpı g. Şimdi iki kenar da aynı anda uzuyor. Alan ne hızla büyür? Genişlik biraz artınca, sağa ince bir şerit eklenir: genişlikteki artış çarpı g. Yükseklik artınca, üste bir şerit: f çarpı yükseklikteki artış. Köşedeki minicik kare, iki küçük artışın çarpımı; limitte yok olur. Geriye iki şerit kalır: işte çarpım kuralı.
+
+Product rule, yani çarpım kuralı: f çarpı g'nin türevi, f üssü çarpı g, artı f çarpı g üssü. Sözle: birincinin türevi çarpı ikinci, artı birinci çarpı ikincinin türevi. Dikkat: f üssü çarpı g üssü değil! Kontrol: x kare çarpı x küp, x üzeri 5; türevi 5 x üzeri 4. Türevleri çarparsan: 2 x çarpı 3 x kare, 6 x küp. Yanlış. Kuralla: 2 x çarpı x küp, artı x kare çarpı 3 x kare: 2 x üzeri 4 artı 3 x üzeri 4, yani 5 x üzeri 4. Doğru.
+
+Örnek: y eşittir x küp sinüs x. f eşittir x küp, g eşittir sinüs x. f üssü 3 x kare, g üssü kosinüs x. y üssü: 3 x kare sinüs x, artı x küp kosinüs x. Bir tane daha: y eşittir e üzeri x çarpı doğal logaritma x. e üzeri x doğal logaritma x, artı e üzeri x bölü x. İstersen e üzeri x'i ortak paranteze al. Sadeleştirme isteğe bağlı; sınavda sadeleştirmeden de tam puan alırsın.
+
+AP tabloyla sorar. x eşittir 1'de: f 3, f üssü 5, g 2, g üssü eksi 1. x eşittir 4'te: f eksi 2, f üssü 1, g 6, g üssü 3. h eşittir f çarpı g ise h üssü 1? 5 çarpı 2, artı 3 çarpı eksi 1: 10 eksi 3, yani 7. h üssü 4? 1 çarpı 6, artı eksi 2 çarpı 3: 6 eksi 6, sıfır. Sıfır: bu anda f'nin düşüşü ile g'nin yükselişi birbirini tam dengeliyor.
+
+Bir de x kare çarpı g x. k üssü x: 2 x çarpı g x, artı x kare çarpı g üssü x. x eşittir 4'te: 2 çarpı 4 çarpı 6, artı 16 çarpı 3. 48 artı 48: 96. Bilinen bir fonksiyonla bilinmeyen bir fonksiyon çarpılınca da kural aynı: birinin türevini al, diğerini olduğu gibi bırak, sonra yer değiştir.
+
+Grafikle de gelir. f, y ekseninde 5'ten başlayıp x ekseninde 5'e inen bir doğru; g ise eksi 1'den başlayıp 2'de 3'e çıkan bir doğru. x eşittir 2'de: f 3, eğimi eksi 1; g 3, eğimi 2. h eşittir f çarpı g ise h üssü 2: eksi 1 çarpı 3, artı 3 çarpı 2. Eksi 3 artı 6: 3. Doğru parçasında türev, o parçanın eğimidir; grafikten değeri de eğimi de okursun.
+
+Bazen sayı değil, sadece işaret sorulur. f'nin grafiği x eşittir 3'te x eksenini yukarıdan aşağı kesiyor; g ise orada 2 yükseklikte ve artıyor. h eşittir f çarpı g; h üssü 3 pozitif mi, negatif mi? f 3 sıfır, bu yüzden ikinci terim f çarpı g üssü tamamen sıfır. Geriye f üssü 3 çarpı g 3 kalır: negatif çarpı pozitif. Cevap: negatif. g'nin eğimini bilmene gerek bile yoktu.
+
+Şimdi bir AP örneği. f 3 eşittir eksi 1 ve f üssü 3 eşittir 2. g x eşittir x kare çarpı f x. g'nin x eşittir 3'teki teğet doğrusu? Nokta: g 3 eşittir 9 çarpı eksi 1, eksi 9. Türev: 2 x f x artı x kare f üssü x. x eşittir 3'te: 6 çarpı eksi 1, artı 9 çarpı 2: eksi 6 artı 18, 12. Teğet: y artı 9 eşittir 12 çarpı x eksi 3.
+
+Üç çarpan varsa? Kural genişler: her seferinde bir tanesinin türevini al, diğer ikisini bırak, üç terimi topla. x çarpı e üzeri x çarpı sinüs x'in türevi: e üzeri x sinüs x, artı x e üzeri x sinüs x, artı x e üzeri x kosinüs x. Bir de şu: çarpanlardan biri sabitse kurala gerek yok; 5 x kare zaten sabit kat kuralı.
+
+Toparlayalım. Çarpım kuralı: f g'nin türevi, f üssü g artı f g üssü. Türevleri çarpmak yanlış: f g'nin türevi f üssü çarpı g üssü değildir. Tablo sorusunda doğru satırı seç, dört değeri formüle yerleştir. Grafikte değer okunur, doğru parçasının eğimi türevdir. Teğet için nokta g'den, eğim çarpım kuralıyla g üssünden gelir.
+
+Şimdi bir soru. y eşittir x kosinüs x ise, y üssü nedir? Cevap: B. Birincinin türevi 1, çarpı kosinüs x; artı x çarpı kosinüsün türevi, eksi sinüs x. Sonuç: kosinüs x eksi x sinüs x.

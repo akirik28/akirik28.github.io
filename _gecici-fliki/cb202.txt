@@ -1,0 +1,21 @@
+Geçen bölümde tek bir noktadaki eğimi bulduk. Peki her nokta için aynı hesabı tek tek mi yapacağız? Hayır: bir makine kuracağız. İçine fonksiyonu at, dışarıya her x'teki eğimi veren yeni bir fonksiyon çıksın. Bu yeni fonksiyonun adı derivative, yani türev.
+
+Tanım şu: f üssü x eşittir, h sıfıra yaklaşırken f x artı h eksi f x, bölü h. Geçen bölümdeki formülün aynısı; tek fark, a yerine x yazdık. Yani sonuç bir sayı değil, x'e bağlı bir fonksiyon. x yerine bir sayı koyunca, o noktadaki teğetin eğimini verir. Bu limit varsa fonksiyon o noktada differentiable, yani türevlenebilir. h'yi doğrudan sıfır yapamazsın, sıfır bölü sıfır çıkar; işte bu yüzden limit alıyoruz.
+
+En basitiyle dene: f x eşittir x kare. x artı h'nin karesi, x kare artı 2 x h artı h kare. x kareyi çıkar: 2 x h artı h kare. h'ye böl ve h'yi sıfıra götür: f üssü x eşittir 2 x. Şimdi grafiğe bak: teğet parabol üzerinde kayarken eğimini ölçüyoruz. Eksi 2'de eksi 4, 1'de 2, 2'de 4. Bu eğimleri işaretledikçe altta yeni bir doğru çiziliyor: y eşittir 2 x.
+
+Şimdi bir AP tipi soru: tanımı kullanarak 3 x kare artı 5 x eksi 2'nin türevini bul. Önce f x artı h: 3 x kare artı 6 x h artı 3 h kare, artı 5 x artı 5 h, eksi 2. f x'i çıkar: geriye yalnızca h'li terimler kalır, 6 x h artı 3 h kare artı 5 h. h'ye böl: 6 x artı 3 h artı 5. h sıfıra: f üssü x eşittir 6 x artı 5. Kural: çıkarmadan sonra her terimde h yoksa, bir yerde hata yaptın.
+
+Kesirli bir fonksiyon: f x eşittir 1 bölü x. 1 bölü x artı h eksi 1 bölü x; ortak payda: pay x eksi x eksi h, yani eksi h. h'ye bölünce eksi 1 bölü x çarpı x artı h. h sıfıra: eksi 1 bölü x kare. Her yerde negatif: 1 bölü x grafiği hep iniyor. Gördün mü? Unit 1'in cebir aletleri burada tekrar iş başında.
+
+Türevin birkaç yazılışı var. Lagrange gösterimi: f üssü x ya da y üssü. Leibniz gösterimi: d y bölü d x, ya da d bölü d x çarpı f x. d y bölü d x'i "y'deki küçücük değişim bölü x'teki küçücük değişim" diye düşün. Bir noktadaki değer için: f üssü 3, ya da x eşittir 3'te d y bölü d x. Hepsi aynı şey. Leibniz yazımı birimi de ele verir: y metre, x saniyeyse, d y bölü d x metre bölü saniye.
+
+Türevin ilk büyük işi: teğet doğrusu. İki malzeme lazım: nokta ve eğim. Nokta a virgül f a; eğim f üssü a. Sonra nokta eğim formu: y eksi y bir eşittir m çarpı x eksi x bir. Az önceki 3 x kare artı 5 x eksi 2 ile, x eşittir 1'de: f 1 eşittir 6, f üssü 1 eşittir 11. Teğet: y eksi 6 eşittir 11 çarpı x eksi 1.
+
+Bir AP klasiği daha. g 2 eşittir eksi 3 ve g üssü x eşittir x küp artı 4, bölü x. x eşittir 2'deki teğet doğrusu? Nokta: 2 ve eksi 3. Eğim: g üssü 2, yani 8 artı 4 bölü 2: 6. Teğet: y artı 3 eşittir 6 çarpı x eksi 2. Tuzak: g üssü 2'yi noktanın y'si sanmak. g üssü eğimi verir; nokta her zaman g'den gelir.
+
+Türevin bir de dili var. P t, bir videonun t gün sonraki izlenme sayısı olsun. P 10 eşittir 20 bin: 10. günün sonunda video 20 bin kez izlenmiş. P üssü 10 eşittir 1500: 10. günde izlenme sayısı günde 1500 izlenme hızıyla artıyor. Türevin birimi her zaman çıktının birimi bölü girdinin birimi. Sınavda cümleyi tam kur: hangi an, ne değişiyor, hangi hızla, hangi birimle, artıyor mu azalıyor mu.
+
+Toparlayalım. Türev, h sıfıra yaklaşırken f x artı h eksi f x bölü h limiti: her x için teğetin eğimini veren fonksiyon. Tanımla hesapta: aç, çıkar, h'ye böl, h'yi sıfıra götür. Gösterimler: f üssü x, y üssü, d y bölü d x, d bölü d x. Teğet doğrusu için nokta f'den, eğim f üssünden gelir. Nokta eğim formu: y eksi y bir eşittir m çarpı x eksi x bir.
+
+Şimdi bir soru. f x eşittir 1 bölü x ise, f üssü 2 kaçtır? Cevap: C. Tanımdan f üssü x eşittir eksi 1 bölü x kare bulduk; 2 koy: eksi 1 bölü 4. Eksi işareti, grafiğin orada indiğini söylüyor.

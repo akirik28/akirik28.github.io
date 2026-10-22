@@ -1,0 +1,21 @@
+Büyük bir Lego kalesini düşün: tek tek parçalardan yapılmış. Polinomlar da öyle; terimlerin toplamı. Her parçanın türevini kuvvet kuralıyla zaten biliyoruz. Bu bölümde parçaları birleştiren yapıştırıcı kuralları göreceğiz, sonra onlarla yatay teğet, normal doğru ve parçalı fonksiyon sorularını çözeceğiz.
+
+Constant rule: sabitin türevi sıfır. Pi kare de sabit, e üzeri 3 de; içinde x yoksa türevi sıfır. Constant multiple rule: c çarpı f'nin türevi, c çarpı f üssü. Grafikte gör: x kareyi dikeyde 3 kat gerersen, her noktadaki eğim de 3 katına çıkar. Sum and difference rule: toplamın türevi türevlerin toplamı; farkınki farkı. Terim terim git.
+
+Hepsi bir arada: y eşittir 2 x üzeri 5, eksi 6 bölü x, artı 4 karekök x, eksi pi kare. Önce yeniden yaz: eksi 6 x üzeri eksi 1, artı 4 x üzeri yarım. Terim terim: 10 x üzeri 4. Eksi 6 x üzeri eksi 1'in türevi artı 6 x üzeri eksi 2. 4 x üzeri yarımın türevi 2 x üzeri eksi yarım. Pi kare sıfır. Sonuç: 10 x üzeri 4, artı 6 bölü x kare, artı 2 bölü karekök x.
+
+Çarpım ya da bölüm görürsen, kuralı uygulamadan önce düzenle. x kare artı 3, çarpı 2 x eksi 1. Aç: 2 x küp eksi x kare artı 6 x eksi 3. Türev: 6 x kare eksi 2 x artı 6. Tuzak: türevleri çarpmak, yani 2 x çarpı 2. Bu 4 x verir ve yanlıştır. Bölüm de öyle: x küp eksi 2 x artı 7, bölü x. Her terimi x'e böl: x kare eksi 2 artı 7 bölü x. Türevi 2 x eksi 7 bölü x kare.
+
+Yatay teğet nerede? Eğimin sıfır olduğu yerde. f x eşittir x küp eksi 6 x kare artı 9 x artı 1. f üssü x: 3 x kare eksi 12 x artı 9. Sıfıra eşitle ve 3 parantezine al: x eksi 1 çarpı x eksi 3. x eşittir 1 ve 3. Noktalar: 1'de 5, 3'te 1. Grafikte teğet kayarken tam bu iki yerde yatay oluyor: biri tepe, biri çukur. Alttaki türev grafiği de tam bu iki x'te ekseni kesiyor.
+
+Normal line, yani normal doğru: aynı noktadan geçer ama teğete diktir. Dik doğruların eğimleri çarpınca eksi 1 verir; normalin eğimi eksi 1 bölü teğet eğimi. f x eşittir x kare eksi 4 x, x eşittir 3'te: f 3 eksi 3, f üssü 3 eşittir 2. Teğet eğimi 2, normal eğimi eksi yarım: y artı 3 eşittir eksi yarım çarpı x eksi 3. Teğet yataysa normal dikeydir: x eşittir a.
+
+Hızlı bir çoktan seçmeli. g x eşittir 2 x üzeri 4 artı k bölü x, ve g üssü 1 eşittir 5. k kaç? Yeniden yaz: k x üzeri eksi 1. Türev: 8 x küp eksi k bölü x kare. x eşittir 1 koy: 8 eksi k. 8 eksi k eşittir 5, yani k eşittir 3. Bilinmeyen sabit k de bir sabit gibi davranır: öne çıkar, bekler.
+
+Şimdi bir AP örneği. f x, x ikiden küçükken a x kare artı 1; x iki ya da büyükken 4 x artı b. f'nin x eşittir 2'de türevlenebilir olması için a ve b ne olmalı? İki şart: önce süreklilik, sonra eğimlerin eşitliği. Süreklilik: 4 a artı 1 eşittir 8 artı b. Eğimler: soldan 2 a x, yani 4 a; sağdan 4. 4 a eşittir 4, a eşittir 1. Yerine koy: 5 eşittir 8 artı b, b eşittir eksi 3.
+
+Neden iki şart? Eğimleri eşitleyip sürekliliği unutursan: a 1, b keyfi. Mesela b sıfır: sol kol 5'e, sağ kol 8'e gider; grafik kopar, aynı eğimli iki paralel parça. Kopuk yerde türev yok. Sürekliliği sağlayıp eğimleri unutursan köşe kalır. İkisi birden sağlanınca grafik o noktada hem bütün hem pürüzsüz olur.
+
+Toparlayalım. Sabitin türevi sıfır; öndeki sabit bekler. Toplam ve farkta terim terim türev al. Çarpım ya da bölüm görürsen önce aç ya da böl; türevleri çarpmak yanlıştır. Yatay teğet: f üssü x eşittir sıfır. Normal doğru: eğim eksi 1 bölü teğet eğimi. Parçalı fonksiyonda türevlenebilirlik için iki şart: süreklilik ve iki taraftan eşit eğim.
+
+Şimdi bir soru. f x eşittir x küp eksi 12 x. f'nin grafiği hangi x değerlerinde yatay teğete sahiptir? Cevap: B. f üssü x eşittir 3 x kare eksi 12; sıfıra eşitle: x kare 4, x eşittir 2 ya da eksi 2.

@@ -1,0 +1,19 @@
+Bir eğrinin herhangi bir noktasına mikroskopla yaklaş. Yaklaştıkça eğri düzleşir ve sonunda bir doğru gibi görünür. Buna local linearity, yani yerel doğrusallık denir; türevin var olduğu yer tam olarak burası. Şimdi aynı mikroskobu mutlak değer grafiğinin sivri ucuna tut. Ne kadar yaklaşırsan yaklaş, köşe köşe kalıyor. Orada türev yok. Bu bölüm, türevin nerede bozulduğunu öğretiyor.
+
+Bir fonksiyon a'da differentiable'dır, eğer f üssü a var ise: yani h sıfıra yaklaşırken türev limiti, bir sayıya eşit. Limitin var olması için soldan ve sağdan gelen eğimler aynı sayıya gitmeli. Türev üç tip yerde bozulur: köşe ya da sivri uç, dikey teğet, ve süreksizlik. Kısaca: grafik o noktada ya kopuyor, ya kırılıyor, ya da dikleşiyor. Şimdi her birine mikroskopla bakacağız.
+
+Köşe: f x eşittir mutlak x eksi 2, x eşittir 2'de. Soldan grafik eğimi eksi 1 olan bir doğru: soldan gelen fark bölümü hep eksi 1. Sağdan eğim artı 1. Eksi 1 ile 1 aynı sayı değil: limit yok, türev yok. Grafikte gör: soldan gelen kesen bir yöne, sağdan gelen öbür yöne yatıyor; tek bir teğet doğrusu seçilemiyor.
+
+Sivri uç, yani cusp: x üzeri üçte iki, x eşittir sıfırda. Soldan yaklaşırken eğim eksi sonsuza, sağdan artı sonsuza kaçıyor. Yakınlaş: uç hep sivri, iki kol dikleşerek birleşiyor. Dikey teğet ise başka: küpkök x, sıfırda. Burada eğri pürüzsüz ama teğet dimdik; dikey bir doğrunun eğimi tanımsız, yani türev yine yok.
+
+Son tip, süreksizlik. Bir sıçramada, fark bölümünün bir tarafı sonsuza kaçar; teğet çizilecek tek bir nokta yok. Delikte ise f a ya hiç yok ya da yanlış yerde; türev formülü f a'yı kullandığı için orada da türev yok. Buradan büyük teorem çıkıyor: Türevlenebilirlik süreklilik gerektirir. Bir noktada türev varsa, fonksiyon orada kesinlikle süreklidir.
+
+Peki tersi doğru mu? Sürekli olan her fonksiyon türevlenebilir mi? Hayır. Mutlak x eksi 2'yi hatırla: kalemi kaldırmadan çizilir, ama köşede türev yok. Doğru olanlar şunlar: türevlenebilir ise sürekli. Sürekli değil ise türevlenebilir değil. Yanlış olan: sürekli ise türevlenebilir. Sınavda bu üç cümle sık sık doğru yanlış sorusu olarak gelir.
+
+Şimdi bir grafik okuyalım. İşaretli noktalar: eksi 3'te delik, eksi 1'de köşe, 1'de sivri uç, 3'te sıçrama, 5'te dikey teğet. Sürekli olmayan yerler: eksi 3 ve 3. Bunlar otomatik olarak türevlenemez. Sürekli ama türevlenemeyen yerler: eksi 1, 1 ve 5. Geri kalan her yerde eğri pürüzsüz: orada hem sürekli hem türevlenebilir. Sıra hep aynı: önce kopukluk var mı diye bak, sonra köşe, sivri uç ya da dikey teğet ara.
+
+Şimdi bir AP örneği. f x eşittir mutlak x kare eksi 9. x eşittir 3'te türevlenebilir mi? Önce süreklilik: mutlak değer ve polinom sürekli, f 3 sıfır; sürekli. Sağdan, x kare eksi 9 pozitif: fark bölümü x kare eksi 9 bölü x eksi 3, yani x artı 3; 6'ya gider. Soldan negatif, mutlak değer işareti çevirir: eksi x artı 3, eksi 6'ya gider. 6 ile eksi 6 farklı: f sürekli ama x eşittir 3'te türevlenemez; orada bir köşe var. Karşılaştır: x çarpı mutlak x, sıfırda türevlenebilir. Fark bölümü mutlak h; iki taraftan da sıfıra gidiyor, yani türev sıfır.
+
+Toparlayalım. Türev, yakınlaştıkça doğruya benzeyen yerde vardır: local linearity. Türev üç yerde bozulur: köşe ya da sivri uç, dikey teğet, süreksizlik. Türevlenebilir ise sürekli; sürekli değil ise türevlenebilir değil. Sürekli olmak türevi garanti etmez: mutlak değerin köşesi. Şüpheli noktada soldan ve sağdan eğimleri ayrı hesapla; eşitse türev var.
+
+Şimdi bir soru. g, x eşittir 2'de türevlenebilir. Hangisi kesinlikle doğrudur? Cevap: D. Türevlenebilirlik sürekliliği garanti eder, yani x ikiye yaklaşırken g x'in limiti g 2'ye eşittir. Teğetin yatay olması ya da g 2'nin sıfır olması gerekmez.
