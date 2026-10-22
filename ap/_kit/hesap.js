@@ -129,9 +129,34 @@
     var h = { id: d.id, name: String(d.ad || ""), email: String(email).trim().toLowerCase() };
     ekle(h); ls(AKTIF, h.id);
     if (yeni) devral(h);
-    return sinirli(cek(h.id), 4000).then(function () { return h; });
+    return sinirli(Promise.all([cek(h.id), profilYenile()]), 4000).then(function () { return h; });
   }
   ld("ap-hesap:v1:aktif");                                /* şifresiz sürümün oturum anahtarı */
+
+  /* ---------------- profil: seçmeliler, araştırma katılımı, quiz notları ---------------- */
+  function aktifId() { var h = bul(lg(AKTIF)); return h ? h.id : null; }
+  function profilKey(id) { return P + "profil:" + id; }
+  function profil() { var id = aktifId(); return id ? oku(lg(profilKey(id)), null) : null; }
+  /* oturum sahibinin adına sunucu fonksiyonu çağır; { hata } yanıtı hataya dönüşür */
+  function cagir(f, args) {
+    var id = aktifId();
+    if (!id) return Promise.reject(new Error("oturum_yok"));
+    var b = { p_id: id }, k;
+    for (k in args) if (Object.prototype.hasOwnProperty.call(args, k)) b[k] = args[k];
+    return rpc(f, b).then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
+  }
+  function profilYenile() {
+    var id = aktifId();
+    if (!id) return Promise.resolve(null);
+    return cagir("ap_profil", {}).then(function (p) { ls(profilKey(id), JSON.stringify(p)); return p; });
+  }
+  /* kitler açılmadan önce tamamlanması gereken adım: kurulum ya da süresi geçen quiz notu */
+  function engel(p) {
+    if (!p) return "/kitora/baslangic/";
+    if (!p.onay || !p.sinif || !p.secmeliler || !p.secmeliler.length || p.katilim == null) return "/kitora/baslangic/";
+    if (p.katilim && p.bekleyen && p.bekleyen.length) return "/kitora/notlar/";
+    return null;
+  }
 
   window.HESAP = {
     hesaplar: hesaplar,
@@ -153,6 +178,19 @@
       return rpc("ap_giris", { p_email: email, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, false); });
     },
     cikis: function () { if (Object.keys(bekleyen()).length) gonder(true); ld(AKTIF); },
+    profil: profil,
+    profilYenile: profilYenile,
+    engel: engel,
+    profilKaydet: function (sinif, secmeliler, katilim) {
+      return cagir("ap_profil_kaydet", { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim }).then(profilYenile);
+    },
+    katilim: function (evet) { return cagir("ap_katilim", { p_katilim: !!evet }).then(profilYenile); },
+    notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
+    /* yönetici fonksiyonları (ap_quiz_ekle, ap_quiz_sil, ap_quiz_ozet, ap_quiz_notlari); yetki sunucuda denetlenir */
+    yonetim: function (f, args) {
+      if (!/^ap_quiz_(ekle|sil|ozet|notlari)$/.test(f)) return Promise.reject(new Error("gecersiz"));
+      return cagir(f, args || {});
+    },
     /* hata kodu → kullanıcıya gösterilecek cümle */
     hataMetni: function (e) {
       var k = String(e && e.message || "");
@@ -162,7 +200,14 @@
         kisa_sifre: "Şifre en az 6 karakter olmalı.",
         email_kayitli: "Bu e-postayla zaten bir hesap var. Giriş yap'ı dene.",
         hatali_giris: "E-posta ya da şifre yanlış.",
-        kilitli: "Çok fazla yanlış deneme oldu. 15 dakika sonra tekrar dene."
+        kilitli: "Çok fazla yanlış deneme oldu. 15 dakika sonra tekrar dene.",
+        gecersiz_puan: "Not, 0 ile quizin tam puanı arasında olmalı.",
+        secmeli_gerekli: "En az bir ders seç.",
+        sinif_gerekli: "Kaçıncı sınıf olduğunu seç.",
+        katilim_gerekli: "Araştırmaya katılıp katılmayacağını seç.",
+        yetki_yok: "Bu işlem için yönetici hesabı gerekiyor.",
+        gecersiz_max: "Tam puan 1 ile 1000 arasında olmalı.",
+        eksik: "Başlık, ders ve son tarihi doldur."
       })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
     },
     yaz: isaretle,

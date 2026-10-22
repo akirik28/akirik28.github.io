@@ -1393,7 +1393,21 @@
   }
   /* açık oturum varsa önce sunucudaki son hali gelir, sonra kit açılır; yoksa giriş sayfasına gidilir */
   var last = H ? H.aktif() : null;
-  if (last) H.sec(last.id).then(function (h) { delete cache[h.id]; enter(h, { hash: true }); }, showPicker);
-  else if (H) enter({ id: "misafir", name: "Misafir", misafir: true }, { hash: true });   /* hesapsız: ilk bölüm açık */
+  /* hesaplı giriş: kurulum eksikse ya da süresi geçmiş quiz notu varsa önce o sayfaya */
+  function blocked(p) {
+    var e = H.engel(p);
+    if (!e) return false;
+    try { window.location.replace(e + "?devam=" + encodeURIComponent(window.location.pathname + window.location.hash)); } catch (x) {}
+    return true;
+  }
+  if (last) {
+    if (!blocked(H.profil())) {
+      var prof = H.profilYenile().then(null, function () { return H.profil(); });   /* bağlantı yoksa son bilinen profil */
+      Promise.all([H.sec(last.id), prof]).then(function (r) {
+        if (blocked(r[1])) return;
+        delete cache[r[0].id]; enter(r[0], { hash: true });
+      }, showPicker);
+    }
+  } else if (H) enter({ id: "misafir", name: "Misafir", misafir: true }, { hash: true });   /* hesapsız: ilk bölüm açık */
   else showPicker();
 })();

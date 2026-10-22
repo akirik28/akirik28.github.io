@@ -9,7 +9,7 @@
 <link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<script src="/ap/_kit/hesap.js?v=3"></script>
+<script src="/ap/_kit/hesap.js?v=4"></script>
 <style>
 :root{color-scheme:dark;--bg:#0B0B0C;--bg-2:#141416;--surface:#161618;--ink:#F3F1EC;--ink-2:#CDCAC3;--muted:#8E8C95;--line:#26262A;--line-2:#35353B;--accent:#E9B949;--bad:#FF9B85;
   --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:"DM Mono",ui-monospace,Menlo,monospace;--ease:cubic-bezier(.2,.8,.2,1)}
@@ -176,7 +176,8 @@ input[aria-invalid="true"]{border-color:var(--bad)}
       go.disabled = true; go.textContent = kayit ? "Hesap açılıyor…" : "Giriş yapılıyor…"; msg.textContent = "";
       (kayit ? H.kayit(ad, mail, sifre) : H.giris(mail, sifre)).then(function () {
         go.textContent = "Açılıyor…";
-        location.replace(devam);
+        var e = H.engel(H.profil());                       /* yeni hesap → kurulum; süresi geçen not → notlar */
+        location.replace(e ? e + "?devam=" + encodeURIComponent(devam) : devam);
       }, function (err) {
         go.disabled = false; go.textContent = etiket;
         var kod = String(err && err.message || "");

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Yönetim · Kitora</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/kitora/kitora.css?v=2">
+<script src="/ap/_kit/hesap.js?v=4"></script>
+<script src="/kitora/dersler.js?v=1"></script>
+<script>
+  if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname));
+</script>
+<style>
+.wrap{max-width:1040px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat{padding:16px 18px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.stat b{display:block;font-size:30px;font-weight:760;letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(120px,240px) 1fr 34px;gap:10px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+.bar i{display:block;height:10px;border-radius:999px;background:color-mix(in oklab,var(--accent) 75%,transparent)}
+.bar em{font-style:normal;text-align:right;font-family:var(--mono);color:var(--muted)}
+.newq{display:grid;grid-template-columns:2fr 2fr 1.4fr 1fr;gap:12px;align-items:end}
+.qz{padding:18px;border-radius:20px;background:var(--bg);border:1px solid var(--line-2)}
+.qz+.qz{margin-top:12px}
+.qz-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 16px;align-items:flex-start}
+.qz h3{font-size:18px;font-weight:720;letter-spacing:-.02em}
+.qz .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;color:var(--muted);font-size:13.5px}
+.nums{display:flex;gap:22px;text-align:right}
+.nums b{display:block;font-size:22px;font-weight:760;letter-spacing:-.02em}
+.nums span{font-size:12px;color:var(--muted)}
+.prog{height:6px;border-radius:999px;background:var(--line);margin:14px 0 12px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.k{font-family:var(--mono);color:var(--accent)}
+td.none{color:var(--muted)}
+.tw{overflow-x:auto}
+@media (max-width:760px){.newq{grid-template-columns:1fr 1fr}.bar{grid-template-columns:120px 1fr 30px}}
+@media (max-width:480px){.newq{grid-template-columns:1fr}.nums{text-align:left}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<header class="top wrap">
+  <a class="brand" href="/kitora/" aria-label="Kitora"><img src="/kitora/logo.svg?v=3" alt="" width="32" height="32"><span>Kitora</span></a>
+  <p class="who" id="who"></p>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Yönetim</p>
+    <h1>Quizler ve <em>notlar</em></h1>
+    <p class="lead">Quiz aç, not giriş tarihini ve kaç üzerinden olduğunu belirle. Tarih geçince katılımcılar notlarını girmeden kitleri açamaz. Notlar isim yerine kodla görünür.</p>
+  </section>
+  <div id="app"><section class="card"><p class="sub">Yükleniyor…</p></section></div>
+</main>
+
+<footer class="foot wrap">
+  <a class="linkish" href="/kitora/notlar/">Notlarım</a>
+  <a class="linkish" href="/kitora/">Kitora'ya dön</a>
+</footer>
+
+<script>
+(function () {
+  var H = window.HESAP, D = window.KITORA_DERSLER || { matematik: [], secmeli: [] };
+  if (!H || !H.aktif()) return;
+  var app = document.getElementById("app");
+  var w = document.getElementById("who"); w.appendChild(document.createTextNode("Hesap: ")); var bb = document.createElement("b"); bb.textContent = H.aktif().name; w.appendChild(bb);
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function tarih(s) { try { return new Date(s).toLocaleString("tr-TR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (e) { return s; } }
+  function sayi(v) { return v == null ? "–" : String(Math.round(Number(v) * 10) / 10).replace(".", ","); }
+  function yuzde(p, m) { return p == null || !m ? "–" : "%" + Math.round(Number(p) / Number(m) * 100); }
+  function kart(baslik, alt) { var c = el("section", "card"); c.appendChild(el("h2", null, baslik)); if (alt) c.appendChild(el("p", "sub", alt)); return c; }
+  function csvIndir(ad, satirlar) {
+    var esc = function (v) { v = v == null ? "" : String(v); return /[",;\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var txt = "﻿" + satirlar.map(function (r) { return r.map(esc).join(","); }).join("\n");
+    var a = el("a"); a.href = URL.createObjectURL(new Blob([txt], { type: "text/csv;charset=utf-8" })); a.download = ad;
+    document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  var BASLIK = ["quiz", "ders", "son_tarih", "tam_puan", "kod", "sinif", "puan", "yuzde", "girilme", "dersleri"];
+  function csvSatirlari(q, satirlar) {
+    return satirlar.map(function (r) {
+      return [q.baslik, q.ders, q.son_tarih, q.max_puan, r.kod, r.sinif, r.puan, r.puan == null ? "" : Math.round(r.puan / q.max_puan * 1000) / 10, r.girilme || "", (r.secmeliler || []).join(" | ")];
+    });
+  }
+
+  /* yeni quiz formu */
+  function yeniQuiz(yenile) {
+    var c = kart("Yeni quiz aç", "Son tarih, öğrencilerin notunu girmesi gereken son an. Geçince katılımcılar not girmeden kitleri açamaz.");
+    var f = el("form", "newq"); f.noValidate = true;
+    function alan(etiket, input) { var l = el("label", "f", etiket); l.appendChild(input); f.appendChild(l); return input; }
+    var bas = el("input"); bas.type = "text"; bas.maxLength = 120; bas.placeholder = "Ör. Unit 1 Quiz"; alan("Başlık", bas);
+    var ders = el("select"); var o0 = el("option", null, "Ders seç"); o0.value = ""; o0.disabled = true; o0.selected = true; ders.appendChild(o0);
+    [["Matematik", D.matematik], ["Seçmeli dersler", D.secmeli]].forEach(function (g) {
+      var og = el("optgroup"); og.label = g[0];
+      g[1].forEach(function (d) { var o = el("option", null, d); o.value = d; og.appendChild(o); });
+      ders.appendChild(og);
+    });
+    alan("Ders", ders);
+    var son = el("input"); son.type = "datetime-local";
+    var d0 = new Date(Date.now() + 7 * 864e5); d0.setHours(23, 59, 0, 0);
+    son.value = new Date(d0.getTime() - d0.getTimezoneOffset() * 6e4).toISOString().slice(0, 16);
+    alan("Not giriş son tarihi", son);
+    var max = el("input"); max.type = "number"; max.min = "1"; max.max = "1000"; max.step = "any"; max.value = "100"; max.inputMode = "decimal"; alan("Kaç üzerinden", max);
+    var acts = el("div", "acts"), go = el("button", "btn primary", "Quizi aç"), msg = el("p", "msg");
+    go.type = "submit"; acts.appendChild(go);
+    c.appendChild(f); c.appendChild(msg); c.appendChild(acts);
+    function gonder(e) {
+      if (e) e.preventDefault();
+      var m = Number(String(max.value).replace(",", "."));
+      if (!bas.value.trim()) { msg.textContent = "Başlık yaz."; bas.focus(); return; }
+      if (!ders.value) { msg.textContent = "Ders seç."; ders.focus(); return; }
+      if (!son.value) { msg.textContent = "Son tarihi seç."; son.focus(); return; }
+      if (!(m > 0 && m <= 1000)) { msg.textContent = "Kaç üzerinden: 1 ile 1000 arasında bir sayı yaz."; max.focus(); return; }
+      go.disabled = true; go.textContent = "Açılıyor…"; msg.textContent = "";
+      H.yonetim("ap_quiz_ekle", { p_baslik: bas.value.trim(), p_ders: ders.value, p_son_tarih: new Date(son.value).toISOString(), p_max: m }).then(function () {
+        go.disabled = false; go.textContent = "Quizi aç"; bas.value = ""; msg.className = "msg ok"; msg.textContent = "Quiz açıldı.";
+        setTimeout(function () { msg.className = "msg"; msg.textContent = ""; }, 3000);
+        yenile();
+      }, function (err) { go.disabled = false; go.textContent = "Quizi aç"; msg.className = "msg"; msg.textContent = H.hataMetni(err); });
+    }
+    f.addEventListener("submit", gonder); go.addEventListener("click", gonder);
+    return c;
+  }
+
+  function quizKarti(q, yenile) {
+    var box = el("div", "qz"), h = el("div", "qz-h"), left = el("div"), meta = el("div", "meta"), gecti = new Date(q.son_tarih) <= new Date();
+    left.appendChild(el("h3", null, q.baslik));
+    meta.appendChild(el("span", "pill " + (gecti ? "late" : "soon"), gecti ? "Tarih geçti" : "Açık"));
+    meta.appendChild(el("span", null, q.ders));
+    meta.appendChild(el("span", null, "· " + sayi(q.max_puan) + " üzerinden"));
+    meta.appendChild(el("span", null, "· son tarih " + tarih(q.son_tarih)));
+    left.appendChild(meta); h.appendChild(left);
+    var nums = el("div", "nums");
+    [[q.giren + " / " + q.hedef, "not girdi"], [sayi(q.ortalama) + (q.ortalama == null ? "" : " / " + sayi(q.max_puan)), "ortalama"], [yuzde(q.ortalama, q.max_puan), "başarı"]].forEach(function (n) {
+      var d = el("div"); d.appendChild(el("b", null, n[0])); d.appendChild(el("span", null, n[1])); nums.appendChild(d);
+    });
+    h.appendChild(nums); box.appendChild(h);
+    var pr = el("div", "prog"), pi = el("i"); pi.style.width = (q.hedef ? Math.round(q.giren / q.hedef * 100) : 0) + "%"; pr.appendChild(pi); box.appendChild(pr);
+
+    var acts = el("div", "acts"), gor = el("button", "btn ghost sm", "Notları gör"), csv = el("button", "btn ghost sm", "CSV indir"), sil = el("button", "btn danger sm", "Sil");
+    [gor, csv, sil].forEach(function (b) { b.type = "button"; acts.appendChild(b); });
+    box.appendChild(acts);
+    var tw = el("div", "tw"); tw.hidden = true; box.appendChild(tw);
+    var cache = null;
+    function getir() { return cache ? Promise.resolve(cache) : H.yonetim("ap_quiz_notlari", { p_quiz: q.id }).then(function (d) { cache = d.satirlar || []; return cache; }); }
+    gor.addEventListener("click", function () {
+      if (!tw.hidden) { tw.hidden = true; gor.textContent = "Notları gör"; return; }
+      gor.disabled = true;
+      getir().then(function (rows) {
+        gor.disabled = false; gor.textContent = "Gizle"; tw.textContent = ""; tw.hidden = false;
+        if (!rows.length) { tw.appendChild(el("p", "sub", "Bu derste araştırmaya katılan öğrenci yok.")); return; }
+        var t = el("table"), th = el("tr");
+        ["Kod", "Sınıf", "Not", "Yüzde", "Girilme"].forEach(function (x) { th.appendChild(el("th", null, x)); });
+        t.appendChild(th);
+        rows.forEach(function (r) {
+          var tr = el("tr");
+          tr.appendChild(el("td", "k", r.kod));
+          tr.appendChild(el("td", null, r.sinif ? r.sinif + ". sınıf" : "–"));
+          tr.appendChild(el("td", r.puan == null ? "none" : null, r.puan == null ? "girilmedi" : sayi(r.puan) + " / " + sayi(q.max_puan)));
+          tr.appendChild(el("td", null, yuzde(r.puan, q.max_puan)));
+          tr.appendChild(el("td", null, r.girilme ? tarih(r.girilme) : "–"));
+          t.appendChild(tr);
+        });
+        tw.appendChild(t);
+      }, function (err) { gor.disabled = false; tw.hidden = false; tw.textContent = H.hataMetni(err); });
+    });
+    csv.addEventListener("click", function () {
+      csv.disabled = true;
+      getir().then(function (rows) { csv.disabled = false; csvIndir("kitora-" + q.baslik.replace(/[^\w-]+/g, "_") + ".csv", [BASLIK].concat(csvSatirlari(q, rows))); }, function () { csv.disabled = false; });
+    });
+    sil.addEventListener("click", function () {
+      if (!window.confirm("“" + q.baslik + "” silinsin mi? Bu quize girilmiş bütün notlar da silinir.")) return;
+      sil.disabled = true;
+      H.yonetim("ap_quiz_sil", { p_quiz: q.id }).then(yenile, function () { sil.disabled = false; });
+    });
+    return box;
+  }
+
+  function ciz(o) {
+    app.textContent = "";
+    var stats = el("div", "stats");
+    [[o.hesap, "hesap"], [o.katilimci, "araştırmaya katılan"], [(o.quizler || []).length, "quiz"]].forEach(function (s) {
+      var d = el("div", "stat"); d.appendChild(el("b", null, String(s[0]))); d.appendChild(el("span", null, s[1])); stats.appendChild(d);
+    });
+    app.appendChild(stats);
+    app.appendChild(yeniQuiz(yukle));
+
+    var cq = kart("Quizler", (o.quizler || []).length ? null : "Henüz quiz açmadın.");
+    var hepsi = el("button", "btn ghost sm", "Bütün notları CSV indir"); hepsi.type = "button";
+    if ((o.quizler || []).length) {
+      var ac = el("div", "acts"); ac.style.marginBottom = "14px"; ac.appendChild(hepsi); cq.appendChild(ac);
+      hepsi.addEventListener("click", function () {
+        hepsi.disabled = true;
+        Promise.all(o.quizler.map(function (q) { return H.yonetim("ap_quiz_notlari", { p_quiz: q.id }).then(function (d) { return csvSatirlari(q, d.satirlar || []); }); }))
+          .then(function (parts) { hepsi.disabled = false; csvIndir("kitora-tum-notlar.csv", [BASLIK].concat([].concat.apply([], parts))); }, function () { hepsi.disabled = false; });
+      });
+    }
+    (o.quizler || []).forEach(function (q) { cq.appendChild(quizKarti(q, yukle)); });
+    app.appendChild(cq);
+
+    var cd = kart("Katılımcılar", "Yalnızca araştırmaya katılanlar sayılır.");
+    function barlar(baslik, obj, sira) {
+      var keys = Object.keys(obj || {}); if (!keys.length) return;
+      keys.sort(sira || function (a, b) { return obj[b] - obj[a]; });
+      var max = Math.max.apply(null, keys.map(function (k) { return obj[k]; }));
+      cd.appendChild(el("p", "eyebrow", baslik)).style.margin = "14px 0 10px";
+      var bs = el("div", "bars");
+      keys.forEach(function (k) {
+        var r = el("div", "bar"), i = el("i"); i.style.width = Math.max(4, Math.round(obj[k] / max * 100)) + "%";
+        var tr = el("span"); tr.appendChild(i);
+        r.appendChild(el("span", null, k)); r.appendChild(tr); r.appendChild(el("em", null, String(obj[k]))); bs.appendChild(r);
+      });
+      cd.appendChild(bs);
+    }
+    var sn = {}; Object.keys(o.siniflar || {}).forEach(function (k) { sn[k + ". sınıf"] = o.siniflar[k]; });
+    barlar("Sınıflar", sn, function (a, b) { return parseInt(a, 10) - parseInt(b, 10); });
+    barlar("Dersler", o.dersler);
+    if (!Object.keys(sn).length && !Object.keys(o.dersler || {}).length) cd.appendChild(el("p", "sub", "Henüz katılımcı yok."));
+    app.appendChild(cd);
+  }
+
+  function yukle() {
+    return H.yonetim("ap_quiz_ozet", {}).then(ciz, function (err) {
+      app.textContent = "";
+      app.appendChild(kart(/yetki/.test(String(err && err.message)) ? "Bu sayfa yönetici hesabı içindir" : "Bağlantı kurulamadı",
+        /yetki/.test(String(err && err.message)) ? "Hesabın yönetici değil." : "İnternetini kontrol edip sayfayı yenile."));
+    });
+  }
+  yukle();
+})();
+</script>
+</body>
+</html>

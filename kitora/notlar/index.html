@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Notlarım · Kitora</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="/kitora/logo.svg?v=3" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/kitora/kitora.css?v=2">
+<script src="/ap/_kit/hesap.js?v=4"></script>
+<script>
+  if (window.HESAP && !window.HESAP.aktif()) location.replace("/kitora/giris/?devam=" + encodeURIComponent(location.pathname + location.search));
+</script>
+<style>
+.q{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 18px;align-items:center;padding:16px 18px;border-radius:18px;background:var(--bg);border:1px solid var(--line-2)}
+.q+.q{margin-top:10px}
+.q.late{border-color:color-mix(in oklab,var(--bad) 50%,var(--line-2))}
+.q h3{font-size:17px;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.q .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px;color:var(--muted);font-size:13.5px}
+.entry{display:flex;align-items:center;gap:8px}
+.entry input{width:96px;min-height:46px;text-align:center;font-size:18px;font-weight:700}
+.entry .of{color:var(--muted);font-weight:650;white-space:nowrap}
+.score{font-size:22px;font-weight:760;letter-spacing:-.02em;text-align:right}
+.score small{display:block;font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:0}
+.empty{color:var(--muted);font-size:14.5px}
+.done-card{text-align:center;display:grid;gap:10px;justify-items:center}
+.done-card .big{font-size:40px}
+@media (max-width:560px){.q{grid-template-columns:1fr}.score{text-align:left}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<header class="top wrap">
+  <a class="brand" href="/kitora/" aria-label="Kitora"><img src="/kitora/logo.svg?v=3" alt="" width="32" height="32"><span>Kitora</span></a>
+  <p class="who" id="who"></p>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Notlarım</p>
+    <h1>Quiz <em>notların</em></h1>
+    <p class="lead" id="lead">Okulda aldığın quiz notlarını buraya gir. Notun belli olunca hemen girebilirsin.</p>
+  </section>
+  <div id="app"><section class="card"><p class="empty">Yükleniyor…</p></section></div>
+</main>
+
+<footer class="foot wrap">
+  <div class="acts">
+    <a class="linkish" href="/kitora/baslangic/?devam=%2Fkitora%2Fnotlar%2F">Sınıfımı ve derslerimi değiştir</a>
+    <a class="linkish" id="yon" href="/kitora/yonetim/" hidden>Yönetim paneli</a>
+  </div>
+  <a class="linkish" href="/kitora/">Kitora'ya dön</a>
+</footer>
+
+<script>
+(function () {
+  var H = window.HESAP;
+  if (!H || !H.aktif()) return;
+  var app = document.getElementById("app");
+  var w = document.getElementById("who"); w.appendChild(document.createTextNode("Hesap: ")); var bb = document.createElement("b"); bb.textContent = H.aktif().name; w.appendChild(bb);
+  var devam = (function () {
+    var m = /[?&]devam=([^&#]*)/.exec(location.search), u = "";
+    if (m) { try { u = decodeURIComponent(m[1]); } catch (e) {} }
+    return /^\/(?!\/)/.test(u) && u.indexOf("/kitora/notlar") !== 0 ? u : "";
+  })();
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function tarih(s) { try { return new Date(s).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }); } catch (e) { return s; } }
+  function sayi(v) { return String(Math.round(Number(v) * 100) / 100).replace(".", ","); }
+
+  /* not giriş satırı: quiz başlığı, ders, son tarih, puan kutusu / tam puan */
+  function satir(q, durum, mevcut) {
+    var row = el("div", "q" + (durum === "late" ? " late" : "")), left = el("div"), meta = el("div", "meta");
+    left.appendChild(el("h3", null, q.baslik));
+    meta.appendChild(el("span", "pill " + (durum === "late" ? "late" : durum === "done" ? "done" : "soon"),
+      durum === "late" ? "Süresi geçti" : durum === "done" ? "Girildi" : "Açık"));
+    meta.appendChild(el("span", null, q.ders));
+    meta.appendChild(el("span", null, "· son tarih " + tarih(q.son_tarih)));
+    left.appendChild(meta);
+    row.appendChild(left);
+
+    var form = el("form", "entry"), inp = el("input"), btn = el("button", "btn primary sm", mevcut != null ? "Güncelle" : "Kaydet"), msg = el("p", "msg");
+    inp.type = "text"; inp.inputMode = "decimal"; inp.autocomplete = "off"; inp.placeholder = "Not"; inp.required = true;   /* "24,5" de "24.5" de kabul */
+    inp.setAttribute("aria-label", q.baslik + " notun, " + q.max_puan + " üzerinden");
+    if (mevcut != null) inp.value = sayi(mevcut);
+    btn.type = "submit";
+    form.appendChild(inp); form.appendChild(el("span", "of", "/ " + sayi(q.max_puan))); form.appendChild(btn);
+    form.noValidate = true;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var t = String(inp.value).trim().replace(",", "."), v = Number(t);
+      if (!/^\d+(\.\d+)?$/.test(t) || !isFinite(v) || v < 0 || v > Number(q.max_puan)) {
+        msg.textContent = "0 ile " + sayi(q.max_puan) + " arasında bir not yaz."; inp.setAttribute("aria-invalid", "true"); inp.focus(); return;
+      }
+      btn.disabled = true; btn.textContent = "Kaydediliyor…";
+      H.notGir(q.id, v).then(ciz, function (err) { btn.disabled = false; btn.textContent = "Kaydet"; msg.textContent = H.hataMetni(err); });
+    });
+    inp.addEventListener("input", function () { inp.removeAttribute("aria-invalid"); msg.textContent = ""; });
+    row.appendChild(form);
+    var wrap = el("div"); wrap.appendChild(row); wrap.appendChild(msg);
+    return wrap;
+  }
+
+  function kart(baslik, alt) { var c = el("section", "card"); c.appendChild(el("h2", null, baslik)); if (alt) c.appendChild(el("p", "sub", alt)); return c; }
+
+  function ciz(p) {
+    if (!p) return;
+    var e = H.engel(p);
+    if (e === "/kitora/baslangic/") { location.replace(e + "?devam=" + encodeURIComponent(location.pathname + location.search)); return; }
+    document.getElementById("yon").hidden = !p.yonetici;
+    app.textContent = "";
+
+    if (!p.katilim) {
+      document.getElementById("lead").textContent = "Araştırmaya katılmadığın için senden not istenmiyor.";
+      var c0 = kart("Araştırmaya katılmıyorsun", "Fikrini değiştirirsen katılabilirsin; o zaman quiz notlarını buradan girersin. Adın araştırmada görünmez.");
+      var kb = el("button", "btn ghost", "Araştırmaya katılmak istiyorum"); kb.type = "button";
+      kb.addEventListener("click", function () { kb.disabled = true; H.katilim(true).then(ciz, function () { kb.disabled = false; }); });
+      c0.appendChild(kb); app.appendChild(c0);
+      return;
+    }
+
+    var late = p.bekleyen || [], soon = p.yaklasan || [], done = p.notlar || [];
+    if (late.length) {
+      var c1 = kart("Notunu girmen gereken quizler", "Not giriş tarihi geçti. Bunları girince kitler yeniden açılır.");
+      late.forEach(function (q) { c1.appendChild(satir(q, "late")); });
+      app.appendChild(c1);
+    } else if (devam) {
+      var ok = el("section", "card done-card");
+      ok.appendChild(el("div", "big", "✓"));
+      ok.appendChild(el("h2", null, "Hepsi tamam"));
+      ok.appendChild(el("p", "sub", "Bekleyen not kalmadı. Kaldığın yerden devam edebilirsin."));
+      var g = el("a", "btn primary", "Devam et"); g.href = devam; ok.appendChild(g);
+      app.appendChild(ok);
+    }
+    var c2 = kart("Açık quizler", "Not giriş tarihi gelmedi. Notun belli olduysa şimdiden girebilirsin.");
+    if (soon.length) soon.forEach(function (q) { c2.appendChild(satir(q, "soon")); });
+    else c2.appendChild(el("p", "empty", "Şu an derslerinde açık quiz yok."));
+    app.appendChild(c2);
+
+    var c3 = kart("Girdiğin notlar", done.length ? "Yanlış girdiysen düzeltebilirsin." : null);
+    if (done.length) done.forEach(function (n) { c3.appendChild(satir({ id: n.quiz_id, baslik: n.baslik, ders: n.ders, son_tarih: n.son_tarih, max_puan: n.max_puan }, "done", n.puan)); });
+    else c3.appendChild(el("p", "empty", "Henüz not girmedin."));
+    app.appendChild(c3);
+
+    var c4 = el("section", "card");
+    c4.appendChild(el("h2", null, "Araştırma"));
+    c4.appendChild(el("p", "sub", "Araştırmaya katılıyorsun. Notların isimsiz bir kodla saklanır. Vazgeçersen girdiğin notlar silinir ve senden not istenmez."));
+    var cb = el("button", "btn danger sm", "Araştırmadan çık"); cb.type = "button";
+    cb.addEventListener("click", function () {
+      if (!window.confirm("Araştırmadan çıkılsın mı? Girdiğin bütün notlar silinecek.")) return;
+      cb.disabled = true; H.katilim(false).then(ciz, function () { cb.disabled = false; });
+    });
+    c4.appendChild(cb); app.appendChild(c4);
+  }
+
+  ciz(H.profil());
+  H.profilYenile().then(ciz, function () {
+    if (!H.profil()) { app.textContent = ""; var c = kart("Bağlantı kurulamadı", "İnternetini kontrol edip sayfayı yenile."); app.appendChild(c); }
+  });
+})();
+</script>
+</body>
+</html>

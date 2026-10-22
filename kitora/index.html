@@ -123,7 +123,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   <a href="/ap/">Bütün AP üniteleri →</a>
 </footer>
 
-<script src="/ap/_kit/hesap.js?v=3"></script>
+<script src="/ap/_kit/hesap.js?v=4"></script>
 <script>
 /* Hesap kutusu: oturum açıksa selam + çıkış; değilse giriş / hesap aç düğmeleri. Oturumsuz kit tıklaması giriş sayfasına gider. */
 (function () {
@@ -142,12 +142,31 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
     box.textContent = "";
     var a = H.aktif();
     if (a) {
+      var p = H.profil(), e = H.engel(p);
       var hi = el("div", "hi"), t = el("div"), b = el("button", "ghost", "Çıkış yap");
       t.appendChild(el("h2", null, "Merhaba, " + a.name));
       t.appendChild(el("p", "sm", "Açtığın her kit bu hesapla açılır; ilerlemen kaydedilir."));
       b.type = "button";
       b.addEventListener("click", function () { H.cikis(); ciz(); });
       hi.appendChild(t); hi.appendChild(b); box.appendChild(hi);
+      if (e) {                                             /* kurulum ya da bekleyen quiz notu */
+        var n = p && p.bekleyen ? p.bekleyen.length : 0;
+        var uy = el("a", "need-acct", e === "/kitora/notlar/" ? n + " quiz notunu girmen gerekiyor →" : "Kurulumu tamamla: sınıfın ve derslerin →");
+        uy.href = e + "?devam=%2Fkitora%2F"; uy.style.textDecoration = "none";
+        box.appendChild(uy);
+      } else if (p && p.katilim && p.yaklasan && p.yaklasan.length) {
+        var y = el("a", "need-acct", p.yaklasan.length + " açık quiz var; notun belli olunca gir →");
+        y.href = "/kitora/notlar/"; y.style.textDecoration = "none"; box.appendChild(y);
+      }
+      var row = el("div", "who"), nl = el("a", "ghost", "Notlarım");
+      nl.href = "/kitora/notlar/"; nl.style.textDecoration = "none"; nl.style.display = "inline-flex"; nl.style.alignItems = "center";
+      row.appendChild(nl);
+      if (p && p.yonetici) {
+        var yn = el("a", "ghost", "Yönetim paneli");
+        yn.href = "/kitora/yonetim/"; yn.style.textDecoration = "none"; yn.style.display = "inline-flex"; yn.style.alignItems = "center";
+        row.appendChild(yn);
+      }
+      box.appendChild(row);
       return;
     }
     box.appendChild(el("h2", null, "Kitlere başlamak için giriş yap"));
@@ -159,6 +178,7 @@ a.item:focus-visible{outline:2px solid var(--c);outline-offset:2px}
     row.appendChild(g); row.appendChild(k); box.appendChild(row);
   }
   ciz();
+  if (H.aktif()) H.profilYenile().then(ciz, function () {});   /* bekleyen notlar ve yönetici bağlantısı güncel olsun */
 })();
 </script>
 <script>
