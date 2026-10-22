@@ -483,6 +483,162 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "2.4",
+      "slug": "cb204",
+      "title": "Türevlenebilirlik ve Süreklilik",
+      "en": "Connecting Differentiability and Continuity",
+      "accent": "#FF6F61",
+      "seconds": 250,
+      "terms": [
+        "Differentiable",
+        "Continuous",
+        "Local linearity",
+        "Corner",
+        "Cusp",
+        "Vertical tangent",
+        "Discontinuity",
+        "One-sided limit",
+        "Differentiability implies continuity"
+      ],
+      "questions": [
+        {
+          "q": "f'nin grafiği üç doğru parçasından oluşuyor. f hangi x değerlerinde sürekli olduğu hâlde türevlenemez?",
+          "opts": [
+            "Yalnız x = 4",
+            "Yalnız x = 2",
+            "x = 2 ve x = 4",
+            "Hiçbir x değerinde"
+          ],
+          "a": 1,
+          "why": "x = 2'de grafik kopmuyor ama eğim −3/2'den 1'e sıçrıyor: köşe, yani sürekli ama türevlenemez. x = 4'te grafik kopuyor (sıçrama); orada f sürekli bile değil, bu yüzden \"sürekli ama türevlenemez\" listesine girmez.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "x",
+            "ylabel": "y",
+            "xmax": 6,
+            "ymax": 6,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  4
+                ],
+                "to": [
+                  2,
+                  1
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "to": [
+                  4,
+                  3
+                ],
+                "label": "f"
+              },
+              {
+                "from": [
+                  4,
+                  5
+                ],
+                "to": [
+                  6,
+                  4
+                ],
+                "label": ""
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 1,
+                "label": "(2, 1)"
+              },
+              {
+                "q": 4,
+                "p": 3,
+                "label": "(4, 3) dolu"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 1,
+                "label": "1"
+              },
+              {
+                "v": 3,
+                "label": "3"
+              },
+              {
+                "v": 5,
+                "label": "5"
+              }
+            ],
+            "caption": "x = 4'te sağ parçanın başı (4, 5) açık daire"
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi her f fonksiyonu için doğrudur?",
+          "opts": [
+            "f, x = a'da sürekli ise x = a'da türevlenebilirdir",
+            "f, x = a'da türevlenemiyorsa x = a'da sürekli değildir",
+            "f, x = a'da sürekli değilse x = a'da türevlenemez",
+            "f′(a) = 0 ise f, x = a'da süreksizdir"
+          ],
+          "a": 2,
+          "why": "Türevlenebilirlik sürekliliği gerektirir; bunun karşıt tersi (contrapositive) \"sürekli değilse türevlenemez\"dir ve her zaman doğrudur. İlk iki şık |x − a| köşesiyle çürür: sürekli ama türevlenemez."
+        },
+        {
+          "q": "f(x) = ∛(x − 2) fonksiyonu için x = 2'de hangisi doğrudur?",
+          "opts": [
+            "Sürekli ve türevlenebilir; f′(2) = 0",
+            "Süreksiz, bu yüzden türevlenemez",
+            "Sürekli; x = 2'de köşe olduğu için türevlenemez",
+            "Sürekli; dikey teğet olduğu için türevlenemez"
+          ],
+          "a": 3,
+          "why": "∛(x − 2) her yerde sürekli. Fark bölümü ∛h / h = 1/∛(h²); h → 0 iken iki taraftan da +∞. Eğim sonsuza kaçıyor ve iki taraf aynı yöne dikleşiyor: dikey teğet. Dikey doğrunun eğimi tanımsız, f′(2) yok."
+        },
+        {
+          "q": "f(x) = x² (x ≤ 1) ve f(x) = 2x − 1 (x > 1) olarak tanımlanıyor. x = 1'de f için hangisi doğrudur?",
+          "opts": [
+            "Türevlenebilir ve f′(1) = 2",
+            "Sürekli ama köşe var, türevlenemez",
+            "Süreksiz",
+            "Türevlenebilir ve f′(1) = 1"
+          ],
+          "a": 0,
+          "why": "f(1) = 1 ve sağ parça da 1'e gider: sürekli. Soldan fark bölümü (x² − 1)/(x − 1) = x + 1 → 2; sağdan ((2x − 1) − 1)/(x − 1) = 2. İki taraf eşit: f′(1) = 2. (1 ise f(1)'in değeri.)"
+        },
+        {
+          "q": "f(x) = x^(2/3) için x = 0'daki fark bölümü (f(h) − f(0))/h = h^(−1/3). Soldan −∞'a, sağdan +∞'a gidiyor. Grafikte x = 0'da ne vardır?",
+          "opts": [
+            "Köşe (iki farklı sonlu eğim)",
+            "Sivri uç (cusp)",
+            "Dikey teğet (iki taraf aynı sonsuza)",
+            "Sıçrama süreksizliği"
+          ],
+          "a": 1,
+          "why": "Eğimler iki taraftan zıt sonsuzlara kaçıyor: iki kol dikleşerek bir sivri uçta birleşiyor (cusp). Köşede eğimler sonlu iki farklı sayıdır; dikey teğette ise iki taraf aynı sonsuza gider. f sürekli olduğu için sıçrama yok."
+        }
+      ]
     }
   ],
   "final": []
