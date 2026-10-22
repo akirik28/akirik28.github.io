@@ -22,6 +22,6 @@ window.KITORA_DERSLER = {
     "AP Physics C: Mechanics",
     "Fundamentals of Science"
   ],
-  ap: ["AP Macroeconomics", "AP Microeconomics"],
+  ap: ["AP Macroeconomics", "AP Microeconomics", "AP Psychology"],
   onuncu: ["Precalculus and Trigonometry", "Chemistry 10", "Physics 10", "Biology 10", "English 10"]
 };

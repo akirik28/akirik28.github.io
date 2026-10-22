@@ -8,6 +8,10 @@
      { type:"box",   items:[{name:"A",min,q1,med,q3,max,outliers:[99]}], label:"Score" }
      { type:"bar",   cats:["Pizza","Burger"], series:[{name:"Grade 9",values:[40,35]}], ylabel:"Percent" }
      { type:"stem",  stems:[{s:"4",leaves:"0 2 5"}], key:"4|0 = 40 points" }
+     { type:"graph", xlabel:"Quantity", ylabel:"Price", xmax:10, ymax:10,          (ekonomi; birimler 0…xmax / 0…ymax)
+       lines:[{from:[1,9],to:[9,1],label:"D"},{from:[1,1],to:[9,9],label:"S",dash:true}],
+       ppc:[{qmax:8,pmax:8,k:2,label:"PPC"}],  points:[{q:5,p:5,label:"E",guides:true}],
+       hlines:[{p:3,label:"$3"}],  xticks:[{v:4,label:"40"}], yticks:[{v:5,label:"$5"}], caption:"…" }
    Bilinmeyen tür ya da bozuk veri → null (sayfa bozulmaz). Renkler sayfanın değişkenlerinden gelir
    (kit.css koyu, bluebook.css açık); değişken yoksa açık varsayılanlar kullanılır.
    ========================================================================== */
@@ -309,7 +313,65 @@
     return fig;
   }
 
-  var TYPES = { table: rTable, dot: rDot, hist: rHist, box: rBox, bar: rBar, stem: rStem };
+  /* ekonomi grafiği: arz–talep doğruları, PPC, noktalar, fiyat çizgileri (birimler 0…xmax / 0…ymax) */
+  function rGraph(f) {
+    var xmax = num(f.xmax) && f.xmax > 0 ? f.xmax : 10, ymax = num(f.ymax) && f.ymax > 0 ? f.ymax : 10;
+    var h = 300, L = 52, R = 30, TOP = 26, B = 44, gw = W - L - R, gh = h - TOP - B;
+    var X = function (q) { return L + (q / xmax) * gw; }, Y = function (p) { return TOP + gh - (p / ymax) * gh; };
+    var svg = svgBox(h), cls = ["af-c0", "af-c1", "af-c2", "af-c3"], aria = [];
+    var strokeOf = function (i) { return ["var(--c0)", "var(--c1)", "var(--c2)", "var(--c3)"][((i | 0) % 4 + 4) % 4]; };
+    /* eksenler + oklar */
+    svg.appendChild(S("path", { d: "M" + L + " " + (TOP - 8) + " L" + L + " " + (TOP + gh) + " L" + (L + gw + 10) + " " + (TOP + gh), "class": "af-ax" }));
+    svg.appendChild(S("path", { d: "M" + (L - 4) + " " + (TOP - 2) + " L" + L + " " + (TOP - 10) + " L" + (L + 4) + " " + (TOP - 2) + "Z", fill: "var(--axis)" }));
+    svg.appendChild(S("path", { d: "M" + (L + gw + 4) + " " + (TOP + gh - 4) + " L" + (L + gw + 12) + " " + (TOP + gh) + " L" + (L + gw + 4) + " " + (TOP + gh + 4) + "Z", fill: "var(--axis)" }));
+    if (f.ylabel) svg.appendChild(T(L + 6, TOP - 10, f.ylabel, "af-lb", "start"));
+    if (f.xlabel) svg.appendChild(T(L + gw + 10, TOP + gh + 34, f.xlabel, "af-lb", "end"));
+    (Array.isArray(f.xticks) ? f.xticks : []).forEach(function (t) {
+      if (!t || !num(t.v)) return;
+      svg.appendChild(S("line", { x1: X(t.v), y1: TOP + gh - 4, x2: X(t.v), y2: TOP + gh + 4, "class": "af-tk" }));
+      svg.appendChild(T(X(t.v), TOP + gh + 18, t.label != null ? String(t.label) : fmt(t.v), "af-t2"));
+    });
+    (Array.isArray(f.yticks) ? f.yticks : []).forEach(function (t) {
+      if (!t || !num(t.v)) return;
+      svg.appendChild(S("line", { x1: L - 4, y1: Y(t.v), x2: L + 4, y2: Y(t.v), "class": "af-tk" }));
+      svg.appendChild(T(L - 8, Y(t.v) + 4, t.label != null ? String(t.label) : fmt(t.v), "af-t2", "end"));
+    });
+    /* PPC eğrileri */
+    (Array.isArray(f.ppc) ? f.ppc : []).forEach(function (c, i) {
+      if (!c || !num(c.qmax) || !num(c.pmax)) return;
+      var k = num(c.k) && c.k > 0 ? c.k : 2, d = "", n = 40, j, q, p;
+      for (j = 0; j <= n; j++) { q = c.qmax * j / n; p = c.pmax * Math.pow(Math.max(0, 1 - Math.pow(q / c.qmax, k)), 1 / k); d += (j ? " L" : "M") + X(q).toFixed(1) + " " + Y(p).toFixed(1); }
+      svg.appendChild(S("path", { d: d, fill: "none", stroke: strokeOf(c.color != null ? c.color : i), "stroke-width": 2.6, "stroke-dasharray": c.dash ? "6 5" : null }));
+      if (c.label) svg.appendChild(T(X(c.qmax * 0.72) + 8, Y(c.pmax * Math.pow(1 - Math.pow(0.72, k), 1 / k)) - 8, c.label, "af-lb", "start"));
+      aria.push((c.label || "PPC") + " from " + fmt(c.pmax) + " to " + fmt(c.qmax));
+    });
+    /* doğrular (arz / talep) */
+    (Array.isArray(f.lines) ? f.lines : []).forEach(function (l, i) {
+      if (!l || !Array.isArray(l.from) || !Array.isArray(l.to)) return;
+      svg.appendChild(S("line", { x1: X(l.from[0]), y1: Y(l.from[1]), x2: X(l.to[0]), y2: Y(l.to[1]), stroke: strokeOf(l.color != null ? l.color : i), "stroke-width": 2.6, "stroke-linecap": "round", "stroke-dasharray": l.dash ? "6 5" : null }));
+      if (l.label) svg.appendChild(T(X(l.to[0]) + 8, Y(l.to[1]) + (l.to[1] < l.from[1] ? 14 : -4), l.label, "af-lb", "start"));
+      aria.push((l.label || "line") + " from (" + l.from.join(", ") + ") to (" + l.to.join(", ") + ")");
+    });
+    /* yatay fiyat çizgileri */
+    (Array.isArray(f.hlines) ? f.hlines : []).forEach(function (hl) {
+      if (!hl || !num(hl.p)) return;
+      svg.appendChild(S("line", { x1: L, y1: Y(hl.p), x2: L + gw * 0.96, y2: Y(hl.p), "class": "af-gr" }));
+      if (hl.label) svg.appendChild(T(L + gw * 0.96, Y(hl.p) - 6, hl.label, "af-t2", "end"));
+    });
+    /* noktalar (+ eksenlere kesikli kılavuz) */
+    (Array.isArray(f.points) ? f.points : []).forEach(function (pt) {
+      if (!pt || !num(pt.q) || !num(pt.p)) return;
+      if (pt.guides) {
+        svg.appendChild(S("path", { d: "M" + X(pt.q) + " " + (TOP + gh) + " L" + X(pt.q) + " " + Y(pt.p) + " L" + L + " " + Y(pt.p), "class": "af-gr" }));
+      }
+      svg.appendChild(S("circle", { cx: X(pt.q), cy: Y(pt.p), r: 5, "class": "af-c0", stroke: "var(--surface,#fff)", "stroke-width": 1.5 }));
+      if (pt.label) svg.appendChild(T(X(pt.q) + 9, Y(pt.p) - 8, pt.label, "af-lb", "start"));
+      aria.push("point " + (pt.label || "") + " at (" + fmt(pt.q) + ", " + fmt(pt.p) + ")");
+    });
+    return wrapper("graph", svg, (f.caption ? f.caption + ". " : "") + "Graph with " + (f.xlabel || "x") + " and " + (f.ylabel || "y") + ": " + aria.join("; "));
+  }
+
+  var TYPES = { table: rTable, dot: rDot, hist: rHist, box: rBox, bar: rBar, stem: rStem, graph: rGraph };
 
   window.APFig = {
     render: function (fig) {
