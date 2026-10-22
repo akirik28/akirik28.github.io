@@ -129,6 +129,7 @@
   function listView() {
     document.title = "Not defterleri · " + COURSE + " · Kitora";
     var read = readMap();
+    root.classList.add("d-list-v");
     var hero = el("section", { class: "d-hero" }, [
       el("p", { class: "eyebrow mono", lang: "en", text: APC + " · " + UNIT }),
       el("h1", { class: "d-hand" }, [el("span", { text: "Not defterleri" })]),

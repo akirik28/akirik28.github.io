@@ -63,7 +63,7 @@
   var N = EPS.length;                 /* görünüm sırası: 0 … N-1 bölümler, N = deneme sınavı */
   var MAXV = DEN ? N - 1 : N;         /* denemeler varsa N görünümü yoktur: oraya giden her yol Denemeler sayfasına çıkar */
   var FINAL_ACCENT = "#FFC15E";
-  var SPEEDS = [1, 1.25, 1.5];
+  var SPEEDS = [1, 1.25, 1.5, 2, 3];
   var SKIP = -1;                      /* ödevde "atlandı" işareti */
 
   if (ANIM) root.classList.add("motion-js");
