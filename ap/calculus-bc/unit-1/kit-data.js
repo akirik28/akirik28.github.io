@@ -628,6 +628,84 @@ window.KIT = {
           "why": "Yalnızca B'de iki sınır da x → 3 iken aynı sayıya, 2'ye gider. A'da sınırlar 1 ve 3'e, D'de 0 ve 2'ye gider; C'de alt sınır yok. Teorem için iki sınır ve aynı limit gerekir."
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "1.12–1.13",
+      "slug": "cb107",
+      "title": "Aralıkta Süreklilik ve Süreksizliği Giderme",
+      "en": "Continuity on Intervals; Removing Discontinuities",
+      "accent": "#FF7DB8",
+      "seconds": 267,
+      "terms": [
+        "Continuous on an interval",
+        "Domain",
+        "Polynomial function",
+        "Rational function",
+        "Closed interval",
+        "Endpoint",
+        "Removing a discontinuity",
+        "Redefine f(c)",
+        "Piecewise function",
+        "Non-removable"
+      ],
+      "questions": [
+        {
+          "q": "f(x) = (x − 3)/(x² − 5x + 6) hangi aralıklarda süreklidir?",
+          "opts": [
+            "(−∞, 2) ∪ (2, ∞)",
+            "(−∞, 2) ∪ (2, 3) ∪ (3, ∞)",
+            "(−∞, 3) ∪ (3, ∞)",
+            "Bütün gerçel sayılarda"
+          ],
+          "a": 1,
+          "why": "Payda (x − 2)(x − 3), x = 2 ve x = 3'te sıfır; rasyonel fonksiyon bu iki nokta dışında süreklidir. x = 3'teki süreksizlik sadeleşmeden gelen bir delik olsa da f(3) tanımsız, yani 3 de aralıktan çıkar."
+        },
+        {
+          "q": "h(x) = ln(x − 1) + √(5 − x) fonksiyonu hangi aralıkta süreklidir?",
+          "opts": [
+            "(1, 5]",
+            "[1, 5]",
+            "(1, 5)",
+            "(1, ∞)"
+          ],
+          "a": 0,
+          "why": "ln için x − 1 > 0, yani x > 1; kök için 5 − x ≥ 0, yani x ≤ 5. İki koşul birlikte (1, 5]. x = 5'te soldan limit h(5) = ln 4'e eşit, uçta süreklilik tamam."
+        },
+        {
+          "q": "f(x) = (x² + x − 12)/(x − 3) (x ≠ 3) ve f(3) = c. f'nin x = 3'te sürekli olması için c kaç olmalı?",
+          "opts": [
+            "0",
+            "3",
+            "7",
+            "12"
+          ],
+          "a": 2,
+          "why": "x² + x − 12 = (x − 3)(x + 4), sadeleşince x + 4 → 7. Süreksizliği gidermek için f(3) limite eşitlenir: c = 7."
+        },
+        {
+          "q": "f(x) = 2x + a (x < 1), f(x) = bx² (1 ≤ x ≤ 2), f(x) = x + 6 (x > 2). f her yerde sürekliyse a + b kaçtır?",
+          "opts": [
+            "4",
+            "0",
+            "6",
+            "2"
+          ],
+          "a": 3,
+          "why": "x = 2'de: b·4 = 2 + 6 = 8, b = 2. x = 1'de: 2 + a = b·1 = 2, a = 0. a + b = 2."
+        },
+        {
+          "q": "Aşağıdaki fonksiyonlardan hangisi, verilen noktada yalnızca o noktadaki değer yeniden tanımlanarak sürekli hâle getirilemez?",
+          "opts": [
+            "(x² − 1)/(x − 1), x = 1'de",
+            "sin x / x, x = 0'da",
+            "|x| / x, x = 0'da",
+            "(√x − 2)/(x − 4), x = 4'te"
+          ],
+          "a": 2,
+          "why": "|x|/x soldan −1'e, sağdan 1'e gider: *jump*, limit yok, giderilemez. Diğerlerinin limiti var (2, 1 ve 1/4); f(c) bu değerlere eşitlenerek süreksizlik giderilir."
+        }
+      ]
     }
   ],
   "final": []
