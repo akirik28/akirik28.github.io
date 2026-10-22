@@ -794,6 +794,83 @@ window.KIT = {
           "why": "Eğimler: soldan 3ax² → 3a, sağdan 6; 3a = 6 ⇒ a = 2. Süreklilik: a · 1³ = 6 + b ⇒ 2 = 6 + b ⇒ b = −4. a = 6, b = 0 yalnız sürekliliği sağlar (köşe kalır)."
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "2.7",
+      "slug": "cb207",
+      "title": "sin x, cos x, eˣ ve ln x'in Türevleri",
+      "en": "Derivatives of cos x, sin x, eˣ, and ln x",
+      "accent": "#FF7DB8",
+      "seconds": 267,
+      "terms": [
+        "Derivative of sin x",
+        "Derivative of cos x",
+        "Natural exponential function",
+        "Natural logarithm",
+        "Radians",
+        "Exponential function aˣ",
+        "Logarithm base a",
+        "Tangent line",
+        "Horizontal tangent"
+      ],
+      "questions": [
+        {
+          "q": "f(x) = 4 sin x − 3 cos x ise f′(π/2) kaçtır?",
+          "opts": [
+            "−3",
+            "4",
+            "3",
+            "0"
+          ],
+          "a": 2,
+          "why": "f′(x) = 4 cos x − 3(−sin x) = 4 cos x + 3 sin x. x = π/2'de 4 · 0 + 3 · 1 = 3. Kosinüsün türevindeki eksiyi unutursan −3 bulursun."
+        },
+        {
+          "q": "g(x) = x² − eˣ. Aşağıdaki x değerlerinden hangisinde g'nin teğet doğrusunun eğimi en büyüktür?",
+          "opts": [
+            "x = −1",
+            "x = 0",
+            "x = 1",
+            "x = 2"
+          ],
+          "a": 2,
+          "why": "g′(x) = 2x − eˣ. g′(−1) ≈ −2,37; g′(0) = −1; g′(1) = 2 − e ≈ −0,72; g′(2) = 4 − e² ≈ −3,39. En büyüğü x = 1'de. (Eğim soruluyor; g'nin kendi değerleri değil.)"
+        },
+        {
+          "q": "lim (h → 0) cos(π/2 + h)/h kaçtır?",
+          "opts": [
+            "0",
+            "−1",
+            "1",
+            "Limit yoktur"
+          ],
+          "a": 1,
+          "why": "cos(π/2) = 0 olduğu için ifade [cos(π/2 + h) − cos(π/2)]/h, yani cos x'in π/2'deki türevi: −sin(π/2) = −1."
+        },
+        {
+          "q": "f(x) = 2eˣ + ln x fonksiyonunun x = 1'deki teğet doğrusu hangisidir?",
+          "opts": [
+            "y − 2e = (2e + 1)(x − 1)",
+            "y − 2e = 2e(x − 1)",
+            "y − 1 = (2e + 1)(x − 2e)",
+            "y = (2e + 1)(x − 1)"
+          ],
+          "a": 0,
+          "why": "f(1) = 2e + ln 1 = 2e. f′(x) = 2eˣ + 1/x, f′(1) = 2e + 1. Nokta-eğim: y − 2e = (2e + 1)(x − 1). ln 1 = 0 olduğu için nokta 2e'dir, 0 değil."
+        },
+        {
+          "q": "d/dx (3ˣ) hangisidir?",
+          "opts": [
+            "x · 3^(x − 1)",
+            "3ˣ",
+            "3ˣ / ln 3",
+            "3ˣ · ln 3"
+          ],
+          "a": 3,
+          "why": "Değişken üsteyken kuvvet kuralı çalışmaz. aˣ'in türevi aˣ ln a: 3ˣ ln 3. Yalnız taban e olunca ln e = 1 olduğu için türev kendisine eşit kalır."
+        }
+      ]
     }
   ],
   "final": []
