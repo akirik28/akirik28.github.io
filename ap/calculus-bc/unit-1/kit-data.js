@@ -1053,6 +1053,108 @@ window.KIT = {
           "why": "ln yalnız pozitif sayılarda tanımlı: x − 3 > 0, x > 3. x → 3⁺ iken x − 3 → 0⁺ ve ln(x − 3) → −∞. Tek taraf yeterli: x = 3 dikey asimptot."
         }
       ]
+    },
+    {
+      "no": 9,
+      "code": "1.15",
+      "slug": "cb109",
+      "title": "Sonsuzda Limit ve Yatay Asimptotlar",
+      "en": "Limits at Infinity and Horizontal Asymptotes",
+      "accent": "#F6B94A",
+      "seconds": 275,
+      "terms": [
+        "Limit at infinity",
+        "End behavior",
+        "Horizontal asymptote",
+        "Degree",
+        "Leading coefficient",
+        "Dominant term",
+        "Rates of growth",
+        "Exponential function",
+        "Logistic curve",
+        "Indeterminate form 1^∞"
+      ],
+      "questions": [
+        {
+          "q": "lim (x → ∞) (4x² − 7)/(3 − 2x²) kaçtır?",
+          "opts": [
+            "2",
+            "−2",
+            "4/3",
+            "0"
+          ],
+          "a": 1,
+          "why": "Pay ve payda ikinci dereceden; limit baş katsayıların oranı: 4/(−2) = −2. (Her terimi x²'ye bölünce (4 − 7/x²)/(3/x² − 2) → 4/(−2).)"
+        },
+        {
+          "q": "f(x) = √(4x² + 3)/(x + 1) fonksiyonunun yatay asimptotları hangileridir?",
+          "opts": [
+            "y = 2 ve y = −2",
+            "Yalnız y = 2",
+            "Yalnız y = 4",
+            "Yatay asimptotu yoktur"
+          ],
+          "a": 0,
+          "why": "√(4x² + 3) ≈ 2|x|. x → ∞ iken 2x/x = 2; x → −∞ iken |x| = −x, yani −2x/x = −2. İki uçta iki farklı yatay asimptot."
+        },
+        {
+          "q": "lim (x → ∞) (eˣ + x⁵)/(3eˣ − ln x) kaçtır?",
+          "opts": [
+            "0",
+            "1",
+            "1/3",
+            "∞"
+          ],
+          "a": 2,
+          "why": "Büyüme sırası ln x ≪ x⁵ ≪ eˣ. Pay ve paydayı eˣ'e böl: (1 + x⁵/eˣ)/(3 − ln x/eˣ) → (1 + 0)/(3 − 0) = 1/3."
+        },
+        {
+          "q": "Tabloda f'nin büyük ve küçük x değerlerindeki değerleri var. Tabloya göre f'nin yatay asimptotları en makul olarak hangileridir?",
+          "opts": [
+            "Yalnız y = 3",
+            "Yatay asimptot yoktur",
+            "y = 2,999 ve y = −0,999",
+            "y = −1 ve y = 3"
+          ],
+          "a": 3,
+          "why": "x → ∞ iken değerler 2,9 → 2,99 → 2,999 diye 3'e, x → −∞ iken −0,9 → −0,99 → −0,999 diye −1'e yaklaşıyor. Asimptot, değerlerin yaklaştığı sayıdır (tablodaki son değer değil).",
+          "fig": {
+            "type": "table",
+            "head": [
+              "x",
+              "−1000",
+              "−100",
+              "−10",
+              "10",
+              "100",
+              "1000"
+            ],
+            "rows": [
+              [
+                "f(x)",
+                "−0,999",
+                "−0,99",
+                "−0,9",
+                "2,9",
+                "2,99",
+                "2,999"
+              ]
+            ],
+            "caption": "f fonksiyonunun seçilmiş değerleri"
+          }
+        },
+        {
+          "q": "g(x) = 2 + (sin x)/x (x > 0) için hangisi doğrudur?",
+          "opts": [
+            "Grafik y = 2'yi kestiği için yatay asimptot yoktur",
+            "y = 2 yatay asimptottur ve grafik onu sonsuz kez keser",
+            "Yatay asimptot y = 3'tür",
+            "Yatay asimptot y = 1'dir"
+          ],
+          "a": 1,
+          "why": "−1/x ≤ (sin x)/x ≤ 1/x olduğundan *squeeze theorem* ile (sin x)/x → 0, yani g → 2. sin x = 0 olan her x = kπ'de g = 2: grafik asimptotu sonsuz kez keser. Yatay asimptot kesilebilir."
+        }
+      ]
     }
   ],
   "final": []
