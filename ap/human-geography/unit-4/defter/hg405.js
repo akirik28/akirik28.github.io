@@ -81,7 +81,7 @@ window.DEFTER = {
             { metin: "==MEB==: 12 mil ile 200 mil arası. Kıyı devleti balık, petrol ve gaz kaynaklarında egemen hakka sahiptir; seyrüsefer ve uçuş serbesttir.", set: { eez: { noktalar: [[2.6, 1], [8, 1], [8, 8], [2.6, 8]] } }, goster: ["ye"] },
             { metin: "==Açık deniz==: 200 milin ötesi. Hiçbir devletin değil; herkesin serbestçe kullandığı uluslararası sulardır.", set: { ac: { noktalar: [[8, 1], [10, 1], [10, 8], [8, 8]] } }, goster: ["ya"] }
           ] },
-        { tip: "not", metin: "Karasuları ile MEB arasında 24 mile kadar uzanan bitişik bölge de vardır (gümrük, göç, sağlık denetimi); sınavda asıl ayrım 12 ve 200 mildir. Karasuları en fazla 12 mil olabilir, devletler daha dar da seçebilir: Türkiye Karadeniz'de 12, Ege ve Akdeniz'de 6 mil uygular. ABD ve Türkiye gibi birkaç ülke sözleşmeye taraf değildir." }
+        { tip: "not", metin: "Karasuları ile MEB arasında 24 mile kadar uzanan bitişik bölge de vardır (gümrük, göç, sağlık denetimi); sınavda asıl ayrım 12 ve 200 mildir. Karasuları en fazla 12 mil olabilir, devletler daha dar da seçebilir: Türkiye Karadeniz'de ve Akdeniz'de 12, Ege'de 6 mil uygular. ABD ve Türkiye gibi birkaç ülke sözleşmeye taraf değildir." }
       ]
     },
     {

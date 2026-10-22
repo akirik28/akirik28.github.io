@@ -81,7 +81,7 @@ window.DEFTER = {
         { tip: "grafik", baslik: "Dinledikçe sevilen şarkı", xlabel: "Dinleme sayısı", ylabel: "Beğeni", xmax: 12, ymax: 10,
           xticks: [{ v: 1, label: "1" }, { v: 3, label: "3" }, { v: 5, label: "5" }, { v: 7, label: "7" }, { v: 9, label: "9" }],
           ogeler: [
-            { id: "e", tip: "egri", renk: 0, etiket: "Beğeni", noktalar: [[0, 2], [0.2, 2.04], [0.4, 2.08], [0.6, 2.12], [0.8, 2.16], [1, 2.2]] },
+            { id: "e", tip: "egri", renk: 0, noktalar: [[0, 2], [0.2, 2.04], [0.4, 2.08], [0.6, 2.12], [0.8, 2.16], [1, 2.2]] },
             { id: "p", tip: "nokta", x: 1, y: 2.2, kilavuz: true, etiket: "1. dinleme" }
           ],
           durumlar: [

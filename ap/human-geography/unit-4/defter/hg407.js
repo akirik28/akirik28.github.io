@@ -82,7 +82,7 @@ window.DEFTER = {
           ] },
         { tip: "ornek", baslik: "Hangi biçim? Üç soruyla bul", durum: "Z ülkesinde eyalet hükümetleri kendi okul programını belirliyor; merkez ise savunma ve para politikasını yönetiyor. Eyaletlerin yetkileri anayasada yazılı. Z hangi yönetim biçimindedir?",
           adimlar: ["Güç tek merkezde mi? Hayır, paylaşılmış.", "Bölgelerin yetkisi nereden geliyor? Anayasadan.", "Merkez bunu tek taraflı geri alabilir mi? Hayır."],
-          sonuc: "Yetki anayasayla paylaşılmış ve bölgelerin kendi gücü var: ==*federal state*==. Cevap \"evet, evet, evet\" olsaydı *unitary state* derdik." },
+          sonuc: "Yetki anayasayla paylaşılmış ve bölgelerin kendi gücü var: ==*federal state*==. Güç tek merkezde olsaydı ve bölgeler yetkiyi merkezden alsaydı *unitary state* derdik." },
         { tip: "tablo", baslik: "Bir bakışta", head: ["Özellik", "Üniter", "Federal"], rows: [
             ["Güç", "Merkezde toplanır", "Merkez ve bölgeler arasında paylaşılır"],
             ["Bölgelerin yetkisi", "Merkezden gelir, değiştirilebilir", "Anayasayla güvence altında"],

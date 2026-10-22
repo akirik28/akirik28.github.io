@@ -63,7 +63,7 @@ window.DEFTER = {
         { tip: "grafik", baslik: "Asch'ten yola çıkarak: çoğunluk büyüdükçe uyma", xlabel: "Aynı yanlış cevabı veren kişi sayısı", ylabel: "Uyma oranı (şematik)", xmax: 10, ymax: 8,
           xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 5, label: "5" }, { v: 7, label: "7" }],
           ogeler: [
-            { id: "c", tip: "egri", renk: 0, etiket: "Uyma", noktalar: [[1, 1.2], [1.03, 1.2], [1.06, 1.2], [1.09, 1.2], [1.12, 1.2], [1.15, 1.2], [1.18, 1.2]] },
+            { id: "c", tip: "egri", renk: 0, noktalar: [[1, 1.2], [1.03, 1.2], [1.06, 1.2], [1.09, 1.2], [1.12, 1.2], [1.15, 1.2], [1.18, 1.2]] },
             { id: "p", tip: "nokta", x: 1, y: 1.2, kilavuz: true, etiket: "1 kişi" },
             { id: "m", tip: "cizgi", renk: 2, kesik: true, from: [1, 1.5], to: [4.2, 1.5], etiket: "Müttefik varsa", gizli: true }
           ],
@@ -187,7 +187,7 @@ window.DEFTER = {
         { tip: "grafik", baslik: "Tanık sayısı arttıkça yardım azalır", xlabel: "Olayı gören kişi sayısı", ylabel: "Birinin yardım etme ihtimali (şematik)", xmax: 10, ymax: 10,
           xticks: [{ v: 1, label: "1" }, { v: 3, label: "3" }, { v: 5, label: "5" }, { v: 8, label: "8" }],
           ogeler: [
-            { id: "c", tip: "egri", renk: 0, etiket: "Yardım", noktalar: [[1, 9], [2, 6.5], [3, 5], [4, 4.2], [6, 3.3], [8, 2.8]], gizli: true },
+            { id: "c", tip: "egri", renk: 0, noktalar: [[1, 9], [2, 6.5], [3, 5], [4, 4.2], [6, 3.3], [8, 2.8]], gizli: true },
             { id: "n1", tip: "nokta", x: 1, y: 9, kilavuz: true, etiket: "Tek tanık", gizli: true },
             { id: "n3", tip: "nokta", x: 3, y: 5, kilavuz: true, etiket: "3 tanık", gizli: true },
             { id: "n8", tip: "nokta", x: 8, y: 2.8, kilavuz: true, etiket: "8 tanık", gizli: true }

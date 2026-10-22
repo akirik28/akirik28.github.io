@@ -82,6 +82,8 @@
       .replace(/\*([^*]+)\*/g, '<span class="en" lang="en">$1</span>');
   }
   function T(s) { return { html: md(s) }; }
+  /* SVG yazıları düz metin: işaretleri at (*terim*, ==vurgu==, **kalın**) */
+  function plain(s) { return String(s == null ? "" : s).replace(/\*\*([^*]+)\*\*/g, "$1").replace(/==(?!=)(.+?)==/g, "$1").replace(/\*([^*]+)\*/g, "$1"); }
   function lg(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function ls(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} if (H && H.yaz) H.yaz(k); }
   function hash(s) { var h = 5381, i = s.length; while (i) h = (h * 33) ^ s.charCodeAt(--i); return (h >>> 0).toString(36); }
@@ -569,13 +571,13 @@
     svg.appendChild(grid);
     var ax = sv("path", { class: "g-ax", d: "M" + X(0) + " " + Y(YM) + " V" + Y(0) + " H" + X(XM), "marker-start": "url(#" + mk + ")", "marker-end": "url(#" + mk + ")" });
     svg.appendChild(ax);
-    var xl = sv("text", { x: X(XM), y: Y(0) + 34, "text-anchor": "end", class: "g-al" }); xl.textContent = b.xlabel || "";
+    var xl = sv("text", { x: X(XM), y: Y(0) + 34, "text-anchor": "end", class: "g-al" }); xl.textContent = plain(b.xlabel);
     var yl = sv("text", { x: 0, y: 0, "text-anchor": "middle", class: "g-al", transform: "translate(" + (X(0) - 34) + " " + Y(YM / 2) + ") rotate(-90)" });
-    yl.textContent = b.ylabel || "";
+    yl.textContent = plain(b.ylabel);
     svg.appendChild(xl); svg.appendChild(yl);
     /* eksen sayıları: xticks / yticks = [{ v, label }] */
-    (b.xticks || []).forEach(function (t) { var n = sv("text", { x: X(t.v), y: Y(0) + 18, "text-anchor": "middle", class: "g-tk" }); n.textContent = t.label; svg.appendChild(n); });
-    (b.yticks || []).forEach(function (t) { var n = sv("text", { x: X(0) - 8, y: Y(t.v) + 4, "text-anchor": "end", class: "g-tk" }); n.textContent = t.label; svg.appendChild(n); });
+    (b.xticks || []).forEach(function (t) { var n = sv("text", { x: X(t.v), y: Y(0) + 18, "text-anchor": "middle", class: "g-tk" }); n.textContent = plain(t.label); svg.appendChild(n); });
+    (b.yticks || []).forEach(function (t) { var n = sv("text", { x: X(0) - 8, y: Y(t.v) + 4, "text-anchor": "end", class: "g-tk" }); n.textContent = plain(t.label); svg.appendChild(n); });
     var layer = sv("g"); svg.appendChild(layer);
 
     var base = {}, order = [];
@@ -628,15 +630,15 @@
       if (o.tip === "cizgi") { g.firstChild.setAttribute("d", "M" + X(o.from[0]) + " " + Y(o.from[1]) + " L" + X(o.to[0]) + " " + Y(o.to[1])); end = o.to; }
       else if (o.tip === "egri") { g.firstChild.setAttribute("d", smooth(o.noktalar)); end = o.noktalar[o.noktalar.length - 1]; }
       else if (o.tip === "ppc") { p = ppcPts(o); g.firstChild.setAttribute("d", "M" + p.map(function (q) { return X(q[0]) + " " + Y(q[1]); }).join(" L")); end = [o.qmax * 0.72, o.pmax * 0.72]; }
-      if (end) { var t = g.lastChild; t.textContent = o.etiket || ""; t.setAttribute("x", X(end[0]) + 6); t.setAttribute("y", Y(end[1]) - 6); }
+      if (end) { var t = g.lastChild; t.textContent = plain(o.etiket); t.setAttribute("x", X(end[0]) + 6); t.setAttribute("y", Y(end[1]) - 6); }
       if (o.tip === "alan") g.firstChild.setAttribute("d", "M" + o.noktalar.map(function (q) { return X(q[0]) + " " + Y(q[1]); }).join(" L") + "Z");
       if (o.tip === "ok") g.firstChild.setAttribute("d", "M" + X(o.from[0]) + " " + Y(o.from[1]) + " L" + X(o.to[0]) + " " + Y(o.to[1]));
       if (o.tip === "nokta") {
         g.childNodes[0].setAttribute("d", o.kilavuz ? "M" + X(0) + " " + Y(o.y) + " H" + X(o.x) + " V" + Y(0) : "");
         g.childNodes[1].setAttribute("cx", X(o.x)); g.childNodes[1].setAttribute("cy", Y(o.y));
-        var lb = g.childNodes[2]; lb.textContent = o.etiket || ""; lb.setAttribute("x", X(o.x) + 10); lb.setAttribute("y", Y(o.y) - 10);
+        var lb = g.childNodes[2]; lb.textContent = plain(o.etiket); lb.setAttribute("x", X(o.x) + 10); lb.setAttribute("y", Y(o.y) - 10);
       }
-      if (o.tip === "yazi") { var tx = g.firstChild; tx.textContent = o.metin || ""; tx.setAttribute("x", X(o.x)); tx.setAttribute("y", Y(o.y)); tx.setAttribute("text-anchor", o.hiza || "middle"); }
+      if (o.tip === "yazi") { var tx = g.firstChild; tx.textContent = plain(o.metin); tx.setAttribute("x", X(o.x)); tx.setAttribute("y", Y(o.y)); tx.setAttribute("text-anchor", o.hiza || "middle"); }
     }
     var shown = -1, raf = 0;
     function go(i, instant) {
