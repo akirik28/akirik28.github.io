@@ -2,35 +2,18 @@
    Kaynak: ap-videolar/src/episodes/ep10 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep10",
-  ozet: "Harita yapma sanatı *cartography*'dir; başında Eratosthenes ve Ptolemy var. Bugünün araçları: *remote sensing* veriyi toplar, *GPS* konumu verir, *GIS* hepsini katman katman analiz eder, *visualization* sonucu anlaşılır bir görsele çevirir. Farklı kaynakları tek haritada birleştirmek de *mashup*'tır.",
+  amac: "Bu konu haritacılığın nasıl başladığını ve bugünün coğrafi araçlarını anlatıyor. *Remote sensing*, *GPS*, *GIS* ve *visualization* ne yapar, birbirine nasıl bağlanır; bunları öğreneceksin.",
   bolumler: [
     {
       baslik: "Haritacılığın iki kurucusu",
+      kisa: "Eratosthenes Dünya'nın çevresini hesapladı; Ptolemy enlem-boylamlı haritalar çizdi.",
       bloklar: [
-        { tip: "hikaye", ikon: "📜", baslik: "Gölgeden Dünya'nın çevresi",
-          metin: "Yaklaşık 2200 yıl önce, Mısır'da bir bilgin yalnızca gölge boylarını ölçerek Dünya'nın çevresini şaşırtıcı bir doğrulukla hesapladı. Bugün ise cebindeki telefon uydularla konuşup konumunu bulabiliyor. Bu bölüm iki dönemi birleştiriyor: haritacılığın doğuşu ve dijital coğrafi araçlar." },
         { tip: "kavramlar", kartlar: [
             { ikon: "🖋️", terim: "Cartography", tr: "haritacılık", tanim: "Harita yapma sanatı ve bilimi.", ornek: "Bir şehrin yol haritasını çizmek." },
             { ikon: "📐", terim: "Eratosthenes", tr: "Eratosthenes", tanim: "==Coğrafya kelimesini ilk kullanan kişi==. Yaklaşık MÖ 240'ta gölge boylarını ölçerek Dünya'nın çevresini hesapladı.", ornek: "İskenderiye ve Syene'deki gölge farkı." },
-            { ikon: "🧮", terim: "Ptolemy", tr: "Batlamyus", tanim: "Enlem ve boylam kullanan haritalar çizdi; eserleri bin yıldan uzun süre kaynak oldu.", ornek: "Parşömen üzerine çizilmiş enlem–boylam ızgaralı dünya haritası." }
+            { ikon: "🧮", terim: "Ptolemy", tr: "Batlamyus", tanim: "Yaklaşık MS 150'de enlem ve boylam kullanan haritalar çizdi; eserleri bin yıldan uzun süre kaynak oldu.", ornek: "Parşömen üzerine çizilmiş enlem–boylam ızgaralı dünya haritası." }
           ] },
-        { tip: "zaman", olaylar: [
-            { tarih: "MÖ ~240", baslik: "Eratosthenes", metin: "Gölge boylarından Dünya'nın çevresini ≈ 40.000 km buldu; coğrafya kelimesini ilk kullanan kişi." },
-            { tarih: "MS ~150", baslik: "Ptolemy", metin: "Enlem ve boylamlı haritalar çizdi; eserleri 1000 yıldan fazla kaynak oldu." },
-            { tarih: "Bugün", baslik: "Dijital araçlar", metin: "*GIS*, *GPS*, *remote sensing* ile harita yapılıyor." }
-          ] }
-      ]
-    },
-    {
-      baslik: "Eratosthenes'in hesabı",
-      bloklar: [
-        { tip: "adimlar", baslik: "Gölgeden çevre", adimlar: [
-            { baslik: "İki şehir", metin: "Syene'de güneş tam tepede; çubuğun gölgesi yok. İskenderiye'de aynı anda çubuğun gölgesi var." },
-            { baslik: "Gölge açısı", metin: "İskenderiye'de gölge ışınla 7,2° açı yapar." },
-            { baslik: "Daireye oranla", metin: "7,2° bir dairenin 360° ÷ 7,2° = 50'de biridir." },
-            { baslik: "Mesafeyle çarp", metin: "İki şehir arası yaklaşık 800 km. Çevre ≈ 50 × 800 = 40.000 km." }
-          ] },
-        { tip: "ornek", baslik: "Dünya'nın çevresi", durum: "Aynı anda Syene'de gölge yok, İskenderiye'de gölge 7,2° açı yapıyor. İki şehir arası yaklaşık 800 km. Dünya'nın çevresi ne kadar?",
+        { tip: "ornek", baslik: "Eratosthenes: Dünya'nın çevresi", durum: "Aynı anda Syene'de güneş tam tepede ve gölge yok; İskenderiye'de gölge 7,2° açı yapıyor. İki şehir arası yaklaşık 800 km. Dünya'nın çevresi ne kadar?",
           adimlar: ["Dairenin kaçta kaçı? 360 ÷ 7,2 = 50.", "Çevre = 50 × 800 km.", "50 × 800 = 40.000 km."],
           sonuc: "Dünya'nın çevresi ==yaklaşık 40.000 km==; bugünkü ölçümle çok yakın." },
         { tip: "tuzak", metin: "Quiz: \"Coğrafya kelimesini ilk kullanan ve gölge boylarıyla Dünya'nın çevresini hesaplayan kişi kimdir?\"", yanlis: "Ptolemy; çünkü enlem ve boylam kullanan haritalar çizdi.", dogru: "==Eratosthenes==. Ptolemy ise enlem–boylamlı haritalar çizen kişidir." }
@@ -38,10 +21,11 @@ window.DEFTER = {
     },
     {
       baslik: "*GIS*: katman katman harita",
+      kisa: "*GIS* coğrafi veriyi katman katman saklar ve analiz eder.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧅", terim: "GIS", tr: "Coğrafi Bilgi Sistemi", tanim: "*Geographic Information System*: coğrafi veriyi ==katman katman== saklayan ve analiz eden bilgisayar sistemi.", ornek: "Bir katmanda yollar, birinde binalar, birinde nüfus." },
-            { ikon: "🔀", terim: "Mashup", tr: "harmanlama", tanim: "Farklı kaynaklardan gelen verileri tek bir haritada birleştirmek.", ornek: "Harita uygulamasında restoran puanlarını ya da trafik yoğunluğunu görmek." }
+            { ikon: "🔀", terim: "Mashup", tr: "harmanlama", tanim: "Farklı kaynaklardan gelen verileri tek bir haritada birleştirmek; *cartogram* değildir.", ornek: "Harita uygulamasında restoran puanlarını ya da trafik yoğunluğunu görmek." }
           ] },
         { tip: "adimlar", baslik: "Katmanlar nasıl çalışır?", adimlar: [
             { baslik: "Katman 1: yollar", metin: "Yollar ayrı bir katman olarak saklanır." },
@@ -50,12 +34,12 @@ window.DEFTER = {
             { baslik: "Üst üste koy", metin: "Katmanları üst üste koyunca tek tek göremediğin ilişkiler ortaya çıkar." },
             { baslik: "Soru: hastane nereye?", metin: "Nüfusun yoğun olduğu, yolların kesiştiği ve binaların uygun olduğu yer taranır; en uygun noktaya yeni hastane işaretlenir." }
           ] },
-        { tip: "tuzak", metin: "Bir belediye; sel riski, nüfus ve yol haritalarını üst üste koyup tahliye planı yapıyor.", yanlis: "*GPS*; çünkü konum bulunuyor.", dogru: "==*GIS*==: katmanları birleştirip analiz ediyor." },
-        { tip: "tuzak", metin: "Restoran puanlarını ve trafik yoğunluğunu temel haritanın üstünde gösteren uygulama.", yanlis: "Bu bir *cartogram*'dır.", dogru: "Farklı kaynaklardan gelen veriyi tek haritada birleştirdiği için bir ==*mashup*==." }
+        { tip: "tuzak", metin: "Bir belediye; sel riski, nüfus ve yol haritalarını üst üste koyup tahliye planı yapıyor.", yanlis: "*GPS*; çünkü konum bulunuyor.", dogru: "==*GIS*==: katmanları birleştirip analiz ediyor." }
       ]
     },
     {
       baslik: "*GPS*: uydularla konum",
+      kisa: "*GPS* uydularla konumu bulur; sonuç *absolute location*'dır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🛰️", terim: "GPS", tr: "Küresel Konumlandırma Sistemi", tanim: "*Global Positioning System*. Üç parçası var: Dünya'nın etrafında dönen ==uydular==, onları izleyen ==yer istasyonları== ve senin elindeki ==alıcı== (telefon).", ornek: "Telefonun bulunduğun noktayı enlem ve boylamla verir." }
@@ -72,6 +56,7 @@ window.DEFTER = {
     },
     {
       baslik: "*Remote sensing*: uzaktan algılama",
+      kisa: "*Remote sensing* yeryüzünü uydu ya da uçakla dokunmadan tarar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📡", terim: "Remote sensing", tr: "uzaktan algılama", tanim: "Uydular ya da uçaklar yeryüzünü ==dokunmadan== tarar.", ornek: "Orman kaybını, şehirlerin büyümesini ve buzulların erimesini izlemek." },
@@ -103,16 +88,12 @@ window.DEFTER = {
             { metin: "**Düşük *resolution***: her piksel geniş bir alanı kapsar. Yol, büyük karelerin içinde kaba bir izdir.", goster: ["c0", "c1", "c2", "c3", "c4", "tc"] },
             { metin: "**Yüksek *resolution***: her piksel küçük bir alanı temsil eder. Yolun yeri çok daha ince seçilir.", gizle: ["c0", "c1", "c2", "c3", "c4", "tc"], goster: ["f0", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "tf"] }
           ] },
-        { tip: "zaman", olaylar: [
-            { tarih: "2000", baslik: "Önceki görüntü", metin: "Amazon'da geniş yeşil orman pikselleri." },
-            { tarih: "2025", baslik: "Sonraki görüntü", metin: "Yeşil pikseller azalmış, gri/kahverengi alanlar yayılmış." },
-            { tarih: "Karşılaştırma", baslik: "Değişimi izle", metin: "İki yılın uydu görüntüsünü karşılaştırarak orman kaybını ölçersin." }
-          ] },
-        { tip: "tuzak", metin: "Bilim insanları Amazon'daki orman kaybını 2000 ve 2025 uydu görüntülerini karşılaştırarak izliyor.", yanlis: "Bu görüntüleri *GPS* sağlıyor.", dogru: "Görüntüleri toplayan teknoloji ==*remote sensing*==. *GPS* konumu verir, görüntü toplamaz." }
+        { tip: "tuzak", metin: "Bilim insanları Amazon'daki orman kaybını 2000 ve 2025 uydu görüntülerini karşılaştırarak izliyor (yeşil pikseller azalmış).", yanlis: "Bu görüntüleri *GPS* sağlıyor.", dogru: "Görüntüleri toplayan teknoloji ==*remote sensing*==. *GPS* konumu verir, görüntü toplamaz." }
       ]
     },
     {
       baslik: "Üçü birlikte çalışır",
+      kisa: "*Remote sensing* toplar, *GPS* konumlar, *GIS* analiz eder, *visualization* gösterir.",
       bloklar: [
         { tip: "adimlar", baslik: "Veriden haritaya", adimlar: [
             { baslik: "*Remote sensing*", metin: "Veriyi toplar: uydular yeryüzünü tarar." },
@@ -123,8 +104,8 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🖼️", terim: "Visualization", tr: "görselleştirme", tanim: "Analiz sonucunu anlaşılır bir görsele (harita, grafik) dönüştürme.", ornek: "Orman kaybını kırmızı alanlarla gösteren harita." }
           ] },
-        { tip: "ikili", sol: { ikon: "📍", baslik: "*GPS*", maddeler: ["Konumu verir", "Uydu + yer istasyonu + alıcı", "En az 4 uydu, *absolute location*"] },
-          sag: { ikon: "🧅", baslik: "*GIS*", maddeler: ["Verileri analiz eder", "Katman katman", "Karar için ilişki bulur"] },
+        { tip: "ikili", sol: { ikon: "📍", baslik: "*GPS*", maddeler: ["Konumu verir", "En az 4 uydu, *absolute location*"] },
+          sag: { ikon: "🧅", baslik: "*GIS*", maddeler: ["Verileri katman katman analiz eder", "Karar için ilişki bulur"] },
           oyun: [
             { metin: "Telefonun bulunduğun noktanın enlem ve boylamını gösteriyor.", cevap: "sol", neden: "Konum bulma: *GPS*." },
             { metin: "Bir belediye sel, nüfus ve yol katmanlarını üst üste koyup tahliye planı yapıyor.", cevap: "sag", neden: "Katman analizi: *GIS*." },
@@ -135,6 +116,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Cartography* haritacılıktır. Eratosthenes (≈ MÖ 240) coğrafya kelimesini ilk kullanan kişi ve Dünya'nın çevresini gölgeden hesapladı: 360 ÷ 7,2 = 50; 50 × 800 km ≈ 40.000 km.",

@@ -2,41 +2,37 @@
    Kaynak: ap-videolar/src/episodes/ep03 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep03",
-  ozet: "Coğrafyanın birinci kuralı: her şey her şeyle ilişkilidir, ama yakın olanlar daha çok. Bu defterde mesafenin iki türünü, *friction of distance* ile *distance decay*'i, *time-space convergence*'ı, akış için üç koşulu ve *gravity model* ile *breaking point*'i göreceksin.",
+  amac: "Bu konu mesafenin yerler arasındaki etkileşimi nasıl azalttığını anlatıyor. Mesafe türlerini, teknolojinin mesafeyi nasıl kısalttığını, akış koşullarını ve *gravity model* ile *breaking point*'i öğreneceksin.",
   bolumler: [
     {
-      baslik: "Yan sıradaki arkadaş",
+      baslik: "Coğrafyanın birinci kuralı",
+      kisa: "Her şey ilişkilidir ama yakın olanlar daha çok.",
       bloklar: [
         { tip: "hikaye", ikon: "🪑", baslik: "En yakın arkadaşın neden yan sırada?",
-          metin: "En yakın arkadaşın büyük ihtimalle yan sırada oturuyor. Başka şehirdeki kuzeninle ise ayda bir konuşuyorsun. Bu tesadüf değil; coğrafyanın birinci kuralı bu." },
+          metin: "En yakın arkadaşın büyük ihtimalle yan sırada oturuyor; başka şehirdeki kuzeninle ayda bir konuşuyorsun. Bu tesadüf değil, coğrafyanın birinci kuralı." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "📜", terim: "Tobler's First Law", tr: "Tobler'in Birinci Yasası", tanim: "Her şey her şeyle ilişkilidir, ama ==yakın olanlar daha çok ilişkilidir.==", ornek: "Sınıfta yan sıradaki arkadaşınla, başka şehirdeki kuzeninden daha çok konuşursun." }
-          ] },
-        { tip: "not", metin: "Bu kural, bölümün geri kalanının temelidir: mesafe etkileşimi azaltır, teknoloji bu etkiyi hafifletir, nüfus ise etkileşimi artırır." }
+            { ikon: "📜", terim: "Tobler's First Law", tr: "Tobler'in Birinci Yasası", tanim: "Her şey her şeyle ilişkilidir, ama ==yakın olanlar daha çok ilişkilidir.== Bölümün geri kalanının temelidir: mesafe etkileşimi azaltır, teknoloji bu etkiyi hafifletir, nüfus artırır.", ornek: "Yan sıradaki arkadaşınla, başka şehirdeki kuzeninden daha çok konuşursun." }
+          ] }
       ]
     },
     {
       baslik: "İki tür mesafe",
+      kisa: "*Absolute* mesafe kilometredir; *relative* mesafe zaman, para ve zahmettir.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "📏", baslik: "*Absolute distance*", maddeler: ["Ölçülebilen mesafe", "Kilometre ya da mil", "İstanbul–Ankara: yaklaşık 450 km"] },
-          sag: { ikon: "⏱️", baslik: "*Relative distance*", maddeler: ["Zaman, para ya da zahmetle ölçülür", "Aynı kilometre farklı olabilir", "Uçakla 1 saat, otobüsle 6 saat"] },
+        { tip: "ikili", sol: { ikon: "📏", baslik: "*Absolute distance*", maddeler: ["Ölçülebilen mesafe: kilometre ya da mil", "İstanbul–Ankara: yaklaşık 450 km"] },
+          sag: { ikon: "⏱️", baslik: "*Relative distance*", maddeler: ["Zaman, para ya da zahmetle ölçülür", "Uçakla 1 saat, otobüsle 6 saat"] },
           oyun: [
             { metin: "İstanbul ile Ankara arası kara yoluyla 450 km.", cevap: "sol", neden: "Kilometre cinsinden ölçüm: *absolute*." },
             { metin: "Ankara'ya uçakla 1 saatte, otobüsle 6 saatte gidilir.", cevap: "sag", neden: "Zaman cinsinden: *relative*." },
             { metin: "İki kasaba arasındaki bilet fiyatı yüksek olduğu için gitmek zor.", cevap: "sag", neden: "Para ile ölçülen uzaklık: *relative*." },
-            { metin: "Haritada cetvelle ölçülen 12 mil.", cevap: "sol", neden: "Mil bir uzunluk ölçüsüdür: *absolute*." },
-            { metin: "Trafik yüzünden 5 km'lik yol 40 dakika sürüyor.", cevap: "sag", neden: "Zahmet ve zaman devrede: *relative*." }
-          ] },
-        { tip: "sayilar", ogeler: [
-            { deger: 450, sonek: " km", etiket: "İstanbul–Ankara, kara yolu (*absolute*)" },
-            { deger: 1, sonek: " saat", etiket: "uçakla (*relative*)" },
-            { deger: 6, sonek: " saat", etiket: "otobüsle (*relative*)" }
+            { metin: "Haritada cetvelle ölçülen 12 mil.", cevap: "sol", neden: "Mil bir uzunluk ölçüsüdür: *absolute*." }
           ] },
         { tip: "tuzak", metin: "Aynı iki şehir arasında iki mesafe birden vardır.", yanlis: "450 km ile 6 saat farklı mesafelerdir; biri yanlıştır.", dogru: "Kilometre aynı kalır (*absolute*); süre ve maliyet ulaşım aracına göre değişir (*relative*)." }
       ]
     },
     {
       baslik: "Sürtünme ve *distance decay*",
+      kisa: "Mesafenin maliyeti (*friction*), uzaklaştıkça etkileşimi azaltır (*decay*).",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧱", terim: "Friction of distance", tr: "mesafenin sürtünmesi", tanim: "Mesafenin bir engel olması: aşmak zaman ve para ister.", ornek: "Şehrin öbür ucundaki kafeye gitmek hem zaman hem bilet parası ister." },
@@ -61,9 +57,10 @@ window.DEFTER = {
     },
     {
       baslik: "Mesafe eriyor: *time-space convergence*",
+      kisa: "Teknoloji yolculuk süresini kısaltır; yerler birbirine yaklaşmış gibi olur.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🚄", terim: "Time-space convergence", tr: "zaman–mekân yakınsaması", tanim: "Teknoloji yolculuk süresini kısalttıkça yerlerin birbirine yaklaşmış gibi olması. Kilometre değişmez, zaman azalır.", ornek: "Yüksek hızlı tren iki şehir arasını 6 saatten 2 saate indirir." }
+            { ikon: "🚄", terim: "Time-space convergence", tr: "zaman–mekân yakınsaması", tanim: "Teknoloji yolculuk süresini kısalttıkça yerlerin birbirine yaklaşmış gibi olması. Kilometre değişmez, zaman azalır. Kimi kaynaklar buna *time-space compression* der.", ornek: "Yüksek hızlı tren iki şehir arasını 6 saatten 2 saate indirir." }
           ] },
         { tip: "grafik", baslik: "Atlantik'i geçmek", xlabel: "Dönem", ylabel: "Süre (hafta)", xmax: 6, ymax: 7,
           xticks: [{ v: 1, label: "1800'ler" }, { v: 3, label: "bugün" }, { v: 5, label: "video" }],
@@ -79,48 +76,35 @@ window.DEFTER = {
             { metin: "1800'lerde Atlantik'i gemiyle geçmek haftalar sürerdi: ==yaklaşık 6 hafta==.", set: { gemi: { noktalar: [[0.6, 0], [1.4, 0], [1.4, 6], [0.6, 6]] } }, goster: ["gemit"] },
             { metin: "Bugün uçakla yalnızca ==8 saat==. Çubuk neredeyse yerle bir.", set: { ucak: { noktalar: [[2.6, 0], [3.4, 0], [3.4, 0.05], [2.6, 0.05]] } }, goster: ["ucakt"] },
             { metin: "Görüntülü aramayla süre ==sıfır==. Yerler sanki birbirine yaklaştı: *time-space convergence*.", goster: ["videot"] }
-          ] },
-        { tip: "zaman", olaylar: [
-            { tarih: "1800'ler", baslik: "Gemi", metin: "Atlantik'i geçmek yaklaşık 6 hafta." },
-            { tarih: "Bugün", baslik: "Uçak", metin: "Aynı yol yaklaşık 8 saat." },
-            { tarih: "Şimdi", baslik: "Görüntülü arama", metin: "Süre sıfır saniye." }
-          ] },
-        { tip: "not", metin: "Bu fikre kimi kaynaklar *time-space compression* de der. Anlamı aynıdır: teknoloji sayesinde mesafenin önemi azalır." }
+          ] }
       ]
     },
     {
       baslik: "Bir yer ne kadar etkileşir?",
+      kisa: "*Accessibility* ulaşmanın kolaylığıdır; *connectivity* bağlantı sayısıdır.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🚪", baslik: "*Accessibility*", maddeler: ["Oraya ulaşmak ne kadar kolay?", "Zaman, maliyet, yol erişimi", "Tek bir yerin özelliği"] },
-          sag: { ikon: "🕸️", baslik: "*Connectivity*", maddeler: ["Başka yerlere kaç yolla, kaç hatla bağlı?", "Bağlantı sayısı", "Ağın yoğunluğu"] },
+        { tip: "ikili", sol: { ikon: "🚪", baslik: "*Accessibility* (erişilebilirlik)", maddeler: ["Oraya ulaşmak ne kadar kolay?", "Zaman, maliyet, yol erişimi"] },
+          sag: { ikon: "🕸️", baslik: "*Connectivity* (bağlantı)", maddeler: ["Başka yerlere kaç yolla, kaç hatla bağlı?", "Bağlantı sayısı, ağın yoğunluğu"] },
           oyun: [
             { metin: "Bir mahalleden şehir merkezine yirmi dakikada varılabiliyor.", cevap: "sol", neden: "Ulaşmanın kolaylığı: *accessibility*." },
             { metin: "Bir aktarma istasyonuna on beş farklı hat bağlanıyor.", cevap: "sag", neden: "Bağlantı sayısı: *connectivity*." },
             { metin: "Bir köyden tek bir yol çıkıyor ve o yol kışın kapanıyor.", cevap: "sag", neden: "Az bağlantı: düşük *connectivity*." },
             { metin: "Bir havalimanına metro, otobüs ve otoyolla kolayca ulaşılıyor.", cevap: "sol", neden: "Erişim kolaylığı: *accessibility*." }
           ] },
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🚉", terim: "Accessibility", tr: "erişilebilirlik", tanim: "Bir yere ulaşmanın ne kadar kolay olduğu.", ornek: "Büyük bir aktarma istasyonuna herkes kolayca ulaşır." },
-            { ikon: "🔗", terim: "Connectivity", tr: "bağlantı", tanim: "Bir yerin başka yerlere kaç yolla, kaç hatla bağlı olduğu.", ornek: "Her hatta bağlı bir aktarma istasyonu; kenardaki tek hatlı durak ise düşük bağlantılıdır." }
-          ] },
-        { tip: "not", metin: "Büyük bir aktarma istasyonu iki ölçüde de yüksektir: her hatta bağlı (*connectivity*) ve herkes kolayca ulaşıyor (*accessibility*)." }
+        { tip: "not", metin: "Büyük bir aktarma istasyonu iki ölçüde de yüksektir: her hatta bağlıdır (*connectivity*) ve herkes oraya kolayca ulaşır (*accessibility*)." }
       ]
     },
     {
       baslik: "Akış için üç koşul",
+      kisa: "Akış için tamamlayıcılık ve aktarılabilirlik gerekir, araya yakın fırsat girmemeli.",
       bloklar: [
-        { tip: "adimlar", baslik: "İki yer arasında akış olması için", adimlar: [
-            { baslik: "*Complementarity*: tamamlayıcılık", metin: "Birinde olan, diğerinde eksik olmalı. Biri portakal üretir, diğeri portakal ister." },
-            { baslik: "*Transferability*: aktarılabilirlik", metin: "Taşımaya değmeli; maliyet ürünün değerini geçmemeli. Elma dünyanın öbür ucuna taşınır; kum taşınmaz." },
-            { baslik: "*Intervening opportunity*: araya daha yakın fırsat girmemeli", metin: "Arada daha yakın bir alternatif varsa akış oraya kayar; yani böyle bir alternatifin ==olmaması== gerekir." }
-          ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🍊", terim: "Complementarity", tr: "tamamlayıcılık", tanim: "Bir yerin fazlası, öbür yerin eksiğini kapatır. Talep ile arz eşleşir.", ornek: "A şehri portakal üretiyor, B şehri portakal istiyor." },
             { ikon: "🚚", terim: "Transferability", tr: "aktarılabilirlik", tanim: "Ürünü ya da insanı taşımanın maliyeti, ürünün değerinden düşük olmalı.", ornek: "Elmayı öbür uca taşımaya değer; ağır ve ucuz kumu taşımaya değmez." },
-            { ikon: "🏬", terim: "Intervening opportunity", tr: "araya giren fırsat", tanim: "İki yer arasında daha yakın bir alternatifin bulunması. Akış, uzaktaki yere değil bu yakın alternatife gider.", ornek: "Uzaktaki mağazaya giderken yolda aynısını görürsen orada durursun." }
+            { ikon: "🏬", terim: "Intervening opportunity", tr: "araya giren fırsat", tanim: "İki yer arasında daha yakın bir alternatifin bulunması. Akış, uzaktaki yere değil bu yakın alternatife gider; akış için böyle bir alternatifin ==olmaması== gerekir.", ornek: "Uzaktaki mağazaya giderken yolda aynısını görürsen orada durursun." }
           ] },
-        { tip: "ikili", sol: { ikon: "🧩", baslik: "*Complementarity*", maddeler: ["Biri sahip, öbürü ihtiyaç sahibi", "\"Neden akış oluşuyor?\"", "Arz–talep eşleşmesi"] },
-          sag: { ikon: "💸", baslik: "*Transferability*", maddeler: ["Taşıma maliyeti ürün değerinin altında olmalı", "\"Taşımaya değiyor mu?\"", "Maliyet–değer karşılaştırması"] },
+        { tip: "ikili", sol: { ikon: "🧩", baslik: "*Complementarity*", maddeler: ["Biri sahip, öbürü ihtiyaç sahibi", "\"Neden akış oluşuyor?\""] },
+          sag: { ikon: "💸", baslik: "*Transferability*", maddeler: ["Taşıma maliyeti ürün değerinin altında", "\"Taşımaya değiyor mu?\""] },
           oyun: [
             { metin: "Kum ve çakıl uzak şehre satılmaz; taşıma ürünün değerinden pahalı.", cevap: "sag", neden: "Taşımaya değmiyor: *transferability* sağlanmıyor." },
             { metin: "Birinde portakal fazla, öbüründe portakal talebi var.", cevap: "sol", neden: "Eksik ve fazla eşleşiyor: *complementarity*." },
@@ -132,15 +116,13 @@ window.DEFTER = {
     },
     {
       baslik: "*Gravity model*",
+      kisa: "Nüfuslar büyüdükçe etkileşim artar, mesafe arttıkça karesiyle azalır.",
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "Etkileşim", alt: "iki yer arasında" }, "=",
             { t: "Nüfus₁ × Nüfus₂", alt: "pay: ikisi büyüdükçe artar" }, "÷",
             { t: "Mesafe²", alt: "payda: uzaklaştıkça azalır" }
-          ], aciklama: "Tıpkı yer çekimi gibi: kütle çekimi artırır, mesafe azaltır." },
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🪐", terim: "Gravity model", tr: "çekim modeli", tanim: "İki yer arasındaki etkileşimi tahmin eder: nüfuslar büyüdükçe artar, mesafe arttıkça azalır.", ornek: "İki büyük şehir arasındaki trafik, iki küçük kasaba arasındakinden kat kat fazladır." }
-          ] },
+          ], aciklama: "*Gravity model* (çekim modeli) iki yer arasındaki etkileşimi tahmin eder. Tıpkı yer çekimi gibi: kütle çekimi artırır, mesafe azaltır." },
         { tip: "ornek", baslik: "Etkileşim nasıl değişir?", durum: "İki şehrin nüfusu 2 ve 3 milyon, aralarındaki mesafe 10 birim olsun. Model: nüfus₁ × nüfus₂ ÷ mesafe².",
           adimlar: ["Başlangıç: (2 × 3) ÷ 10² = 6 ÷ 100 = 0,06.", "Mesafe 20 birime çıkarsa: 6 ÷ 400 = 0,015. Mesafe 2 katına çıktı, etkileşim ==dörtte bire== düştü.", "Bir şehrin nüfusu 2'den 4'e çıkarsa (mesafe 10): (4 × 3) ÷ 100 = 0,12. Nüfus 2 katına çıktı, etkileşim ==2 katına== çıktı."],
           sonuc: "Nüfus çarpan olarak etkileşimi artırır; mesafe ise karesiyle etkileşimi düşürür." },
@@ -148,11 +130,12 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "*Law of retail gravitation* ve *breaking point*",
+      baslik: "*Breaking point*",
+      kisa: "*Breaking point*, çekimin eşitlendiği noktadır ve küçük şehre daha yakındır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🛍️", terim: "Law of retail gravitation", tr: "perakende çekim yasası", tanim: "Çekim modelinin alışveriş versiyonu: büyük şehir, müşteriyi daha uzaktan çeker.", ornek: "Büyük şehrin alışveriş merkezi, küçük kasabadan müşteri çeker." },
-            { ikon: "⚖️", terim: "Breaking point", tr: "kırılma noktası", tanim: "İki şehir arasında çekimin eşitlendiği nokta. Bir yanındakiler A'ya, öbür yanındakiler B'ye gider. ==Her zaman küçük şehre daha yakındır.==", ornek: "A şehri B'den 4 kat kalabalıksa, 100 km'lik yolun yaklaşık 67 km'si A'nın çekim alanında kalır." }
+            { ikon: "⚖️", terim: "Breaking point", tr: "kırılma noktası", tanim: "İki şehir arasında çekimin eşitlendiği nokta. Bir yanındakiler A'ya, öbür yanındakiler B'ye gider.", ornek: "A şehri B'den 4 kat kalabalıksa, 100 km'lik yolun yaklaşık 67 km'si A'nın çekim alanında kalır." }
           ] },
         { tip: "grafik", baslik: "Çekimler nerede eşitlenir?", xlabel: "100 km'lik yol (1 birim = 10 km)", ylabel: "Çekim (göreli)", xmax: 10, ymax: 10,
           xticks: [{ v: 0.8, label: "A (büyük)" }, { v: 9.2, label: "B (küçük)" }],
@@ -177,6 +160,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Tobler's First Law*: her şey ilişkilidir ama yakın olanlar daha çok.",
@@ -185,7 +169,7 @@ window.DEFTER = {
             "*Time-space convergence*: teknoloji yerleri yaklaştırır (gemi ~6 hafta, uçak 8 saat, görüntülü arama 0 sn).",
             "*Accessibility* ulaşım kolaylığı; *connectivity* bağlantı sayısıdır.",
             "Akış için *complementarity*, *transferability* ve *intervening opportunity*'nin yokluğu gerekir.",
-            "*Gravity model*: nüfuslar büyüdükçe etkileşim artar, mesafe arttıkça azalır.",
+            "*Gravity model*: nüfuslar büyüdükçe etkileşim artar, mesafe arttıkça karesiyle azalır.",
             "*Breaking point* iki şehir arasında çekimin eşitlendiği noktadır ve küçük şehre daha yakındır."
           ] }
       ]

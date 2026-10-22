@@ -2,26 +2,20 @@
    Kaynak: ap-videolar/src/episodes/st113 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st113",
-  ozet: "Hepsine soramazsan örneklem alırsın, ve tek adil yol ==seçimi şansa bırakmaktır==. Bu defterde dört yöntemi (*simple random sample*, *stratified*, *cluster*, *systematic*) göreceksin: kim nasıl seçilir, *strata* ile *cluster* nasıl karıştırılmaz, her yöntemin avantajı ve tuzağı ne, ve acı sos fabrikasında üç yöntem aynı problemde nasıl uygulanır.",
+  amac: "Bu konu hepsine soramayınca örneklemi şansla nasıl seçeceğini anlatıyor. Dört yöntemi (*SRS*, *stratified*, *cluster*, *systematic*), *strata* ile *cluster* farkını ve her yöntemin avantajını ve tuzağını öğreneceksin.",
   bolumler: [
     {
-      baslik: "600 öğrenci, 40 kişi: kimi seçeceksin?",
+      baslik: "Hepsine soramazsan: dört rastgele yöntem",
+      kisa: "Tek adil yol, seçimi şansa bırakmaktır.",
       bloklar: [
-        { tip: "hikaye", ikon: "🌙", baslik: "Okulda ortalama uyku kaç saat?",
-          metin: "Okulunda 600 öğrenci var. Gecede ortalama kaç saat uyuyorlar? Hepsine soramazsın; **40 kişi** seçeceksin. Arkadaşlarını seçersen hepsi sana benziyor. Gözüne kestirdiklerini seçersen farkında olmadan taraf tutarsın. Tek adil yol, seçimi şansa bırakmak. Bunun dört yolu var." },
         { tip: "ikili", ayirici: "vs",
           sol: { ikon: "👀", baslik: "Seçen insan", maddeler: ["Arkadaşlarını seçmek: hepsi sana benzer", "Gözüne kestirmek: farkında olmadan taraf tutarsın", "Önyargılı örneklem"] },
           sag: { ikon: "🎲", baslik: "Seçen şans", maddeler: ["Zar, rastgele sayı üreteci", "İnsan değil şans karar verir", "Adil örneklem"] },
           oyun: [
-            { metin: "En yakın arkadaşlarına sormak.", cevap: "sol", neden: "Seçimi sen yaptın, hepsi sana benziyor." },
+            { metin: "600 öğrenciden en yakın arkadaşlarına sormak.", cevap: "sol", neden: "Seçimi sen yaptın, hepsi sana benziyor." },
             { metin: "Rastgele sayı üreteciyle numara çekmek.", cevap: "sag", neden: "Seçimi şans yapıyor." },
             { metin: "Koridorda gözüne iyi gelenleri durdurmak.", cevap: "sol", neden: "Göz kestirmek bilinçsiz taraf tutmaktır." },
             { metin: "Öğrenci listesinden zarla numara seçmek.", cevap: "sag", neden: "Seçim şansa bırakılmış." }
-          ] },
-        { tip: "sayilar", ogeler: [
-            { deger: 600, etiket: "öğrenci (N)" },
-            { deger: 40, etiket: "seçilecek kişi (n)" },
-            { deger: 4, etiket: "rastgele örnekleme yöntemi" }
           ] },
         { tip: "liste", maddeler: [
             { ikon: "1️⃣", baslik: "*Simple random sample* (*SRS*)", metin: "Her olası grup eşit şansa sahip." },
@@ -33,6 +27,7 @@ window.DEFTER = {
     },
     {
       baslik: "*Simple random sample* (*SRS*)",
+      kisa: "SRS'te her olası n'li grubun seçilme şansı eşittir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🎲", terim: "Simple random sample (SRS)", tr: "basit rastgele örneklem", tanim: "n büyüklüğündeki ==her olası grubun== seçilme şansının eşit olduğu örneklem. “Every possible sample of size n has an equal chance of being chosen.”", ornek: "600 öğrenciden 40'lık her olası grup eşit şansa sahip." }
@@ -45,59 +40,32 @@ window.DEFTER = {
             "SRS'te her olası grubun şansı eşit olmalıydı. Burada bazı gruplar (aynı masa) mümkün, bazıları (farklı masa) imkânsız.",
             "Sonuç: bireysel şans eşit ama SRS değil."
           ],
-          sonuc: "Bu, SRS değil (aslında tek *cluster*'lı bir *cluster sample*). ==Eşit bireysel şans ≠ SRS.==" }
+          sonuc: "Bu, SRS değil (aslında tek *cluster*'lı bir *cluster sample*). ==Eşit bireysel şans ≠ SRS.== SRS tanımında “each individual” değil, “every possible sample” yaz." }
       ]
     },
     {
       baslik: "*SRS* nasıl seçilir?",
+      kisa: "Etiketle, rastgele sayı üret (tekrarları atla), seç.",
       bloklar: [
-        { tip: "hikaye", ikon: "🧹", baslik: "Quidditch takımı", metin: "12 kişilik Quidditch takımından her hafta 2 oyuncu teste girecek. Seçimi rastgele yapalım." },
-        { tip: "tablo", baslik: "Etiketle: oyuncuları 1–12 numarala", head: ["No", "Oyuncu", "No", "Oyuncu", "No", "Oyuncu"], rows: [
-            ["1", "Chang", "5", "Delacour", "9", "Diggory"],
-            ["2", "Finnigan", "6", "Granger", "10", "Krum"],
-            ["3", "Longbottom", "7", "Lovegood", "11", "Potter"],
-            ["4", "Thomas", "8", "Weasley", "12", "Wood"]
-          ] },
-        { tip: "adimlar", baslik: "Üç adım", adimlar: [
-            { baslik: "1 · *Label* (etiketle)", metin: "Oyuncuları 1'den 12'ye numarala." },
-            { baslik: "2 · *Randomize* (rastgele üret)", metin: "Hesap makinesinde randInt(1,12) ile 1 ile 12 arasında rastgele sayılar üret (TI-84: MATH → PRB → 5)." },
-            { baslik: "Tekrarı atla", metin: "Üretilen: 7, 7, 3. İkinci 7 tekrar: atla." },
-            { baslik: "3 · *Select* (seç)", metin: "İlk iki farklı numara: 7 ve 3. Seçilenler Lovegood ve Longbottom." }
-          ] },
-        { tip: "ornek", baslik: "Kaç olası ikili var?", durum: "12 oyuncudan 2'li grup seçiyoruz. SRS ise her olası ikili eşit şansa sahip.",
-          adimlar: ["İlk oyuncu için 12, ikincisi için 11 seçenek: 12 × 11 = 132.", "Sıra önemli değil (AB = BA), her ikili iki kez sayıldı: 132 ÷ 2 = 66.", "66 olası ikilinin her biri eşit şansa sahip."],
-          sonuc: "66 olası ikili; her birinin şansı 1/66." },
-        { tip: "tuzak", baslik: "SRS'i anlatırken “ignore repeats”", metin: "AP'de SRS'i tarif ederken üç adımı yaz ve tekrarları atladığını belirt.", yanlis: "“Generate random numbers from 1 to 12 and pick the first 2.” (tekrar edebilir)", dogru: "“Label the players 1–12. Generate random integers from 1 to 12, ignoring repeats. Select the players with the first 2 different numbers.”" },
-        { tip: "tuzak", baslik: "Yalnızca “eşit şans” yazma", metin: "SRS tanımında grup vurgulanır.", yanlis: "“Each individual has an equal chance of being selected.”", dogru: "“Every possible sample of size n has an equal chance of being chosen.”" }
-      ]
-    },
-    {
-      baslik: "Tekrarlı ve tekrarsız seçim",
-      bloklar: [
-        { tip: "ikili",
-          sol: { ikon: "🚫", baslik: "*Without replacement*", maddeler: ["Seçilen kişi geri konmaz", "Bir kişi bir kez seçilebilir", "*SRS* böyle seçilir"] },
-          sag: { ikon: "🔁", baslik: "*With replacement*", maddeler: ["Seçilen kişi geri konur", "Aynı sayı yeniden gelebilir", "randInt böyle çalışır"] },
-          oyun: [
-            { metin: "7 numaralı top torbadan çıkıyor ve torbaya geri atılmıyor.", cevap: "sol", neden: "Geri konmuyor: *without replacement*." },
-            { metin: "Hesap makinesinde randInt(1,12) ardışık iki kez 7 veriyor.", cevap: "sag", neden: "Aynı sayı tekrar gelebiliyor: *with replacement*." },
-            { metin: "İki oyuncu seçilirken aynı oyuncu iki kere seçilemez.", cevap: "sol", neden: "*SRS* tekrarsız seçilir." },
-            { metin: "7 numaralı top çekilip geri atıldı, yine 7 çekildi.", cevap: "sag", neden: "Geri konduğu için tekrar mümkün." }
-          ] },
-        { tip: "adimlar", baslik: "Sınavda yazacağın cevap (AP EXAM TIP)", adimlar: [
-            { baslik: "*Label*", metin: "Number the players 1–12." },
-            { baslik: "*Randomize*", metin: "Generate random integers from 1 to 12, ==ignoring repeats==." },
-            { baslik: "*Select*", metin: "The players with the first 2 different numbers." }
-          ] },
+        { tip: "ornek", baslik: "Quidditch takımından 2 oyuncu", durum: "12 kişilik takımdan her hafta 2 oyuncu teste girecek. Oyuncular: 1 Chang, 2 Finnigan, 3 Longbottom, 4 Thomas, 5 Delacour, 6 Granger, 7 Lovegood, 8 Weasley, 9 Diggory, 10 Krum, 11 Potter, 12 Wood.",
+          adimlar: [
+            "*Label*: oyuncuları 1'den 12'ye numarala (yukarıdaki liste).",
+            "*Randomize*: hesap makinesinde randInt(1,12) ile rastgele sayılar üret (TI-84: MATH → PRB → 5). Üretilen: 7, 7, 3. İkinci 7 tekrar: atla.",
+            "*Select*: ilk iki farklı numara 7 ve 3: Lovegood ve Longbottom.",
+            "Kaç olası ikili var? 12 × 11 = 132; sıra önemli değil, her ikili iki kez sayıldı: 132 ÷ 2 = 66. SRS'te her birinin şansı 1/66."
+          ],
+          sonuc: "“Label the players 1–12. Generate random integers from 1 to 12, ignoring repeats. Select the players with the first 2 different numbers.”" },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🎰", terim: "randInt", tr: "rastgele tam sayı", tanim: "Verilen aralıkta rastgele tam sayı üretir; ==tekrar edebilir==.", ornek: "randInt(1,12) → 7, 7, 3, …" },
-            { ikon: "🔀", terim: "randIntNoRep", tr: "tekrarsız karışık sıra", tanim: "Aralıktaki bütün tam sayıları tekrarsız, karışık sırada verir; ilk n tanesi örneklemdir.", ornek: "randIntNoRep(1,12) → {7 3 11 1 9 12 4 …}; ilk ikisi: 7 ve 3." },
+            { ikon: "🎰", terim: "randInt", tr: "rastgele tam sayı", tanim: "Verilen aralıkta rastgele tam sayı üretir; ==tekrar edebilir== (*with replacement*).", ornek: "randInt(1,12) → 7, 7, 3, …" },
+            { ikon: "🔀", terim: "randIntNoRep", tr: "tekrarsız karışık sıra", tanim: "Aralıktaki bütün tam sayıları tekrarsız (*without replacement*), karışık sırada verir; ilk n tanesi örneklemdir.", ornek: "randIntNoRep(1,12) → {7 3 11 1 9 12 4 …}; ilk ikisi: 7 ve 3." },
             { ikon: "🎩", terim: "Şapka yöntemi", tr: "özdeş kâğıtlar", tanim: "12 özdeş kâğıdı şapkaya at, iyice karıştır, 2 tane çek.", ornek: "Kâğıtlar özdeş, karışım iyi olmalı." }
           ] },
-        { tip: "tuzak", baslik: "Tekrarı atladığını yaz", metin: "Üreteçler *with replacement* çalıştığı için aynı sayı tekrar gelir.", yanlis: "7, 7, 3 gelince “7 ve 7 seçildi” demek ya da tekrarı hiç anmamak.", dogru: "“Ignoring repeats” yaz, ya da randIntNoRep kullan." }
+        { tip: "tuzak", baslik: "Tekrarı atladığını yaz", metin: "*SRS* tekrarsız seçilir, ama üreteçler tekrar edebildiği için “ignoring repeats” yazmalısın.", yanlis: "“Generate random numbers from 1 to 12 and pick the first 2.” (tekrar edebilir)", dogru: "“Ignoring repeats” yaz, ya da randIntNoRep kullan." }
       ]
     },
     {
       baslik: "*Stratified random sample*",
+      kisa: "Her gruptan ayrı SRS alınır; kazanç isabettir, yansızlık değil.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧱", terim: "Stratified random sample", tr: "tabakalı rastgele örneklem", tanim: "Popülasyon *strata*'ya ayrılır, ==her== stratum'dan ayrı bir *SRS* seçilir ve birleştirilir.", ornek: "Dört sınıf düzeyinden her birinden 10 kişi." },
@@ -116,12 +84,12 @@ window.DEFTER = {
             { metin: "*SRS* ile n = 40: tahminler gerçek ortalamanın etrafında geniş bir yelpazeye yayılır. Yansızdır ama dağınıktır." },
             { metin: "*Stratified* ile n = 40: her sınıf düzeyi temsil edilir, tahminler gerçek değere sıkışır. ==Daha az değişken → daha isabetli.==", goster: ["str"] }
           ] },
-        { tip: "not", metin: "Dikkat: stratified'ın avantajı *bias* azaltmak değil. *SRS* de yansızdır. Kazancı, tahminin **değişkenliğini azaltmak**, yani ==daha isabetli (*more precise*)== olmak." },
-        { tip: "tuzak", baslik: "Stratified'ın amacı", metin: "Stratified'ın kazancı yansızlık değil, isabettir.", yanlis: "“Stratified sampling removes bias that SRS has.”", dogru: "“Stratified sampling gives a less variable (more precise) estimate because every group is represented.”" }
+        { tip: "tuzak", baslik: "Stratified'ın amacı", metin: "*SRS* de yansızdır; stratified'ın kazancı tahminin **değişkenliğini azaltmak**, yani daha isabetli (*more precise*) olmaktır.", yanlis: "“Stratified sampling removes bias that SRS has.”", dogru: "“Stratified sampling gives a less variable (more precise) estimate because every group is represented.”" }
       ]
     },
     {
       baslik: "*Cluster random sample*",
+      kisa: "Rastgele seçilen kümelerin herkesi alınır; ucuz ama risklidir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🚌", terim: "Cluster random sample", tr: "küme rastgele örneklemi", tanim: "Popülasyon *cluster*'lara ayrılır, rastgele ==bütün cluster'lar== seçilir ve seçilenlerin içindeki herkes örnekleme girer.", ornek: "20 servisten 2'si seçilir, içindeki 60 öğrencinin hepsine sorulur." },
@@ -143,40 +111,39 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Strata mı, cluster mı?",
+      baslik: "*Strata* mı, *cluster* mı?",
+      kisa: "Bütün gruplardan birkaç kişi stratified; birkaç grubun herkesi cluster.",
       bloklar: [
         { tip: "tablo", baslik: "AP'nin en sevdiği ayrım", head: ["", "*Strata* (stratified)", "*Clusters* (cluster)"], rows: [
             ["Grubun içi", "Benzer (*homogeneous*)", "Karışık (*heterogeneous*)"],
             ["Gruplar arası", "Farklı", "Birbirine benzer"],
             ["Ne alınır?", "HER gruptan BİRKAÇ kişi", "BİRKAÇ grubun HERKESİ"],
             ["Kazanç", "Daha isabetli tahmin", "Ucuz, pratik"]
-          ] },
+          ], not: "Karar sorusu: bütün gruplardan seçim var mı? Evet → stratified. Yalnızca rastgele seçilen grupların herkesi mi alındı? Evet → cluster." },
         { tip: "ikili",
           sol: { ikon: "🧱", baslik: "*Stratified*", maddeler: ["Bütün gruplardan seçim var", "Her gruptan ayrı *SRS*", "Market zinciri: her şehirden rastgele 5 mağaza"] },
           sag: { ikon: "🚌", baslik: "*Cluster*", maddeler: ["Yalnızca seçilen gruplar", "Seçilen grubun herkesi", "Market zinciri: 3 şehir, oradaki bütün mağazalar"] },
           oyun: [
             { metin: "Her şehirden rastgele 5 mağaza seçildi.", cevap: "sol", neden: "Bütün şehirlerden (strata) birkaç mağaza: stratified." },
             { metin: "Rastgele 3 şehir seçildi, oradaki bütün mağazalar alındı.", cevap: "sag", neden: "Seçilen şehirlerin (cluster) herkesi: cluster." },
-            { metin: "40 şubeli kafe zincirinde rastgele 5 şube seçildi, oradaki bütün çalışanlara anket yapıldı.", cevap: "sag", neden: "Şubeler bütün olarak seçildi: cluster." },
             { metin: "Her şubeden rastgele 3 çalışan seçildi.", cevap: "sol", neden: "Her gruptan birkaç kişi: stratified." },
             { metin: "Dört sınıf düzeyinden her birinden 10 öğrenci seçildi.", cevap: "sol", neden: "Her düzeyden bir SRS: stratified." }
           ] },
-        { tip: "adimlar", baslik: "Karar sorusu", adimlar: [
-            { baslik: "Soru 1", metin: "Bütün gruplardan seçim var mı? Evet → *stratified*." },
-            { baslik: "Soru 2", metin: "Yalnızca rastgele seçilen grupların herkesi mi alındı? Evet → *cluster*." }
-          ] },
+        { tip: "ornek", baslik: "Mini sınav: kafe zincirinin şubeleri", durum: "Bir kafe zincirinin 40 şubesi var. Yönetim rastgele 5 şube seçiyor ve oradaki bütün çalışanlara anket yapıyor. Bu hangi yöntem?",
+          adimlar: ["Gruplar şubeler.", "Rastgele 5 şube seçildi, şubelerin tamamı alındı (bütün çalışanlar).", "Her şubeden birkaç çalışan seçilseydi *stratified* olurdu."],
+          sonuc: "*Cluster random sample*: 5 şubenin tamamı, içindeki herkes." },
         { tip: "tuzak", baslik: "İki kavramı yer değiştirme", metin: "*Strata* içi benzer, arası farklı. *Cluster* içi karışık, arası benzer. Tam tersi dizilimler.", yanlis: "“Cluster'lar içi benzer gruplardır.”", dogru: "*Strata* içi benzer gruplardır; *cluster*'lar popülasyonun küçük kopyalarıdır." }
       ]
     },
     {
       baslik: "*Systematic random sample*",
+      kisa: "Rastgele başlangıç seç, sonra her k'ıncı kişiyi al.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🚪", terim: "Systematic random sample", tr: "sistematik rastgele örneklem", tanim: "Sıralı bir dizilimde ilk k bireyden biri rastgele seçilir, sonra her k'ıncı birey alınır. k = N ÷ n.", ornek: "Kapıdan giren 600 öğrenciden 40'ı." },
             { ikon: "🗳️", terim: "Exit poll", tr: "sandık çıkışı anketi", tanim: "Seçim günü sandıktan çıkan seçmenlerle yapılan anket. Önceden liste olmadığı için *systematic* yapılır.", ornek: "Anketör her k'ıncı seçmeni durdurur." }
           ] },
-        { tip: "formul", parcalar: [{ t: "k", alt: "aralık" }, "=", { t: "N", alt: "600 öğrenci" }, "÷", { t: "n", alt: "40 kişi" }, "=", { t: "15", alt: "her 15. kişi" }], aciklama: "Aralığı bulduktan sonra 1 ile k arasında rastgele bir başlangıç seçersin." },
-        { tip: "ornek", baslik: "Kapıdan giren 600 öğrenciden 40'ı", durum: "Öğrenciler tek sıra hâlinde kapıdan giriyor.",
+        { tip: "ornek", baslik: "Kapıdan giren 600 öğrenciden 40'ı", durum: "Öğrenciler tek sıra hâlinde kapıdan giriyor. Aralık k = N ÷ n = 600 ÷ 40 = 15.",
           adimlar: [
             "Aralık: k = 600 ÷ 40 = 15.",
             "1 ile 15 arasında rastgele bir sayı: randInt(1,15) → 7 olsun.",
@@ -204,30 +171,20 @@ window.DEFTER = {
             { metin: "Rastgele sayı 7 geldi: ilk seçilen 7. öğrenci.", goster: ["n1"] },
             { metin: "Bundan sonra her 15. kişi: 22, 37, 52, 67… Aralık sabit, yalnızca ilk adım rastgele.", goster: ["n2", "n3", "n4", "n5", "k1", "k2", "k3", "k4"] }
           ] },
-        { tip: "ornek", baslik: "Günlük kayıtlarda her 7. kayıt", durum: "Bir kafenin günlük satış kayıtları haftanın günlerine göre sıralı, art arda üç hafta. Her 7. kaydı alıyorsun.",
-          adimlar: ["Haftada 7 gün var, aralık da 7.", "Başlangıç ne olursa olsun hep haftanın aynı gününe düşersin.", "Örneklem yalnızca o günü (ör. hep cumartesiyi) temsil eder."],
-          sonuc: "Listedeki düzen aralıkla çakışırsa örneklem popülasyonu temsil etmez." },
-        { tip: "tuzak", baslik: "Düzen ve aralık çakışmasın", metin: "Systematic'te listedeki tekrarlayan düzen sabit aralıkla uyuşuyorsa (günlük kayıt, her 7.) hep aynı günü seçersin.", yanlis: "“Her 7. kaydı al, sonuç temsil eder.”", dogru: "Aralığın listedeki düzenle çakışmadığından emin ol." },
-        { tip: "tuzak", baslik: "Başlangıç rastgele olmalı", metin: "“İlk kişiden başla” dersen yöntem rastgele olmaz.", yanlis: "“İlk kişiden başlayıp her 15. kişiyi aldım.”", dogru: "1 ile k arasında rastgele bir başlangıç seç." }
+        { tip: "tuzak", baslik: "Başlangıç rastgele, düzen çakışmasız", metin: "“İlk kişiden başla” dersen yöntem rastgele olmaz. Listedeki tekrarlayan düzen de aralıkla çakışmamalı: art arda üç haftanın günlük kayıtlarında her 7. kaydı alırsan hep haftanın aynı gününü (ör. cumartesiyi) seçersin.", yanlis: "“İlk kişiden başlayıp her 15. kişiyi aldım.” ya da “Her 7. kaydı al, sonuç temsil eder.”", dogru: "1 ile k arasında rastgele bir başlangıç seç; aralığın listedeki düzenle çakışmadığından emin ol." }
       ]
     },
     {
       baslik: "Acı sos fabrikası: üç yöntem, bir problem",
+      kisa: "Aynı 200 kutu, üç yöntemle farklı yoldan seçilir.",
       bloklar: [
-        { tip: "hikaye", ikon: "🌶️", baslik: "Bin kutu, 200'ünü tart", metin: "Acı sos fabrikasında **4 makine** var (A, B, C, D). Her makine **10 palet** dolduruyor, her palette **25 kutu**. Kalite kontrol, 200 kutunun ortalama ağırlığını ölçecek." },
-        { tip: "formul", parcalar: [{ t: "4", alt: "makine" }, "×", { t: "10", alt: "palet" }, "×", { t: "25", alt: "kutu" }, "=", { t: "1000", alt: "kutu" }], aciklama: "Toplam bin kutu; örneklem n = 200." },
-        { tip: "ornek", baslik: "*Stratified*: strata = makineler", durum: "Aynı makinenin kutuları benzer ağırlıkta; makineler arası fark olabilir.",
-          adimlar: ["Her makinede 10 × 25 = 250 kutu.", "200 ÷ 4 = 50 kutu her makineden.", "Her makinenin 250 kutusundan 50'lik bir *SRS*.", "50 + 50 + 50 + 50 = 200."],
-          sonuc: "Her makineden 50 kutu (toplam 200). Avantaj: her makine temsil edilir, tahmin daha isabetli." },
-        { tip: "ornek", baslik: "*Cluster*: clusters = paletler", durum: "Paletler hazır gruplar; her paletin içinde 25 kutu var.",
-          adimlar: ["Toplam 4 × 10 = 40 palet.", "200 ÷ 25 = 8 palet gerekir.", "40 paletten rastgele 8'ini seç; üstlerindeki bütün kutuları tart.", "8 × 25 = 200."],
-          sonuc: "8 palet, 200 kutu. Avantaj: dağınık kutuları aramak yok; hızlı ve pratik." },
-        { tip: "ornek", baslik: "*Systematic*: banttan her 5. kutu", durum: "Kutular bantta sırayla geçiyor.",
-          adimlar: ["k = 1000 ÷ 200 = 5.", "1 ile 5 arasında rastgele başlangıç: randInt(1,5) → 3.", "Seçilenler: 3, 8, 13, 18, … (her seferinde +5).", "Son: 3 + 199 × 5 = 998. Toplam 200 kutu."],
-          sonuc: "3., 8., 13., …, 998. kutu: 200 kutu. Avantaj: kutuları numaralamaya gerek yok." },
-        { tip: "ornek", baslik: "*SRS* olsaydı?", durum: "Aynı problemi basit rastgele örneklemle çözmek istiyorsun.",
-          adimlar: ["1'den 1000'e kadar tüm kutuları numarala.", "200 farklı sayı üret (tekrarları at).", "O kutuları tek tek bul ve tart."],
-          sonuc: "Çok emek ister; üç yöntem bu zahmeti azaltır." },
+        { tip: "ornek", baslik: "Bin kutudan 200'ünü tart", durum: "Fabrikada 4 makine (A, B, C, D) var; her makine 10 palet, her palet 25 kutu doldurur: 4 × 10 × 25 = 1000 kutu. Kalite kontrol 200 kutunun ortalama ağırlığını ölçecek (n = 200). *SRS* için 1000 kutuyu numaralayıp tek tek bulmak gerekirdi; üç yöntem bu zahmeti azaltır.",
+          adimlar: [
+            "*Stratified* (strata = makineler; aynı makinenin kutuları benzer): her makinede 10 × 25 = 250 kutu; 200 ÷ 4 = 50. Her makineden 50 kutuluk bir *SRS*: 50 + 50 + 50 + 50 = 200.",
+            "*Cluster* (clusters = paletler): 4 × 10 = 40 palet; 200 ÷ 25 = 8 palet. 40 paletten rastgele 8'ini seç, üstlerindeki bütün kutuları tart: 8 × 25 = 200.",
+            "*Systematic* (banttan): k = 1000 ÷ 200 = 5; randInt(1,5) → 3; seçilenler 3, 8, 13, 18, … (+5); son 3 + 199 × 5 = 998. Toplam 200 kutu."
+          ],
+          sonuc: "Her yöntemde 200 kutu. Avantajlar: *stratified* her makineyi temsil eder (daha isabetli), *cluster* hızlı ve pratik, *systematic* kutuları numaralamaya gerek bırakmaz." },
         { tip: "tablo", baslik: "Fabrikada üç yöntem", head: ["Yöntem", "Gruplar", "Ne alınır?", "Sayı"], rows: [
             ["*Stratified*", "strata = 4 makine", "Her makineden 50 kutuluk *SRS*", "4 × 50 = 200"],
             ["*Cluster*", "clusters = 40 palet", "8 paletin tüm kutuları", "8 × 25 = 200"],
@@ -237,11 +194,9 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Mini sınav ve toparlayalım",
+      baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
-        { tip: "ornek", baslik: "Kafe zincirinin şubeleri", durum: "Bir kafe zincirinin 40 şubesi var. Yönetim rastgele 5 şube seçiyor ve oradaki bütün çalışanlara anket yapıyor. Bu hangi yöntem?",
-          adimlar: ["Gruplar şubeler.", "Rastgele 5 şube seçildi, şubelerin tamamı alındı (bütün çalışanlar).", "Her şubeden birkaç çalışan seçilseydi *stratified* olurdu."],
-          sonuc: "*Cluster random sample*: 5 şubenin tamamı, içindeki herkes." },
         { tip: "ozet", maddeler: [
             "Hepsine soramazsan seçimi şansa bırak: dört rastgele yöntem var.",
             "*SRS*: her olası n'li grup eşit şansa sahip; eşit bireysel şans yetmez (üç masa örneği). Etiketle → rastgele üret (tekrarları atla) → seç.",

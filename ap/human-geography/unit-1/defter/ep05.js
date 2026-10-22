@@ -2,50 +2,45 @@
    Kaynak: ap-videolar/src/episodes/ep05 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep05",
-  ozet: "Bir şeyin dağılımını (*distribution*) üç gözlükle anlatırız: *density* (kaç tane?), *concentration* (nasıl yayılmış?), *pattern* (düzen var mı?). Quizin en sevdiği tuzak bu üçünü karıştırmaktır. Defterde 12 evlik örneği, beyzbol ligini, *township and range*'i ve *aggregation*'ı göreceksin.",
+  amac: "Bu konu bir şeyin haritada nasıl dağıldığını (*distribution*) anlatıyor. Üç ayrı özelliğini öğreneceksin: kaç tane (*density*), ne kadar yakın (*concentration*), düzen var mı (*pattern*). Sınavın en sevdiği tuzak bu üçünü karıştırmaktır.",
   bolumler: [
     {
-      baslik: "Üç gözlük",
+      baslik: "*Distribution* ve üç gözlük",
+      kisa: "Dağılım üç özellikle anlatılır: *density*, *concentration*, *pattern*.",
       bloklar: [
-        { tip: "hikaye", ikon: "🔭", baslik: "Aynı noktalar, üç farklı bakış",
-          metin: "Bir şeyin nasıl dağıldığını anlatmak için tek kelime yetmez. Haritada bir sürü nokta var. Coğrafyacılar *distribution* kavramına üç ayrı gözlükle bakar. Üçü de farklı bir şey söyler. Quizin en sevdiği tuzak da tam burada." },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🗺️", terim: "Distribution", tr: "dağılım", tanim: "Bir şeyin mekâna yayılış biçimi. Aynı noktalara üç ayrı gözlükle bakılır; üçü de farklı bir şey söyler.", ornek: "Bir şehirdeki kafelerin haritadaki yerleşimi." }
+          ] },
         { tip: "harita", merkez: "*Distribution*", dallar: [
             { baslik: "*Density*", alt: "Kaç tane? Sayı ÷ alan" },
             { baslik: "*Concentration*", alt: "Ne kadar yakın? Kümelenmiş mi yayılmış mı?" },
             { baslik: "*Pattern*", alt: "Düzen var mı? Doğrusal, ızgara..." }
-          ] },
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🗺️", terim: "Distribution", tr: "dağılım", tanim: "Bir şeyin mekâna yayılış biçimi. Üç özelliğiyle anlatılır: *density*, *concentration*, *pattern*.", ornek: "Bir şehirdeki kafelerin haritadaki yerleşimi." }
           ] }
       ]
     },
     {
       baslik: "*Density*: sıklık",
+      kisa: "*Density* alan başına miktardır; nesnelerin nasıl yayıldığına bakmaz.",
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "Sayı", alt: "kaç ev, kaç kişi" }, "÷",
             { t: "Alan", alt: "km² ya da mil²" }, "=",
             { t: "*Density*", alt: "alan başına miktar" }
-          ], aciklama: "*Density* nesnelerin nasıl yayıldığıyla ilgilenmez; yalnızca sayar." },
-        { tip: "ikili", sol: { ikon: "🏘️", baslik: "Mahalle A: 20 ev", maddeler: ["Eşit büyüklükte bir arsa", "20 ev ÷ 1 km² = 20 ev/km²", "Yüksek *density*"] },
-          sag: { ikon: "🏠", baslik: "Mahalle B: 5 ev", maddeler: ["Aynı büyüklükte arsa", "5 ev ÷ 1 km² = 5 ev/km²", "Düşük *density*"] },
-          oyun: [
-            { metin: "Aynı büyüklükteki arsaya 20 ev yapılmış.", cevap: "sol", neden: "Alanın başına daha çok ev: yüksek *density*." },
-            { metin: "Aynı büyüklükteki arsada yalnızca 5 ev var.", cevap: "sag", neden: "Alanın başına az ev: düşük *density*." },
-            { metin: "Ev sayısı ÷ alan = 20 ev/km².", cevap: "sol", neden: "Sayı büyük, aynı alan: yüksek *density*." },
-            { metin: "Ev sayısı ÷ alan = 5 ev/km².", cevap: "sag", neden: "Daha seyrek: düşük *density*." }
-          ] },
+          ], aciklama: "*Density* yalnızca sayar. İnsanlar için hesaplanan kişi/km² değerine ileride *arithmetic density* denir; mantık aynıdır." },
         { tip: "ornek", baslik: "Hangi mahalle daha yoğun?", durum: "A mahallesi 2 km² ve içinde 400 ev var. B mahallesi 4 km² ve içinde yine 400 ev var. Hangisinin *density* değeri yüksek?",
           adimlar: ["A: 400 ev ÷ 2 km² = 200 ev/km².", "B: 400 ev ÷ 4 km² = 100 ev/km².", "Karşılaştır: 200 > 100."],
-          sonuc: "A mahallesinin *density* değeri ==iki kat daha yüksek==. Evlerin nasıl yayıldığı *density*'yi değil *concentration*'ı ilgilendirir." },
-        { tip: "not", metin: "Ek bilgi: insanlar için hesaplanan *density*'ye (kişi/km²) ileride *arithmetic density* denir; mantık aynıdır: toplam sayı ÷ toplam alan." }
+          sonuc: "A mahallesinin *density* değeri ==iki kat daha yüksek==. Evlerin nasıl yayıldığı *density*'yi değil *concentration*'ı ilgilendirir." }
       ]
     },
     {
       baslik: "*Concentration*: yayılma biçimi",
+      kisa: "*Concentration* nesnelerin ne kadar yakın olduğudur: *clustered* ya da *dispersed*.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🧲", baslik: "*Clustered*", maddeler: ["Nesneler birbirine yakın", "Bir yerde toplanmış", "Yüksek *concentration*"] },
-          sag: { ikon: "🌾", baslik: "*Dispersed*", maddeler: ["Nesneler alana yayılmış", "Birbirinden uzak", "Düşük *concentration*"] },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🍀", terim: "Concentration", tr: "yoğunlaşma / kümelenme", tanim: "Nesnelerin alana nasıl yayıldığı: birbirine yakınsa *clustered* (kümelenmiş), yayılmışsa *dispersed* (dağınık).", ornek: "İki mahallede de tam 12 ev var; birinde köşeye toplanmış, diğerinde eşit yayılmış." }
+          ] },
+        { tip: "ikili", sol: { ikon: "🧲", baslik: "*Clustered*", maddeler: ["Nesneler birbirine yakın, bir yerde toplu", "Yüksek *concentration*"] },
+          sag: { ikon: "🌾", baslik: "*Dispersed*", maddeler: ["Nesneler alana yayılmış, birbirinden uzak", "Düşük *concentration*"] },
           oyun: [
             { metin: "12 evin hepsi mahallenin bir köşesinde.", cevap: "sol", neden: "Toplu: *clustered*." },
             { metin: "12 ev eşit aralıklarla alana yayılmış.", cevap: "sag", neden: "Yayılmış: *dispersed*." },
@@ -78,42 +73,30 @@ window.DEFTER = {
             { metin: "Aynı 12 ev bir köşeye toplanıyor: *clustered*. ==Ev sayısı da alan da aynı, yani *density* değişmedi.== Değişen *concentration*.", set: { n1: { x: 1.5, y: 8.5 }, n2: { x: 2.2, y: 8.8 }, n3: { x: 3.0, y: 8.4 }, n4: { x: 1.8, y: 7.7 }, n5: { x: 2.6, y: 7.9 }, n6: { x: 3.3, y: 7.5 }, n7: { x: 1.2, y: 7.0 }, n8: { x: 2.1, y: 7.0 }, n9: { x: 2.9, y: 6.9 }, n10: { x: 1.6, y: 6.3 }, n11: { x: 2.5, y: 6.2 }, n12: { x: 3.2, y: 6.3 } }, goster: ["yz2"], gizle: ["yz1"] },
             { metin: "Tekrar yayılınca *dispersed*'a döneriz. *Density* hep 12 ev/alan; yalnızca yayılma biçimi oynadı.", set: { n1: { x: 1.0, y: 8.6 }, n2: { x: 3.9, y: 9.1 }, n3: { x: 6.8, y: 8.1 }, n4: { x: 9.1, y: 9.0 }, n5: { x: 2.2, y: 5.5 }, n6: { x: 5.0, y: 6.2 }, n7: { x: 8.0, y: 5.0 }, n8: { x: 9.3, y: 6.8 }, n9: { x: 1.1, y: 2.0 }, n10: { x: 4.2, y: 3.1 }, n11: { x: 6.5, y: 1.6 }, n12: { x: 8.9, y: 2.9 } }, goster: ["yz1"], gizle: ["yz2"] }
           ] },
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🍀", terim: "Concentration", tr: "yoğunlaşma / kümelenme", tanim: "Nesnelerin alana nasıl yayıldığı: birbirine yakınsa *clustered*, yayılmışsa *dispersed*.", ornek: "İki mahallede de tam 12 ev var; birinde köşeye toplanmış, diğerinde eşit yayılmış." },
-            { ikon: "🧲", terim: "Clustered", tr: "kümelenmiş", tanim: "Nesneler birbirine yakın, bir bölgede toplu halde.", ornek: "Hepsi köşede toplanmış 12 ev." },
-            { ikon: "🌐", terim: "Dispersed", tr: "dağınık", tanim: "Nesneler geniş alana yayılmış, birbirinden uzak.", ornek: "Eşit aralıklarla yayılmış 12 ev." }
-          ] },
         { tip: "tuzak", metin: "İki mahallede de 12 ev var; biri kümelenmiş, diğeri yayılmış.", yanlis: "Kümelenmiş mahallenin *density*'si daha yüksektir.", dogru: "==*Density* aynıdır (12 = 12).== Değişen *concentration*'dır: *clustered* ≠ *dispersed*." }
       ]
     },
     {
       baslik: "Klasik sınav örneği: beyzbol ligi",
+      kisa: "Takım sayısı artınca *density*, yayılınca *concentration* değişti.",
       bloklar: [
-        { tip: "sayilar", ogeler: [
-            { deger: 16, etiket: "takım · 1952 · neredeyse hepsi kuzeydoğuda" },
-            { deger: 30, etiket: "takım · bugün · ülkenin her yanında" }
-          ] },
         { tip: "tablo", baslik: "İki dönem, iki özellik", head: ["", "1952", "Bugün", "Değişen"], rows: [
             ["Takım sayısı", "16", "30", "*Density* arttı"],
             ["Dağılım", "Kuzeydoğuda toplu", "Ülkeye yayılmış", "*Concentration* değişti"],
             ["Biçim", "*Clustered*", "*Dispersed*", "—"]
-          ], vurgu: 0 },
-        { tip: "zaman", olaylar: [
-            { tarih: "1952", baslik: "16 takım, kuzeydoğuda", metin: "Boston, New York, Philadelphia, Chicago, St. Louis gibi şehirlerde toplu halde." },
-            { tarih: "Sonraki on yıllar", baslik: "Batıya ve güneye sıçrama", metin: "Los Angeles, San Francisco, Seattle, Phoenix, Denver, Dallas, Houston, Atlanta, Miami gibi yeni şehirlere takımlar geldi." },
-            { tarih: "Bugün", baslik: "30 takım, her yerde", metin: "Takımlar ülkeye yayıldı." }
-          ] },
+          ], vurgu: 0, not: "1952'de 16 takımın neredeyse hepsi kuzeydoğudaydı; sonraki on yıllarda batıya ve güneye yayıldılar." },
         { tip: "tuzak", metin: "Sınavda \"ne değişti?\" diye sorulur.", yanlis: "Takım sayısı arttığı için yalnızca *density* değişti.", dogru: "İkisi de değişti: sayı 16'dan 30'a çıktığı için ==*density* arttı==; takımlar yayıldığı için ==*concentration* *clustered*'dan *dispersed*'a geçti==." }
       ]
     },
     {
       baslik: "*Pattern*: geometrik düzen",
+      kisa: "*Pattern* nesnelerin geometrik düzenidir: *linear* ya da *grid*.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📐", terim: "Pattern", tr: "desen", tanim: "Nesnelerin geometrik bir düzen oluşturup oluşturmadığı.", ornek: "Evlerin kare kare mi, bir yol boyunca mı dizildiği." },
             { ikon: "〰️", terim: "Linear", tr: "doğrusal", tanim: "Nesneler bir nehir ya da yol boyunca dizilmiştir.", ornek: "Nehir boyunca sıralanan köyler." },
             { ikon: "🟦", terim: "Grid", tr: "ızgara", tanim: "Nesneler kare kare, eşit aralıklarla dizilmiştir.", ornek: "Satranç tahtası düzenindeki şehir blokları." },
-            { ikon: "🌽", terim: "Township and range", tr: "kasaba ve sıra sistemi", tanim: "Amerika'da toprağın karelere bölündüğü sistem. Uçaktan bakınca ==satranç tahtası== gibi görünür.", ornek: "6 mil × 6 mil'lik bir *township*; içinde 36 *section*, her biri 1 mil kare." }
+            { ikon: "🌽", terim: "Township and range", tr: "kasaba ve sıra sistemi", tanim: "Amerika'da toprağın karelere bölündüğü sistem. Uçaktan bakınca ==satranç tahtası== gibi görünür.", ornek: "Orta Batı'da kare kare bölünmüş tarlalar." }
           ] },
         { tip: "grafik", baslik: "Linear, grid ve township and range", xlabel: "", ylabel: "", xmax: 10, ymax: 10,
           ogeler: [
@@ -167,14 +150,10 @@ window.DEFTER = {
     },
     {
       baslik: "*Aggregation*: veriyi nasıl grupluyoruz?",
+      kisa: "Veri büyük birimlerde toplanınca detay kaybolur, desen değişebilir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧮", terim: "Aggregation", tr: "birleştirme / gruplama", tanim: "Veriyi hangi büyüklükteki birimlerde topladığın: mahalle, il ya da ülke. ==Birim büyüdükçe detay kaybolur; gördüğün desen bile değişebilir.==", ornek: "Ülke ortalamasında işsizlik düşük görünür; il il bakınca bazı illerde çok yüksektir." }
-          ] },
-        { tip: "adimlar", baslik: "Aynı veri, üç düzey", adimlar: [
-            { baslik: "Mahalle düzeyi", metin: "İnce detay: hangi mahallede işsizlik yüksek, hangisinde düşük, açıkça görünür." },
-            { baslik: "İl düzeyi", metin: "Mahalleler birleşti; farklar bulanıklaşır ve bazı desenler kaybolur." },
-            { baslik: "Ülke düzeyi", metin: "Tek bir sayı kalır. Bölgesel sorunlar görünmez olabilir." }
           ] },
         { tip: "tablo", baslik: "Örnek (varsayımsal): işsizlik oranı", head: ["Düzey", "A ili", "B ili", "C ili", "D ili"], rows: [
             ["İl il", "%3", "%4", "%12", "%5"],
@@ -185,6 +164,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Density* = sayı ÷ alan; yayılma biçimine bakmaz (20 ev/km² > 5 ev/km²).",

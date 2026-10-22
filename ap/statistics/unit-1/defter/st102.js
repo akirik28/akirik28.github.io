@@ -2,32 +2,15 @@
    Kaynak: ap-videolar/src/episodes/st102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st102",
-  ozet: "Kategorik veriyi sayarak (*frequency table*), oranlayarak (*relative frequency table*) ve çizerek (*bar chart*, *pie chart*) göstermeyi öğreneceksin. *Majority* iddialarını nasıl sınayacağını, farklı büyüklükteki grupları neden yüzdeyle karşılaştırman gerektiğini ve grafiklerin aynı veriyle nasıl yalan söyleyebileceğini göreceksin.",
+  amac: "Bu konu kategorik veriyi nasıl özetleyip çizeceğini anlatıyor. Sayarak (*frequency table*), oranlayarak (*relative frequency table*) ve çizerek (*bar chart*, *pie chart*) göstermeyi, çoğunluk iddialarını sınamayı ve yanıltıcı grafikleri tanımayı öğreneceksin.",
   bolumler: [
     {
-      baslik: "27 cevap, bir iddia",
-      bloklar: [
-        { tip: "hikaye", ikon: "🍗", baslik: "En iyi tavuk sandviçi kimde?",
-          metin: "Bir öğretmen sınıfına soruyor: en iyi tavuk sandviçini kim yapıyor? Elinde 27 cevaplık karışık bir liste var. Biri \"sınıfın çoğunluğu Popeye's dedi\" diyor. Doğru mu? Listeye bakarak söylemek zor. Bugün listeyi önce sayacağız, sonra çizeceğiz; bir de kötü bir grafiğin aynı veriyle nasıl yalan söylediğini göreceğiz." },
-        { tip: "sayilar", ogeler: [
-            { deger: 27, etiket: "öğrenci cevabı (n = 27)" },
-            { deger: 4, etiket: "restoran seçeneği" }
-          ] },
-        { tip: "adimlar", baslik: "Yol haritası", adimlar: [
-            { baslik: "Say", metin: "*Frequency table* ile her kategoriyi say." },
-            { baslik: "Çiz", metin: "*Bar chart* ve *pie chart* ile göster." },
-            { baslik: "Kanma", metin: "Yanıltıcı grafiklerin üç hilesini tanı." }
-          ] }
-      ]
-    },
-    {
       baslik: "*Frequency table*: sayarak özetle",
+      kisa: "Frekans tablosu, her kategoride kaç birim olduğunu sayar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🏷️", terim: "Categorical variable", tr: "kategorik değişken", tanim: "Değerleri kategori olan değişken; burada \"en iyi sandviç\", değerleri restoran adları.", ornek: "Popeye's, Shake Shack, Chick-fil-A, KFC." },
-            { ikon: "📈", terim: "Distribution", tr: "dağılım", tanim: "Değişkenin hangi değerleri ne sıklıkla aldığı.", ornek: "Hangi restoran kaç oy aldı?" },
-            { ikon: "🔢", terim: "Frequency", tr: "frekans", tanim: "Bir kategorideki birim sayısı (count).", ornek: "Popeye's için 14." },
-            { ikon: "🗒️", terim: "Frequency table", tr: "frekans tablosu", tanim: "Her kategorinin frekansını gösteren tablo.", ornek: "Popeye's 14, Shake Shack 6, Chick-fil-A 5, KFC 2." }
+            { ikon: "🔢", terim: "Frequency", tr: "frekans", tanim: "Bir kategorideki birim sayısı (count).", ornek: "27 öğrenciye \"en iyi tavuk sandviçi kimde?\" soruldu; Popeye's için 14." },
+            { ikon: "🗒️", terim: "Frequency table", tr: "frekans tablosu", tanim: "Her kategorinin frekansını gösteren tablo. Değişkenin ==distribution=='ını (hangi değer, ne sıklıkla) özetler.", ornek: "Popeye's 14, Shake Shack 6, Chick-fil-A 5, KFC 2." }
           ] },
         { tip: "sekil", baslik: "Frekans tablosu (n = 27)", fig: { type: "table", head: ["Restaurant", "Frequency"], rows: [["Popeye's", 14], ["Shake Shack", 6], ["Chick-fil-A", 5], ["KFC", 2], ["Total", 27]] } },
         { tip: "ornek", baslik: "Toplam kontrolü", durum: "Tabloya yazılan frekanslar 14, 6, 5 ve 2.",
@@ -37,8 +20,8 @@ window.DEFTER = {
     },
     {
       baslik: "*Relative frequency table*: paya çevir",
+      kisa: "Relative frequency, frekansı toplama bölerek bulunan paydır.",
       bloklar: [
-        { tip: "not", metin: "14 kişi çok mu, az mı? Bunu söylemek için sayıyı toplama bölüp bir paya çeviririz." },
         { tip: "formul", parcalar: [{ t: "Relative frequency", alt: "göreli frekans (pay)" }, "=", { t: "Frequency", alt: "kategorideki sayı" }, "÷", { t: "Total", alt: "toplam birim" }], aciklama: "Sonuç oran (0,519) ya da yüzde (51,9%) olarak yazılabilir; ikisi de doğrudur." },
         { tip: "tablo", baslik: "Relative frequency table", head: ["Restaurant", "Frequency", "Hesap", "Relative frequency"], rows: [
             ["Popeye's", "14", "14 ÷ 27", "0,519 = 51,9%"],
@@ -47,17 +30,15 @@ window.DEFTER = {
             ["KFC", "2", "2 ÷ 27", "0,074 = 7,4%"],
             ["Total", "27", "", "100%"]
           ], vurgu: 0, not: "51,9 + 22,2 + 18,5 + 7,4 = 100. Sözlü anlatımda yuvarlanmış hali: yüzde 52, 22, 19 ve 7." },
-        { tip: "ornek", baslik: "Popeye's'in payı", durum: "14 kişi Popeye's dedi, toplam 27 kişi var.",
-          adimlar: ["Frekans ÷ toplam = 14 ÷ 27.", "14 ÷ 27 ≈ 0,5185, yani 0,519 (üç basamak).", "Yüzdeye çevir: 0,519 × 100 = 51,9%."],
-          sonuc: "Popeye's'i seçenlerin payı yaklaşık ==%51,9==." },
         { tip: "tuzak", baslik: "Frekanslar veri değildir", metin: "Tablodaki 14, 6, 5 ve 2 verinin kendisi değil, özetidir.", yanlis: "Veri 14, 6, 5, 2'dir.", dogru: "Veri, 27 öğrencinin tek tek cevaplarıdır; frekanslar ve relative frequency'ler bu veriyi özetler." }
       ]
     },
     {
       baslik: "*Majority*: çoğunluk iddiası",
+      kisa: "Majority yarıdan fazlası demektir; en çok oy almak yetmez.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🗳️", terim: "Majority", tr: "çoğunluk", tanim: "Yarıdan fazlası, yani ==%50'den fazlası==. En çok oy almak yetmez.", ornek: "27 kişide en az 14 oy gerekir (14/27 = %51,9)." }
+            { ikon: "🗳️", terim: "Majority", tr: "çoğunluk", tanim: "Yarıdan fazlası, yani ==%50'den fazlası==. İddia: \"Sınıfın çoğunluğu Popeye's'i seçti.\"", ornek: "27 kişide en az 14 oy gerekir (14/27 = %51,9)." }
           ] },
         { tip: "grafik", baslik: "50% çizgisi: iddia sınanıyor", xlabel: "Yüzde", ylabel: "", xmax: 10, ymax: 4,
           xticks: [{ v: 0, label: "0%" }, { v: 5, label: "50%" }, { v: 10, label: "100%" }],
@@ -83,30 +64,28 @@ window.DEFTER = {
             { metin: "27 kişide 13 oy alıp birinci olan seçenek.", cevap: "sol", neden: "13/27 = %48,1 < 50: birinci ama *majority* değil." },
             { metin: "40 kişide 18 oy alıp birinci olan seçenek.", cevap: "sol", neden: "18/40 = %45 < 50: en çok seçilen, *majority* değil." },
             { metin: "40 kişide 21 oy alan seçenek.", cevap: "sag", neden: "21/40 = %52,5 > 50: *majority*." }
-          ] },
-        { tip: "tuzak", baslik: "Birinci olmak çoğunluk değildir", metin: "\"En çok oy aldı\" cümlesi çoğunluk demek değildir.", yanlis: "13 oyla birinci olduysa çoğunluğu sağlamıştır.", dogru: "*Majority* = %50'den fazlası. 13/27 = %48,1 yetmez." }
+          ] }
       ]
     },
     {
       baslik: "*Bar chart*: çubuk grafik",
+      kisa: "Bar chart her kategoriye bir çubuk verir; kategorik veri içindir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📊", terim: "Bar chart", tr: "çubuk grafik", tanim: "Her kategoriye bir çubuk; yükseklik frekansı ya da yüzdeyi gösterir.", ornek: "Popeye's çubuğu 51,9, KFC çubuğu 7,4." }
           ] },
         { tip: "sekil", baslik: "Sandviç anketi: yüzde olarak", fig: { type: "bar", cats: ["Popeye's", "Shake Shack", "Chick-fil-A", "KFC"], series: [{ name: "Percent of students", values: [51.9, 22.2, 18.5, 7.4] }], ylabel: "Percent of students" } },
-        { tip: "adimlar", baslik: "Çubuk grafik kuralları", adimlar: [
-            { baslik: "Eşit genişlik", metin: "Bütün çubuklar aynı genişlikte olsun." },
-            { baslik: "Boşluk", metin: "Çubukların arasında boşluk kalsın." },
-            { baslik: "Etiketli eksenler", metin: "Yatay eksene \"Restaurant\", dikey eksene \"Percent of students\" yaz." }
+        { tip: "adimlar", baslik: "Çiz, sonra yorumla", adimlar: [
+            { baslik: "Eşit genişlik ve boşluk", metin: "Bütün çubuklar aynı genişlikte olsun, aralarında boşluk kalsın." },
+            { baslik: "Etiketli eksenler", metin: "Yatay eksene \"Restaurant\", dikey eksene \"Percent of students\" yaz." },
+            { baslik: "Ne görüyorum?", metin: "Popeye's açık ara önde (%51,9); Shake Shack (%22,2) ile Chick-fil-A (%18,5) yakın; KFC en geride (%7,4). Grafik çizmek amaç değil, ==yorumlamak== amaç." }
           ] },
-        { tip: "ornek", baslik: "Grafiğe bak: ne görüyorum?", durum: "Yukarıdaki grafikte çubukları yorumlayalım.",
-          adimlar: ["Popeye's açık ara önde (%51,9).", "Shake Shack (%22,2) ile Chick-fil-A (%18,5) birbirine yakın.", "KFC en geride (%7,4)."],
-          sonuc: "Grafik çizmek amaç değil, ==yorumlamak== amaç. Kategorilerin sırası serbesttir." },
         { tip: "tuzak", baslik: "Bar chart ≠ histogram", metin: "Çubuk grafik kategorik, histogram sayısal veri içindir; ayrıntısı sonraki bölümlerde.", yanlis: "Çubuk görünce histogram deriz.", dogru: "Kategorik değişken → *bar chart* (aralıklı çubuklar). Sayısal değişken → histogram." }
       ]
     },
     {
       baslik: "*Pie chart*: pasta grafik",
+      kisa: "Pie chart yalnızca dilimler bir bütünü, yani %100'ü oluşturuyorsa çizilir.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "📊", baslik: "*Bar chart*", maddeler: ["Her zaman çizilebilir", "Yakın değerleri kıyaslamak kolay", "Birden fazla seçilen anketlerde de olur"] },
           sag: { ikon: "🥧", baslik: "*Pie chart*", maddeler: ["Bütünün parçalarını gösterir", "Dilimler toplamı %100 olmalı", "Yakın dilimleri kıyaslamak zor"] },
@@ -123,27 +102,23 @@ window.DEFTER = {
     },
     {
       baslik: "İki grubu karşılaştırmak",
+      kisa: "Grup büyüklükleri farklıysa frekansla değil, yüzdeyle karşılaştır.",
       bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "↔️", terim: "Side-by-side bar chart", tr: "yan yana çubuk grafik", tanim: "Bir categorical variable'ın dağılımını iki ya da daha fazla grupta, kategori kategori yan yana çubuklarla karşılaştırır.", ornek: "9. ve 12. sınıfların öğle yemeği tercihi." }
-          ] },
         { tip: "tablo", baslik: "Öğle yemeği anketi", head: ["Lunch choice", "Grade 9 (n = 200)", "Grade 12 (n = 50)"], rows: [
             ["Cafeteria", "100", "10"],
             ["Canteen", "60", "30"],
             ["From home", "40", "10"]
-          ], not: "9. sınıfta 100 + 60 + 40 = 200; 12. sınıfta 10 + 30 + 10 = 50." },
-        { tip: "sekil", baslik: "Frekansla çizilen yan yana grafik", fig: { type: "bar", cats: ["Cafeteria", "Canteen", "From home"], series: [{ name: "Grade 9", values: [100, 60, 40] }, { name: "Grade 12", values: [10, 30, 10] }], ylabel: "Frequency" } },
-        { tip: "not", metin: "Bu grafikte kantin için 9. sınıfın çubuğu (60) 12. sınıfınkinin (30) iki katı. Demek ki kantini 9'lar daha çok seviyor? ==Hayır.== Gruplar farklı büyüklükte: 200 kişiye karşı 50 kişi." },
-        { tip: "ornek", baslik: "Yüzdeye çevir", durum: "Kantini seçenler: 9. sınıftan 60 kişi (n = 200), 12. sınıftan 30 kişi (n = 50).",
+          ], not: "9. sınıfta 100 + 60 + 40 = 200; 12. sınıfta 10 + 30 + 10 = 50. İki grubu kategori kategori yan yana çubuklarla (*side-by-side bar chart*) karşılaştırırız." },
+        { tip: "ornek", baslik: "Yüzdeye çevir", durum: "Kantini seçenler: 9. sınıftan 60 kişi (n = 200), 12. sınıftan 30 kişi (n = 50). Frekansla bakınca 9'ların çubuğu iki kat uzun.",
           adimlar: ["9. sınıf: 60 ÷ 200 = 0,30 = %30.", "12. sınıf: 30 ÷ 50 = 0,60 = %60.", "Karşılaştır: %60, %30'un iki katı."],
           sonuc: "Sonuç tersine döndü: kantin ==12. sınıfta iki kat popüler==. Grup büyüklükleri farklıysa *relative frequency* ile karşılaştır." },
-        { tip: "sekil", baslik: "Aynı veri, yüzdeyle", fig: { type: "bar", cats: ["Cafeteria", "Canteen", "From home"], series: [{ name: "Grade 9", values: [50, 30, 20] }, { name: "Grade 12", values: [20, 60, 20] }], ylabel: "Percent" } },
-        { tip: "tuzak", baslik: "Frekansla karşılaştırma", metin: "Gruplar eşit büyüklükte değilse çubuk yükseklikleri yanıltır.", yanlis: "9. sınıfın çubuğu uzun, o hâlde kantini 9'lar daha çok seviyor.", dogru: "Yüzdeye çevir: %30 (9. sınıf) ve %60 (12. sınıf)." },
-        { tip: "tuzak", baslik: "Karşılaştırma tek cümlede yazılır", metin: "\"Compare the distributions\" sorularında iki grubu aynı cümlede, karşılaştırma sözcükleriyle ve bağlamıyla yaz. Örnek (başkan yaşı anketi): \"A greater percentage of 18- to 29-year-olds than of 60- to 69-year-olds chose …\".", yanlis: "Önce bir grubu, sonra ötekini ayrı ayrı anlat.", dogru: "İki grubu tek cümlede \"daha büyük yüzde, daha küçük yüzde\" diyerek kıyasla; iki ayrı liste karşılaştırma sayılmaz." }
+        { tip: "sekil", baslik: "Yan yana çubuk grafik, yüzdeyle", fig: { type: "bar", cats: ["Cafeteria", "Canteen", "From home"], series: [{ name: "Grade 9", values: [50, 30, 20] }, { name: "Grade 12", values: [20, 60, 20] }], ylabel: "Percent" } },
+        { tip: "tuzak", baslik: "Frekansla karşılaştırma ve tek cümle kuralı", metin: "Gruplar eşit büyüklükte değilse çubuk yükseklikleri yanıltır. \"Compare the distributions\" sorusunda iki grubu aynı cümlede yaz: \"A greater percentage of 18- to 29-year-olds than of 60- to 69-year-olds chose …\".", yanlis: "9. sınıfın çubuğu uzun, o hâlde kantini 9'lar daha çok seviyor; iki grubu ayrı ayrı listelemek de karşılaştırmadır.", dogru: "Yüzdeye çevir (%30 ve %60) ve iki grubu tek cümlede \"daha büyük yüzde, daha küçük yüzde\" diyerek kıyasla." }
       ]
     },
     {
-      baslik: "Yalan söyleyen grafikler",
+      baslik: "Üç hile: resimli çubuk, genişlik",
+      kisa: "Göz alana bakar; çubuklar eşit genişlikte olmalı, resim değil çubuk kullanılmalı.",
       bloklar: [
         { tip: "harita", merkez: "Yanıltıcı grafiğin 3 hilesi", dallar: [
             { baslik: "Resimli çubuk", alt: "Göz yüksekliğe değil alana bakar" },
@@ -168,6 +143,13 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Alan neden 11,6 kat?", durum: "Dwyane Wade (2008–2009): maç başına 7,5 asist ve 2,2 top çalma.",
           adimlar: ["Yükseklik oranı: 7,5 ÷ 2,2 ≈ 3,41 (yaklaşık 3 kat).", "Resim orantılı büyüdüğü için en de 3,41 kat artar.", "Alan oranı: 3,41² ≈ 11,6."],
           sonuc: "Yükseklik farkı ≈ 3,4 kat, ==alan farkı ≈ 11,6 kat (9 kattan fazla)==. Çözüm: resim yerine eşit genişlikte çubuklar." },
+        { tip: "tuzak", baslik: "Eşit olmayan genişlik", metin: "Üçüncü hile: aynı yükseklikte iki çubuktan biri üç kat geniş çizilirse, geniş olan daha büyük görünür.", yanlis: "Çubuk genişliği önemli değil, yüksekliğe bakılır.", dogru: "Çubuklar ==eşit genişlikte==, eksen ==sıfırdan başlayan==, resim değil çubuk olmalı." }
+      ]
+    },
+    {
+      baslik: "Sıfırdan başlamayan eksen",
+      kisa: "Eksen sıfırdan başlamazsa küçük fark devasa görünür.",
+      bloklar: [
         { tip: "grafik", baslik: "Hile 2: sıfırdan başlamayan eksen", xlabel: "İçecek", ylabel: "Memnuniyet (%)", xmax: 6, ymax: 8,
           xticks: [{ v: 1.5, label: "A" }, { v: 4.5, label: "B" }],
           yticks: [{ v: 0, label: "76" }, { v: 2, label: "78" }, { v: 4, label: "80" }, { v: 6, label: "82" }],
@@ -181,12 +163,12 @@ window.DEFTER = {
             { metin: "A'nın çubuğu 76'dan 78'e: 2 birim. B'ninki 76'dan 82'ye: 6 birim.", set: { ba: { noktalar: [[1, 0], [1, 2], [2, 2], [2, 0]] }, bb: { noktalar: [[4, 0], [4, 6], [5, 6], [5, 0]] } } },
             { metin: "6 ÷ 2 = 3: B üç kat uzun görünüyor. Gerçek oran ise 82 ÷ 78 ≈ 1,05.", goster: ["x3"] }
           ] },
-        { tip: "sekil", baslik: "Aynı veri, sıfırdan başlayan eksenle", fig: { type: "bar", cats: ["Drink A", "Drink B"], series: [{ name: "Memnuniyet", values: [78, 82] }], ylabel: "Percent satisfied" } },
-        { tip: "tuzak", baslik: "Eşit olmayan genişlik", metin: "Üçüncü hile: aynı yükseklikte iki çubuktan biri üç kat geniş çizilirse, geniş olan daha büyük görünür.", yanlis: "Çubuk genişliği önemli değil, yüksekliğe bakılır.", dogru: "Çubuklar ==eşit genişlikte==, eksen ==sıfırdan başlayan==, resim değil çubuk olmalı." }
+        { tip: "sekil", baslik: "Aynı veri, sıfırdan başlayan eksenle", fig: { type: "bar", cats: ["Drink A", "Drink B"], series: [{ name: "Memnuniyet", values: [78, 82] }], ylabel: "Percent satisfied" } }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Frequency table* sayar; *relative frequency table* toplama böler (14/27 ≈ %51,9). Frekanslar toplamı n'yi vermeli.",

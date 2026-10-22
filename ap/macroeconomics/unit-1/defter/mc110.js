@@ -47,34 +47,19 @@ window.DEFTER = (function () {
 
   return {
     slug: "mc110",
-    ozet: "Haberler arz ve talebi kaydırır; ekonomist de kâğıda iki eğri çizip fiyatın nereye gittiğini tahmin eder. Bu defterde üç adımlı yöntemi (önce çiz, değişimi analiz et, yeni dengeyi söyle), dört tek kaymanın sonuçlarını, iki tuzağı, komşu piyasalara sıçrayan zinciri, iki eğri birden kayınca ortaya çıkan *double shift rule*'u (biri hep *indeterminate*) ve neden belirsiz olduğunu sayılarla göreceksin.",
+    amac: "Bu konu haberlerin arz ve talebi kaydırıp dengeyi nasıl değiştirdiğini anlatıyor. Üç adımlı yöntemi, dört tek kaymanın sonucunu ve iki eğri birden kayınca (*double shift*) neden fiyat ya da miktardan birinin belirsiz kaldığını öğreneceksin.",
     bolumler: [
       {
-        baslik: "Haber bülteni ve dört olasılık",
+        baslik: "Üç adım: önce çiz, değişimi analiz et, sonra söyle",
+        kisa: "Önce kimi etkilediğine bak: alıcıysa talep, satıcıysa arz kayar.",
         bloklar: [
           { tip: "hikaye", ikon: "📺", baslik: "Son dakika!",
-            metin: "Haber bülteni açık. Domates fiyatları uçtu. Yaz sıcakları rekor kırıyor. Yeni bir makine dondurma üretimini ikiye katladı. Bir ekonomist bu haberleri duyunca kâğıda iki eğri çizer ve fiyatın nereye gideceğini tahmin eder. Sırrı şu: tek bir haber yalnızca **dört** şeyden birini yapabilir. Bugün o dördünü ve işin asıl zorlaştığı yeri göreceğiz." },
-          { tip: "liste", maddeler: [
-              { ikon: "➡️", baslik: "Talep sağa kayar", metin: "*Increase in demand*" },
-              { ikon: "⬅️", baslik: "Talep sola kayar", metin: "*Decrease in demand*" },
-              { ikon: "↗️", baslik: "Arz sağa kayar", metin: "*Increase in supply*" },
-              { ikon: "↙️", baslik: "Arz sola kayar", metin: "*Decrease in supply*" }
-            ] },
-          { tip: "not", metin: "Tek bir haber, bu dört kaymadan yalnızca birini yapar. İşin zorlaştığı yer: iki haber aynı anda gelirse (çift kayma). Önce tek kaymaları öğreneceğiz." }
-        ]
-      },
-      {
-        baslik: "Easy as 1-2-3: üç adım",
-        bloklar: [
-          { tip: "adimlar", baslik: "Her soruda aynı üç adım", adimlar: [
+            metin: "Domates fiyatları uçtu, yaz sıcakları rekor kırıyor, yeni bir makine dondurma üretimini ikiye katladı. Ekonomist kâğıda iki eğri çizer ve fiyatın nereye gideceğini tahmin eder. Sırrı: tek bir haber yalnızca **dört** şeyden birini yapar: talep sağa, talep sola, arz sağa ya da arz sola kayar." },
+          { tip: "adimlar", baslik: "Her soruda aynı üç adım (Easy as 1-2-3)", adimlar: [
               { baslik: "1 · Önce (Before)", metin: "Arz ve talebi çiz, denge fiyatını ve miktarını işaretle (Pe, Qe)." },
               { baslik: "2 · Değişim (Change)", metin: "Olay kimi etkiliyor, alıcıları mı satıcıları mı? Alıcıysa *demand*, satıcıysa *supply* kayar. Hangi *shifter*, hangi yön? Sağ artış, sol azalış; oku çizmeyi unutma." },
               { baslik: "3 · Sonra (After)", metin: "Yeni dengeyi bul; fiyat ve miktar ne oldu, söyle." }
             ] },
-          graf("1. adım: önce çiz", [
-            ac("Arz ve talebi çiz.", ["D", "S"]),
-            ac("Denge fiyatını ve miktarını işaretle: **Pe** ve **Qe**.", BAZ)
-          ], false),
           { tip: "ikili", sol: { ikon: "🛍️", baslik: "Alıcıyı etkiler → talep kayar", maddeler: ["Zevk, haber, hava, reklam", "Alıcı sayısı, gelir", "İkame/tamamlayıcı fiyatı, alıcı beklentisi"] },
             sag: { ikon: "🏭", baslik: "Satıcıyı etkiler → arz kayar", maddeler: ["Girdi fiyatı", "Teknoloji, satıcı sayısı", "Vergi, sübvansiyon, düzenleme, satıcı beklentisi"] },
             oyun: [
@@ -86,64 +71,42 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Talep kayınca: fiyat ve miktar aynı yöne",
+        baslik: "Tek kayma: talep aynı yöne, arz zıt yöne",
+        kisa: "Talep kayınca fiyat ve miktar aynı yöne, arz kayınca zıt yöne gider.",
         bloklar: [
-          { tip: "not", metin: "Dondurma piyasasıyla başlayalım: denge **50 lira, günde 500 külah**. Grafikte 1 birim = 100 külah ve 10 TL." },
-          graf("Sıcak ve soğuk hava", [
-            ac("Başlangıç: denge 50 TL, 500 külah.", BAZ),
-            ac("Sıcak hava dalgası geldi. Bu alıcıları etkiler: *demand* ==sağa== kayar (eski eğri kesikli). Yeni denge **60 lira, 600 külah**: fiyat da miktar da arttı.", ["Dk", "D1", "S", "okDR", "Edr"]),
-            ac("Yaz birden kışa dönerse? *Demand* ==sola== kayar. Yeni denge **40 lira, 400 külah**: ikisi de düştü.", ["Dk", "D2", "S", "okDL", "Edl"]),
-            ac("Talep kayınca fiyat ve miktar ==hep aynı yöne== gider.", ["Dk", "D1", "D2", "S", "okDR", "okDL", "Edr", "Edl"])
-          ], true),
-          { tip: "tablo", baslik: "Talep kayması sonuçları", head: ["Olay", "Talep", "Fiyat", "Miktar", "Denge"], rows: [
-              ["Sıcak hava", "Sağa (artış)", "↑", "↑", "60 TL, 600"],
-              ["Kış", "Sola (azalış)", "↓", "↓", "40 TL, 400"]
-            ], not: "Hafıza kuralı: talep kayınca fiyat ve miktar aynı yöne gider." }
-        ]
-      },
-      {
-        baslik: "Arz kayınca: fiyat ve miktar zıt yöne",
-        bloklar: [
-          graf("Makine ve süt", [
-            ac("Başlangıç: denge 50 TL, 500 külah.", BAZ),
+          graf("Dört tek kayma: sıcak, kış, makine, süt", [
+            ac("Dondurma piyasası: denge **50 lira, günde 500 külah**. Grafikte 1 birim = 100 külah ve 10 TL.", BAZ),
+            ac("Sıcak hava dalgası alıcıları etkiler: *demand* ==sağa== kayar (eski eğri kesikli). Yeni denge **60 lira, 600 külah**: fiyat da miktar da arttı.", ["Dk", "D1", "S", "okDR", "Edr"]),
+            ac("Yaz birden kışa dönerse *demand* ==sola== kayar. Yeni denge **40 lira, 400 külah**: ikisi de düştü.", ["Dk", "D2", "S", "okDL", "Edl"]),
             ac("Yeni makine aynı sürede iki kat dondurma yapıyor: bu *technology*, *supply* ==sağa== kayar. Yeni denge **40 lira, 600 külah**: fiyat düştü, miktar arttı.", ["D", "Sk", "S1", "okSR", "Esr"]),
             ac("Süt pahalandı; bu bir *input price*, yani girdi fiyatı: *supply* ==sola== kayar. **60 lira, 400 külah**: fiyat arttı, miktar düştü.", ["D", "Sk", "S2", "okSL", "Esl"]),
-            ac("Arz kayınca fiyat ve miktar ==hep zıt yöne== gider.", ["D", "Sk", "S1", "S2", "okSR", "okSL", "Esr", "Esl"])
+            ac("Talep kayınca fiyat ve miktar ==hep aynı yöne==, arz kayınca ==hep zıt yöne== gider.", ["D", "S", "E0", "Edr", "Edl", "Esr", "Esl"])
           ], true),
           { tip: "tablo", baslik: "Dört tek kayma: 2×2 pano", head: ["Kayma", "Fiyat (P)", "Miktar (Q)", "Örnek"], rows: [
               ["Talep sağa", "↑", "↑", "Sıcak hava"],
               ["Talep sola", "↓", "↓", "Kış"],
               ["Arz sağa", "↓", "↑", "Yeni makine"],
               ["Arz sola", "↑", "↓", "Süt pahalandı"]
-            ], not: "Talep kayınca P ve Q aynı yönde; arz kayınca zıt yönde." },
-          { tip: "formul", parcalar: [
-              { t: "Talep kayar", alt: "D→ ya da D←" }, "→",
-              { t: "P ve Q aynı yönde", alt: "↑↑ ya da ↓↓" },
-              { t: "Arz kayar", alt: "S→ ya da S←" }, "→",
-              { t: "P ve Q zıt yönde", alt: "↓↑ ya da ↑↓" }
-            ], aciklama: "Ezberlemek yerine her seferinde çiz." },
+            ], not: "Ezberlemek yerine her seferinde çiz." },
           { tip: "tuzak", baslik: "Sola kayan arz yukarı görünür", metin: "Arzın sola kayması grafikte \"yukarı\" gibi görünür ama azalıştır.", yanlis: "Arz eğrisi yukarı kaydı, o halde arz arttı.", dogru: "Arzda ==sağ artış, sol azalış==. \"Fiyat arttı\" görmek talebin arttığını göstermez: P↑ Q↓ ise arz azalmıştır." }
         ]
       },
       {
-        baslik: "İki tuzak",
+        baslik: "İki tuzak: kendi fiyatı ve saç haberi",
+        kisa: "Malın kendi fiyatı eğriyi kaydırmaz; haber alıcıyı etkiliyorsa talep kayar.",
         bloklar: [
-          graf("Tuzak 1: dondurmanın kendi fiyatı", [
-            ac("Dondurmanın kendi fiyatı 30 liraya düşerse hangi eğri kayar?", BAZ),
-            ac("**Hiçbiri!** Fiyat yalnızca eğriler üzerinde hareket ettirir. 30 lirada S üzerinde 300, D üzerinde 700 külah var.", ["D", "S", "E0", "pl", "ps", "pd"]),
-            ac("Talep edilen 700, arz edilen 300: **400 külahlık shortage**. Eğriler kilitli (NO SHIFT).", ["D", "S", "E0", "pl", "ps", "pd", "gap", "gt"])
+          graf("Tuzak 1: dondurmanın kendi fiyatı · Tuzak 2: saç çıktı", [
+            ac("**Tuzak 1:** dondurmanın kendi fiyatı 30 liraya düşerse hangi eğri kayar?", BAZ, ["pl", "ps", "pd", "gap", "gt", "sx", "sv"]),
+            ac("**Hiçbiri!** Fiyat yalnızca eğriler üzerinde hareket ettirir. 30 lirada S üzerinde 300, D üzerinde 700 külah var.", ["D", "S", "E0", "pl", "ps", "pd"], ["pl", "ps", "pd", "gap", "gt", "sx", "sv"]),
+            ac("Talep edilen 700, arz edilen 300: **400 külahlık shortage**. Eğriler kilitli (NO SHIFT).", ["D", "S", "E0", "pl", "ps", "pd", "gap", "gt"], ["pl", "ps", "pd", "gap", "gt", "sx", "sv"]),
+            ac("**Tuzak 2:** haber: \"Dondurmada saç çıktı!\" Bu satıcının derdi gibi görünür. Yanlış: arzın sola kaydığını söylemek; üretim bozulmadı ki.", ["D", "Sk", "S2", "okSL", "Esl", "sx"], ["pl", "ps", "pd", "gap", "gt", "sx", "sv"]),
+            ac("Doğru: artık kimse almak istemiyor, yani ==*demand* sola== kayar: alıcıların zevki ve tercihi değişti.", ["Dk", "D2", "S", "okDL", "Edl", "sv"], ["pl", "ps", "pd", "gap", "gt", "sx", "sv"])
           ], true, [
             { id: "pl", tip: "cizgi", renk: 2, from: [0, 3], to: [10, 3], etiket: "30 TL", gizli: true },
             { id: "ps", tip: "nokta", renk: 3, x: 3, y: 3, etiket: "Qs = 300", gizli: true },
             { id: "pd", tip: "nokta", renk: 3, x: 7, y: 3, etiket: "Qd = 700", gizli: true },
             { id: "gap", tip: "ok", renk: 2, from: [3.2, 2.5], to: [6.8, 2.5], gizli: true },
-            { id: "gt", tip: "yazi", x: 5, y: 1.8, metin: "SHORTAGE = 400 külah (kayma yok)", gizli: true }
-          ]),
-          graf("Tuzak 2: dondurmada saç çıktı", [
-            ac("Haber: \"Dondurmada saç çıktı!\" Bu satıcının derdi gibi görünür.", BAZ, ["sx", "sv"]),
-            ac("Yanlış: arzın sola kaydığını söylemek. Üretim bozulmadı ki.", ["D", "Sk", "S2", "okSL", "Esl", "sx"], ["sx", "sv"]),
-            ac("Doğru: artık kimse almak istemiyor, yani ==*demand* sola== kayar: alıcıların zevki ve tercihi değişti.", ["Dk", "D2", "S", "okDL", "Edl", "sv"], ["sx", "sv"])
-          ], false, [
+            { id: "gt", tip: "yazi", x: 5, y: 1.8, metin: "SHORTAGE = 400 külah (kayma yok)", gizli: true },
             { id: "sx", tip: "yazi", x: 8.5, y: 9, metin: "✗ yanlış taraf", gizli: true },
             { id: "sv", tip: "yazi", x: 8.5, y: 9, metin: "✓ alıcı vazgeçti", gizli: true }
           ]),
@@ -160,21 +123,15 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Komşu piyasalara sıçrayan zincir",
+        kisa: "Zincir fiyat üzerinden ilerler: bir piyasa öncekinin fiyatına tepki verir.",
         bloklar: [
-          { tip: "not", metin: "Bir piyasadaki değişim komşu piyasalara da sıçrar. Zincir **fiyat** üzerinden ilerler: bir sonraki piyasa, öncekinin fiyat değişimine tepki verir." },
-          graf("Domates → pizza", [
-            ac("**Domates piyasası:** başlangıç.", BAZ),
-            ac("Kötü hasat: domates *supply* ==sola== kayar, domates pahalanır (P↑, Q↓).", ["D", "Sk", "S2", "okSL", "Esl"]),
-            ac("**Pizza piyasası:** başlangıç. Domates pizzanın girdisi.", BAZ),
-            ac("Girdi pahalandı: pizza *supply* ==sola== kayar, pizza pahalanır (P↑, Q↓).", ["D", "Sk", "S2", "okSL", "Esl"])
+          graf("Domates → pizza → tost ve kola", [
+            ac("**Domates piyasası:** kötü hasat, domates *supply* ==sola== kayar, domates pahalanır (P↑, Q↓).", ["D", "Sk", "S2", "okSL", "Esl"]),
+            ac("**Pizza piyasası:** domates pizzanın girdisi. Girdi pahalandı: pizza *supply* ==sola== kayar, pizza pahalanır (P↑, Q↓).", ["D", "Sk", "S2", "okSL", "Esl"]),
+            ac("**Tost piyasası:** tost pizzanın *substitute*'u. Pizza pahalanınca öğrenciler tosta geçer: tost *demand* ==sağa== kayar (P↑, Q↑).", ["Dk", "D1", "S", "okDR", "Edr"]),
+            ac("**Kola piyasası:** kola pizzanın *complement*'i. Pizza pahalanınca kola *demand* ==sola== kayar (P↓, Q↓).", ["Dk", "D2", "S", "okDL", "Edl"])
           ], false),
-          graf("Pizza → tost ve kola", [
-            ac("**Tost piyasası:** başlangıç. Tost, pizzanın *substitute*'u.", BAZ),
-            ac("Pizza pahalanınca öğrenciler tosta geçer: tost *demand* ==sağa== kayar (P↑, Q↑).", ["Dk", "D1", "S", "okDR", "Edr"]),
-            ac("**Kola piyasası:** başlangıç. Kola, pizzanın *complement*'i.", BAZ),
-            ac("Pizza pahalanınca kola *demand* ==sola== kayar (P↓, Q↓).", ["Dk", "D2", "S", "okDL", "Edl"])
-          ], false),
-          { tip: "tablo", baslik: "Domino zinciri", head: ["Piyasa", "Bağ", "Kayma", "P / Q"], rows: [
+          { tip: "tablo", baslik: "Domino zinciri (*related markets*, ilişkili piyasalar)", head: ["Piyasa", "Bağ", "Kayma", "P / Q"], rows: [
               ["Domates", "Kötü hasat", "Arz sola", "P↑ Q↓"],
               ["Pizza", "Domates = girdi", "Arz sola", "P↑ Q↓"],
               ["Tost", "Pizzanın ikamesi", "Talep sağa", "P↑ Q↑"],
@@ -183,17 +140,16 @@ window.DEFTER = (function () {
           { tip: "kavramlar", kartlar: [
               { ikon: "🍅", terim: "Input price", tr: "girdi fiyatı", tanim: "Üretimde kullanılan girdinin fiyatı; artarsa o girdiyi kullanan malın arzı sola kayar.", ornek: "Domates pizzanın girdisi." },
               { ikon: "🔁", terim: "Substitute", tr: "ikame", tanim: "Birinin yerine diğeri alınan mal; birinin fiyatı artınca diğerinin talebi sağa kayar.", ornek: "Pizza ↔ tost." },
-              { ikon: "🧩", terim: "Complement", tr: "tamamlayıcı", tanim: "Birlikte tüketilen mal; birinin fiyatı artınca diğerinin talebi sola kayar.", ornek: "Pizza + kola." },
-              { ikon: "🕸️", terim: "Related markets", tr: "ilişkili piyasalar", tanim: "Girdi, ikame ya da tamamlayıcı ilişkisiyle bağlı piyasalar; birindeki değişim ötekileri de kaydırır.", ornek: "Domates, pizza, tost, kola." }
+              { ikon: "🧩", terim: "Complement", tr: "tamamlayıcı", tanim: "Birlikte tüketilen mal; birinin fiyatı artınca diğerinin talebi sola kayar.", ornek: "Pizza + kola." }
             ] }
         ]
       },
       {
         baslik: "Çift kayma: iki eğri aynı anda",
+        kisa: "Her kaymayı ayrı çiz, sonra birleştir; ters yöne itilen belirsiz kalır.",
         bloklar: [
-          { tip: "not", metin: "Şimdi işin zorlaştığı yer: iki eğri aynı anda kayarsa. **Yaz geldi**, sıcakta herkes karpuz ister: *demand* sağa. Aynı anda **hasat başlar**: *supply* de sağa. Hile şu: ==her kaymayı ayrı çiz, sonra birleştir.==" },
           graf("Talep sağa + arz sağa", [
-            ac("Başlangıç: karpuz piyasası.", BAZ),
+            ac("Karpuz piyasası, başlangıç. **Yaz geldi**, sıcakta herkes karpuz ister: *demand* sağa. Aynı anda **hasat başlar**: *supply* de sağa. Hile: ==her kaymayı ayrı çiz, sonra birleştir.==", BAZ),
             ac("**Yalnız talep sağa:** fiyat yukarı, miktar yukarı (P↑ Q↑).", ["Dk", "D1", "S", "okDR", "Edr"]),
             ac("**Yalnız arz sağa:** fiyat aşağı, miktar yukarı (P↓ Q↑).", ["D", "Sk", "S1", "okSR", "Esr"]),
             ac("**Birleştir:** miktar kesin arttı. Fiyat ise ==*indeterminate*==, yani belirsiz: talep yukarı, arz aşağı itiyor.", ["Dk", "D1", "Sk", "S1", "okDR", "okSR", "Euu"])
@@ -212,8 +168,8 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Neden belirsiz? Büyüklüğe bağlı",
+        kisa: "Hangi eğri daha çok kayarsa fiyat o yöne gider; miktar sabit kalır.",
         bloklar: [
-          { tip: "not", metin: "Cevap kaymaların büyüklüğüne bağlı. Başlangıçta karpuzun kilosu **10 lira**, pazarda **40 ton** satılıyor. Grafikte 1 birim = 10 ton ve 2 TL/kg." },
           { tip: "grafik", baslik: "Üç senaryo, aynı sonuç: Q = 60 ton", xlabel: "Miktar (ton)", ylabel: "Fiyat (TL/kg)", xmax: 11, ymax: 10,
             xticks: [{ v: 4, label: "40" }, { v: 6, label: "60" }],
             yticks: [{ v: 4, label: "8" }, { v: 5, label: "10" }, { v: 6, label: "12" }],
@@ -232,7 +188,7 @@ window.DEFTER = (function () {
               { id: "Ec", tip: "nokta", renk: 1, x: 6, y: 4, etiket: "8 TL · 60 ton", kilavuz: true, gizli: true }
             ],
             durumlar: [
-              { metin: "Başlangıç: karpuzun kilosu 10 lira, 40 ton satılıyor." },
+              { metin: "Başlangıç: karpuzun kilosu 10 lira, pazarda 40 ton satılıyor. Grafikte 1 birim = 10 ton ve 2 TL/kg." },
               { metin: "**Eşit kayma:** iki eğri de aynı miktarda (2 birim) sağa. Fiyat 10 lirada ==kalır==; miktar 60 ton.", goster: ["Da", "Sa", "Ea"] },
               { metin: "**Talep daha çok kayarsa** (+3 talep, +1 arz): fiyat 12 liraya ==çıkar==; miktar yine 60 ton.", gizle: ["Da", "Sa", "Ea"], goster: ["Db", "Sb", "Eb"] },
               { metin: "**Arz daha çok kayarsa** (+1 talep, +3 arz): fiyat 8 liraya ==iner==; miktar yine 60 ton.", gizle: ["Db", "Sb", "Eb"], goster: ["Dc", "Sc", "Ec"] }
@@ -242,12 +198,12 @@ window.DEFTER = (function () {
               ["Eşit kayma (talep +2, arz +2)", "10", "60"],
               ["Talep daha çok (+3, +1)", "12", "60"],
               ["Arz daha çok (+1, +3)", "8", "60"]
-            ], not: "Üç durumda da miktar 60 ton (kesin artış); fiyat 12, 10 ya da 8: belirsiz." },
-          { tip: "not", metin: "Gerçekte karpuz yazın ucuzlar: demek ki arz **daha çok** kayıyor. Aynı mantık, bayram öncesi hindi gibi gerçek hayat çift kaymalarını açıklar: talep ve arz birlikte artar, fiyat düşer çünkü arz daha çok kaymıştır." }
+            ], not: "Üç durumda da miktar 60 ton (kesin artış); fiyat 12, 10 ya da 8: belirsiz. Gerçekte karpuz yazın ucuzlar: arz daha çok kayıyor; bayram öncesi hindi gibi çift kaymalar da böyle açıklanır." }
         ]
       },
       {
-        baslik: "Diğer üç çift kayma",
+        baslik: "Dört çift kayma kuralı ve sınav sorusu",
+        kisa: "İki kayma aynı yöne itiyorsa kesin, ters yöne itiyorsa belirsiz.",
         bloklar: [
           graf("Aynı hile, üç yeni durum", [
             ac("Taban: denge Pe, Qe.", BAZ),
@@ -259,8 +215,8 @@ window.DEFTER = (function () {
               ["Talep ↑ (sağ)", "Q ↑ kesin · P belirsiz", "P ↑ kesin · Q belirsiz"],
               ["Talep ↓ (sol)", "P ↓ kesin · Q belirsiz", "Q ↓ kesin · P belirsiz"]
             ], not: "Kural: iki kayma aynı yöne itiyorsa kesin, ters yöne itiyorsa belirsiz. Emin değilsen çiz (*when in doubt, graph it out*)." },
-          { tip: "ikili", sol: { ikon: "🎯", baslik: "Kesin", maddeler: ["İki kayma aynı yöne itiyor", "Örnek: talep sağa + arz sola → fiyat (ikisi de yukarı iter)", "İki oku birlikte okursun"] },
-            sag: { ikon: "❓", baslik: "Belirsiz", maddeler: ["İki kayma ters yöne itiyor", "Örnek: talep sağa + arz sola → miktar (ters yönlere çeker)", "Büyüklükler bilinmeden söylenemez"] },
+          { tip: "ikili", sol: { ikon: "🎯", baslik: "Kesin", maddeler: ["İki kayma aynı yöne itiyor", "Örnek: talep sağa + arz sola → fiyat (ikisi de yukarı iter)"] },
+            sag: { ikon: "❓", baslik: "Belirsiz", maddeler: ["İki kayma ters yöne itiyor", "Örnek: talep sağa + arz sola → miktar (ters yönlere çeker)"] },
             oyun: [
               { metin: "Talep sağa + arz sola, fiyat.", cevap: "sol", neden: "İkisi de fiyatı yukarı iter: kesin artış." },
               { metin: "Talep sağa + arz sola, miktar.", cevap: "sag", neden: "Talep miktarı artırır, arz azaltır: belirsiz." },
@@ -268,24 +224,14 @@ window.DEFTER = (function () {
               { metin: "Talep sola + arz sağa, miktar.", cevap: "sag", neden: "Talep azaltır, arz artırır: belirsiz." },
               { metin: "Talep sola + arz sağa, fiyat.", cevap: "sol", neden: "İkisi de fiyatı aşağı iter: kesin düşüş." }
             ] },
-          { tip: "tuzak", baslik: "Çift kaymada ikisini birden söylemek", metin: "Çift kaymada fiyat ve miktarı birlikte kesin söyleyen şık yanlıştır.", yanlis: "Talep ve arz birlikte kayınca hem P hem Q kesin belirlenebilir.", dogru: "Çift kaymada ==biri hep belirsiz== kalır. \"Both price and quantity determinable?\" → hayır." }
-        ]
-      },
-      {
-        baslik: "Sınav sorusu: kahve",
-        bloklar: [
-          graf("Don ve araştırma", [
-            ac("Kahve piyasası, başlangıç.", BAZ),
-            ac("Brezilya'daki don, kahve hasadını vurdu: *supply* ==sola==.", ["D", "Sk", "S2", "okSL", "Esl"]),
-            ac("Aynı hafta kahvenin dikkati artırdığını söyleyen araştırma: *demand* ==sağa==.", ["Dk", "D1", "Sk", "S2", "okDR", "okSL", "Eds"])
-          ], false),
-          { tip: "ornek", baslik: "Fiyat ve miktar", durum: "Brezilya'daki don, kahve hasadını vurdu. Aynı hafta kahvenin dikkati artırdığını söyleyen bir araştırma yayımlandı. Kahve piyasasında ne olur? Şıklar: (A) Fiyat artar, miktar artar. (B) Fiyat artar, miktar belirsiz. (C) Fiyat belirsiz, miktar düşer. (D) Fiyat düşer, miktar belirsiz.",
+          { tip: "ornek", baslik: "Sınav sorusu: kahve", durum: "Brezilya'daki don, kahve hasadını vurdu. Aynı hafta kahvenin dikkati artırdığını söyleyen bir araştırma yayımlandı. Kahve piyasasında ne olur? Şıklar: (A) Fiyat artar, miktar artar. (B) Fiyat artar, miktar belirsiz. (C) Fiyat belirsiz, miktar düşer. (D) Fiyat düşer, miktar belirsiz.",
             adimlar: ["Don satıcıyı etkiler: arz sola. Fiyat ↑, miktar ↓.", "Araştırma alıcıyı etkiler: talep sağa. Fiyat ↑, miktar ↑.", "İkisi de fiyatı yukarı iter: fiyat kesin artar.", "Miktar: biri azaltır, öteki artırır: belirsiz."],
-            sonuc: "==B: fiyat artar, miktar belirsiz.== Don arzı sola, araştırma talebi sağa kaydırır; ikisi de fiyatı yukarı iter ama miktarı ters yönlere çeker." }
+            sonuc: "==B: fiyat artar, miktar belirsiz.== Don arzı sola, araştırma talebi sağa kaydırır; ikisi de fiyatı yukarı iter ama miktarı ters yönlere çeker. Çift kaymada ikisini birden kesin söyleyen şık her zaman yanlıştır." }
         ]
       },
       {
         baslik: "Toparlayalım",
+        kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
               "Üç adım: önce çiz (Pe, Qe), değişimi analiz et (kimi etkiliyor, hangi shifter, hangi yön), sonra yeni dengeyi söyle.",

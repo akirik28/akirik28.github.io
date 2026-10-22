@@ -2,64 +2,50 @@
    Kaynak: ap-videolar/src/episodes/st110 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st110",
-  ozet: "İki grubu adil karşılaştırmak için dört başlığa bakar (*shape*, *outliers*, *center*, *variability*), hepsini *in context* yazar ve ==karşılaştırma sözcüğü== kullanırsın. Bu defterde *parallel dotplots*, *back-to-back stemplot*, karşılaştırmalı *histogram* ve *side-by-side boxplots* araçlarını, grup büyüklükleri farklıyken *relative frequency* kullanmayı ve iki bireyi *z-score* ile kıyaslamayı göreceksin.",
+  amac: "Bu konu iki grubu adil karşılaştırmayı anlatıyor. Dört başlığa (*shape*, *outliers*, *center*, *variability*) nasıl bakacağını, bunu karşılaştırma cümlesiyle nasıl yazacağını ve iki bireyi *z-score* ile nasıl kıyaslayacağını öğreneceksin.",
   bolumler: [
     {
-      baslik: "Kim daha golcü?",
+      baslik: "Karşılaştırmanın dört başlığı",
+      kisa: "Shape, outliers, center, variability: dördüne de bak.",
       bloklar: [
-        { tip: "hikaye", ikon: "⚽", baslik: "Manchester United mı, Liverpool mu?",
-          metin: "Arkadaşınla tartışıyorsun: hangi takım daha golcü? O diyor ki: “Liverpool bir maçta 9 gol attı!” Sen diyorsun ki: “United her maç bir iki gol buluyor.” İkiniz de ==tek bir şeye== bakıyorsunuz: o 9 gollü maça, sen tipik maça. İki grubu adil karşılaştırmak için birkaç şeye birden bakmak ve bunu doğru cümleyle söylemek gerekir." },
-        { tip: "ikili", ayirici: "vs",
-          sol: { ikon: "🔴", baslik: "United diyor ki", maddeler: ["Her maç 1–2 gol", "Gol sayıları: 1 · 2 · 1 · 2 · 2", "Bakışı: tipik maç"] },
-          sag: { ikon: "🏟️", baslik: "Arkadaşın diyor ki", maddeler: ["Bir maçta 9 gol", "Tek bir maç", "Bakışı: en uçtaki değer"] } },
-        { tip: "not", metin: "İkisi de haklı, ikisi de eksik. Tek bir sayı iki dağılımı anlatmaz. Bu bölümün işi, ==hangi dört şeye bakacağını== ve ==nasıl cümle kuracağını== öğretmek." }
-      ]
-    },
-    {
-      baslik: "Dört başlık ve karşılaştırma dili",
-      bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "⚖️", terim: "Comparing distributions", tr: "dağılımları karşılaştırmak", tanim: "Aynı *quantitative* değişkenin iki (ya da daha çok) gruptaki dağılımını yan yana değerlendirmek.", ornek: "United'ın ve Liverpool'un maç başına attığı gol sayıları." },
-            { ikon: "🔷", terim: "Shape", tr: "şekil", tanim: "Dağılımın görünümü: kabaca simetrik mi, sağa ya da sola çarpık mı?", ornek: "United kabaca simetrik; Liverpool sağa çarpık." },
-            { ikon: "🎯", terim: "Outliers", tr: "aykırı değerler", tanim: "Kalabalıktan belirgin biçimde uzakta kalan değerler.", ornek: "Liverpool'un 9 gollü maçı." },
-            { ikon: "📍", terim: "Center", tr: "merkez", tanim: "Dağılımın tipik değeri: genellikle *median* (ya da *mean*).", ornek: "Liverpool'un *median*'ı 3, United'ınki 2." },
-            { ikon: "↔️", terim: "Variability", tr: "değişkenlik", tanim: "Değerlerin ne kadar dağınık olduğu: *range*, *IQR* ya da *standard deviation*.", ornek: "Liverpool'un golleri 1 ile 9 arasında, United'ınkiler 0 ile 3 arasında." },
-            { ikon: "🏷️", terim: "In context", tr: "bağlamıyla", tanim: "Cevapta değişkenin adını ve grupları kullanmak; yalnızca sayı ya da birim yazmamak.", ornek: "“goals scored”, “Liverpool”, “United” gibi adları cümlede geçirmek." },
-            { ikon: "🗣️", terim: "Comparative language", tr: "karşılaştırma dili", tanim: "Açıkça karşılaştıran sözcükler: *greater than*, *less than*, *higher*, *lower*, *more variable than*, *less variable than*, *similar to*.", ornek: "“Liverpool's median is greater than United's.”" }
-          ] },
         { tip: "formul", parcalar: [
             { t: "*Shape*", alt: "şekil" }, "+", { t: "*Outliers*", alt: "aykırı değer" }, "+", { t: "*Center*", alt: "merkez" }, "+", { t: "*Variability*", alt: "değişkenlik" }, "=",
             { t: "Tam cevap", alt: "hepsi *in context*, hepsi karşılaştırmalı" }
           ], aciklama: "Tek dağılımı anlatırken kullandığın listenin aynısı; karşılaştırırken tek ekleme: karşılaştırma sözcüğü." },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🔷", terim: "Shape", tr: "şekil", tanim: "Dağılımın görünümü: kabaca simetrik mi, sağa ya da sola çarpık mı?", ornek: "United kabaca simetrik; Liverpool sağa çarpık." },
+            { ikon: "🎯", terim: "Outliers", tr: "aykırı değerler", tanim: "Kalabalıktan belirgin biçimde uzakta kalan değerler.", ornek: "Liverpool'un 9 gollü maçı." },
+            { ikon: "📍", terim: "Center", tr: "merkez", tanim: "Dağılımın tipik değeri: genellikle *median* (ya da *mean*).", ornek: "Liverpool'un *median*'ı 3, United'ınki 2." },
+            { ikon: "↔️", terim: "Variability", tr: "değişkenlik", tanim: "Değerlerin ne kadar dağınık olduğu: *range*, *IQR* ya da *standard deviation*.", ornek: "Liverpool 1 ile 9 arasında, United 0 ile 3 arasında gol atıyor." }
+          ] }
+      ]
+    },
+    {
+      baslik: "Karşılaştırma cümlesi kurmak",
+      kisa: "İki ayrı liste yazma; karşılaştırma sözcüğüyle iki grubu bağla.",
+      bloklar: [
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🏷️", terim: "In context", tr: "bağlamıyla", tanim: "Cevapta değişkenin adını ve grupları kullanmak; yalnızca sayı ya da birim yazmamak.", ornek: "“goals scored”, “Liverpool”, “United” gibi adları cümlede geçirmek." },
+            { ikon: "🗣️", terim: "Comparative language", tr: "karşılaştırma dili", tanim: "Açıkça karşılaştıran sözcükler: *greater than*, *less than*, *higher*, *lower*, *more variable than*, *less variable than*, *similar to*.", ornek: "“Liverpool's median is greater than United's.”" }
+          ] },
         { tip: "ikili",
           sol: { ikon: "✅", baslik: "Karşılaştırma", maddeler: ["Tek cümlede iki grubu bağlar", "“Liverpool's median (3) is greater than United's (2).”", "Tam puan getirir"] },
           sag: { ikon: "❌", baslik: "İki ayrı liste", maddeler: ["Her grubu ayrı ayrı anlatır", "“United's median is 2. Liverpool's median is 3.”", "Puan getirmez"] },
           oyun: [
-            { metin: "A şubesinin median'ı 70. B şubesinin median'ı 78.", cevap: "sag", neden: "İki sayı yan yana duruyor ama aralarında karşılaştırma sözcüğü yok: iki ayrı liste." },
-            { metin: "B şubesinin median'ı A şubesinin median'ından daha yüksek.", cevap: "sol", neden: "*Higher than* ile iki grubu açıkça bağlıyor: gerçek karşılaştırma." },
+            { metin: "A şubesinin median'ı 70. B şubesinin median'ı 78.", cevap: "sag", neden: "İki sayı yan yana ama aralarında karşılaştırma sözcüğü yok: iki ayrı liste." },
+            { metin: "B şubesinin median'ı A şubesinin median'ından daha yüksek.", cevap: "sol", neden: "*Higher than* iki grubu açıkça bağlıyor: gerçek karşılaştırma." },
             { metin: "Liverpool'un gol sayıları United'ınkinden daha değişken (range 8, range 3).", cevap: "sol", neden: "*More variable* sözcüğü ve iki sayı birlikte: karşılaştırma." },
-            { metin: "United'ın range'i 3. Liverpool'un range'i 8.", cevap: "sag", neden: "Sayılar doğru ama hangisinin daha değişken olduğu hiçbir yerde yazmıyor." },
+            { metin: "United'ın range'i 3. Liverpool'un range'i 8.", cevap: "sag", neden: "Sayılar doğru ama hangisinin daha değişken olduğu yazmıyor." },
             { metin: "Her iki hattın tipik yolculuk süresi benzer (median 30 dakika).", cevap: "sol", neden: "*Similar to* de bir karşılaştırma ifadesidir." }
-          ] },
-        { tip: "tuzak", baslik: "İki ayrı liste karşılaştırma değildir", metin: "Center ve variability için mutlaka bir karşılaştırma cümlesi kur.", yanlis: "“A'nın median'ı 70. B'nin median'ı 78.”", dogru: "“B's median is greater than A's.” Sayıları da yanına ekleyebilirsin." },
-        { tip: "tablo", baslik: "Anahtar sözcükler", head: ["Daha büyük / küçük", "Değişkenlik", "Benzerlik"], rows: [
-            ["*greater than*", "*more variable than*", "*similar to*"],
-            ["*less than*", "*less variable than*", "*about the same as*"],
-            ["*higher*", "*more spread out*", ""],
-            ["*lower*", "", ""]
-          ], not: "Cümlede bu sözcüklerden en az biri geçmeli." }
+          ] }
       ]
     },
     {
-      baslik: "*Parallel dotplots*",
+      baslik: "*Parallel dotplots*: United ve Liverpool",
+      kisa: "Ortak eksendeki iki dotplot, dört başlığı yan yana okutur.",
       bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🟣", terim: "Parallel dotplots", tr: "paralel nokta grafikleri", tanim: "Aynı eksen üzerinde alt alta çizilmiş iki *dotplot*. Eksen ortak olduğu için gruplar doğrudan kıyaslanır.", ornek: "Dokuz maçın gol sayıları: üstte United, altta Liverpool." }
-          ] },
-        { tip: "tablo", baslik: "Örnek veri: dokuzar maç (gol sayısı)", head: ["Takım", "Dokuz maçta attığı goller"], rows: [
-            ["Manchester United", "0, 1, 1, 1, 2, 2, 2, 3, 3"],
-            ["Liverpool", "1, 1, 2, 2, 3, 3, 4, 4, 9"]
-          ], not: "Bu değerler ekranda “örnek veri” olarak gösterilen, bu bölüm için uydurulmuş değerlerdir." },
+        { tip: "hikaye", ikon: "⚽", baslik: "Manchester United mı, Liverpool mu?",
+          metin: "Arkadaşın “Liverpool bir maçta 9 gol attı!” diyor; sen “United her maç bir iki gol buluyor” diyorsun. İkiniz de ==tek bir şeye== bakıyorsunuz. *Parallel dotplots* (ortak eksende alt alta iki *dotplot*) ile iki takımı adil kıyaslayalım; değerler bu bölüm için uydurulmuş örnek veridir." },
         { tip: "grafik", baslik: "Dotplot'ları kur ve oku", xlabel: "Goals scored", ylabel: "", xmax: 10, ymax: 6,
           xticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function (v) { return { v: v, label: String(v) }; }), yticks: [],
           ogeler: [
@@ -96,50 +82,24 @@ window.DEFTER = {
             { metin: "==*Variability*==: United'ın *range*'i 3, Liverpool'unki 8. Liverpool daha değişken.", goster: ["ur", "urt", "lr", "lrt"], gizle: ["um", "umt", "lm", "lmt"] },
             { metin: "==*Outliers*==: Liverpool'da üst sınır 4 + 1.5 × 2.5 = 7.75. 9 bu sınırın dışında: ==high outlier==. United'da aykırı değer yok.", goster: ["fence", "fencet", "outt"], gizle: ["ur", "urt", "lr", "lrt"] },
             { metin: "==*Shape*==: United kabaca simetrik; Liverpool'un kuyruğu sağa uzuyor, yani *skewed right*.", goster: ["cu", "cl"], gizle: ["fence", "fencet", "outt"] }
-          ] }
-      ]
-    },
-    {
-      baslik: "Dört başlıkla tam cevap",
-      bloklar: [
-        { tip: "ornek", baslik: "*Center*: iki *median*", durum: "Dokuz değerin ortancası 5. değerdir. United: 0, 1, 1, 1, **2**, 2, 2, 3, 3. Liverpool: 1, 1, 2, 2, **3**, 3, 4, 4, 9.",
-          adimlar: ["United'ın 5. değeri 2, yani *median* = 2.", "Liverpool'un 5. değeri 3, yani *median* = 3.", "3 > 2 olduğu için Liverpool'un tipik gol sayısı daha yüksek."],
-          sonuc: "“Liverpool's median number of goals (3) is greater than United's (2).”" },
-        { tip: "ornek", baslik: "*Variability*: *range* ve *IQR*", durum: "Aynı iki veri kümesi için dağılımın yayılımını sayıyla söyle.",
-          adimlar: [
-            "United: *range* = 3 − 0 = 3. Alt yarı 0, 1, 1, 1 → Q1 = 1; üst yarı 2, 2, 3, 3 → Q3 = 2.5; *IQR* = 2.5 − 1 = 1.5.",
-            "Liverpool: *range* = 9 − 1 = 8. Alt yarı 1, 1, 2, 2 → Q1 = 1.5; üst yarı 3, 4, 4, 9 → Q3 = 4; *IQR* = 4 − 1.5 = 2.5.",
-            "8 > 3 ve 2.5 > 1.5: iki ölçüye göre de Liverpool daha değişken."
-          ],
-          sonuc: "Liverpool'un gol sayıları United'ınkinden daha değişken." },
-        { tip: "ornek", baslik: "*Outliers*: 1.5 × *IQR* kuralı", durum: "9 gerçekten aykırı mı? Sınırları hesapla.",
-          adimlar: [
-            "Liverpool: üst sınır = Q3 + 1.5 × *IQR* = 4 + 1.5 × 2.5 = 4 + 3.75 = 7.75.",
-            "Alt sınır = 1.5 − 3.75 = −2.25. Hiçbir değer bunun altında değil.",
-            "9 > 7.75 olduğu için 9 bir ==high outlier==.",
-            "United: sınırlar 1 − 2.25 = −1.25 ve 2.5 + 2.25 = 4.75. Bütün değerler (0–3) içeride: aykırı değer yok."
-          ],
-          sonuc: "Liverpool'un 9 gollü maçı *high outlier*; United'da aykırı değer yok." },
-        { tip: "adimlar", baslik: "Dördü birden: tam puanlık cevap", adimlar: [
-            { baslik: "*Shape*", metin: "“United's distribution of goals scored is roughly symmetric, while Liverpool's is skewed to the right.”" },
-            { baslik: "*Outliers*", metin: "“Liverpool has a high outlier at 9 goals; United has none.”" },
-            { baslik: "*Center*", metin: "“Liverpool's median (3) is greater than United's (2).”" },
-            { baslik: "*Variability*", metin: "“Liverpool's goals scored vary more (range 8 vs. 3).”" },
-            { baslik: "Sonuç: 4/4", metin: "Dördü de gol sayısı (*goals scored*) üzerinden ve karşılaştırarak yazıldı." }
           ] },
-        { tip: "not", metin: "Dikkat: cümlelerde *while*, *greater than*, *vary more* gibi bağlayıcılar var. Bunlar, iki grubu tek cümlede buluşturan kısımlar." }
+        { tip: "ornek", baslik: "Dört başlıkla tam cevap", durum: "Dokuz maç. United: 0, 1, 1, 1, **2**, 2, 2, 3, 3. Liverpool: 1, 1, 2, 2, **3**, 3, 4, 4, 9.",
+          adimlar: [
+            "*Center*: dokuz değerde *median* 5. değerdir. United 2, Liverpool 3; 3 > 2.",
+            "*Variability*: *range* United 3 − 0 = 3, Liverpool 9 − 1 = 8. *IQR*: United Q1 = 1, Q3 = 2.5, *IQR* = 1.5; Liverpool Q1 = 1.5, Q3 = 4, *IQR* = 2.5. İki ölçüye göre de Liverpool daha değişken.",
+            "*Outliers*: Liverpool'da üst sınır = 4 + 1.5 × 2.5 = 7.75, alt sınır = 1.5 − 3.75 = −2.25. 9 > 7.75 olduğu için ==high outlier==. United'da sınırlar −1.25 ve 4.75; hepsi içeride.",
+            "*Shape*: United kabaca simetrik, Liverpool sağa çarpık."
+          ],
+          sonuc: "“United's goals scored are roughly symmetric, while Liverpool's are skewed to the right. Liverpool has a high outlier at 9 goals; United has none. Liverpool's median (3) is greater than United's (2), and Liverpool's goals vary more (range 8 vs. 3).” 4/4." }
       ]
     },
     {
       baslik: "*Back-to-back stemplot*",
+      kisa: "Ortak stem, dışa doğru sıralı yapraklar ve bir key şart.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🪜", terim: "Back-to-back stemplot", tr: "sırt sırta gövde-yaprak grafiği", tanim: "*Stem* sütunu ortada tek; bir grubun yaprakları (*leaves*) sola, öbürününki sağa yazılır. Yapraklar *stem*'den dışa doğru büyür.", ornek: "11-A ve 11-B şubelerinin quiz puanları." },
             { ikon: "🗝️", terim: "Key", tr: "anahtar", tanim: "Stem ve leaf'in ne anlama geldiğini bağlamıyla anlatan not. ==Her stemplot'ta yazılmalı.==", ornek: "Key: 2 | 7 | 1 = 72 points in 11-A and 71 points in 11-B" }
-          ] },
-        { tip: "tablo", baslik: "Veri: iki şubenin quiz puanları", head: ["Şube", "Puanlar (8'er öğrenci)"], rows: [
-            ["11-A", "58, 63, 67, 72, 74, 75, 81, 88"],
-            ["11-B", "71, 76, 78, 82, 84, 85, 89, 93"]
           ] },
         { tip: "sekil", baslik: "11-A (sol) | stem | 11-B (sağ)", fig: { type: "stem", stems: [
             { s: "8 | 5", leaves: "" },
@@ -148,12 +108,7 @@ window.DEFTER = {
             { s: "8 1 | 8", leaves: "2 4 5 9" },
             { s: "| 9", leaves: "3" }
           ], key: "2 | 7 | 1 = 72 points in 11-A and 71 points in 11-B" } },
-        { tip: "adimlar", baslik: "Grafiği nasıl okursun?", adimlar: [
-            { baslik: "Yapraklar dışa doğru büyür", metin: "Sağ taraf soldan sağa küçükten büyüğe okunur. Sol taraf ==sağdan sola== okunur: 7'nin solunda 5, 4, 2 yazıyorsa değerler 72, 74, 75." },
-            { baslik: "Stem'le birleştir", metin: "7 | 2 → 72. 7'nin sağındaki 1, 6, 8 ise B şubesinde 71, 76, 78 demek." },
-            { baslik: "Key'i oku", metin: "Key birimi ve bağlamı söyler: puanlar, puan. Key olmadan 7 | 2 hem 72, hem 7.2, hem 720 olabilir." }
-          ] },
-        { tip: "ornek", baslik: "İki şubenin merkezini ve yayılımını karşılaştır", durum: "Sekiz değer olduğu için *median* ortadaki iki değerin ortalamasıdır.",
+        { tip: "ornek", baslik: "İki şubenin merkezini ve yayılımını karşılaştır", durum: "11-A: 58, 63, 67, 72, 74, 75, 81, 88. 11-B: 71, 76, 78, 82, 84, 85, 89, 93. Sekiz değerde *median* ortadaki iki değerin ortalamasıdır.",
           adimlar: [
             "11-A: 58, 63, 67, **72, 74**, 75, 81, 88 → *median* = (72 + 74) ÷ 2 = 73.",
             "11-B: 71, 76, 78, **82, 84**, 85, 89, 93 → *median* = (82 + 84) ÷ 2 = 83.",
@@ -161,21 +116,18 @@ window.DEFTER = {
             "*Range*: A için 88 − 58 = 30, B için 93 − 71 = 22. A daha değişken."
           ],
           sonuc: "“Class B's quiz scores are typically about 10 points higher than Class A's; Class A's scores are more variable (range 30 vs. 22).”" },
-        { tip: "tuzak", baslik: "Stemplot'ta üç tuzak", metin: "Back-to-back stemplot için üç şart: tek ortak *stem*, dışa doğru sıralı yapraklar ve bir *key*.", yanlis: "Sol yaprakları soldan sağa 2 4 5 diye yazmak ve key'i atlamak.", dogru: "Sol yapraklar stem'den dışa doğru büyür, yani soldan sağa 5 4 2 yazılır; key mutlaka yazılır." }
+        { tip: "tuzak", baslik: "Stemplot'ta üç şart", metin: "Tek ortak *stem*, dışa doğru sıralı yapraklar ve bir *key* gerekir. Sol taraf ==sağdan sola== okunur: 7'nin solunda 5, 4, 2 varsa değerler 72, 74, 75. *Key* olmadan 7 | 2 hem 72, hem 7.2 olabilir.", yanlis: "Sol yaprakları soldan sağa 2 4 5 diye yazmak ve key'i atlamak.", dogru: "Sol yapraklar stem'den dışa doğru büyür (soldan sağa 5 4 2); key mutlaka yazılır." }
       ]
     },
     {
       baslik: "Karşılaştırmalı *histogram*",
+      kisa: "Aynı aralık ve ölçek kullan; grup büyüklükleri farklıysa yüzde karşılaştır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📊", terim: "Comparative histograms", tr: "karşılaştırmalı histogramlar", tanim: "Aynı aralıklar (*intervals*) ve aynı ölçekle çizilmiş histogramlar; alt alta konunca sütunlar doğrudan kıyaslanır.", ornek: "Ekran süresi: 0–2, 2–4, 4–6, 6–8 saat aralıkları iki grafikte de aynı." },
             { ikon: "💯", terim: "Relative frequency", tr: "bağıl frekans", tanim: "Sayı yerine oran ya da yüzde. Grup büyüklükleri farklıyken adil kıyas için kullanılır.", ornek: "40 kişi / 200 kişi = %20." }
           ] },
-        { tip: "adimlar", baslik: "Histogramla karşılaştırırken iki kural", adimlar: [
-            { baslik: "Bir: aynı aralıklar, aynı ölçek", metin: "İki grafiğin yatay ekseni aynı sınırlarda ve aynı genişlikte olmalı; yoksa şekil farkı grafikten gelir, veriden değil." },
-            { baslik: "İki: grup büyüklükleri farklıysa yüzde", metin: "Sayıları değil *relative frequency*'yi karşılaştır; büyük grup her sütunda sayıca öne geçer." }
-          ] },
-        { tip: "ornek", baslik: "Okulda ekran süresi", durum: "Okulda 200 dokuzuncu sınıf, 50 on ikinci sınıf öğrencisi var. Günde 4 saatten fazla ekrana bakanlar: dokuzlarda 40, on ikilerde 20 kişi.",
+        { tip: "ornek", baslik: "Okulda ekran süresi", durum: "Okulda 200 dokuzuncu, 50 on ikinci sınıf öğrencisi var. Günde 4 saatten fazla ekrana bakanlar: dokuzlarda 40, on ikilerde 20 kişi.",
           adimlar: [
             "Sayıya bak: 40 > 20, dokuzlar önde görünüyor.",
             "Ama gruplar eşit değil. Dokuzlar: 40 ÷ 200 = 0.20 = %20.",
@@ -200,29 +152,15 @@ window.DEFTER = {
             { metin: "Sayılar yerine oran: 40 ÷ 200 = %20 ve 20 ÷ 50 = %40. Eksen artık yüzde.", set: { g9: { noktalar: [[0.5, 0], [1.5, 0], [1.5, 20], [0.5, 20]] }, g12: { noktalar: [[2.5, 0], [3.5, 0], [3.5, 40], [2.5, 40]] } }, goster: ["tp", "p9", "p12"], gizle: ["tf", "v9", "v12"] },
             { metin: "Sıralama tersine döndü: ==grup büyüklükleri farklıyken sayıya değil yüzdeye bak.==", set: { g12: { noktalar: [[2.5, 0], [3.5, 0], [3.5, 40], [2.5, 40]] } } }
           ] },
-        { tip: "sekil", baslik: "Aynı bilgi: iki farklı bakış", fig: { type: "bar", cats: ["Grade 9", "Grade 12"], series: [{ name: "Frekans (kişi)", values: [40, 20] }, { name: "Relative frequency (%)", values: [20, 40] }], ylabel: "Frekans ve yüzde" } },
-        { tip: "ikili",
-          sol: { ikon: "🔢", baslik: "Frekans (sayı)", maddeler: ["Gruplar eşit büyüklükteyse yeterli", "Büyük grup her sütunda öne geçer", "“Kaç kişi?” sorusunu cevaplar"] },
-          sag: { ikon: "💯", baslik: "*Relative frequency* (yüzde)", maddeler: ["Gruplar farklı büyüklükteyse şart", "Büyüklük etkisini ortadan kaldırır", "“Grubun yüzde kaçı?” sorusunu cevaplar"] },
-          oyun: [
-            { metin: "İki sınıfta 30'ar öğrenci var; kaç kişinin geç kaldığını karşılaştırıyoruz.", cevap: "sol", neden: "Gruplar eşit, sayı yeterli." },
-            { metin: "Şehirde 5 milyon, kasabada 20 bin kişi var; hangisinde kişi başına daha çok bisiklet var?", cevap: "sag", neden: "Gruplar çok farklı; oran gerekli." },
-            { metin: "200 dokuzuncu ve 50 on ikinci sınıf öğrencisinin ekran süresi.", cevap: "sag", neden: "n = 200 ve n = 50 eşit değil; yüzde karşılaştırılır." },
-            { metin: "Aynı sınıfın iki ayrı sınavında 4 saatten fazla çalışanların sayısı.", cevap: "sol", neden: "Aynı kişiler, aynı grup büyüklüğü: sayı yeterli." }
-          ] },
         { tip: "tuzak", baslik: "Eksen kaydırma tuzağı", metin: "İki histogram karşılaştırılırken ekseni bir yerde farklı ölçeğe çekersen şekil bozulur.", yanlis: "Her grafiğe kendi eksenini ve kendi aralıklarını çizmek.", dogru: "Aynı aralıklar, ortak yatay eksen ölçeği; farklı grup büyüklüklerinde *relative frequency*." }
       ]
     },
     {
-      baslik: "*Side-by-side boxplots*: merkez",
+      baslik: "*Side-by-side boxplots*: 1968 ve 1978",
+      kisa: "Merkez için median, değişkenlik için kutu boyu (IQR) kullan.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "📦", terim: "Side-by-side (parallel) boxplots", tr: "yan yana (paralel) kutu grafikleri", tanim: "Aynı sayı doğrusunda alt alta çizilmiş *boxplot*'lar. Grupları karşılaştırmanın en hızlı yolu.", ornek: "1968 ve 1978 takım başına *home run* sayıları." }
-          ] },
-        { tip: "hikaye", ikon: "⚾", baslik: "İkinci *Dead-Ball Era* var mıydı?", metin: "Beyzbol tarihinde, yaklaşık 1964–1972 arası için çok az *home run* atıldığı söylenir; buna ikinci *Dead-Ball Era* deniyor. Doğru mu? 1968 ile 1978'i *side-by-side boxplots* ile karşılaştıralım. Aşağıdaki sayılar ==temsili değerlerdir==, gerçek ligin tam verisi değil." },
-        { tip: "tablo", baslik: "Takım başına home run: beş sayı özeti (temsili değerler)", head: ["Yıl", "min", "Q1", "median", "Q3", "bıyık ucu", "outlier"], rows: [
-            ["1968", "65", "80", "95", "110", "135", "185"],
-            ["1978", "70", "100", "120", "145", "175", "yok"]
+            { ikon: "📦", terim: "Side-by-side (parallel) boxplots", tr: "yan yana (paralel) kutu grafikleri", tanim: "Aynı sayı doğrusunda alt alta çizilmiş *boxplot*'lar. Grupları karşılaştırmanın en hızlı yolu.", ornek: "1968 ve 1978 takım başına *home run* sayıları (temsili değerler)." }
           ] },
         { tip: "grafik", baslik: "1968 ve 1978 kutularını kur ve kıyasla", xlabel: "Home runs per team", ylabel: "", xmax: 200, ymax: 10,
           xticks: [{ v: 50, label: "50" }, { v: 100, label: "100" }, { v: 150, label: "150" }, { v: 200, label: "200" }], yticks: [],
@@ -253,35 +191,26 @@ window.DEFTER = {
             { metin: "1968: min 65, Q1 80, *median* 95, Q3 110, bıyık ucu 135 ve ayrı duran bir nokta, 185." },
             { metin: "1978: min 70, Q1 100, *median* 120, Q3 145, en büyük 175. Aykırı değer yok.", goster: ["a78", "w78a", "w78b", "c78a", "c78b", "b78", "m78"] },
             { metin: "==*Center*==: *median*'lar 95 ve 120; 1978'in merkezi 25 yüksek.", goster: ["md1", "md2", "plus"] },
-            { metin: "Daha güçlü bir sonuç: 1978'in Q1'i (100), 1968'in *median*'ının (95) sağında. 1978 takımlarının en az dörtte üçü, 1968'in ortanca takımından fazla atmış.", goster: ["gd", "gdt", "q1t"], gizle: ["md1", "md2", "plus"] }
+            { metin: "Daha güçlü sonuç: 1978'in Q1'i (100), 1968'in *median*'ının (95) sağında. 1978 takımlarının en az dörtte üçü, 1968'in ortanca takımından fazla atmış.", goster: ["gd", "gdt", "q1t"], gizle: ["md1", "md2", "plus"] }
           ] },
-        { tip: "ornek", baslik: "Merkez cümlesi ve “en az %75” yorumu", durum: "1968: *median* 95. 1978: *median* 120 ve Q1 = 100.",
+        { tip: "ornek", baslik: "Dört başlıkla 1968 ve 1978", durum: "Beyzbolda 1964–1972 arası için “ikinci *Dead-Ball Era*” denir; çok az *home run* atıldığı söylenir. Temsili değerler: 1968 Q1 = 80, *median* 95, Q3 = 110; 1978 Q1 = 100, *median* 120, Q3 = 145.",
           adimlar: [
-            "*Center*: 120 > 95, fark 25.",
-            "Q1 = 100 demek, 1978 takımlarının en az %75'i 100 ya da daha fazla *home run* atmış demek.",
-            "100 > 95 olduğu için bu takımların hepsi, 1968'in ortanca takımından daha fazla atmış."
+            "*Center*: 120 > 95, fark 25. 1978 için Q1 = 100 > 95 olduğundan 1978 takımlarının en az %75'i, 1968'in ortanca takımından fazla atmış.",
+            "*Variability*: *IQR* 1968'de 110 − 80 = 30, 1978'de 145 − 100 = 45. 45 > 30: 1978 daha değişken.",
+            "*Outliers*: 1968'de üst sınır 110 + 1.5 × 30 = 155, alt sınır 80 − 45 = 35. 185 > 155: ==high outlier==. 1978'de sınırlar 212.5 ve 32.5; 70 ve 175 içeride, aykırı değer yok.",
+            "*Shape*: iki kutuda da *median* çizgisinin iki yanı kabaca eşit: kabaca simetrik. *Boxplot* *peaks*, *gaps* ve *clusters* göstermez; şekil için yalnızca simetri ya da çarpıklık söylenir."
           ],
-          sonuc: "“The median number of home runs was higher in 1978 (120) than in 1968 (95).”" }
+          sonuc: "“Yes, the data support the claim: teams typically hit fewer home runs in 1968 (median 95 vs. 120). Home runs were more variable in 1978 (IQR 45 vs. 30), and 1968 has a high outlier at 185.”" }
       ]
     },
     {
-      baslik: "*Boxplot*'larla değişkenlik, aykırı değer, şekil",
+      baslik: "Range neden yanıltır?",
+      kisa: "Median ve IQR dirençlidir; range tek aykırı değerle yanıltır.",
       bloklar: [
-        { tip: "ornek", baslik: "*Variability*: kutu boyu = *IQR*", durum: "1968: Q1 = 80, Q3 = 110. 1978: Q1 = 100, Q3 = 145.",
-          adimlar: ["1968: *IQR* = 110 − 80 = 30.", "1978: *IQR* = 145 − 100 = 45.", "45 > 30: 1978'in kutusu daha uzun, yani daha değişken."],
-          sonuc: "“Home runs were more variable in 1978 (IQR 45) than in 1968 (IQR 30).”" },
-        { tip: "ornek", baslik: "*Outliers*: 1.5 × *IQR* kuralı", durum: "Her yıl için üst ve alt sınırı bul.",
-          adimlar: [
-            "1968: 110 + 1.5 × 30 = 110 + 45 = 155 ve 80 − 45 = 35.",
-            "185 > 155 olduğu için 185 bir ==high outlier==. Alt tarafta 65 > 35: sorun yok.",
-            "1978: 145 + 1.5 × 45 = 145 + 67.5 = 212.5 ve 100 − 67.5 = 32.5. 70 ve 175 bu sınırların içinde: aykırı değer yok."
-          ],
-          sonuc: "1968'de 185'lik bir *high outlier* var; 1978'de yok." },
-        { tip: "tablo", baslik: "*Range* neden yanıltır?", head: ["Yıl", "Range", "IQR", "Neden"], rows: [
+        { tip: "tablo", baslik: "Range ve IQR farklı sonuç verir", head: ["Yıl", "Range", "IQR", "Neden"], rows: [
             ["1968", "185 − 65 = 120", "30", "Uçtaki outlier range'i şişirir"],
             ["1978", "175 − 70 = 105", "45", "Outlier yok"]
           ], vurgu: 0, not: "Range'e bakarsan 1968 daha değişken görünür (120 > 105). IQR'a bakarsan tam tersi (30 < 45)." },
-        { tip: "tuzak", baslik: "Range resistant değildir", metin: "Tek bir *outlier*, *range*'i ve dolayısıyla “değişkenlik” sonucunu tersine çevirebilir.", yanlis: "“Range 120 > 105, yani 1968 daha değişken.”", dogru: "Boxplot'la karşılaştırırken *center* için *median*, *variability* için *IQR* (kutu boyu) kullan; *range* aykırı değerden etkilenir." },
         { tip: "ikili",
           sol: { ikon: "🛡️", baslik: "Dirençli (*resistant*)", maddeler: ["*Median*", "*IQR*", "Aykırı değer çok etkilemez"] },
           sag: { ikon: "⚠️", baslik: "Dirençli değil", maddeler: ["*Range*", "*Mean*", "*Standard deviation*", "Tek bir uç değer sonucu değiştirir"] },
@@ -292,34 +221,22 @@ window.DEFTER = {
             { metin: "Mean", cevap: "sag", neden: "Her değer toplama girer; aykırı değer ortalamayı çeker." },
             { metin: "Standard deviation", cevap: "sag", neden: "Ortalamaya bağlı hesaplanır; aykırı değere duyarlıdır." }
           ] },
-        { tip: "not", metin: "*Shape* için: iki yılın da kutularında *median* çizgisinin iki yanı kabaca eşit uzunlukta: ==kabaca simetrik==. Ama dikkat: *boxplot* ==*peaks*, *gaps* ve *clusters*== göstermez; şekil için yalnızca kabaca simetri ya da çarpıklık söylenebilir." },
-        { tip: "adimlar", baslik: "Tam sonuç cümlesi", adimlar: [
-            { baslik: "*Center*", metin: "1978'in *median*'ı daha yüksek: 120 > 95." },
-            { baslik: "*Variability*", metin: "1978 daha değişken: *IQR* 45 > 30." },
-            { baslik: "*Outliers*", metin: "1968'de 185'lik *high outlier*; 1978'de yok." },
-            { baslik: "*Shape*", metin: "İkisi de kabaca simetrik." },
-            { baslik: "Sonuç", metin: "“Yes, the data support the claim: teams typically hit fewer home runs in 1968 (median 95 vs. 120).”" }
-          ] },
+        { tip: "tuzak", baslik: "Range ile karar verme", metin: "Boxplot'la karşılaştırırken *center* için *median*, *variability* için *IQR* (kutu boyu) kullan.", yanlis: "“Range 120 > 105, yani 1968 daha değişken.”", dogru: "*IQR* 30 < 45: 1978 daha değişken. *Range* aykırı değerden etkilenir." },
         { tip: "ornek", baslik: "Mini sınav: iki otobüs hattı", durum: "Route 15: *median* 30 dk, *IQR* 6 dk. Route 20: *median* 30 dk, *IQR* 14 dk. Hangi karşılaştırma doğru?",
           adimlar: ["*Median*'lar eşit (30 = 30): merkez aynı.", "*IQR*'lar 6 ve 14: Route 20'nin süreleri daha dağınık.", "“Tipik süre daha uzun” demek yanlış (merkez eşit); “Route 15 daha değişken” demek de yanlış."],
-          sonuc: "“The typical travel times are similar, but Route 20's times are more variable (IQR 14 min vs. 6 min).”" },
-        { tip: "sekil", baslik: "Hatların kutuları (temsili değerler)", fig: { type: "box", label: "Travel time (min)", items: [
-            { name: "Route 15", min: 22, q1: 27, med: 30, q3: 33, max: 38 },
-            { name: "Route 20", min: 20, q1: 23, med: 30, q3: 37, max: 45 }
-          ] } }
+          sonuc: "“The typical travel times are similar, but Route 20's times are more variable (IQR 14 min vs. 6 min).”" }
       ]
     },
     {
-      baslik: "Bireyleri karşılaştırmak",
+      baslik: "Bireyleri karşılaştırmak: *z-score*",
+      kisa: "Ham puana değil, grubuna göre konuma (z-score, percentile) bak.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📌", terim: "Relative position", tr: "göreli konum", tanim: "Bir değerin kendi dağılımı içindeki yeri. *z-score* ya da *percentile* ile ölçülür.", ornek: "84 puan, sınıf ortalamasının 1 standart sapma üstünde." },
             { ikon: "📐", terim: "z-score", tr: "z-puanı", tanim: "Bir değerin ortalamadan kaç *standard deviation* uzakta olduğu: (değer − *mean*) ÷ *standard deviation*.", ornek: "İstatistik quiz'inde z = (84 − 76) ÷ 8 = 1." },
             { ikon: "📈", terim: "Percentile", tr: "yüzdelik dilim", tanim: "Dağılımın yüzde kaçının bu değerin altında kaldığını söyler.", ornek: "88. *percentile*: öğrencilerin %88'i bu puanın altında." }
           ] },
-        { tip: "hikaye", ikon: "🧪", baslik: "84 mü, 90 mı daha iyi?", metin: "İstatistik quiz'inden 84, kimya sınavından 90 aldın. Hangisinde daha iyisin? Ham puana bakma; ==sınıfa göre konumuna== bak." },
-        { tip: "formul", parcalar: [{ t: "z", alt: "z-score" }, "=", { t: "(değer − *mean*)", alt: "ortalamadan fark" }, "÷", { t: "*standard deviation*", alt: "bir adımın büyüklüğü" }], aciklama: "z, ortalamadan kaç standart sapma uzakta olduğunu söyler." },
-        { tip: "ornek", baslik: "İki sınavın *z-score*'u", durum: "İstatistik quiz: 84, *mean* 76, *standard deviation* 8. Kimya sınavı: 90, *mean* 85, *standard deviation* 10.",
+        { tip: "ornek", baslik: "84 mü, 90 mı daha iyi?", durum: "İstatistik quiz: 84, *mean* 76, *standard deviation* 8. Kimya sınavı: 90, *mean* 85, *standard deviation* 10.",
           adimlar: [
             "İstatistik: z = (84 − 76) ÷ 8 = 8 ÷ 8 = 1.00.",
             "Kimya: z = (90 − 85) ÷ 10 = 5 ÷ 10 = 0.50.",
@@ -342,30 +259,13 @@ window.DEFTER = {
             { metin: "İstatistik: 84, ortalama 76'nın tam 1 standart sapma üstünde. z = 1.0.", goster: ["zs"] },
             { metin: "Sağa daha uzakta olan nokta göreli olarak daha iyidir: ==istatistik==.", goster: ["zw"] }
           ] },
-        { tip: "ikili",
-          sol: { ikon: "📐", baslik: "*z-score*", maddeler: ["Ortalama ve standart sapmadan hesaplanır", "“Ortalamanın 1 standart sapma üstü”", "Pozitif: ortalamanın üstü, negatif: altı"] },
-          sag: { ikon: "📈", baslik: "*Percentile*", maddeler: ["Sıralamadan okunur", "“88. percentile'da”", "Yüksek percentile = çoğu değerin üstünde"] },
-          oyun: [
-            { metin: "Ortalamanın 1.5 standart sapma altında.", cevap: "sol", neden: "Standart sapma birimiyle konum: z = −1.5." },
-            { metin: "Sınıfın %70'inin altında kalan puan.", cevap: "sag", neden: "Yüzde ile ifade edilen sıra: 70. percentile." },
-            { metin: "z = 0.5", cevap: "sol", neden: "z-score." },
-            { metin: "88. percentile'da olmak.", cevap: "sag", neden: "Yüzdelik dilim." }
-          ] },
-        { tip: "tuzak", baslik: "Düşük değer iyi olduğunda", metin: "Koşu süresi ya da kolesterolde küçük değer iyidir; ham puan karşılaştırması da yönü ters çevirir.", yanlis: "“Yüksek z-score her zaman daha iyidir.”", dogru: "Düşük değerin iyi olduğu durumlarda daha negatif z-score ya da daha düşük percentile göreli olarak daha iyidir." },
-        { tip: "tuzak", baslik: "Percentile dili", metin: "Doğru kalıp: “at the 84th percentile”. Başka bir yanlış: ham puanları doğrudan kıyaslamak.", yanlis: "“In the 84th percentile” ya da ham puanları kıyaslamak.", dogru: "“At the 84th percentile”; bireyleri kıyaslarken ham değere değil *z-score* ya da *percentile*'a bak." }
+        { tip: "tuzak", baslik: "Yön ve dil tuzakları", metin: "Koşu süresi ya da kolesterolde küçük değer iyidir. Percentile için doğru kalıp “at the 84th percentile”.", yanlis: "“Yüksek z-score her zaman daha iyidir”; “in the 84th percentile”.", dogru: "Düşük değer iyiyse daha negatif z-score ya da daha düşük percentile daha iyidir; “at the 84th percentile” yaz." }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
-        { tip: "sayilar", ogeler: [
-            { deger: 8, etiket: "Liverpool'un range'i (United: 3)" },
-            { deger: 7.75, etiket: "Liverpool'da üst aykırı değer sınırı; 9 bunun dışında" },
-            { deger: 10, sonek: " puan", etiket: "11-B ile 11-A median farkı (83 − 73)" },
-            { deger: 45, etiket: "1978 boxplot'unda IQR (1968: 30)" },
-            { deger: 40, sonek: "%", etiket: "12. sınıflarda yüzde (9. sınıflarda %20)" },
-            { deger: 1, etiket: "İstatistik quiz'inin z-score'u (kimya: 0.5)" }
-          ] },
         { tip: "ozet", maddeler: [
             "Karşılaştırırken dört başlık: *shape*, *outliers*, *center*, *variability*; hepsi *in context*.",
             "İki ayrı liste yetmez; *greater than*, *more variable than*, *similar to* gibi ==karşılaştırma sözcükleri== şart.",

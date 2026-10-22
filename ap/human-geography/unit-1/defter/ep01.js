@@ -2,26 +2,26 @@
    Kaynak: ap-videolar/src/episodes/ep01 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep01",
-  ozet: "Coğrafya başkent ezberi değil, iki sorudur: ==nerede?== ve ==neden orada?== Bu defterde *physical* ile *human geography* farkını, *spatial perspective*'i, Pattison'un dört geleneğini, Sauer'in *cultural landscape* fikrini ve *quantitative* ile *qualitative* veriyi göreceksin.",
+  amac: "Bu konu coğrafyanın ne olduğunu anlatıyor: bir şeyin ==nerede== olduğunu ve ==neden orada== olduğunu sormak. Fiziki ile beşerî coğrafya farkını, coğrafyacının bakış açısını ve veri türlerini öğreneceksin.",
   bolumler: [
     {
       baslik: "Coğrafyanın iki sorusu",
+      kisa: "Coğrafya başkent ezberi değil; nerede ve neden orada sorularıdır.",
       bloklar: [
-        { tip: "hikaye", ikon: "🗺️", baslik: "Başkent ezberlemek mi?",
-          metin: "Coğrafya denince aklına başkent ezberlemek geliyorsa, onu unut. Coğrafyanın sadece iki sorusu var: **insanlar ve yaptıkları şeyler nerede?** Ve **neden orada?** Dünya haritasında şehirler, yollar, diller, dinler, fabrikalar... hepsi bu iki sorunun cevabıdır." },
         { tip: "formul", parcalar: [
             { t: "Nerede?", alt: "bir şeyin yeri ve dağılımı" }, "+",
             { t: "Neden orada?", alt: "yerin nedenleri" }, "=",
             { t: "Coğrafi düşünce", alt: "AP Human Geography'nin özü" }
           ], aciklama: "Haritada bir nokta gördüğünde önce yerini, sonra o yerde olmasının sebebini sor." },
-        { tip: "not", metin: "Bu sorular ezberle cevaplanmaz; düşünerek cevaplanır. Bu yüzden sınavda ==\"nedenini açıkla\"== tarzı sorular çıkar." }
+        { tip: "not", metin: "Şehirler, yollar, diller, dinler, fabrikalar bu iki sorunun cevabıdır. Cevap ezberle değil düşünerek bulunur; bu yüzden sınavda ==\"nedenini açıkla\"== tarzı sorular çıkar." }
       ]
     },
     {
       baslik: "İki büyük kol: doğa ve insan",
+      kisa: "*Physical geography* doğayı, *human geography* insanı inceler.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "⛰️", baslik: "*Physical geography*", maddeler: ["Doğayı inceler", "İklim, dağlar, nehirler, topraklar", "Örnek: bir nehrin yatağını nasıl oyduğu"] },
-          sag: { ikon: "🏙️", baslik: "*Human geography*", maddeler: ["İnsanı inceler", "Nüfus, kültür, şehirler, ekonomi", "Örnek: şehrin neden o nehir kıyısında kurulduğu"] },
+        { tip: "ikili", sol: { ikon: "⛰️", baslik: "*Physical geography*", maddeler: ["Doğayı inceler (fiziki coğrafya)", "İklim, dağlar, nehirler, topraklar"] },
+          sag: { ikon: "🏙️", baslik: "*Human geography*", maddeler: ["İnsanı inceler (beşerî coğrafya)", "Nüfus, kültür, şehirler, ekonomi"] },
           oyun: [
             { metin: "Akdeniz ikliminin hangi enlemlerde görüldüğünü incelemek.", cevap: "sol", neden: "İklim doğanın konusudur: *physical*." },
             { metin: "Bir ülkede nüfusun şehirlerde toplanması.", cevap: "sag", neden: "Nüfus insanın konusudur: *human*." },
@@ -29,22 +29,15 @@ window.DEFTER = {
             { metin: "İstanbul'da mağazaların hangi semtlerde toplandığı.", cevap: "sag", neden: "Ekonomik faaliyetin dağılımı: *human*." },
             { metin: "Dillerin ve dinlerin dünyaya yayılışı.", cevap: "sag", neden: "Kültür insanın ürünüdür: *human*." }
           ] },
-        { tip: "not", metin: "Bu derste ağırlık **insan tarafında**. Ama iki kol sürekli birbirine dokunur: nehir şehre akar, şehir nehri değiştirir." }
+        { tip: "not", metin: "Bu derste ağırlık insan tarafında. Ama iki kol birbirine dokunur: nehir şehre akar, şehir nehri değiştirir." }
       ]
     },
     {
       baslik: "Doğa ile toplumun kesişimi",
+      kisa: "İnsan ile çevre birbirini karşılıklı etkiler.",
       bloklar: [
-        { tip: "harita", merkez: "Doğa ⇄ toplum ilişkisi", dallar: [
-            { baslik: "*Environmental geography*", alt: "İki kolun kesiştiği yer: insan çevreyi nasıl değiştirir, çevre insanı nasıl etkiler?" },
-            { baslik: "*Cultural ecology*", alt: "İnsanların yaşadığı ortama nasıl uyum sağladığı" },
-            { baslik: "İnsan → çevre", alt: "Baraj nehrin akışını değiştirir" },
-            { baslik: "Çevre → insan", alt: "Kuraklık çiftçiyi göçe zorlar" }
-          ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🌍", terim: "Physical geography", tr: "fiziki coğrafya", tanim: "Doğal ortamı inceleyen kol: iklim, yer şekilleri, su, toprak.", ornek: "Bir nehrin taşkın düzlüğünü nasıl oluşturduğu." },
-            { ikon: "👥", terim: "Human geography", tr: "beşerî coğrafya", tanim: "İnsanın ve insan faaliyetlerinin mekândaki dağılımını inceleyen kol.", ornek: "Göçmenlerin hangi mahallelerde toplandığı." },
-            { ikon: "🔁", terim: "Environmental geography", tr: "çevre coğrafyası", tanim: "Doğa ile toplum arasındaki karşılıklı ilişkiyi inceler. ==İki yönlüdür:== insan çevreyi, çevre de insanı etkiler.", ornek: "Baraj nehrin akışını değiştirir; kuraklık çiftçiyi göç etmeye zorlar." },
+            { ikon: "🔁", terim: "Environmental geography", tr: "çevre coğrafyası", tanim: "Doğa ile toplum arasındaki karşılıklı ilişkiyi inceler. ==İki yönlüdür:== insan çevreyi, çevre de insanı etkiler.", ornek: "Baraj nehrin akışını değiştirir; kuraklık çiftçiyi göçe zorlar." },
             { ikon: "🏜️", terim: "Cultural ecology", tr: "kültürel ekoloji", tanim: "İnsanların yaşadıkları ortama nasıl uyum sağladığını inceleyen yaklaşım.", ornek: "Çölde kalın duvarlı, küçük pencereli evler; çok yağmur alan yerlerde dik çatılar." }
           ] },
         { tip: "tuzak", metin: "*Environmental geography* yalnız \"insan doğaya zarar verir\" demek değildir.", yanlis: "Çevre coğrafyası sadece insanın çevreye etkisini inceler.", dogru: "İlişki ==iki yönlüdür==: insan çevreyi değiştirir, çevre de insanı (kuraklık, taşkın, iklim) etkiler." }
@@ -52,14 +45,10 @@ window.DEFTER = {
     },
     {
       baslik: "Coğrafyacının gözlüğü: *spatial perspective*",
+      kisa: "Coğrafyacı her konuya mekân gözüyle bakar: nerede, neden, ilişkisi ne?",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "👓", terim: "Spatial perspective", tr: "mekânsal bakış açısı", tanim: "Coğrafyacıyı diğer bilim insanlarından ayıran bakış. Her konuya mekân gözüyle bakar.", ornek: "Kahve zincirlerinin şubeleri neden hep kalabalık caddelerde ve birbirine bu kadar yakın?" }
-          ] },
-        { tip: "adimlar", baslik: "Her konuda üç soru", adimlar: [
-            { baslik: "Bu şey nerede?", metin: "Yerini ve dağılımını bul: hangi caddeler, hangi mahalleler?" },
-            { baslik: "Neden orada?", metin: "Yerin nedenini ara: kalabalık, ulaşım, fiyat, doğal koşullar." },
-            { baslik: "Başka yerlerle nasıl ilişkili?", metin: "Komşu yerlerle, yollarla, müşterilerle bağlantısını incele." }
+            { ikon: "👓", terim: "Spatial perspective", tr: "mekânsal bakış açısı", tanim: "Coğrafyacıyı diğer bilim insanlarından ayıran bakış. Her konuya üç soruyla bakar: nerede, neden orada, başka yerlerle nasıl ilişkili?", ornek: "Kahve zincirlerinin şubeleri neden hep kalabalık caddelerde ve birbirine yakın?" }
           ] },
         { tip: "grafik", baslik: "Kahve zincirleri neden ana caddede?", xlabel: "", ylabel: "", xmax: 10, ymax: 10,
           ogeler: [
@@ -88,38 +77,31 @@ window.DEFTER = {
             { metin: "**Nerede?** Kafe şubeleri sokaklara rastgele değil, hep ana caddeye dizilmiş.", goster: ["k1", "k2", "k3", "k4", "k5", "k6"] },
             { metin: "**Neden orada?** Ana cadde kalabalıktır; kalabalık müşteri demektir.", goster: ["w1"] },
             { metin: "**Başka yerlerle nasıl ilişkili?** Şubeler birbirine yakındır ve aynı müşteri akışını paylaşır.", goster: ["c1", "c2", "c3", "c4", "c5", "w2"] }
-          ] },
-        { tip: "not", metin: "Kahve zincirleri sorusu bir ==*spatial*== sorudur: yer (nerede), neden (kalabalık) ve ilişki (yakın şubeler) birlikte düşünülür." }
+          ] }
       ]
     },
     {
       baslik: "Pattison'un dört geleneği",
+      kisa: "Pattison'un dört geleneği: earth-science, culture-environment, locational, area-analysis.",
       bloklar: [
-        { tip: "not", metin: "William Pattison coğrafyayı **dört gelenek** olarak sınıflandırdı. Sınavda ==\"hangisi dört gelenekten biri değildir?\"== diye sorulabilir." },
-        { tip: "harita", merkez: "Pattison · *four traditions*", dallar: [
-            { baslik: "1 · *Earth-science*", alt: "Fiziki dünyanın kendisi: iklim kuşakları, depremler" },
-            { baslik: "2 · *Culture-environment*", alt: "İnsan–çevre ilişkisi: dik yamaçlara teras yaparak tarım" },
-            { baslik: "3 · *Locational*", alt: "Konum, mesafe, dağılım: marketler neden ana caddelerde toplanır?" },
-            { baslik: "4 · *Area-analysis*", alt: "Bölgeleri inceleyip karşılaştırmak: Akdeniz kıyısını diğer bölgelerden ayıran ne?" }
-          ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🌋", terim: "Earth-science tradition", tr: "yer bilimi geleneği", tanim: "Fiziki dünyanın kendisini inceler.", ornek: "İklim kuşakları ya da depremler." },
             { ikon: "🌱", terim: "Culture-environment tradition", tr: "kültür–çevre geleneği", tanim: "İnsan ile çevre arasındaki ilişkiye bakar.", ornek: "Dik yamaçlara teras yaparak tarım yapmak." },
             { ikon: "📍", terim: "Locational tradition", tr: "konumsal gelenek", tanim: "Konum, mesafe ve dağılımı inceler.", ornek: "Marketler neden hep ana caddelerde toplanır?" },
             { ikon: "🧩", terim: "Area-analysis tradition", tr: "alan analizi geleneği", tanim: "Bölgeleri inceleyip birbiriyle karşılaştırır.", ornek: "Akdeniz kıyısını diğer bölgelerden ayıran nedir?" }
           ] },
-        { tip: "tuzak", metin: "Sınav çeldiricisi: \"*Political tradition*\" gibi kulağa uygun gelen uydurma bir gelenek.", yanlis: "Dört gelenekten biri *political tradition*'dır.", dogru: "Dördü *earth-science*, *culture-environment*, *locational* ve *area-analysis*'tir. Siyasi bir gelenek yoktur." }
+        { tip: "tuzak", metin: "William Pattison coğrafyayı dört gelenek olarak sınıflandırdı; sınavda ==\"hangisi dört gelenekten biri değildir?\"== diye sorulur. Çeldirici, kulağa uygun gelen uydurma bir gelenektir.", yanlis: "Dört gelenekten biri *political tradition*'dır.", dogru: "Dördü *earth-science*, *culture-environment*, *locational* ve *area-analysis*'tir. Siyasi bir gelenek yoktur." }
       ]
     },
     {
       baslik: "Sauer'in kültürel peyzajı",
+      kisa: "Kültür etkendir, doğa ortamdır, *cultural landscape* sonuçtur.",
       bloklar: [
-        { tip: "not", metin: "Carl Sauer'e göre bir manzaranın değişmesini sağlayan üç şey vardır. Bunu bir cümleyle akılda tut: **kültür etkendir, doğa ortamdır, *cultural landscape* ise sonuçtur.**" },
         { tip: "formul", parcalar: [
             { t: "Kültür", alt: "etken (agent)" }, "+",
             { t: "Doğa", alt: "ortam (medium)" }, "→",
             { t: "*Cultural landscape*", alt: "sonuç (result)" }
-          ], aciklama: "Doğa malzemeyi verir, insan kültürüyle onu biçimlendirir." },
+          ], aciklama: "Carl Sauer'e göre doğa malzemeyi verir, insan kültürüyle onu biçimlendirir." },
         { tip: "adimlar", baslik: "Bir vadi nasıl kültürel peyzaja dönüşür?", adimlar: [
             { baslik: "*Natural landscape*", metin: "El değmemiş bir vadi: dağlar, nehir, ağaçlar. İnsan izi yok." },
             { baslik: "Tarlalar ve yollar", metin: "İnsanlar tarla şeritleri açar, yol çeker." },
@@ -135,9 +117,10 @@ window.DEFTER = {
     },
     {
       baslik: "Veri: sayı mı söz mü?",
+      kisa: "*Quantitative* veri sayıdır; *qualitative* veri söz, gözlem ve yorumdur.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🔢", baslik: "*Quantitative data*", maddeler: ["Sayıdır; ölçülür", "Tartışmaya açık değildir", "Örnek: nüfus, gelir, sıcaklık"] },
-          sag: { ikon: "💬", baslik: "*Qualitative data*", maddeler: ["Söze ve gözleme dayanır", "Yoruma açıktır", "Örnek: röportajlar, gözlemler, insanların bir yer hakkındaki düşünceleri"] },
+        { tip: "ikili", sol: { ikon: "🔢", baslik: "*Quantitative data*", maddeler: ["Sayıdır; ölçülür", "Örnek: nüfus, gelir, sıcaklık"] },
+          sag: { ikon: "💬", baslik: "*Qualitative data*", maddeler: ["Söze ve gözleme dayanır; yoruma açıktır", "Örnek: röportajlar, insanların bir yer hakkındaki düşünceleri"] },
           oyun: [
             { metin: "Şehrin nüfusu 16 milyon.", cevap: "sol", neden: "Sayı ve ölçüm: *quantitative*." },
             { metin: "Şehir çok kalabalık hissettiriyor.", cevap: "sag", neden: "His ve yorum: *qualitative*." },
@@ -145,23 +128,16 @@ window.DEFTER = {
             { metin: "Bir araştırmacı köylülerle röportaj yapıp anlattıklarını not alıyor.", cevap: "sag", neden: "Söze dayanır, sayı değil: *qualitative*." },
             { metin: "Nüfusun %12'si 65 yaş üstü.", cevap: "sol", neden: "Yüzde bir sayıdır: *quantitative*." }
           ] },
-        { tip: "sayilar", ogeler: [
-            { deger: 16000000, etiket: "şehrin nüfusu → *quantitative*" },
-            { deger: 24, sonek: " °C", etiket: "sıcaklık → *quantitative*" },
-            { deger: 12, sonek: "%", etiket: "bir oran → *quantitative*" }
-          ] },
-        { tip: "liste", maddeler: [
-            { ikon: "📊", baslik: "Veri nereden gelir?", metin: "Ek bilgi: coğrafyacılar nüfus sayımından, anketlerden, saha gözleminden, röportajlardan ve uydu görüntülerinden yararlanır. Sayım ve ölçümler genelde *quantitative*; röportaj ve gözlem notları *qualitative* olur." }
-          ] },
-        { tip: "tuzak", metin: "\"Sayı yoksa veri değildir\" gibi düşünmek yanlıştır.", yanlis: "*Qualitative data* değersiz ya da bilimsel değildir.", dogru: "İkisi de veridir. *Quantitative* ölçülür; *qualitative* insanların deneyimini, hissini ve yorumunu yakalar." }
+        { tip: "tuzak", metin: "Veriler nüfus sayımı, anket, saha gözlemi, röportaj ve uydu görüntüsünden gelir. Sayım ve ölçümler genelde *quantitative*, röportaj ve gözlem notları *qualitative* olur.", yanlis: "*Qualitative data* değersiz ya da bilimsel değildir.", dogru: "İkisi de veridir. *Quantitative* ölçülür; *qualitative* insanların deneyimini, hissini ve yorumunu yakalar." }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Coğrafyanın iki sorusu: ==nerede?== ve ==neden orada?==",
-            "*Physical geography* doğayı, *human geography* insanı inceler; kesiştikleri yer *environmental geography*'dir.",
+            "*Physical geography* doğayı, *human geography* insanı inceler; kesiştikleri yer *environmental geography*'dir ve ilişki iki yönlüdür.",
             "*Cultural ecology*: insanların yaşadıkları ortama uyum sağlaması (çöl evleri, dik çatılar).",
             "*Spatial perspective*: nerede, neden orada ve başka yerlerle nasıl ilişkili?",
             "Pattison'un dört geleneği: *earth-science*, *culture-environment*, *locational*, *area-analysis*. Siyasi bir gelenek yok.",

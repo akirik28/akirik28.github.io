@@ -3,34 +3,29 @@
 (function () {
   /* 100 denemelik randomization distribution (notes.md tablosu): fark → adet */
   var COUNTS = { "-2.8": 1, "-2.6": 2, "-2.4": 1, "-2.0": 1, "-1.8": 2, "-1.6": 4, "-1.4": 2, "-1.2": 2, "-1.0": 7, "-0.8": 9, "-0.6": 7, "-0.4": 7, "-0.2": 6, "0": 5, "0.2": 6, "0.4": 5, "0.6": 3, "0.8": 5, "1": 6, "1.2": 3, "1.4": 2, "1.6": 3, "1.8": 4, "2": 4, "2.4": 2, "3": 1 };
-  var VALS = [], k, i;
-  for (k in COUNTS) for (i = 0; i < COUNTS[k]; i++) VALS.push(parseFloat(k));
+  var i;
   /* grafik ögeleri: her 0.2'lik aralık için bir sütun (x = fark + 3) */
-  var BARS = [], SET_ALL = {}, SET_ONE = {}, TAIL = [], HEAD = [];
+  var BARS = [], SET_ALL = {}, SET_ONE = {}, TAIL = [];
   for (i = 0; i < 30; i++) {
     var v = Math.round((-2.8 + 0.2 * i) * 10) / 10, n = COUNTS[String(v)] || 0, c = Math.round((v + 3) * 10) / 10;
     var id = "h" + i, tail = v >= 1.2;
     BARS.push({ id: id, tip: "alan", renk: tail ? 0 : 1, gizli: tail, noktalar: [[c - 0.09, 0], [c + 0.09, 0], [c + 0.09, 0], [c - 0.09, 0]] });
     SET_ALL[id] = { noktalar: [[c - 0.09, 0], [c + 0.09, 0], [c + 0.09, n], [c - 0.09, n]] };
     if (v === -0.6) SET_ONE[id] = SET_ALL[id];
-    (tail ? TAIL : HEAD).push(id);
+    if (tail) TAIL.push(id);
   }
   var XT = [-3, -2, -1, 0, 1, 2, 3].map(function (d) { return { v: d + 3, label: String(d) }; });
 
   window.DEFTER = {
     slug: "st117",
-    ozet: "Bir deneyde iki grup arasında fark çıktı. Bu fark ==treatment'tan== mı geldi, yoksa ==kuranın şansından== mı? Bu defterde bunu *simulation* ve *randomization distribution* ile nasıl test edeceğini (kafein–nabız deneyi, 100 deneme, %19), %5 kuralıyla *statistically significant* kararını, *scope of inference* ile iki sorunun (*random selection* ve *random assignment*) dört kutusunu ve etiği göreceksin.",
+    amac: "Bu konu deneyde çıkan farkın treatment'tan mı yoksa kuranın şansından mı geldiğini nasıl test edeceğimizi anlatıyor. *Simulation*, %5 kuralı ve *statistically significant* kararını, sonucun kime genelleneceğini ve etiği öğreneceksin.",
     bolumler: [
       {
-        baslik: "Para hileli mi?",
+        baslik: "Şans mı, etki mi?",
+        kisa: "Fark şansın kolayca üretebileceği kadar küçükse ikna olma.",
         bloklar: [
-          { tip: "hikaye", ikon: "🪙", baslik: "10 atışta 6 yazı",
-            metin: "Arkadaşın bir parayı 10 kez atıyor, 6 yazı geliyor. “Bu para hileli!” diyor. İkna olur musun? Olmazsın; dürüst parada da 6 yazı sık sık gelir. Ya 10'u da yazı gelseydi? O zaman şüphelenirdin. Demek ki asıl soru: bu fark ==şansın kolayca üretebileceği bir şey mi==, yoksa ==şansla açıklanamayacak kadar büyük mü?==" },
-          { tip: "sekil", baslik: "Dürüst parada 10 atış: ne kadar sık?", fig: { type: "bar", cats: ["6 ya da daha çok yazı", "10 yazı"], series: [{ name: "Olasılık (%)", values: [37.7, 0.1] }], ylabel: "Olasılık (%)" } },
-          { tip: "sayilar", ogeler: [
-              { deger: 38, sonek: "%", etiket: "dürüst parada 6 ya da daha çok yazı (386/1024) — olağan" },
-              { deger: 0.1, sonek: "%", etiket: "dürüst parada 10 yazı (1/1024), yaklaşık binde 1 — şansla zor" }
-            ] },
+          { tip: "not", metin: "Arkadaşın bir parayı 10 kez atıyor, 6 yazı geliyor ve “Bu para hileli!” diyor. İkna olmazsın; dürüst parada 6 yazı sık gelir. Ya 10'u da yazı gelseydi? Asıl soru: bu fark ==şansın kolayca üretebileceği bir şey mi==, yoksa ==şansla açıklanamayacak kadar büyük mü?==" },
+          { tip: "sekil", baslik: "Dürüst parada 10 atış: 6 ya da daha çok yazı ≈ %38 (386/1024), 10 yazı ≈ binde 1 (1/1024)", fig: { type: "bar", cats: ["6 ya da daha çok yazı", "10 yazı"], series: [{ name: "Olasılık (%)", values: [37.7, 0.1] }], ylabel: "Olasılık (%)" } },
           { tip: "ikili", ayirici: "vs",
             sol: { ikon: "🎲", baslik: "Şans kolayca üretir", maddeler: ["10 atışta 6 yazı", "Dürüst parada sık görülür", "Şüphelenmek için erken"] },
             sag: { ikon: "🔓", baslik: "Şansla açıklanamaz", maddeler: ["10 atışta 10 yazı", "Dürüst parada binde 1", "Şüphelenmek için yeterli"] },
@@ -44,26 +39,19 @@
       },
       {
         baslik: "Kafein nabzı artırır mı?",
+        kisa: "Gözlenen fark, treatment'tan ya da kuranın şansından gelebilir.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
-              { ikon: "🎲", terim: "Random assignment", tr: "rastgele atama", tanim: "*Treatment*'ları kurayla dağıtmak. Grupları kabaca denk yapar, birebir aynı yapmaz.", ornek: "20 gönüllüyü kurayla 10'a 10 bölmek." },
+              { ikon: "🎲", terim: "Random assignment", tr: "rastgele atama", tanim: "*Treatment*'ları kurayla dağıtmak. Grupları kabaca denk yapar, birebir aynı yapmaz; şans payı kalır.", ornek: "20 gönüllüyü kurayla 10'a 10 bölmek." },
               { ikon: "🫀", terim: "Change in pulse", tr: "nabız değişimi", tanim: "Ölçülen *response*: son nabız eksi ilk nabız.", ornek: "Change = Final pulse rate − Initial pulse rate." }
             ] },
-          { tip: "hikaye", ikon: "🥤", baslik: "20 gönüllü, iki kola", metin: "Bir sınıfta 20 gönüllü öğrenci var. *Random assignment* ile (kurayla) 10'u **kafeinli** kola içiyor, 10'u **kafeinsiz**. Ölçülen şey nabız değişimi: son nabız eksi ilk nabız." },
-          { tip: "tablo", baslik: "Her öğrencinin nabız değişimi", head: ["Grup", "Değerler (10 öğrenci)", "Toplam", "Ortalama"], rows: [
+          { tip: "tablo", baslik: "20 gönüllü kurayla iki kola: her öğrencinin nabız değişimi", head: ["Grup", "Değerler (10 öğrenci)", "Toplam", "Ortalama"], rows: [
               ["Kafeinli", "8, 3, 5, 1, 4, 0, 6, 1, 4, 0", "32", "3.2"],
               ["Kafeinsiz", "3, −2, 4, −1, 5, 5, 1, 2, −1, 4", "20", "2.0"]
-            ], not: "Değerler 20 öğrencinin kayıtlarıdır; toplamlar ve ortalamalar tutuyor." },
+            ], not: "10'u kafeinli, 10'u kafeinsiz kola içti; toplamlar ve ortalamalar tutuyor." },
           { tip: "ornek", baslik: "Gözlenen fark", durum: "Kafeinli grubun ortalaması 3.2, kafeinsiz grubunki 2.0.",
-            adimlar: ["Kafeinli: 8 + 3 + 5 + 1 + 4 + 0 + 6 + 1 + 4 + 0 = 32 → 32 ÷ 10 = 3.2.", "Kafeinsiz: 3 − 2 + 4 − 1 + 5 + 5 + 1 + 2 − 1 + 4 = 20 → 20 ÷ 10 = 2.0.", "Fark (kafeinli − kafeinsiz): 3.2 − 2.0 = 1.2.", "Kafein işe yarıyor gibi. Ama dur: bu fark şanstan olabilir mi?"],
+            adimlar: ["Kafeinli: 8 + 3 + 5 + 1 + 4 + 0 + 6 + 1 + 4 + 0 = 32 → 32 ÷ 10 = 3.2.", "Kafeinsiz: 3 − 2 + 4 − 1 + 5 + 5 + 1 + 2 − 1 + 4 = 20 → 20 ÷ 10 = 2.0.", "Fark (kafeinli − kafeinsiz): 3.2 − 2.0 = 1.2.", "Kafein işe yarıyor gibi. Ama dur: bu fark şanstan olabilir mi? Asıl soru: kafein etkisiz olsaydı, şansla 1.2 ya da daha büyük fark ne sıklıkla çıkardı?"],
             sonuc: "Gözlenen fark = 1.2 (nabız değişimi)." },
-          { tip: "sekil", baslik: "Kafeinli grubun nabız değişimleri", fig: { type: "dot", values: [8, 3, 5, 1, 4, 0, 6, 1, 4, 0], label: "Kafeinli: nabız değişimi" } },
-          { tip: "sekil", baslik: "Kafeinsiz grubun nabız değişimleri", fig: { type: "dot", values: [3, -2, 4, -1, 5, 5, 1, 2, -1, 4], label: "Kafeinsiz: nabız değişimi" } }
-        ]
-      },
-      {
-        baslik: "Farkın iki açıklaması",
-        bloklar: [
           { tip: "ikili", ayirici: "ya da",
             sol: { ikon: "🎲", baslik: "Açıklama 1: şans", maddeler: ["Kafein etkisiz", "Fark kuranın şansından çıktı", "Nabzı kolay yükselenler tesadüfen aynı gruba düştü"] },
             sag: { ikon: "🥤", baslik: "Açıklama 2: kafein", maddeler: ["Kafein nabzı gerçekten artırıyor", "Fark treatment'tan geliyor", "Şansla açıklanamaz"] },
@@ -72,13 +60,12 @@
               { metin: "Kafein nabzı gerçekten artırıyor.", cevap: "sag", neden: "Treatment etkisi." },
               { metin: "“No effect — the difference is due to chance variation in the random assignment.”", cevap: "sol", neden: "Şans açıklaması." },
               { metin: "“Caffeine increases pulse rates.”", cevap: "sag", neden: "Treatment açıklaması." }
-            ] },
-          { tip: "not", metin: "Asıl soru: ==kafein etkisiz olsaydı, şansla 1.2 ya da daha büyük bir fark ne sıklıkla çıkardı?== İngilizcesi: “If caffeine has no effect, how often would a difference of 1.2 or more happen just by chance?”" },
-          { tip: "tuzak", baslik: "Random assignment birebir eşitlemez", metin: "Rastgele atama grupları kabaca denk yapar; şans payı kalır.", yanlis: "“Atama rastgele, o halde gruplar birebir aynı; fark mutlaka treatment'tan.”", dogru: "Gruplar kabaca denk; fark treatment'tan da gelebilir, kuranın şansından da." }
+            ] }
         ]
       },
       {
         baslik: "*Simulation*: şansı taklit et",
+        kisa: "Etki yokmuş gibi kartları karıştırıp dağıt, farkı bul, tekrarla.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "🃏", terim: "Simulation", tr: "benzetim", tanim: "Şansı taklit ederek “etki olmasaydı ne olurdu?” sorusunu denemek.", ornek: "20 kartı karıştırıp onar onar dağıtmak." },
@@ -88,17 +75,17 @@
               { baslik: "Varsayım", metin: "Kafein etkisiz: herkesin nabız değişimi hangi kolayı içerse içsin aynı kalırdı." },
               { baslik: "20 kart", metin: "20 öğrencinin değişimini kartlara yaz: 8, 3, 5, 1, 4, 0, 6, 1, 4, 0, 3, −2, 4, −1, 5, 5, 1, 2, −1, 4." },
               { baslik: "Karıştır ve dağıt", metin: "Kartları karıştır, onar onar iki desteye dağıt: ilk deste kafein grubu, ikincisi kafeinsiz. Kurayı yeniden çekmiş oldun." },
-              { baslik: "Farkı bul", metin: "Ortalama(kafein) − ortalama(kafeinsiz) hesapla." },
+              { baslik: "Farkı bul", metin: "Ortalama(kafein) − ortalama(kafeinsiz) hesapla; her seferinde bu sırayla. Negatif değerler de olağandır, hiçbir deneme atlanmaz." },
               { baslik: "Noktayı koy", metin: "Farkı sayı doğrusuna bir nokta olarak koy; tekrarla." }
             ] },
           { tip: "ornek", baslik: "Deneme 1", durum: "Karıştırıp dağıtınca: Pile 1 (kafein): 8, 0, 1, 4, −2, 5, 1, 2, −1, 5. Pile 2 (kafeinsiz): 6, 5, 4, 4, 4, 3, 3, 1, 0, −1.",
             adimlar: ["Pile 1 toplamı: 8 + 0 + 1 + 4 − 2 + 5 + 1 + 2 − 1 + 5 = 23 → 23 ÷ 10 = 2.3.", "Pile 2 toplamı: 6 + 5 + 4 + 4 + 4 + 3 + 3 + 1 + 0 − 1 = 29 → 29 ÷ 10 = 2.9.", "Kontrol: 23 + 29 = 52, orijinal 20 kartın toplamı (32 + 20 = 52).", "Fark: 2.3 − 2.9 = −0.6. Negatif de çıkabilir."],
-            sonuc: "Deneme 1: fark = −0.6 (sayı doğrusunda −0.6'ya bir nokta)." },
-          { tip: "tuzak", baslik: "Çıkarma sırası sabit", metin: "Fark her seferinde aynı sırayla alınır: kafein grubu − kafeinsiz grup. Negatif değerler de olağandır.", yanlis: "“Fark negatif çıktı, o denemeyi saymıyorum.”", dogru: "Her denemenin farkı (işaretiyle) dağılıma konur." }
+            sonuc: "Deneme 1: fark = −0.6 (sayı doğrusunda −0.6'ya bir nokta)." }
         ]
       },
       {
         baslik: "*Randomization distribution*: 100 deneme",
+        kisa: "Etki yokken 1.2 ya da daha büyük fark 100 denemenin 19'unda çıktı.",
         bloklar: [
           { tip: "grafik", baslik: "Dağılımı kur, gözlenen farkı işaretle", xlabel: "Fark (Kafein − Kafeinsiz)", ylabel: "Deneme sayısı", xmax: 7, ymax: 10, xticks: XT, yticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }],
             ogeler: BARS.concat([
@@ -114,26 +101,14 @@
               { metin: "Noktalar sıfırın çevresinde toplanır: etki yoksa fark ortalamada 0.", goster: ["z0", "z0t"] },
               { metin: "Gerçek fark 1.2'yi işaretle. Ona eşit ya da ondan büyük kaç nokta var? ==19== (3 + 2 + 3 + 4 + 4 + 2 + 1). Yani denemelerin %19'u.", goster: TAIL.concat(["obs", "obst", "pct"]) }
             ] },
-          { tip: "sekil", baslik: "100 denemenin dotplot'u", fig: { type: "dot", values: VALS, label: "Fark (Kafein − Kafeinsiz)" } },
-          { tip: "tablo", baslik: "Frekans tablosu (fark: adet)", head: ["Fark", "Adet", "Fark", "Adet", "Fark", "Adet"], rows: [
-              ["−2.8", "1", "−0.8", "9", "1.0", "6"],
-              ["−2.6", "2", "−0.6", "7", "1.2", "3"],
-              ["−2.4", "1", "−0.4", "7", "1.4", "2"],
-              ["−2.0", "1", "−0.2", "6", "1.6", "3"],
-              ["−1.8", "2", "0.0", "5", "1.8", "4"],
-              ["−1.6", "4", "0.2", "6", "2.0", "4"],
-              ["−1.4", "2", "0.4", "5", "2.4", "2"],
-              ["−1.2", "2", "0.6", "3", "3.0", "1"],
-              ["−1.0", "7", "0.8", "5", "", ""]
-            ], not: "Toplam 100 deneme." },
-          { tip: "ornek", baslik: "Kaç nokta 1.2 ya da daha büyük?", durum: "Gözlenen fark 1.2. Dağılımda 1.2'ye eşit ya da ondan büyük farkları say.",
-            adimlar: ["1.2: 3 deneme; 1.4: 2; 1.6: 3; 1.8: 4; 2.0: 4; 2.4: 2; 3.0: 1.", "Toplam: 3 + 2 + 3 + 4 + 4 + 2 + 1 = 19 nokta.", "Oran: 19 ÷ 100 = 0.19 = %19.", "“Eşit ya da büyük”: çizginin üstündeki noktalar da sayılır."],
-            sonuc: "Etki yokken 1.2 ya da daha büyük fark 100 denemenin 19'unda çıktı: %19." },
-          { tip: "tuzak", baslik: "Eşit ya da büyük", metin: "Gözlenen farka ==eşit ya da ondan büyük== bütün noktaları say.", yanlis: "“1.2'den büyük farkları saydım, 1.2'dekileri atladım.”", dogru: "1.2'dekiler dahil: 3 + 2 + 3 + 4 + 4 + 2 + 1 = 19." }
+          { tip: "ornek", baslik: "Kaç nokta 1.2 ya da daha büyük?", durum: "Gözlenen fark 1.2. Dağılımda 1.2'ye eşit ya da ondan büyük farkları say; 1.2'dekiler de dahildir.",
+            adimlar: ["1.2: 3 deneme; 1.4: 2; 1.6: 3; 1.8: 4; 2.0: 4; 2.4: 2; 3.0: 1.", "Toplam: 3 + 2 + 3 + 4 + 4 + 2 + 1 = 19 nokta.", "Oran: 19 ÷ 100 = 0.19 = %19.", "“Eşit ya da büyük”: çizginin üstündeki noktalar da sayılır; yalnızca 1.2'den büyükleri saymak yanlış olur."],
+            sonuc: "Etki yokken 1.2 ya da daha büyük fark 100 denemenin 19'unda çıktı: %19." }
         ]
       },
       {
         baslik: "%5 kuralı: *statistically significant*",
+        kisa: "Şansla çıkma oranı %5'ten azsa fark anlamlıdır.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "✅", terim: "Statistically significant", tr: "istatistiksel olarak anlamlı", tanim: "Gözlenen fark, yalnızca *random assignment*'taki şansla açıklanamayacak kadar büyük. Pratik sınır: etki yokken böyle bir fark simülasyonların ==%5'inden azında== çıkıyorsa.", ornek: "Etki yokken %3'te çıkan fark." },
@@ -153,16 +128,17 @@
             durumlar: [
               { metin: "Kural: şansla çıkma oranı ==%5'ten azsa== fark anlamlı. Sol bölge anlamlı, sağ bölge şansla olağan." },
               { metin: "Kafein deneyi: %19 > %5. Etki olmasa da beş kuradan birinde bu fark çıkar: ==not statistically significant==.", goster: ["p19"] },
-              { metin: "Karşılaştırma için mini sınavdaki telefon deneyi: %3 < %5, sol bölgede: anlamlı.", goster: ["p3"] }
+              { metin: "Karşılaştırma için aşağıdaki telefon deneyi: %3 < %5, sol bölgede: anlamlı.", goster: ["p3"] }
             ] },
-          { tip: "formul", parcalar: [{ t: "%19", alt: "kafein deneyi" }, ">", { t: "%5", alt: "eşik" }, "→", { t: "anlamlı DEĞİL", alt: "not statistically significant" }, { t: "%3", alt: "telefon deneyi" }, "<", { t: "%5", alt: "eşik" }, "→", { t: "anlamlı", alt: "statistically significant" }], aciklama: "Notun önerisi: şimdilik sınır olarak %5 kullan." },
-          { tip: "not", metin: "Tanımın İngilizcesi: “The observed difference is too large to be explained by chance variation in the random assignment alone.” Kafein deneyinin cümlesi: “Because a difference of 1.2 or greater occurred in 19% of the simulated random assignments, the difference is not statistically significant.”" },
-          { tip: "tuzak", baslik: "“Etkisiz” demek yanlış", metin: "Anlamlı çıkmaması etkinin yok olduğunu kanıtlamaz; yalnızca bu deney göstermedi.", yanlis: "“Caffeine has no effect.”", dogru: "“There is not convincing evidence that caffeine increases pulse rates.” Belki etki var; bu deney gösteremedi." },
-          { tip: "tuzak", baslik: "Yüzde neyin yüzdesi?", metin: "%19, farkın treatment'tan gelme olasılığı değildir.", yanlis: "“%19 olasılıkla fark kafeinden geldi.”", dogru: "Etki yokken o kadar ya da daha büyük bir farkın şansla çıkma sıklığıdır." }
+          { tip: "ornek", baslik: "Telefonsuz çalışma", durum: "30 gönüllü öğrenci rastgele ikiye ayrılıyor: bir grup telefonsuz çalışıyor, öbürü telefonu yanında tutuyor. Telefonsuz grubun quiz ortalaması 4 puan yüksek. 200 denemelik simulation'da 4 ya da daha büyük fark 6 kez çıkıyor. Fark statistically significant mi?",
+            adimlar: ["Etki yokken 4 ya da daha büyük fark: 6 ÷ 200 = 0.03 = %3.", "%3 < %5 → fark şansla kolay açıklanamaz: statistically significant.", "Random assignment var, fark anlamlı → telefonun quiz puanını etkilediği söylenebilir.", "Ama gönüllüler rastgele seçilmedi: sonuç yalnızca benzer öğrencilere genellenir (bütün lise öğrencilerine değil)."],
+            sonuc: "Evet, anlamlı: %3 < %5." },
+          { tip: "tuzak", baslik: "Anlamsızlık “etkisiz” demek değil; %19 bir olasılık değil", metin: "Anlamlı çıkmaması etkinin yok olduğunu kanıtlamaz. %19 da farkın treatment'tan gelme olasılığı değildir: etki yokken o kadar ya da daha büyük farkın şansla çıkma sıklığıdır.", yanlis: "“Caffeine has no effect.” ya da “%19 olasılıkla fark kafeinden geldi.”", dogru: "“There is not convincing evidence that caffeine increases pulse rates.” Belki etki var; bu deney gösteremedi." }
         ]
       },
       {
         baslik: "*Scope of inference*: kime, neyi söyleyebilirsin?",
+        kisa: "Seçim genellemeyi, atama neden-sonucu belirler.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "🔭", terim: "Scope of inference", tr: "çıkarımın kapsamı", tanim: "Bir çalışmadan çıkarılabilecek sonucun kapsamı: kime genellenir, neden-sonuç denir mi?", ornek: "İki soruya bak: seçim, atama." },
@@ -179,38 +155,30 @@
               { metin: "Amaç: neden-sonuç diyebilmek.", cevap: "sag", neden: "Neden-sonuç atamaya bağlı." }
             ] },
           { tip: "tablo", baslik: "İki soru, dört kutu", head: ["", "Random assignment: EVET", "Random assignment: HAYIR"], rows: [
-              ["Random selection: EVET", "Popülasyon ✓ · Neden-sonuç ✓", "Popülasyon ✓ · Neden-sonuç ✗"],
-              ["Random selection: HAYIR", "Popülasyon ✗ (yalnızca benzerlere) · Neden-sonuç ✓", "Popülasyon ✗ · Neden-sonuç ✗"]
+              ["Random selection: EVET", "Popülasyon ✓ · Neden-sonuç ✓ (okul listesinden seçilip rastgele iki gruba ayrılan öğrenciler)", "Popülasyon ✓ · Neden-sonuç ✗ (rastgele örneklemli anket, random sample of U.S. adults)"],
+              ["Random selection: HAYIR", "Popülasyon ✗ (yalnızca benzerlere) · Neden-sonuç ✓ (20 gönüllüyle kafein deneyi, fark anlamlıysa)", "Popülasyon ✗ · Neden-sonuç ✗ (kantindeki arkadaşlara sorulan anket)"]
             ], vurgu: 1, not: "Deneylerin çoğu sol alttaki kutudadır: gönüllülerle rastgele atamalı deney." },
-          { tip: "liste", maddeler: [
-              { ikon: "🟢", baslik: "Seçim EVET, atama EVET", metin: "Okulun listesinden rastgele seçilen öğrenciler rastgele iki gruba ayrıldı: popülasyona genellersin, neden-sonuç da dersin." },
-              { ikon: "🟡", baslik: "Seçim EVET, atama HAYIR", metin: "Rastgele örneklemli anket (random sample of U.S. adults — survey): genellersin, neden-sonuç diyemezsin." },
-              { ikon: "🟠", baslik: "Seçim HAYIR, atama EVET", metin: "20 gönüllüyle kafein deneyi: neden-sonuç dersin (anlamlıysa), ama yalnızca deneydekilere benzeyenler için." },
-              { ikon: "🔴", baslik: "Seçim HAYIR, atama HAYIR", metin: "Kantindeki arkadaşlara sorulan anket: yalnızca o grubu anlatır." }
-            ] },
-          { tip: "tuzak", baslik: "Seçim ile atamayı karıştırma", metin: "Selection popülasyona genelleme, assignment neden-sonuç içindir.", yanlis: "“Atama rastgele olduğu için sonuç bütün lise öğrencilerine genellenir.”", dogru: "Atama rastgele → neden-sonuç. Birimler rastgele seçilmediyse genelleme yalnızca “items or individuals like those in the study”." },
-          { tip: "tuzak", baslik: "Neden-sonuç için iki koşul birlikte", metin: "Neden-sonuç yalnızca randomize deneyde ve anlamlı farkta söylenir.", yanlis: "“Random assignment var, o halde neden-sonuç.” (fark anlamlı değilse)", dogru: "Random assignment ve statistically significant fark birlikte → cause and effect." }
+          { tip: "tuzak", baslik: "Seçim ile atamayı karıştırma", metin: "Selection popülasyona genelleme, assignment neden-sonuç içindir. Neden-sonuç için randomize deney ve anlamlı fark birlikte gerekir.", yanlis: "“Atama rastgele olduğu için sonuç bütün lise öğrencilerine genellenir.” ya da “Random assignment var, o halde neden-sonuç.” (fark anlamlı değilse)", dogru: "Atama rastgele ve fark anlamlıysa neden-sonuç. Birimler rastgele seçilmediyse genelleme yalnızca “items or individuals like those in the study”." }
         ]
       },
       {
         baslik: "Botox örneği",
+        kisa: "Randomize deney ve anlamlı fark neden-sonucu, seçim yokluğu genellemeyi sınırlar.",
         bloklar: [
-          { tip: "hikaye", ikon: "💉", baslik: "Kronik bel ağrısı", metin: "Kronik bel ağrılı, 18 ile 55 yaş arası **50 hasta** rastgele ikiye ayrılıyor: **25'ine Botox**, **25'ine placebo** (tuzlu su iğnesi, *saline*). 8 hafta sonra Botox grubunun %68'i, öbür grubun %12'si düzeliyor. Fark *statistically significant*." },
-          { tip: "sekil", baslik: "8 hafta sonra düzelenlerin yüzdesi", fig: { type: "bar", cats: ["Botox (25 hasta)", "Placebo / saline (25 hasta)"], series: [{ name: "Düzelen (%)", values: [68, 12] }], ylabel: "Düzelen (%)" } },
-          { tip: "ornek", baslik: "Yüzdeleri ve farkı hesapla", durum: "Botox grubunda 25 hastadan 17'si, placebo grubunda 3'ü düzeldi.",
-            adimlar: ["Botox: 17 ÷ 25 = 0.68 = %68.", "Placebo: 3 ÷ 25 = 0.12 = %12.", "Fark: 68 − 12 = 56 yüzde puanı (percentage points).", "Fark anlamlı (notta verilmiş)."],
-            sonuc: "Fark 56 puan ve *statistically significant*." },
-          { tip: "ornek", baslik: "(a) Neden-sonuç var mı?", durum: "Atama rastgele, fark anlamlı.",
-            adimlar: ["Random assignment var mı? Evet: hastalar rastgele iki gruba ayrıldı.", "Fark anlamlı mı? Evet.", "İki koşul birlikte sağlandı."],
-            sonuc: "Evet: Botox'un düzelmeye neden olduğu söylenebilir." },
-          { tip: "ornek", baslik: "(b) En geniş popülasyon hangisi?", durum: "Hastalar rastgele seçilmedi.",
-            adimlar: ["Random selection var mı? Hayır: hastalar rastgele seçilmedi.", "Genelleme çalışmadakilere benzeyenlerle sınırlı.", "Bunlar: 18–55 yaş arası, kronik bel ağrısı olan hastalar."],
-            sonuc: "“Patients like those in the study: aged 18–55 with chronic low back pain.” (“all people with back pain” DEĞİL)" },
+          { tip: "sekil", baslik: "Kronik bel ağrısı: 8 hafta sonra düzelenlerin yüzdesi", fig: { type: "bar", cats: ["Botox (25 hasta)", "Placebo / saline (25 hasta)"], series: [{ name: "Düzelen (%)", values: [68, 12] }], ylabel: "Düzelen (%)" } },
+          { tip: "ornek", baslik: "Botox deneyini yorumla", durum: "Kronik bel ağrılı, 18 ile 55 yaş arası 50 hasta rastgele ikiye ayrılıyor: 25'ine Botox, 25'ine placebo (tuzlu su iğnesi, *saline*). 8 hafta sonra Botox grubunun %68'i, öbür grubun %12'si düzeliyor. Fark *statistically significant*; hastalar rastgele seçilmedi.",
+            adimlar: [
+              "Yüzdeler: Botox 17 ÷ 25 = 0.68 = %68; placebo 3 ÷ 25 = 0.12 = %12. Fark: 68 − 12 = 56 yüzde puanı (*percentage points*).",
+              "(a) Neden-sonuç? Random assignment var (hastalar rastgele iki gruba ayrıldı) ve fark anlamlı: evet, Botox'un düzelmeye neden olduğu söylenebilir.",
+              "(b) En geniş popülasyon? Random selection yok: genelleme çalışmadakilere benzeyen, 18–55 yaş arası kronik bel ağrılı hastalarla sınırlı."
+            ],
+            sonuc: "Neden-sonuç evet; genelleme: “patients like those in the study: aged 18–55 with chronic low back pain.” (“all people with back pain” DEĞİL)" },
           { tip: "tuzak", baslik: "Popülasyonu bağlamla yaz", metin: "Cevapta çalışmadaki grubu bağlamıyla yaz: yaş aralığı, hastalık…", yanlis: "“Sonuç bel ağrısı olan herkese genellenir.”", dogru: "“Sonuç, çalışmadakilere benzeyen 18–55 yaş arası kronik bel ağrılı hastalara genellenir.”" }
         ]
       },
       {
         baslik: "Veri etiği",
+        kisa: "Zarar verebilecek treatment atanamaz; o zaman gözlem yapılır.",
         bloklar: [
           { tip: "adimlar", baslik: "Etik üç durum", adimlar: [
               { baslik: "Zarar verebilecek *treatment* atanamaz", metin: "Kimseye sigara içiremezsin. O zaman *observational study* yapılır: yalnızca gözlersin." },
@@ -229,11 +197,9 @@
         ]
       },
       {
-        baslik: "Mini sınav ve toparlayalım",
+        baslik: "Toparlayalım",
+        kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
-          { tip: "ornek", baslik: "Telefonsuz çalışma", durum: "30 gönüllü öğrenci rastgele ikiye ayrılıyor: bir grup telefonsuz çalışıyor, öbürü telefonu yanında tutuyor. Telefonsuz grubun quiz ortalaması 4 puan yüksek. 200 denemelik simulation'da 4 ya da daha büyük fark 6 kez çıkıyor. Fark statistically significant mi?",
-            adimlar: ["Etki yokken 4 ya da daha büyük fark: 6 ÷ 200 = 0.03 = %3.", "%3 < %5 → fark şansla kolay açıklanamaz: statistically significant.", "Random assignment var, fark anlamlı → telefonun quiz puanını etkilediği söylenebilir.", "Ama gönüllüler rastgele seçilmedi: sonuç yalnızca benzer öğrencilere genellenir (bütün lise öğrencilerine değil)."],
-            sonuc: "Evet, anlamlı: %3 < %5." },
           { tip: "ozet", maddeler: [
               "Deneydeki fark *treatment*'tan da gelebilir, kuranın şansından da (*chance variation in the random assignment*).",
               "*Simulation*: 20 kartı karıştır, onar onar dağıt, farkı bul (Deneme 1: 2.3 − 2.9 = −0.6), noktayı koy, tekrarla.",

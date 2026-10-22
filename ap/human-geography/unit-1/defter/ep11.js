@@ -2,26 +2,26 @@
    Kaynak: ap-videolar/src/episodes/ep11 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep11",
-  ozet: "Üzerindeki tişört birkaç ülkenin işidir: bu *globalization*. Ağı *transnational corporations* kurar; ama kazanç eşit dağılmaz: *core* ile *periphery* arasındaki fark *uneven development*'tır. Sürdürülebilirlik (*sustainability*) *environment*, *economy*, *society* ayaklarının dengesidir. Hollanda'nın *polder*'ları sürdürülebilir, Florida'daki Everglades'in kurutulması sürdürülemez bir örnektir.",
+  amac: "Bu konu dünyanın birbirine nasıl bağlandığını (*globalization*) ve bu bağdan herkesin eşit kazanmadığını anlatıyor. Çok uluslu şirketleri, *core* ile *periphery* farkını ve sürdürülebilirliği örneklerle öğreneceksin.",
   bolumler: [
     {
-      baslik: "Tişörtün yolculuğu",
+      baslik: "Tişörtün yolculuğu: *globalization*",
+      kisa: "*Globalization* dünyanın tek bir pazar ve ağ gibi işlemesidir.",
       bloklar: [
-        { tip: "hikaye", ikon: "👕", baslik: "Bir tişört, dört ülke",
-          metin: "Üzerindeki tişört büyük ihtimalle bir ülkede tasarlandı, pamuğu başka bir ülkede yetişti, üçüncü bir ülkede dikildi ve sana burada satıldı. Dünya, tek bir pazar ve tek bir ağ gibi işlemeye başladı." },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🌐", terim: "Globalization", tr: "küreselleşme", tanim: "Dünyanın tek bir pazar, tek bir ağ gibi işlemeye başlaması: mal, para, insan ve fikirler sınırları kolayca aşar.", ornek: "Üzerindeki tişört bir ülkede tasarlandı, pamuğu başka bir ülkede yetişti, üçüncü bir ülkede dikildi ve sana burada satıldı." }
+          ] },
         { tip: "adimlar", baslik: "Tişörtün zinciri", adimlar: [
             { baslik: "Tasarım", metin: "Örneğin ABD'de tasarlanır." },
             { baslik: "Pamuk", metin: "Hindistan gibi bir ülkede yetişir." },
             { baslik: "Dikim", metin: "Bangladeş gibi üçüncü bir ülkede dikilir." },
             { baslik: "Satış", metin: "Türkiye'deki bir mağazada sana satılır." }
-          ] },
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🌐", terim: "Globalization", tr: "küreselleşme", tanim: "Dünyanın tek bir pazar, tek bir ağ gibi işlemeye başlaması: mal, para, insan ve fikirler sınırları kolayca aşar.", ornek: "Aynı tişörtün dört ülkeye yayılmış üretim ve satış zinciri." }
           ] }
       ]
     },
     {
       baslik: "Ağı kuranlar: *TNC*",
+      kisa: "*TNC* merkezi bir ülkede, üretimi ve satışı çok ülkede olan şirkettir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🏢", terim: "Transnational corporation (TNC)", tr: "çok uluslu şirket", tanim: "Merkezi bir ülkede olan, ama üretimini ve satışını pek çok ülkeye yayan şirket.", ornek: "Bir telefon Amerika'da tasarlanır, parçaları Asya'da üretilir ve dünyanın her yerinde satılır." }
@@ -30,20 +30,18 @@ window.DEFTER = {
             ["Tasarım ve yönetim", "Genel merkez (bir yerde)", "Karar ve para burada toplanır"],
             ["Fabrikalar", "İş gücünün ucuz olduğu yerler", "Maliyeti düşürmek"],
             ["Mağazalar", "Her yerde", "Müşteri her yerde"]
-          ] },
-        { tip: "ornek", baslik: "Telefonun yolculuğu", durum: "Bir telefon düşün: tasarımı Amerika'da, parçaları Asya'da, satışı dünyanın her yerinde. Hangi bölüm nerede, ve bu neden bir *TNC* örneği?",
-          adimlar: ["Tasarım ve yönetim → genel merkez (Amerika).", "Parça üretimi → ucuz iş gücü olan Asya'daki fabrikalar.", "Satış → dünyanın her yerindeki mağazalar."],
-          sonuc: "Merkez bir ülkede, üretim ve satış çok ülkede olduğu için bu bir ==*TNC*== örneğidir." }
+          ] }
       ]
     },
     {
       baslik: "Kültür: *McCulture*",
+      kisa: "Küreselleşme kültürü tek tipleştirir, ama insanlar yerel kimliğe de sarılır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🍟", terim: "McCulture", tr: "McKültür", tanim: "Dünyanın her yerinde aynı restoranlar, aynı markalar, aynı diziler: kültürün tek tipleşmesi.", ornek: "Tokyo, Paris, İstanbul ve New York'ta birebir aynı dükkân vitrini." }
           ] },
-        { tip: "ikili", sol: { ikon: "🧬", baslik: "Tek tipleşme", maddeler: ["Aynı markalar, aynı dükkânlar", "*McCulture*", "Şehirler birbirine benzer"] },
-          sag: { ikon: "🏮", baslik: "Yerel kimlik", maddeler: ["İnsanlar yerel kimliğine sarılır", "Çay ocağı, ramen, fırın", "Şehirler benzersiz kalır"] },
+        { tip: "ikili", sol: { ikon: "🧬", baslik: "Tek tipleşme", maddeler: ["Aynı markalar, aynı dükkânlar: *McCulture*", "Şehirler birbirine benzer"] },
+          sag: { ikon: "🏮", baslik: "Yerel kimlik", maddeler: ["İnsanlar yerel kimliğine sarılır: çay ocağı, ramen, fırın", "Şehirler benzersiz kalır"] },
           oyun: [
             { metin: "Dünyanın her yerinde aynı zincir restoranlar.", cevap: "sol", neden: "Aynılaşma: *McCulture*." },
             { metin: "Mahallede yerel fırın ve çay ocağına sahip çıkmak.", cevap: "sag", neden: "Yerel kimliğe sarılmak." },
@@ -55,20 +53,20 @@ window.DEFTER = {
     },
     {
       baslik: "*Core* ve *periphery*: herkes eşit kazanmıyor",
+      kisa: "*Core* zenginlik ve karar gücünü toplar; *periphery* ham madde sağlar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🏙️", terim: "Core", tr: "çekirdek", tanim: "Dünya ekonomisinin merkezi: ==Kuzey Amerika, Batı Avrupa ve Japonya==. Zenginlik, teknoloji ve karar gücü burada toplanır.", ornek: "Genel merkezler, bankalar, teknoloji şirketleri." },
-            { ikon: "🌾", terim: "Periphery", tr: "çevre", tanim: "Geri kalan bölgeler: ham madde ve ucuz iş gücü sağlar.", ornek: "Sahra Altı Afrika." },
+            { ikon: "🌾", terim: "Periphery", tr: "çevre", tanim: "Geri kalan bölgeler: ham madde ve ucuz iş gücü sağlar. Bazı derslerde aradaki hızlı gelişen kuşağa *semi-periphery* denir; sınav odağı *core* ve *periphery*'dir.", ornek: "Sahra Altı Afrika." },
             { ikon: "↔️", terim: "Uneven development", tr: "eşitsiz gelişme", tanim: "*Core* ile *periphery* arasındaki farkın açılması.", ornek: "Zengin bölgeler daha da zenginleşir; çevre ham madde sağlamaya devam eder." }
           ] },
-        { tip: "ikili", sol: { ikon: "🏙️", baslik: "*Core*", maddeler: ["Zenginlik, teknoloji, karar gücü", "Kuzey Amerika, Batı Avrupa, Japonya", "Pahalı ürün üretir"] },
-          sag: { ikon: "🌾", baslik: "*Periphery*", maddeler: ["Ham madde ve ucuz iş gücü sağlar", "Örneğin Sahra Altı Afrika", "Ham madde gönderir"] },
+        { tip: "ikili", sol: { ikon: "🏙️", baslik: "*Core*", maddeler: ["Kuzey Amerika, Batı Avrupa, Japonya", "Pahalı ürün üretir"] },
+          sag: { ikon: "🌾", baslik: "*Periphery*", maddeler: ["Örneğin Sahra Altı Afrika", "Ham madde gönderir"] },
           oyun: [
             { metin: "Japonya", cevap: "sol", neden: "Videodaki üç *core* bölgesinden biri." },
             { metin: "Sahra Altı Afrika", cevap: "sag", neden: "*Periphery* tarafında." },
             { metin: "Ham madde ve ucuz iş gücü sağlar.", cevap: "sag", neden: "*Periphery*'nin tipik rolü." },
-            { metin: "Teknoloji ve karar gücü burada toplanır.", cevap: "sol", neden: "*Core*." },
-            { metin: "Batı Avrupa", cevap: "sol", neden: "*Core* bölgesi." }
+            { metin: "Teknoloji ve karar gücü burada toplanır.", cevap: "sol", neden: "*Core*." }
           ] },
         { tip: "grafik", baslik: "Eşitsiz gelişme: fark açılır (şematik)", xlabel: "Zaman", ylabel: "Kalkınma düzeyi", xmax: 10, ymax: 10,
           ogeler: [
@@ -82,21 +80,16 @@ window.DEFTER = {
             { metin: "*Periphery* ham madde ve ucuz iş gücü sağlar; daha yavaş büyür.", goster: ["per"] },
             { metin: "İki eğri arasındaki fark açılır: ==*uneven development*==.", goster: ["gap", "gapt"] }
           ] },
-        { tip: "tuzak", metin: "Quiz: \"Hangisi dünya ekonomisinin *core* bölgelerinden biri değildir: Kuzey Amerika, Batı Avrupa, Japonya, Sahra Altı Afrika?\"", yanlis: "Japonya, çünkü Asya'da.", dogru: "==Sahra Altı Afrika==. Japonya Asya'da olsa da *core*'dur; Sahra Altı Afrika *periphery* tarafındadır." },
-        { tip: "not", metin: "Ek bilgi: bazı derslerde bu iki kutup arasında hızla gelişen bir *semi-periphery* (yarı çevre) kuşağı da anılır. Bu bölümde sınav odağı *core* ve *periphery*'dir." }
+        { tip: "tuzak", metin: "Quiz: \"Hangisi dünya ekonomisinin *core* bölgelerinden biri değildir: Kuzey Amerika, Batı Avrupa, Japonya, Sahra Altı Afrika?\"", yanlis: "Japonya, çünkü Asya'da.", dogru: "==Sahra Altı Afrika==. Japonya Asya'da olsa da *core*'dur; Sahra Altı Afrika *periphery* tarafındadır." }
       ]
     },
     {
       baslik: "*Sustainability*: dengeli tabure",
+      kisa: "Sürdürülebilirlik üç ayağın dengesidir: çevre, ekonomi, toplum.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "♻️", terim: "Sustainability", tr: "sürdürülebilirlik", tanim: "Bugünün ihtiyaçlarını, gelecek nesillerin ihtiyaçlarını tehlikeye atmadan karşılamak.", ornek: "Bir ormandan, yeniden büyüyebileceğinden fazla ağaç kesmemek." },
-            { ikon: "🌿", terim: "Environment · Economy · Society", tr: "çevre · ekonomi · toplum", tanim: "Sürdürülebilirliğin üç ayağı. Üçü de dengede olmalı; biri kırılırsa tabure devrilir.", ornek: "Yaprak (çevre), para (ekonomi), insanlar (toplum)." }
-          ] },
-        { tip: "harita", merkez: "*Sustainability*", dallar: [
-            { baslik: "*Environment*", alt: "Çevre: doğa, su, hava" },
-            { baslik: "*Economy*", alt: "Ekonomi: üretim, iş, para" },
-            { baslik: "*Society*", alt: "Toplum: insanlar, adalet, sağlık" }
+            { ikon: "🌿", terim: "Environment · Economy · Society", tr: "çevre · ekonomi · toplum", tanim: "Sürdürülebilirliğin üç ayağı. Üçü de dengede olmalı; biri kırılırsa tabure devrilir.", ornek: "Çevre: doğa, su, hava. Ekonomi: üretim, iş, para. Toplum: insanlar, adalet, sağlık." }
           ] },
         { tip: "grafik", baslik: "Orman: kesim, büyümeyi aşarsa", xlabel: "Zaman", ylabel: "Orman miktarı", xmax: 10, ymax: 10,
           ogeler: [
@@ -115,26 +108,20 @@ window.DEFTER = {
     },
     {
       baslik: "Dünya'nın dört sistemi",
+      kisa: "Atmosfer, hidrosfer, litosfer cansızdır; biyosfer canlıdır; hepsi bağlıdır.",
       bloklar: [
-        { tip: "harita", merkez: "Dünya sistemleri", dallar: [
-            { baslik: "*Atmosphere*", alt: "Hava · abiotic" },
-            { baslik: "*Hydrosphere*", alt: "Su · abiotic" },
-            { baslik: "*Lithosphere*", alt: "Yer kabuğu · abiotic" },
-            { baslik: "*Biosphere*", alt: "Bütün canlılar · biotic" }
-          ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "💨", terim: "Atmosphere", tr: "atmosfer", tanim: "Hava; cansız (*abiotic*) sistem.", ornek: "Bulutlar, rüzgâr." },
             { ikon: "💧", terim: "Hydrosphere", tr: "hidrosfer", tanim: "Su; cansız (*abiotic*) sistem.", ornek: "Deniz, nehir, yağmur." },
             { ikon: "🪨", terim: "Lithosphere", tr: "litosfer", tanim: "Yer kabuğu; cansız (*abiotic*) sistem.", ornek: "Kayalar, dağlar, yanardağlar." },
             { ikon: "🌳", terim: "Biosphere", tr: "biyosfer", tanim: "Bütün canlılar; canlı (*biotic*) sistem.", ornek: "Ağaçlar, kuşlar, balıklar, insanlar." }
           ] },
-        { tip: "ikili", sol: { ikon: "🪨", baslik: "*Abiotic* (cansız)", maddeler: ["*Atmosphere* (hava)", "*Hydrosphere* (su)", "*Lithosphere* (yer kabuğu)"] },
+        { tip: "ikili", sol: { ikon: "🪨", baslik: "*Abiotic* (cansız)", maddeler: ["*Atmosphere* (hava)", "*Hydrosphere* (su), *lithosphere* (yer kabuğu)"] },
           sag: { ikon: "🌳", baslik: "*Biotic* (canlı)", maddeler: ["*Biosphere*", "Bitki, hayvan, insan"] },
           oyun: [
             { metin: "Okyanuslar ve nehirler.", cevap: "sol", neden: "Su cansızdır: *hydrosphere*, *abiotic*." },
             { metin: "Bir ormandaki ağaçlar ve kuşlar.", cevap: "sag", neden: "Canlılar: *biosphere*, *biotic*." },
             { metin: "Dağları oluşturan kayalar.", cevap: "sol", neden: "Yer kabuğu: *lithosphere*, *abiotic*." },
-            { metin: "Rüzgâr ve bulutlar.", cevap: "sol", neden: "Hava: *atmosphere*, *abiotic*." },
             { metin: "Balıklar ve insanlar.", cevap: "sag", neden: "Canlılar: *biotic*." }
           ] },
         { tip: "ornek", baslik: "Yanardağ patlarsa", durum: "Bir yanardağ patlıyor. Dört sistem birbirine bağlı olduğuna göre hangileri nasıl etkilenir?",
@@ -144,6 +131,7 @@ window.DEFTER = {
     },
     {
       baslik: "Hollanda ve Florida",
+      kisa: "*Polder* planlı ve sürdürülebilirdir; Everglades'in kurutulması sürdürülemezdir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🌷", terim: "Polder", tr: "polder", tanim: "Denizden kazanılmış arazi. Setler kurup suyu pompalayarak elde edilir.", ornek: "Hollanda'da ülkenin yaklaşık dörtte biri deniz seviyesinin altındadır." }
@@ -166,8 +154,8 @@ window.DEFTER = {
             { metin: "Setin arkasındaki arazi ==deniz seviyesinin altındadır==: **polder**.", goster: ["zemin", "pol"] },
             { metin: "Yel değirmenleri ve pompalar fazla suyu dışarı atar; tarla kurur.", goster: ["pomp", "pompt"] }
           ] },
-        { tip: "ikili", sol: { ikon: "🌷", baslik: "Hollanda · *polder*", maddeler: ["Set kurup suyu pompalar", "Denizden toprak kazanır", "Doğayla planlı ve dikkatli ilişki: sürdürülebilir"] },
-          sag: { ikon: "🐊", baslik: "Florida · Everglades", maddeler: ["Bataklıklar tarım ve şehirler için kurutuldu", "Nehirler kanala çevrildi", "Su kirlendi, ekosistem bozuldu: sürdürülemez"] },
+        { tip: "ikili", sol: { ikon: "🌷", baslik: "Hollanda · *polder*", maddeler: ["Set kurup suyu pompalar, denizden toprak kazanır", "Doğayla planlı ve dikkatli ilişki: sürdürülebilir"] },
+          sag: { ikon: "🐊", baslik: "Florida · Everglades", maddeler: ["Bataklıklar tarım ve şehirler için kurutuldu, nehirler kanala çevrildi", "Su kirlendi, ekosistem bozuldu: sürdürülemez"] },
           oyun: [
             { metin: "Setler, pompalar ve yel değirmenleriyle denizden toprak kazanılması.", cevap: "sol", neden: "Planlı ve dikkatli: sürdürülebilir *polder*." },
             { metin: "Nehirlerin dümdüz kanallara çevrilip bataklığın kurutulması.", cevap: "sag", neden: "Ekosistemi bozdu: sürdürülemez." },
@@ -179,6 +167,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Globalization*: dünyanın tek bir pazar ve ağ gibi işlemesi (tişörtün tasarım–pamuk–dikim–satış zinciri).",

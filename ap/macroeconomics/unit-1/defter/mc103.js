@@ -2,28 +2,18 @@
    Kaynak: ap-videolar/src/episodes/mc103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc103",
-  ozet: "PPC'nin şekli maliyetin nasıl değiştiğini, kayması ise bir ülkenin sınırlarının nasıl büyüdüğünü (ya da küçüldüğünü) gösterir. Bu defterde dışa bükük eğri ile düz çizgi farkını, *law of increasing opportunity cost*'u, eğriyi kaydıran etkenleri, kaydırmayan tuzakları (işsizlik ve talep) ve *capital goods*'un geleceğe yatırım olduğunu göreceksin.",
+  amac: "Bu konu *PPC*'nin şeklini ve yerini anlatıyor. Eğrinin neden dışa bükük ya da düz olduğunu, neyin eğriyi kaydırdığını (ve neyin kaydırmadığını) ve *capital goods*'un geleceğe yatırım olduğunu öğreneceksin.",
   bolumler: [
     {
-      baslik: "Kiraz ağacı: neden her sepet daha pahalı?",
-      bloklar: [
-        { tip: "hikaye", ikon: "🍒", baslik: "Babaannenin bahçesi",
-          metin: "Yaz tatili. Bir saatin var: ya telefonda oyun oynayacaksın ya kiraz toplayacaksın. İlk sepet çocuk oyuncağı: alt dallar elinin altında, beş dakikada dolar. Son sepet kâbus: merdiven, en tepedeki dal, kan ter. Neden her sepet bir öncekinden pahalıya patlıyor? Ve bir ülke kendi sınırlarını nasıl genişletir? Bugün ikisini de çözüyoruz." },
-        { tip: "sayilar", ogeler: [
-            { deger: 60, sonek: " dk", etiket: "elindeki toplam süre" },
-            { deger: 5, sonek: " dk", etiket: "ilk sepetin süresi (alt dallar)" },
-            { deger: 25, sonek: " dk", etiket: "son sepetin süresi (tepedeki dal)" }
-          ] },
-        { tip: "not", metin: "Önceki bölümde *PPC*'nin, bütün kaynaklar kullanılınca üretebileceğin kombinasyonları gösterdiğini gördün. Şimdi eğrinin **şekline** ve **yerine** bakacağız." }
-      ]
-    },
-    {
       baslik: "*Law of increasing opportunity cost*",
+      kisa: "Bir malın üretimi arttıkça her ek birimin fırsat maliyeti artar.",
       bloklar: [
+        { tip: "hikaye", ikon: "🍒", baslik: "Babaannenin kiraz bahçesi",
+          metin: "Bir saatin var: ya oyun oynarsın ya kiraz toplarsın. İlk sepet 5 dakikada dolar, alt dallar elinin altında. Son sepet 25 dakika sürer, tepedeki dala çıkman gerekir. Her sepet bir öncekinden pahalı." },
         { tip: "tablo", baslik: "Kiraz sepeti ve oyun bölümü", head: ["Sepet kiraz", "0", "1", "2", "3", "4"], rows: [
             ["Oyun bölümü", "15", "14", "12", "8", "0"],
             ["O sepetin *opportunity cost*'u (bölüm)", "—", "1", "2", "4", "8"]
-          ], vurgu: 1, not: "Farklar: 15−14 = 1, 14−12 = 2, 12−8 = 4, 8−0 = 8. Her yeni sepet bir öncekinden daha pahalı." },
+          ], vurgu: 1, not: "Farklar: 15−14 = 1, 14−12 = 2, 12−8 = 4, 8−0 = 8. Ters yönde de artar: bölüm başına sepet maliyeti 1/8, 1/4, 1/2, 1 olur." },
         { tip: "grafik", baslik: "Kiraz–oyun PPC'si", xlabel: "Kiraz (sepet)", ylabel: "Oyun (bölüm)", xmax: 9, ymax: 10,
           xticks: [{ v: 2, label: "1" }, { v: 4, label: "2" }, { v: 6, label: "3" }, { v: 8, label: "4" }],
           yticks: [{ v: 4.8, label: "8" }, { v: 7.2, label: "12" }, { v: 8.4, label: "14" }, { v: 9, label: "15" }],
@@ -51,16 +41,15 @@ window.DEFTER = {
             { metin: "Noktaları birleştirince eğri dışa doğru şişer; buna ==*bowed out*== denir. Kural: ==*law of increasing opportunity cost*==.", goster: ["eg"] }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "📈", terim: "Law of increasing opportunity cost", tr: "artan fırsat maliyeti yasası", tanim: "Bir malın üretimi arttıkça her ek birimin fırsat maliyeti artar. PPC bu yüzden dışa bükük çizilir.", ornek: "Kirazda 1., 2., 3., 4. sepet sırayla 1, 2, 4, 8 oyun bölümüne mal oluyor." },
+            { ikon: "📈", terim: "Law of increasing opportunity cost", tr: "artan fırsat maliyeti yasası", tanim: "Bir malın üretimi arttıkça her ek birimin fırsat maliyeti artar; ==iki yönde de== geçerlidir. PPC bu yüzden dışa bükük çizilir.", ornek: "Kirazda 1., 2., 3., 4. sepet sırayla 1, 2, 4, 8 oyun bölümüne mal oluyor." },
             { ikon: "🌙", terim: "Bowed out", tr: "dışa bükük", tanim: "Orijinden dışa doğru şişmiş PPC şekli. Kitaplarda *concave to the origin* diye de geçer.", ornek: "Kiraz–oyun eğrisi." }
-          ] },
-        { tip: "not", metin: "Artış **iki yönde de** geçerli: 4 sepetten geri dönerken ilk 8 bölüm 1 sepete (bölüm başına 1/8 sepet), sonra 4 bölüm 1 sepete (1/4), 2 bölüm 1 sepete (1/2), son 1 bölüm 1 sepete (1) mal olur. Yani bükük eğride ==iki mal için de== ek birim giderek pahalanır." }
+          ] }
       ]
     },
     {
       baslik: "Neden bükük? Kaynaklar tam uyarlanamaz",
+      kisa: "Kaynaklar her mala aynı ölçüde uymaz; en uygun olan önce kullanılır.",
       bloklar: [
-        { tip: "not", metin: "Cevap: kaynaklar her mala **aynı ölçüde uymaz**. Türkiye'nin bütün tarlalarında pamuk olduğunu düşün ve çay istediğini varsay." },
         { tip: "grafik", baslik: "Çay–pamuk: önce uygun toprak, sonra uygunsuz", xlabel: "Çay", ylabel: "Pamuk", xmax: 9, ymax: 9,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
@@ -71,18 +60,10 @@ window.DEFTER = {
             { id: "tc", tip: "yazi", x: 6.8, y: 5.4, metin: "Çukurova: +1 çay, −4 pamuk", gizli: true }
           ],
           durumlar: [
-            { metin: "Önce her yer pamuk: 8 birim pamuk, hiç çay yok.", goster: ["m"] },
+            { metin: "Türkiye'nin bütün tarlalarında pamuk var; 8 birim pamuk, hiç çay yok.", goster: ["m"] },
             { metin: "Çay istiyorsun; önce Rize'nin yağmurlu yamaçlarını çaya çevirirsin. Oradan zaten az pamuk çıkıyordu: çok çay kazanırsın, **az pamuk** kaybedersin (yaklaşık +4 çay, −1 pamuk).", set: { m: { x: 4, y: 6.93, etiket: "Rize bitti" } }, goster: ["tr"] },
             { metin: "Çay arttıkça Çukurova'nın sıcak ovalarına sıra gelir: pamuğun cenneti, çayın cehennemi.", set: { m: { x: 7, y: 3.87, etiket: "Çukurova'ya girdik" } } },
             { metin: "Son birim çay için bile **tonlarca pamuk** gider (yaklaşık +1 çay, −4 pamuk).", set: { m: { x: 8, y: 0, etiket: "hepsi çay" } }, goster: ["tc"] }
-          ] },
-        { tip: "ikili", sol: { ikon: "📈", baslik: "Dışa bükük PPC", maddeler: ["*Increasing opportunity cost*", "Kaynaklar *not perfectly adaptable*: iki mala eşit uygun değil", "Örnek: çay–pamuk"] },
-          sag: { ikon: "➖", baslik: "Düz PPC", maddeler: ["*Constant opportunity cost*", "Kaynaklar iki mala eşit uygun", "Örnek: simit–poğaça"] },
-          oyun: [
-            { metin: "Her ek birim bir öncekinden daha pahalı.", cevap: "sol", neden: "Artan fırsat maliyeti: dışa bükük." },
-            { metin: "Her poğaça tepsisi hep 2 tepsi simide mal oluyor.", cevap: "sag", neden: "Sabit maliyet: düz çizgi." },
-            { metin: "Kaynakların bir kısmı yalnızca bir mal için uygun.", cevap: "sol", neden: "Tam uyarlanabilir değil: bükük eğri." },
-            { metin: "Aynı usta ve aynı fırın iki malı da eşit iyi üretiyor.", cevap: "sag", neden: "Kaynaklar eşit uygun: düz çizgi." }
           ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🧩", terim: "Not perfectly adaptable", tr: "tam uyarlanabilir değil", tanim: "Kaynakların bir maldan ötekine geçerken aynı verimle çalışmaması. Artan fırsat maliyetinin nedeni budur; o mala en uygun kaynaklar önce kullanılır.", ornek: "Rize çaya uygun, Çukurova pamuğa." }
@@ -92,10 +73,9 @@ window.DEFTER = {
     },
     {
       baslik: "Düz çizgi: sabit fırsat maliyeti",
+      kisa: "Kaynaklar iki mala eşit uygunsa PPC düz çizgidir.",
       bloklar: [
-        { tip: "not", metin: "Her zaman böyle değil. Bir fırında simit de poğaça da aynı ustanın elinden, aynı fırından çıkar. Bir sabahta ya 10 tepsi simit ya 5 tepsi poğaça yapılabilir." },
-        { tip: "tablo", baslik: "Simit–poğaça", head: ["Poğaça tepsisi", "0", "1", "2", "3", "4", "5"], rows: [["Simit tepsisi", "10", "8", "6", "4", "2", "0"]], not: "Her adımda fark aynı: 2 tepsi simit. Her poğaça tepsisi = 10 ÷ 5 = 2 tepsi simit. Ters yönde 1 tepsi simit = ½ tepsi poğaça." },
-        { tip: "grafik", baslik: "Düz PPC: her adım eşit", xlabel: "Poğaça (tepsi)", ylabel: "Simit (tepsi)", xmax: 6, ymax: 11,
+        { tip: "grafik", baslik: "Simit–poğaça: her adım eşit", xlabel: "Poğaça (tepsi)", ylabel: "Simit (tepsi)", xmax: 6, ymax: 11,
           xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }, { v: 5, label: "5" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }, { v: 10, label: "10" }],
           ogeler: [
@@ -114,26 +94,28 @@ window.DEFTER = {
             { id: "line", tip: "cizgi", renk: 0, from: [0, 10], to: [5, 0], etiket: "PPC", gizli: true }
           ],
           durumlar: [
-            { metin: "Altı kombinasyon: 0'dan 5 tepsi poğaçaya kadar.", goster: ["p0", "p1", "p2", "p3", "p4", "p5"] },
-            { metin: "Her ek poğaça tepsisinde simit **aynı miktarda** (2 tepsi) azalıyor.", goster: ["a1", "a2", "a3", "a4", "a5", "tx"] },
+            { metin: "Aynı usta, aynı fırın: bir sabahta ya 10 tepsi simit ya 5 tepsi poğaça. Altı kombinasyon var.", goster: ["p0", "p1", "p2", "p3", "p4", "p5"] },
+            { metin: "Her ek poğaça tepsisinde simit **aynı miktarda** azalıyor: 10 ÷ 5 = 2 tepsi. Ters yönde 1 tepsi simit = ½ tepsi poğaça.", goster: ["a1", "a2", "a3", "a4", "a5", "tx"] },
             { metin: "Noktalar **düz bir çizgi** oluşturur: ==*constant opportunity cost*== (sabit fırsat maliyeti).", goster: ["line"] }
           ] },
-        { tip: "formul", parcalar: [
-            { t: "Düz çizgi", alt: "eğim sabit" }, "=",
-            { t: "Sabit maliyet", alt: "kaynaklar eşit uygun" },
-            { t: "Bükük eğri", alt: "eğim artıyor" }, "=",
-            { t: "Artan maliyet", alt: "kaynaklar tam uygun değil" }
-          ], aciklama: "Kural basit: düz çizgi sabit maliyet, dışa bükük eğri artan maliyet." },
         { tip: "kavramlar", kartlar: [
             { ikon: "➖", terim: "Constant opportunity cost", tr: "sabit fırsat maliyeti", tanim: "Her ek birimin fırsat maliyetinin aynı kalması. Kaynaklar iki mala eşit uygun olduğunda görülür; PPC düz çizgidir.", ornek: "Her poğaça tepsisi hep 2 tepsi simit." }
+          ] },
+        { tip: "ikili", sol: { ikon: "📈", baslik: "Dışa bükük PPC", maddeler: ["*Increasing opportunity cost*", "Kaynaklar iki mala eşit uygun değil", "Örnek: çay–pamuk"] },
+          sag: { ikon: "➖", baslik: "Düz PPC", maddeler: ["*Constant opportunity cost*", "Kaynaklar iki mala eşit uygun", "Örnek: simit–poğaça"] },
+          oyun: [
+            { metin: "Her ek birim bir öncekinden daha pahalı.", cevap: "sol", neden: "Artan fırsat maliyeti: dışa bükük." },
+            { metin: "Her poğaça tepsisi hep 2 tepsi simide mal oluyor.", cevap: "sag", neden: "Sabit maliyet: düz çizgi." },
+            { metin: "Kaynakların bir kısmı yalnızca bir mal için uygun.", cevap: "sol", neden: "Tam uyarlanabilir değil: bükük eğri." },
+            { metin: "Aynı usta ve aynı fırın iki malı da eşit iyi üretiyor.", cevap: "sag", neden: "Kaynaklar eşit uygun: düz çizgi." }
           ] }
       ]
     },
     {
       baslik: "Eğriyi dışa kaydıran etkenler",
+      kisa: "Daha çok kaynak, daha iyi kaynak ya da teknoloji eğriyi dışa kaydırır.",
       bloklar: [
-        { tip: "not", metin: "*PPC*, kaynaklar ve teknoloji **sabitken** çizilir. Bunlar değişirse eğri kayar." },
-        { tip: "harita", merkez: "Eğriyi dışa kaydırır", dallar: [
+        { tip: "harita", merkez: "*PPC* dışa kayar", dallar: [
             { baslik: "1 · Kaynak miktarı", alt: "Daha çok işçi, fabrika ve makine (*physical capital*)" },
             { baslik: "2 · Kaynak kalitesi", alt: "Eğitimli işçi (*human capital*): daha çok değil, daha iyi işçi" },
             { baslik: "3 · Teknoloji", alt: "Aynı kaynakla daha çok üretim" },
@@ -171,47 +153,36 @@ window.DEFTER = {
     },
     {
       baslik: "İçe kayma ve tek eksende kayma",
+      kisa: "Kaynak kaybı eğriyi içe, o mala özgü gelişme tek ekseni kaydırır.",
       bloklar: [
-        { tip: "grafik", baslik: "Kaynak kaybı: eğri içe kayar", xlabel: "Çay", ylabel: "Pamuk", xmax: 10, ymax: 10,
-          xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
-          yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
-          ogeler: [
-            { id: "p1", tip: "ppc", renk: 0, qmax: 6, pmax: 6, k: 2, etiket: "PPC₁" },
-            { id: "p1k", tip: "ppc", renk: 0, qmax: 6, pmax: 6, k: 2, kesik: true, gizli: true },
-            { id: "p2", tip: "ppc", renk: 2, qmax: 4.5, pmax: 4.5, k: 2, etiket: "PPC₂", gizli: true },
-            { id: "A", tip: "nokta", renk: 1, x: 3.6, y: 4.8, etiket: "A", kilavuz: true },
-            { id: "Ar", tip: "nokta", renk: 3, x: 3.6, y: 4.8, etiket: "A · artık ulaşılamaz", kilavuz: true, gizli: true },
-            { id: "ok", tip: "ok", renk: 2, from: [4.4, 4.4], to: [3.3, 3.3], gizli: true }
-          ],
-          durumlar: [
-            { metin: "Başlangıç: A noktası PPC₁ üzerinde." },
-            { metin: "Bir afet fabrikaları ve santralleri yıkıyor: kaynak kaybettin.", goster: ["ok"] },
-            { metin: "Eğri **içe** kayar (eski eğri kesikli kalır).", gizle: ["p1"], goster: ["p1k", "p2"] },
-            { metin: "Dünün verimli noktası A artık eğrinin dışında: ==ulaşılamaz==.", gizle: ["A"], goster: ["Ar"] }
-          ] },
-        { tip: "grafik", baslik: "Tek eksende kayma: çaya özgü makine", xlabel: "Çay", ylabel: "Pamuk", xmax: 10, ymax: 8,
+        { tip: "grafik", baslik: "Tek eksende kayma ve kaynak kaybı", xlabel: "Çay", ylabel: "Pamuk", xmax: 10, ymax: 8,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }],
           ogeler: [
             { id: "p1", tip: "ppc", renk: 0, qmax: 6, pmax: 6, k: 2, etiket: "PPC₁" },
             { id: "p1k", tip: "ppc", renk: 0, qmax: 6, pmax: 6, k: 2, kesik: true, gizli: true },
             { id: "p2", tip: "ppc", renk: 1, qmax: 9, pmax: 6, k: 2, etiket: "PPC₂", gizli: true },
-            { id: "pin", tip: "yazi", x: 1.9, y: 6.6, metin: "pamuğun en fazlası aynı: 6", gizli: true },
+            { id: "pin", tip: "yazi", x: 1.9, y: 6.9, metin: "pamuğun en fazlası aynı: 6", gizli: true },
             { id: "ok", tip: "ok", renk: 1, from: [6.1, 0.4], to: [8.9, 0.4], gizli: true },
-            { id: "A", tip: "nokta", renk: 1, x: 3.6, y: 4.8, etiket: "A" }
+            { id: "A", tip: "nokta", renk: 1, x: 3.6, y: 4.8, etiket: "A", kilavuz: true },
+            { id: "p3", tip: "ppc", renk: 2, qmax: 4.5, pmax: 4.5, k: 2, etiket: "PPC₃", gizli: true },
+            { id: "ok2", tip: "ok", renk: 2, from: [4.4, 4.4], to: [3.3, 3.3], gizli: true },
+            { id: "Ar", tip: "nokta", renk: 3, x: 3.6, y: 4.8, etiket: "A · artık ulaşılamaz", kilavuz: true, gizli: true }
           ],
           durumlar: [
-            { metin: "Çay toplayan hızlı bir makine icat edildi. Bu makine pamuk toplamaz." },
-            { metin: "Pamuğun en fazla miktarı (y ekseni ucu) aynı kalır.", goster: ["pin"] },
-            { metin: "Çayın en fazla miktarı 6'dan 9'a çıkar. Eğri yalnızca ==çay ekseninde== dışa açılır.", gizle: ["p1"], goster: ["p1k", "p2", "ok"] }
+            { metin: "Başlangıç: A noktası PPC₁ üzerinde. Çay toplayan hızlı bir makine icat edildi; pamuk toplamaz.", goster: ["pin"] },
+            { metin: "Çayın en fazla miktarı 6'dan 9'a çıkar, pamuğunki aynı kalır. Eğri yalnızca ==çay ekseninde== dışa açılır.", gizle: ["p1", "pin"], goster: ["p1k", "p2", "ok"] },
+            { metin: "Şimdi tersi: bir afet fabrikaları ve santralleri yıkıyor, kaynak kaybettin. Eski eğri geri gelir.", gizle: ["p2", "p1k", "ok"], goster: ["p1", "ok2"] },
+            { metin: "Eğri **içe** kayar (PPC₃).", gizle: ["p1", "ok2"], goster: ["p1k", "p3"] },
+            { metin: "Dünün verimli noktası A artık eğrinin dışında: ==ulaşılamaz==.", gizle: ["A"], goster: ["Ar"] }
           ] },
         { tip: "tuzak", baslik: "Her kayma iki eksende olmaz", metin: "Bir gelişme yalnızca bir malı etkiliyorsa (o mala özgü teknoloji ya da kaynak) yalnızca o malın ekseni kayar.", yanlis: "Her kaymada eğrinin iki ucu birden hareket eder.", dogru: "O mala özgü gelişme ==tek eksende== kaydırır, öteki ucun yeri sabit kalır; bir teknoloji ya da eğitim **her iki malı** etkiliyorsa bütün eğri kayar. Yeni eğride A içeride kalır: 4,8 pamukla artık 5,4 çay yapılabilir." }
       ]
     },
     {
       baslik: "Eğriyi kaydırmayanlar: işsizlik ve talep",
+      kisa: "İşsizlik noktayı eğrinin içine düşürür, talep eğri üzerinde hareket ettirir.",
       bloklar: [
-        { tip: "not", metin: "Bu bölümün en sık sorulan tuzağı. İki durumda eğri **kıpırdamaz**, ama çoğu kişi kayar sanır." },
         { tip: "grafik", baslik: "İşsizlik, işçi kaybı ve talep", xlabel: "Çay", ylabel: "Pamuk", xmax: 10, ymax: 10,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
@@ -232,14 +203,8 @@ window.DEFTER = {
             { metin: "İkinci tuzak: insanlar çaydan sıkılıp kahveye geçti. Eğri kayar mı? **Hayır.** Ülke eğri üzerinde daha az çaylı bir noktaya geçer.", gizle: ["p4", "p1k", "yz2"], goster: ["p1", "E", "yz3"], set: { E: { x: 2, y: 5.66, etiket: "daha az çay" } } },
             { metin: "Talep, ne istediğimizi değiştirir; ne yapabileceğimizi değil. PPC ise yapabileceğimizi gösterir." }
           ] },
-        { tip: "tablo", baslik: "Eğri kayar mı?", head: ["Olay", "Eğri", "Ne olur?"], rows: [
-            ["Kriz, işsizlik %5 → %12", "Kaymaz", "Nokta eğrinin içine düşer"],
-            ["Afet, savaş, göç: kaynak yok oldu", "İçe kayar", "Eğri küçülür"],
-            ["Çay talebi kahveye kaydı", "Kaymaz", "Eğri üzerinde başka noktaya geçilir"],
-            ["Eğitim, yeni teknoloji, daha çok işçi", "Dışa kayar", "*Economic growth*"]
-          ] },
-        { tip: "ikili", sol: { ikon: "🔒", baslik: "Eğri KAYMAZ", maddeler: ["Kaynak duruyor ama kullanılmıyor", "İnsanların istekleri değişti", "Nokta eğri içinde ya da eğri üzerinde oynar"] },
-          sag: { ikon: "↔️", baslik: "Eğri KAYAR", maddeler: ["Kaynağın miktarı ya da kalitesi değişti", "Teknoloji değişti", "Eğri dışa ya da içe hareket eder"] },
+        { tip: "ikili", sol: { ikon: "🔒", baslik: "Eğri KAYMAZ", maddeler: ["Kaynak duruyor ama kullanılmıyor (işsizlik)", "İnsanların istekleri değişti (talep)"] },
+          sag: { ikon: "↔️", baslik: "Eğri KAYAR", maddeler: ["Kaynağın miktarı ya da kalitesi değişti", "Teknoloji değişti"] },
           oyun: [
             { metin: "Ekonomi resesyona girdi, fabrikalar yarı kapasiteyle çalışıyor.", cevap: "sol", neden: "Kaynak duruyor ama yok olmadı: nokta içeri düşer." },
             { metin: "Bir deprem enerji santrallerini yok etti.", cevap: "sag", neden: "Kaynak kaybı: eğri içe kayar." },
@@ -250,18 +215,17 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Sınav sorusu: işsizlik %5'ten %12'ye", durum: "Bir ülkede ekonomi krize giriyor ve işsizlik oranı yüzde 5'ten yüzde 12'ye çıkıyor. Bu ülkenin PPC grafiğinde ne olur?",
           adimlar: ["Soru: işçiler kayboldu mu, yoksa sadece çalışmıyorlar mı?", "İşçiler ülkede, ama atıl: kaynak kaybı yok.", "Kaynak ve teknoloji aynı: eğri yerinde kalır.", "Atıl kaynak = eğrinin içindeki nokta."],
           sonuc: "==Nokta eğrinin içine düşer, eğri yerinde kalır.== İçe kayma yok, çünkü işçiler kaybolmadı (idle workers ≠ lost workers)." },
-        { tip: "tuzak", baslik: "En sık tuzak", metin: "Resesyon ve işsizlik soruları sınavın favorisidir.", yanlis: "İşsizlik arttı, o halde PPC içe kaydı.", dogru: "Kaynak ==kullanılmıyorsa== içerideki nokta; kaynak ==yok olduysa== (afet, savaş, salgın, göç) eğri içe kayar." },
-        { tip: "tuzak", baslik: "Talep tuzağı", metin: "Bir malın talebi düştü diye PPC'nin şekli değişmez.", yanlis: "Yün talebi düştü, eğri kayar.", dogru: "Eğri üzerinde başka bir noktaya geçilir; PPC ne istediğimizi değil ne yapabileceğimizi gösterir." }
+        { tip: "tuzak", baslik: "En sık tuzak: işsizlik ve talep", metin: "Resesyon ve işsizlik soruları sınavın favorisidir; talep düşüşü de eğriyi kaydırmaz.", yanlis: "İşsizlik arttı ya da talep düştü, o halde PPC kaydı.", dogru: "Kaynak ==kullanılmıyorsa== içerideki nokta; kaynak ==yok olduysa== (afet, savaş, salgın, göç) eğri içe kayar. Talep değişince eğri üzerinde başka bir noktaya geçilir." }
       ]
     },
     {
       baslik: "*Capital goods* ve *consumer goods*: bugünün fedakârlığı",
+      kisa: "Bugün daha çok sermaye malı üretmek, yarın daha geniş bir PPC demektir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🍞", terim: "Consumer goods", tr: "tüketim malları", tanim: "Doğrudan kullandığın mallar.", ornek: "Tost, telefon, pizza." },
             { ikon: "🏗️", terim: "Capital goods", tr: "sermaye malları", tanim: "Başka mal üretmek için kullanılan mallar: mal üretmek için mal.", ornek: "Tost makinesi, fırın, fabrika." }
           ] },
-        { tip: "not", metin: "İki komşu ülke aynı PPC'yle başlıyor. **Tostistan** bugün bol tost yiyor. **Makinistan** kemerini sıkıp makine üretiyor. Aşağıda ikisinin on yıl sonrasını gör." },
         { tip: "grafik", baslik: "Tostistan ve Makinistan", xlabel: "Sermaye malları", ylabel: "Tüketim malları", xmax: 9, ymax: 9,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
@@ -274,21 +238,17 @@ window.DEFTER = {
             { id: "mp", tip: "ppc", renk: 3, qmax: 8, pmax: 8, k: 2, etiket: "Makinistan", gizli: true }
           ],
           durumlar: [
-            { metin: "İki ülke aynı PPC'yle başlıyor; ikisi de eğrinin üstünde, ikisi de verimli." },
-            { metin: "Tostistan **bugün** bol tüketim malı seçiyor.", goster: ["T"] },
-            { metin: "Makinistan bugün kemerini sıkıyor: az tüketim, çok sermaye malı.", goster: ["M"] },
-            { metin: "On yıl sonra: Tostistan'ın eğrisi biraz, Makinistan'ınki **çok daha fazla** dışa kaymış; hem makine hem tüketim için.", gizle: ["b"], goster: ["bk", "tp", "mp"] }
+            { metin: "İki komşu ülke aynı PPC'yle başlıyor; ikisi de eğrinin üstünde, ikisi de verimli." },
+            { metin: "**Tostistan** bugün bol tost yiyor: çok tüketim malı seçiyor.", goster: ["T"] },
+            { metin: "**Makinistan** kemerini sıkıyor: az tüketim, çok sermaye malı.", goster: ["M"] },
+            { metin: "On yıl sonra: Tostistan'ın eğrisi biraz (5 → 5,5), Makinistan'ınki **çok daha fazla** (5 → 8) dışa kaymış; hem makine hem tüketim için.", gizle: ["b"], goster: ["bk", "tp", "mp"] }
           ] },
-        { tip: "tablo", baslik: "İki stratejinin karşılaştırması", head: ["", "Tostistan", "Makinistan"], rows: [
-            ["Bugünkü seçim", "Çok tüketim malı", "Çok sermaye malı"],
-            ["Bugün", "Bol tost yiyor", "Kemerini sıkıyor"],
-            ["On yıl sonra", "Eğri biraz kaymış", "Eğri çok daha fazla kaymış (iki eksende de)"]
-          ], not: "Temsilî değerler: Tostistan'ın eğrisi 5 → 5,5; Makinistan'ınki 5 → 8." },
         { tip: "tuzak", baslik: "Sermaye malı verimsizlik değildir", metin: "Makinistan bugün az tüketiyor diye \"verimsiz\" sayılmaz; nokta yine eğrinin üstündedir.", yanlis: "Capital goods üretmek, ülkeyi verimsiz kılar.", dogru: "Daha çok *capital goods* = bugün daha az tüketim, yarın ==iki eksende de dışa kayan== daha geniş bir PPC." }
       ]
     },
     {
       baslik: "Yine *productive* ve *allocative efficiency*",
+      kisa: "Eğrinin her noktası üretken verimlidir; tahsis verimliliği toplumun tercihine bağlıdır.",
       bloklar: [
         { tip: "grafik", baslik: "Üç nokta, iki verimlilik", xlabel: "Çay", ylabel: "Pamuk", xmax: 10, ymax: 10,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }],
@@ -316,12 +276,12 @@ window.DEFTER = {
             { metin: "Ortadaki nokta da, uçtaki nokta da eşit derecede üretken.", cevap: "sol", neden: "Eğrinin her noktası *productively efficient*." },
             { metin: "Eğri üzerinde ama halk bu karışımı istemiyor (hepsi çay, hiç pamuk).", cevap: "sag", neden: "Eğri üzerinde olması yetmez; tercih tutmuyor: *allocative* sağlanmadı." }
           ] },
-        { tip: "tuzak", baslik: "Hangi nokta en verimli?", metin: "\"En verimli nokta\" diye bir şık görürsen yanlış olduğunu bil.", yanlis: "Eğri üzerindeki en verimli nokta ortadaki ya da en çok mal üretilen noktadır.", dogru: "Eğrinin üzerindeki ==bütün noktalar== eşit derecede *productively efficient*'tır; *allocative efficiency* için toplumun tercihi gerekir." },
-        { tip: "tuzak", baslik: "Dışarıdaki nokta", metin: "Eğrinin dışındaki bir nokta için \"ekonomi hatalı\" demek yanlıştır.", yanlis: "Eğrinin dışındaki nokta ekonominin yanlış karar verdiğini gösterir.", dogru: "Dışarıdaki nokta, ==şu anki== kaynak ve teknolojiyle ulaşılamaz demektir; kayma olunca ulaşılabilir hâle gelebilir." }
+        { tip: "tuzak", baslik: "\"En verimli nokta\" ve dışarıdaki nokta", metin: "\"En verimli nokta\" diye bir şık görürsen yanlıştır; eğrinin dışındaki nokta da \"ekonomi hatalı\" demek değildir.", yanlis: "Ortadaki ya da en çok mal üretilen nokta en verimlidir; dışarıdaki nokta yanlış karardır.", dogru: "Eğrinin üzerindeki ==bütün noktalar== eşit derecede *productively efficient*'tır. Dışarıdaki nokta, ==şu anki== kaynak ve teknolojiyle ulaşılamaz demektir; kayma olunca ulaşılabilir olabilir." }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Düz *PPC* = *constant opportunity cost* (kaynaklar iki mala eşit uygun); dışa bükük *PPC* = *increasing opportunity cost*.",

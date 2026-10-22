@@ -2,15 +2,14 @@
    Kaynak: ap-videolar/src/episodes/ep09 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep09",
-  ozet: "Küreyi düz kâğıda kusursuz geçirmek imkânsızdır; her harita bir *projection* ve her *projection* bir şeyi bozar: şekil, alan, mesafe ya da yön. Bu defterde üç yüzeyi, *Mercator*, *Gall-Peters*, *Robinson*, *Winkel Tripel*, *azimuthal equidistant* ve *Fuller*'ı; hangisini ne zaman seçeceğini göreceksin.",
+  amac: "Bu konu küreyi düz kâğıda aktarmanın neden kusursuz olamadığını anlatıyor: her *projection* şekli, alanı, mesafeyi ya da yönü bozar. *Mercator*, *Gall-Peters*, *Robinson* gibi haritaları ve hangisini ne zaman seçeceğini öğreneceksin.",
   bolumler: [
     {
       baslik: "Portakal kabuğu problemi",
+      kisa: "Küreyi düzleme geçirmek kusursuz olamaz; her *projection* bir şeyi bozar.",
       bloklar: [
-        { tip: "hikaye", ikon: "🍊", baslik: "Kabuğu masaya yaymak",
-          metin: "Bir portakalın kabuğunu soyup masaya dümdüz yaymayı dene. Ya yırtılır ya da esner. Dünya da böyle: küreyi düz bir kâğıda geçirmenin kusursuz bir yolu yok. Her harita bir **projection**; ve her *projection* bir şeyi bozar." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🗺️", terim: "Projection", tr: "projeksiyon", tanim: "Küreyi düzleme aktarma yöntemi. Her harita bir *projection*dır ve ==her *projection* bir şeyi bozar==.", ornek: "Portakal kabuğunu düzleştirirken kabuğun gerilmesi ya da yırtılması." }
+            { ikon: "🗺️", terim: "Projection", tr: "projeksiyon", tanim: "Küreyi düzleme aktarma yöntemi. Her harita bir *projection*dır ve ==her *projection* bir şeyi bozar==.", ornek: "Portakal kabuğunu masaya yaymayı dene: ya yırtılır ya da esner." }
           ] },
         { tip: "adimlar", baslik: "Küre düzleme nasıl geçer?", adimlar: [
             { baslik: "Küre", metin: "Dönen küre: şekil, alan, mesafe ve yön hep doğru." },
@@ -22,13 +21,8 @@ window.DEFTER = {
     },
     {
       baslik: "Bozulabilecek dört şey",
+      kisa: "*Projection* şekli, alanı, mesafeyi ya da yönü bozar; hepsini korumak imkânsızdır.",
       bloklar: [
-        { tip: "harita", merkez: "*Projection* bozulması", dallar: [
-            { baslik: "*Shape*", alt: "Şekil: kıtalar uzun ya da basık" },
-            { baslik: "*Area*", alt: "Alan: ülke büyük ya da küçük" },
-            { baslik: "*Distance*", alt: "Mesafe: iki şehir arası yanlış" },
-            { baslik: "*Direction*", alt: "Yön: pusulayla tutmaz" }
-          ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🔷", terim: "Shape", tr: "şekil", tanim: "Kıtaların ve ülkelerin görünüşü. Bozulursa kıtalar olduğundan uzun ya da basık görünür.", ornek: "Güney Amerika'nın yukarıdan aşağıya sünmüş görünmesi." },
             { ikon: "⬛", terim: "Area", tr: "alan", tanim: "Bir yerin yüzölçümünün doğru gösterilmesi. Bozulursa ülke olduğundan büyük ya da küçük görünür.", ornek: "Grönland'ın Afrika kadar görünmesi." },
@@ -40,22 +34,19 @@ window.DEFTER = {
     },
     {
       baslik: "Üç yüzey: silindir, külah, levha",
+      kisa: "Silindir ekvatorda, külah orta enlemde, levha merkezde doğrudur.",
       bloklar: [
-        { tip: "tablo", baslik: "Haritalar üç yüzeye yansıtılır", head: ["Yüzey", "Temas", "Nerede doğru?", "Kullanım"], rows: [
-            ["*Cylindrical* (silindir)", "Ekvator çevresi", "Ekvatorda; kutuplara gittikçe bozulur", "Bildiğin dikdörtgen dünya haritaları"],
-            ["*Conic* (külah)", "Orta enlemde bir paralel", "Orta enlemlerde", "Türkiye ya da Amerika gibi ülke haritaları"],
-            ["*Planar / azimuthal* (levha)", "Tek bir nokta (örneğin kutup)", "Merkezde; uzaklaştıkça bozulur", "Kutup haritaları"]
-          ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🥫", terim: "Cylindrical", tr: "silindirik", tanim: "Küre bir silindire sarılır. Ekvator çevresi doğrudur; ==kutuplara gittikçe bozulur.==", ornek: "Dikdörtgen dünya haritalarının çoğu." },
-            { ikon: "🍦", terim: "Conic", tr: "konik", tanim: "Küreye bir külah oturtulur. Orta enlemler için iyidir.", ornek: "Türkiye ya da Amerika gibi ülkelerin haritaları." },
-            { ikon: "🔵", terim: "Planar (azimuthal)", tr: "düzlemsel", tanim: "Düz bir levha tek bir noktaya değer. O merkez doğrudur; uzaklaştıkça bozulur.", ornek: "Kutup haritaları." }
+            { ikon: "🍦", terim: "Conic", tr: "konik", tanim: "Küreye bir külah oturtulur. Orta enlemlerde bir paralele değer; orta enlemler için iyidir.", ornek: "Türkiye ya da Amerika gibi ülkelerin haritaları." },
+            { ikon: "🔵", terim: "Planar (azimuthal)", tr: "düzlemsel", tanim: "Düz bir levha tek bir noktaya (örneğin kutba) değer. O merkez doğrudur; uzaklaştıkça bozulur.", ornek: "Kutup haritaları." }
           ] },
         { tip: "tuzak", metin: "Quiz: \"*Cylindrical* bir projeksiyonda bozulma nerede en azdır?\"", yanlis: "Kutuplarda ya da her yerde eşittir.", dogru: "Silindir küreye ekvatorda değer; bu yüzden ==ekvator çevresinde== bozulma en azdır." }
       ]
     },
     {
       baslik: "*Mercator*: gemici haritası",
+      kisa: "*Mercator* şekli ve yönü korur, ama kutuplarda alanı şişirir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "⛵", terim: "Mercator", tr: "Mercator projeksiyonu", tanim: "Silindirik. ==Şekli ve yönü korur==, bu yüzden yüzyıllarca gemi navigasyonunda kullanıldı: pusulayla sabit bir rota çizebilirsin. Bedeli: kutuplara doğru alanlar devasa şişer.", ornek: "Haritada Grönland, Afrika kadar görünür." }
@@ -84,24 +75,25 @@ window.DEFTER = {
     },
     {
       baslik: "*Gall-Peters*: alan doğru",
+      kisa: "*Gall-Peters* alanı korur ama şekli bozar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "⚖️", terim: "Gall-Peters · equal-area", tr: "eş alanlı projeksiyon", tanim: "Alanları doğru gösterir: Afrika hak ettiği büyüklüğe kavuşur. ==Ama şekiller bozulur==; kıtalar yukarıdan aşağıya sünmüş görünür.", ornek: "Nüfus yoğunluğu gibi alan karşılaştırmaları." }
           ] },
-        { tip: "ikili", sol: { ikon: "⛵", baslik: "*Mercator*", maddeler: ["Şekil ve yön ✓", "Alan ✗ (kutuplar şişer)", "Gemi navigasyonu"] },
-          sag: { ikon: "⚖️", baslik: "*Gall-Peters*", maddeler: ["Alan ✓ (*equal-area*)", "Şekil ✗ (sünme)", "Alan karşılaştırması"] },
+        { tip: "ikili", sol: { ikon: "⛵", baslik: "*Mercator*", maddeler: ["Şekil ve yön ✓; alan ✗ (kutuplar şişer)", "Gemi navigasyonu"] },
+          sag: { ikon: "⚖️", baslik: "*Gall-Peters*", maddeler: ["Alan ✓ (*equal-area*); şekil ✗ (sünme)", "Alan karşılaştırması"] },
           oyun: [
             { metin: "Bir öğretmen kıtaların gerçek büyüklüklerini karşılaştırmak istiyor.", cevap: "sag", neden: "Alan doğruluğu lazım: *Gall-Peters*." },
             { metin: "Bir kaptan pusulayla sabit bir rota çizmek istiyor.", cevap: "sol", neden: "Yön ve şekil korunmalı: *Mercator*." },
             { metin: "Haritada Grönland, Afrika kadar görünüyor.", cevap: "sol", neden: "Kutuplarda alan şişmesi: *Mercator*." },
-            { metin: "Afrika ve Güney Amerika dikey olarak uzamış görünüyor.", cevap: "sag", neden: "Şekil bozulması: *Gall-Peters*." },
-            { metin: "Nüfus yoğunluğu haritası için adil bir alan temsili.", cevap: "sag", neden: "*Equal-area* gerekir: *Gall-Peters*." }
+            { metin: "Afrika ve Güney Amerika dikey olarak uzamış görünüyor.", cevap: "sag", neden: "Şekil bozulması: *Gall-Peters*." }
           ] },
         { tip: "tuzak", metin: "Öğretmen sınıfa *Gall-Peters* haritası asıyor; kazancı ve bedeli ne?", yanlis: "Hem alan hem şekil doğru olur.", dogru: "==Kazanç: alanlar doğru. Bedel: şekiller bozulur.== *Equal-area* projeksiyonlarda şekil kurban edilir." }
       ]
     },
     {
       baslik: "Uzlaşma haritaları: *Robinson* ve *Winkel Tripel*",
+      kisa: "Uzlaşma haritaları hiçbir şeyi mükemmel korumaz, her şeyi biraz bozar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🤝", terim: "Robinson", tr: "Robinson projeksiyonu", tanim: "Orta yolu seçer: hiçbir şeyi tam korumaz ama her şeyi yalnızca biraz bozar. Göze doğal görünür, kenarları yuvarlaktır.", ornek: "Sınıf duvarlarındaki dünya haritaları." },
@@ -117,13 +109,14 @@ window.DEFTER = {
     },
     {
       baslik: "Özel amaçlı haritalar",
+      kisa: "*Azimuthal equidistant* merkezden mesafe ve yönü, *Fuller* alan ve şekli korur.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "✈️", terim: "Azimuthal equidistant", tr: "eş uzaklıklı azimutal", tanim: "Merkezden her noktaya ==mesafe ve yön doğrudur==. Kuzey Kutbu merkezli hali Birleşmiş Milletler bayrağındadır. Kutup üzerinden uçuş rotalarını göstermek için de kullanılır.", ornek: "New York'tan Pekin'e kutup üzerinden uçuş rotası düz bir çizgi olarak görünür." },
+            { ikon: "✈️", terim: "Azimuthal equidistant", tr: "eş uzaklıklı azimutal", tanim: "Merkezden her noktaya ==mesafe ve yön doğrudur==. Kuzey Kutbu merkezli hali Birleşmiş Milletler bayrağındadır; kutup üzerinden uçuş rotalarını göstermek için de kullanılır.", ornek: "New York'tan Pekin'e kutup üzerinden uçuş rotası düz bir çizgi olarak görünür." },
             { ikon: "🔺", terim: "Fuller (Dymaxion)", tr: "Fuller projeksiyonu", tanim: "Dünyayı üçgenlere açar. Alan ve şekil gayet iyidir; ama ==kuzey, güney gibi yönler anlamını kaybeder.==", ornek: "Üçgenlerden oluşan açılmış Dünya haritası." }
           ] },
-        { tip: "ikili", sol: { ikon: "🧊", baslik: "Kutup merkezli *azimuthal equidistant*", maddeler: ["Merkezden mesafe ve yön ✓", "BM bayrağı, kutup uçuşları", "Merkezden uzaklaştıkça bozulur"] },
-          sag: { ikon: "🔺", baslik: "*Fuller*", maddeler: ["Alan ve şekil iyi", "Yön anlamını yitirir", "Üçgenlere açılmış Dünya"] },
+        { tip: "ikili", sol: { ikon: "🧊", baslik: "Kutup merkezli *azimuthal equidistant*", maddeler: ["Merkezden mesafe ve yön ✓", "BM bayrağı, kutup uçuşları"] },
+          sag: { ikon: "🔺", baslik: "*Fuller*", maddeler: ["Alan ve şekil iyi", "Yön anlamını yitirir"] },
           oyun: [
             { metin: "Bir havayolu, Kuzey Kutbu üzerinden geçen uçuş rotalarını göstermek istiyor.", cevap: "sol", neden: "Merkezden mesafe ve yön doğru: *azimuthal equidistant*." },
             { metin: "Kuzey, güney gibi yönler anlamını yitiriyor ama alan ve şekil iyi.", cevap: "sag", neden: "*Fuller (Dymaxion)*." },
@@ -134,6 +127,7 @@ window.DEFTER = {
     },
     {
       baslik: "Hangisini ne zaman seçersin?",
+      kisa: "Önce amacı belirle; seçtiğin projeksiyonun neyi bozduğunu bil.",
       bloklar: [
         { tip: "tablo", baslik: "Amaç → projeksiyon", head: ["Amaç", "Projeksiyon"], rows: [
             ["Nüfus yoğunluğu gibi alan karşılaştırması", "*Equal-area*, yani *Gall-Peters*"],
@@ -150,6 +144,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Küreyi düzleme geçirmek kusursuz olamaz; her *projection* şekil, alan, mesafe ya da yönü bozar.",

@@ -35,14 +35,14 @@ window.DEFTER = (function () {
 
   return {
     slug: "mc108",
-    ozet: "Bu bölümde taraf değiştiriyoruz: üretici olarak karar veriyorsun. Fiyat yükseldikçe daha çok üretmeye razı olursun: *law of supply*. Bu defterde *supply* ile *quantity supplied* farkını, arz tablosunu ve yukarı tırmanan arz eğrisini, eğri üzerindeki hareketi, altı arz belirleyicisini (girdi fiyatları, teknoloji, satıcı sayısı, vergi ve sübvansiyon, beklentiler, diğer malların fiyatı) ve sola kayan eğrinin neden \"yukarı\" göründüğünü ama *decrease* olduğunu göreceksin.",
+    amac: "Bu konu *law of supply* yani arz yasasını anlatıyor: bu kez üreticisin. Fiyat yükseldikçe neden daha çok üretmek istediğini, arz eğrisini ve onu kaydıran altı etkeni öğreneceksin; sola kayan eğrinin neden \"yukarı\" göründüğünü ama azalış olduğunu da.",
     bolumler: [
       {
         baslik: "Köpek gezdirme teklifi",
+        kisa: "Fiyat yükseldikçe daha çok iş sunmaya razı olursun.",
         bloklar: [
           { tip: "hikaye", ikon: "🐕", baslik: "20 TL mi, 2 000 TL mi?",
-            metin: "Komşun, köpeğini bir saat gezdirmen için 20 lira teklif ediyor. Belki. 200 lira? Hemen tasmayı kaparsın. 2 bin lira? Basketbol antrenmanını bile atlarsın. Fiyat yükseldikçe daha çok iş sunmaya razı oldun. Bugün bunun grafiğini çizeceğiz. Sürpriz: bazen eğri yukarı çıkar ama her şey azalır." },
-          { tip: "tablo", baslik: "Teklif büyüdükçe cevabın", head: ["Teklif", "Senin cevabın"], rows: [["20 TL", "Belki…"], ["200 TL", "Hemen tasmayı kaparsın"], ["2 000 TL", "Antrenmanı bile atlarsın"]], not: "Fiyat yükseldikçe sunmaya razı olduğun iş artıyor: bu, arzın özü." },
+            metin: "Komşun köpeğini gezdirmen için 20 lira teklif ediyor: belki. 200 lirada hemen tasmayı kaparsın; 2 bin lirada basketbol antrenmanını bile atlarsın. Fiyat yükseldikçe daha çok iş sunmaya razı oldun." },
           { tip: "adimlar", baslik: "Neden her ek saat daha pahalı?", adimlar: [
               { baslik: "İlk saat kolay", metin: "Boş vaktini harcıyorsun; vazgeçtiğin şey az değerli." },
               { baslik: "Sonraki saatler", metin: "Her ek saat, daha değerli bir şeyden (antrenman, ders) vazgeçmek demek." },
@@ -51,52 +51,32 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Taraf değiştiriyoruz: *supply*",
+        baslik: "*Supply* ve *law of supply*",
+        kisa: "Üretici için fiyat ile arz edilen miktar aynı yönde gider.",
         bloklar: [
-          { tip: "not", metin: "Bugün alıcı değil, **üreticisin**. Okulun yanındaki tost atölyesinin sahibisin. Kısacası: tüketici talep eder, işletme arz eder." },
           { tip: "kavramlar", kartlar: [
-              { ikon: "🏭", terim: "Supply", tr: "arz", tanim: "Üreticilerin farklı fiyatlarda üretip satmaya *willing and able* (hem istekli hem gücü yeter) olduğu miktarların bütünü (tablo ya da eğri).", ornek: "Atölyenin tüm fiyat–miktar planı." },
+              { ikon: "🏭", terim: "Supply", tr: "arz", tanim: "Üreticilerin farklı fiyatlarda üretip satmaya *willing and able* (hem istekli hem gücü yeter) olduğu miktarların bütünü (tablo ya da eğri). Biri eksikse arz yoktur.", ornek: "Atölyenin tüm fiyat–miktar planı; makinesi olmayan atölye satmak istese de arz edemez." },
               { ikon: "1️⃣", terim: "Quantity supplied", tr: "arz edilen miktar", tanim: "Tek bir fiyatta sunulan miktar; arz eğrisi üzerindeki tek nokta.", ornek: "60 liraya günde 30 tost." },
-              { ikon: "💪", terim: "Willing and able", tr: "istekli ve güç yetirebilir", tanim: "Üretici hem satmak istemeli hem de üretmeye gücü yetmeli; biri eksikse arz yoktur.", ornek: "Makinesi olmayan atölye satmak istese de arz edemez." }
-            ] },
-          { tip: "ikili", sol: { ikon: "🛒", baslik: "Talep (*demand*)", maddeler: ["Tüketiciler", "Alıcı davranışı", "Fiyat ↑ → miktar ↓"] },
-            sag: { ikon: "🏭", baslik: "Arz (*supply*)", maddeler: ["Üreticiler, işletmeler", "Satıcı davranışı", "Fiyat ↑ → miktar ↑"] },
-            oyun: [
-              { metin: "Tüketici 50 TL'ye 50 tost almak istiyor.", cevap: "sol", neden: "Alıcının isteği: talep." },
-              { metin: "Atölye 60 liraya günde 30 tost satmaya hazır.", cevap: "sag", neden: "Satıcının planı: arz." },
-              { metin: "Fiyat arttıkça daha az tost alınıyor.", cevap: "sol", neden: "Ters ilişki: talep yasası." },
-              { metin: "Fiyat arttıkça daha çok tost üretilmek isteniyor.", cevap: "sag", neden: "Doğru ilişki: arz yasası." }
-            ] }
-        ]
-      },
-      {
-        baslik: "*Law of supply*: neden fiyat artınca arz artar?",
-        bloklar: [
-          { tip: "formul", parcalar: [
-              { t: "Fiyat ↑", alt: "price up" }, "→",
-              { t: "*Quantity supplied* ↑", alt: "arz edilen miktar artar" }
-            ], aciklama: "*Law of supply*: fiyat ile *quantity supplied* **aynı yönde** gider; ilişki *direct* (doğru)." },
-          { tip: "kavramlar", kartlar: [
-              { ikon: "📈", terim: "Law of supply", tr: "arz yasası", tanim: "Diğer her şey sabitken fiyat ile *quantity supplied* aynı yönde değişir.", ornek: "Tost 100 TL olunca atölye daha çok üretmek ister." },
-              { ikon: "↗️", terim: "Direct relationship", tr: "doğru ilişki", tanim: "İki değişkenin birlikte artıp birlikte azalması.", ornek: "Fiyat ↑ ve miktar ↑." }
+              { ikon: "📈", terim: "Law of supply", tr: "arz yasası", tanim: "Diğer her şey sabitken fiyat ile *quantity supplied* aynı yönde (*direct*, doğru ilişki) değişir.", ornek: "Tost 100 TL olunca atölye daha çok üretmek ister." }
             ] },
           { tip: "liste", maddeler: [
               { ikon: "💰", baslik: "Neden 1: kâr", metin: "Tost 100 lira olursa atölye daha çok üretmek ister; 20 lira olursa \"neden uğraşayım\" der." },
-              { ikon: "🔧", baslik: "Neden 2: artan maliyet", metin: "Fazla tost için fazla mesai, ikinci makine gerekir; her ek tost daha pahalıya gelir." },
-              { ikon: "🔗", baslik: "*Opportunity cost* bağlantısı", metin: "Köpekteki gibi: her ek saat, daha değerli bir şeyden vazgeçmek. Bunu ancak daha yüksek fiyat karşılar." }
+              { ikon: "🔧", baslik: "Neden 2: artan maliyet", metin: "Fazla tost için fazla mesai, ikinci makine gerekir; her ek tost daha pahalıya gelir (*opportunity cost*)." }
             ] },
-          { tip: "ikili", sol: { ikon: "📉", baslik: "*Law of demand*", maddeler: ["Ters ilişki (*inverse*)", "Fiyat ↑ → *Qd* ↓", "Eğri aşağı iner"] },
-            sag: { ikon: "📈", baslik: "*Law of supply*", maddeler: ["Doğru ilişki (*direct*)", "Fiyat ↑ → *Qs* ↑", "Eğri yukarı tırmanır"] },
+          { tip: "ikili", sol: { ikon: "🛒", baslik: "Talep (*demand*)", maddeler: ["Tüketiciler, alıcı davranışı", "Fiyat ↑ → miktar ↓ (*inverse*)"] },
+            sag: { ikon: "🏭", baslik: "Arz (*supply*)", maddeler: ["Üreticiler, satıcı davranışı", "Fiyat ↑ → miktar ↑ (*direct*)"] },
             oyun: [
-              { metin: "Fiyat ikiye katlanınca atölye iki katı tost sunmak istiyor.", cevap: "sag", neden: "Aynı yön: arz yasası." },
+              { metin: "Tüketici 50 TL'ye 50 tost almak istiyor.", cevap: "sol", neden: "Alıcının isteği: talep." },
+              { metin: "Atölye 60 liraya günde 30 tost satmaya hazır.", cevap: "sag", neden: "Satıcının planı: arz." },
               { metin: "Fiyat ikiye katlanınca kantindeki kuyruk dağıldı.", cevap: "sol", neden: "Ters yön: talep yasası." },
-              { metin: "Kâr beklentisi üreticiyi daha çok üretmeye iter.", cevap: "sag", neden: "Fiyat yüksekse kâr yüksek: arz yasasının nedeni." },
-              { metin: "Simit pahalanınca öğrenciler simitten tosta geçiyor.", cevap: "sol", neden: "İkame etkisi: talep yasasının nedeni." }
+              { metin: "Fiyat ikiye katlanınca atölye iki katı tost sunmak istiyor.", cevap: "sag", neden: "Aynı yön: arz yasası." },
+              { metin: "Kâr beklentisi üreticiyi daha çok üretmeye iter.", cevap: "sag", neden: "Fiyat yüksekse kâr yüksek: arz yasasının nedeni." }
             ] }
         ]
       },
       {
         baslik: "Arz tablosundan arz eğrisine",
+        kisa: "Arz eğrisi yukarı eğimlidir: talep yere iner, arz göğe çıkar.",
         bloklar: [
           { tip: "tablo", baslik: "Supply schedule · tost atölyesi (günlük)", head: ["Fiyat (TL)", "Arz edilen miktar (tost)"], rows: [["20", "10"], ["40", "20"], ["60", "30"], ["80", "40"], ["100", "50"]], not: "Kural: TL = 2 × tost. Grafik ölçeği: yatay 1 birim = 10 tost, dikey 1 birim = 20 TL." },
           { tip: "grafik", baslik: "Her satır bir nokta", xlabel: AX.xlabel, ylabel: AX.ylabel, xmax: AX.xmax, ymax: AX.ymax, xticks: AX.xticks, yticks: AX.yticks,
@@ -116,12 +96,12 @@ window.DEFTER = (function () {
           { tip: "kavramlar", kartlar: [
               { ikon: "📋", terim: "Supply schedule", tr: "arz tablosu", tanim: "Her fiyatta sunulan miktarı gösteren tablo.", ornek: "Yukarıdaki atölye tablosu." },
               { ikon: "📈", terim: "Supply curve", tr: "arz eğrisi", tanim: "*Supply schedule*'ın grafiği; sağa doğru yukarı eğimli. Tablo da eğri de aynı şeyi anlatır.", ornek: "S çizgisi (0,5; 0,5)'ten (8; 8)'e." }
-            ] },
-          { tip: "not", metin: "Akılda kalsın: **talep yere iner, arz göğe çıkar.**" }
+            ] }
         ]
       },
       {
         baslik: "Eğri üzerinde hareket",
+        kisa: "Ürünün kendi fiyatı eğriyi kaydırmaz, yalnızca eğri boyunca hareket ettirir.",
         bloklar: [
           { tip: "grafik", baslik: "Fiyat 40'tan 80'e çıkarsa", xlabel: AX.xlabel, ylabel: AX.ylabel, xmax: AX.xmax, ymax: AX.ymax, xticks: AX.xticks, yticks: AX.yticks,
             ogeler: [
@@ -143,6 +123,7 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Arz eğrisi kayınca: sağ = artış, sol = azalış",
+        kisa: "Sağa kayma artış, sola kayma azalıştır; yukarı görünse bile.",
         bloklar: [
           { tip: "tablo", baslik: "Üç arz tablosu", head: ["Fiyat (TL)", "S₁ (tost)", "S₂ artış (+20)", "S₃ azalış (−10)"], rows: [["20", "10", "30", "0"], ["40", "20", "40", "10"], ["60", "30", "50", "20"], ["80", "40", "60", "30"], ["100", "50", "70", "40"]], vurgu: 2, not: "S₂ = S₁'in 2 birim sağı; S₃ = S₁'in 1 birim solu. 60 TL'de S₁: 30, S₂: 50, S₃: 20." },
           graf("Süper hızlı makine geldi", [
@@ -164,52 +145,32 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Belirleyiciler 1–2: girdi fiyatları ve teknoloji",
+        baslik: "Belirleyiciler 1–4: maliyeti değiştirenler",
+        kisa: "Maliyeti artıran her şey arzı sola, düşüren her şey sağa kaydırır.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
-              { ikon: "⬆️", terim: "Determinants of supply", tr: "arz belirleyicileri", tanim: "Arz eğrisini kaydıran fiyat dışı etkenler; bu listede altı tane.", ornek: "Girdi fiyatı, teknoloji, satıcı sayısı, vergi/sübvansiyon, beklentiler, diğer malların fiyatı." },
-              { ikon: "🧀", terim: "Input prices", tr: "girdi fiyatları", tanim: "Üretimde kullanılan hammadde, ücret, kira, enerji gibi girdilerin fiyatı ve bulunabilirliği. Girdi pahalanırsa maliyet artar.", ornek: "Kaşar peyniri, asgari ücret, kira, buğday." },
-              { ikon: "⚙️", terim: "Technology", tr: "teknoloji, verimlilik", tanim: "Aynı girdiyle daha çok üretebilmek; maliyeti düşürür.", ornek: "Dakikada 8 tost basan makine." }
-            ] },
-          graf("Girdi fiyatı ve teknoloji", [
-            dur("Başlangıç: atölyenin arzı S₁."),
-            sol("**Girdi fiyatı:** kaşar peyniri ikiye katlandı. Her tost pahalıya patlıyor: arz ==sola==. Asgari ücret ya da kira artışı da öyle."),
-            sifirla("Başka bir örnek: kuraklık, buğdayı vurdu. Başlangıç yine S₁."),
-            sol("**Girdinin bulunabilirliği:** kuraklık yüzünden ekmek azaldı, arz ==sola=="),
-            sifirla("Şimdi teknoloji. Başlangıç yine S₁."),
-            sag("**Teknoloji:** dakikada 8 tost basan makine maliyeti düşürür, arz ==sağa==.")
-          ]),
-          { tip: "formul", parcalar: [
-              { t: "Maliyet ↑", alt: "girdi pahalanır" }, "→",
-              { t: "Arz sola", alt: "decrease" },
-              { t: "Maliyet ↓", alt: "teknoloji, ucuz girdi" }, "→",
-              { t: "Arz sağa", alt: "increase" }
-            ], aciklama: "Kısa kural: üreticinin maliyetini artıran her şey arzı sola, düşüren ya da üretimi artıran her şey sağa kaydırır." }
-        ]
-      },
-      {
-        baslik: "Belirleyiciler 3–4: satıcı sayısı, vergi, sübvansiyon, düzenleme",
-        bloklar: [
-          { tip: "kavramlar", kartlar: [
+              { ikon: "🧀", terim: "Input prices", tr: "girdi fiyatları", tanim: "Hammadde, ücret, kira, enerji gibi girdilerin fiyatı ve bulunabilirliği. Girdi pahalanırsa ya da kıtlaşırsa maliyet artar.", ornek: "Kaşar peyniri, asgari ücret, kira; kuraklıkta buğday." },
+              { ikon: "⚙️", terim: "Technology", tr: "teknoloji, verimlilik", tanim: "Aynı girdiyle daha çok üretebilmek; maliyeti düşürür.", ornek: "Dakikada 8 tost basan makine." },
               { ikon: "🏪", terim: "Number of sellers", tr: "satıcı sayısı", tanim: "Piyasadaki üretici sayısı; *market supply* bütün satıcıların toplamıdır.", ornek: "Okulun karşısına iki tostçu daha açıldı." },
               { ikon: "🧾", terim: "Excise tax", tr: "özel tüketim vergisi", tanim: "Birim başına konan vergi; üretim maliyetine eklenir, arzı sola kaydırır.", ornek: "Tost başına 5 lira vergi." },
               { ikon: "🎁", terim: "Subsidy", tr: "sübvansiyon", tanim: "Devletin üreticiye yaptığı ödeme; maliyeti düşürür, arzı sağa kaydırır.", ornek: "Devlet tostçuya tost başına destek öder." },
               { ikon: "📜", terim: "Regulation", tr: "düzenleme", tanim: "Üretime getirilen kurallar (ek denetim, standart); uyum maliyeti arzı azaltır.", ornek: "Ek denetim isteyen sıkı kurallar." }
             ] },
-          graf("Satıcı sayısı ve devlet", [
-            dur("Başlangıç: mahallenin tost arzı S₁."),
+          graf("Girdi, teknoloji, satıcı sayısı ve devlet", [
+            dur("Başlangıç: atölyenin arzı S₁."),
+            sol("**Girdi fiyatı:** kaşar peyniri ikiye katlandı (asgari ücret ya da kira artışı, kuraklık da öyle). Her tost pahalıya patlıyor: arz ==sola==."),
+            sag("**Teknoloji:** dakikada 8 tost basan makine maliyeti düşürür, arz ==sağa==."),
             sag("**Satıcı sayısı:** okulun karşısına iki tostçu daha açıldı; mahallenin tost arzı ==sağa== kayar."),
-            sifirla("Şimdi devlet. Başlangıç yine S₁."),
             sol("**Excise tax:** tost başına 5 lira vergi maliyete eklenir; arz ==sola==."),
-            sifirla("Başlangıç yine S₁."),
             sag("**Subsidy:** devlet üreticiye ödeme yapar; maliyet düşer, arz ==sağa==."),
             sol("**Regulation:** ek denetim isteyen sıkı kurallar arzı ==sola== çeker.")
           ]),
-          { tip: "tablo", baslik: "Devlet ve arz", head: ["Politika", "Maliyet", "Arz", "Yön"], rows: [
-              ["Vergi (excise tax)", "Artar", "Azalır", "Sol"],
-              ["Sübvansiyon", "Düşer", "Artar", "Sağ"],
-              ["Düzenleme (regulation)", "Artar", "Azalır", "Sol"]
-            ] },
+          { tip: "formul", parcalar: [
+              { t: "Maliyet ↑", alt: "girdi pahalanır, vergi, düzenleme" }, "→",
+              { t: "Arz sola", alt: "decrease" },
+              { t: "Maliyet ↓", alt: "teknoloji, ucuz girdi, sübvansiyon" }, "→",
+              { t: "Arz sağa", alt: "increase" }
+            ], aciklama: "Kısa kural: üreticinin maliyetini artıran her şey arzı sola, düşüren ya da üretimi artıran her şey sağa kaydırır." },
           { tip: "ornek", baslik: "Birim vergi arzı nasıl kaydırır?", durum: "Atölye tost başına 5 lira vergi ödemeye başlıyor. Arz eğrisine ne olur?",
             adimlar: ["Vergi her tostun maliyetine 5 lira ekler.", "Aynı miktarı sunmak için atölyenin eskisinden 5 lira fazla fiyata ihtiyacı var.", "Her miktarda arz fiyatı yukarı kayar, yani her fiyatta sunulan miktar azalır.", "Grafikte yukarı görünür; ama doğru adı: arz azalır (sola)."],
             sonuc: "Birim vergi ==arzı sola kaydırır== (*decrease in supply*). Sübvansiyon tersine sağa kaydırır." }
@@ -217,6 +178,7 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Belirleyiciler 5–6: beklentiler ve diğer malların fiyatı",
+        kisa: "Üretici fiyat artacak derse bugün arzı geri tutar; alternatif mal pahalanırsa o mala döner.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "🔮", terim: "Expectations", tr: "beklentiler", tanim: "Üreticinin gelecekteki fiyat ya da kâr beklentisi. Fiyat artacak beklentisi bugünkü arzı **azaltır** (ürünü depoda tutar).", ornek: "Fındık üreticisi gelecek ay fiyat artacak diye fındığı depoda tutar." },
@@ -225,16 +187,14 @@ window.DEFTER = (function () {
           graf("Beklentiler ve diğer malların fiyatı", [
             dur("Başlangıç: tost arzı S₁."),
             sol("**Beklenti:** fındık üreticisi fiyatın gelecek ay artacağını bekliyor; fındığı depoda tutar. Bugünkü arz ==sola==."),
-            sifirla("Başka bir örnek. Başlangıç yine S₁."),
             sol("**Diğer malın fiyatı:** atölyenin makineleri waffle da yapıyor; waffle fiyatı fırladı. Makineler waffle'a döner, tost arzı ==sola==.")
           ]),
-          { tip: "not", metin: "Bazı kaynaklar bu listeyi beş madde sayar (örneğin girdi fiyatları, satıcı sayısı, teknoloji, vergi ve sübvansiyon, beklentiler). Mantık aynı: sınav listeyi değil, uygulamayı sorar." },
-          { tip: "tuzak", baslik: "Talepteki \"ikame\" ile karıştırma", metin: "Üretimde diğer malın fiyatı artınca bu malın arzı **azalır**.", yanlis: "Waffle pahalandı, tost arzı da artar (ikame gibi).", dogru: "Talepte ikame malın fiyatı artarsa talep artar. Arzda ise ==üretimdeki alternatif mal pahalanırsa bu malın arzı sola kayar==." },
-          { tip: "tuzak", baslik: "Beklenti iki yönlü", metin: "Beklentiler talep ve arz listelerinde de var; yön tersidir.", yanlis: "Fiyatın artacağını bekleyen herkes bugün daha çok satar.", dogru: "Alıcı fiyat artacak derse bugün talebi artırır (sağ); satıcı fiyat artacak derse bugünkü arzı ==azaltır== (sol)." }
+          { tip: "tuzak", baslik: "Talepteki \"ikame\" ve beklenti ile karıştırma", metin: "Talepte ikame malın fiyatı artarsa talep artar; arzda üretimdeki alternatif mal pahalanırsa arz azalır. Beklentide de yön tersine döner.", yanlis: "Waffle pahalandı, tost arzı da artar (ikame gibi); fiyatın artacağını bekleyen herkes bugün daha çok satar.", dogru: "==Üretimdeki alternatif mal pahalanırsa bu malın arzı sola kayar==. Alıcı fiyat artacak derse bugün talebi artırır (sağ); satıcı fiyat artacak derse bugünkü arzı ==azaltır== (sol)." }
         ]
       },
       {
         baslik: "Kimi etkiliyor? Talep mi, arz mı?",
+        kisa: "Alıcıyı etkiliyorsa talep, üreticiyi etkiliyorsa arz kayar.",
         bloklar: [
           { tip: "ikili", sol: { ikon: "🛍️", baslik: "Alıcıyı etkiler → *demand*", maddeler: ["Zevk, haber, reklam", "Alıcı sayısı", "Gelir, ilişkili mal fiyatı, alıcı beklentisi"] },
             sag: { ikon: "🏭", baslik: "Üreticiyi etkiler → *supply*", maddeler: ["Girdi fiyatı", "Teknoloji, satıcı sayısı", "Vergi/sübvansiyon, düzenleme, üretici beklentisi, diğer malın fiyatı"] },
@@ -243,27 +203,24 @@ window.DEFTER = (function () {
               { metin: "\"Peynir pahalandı\" haberi çıktı.", cevap: "sag", neden: "Üreticinin maliyeti: arz." },
               { metin: "Okula 200 yeni öğrenci geldi.", cevap: "sol", neden: "Alıcı sayısı: talep." },
               { metin: "Devlet tostçulara destek ödemesi yapıyor.", cevap: "sag", neden: "Sübvansiyon: arz." },
-              { metin: "Öğrencilerin harçlığı arttı.", cevap: "sol", neden: "Alıcı geliri: talep." },
               { metin: "Dakikada 8 tost basan makine geldi.", cevap: "sag", neden: "Teknoloji: arz." }
             ] },
           { tip: "tuzak", baslik: "Talep değil, arz meselesi (ya da tersi)", metin: "Her habere önce şunu sor: kimi etkiliyor, alıcıyı mı satıcıyı mı?", yanlis: "Girdi fiyatı, teknoloji ve satıcı sayısı talebi de kaydırır.", dogru: "Girdi fiyatı, teknoloji ve satıcı sayısı ==talebi kaydırmaz==. \"Hangisi talep belirleyicisi DEĞİLDİR?\" sorusunda genelde girdi fiyatı doğru cevaptır." },
           { tip: "ornek", baslik: "Sınav sorusu: telefon kılıfı", durum: "Aşağıdakilerden hangisi telefon kılıfı arz eğrisini sola kaydırır? (A) Kılıfın fiyatının düşmesi (B) Daha hızlı yeni bir baskı makinesi (C) Plastik fiyatının artması (D) Hükümetin üreticilere sübvansiyon vermesi.",
             adimlar: ["A: kılıfın kendi fiyatı eğriyi kaydırmaz; eğri üzerinde hareket.", "B: teknoloji, arz sağa.", "C: girdi (plastik) pahalandı, maliyet artar, arz sola.", "D: sübvansiyon, arz sağa."],
-            sonuc: "==C: plastik fiyatının artması.== Girdi pahalanınca her fiyatta daha az kılıf üretilir." },
-          { tip: "ornek", baslik: "Ek örnek: final haftası", durum: "Final haftası geldi; köpek gezdirmenin fırsat maliyeti (ders çalışma) arttı. Köpek gezdirme arzına ne olur?",
-            adimlar: ["Çalışma zamanın daha değerli oldu: vazgeçilen şey arttı.", "Her ücrette sunmaya razı olduğun saat sayısı azalır.", "Fiyat dışı etken olduğu için eğri kayar."],
-            sonuc: "Arz ==sola== kayar (*decrease in supply*); girdi fiyatı (zamanın maliyeti) ya da diğer işin getirisi olarak yorumlanabilir, ikisi de sola." }
+            sonuc: "==C: plastik fiyatının artması.== Girdi pahalanınca her fiyatta daha az kılıf üretilir." }
         ]
       },
       {
         baslik: "Toparlayalım",
+        kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
               "*Supply*: üreticinin her fiyatta sunmaya *willing and able* olduğu miktarlar. *Quantity supplied* tek bir fiyattaki miktardır.",
               "*Law of supply*: fiyat ile *quantity supplied* aynı yönde (*direct*); nedeni kâr ve artan maliyet (*opportunity cost*).",
               "Arz tablosu grafiğe dökülünce yukarı eğimli *supply curve* olur: talep yere iner, arz göğe çıkar.",
               "Ürünün kendi fiyatı yalnızca eğri boyunca hareket ettirir (*change in quantity supplied*); fiyat artınca *supply* hiçbir şey olmaz.",
-              "Altı belirleyici eğriyi kaydırır: girdi fiyatları, teknoloji, satıcı sayısı, vergi/sübvansiyon/düzenleme, beklentiler, diğer malların fiyatı.",
+              "Altı belirleyici eğriyi kaydırır: girdi fiyatları, teknoloji, satıcı sayısı, vergi/sübvansiyon/düzenleme, beklentiler, diğer malların fiyatı (bazı kaynaklar beş sayar; sınav listeyi değil uygulamayı sorar).",
               "Maliyeti artıran her şey arzı sola, düşüren her şey sağa kaydırır.",
               "Sağ artış, sol azalış; yukarıda görünen sol kayma da azalıştır.",
               "Önce sor: kimi etkiliyor? Alıcıyı etkiliyorsa talep, üreticiyi etkiliyorsa arz."

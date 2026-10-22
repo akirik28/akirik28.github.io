@@ -2,63 +2,21 @@
    Kaynak: ap-videolar/src/episodes/st114 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st114",
-  ozet: "Kötü örnekleme yöntemleri sonucu ==sistematik olarak aynı yöne== kaydırır: buna *bias* denir ve şanssızlık değildir. Bu defterde *convenience sample*, *voluntary response*, *undercoverage*, *nonresponse*, *response bias* ve *question wording bias* türlerini, bias'ı iki adımda açıklamayı (kim farklı, hangi yöne) ve büyük örneklemin bias'ı neden düzeltmediğini göreceksin.",
+  amac: "Bu konu kötü örneklemenin sonucu neden hep aynı yöne kaydırdığını, yani *bias*'ı anlatıyor. Altı bias türünü ayırmayı, bias'ı iki adımda açıklamayı ve büyük örneklemin bias'ı neden düzeltmediğini öğreneceksin.",
   bolumler: [
     {
-      baslik: "Marmaray çıkışındaki anket",
-      bloklar: [
-        { tip: "hikaye", ikon: "🚆", baslik: "Sonuç sormadan belliydi",
-          metin: "İstanbulluların yüzde kaçı işe toplu taşımayla gidiyor? Sabah sekizde Marmaray çıkışında duruyor ve 50 kişiye soruyorsun. 46'sı evet diyor: yüzde 92. Harika mı? Pek değil. Sorduğun herkes trenden yeni inmişti. Köprü trafiğinde arabasında bekleyenlerin hiçbiri orada değildi. Sonuç, sormadan belliydi." },
-        { tip: "sayilar", ogeler: [
-            { deger: 50, etiket: "kişiye sorulan" },
-            { deger: 46, etiket: "“evet” diyen" },
-            { deger: 92, sonek: "%", etiket: "46 ÷ 50: güvenilir mi?" }
-          ] },
-        { tip: "ikili", ayirici: "vs",
-          sol: { ikon: "🚉", baslik: "Sorduklarım", maddeler: ["Hepsi trenden yeni indi", "Toplu taşıma kullanıyor", "Oran: %92"] },
-          sag: { ikon: "🚗", baslik: "Sormadıklarım", maddeler: ["Köprü trafiğinde arabada", "Toplu taşıma kullanmıyor", "Hiçbiri örneklemde yok"] },
-          oyun: [
-            { metin: "Sabah sekizde Marmaray çıkışındaki 50 kişi.", cevap: "sol", neden: "Hepsi trenle gelmiş; örneklemin tamamı toplu taşımacı." },
-            { metin: "Köprü trafiğinde arabasında bekleyen sürücüler.", cevap: "sag", neden: "Kimse onlara sormadı." },
-            { metin: "İşe yürüyerek giden biri.", cevap: "sag", neden: "O da çıkışta değildi; örneklemde yok." },
-            { metin: "Yeni inip çıkıştan yürüyen yolcular.", cevap: "sol", neden: "Hepsi örneklemde." }
-          ] },
-        { tip: "not", metin: "Bu bölümün konusu: hangi örnekleme yöntemleri ve hangi hatalar sonucu ==hep aynı yöne== iter?" }
-      ]
-    },
-    {
-      baslik: "*Convenience sample* ve domates bahçesi",
+      baslik: "*Bias* ve *convenience sample*",
+      kisa: "Bias, yöntemin sonucu sistematik olarak aynı yöne itmesidir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🚶", terim: "Convenience sample", tr: "kolay ulaşılan örneklem", tanim: "Ulaşması en kolay bireylerden oluşan örneklem.", ornek: "Marmaray çıkışındaki 50 kişi." },
+            { ikon: "🚶", terim: "Convenience sample", tr: "kolay ulaşılan örneklem", tanim: "Ulaşması en kolay bireylerden oluşan örneklem.", ornek: "Marmaray çıkışındaki 50 kişiden 46'sı toplu taşımacı (%92); arabadakilere hiç sorulmadı." },
+            { ikon: "↗️", terim: "Bias", tr: "yanlılık (sapma)", tanim: "Yöntemin, bilmek istediğin değeri ==sistematik olarak aynı yönde== (hep fazla ya da hep eksik) tahmin etmesi. Tek bir örneklemin şanssızlığı değildir.", ornek: "Her hafta aynı sıradan sayan bahçıvanın tahmini hep fazla çıkar." },
             { ikon: "⬆️", terim: "Overestimate", tr: "fazla tahmin", tanim: "Tahminin gerçek değerden büyük çıkması.", ornek: "212 > gerçek toplam." },
             { ikon: "⬇️", terim: "Underestimate", tr: "eksik tahmin", tanim: "Tahminin gerçek değerden küçük çıkması.", ornek: "Yoğun kişilerin cevap vermediği ankette boş vakit tahmini düşebilir." }
           ] },
-        { tip: "hikaye", ikon: "🍅", baslik: "Domates bahçesi", metin: "Bir bahçıvanın 20 domates bitkisi var. Eve en yakın sıradaki 5 bitkide toplam 53 domates sayıyor. Bahçedeki toplamı tahmin etmek istiyor." },
-        { tip: "ornek", baslik: "Bahçıvanın tahmini", durum: "20 bitkiden eve en yakın 5'i sayıldı: 53 domates.",
+        { tip: "ornek", baslik: "Domates bahçesinde bahçıvanın tahmini", durum: "Bahçıvanın 20 domates bitkisi var. Eve en yakın sıradaki 5 bitkide toplam 53 domates sayıyor ve bahçedeki toplamı tahmin etmek istiyor.",
           adimlar: ["20 bitki, 5'in kaç katı? 20 ÷ 5 = 4.", "Toplam tahmini: 53 × 4 = 212 domates.", "Ama sayılan sıra bahçenin güney ucunda, en çok güneşi alıyor; büyük olasılıkla diğer sıralardan daha çok domates veriyor.", "Demek ki 212, gerçek toplamdan büyük."],
           sonuc: "212 gerçek toplamı ==*overestimate*== eder." },
-        { tip: "grafik", baslik: "Tahmin gerçeğin neresinde?", xlabel: "Tahmin edilen toplam domates", ylabel: "", xmax: 10, ymax: 4, xticks: [{ v: 5, label: "gerçek toplam (bilinmiyor)" }, { v: 8.5, label: "212" }], yticks: [],
-          ogeler: [
-            { id: "tr", tip: "cizgi", renk: 1, kesik: true, etiket: "", from: [5, 0], to: [5, 3.6] },
-            { id: "est", tip: "nokta", x: 8.5, y: 1.8, etiket: "212", renk: 0, gizli: true },
-            { id: "ar", tip: "ok", from: [5.2, 2.6], to: [8.3, 2.6], gizli: true },
-            { id: "ot", tip: "yazi", x: 6.8, y: 3.1, metin: "overestimate", gizli: true }
-          ],
-          durumlar: [
-            { metin: "Kesikli çizgi: gerçek toplam. Bahçıvan bunu bilmiyor." },
-            { metin: "Sayıdan çıkan tahmin 212 gerçek toplamın sağında.", goster: ["est"] },
-            { metin: "Güneşe yakın sıra daha çok domates veriyor: tahmin gerçeği ==aşıyor==.", goster: ["ar", "ot"] }
-          ] },
-        { tip: "tuzak", baslik: "Kolay olan, doğru olan değildir", metin: "*Convenience sample* seçimi senin rahatlığına göre yapılır, şansa göre değil.", yanlis: "“Eve en yakın sıra bahçeyi temsil eder, çünkü kolay sayılır.”", dogru: "Kolay ulaşılan sıra diğerlerinden sistematik olarak farklı olabilir (güneş)." }
-      ]
-    },
-    {
-      baslik: "*Bias* nedir?",
-      bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "↗️", terim: "Bias", tr: "yanlılık (sapma)", tanim: "Yöntemin, bilmek istediğin değeri ==sistematik olarak aynı yönde== (hep fazla ya da hep eksik) tahmin etmesi. “The method consistently over- or underestimates the true value.”", ornek: "Her hafta aynı sıradan sayan bahçıvanın tahmini hep fazla çıkar." }
-          ] },
         { tip: "grafik", baslik: "Bias ile şanssızlık farkı", xlabel: "Tahmin edilen toplam domates", ylabel: "", xmax: 10, ymax: 6, xticks: [{ v: 5, label: "gerçek toplam" }], yticks: [],
           ogeler: [
             { id: "tr", tip: "cizgi", renk: 1, kesik: true, etiket: "", from: [5, 0], to: [5, 5.4] },
@@ -81,20 +39,12 @@ window.DEFTER = {
             { metin: "Rastgele seçilen 5 bitki: iki tahmin çizginin solunda, ikisi sağında. Bir yöne yaslanmaz; şanssızlık bias değildir.", goster: ["ls", "s1", "s2", "s3", "s4", "sb"] },
             { metin: "Yönün iki adı var: gerçeğin üstüne düşerse *overestimate*, altına düşerse *underestimate*.", goster: ["ov", "ovt", "un", "unt"] }
           ] },
-        { tip: "ikili",
-          sol: { ikon: "↗️", baslik: "*Bias*", maddeler: ["Yöntemin kendisi aynı yöne iter", "Tekrar tekrar aynı hata", "Büyütmekle düzelmez"] },
-          sag: { ikon: "🎰", baslik: "Şanssızlık", maddeler: ["Tek bir örneklemdeki rastlantı", "Bir seferde fazla, bir seferde eksik", "Rastgele seçimde ortalamada sıfırlanır"] },
-          oyun: [
-            { metin: "Bahçıvan her hafta güney sırasını sayıyor ve hep fazla çıkıyor.", cevap: "sol", neden: "Her seferinde aynı yön: yöntem kaynaklı." },
-            { metin: "Rastgele 5 bitkiden biri seferinde iki fazla bitki içeriyor.", cevap: "sag", neden: "Bir seferlik rastlantı." },
-            { metin: "Eve en yakın sıra seçildiği için tahmin hep büyük.", cevap: "sol", neden: "Seçim yöntemi sistematik kayma yaratıyor." },
-            { metin: "Rastgele örneklemin bir seferde gerçekten biraz düşük çıkması.", cevap: "sag", neden: "Rastlantısal sapma; bir yöne yaslanmaz." }
-          ] },
-        { tip: "tuzak", baslik: "Bias şanssızlık değildir", metin: "“Bias is not just bad luck in one sample!”", yanlis: "“Örneklem şanssız seçildi, bu yüzden biased.”", dogru: "Bias, yöntemin sonucu sistematik olarak aynı yöne kaydırmasıdır." }
+        { tip: "tuzak", baslik: "Bias şanssızlık değildir; kolay olan temsil etmez", metin: "“Bias is not just bad luck in one sample!” *Convenience sample* seçimi senin rahatlığına göre yapılır, şansa göre değil.", yanlis: "“Örneklem şanssız seçildi, bu yüzden biased.” ya da “Eve en yakın sıra bahçeyi temsil eder, çünkü kolay sayılır.”", dogru: "Bias, yöntemin sonucu sistematik olarak aynı yöne kaydırmasıdır; kolay ulaşılan sıra diğerlerinden farklı olabilir (güneş)." }
       ]
     },
     {
       baslik: "*Voluntary response sample*",
+      kisa: "Kendi katılanlar, çoğu zaman güçlü görüşlülerdir; sonuç kayar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🙋", terim: "Voluntary response sample", tr: "gönüllü yanıt örneklemi", tanim: "Genel bir çağrıya kendi isteğiyle katılanlardan oluşan örneklem; araştırmacı kimseyi seçmez.", ornek: "Okul hesabında “kıyafet kalksın mı?” anketi." },
@@ -107,17 +57,17 @@ window.DEFTER = {
         { tip: "adimlar", baslik: "AP EXAM TIP: bias'ı iki adımda açıkla", adimlar: [
             { baslik: "1 · Kim farklı cevap verir?", metin: "“Students who dislike the uniform are more likely to vote than students who don't mind it.”" },
             { baslik: "2 · Hangi yöne kayar?", metin: "“So 90% is likely an overestimate of the true proportion of all students who want the uniform removed.”" },
-            { baslik: "Bağlamı unutma", metin: "“true proportion of all students who…” gibi parametreyi bağlamıyla söyle." }
-          ] },
-        { tip: "tuzak", baslik: "Yarım cevap puan getirmez", metin: "Yalnızca türün adını ya da “biased” demek yetmez.", yanlis: "“The sample is biased.”", dogru: "Kimin farklı cevap verdiğini ve sonucun hangi yöne kaydığını bağlamla yaz." }
+            { baslik: "Yarım cevap puan getirmez", metin: "“The sample is biased.” yetmez; parametreyi bağlamıyla (“true proportion of all students who…”) söyle." }
+          ] }
       ]
     },
     {
       baslik: "*Undercoverage* ve *sampling frame*",
+      kisa: "Listede olmayan kişi seçilemez; rastgele seçim bunu çözmez.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📋", terim: "Sampling frame", tr: "örnekleme çerçevesi", tanim: "Örneklemin içinden seçildiği liste; ideali popülasyonun tamamını içermesidir.", ornek: "Sınıfın WhatsApp grubundaki veliler." },
-            { ikon: "🕳️", terim: "Undercoverage bias", tr: "eksik kapsama yanlılığı", tanim: "Popülasyonun bir kısmının listede olmaması yüzünden seçilme şansının olmaması (ya da az olması) ve bu kişilerin farklı cevap verecek olması.", ornek: "WhatsApp grubunda olmayan veliler baştan dışarıda." }
+            { ikon: "🕳️", terim: "Undercoverage bias", tr: "eksik kapsama yanlılığı", tanim: "Popülasyonun bir kısmının listede olmaması yüzünden seçilme şansının olmaması (ya da az olması) ve bu kişilerin farklı cevap verecek olması.", ornek: "WhatsApp grubunda olmayan veliler; ya da derenin yalnızca bir yakasından toprak örneği almak." }
           ] },
         { tip: "ornek", baslik: "Velileri WhatsApp grubundan seçmek", durum: "11-B'nin 30 velisi var, sınıfın WhatsApp grubunda 24 üye. Anketi gruptan rastgele seçtiğin velilere yapıyorsun.",
           adimlar: ["Rastgele seçim var ama liste (sampling frame) yalnızca gruptakiler.", "Dışarıda kalanlar: 30 − 24 = 6 veli.", "Bu 6 velinin seçilme şansı 0.", "Gruba katılmayan veliler farklı düşünüyorsa sonuç kayar."],
@@ -136,14 +86,12 @@ window.DEFTER = {
             { metin: "Sampling frame: yalnızca grup üyeleri, 24 veli. Altı kişi listenin dışında.", goster: ["lst", "lt", "out"] },
             { metin: "Zar yalnızca listenin içinde dönüyor. Dışarıdaki 6 kişinin ==seçilme şansı 0==.", goster: ["pick"] }
           ] },
-        { tip: "ornek", baslik: "Dere", durum: "Bir arazinin toprağını incelemek için yalnızca derenin bir yakasından örnek alınıyor.",
-          adimlar: ["Ortadan bir dere geçiyor ve iki yaka farklı toprak.", "Sol yaka rastgele örneklenir; sağ yakadan hiç örnek alınmaz.", "Sağ yaka listeye hiç girmediği için seçilemez."],
-          sonuc: "*Undercoverage bias*: karşı yaka hiç temsil edilmedi." },
-        { tip: "tuzak", baslik: "Rastgele seçim her şeyi çözmez", metin: "Rastgele seçim convenience ve voluntary response'u önler; ama liste eksikse yine bias çıkar.", yanlis: "“Rastgele seçtim, o halde bias yok.”", dogru: "Liste (sampling frame) herkesi kapsamıyorsa *undercoverage* vardır." }
+        { tip: "tuzak", baslik: "Rastgele seçim her şeyi çözmez", metin: "Rastgele seçim *convenience* ve *voluntary response*'u önler; ama liste eksikse yine bias çıkar.", yanlis: "“Rastgele seçtim, o halde bias yok.”", dogru: "Liste (sampling frame) herkesi kapsamıyorsa *undercoverage* vardır." }
       ]
     },
     {
       baslik: "*Nonresponse bias*",
+      kisa: "Seçildiği hâlde cevap vermeyenler farklıysa sonuç kayar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "✉️", terim: "Nonresponse bias", tr: "cevapsızlık yanlılığı", tanim: "Örnekleme ==seçilen== ama ulaşılamayan ya da katılmayı reddeden bireylerin farklı cevap verecek olması.", ornek: "Postayla gönderilen ankete çok yoğun olanların dönmemesi." }
@@ -159,21 +107,12 @@ window.DEFTER = {
             { metin: "Okul hesabında anket paylaşıldı, isteyen oy verdi.", cevap: "sag", neden: "Kimse seçilmedi; gönüllüler katıldı." },
             { metin: "Rastgele seçilen kişilerin evine gidildi ama kapıyı açan olmadı.", cevap: "sol", neden: "Seçilmiş ama ulaşılamamış kişiler." },
             { metin: "Televizyon programı izleyicilerden telefonla oy vermesini istiyor.", cevap: "sag", neden: "Herkes kendi isteğiyle katılıyor." }
-          ] },
-        { tip: "ikili",
-          sol: { ikon: "🕳️", baslik: "*Undercoverage*", maddeler: ["Kişi listede bile yok", "Seçilme şansı sıfır ya da çok az", "Sorun seçim ÖNCESİ"] },
-          sag: { ikon: "📭", baslik: "*Nonresponse*", maddeler: ["Kişi seçildi", "Seçildikten sonra cevap yok", "Sorun seçim SONRASI"] },
-          oyun: [
-            { metin: "Velileri yalnızca WhatsApp grubundan seçmek.", cevap: "sol", neden: "Grupta olmayanlar listede yok." },
-            { metin: "Seçilen 2000 kişiden yalnızca 317'sinin dönmesi.", cevap: "sag", neden: "Seçilmiş, ama cevap yok." },
-            { metin: "Dereye bakan tek bir yakadan örnek almak.", cevap: "sol", neden: "Karşı yaka hiç seçilemez." },
-            { metin: "Rastgele seçilmiş, ama anketi hiç yanıtlamayan 410 kişi.", cevap: "sag", neden: "Seçildiler; sorun seçim sonrası cevap vermemeleri." }
-          ] },
-        { tip: "tuzak", baslik: "Voluntary response ile karıştırma", metin: "Seçilen kişilerin cevap vermemesini anlatmak için “*voluntary response*” terimini kullanma.", yanlis: "“Rastgele seçilen kullanıcıların çoğu cevap vermedi: voluntary response bias.”", dogru: "Araştırmacı seçti + kişi cevap vermedi = *nonresponse bias*." }
+          ] }
       ]
     },
     {
       baslik: "*Response bias* ve soru yazılışı",
+      kisa: "Cevap gerçeği süsleyebilir; yönlendirici soru cevabı iter.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🤥", terim: "Response bias", tr: "yanıt yanlılığı", tanim: "Cevap var ama gerçeği yansıtmıyor: utanılan konularda süsleme, hatırlama hatası, kendi bildirimi (*self-report*).", ornek: "Oy vermediğini söylemekten çekinmek." },
@@ -186,18 +125,18 @@ window.DEFTER = {
           sonuc: "*Response bias*: oy vermeyenlerin oranı ankette olduğundan düşük çıkar (*underestimate*)." },
         { tip: "ikili", ayirici: "↔",
           sol: { ikon: "🙂", baslik: "Tarafsız soru", maddeler: ["“Kantin menüsü değişsin mi?”", "Cevabı etkilemez", "Daha güvenilir"] },
-          sag: { ikon: "🧲", baslik: "Yönlendirici soru", maddeler: ["“Sağlıksız ve pahalı kantin yemekleri değişsin mi?”", "“Evet” cevabını itiyor", "*Leading question*"] },
+          sag: { ikon: "🧲", baslik: "Yönlendirici soru", maddeler: ["“Sağlıksız ve pahalı kantin yemekleri değişsin mi?”", "“Evet” cevabını itiyor: sonuç *overestimate*", "*Leading question*"] },
           oyun: [
             { metin: "Kantin menüsü değişsin mi?", cevap: "sol", neden: "Hiçbir tarafı tutmuyor." },
             { metin: "Sağlıksız ve pahalı kantin yemekleri değişsin mi?", cevap: "sag", neden: "“Sağlıksız ve pahalı” cevabı belirliyor." },
             { metin: "Müdür öğrencilere yüz yüze “okulu seviyor musun?” diye soruyor.", cevap: "sag", neden: "Soran kişi cevabı etkiliyor." },
             { metin: "Anonim bir formda “okulu seviyor musun?”", cevap: "sol", neden: "Çekinmeden cevap verilir." }
-          ] },
-        { tip: "tuzak", baslik: "Soruyu sen yazmışsan cevabı da sen verirsin", metin: "Soruda yük taşıyan sözcükler cevabı belirler.", yanlis: "“Sağlıksız ve pahalı yemekler değişsin mi?” sorusuna gelen %90 evet, öğrencilerin gerçek görüşüdür.", dogru: "Soru yönlendiriyor: sonuç *overestimate* edilir. Tarafsız bir soru yaz." }
+          ] }
       ]
     },
     {
       baslik: "Büyük örneklem çözüm değil",
+      kisa: "Örneklemi büyütmek rastgele değişkenliği azaltır, bias'ı değil.",
       bloklar: [
         { tip: "grafik", baslik: "Örneklemi büyüt, bias kalsın", xlabel: "Tahmin edilen oran (%)", ylabel: "Olasılık", xmax: 10, ymax: 10, xticks: [{ v: 5, label: "gerçek oran" }, { v: 9, label: "%92" }], yticks: [],
           ogeler: [
@@ -213,19 +152,19 @@ window.DEFTER = {
         { tip: "zaman", olaylar: [
             { tarih: "1936", baslik: "Bir Amerikan dergisi 2 milyondan fazla cevap topladı", metin: "Yaklaşık 10 milyon anket gönderdi. Seçimi yanlış bildi: Landon kazanacak dedi, kazanan Roosevelt oldu." },
             { tarih: "Neden", baslik: "Adres listesi eksikti", metin: "Adresler telefon rehberlerinden ve araba kayıtlarından alınmıştı: o dönemde ikisine de sahip olmayanlar listede yoktu (*undercoverage*). Gönderilenlerin çoğu da dönmedi (*nonresponse*)." },
-            { tarih: "Ders", baslik: "Büyük örneklem bias'ı düzeltmez", metin: "2 milyon da olsa yanlı yöntem yanlış sonuç verir." }
+            { tarih: "Ders", baslik: "Büyük örneklem bias'ı düzeltmez", metin: "2 milyon da olsa yanlı yöntem yanlış sonuç verir. “Çok kişiye sorarsam düzelir” bir tuzaktır; önce yöntemi düzelt." }
           ] },
         { tip: "adimlar", baslik: "Çare: dört şey", adimlar: [
             { baslik: "1 · Rastgele seç", metin: "Convenience ve voluntary response'tan kurtul." },
             { baslik: "2 · Tam *sampling frame*", metin: "Liste herkesi kapsasın." },
             { baslik: "3 · Tarafsız soru", metin: "Yönlendirmeden yaz." },
             { baslik: "4 · Cevap vermeyenleri takip et", metin: "Bir daha ara, ulaşmaya çalış." }
-          ] },
-        { tip: "tuzak", baslik: "“Çok kişiye sorarsam düzelir”", metin: "Örneklem boyutu rastgele değişkenliği azaltır, bias'ı değil.", yanlis: "“Marmaray çıkışında 50 yerine 5000 kişiye sorarsam sonuç güvenilir olur.”", dogru: "Büyük örneklem yine yanlı kalır. Önce yöntemi düzelt (rastgele seçim, tam liste)." }
+          ] }
       ]
     },
     {
       baslik: "Hangi bias? Karar tablosu",
+      kisa: "Bias türünü, kimin neden dışarıda kaldığına bakarak ayır.",
       bloklar: [
         { tip: "tablo", baslik: "Bias türleri bir bakışta", head: ["Tür", "Ne oldu?", "Örnek"], rows: [
             ["*Convenience*", "Kolay ulaşılanlar alındı", "Eve en yakın sıra"],
@@ -238,12 +177,12 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Spor uygulaması", durum: "Bir spor uygulaması rastgele 500 kullanıcı seçip haftada kaç gün spor yaptıklarını e-postayla soruyor. Yalnızca 90 kişi cevap veriyor. En olası bias türü hangisi?",
           adimlar: ["Cevap oranı: 90 ÷ 500 = 0.18 = %18.", "Cevap vermeyen: 500 − 90 = 410 kişi.", "Kişileri araştırmacı seçti, çoğu cevap vermedi.", "Kimse seçilmeseydi, isteyen katılsaydı *voluntary response* olurdu."],
           sonuc: "*Nonresponse bias*." },
-        { tip: "tuzak", baslik: "Bias'ı bağlamla yönlendir", metin: "Yönü her zaman bağlamla söyle.", yanlis: "“Overestimate” deyip bırakmak.", dogru: "“…is likely an overestimate of the true mean number of hours…” gibi parametreyi adlandır." },
-        { tip: "tuzak", baslik: "Rastgele seçim hangisini önler?", metin: "Rastgele seçim *convenience* ve *voluntary response* bias'ını önler; *undercoverage*, *nonresponse* ve *response bias* kendiliğinden çözülmez (tam liste, takip, anonimlik, tarafsız soru gerekir).", yanlis: "“Rastgele seçtim, bütün bias türleri bitti.”", dogru: "Her bias türünün kendi çaresi var." }
+        { tip: "tuzak", baslik: "Yönü bağlamla söyle; rastgele seçim hepsini çözmez", metin: "Rastgele seçim yalnızca *convenience* ve *voluntary response* bias'ını önler. *Undercoverage*, *nonresponse* ve *response bias* için tam liste, takip, anonimlik ve tarafsız soru gerekir.", yanlis: "“Overestimate” deyip bırakmak ya da “Rastgele seçtim, bütün bias türleri bitti.”", dogru: "“…is likely an overestimate of the true mean number of hours…” gibi parametreyi adlandır; her bias türünün kendi çaresi var." }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Bias*: yöntemin sonucu hep aynı yöne kaydırması (*overestimate* ya da *underestimate*); tek örneklemin şanssızlığı değildir.",

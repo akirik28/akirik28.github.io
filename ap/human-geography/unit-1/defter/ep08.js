@@ -2,15 +2,14 @@
    Kaynak: ap-videolar/src/episodes/ep08 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep08",
-  ozet: "Her harita bir soruya cevap verir. *Reference map* \"nerede?\" der; *thematic map* \"ne kadar, hangi desen?\" der. Sınavın en sevdiği soru: bu veri için hangi harita? Oran → *choropleth*, tam konum → *dot density*, toplam büyüklük → *proportional symbol*, hareket → *flow map*, eşit değerler → *isoline*.",
+  amac: "Bu konu haritaların iki ana türünü anlatıyor: yer gösteren *reference map* ve bir veriyi anlatan *thematic map*. Hangi veri için hangi haritayı seçeceğini öğreneceksin: oran, tam konum, toplam, hareket ya da eşit değer.",
   bolumler: [
     {
       baslik: "Her harita bir soruya cevap verir",
+      kisa: "*Reference map* \"nerede?\", *thematic map* \"ne kadar, hangi desen?\" sorusunu yanıtlar.",
       bloklar: [
-        { tip: "hikaye", ikon: "🧭", baslik: "Telefonundaki navigasyon da bir harita",
-          metin: "Telefonundaki navigasyon \"nerede?\" sorusunu cevaplar. Bir ülkenin gelir haritası ise \"ne kadar?\" sorusunu. Aynı dünya, iki farklı soru; iki farklı harita türü." },
-        { tip: "ikili", sol: { ikon: "📍", baslik: "*Reference map*", maddeler: ["\"Nerede?\" sorusuna cevap verir", "Sınırlar, yollar, şehir adları", "Örnek: telefondaki navigasyon"] },
-          sag: { ikon: "📊", baslik: "*Thematic map*", maddeler: ["\"Ne kadar? Nasıl bir desen var?\"", "Tek bir konunun hikâyesi: nüfus, gelir, sıcaklık", "Örnek: eyalete göre işsizlik haritası"] },
+        { tip: "ikili", sol: { ikon: "📍", baslik: "*Reference map*", maddeler: ["\"Nerede?\" sorusuna cevap verir", "Sınırlar, yollar, şehir adları; örnek: telefondaki navigasyon"] },
+          sag: { ikon: "📊", baslik: "*Thematic map*", maddeler: ["\"Ne kadar? Nasıl bir desen var?\"", "Tek bir konunun hikâyesi: nüfus, gelir, sıcaklık"] },
           oyun: [
             { metin: "Telefondaki navigasyon haritası.", cevap: "sol", neden: "Nerede olduğunu gösterir: *reference*." },
             { metin: "İllere göre işsizlik oranını gösteren renkli harita.", cevap: "sag", neden: "Tek bir konunun deseni: *thematic*." },
@@ -30,6 +29,7 @@ window.DEFTER = {
     },
     {
       baslik: "*Choropleth*: renk tonuyla boyama",
+      kisa: "*Choropleth* bölgeleri oran ile boyar; ham sayı büyük alanları şişirir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🎨", terim: "Choropleth map", tr: "kloropet harita", tanim: "Bölgeleri renk tonlarıyla boyar; koyu renk yüksek değer. ==Oranlar ve yoğunluklar için idealdir.==", ornek: "Kişi başı gelir, işsizlik yüzdesi." }
@@ -42,6 +42,7 @@ window.DEFTER = {
     },
     {
       baslik: "*Dot density*: nokta nokta",
+      kisa: "*Dot density*'de her nokta sabit bir miktardır; kümelenmeyi gösterir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "⚫", terim: "Dot density map", tr: "nokta yoğunluğu haritası", tanim: "Her nokta sabit bir miktarı temsil eder. ==Verinin tam olarak nerede toplandığını, yani kümelenmeyi gösterir.==", ornek: "Bir nokta = 10.000 kişi. Kuzeydoğuda, Kaliforniya kıyısında noktalar sıktır; Great Plains'te seyrek." }
@@ -49,8 +50,8 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Noktayı kişiye çevirmek", durum: "Lejant: 1 nokta = 10.000 kişi. Bir ilçede 25 nokta var. İlçenin nüfusu ne kadar?",
           adimlar: ["Nokta sayısı: 25.", "Her nokta 10.000 kişi: 25 × 10.000 = 250.000."],
           sonuc: "İlçenin nüfusu yaklaşık ==250.000 kişi==." },
-        { tip: "ikili", sol: { ikon: "🎨", baslik: "*Choropleth*", maddeler: ["Bölge tek renk", "Oran ve yoğunluk", "Alan içinde dağılımı göstermez"] },
-          sag: { ikon: "⚫", baslik: "*Dot density*", maddeler: ["Noktalar gerçek dağılımı gösterir", "Sabit miktar = bir nokta", "Kümelenmeyi (*clustered*) gösterir"] },
+        { tip: "ikili", sol: { ikon: "🎨", baslik: "*Choropleth*", maddeler: ["Bölge tek renk; oran ve yoğunluk", "Alan içinde dağılımı göstermez"] },
+          sag: { ikon: "⚫", baslik: "*Dot density*", maddeler: ["Noktalar gerçek dağılımı gösterir", "Kümelenmeyi (*clustered*) gösterir"] },
           oyun: [
             { metin: "Nüfusun hangi kesimlerde toplandığını tek tek noktalarla gösteren harita.", cevap: "sag", neden: "Konum ve kümelenme: *dot density*." },
             { metin: "İllere göre işsizlik yüzdesini renkle gösteren harita.", cevap: "sol", neden: "Yüzde ve bölge boyaması: *choropleth*." },
@@ -60,17 +61,17 @@ window.DEFTER = {
     },
     {
       baslik: "*Proportional symbol* ve *cartogram*",
+      kisa: "Sembol boyutu toplamı gösterir; kartogramda alan veriye göre şişer.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "⭕", terim: "Proportional (graduated) symbol map", tr: "orantılı sembol haritası", tanim: "Sembolün boyutu değerle birlikte büyür. Büyük daire, büyük sayı. ==Toplam miktarları karşılaştırmak için== kullanılır.", ornek: "Şehir nüfuslarına göre büyüyen daireler: Tokyo, Delhi, İstanbul, Londra, New York." },
             { ikon: "🫧", terim: "Cartogram", tr: "kartogram", tanim: "Ülkelerin büyüklüğü gerçek yüzölçümüne göre değil, seçilen veriye göre şişer ya da küçülür.", ornek: "Nüfus kartogramında Hindistan ve Çin devleşir; Kanada ve Rusya ufacık kalır." }
           ] },
-        { tip: "ikili", sol: { ikon: "🎨", baslik: "*Choropleth*", maddeler: ["Oran / yüzde", "Renk tonu", "Bölgeyi boyar"] },
-          sag: { ikon: "⭕", baslik: "*Proportional symbol*", maddeler: ["Toplam büyüklük", "Sembol boyutu", "Şehir nüfusu gibi toplamlar"] },
+        { tip: "ikili", sol: { ikon: "🎨", baslik: "*Choropleth*", maddeler: ["Oran / yüzde", "Renk tonu, bölgeyi boyar"] },
+          sag: { ikon: "⭕", baslik: "*Proportional symbol*", maddeler: ["Toplam büyüklük", "Sembol boyutu; şehir nüfusu gibi toplamlar"] },
           oyun: [
             { metin: "Her şehrin üstünde, toplam nüfusuyla orantılı büyüklükte bir daire var.", cevap: "sag", neden: "Toplam miktar ve sembol boyutu: *proportional symbol*." },
             { metin: "Eyaletler kişi başı gelire göre açıktan koyuya boyanmış.", cevap: "sol", neden: "Oran ve renk tonu: *choropleth*." },
-            { metin: "Büyük daire büyük sayı, küçük daire küçük sayı.", cevap: "sag", neden: "Sembol boyutu değerle büyür." },
             { metin: "İstanbul için büyük, Ankara için orta, İzmir için küçük bir daire çizilmiş.", cevap: "sag", neden: "Daire boyutu toplam nüfusu gösterir: *proportional symbol*." }
           ] },
         { tip: "tuzak", metin: "Dünya haritasında Hindistan ve Çin devasa, Kanada ve Rusya ufacık görünüyor.", yanlis: "Bu bir *Gall-Peters* ya da *Mercator* projeksiyonudur.", dogru: "Ülkelerin büyüklüğü yüzölçümüne göre değil nüfusa göre çizildiği için bu bir ==*cartogram*==." }
@@ -78,6 +79,7 @@ window.DEFTER = {
     },
     {
       baslik: "*Isoline* ve *topographic map*",
+      kisa: "*Isoline* eşit değerleri birleştirir; çizgiler sıksa değişim hızlıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "〰️", terim: "Isoline map", tr: "eş değer çizgisi haritası", tanim: "Eşit değere sahip noktaları çizgilerle birleştirir. ==Çizgiler sıklaşıyorsa değişim hızlıdır.==", ornek: "Hava durumu haritasındaki sıcaklık ve basınç çizgileri." },
@@ -118,23 +120,18 @@ window.DEFTER = {
     },
     {
       baslik: "*Flow map* ve *location chart*",
+      kisa: "*Flow map* hareketi gösterir; ok yönü nereye, kalınlık ne kadar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "➡️", terim: "Flow map", tr: "akış haritası", tanim: "Hareketi gösterir. Okun yönü nereye gittiğini, ==kalınlığı ne kadar gittiğini== anlatır.", ornek: "Göç, ticaret, uçuş rotaları." },
             { ikon: "📈", terim: "Location chart", tr: "konum grafiği", tanim: "Haritanın üzerine, her yerin kendi konumuna küçük grafikler (pasta, sütun) yerleştirilir.", ornek: "Şehirlerin üstüne küçük pasta grafikleri konması." }
           ] },
-        { tip: "ikili", sol: { ikon: "➡️", baslik: "*Flow map*", maddeler: ["Hareketi gösterir", "Ok yönü + kalınlık", "Göç, ticaret, uçuş"] },
-          sag: { ikon: "📍", baslik: "Duran veriler", maddeler: ["Hareket değil, konum", "Nokta, renk, sembol", "Bir yerdeki miktar"] },
-          oyun: [
-            { metin: "Ülkeler arası göç akımlarının yönünü ve hacmini göstermek.", cevap: "sol", neden: "Hareket: *flow map*." },
-            { metin: "Her ilçedeki toplam nüfusu nokta ya da daire ile göstermek.", cevap: "sag", neden: "Duran bir miktar: *dot density* / *proportional symbol*." },
-            { metin: "Havayolu uçuş rotalarını kalın ve ince oklarla çizmek.", cevap: "sol", neden: "Hareket ve miktar: *flow map*." }
-          ] },
-        { tip: "tuzak", metin: "Göç akımlarının yönü ve hacmi soruluyor; şıklarda *choropleth* ve *cartogram* var.", yanlis: "*Choropleth*: renk hangi ülkelerin göç aldığını gösterir.", dogru: "Yön ve hacim = hareket = ==*flow map*==." }
+        { tip: "tuzak", metin: "Göç akımlarının yönü ve hacmi soruluyor; şıklarda *choropleth* ve *cartogram* var.", yanlis: "*Choropleth*: renk hangi ülkelerin göç aldığını gösterir.", dogru: "Yön ve hacim = hareket = ==*flow map*==. Duran veriler (nokta, daire, renk) hareketi göstermez." }
       ]
     },
     {
       baslik: "Hangi veri, hangi harita?",
+      kisa: "Veri tipine bak: oran, konum, toplam, hareket ya da eşit değer.",
       bloklar: [
         { tip: "tablo", baslik: "Sınavın en sevdiği eşleştirme", head: ["Veri tipi", "Harita"], rows: [
             ["Oran ya da yüzde", "*Choropleth*"],
@@ -155,6 +152,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Reference map* \"nerede?\" der; *thematic map* \"ne kadar, hangi desen?\" der.",

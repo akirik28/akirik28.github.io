@@ -2,46 +2,41 @@
    Kaynak: ap-videolar/src/episodes/bf17 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf17",
-  ozet: "İş büyüyünce daha çok insan, net bir yapı ve karar düzeni gerekir. Bu defterde dört yasal yapıyı (*sole proprietorship*, *partnership*, *LLC*, *corporation*), onları ayıran ölçütü (*liability*), *corporation*'da kimin ne yaptığını (*shareholder*, *board of directors*, *executive leadership*), bölümleri (*departments*) ve *outsourcing*'i göreceksin.",
+  amac: "Bu konu işletmenin yasal yapısını ve içindeki düzeni anlatıyor: şahıs işletmesi, ortaklık, *LLC* ve anonim şirketi ayıran ölçüt *liability*'dir. Şirkette kimin karar verdiğini, bölümleri ve *outsourcing*'i öğreneceksin.",
   bolumler: [
     {
-      baslik: "Tek başına yetişemiyorsun",
+      baslik: "Büyüyen işin yapısı: dört yasal seçenek",
+      kisa: "İş büyüyünce insan, yapı ve karar düzeni gerekir; yasal yapı seçilir.",
       bloklar: [
-        { tip: "hikaye", ikon: "🍪", baslik: "Evden kurabiye satıyorsun",
-          metin: "Evde kurabiye yapıp internetten satıyorsun. Siparişler patladı. Mesajlara sen bakıyorsun, kargoyu sen hazırlıyorsun, hesabı sen tutuyorsun. Bir gün bakıyorsun: tek başına yetişemiyorsun. Büyüyen iş daha çok insan, net bir yapı ve karar düzeni ister." },
         { tip: "adimlar", baslik: "Büyüyen işin üç ihtiyacı", adimlar: [
-            { baslik: "*People*", metin: "Daha çok insan." },
+            { baslik: "*People*", metin: "Daha çok insan: tek başına e-posta, kargo ve hesap tutmaya yetişemezsin." },
             { baslik: "*Structure*", metin: "Net bir yapı." },
             { baslik: "*Systems*", metin: "Net bir karar düzeni." }
           ] },
-        { tip: "not", metin: "Her şey yolunda giderse yeni bir sorunun olur: hepsini tek başına yapamazsın. E-postalara cevap, sosyal medya, gider takibi, stok siparişi hep sende. Dave Ramsey'e göre ilk çalışanı almadan önce işin ==altında ezilmek normaldir.==" }
-      ]
-    },
-    {
-      baslik: "Yasal yapı: *business structure*",
-      bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🏛️", terim: "Business structure", tr: "işletme yapısı", tanim: "İşletmenin yasal yapısı; kimin sahip olduğunu, kimin karar verdiğini ve borçtan kimin sorumlu olduğunu belirler.", ornek: "Şahıs şirketi, limited şirket, anonim şirket." }
           ] },
         { tip: "harita", merkez: "Dört yasal yapı", dallar: [
-            { baslik: "1 · *Sole proprietorship*", alt: "Tek sahip; şahıs şirketine yakın" },
+            { baslik: "1 · *Sole proprietorship*", alt: "Tek sahip; şahıs şirketine yakın. ABD'de işletmelerin yaklaşık %65'i, en yaygın yapı" },
             { baslik: "2 · *Partnership*", alt: "İki ya da daha fazla sahip" },
             { baslik: "3 · *LLC*", alt: "Limited şirkete yakın" },
             { baslik: "4 · *Corporation*", alt: "Anonim şirkete yakın" }
-          ] },
-        { tip: "sayilar", ogeler: [
-            { deger: 65, sonek: "%", etiket: "ABD'de işletmelerin yaklaşık payı: sole proprietorship (en yaygın yapı)" }
           ] }
       ]
     },
     {
-      baslik: "*Sole proprietorship*: tek kişilik işletme",
+      baslik: "*Sole proprietorship* ve *partnership*",
+      kisa: "Tek sahip ya da ortaklarda sorumluluk sınırsızdır; kişisel mal varlığı risktedir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧵", terim: "Sole proprietorship", tr: "şahıs işletmesi", tanim: "Tek kişinin sahip olduğu ve işlettiği, sahibiyle işletme arasında yasal ayrım bulunmayan işletme.", ornek: "Mahalledeki terzi." },
+            { ikon: "🤝", terim: "Partnership", tr: "ortaklık", tanim: "İki ya da daha fazla kişinin sahip olup işlettiği; kârın, zararın ve sorumluluğun paylaşıldığı işletme. Güven şarttır.", ornek: "Sen kurabiyeyi yaparsın, arkadaşın Elif satar." },
             { ikon: "⛓️", terim: "Liability", tr: "yasal sorumluluk", tanim: "İşletmenin borçlarından, yükümlülüklerinden ve yaptıklarından doğan yasal sorumluluk.", ornek: "Borç kalırsa kim öder?" },
             { ikon: "♾️", terim: "Unlimited liability", tr: "sınırsız sorumluluk", tanim: "İşletme borcunu ödeyemezse ya da dava edilirse sahibinin kişisel mal varlığıyla sorumlu olması; sorumluluğun sınırı yoktur.", ornek: "400 bin liralık borç için arabana el konabilir." }
           ] },
+        { tip: "ornek", baslik: "İş battı: kim ödüyor?", durum: "Sole proprietorship'in 500.000 TL borcu kaldı, kasada 100.000 TL var. Kalan borç için kim sorumlu?",
+          adimlar: ["Toplam borç = 500.000 TL.", "Kasadaki para = 100.000 TL.", "Kalan borç = 500.000 − 100.000 = 400.000 TL.", "*Unlimited liability*: kalan 400.000 TL için birikimine, arabana el konabilir."],
+          sonuc: "Sahip kişisel mal varlığıyla 400.000 TL öder. Yasalara göre sen ve işletmen aynısınız." },
         { tip: "ikili", sol: { ikon: "👑", baslik: "Kontrol ve kâr", maddeler: ["Bütün kararlar senin", "Kârın tamamı senin"] },
           sag: { ikon: "💣", baslik: "Risk", maddeler: ["Bütün risk de senin", "Kişisel mal varlığın tehlikede"] },
           oyun: [
@@ -50,57 +45,17 @@ window.DEFTER = {
             { metin: "Yıl sonunda kârın tamamını cebine koymak.", cevap: "sol", neden: "Kâr paylaşılmaz." },
             { metin: "Borcu ödeyemeyince arabanın haczedilmesi.", cevap: "sag", neden: "Tüm risk de sende." }
           ] },
-        { tip: "ornek", baslik: "İş battı: kim ödüyor?", durum: "Sole proprietorship'in 500.000 TL borcu kaldı, kasada 100.000 TL var. Kalan borç için kim sorumlu?",
-          adimlar: ["Toplam borç = 500.000 TL.", "Kasadaki para = 100.000 TL.", "Kalan borç = 500.000 − 100.000 = 400.000 TL.", "*Unlimited liability*: kalan 400.000 TL için birikimine, arabana el konabilir."],
-          sonuc: "Sahip kişisel mal varlığıyla 400.000 TL öder. Yasalara göre sen ve işletmen aynısınız." },
-        { tip: "grafik", baslik: "500 bin liralık borç kimin cebinden? (bin TL)", xlabel: "Kalem", ylabel: "Bin TL", xmax: 4, ymax: 600,
-          yticks: [{ v: 100, label: "100" }, { v: 400, label: "400" }, { v: 500, label: "500" }],
-          ogeler: [
-            { id: "b", tip: "alan", renk: 0, noktalar: [[0.4, 0], [1.2, 0], [1.2, 0], [0.4, 0]] },
-            { id: "k", tip: "alan", renk: 1, noktalar: [[1.6, 0], [2.4, 0], [2.4, 0], [1.6, 0]] },
-            { id: "p", tip: "alan", renk: 3, noktalar: [[2.8, 0], [3.6, 0], [3.6, 0], [2.8, 0]] },
-            { id: "bt", tip: "yazi", x: 0.8, y: 530, metin: "Borç 500", gizli: true },
-            { id: "kt", tip: "yazi", x: 2, y: 130, metin: "Kasa 100", gizli: true },
-            { id: "pt", tip: "yazi", x: 3.2, y: 430, metin: "Kişisel 400", gizli: true }
-          ],
-          durumlar: [
-            { metin: "İş battı: ==500 bin TL borç== kaldı.", set: { b: { noktalar: [[0.4, 0], [1.2, 0], [1.2, 500], [0.4, 500]] } }, goster: ["bt"] },
-            { metin: "Kasada yalnızca ==100 bin TL== var.", set: { k: { noktalar: [[1.6, 0], [2.4, 0], [2.4, 100], [1.6, 100]] } }, goster: ["kt"] },
-            { metin: "Kalan ==400 bin TL== kişisel birikimden çıkar. Tüm kontrol da, tüm risk de sende.", set: { p: { noktalar: [[2.8, 0], [3.6, 0], [3.6, 400], [2.8, 400]] } }, goster: ["pt"] }
-          ] },
-        { tip: "tuzak", baslik: "Sahip ile işletme aynı", metin: "*Sole proprietorship*'te sahip ile işletme arasında yasal ayrım yoktur.", yanlis: "İşletme borçlanırsa sahibin kişisel mal varlığı güvendedir.", dogru: "Yasalara göre sen ve işletmen aynısınız; *unlimited liability* geçerlidir." }
-      ]
-    },
-    {
-      baslik: "*Partnership*: ortaklık",
-      bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "🤝", terim: "Partnership", tr: "ortaklık", tanim: "İki ya da daha fazla kişinin sahip olup işlettiği; kârın, zararın ve sorumluluğun paylaşıldığı işletme.", ornek: "Sen kurabiyeyi yaparsın, arkadaşın Elif satar." }
-          ] },
-        { tip: "adimlar", baslik: "Yükü paylaşmak", adimlar: [
-            { baslik: "Yetenekler birleşir", metin: "Biri ürünü yaratmada, diğeri pazarlama ve satışta iyi." },
-            { baslik: "Paylaşım", metin: "Kâr, zarar ve sorumluluk paylaşılır." },
-            { baslik: "Güven şart", metin: "Ortağınla her şeyi paylaşırsın." },
-            { baslik: "Dikkat", metin: "Burada da *unlimited liability* var." }
-          ] },
-        { tip: "zaman", olaylar: [
-            { tarih: "1976", baslik: "Apple kuruldu", metin: "Üç ortaklı bir *partnership* olarak." },
-            { tarih: "+12 gün", baslik: "Ortaklardan biri ayrıldı", metin: "Borçlardan sorumlu olmaktan korkup payını 800 dolara sattı." },
-            { tarih: "Ders", baslik: "Risk gerçek", metin: "Ortak sayısı artınca *unlimited liability* kaybolmaz." }
-          ] },
-        { tip: "tuzak", baslik: "Ortak çoksa risk azalır mı?", metin: "Clifford özellikle vurguluyor: *partnership*'te de “tıpkı *sole proprietorship* gibi” *unlimited liability* var.", yanlis: "Ortak sayısı artınca kişisel sorumluluk azalır.", dogru: "Ortak sayısı riski azaltmaz; her ortak borçtan kişisel olarak sorumlu olabilir." }
+        { tip: "tuzak", baslik: "Ortak çoksa risk azalır mı?", metin: "Clifford vurguluyor: *partnership*'te de “tıpkı *sole proprietorship* gibi” *unlimited liability* var. Apple 1976'da üç ortaklı kurulmuştu; ortaklardan biri borçlardan sorumlu olmaktan korkup 12 gün sonra payını 800 dolara sattı.", yanlis: "Ortak sayısı artınca kişisel sorumluluk azalır; işletme borçlanırsa sahibin birikimi güvendedir.", dogru: "Ortak sayısı riski azaltmaz; her ortak borçtan kişisel olarak sorumlu olabilir." }
       ]
     },
     {
       baslik: "*LLC*: sınırlı sorumluluk",
+      kisa: "*LLC* esnektir ve sahiplerin kaybını yatırdıkları parayla sınırlar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🛡️", terim: "LLC (Limited liability company)", tr: "limited şirket", tanim: "*Partnership* ile *corporation* özelliklerini birleştiren ve sahiplerine *limited liability* sağlayan yapı.", ornek: "Doktor, dişçi, muhasebeci gibi profesyonel hizmet işlerinde yaygın." },
+            { ikon: "🛡️", terim: "LLC (Limited liability company)", tr: "limited şirket", tanim: "“*Partnership* ile *corporation* özelliklerini birleştirir ve *limited liability* sağlar.” Doktor, dişçi, muhasebeci gibi profesyonel hizmet işlerinde yaygındır.", ornek: "Küçük işletmenin esnekliği, daha az kişisel risk." },
             { ikon: "🧱", terim: "Limited liability", tr: "sınırlı sorumluluk", tanim: "Sahiplerin, işletmenin borçlarından yatırdıkları paranın ötesinde kişisel olarak sorumlu olmaması; kişisel mal varlığı korunur.", ornek: "200 bin TL koydun, kaybın en fazla 200 bin TL." }
           ] },
-        { tip: "ornek", baslik: "LLC battı: ne kaybedersin?", durum: "Şirkete 200.000 TL koydun. Şirket 500.000 TL borçla battı. *Limited liability* varsa ne kaybedersin?",
-          adimlar: ["Yatırdığın para = 200.000 TL.", "Şirketin borcu = 500.000 TL, ama kişisel sorumluluk yok.", "Kaybın = yatırdığın 200.000 TL.", "Evin ve birikimin güvende."],
-          sonuc: "Kaybın 200.000 TL. Aynı borçta *sole proprietorship* olsaydı kişisel birikimden de çıkardı." },
         { tip: "grafik", baslik: "Aynı batış, iki yapı: kim ne kaybeder? (bin TL)", xlabel: "Yapı", ylabel: "Kayıp (bin TL)", xmax: 4, ymax: 600,
           yticks: [{ v: 200, label: "200" }, { v: 500, label: "500" }],
           ogeler: [
@@ -111,15 +66,15 @@ window.DEFTER = {
             { id: "gv", tip: "yazi", x: 2.8, y: 320, metin: "Ev ve birikim güvende", gizli: true }
           ],
           durumlar: [
-            { metin: "*Sole proprietorship*: borcun hepsi sahibin sorumluluğunda: ==500 bin TL.==", set: { sp: { noktalar: [[0.5, 0], [1.5, 0], [1.5, 500], [0.5, 500]] } }, goster: ["spt"] },
-            { metin: "*LLC*: kayıp yalnızca yatırılan ==200 bin TL.==", set: { ll: { noktalar: [[2.3, 0], [3.3, 0], [3.3, 200], [2.3, 200]] } }, goster: ["llt"] },
+            { metin: "Şirket 500.000 TL borçla battı. *Sole proprietorship*: borcun hepsi sahibin sorumluluğunda: ==500 bin TL.==", set: { sp: { noktalar: [[0.5, 0], [1.5, 0], [1.5, 500], [0.5, 500]] } }, goster: ["spt"] },
+            { metin: "*LLC*'ye 200.000 TL koymuştun: kayıp yalnızca yatırılan ==200 bin TL.==", set: { ll: { noktalar: [[2.3, 0], [3.3, 0], [3.3, 200], [2.3, 200]] } }, goster: ["llt"] },
             { metin: "Evin ve birikimin ==güvende==.", goster: ["gv"] }
-          ] },
-        { tip: "not", metin: "LLC'nin tanım kalıbı: ==“*partnership* ile *corporation* özelliklerini birleştirir ve *limited liability* sağlar.”== Küçük işletmenin esnekliği, daha az kişisel risk." }
+          ] }
       ]
     },
     {
       baslik: "Dört yapıyı karşılaştır",
+      kisa: "*Liability* dört yapıyı ayıran ana ölçüttür; sahip sayısı değil.",
       bloklar: [
         { tip: "tablo", baslik: "Liability dört yapıyı ayıran ana ölçüt", head: ["Yapı", "Sahip", "*Liability*", "Not"], rows: [
             ["*Sole proprietorship*", "Tek kişi", "Sınırsız (*unlimited*)", "Tüm kontrol ve tüm risk sende"],
@@ -141,9 +96,10 @@ window.DEFTER = {
     },
     {
       baslik: "*Corporation*: hisseler ve sahipler",
+      kisa: "*Corporation* sahiplerinden ayrıdır; sahipleri hisse alan *shareholder*'lardır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🏢", terim: "Corporation", tr: "anonim şirket", tanim: "Sahiplerinden ayrı bir tüzel kişi olarak var olan ve *shareholder*'ların sahip olduğu şirket.", ornek: "Disney." },
+            { ikon: "🏢", terim: "Corporation", tr: "anonim şirket", tanim: "Sahiplerinden ayrı bir tüzel kişi olarak var olan ve *shareholder*'ların sahip olduğu şirket. *Sole proprietorship* ve *partnership*'te böyle bir ayrım yoktur.", ornek: "Disney." },
             { ikon: "🙋", terim: "Shareholder", tr: "hissedar", tanim: "Bir *corporation*'ın hisselerine sahip olan kişi ya da kurum; yani şirketin ortağı.", ornek: "Disney hissesi alan, Disney'in küçücük bir ortağıdır." },
             { ikon: "🧩", terim: "Shares of stock", tr: "hisse senedi", tanim: "Şirketin sahipliğinin bölündüğü küçük parçalar.", ornek: "1 milyon hisse." },
             { ikon: "🔔", terim: "IPO (Initial public offering)", tr: "halka arz", tanim: "Bir şirketin hisselerini ilk kez halka satması.", ornek: "Özel yatırımcılara da satılabilir." }
@@ -151,22 +107,12 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Hisse satarak para toplamak", durum: "Bir şirket 1.000.000 hisseyi hisse başına 50 TL'den satıyor. Kaç lira toplar, bu parayla ne yapar?",
           adimlar: ["Hisse sayısı = 1.000.000.", "Hisse başına fiyat = 50 TL.", "Toplanan = 1.000.000 × 50 = 50.000.000 TL.", "Bu para yeni ürün, çalışan ve şube için kullanılır."],
           sonuc: "Şirket 50 milyon TL toplar: yeni ürün çıkarır, çalışan alır, yeni şube açar. Hisse ve borsa ayrıntısı Personal Finance ünitelerinde; burada yalnızca fikir yeter." },
-        { tip: "grafik", baslik: "IPO ile toplanan para (milyon TL)", xlabel: "Hisse sayısı (milyon)", ylabel: "Toplanan (milyon TL)", xmax: 2, ymax: 110,
-          xticks: [{ v: 0.5, label: "0,5" }, { v: 1, label: "1" }, { v: 1.5, label: "1,5" }],
-          yticks: [{ v: 25, label: "25" }, { v: 50, label: "50" }, { v: 75, label: "75" }],
-          ogeler: [
-            { id: "dogru", tip: "cizgi", renk: 1, from: [0, 0], to: [2, 100], etiket: "Hisse × 50 TL", gizli: true },
-            { id: "n", tip: "nokta", x: 1, y: 50, etiket: "1 milyon hisse = 50 milyon TL", kilavuz: true, gizli: true }
-          ],
-          durumlar: [
-            { metin: "Her hisse ==50 TL==: sattığın hisse arttıkça toplanan para doğrusal artar.", goster: ["dogru"] },
-            { metin: "==1 milyon hisse== satarsan ==50 milyon TL== toplarsın.", goster: ["n"] }
-          ] },
-        { tip: "tuzak", baslik: "Sahipler ve şirket ayrı", metin: "*Corporation* sahiplerinden ayrı var olur. *Sole proprietorship* ve *partnership*'te böyle bir ayrım yok.", yanlis: "*Corporation* ile sahipleri yasal olarak aynıdır.", dogru: "*Corporation* sahiplerinden ayrı bir tüzel kişidir; sahipleri *shareholder*'lardır." }
+        { tip: "tuzak", baslik: "Sahipler ve şirket ayrı", metin: "*Corporation* hisse satarak para toplar ve sahiplerinden ayrı var olur.", yanlis: "*Corporation* ile sahipleri yasal olarak aynıdır.", dogru: "*Corporation* sahiplerinden ayrı bir tüzel kişidir; sahipleri *shareholder*'lardır." }
       ]
     },
     {
       baslik: "Kim karar verir? Kurul ve yönetim",
+      kisa: "Kurul gözetir ve denetler; üst yönetim şirketi yürütür.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🪑", terim: "Board of directors", tr: "yönetim kurulu", tanim: "*Shareholder*'ların seçtiği, şirketin uzun vadeli stratejisini ve üst yönetimini gözeten kurul; günlük işleri yürütmez.", ornek: "Steve Jobs 1985'te kurul kararıyla Apple'dan alındı." },
@@ -188,14 +134,15 @@ window.DEFTER = {
             { metin: "CEO'yu denetleyip performansını değerlendiren grup.", cevap: "sol", neden: "Yürütenleri denetler." },
             { metin: "Şirketin parasını yöneten CFO.", cevap: "sag", neden: "Üst yönetimin bir parçası." }
           ] },
-        { tip: "tuzak", baslik: "Kurucu her zaman karar verici değil", metin: "*Board of directors* günlük işi yürütmez; uzun vadeli stratejiyi gözetir ve yürütenleri, yani *executive leadership*'i denetler. Kararı veren mutlaka kurucu değildir: Steve Jobs 1985'te Apple'da kurul kararıyla görevinden alınmıştı.", yanlis: "Şirketi kuran kişi her zaman şirketi yönetir.", dogru: "Büyük şirketlerde kurul yönetimi denetler; kurucu bile görevden alınabilir." }
+        { tip: "tuzak", baslik: "Kurucu her zaman karar verici değil", metin: "*Board of directors* günlük işi yürütmez; yürütenleri denetler. Kararı veren mutlaka kurucu değildir: Steve Jobs 1985'te Apple'da kurul kararıyla görevinden alınmıştı.", yanlis: "Şirketi kuran kişi her zaman şirketi yönetir.", dogru: "Büyük şirketlerde kurul yönetimi denetler; kurucu bile görevden alınabilir." }
       ]
     },
     {
       baslik: "Bölümler ve organizasyon şeması",
+      kisa: "Her bölüm bir işleve odaklanır; *accounting* kaydeder, *finance* yönetir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🗂️", terim: "Departments", tr: "bölümler", tanim: "İşletme içinde belirli bir işleve odaklanan birimler.", ornek: "Marketing, operations, accounting, finance, human resources." },
+            { ikon: "🗂️", terim: "Departments", tr: "bölümler", tanim: "İşletme içinde belirli bir işleve odaklanan birimler. Her işletmede bütün bölümler bulunmaz.", ornek: "Marketing, operations, accounting, finance, human resources." },
             { ikon: "🌳", terim: "Organization chart (org chart)", tr: "organizasyon şeması", tanim: "Bölümleri ve kimin kime bağlı olduğunu gösteren şema.", ornek: "Dunder Mifflin'in şeması (The Office)." }
           ] },
         { tip: "harita", merkez: "Trendyol'un bölümleri", dallar: [
@@ -214,23 +161,15 @@ window.DEFTER = {
             { metin: "Bu çeyreğin gelir ve gider tablosunu hazırlamak.", cevap: "sol", neden: "Kayıt ve raporlama." },
             { metin: "Büyüme için hangi projeye ne kadar harcanacağına karar vermek.", cevap: "sag", neden: "Harcama ve büyüme kararları: *finance*." }
           ] },
-        { tip: "ikili", sol: { ikon: "📣", baslik: "*Marketing*", maddeler: ["Müşteri çeker ve elde tutar", "Reklam, sosyal medya"] },
-          sag: { ikon: "📦", baslik: "*Operations*", maddeler: ["Üretir ve teslim eder", "Siparişi kapıya getirir"] },
-          oyun: [
-            { metin: "Sosyal medyada indirim kampanyası yönetmek.", cevap: "sol", neden: "*Marketing*." },
-            { metin: "Siparişi depodan çıkarıp müşteriye ulaştırmak.", cevap: "sag", neden: "*Operations*." },
-            { metin: "Pazar araştırması yapıp müşteri tercihini öğrenmek.", cevap: "sol", neden: "*Marketing*." },
-            { metin: "Hizmeti sunmak ve ürünün müşterinin eline geçmesini sağlamak.", cevap: "sag", neden: "*Operations*." }
-          ] },
-        { tip: "tuzak", baslik: "Accounting ≠ finance", metin: "*Accounting* olanı kaydeder ve raporlar (revenue, expenses, profit). *Finance* parayı yönetir: fon bulur, yatırımcı çeker, harcama ve büyüme kararlarını verir.", yanlis: "*Accounting* ile *finance* aynı bölümdür.", dogru: "Geçmişi kaydeden *accounting*, geleceğe dair para kararlarını veren *finance*'tir." },
-        { tip: "not", metin: "Her işletmede bütün *departments* bulunmaz. *Human resources* (HR) işe alır, eğitir, yan hakları yönetir, performansı değerlendirir." }
+        { tip: "tuzak", baslik: "Accounting ≠ finance", metin: "*Accounting* olanı kaydeder ve raporlar (revenue, expenses, profit). *Finance* parayı yönetir: fon bulur, yatırımcı çeker, harcama ve büyüme kararlarını verir.", yanlis: "*Accounting* ile *finance* aynı bölümdür.", dogru: "Geçmişi kaydeden *accounting*, geleceğe dair para kararlarını veren *finance*'tir." }
       ]
     },
     {
       baslik: "*Outsourcing*: dışarıya yaptır",
+      kisa: "Başka firma daha ucuza yapıyorsa işi dışarıya vermek mantıklıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🏭", terim: "Outsourcing", tr: "dış kaynak kullanımı", tanim: "Belirli bir işi şirket içinde (*in-house*) yapmak yerine başka bir firmaya yaptırmak.", ornek: "Apple iPhone'u tasarlar, üretimini Foxconn gibi firmalara yaptırır." }
+            { ikon: "🏭", terim: "Outsourcing", tr: "dış kaynak kullanımı", tanim: "Belirli bir işi şirket içinde (*in-house*) yapmak yerine başka bir firmaya yaptırmak. Örnekler: bordro, müşteri hizmetleri, web tasarımı, üretim.", ornek: "Apple iPhone'u tasarlar, üretimini Foxconn gibi firmalara yaptırır." }
           ] },
         { tip: "ikili", sol: { ikon: "🏠", baslik: "*In-house*", maddeler: ["İşi şirket içinde yaparsın", "Kontrol sende"] },
           sag: { ikon: "🌍", baslik: "*Outsourcing*", maddeler: ["İşi başka firmaya yaptırırsın", "Başkası daha ucuza yapıyorsa mantıklı"] },
@@ -240,18 +179,12 @@ window.DEFTER = {
             { metin: "Bordro hesabını başka bir firmaya yaptırmak.", cevap: "sag", neden: "Bordro *outsourcing*'e örnek." },
             { metin: "Müşteri hizmetlerini kendi çalışanlarınla vermek.", cevap: "sol", neden: "İş şirket içinde yapılıyor." }
           ] },
-        { tip: "liste", maddeler: [
-            { ikon: "🧾", baslik: "Bordro", metin: "*Payroll* işini dışarıya yaptırmak." },
-            { ikon: "☎️", baslik: "Müşteri hizmetleri", metin: "*Customer service* dışarıdan alınabilir." },
-            { ikon: "🖥️", baslik: "Web tasarımı", metin: "Siteyi başka bir firma yapar." },
-            { ikon: "🏭", baslik: "Üretim", metin: "*Manufacturing*: iPhone üretimi gibi." }
-          ] },
-        { tip: "tuzak", baslik: "Neden outsourcing?", metin: "Her iş şirket içinde yapılmak zorunda değildir; *outsourcing*’in gerekçesi çoğunlukla maliyettir.", yanlis: "Her işi şirketin kendisinin yapması şarttır.", dogru: "Başka bir firma daha ucuza yapabiliyorsa işi dışarıya vermek mantıklıdır." },
-        { tip: "not", metin: "Büyük çıkarım: başarılı işletmeler yalnızca iyi ürünle değil, ==etkili ve verimli organizasyonla== kurulur." }
+        { tip: "tuzak", baslik: "Neden outsourcing?", metin: "*Outsourcing*’in gerekçesi çoğunlukla maliyettir. Büyük çıkarım: başarılı işletmeler yalnızca iyi ürünle değil, ==etkili ve verimli organizasyonla== kurulur.", yanlis: "Her işi şirketin kendisinin yapması şarttır.", dogru: "Başka bir firma daha ucuza yapabiliyorsa işi dışarıya vermek mantıklıdır." }
       ]
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "İş büyüyünce daha çok insan, net bir yapı ve karar düzeni gerekir.",

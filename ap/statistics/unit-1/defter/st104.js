@@ -2,45 +2,24 @@
    Kaynak: ap-videolar/src/episodes/st104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st104",
-  ozet: "Küçük veri için her değeri gösteren *stemplot*; büyük veri için yakın değerleri gruplayan *histogram*. Bu defterde gövde-yaprak grafiğini ve zorunlu *key*'i, *split stems* hilesini, histogramın aralık kurallarını (sol uç dahil, sağ uç hariç), *frequency* ile *relative frequency* histogramı, histogramın sınırlarını, *bar chart* ile farkını ve hesap makinesiyle nasıl çizildiğini öğreneceksin.",
+  amac: "Bu konu sayısal veriyi göstermenin iki yolunu anlatıyor: küçük veri için her değeri gösteren *stemplot*, büyük veri için yakın değerleri gruplayan *histogram*. Key'i, aralık kurallarını, histogramın sınırlarını ve *bar chart* farkını öğreneceksin.",
   bolumler: [
     {
-      baslik: "Kronometreyi 5 saniyede durdur",
-      bloklar: [
-        { tip: "hikaye", ikon: "⏱️", baslik: "Tek dokunuşta tam 5.0",
-          metin: "Telefonunun kronometresini aç ve tek dokunuşla tam 5 saniyede durdurmayı dene. Bir sınıf bunu denedi. 16 öğrencinin süreleri şöyle başlıyor: 4,8; 5,1; 4,9; 6,2… Sence çoğu 5'e yakın mı durdu? Sayıları öyle dizeceğiz ki liste grafiğe dönüşecek." },
-        { tip: "tablo", baslik: "16 öğrencinin süresi (saniye, toplanma sırasıyla)", head: ["1", "2", "3", "4", "5", "6", "7", "8"], rows: [
-            ["4,8", "5,1", "4,9", "6,2", "5,0", "4,6", "5,3", "5,0"],
-            ["4,4", "5,1", "4,9", "5,5", "4,7", "5,0", "4,8", "5,2"]
-          ] },
-        { tip: "sekil", baslik: "Aynı veri dotplot olarak", fig: { type: "dot", values: [4.8, 5.1, 4.9, 6.2, 5.0, 4.6, 5.3, 5.0, 4.4, 5.1, 4.9, 5.5, 4.7, 5.0, 4.8, 5.2], label: "Time (seconds)" } },
-        { tip: "sayilar", ogeler: [
-            { deger: 16, etiket: "öğrenci" },
-            { deger: 5, sonek: " s", etiket: "hedef süre" }
-          ] }
-      ]
-    },
-    {
       baslik: "*Stem-and-leaf plot* nasıl kurulur?",
+      kisa: "Her değeri gövde ve yaprağa böl; key yazmak zorunludur.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🌿", terim: "Stem-and-leaf plot", tr: "gövde-yaprak grafiği (stemplot)", tanim: "Her değeri ikiye bölüp satır satır dizen grafik; ==küçük sayısal veri== için.", ornek: "16 kronometre süresi." },
+            { ikon: "🌿", terim: "Stem-and-leaf plot", tr: "gövde-yaprak grafiği (stemplot)", tanim: "Her değeri ikiye bölüp satır satır dizen grafik; ==küçük sayısal veri== için.", ornek: "Tek dokunuşla 5 saniyede durdurulan kronometrenin 16 süresi." },
             { ikon: "🪵", terim: "Stem", tr: "gövde", tanim: "Değerin son basamağı dışındaki kısmı. Alt alta, hiç atlamadan yazılır.", ornek: "4,8 değerinde gövde 4." },
             { ikon: "🍃", terim: "Leaf", tr: "yaprak", tanim: "Değerin son basamağı; tek basamaktır ve satırda küçükten büyüğe dizilir.", ornek: "4,8 değerinde yaprak 8." },
             { ikon: "🔑", terim: "Key", tr: "anahtar", tanim: "Gövde ve yaprağın ne anlama geldiğini bağlam ve birimle söyler. ==Yazmak zorunludur.==", ornek: "Key: 4 | 8 = 4.8 seconds" }
           ] },
         { tip: "adimlar", baslik: "Üç adımda stemplot", adimlar: [
-            { baslik: "1 · Gövdeleri yaz", metin: "Alt alta 4, 5, 6 yaz ve yanlarına dik bir çizgi çek." },
+            { baslik: "1 · Gövdeleri yaz", metin: "Süreler (saniye): 4,8; 5,1; 4,9; 6,2; 5,0; 4,6; 5,3; 5,0; 4,4; 5,1; 4,9; 5,5; 4,7; 5,0; 4,8; 5,2. Alt alta 4, 5, 6 yaz ve yanlarına dik bir çizgi çek." },
             { baslik: "2 · Yaprakları ekle", metin: "Her değerin yaprağını gövdesinin yanına, veri sırasıyla ekle." },
             { baslik: "3 · Sırala", metin: "Her satırdaki yaprakları küçükten büyüğe diz." }
           ] },
-        { tip: "sekil", baslik: "Adım 2: sırasız yapraklar", fig: { type: "stem", stems: [{ s: "4", leaves: "8 9 6 4 9 7 8" }, { s: "5", leaves: "1 0 3 0 1 5 0 2" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
-        { tip: "sekil", baslik: "Adım 3: sıralı stemplot", fig: { type: "stem", stems: [{ s: "4", leaves: "4 6 7 8 8 9 9" }, { s: "5", leaves: "0 0 0 1 1 2 3 5" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
-        { tip: "sayilar", ogeler: [
-            { deger: 7, etiket: "yaprak: 4 satırı" },
-            { deger: 8, etiket: "yaprak: 5 satırı" },
-            { deger: 1, etiket: "yaprak: 6 satırı" }
-          ] },
+        { tip: "sekil", baslik: "Sıralı stemplot (n = 16)", fig: { type: "stem", stems: [{ s: "4", leaves: "4 6 7 8 8 9 9" }, { s: "5", leaves: "0 0 0 1 1 2 3 5" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
         { tip: "ornek", baslik: "Sayı kontrolü ve median", durum: "Sıralı stemplot: 4 | 4 6 7 8 8 9 9 · 5 | 0 0 0 1 1 2 3 5 · 6 | 2.",
           adimlar: ["Yaprakları say: 7 + 8 + 1 = 16, öğrenci sayısıyla aynı.", "n = 16 çift sayı: ortada 8. ve 9. değer var.", "Sayarak ilerle: 4'lü satır 7 değer; 8. ve 9. değer 5 | 0 ve 5 | 0, yani 5,0 ve 5,0.", "Median = (5,0 + 5,0) ÷ 2 = 5,0."],
           sonuc: "Stemplot her değeri gösterdiği için median'ı sayarak bulursun: ==median = 5,0 saniye==." }
@@ -48,9 +27,8 @@ window.DEFTER = {
     },
     {
       baslik: "Key ve üç kural",
+      kisa: "Yaprak tek basamak, boş gövde atlanmaz, çok basamaklıysa yuvarla ya da truncate et.",
       bloklar: [
-        { tip: "sekil", baslik: "Anahtarla birlikte", fig: { type: "stem", stems: [{ s: "4", leaves: "4 6 7 8 8 9 9" }, { s: "5", leaves: "0 0 0 1 1 2 3 5" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
-        { tip: "not", metin: "\"4 çizgi 8\" ne demek: 48 mi, 4,8 mi? Bunu yalnızca *key* söyler. Sınavda *key* yazmazsan puan gider; birim ve bağlamı da içermeli." },
         { tip: "adimlar", baslik: "Üç kural", adimlar: [
             { baslik: "Yaprak tek basamak", metin: "Araya virgül konmaz: \"5 | 0 0 0 1\" doğru, \"5 | 0, 0, 0, 1\" yanlış; \"5 | 10\" (iki basamaklı yaprak) da yanlış." },
             { baslik: "Boş gövde atlanmaz", metin: "Boşluk da bilgidir; boşluk (*gap*) ve olası aykırı değer ancak böyle görünür." },
@@ -60,58 +38,38 @@ window.DEFTER = {
         { tip: "ornek", baslik: "23,7 dakika stemplot'a nasıl girer?", durum: "Değer 23,7 dakika; yaprak tek basamak olmalı.",
           adimlar: ["Truncate: son basamağı at, 23,7 → 23. Gövde 2, yaprak 3, yani 2 | 3.", "Round: 23,7 → 24. Gövde 2, yaprak 4, yani 2 | 4.", "Hangisini seçtiysen key'e yaz: Key: 2 | 3 = 23 minutes."],
           sonuc: "Truncate ile ==2 | 3==, round ile 2 | 4. Seçimi key'de belirt." },
-        { tip: "tuzak", baslik: "Key'siz stemplot", metin: "Yalnızca gövde ve yapraklar yeterli değildir.", yanlis: "Stemplot çizdim, key'e gerek yok, 4 | 8 zaten belli.", dogru: "4 | 8 = 4,8 mi 48 mi? Key olmadan belli değil. Her zaman bağlam ve birimle key yaz." },
-        { tip: "tuzak", baslik: "Boş satırı sil", metin: "Veride bir gövde hiç yoksa satırı atlamak şekli bozar.", yanlis: "3 gövdesinde değer yok, o satırı yazmayayım.", dogru: "Boş gövdeyi yaz (3 | ); gap ancak böyle görünür." }
+        { tip: "tuzak", baslik: "Key'siz stemplot, atlanan satır", metin: "\"4 çizgi 8\" 48 mi, 4,8 mi? Bunu yalnızca *key* söyler; birim ve bağlamı da içermeli. Veride bir gövde hiç yoksa satırı atlamak da şekli bozar.", yanlis: "Key'e gerek yok, 4 | 8 zaten belli. / 3 gövdesinde değer yok, o satırı yazmayayım.", dogru: "Her zaman bağlam ve birimle key yaz; boş gövdeyi de yaz (3 | ): gap ancak böyle görünür." }
       ]
     },
     {
       baslik: "*Split stems*: gövdeyi ikiye böl",
+      kisa: "Her gövdeyi iki kez yaz; amaç şekli daha net görmek.",
       bloklar: [
         { tip: "not", metin: "Üç satırlık stemplot'ta şekil seçilmiyor. Çözüm: ==her gövdeyi iki kez yaz==. İlk satıra 0–4 arası yapraklar, ikinci satıra 5–9 arası yapraklar." },
-        { tip: "sekil", baslik: "Split stems", fig: { type: "stem", stems: [{ s: "4", leaves: "4" }, { s: "4", leaves: "6 7 8 8 9 9" }, { s: "5", leaves: "0 0 0 1 1 2 3" }, { s: "5", leaves: "5" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
-        { tip: "tablo", baslik: "Satır başına yaprak sayısı", head: ["Satır", "Yapraklar", "Adet"], rows: [
-            ["4 (0–4)", "4", "1"],
-            ["4 (5–9)", "6 7 8 8 9 9", "6"],
-            ["5 (0–4)", "0 0 0 1 1 2 3", "7"],
-            ["5 (5–9)", "5", "1"],
-            ["6 (0–4)", "2", "1"]
-          ], not: "1 + 6 + 7 + 1 + 1 = 16." },
+        { tip: "sekil", baslik: "Split stems (1 + 6 + 7 + 1 + 1 = 16 yaprak)", fig: { type: "stem", stems: [{ s: "4", leaves: "4" }, { s: "4", leaves: "6 7 8 8 9 9" }, { s: "5", leaves: "0 0 0 1 1 2 3" }, { s: "5", leaves: "5" }, { s: "6", leaves: "2" }], key: "4|8 = 4.8 seconds" } },
         { tip: "ornek", baslik: "Bölünmüş grafikte şekli oku", durum: "Split stemplot'ta en uzun iki satır 4 | 6 7 8 8 9 9 ve 5 | 0 0 0 1 1 2 3.",
           adimlar: ["Tepe: 5,0 saniye çevresinde, tek tepe.", "İki yan yaklaşık birbirinin aynası: kabaca simetrik.", "6,2 ötekilerden kopuk (5,5 ile 6,2 arasında boşluk): olası aykırı değer."],
           sonuc: "==Roughly symmetric==, 5,0 saniye çevresinde tek tepe, 6,2 olası *outlier*. Bölmenin tek amacı: *to see the shape more clearly*." }
       ]
     },
     {
-      baslik: "Büyük veri: *histogram* fikri",
+      baslik: "Büyük veri: *histogram* nasıl kurulur?",
+      kisa: "Histogram yakın değerleri eşit aralıklara gruplar; sol uç dahil, sağ uç hariç.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "🌿", baslik: "*Stemplot* ve *dotplot*", maddeler: ["Her değeri tek tek gösterir", "Küçük veri için", "Median'ı sayarak bulursun"] },
-          sag: { ikon: "📊", baslik: "*Histogram*", maddeler: ["Yakın değerleri gruplar", "Büyük veri için", "Tek tek değer görünmez"] },
+          sag: { ikon: "📊", baslik: "*Histogram*", maddeler: ["Sayısal veriyi eşit genişlikte aralıklara (*intervals*) gruplar", "Çubuklar bitişik; büyük veri için", "Tek tek değer görünmez"] },
           oyun: [
             { metin: "16 öğrencinin kronometre süreleri; median'ı sayarak bulmak istiyorsun.", cevap: "sol", neden: "Küçük veri, her değer görünür: *stemplot* ya da *dotplot*." },
             { metin: "500 öğrencinin okula geliş süresi.", cevap: "sag", neden: "500 değeri yaprak yaprak yazamazsın: *histogram*." },
             { metin: "12 kişinin uyku süresi.", cevap: "sol", neden: "Küçük sayısal veri: *dotplot*/*stemplot*." },
             { metin: "Bir ülkedeki 100 bin hanenin geliri.", cevap: "sag", neden: "Çok büyük veri: yakın değerler aralıklara gruplanır: *histogram*." }
           ] },
-        { tip: "sayilar", ogeler: [
-            { deger: 16, etiket: "değer: stemplot yeter" },
-            { deger: 500, etiket: "değer: histogram gerekir" }
-          ] }
-      ]
-    },
-    {
-      baslik: "Histogram nasıl kurulur?",
-      bloklar: [
-        { tip: "kavramlar", kartlar: [
-            { ikon: "📊", terim: "Histogram", tr: "histogram", tanim: "Sayısal veriyi eşit genişlikte aralıklara bölüp her aralığı ==bitişik== bir çubukla gösteren grafik.", ornek: "Gezilen eyalet sayıları." },
-            { ikon: "📏", terim: "Intervals (bins)", tr: "aralıklar", tanim: "Histogramın eşit genişlikteki aralıkları. ==Sol uç dahil, sağ uç hariç.==", ornek: "10 to <15: 10 dahil, 15 hariç." }
-          ] },
-        { tip: "not", metin: "30 öğrenciye kaç Amerikan eyaleti gezdiklerini soruyoruz. Değerler (büyükten küçüğe): 31, 24, 20, 19, 18, 18, 17, 17, 15, 14, 14, 13, 13, 12, 12, 12, 12, 11, 11, 11, 11, 10, 9, 9, 9, 8, 8, 8, 5, 5." },
-        { tip: "adimlar", baslik: "Üç adımda histogram", adimlar: [
-            { baslik: "1 · Eşit genişlikte aralıklar kur", metin: "En küçük değer 5. Beşerli alalım: 5'ten 10'a, 10'dan 15'e…" },
+        { tip: "adimlar", baslik: "Üç adımda histogram: gezilen eyalet sayıları", adimlar: [
+            { baslik: "1 · Eşit genişlikte aralıklar kur", metin: "30 öğrenciye kaç Amerikan eyaleti gezdikleri soruldu; en küçük değer 5. Beşerli alalım: 5'ten 10'a, 10'dan 15'e… Aralıklarda ==sol uç dahil, sağ uç hariç==: 10 değeri 10–15 aralığına girer." },
             { baslik: "2 · Her aralığı say", metin: "Her aralığa düşen kişi sayısını bul." },
-            { baslik: "3 · Çubuk çiz", metin: "Her aralığa o yükseklikte, bitişik bir çubuk çiz; boş aralığın yüksekliği 0'dır." }
+            { baslik: "3 · Çubuk çiz", metin: "Her aralığa o yükseklikte, bitişik bir çubuk çiz; boş aralığın yüksekliği 0'dır. İki ekseni de etiketle ve ölçekle: yatayda değişken adı (+ birim), dikeyde frequency ya da relative frequency." }
           ] },
-        { tip: "tablo", baslik: "Frekans tablosu", head: ["Interval", "Frequency", "Relative frequency"], rows: [
+        { tip: "tablo", baslik: "Frekans tablosu (n = 30)", head: ["Interval", "Frequency", "Relative frequency"], rows: [
             ["5 to <10", "8", "8/30 = %26,7"],
             ["10 to <15", "13", "13/30 = %43,3"],
             ["15 to <20", "6", "6/30 = %20,0"],
@@ -119,7 +77,7 @@ window.DEFTER = {
             ["25 to <30", "0", "0%"],
             ["30 to <35", "1", "1/30 = %3,3"],
             ["Toplam", "30", "%100"]
-          ], vurgu: 1, not: "8 + 13 + 6 + 2 + 0 + 1 = 30." },
+          ], vurgu: 1, not: "8 + 13 + 6 + 2 + 0 + 1 = 30. Veri: 31, 24, 20, 19, 18, 18, 17, 17, 15, 14, 14, 13, 13, 12, 12, 12, 12, 11, 11, 11, 11, 10, 9, 9, 9, 8, 8, 8, 5, 5." },
         { tip: "grafik", baslik: "Çubuklar yükseliyor", xlabel: "Gezilen eyalet sayısı", ylabel: "Kişi sayısı", xmax: 6, ymax: 14,
           xticks: [{ v: 0, label: "5" }, { v: 1, label: "10" }, { v: 2, label: "15" }, { v: 3, label: "20" }, { v: 4, label: "25" }, { v: 5, label: "30" }, { v: 6, label: "35" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }, { v: 10, label: "10" }, { v: 12, label: "12" }, { v: 13, label: "13" }],
@@ -138,19 +96,15 @@ window.DEFTER = {
             { metin: "10'dan 15'e: 13 kişi (en yüksek çubuk); 15'ten 20'ye: 6 kişi. Çubuklar bitişik, arada boşluk yok.", set: { b2: { noktalar: [[1, 0], [1, 13], [2, 13], [2, 0]] }, b3: { noktalar: [[2, 0], [2, 6], [3, 6], [3, 0]] } } },
             { metin: "20–25: 2 kişi, 25–30: 0 kişi (boş ama eksen çizili), 30–35: 1 kişi (31 eyalet).", set: { b4: { noktalar: [[3, 0], [3, 2], [4, 2], [4, 0]] }, b6: { noktalar: [[5, 0], [5, 1], [6, 1], [6, 0]] } }, goster: ["bos"] },
             { metin: "Tam 10 eyalet gezen nereye girer? ==Sol uç dahil, sağ uç hariç==: 10, 5–10'a değil 10–15 çubuğuna girer.", goster: ["t10"] }
-          ] },
-        { tip: "ornek", baslik: "Sınır değerini yerleştir", durum: "Aralıklar 5'er genişlikte: [5,10), [10,15), [15,20), [20,25)… Dört öğrenci sırasıyla 10, 15, 20, 9 eyalet gezmiş.",
-          adimlar: ["10: sol uç dahil → [10, 15) çubuğu.", "15: [15, 20) çubuğu.", "20: [20, 25) çubuğu.", "9: [5, 10) çubuğu (10'a ulaşmadı)."],
-          sonuc: "Kural: ==sol uç dahil, sağ uç hariç==. Sınırdaki değer başladığı aralığa girer." },
-        { tip: "tuzak", baslik: "Histogramda etiket ve ölçek", metin: "Grafik çizmen istenirse iki ekseni de etiketle ve ölçekle: yatayda değişken adı (+ birim), dikeyde frequency ya da relative frequency.", yanlis: "Çubuklar arasına boşluk bıraktım, eksen adlarını yazmadım.", dogru: "Histogramda çubuklar ==bitişik==, aralıklar ==eşit genişlikte==, eksenler etiketli ve ölçekli." }
+          ] }
       ]
     },
     {
       baslik: "*Frequency* ve *relative frequency* histogramı",
+      kisa: "Şekil aynı kalır; yalnızca dikey eksen sayıdan yüzdeye döner.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "🔢", baslik: "*Frequency histogram*", maddeler: ["Dikeyde sayı (kaç gözlem)", "8, 13, 6, 2, 0, 1"] },
           sag: { ikon: "％", baslik: "*Relative frequency histogram*", maddeler: ["Dikeyde oran ya da yüzde", "%26,7; %43,3; %20; %6,7; %0; %3,3"] } },
-        { tip: "sekil", baslik: "Frequency histogram (n = 30)", fig: { type: "hist", bins: [{ from: 5, to: 10, n: 8 }, { from: 10, to: 15, n: 13 }, { from: 15, to: 20, n: 6 }, { from: 20, to: 25, n: 2 }, { from: 25, to: 30, n: 0 }, { from: 30, to: 35, n: 1 }], label: "Number of states visited", ylabel: "Frequency (students)" } },
         { tip: "sekil", baslik: "Relative frequency histogram", fig: { type: "hist", bins: [{ from: 5, to: 10, n: 26.7 }, { from: 10, to: 15, n: 43.3 }, { from: 15, to: 20, n: 20 }, { from: 20, to: 25, n: 6.7 }, { from: 25, to: 30, n: 0 }, { from: 30, to: 35, n: 3.3 }], label: "Number of states visited", ylabel: "Relative frequency (%)" } },
         { tip: "ornek", baslik: "Yüzdeleri hesapla", durum: "Frekanslar 8, 13, 6, 2, 0, 1 ve toplam 30.",
           adimlar: ["8 ÷ 30 = 0,267 → %26,7.", "13 ÷ 30 = 0,433 → %43,3.", "6 ÷ 30 = 0,2 → %20.", "2 ÷ 30 = 0,067 → %6,7; 0 ÷ 30 = 0; 1 ÷ 30 = 0,033 → %3,3.", "Toplam: 26,7 + 43,3 + 20 + 6,7 + 0 + 3,3 = 100."],
@@ -159,8 +113,8 @@ window.DEFTER = {
     },
     {
       baslik: "Histogram neyi gösteremez?",
+      kisa: "Histogram tek tek değerleri göstermez; çubuğun içindeki sınır bilinemez.",
       bloklar: [
-        { tip: "not", metin: "Histogramın bedeli: değerleri tek tek göremezsin. 10–15 çubuğundaki 13 kişi 10 mu gezmiş, 14 mü? Merkezi ve yayılımı ancak ==tahmin== edersin (median 15. ve 16. değer, 10–15 aralığında)." },
         { tip: "grafik", baslik: "İddia: \"çoğu bir düzineden az eyalet gezmiş\"", xlabel: "Gezilen eyalet sayısı", ylabel: "Kişi sayısı", xmax: 6, ymax: 14,
           xticks: [{ v: 0, label: "5" }, { v: 1, label: "10" }, { v: 2, label: "15" }, { v: 3, label: "20" }, { v: 4, label: "25" }, { v: 5, label: "30" }, { v: 6, label: "35" }],
           yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }, { v: 8, label: "8" }, { v: 10, label: "10" }, { v: 13, label: "13" }],
@@ -184,11 +138,12 @@ window.DEFTER = {
         { tip: "ornek", baslik: "İddia: \"çoğu 12'den az eyalet gezmiş\"", durum: "30 öğrenci, aralıklar 5'er. 12, [10, 15) aralığının içinde.",
           adimlar: ["Kesin: 10'dan az 8 kişi, 15'ten az 8 + 13 = 21 kişi.", "12'den az gezenler 8 ile 21 arasında; çoğunluk için 15'ten fazlası gerekir (30'un yarısı 15).", "Bu aralıkta 15 de var 20 de; histogramla karar verilemez."],
           sonuc: "Cevap: ==bu grafikten gerekçelendirilemez== (cannot be determined). Ham veride 12'den az gezen 13 kişi vardı: 13/30 = %43,3, yani iddia aslında doğru değil; ama bunu histogram değil ham veri gösterir." },
-        { tip: "tuzak", baslik: "Sınır bir çubuğun içinde mi, kenarında mı?", metin: "Sınır çubuk kenarındaysa (\"30 dakika veya daha fazla\") çubukları toplarsın; çubuğun içindeyse histogram yetmez.", yanlis: "Aralığın yarısı 12'den küçüktür, oranla 6 kişi sayarım.", dogru: "Çubuğun içinde değer dağılımını bilmiyoruz; \"cannot be determined from the graph\" yaz." }
+        { tip: "tuzak", baslik: "Sınır bir çubuğun içinde mi, kenarında mı?", metin: "Sınır çubuk kenarındaysa (\"30 dakika veya daha fazla\") çubukları toplarsın; çubuğun içindeyse histogram yetmez. Merkez ve yayılım da yalnızca tahmin edilir (median 15. ve 16. değer, 10–15 aralığında).", yanlis: "Aralığın yarısı 12'den küçüktür, oranla 6 kişi sayarım.", dogru: "Çubuğun içinde değer dağılımını bilmiyoruz; \"cannot be determined from the graph\" yaz." }
       ]
     },
     {
       baslik: "Histogram ≠ *bar chart*",
+      kisa: "Histogram sayısal, bar chart kategorik veri içindir; şekil yalnızca histogramda konuşulur.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "🗂️", baslik: "*Bar chart*", maddeler: ["Kategorik veri", "Çubuklar ayrı, aralarında boşluk", "Sıra değişebilir", "\"Skewed\" denmez"] },
           sag: { ikon: "📊", baslik: "*Histogram*", maddeler: ["Sayısal veri", "Yatay eksen sayı doğrusu, çubuklar bitişik", "Sıra sabit", "Şekilden söz edilir (*skewed right*…)"] },
@@ -205,7 +160,9 @@ window.DEFTER = {
     },
     {
       baslik: "Hesap makinesinde histogram",
+      kisa: "TI-84'te veriyi L1'e yaz, STAT PLOT'u aç, ZoomStat ile çiz.",
       bloklar: [
+        { tip: "not", metin: "Sınavda ya da ödevde veriden histogram çizmen gerekirse hesap makinesi işi hızlandırır. Çubuk genişliğini (*bin width*) sen ayarlarsın." },
         { tip: "adimlar", baslik: "TI-84 ile adım adım", adimlar: [
             { baslik: "1 · Verileri gir", metin: "STAT → 1: Edit; verileri L1 listesine yaz." },
             { baslik: "2 · Grafiği aç", metin: "2nd → Y= (STAT PLOT) → 1: Plot1 → On; Type olarak üçüncü simgeyi (histogram) seç; Xlist: L1, Freq: 1." },
@@ -217,6 +174,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
+      kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Stemplot*: gövde | yaprak ve mutlaka *key* (bağlam + birim). Yaprak tek basamak, sıralı, boş gövde atlanmaz.",
