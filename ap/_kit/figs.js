@@ -22,6 +22,8 @@
 
   /* ---------------- stil (bir kez eklenir) ---------------- */
   var CSS = [
+    ".apfig-code pre{margin:0;font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre;overflow-x:auto;color:var(--fg);tab-size:4}",
+    ".apfig-code figcaption{margin:0 0 6px;font-size:13px;color:var(--fg2)}",
     ".apfig{--fg:var(--ink,#1E1E1E);--fg2:var(--muted,#595959);--grid:var(--line-2,#CFCFCF);--axis:var(--muted,#595959);",
     "--c0:var(--accent,var(--blue,#324DC7));--c1:color-mix(in srgb,var(--fg) 62%,var(--surface,#fff));--c2:#3FB5A0;--c3:#B77AD9;",
     "margin:16px 0 0;padding:10px 12px;border:1px solid var(--line-2,#CFCFCF);border-radius:12px;background:var(--surface,#fff);",
@@ -371,7 +373,17 @@
     return wrapper("graph", svg, (f.caption ? f.caption + ". " : "") + "Graph with " + (f.xlabel || "x") + " and " + (f.ylabel || "y") + ": " + aria.join("; "));
   }
 
-  var TYPES = { table: rTable, dot: rDot, hist: rHist, box: rBox, bar: rBar, stem: rStem, graph: rGraph };
+  /* kod parçası (AP CSA): satırlar korunur, eş aralıklı yazı; metin olarak okunur (ekran okuyucu için şekil değil) */
+  function rCode(f) {
+    if (typeof f.code !== "string" || !f.code.trim()) return null;
+    var fig = wrapper("code", H("pre", null, null)), pre = fig.querySelector("pre");
+    pre.appendChild(H("code", null, f.code.replace(/\t/g, "    ")));
+    pre.setAttribute("lang", "en"); pre.setAttribute("tabindex", "0");
+    if (f.caption) fig.insertBefore(H("figcaption", null, String(f.caption)), pre);
+    return fig;
+  }
+
+  var TYPES = { code: rCode, table: rTable, dot: rDot, hist: rHist, box: rBox, bar: rBar, stem: rStem, graph: rGraph };
 
   window.APFig = {
     render: function (fig) {
