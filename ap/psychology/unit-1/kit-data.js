@@ -3,6 +3,10 @@ window.KIT = {
   "store": "psych-u1:v1:",
   "course": "AP Psychology",
   "unitLabel": "Unit 1 — Biological Bases of Behavior",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
