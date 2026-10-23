@@ -2,7 +2,7 @@
 window.KIT = {
   "store": "bpf-u1:v1:",
   "course": "Business with Personal Finance",
-  "unitLabel": "Unit 1 — Business, Competition, and New Ideas",
+  "unitLabel": "Unit 1 — Businesses, Competition, and New Ideas",
   "denemeler": {
     "url": "deneme/",
     "count": 5

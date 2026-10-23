@@ -126,7 +126,7 @@ window.DENEME = {
             "5; demand is elastic"
           ],
           "a": 1,
-          "w": "*Midpoint formula*: %ΔQ = 20 ÷ ((60 + 40) ÷ 2) = 20 ÷ 50 = %40; %ΔP = 4 ÷ ((10 + 14) ÷ 2) = 4 ÷ 12 ≈ %33,3. Ed = 40 ÷ 33,3 = 1,2 > 1 → *elastic*. 0,83 başlangıç değerlerine bölünerek ve oran ters çevrilerek bulunur. 5, ham değişimlerin oranıdır (20 ÷ 4); esneklik yüzdelerle hesaplanır.",
+          "w": "*Midpoint formula*: %ΔQ = 20 ÷ ((60 + 40) ÷ 2) = 20 ÷ 50 = %40; %ΔP = 4 ÷ ((10 + 14) ÷ 2) = 4 ÷ 12 ≈ %33,3. Ed = 40 ÷ 33,3 = 1,2 > 1 → *elastic*. 0,83 ya başlangıç değerlerine bölünerek (%33,3 ÷ %40) ya da oran ters çevrilerek bulunur. 5, ham değişimlerin oranıdır (20 ÷ 4); esneklik yüzdelerle hesaplanır.",
           "fig": {
             "type": "table",
             "head": [
@@ -611,7 +611,7 @@ window.DENEME = {
             "increase by 4 percent"
           ],
           "a": 1,
-          "w": "Ed = %ΔQ ÷ %ΔP → %ΔQ = Ed × %ΔP = 0,4 × 10 = %4. Talep yasası gereği fiyat artınca miktar düşer, yani %4 azalır. %25, 10'u 0,4'e bölmekten gelir; %2,5 ise 0,4 ÷ 10 × 100 karışıklığıdır. Ed < 1 olduğu için miktarın fiyattan daha az tepki vermesi beklenir."
+          "w": "Ed = %ΔQ ÷ %ΔP → %ΔQ = Ed × %ΔP = 0,4 × 10 = %4. Talep yasası gereği fiyat artınca miktar düşer, yani %4 azalır. %25, 10'u 0,4'e bölmekten gelir; %2,5 ise esnekliği ters çevirmekten (1 ÷ 0,4 = 2,5) gelir. Ed < 1 olduğu için miktarın fiyattan daha az tepki vermesi beklenir."
         },
         {
           "t": "2.3-1",
@@ -2027,7 +2027,7 @@ window.DENEME = {
             "P = 30 TL and Q = 60"
           ],
           "a": 3,
-          "w": "Dengede Qd = Qs: 120 − 2P = 3P − 30 → 150 = 5P → P = 30 TL. Q = 120 − 2 × 30 = 60 (kontrol: 3 × 30 − 30 = 60). 20 TL'de Qd = 80 ama Qs = 30: kıtlık var, denge değil. 90, 30 TL'yi talep yerine yanlış denklemde kullanmaktır."
+          "w": "Dengede Qd = Qs: 120 − 2P = 3P − 30 → 150 = 5P → P = 30 TL. Q = 120 − 2 × 30 = 60 (kontrol: 3 × 30 − 30 = 60). 20 TL'de Qd = 80 ama Qs = 30: kıtlık var, denge değil. 90, arz denklemindeki −30'u unutmaktır (3 × 30 = 90)."
         },
         {
           "t": "2.6-2",

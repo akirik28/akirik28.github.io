@@ -952,7 +952,7 @@ window.DENEME = {
         },
         {
           "t": "1.3-1",
-          "q": "The graph shows the average speed at which signals traveled along motor nerves in two groups of adults in a study. Which explanation best accounts for the difference?",
+          "q": "The graph shows the average speed at which signals traveled along nerve pathways in the brain and spinal cord in two groups of adults in a study. Which explanation best accounts for the difference?",
           "o": [
             "Multiple sclerosis increases the amount of neurotransmitter released at each synapse.",
             "Neurons of people with multiple sclerosis remain permanently in the refractory period.",

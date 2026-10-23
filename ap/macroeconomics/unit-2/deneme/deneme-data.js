@@ -1605,7 +1605,7 @@ window.DENEME = {
             "$700 billion"
           ],
           "a": 2,
-          "w": "2.000 = 1.300 + I + 350 + (150 − 200) → 2.000 = 1.600 + I → I = 400 milyar $. Net ihracat −50 olduğu için I, C + G'nin bıraktığı boşluktan 50 fazladır. Dış ticareti yok saymak 350, işareti ters almak 300, G'yi unutmak 700 verir.",
+          "w": "2.000 = 1.300 + I + 350 + (150 − 200) → 2.000 = 1.600 + I → I = 400 milyar $. Net ihracat −50 olduğu için I, C + G'nin bıraktığı boşluktan 50 fazladır. Dış ticareti yok saymak 350, işareti ters almak 300, G'yi ve dış ticareti birlikte unutmak 700 verir.",
           "fig": {
             "type": "table",
             "head": [

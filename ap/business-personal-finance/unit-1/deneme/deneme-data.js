@@ -2,7 +2,7 @@
 window.DENEME = {
   "store": "bpf-u1:v1:",
   "course": "AP Business with Personal Finance",
-  "unit": "Unit 1 — Business, Competition, and New Ideas",
+  "unit": "Unit 1 — Businesses, Competition, and New Ideas",
   "topics": {
     "1.1": "İşletme Nedir?",
     "1.2": "Pazarlar ve Rekabet Avantajı",

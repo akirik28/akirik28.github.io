@@ -1102,7 +1102,7 @@ window.KIT = {
           }
         },
         {
-          "q": "Bir kazadan sonra hastanın gözleri ve görme korteksi sağlam; nesneleri, renkleri ve harfleri sorunsuz tanıyor. Ama en yakın arkadaşını yüzünden tanıyamıyor, ancak sesini duyunca tanıyor. Bu durum en iyi hangi kavramla açıklanır?",
+          "q": "Bir kazadan sonra hastanın gözleri sağlam ve genel görmesi yerinde; nesneleri, renkleri ve harfleri sorunsuz tanıyor. Ama en yakın arkadaşını yüzünden tanıyamıyor, ancak sesini duyunca tanıyor. Bu durum en iyi hangi kavramla açıklanır?",
           "opts": [
             "*Blindsight*",
             "*Prosopagnosia*",

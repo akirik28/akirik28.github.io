@@ -1690,7 +1690,7 @@ window.DENEME = {
             "Ece should specialize in dresses, and Lale should specialize in scarves."
           ],
           "a": 1,
-          "w": "O.O.O.: 1 elbise Ece'ye 12 ÷ 6 = 2, Lale'ye 8 ÷ 2 = 4 eşarba mal olur → elbisede Ece (2 < 4). 1 eşarp Lale'ye 2 ÷ 8 = 1/4, Ece'ye 1/2 elbise → eşarpta Lale. Yanlış ifade sonuncusudur: 4 eşarp daha yüksek maliyettir; *comparative advantage* düşük maliyette olur. Ece iki üründe de daha çok üretir (6 > 2, 12 > 8)."
+          "w": "O.O.O.: 1 elbise Ece'ye 12 ÷ 6 = 2, Lale'ye 8 ÷ 2 = 4 eşarba mal olur → elbisede Ece (2 < 4). 1 eşarp Lale'ye 2 ÷ 8 = 1/4, Ece'ye 1/2 elbise → eşarpta Lale. Yanlış ifade B şıkkıdır: 4 eşarp daha yüksek maliyettir; *comparative advantage* düşük maliyette olur. Ece iki üründe de daha çok üretir (6 > 2, 12 > 8)."
         },
         {
           "t": "1.3-1",
