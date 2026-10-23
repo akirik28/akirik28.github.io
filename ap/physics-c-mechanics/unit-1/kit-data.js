@@ -1037,6 +1037,83 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 9,
+      "code": "1.4–1.5",
+      "slug": "pc111",
+      "title": "İki Boyutta Hareket ve Göreli Hareket",
+      "en": "Motion in Two Dimensions and Relative Motion",
+      "accent": "#58C9FF",
+      "seconds": 276,
+      "terms": [
+        "Position vector",
+        "Projectile motion",
+        "Horizontal component",
+        "Vertical component",
+        "Time of flight",
+        "Range",
+        "Reference frame",
+        "Relative velocity",
+        "Independence of motion"
+      ],
+      "questions": [
+        {
+          "q": "Bir top 25 m/s ile yatayla θ açısı yapacak şekilde atılıyor (sin θ = 0,8, cos θ = 0,6). Hava direnci yoksa, en yüksek noktadaki sürati kaçtır?",
+          "opts": [
+            "0 m/s",
+            "20 m/s",
+            "15 m/s",
+            "25 m/s"
+          ],
+          "a": 2,
+          "why": "Tepede yalnızca dikey hız sıfırdır. Yatay hız sabit kalır: 25 · cos θ = 25 · 0,6 = 15 m/s. 20, dikey ilk hızdır."
+        },
+        {
+          "q": "45 m yüksekliğindeki bir kayalıktan bir taş yatay olarak 10 m/s ile atılıyor (g = 9,8 m/s²). Kayalığın dibinden yaklaşık ne kadar uzağa düşer?",
+          "opts": [
+            "30 m",
+            "45 m",
+            "15 m",
+            "90 m"
+          ],
+          "a": 0,
+          "why": "Dikey: 45 = ½ · 9,8 · t² → t = √(90/9,8) ≈ 3,03 s. Yatay: x = 10 · 3,03 ≈ 30 m. Yatay hız düşme süresini değiştirmez."
+        },
+        {
+          "q": "Bir parçacığın konum vektörü r(t) = 2t² î + 3t ĵ (metre) ise ivmesi nedir?",
+          "opts": [
+            "4t î + 3 ĵ",
+            "4 î",
+            "4 î + 3 ĵ",
+            "2 î"
+          ],
+          "a": 1,
+          "why": "Bileşen bileşen iki kez türev: x = 2t² → vₓ = 4t → aₓ = 4; y = 3t → v_y = 3 → a_y = 0. a = 4 î m/s². 4t î + 3 ĵ hızdır."
+        },
+        {
+          "q": "Bir tekne suya göre doğuya 6 m/s ile gidiyor; nehir kuzeye 8 m/s ile akıyor. Kıyıdaki birine göre teknenin sürati kaçtır?",
+          "opts": [
+            "14 m/s",
+            "2 m/s",
+            "8 m/s",
+            "10 m/s"
+          ],
+          "a": 3,
+          "why": "v_tekne,kıyı = v_tekne,su + v_su,kıyı; iki hız dik: √(6² + 8²) = √100 = 10 m/s. 14, büyüklükleri doğrudan toplamaktır."
+        },
+        {
+          "q": "120 m genişliğindeki bir nehirde bir tekne, suya göre karşı kıyıya dik olarak 4 m/s ile gidiyor; akıntı 3 m/s. Karşıya geçiş ne kadar sürer?",
+          "opts": [
+            "24 s",
+            "40 s",
+            "30 s",
+            "17 s"
+          ],
+          "a": 2,
+          "why": "Karşıya doğru bileşen yalnızca 4 m/s: t = 120/4 = 30 s. Akıntı tekneyi aşağı kaydırır (3 · 30 = 90 m) ama geçiş süresini değiştirmez. 24 s, 5 m/s'lik bileşkeyle bölmektir."
+        }
+      ]
     }
   ],
   "final": [],
