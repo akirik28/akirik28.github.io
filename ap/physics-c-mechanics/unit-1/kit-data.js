@@ -336,6 +336,172 @@ window.KIT = {
           "why": "İç fonksiyon 2t'nin türevi 2; ona bölünür: ½ sin(2t) + C. Kontrol: (½ sin 2t)' = ½ · 2 cos 2t = cos 2t. 2 sin 2t'nin türevi 4 cos 2t olurdu."
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "1.1–1.2",
+      "slug": "pc106",
+      "title": "Konum, Yer Değiştirme ve Hız",
+      "en": "Position, Displacement and Velocity",
+      "accent": "#B9E552",
+      "seconds": 276,
+      "terms": [
+        "Kinematics",
+        "Position",
+        "Displacement",
+        "Distance",
+        "Average velocity",
+        "Average speed",
+        "Instantaneous velocity",
+        "Speed",
+        "Motion diagram"
+      ],
+      "questions": [
+        {
+          "q": "Bir kedi x = −3 m'den x = 5 m'ye koşuyor, sonra x = −1 m'ye geri dönüyor. Yer değiştirmesi ve aldığı yol nedir?",
+          "opts": [
+            "Δx = +2 m, yol = 14 m",
+            "Δx = −1 m, yol = 14 m",
+            "Δx = +2 m, yol = 2 m",
+            "Δx = +8 m, yol = 6 m"
+          ],
+          "a": 0,
+          "why": "Δx = son − ilk = −1 − (−3) = +2 m. Yol: −3'ten 5'e 8 m, 5'ten −1'e 6 m; toplam 14 m."
+        },
+        {
+          "q": "Grafik, bir asansörün konumunu gösteriyor (doğru parçaları). 5 s ile 7 s arasındaki hızı nedir?",
+          "opts": [
+            "0 m/s",
+            "+3 m/s",
+            "−6 m/s",
+            "−3 m/s"
+          ],
+          "a": 3,
+          "why": "Hız, x–t grafiğinin eğimidir: (0 − 6)/(7 − 5) = −6/2 = −3 m/s. −6 m, yer değiştirmedir; zamana bölmek gerekir.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "t (s)",
+            "ylabel": "x (m)",
+            "xmax": 8,
+            "ymax": 8,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  2,
+                  6
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  6
+                ],
+                "to": [
+                  5,
+                  6
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  5,
+                  6
+                ],
+                "to": [
+                  7,
+                  0
+                ],
+                "label": "x"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 2,
+                "label": "(0, 2)"
+              },
+              {
+                "q": 2,
+                "p": 6,
+                "label": "(2, 6)"
+              },
+              {
+                "q": 5,
+                "p": 6,
+                "label": "(5, 6)"
+              },
+              {
+                "q": 7,
+                "p": 0,
+                "label": "(7, 0)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 5,
+                "label": "5"
+              },
+              {
+                "v": 7,
+                "label": "7"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              }
+            ],
+            "caption": "Asansörün konum–zaman grafiği"
+          }
+        },
+        {
+          "q": "x(t) = 4t² − t (m) ise 1 s ile 3 s arasındaki *average velocity* kaçtır?",
+          "opts": [
+            "30 m/s",
+            "15 m/s",
+            "16 m/s",
+            "23 m/s"
+          ],
+          "a": 1,
+          "why": "x(3) = 36 − 3 = 33 m, x(1) = 4 − 1 = 3 m. (33 − 3)/(3 − 1) = 30/2 = 15 m/s. 30 m yer değiştirmedir; 23 m/s ise t = 3'teki anlık hızdır (8t − 1)."
+        },
+        {
+          "q": "x(t) = t³ − 4t (m) ise t = 2 s'deki anlık hız kaçtır?",
+          "opts": [
+            "0 m/s",
+            "4 m/s",
+            "8 m/s",
+            "12 m/s"
+          ],
+          "a": 2,
+          "why": "v = dx/dt = 3t² − 4. t = 2'de 12 − 4 = 8 m/s. 0, x(2)'dir: parçacık orijinde ama hareket ediyor."
+        },
+        {
+          "q": "Bir yüzücü 50 m'lik havuzda bir gidip bir dönüyor (100 m) ve 50 s'de başladığı duvara varıyor. Hangisi doğrudur?",
+          "opts": [
+            "Ortalama hız 2 m/s, ortalama sürat 2 m/s",
+            "Ortalama hız 0, ortalama sürat 0",
+            "Ortalama hız 1 m/s, ortalama sürat 2 m/s",
+            "Ortalama hız 0, ortalama sürat 2 m/s"
+          ],
+          "a": 3,
+          "why": "Başladığı yere döndüğü için Δx = 0, ortalama hız 0. Yol 100 m: ortalama sürat 100/50 = 2 m/s. Ortalama sürat, ortalama hızın büyüklüğü değildir."
+        }
+      ]
     }
   ],
   "final": [],
