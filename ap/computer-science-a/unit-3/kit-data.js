@@ -12,6 +12,7 @@ window.KIT = {
       "en": "Abstraction, Program Design, and Its Impact",
       "accent": "#FF8A65",
       "defter": "cs301",
+      "sessiz": true,
       "seconds": 308,
       "terms": [
         "Abstraction",
@@ -94,6 +95,7 @@ window.KIT = {
       "en": "Anatomy of a Class",
       "accent": "#B77AD9",
       "defter": "cs302",
+      "sessiz": true,
       "seconds": 282,
       "terms": [
         "Class",
@@ -179,6 +181,7 @@ window.KIT = {
       "en": "Constructors",
       "accent": "#E86A92",
       "defter": "cs303",
+      "sessiz": true,
       "seconds": 315,
       "terms": [
         "Constructor",
@@ -268,6 +271,7 @@ window.KIT = {
       "accent": "#5BC0EB",
       "defter": "cs304",
       "defterBaslik": "Metot Yazmak",
+      "sessiz": true,
       "seconds": 294,
       "terms": [
         "Method header",
@@ -357,6 +361,7 @@ window.KIT = {
       "en": "Methods: Passing and Returning References of an Object",
       "accent": "#9BC53D",
       "defter": "cs305",
+      "sessiz": true,
       "seconds": 297,
       "terms": [
         "Reference",
