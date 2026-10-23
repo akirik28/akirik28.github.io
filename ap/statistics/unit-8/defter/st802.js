@@ -147,7 +147,7 @@ window.DEFTER = {
     { q: "Bir kalem paketinde üretici %50 mavi, %30 kırmızı, %20 yeşil olduğunu söylüyor. Rastgele seçilen 100 kalemde 40 mavi, 36 kırmızı, 24 yeşil sayılıyor. Ki-kare istatistiği kaçtır?",
       opts: ["152", "4,17", "4,0", "0,6"],
       a: 2,
-      why: "E = 50, 30, 20. χ² = (40 − 50)² / 50 + (36 − 30)² / 30 + (24 − 20)² / 20 = 2 + 1,2 + 0,8 = 4,0. 152 farkların karelerinin E’ye bölünmeden toplamıdır; 4,17 paydada O kullanılarak çıkar; 0,6 ise farkın karesi alınmadığında elde edilir." },
+      why: "E = 50, 30, 20. χ² = (40 − 50)² / 50 + (36 − 30)² / 30 + (24 − 20)² / 20 = 2 + 1,2 + 0,8 = 4,0. 152 farkların karelerinin E’ye bölünmeden toplamıdır; 4,17 paydada O kullanılarak çıkar; 0,6 ise farkın karesi yerine mutlak değeri alındığında (|O − E| / E) elde edilir." },
     { q: "Bir uyum iyiliği testinde 4 kategori var ve χ² = 6,5 bulundu. Aşağıdaki tabloya göre α = 0,05 düzeyinde hangi ifade doğrudur?",
       fig: { type: "table", head: ["df = 3, sağ kuyruk olasılığı", "0,10", "0,05", "0,025", "0,01"], rows: [["Kritik χ²", "6,25", "7,81", "9,35", "11,34"]], caption: "Tablo değerleri" },
       opts: ["0,05 < p < 0,10 ve H₀ reddedilemez", "p < 0,01 ve H₀ reddedilir", "0,025 < p < 0,05 ve H₀ reddedilir", "p > 0,10 ve H₀ reddedilemez"],

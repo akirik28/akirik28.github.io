@@ -128,7 +128,7 @@ window.DEFTER = {
             { metin: "Her öğrenci bir saat daha çalışırsa puanı kesin olarak 1,68 ile 3,99 puan artar.", cevap: "sag", neden: "Bu rastgele atamalı deney değil; ilişki neden-sonuç kanıtı değildir." }
           ] },
         { tip: "tuzak", baslik: "Aralık çalışma aralığının dışına taşınmaz", metin: "Aralık yalnızca gözlenen x aralığında (1–10 saat) anlamlıdır. 40 saat çalışmanın etkisi hakkında bu aralıkla konuşamazsın (*extrapolation*).",
-          yanlis: "Haftada 40 saat çalışırsan puan 114 ile 160 puan artar.",
+          yanlis: "Haftada 40 saat çalışırsan puan 67 ile 160 puan artar.",
           dogru: "Yorumu gözlenen çalışma saatleriyle sınırla." }
       ]
     },
@@ -153,7 +153,7 @@ window.DEFTER = {
       fig: { type: "table", head: ["Predictor", "Coef", "SE Coef", "T", "P"], rows: [["Constant", "5.10", "1.20", "4.25", "0.000"], ["Saat", "0.80", "0.20", "4.00", "0.001"]], caption: "S = 2.10   R-Sq = 44.4%" },
       opts: ["(0,60; 1,00)", "(0,38; 1,22)", "(−3,58; 5,18)", "(2,60; 7,60)"],
       a: 1,
-      why: "Saat satırından b = 0,80 ve SE_b = 0,20: 0,80 ± 2,086 × 0,20 = 0,80 ± 0,417 ⇒ (0,38; 1,22). A yalnızca 1 SE ekler; C paydada SE_b yerine S kullanır; D kesişim satırından (Constant) kurulmuştur." },
+      why: "Saat satırından b = 0,80 ve SE_b = 0,20: 0,80 ± 2,086 × 0,20 = 0,80 ± 0,417 ⇒ (0,38; 1,22). A yalnızca 1 SE ekler; C, SE_b yerine S’yi kullanır (0,80 ± 2,086 × 2,10); D kesişim satırından (Constant) kurulmuştur." },
     { q: "Bir araştırmacı bir regresyon modelinin artık grafiğini çiziyor: noktalar soldaki x değerlerinde sıfır çizgisine yakın ve sıkışık, sağa gidildikçe sıfırın iki yanında giderek daha çok açılıyor. Hangi koşul sorunludur?",
       opts: ["*Linear*: ilişki doğrusal değil.", "*Independent*: gözlemler bağımlı.", "*Normal*: artıklar sağa çarpık.", "*Equal SD*: artıkların yayılımı x ile değişiyor."],
       a: 3,

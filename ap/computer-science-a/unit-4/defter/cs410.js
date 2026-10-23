@@ -322,9 +322,9 @@ for (int r = 0; r < a.length; r++)
 }
 System.out.println(a[0][0] + a[0][1] + a[1][0] + a[1][1]);`
       },
-      opts: ["0", "4", "12", "20"],
+      opts: ["0", "2", "12", "20"],
       a: 2,
-      why: "İlk döngü hücrelerin kopyasını değiştirir, tablo aynı kalır. İkinci döngü her satırın ilk hücresini 1 yapar: { {1, 5}, {1, 5} }. Toplam 1 + 5 + 1 + 5 = 12. İlk döngünün tabloyu sıfırladığını sanan 4'e gider."
+      why: "İlk döngü hücrelerin kopyasını değiştirir, tablo aynı kalır. İkinci döngü her satırın ilk hücresini 1 yapar: { {1, 5}, {1, 5} }. Toplam 1 + 5 + 1 + 5 = 12. İlk döngünün tabloyu sıfırladığını sanan 2'ye gider."
     },
     {
       q: "a, satır ve sütun sayısı farklı olabilen bir int[][] dizisidir. Yalnızca son sütunun toplamını hesaplayan kod hangisidir?",

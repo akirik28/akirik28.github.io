@@ -39,7 +39,7 @@ window.DEFTER = {
           durumlar: [
             { metin: "Rastgele dağılımın sonucu: A 24.4, B 22.6, C 28.0 dakika." },
             { metin: "B'nin sütunu A'dan kısa: ilk bakışta ==B daha hızlı== görünüyor.", goster: ["cr"] },
-            { metin: "Gerçekte A'nın vakitler arası farkı 3 dk, ama sabah/öğleden sonra farkı 12 dk. Büyük etki küçük etkiyi ezdi.", goster: ["r1", "r1t", "r2", "r2t"], gizle: ["cr"] }
+            { metin: "Gerçekte rotalar arasındaki fark 3 dk, ama sabah/öğleden sonra farkı 12 dk. Büyük etki küçük etkiyi ezdi.", goster: ["r1", "r1t", "r2", "r2t"], gizle: ["cr"] }
           ] },
         { tip: "tuzak", baslik: "Şans bazen kötü dağıtır", metin: "*Random assignment* uzun vadede dengeler; ama tek bir deneyde gruplar dengesiz çıkabilir. Çok güçlü bir etki varsa buna güvenme.", yanlis: "“Tamamen rastgele atadım, o halde günün vakti dengelendi.”", dogru: "Güçlü bir değişken (günün vakti) varsa onu *block* olarak kur." }
       ]

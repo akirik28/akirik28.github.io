@@ -52,7 +52,7 @@ window.DEFTER = {
           ], vurgu: 3, not: "Örnek hesap: E(A, Instagram) = (100 × 150) ÷ 300 = 50. Parantezdeki sayılar beklenenler." },
         { tip: "adimlar", baslik: "Koşullar (iki tasarım için)", adimlar: [
             { baslik: "1 · *Random*", metin: "Homojenlik: her grup ayrı rastgele örneklem (ya da deneyde rastgele atama). Bağımsızlık: tek rastgele örneklem." },
-            { baslik: "2 · *Independent* (%10)", metin: "Yerine koymadan örnekliyorsan her örneklem kendi popülasyonunun %10’unu aşmasın. Her okulda 1000’den fazla öğrenci varsa 100, 120, 80 uygundur." },
+            { baslik: "2 · *Independent* (%10)", metin: "Yerine koymadan örnekliyorsan her örneklem kendi popülasyonunun %10’unu aşmasın. Okul B’de 1200’den, A’da 1000’den, C’de 800’den fazla öğrenci varsa 100, 120, 80 uygundur." },
             { baslik: "3 · *Large Counts*", metin: "Bütün beklenen sayılar en az 5: en küçüğü 16 ≥ 5 ✓." }
           ] }
       ]
@@ -92,7 +92,7 @@ window.DEFTER = {
       baslik: "Sonucu bağlamla yaz",
       kisa: "Aynı hesap, farklı cümle: homojenlikte dağılımlar, bağımsızlıkta ilişki.",
       bloklar: [
-        { tip: "ornek", baslik: "Dört adım: üç okul, favori platform", durum: "Okul A, B ve C’den ayrı ayrı rastgele seçilen 100, 120 ve 80 öğrenci (her okulda 1000’den fazla öğrenci var). α = 0,05. Favori platform dağılımı okullarda aynı mı?",
+        { tip: "ornek", baslik: "Dört adım: üç okul, favori platform", durum: "Okul A, B ve C’den ayrı ayrı rastgele seçilen 100, 120 ve 80 öğrenci (her okulda 1200’den fazla öğrenci var). α = 0,05. Favori platform dağılımı okullarda aynı mı?",
           adimlar: ["State: H₀: Favori platformun dağılımı üç okulda aynıdır. Hₐ: Dağılım en az bir okulda farklıdır. α = 0,05.", "Plan: ki-kare homojenlik testi. *Random*: her okuldan ayrı rastgele örnek. %10: örneklemler okulların %10’undan küçük. *Large Counts*: en küçük E = 16 ≥ 5 ✓.", "Do: χ² ≈ 6,65; df = (3 − 1)(3 − 1) = 4; p-değeri ≈ 0,155.", "Conclude: p = 0,155 > α = 0,05 olduğundan H₀’ı reddedemeyiz. Favori platform dağılımının okullar arasında farklı olduğuna dair ikna edici kanıt yoktur."],
           sonuc: "χ² ≈ 6,65, df = 4, p ≈ 0,155 > 0,05 ⇒ H₀ reddedilemez." },
         { tip: "tablo", baslik: "Sonuç cümleleri: iki test", head: ["", "Homojenlik", "Bağımsızlık"], rows: [

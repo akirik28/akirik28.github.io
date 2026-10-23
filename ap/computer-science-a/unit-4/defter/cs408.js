@@ -352,7 +352,7 @@ System.out.println(list);`
       },
       opts: ["1", "3", "4", "2"],
       a: 3,
-      why: "Çiftlere bakılır: (4, 7) küçük, (7, 7) küçük değil, (7, 2) değil, (2, 9) küçük. Yani 2 çift sayılır. 4 diyen, 4 elemanlı listede her çifti saymıştır; 3 diyen ise 7 < 7 eşitliğini de saymıştır."
+      why: "Çiftlere bakılır: (4, 7) küçük, (7, 7) küçük değil, (7, 2) değil, (2, 9) küçük. Yani 2 çift sayılır. 4 diyen, 4 komşu çiftin hepsini saymıştır; 3 diyen ise 7 < 7 eşitliğini de saymıştır."
     },
     {
       q: "Aşağıdaki döngü list içindeki bütün negatif sayıları silmeyi amaçlıyor, ancak [-1, -2, 3] gibi ardışık negatifleri atlıyor. Hangi değişiklik hatayı giderir?",

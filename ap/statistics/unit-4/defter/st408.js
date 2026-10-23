@@ -31,7 +31,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "σ²_(X±Y)", alt: "toplamın da farkın da varyansı" }, "=",
-            { t: "σ²_X + σ²_Y", alt: "varyanslar HER ZAMAN toplanır" }
+            { t: "σ²_X + σ²_Y", alt: "toplamda da farkta da varyanslar toplanır (bağımsızsa)" }
           ], aciklama: "Yalnız X ve Y ==bağımsızsa== geçerli. Standart sapma için son adımda karekök al: σ_(X±Y) = √(σ²_X + σ²_Y)." },
         { tip: "ornek", baslik: "Yolculuk süresinin standart sapması", durum: "Aynı X (σ = 3) ve Y (σ = 4), bağımsız. T = X + Y ve D = Y − X için σ kaçtır?",
           adimlar: ["Varyanslar: σ²_X = 3² = 9; σ²_Y = 4² = 16.", "T için: σ²_T = 9 + 16 = 25; σ_T = √25 = 5 dakika.", "D için de varyanslar toplanır: σ²_D = 9 + 16 = 25; σ_D = 5 dakika."],

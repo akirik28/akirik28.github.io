@@ -121,7 +121,7 @@ window.DEFTER = {
             { metin: "\"4 dakikadan az\" olasılığı = 0'dan 4'e kadar ==alan==.", goster: ["a", "n", "y"] },
             { metin: "Tek bir noktanın olasılığı 0'dır: genişliği olmayan şeridin alanı yok. Bu yüzden sürekli değişkende P(X = 4) = 0.", goster: ["z"] }
           ] },
-        { tip: "not", metin: "Bu yüzden sürekli değişkenlerde olasılık **aralık** için sorulur: P(X ≤ 4), P(2 < X < 6). Normal dağılımda (Unit 2) alan hesabı tam bu fikre dayanır. Burada yalnız fikri tut: ayrık değişkende çubuk, sürekli değişkende alan." }
+        { tip: "not", metin: "Bu yüzden sürekli değişkenlerde olasılık **aralık** için sorulur: P(X ≤ 4), P(2 < X < 6). Normal dağılımda (Unit 5) alan hesabı tam bu fikre dayanır. Burada yalnız fikri tut: ayrık değişkende çubuk, sürekli değişkende alan." }
       ]
     },
     {

@@ -28,7 +28,7 @@ window.DEFTER = {
             { metin: "Şimdi [n, n+1] üzerine kuralım (yükseklik yine f(n)). Bu dikdörtgenler eğrinin ==üstünde== kalır.", gizle: ["lo2", "lo3", "lo4", "lo5", "lo6"], goster: ["up1", "up2", "up3", "up4", "up5", "up6"] },
             { metin: "İkisi birlikte: toplam, integralle sıkışır. İntegral sonluysa toplam sonlu, integral sonsuzsa toplam sonsuz.", goster: ["lo2", "lo3", "lo4", "lo5", "lo6"] }
           ] },
-        { tip: "formul", parcalar: [{ t: "∫₁ᴺ⁺¹ f dx", alt: "üst dikdörtgenlerden küçük" }, "≤", { t: "a₁ + a₂ + … + aₙ", alt: "kısmi toplam" }, "≤", { t: "a₁ + ∫₁ᴺ f dx", alt: "alt dikdörtgenlerden büyük" }], aciklama: "Bu sıkıştırma testin kanıtıdır: kısmi toplam, integralden hem büyük (soldan) hem en fazla a₁ kadar küçük (sağdan) olduğu için ==ikisi birlikte sınırlı ya da sınırsız== olur." }
+        { tip: "formul", parcalar: [{ t: "∫₁ᴺ⁺¹ f dx", alt: "üst dikdörtgenlerden küçük" }, "≤", { t: "a₁ + a₂ + … + aₙ", alt: "kısmi toplam" }, "≤", { t: "a₁ + ∫₁ᴺ f dx", alt: "alt dikdörtgenlerden büyük" }], aciklama: "Bu sıkıştırma testin kanıtıdır: kısmi toplam, integralden hem büyük (soldan) hem de integralden en fazla a₁ kadar büyük (sağdan) olduğu için ==ikisi birlikte sınırlı ya da sınırsız== olur." }
       ]
     },
     {

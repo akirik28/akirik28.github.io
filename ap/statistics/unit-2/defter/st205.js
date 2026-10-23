@@ -89,7 +89,7 @@ window.DEFTER = {
             ["5", "7", "6", "+1"], ["6", "8", "7", "+1"], ["7", "8", "8", "0"], ["8", "8", "9", "−1"],
             ["", "", "Toplam", "0"]
           ], vurgu: 8, not: "Bu doğruda artıkların toplamı 0'dır; üstteki ve alttaki sapmalar birbirini dengeler." },
-        { tip: "grafik", baslik: "Artıklar doğruya dik çizilen çubuklardır", xlabel: "Çalışma saati", ylabel: "Quiz", xmax: 9, ymax: 10,
+        { tip: "grafik", baslik: "Artıklar noktadan doğruya dikey çizilen çubuklardır", xlabel: "Çalışma saati", ylabel: "Quiz", xmax: 9, ymax: 10,
           xticks: [1, 2, 3, 4, 5, 6, 7, 8].map(function (v) { return { v: v, label: String(v) }; }),
           yticks: [2, 4, 6, 8, 10].map(function (v) { return { v: v, label: String(v) }; }),
           ogeler: [
@@ -153,7 +153,7 @@ window.DEFTER = {
             "Artık = y − ŷ. Pozitif: model eksik tahmin etti (nokta doğrunun üstünde); negatif: fazla tahmin etti.",
             "*Residual plot*: artıklar x'e karşı çizilir. Desen yoksa doğrusal model uygun, desen varsa uygun değil.",
             "Yüksek r tek başına doğrusal modelin uygun olduğunu göstermez; artık grafiğine bak.",
-            "Doğrusal ilişkide artıkların toplamı 0'dır."
+            "En küçük kareler doğrusunda (LSRL) artıkların toplamı 0'dır."
           ] }
       ]
     }

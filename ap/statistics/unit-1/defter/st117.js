@@ -2,7 +2,7 @@
    Kaynak: ap-videolar/src/episodes/st117 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 (function () {
   /* 100 denemelik randomization distribution (notes.md tablosu): fark → adet */
-  var COUNTS = { "-2.8": 1, "-2.6": 2, "-2.4": 1, "-2.0": 1, "-1.8": 2, "-1.6": 4, "-1.4": 2, "-1.2": 2, "-1.0": 7, "-0.8": 9, "-0.6": 7, "-0.4": 7, "-0.2": 6, "0": 5, "0.2": 6, "0.4": 5, "0.6": 3, "0.8": 5, "1": 6, "1.2": 3, "1.4": 2, "1.6": 3, "1.8": 4, "2": 4, "2.4": 2, "3": 1 };
+  var COUNTS = { "-2.8": 1, "-2.6": 2, "-2.4": 1, "-2": 1, "-1.8": 2, "-1.6": 4, "-1.4": 2, "-1.2": 2, "-1": 7, "-0.8": 9, "-0.6": 7, "-0.4": 7, "-0.2": 6, "0": 5, "0.2": 6, "0.4": 5, "0.6": 3, "0.8": 5, "1": 6, "1.2": 3, "1.4": 2, "1.6": 3, "1.8": 4, "2": 4, "2.4": 2, "3": 1 };
   var i;
   /* grafik ögeleri: her 0.2'lik aralık için bir sütun (x = fark + 3) */
   var BARS = [], SET_ALL = {}, SET_ONE = {}, TAIL = [];
@@ -11,7 +11,7 @@
     var id = "h" + i, tail = v >= 1.2;
     BARS.push({ id: id, tip: "alan", renk: tail ? 0 : 1, gizli: tail, noktalar: [[c - 0.09, 0], [c + 0.09, 0], [c + 0.09, 0], [c - 0.09, 0]] });
     SET_ALL[id] = { noktalar: [[c - 0.09, 0], [c + 0.09, 0], [c + 0.09, n], [c - 0.09, n]] };
-    if (v === -0.6) SET_ONE[id] = SET_ALL[id];
+    if (v === -0.6) SET_ONE[id] = { noktalar: [[c - 0.09, 0], [c + 0.09, 0], [c + 0.09, 1], [c - 0.09, 1]] };
     if (tail) TAIL.push(id);
   }
   var XT = [-3, -2, -1, 0, 1, 2, 3].map(function (d) { return { v: d + 3, label: String(d) }; });

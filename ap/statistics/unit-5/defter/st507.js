@@ -117,7 +117,7 @@ window.DEFTER = {
       opts: ["n₁ = 45, n₂ = 12", "n₁ = 12, n₂ = 45", "n₁ = 15, n₂ = 20", "n₁ = 40, n₂ = 50"],
       a: 3,
       why: "Çarpık popülasyonlarda her iki örneklem büyüklüğü de ≥ 30 olmalıdır (CLT). Yalnızca D'de n₁ = 40 ve n₂ = 50 koşulu sağlar. A ve B'de küçük olan grup çarpıklığı fark dağılımına taşır." },
-    { q: "İki şehirde günlük ekran süresi (saat) ölçülüyor. 1. şehir: μ₁ = 46, σ₁ = 20, n₁ = 50; 2. şehir: μ₂ = 40, σ₂ = 20, n₂ = 50. Örneklemler bağımsız, rastgele ve popülasyonlar çok büyük. x̄₁ − x̄₂ < 0 olma olasılığı yaklaşık kaçtır?",
+    { q: "İki şehirde haftalık ekran süresi (saat) ölçülüyor. 1. şehir: μ₁ = 46, σ₁ = 20, n₁ = 50; 2. şehir: μ₂ = 40, σ₂ = 20, n₂ = 50. Örneklemler bağımsız, rastgele ve popülasyonlar çok büyük. x̄₁ − x̄₂ < 0 olma olasılığı yaklaşık kaçtır?",
       opts: ["0,933", "0,159", "0,067", "0,023"],
       a: 2,
       why: "Mean 46 − 40 = 6; SD = √(400 ÷ 50 + 400 ÷ 50) = √16 = 4; z = (0 − 6) ÷ 4 = −1,5; P(Z < −1,5) = 0,0668 ≈ 0,067. 0,933 sağ kuyruktur; 0,159 SD'yi 6, 0,023 SD'yi 3 almanın sonucudur." },

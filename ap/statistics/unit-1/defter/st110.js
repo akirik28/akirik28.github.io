@@ -234,7 +234,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "📌", terim: "Relative position", tr: "göreli konum", tanim: "Bir değerin kendi dağılımı içindeki yeri. *z-score* ya da *percentile* ile ölçülür.", ornek: "84 puan, sınıf ortalamasının 1 standart sapma üstünde." },
             { ikon: "📐", terim: "z-score", tr: "z-puanı", tanim: "Bir değerin ortalamadan kaç *standard deviation* uzakta olduğu: (değer − *mean*) ÷ *standard deviation*.", ornek: "İstatistik quiz'inde z = (84 − 76) ÷ 8 = 1." },
-            { ikon: "📈", terim: "Percentile", tr: "yüzdelik dilim", tanim: "Dağılımın yüzde kaçının bu değerin altında kaldığını söyler.", ornek: "88. *percentile*: öğrencilerin %88'i bu puanın altında." }
+            { ikon: "📈", terim: "Percentile", tr: "yüzdelik dilim", tanim: "Dağılımın yüzde kaçının bu değere eşit ya da ondan küçük olduğunu söyler.", ornek: "88. *percentile*: öğrencilerin %88'i bu puanda ya da altında." }
           ] },
         { tip: "ornek", baslik: "84 mü, 90 mı daha iyi?", durum: "İstatistik quiz: 84, *mean* 76, *standard deviation* 8. Kimya sınavı: 90, *mean* 85, *standard deviation* 10.",
           adimlar: [
