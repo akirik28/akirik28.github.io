@@ -58,7 +58,7 @@
       LS.forEach(function (l) {
         var c = by[l.slug];
         if (c) { delete by[l.slug]; if (!c.defterBaslik) { c.title = l.title; c.en = l.en || c.en; } c.code = l.code || c.code; c.no = l.no; }
-        else { c = {}; for (var f in l) c[f] = l[f]; c.questions = []; c._yok = true; }
+        else { c = {}; for (var f in l) c[f] = l[f]; c.questions = (l.questions || []).slice(); c._yok = true; }
         sirali.push(c);
       });
       out.forEach(function (c) { if (by[c.slug]) sirali.push(c); });
