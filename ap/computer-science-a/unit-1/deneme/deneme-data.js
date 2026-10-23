@@ -31,7 +31,7 @@ window.DENEME = {
             "Good night / See you soon"
           ],
           "a": 2,
-          "w": "*print* yazar ve imleci aynı satırda bırakır; *println* yazdıktan sonra alt satıra geçer. Bu yüzden Good ile night bitişik, See you ile \" soon\" aynı satırdadır. Her komutu ayrı satır sanmak ilk şıkkı, *println*'in satır atlatmasını unutmak üçüncüyü verir. Araya boşluk koyan yalnız *string literal*'in içindeki boşluktur; \"night\"ın başında boşluk yok.",
+          "w": "*print* yazar ve imleci aynı satırda bırakır; *println* yazdıktan sonra alt satıra geçer. Bu yüzden Good ile night bitişik, See you ile \" soon\" aynı satırdadır. Her komutu ayrı satır sanmak ilk şıkkı, *println*'in satır atlatmasını unutmak ikinciyi verir. Araya boşluk koyan yalnız *string literal*'in içindeki boşluktur; \"night\"ın başında boşluk yok.",
           "fig": {
             "type": "code",
             "code": "System.out.print(\"Good\");\nSystem.out.println(\"night\");\nSystem.out.print(\"See you\");\nSystem.out.println(\" soon\");"
@@ -773,7 +773,7 @@ window.DENEME = {
             "(double) a + b + c / 3"
           ],
           "a": 1,
-          "w": "Toplam 19. (double) (a + b + c) önce 19.0 yapar, sonra / 3 *double* bölmedir: 6.333…. İkinci şıkta bölme parantez içinde *int* olarak yapılır (6), *cast* yalnız 6.0 verir. Üçüncüsü 6. Sonuncusunda *cast* yalnız a'ya uygulanır ve c / 3 = 2 önce hesaplanır: 5.0 + 6 + 2 = 13.0."
+          "w": "Toplam 19. (double) (a + b + c) önce 19.0 yapar, sonra / 3 *double* bölmedir: 6.333…. İlk şıkta bölme parantez içinde *int* olarak yapılır (6), *cast* yalnız 6.0 verir. Üçüncüsü 6. Sonuncusunda *cast* yalnız a'ya uygulanır ve c / 3 = 2 önce hesaplanır: 5.0 + 6 + 2 = 13.0."
         },
         {
           "t": "1.6",
@@ -1124,7 +1124,7 @@ window.DENEME = {
             "9"
           ],
           "a": 3,
-          "w": "x = 7; y = 5 × (7 − 4) = 15; x = 7 % (15 − 11) = 7 % 4 = 3; y = 15 / 3 = 5; x = 4. x + y iki *int*'in toplamı: 9. \"45\" toplamı birleştirme sanmaktan, 12 sağ tarafları parantezsiz okumaktan (y = 5 × 7 − 4 = 31 …) gelir.",
+          "w": "x = 7; y = 5 × (7 − 4) = 15; x = 7 % (15 − 11) = 7 % 4 = 3; y = 15 / 3 = 5; x = 4. x + y iki *int*'in toplamı: 9. \"45\" toplamı birleştirme sanmaktan, 12 ve 10, ara satırlardan birinde değişkenin güncel değeri yerine eski değerini kullanmaktan gelir.",
           "fig": {
             "type": "code",
             "code": "int x = 2;\nint y = 5;\nx += y;\ny *= x - 4;\nx %= y - 11;\ny /= x;\nx++;\nSystem.out.println(x + y);"
@@ -1156,7 +1156,7 @@ window.DENEME = {
             "int total(int a) and double total(double a)"
           ],
           "a": 1,
-          "w": "*Method signature* yalnız ad ve parametre tiplerinin sırasıdır; dönüş tipi ve parametre adları dahil değildir. İlk çiftin ikisi de total(int, int) imzasına sahiptir, bu yüzden aynı sınıfta olamaz. Öteki çiftlerde parametre sayısı, tip sırası ya da tipi farklıdır; geçerli *overloading*'dir."
+          "w": "*Method signature* yalnız ad ve parametre tiplerinin sırasıdır; dönüş tipi ve parametre adları dahil değildir. İkinci çiftin ikisi de total(int, int) imzasına sahiptir, bu yüzden aynı sınıfta olamaz. Öteki çiftlerde parametre sayısı, tip sırası ya da tipi farklıdır; geçerli *overloading*'dir."
         },
         {
           "t": "1.11",
@@ -1456,10 +1456,10 @@ window.DENEME = {
             "3 hey 12",
             "6 hey! 12",
             "3 hey! 12",
-            "3 hey 30"
+            "3 hey 36"
           ],
           "a": 0,
-          "w": "*Call by value*: metodun n ve s'si, çağıranın n ve s'sinin kopyalarıdır. n = n + 3 ve s = s + \"!\" yalnızca bu kopyaları değiştirir. r = (3 + 3) × 2 = 12. İkinci çağrı 30 döndürür ama atanmaz. String *immutable* olduğu için s + \"!\" yeni bir nesne üretir; çağıranın s'si \"hey\" kalır.",
+          "w": "*Call by value*: metodun n ve s'si, çağıranın n ve s'sinin kopyalarıdır. n = n + 3 ve s = s + \"!\" yalnızca bu kopyaları değiştirir. r = (3 + 3) × 2 = 12. İkinci çağrı 36 döndürür ama atanmaz. String *immutable* olduğu için s + \"!\" yeni bir nesne üretir; çağıranın s'si \"hey\" kalır.",
           "fig": {
             "type": "code",
             "code": "public static int update(int n, String s)\n{\n    n = n + s.length();\n    s = s + \"!\";\n    return n * 2;\n}\n\n// code segment\nint n = 3;\nString s = \"hey\";\nint r = update(n, s);\nupdate(r, s + s);\nSystem.out.println(n + \" \" + s + \" \" + r);"
@@ -1595,7 +1595,7 @@ window.DENEME = {
             "Zebra, apple, zebra, zeb"
           ],
           "a": 2,
-          "w": "*compareTo* karakter kodlarına göre sıralar ve bütün büyük harfler küçüklerden önce gelir; bu yüzden \"Zebra\" \"apple\"dan bile öncedir. \"zeb\", \"zebra\"nın önekidir; kısa olan önce gelir. Alfabetik sezgiyle büyük/küçük harfi yok saymak ikinci ve üçüncü şıkları, öneki sona koymak sonuncuyu verir."
+          "w": "*compareTo* karakter kodlarına göre sıralar ve bütün büyük harfler küçüklerden önce gelir; bu yüzden \"Zebra\" \"apple\"dan bile öncedir. \"zeb\", \"zebra\"nın önekidir; kısa olan önce gelir. Alfabetik sezgiyle büyük/küçük harfi yok saymak ilk iki şıkkı, öneki sona koymak sonuncuyu verir."
         }
       ]
     }

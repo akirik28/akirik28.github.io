@@ -881,7 +881,7 @@ window.DENEME = {
             "y − 1 = 10(x − 2)"
           ],
           "a": 3,
-          "w": "y(2) = (4 − 3)⁵ = 1; y′ = 5(2x − 3)⁴·2 = 10(2x − 3)⁴, y′(2) = 10. Teğet: y − 1 = 10(x − 2). Eğimi 5 olan şık iç türevi unutur; y = 10(x − 2) noktanın y değerini 0 alır; son şık x ile y'yi yer değiştirir."
+          "w": "y(2) = (4 − 3)⁵ = 1; y′ = 5(2x − 3)⁴·2 = 10(2x − 3)⁴, y′(2) = 10. Teğet: y − 1 = 10(x − 2). Eğimi 5 olan şık iç türevi unutur; y = 10(x − 2) noktanın y değerini 0 alır; y − 2 = 10(x − 1) şıkkı x ile y'yi yer değiştirir."
         },
         {
           "t": "3.1-2",

@@ -1817,7 +1817,7 @@ window.DENEME = {
             "The limit does not exist, because cos x oscillates."
           ],
           "a": 2,
-          "w": "cos x salınır ama −1 ile 1 arasındadır: (5x − 1)/(x + 2) ≤ (5x − cos x)/(x + 2) ≤ (5x + 1)/(x + 2) ve iki sınır da 5'e gider (*squeeze theorem*). Ya da x'e böl: (5 − cos x/x)/(1 + 2/x) ve cos x/x → 0. Büyüyen x'in yanında salınım önemsizleşir; \"does not exist\" yanlış. 4, cos x'i 1 sanmaktan gelir."
+          "w": "cos x salınır ama −1 ile 1 arasındadır: (5x − 1)/(x + 2) ≤ (5x − cos x)/(x + 2) ≤ (5x + 1)/(x + 2) ve iki sınır da 5'e gider (*squeeze theorem*). Ya da x'e böl: (5 − cos x/x)/(1 + 2/x) ve cos x/x → 0. Büyüyen x'in yanında salınım önemsizleşir; \"does not exist\" yanlış. 4, cos x'i x kadar büyüyen bir terim sanıp (5x − x)/x yazmaktan gelir."
         },
         {
           "t": "1.10–1.11",

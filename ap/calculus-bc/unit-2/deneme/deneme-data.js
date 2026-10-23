@@ -1491,7 +1491,7 @@ window.DENEME = {
             "e²"
           ],
           "a": 2,
-          "w": "Teğet: y − ln a = (1/a)(x − a). (0, 0)'ı koy: −ln a = −1 → ln a = 1 → a = e. 1, eğrinin x eksenini kestiği yer; oradaki teğet y = x − 1 orijinden geçmez. 1/e, ln a = −1 işaret hatası. e² ise ln a = 2: teğetin eğimini a yerine 1/a² ile kurar."
+          "w": "Teğet: y − ln a = (1/a)(x − a). (0, 0)'ı koy: −ln a = −1 → ln a = 1 → a = e. 1, eğrinin x eksenini kestiği yer; oradaki teğet y = x − 1 orijinden geçmez. 1/e, ln a = −1 işaret hatası. e² ise ln a = 2: teğetin y-kesişimini (ln a − 1) 0 yerine 1'e eşitler."
         },
         {
           "t": "2.8",
@@ -2226,7 +2226,7 @@ window.DENEME = {
             "(0, 1) and (−2, −3)"
           ],
           "a": 2,
-          "w": "y′ = [(x + 1) − (x − 1)]/(x + 1)² = 2/(x + 1)². 2/(x + 1)² = 2 → (x + 1)² = 1 → x = 0 ya da x = −2. y değerleri: y(0) = −1, y(−2) = (−3)/(−1) = 3. (1, 0) ve (−3, 2), payı 1 alıp (x + 1)² = 4 çözer. (0, 1) ve (−2, −3) y değerlerinde işaret hatası. \"Yalnız (0, −1)\" negatif kökü kaybeder."
+          "w": "y′ = [(x + 1) − (x − 1)]/(x + 1)² = 2/(x + 1)². 2/(x + 1)² = 2 → (x + 1)² = 1 → x = 0 ya da x = −2. y değerleri: y(0) = −1, y(−2) = (−3)/(−1) = 3. (1, 0) ve (−3, 2), eğimi 2 yerine 1/2'ye eşitleyip (x + 1)² = 4 çözer. (0, 1) ve (−2, −3) y değerlerinde işaret hatası. \"Yalnız (0, −1)\" negatif kökü kaybeder."
         },
         {
           "t": "2.9",
@@ -2238,7 +2238,7 @@ window.DENEME = {
             "13/25"
           ],
           "a": 0,
-          "w": "Grafikten: f(2) = 2 ve f′(2) = −1 (ilk parçanın eğimi). Payda g(x) = x² + 1: g(2) = 5, g′(2) = 4. h′(2) = [f′g − fg′]/g² = [(−1)(5) − (2)(4)]/25 = −13/25. 3/25, −1'in işaretini kaybeder (5 − 2 yerine −5 + 8); 13/25 sırayı ters çevirir; −1/4 ise f′/g′.",
+          "w": "Grafikten: f(2) = 2 ve f′(2) = −1 (ilk parçanın eğimi). Payda g(x) = x² + 1: g(2) = 5, g′(2) = 4. h′(2) = [f′g − fg′]/g² = [(−1)(5) − (2)(4)]/25 = −13/25. 3/25, paydaki çıkarmayı toplama yapar (−5 − 8 yerine −5 + 8); 13/25 sırayı ters çevirir; −1/4 ise f′/g′.",
           "fig": {
             "type": "graph",
             "xlabel": "x",
