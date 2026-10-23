@@ -569,6 +569,7 @@ window.KIT = {
       "en": "Loop Algorithms: Sum, Average, Count, Max, and Min",
       "accent": "#9BC53D",
       "defter": "cs206",
+      "sessiz": true,
       "seconds": 302,
       "terms": [
         "Accumulator",
@@ -666,6 +667,7 @@ window.KIT = {
       "en": "Loop Algorithms: Digits and Divisibility",
       "accent": "#2FD6B9",
       "defter": "cs206",
+      "sessiz": true,
       "seconds": 287,
       "terms": [
         "Divisible",
@@ -757,6 +759,7 @@ window.KIT = {
       "en": "Implementing String Algorithms",
       "accent": "#F25F5C",
       "defter": "cs207",
+      "sessiz": true,
       "seconds": 310,
       "terms": [
         "Traverse",
@@ -854,6 +857,7 @@ window.KIT = {
       "en": "Nested Iteration",
       "accent": "#F6B94A",
       "defter": "cs208",
+      "sessiz": true,
       "seconds": 292,
       "terms": [
         "Nested loop",
@@ -948,6 +952,7 @@ window.KIT = {
       "en": "Informal Run-Time Analysis",
       "accent": "#7C95FF",
       "defter": "cs209",
+      "sessiz": true,
       "seconds": 306,
       "terms": [
         "Informal run-time analysis",
