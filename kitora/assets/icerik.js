@@ -120,12 +120,12 @@
     ["calc-u1", "calc", 1, "ap/calculus-bc/unit-1/", "kit-data.js", "Limits and Continuity"],
     ["calc-u2", "calc", 2, "ap/calculus-bc/unit-2/", "kit-data.js", "Differentiation: Definition and Fundamental Properties"],
     ["calc-u3", "calc", 3, "ap/calculus-bc/unit-3/", "kit-data.js", "Differentiation: Composite, Implicit, and Inverse Functions"],
-    ["psych-u1", "psych", 1, "ap/psychology/unit-1/", "defter/defter-liste.js", "Biological Bases of Behavior"],
+    ["psych-u1", "psych", 1, "ap/psychology/unit-1/", "ikisi", "Biological Bases of Behavior"],
     ["psych-u2", "psych", 2, "ap/psychology/unit-2/", "defter/defter-liste.js", "Cognition"],
     ["psych-u3", "psych", 3, "ap/psychology/unit-3/", "defter/defter-liste.js", "Development and Learning"],
     ["psych-u4", "psych", 4, "ap/psychology/unit-4/", "defter/defter-liste.js", "Social Psychology and Personality"],
     ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"],
-    ["csa-u1", "csa", 1, "ap/computer-science-a/unit-1/", "kit-data.js", "Using Objects and Methods"],
+    ["csa-u1", "csa", 1, "ap/computer-science-a/unit-1/", "ikisi", "Using Objects and Methods"],
     /* 10. sınıf okul defterleri (kitsiz; listede KIT.okul ve KIT.not var) */
     ["pre-u1", "precalc", 1, "okul/precalculus/unit-1/", "defter/defter-liste.js", "Functions"],
     ["pre-u2", "precalc", 2, "okul/precalculus/unit-2/", "defter/defter-liste.js", "Quadratics"],
@@ -154,7 +154,7 @@
   /* ünitenin bölüm listesi (window.KIT); kitsiz ünitede KIT.kitYok = true */
   function defterListesi(u) {
     var key = "dl:" + u.id;
-    return onbellek[key] || (onbellek[key] = genel(KOK + u.path + u.liste, "KIT").then(function (K) { if (!K.store) K.store = "hg-kit:v2:"; return K; }));
+    return onbellek[key] || (onbellek[key] = genel(KOK + u.path + (u.liste === "ikisi" ? "defter/defter-liste.js" : u.liste), "KIT").then(function (K) { if (!K.store) K.store = "hg-kit:v2:"; return K; }));
   }
   function defterOku(u, slug) { var key = "def:" + u.id + slug; return onbellek[key] || (onbellek[key] = genel(KOK + u.path + "defter/" + slug + ".js", "DEFTER")); }
   /* bir dersin bütün ünitelerinde kaç defter var, kaçı okundu (Kitlerim ve panel kartları için) */

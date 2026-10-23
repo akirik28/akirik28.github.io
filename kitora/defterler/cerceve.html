@@ -7,7 +7,7 @@
 <!--
   Kitora UI v2 · orijinal not defteri çerçevesi.
   Canlı sitedeki defteri birebir (kendi motoru _kit/defter.js ve stili defter.css ile) gösterir;
-  v2 sayfaları bunu iframe içinde açar: defterler/cerceve.html?u=<ünite>&yol=ap|okul/<ders>/unit-N/&liste=<liste>&b=<bölüm>&tema=koyu|acik[&misafir=1]#b2
+  v2 sayfaları bunu iframe içinde açar: defterler/cerceve.html?u=<ünite>&yol=ap|okul/<ders>/unit-N/&liste=kit-data.js|defter/defter-liste.js|ikisi&b=<bölüm>&tema=koyu|acik[&misafir=1]#b2
   - Defter dosyaları canlı siteden gelir (<base>), hiçbiri kopyalanmaz.
   - Hesap: v2'nin hesap.js'i (aynı anahtarlar); misafirde hiç yüklenmez, böylece Unit 1 defterlerinin hepsi açık kalır.
   - Defterin kendi bağlantıları (önceki/sonraki defter, "Videosu", "Bütün defterler") v2 sayfalarına çevrilir.
@@ -17,7 +17,7 @@
   "use strict";
   var p = new URLSearchParams(location.search);
   var yol = p.get("yol") || "", liste = p.get("liste") || "", b = p.get("b") || "";
-  if (!/^(ap|okul)\/[a-z-]+\/unit-\d+\/$/.test(yol) || !/^(kit-data\.js|defter\/defter-liste\.js)$/.test(liste) || !/^[a-z0-9-]+$/i.test(b)) { window.CERCEVE_HATA = true; return; }
+  if (!/^(ap|okul)\/[a-z-]+\/unit-\d+\/$/.test(yol) || !/^(kit-data\.js|defter\/defter-liste\.js|ikisi)$/.test(liste) || !/^[a-z0-9-]+$/i.test(b)) { window.CERCEVE_HATA = true; return; }
   var KOK = /(^|\.)akirik28\.github\.io$/.test(location.hostname) ? location.origin + "/" : "https://akirik28.github.io/";
   var AYNA = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && location.pathname.match(/^.*\/_test\/ayna\//);   /* yerel deneme (icerik.js'teki gibi) */
   if (AYNA) KOK = location.origin + AYNA[0];
@@ -31,7 +31,9 @@
   w.push('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap">');
   w.push('<link rel="stylesheet" href="' + KOK + 'ap/_kit/kit.css?g=' + gun + '">');
   w.push('<link rel="stylesheet" href="' + KOK + 'ap/_kit/defter.css?g=' + gun + '">');
-  window.CERCEVE.betikler = [KOK + "assets/js/motion.js", (liste === "kit-data.js" ? "../kit-data.js" : "defter-liste.js") + "?g=" + gun, KOK + "ap/_kit/figs.js?g=" + gun]
+  /* liste: kit-data.js (kit tam) · defter/defter-liste.js (kitsiz) · ikisi (kit yarım: konu listesi + kit, canlı defter sayfası gibi KIT_LISTE) */
+  var listeler = liste === "kit-data.js" ? ["../kit-data.js?g=" + gun] : liste === "ikisi" ? ["defter-liste.js?g=" + gun, "@liste", "../kit-data.js?g=" + gun] : ["defter-liste.js?g=" + gun];
+  window.CERCEVE.betikler = [KOK + "assets/js/motion.js"].concat(listeler, [KOK + "ap/_kit/figs.js?g=" + gun])
     .concat(window.CERCEVE.misafir ? [] : [hesap]);
   window.CERCEVE.motor = KOK + "ap/_kit/defter.js?g=" + gun;
   document.write(w.join(""));
@@ -55,6 +57,7 @@
   function yukle(src) { return new Promise(function (ok, no) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = no; document.body.appendChild(s); }); }
   var i = 0;
   (function sira() {
+    if (i < C.betikler.length && C.betikler[i] === "@liste") { i++; window.KIT_LISTE = window.KIT; window.KIT = null; sira(); return; }
     if (i < C.betikler.length) { yukle(C.betikler[i++]).then(sira, sira); return; }
     /* v2 sayfası kurulum ve not kilidini zaten denetledi; defter motorunun kendi yönlendirmesi çalışmasın */
     if (window.HESAP) window.HESAP.engel = function () { return null; };
