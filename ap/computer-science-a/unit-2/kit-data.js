@@ -372,6 +372,99 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "2.8",
+      "slug": "cs206",
+      "title": "for Döngüsü",
+      "en": "for Loops",
+      "accent": "#5BC0EB",
+      "defter": "cs205",
+      "seconds": 277,
+      "terms": [
+        "for loop",
+        "Initialization",
+        "Loop condition",
+        "Update",
+        "Loop control variable",
+        "Scope",
+        "Accumulator",
+        "Off-by-one error"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki döngünün gövdesi kaç kez çalışır?",
+          "opts": [
+            "5",
+            "16",
+            "4",
+            "20"
+          ],
+          "a": 2,
+          "why": "i = 4, 8, 12, 16 değerlerini alır. i 20 olunca 20 < 20 *false*. Dört tur.",
+          "fig": {
+            "type": "code",
+            "code": "for (int i = 4; i < 20; i += 4) {\n  System.out.println(i);\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "10 6 2",
+            "10 6 2 -2",
+            "6 2",
+            "10 6"
+          ],
+          "a": 0,
+          "why": "j = 10, 6, 2 iken j > 0 doğru. Sonra j = −2 olur ve döngü biter; −2 hiç yazdırılmaz.",
+          "fig": {
+            "type": "code",
+            "code": "for (int j = 10; j > 0; j -= 4) {\n  System.out.print(j + \" \");\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "AyAyAy",
+            "Hiçbir şey yazdırmaz.",
+            "Kod derlenmez.",
+            "Ay"
+          ],
+          "a": 3,
+          "why": "Başlıktan sonraki noktalı virgül boş bir gövdedir: döngü üç kez boşuna döner. Süslü parantezli blok döngünün parçası değildir, bir kez çalışır.",
+          "fig": {
+            "type": "code",
+            "code": "for (int i = 0; i < 3; i++);\n{\n  System.out.print(\"Ay\");\n}"
+          }
+        },
+        {
+          "q": "Gövdesi System.out.print(i) olan döngülerden hangisi 1'den 10'a kadar (ikisi de dahil) bütün tam sayıları yazdırır?",
+          "opts": [
+            "for (int i = 1; i < 10; i++)",
+            "for (int i = 0; i <= 10; i++)",
+            "for (int i = 1; i <= 10; i++)",
+            "for (int i = 0; i < 10; i++)"
+          ],
+          "a": 2,
+          "why": "İlk değer 1, son değer 10 olmalı: i = 1 ve i <= 10. i < 10 yazanlar 10'u, 0'dan başlayanlar fazladan 0'ı yazar."
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "16",
+            "10",
+            "64",
+            "32"
+          ],
+          "a": 3,
+          "why": "Beş tur, her turda p ikiye katlanır: 2, 4, 8, 16, 32.",
+          "fig": {
+            "type": "code",
+            "code": "int p = 1;\nfor (int i = 1; i <= 5; i++) {\n  p *= 2;\n}\nSystem.out.println(p);"
+          }
+        }
+      ]
     }
   ],
   "final": []
