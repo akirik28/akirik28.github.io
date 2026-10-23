@@ -901,7 +901,7 @@
     kok.innerHTML = '<section class="hello rise"><h1 class="display" style="font-size:clamp(44px,5vw,60px)"><span class="hl">Defterler</span></h1><span class="hand" style="font-size:24px;rotate:-2deg">videosuz çalışmak isteyene</span></section>' +
       '<label class="df-ara rise d1"><span class="sr-only">Defterlerde ara</span>' + I.ara + '<input type="search" data-k="df-q" placeholder="Terim ya da konu ara: opportunity cost, GDP, function, mole…" autocomplete="off"></label>' +
       '<div class="row rise d1" style="gap:6px" role="group" aria-label="Defter türü" data-k="df-grup"><button type="button" class="filter" data-grup="ap">AP sınavları</button><button type="button" class="filter" data-grup="okul">10. sınıf okul dersleri</button></div>' +
-      '<div class="seg tabs-row rise d1" role="tablist" aria-label="Ders" data-k="df-dersler"></div><p class="muted" style="font-size:13px;margin:-12px 0 0" data-k="df-grup-not" hidden>Geçen yılın (2025-26) müfredatına göre; bu yıl konular farklı olabilir.</p>' +
+      '<div class="seg tabs-row rise d1" role="tablist" aria-label="Ders" data-k="df-dersler"></div><p class="muted rise d1" style="font-size:13px;margin:-12px 0 0" data-k="df-grup-not" hidden>Geçen yılın (2025-26) müfredatına göre; bu yıl konular farklı olabilir.</p>' +
       '<div class="kit-grid df-units rise d2" data-k="df-uniteler"></div><div class="df-sonuc" data-k="df-sonuc" hidden></div>';
     var grid = $('[data-k="df-uniteler"]'), sonuc = $('[data-k="df-sonuc"]'), inp = $('[data-k="df-q"]');
     function cipler() {

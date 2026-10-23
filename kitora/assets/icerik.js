@@ -27,12 +27,16 @@
   };
   var KITLER = [
     { id: "macro-u1", ders: "macro", unit: 1, path: "ap/macroeconomics/unit-1/", store: "macro-u1:v1:" },
+    { id: "macro-u2", ders: "macro", unit: 2, path: "ap/macroeconomics/unit-2/", store: "macro-u2:v1:" },
     { id: "micro-u1", ders: "micro", unit: 1, path: "ap/microeconomics/unit-1/", store: "micro-u1:v1:" },
+    { id: "micro-u2", ders: "micro", unit: 2, path: "ap/microeconomics/unit-2/", store: "micro-u2:v1:" },
     { id: "stat-u1", ders: "stats", unit: 1, path: "ap/statistics/unit-1/", store: "stat-u1:v1:" },
     { id: "hug-u1", ders: "hug", unit: 1, path: "ap/human-geography/unit-1/", store: "hg-kit:v2:" },
     { id: "bpf-u1", ders: "bpf", unit: 1, path: "ap/business-personal-finance/unit-1/", store: "bpf-u1:v1:" },
     { id: "bpf-u2", ders: "bpf", unit: 2, path: "ap/business-personal-finance/unit-2/", store: "bpf-u2:v1:" },
-    { id: "calc-u1", ders: "calc", unit: 1, path: "ap/calculus-bc/unit-1/", store: "calcbc-u1:v1:" }
+    { id: "calc-u1", ders: "calc", unit: 1, path: "ap/calculus-bc/unit-1/", store: "calcbc-u1:v1:" },
+    { id: "calc-u2", ders: "calc", unit: 2, path: "ap/calculus-bc/unit-2/", store: "calcbc-u2:v1:" },
+    { id: "calc-u3", ders: "calc", unit: 3, path: "ap/calculus-bc/unit-3/", store: "calcbc-u3:v1:" }
   ];
   /* veritabanındaki ders adları (ap_profil_kaydet ve quizler bunlarla eşleşir; canlı kitora/dersler.js ile aynı) */
   var OKUL = {
