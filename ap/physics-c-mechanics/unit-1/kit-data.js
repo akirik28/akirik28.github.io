@@ -579,6 +579,190 @@ window.KIT = {
           "why": "Başladığı yere döndüğü için Δx = 0, ortalama hız 0. Yol 100 m: ortalama sürat 100/50 = 2 m/s. Ortalama sürat, ortalama hızın büyüklüğü değildir."
         }
       ]
+    },
+    {
+      "no": 6,
+      "code": "1.2",
+      "slug": "pc107",
+      "title": "İvme",
+      "en": "Acceleration",
+      "accent": "#FF7DB8",
+      "seconds": 275,
+      "terms": [
+        "Acceleration",
+        "Average acceleration",
+        "Instantaneous acceleration",
+        "Second derivative",
+        "Speeding up",
+        "Slowing down",
+        "Velocity–time graph",
+        "Motion diagram",
+        "Jerk"
+      ],
+      "questions": [
+        {
+          "q": "Bir koşucunun hızı tabloda verilmiştir. t = 2 s ile t = 5 s arasındaki *average acceleration* kaçtır?",
+          "opts": [
+            "−3 m/s²",
+            "−4,5 m/s²",
+            "3 m/s²",
+            "−0,2 m/s²"
+          ],
+          "a": 0,
+          "why": "(v(5) − v(2))/(5 − 2) = (2 − 11)/3 = −9/3 = −3 m/s². Eksi işareti ivmenin −x yönünde olduğunu söyler.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "t (s)",
+              "0",
+              "2",
+              "5"
+            ],
+            "rows": [
+              [
+                "v (m/s)",
+                "3",
+                "11",
+                "2"
+              ]
+            ],
+            "caption": "Koşucunun hızı"
+          }
+        },
+        {
+          "q": "v(t) = 4t − t² (m/s) ise t = 3 s'deki ivme kaçtır?",
+          "opts": [
+            "3 m/s²",
+            "−2 m/s²",
+            "2 m/s²",
+            "−6 m/s²"
+          ],
+          "a": 1,
+          "why": "a = dv/dt = 4 − 2t. t = 3'te 4 − 6 = −2 m/s². 3, o andaki hızdır (12 − 9)."
+        },
+        {
+          "q": "x(t) = 2t³ − 3t² (m) ise t = 1 s'deki ivme kaçtır?",
+          "opts": [
+            "0 m/s²",
+            "−1 m/s²",
+            "12 m/s²",
+            "6 m/s²"
+          ],
+          "a": 3,
+          "why": "v = 6t² − 6t, a = dv/dt = 12t − 6. t = 1'de 12 − 6 = 6 m/s². 0, t = 1'deki hızdır; −1 ise konumdur."
+        },
+        {
+          "q": "Grafik bir scooterın hızını gösteriyor (doğru parçaları). t = 7 s'deki ivme kaçtır?",
+          "opts": [
+            "4 m/s²",
+            "−6 m/s²",
+            "−3 m/s²",
+            "0 m/s²"
+          ],
+          "a": 2,
+          "why": "t = 7, (6, 10) ile (8, 4) arasındaki parçada. İvme eğimdir: (4 − 10)/(8 − 6) = −6/2 = −3 m/s². 4 m/s, o andaki hızdır, ivme değil.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "t (s)",
+            "ylabel": "v (m/s)",
+            "xmax": 9,
+            "ymax": 12,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  4,
+                  10
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  4,
+                  10
+                ],
+                "to": [
+                  6,
+                  10
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  6,
+                  10
+                ],
+                "to": [
+                  8,
+                  4
+                ],
+                "label": "v"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 2,
+                "label": "(0, 2)"
+              },
+              {
+                "q": 4,
+                "p": 10,
+                "label": "(4, 10)"
+              },
+              {
+                "q": 6,
+                "p": 10,
+                "label": "(6, 10)"
+              },
+              {
+                "q": 8,
+                "p": 4,
+                "label": "(8, 4)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 10,
+                "label": "10"
+              }
+            ],
+            "caption": "Scooterın hız–zaman grafiği"
+          }
+        },
+        {
+          "q": "Bir an bir arabanın hızı +5 m/s, ivmesi −2 m/s²'dir. Hangisi doğrudur?",
+          "opts": [
+            "Araba −x yönünde gidiyor",
+            "Arabanın sürati artıyor",
+            "Araba duruyor",
+            "Arabanın sürati azalıyor"
+          ],
+          "a": 3,
+          "why": "v ve a zıt işaretli: araba +x yönünde gidiyor ama yavaşlıyor. Sürat ancak v ile a aynı işaretliyse artar."
+        }
+      ]
     }
   ],
   "final": [],
