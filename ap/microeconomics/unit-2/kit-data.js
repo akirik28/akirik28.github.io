@@ -679,6 +679,152 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "2.4",
+      "slug": "mi203",
+      "title": "Arzın Fiyat Esnekliği",
+      "en": "Price Elasticity of Supply",
+      "accent": "#58C9FF",
+      "seconds": 246,
+      "terms": [
+        "Price elasticity of supply",
+        "Quantity supplied",
+        "Elastic supply",
+        "Inelastic supply",
+        "Perfectly inelastic supply",
+        "Perfectly elastic supply",
+        "Spare capacity",
+        "Inventories",
+        "Input mobility",
+        "Short run vs long run"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, okul kulübünün ürettiği bilekliklerin iki fiyattaki arzını gösteriyor. *Midpoint formula* ile arz esnekliği ve türü nedir?",
+          "opts": [
+            "2,0 — *elastic*",
+            "1,67 — *elastic*",
+            "0,6 — *inelastic*",
+            "1,0 — *unit elastic*"
+          ],
+          "a": 1,
+          "why": "Miktar: 50 ÷ ortalama 75 = yüzde 66,7. Fiyat: 10 ÷ ortalama 25 = yüzde 40. 66,7 ÷ 40 ≈ 1,67; birden büyük, arz *elastic*. 2,0 başlangıç değerlerine bölünce çıkar; 0,6 ise kesrin ters çevrilmiş hâlidir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL)",
+              "Quantity supplied (bileklik/hafta)"
+            ],
+            "rows": [
+              [
+                "20",
+                "50"
+              ],
+              [
+                "30",
+                "100"
+              ]
+            ],
+            "caption": "Kulüp bilekliği arzı"
+          }
+        },
+        {
+          "q": "Grafikteki üç arz eğrisi aynı simit fırınının bu sabahki, birkaç gün sonraki ve aylar sonraki arzını gösteriyor. Hangisi doğru eşleştirmedir?",
+          "opts": [
+            "S₃ bu sabah, S₂ birkaç gün sonra, S₁ aylar sonra",
+            "S₂ bu sabah, S₁ birkaç gün sonra, S₃ aylar sonra",
+            "Üç eğri aynı noktadan geçtiği için zamanla ilgileri yoktur",
+            "S₁ bu sabah, S₂ birkaç gün sonra, S₃ aylar sonra"
+          ],
+          "a": 3,
+          "why": "Bu sabah çıkan simit sayısı sabittir: dikey S₁. Birkaç günde ek vardiya üretimi biraz artırır: dik S₂. Aylar içinde yeni fırınlar açılır: yayvan S₃. Zaman uzadıkça arz daha esnek olur.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  5,
+                  0
+                ],
+                "to": [
+                  5,
+                  10
+                ],
+                "label": "S₁"
+              },
+              {
+                "from": [
+                  4,
+                  0
+                ],
+                "to": [
+                  6,
+                  10
+                ],
+                "label": "S₂"
+              },
+              {
+                "from": [
+                  0,
+                  4
+                ],
+                "to": [
+                  10,
+                  6
+                ],
+                "label": "S₃"
+              }
+            ],
+            "points": [
+              {
+                "q": 5,
+                "p": 5,
+                "label": "E",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisinin arzı en *elastic*'tir?",
+          "opts": [
+            "Yarısı boş çalışan bir fabrikada üretilen plastik su şişesi",
+            "Yüz yıllık el dokuması antika halılar",
+            "Bir futbol stadyumundaki koltuklar, maç günü",
+            "Ağaçlarının meyve vermesi yıllar süren fındık, bu yıl"
+          ],
+          "a": 0,
+          "why": "Boş kapasitesi olan fabrika fiyat artınca üretimi hızla artırabilir; girdiler de kolay bulunur. Antika halı yeniden üretilemez, stadyum koltuğu maç günü sabittir, fındık ağacı ise yıllar ister; bunların arzı *inelastic*."
+        },
+        {
+          "q": "Aşağıdaki ifadelerden hangisi doğrudur?",
+          "opts": [
+            "Arz esnekliği katsayısı, arz yasası yüzünden genellikle negatiftir.",
+            "Fiyat artınca toplam gelir artıyorsa arz *inelastic*'tir.",
+            "Zaman uzadıkça bir malın arzı daha *elastic* hâle gelir.",
+            "Dikey bir arz eğrisi *perfectly elastic*'tir."
+          ],
+          "a": 2,
+          "why": "Zamanla üreticiler yeni makine alır, yeni firmalar girer; arz esnekleşir. Arz yasası fiyat ve miktarı aynı yöne götürdüğü için katsayı pozitiftir; toplam gelir testi yalnızca talep için kullanılır; dikey arz *perfectly inelastic*'tir."
+        },
+        {
+          "q": "Bir konser salonunda 2 bin koltuk var ve konser gecesi koltuk eklenemiyor. Şarkıcının şarkısı viral olunca bilet talebi artıyor. Ne olur?",
+          "opts": [
+            "Fiyat da miktar da artar; arz esnek olduğu için daha çok bilet satılır.",
+            "Fiyat artar, satılan bilet sayısı değişmez.",
+            "Miktar artar, fiyat değişmez.",
+            "Arz eğrisi sağa kayar ve fiyat düşer."
+          ],
+          "a": 1,
+          "why": "Koltuk sayısı sabit olduğu için arz dikeydir, yani *perfectly inelastic*. Talep sağa kayınca miktar 2 binde kalır; bütün tepki fiyata gider. Talep artışı arz eğrisini kaydırmaz."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "2.6-1",
       "slug": "mc109",
       "title": "Denge, Fazla ve Kıtlık",
@@ -863,7 +1009,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "2.7",
       "slug": "mc110",
       "title": "Dengenin Değişmesi ve Çift Kayma",
