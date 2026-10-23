@@ -679,6 +679,156 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "2.3-2",
+      "slug": "mi202",
+      "title": "Toplam Gelir Testi ve Esneklik",
+      "en": "Total Revenue Test and Determinants of Elasticity",
+      "accent": "#A98BFF",
+      "seconds": 265,
+      "terms": [
+        "Total revenue",
+        "Total revenue test",
+        "Elastic",
+        "Inelastic",
+        "Unit elastic",
+        "Slope vs elasticity",
+        "Determinants of price elasticity of demand",
+        "Substitutes",
+        "Necessity vs luxury",
+        "Share of income",
+        "Time horizon"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, okul kermesindeki kurabiye talebini gösteriyor. Hangisi doğrudur?",
+          "opts": [
+            "Fiyat 10'dan 8 liraya inerken talep *elastic*'tir.",
+            "Fiyat 6'dan 4 liraya inerken talep *elastic*'tir.",
+            "Fiyat 8'den 6 liraya inerken talep *inelastic*'tir.",
+            "Fiyat düştükçe toplam gelir her aralıkta artar."
+          ],
+          "a": 0,
+          "why": "Toplam gelir: 200, 240, 240, 200 lira. 10'dan 8'e fiyat düşerken gelir arttı: ters yön, *elastic*. 8'den 6'ya gelir değişmedi: *unit elastic*. 6'dan 4'e gelir düştü: aynı yön, *inelastic*.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL)",
+              "Quantity demanded",
+              "Total revenue (TL)"
+            ],
+            "rows": [
+              [
+                "10",
+                "20",
+                "200"
+              ],
+              [
+                "8",
+                "30",
+                "240"
+              ],
+              [
+                "6",
+                "40",
+                "240"
+              ],
+              [
+                "4",
+                "50",
+                "200"
+              ]
+            ],
+            "caption": "Kermes kurabiyesi"
+          }
+        },
+        {
+          "q": "Grafikteki doğrusal talep eğrisinde toplam gelir hangi noktada en yüksektir ve A'dan B'ye inerken talep nasıldır?",
+          "opts": [
+            "A noktasında; A ile B arasında talep *inelastic*",
+            "C noktasında; B ile C arasında talep *elastic*",
+            "B noktasında; A ile B arasında talep *elastic*",
+            "Eğim sabit olduğu için üç noktada da toplam gelir eşit"
+          ],
+          "a": 2,
+          "why": "Toplam gelir A'da 8 × 2 = 16, B'de 5 × 5 = 25, C'de 2 × 8 = 16. A'dan B'ye fiyat düşerken gelir artıyor; demek ki üst yarıda talep *elastic*. Eğim her yerde aynı ama esneklik değişir; tepe noktası *unit elastic* olan orta noktadır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  10
+                ],
+                "to": [
+                  10,
+                  0
+                ],
+                "label": "D"
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 8,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 5,
+                "p": 5,
+                "label": "B",
+                "guides": true
+              },
+              {
+                "q": 8,
+                "p": 2,
+                "label": "C",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Aşağıdaki malların hangisinin talebi en *elastic*'tir?",
+          "opts": [
+            "Sofra tuzu",
+            "Belirli bir markanın spor ayakkabısı",
+            "Fiyat artışından bir hafta sonra benzin",
+            "Astım hastası için ilaç"
+          ],
+          "a": 1,
+          "why": "Tek bir markanın ayakkabısının çok sayıda yakın ikamesi vardır ve bütçede küçümsenmeyecek bir pay tutar; fiyatı artınca alıcılar başka markaya geçer. Tuz bütçede çok küçük bir paydır, kısa vadede benzinin ikamesi azdır, ilaç ise bir ihtiyaçtır."
+        },
+        {
+          "q": "Akaryakıt fiyatları kalıcı olarak yüzde 30 artıyor. Hangisi en doğru beklentidir?",
+          "opts": [
+            "Talep kısa vadede *elastic*, uzun vadede *inelastic* olur.",
+            "Talep hem kısa hem uzun vadede *perfectly inelastic*'tir.",
+            "Zaman geçtikçe talep eğrisi sağa kayar.",
+            "Talep kısa vadede *inelastic*, uzun vadede daha *elastic* olur."
+          ],
+          "a": 3,
+          "why": "İlk günlerde insanların işe gitmek için başka seçeneği azdır; talep edilen miktar az düşer. Zamanla toplu taşımaya, bisiklete ya da daha az yakan araçlara geçerler; uzun vadede talep daha esnektir. Fiyat değişimi eğriyi kaydırmaz."
+        },
+        {
+          "q": "Bir kafenin sabah kahvesi talebi *inelastic*'tir. Kafe sahibi toplam gelirini artırmak istiyor. Ne yapmalıdır?",
+          "opts": [
+            "Fiyatı düşürmeli, çünkü daha çok kahve satar ve gelir artar.",
+            "Fiyatı değiştirmemeli, çünkü *inelastic* talepte gelir sabittir.",
+            "Fiyatı artırmalı, çünkü satış oransal olarak daha az düşer ve gelir artar.",
+            "Fiyatı artırmalı, çünkü *inelastic* talepte satış miktarı da artar."
+          ],
+          "a": 2,
+          "why": "*Inelastic* talepte fiyat ve toplam gelir aynı yöne gider. Fiyat artınca satılan miktar biraz düşer ama fiyattaki artıştan daha küçük oranda; çarpım büyür. Satış miktarı artmaz; talep yasası hâlâ geçerlidir."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "2.4",
       "slug": "mi203",
       "title": "Arzın Fiyat Esnekliği",
@@ -824,7 +974,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "2.6-1",
       "slug": "mc109",
       "title": "Denge, Fazla ve Kıtlık",
@@ -1009,7 +1159,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "2.7",
       "slug": "mc110",
       "title": "Dengenin Değişmesi ve Çift Kayma",
