@@ -1611,6 +1611,183 @@ window.KIT = {
           "why": "Tavanda üreticiler daha az arz eder; satılan miktar arz edilen miktara düşer, üretici artığı küçülür ve yapılamayan alışverişler *deadweight loss* olur. Tüketici artığı ise duruma göre artabilir ya da azalabilir: ucuza ev bulanlar kazanır, bulamayanlar kaybeder."
         }
       ]
+    },
+    {
+      "no": 11,
+      "code": "2.9",
+      "slug": "mi208",
+      "title": "Uluslararası Ticaret ve Gümrük Vergisi",
+      "en": "International Trade and Public Policy",
+      "accent": "#2FD6B9",
+      "seconds": 243,
+      "terms": [
+        "Autarky",
+        "World price",
+        "Imports",
+        "Exports",
+        "Gains from trade",
+        "Tariff",
+        "Tariff revenue",
+        "Import quota",
+        "Quota rent",
+        "Deadweight loss",
+        "Protectionism"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir ülkenin kayısı piyasasını gösteriyor. Ülke ticarete açılıyor ve dünya fiyatı 60 lira. Ne olur?",
+          "opts": [
+            "Ülke 40 ton kayısı ithal eder.",
+            "Ülke 40 ton kayısı ihraç eder.",
+            "Ülke 80 ton kayısı ihraç eder.",
+            "Ülke 20 ton kayısı ihraç eder."
+          ],
+          "a": 1,
+          "why": "Ticaret yokken denge 40 lira ve 60 ton. Dünya fiyatı 60 lira, yurt içi dengenin üstünde: yerli üreticiler 80 ton üretir, yurt içinde 40 ton tüketilir. Fark 80 − 40 = 40 ton ihracattır. 80 ton toplam üretimdir; 20 ton 50 liradaki farktır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL/kg)",
+              "Qd (ton)",
+              "Qs (ton)"
+            ],
+            "rows": [
+              [
+                "40",
+                "60",
+                "60"
+              ],
+              [
+                "50",
+                "50",
+                "70"
+              ],
+              [
+                "60",
+                "40",
+                "80"
+              ]
+            ],
+            "caption": "Yurt içi kayısı piyasası"
+          }
+        },
+        {
+          "q": "Dünya fiyatı yurt içi denge fiyatının altında olan bir ülke serbest ticarete açılıyor. Aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "Tüketici artığı ve yerli üretici artığı birlikte artar.",
+            "Yerli üretici artığı artar, toplam artık azalır.",
+            "Tüketici artığı azalır, toplam artık artar.",
+            "Tüketici artığı artar, yerli üretici artığı azalır, toplam artık artar."
+          ],
+          "a": 3,
+          "why": "Fiyat dünya fiyatına iner: tüketiciler daha ucuza daha çok alır, tüketici artığı büyür. Yerli üreticiler daha düşük fiyata daha az satar, artıkları küçülür. Tüketicinin kazancı üreticinin kaybından büyük olduğu için toplam artık artar."
+        },
+        {
+          "q": "Grafikte dikey eksende 1 birim 10 lira, yatay eksende 1 birim 100 adettir. Dünya fiyatı Pw; devlet bir *tariff* koyunca yurt içi fiyat Pw + t oluyor. Devletin tarife geliri kaç liradır?",
+          "opts": [
+            "2.000 TL",
+            "4.000 TL",
+            "1.000 TL",
+            "5.000 TL"
+          ],
+          "a": 0,
+          "why": "Tarife 50 − 40 = 10 lira. Tarifeden sonra yurt içi üretim 300, tüketim 500; ithalat 200. Gelir = 10 × 200 = 2.000 TL. 4.000 tarifeden önceki ithalatla (400) hesaplanır; 1.000 iki *deadweight loss* üçgeninin toplamıdır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  10
+                ],
+                "to": [
+                  10,
+                  0
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  8,
+                  10
+                ],
+                "label": "S"
+              }
+            ],
+            "points": [
+              {
+                "q": 4,
+                "p": 6,
+                "label": "E"
+              },
+              {
+                "q": 3,
+                "p": 5,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 5,
+                "p": 5,
+                "label": "B",
+                "guides": true
+              },
+              {
+                "q": 2,
+                "p": 4,
+                "label": "C",
+                "guides": true
+              },
+              {
+                "q": 6,
+                "p": 4,
+                "label": "F",
+                "guides": true
+              }
+            ],
+            "hlines": [
+              {
+                "p": 4,
+                "label": "Pw"
+              },
+              {
+                "p": 5,
+                "label": "Pw + t"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Bir ülke aynı ithalat miktarına yol açan bir *tariff* yerine bir *import quota* uyguluyor. İki politika arasındaki temel fark nedir?",
+          "opts": [
+            "Kotada yurt içi fiyat dünya fiyatına eşit kalır.",
+            "Kotada *deadweight loss* oluşmaz.",
+            "Tarifede devlete giden gelir, kotada ithalat izni olanlara kalır.",
+            "Kotada yerli üretim tarifedekinden daha fazla düşer."
+          ],
+          "a": 2,
+          "why": "Aynı ithalat miktarında fiyat, tüketim, üretim ve iki DWL üçgeni aynıdır. Tek fark, fiyat farkı çarpı ithalat dikdörtgeninin kime gittiğidir: tarifede devlete gelir, kotada izin sahiplerine *quota rent*."
+        },
+        {
+          "q": "Dünya fiyatı yurt içi denge fiyatının altında. Bir öğrenci \"bu fiyat bir tavan gibi; ülkede kıtlık oluşur\" diyor. Hangisi doğrudur?",
+          "opts": [
+            "Öğrenci haklıdır; talep edilen miktar arz edilen miktarı aştığı için kuyruklar oluşur.",
+            "Yerli üretim azalır ama aradaki fark ithalatla karşılanır; kıtlık oluşmaz.",
+            "Dünya fiyatı yurt içi arzı sağa kaydırır; yerli üretim artar.",
+            "Fiyat yurt içi denge fiyatına geri çıkar; ticaret gerçekleşmez."
+          ],
+          "a": 1,
+          "why": "Dünya fiyatında alıcılar istedikleri kadar alabilir: yerli üreticilerin karşılamadığı kısım ithal edilir. Fiyat tavanında boşluğu dolduracak satıcı yoktur, ticarette ise dünya vardır. Fiyat değişimi arz eğrisini kaydırmaz; yalnızca eğri üzerinde hareket ettirir."
+        }
+      ]
     }
   ],
   "final": []
