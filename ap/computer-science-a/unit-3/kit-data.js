@@ -446,6 +446,92 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 6,
+      "code": "3.7",
+      "slug": "cs307",
+      "title": "static Değişkenler ve Metotlar",
+      "en": "Class Variables and Methods",
+      "accent": "#F25F5C",
+      "defter": "cs306",
+      "defterBaslik": "static Üyeler, Kapsam ve Erişim",
+      "sessiz": true,
+      "seconds": 285,
+      "terms": [
+        "static",
+        "Class variable",
+        "Instance variable",
+        "Class method",
+        "static final",
+        "Constant",
+        "static context"
+      ],
+      "questions": [
+        {
+          "q": "Badge sınıfı aşağıdaki gibi. Üç Badge nesnesi a, b, c bu sırayla oluşturuluyor. System.out.println(c.getCode() + \" \" + Badge.getNext()); ne yazdırır?",
+          "opts": [
+            "110 115",
+            "115 115",
+            "100 115",
+            "110 110"
+          ],
+          "a": 0,
+          "why": "*next* ortak: a 100 alır (next 105), b 105 alır (next 110), c 110 alır (next 115). *code* her nesnede ayrıdır ve atandığı anki değeri tutar.",
+          "fig": {
+            "type": "code",
+            "code": "private static int next = 100;\nprivate int code;\npublic Badge() {\n  code = next;\n  next += 5;\n}\npublic int getCode() { return code; }\npublic static int getNext() { return next; }"
+          }
+        },
+        {
+          "q": "Order sınıfında private static int count ve private int id alanları var. Aşağıdaki metotlardan hangisi derlenmez?",
+          "opts": [
+            "public static int getCount() { return count; }",
+            "public static int getId() { return id; }",
+            "public int getId() { return id + count; }",
+            "public void show() { System.out.println(count); }"
+          ],
+          "a": 1,
+          "why": "*static* metot hiçbir nesne adına çalışmaz; *instance* alan id'yi kullanamaz (non-static variable cannot be referenced from a static context). Nesne metotları ise *static* değişkeni kullanabilir."
+        },
+        {
+          "q": "Club sınıfı aşağıdaki gibi. Kod ne yazdırır?",
+          "opts": [
+            "1 1",
+            "2 2",
+            "1 2",
+            "0 2"
+          ],
+          "a": 2,
+          "why": "first, ilk nesne oluşturulduktan hemen sonraki değer: 1. *members* *static* olduğu için ikinci nesne onu 2 yapar ve a.getMembers() da aynı ortak değeri okur: 2.",
+          "fig": {
+            "type": "code",
+            "code": "private static int members = 0;\nprivate String name;\npublic Club(String n) { name = n; members++; }\npublic int getMembers() { return members; }\nClub a = new Club(\"Satranç\");\nint first = a.getMembers();\nClub b = new Club(\"Robotik\");\nSystem.out.println(first + \" \" + a.getMembers());"
+          }
+        },
+        {
+          "q": "Bir sınıfta private static final int LIMIT = 3; var. Bir metodun içinde LIMIT++; yazılırsa ne olur?",
+          "opts": [
+            "LIMIT 4 olur.",
+            "Her nesnenin kendi LIMIT'i ayrı ayrı artar.",
+            "Çalışma anında hata verir.",
+            "Kod derlenmez: final bir değişken değiştirilemez."
+          ],
+          "a": 3,
+          "why": "*final* değişken bir kez atanır ve bir daha değiştirilemez; derleyici LIMIT++ satırını reddeder. *static* olduğu için de nesne başına ayrı kopyası yoktur."
+        },
+        {
+          "q": "Order sınıfında public static int getCount() metodu var. Hiç nesne oluşturmadan sayıyı yazdırmanın doğru yolu hangisidir?",
+          "opts": [
+            "System.out.println(getCount(Order));",
+            "System.out.println(Order.getCount());",
+            "System.out.println(new.getCount());",
+            "System.out.println(Order.count);"
+          ],
+          "a": 1,
+          "why": "*static* metot sınıf adıyla çağrılır: ClassName.method(). D derlenmez: *count* *private* olduğu için başka bir sınıftan ona doğrudan erişilemez."
+        }
+      ]
     }
   ],
   "final": []
