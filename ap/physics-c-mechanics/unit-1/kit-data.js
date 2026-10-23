@@ -1,4 +1,4 @@
-/* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/pcN/questions.json) */
+/* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/pc1N/questions.json) */
 window.KIT = {
   "store": "physc-u1:v1:",
   "course": "AP Physics C: Mechanics",
@@ -765,6 +765,179 @@ window.KIT = {
           ],
           "a": 3,
           "why": "v ve a zıt işaretli: araba +x yönünde gidiyor ama yavaşlıyor. Sürat ancak v ile a aynı işaretliyse artar."
+        }
+      ]
+    },
+    {
+      "no": 7,
+      "code": "1.3",
+      "slug": "pc108",
+      "title": "Hareket Grafikleri: Eğim ve Alan",
+      "en": "Motion Graphs: Slopes and Areas",
+      "accent": "#5C8DFF",
+      "seconds": 276,
+      "terms": [
+        "Position–time graph",
+        "Velocity–time graph",
+        "Acceleration–time graph",
+        "Slope",
+        "Area under the curve",
+        "Concave up",
+        "Concave down",
+        "Displacement",
+        "Distance"
+      ],
+      "questions": [
+        {
+          "q": "Grafik bir koşucunun hızını gösteriyor. 0 ile 8 s arasındaki yer değiştirmesi kaçtır?",
+          "opts": [
+            "32 m",
+            "24 m",
+            "16 m",
+            "4 m"
+          ],
+          "a": 1,
+          "why": "v–t altındaki alan: üçgen ½ · 2 · 4 = 4, dikdörtgen 4 · 4 = 16, üçgen ½ · 2 · 4 = 4. Toplam 24 m. 32, şekli 8 · 4'lük dikdörtgen sanmaktır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "t (s)",
+            "ylabel": "v (m/s)",
+            "xmax": 9,
+            "ymax": 6,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  2,
+                  4
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  4
+                ],
+                "to": [
+                  6,
+                  4
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  6,
+                  4
+                ],
+                "to": [
+                  8,
+                  0
+                ],
+                "label": "v"
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 4,
+                "label": "(2, 4)"
+              },
+              {
+                "q": 6,
+                "p": 4,
+                "label": "(6, 4)"
+              },
+              {
+                "q": 8,
+                "p": 0,
+                "label": "(8, 0)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 6,
+                "label": "6"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "caption": "Koşucunun hız–zaman grafiği"
+          }
+        },
+        {
+          "q": "Aynı koşucu için (önceki sorudaki grafik: 0–2 s arasında 0'dan 4 m/s'ye düzgün artış) t = 1 s'deki ivme kaçtır?",
+          "opts": [
+            "4 m/s²",
+            "0 m/s²",
+            "2 m/s²",
+            "1 m/s²"
+          ],
+          "a": 2,
+          "why": "İvme v–t'nin eğimidir: (4 − 0)/(2 − 0) = 2 m/s². 2 m/s, t = 1'deki hızdır; sayı aynı ama birimi ve anlamı farklı."
+        },
+        {
+          "q": "Bir cismin ivmesi tabloda verilmiştir. t = 0'da hızı 1 m/s ise t = 5 s'deki hızı kaçtır?",
+          "opts": [
+            "6 m/s",
+            "16 m/s",
+            "3 m/s",
+            "7 m/s"
+          ],
+          "a": 3,
+          "why": "a–t altındaki alan Δv: 3 · 2 + 0 · 3 = 6 m/s. v(5) = v₀ + Δv = 1 + 6 = 7 m/s. 6, başlangıç hızını eklemeyi unutmaktır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Zaman aralığı",
+              "0–2 s",
+              "2–5 s"
+            ],
+            "rows": [
+              [
+                "a (m/s²)",
+                "3",
+                "0"
+              ]
+            ],
+            "caption": "Cismin ivmesi"
+          }
+        },
+        {
+          "q": "Bir cismin x–t grafiği bir aralıkta yükseliyor ve aşağı doğru bükülüyor (eğimi azalıyor). Bu aralıkta hangisi doğrudur?",
+          "opts": [
+            "v > 0 ve a < 0: cisim yavaşlıyor",
+            "v > 0 ve a > 0: cisim hızlanıyor",
+            "v < 0 ve a < 0: cisim hızlanıyor",
+            "v = 0 ve a < 0"
+          ],
+          "a": 0,
+          "why": "Yükselen x–t: eğim, yani v, pozitif. Eğim azalıyorsa v azalıyor: a < 0. v ve a zıt işaretli, cisim yavaşlıyor."
+        },
+        {
+          "q": "Bir oyuncak araba 4 s boyunca +3 m/s, sonra 2 s boyunca −5 m/s hızla gidiyor. Bu 6 s'deki yer değiştirmesi ve aldığı yol nedir?",
+          "opts": [
+            "Δx = 22 m, yol = 2 m",
+            "Δx = 2 m, yol = 22 m",
+            "Δx = −2 m, yol = 22 m",
+            "Δx = 2 m, yol = 2 m"
+          ],
+          "a": 1,
+          "why": "İşaretli alanlar: +3 · 4 = +12 m ve −5 · 2 = −10 m. Δx = 12 − 10 = 2 m. Yol, mutlak değerlerin toplamı: 12 + 10 = 22 m."
         }
       ]
     }
