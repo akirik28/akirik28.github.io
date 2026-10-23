@@ -11,7 +11,7 @@
   var C = window.KICERIK || null;
   var body = document.body;
   var ROOT = body.dataset.root || "";
-  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", csa: "#5A55D6", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B",
+  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", csa: "#5A55D6", physc: "#C2413A", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B",
     precalc: "#E0A43F", chem: "#E0534A", phys: "#5A67D8", bio: "#5FA83A", eng: "#9A6A45" };
   var HESAPLI = !!(H && H.aktif());
   var ME = HESAPLI ? H.aktif() : null;
@@ -266,7 +266,7 @@
         if (!son || (o.t || 0) > (son.o.t || 0)) son = { k: k, o: o };
       });
       var hedef = son && son.o.bitenler < son.o.n ? son.k : (kits.filter(function (k) { var o = C.ozet(k); return !o || o.bitenler < o.n; })[0] || kits[0]);
-      return { id: id, title: d.title, code: d.code, art: d.art, renk: d.renk || d.art, rot: d.rot, video: d.video, kits: kits, pct: n ? Math.round(100 * b / n) : 0, son: son, href: "ders/?d=" + id, uniteHref: "unite/?kit=" + hedef.id };
+      return { id: id, title: d.title, code: d.code, art: d.art, renk: d.renk || d.art, rot: d.rot, video: d.video, not: d.not, kits: kits, pct: n ? Math.round(100 * b / n) : 0, son: son, href: "ders/?d=" + id, uniteHref: "unite/?kit=" + hedef.id };
     });
   }
   function kitCard(c, opts) {
@@ -277,7 +277,7 @@
     return '<a class="kit-card" href="' + ROOT + c.href + '" style="--c:' + col + ';--rot:' + (opts.straight ? "0deg" : c.rot) + '">' +
       '<div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">' + esc(c.code) + '</span>' + art(c.art, col) + '</div>' +
       '<div class="kit-card__body"><div class="kit-card__chips">' +
-      (c.video ? '<span class="chip">▶ Videolu</span>' : "") + (HESAPLI ? "" : '<span class="chip">1. video hesapsız</span>') + '</div>' +
+      (c.video ? '<span class="chip">▶ Videolu</span>' : "") + (c.not ? '<span class="chip chip--warn">' + esc(c.not) + '</span>' : "") + (HESAPLI ? "" : '<span class="chip">1. video hesapsız</span>') + '</div>' +
       '<span class="kit-card__title">' + esc(c.title) + '</span><span class="kit-card__meta">' + (HESAPLI ? esc(units.join(" · ")) + " açık" : c.kits.length + " ünite hazır") + '</span>' + lock +
       '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="İlerleme" aria-valuenow="' + c.pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + c.pct + '%"></span></div><span class="mono muted">%' + c.pct + '</span></div>' +
       '</div>' + (kilitliMi(c.id) ? kilitRozet() : "") + '</a>';
@@ -861,7 +861,7 @@
     var o = d && d.son && d.son.o, pct = d ? d.pct : 0;
     var alt = !r.hazir ? "Kiti yolda; hazır olunca burada açılır." : d ? (o ? (o.bitenler >= o.n ? "Unit " + d.son.k.unit + " bitti!" : "Sıradaki: Bölüm " + (o.cur + 1) + " · " + o.curTitle) : "Henüz başlamadın") : k.defter ? "Not defterleri · geçen yılın müfredatı" : "Yazılıdan önce tek, odaklı paket.";
     var href = d ? ROOT + d.href : k.defter ? ROOT + "defterler/?ders=" + k.defter : k.href ? C.KOK + k.href : null;
-    var chips = (r.varsayilan ? '<span class="chip chip--info" style="font-size:11px">sınıfından</span>' : "") + (r.eklendi ? '<span class="chip chip--ok" style="font-size:11px">eklendi</span>' : "") + (!r.hazir ? '<span class="chip chip--warn" style="font-size:11px">yakında</span>' : "");
+    var chips = (r.varsayilan ? '<span class="chip chip--info" style="font-size:11px">sınıfından</span>' : "") + (r.eklendi ? '<span class="chip chip--ok" style="font-size:11px">eklendi</span>' : "") + (!r.hazir ? '<span class="chip chip--warn" style="font-size:11px">yakında</span>' : "") + (k.ders && C.DERSLER[k.ders] && C.DERSLER[k.ders].not ? '<span class="chip chip--warn" style="font-size:11px">' + esc(C.DERSLER[k.ders].not) + '</span>' : "");
     var ad = k.title.replace(/^AP\s+/, "").replace(/:.*$/, "");
     /* elle eklenen: köşede ×; sınıfından gelen ya da başlanmış kit: ⋯ → gizle / kaldır */
     var kose = r.eklendi

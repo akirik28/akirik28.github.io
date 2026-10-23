@@ -25,7 +25,8 @@
     bpf: { title: "Business with Personal Finance", code: "AP · BPF", art: "bpf", rot: "1.3deg", video: true, ad: "AP Business with Personal Finance" },
     calc: { title: "Calculus BC", code: "AP · MATH", art: "calc", rot: "1deg", video: true, ad: "AP Calculus BC" },
     psych: { title: "Psychology", code: "AP · PSYCH", art: "psych", renk: "psych", rot: "-1deg", video: true, ad: "AP Psychology" },
-    csa: { title: "Computer Science A", code: "AP · CS", art: "csa", renk: "csa", rot: "1.2deg", video: true, ad: "AP Computer Science A" }
+    csa: { title: "Computer Science A", code: "AP · CS", art: "csa", renk: "csa", rot: "1.2deg", video: true, ad: "AP Computer Science A" },
+    physc: { title: "Physics C: Mechanics", code: "AP · PHYS", art: "phys", renk: "physc", rot: "-.8deg", video: true, not: "ses yakında", ad: "AP Physics C: Mechanics" }
   };
   var KITLER = [
     { id: "macro-u1", ders: "macro", unit: 1, path: "ap/macroeconomics/unit-1/", store: "macro-u1:v1:" },
@@ -42,7 +43,8 @@
     { id: "psych-u1", ders: "psych", unit: 1, path: "ap/psychology/unit-1/", store: "psych-u1:v1:" },
     { id: "psych-u2", ders: "psych", unit: 2, path: "ap/psychology/unit-2/", store: "psych-u2:v1:" },
     { id: "csa-u1", ders: "csa", unit: 1, path: "ap/computer-science-a/unit-1/", store: "csa-u1:v1:" },
-    { id: "csa-u2", ders: "csa", unit: 2, path: "ap/computer-science-a/unit-2/", store: "csa-u2:v1:" }
+    { id: "csa-u2", ders: "csa", unit: 2, path: "ap/computer-science-a/unit-2/", store: "csa-u2:v1:" },
+    { id: "physc-u1", ders: "physc", unit: 1, path: "ap/physics-c-mechanics/unit-1/", store: "physc-u1:v1:" }
   ];
   /* veritabanındaki ders adları (ap_profil_kaydet ve quizler bunlarla eşleşir; canlı kitora/dersler.js ile aynı) */
   var OKUL = {
@@ -64,6 +66,7 @@
     if (/micro/.test(a)) return "micro";
     if (/psych|psikoloji/.test(a)) return "psych";
     if (/computer/.test(a)) return "csa";
+    if (/physics c/.test(a)) return "physc";
     if (/macro|ekonomi/.test(a)) return "macro";
     if (/geograph/.test(a)) return "hug";
     if (/business|finance/.test(a)) return "bpf";
@@ -210,6 +213,7 @@
     { id: "okul-eng", tur: "okul", title: "English 10", code: "10. SINIF · İNGİLİZCE", renk: "eng", ders: null, defter: "eng", sinif: 10, okul: ["English 10"], ara: "english ingilizce oedipus catcher in the rye passage analysis research argument" },
     { id: "psych", tur: "ap", title: "AP Psychology", code: "AP · PSYCH", renk: "psych", ders: "psych", okul: ["AP Psychology", "Psikoloji"], ara: "psych psychology psikoloji brain neuron behavior memory learning beyin davranış" },
     { id: "csa", tur: "ap", title: "AP Computer Science A", code: "AP · CS", renk: "csa", ders: "csa", okul: ["Computer Science"], ara: "csa computer science java programming code kod yazılım object method" },
+    { id: "physc", tur: "ap", title: "AP Physics C: Mechanics", code: "AP · PHYS", renk: "physc", ders: "physc", okul: ["AP Physics C: Mechanics"], ara: "physics c mechanics fizik kinematics newton force energy momentum rotation kuvvet enerji hareket" },
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" }
   ];
   function rafKey(id) { return "kitora:v1:" + (id || kim()) + ":kitlerim"; }
@@ -237,7 +241,7 @@
   var QUIZ_DERS = {
     "AP Macroeconomics": ["macro"], "AP Microeconomics": ["micro"], "Ekonomi": ["macro", "micro"],
     "AP Statistics": ["stats"], "AP Calculus BC/AB": ["calc"], "Calculus": ["calc"],
-    "Honours Human Geography": ["hug"], "AP Psychology": ["psych"], "Psikoloji": ["psych"], "Computer Science": ["csa"],
+    "Honours Human Geography": ["hug"], "AP Psychology": ["psych"], "Psikoloji": ["psych"], "Computer Science": ["csa"], "AP Physics C: Mechanics": ["physc"],
     "Precalculus and Trigonometry": ["precalc"], "Chemistry 10": ["chem"], "Physics 10": ["phys"], "Biology 10": ["bio"], "English 10": ["eng"]
   };
   function kilitler(p) {
