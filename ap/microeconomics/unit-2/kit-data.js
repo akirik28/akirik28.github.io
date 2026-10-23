@@ -975,6 +975,127 @@ window.KIT = {
     },
     {
       "no": 7,
+      "code": "2.5",
+      "slug": "mi204",
+      "title": "Çapraz ve Gelir Esnekliği",
+      "en": "Cross-Price and Income Elasticity",
+      "accent": "#B9E552",
+      "seconds": 267,
+      "terms": [
+        "Cross-price elasticity of demand",
+        "Substitutes",
+        "Complements",
+        "Unrelated goods",
+        "Income elasticity of demand",
+        "Normal good",
+        "Inferior good",
+        "Luxury",
+        "Necessity",
+        "Midpoint formula"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, tablet fiyatı değişmeden önce ve sonra tablet kalemi talebini gösteriyor. *Midpoint formula* ile çapraz fiyat esnekliği ve iki malın ilişkisi nedir?",
+          "opts": [
+            "+0,5 — *substitutes*",
+            "−0,5 — *complements*",
+            "−2,0 — *complements*",
+            "−0,5 — *inferior goods*"
+          ],
+          "a": 1,
+          "why": "Kalem miktarı: −100 ÷ ortalama 500 = yüzde −20. Tablet fiyatı: 2.000 ÷ ortalama 5.000 = yüzde +40. −20 ÷ 40 = −0,5. İşaret negatif: tablet pahalanınca kalem daha az alınıyor, yani *complements*. *Inferior good* gelir esnekliğiyle ilgilidir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Önce",
+              "Sonra"
+            ],
+            "rows": [
+              [
+                "Tablet fiyatı (TL)",
+                "4.000",
+                "6.000"
+              ],
+              [
+                "Tablet kalemi talebi (adet/ay)",
+                "550",
+                "450"
+              ]
+            ],
+            "caption": "Tablet ve tablet kalemi"
+          }
+        },
+        {
+          "q": "Tablo üç malın gelir esnekliğini gösteriyor. Hangisi doğru sınıflandırmadır?",
+          "opts": [
+            "X ihtiyaç malı, Y lüks mal, Z *normal good*",
+            "X *inferior good*, Y ihtiyaç malı, Z lüks mal",
+            "X lüks mal, Y *inferior good*, Z ihtiyaç malı",
+            "X lüks mal, Y ihtiyaç malı, Z *inferior good*"
+          ],
+          "a": 3,
+          "why": "Gelir esnekliği birden büyükse lüks (X, 2,1), sıfır ile bir arasındaysa ihtiyaç (Y, 0,3); ikisi de *normal good*'dur. Negatifse *inferior good* (Z, −0,8): gelir artınca daha az alınır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Mal",
+              "Income elasticity"
+            ],
+            "rows": [
+              [
+                "X",
+                "+2,1"
+              ],
+              [
+                "Y",
+                "+0,3"
+              ],
+              [
+                "Z",
+                "−0,8"
+              ]
+            ],
+            "caption": "Gelir esneklikleri"
+          }
+        },
+        {
+          "q": "Ailelerin geliri yüzde 20 artınca yurt dışı tatil talebi yüzde 30 artıyor. Hangisi doğrudur?",
+          "opts": [
+            "Gelir esnekliği 1,5'tir; tatil bir lüks mal ve *normal good*'dur.",
+            "Gelir esnekliği 0,67'dir; tatil bir ihtiyaç malıdır.",
+            "Gelir esnekliği 1,5'tir; tatil bir *inferior good*'dur.",
+            "Gelir esnekliği −1,5'tir; tatil bir lüks maldır."
+          ],
+          "a": 0,
+          "why": "Gelir esnekliği = 30 ÷ 20 = +1,5. Pozitif olduğu için *normal good*, birden büyük olduğu için lüks mal. 0,67 kesri ters çevirince çıkar."
+        },
+        {
+          "q": "İki mal arasındaki çapraz fiyat esnekliği −1,2 bulunuyor. Bir öğrenci \"esneklikte eksi atılır; +1,2, demek ki *substitutes*\" diyor. Hangisi doğrudur?",
+          "opts": [
+            "Öğrenci haklıdır; esneklik hep mutlak değerle yorumlanır.",
+            "Mallar ilişkisizdir, çünkü katsayı birden büyüktür.",
+            "Öğrenci yanılıyor; çapraz esneklikte işaret korunur ve negatif sonuç *complements* demektir.",
+            "Öğrenci yanılıyor; negatif sonuç malların *inferior good* olduğunu gösterir."
+          ],
+          "a": 2,
+          "why": "Eksiyi atma kuralı yalnızca kendi fiyat esnekliği içindir. Çapraz esneklikte işaret ilişkiyi söyler: negatifse biri pahalanınca ötekinin talebi düşer, yani *complements*. İlişkisiz mallarda esneklik sıfıra yakındır."
+        },
+        {
+          "q": "Ekonomi durgunluğa giriyor ve hane gelirleri düşüyor. Aşağıdaki gelir esnekliklerinden hangisine sahip malın satışlarının artması beklenir?",
+          "opts": [
+            "+2,5",
+            "−0,7",
+            "+0,4",
+            "+1,0"
+          ],
+          "a": 1,
+          "why": "Gelir düşerken talebi artan mal *inferior good*'dur; gelir esnekliği negatiftir. Pozitif esnekliğe sahip *normal good*'ların talebi gelirle birlikte düşer; en çok da +2,5 gibi lüks malların talebi düşer."
+        }
+      ]
+    },
+    {
+      "no": 8,
       "code": "2.6-1",
       "slug": "mc109",
       "title": "Denge, Fazla ve Kıtlık",
@@ -1159,7 +1280,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 8,
+      "no": 9,
       "code": "2.7",
       "slug": "mc110",
       "title": "Dengenin Değişmesi ve Çift Kayma",
