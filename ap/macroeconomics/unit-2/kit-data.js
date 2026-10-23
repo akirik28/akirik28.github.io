@@ -284,6 +284,165 @@ window.KIT = {
     },
     {
       "no": 3,
+      "code": "2.1-3",
+      "slug": "mc203",
+      "title": "GDP'yi Hesaplamak: C + I + G + Xn",
+      "en": "Measuring GDP",
+      "accent": "#58C9FF",
+      "seconds": 255,
+      "terms": [
+        "Expenditure approach",
+        "Consumption",
+        "Investment",
+        "Change in inventories",
+        "New residential construction",
+        "Government spending",
+        "Transfer payments",
+        "Net exports",
+        "Exports",
+        "Imports",
+        "Income approach"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir ekonominin bir yıllık verilerini gösteriyor (milyar lira). Harcama yöntemiyle GDP kaç milyar liradır?",
+          "opts": [
+            "730",
+            "750",
+            "790",
+            "820"
+          ],
+          "a": 0,
+          "why": "I = 80 + 40 − 20 = 100 (stok azaldı, eksi yazılır). Xn = 70 − 90 = −20. GDP = 500 + 100 + 150 − 20 = 730. Transfer ödemeleri ve hisse senedi alımı sayılmaz.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Milyar TL"
+            ],
+            "rows": [
+              [
+                "Consumer spending",
+                "500"
+              ],
+              [
+                "New equipment purchases by firms",
+                "80"
+              ],
+              [
+                "New residential construction",
+                "40"
+              ],
+              [
+                "Change in inventories",
+                "−20"
+              ],
+              [
+                "Government purchases",
+                "150"
+              ],
+              [
+                "Transfer payments",
+                "60"
+              ],
+              [
+                "Purchases of stocks",
+                "50"
+              ],
+              [
+                "Exports",
+                "70"
+              ],
+              [
+                "Imports",
+                "90"
+              ]
+            ],
+            "caption": "Bir yıllık veriler"
+          }
+        },
+        {
+          "q": "Bir ülkenin GDP'si 1.000 milyar lira. Tablodaki verilere göre ithalat kaç milyar liradır?",
+          "opts": [
+            "30",
+            "120",
+            "150",
+            "270"
+          ],
+          "a": 2,
+          "why": "1.000 = 650 + 180 + 200 + Xn → Xn = −30. Xn = X − M → −30 = 120 − M → M = 150.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kalem",
+              "Milyar TL"
+            ],
+            "rows": [
+              [
+                "GDP",
+                "1.000"
+              ],
+              [
+                "C",
+                "650"
+              ],
+              [
+                "I",
+                "180"
+              ],
+              [
+                "G",
+                "200"
+              ],
+              [
+                "Exports",
+                "120"
+              ],
+              [
+                "Imports",
+                "?"
+              ]
+            ],
+            "caption": "Eksik kalem"
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi GDP'nin C bileşenine, yani *consumption*'a girer?",
+          "opts": [
+            "Bir yazılım firmasının yeni bilgisayarlar alması",
+            "Devletin orduya yeni araçlar alması",
+            "Türkiye'de dokunup Japonya'ya satılan bir halı",
+            "Bir öğrencinin berberde saç kestirmesi"
+          ],
+          "a": 3,
+          "why": "Hane halkının satın aldığı hizmet tüketimdir. Firmanın bilgisayarı I, devletin araçları G, Japonya'ya satılan halı ise ihracat, yani X'tir."
+        },
+        {
+          "q": "Bir bisiklet firması 2026'da tanesi 10.000 lira olan 500 bisiklet üretiyor ve yıl sonuna kadar 450'sini satıyor. Bu firmanın 2026 GDP'sine katkısı nasıl kaydedilir?",
+          "opts": [
+            "Yalnızca satılanlar: 4,5 milyon lira C",
+            "Toplam 5 milyon lira: 4,5 milyon C, 0,5 milyon I",
+            "Toplam 5,5 milyon lira: üretim artı satış",
+            "Yalnızca satılmayanlar: 0,5 milyon lira I"
+          ],
+          "a": 1,
+          "why": "GDP üretimi ölçer: 500 × 10.000 = 5 milyon lira. Satılan 450 bisiklet tüketimde (4,5 milyon), depoda kalan 50 bisiklet stok artışı olarak yatırımda (0,5 milyon) sayılır."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "*Transfer payments*, G'nin bir parçası olarak GDP'ye eklenir.",
+            "Bir ailenin hisse senedi alması I'ya girer.",
+            "İthalat, C, I ve G'nin içinde saklı olan yurt dışı üretimini ayıklamak için çıkarılır.",
+            "*Income approach* her zaman harcama yönteminden daha büyük bir sonuç verir."
+          ],
+          "a": 2,
+          "why": "Yurt dışından alınan telefon C'nin içinde sayılmıştır ama Türkiye'de üretilmemiştir; M'yi çıkararak ayıklarız. Transferler ve hisse senedi GDP'ye girmez; harcama ve gelir yöntemi aynı sayıyı verir."
+        }
+      ]
+    },
+    {
+      "no": 4,
       "code": "2.2",
       "slug": "mc204",
       "title": "GDP'nin Göremedikleri",
@@ -413,7 +572,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 4,
+      "no": 5,
       "code": "2.4",
       "slug": "mc207",
       "title": "Fiyat Endeksleri ve Enflasyon",
