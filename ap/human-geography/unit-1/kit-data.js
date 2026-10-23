@@ -402,7 +402,7 @@ window.KIT = {
           why: "*GPS* uydular, yer istasyonları ve alıcıdan oluşur; en az 4 uyduyla kesin koordinatı, yani *absolute location*'ı bulur."
         },
         {
-          q: "Coğrafya (*geography*) kelimesini ilk kullanan ve yalnızca gölge boylarını ölçerek Dünya'nın çevresini hesaplayan kişi kimdir?",
+          q: "Coğrafya (*geography*) kelimesini ilk kullanan ve gölge açısıyla iki şehir arasındaki mesafeyi kullanarak Dünya'nın çevresini hesaplayan kişi kimdir?",
           opts: ["Ptolemy (Batlamyus)", "Carl Sauer", "William Pattison", "Eratosthenes"],
           a: 3,
           why: "Eratosthenes yaklaşık 2200 yıl önce Dünya'nın çevresini hesapladı; Ptolemy ise enlem ve boylam kullanan haritalar çizdi."
