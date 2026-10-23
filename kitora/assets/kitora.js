@@ -51,13 +51,11 @@
   /* ?devam= yalnızca bu sitenin içine döner */
   function devamAdresi() { var d = param("devam"); return d && /^\/(?!\/)/.test(d) ? d : null; }
   function girisGerek() { location.replace(ROOT + "giris/?mod=giris&devam=" + encodeURIComponent(buradan())); }
-  /* kitlerden önce: kurulum eksikse onboarding, süresi geçmiş quiz notu varsa panel */
-  function engelKontrol(panelde) {
+  /* kitlerden önce: kurulum eksikse onboarding. Süresi geçmiş quiz notu artık yalnızca kendi dersini kilitler (kilitliMi) */
+  function engelKontrol() {
     if (!HESAPLI) return false;
     function bak(p) {
-      var e = H.engel(p);
-      if (e === "kurulum") { git("hosgeldin/"); return true; }
-      if (e === "not" && !panelde) { git("panel/"); return true; }
+      if (H.engel(p) === "kurulum") { git("hosgeldin/"); return true; }
       return false;
     }
     var p0 = H.profil();
@@ -65,6 +63,33 @@
     H.profilYenile().then(function (p) { bak(p); }, function () {});
     return false;
   }
+  /* ---------- quiz kilidi ----------
+     Son tarihi geçmiş, notu girilmemiş quiz o dersi kilitler: yalnızca Unit 1'in 1. videosu açık kalır.
+     Kilitli yerlerin üstünde bulanık perde + sallanan kilit + not girme kutusu; not girilince sayfa yenilenir ve ders açılır. */
+  function kilitliMi(ders) { if (!HESAPLI || !C || !ders) return null; return C.kilitler(H.profil())[ders] || null; }
+  function kilitTazele(ders) {
+    var once = JSON.stringify(kilitliMi(ders) || []);
+    H.profilYenile().then(function (p) { if (JSON.stringify(C.kilitler(p)[ders] || []) !== once) location.reload(); }, function () {});
+  }
+  var KILIT_SVG = '<svg class="kilit-anim" viewBox="0 0 80 96" aria-hidden="true"><path class="kilit-anim__halka" d="M22 46 V30 a18 18 0 0 1 36 0 V46" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><rect x="8" y="42" width="64" height="48" rx="13" fill="currentColor"/><circle cx="40" cy="62" r="6.5" fill="var(--surface)"/><rect x="36.5" y="64" width="7" height="13" rx="3.5" fill="var(--surface)"/></svg>';
+  function kilitRozet(metin) { return '<span class="kilitli-rozet">' + KILIT_SVG + '<b>' + esc(metin || "Quiz notu bekleniyor") + '</b></span>'; }
+  function kilitPerde(quizler, ust, kucuk) {
+    var arka = '<span class="kilit__arka" aria-hidden="true"><i style="width:100%;height:' + (kucuk ? 90 : 180) + 'px"></i><i style="width:72%"></i><i style="width:88%"></i><i style="width:54%"></i><i style="width:80%"></i></span>';
+    return '<div class="kilit' + (kucuk ? " kilit--kucuk" : "") + '" role="region" aria-label="Kilitli içerik">' + arka + '<div class="kilit__on">' + KILIT_SVG +
+      '<strong class="h3" style="font-size:' + (kucuk ? 19 : 24) + 'px">' + esc(ust || "Bu ders şimdilik kilitli") + '</strong>' +
+      '<span class="muted" style="line-height:1.55;font-size:' + (kucuk ? 13 : 15) + 'px">' + quizler.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + ' quizinin son tarihi geçti. Notunu gir, ders hemen açılsın. Şimdilik yalnızca Unit 1\'in 1. videosu açık.</span>' +
+      quizler.map(function (q) {
+        return '<form data-quiz="' + esc(q.id) + '" data-max="' + q.max_puan + '" novalidate><input class="grade-in" name="puan" type="text" inputmode="decimal" autocomplete="off" placeholder="Not" aria-label="' + esc(q.baslik) + ' notun, ' + sayi(q.max_puan) + ' üzerinden" style="width:92px"><span class="mono">/ ' + sayi(q.max_puan) + '</span><button type="submit" class="btn btn--primary btn--sm">Notu gir, kilidi aç</button></form>';
+      }).join("") + '</div></div>';
+  }
+  document.addEventListener("submit", function (e) {
+    var f = e.target.closest && e.target.closest(".kilit form[data-quiz]"); if (!f) return;
+    e.preventDefault();
+    var inp = f.puan, max = +f.dataset.max, v = Number(String(inp.value).trim().replace(",", "."));
+    if (!String(inp.value).trim() || !(v >= 0 && v <= max)) { inp.setAttribute("aria-invalid", "true"); toast("0 ile " + sayi(max) + " arasında bir not yaz"); inp.focus(); return; }
+    var bt = f.querySelector("button"); bt.disabled = true;
+    H.notGir(f.dataset.quiz, v).then(function () { toast("Notun kaydedildi, kilit açılıyor"); setTimeout(function () { location.reload(); }, 700); }, function (x) { bt.disabled = false; toast(H.hataMetni(x)); });
+  });
   /* örnek görünüm şeridi (giriş yapılmamışken panel, profil, yönetim) */
   function ornekSerit(metin) {
     var main = $("main");
@@ -232,7 +257,7 @@
       (c.video ? '<span class="chip">▶ Videolu</span>' : "") + (HESAPLI ? "" : '<span class="chip">Unit 1 hesapsız</span>') + '</div>' +
       '<span class="kit-card__title">' + esc(c.title) + '</span><span class="kit-card__meta">' + (HESAPLI ? esc(units.join(" · ")) + " açık" : c.kits.length + " ünite hazır") + '</span>' + lock +
       '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="İlerleme" aria-valuenow="' + c.pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + c.pct + '%"></span></div><span class="mono muted">%' + c.pct + '</span></div>' +
-      '</div></a>';
+      '</div>' + (kilitliMi(c.id) ? kilitRozet() : "") + '</a>';
   }
 
   function marquee() {
@@ -309,13 +334,13 @@
     C.kitVerisi(k).then(function (KIT) {
       var den = KIT.denemeler ? C.denemeVerisi(k).then(null, function () { return null; }) : Promise.resolve(null);
       return Promise.all([KIT, den, C.sekiller()]);
-    }).then(function (r) { main.removeAttribute("aria-busy"); uniteBasla(k, ders, r[0], r[1]); }, function () {
+    }).then(function (r) { main.removeAttribute("aria-busy"); uniteBasla(k, ders, r[0], r[1], kilitliMi(k.ders)); if (HESAPLI) kilitTazele(k.ders); }, function () {
       main.removeAttribute("aria-busy");
       main.innerHTML = '<section class="card empty"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:30px">hay aksi</span><h1 class="h2" style="font-size:32px">Kit şu an yüklenemedi.</h1><p class="muted">İnternet bağlantını kontrol edip sayfayı yenile.</p><button type="button" class="btn btn--primary" style="align-self:flex-start" onclick="location.reload()">Yenile</button></div></section>';
     });
   };
 
-  function uniteBasla(k, ders, KIT, DEN) {
+  function uniteBasla(k, ders, KIT, DEN, kilit) {
     var EPS = (KIT.episodes || []).map(function (e) { var c = {}, x; for (x in e) c[x] = e[x]; c.questions = (e.questions || []).filter(gecerli); return c; });
     var N = EPS.length;
     if (!N) return;
@@ -352,6 +377,23 @@
       $$("[data-lpanel]").forEach(function (x) { x.hidden = x.dataset.lpanel !== t; });
       var v = $(".player video"); if (v && t !== "video") v.pause();
       $(".lesson-actions").hidden = t === "deneme";
+      kilitGoster();
+    }
+    /* quiz kilidi: yalnızca Unit 1'in 1. bölüm videosu açık; gerisinin üstünde perde */
+    var izinli = kilit ? (k.unit === 1 ? 0 : -1) : null, perde = null;
+    function serbest(i) { return !kilit || i === izinli; }
+    if (kilit) {
+      perde = document.createElement("div");
+      perde.dataset.k = "kilit-perde";
+      perde.innerHTML = kilitPerde(kilit, "AP " + ders.title + " şimdilik kilitli");
+      $(".ltabs").insertAdjacentElement("afterend", perde);
+    }
+    function kilitGoster() {
+      if (!kilit) return;
+      var acik = serbest(s.cur) && ltab === "video";
+      perde.hidden = acik || ltab === "defter";          /* dar ekranda defter sekmesi kendi küçük perdesini gösterir */
+      if (!acik) $$("[data-lpanel]").forEach(function (x) { x.hidden = true; });
+      $(".lesson-actions").hidden = !acik;
     }
     $(".ltabs").addEventListener("click", function (ev) { var b = ev.target.closest("[data-ltab]"); if (b) sekme(b.dataset.ltab); });
     var genis = matchMedia("(max-width: 999px)");
@@ -376,9 +418,9 @@
       fill('[data-k="done-count"]', bitti + "/" + N + " BÖLÜM" + (enIyi ? " · DENEME " + enIyi.no + ": " + enIyi.score + "/" + enIyi.n : ""));
       var sonraki = TESTS.filter(function (t) { var d = denemeKaydi(t); return !d || !d.done; })[0] || TESTS[0];
       fill('[data-k="steps"]', EPS.map(function (x, i) {
-        var state = C.bittiMi(x, s.eps[x.slug]) ? "done" : "todo";
-        return '<button type="button" class="step" data-i="' + i + '" data-state="' + state + '"' + (i === s.cur ? ' aria-current="step"' : "") + ' aria-label="Bölüm ' + (i + 1) + ': ' + esc(x.title) + (state === "done" ? " (bitti)" : "") + '">' +
-          '<span class="step__dot"><span class="num">' + (i + 1) + '</span>' + I.check + '</span><span class="step__code">' + esc(x.code || i + 1) + '</span></button>';
+        var state = !serbest(i) ? "kilit" : C.bittiMi(x, s.eps[x.slug]) ? "done" : "todo";
+        return '<button type="button" class="step" data-i="' + i + '" data-state="' + state + '"' + (i === s.cur ? ' aria-current="step"' : "") + ' aria-label="Bölüm ' + (i + 1) + ': ' + esc(x.title) + (state === "done" ? " (bitti)" : state === "kilit" ? " (kilitli)" : "") + '">' +
+          '<span class="step__dot">' + (state === "kilit" ? I.lock : '<span class="num">' + (i + 1) + '</span>' + I.check) + '</span><span class="step__code">' + esc(x.code || i + 1) + '</span></button>';
       }).join("") + (sonraki ? '<button type="button" class="step" data-ltab-go="deneme" aria-label="Denemeler"><span class="step__dot" style="border-style:dashed">' + I.flag + '</span><span class="step__code">DENEME</span></button>' : ""));
       testler();
     }
@@ -399,10 +441,12 @@
       var bos = ilkBos();
       qi = bos < 0 ? -1 : bos;
       sorular();
+      kilitGoster();
     }
 
     function defter() {
       var x = ep(), nb = $('[data-k="notebook"]');
+      if (kilit) { fill('[data-k="notebook-body"]', kilitPerde(kilit, "Defterler de kilitli", true)); return; }
       $$('[role="tab"]', nb).forEach(function (t) { t.setAttribute("aria-selected", String(t.dataset.tab === tab)); });
       if (tab === "terim") {
         var terms = x.terms || [];
@@ -717,8 +761,8 @@
 
   /* süresi geçmiş quiz için öğrencinin not kutuları (panel ve Notlarım) */
   function notKutusu(bek) {
-    fill('[data-k="alert"] .alert__body', '<strong>Kitlerin kısa bir mola verdi.</strong><span style="font-size:15px;line-height:1.55">' +
-      bek.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + ' quizinin son tarihi geçti. Notunu buraya yaz ya da hocan girsin; not girilince kitlerin hemen açılır.</span>' +
+    fill('[data-k="alert"] .alert__body', '<strong>' + esc(bek.map(function (q) { return q.ders; }).filter(function (d, i, a) { return a.indexOf(d) === i; }).join(", ")) + ' kısa bir mola verdi.</strong><span style="font-size:15px;line-height:1.55">' +
+      bek.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + ' quizinin son tarihi geçti. O dersin kitleri ve defterleri kilitli (yalnızca 1. video açık); diğer derslerin açık. Notunu buraya yaz ya da hocan girsin, kilit hemen açılır.</span>' +
       bek.map(function (q) {
         return '<form class="row" style="align-items:center;gap:10px;flex-wrap:wrap" data-quiz="' + esc(q.id) + '" data-max="' + q.max_puan + '" novalidate><strong style="font-size:14px;flex:1 1 200px">' + esc(q.baslik) + '</strong>' +
           '<input class="grade-in" name="puan" type="text" inputmode="decimal" autocomplete="off" placeholder="Not" aria-label="' + esc(q.baslik) + ' notun, ' + sayi(q.max_puan) + ' üzerinden" style="width:96px"><span class="mono">/ ' + sayi(q.max_puan) + '</span>' +
@@ -755,7 +799,9 @@
     $('[data-k="full"]').hidden = bos;
     fill('[data-k="cheer"]', engel ? "not gelince devam!" : bos ? "hoş geldin, rafın seni bekliyor" : r.seri > 0 ? r.seri + " günlük serin var, bozma!" : "bugün bir bölümle seriyi başlat!");
     if (engel) notKutusu(bek);
-    $$("[data-dim]").forEach(function (x) { x.classList.toggle("dimmed", engel); if (engel) x.setAttribute("aria-disabled", "true"); else x.removeAttribute("aria-disabled"); });
+    /* kilit yalnız quizin dersinde: "kaldığın yer" kartı o derse aitse üstünde kilit rozeti */
+    var kl = C.kilitler(p), resEl = $(".resume");
+    if (resEl) { var eskiR = $(".kilitli-rozet", resEl); if (eskiR) eskiR.remove(); if (r.son && kl[r.son.kit.ders]) resEl.insertAdjacentHTML("beforeend", kilitRozet("Quiz notu bekleniyor")); }
 
     var res = $(".resume");
     res.hidden = !r.son;
@@ -806,6 +852,7 @@
       '<span class="kit-card__title">' + esc(k.title.replace(/^AP\s+/, "")) + '</span><span class="kit-card__meta">' + esc(alt) + '</span>' +
       (d ? '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="' + esc(k.title) + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div>' : "") +
       (k.defter ? '<div class="kit-card__progress" data-df-durum="' + k.defter + '"><div class="progress progress--thin" role="progressbar" aria-label="' + esc(k.title) + ' okunan defterler" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><span style="--w:0%"></span></div><span class="mono muted">…</span></div>' : "") + '</div>';
+    if (kilitliMi(k.ders || k.defter)) ic += kilitRozet();
     var stil = ' style="--c:' + col + ';--rot:0deg"';
     return '<div class="kit-slot">' + (href ? '<a class="kit-card" href="' + href + '"' + stil + '>' + ic + '</a>' : '<div class="kit-card" data-yakinda="true"' + stil + '>' + ic + '</div>') +
       kose + '</div>';
@@ -898,6 +945,10 @@
     }
     function hata() { kok.innerHTML = '<a class="btn btn--link" style="align-self:flex-start" href="' + ROOT + 'defterler/">← Defterler</a><section class="card empty"><div class="stack" style="gap:12px"><span class="hand" style="font-size:28px">hay aksi</span><h1 class="h2" style="font-size:30px">Defter şu an yüklenemedi.</h1><p class="muted">İnternetini kontrol edip sayfayı yenile.</p></div></section>'; bitti(); }
     if (u && !HESAPLI && u.unit > 1) { kilit(u); return; }
+    if (u && kilitliMi(u.ders)) {
+      kok.innerHTML = '<a class="btn btn--link" style="align-self:flex-start" href="' + ROOT + 'defterler/?ders=' + u.ders + '">← Defterler</a>' + kilitPerde(kilitliMi(u.ders), C.DEFTER_DERS[u.ders].ad + " defterleri şimdilik kilitli");
+      kilitTazele(u.ders); bitti(); return;
+    }
     if (u && slug) { defterOkuma(kok, u, slug, bitti, hata); return; }
     if (u) { defterUnitesi(kok, u, bitti, hata); return; }
     defterMerkezi(kok, bitti);
@@ -931,7 +982,7 @@
       fill(grid, us.map(function (x) {
         var col = uniteRengi(x), kilitli = !HESAPLI && x.unit > 1;
         return '<a class="kit-card" href="' + ROOT + 'defterler/?u=' + x.id + '" style="--c:' + col + ';--rot:0deg"><div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">UNIT ' + x.unit + '</span>' + art(C.DEFTER_DERS[x.ders].art, col) + '</div>' +
-          '<div class="kit-card__body"><span class="kit-card__title" style="font-size:20px">' + esc(x.baslik) + '</span><span class="kit-card__meta" data-say="' + x.id + '">' + (kilitli ? '<span class="row" style="align-items:center;gap:6px">' + I.lock + " Ücretsiz hesapla açılır</span>" : "…") + '</span></div></a>';
+          '<div class="kit-card__body"><span class="kit-card__title" style="font-size:20px">' + esc(x.baslik) + '</span><span class="kit-card__meta" data-say="' + x.id + '">' + (kilitli ? '<span class="row" style="align-items:center;gap:6px">' + I.lock + " Ücretsiz hesapla açılır</span>" : "…") + '</span></div>' + (kilitliMi(x.ders) ? kilitRozet() : "") + '</a>';
       }).join(""));
       us.forEach(function (x) {
         if (!HESAPLI && x.unit > 1) return;
@@ -1101,6 +1152,7 @@
     var id = param("d"), d = C.DERSLER[id], kok = $('[data-k="ders-kok"]');
     if (!d) { location.replace(ROOT + "kitler/"); return; }
     if (engelKontrol()) return;
+    if (HESAPLI) kilitTazele(id);
     var col = COLORS[d.renk || d.art], kits = C.KITLER.filter(function (k) { return k.ders === id; });
     var defterVar = C.DEFTER_UNITELER.some(function (u) { return u.ders === id; });
     document.title = "AP " + d.title + " · Kitora";
@@ -1110,6 +1162,7 @@
       '<div class="stack" style="gap:8px;flex:1;min-width:0"><span class="eyebrow accent">// ' + esc(d.code) + '</span><h1 class="display" style="font-size:clamp(36px,4.5vw,54px)">AP <span class="hl">' + esc(d.title) + '</span></h1>' +
       '<span class="muted">' + kits.length + ' ünite hazır · hangisinden başlamak istersin?</span></div>' +
       (defterVar ? '<a class="btn btn--ghost" href="' + ROOT + 'defterler/?ders=' + id + '">' + I.defter + ' Defterleri</a>' : "") + '</section>' +
+      (kilitliMi(id) ? kilitPerde(kilitliMi(id), "AP " + d.title + " şimdilik kilitli", true) : "") +
       '<div class="kit-grid ders-uniteler rise d1" data-k="ders-uniteler"></div>';
     fill('[data-k="ders-uniteler"]', kits.map(function (k) {
       var o = C.ozet(k), kilitli = !HESAPLI && k.unit > 1, pct = o ? o.pct : 0;
@@ -1117,7 +1170,7 @@
         : o && o.bitenler >= o.n ? '<span class="chip chip--ok">Bitti ✓</span>' : o ? '<span class="chip chip--info">Devam et · Bölüm ' + (o.cur + 1) + '</span>' : '<span class="chip chip--plain">Başla →</span>';
       return '<a class="kit-card" href="' + ROOT + 'unite/?kit=' + k.id + '" style="--c:' + col + ';--rot:0deg"><div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">UNIT ' + k.unit + '</span>' + art(d.art, col) + '</div>' +
         '<div class="kit-card__body"><span class="kit-card__title" style="font-size:20px" data-ad="' + k.id + '">Unit ' + k.unit + '</span><span class="kit-card__meta" data-bilgi="' + k.id + '">…</span>' + durum +
-        '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="Unit ' + k.unit + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div></div></a>';
+        '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="Unit ' + k.unit + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div></div>' + (kilitliMi(id) ? kilitRozet(k.unit === 1 ? "Sadece 1. video açık" : "Quiz notu bekleniyor") : "") + '</a>';
     }).join(""));
     /* ünite adı ve bölüm/deneme sayısı kit-data.js'ten (sırayla yüklenir) */
     kits.forEach(function (k) {
@@ -1147,7 +1200,6 @@
       panelP = p || panelP || {};
       var engel = H.engel(panelP) === "not";
       $('[data-k="kit-engel"]').hidden = !engel;
-      $$("[data-dim]").forEach(function (x) { x.classList.toggle("dimmed", engel); if (engel) x.setAttribute("aria-disabled", "true"); else x.removeAttribute("aria-disabled"); });
       kitlerim();
     }
     ciz(H.profil());
@@ -1231,6 +1283,7 @@
     var k = C.kit(param("kit")) || C.kit("macro-u1"), no = parseInt(param("n"), 10) || 1;
     if (!HESAPLI && k.unit > 1) { girisGerek(); return; }
     if (engelKontrol()) return;
+    if (kilitliMi(k.ders)) { location.replace(ROOT + "unite/?kit=" + k.id + "&sekme=deneme"); return; }
     function hata(msg) {
       fill(".bb__main", '<section class="bb__q" aria-label="Hata"><div class="bb__qin"><p class="bb__text">' + esc(msg) + '</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'unite/?kit=' + k.id + '">Üniteye dön</a></div></section>');
       $$(".bb__bottom button, .bb__bottom a, .bb__top button:not([data-k-toggle-theme])").forEach(function (b) { b.hidden = true; });
@@ -1360,6 +1413,7 @@
     hd.dataset.back = ROOT + "unite/?kit=" + k.id; hd.dataset.backLabel = ders.title + " Unit " + k.unit;
     header();
     if (engelKontrol()) return;
+    if (kilitliMi(k.ders)) { location.replace(ROOT + "unite/?kit=" + k.id + "&sekme=deneme"); return; }
     var main = $("main"), S = C.deneme(k, no);
     function bos(msg) {
       main.innerHTML = '<section class="card empty"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:30px">henüz sonuç yok</span><h1 class="h2" style="font-size:32px">' + esc(msg) + '</h1><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'deneme/?kit=' + k.id + '&n=' + no + '">Denemeyi çöz →</a></div></section>';

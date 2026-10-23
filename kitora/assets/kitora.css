@@ -902,3 +902,28 @@ html.df-acik, html.df-acik body { overflow: hidden; }
   .kit-grid--raf .kit-add-card { min-height: 200px; }
 }
 @keyframes kSarkac { 0%, 100% { rotate: -22deg; } 50% { rotate: 22deg; } }
+
+/* ---------- quiz kilidi: bulanık perde + sallanan kilit ---------- */
+.kilit { position: relative; display: grid; place-items: center; min-height: 360px; padding: 32px 22px; border-radius: var(--r-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+.kilit--kucuk { min-height: 300px; padding: 22px 14px; box-shadow: none; background: var(--surface-2); }
+.kilit__arka { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; gap: 14px; filter: blur(8px); opacity: .7; pointer-events: none; }
+.kilit__arka i { display: block; height: 16px; border-radius: 10px; background: color-mix(in srgb, var(--macro) 35%, var(--track)); }
+.kilit__arka i:first-child { border-radius: 18px; background: color-mix(in srgb, var(--macro) 55%, var(--track)); }
+.kilit::after { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--surface) 35%, transparent); backdrop-filter: blur(3px); }
+.kilit__on { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 460px; text-align: center; animation: kKitIn .4s var(--ease) both; }
+.kilit__on form { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.kilit-anim { width: 66px; height: 80px; color: var(--macro); transform-origin: 50% 92%; animation: kKilit 3s ease-in-out infinite; filter: drop-shadow(0 8px 14px color-mix(in srgb, var(--macro) 35%, transparent)); }
+.kilit--kucuk .kilit-anim { width: 50px; height: 60px; }
+.kilit-anim__halka { animation: kHalka 3s ease-in-out infinite; }
+@keyframes kKilit { 0%, 58%, 100% { rotate: 0deg; } 66% { rotate: -9deg; } 74% { rotate: 8deg; } 82% { rotate: -5deg; } 90% { rotate: 3deg; } }
+@keyframes kHalka { 0%, 52%, 100% { translate: 0 0; } 62%, 88% { translate: 0 -6px; } }
+/* kartlarda kilit: içerik bulanık, ortada kilit */
+.kit-card, .resume { position: relative; }
+.kilitli-rozet { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: inherit; text-align: center; padding: 12px;
+  background: color-mix(in srgb, var(--surface) 55%, transparent); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); color: var(--ink); }
+.kilitli-rozet .kilit-anim { width: 44px; height: 54px; }
+.kilitli-rozet b { font-size: 14px; padding: 6px 12px; border-radius: 999px; background: var(--surface); box-shadow: var(--shadow); }
+/* ünitede kilitli bölüm adımları */
+.step[data-state="kilit"] .step__dot { border-style: dashed; color: var(--muted); }
+.step[data-state="kilit"] .step__dot svg { width: 14px; height: 14px; }
+.step[data-state="kilit"] .step__code { opacity: .6; }

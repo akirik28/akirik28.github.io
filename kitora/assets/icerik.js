@@ -230,6 +230,21 @@
   /* elle eklenen kaldırılır; varsayılan (ya da ilerlemesi olan) kit yalnızca gizlenir */
   function raftanCikar(id) { rafYaz(function (r) { r.eklenen = r.eklenen.filter(function (x) { return x !== id; }); if (r.gizli.indexOf(id) < 0) r.gizli.push(id); }); }
 
+  /* quiz kilidi: quizin veritabanındaki ders adı → kilitlenecek Kitora dersleri (DERSLER ya da DEFTER_DERS anahtarları).
+     Son tarihi geçmiş, notu girilmemiş quiz yalnızca kendi dersini kilitler; diğer derslere dokunmaz. */
+  var QUIZ_DERS = {
+    "AP Macroeconomics": ["macro"], "AP Microeconomics": ["micro"], "Ekonomi": ["macro", "micro"],
+    "AP Statistics": ["stats"], "AP Calculus BC/AB": ["calc"], "Calculus": ["calc"],
+    "Honours Human Geography": ["hug"], "AP Psychology": ["psych"], "Psikoloji": ["psych"], "Computer Science": ["csa"],
+    "Precalculus and Trigonometry": ["precalc"], "Chemistry 10": ["chem"], "Physics 10": ["phys"], "Biology 10": ["bio"], "English 10": ["eng"]
+  };
+  function kilitler(p) {
+    var r = {};
+    if (!p || !p.katilim) return r;
+    (p.bekleyen || []).forEach(function (q) { (QUIZ_DERS[q.ders] || []).forEach(function (d) { (r[d] = r[d] || []).push(q); }); });
+    return r;
+  }
+
   function lg(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function oku(k) { try { return JSON.parse(lg(k) || "null"); } catch (e) { return null; } }
   function yaz(k, v) {
@@ -430,6 +445,7 @@
   }
 
   window.KICERIK = {
+    QUIZ_DERS: QUIZ_DERS, kilitler: kilitler,
     DEFTER_DERS: DEFTER_DERS, DEFTER_UNITELER: DEFTER_UNITELER, defterUnite: defterUnite, defterListesi: defterListesi, defterDurumu: defterDurumu, defterOku: defterOku, okunanlar: okunanlar, okundu: okundu, sonDefter: sonDefter,
     KATALOG: KATALOG, raf: raf, rafaEkle: rafaEkle, raftanCikar: raftanCikar,
     KOK: KOK, DERSLER: DERSLER, KITLER: KITLER, OKUL: OKUL, SECMELI: SECMELI, dersRengi: dersRengi,
