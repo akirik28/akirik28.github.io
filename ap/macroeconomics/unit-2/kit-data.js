@@ -1230,6 +1230,218 @@ window.KIT = {
           "why": "Temel yılda cari fiyatlar ile temel yıl fiyatları aynıdır; real ve nominal eşit, deflatör 100'dür. Deflatör 100'ün altındaysa real nominalden büyük çıkar; real GDP temel yıl fiyatlarıyla hesaplanır; nominal artış yalnızca fiyatlardan da gelebilir."
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "2.7",
+      "slug": "mc210",
+      "title": "İş Çevrimi",
+      "en": "Business Cycles",
+      "accent": "#2FD6B9",
+      "seconds": 248,
+      "terms": [
+        "Business cycle",
+        "Peak",
+        "Contraction",
+        "Trough",
+        "Expansion",
+        "Recession",
+        "Long-run trend",
+        "Potential output",
+        "Output gap",
+        "Recessionary gap",
+        "Inflationary gap",
+        "Cyclical unemployment"
+      ],
+      "questions": [
+        {
+          "q": "Grafik bir ekonominin *real GDP*'sini zaman içinde gösteriyor; kesikli çizgi uzun dönem eğilim. Hangi nokta *contraction* evresindedir?",
+          "opts": [
+            "W",
+            "X",
+            "Y",
+            "Z"
+          ],
+          "a": 1,
+          "why": "W zirve (*peak*), Y dip (*trough*). X, zirveden dibe inen yolun üzerinde; *real GDP* düşüyor, yani daralma. Z dipten sonraki yükselişte, yani *expansion*'da.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Time",
+            "ylabel": "Real GDP",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  10,
+                  8
+                ],
+                "label": "Trend",
+                "dash": true
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  2,
+                  4
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  2,
+                  4
+                ],
+                "to": [
+                  4,
+                  3.6
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  4,
+                  3.6
+                ],
+                "to": [
+                  6.5,
+                  6.7
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  6.5,
+                  6.7
+                ],
+                "to": [
+                  8.5,
+                  6.3
+                ],
+                "label": ""
+              },
+              {
+                "from": [
+                  8.5,
+                  6.3
+                ],
+                "to": [
+                  10,
+                  8.4
+                ],
+                "label": ""
+              }
+            ],
+            "points": [
+              {
+                "q": 2,
+                "p": 4,
+                "label": "W"
+              },
+              {
+                "q": 3,
+                "p": 3.8,
+                "label": "X"
+              },
+              {
+                "q": 4,
+                "p": 3.6,
+                "label": "Y"
+              },
+              {
+                "q": 5.25,
+                "p": 5.15,
+                "label": "Z"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Tablo bir ülkenin çeyreklik *real GDP*'sini gösteriyor. \"Üst üste iki çeyrek düşüş\" kuralına göre durgunluk hangi çeyreklerde yaşanmıştır?",
+          "opts": [
+            "3. ve 4. çeyrek",
+            "2. ve 3. çeyrek",
+            "4. ve 5. çeyrek",
+            "5. ve 6. çeyrek"
+          ],
+          "a": 0,
+          "why": "2. çeyrek zirve (510). 3. çeyrekte 505'e, 4. çeyrekte 498'e düşüyor: üst üste iki düşüş. 4. çeyrek dip; 5. ve 6. çeyrekte *real GDP* yeniden artıyor, yani genişleme.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Çeyrek",
+              "Real GDP (milyar TL)"
+            ],
+            "rows": [
+              [
+                "1",
+                "500"
+              ],
+              [
+                "2",
+                "510"
+              ],
+              [
+                "3",
+                "505"
+              ],
+              [
+                "4",
+                "498"
+              ],
+              [
+                "5",
+                "503"
+              ],
+              [
+                "6",
+                "515"
+              ]
+            ],
+            "caption": "Çeyreklik real GDP"
+          }
+        },
+        {
+          "q": "Bir ülkenin potansiyel üretimi 4.000 milyar lira, gerçekleşen *real GDP*'si 3.800 milyar lira. Hangisi doğrudur?",
+          "opts": [
+            "Açık artı 200; *inflationary gap* var, işsizlik doğal oranın altında",
+            "Açık eksi 200; *inflationary gap* var, işsizlik doğal oranın altında",
+            "Açık eksi 200; *recessionary gap* var, işsizlik doğal oranın altında",
+            "Açık eksi 200; *recessionary gap* var, işsizlik doğal oranın üstünde"
+          ],
+          "a": 3,
+          "why": "Output gap = gerçek − potansiyel = 3.800 − 4.000 = −200; −200 ÷ 4.000 = yüzde −5. Gerçek üretim potansiyelin altında olduğu için *recessionary gap* var; *cyclical* işsizlik yüzünden işsizlik doğal oranın üstündedir."
+        },
+        {
+          "q": "Bir ekonomide gerçek *real GDP* potansiyel üretimin üstüne çıkmış. Aşağıdakilerden hangisi büyük olasılıkla doğrudur?",
+          "opts": [
+            "İşsizlik doğal oranın üstündedir ve fiyatlar düşmektedir.",
+            "Ekonomi bir *trough*'tadır ve *cyclical* işsizlik yüksektir.",
+            "İşsizlik doğal oranın altındadır ve fiyatlar üzerinde yukarı yönlü baskı vardır.",
+            "Ekonomi *PPC*'nin içindeki bir noktada üretim yapmaktadır."
+          ],
+          "a": 2,
+          "why": "Potansiyelin üstünde üretim, *inflationary gap* demektir: firmalar fazla mesai ve ek işçiyle üretir, işsizlik doğal oranın altına iner ve güçlü talep fiyatları yukarı iter. Dip ve PPC'nin içi durgunluğu anlatır."
+        },
+        {
+          "q": "İş çevrimi grafiğinde uzun dönem ekonomik büyümeyi en iyi hangisi gösterir?",
+          "opts": [
+            "Bir dipten bir sonraki zirveye doğru her yükseliş",
+            "Uzun dönem eğilim çizgisinin, yani potansiyel üretimin zamanla yükselmesi",
+            "Bir genişleme evresinde *nominal GDP*'nin artması",
+            "İki çeyrek üst üste *real GDP*'nin düşmesi"
+          ],
+          "a": 1,
+          "why": "Uzun dönem büyüme, ekonominin üretebileceği potansiyel üretimin artmasıdır; grafikte yukarı eğimli trend çizgisi, PPC'de dışa kayma. Dipten zirveye yükseliş kısa dönem genişlemedir; nominal artış fiyattan gelebilir; iki çeyrek düşüş durgunluktur."
+        }
+      ]
     }
   ],
   "final": []
