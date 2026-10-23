@@ -145,6 +145,142 @@ window.KIT = {
           "why": "Bankaya yatırılan para harcama akışından çıkan tasarruftur. Finans sektörü onu firmaya kredi olarak verir; firmanın yeni makine alması *investment*'tır ve para çembere geri döner."
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "2.1-2",
+      "slug": "mc202",
+      "title": "GDP Nedir, Ne Sayılmaz?",
+      "en": "What Counts in GDP",
+      "accent": "#2FD6B9",
+      "seconds": 240,
+      "terms": [
+        "GDP",
+        "Gross domestic product",
+        "Market value",
+        "Final goods and services",
+        "Intermediate goods",
+        "Double counting",
+        "Value-added approach",
+        "Domestic",
+        "Used goods",
+        "Financial transactions",
+        "Transfer payments",
+        "Non-market activities"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir ekmeğin üretim zincirini gösteriyor. Bu zincir yıl içinde GDP'ye ne kadar ekler?",
+          "opts": [
+            "40 lira",
+            "150 lira",
+            "190 lira",
+            "280 lira"
+          ],
+          "a": 1,
+          "why": "Yalnızca nihai mal, yani ekmek sayılır: 150 lira. Katma değerle de aynı sonuç: 40 + 50 + 60 = 150. Bütün satışları toplamak (280) çifte sayımdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Aşama",
+              "Kime satılıyor",
+              "Satış fiyatı (TL)"
+            ],
+            "rows": [
+              [
+                "Buğday",
+                "Değirmene",
+                "40"
+              ],
+              [
+                "Un",
+                "Fırına",
+                "90"
+              ],
+              [
+                "Ekmek",
+                "Tüketiciye",
+                "150"
+              ]
+            ],
+            "caption": "Ekmeğin yolculuğu"
+          }
+        },
+        {
+          "q": "Tablodaki işlemlerin hepsi bu yıl Türkiye'de gerçekleşiyor. Bunlardan GDP'ye eklenen toplam tutar kaç liradır?",
+          "opts": [
+            "6.000 lira",
+            "26.000 lira",
+            "26.300 lira",
+            "41.300 lira"
+          ],
+          "a": 1,
+          "why": "Yeni bisiklet bu yıl üretildi: 6.000. Emlakçı komisyonu bu yıl üretilen bir hizmet: 20.000. İkinci el kitap, hisse senedi ve burs sayılmaz. Toplam 26.000 lira.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "İşlem",
+              "Tutar (TL)"
+            ],
+            "rows": [
+              [
+                "Bu yıl üretilen yeni bisikletin satışı",
+                "6.000"
+              ],
+              [
+                "İkinci el bir romanın satışı",
+                "300"
+              ],
+              [
+                "Eski bir evin satışında emlakçı komisyonu",
+                "20.000"
+              ],
+              [
+                "Bir öğrencinin hisse senedi alması",
+                "10.000"
+              ],
+              [
+                "Devletin verdiği karşılıksız burs",
+                "5.000"
+              ]
+            ],
+            "caption": "Bu yılın işlemleri"
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi bir *intermediate good*'dur?",
+          "opts": [
+            "Bir ailenin kahvaltı için marketten aldığı peynir",
+            "Bir öğrencinin okula gitmek için aldığı otobüs bileti",
+            "Bir pizzacının pizzalarında kullanmak için aldığı peynir",
+            "Bir pizzacının dükkânı için aldığı yeni taş fırın"
+          ],
+          "a": 2,
+          "why": "Pizzacının peyniri başka bir malın, pizzanın içine giriyor; ara maldır. Ailenin peyniri ve otobüs bileti son kullanıcıya gider. Taş fırın tükenmez, yıllarca kullanılır; sermaye malıdır ve nihai mal olarak yatırıma sayılır."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "Bir Türk firmasının Mısır'daki fabrikasında üretilen tişörtler Türkiye'nin GDP'sine girmez.",
+            "Devletin ödediği işsizlik ödeneği, devlet harcaması olarak GDP'ye girer.",
+            "Hisse senedi almak bir yatırım olduğu için GDP'ye eklenir.",
+            "Evde pişirilen yemekler tahmini piyasa değeriyle GDP'ye eklenir."
+          ],
+          "a": 0,
+          "why": "GDP'de önemli olan üretimin yeri: Mısır'da üretilen tişört Mısır'ın GDP'sidir. İşsizlik ödeneği bir *transfer payment*'tır; hisse senedi finansal işlemdir; ev yemeği piyasa dışıdır."
+        },
+        {
+          "q": "Bir öğrenci GDP hesaplarken lastik fabrikasının otomobil fabrikasına sattığı lastikleri de, otomobillerin satış fiyatını da topluyor. Yaptığı hata nedir?",
+          "opts": [
+            "Yabancı firmaların üretimini hesaba katmıştır.",
+            "Satılan otomobilleri *used goods* olarak saymıştır.",
+            "Lastikleri *transfer payment* olarak saymıştır.",
+            "Lastikler ara maldır; otomobilin fiyatında zaten var, iki kez saymıştır."
+          ],
+          "a": 3,
+          "why": "Otomobil fabrikasına satılan lastik bir *intermediate good*'dur; değeri otomobilin fiyatının içindedir. İkisini de toplamak *double counting*'dir."
+        }
+      ]
     }
   ],
   "final": []
