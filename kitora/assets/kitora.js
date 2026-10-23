@@ -11,7 +11,7 @@
   var C = window.KICERIK || null;
   var body = document.body;
   var ROOT = body.dataset.root || "";
-  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B",
+  var COLORS = { macro: "#E07A3F", micro: "#D2557A", psych: "#1F9FB4", csa: "#5A55D6", stats: "#2FA37A", hug: "#3D7BFF", bpf: "#9B6BDB", calc: "#E0A43F", cep: "#D9A21B",
     precalc: "#E0A43F", chem: "#E0534A", phys: "#5A67D8", bio: "#5FA83A", eng: "#9A6A45" };
   var HESAPLI = !!(H && H.aktif());
   var ME = HESAPLI ? H.aktif() : null;
@@ -120,6 +120,17 @@
         return open + '<path d="M8 90 H124"/><rect class="a-grow" x="16" y="66" width="14" height="24" stroke-width="2.5"/><rect class="a-grow" x="38" y="52" width="14" height="38" stroke-width="2.5" style="animation-delay:.2s"/><rect class="a-grow" x="60" y="38" width="14" height="52" stroke-width="2.5" style="animation-delay:.4s"/><path class="a-loop" d="M14 54 L42 36 L58 44 L98 12"/><path d="M86 12 H98 V24"/><g fill="' + color + '" stroke-width="2.5"><ellipse cx="104" cy="84" rx="15" ry="5"/><ellipse cx="104" cy="75" rx="15" ry="5"/><ellipse class="a-drop" cx="104" cy="66" rx="15" ry="5"/></g></svg>';
       case "calc":
         return open + '<path d="M6 88 H124 M10 92 V6"/><path d="M14 84 C 50 82, 70 20, 120 12"/><g><circle r="6" fill="#FFFFFF" stroke="none"/><path d="M-26 8 L26 -8" stroke-width="2.5"/><animateMotion dur="4s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" path="M14 84 C 50 82, 70 20, 120 12"/></g></svg>';
+      case "psych":
+        /* beyin: iki yarım küre, sinyal gezen sinir yolu, yanıp sönen nöronlar */
+        return open + '<path d="M64 14 C 48 6, 26 10, 22 28 C 10 32, 10 52, 22 58 C 22 74, 40 82, 52 76 C 56 82, 62 84, 64 82"/><path d="M64 14 C 80 6, 102 10, 106 28 C 118 32, 118 52, 106 58 C 106 74, 88 82, 76 76 C 72 82, 66 84, 64 82"/><path d="M64 14 V82" stroke-width="2" opacity=".7"/>' +
+          '<path class="a-ants" d="M32 40 Q 46 30 58 44 T 92 40 T 98 60" stroke-width="2.5" stroke-dasharray="5 6"/>' +
+          '<circle class="a-tw" cx="32" cy="40" r="5" fill="#FFFFFF" stroke="none"/><circle class="a-tw" cx="58" cy="44" r="4" fill="#FFFFFF" stroke="none" style="animation-delay:.5s"/><circle class="a-tw" cx="92" cy="40" r="5" fill="#FFFFFF" stroke="none" style="animation-delay:1s"/><circle class="a-tw" cx="98" cy="60" r="4" fill="#FFFFFF" stroke="none" style="animation-delay:1.5s"/>' +
+          '<g class="a-bounce"><path d="M112 8 l3 6 l6 1 l-4.5 4 l1 6 l-5.5 -3 l-5.5 3 l1 -6 l-4.5 -4 l6 -1z" fill="#FFFFFF" stroke="none"/></g></svg>';
+      case "csa":
+        /* kod penceresi: büyüyen satırlar ve yanıp sönen imleç */
+        return open + '<rect x="10" y="10" width="110" height="80" rx="10"/><path d="M10 26 H120" stroke-width="2"/><circle cx="20" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/><circle cx="29" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/><circle cx="38" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/>' +
+          lbl(18, 44, "{") + '<g fill="#FFFFFF" stroke="none" opacity=".75"><rect class="a-grow" x="30" y="37" width="46" height="6" rx="3"/><rect class="a-grow" x="30" y="51" width="64" height="6" rx="3" style="animation-delay:.3s"/><rect class="a-grow" x="30" y="65" width="34" height="6" rx="3" style="animation-delay:.6s"/></g>' + lbl(18, 84, "}") +
+          '<rect class="a-tw" x="70" y="63" width="4" height="10" fill="#FFFFFF" stroke="none"/><path class="a-sway" d="M98 72 l8 -8 -8 -8" stroke-width="3"/></svg>';
       default:
         return '<svg class="art" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 14h26l8 8v28H16z"/><path d="M24 30h18M24 38h18M24 46h10"/></svg>';
     }

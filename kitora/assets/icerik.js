@@ -23,7 +23,9 @@
     stats: { title: "Statistics", code: "AP · STAT", art: "stats", rot: "1deg", video: true, ad: "AP Statistics" },
     hug: { title: "Human Geography", code: "AP · HUG", art: "hug", rot: "-.6deg", video: true, ad: "AP Human Geography" },
     bpf: { title: "Business with Personal Finance", code: "AP · BPF", art: "bpf", rot: "1.3deg", video: true, ad: "AP Business with Personal Finance" },
-    calc: { title: "Calculus BC", code: "AP · MATH", art: "calc", rot: "1deg", video: true, ad: "AP Calculus BC" }
+    calc: { title: "Calculus BC", code: "AP · MATH", art: "calc", rot: "1deg", video: true, ad: "AP Calculus BC" },
+    psych: { title: "Psychology", code: "AP · PSYCH", art: "psych", renk: "psych", rot: "-1deg", video: true, ad: "AP Psychology" },
+    csa: { title: "Computer Science A", code: "AP · CS", art: "csa", renk: "csa", rot: "1.2deg", video: true, ad: "AP Computer Science A" }
   };
   var KITLER = [
     { id: "macro-u1", ders: "macro", unit: 1, path: "ap/macroeconomics/unit-1/", store: "macro-u1:v1:" },
@@ -36,7 +38,9 @@
     { id: "bpf-u2", ders: "bpf", unit: 2, path: "ap/business-personal-finance/unit-2/", store: "bpf-u2:v1:" },
     { id: "calc-u1", ders: "calc", unit: 1, path: "ap/calculus-bc/unit-1/", store: "calcbc-u1:v1:" },
     { id: "calc-u2", ders: "calc", unit: 2, path: "ap/calculus-bc/unit-2/", store: "calcbc-u2:v1:" },
-    { id: "calc-u3", ders: "calc", unit: 3, path: "ap/calculus-bc/unit-3/", store: "calcbc-u3:v1:" }
+    { id: "calc-u3", ders: "calc", unit: 3, path: "ap/calculus-bc/unit-3/", store: "calcbc-u3:v1:" },
+    { id: "psych-u1", ders: "psych", unit: 1, path: "ap/psychology/unit-1/", store: "psych-u1:v1:" },
+    { id: "csa-u1", ders: "csa", unit: 1, path: "ap/computer-science-a/unit-1/", store: "csa-u1:v1:" }
   ];
   /* veritabanındaki ders adları (ap_profil_kaydet ve quizler bunlarla eşleşir; canlı kitora/dersler.js ile aynı) */
   var OKUL = {
@@ -56,6 +60,8 @@
     if (/calculus/.test(a)) return "calc";
     if (/statistic/.test(a)) return "stats";
     if (/micro/.test(a)) return "micro";
+    if (/psych|psikoloji/.test(a)) return "psych";
+    if (/computer/.test(a)) return "csa";
     if (/macro|ekonomi/.test(a)) return "macro";
     if (/geograph/.test(a)) return "hug";
     if (/business|finance/.test(a)) return "bpf";
@@ -75,7 +81,7 @@
     hug: { ad: "Human Geography", renk: "hug", art: "hug", grup: "ap" },
     bpf: { ad: "Business with Personal Finance", kisa: "Business", renk: "bpf", art: "bpf", grup: "ap" },
     calc: { ad: "Calculus BC", renk: "calc", art: "calc", grup: "ap" },
-    psych: { ad: "Psychology", renk: "psych", art: "cep", grup: "ap" },
+    psych: { ad: "Psychology", renk: "psych", art: "psych", grup: "ap" },
     /* 10. sınıf okul dersleri (okul/<ders>/unit-N/, geçen yılın müfredatı) */
     precalc: { ad: "Precalculus and Trigonometry", kisa: "Precalculus", renk: "precalc", art: "calc", grup: "okul" },
     chem: { ad: "Chemistry", renk: "chem", art: "cep", grup: "okul" },
@@ -180,6 +186,8 @@
     { id: "okul-phys", tur: "okul", title: "Physics 10", code: "10. SINIF · FİZİK", renk: "phys", ders: null, defter: "phys", sinif: 10, okul: ["Physics 10"], ara: "physics fizik force motion energy electricity waves kuvvet hareket enerji elektrik dalga" },
     { id: "okul-bio", tur: "okul", title: "Biology 10", code: "10. SINIF · BİYOLOJİ", renk: "bio", ders: null, defter: "bio", sinif: 10, okul: ["Biology 10"], ara: "biology biyoloji energy ecology photosynthesis respiration ekoloji fotosentez" },
     { id: "okul-eng", tur: "okul", title: "English 10", code: "10. SINIF · İNGİLİZCE", renk: "eng", ders: null, defter: "eng", sinif: 10, okul: ["English 10"], ara: "english ingilizce oedipus catcher in the rye passage analysis research argument" },
+    { id: "psych", tur: "ap", title: "AP Psychology", code: "AP · PSYCH", renk: "psych", ders: "psych", okul: ["AP Psychology", "Psikoloji"], ara: "psych psychology psikoloji brain neuron behavior memory learning beyin davranış" },
+    { id: "csa", tur: "ap", title: "AP Computer Science A", code: "AP · CS", renk: "csa", ders: "csa", okul: ["Computer Science"], ara: "csa computer science java programming code kod yazılım object method" },
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" }
   ];
   function rafKey(id) { return "kitora:v1:" + (id || kim()) + ":kitlerim"; }
