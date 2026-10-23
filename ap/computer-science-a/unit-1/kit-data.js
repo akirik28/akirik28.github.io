@@ -3,6 +3,10 @@ window.KIT = {
   "store": "csa-u1:v1:",
   "course": "AP Computer Science A",
   "unitLabel": "Unit 1 — Using Objects and Methods",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
