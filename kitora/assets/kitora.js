@@ -203,7 +203,7 @@
         if (!son || (o.t || 0) > (son.o.t || 0)) son = { k: k, o: o };
       });
       var hedef = son && son.o.bitenler < son.o.n ? son.k : (kits.filter(function (k) { var o = C.ozet(k); return !o || o.bitenler < o.n; })[0] || kits[0]);
-      return { id: id, title: d.title, code: d.code, art: d.art, renk: d.renk || d.art, rot: d.rot, video: d.video, kits: kits, pct: n ? Math.round(100 * b / n) : 0, son: son, href: "unite/?kit=" + hedef.id };
+      return { id: id, title: d.title, code: d.code, art: d.art, renk: d.renk || d.art, rot: d.rot, video: d.video, kits: kits, pct: n ? Math.round(100 * b / n) : 0, son: son, href: "ders/?d=" + id, uniteHref: "unite/?kit=" + hedef.id };
     });
   }
   function kitCard(c, opts) {
@@ -1079,6 +1079,41 @@
       bitti();
     }, hata);
   }
+
+  /* ---------- ders: ünite seçme ekranı (?d=macro) ---------- */
+  pages.ders = function () {
+    if (!C) return;
+    var id = param("d"), d = C.DERSLER[id], kok = $('[data-k="ders-kok"]');
+    if (!d) { location.replace(ROOT + "kitler/"); return; }
+    if (engelKontrol()) return;
+    var col = COLORS[d.renk || d.art], kits = C.KITLER.filter(function (k) { return k.ders === id; });
+    var defterVar = C.DEFTER_UNITELER.some(function (u) { return u.ders === id; });
+    document.title = "AP " + d.title + " · Kitora";
+    body.style.setProperty("--macro", col);
+    kok.innerHTML = '<a class="btn btn--link" style="align-self:flex-start" href="' + ROOT + 'kitler/">← Tüm kitler</a>' +
+      '<section class="ders-head rise" style="--c:' + col + '"><div class="ders-head__band" aria-hidden="true"><span class="bob-dot"></span>' + art(d.art, col) + '</div>' +
+      '<div class="stack" style="gap:8px;flex:1;min-width:0"><span class="eyebrow accent">// ' + esc(d.code) + '</span><h1 class="display" style="font-size:clamp(36px,4.5vw,54px)">AP <span class="hl">' + esc(d.title) + '</span></h1>' +
+      '<span class="muted">' + kits.length + ' ünite hazır · hangisinden başlamak istersin?</span></div>' +
+      (defterVar ? '<a class="btn btn--ghost" href="' + ROOT + 'defterler/?ders=' + id + '">' + I.defter + ' Defterleri</a>' : "") + '</section>' +
+      '<div class="kit-grid ders-uniteler rise d1" data-k="ders-uniteler"></div>';
+    fill('[data-k="ders-uniteler"]', kits.map(function (k) {
+      var o = C.ozet(k), kilitli = !HESAPLI && k.unit > 1, pct = o ? o.pct : 0;
+      var durum = kilitli ? '<span class="row muted" style="align-items:center;gap:6px;font-size:14px">' + I.lock + ' Ücretsiz hesapla açılır</span>'
+        : o && o.bitenler >= o.n ? '<span class="chip chip--ok">Bitti ✓</span>' : o ? '<span class="chip chip--info">Devam et · Bölüm ' + (o.cur + 1) + '</span>' : '<span class="chip chip--plain">Başla →</span>';
+      return '<a class="kit-card" href="' + ROOT + 'unite/?kit=' + k.id + '" style="--c:' + col + ';--rot:0deg"><div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">UNIT ' + k.unit + '</span>' + art(d.art, col) + '</div>' +
+        '<div class="kit-card__body"><span class="kit-card__title" style="font-size:20px" data-ad="' + k.id + '">Unit ' + k.unit + '</span><span class="kit-card__meta" data-bilgi="' + k.id + '">…</span>' + durum +
+        '<div class="kit-card__progress"><div class="progress progress--thin" role="progressbar" aria-label="Unit ' + k.unit + ' ilerleme" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><span style="--w:' + pct + '%"></span></div><span class="mono muted">%' + pct + '</span></div></div></a>';
+    }).join(""));
+    /* ünite adı ve bölüm/deneme sayısı kit-data.js'ten (sırayla yüklenir) */
+    kits.forEach(function (k) {
+      C.kitVerisi(k).then(function (K) {
+        var ad = String(K.unitLabel || "").split(/\s+[—–-]\s+/).slice(1).join(" — ");
+        if (ad) fill('[data-ad="' + k.id + '"]', esc(ad));
+        var n = (K.episodes || []).length, den = K.denemeler && K.denemeler.count;
+        fill('[data-bilgi="' + k.id + '"]', n + " bölüm" + (den ? " · " + den + " deneme" : ""));
+      }, function () { fill('[data-bilgi="' + k.id + '"]', "yakında"); });
+    });
+  };
 
   /* ---------- Kitlerim sayfası ---------- */
   pages.kitlerim = function () {
