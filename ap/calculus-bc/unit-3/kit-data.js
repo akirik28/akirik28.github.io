@@ -3,6 +3,10 @@ window.KIT = {
   "store": "calcbc-u3:v1:",
   "course": "AP Calculus BC",
   "unitLabel": "Unit 3 — Differentiation: Composite, Implicit, and Inverse Functions",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
