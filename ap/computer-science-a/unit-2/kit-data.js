@@ -92,6 +92,95 @@ window.KIT = {
           "why": "0.1 + 0.2 aslında 0.30000000000000004 olarak saklanır (*round-off*). 0.3 ile tam eşit olmadığı için == *false* verir."
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "2.5",
+      "slug": "cs203",
+      "title": "Bileşik Boolean İfadeler ve Kısa Devre",
+      "en": "Compound Boolean Expressions and Short-Circuit Evaluation",
+      "accent": "#B77AD9",
+      "defter": "cs203",
+      "defterBaslik": "Bileşik Boolean İfadeler ve De Morgan",
+      "seconds": 280,
+      "terms": [
+        "Logical operator",
+        "&& (and)",
+        "|| (or)",
+        "! (not)",
+        "Compound Boolean expression",
+        "Truth table",
+        "Short-circuit evaluation"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "false",
+            "true",
+            "7",
+            "Kod derlenmez."
+          ],
+          "a": 1,
+          "why": "&& önce bağlanır: (x > 5 && x % 2 == 0) → true && false → false. Sonra false || x == 7 → false || true → *true*.",
+          "fig": {
+            "type": "code",
+            "code": "int x = 7;\nSystem.out.println(x > 5 && x % 2 == 0 || x == 7);"
+          }
+        },
+        {
+          "q": "n bir int değişkendir. n tam olarak 10 ile 20 arasında olduğunda (10 ve 20 dahil) true olan ifade hangisi?",
+          "opts": [
+            "n >= 10 || n <= 20",
+            "10 <= n <= 20",
+            "n >= 10 && n <= 20",
+            "n > 10 && n < 20"
+          ],
+          "a": 2,
+          "why": "Aralığın içi için iki koşul da sağlanmalı: *and*. || ile yazılan ifade her sayı için doğrudur; 10 <= n <= 20 derlenmez; > ve < sınırları dışarıda bırakır."
+        },
+        {
+          "q": "d bir int değişkendir ve değeri 0'dır. Aşağıdaki ifadelerden hangisinin hesaplanması ArithmeticException fırlatır?",
+          "opts": [
+            "d != 0 && 5 / d > 1",
+            "d == 0 || 5 / d > 1",
+            "5 / d > 1 && d != 0",
+            "d > 0 && 5 / d > 1"
+          ],
+          "a": 2,
+          "why": "Kısa devre yalnız sol taraf sonucu belirlediğinde sağı atlar. Üçüncü ifadede bölme solda olduğu için önce o yapılır ve 5 / 0 hata verir. Diğerlerinde sol taraf sonucu belirler, bölme hiç yapılmaz."
+        },
+        {
+          "q": "Aşağıdaki kod iki satır yazdırır. Satırlar sırasıyla nedir?",
+          "opts": [
+            "true true",
+            "false false",
+            "false true",
+            "true false"
+          ],
+          "a": 3,
+          "why": "İlk satırda && önce: q && r = false; p || false = *true*. İkinci satırda parantez önce: p || q = true; true && r = *false*.",
+          "fig": {
+            "type": "code",
+            "code": "boolean p = true;\nboolean q = false;\nboolean r = false;\nSystem.out.println(p || q && r);\nSystem.out.println((p || q) && r);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "Açık",
+            "Kapalı",
+            "AçıkKapalı",
+            "Kod derlenmez."
+          ],
+          "a": 1,
+          "why": "!weekend true, h >= 9 true, ama h < 17 → 17 < 17 *false*. && zincirinde bir *false* yeter: Kapalı. Sınır değeri dahil değil.",
+          "fig": {
+            "type": "code",
+            "code": "boolean weekend = false;\nint h = 17;\nif (!weekend && h >= 9 && h < 17)\n  System.out.println(\"Açık\");\nelse\n  System.out.println(\"Kapalı\");"
+          }
+        }
+      ]
     }
   ],
   "final": []
