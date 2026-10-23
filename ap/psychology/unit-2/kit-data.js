@@ -285,6 +285,108 @@ window.KIT = {
           "why": "Tek fark ilk sekiz bulmacayı çözmek. Bu deneyim katılımcıları eski yönteme kilitledi; kısa yolu kaçırdılar. Bu *mental set*'tir. Kontrol grubu karşılaştırma sağladığı için fark bu deneyime bağlanabilir."
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "2.3",
+      "slug": "py205",
+      "title": "Belleğe Giriş",
+      "en": "Introduction to Memory",
+      "accent": "#B77AD9",
+      "defter": "py203",
+      "seconds": 253,
+      "terms": [
+        "Encoding",
+        "Storage",
+        "Retrieval",
+        "Explicit memory",
+        "Episodic memory",
+        "Semantic memory",
+        "Implicit memory",
+        "Procedural memory",
+        "Prospective memory",
+        "Multi-store model",
+        "Working memory",
+        "Levels of processing"
+      ],
+      "questions": [
+        {
+          "q": "Arda dün akşam fizik formülünü defterine baktıktan sonra hiç tekrar etmeden kapattı. Bugün sınavda formülü hatırlayamıyor; arkadaşları ise o konuya hiç dikkat etmediğini söylüyor. Arda'nın sorunu büyük olasılıkla hangi bellek işleminde başladı?",
+          "opts": [
+            "*Retrieval*",
+            "*Encoding*",
+            "*Storage*",
+            "*Prospective memory*"
+          ],
+          "a": 1,
+          "why": "Arda formüle dikkat etmedi ve üzerinde işlem yapmadı; bilgi baştan belleğe iyi girmedi. Bu bir *encoding* sorunudur. Bilgi hiç girmediyse ne depolanabilir ne de geri getirilebilir."
+        },
+        {
+          "q": "Hangi eşleştirme doğrudur?",
+          "opts": [
+            "Geçen yılki okul gezisinde otobüste yanında kimin oturduğunu hatırlamak → *semantic memory*",
+            "Fotosentezin ışık enerjisini kimyasal enerjiye çevirdiğini bilmek → *episodic memory*",
+            "Akşam yemekten önce annesini aramayı hatırlamak → *prospective memory*",
+            "Bakmadan klavyede yazı yazmak → *explicit memory*"
+          ],
+          "a": 2,
+          "why": "Gelecekte bir işi yapmayı hatırlamak *prospective memory*'dir. Gezi anısı *episodic*, fotosentez bilgisi *semantic*, bakmadan yazmak ise *implicit* bir *procedural memory* örneğidir."
+        },
+        {
+          "q": "*Multi-store model*'e göre, sınıfta hocanın söylediği ama senin hiç dikkat etmediğin bir cümleye ne olur?",
+          "opts": [
+            "*Sensory memory*'de kısa süre kalır ve kaybolur",
+            "Doğrudan *long-term memory*'ye geçer",
+            "*Procedural memory*'ye kaydedilir",
+            "*Short-term memory*'de süresiz bekler"
+          ],
+          "a": 0,
+          "why": "Modele göre duyulardan gelen her şey önce *sensory memory*'ye girer. Yalnız dikkat edilen bilgi *short-term memory*'ye geçer; dikkat edilmeyen cümle çok kısa sürede kaybolur."
+        },
+        {
+          "q": "Bir deneyde katılımcılar bir yandan duydukları rakamları akılda tutarken bir yandan da ikinci bir görev yapıyor. İkinci görev bir gruba duyduğu kelimeleri tekrar etmek, öbür gruba ekrandaki şekilleri döndürmek. Rakamları hatırlama en çok hangi grupta bozulur ve neden?",
+          "opts": [
+            "Şekil grubunda; çünkü *visuospatial sketchpad* rakamları tutar",
+            "İki grupta eşit bozulur; çünkü *short-term memory* tek bir depodur",
+            "Hiçbir grupta bozulmaz; çünkü *central executive* sınırsızdır",
+            "Kelime grubunda; çünkü rakamlar ve kelimeler aynı *phonological loop*'u kullanır"
+          ],
+          "a": 3,
+          "why": "*Working memory model*'e göre duyulan rakamlar ve tekrar edilen kelimeler aynı sözel bileşeni, *phonological loop*'u paylaşır ve çakışır. Şekil döndürmek ayrı bir bileşen olan *visuospatial sketchpad*'i kullandığı için daha az bozar."
+        },
+        {
+          "q": "Bir öğretmen iki sınıfa aynı 30 tarih terimini veriyor. A sınıfı terimleri yüksek sesle 5 kez tekrar ediyor. B sınıfı her terimi kendi hayatından bir olayla ilişkilendiren bir cümle yazıyor. Bir hafta sonra sonuçlar tablodaki gibi. Hangi sonuç en iyi desteklenir?",
+          "opts": [
+            "Yüksek sesle tekrar, bilgiyi en derin işleme biçimidir",
+            "B sınıfı daha zeki olduğu için daha çok hatırlamıştır",
+            "Anlama dayalı, kişisel bağlantılı işleme daha kalıcı hatırlamayı sağlar",
+            "Terimler *procedural memory*'ye kodlanmıştır"
+          ],
+          "a": 2,
+          "why": "A sınıfı 12/30 = yüzde 40, B sınıfı 21/30 = yüzde 70 hatırladı. Anlamla ve kendi hayatıyla ilişkilendirmek daha derin işlemedir; *levels of processing* bunu öngörür. Ancak sınıflar rastgele atanmadıysa sınıf farkları da etkili olabilir; zekâ yorumu veriden çıkmaz.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Sınıf",
+              "Çalışma yöntemi",
+              "Bir hafta sonra hatırlanan"
+            ],
+            "rows": [
+              [
+                "A",
+                "5 kez yüksek sesle tekrar",
+                "12 / 30"
+              ],
+              [
+                "B",
+                "Kendi hayatıyla ilişkilendiren cümle",
+                "21 / 30"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
     }
   ],
   "final": []
