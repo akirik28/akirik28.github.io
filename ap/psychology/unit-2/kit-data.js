@@ -103,6 +103,107 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "2.2-1",
+      "slug": "py203",
+      "title": "Kavramlar, Algoritmalar ve Sezgiseller",
+      "en": "Concepts, Algorithms, and Heuristics",
+      "accent": "#FF8A65",
+      "defter": "py202",
+      "defterBaslik": "Düşünme, Problem Çözme ve Karar Verme",
+      "seconds": 236,
+      "terms": [
+        "Concept",
+        "Prototype",
+        "Schema",
+        "Assimilation",
+        "Accommodation",
+        "Algorithm",
+        "Heuristic",
+        "Availability heuristic",
+        "Representativeness heuristic",
+        "Mental set"
+      ],
+      "questions": [
+        {
+          "q": "Öğrencilerden \"sebze\" kavramına uyan örnekleri olabildiğince hızlı onaylamaları isteniyor. \"Havuç\" için ortalama 0,6 saniyede, \"enginar\" için 1,4 saniyede \"evet\" diyorlar. Bu fark en iyi neyle açıklanır?",
+          "opts": [
+            "Havuç, sebze kavramının *prototype*'ına daha yakındır",
+            "Enginar için öğrenciler *algorithm* kullanmıştır",
+            "Havuç için *accommodation* gerekmiştir",
+            "Öğrenciler enginar için *mental set*'e takılmıştır"
+          ],
+          "a": 0,
+          "why": "Yeni bir örneği kavramın en tipik örneğiyle karşılaştırırız. Havuç sebze *prototype*'ına daha çok benzediği için daha hızlı sınıflandırılır; enginar daha az tipik olduğu için daha uzun sürer."
+        },
+        {
+          "q": "Ece ilk kez bir yunus görüyor ve onu balık sanıyor. Daha sonra yunusların akciğerle nefes aldığını ve yavrularını emzirdiğini öğrenince yunusu \"memeli\" kategorisine taşıyor. Ece'nin önce ve sonra yaptığı sırasıyla nedir?",
+          "opts": [
+            "*Accommodation*, sonra *assimilation*",
+            "*Assimilation*, sonra *accommodation*",
+            "*Availability heuristic*, sonra *algorithm*",
+            "*Prototype*, sonra *mental set*"
+          ],
+          "a": 1,
+          "why": "Yunusu var olan balık şemasına koymak *assimilation*'dır. Yeni bilgi şemaya sığmayınca kategorisini değiştirmek *accommodation*'dır."
+        },
+        {
+          "q": "Burak 5 harfli bir kelime oyununda, olası her harf dizilimini bir listeye yazıp sırayla deneyerek mutlaka doğru kelimeyi bulmayı planlıyor. Arkadaşı ise \"Türkçede en sık kullanılan harflerle başla\" diyor. Burak'ın ve arkadaşının stratejileri sırasıyla nedir?",
+          "opts": [
+            "*Heuristic*; *algorithm*",
+            "*Mental set*; *prototype*",
+            "*Representativeness heuristic*; *availability heuristic*",
+            "*Algorithm*; *heuristic*"
+          ],
+          "a": 3,
+          "why": "Bütün olasılıkları sistemli denemek sonunda doğru cevabı garanti eder: *algorithm*. \"Sık harflerle başla\" ise hızlı ama garantisiz bir kaba kural, yani *heuristic*'tir."
+        },
+        {
+          "q": "Bir okulda 20 öğrenci robotik kulübünde, 380 öğrenci başka kulüplerde. Robotik kulübündekilerin yüzde 60'ı, ötekilerin yüzde 10'u \"bilgisayar oyunlarını sever, sessizdir\" diye tanımlanıyor. Rastgele seçilen ve böyle tanımlanan bir öğrenci için en doğru yargı hangisidir?",
+          "opts": [
+            "Robotik kulübünde olma olasılığı daha yüksektir, çünkü tanım robotikçilere çok benzer",
+            "İki grup için olasılık tam olarak eşittir",
+            "Başka bir kulüpte olma olasılığı daha yüksektir; robotik demek *representativeness heuristic* hatasıdır",
+            "Bu bilgilerle hiçbir yargıya varılamaz"
+          ],
+          "a": 2,
+          "why": "Tanıma uyan öğrenciler: robotikte 20 × 0,60 = 12, ötekilerde 380 × 0,10 = 38. 38 > 12, yani tanım robotikçilere benzese de öteki kulüplerde olma olasılığı daha yüksek. Benzerliğe bakıp temel oranı unutmak *representativeness heuristic*'in tuzağıdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Grup",
+              "Öğrenci",
+              "Tanıma uyan oran"
+            ],
+            "rows": [
+              [
+                "Robotik kulübü",
+                "20",
+                "yüzde 60"
+              ],
+              [
+                "Diğer kulüpler",
+                "380",
+                "yüzde 10"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        },
+        {
+          "q": "Araştırmacılar bir gruba önce aynı uzun yöntemle çözülen sekiz bulmaca, sonra çok daha kısa bir yolla çözülebilen bir dokuzuncu bulmaca veriyor. Kontrol grubu yalnız dokuzuncu bulmacayı çözüyor. İlk grubun dokuzuncu bulmacada uzun yöntemi çok daha sık kullanması neyi destekler?",
+          "opts": [
+            "*Mental set*: önceki başarılı yöntem yeni çözümleri görmeyi engelleyebilir",
+            "*Availability heuristic*: kısa yol akla daha kolay gelir",
+            "*Accommodation*: katılımcılar şemalarını değiştirmiştir",
+            "Uzun yöntem her zaman daha doğru sonuç verir"
+          ],
+          "a": 0,
+          "why": "Tek fark ilk sekiz bulmacayı çözmek. Bu deneyim katılımcıları eski yönteme kilitledi; kısa yolu kaçırdılar. Bu *mental set*'tir. Kontrol grubu karşılaştırma sağladığı için fark bu deneyime bağlanabilir."
+        }
+      ]
     }
   ],
   "final": []
