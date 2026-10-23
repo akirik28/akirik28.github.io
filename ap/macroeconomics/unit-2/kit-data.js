@@ -708,6 +708,141 @@ window.KIT = {
     },
     {
       "no": 6,
+      "code": "2.3-2",
+      "slug": "mc206",
+      "title": "İşsizliğin Türleri ve Doğal Oran",
+      "en": "Types of Unemployment",
+      "accent": "#B9E552",
+      "seconds": 264,
+      "terms": [
+        "Frictional unemployment",
+        "Structural unemployment",
+        "Seasonal unemployment",
+        "Cyclical unemployment",
+        "Natural rate of unemployment",
+        "Full employment",
+        "Actual unemployment rate",
+        "Recession",
+        "Production possibilities curve"
+      ],
+      "questions": [
+        {
+          "q": "Tablo 1.000 kişilik bir işgücündeki işsizleri türlerine göre gösteriyor. Doğal işsizlik oranı ve *cyclical* işsizlik oranı kaçtır?",
+          "opts": [
+            "Yüzde 3 ve yüzde 5",
+            "Yüzde 8 ve yüzde 3",
+            "Yüzde 5 ve yüzde 3",
+            "Yüzde 5 ve yüzde 8"
+          ],
+          "a": 2,
+          "why": "Gerçek oran = 80 ÷ 1.000 = yüzde 8. Doğal oran = *frictional* + *structural* = (20 + 30) ÷ 1.000 = yüzde 5. *Cyclical* = 8 − 5 = yüzde 3.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Tür",
+              "Kişi"
+            ],
+            "rows": [
+              [
+                "Frictional",
+                "20"
+              ],
+              [
+                "Structural",
+                "30"
+              ],
+              [
+                "Cyclical",
+                "30"
+              ],
+              [
+                "Labor force",
+                "1.000"
+              ]
+            ],
+            "caption": "İşsizlerin türlere göre dağılımı"
+          }
+        },
+        {
+          "q": "Grafikteki noktalardan hangisi *cyclical* işsizliğin olduğu bir ekonomiyi gösterir?",
+          "opts": [
+            "Yalnız A",
+            "Yalnız B",
+            "A ve B",
+            "Yalnız C"
+          ],
+          "a": 0,
+          "why": "A eğrinin içinde: kaynaklar tam kullanılmıyor, yani *cyclical* işsizlik var. B eğrinin üzerinde: ekonomi tam istihdamda, yalnızca doğal işsizlik var. C mevcut kaynaklarla ulaşılamaz.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Cars",
+            "ylabel": "Food",
+            "xmax": 10,
+            "ymax": 10,
+            "ppc": [
+              {
+                "qmax": 8,
+                "pmax": 8,
+                "k": 2,
+                "label": "PPC"
+              }
+            ],
+            "points": [
+              {
+                "q": 3,
+                "p": 3,
+                "label": "A"
+              },
+              {
+                "q": 5,
+                "p": 6.24,
+                "label": "B"
+              },
+              {
+                "q": 7,
+                "p": 6,
+                "label": "C"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi *frictional unemployment* örneğidir?",
+          "opts": [
+            "Durgunlukta konut satışları düşünce işten çıkarılan bir inşaat işçisi",
+            "Kömür madenleri kapanınca işsiz kalan ve başka beceri bilmeyen bir madenci",
+            "Daha iyi bir iş bulmak için istifa edip iş görüşmelerine giden bir yazılımcı",
+            "Yerini self-servis kasalar alan bir market kasiyeri"
+          ],
+          "a": 2,
+          "why": "Yazılımcının becerisi aranıyor; sadece doğru işe geçiş yapıyor, bu geçiş işsizliğidir. İnşaat işçisi durgunluktan, yani *cyclical*; madenci ve kasiyer beceri uyuşmazlığından, yani *structural* işsiz."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "Ekonomi tam istihdamdayken işsizlik oranı sıfırdır.",
+            "*Cyclical* işsizlik hiçbir zaman eksi değere inemez.",
+            "Doğal işsizlik oranı zaman içinde hiç değişmez.",
+            "Ekonomi tam istihdamdayken gerçek işsizlik oranı doğal orana eşittir."
+          ],
+          "a": 3,
+          "why": "Tam istihdamda yalnızca *frictional* ve *structural* işsizlik kalır, yani gerçek oran doğal orana eşittir; sıfır değildir. Aşırı ısınan ekonomide gerçek oran doğal oranın altına iner ve *cyclical* işsizlik eksi olur. Doğal oran teknoloji ve demografiyle değişebilir."
+        },
+        {
+          "q": "Aşağıdakilerden hangisi doğal işsizlik oranını düşürür?",
+          "opts": [
+            "Pek çok mesleği hızla eskiten bir otomasyon dalgası",
+            "İş arayanları uygun işverenlerle çok daha hızlı eşleştiren bir çevrim içi platform",
+            "Talebin düştüğü ve firmaların işçi çıkardığı bir durgunluk",
+            "İşgücüne bir anda çok sayıda yeni mezunun katılması"
+          ],
+          "a": 1,
+          "why": "Daha hızlı eşleşme arama süresini kısaltır, *frictional* işsizliği ve dolayısıyla doğal oranı düşürür. Otomasyon *structural* işsizliği, yeni mezun dalgası *frictional* işsizliği artırır; durgunluk ise doğal oranı değil *cyclical* işsizliği artırır."
+        }
+      ]
+    },
+    {
+      "no": 7,
       "code": "2.4",
       "slug": "mc207",
       "title": "Fiyat Endeksleri ve Enflasyon",
