@@ -6,6 +6,105 @@ window.KIT = {
   "episodes": [
     {
       "no": 1,
+      "code": "M.1",
+      "slug": "pc101",
+      "title": "Türev: Anlık Değişim Hızı",
+      "en": "The Derivative as a Rate of Change",
+      "accent": "#F6B94A",
+      "seconds": 276,
+      "terms": [
+        "Rate",
+        "Average velocity",
+        "Instantaneous velocity",
+        "Secant line",
+        "Tangent line",
+        "Derivative",
+        "Power rule",
+        "Constant multiple rule",
+        "Sum rule"
+      ],
+      "questions": [
+        {
+          "q": "x(t) = 3t⁴ − 2t + 7 ise dx/dt nedir?",
+          "opts": [
+            "12t³ − 2",
+            "12t³ − 2 + 7",
+            "3t³ − 2",
+            "12t⁴ − 2t"
+          ],
+          "a": 0,
+          "why": "*Power rule*: 3t⁴ → 3·4t³ = 12t³; −2t → −2; sabit 7'nin türevi 0. Sonuç 12t³ − 2."
+        },
+        {
+          "q": "Bir arabanın konumu tabloda verilmiştir (x = 2t²). t = 2 s ile t = 4 s arasındaki *average velocity* kaçtır?",
+          "opts": [
+            "8 m/s",
+            "16 m/s",
+            "12 m/s",
+            "24 m/s"
+          ],
+          "a": 2,
+          "why": "(x(4) − x(2))/(4 − 2) = (32 − 8)/2 = 24/2 = 12 m/s. 24 m toplam yer değiştirmedir; zamana bölmek gerekir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "t (s)",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "rows": [
+              [
+                "x (m)",
+                "0",
+                "2",
+                "8",
+                "18",
+                "32"
+              ]
+            ],
+            "caption": "Arabanın konumu"
+          }
+        },
+        {
+          "q": "x(t) = 6√t (metre, t saniye) ise t = 4 s'deki hız kaçtır?",
+          "opts": [
+            "12 m/s",
+            "1,5 m/s",
+            "3 m/s",
+            "0,75 m/s"
+          ],
+          "a": 1,
+          "why": "6√t = 6t^(1/2); türevi 6·(1/2)t^(−1/2) = 3/√t. t = 4'te 3/2 = 1,5 m/s. 12, x(4)'tür (konum)."
+        },
+        {
+          "q": "lim (Δt → 0) [(3 + Δt)² − 9]/Δt ifadesi neyi gösterir?",
+          "opts": [
+            "x(t) = t² fonksiyonunun t = 9'daki eğimini, 18",
+            "x(t) = t² fonksiyonunun t = 3'teki konumunu, 9",
+            "x(t) = t² fonksiyonunun t = 3'teki eğimini, 6",
+            "x(t) = 3t fonksiyonunun eğimini, 3"
+          ],
+          "a": 2,
+          "why": "Kalıp lim [x(t + Δt) − x(t)]/Δt: x(t) = t², t = 3, çünkü 3² = 9. Açınca (6Δt + Δt²)/Δt = 6 + Δt → 6. Bu, t = 3'teki teğetin eğimidir."
+        },
+        {
+          "q": "Bir parçacığın konumu x(t) = 4/t (t > 0) ise t = 2 s'deki hızı kaçtır?",
+          "opts": [
+            "−1 m/s",
+            "2 m/s",
+            "1 m/s",
+            "−2 m/s"
+          ],
+          "a": 0,
+          "why": "4/t = 4t⁻¹; türevi −4t⁻² = −4/t². t = 2'de −4/4 = −1 m/s. Eksi işareti parçacığın −x yönünde gittiğini söyler; 2, x(2)'dir."
+        }
+      ]
+    },
+    {
+      "no": 2,
       "code": "M.2",
       "slug": "pc102",
       "title": "Türev Kuralları ve Zincir Kuralı",
