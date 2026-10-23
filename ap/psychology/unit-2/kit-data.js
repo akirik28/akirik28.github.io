@@ -494,6 +494,111 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 6,
+      "code": "2.4",
+      "slug": "py206",
+      "title": "Belleğe Kodlama",
+      "en": "Encoding Memories",
+      "accent": "#E86A92",
+      "defter": "py204",
+      "seconds": 237,
+      "terms": [
+        "Automatic processing",
+        "Effortful processing",
+        "Self-reference effect",
+        "Mnemonics",
+        "Method of loci",
+        "Chunking",
+        "Spacing effect",
+        "Distributed practice",
+        "Massed practice",
+        "Serial position effect",
+        "Primacy effect",
+        "Recency effect"
+      ],
+      "questions": [
+        {
+          "q": "Melis hiç çaba göstermeden, okula gelirken bu hafta kaç kez otobüsü kaçırdığını biliyor. Ama İngilizce kelime listesini öğrenmek için her gün oturup çalışması gerekiyor. Bu iki durum sırasıyla neyi gösterir?",
+          "opts": [
+            "*Effortful processing*; *automatic processing*",
+            "*Automatic processing*; *effortful processing*",
+            "*Primacy effect*; *recency effect*",
+            "*Chunking*; *method of loci*"
+          ],
+          "a": 1,
+          "why": "Sıklık gibi bilgiler çabasız kodlanır: *automatic processing*. Yeni kelimeler ise dikkat ve çaba ister: *effortful processing*."
+        },
+        {
+          "q": "Bir öğrenci tarih sınavı için padişahların sırasını, evinden okula giden yoldaki dükkânlara tek tek \"yerleştirerek\" çalışıyor. Sınavda zihninde o yolu yürüyerek sırayı hatırlıyor. Hangi teknik kullanılmıştır?",
+          "opts": [
+            "*Method of loci*",
+            "*Chunking*",
+            "*Massed practice*",
+            "*Self-reference effect*"
+          ],
+          "a": 0,
+          "why": "Bilgileri iyi bilinen bir mekânın yerlerine yerleştirip zihinde o mekânda dolaşmak *method of loci*'dir; bir *mnemonic* türüdür."
+        },
+        {
+          "q": "Bir deneyde katılımcılara 9 harflik bir dizi gösteriliyor: T R T T H Y A S M. Bir grup harfleri tek tek, öteki grup \"TRT · THY · ASM\" biçiminde tanıdık kısaltmalar olarak görüyor. İkinci grubun harfleri daha iyi hatırlaması en iyi neyle açıklanır?",
+          "opts": [
+            "*Recency effect*",
+            "*Automatic processing*",
+            "*Chunking*",
+            "*Method of loci*"
+          ],
+          "a": 2,
+          "why": "Dokuz ayrı harf, anlamlı üç birime dönüştü; akılda tutulacak öğe sayısı 9'dan 3'e indi. Bu *chunking*'dir."
+        },
+        {
+          "q": "Bir öğretmen iki sınıfa aynı konuyu aynı toplam sürede çalıştırıyor. Sonuçlar tabloda. Hangi yorum en iyi desteklenir?",
+          "opts": [
+            "Yığarak çalışmak hem kısa hem uzun vadede daha iyidir",
+            "İki yöntem arasında hiçbir fark yoktur",
+            "Aralıklı çalışma yalnız ertesi günkü testi iyileştirmiştir",
+            "Aralıklı çalışma uzun vadede bilgiyi çok daha iyi korur"
+          ],
+          "a": 3,
+          "why": "Ertesi gün sonuçlar neredeyse aynı (78 ve 76). Bir ay sonra yığarak çalışan sınıf 41'e, aralıklı çalışan sınıf 68'e iniyor; fark 27 puan. Bu, *distributed practice*'in üstünlüğünü, yani *spacing effect*'i destekler.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Sınıf",
+              "Çalışma biçimi",
+              "Ertesi gün",
+              "Bir ay sonra"
+            ],
+            "rows": [
+              [
+                "A",
+                "Tek akşamda 4 saat",
+                "78",
+                "41"
+              ],
+              [
+                "B",
+                "4 gün, günde 1 saat",
+                "76",
+                "68"
+              ]
+            ],
+            "caption": "Ortalama puan, 100 üzerinden · örnek veri"
+          }
+        },
+        {
+          "q": "Toplantıda arkadaşın 12 kişilik bir isim listesini çok hızlı okuyor, hemen ardından da hatırlayabildiklerini yazmanı istiyor. Liste o kadar hızlı okunuyor ki isimleri kafanda tekrar edemiyorsun. Hangi sonuç en olasıdır?",
+          "opts": [
+            "Primacy etkisi güçlenir, recency etkisi kaybolur",
+            "Listenin ortasındaki isimler en iyi hatırlanır",
+            "Recency etkisi korunur, primacy etkisi zayıflar",
+            "Hiçbir isim hatırlanmaz"
+          ],
+          "a": 2,
+          "why": "*Primacy effect* baştaki öğeleri tekrar etmeye bağlıdır; tekrar fırsatı olmayınca zayıflar. Hemen ardından yazıldığı için son isimler hâlâ kısa süreli bellektedir; *recency effect* korunur."
+        }
+      ]
     }
   ],
   "final": []
