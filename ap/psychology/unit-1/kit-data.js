@@ -114,6 +114,117 @@ window.KIT = {
           "why": "DNA dizisi değişmeden, çevrenin (stres, sigara) hangi genlerin açık ya da kapalı olduğunu değiştirmesi *epigenetics*'tir. *Natural selection* nesiller boyunca işler; *heritability* bir grup istatistiğidir; bu ikizler zaten tek yumurta ikizidir."
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "1.2",
+      "slug": "py102",
+      "title": "Sinir Sistemine Genel Bakış",
+      "en": "Overview of the Nervous System",
+      "accent": "#3FB5A0",
+      "defter": "py102",
+      "seconds": 241,
+      "terms": [
+        "Central nervous system (CNS)",
+        "Peripheral nervous system (PNS)",
+        "Somatic nervous system",
+        "Autonomic nervous system",
+        "Sympathetic nervous system",
+        "Parasympathetic nervous system",
+        "Fight or flight",
+        "Sensory (afferent) neurons",
+        "Motor (efferent) neurons",
+        "Interneurons",
+        "Reflex arc"
+      ],
+      "questions": [
+        {
+          "q": "Can penaltı atışından hemen önce top başında duruyor: kalbi hızlanmış, ağzı kurumuş, göz bebekleri büyümüş. Bu belirtileri en iyi hangisi açıklar?",
+          "opts": [
+            "*Parasympathetic nervous system*'in etkinleşmesi",
+            "*Somatic nervous system*'in iskelet kaslarını gevşetmesi",
+            "*Sympathetic nervous system*'in etkinleşmesi",
+            "Omurilikte bir *reflex arc* oluşması"
+          ],
+          "a": 2,
+          "why": "Hızlı kalp, ağız kuruluğu (sindirimin yavaşlaması) ve büyüyen göz bebekleri *fight or flight* tepkisidir; bunu *autonomic* sistemin *sympathetic* kolu yürütür. *Parasympathetic* bunların tersini yapar; refleks yayı ise tek bir uyarana verilen hızlı kas tepkisidir."
+        },
+        {
+          "q": "Tablodaki eşleştirmelerden hangisi doğrudur?",
+          "opts": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "a": 1,
+          "why": "Klavyede yazmak istemli iskelet kası hareketidir: *somatic*. 1'de mide sindirimi otomatiktir (*autonomic*), 3'te alarm sonrası sakinleşme *parasympathetic*'tir, 4'te bilgiyi deriden merkeze taşıyan nöron *afferent*, yani duyu nöronudur.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Durum",
+              "Eşleştirilen bölüm / nöron"
+            ],
+            "rows": [
+              [
+                "1",
+                "Öğle yemeğinden sonra midenin yemeği sindirmesi",
+                "Somatic nervous system"
+              ],
+              [
+                "2",
+                "Arkadaşına klavyeyle mesaj yazmak",
+                "Somatic nervous system"
+              ],
+              [
+                "3",
+                "Deprem tatbikatı bitince kalbin yavaşlaması",
+                "Sympathetic nervous system"
+              ],
+              [
+                "4",
+                "Ayağına batan dikenin bilgisini omuriliğe taşıyan nöron",
+                "Efferent (motor) neuron"
+              ]
+            ],
+            "caption": "Hangi satır doğru eşleştirilmiş?"
+          }
+        },
+        {
+          "q": "Bir kaza sonucu omuriliği boyun hizasında tamamen hasar gören bir hasta, bacağına dokunulduğunu hissedemiyor. Bunun en olası nedeni hangisidir?",
+          "opts": [
+            "Bacaktan gelen duyusal sinyaller beyne ulaşamıyor",
+            "*Parasympathetic* sistem bacaktaki duyuları kapatmıştır",
+            "Bacaktaki motor nöronlar sinyali beyne taşıyamıyor",
+            "*Autonomic nervous system* artık kalbi yönetemiyor"
+          ],
+          "a": 0,
+          "why": "Dokunma bilgisi duyu nöronlarıyla (*afferent*) omuriliğe, oradan yukarı beyne çıkar. Omurilik boyun hizasında kesilirse aşağıdan gelen sinyal beyne ulaşamaz; beyin dokunuşu algılayamaz. Motor nöronlar emri merkezden dışarı taşır, duyuyu değil."
+        },
+        {
+          "q": "Araştırmacılar, gönüllülerden zor bir matematik testini 5 dakikada bitirmelerini istiyor ve test sırasında kalp hızlarını ölçüyor. Test sonunda gönüllüler 10 dakika sakin müzik dinliyor ve kalp hızları yeniden ölçülüyor. Dinlenme sırasındaki değişimi en iyi hangisi açıklar?",
+          "opts": [
+            "*Somatic* sistemin kalbi istemli olarak yavaşlatması",
+            "*Sympathetic* etkinliğin artmaya devam etmesi",
+            "Omurilikteki ara nöronların kalbi durdurması",
+            "*Parasympathetic* etkinliğin artarak kalbi yavaşlatması"
+          ],
+          "a": 3,
+          "why": "Stresli testte *sympathetic* kol kalbi hızlandırır; dinlenmede *parasympathetic* kol baskın gelir ve kalp hızı düşer. Kalp istemli kontrol edilmez, bu yüzden *somatic* sistem açıklama olamaz."
+        },
+        {
+          "q": "Mert yanlışlıkla bir raptiyeye basıyor ve ne olduğunu fark etmeden ayağını çekiyor. Bu olaydaki sinyal sırası hangisidir?",
+          "opts": [
+            "Motor nöron → beyin → duyu nöronu",
+            "Duyu nöronu → omurilikteki ara nöron → motor nöron",
+            "Ara nöron → duyu nöronu → beyin",
+            "Beyin → motor nöron → duyu nöronu"
+          ],
+          "a": 1,
+          "why": "Refleks yayında bilgi duyu nöronuyla omuriliğe gelir, ara nöron onu doğrudan motor nörona aktarır ve kas kasılır. Beyin bilgiyi sonradan alır; bu yüzden Mert acıyı ayağını çektikten sonra fark eder."
+        }
+      ]
     }
   ],
   "final": []
