@@ -288,6 +288,113 @@ window.KIT = {
     },
     {
       "no": 4,
+      "code": "2.2-2",
+      "slug": "py204",
+      "title": "Karar Tuzakları ve Yaratıcılık",
+      "en": "Decision-Making Biases and Creativity",
+      "accent": "#FF8A65",
+      "defter": "py202",
+      "defterBaslik": "Düşünme, Problem Çözme ve Karar Verme",
+      "seconds": 231,
+      "terms": [
+        "Framing",
+        "Priming",
+        "Confirmation bias",
+        "Belief perseverance",
+        "Overconfidence",
+        "Gambler's fallacy",
+        "Sunk cost fallacy",
+        "Executive functions",
+        "Functional fixedness",
+        "Divergent thinking",
+        "Convergent thinking"
+      ],
+      "questions": [
+        {
+          "q": "Bir deneyde katılımcılar önce ekranda çok kısa süre \"yaşlı, emekli, baston\" gibi kelimeler görüyor. Kontrol grubu nötr kelimeler görüyor. Ardından herkes belirsiz bir fotoğraftaki kişinin yaşını tahmin ediyor; ilk grup daha yüksek tahminler veriyor. Bu sonucu en iyi ne açıklar?",
+          "opts": [
+            "*Functional fixedness*",
+            "*Sunk cost fallacy*",
+            "*Priming*",
+            "*Gambler's fallacy*"
+          ],
+          "a": 2,
+          "why": "Önceki kelimeler bellekte yaşlılıkla ilgili bağlantıları etkinleştirdi ve sonraki yargıyı etkiledi. Bu *priming*'dir. Kontrol grubuyla karşılaştırma, farkın kelimelerden kaynaklandığını gösterir."
+        },
+        {
+          "q": "Can, bir enerji içeceğinin sınav performansını artırdığına inanıyor. İnternette yalnız bunu destekleyen yazıları okuyor. Daha sonra güvendiği çalışmanın verilerinin uydurma olduğu açıklanıyor, ama Can yine de içeceğin işe yaradığını savunuyor. Can'ın davranışında sırasıyla hangi iki eğilim görülür?",
+          "opts": [
+            "*Confirmation bias*, sonra *belief perseverance*",
+            "*Belief perseverance*, sonra *framing*",
+            "*Overconfidence*, sonra *priming*",
+            "*Framing*, sonra *confirmation bias*"
+          ],
+          "a": 0,
+          "why": "Yalnız destekleyen kanıtı aramak *confirmation bias*'tır. Dayanak çürütüldükten sonra bile inancı korumak *belief perseverance*'tır."
+        },
+        {
+          "q": "Hangi eşleştirme doğrudur?",
+          "opts": [
+            "Ruletin üst üste altı kez kırmızı gelmesinden sonra siyaha daha çok para yatırmak → *sunk cost fallacy*",
+            "Sevmediği bir kursa, ücretini peşin ödediği için devam etmek → *gambler's fallacy*",
+            "\"Yüzde 95 başarı\" yazan reklama \"yüzde 5 başarısızlık\" yazandan çok güvenmek → *priming*",
+            "Kötü giden bir projeye \"bu kadar emek verdik\" diye kaynak aktarmaya devam etmek → *sunk cost fallacy*"
+          ],
+          "a": 3,
+          "why": "Geri alınamayacak geçmiş emek yüzünden kötü bir işe devam etmek *sunk cost fallacy*'dir. Rulet örneği *gambler's fallacy*, ödenmiş kurs ücreti *sunk cost*, yüzde 95 ile yüzde 5 farkı ise *framing*'dir."
+        },
+        {
+          "q": "Kamp sırasında konserve açacağı kaybolan bir grup, yanlarındaki kaşığın sapını taşa sürterek konserveyi açmayı uzun süre düşünemiyor. Daha sonra bir öğretmen onlara \"bir kaşıkla yapılabilecek on şey yazın\" diye bir alıştırma yaptırıyor. Gruptaki ilk sorun ve öğretmenin alıştırması sırasıyla nedir?",
+          "opts": [
+            "*Mental set*; *convergent thinking*",
+            "*Functional fixedness*; *divergent thinking*",
+            "*Confirmation bias*; *executive functions*",
+            "*Functional fixedness*; *convergent thinking*"
+          ],
+          "a": 1,
+          "why": "Kaşığı yalnız yemek yemek için görmek *functional fixedness*'tır. Bir nesnenin birçok farklı kullanımını üretmek *divergent thinking*'dir; tek doğru cevaba daralmak *convergent* olurdu."
+        },
+        {
+          "q": "Bir araştırmacı öğrencilere genel kültür soruları soruyor ve her cevap için ne kadar emin olduklarını yüzde olarak soruyor. Sonuçlar tabloda. Bu veriler en çok hangi kavramı destekler?",
+          "opts": [
+            "*Overconfidence*",
+            "*Gambler's fallacy*",
+            "*Framing*",
+            "*Functional fixedness*"
+          ],
+          "a": 0,
+          "why": "Ortalama güven (90 + 85 + 95) / 3 = yüzde 90, ortalama doğruluk (60 + 55 + 50) / 3 = yüzde 55. Öğrenciler bildiklerine gerçekte olduğundan 35 puan daha fazla güveniyor: *overconfidence*.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Soru grubu",
+              "Ortalama güven",
+              "Gerçek doğruluk"
+            ],
+            "rows": [
+              [
+                "Tarih",
+                "yüzde 90",
+                "yüzde 60"
+              ],
+              [
+                "Coğrafya",
+                "yüzde 85",
+                "yüzde 55"
+              ],
+              [
+                "Bilim",
+                "yüzde 95",
+                "yüzde 50"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 5,
       "code": "2.3",
       "slug": "py205",
       "title": "Belleğe Giriş",
