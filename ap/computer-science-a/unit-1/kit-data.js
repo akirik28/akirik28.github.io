@@ -386,6 +386,101 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "1.12–1.14",
+      "slug": "cs108",
+      "title": "Nesneler, Referanslar ve null",
+      "en": "Objects, References, and null",
+      "accent": "#5C8DFF",
+      "seconds": 260,
+      "terms": [
+        "Class",
+        "Object",
+        "Instance",
+        "Constructor",
+        "new",
+        "Reference",
+        "Aliasing",
+        "null",
+        "NullPointerException",
+        "Instance method",
+        "Dot operator"
+      ],
+      "questions": [
+        {
+          "q": "Ticket sınıfında Ticket(String band, int seat) *constructor*'ı, int getSeat() ve void setSeat(int s) metotları var. Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "4",
+            "10",
+            "0",
+            "Derleme hatası"
+          ],
+          "a": 1,
+          "why": "b = a yeni nesne üretmez; okun kopyasını alır. a ve b aynı bilete bakar (*aliasing*). a üzerinden koltuk 10 yapılınca b de 10 görür.",
+          "fig": {
+            "type": "code",
+            "code": "Ticket a = new Ticket(\"Mor\", 4);\nTicket b = a;\na.setSeat(10);\nSystem.out.println(b.getSeat());"
+          }
+        },
+        {
+          "q": "Aynı Ticket sınıfıyla, aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "7",
+            "11",
+            "4",
+            "Derleme hatası"
+          ],
+          "a": 2,
+          "why": "İki ayrı *new* iki ayrı nesne üretir. Bilgileri aynı olsa da birbirinden bağımsızdır; b'nin koltuğunu değiştirmek a'yı etkilemez.",
+          "fig": {
+            "type": "code",
+            "code": "Ticket a = new Ticket(\"Mor\", 4);\nTicket b = new Ticket(\"Mor\", 4);\nb.setSeat(7);\nSystem.out.println(a.getSeat());"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod için hangisi doğrudur?",
+          "opts": [
+            "Kod derlenmez",
+            "t'nin koltuğu 2 olur",
+            "Hiçbir şey olmaz; null üzerindeki çağrı yok sayılır",
+            "Çalışırken NullPointerException fırlatılır"
+          ],
+          "a": 3,
+          "why": "Kod derlenir: t bir Ticket değişkeni ve setSeat var. Ama çalışırken t hiçbir nesneye bakmaz; *null* üzerinden metot çağırmak *NullPointerException* verir.",
+          "fig": {
+            "type": "code",
+            "code": "Ticket t = new Ticket(\"Can\", 5);\nt = null;\nt.setSeat(2);"
+          }
+        },
+        {
+          "q": "Ticket sınıfının tek *constructor*'ı Ticket(String band, int seat). Aşağıdakilerden hangisi geçerli bir nesne oluşturur?",
+          "opts": [
+            "Ticket t = new Ticket(\"Can\", 5);",
+            "Ticket t = Ticket(\"Can\", 5);",
+            "Ticket t = new Ticket(5, \"Can\");",
+            "new Ticket t(\"Can\", 5);"
+          ],
+          "a": 0,
+          "why": "Nesne *new* ve *constructor* ile kurulur; argümanlar imzadaki sırayla (önce *String*, sonra *int*) verilmelidir. new olmadan ya da ters sırayla yazılan satırlar derlenmez."
+        },
+        {
+          "q": "Aşağıdaki satırdan sonra t değişkeninde ne saklanır?",
+          "opts": [
+            "\"Can\" ve 5 değerlerinin kopyası",
+            "Ticket nesnesinin kendisi",
+            "Ticket nesnesine giden bir *reference* (bellek adresi)",
+            "Constructor'ın döndürdüğü 5 sayısı"
+          ],
+          "a": 2,
+          "why": "Nesne tipli değişkenler nesnenin kendisini değil, ona giden *reference*'ı tutar. *int* gibi *primitive* değişkenler ise değerin kendisini tutar.",
+          "fig": {
+            "type": "code",
+            "code": "Ticket t = new Ticket(\"Can\", 5);"
+          }
+        }
+      ]
     }
   ],
   "final": []
