@@ -232,6 +232,123 @@ window.KIT = {
     },
     {
       "no": 3,
+      "code": "1.3-2",
+      "slug": "py104",
+      "title": "Nörotransmitterler ve Hormonlar",
+      "en": "Neurotransmitters and Hormones",
+      "accent": "#FF8A65",
+      "defter": "py103",
+      "defterBaslik": "Nöron ve Sinirsel İletim",
+      "seconds": 238,
+      "terms": [
+        "Neurotransmitters",
+        "Acetylcholine",
+        "Dopamine",
+        "Serotonin",
+        "Norepinephrine",
+        "Glutamate",
+        "GABA",
+        "Endorphins",
+        "Substance P",
+        "Endocrine system",
+        "Pituitary gland",
+        "Adrenaline",
+        "Ghrelin",
+        "Leptin",
+        "Melatonin",
+        "Oxytocin"
+      ],
+      "questions": [
+        {
+          "q": "Tablodaki eşleştirmelerden hangisi YANLIŞTIR?",
+          "opts": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "a": 2,
+          "why": "Ana *inhibitory* haberci *GABA*'dır, *glutamate* değil; *glutamate* ana *excitatory* habercidir. Kaygı ve nöbetlerle ilişkilendirilen düşük düzey de *GABA* içindir. Öteki üç eşleştirme doğrudur.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Haberci",
+              "Eşleştirilen işlev"
+            ],
+            "rows": [
+              [
+                "1",
+                "Acetylcholine",
+                "Kas hareketi; öğrenme ve bellek"
+              ],
+              [
+                "2",
+                "Endorphins",
+                "Doğal ağrı kesici etki"
+              ],
+              [
+                "3",
+                "Glutamate",
+                "Beynin ana inhibitory (sakinleştirici) habercisi"
+              ],
+              [
+                "4",
+                "Melatonin",
+                "Karanlıkta artar, uykuyu getirir"
+              ]
+            ],
+            "caption": "Hangi satır yanlış eşleştirilmiş?"
+          }
+        },
+        {
+          "q": "Araştırmacılar bir grup gönüllünün öğle yemeğinden önce ve hemen sonra kanındaki iki hormonu ölçüyor. Yemekten önce biri yüksek, yemekten sonra öteki yükselmeye başlıyor. Bu iki hormon büyük olasılıkla hangileridir?",
+          "opts": [
+            "Önce *melatonin*, sonra *oxytocin*",
+            "Önce *ghrelin*, sonra *leptin*",
+            "Önce *leptin*, sonra *ghrelin*",
+            "Önce *adrenaline*, sonra *melatonin*"
+          ],
+          "a": 1,
+          "why": "Açken mideden salınan *ghrelin* yüksektir ve açlık hissi verir; yemekten sonra yağ hücrelerinden gelen *leptin*'in etkisi doygunluk sinyali verir. *Leptin* önce, *ghrelin* sonra olsaydı sıra tersine dönerdi."
+        },
+        {
+          "q": "Bir koşucu maratonun son kilometrelerinde ayağındaki su toplamasını neredeyse hiç hissetmediğini, yarış bitince ise acının arttığını söylüyor. Bu durumu en iyi hangisi açıklar?",
+          "opts": [
+            "Yarış sırasında *endorphins* salınması acıyı bastırmış, yarış bitince etkisi azalmıştır",
+            "Yarış sırasında *substance P* artmış ve acıyı azaltmıştır",
+            "*Melatonin* koşu sırasında acı sinyallerini taşımıştır",
+            "*Acetylcholine* eksikliği yarıştan sonra acıyı başlatmıştır"
+          ],
+          "a": 0,
+          "why": "*Endorphins* vücudun doğal ağrı kesicisidir ve yoğun egzersizde artar. *Substance P* ise acı sinyalini taşır; arttığında acı azalmaz, artar. Yarış bitince *endorphins* azalır ve acı fark edilir."
+        },
+        {
+          "q": "Bir hastanın kasları gün içinde giderek zayıflıyor; göz kapakları düşüyor. Testler, bağışıklık sisteminin kaslardaki bir habercinin reseptörlerine saldırdığını gösteriyor. Hangi haberci ve hastalık söz konusudur?",
+          "opts": [
+            "*Dopamine* · *Parkinson's disease*",
+            "*Serotonin* · *depression*",
+            "*Acetylcholine* · *myasthenia gravis*",
+            "*GABA* · nöbet"
+          ],
+          "a": 2,
+          "why": "Kas hareketini başlatan haberci *acetylcholine*'dir. Bağışıklık sistemi kas üzerindeki *acetylcholine* reseptörlerini hedeflediğinde *myasthenia gravis* görülür ve kaslar çabuk yorulur. *Parkinson's* ise beyindeki *dopamine* kaybıyla ilgilidir."
+        },
+        {
+          "q": "Sinir sistemi ile *endocrine system*'i karşılaştıran hangi ifade doğrudur?",
+          "opts": [
+            "*Endocrine system* daha hızlıdır, çünkü hormonlar nöronlar boyunca taşınır",
+            "İki sistem de habercilerini yalnızca sinaps boşluğuna bırakır",
+            "*Pituitary gland* sinir sisteminin bir parçasıdır ve hormon salmaz",
+            "Hormonlar kanla taşındığı için daha yavaş yayılır ama etkileri daha uzun sürebilir"
+          ],
+          "a": 3,
+          "why": "Hormonlar bezlerden kana salınır, bütün vücuda yavaşça yayılır ve etkileri uzun sürebilir; nöronlar ise sinapsta hızlı ve hedefli çalışır. *Pituitary gland* endokrin sistemin \"usta bezi\"dir ve hormon salar."
+        }
+      ]
+    },
+    {
+      "no": 4,
       "code": "1.5",
       "slug": "py108",
       "title": "Uyku",
