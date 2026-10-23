@@ -389,6 +389,99 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "1.11",
+      "slug": "cs107",
+      "title": "Math Sınıfı ve Rastgele Sayılar",
+      "en": "The Math Class and Random Numbers",
+      "accent": "#FF7DB8",
+      "seconds": 285,
+      "terms": [
+        "Math class",
+        "Math.abs",
+        "Math.pow",
+        "Math.sqrt",
+        "Math.random",
+        "static method",
+        "Return type",
+        "Random range",
+        "Java Quick Reference"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "-7",
+            "7",
+            "7.0",
+            "15"
+          ],
+          "a": 1,
+          "why": "4 − 11 = −7; mutlak değer 7. *int* verildiği için *int* döner, 7.0 değil.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(Math.abs(4 - 11));"
+          }
+        },
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "13.0",
+            "13",
+            "11.0",
+            "Derleme hatası"
+          ],
+          "a": 0,
+          "why": "Math.pow(3, 2) 9.0, Math.sqrt(16) 4.0 döndürür; ikisi de *double*. Toplam 13.0.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(Math.pow(3, 2) + Math.sqrt(16));"
+          }
+        },
+        {
+          "q": "Aşağıdaki satırlardan hangisi derlenmez?",
+          "opts": [
+            "double r = Math.sqrt(25);",
+            "int r = (int) Math.sqrt(25);",
+            "int r = Math.sqrt(25);",
+            "int r = Math.abs(-5);"
+          ],
+          "a": 2,
+          "why": "Math.sqrt her zaman *double* döndürür; *cast* olmadan *int* değişkene atanamaz. Math.abs ise *int* argümanla *int* döndürdüğü için son satır geçerlidir."
+        },
+        {
+          "q": "Aşağıdaki satır çalışınca n hangi değerleri alabilir?",
+          "opts": [
+            "3, 4, 5, 6, 7",
+            "3, 4, 5, 6, 7, 8",
+            "0, 1, 2, 3, 4",
+            "4, 5, 6, 7, 8"
+          ],
+          "a": 0,
+          "why": "Math.random() 0 ile 1 arasında (1 hariç) bir double verir. 5 ile çarpıp kesince 0, 1, 2, 3 ya da 4; 3 eklenince 3 ile 7 arası. 8 asla gelmez.",
+          "fig": {
+            "type": "code",
+            "code": "int n = (int) (Math.random() * 5) + 3;"
+          }
+        },
+        {
+          "q": "Aşağıdaki satırlarda r değeri 0.99 çıktıysa d kaç olur?",
+          "opts": [
+            "7",
+            "5",
+            "6.94",
+            "6"
+          ],
+          "a": 3,
+          "why": "0.99 · 6 = 5.94; (int) ile 5'e kesilir; artı 1: 6. r hiçbir zaman 1 olamadığı için d en fazla 6 olur.",
+          "fig": {
+            "type": "code",
+            "code": "double r = Math.random();\nint d = (int) (r * 6) + 1;"
+          }
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.12–1.14",
       "slug": "cs108",
       "title": "Nesneler, Referanslar ve null",
