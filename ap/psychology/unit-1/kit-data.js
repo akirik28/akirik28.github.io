@@ -454,6 +454,119 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "1.4-2",
+      "slug": "py107",
+      "title": "Yarım Küreler, Plastisite ve Yöntemler",
+      "en": "Hemispheres, Plasticity, and Research Methods",
+      "accent": "#B77AD9",
+      "defter": "py104",
+      "defterBaslik": "Beyin",
+      "seconds": 253,
+      "terms": [
+        "Corpus callosum",
+        "Hemispheric specialization (lateralization)",
+        "Split-brain",
+        "Broca's area",
+        "Wernicke's area",
+        "Aphasia",
+        "Plasticity",
+        "Case study",
+        "Lesioning",
+        "EEG",
+        "fMRI",
+        "PET"
+      ],
+      "questions": [
+        {
+          "q": "Bir *split-brain* hastası ekranın ortasına bakarken sağ görme alanına \"top\", sol görme alanına \"kalem\" kelimesi aynı anda gösteriliyor. Hasta ne gördüğünü söylüyor ve sonra perdenin altından sol eliyle bir nesne seçiyor. En olası sonuç hangisidir?",
+          "opts": [
+            "\"Kalem\" der ve sol eliyle kalemi seçer",
+            "\"Top\" der ve sol eliyle topu seçer",
+            "\"Kalem\" der ve sol eliyle topu seçer",
+            "\"Top\" der ve sol eliyle kalemi seçer"
+          ],
+          "a": 3,
+          "why": "Sağ görme alanındaki \"top\" sol yarım küreye gider; konuşma çoğunlukla solda olduğu için hasta \"top\" der. Sol görme alanındaki \"kalem\" sağ yarım küreye gider; sağ yarım küre sol eli yönettiği için sol el kalemi seçer. Köprü kesik olduğundan iki taraf birbirinden habersizdir."
+        },
+        {
+          "q": "İnme geçiren bir hasta akıcı ve uzun cümleler kuruyor ama cümleleri anlamsız; kendisine söylenenleri de anlamıyor gibi görünüyor. Hasar büyük olasılıkla nerededir?",
+          "opts": [
+            "Sol *temporal lobe*'daki *Wernicke's area*",
+            "Sol *frontal lobe*'daki *Broca's area*",
+            "*Corpus callosum*",
+            "Sağ *occipital lobe*"
+          ],
+          "a": 0,
+          "why": "Akıcı ama anlamsız konuşma ve anlama güçlüğü *Wernicke's aphasia*'nın belirtisidir; *Wernicke's area* çoğunlukla sol *temporal lobe*'dadır. *Broca's area* hasarında kişi anlar ama konuşmayı üretmekte zorlanır."
+        },
+        {
+          "q": "Tablo, dört araştırma sorusunu ve önerilen yöntemleri gösteriyor. Hangi satırda yöntem soruya en iyi uyar?",
+          "opts": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "a": 1,
+          "why": "Beynin bir sese milisaniyeler içinde ne zaman tepki verdiğini ölçmek için zamanlaması çok iyi olan *EEG* en uygundur. 1'de yer sorusu için *fMRI*, 3'te tek bir nadir vakayı anlamak için *case study* uygun olurdu; 4'te sağlıklı insanlarda bilerek *lesioning* yapmak etik değildir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Araştırma sorusu",
+              "Önerilen yöntem"
+            ],
+            "rows": [
+              [
+                "1",
+                "Matematik problemi çözerken hangi bölge daha çok çalışıyor?",
+                "EEG"
+              ],
+              [
+                "2",
+                "Beklenmedik bir ses duyulunca beyin kaç milisaniye içinde tepki veriyor?",
+                "EEG"
+              ],
+              [
+                "3",
+                "Ön lobu kazada hasar gören tek bir hastanın kişiliği nasıl değişti?",
+                "fMRI"
+              ],
+              [
+                "4",
+                "Hippocampus yeni anılar için gerekli mi?",
+                "Sağlıklı gönüllülerde lesioning"
+              ]
+            ],
+            "caption": "Araştırma soruları ve yöntemler"
+          }
+        },
+        {
+          "q": "Dört yaşında, ağır nöbetler nedeniyle sol yarım küresi ameliyatla alınan bir çocuk birkaç yıl içinde konuşmayı büyük ölçüde yeniden öğreniyor. Bu durum en iyi hangi kavramla açıklanır?",
+          "opts": [
+            "*Lateralization*",
+            "*Aphasia*",
+            "*Plasticity*",
+            "*Lesioning*"
+          ],
+          "a": 2,
+          "why": "Beynin kalan bölümlerinin yeni bağlantılar kurup kaybedilen işlevleri üstlenmesi *plasticity*'dir ve küçük çocuklarda daha güçlüdür. *Lateralization* dilin normalde solda olmasını anlatır; burada şaşırtıcı olan beynin bu düzeni değiştirebilmesidir."
+        },
+        {
+          "q": "Bir dergi testi \"Matematikte iyiysen sol beyinli, resimde iyiysen sağ beyinlisin\" diyor. Bir psikoloji öğrencisi bu iddiaya hangi yanıtı vermelidir?",
+          "opts": [
+            "Doğru; her insan yalnızca bir yarım küresini kullanır",
+            "İki yarım küre bazı işlerde uzmanlaşsa da çoğu işte birlikte çalışır; insanları sol ya da sağ beyinli diye ayırmak desteklenmez",
+            "Doğru; *corpus callosum* yalnızca sanatçılarda çalışır",
+            "Yanlış; iki yarım küre arasında hiçbir işlev farkı yoktur"
+          ],
+          "a": 1,
+          "why": "*Lateralization* gerçektir: çoğu insanda dil solda, uzamsal ve yüz işleri sağda öne çıkar. Ama sağlıklı bir beyinde iki taraf *corpus callosum* üzerinden sürekli haberleşir ve birlikte çalışır; \"sol beyinli insan\" bir efsanedir. D şıkkı ise uzmanlaşmayı tamamen yok saydığı için yanlıştır."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.5",
       "slug": "py108",
       "title": "Uyku",
