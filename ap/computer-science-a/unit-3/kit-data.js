@@ -170,6 +170,94 @@ window.KIT = {
           "why": "*Instance variable*'lar *private* olmalı; *public* alan derlenir ama kapsüllemeyi bozar ve puan kaybettirir. Öteki üçü doğru alışkanlıklar."
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "3.4",
+      "slug": "cs303",
+      "title": "Constructor Yazmak",
+      "en": "Constructors",
+      "accent": "#E86A92",
+      "defter": "cs303",
+      "seconds": 315,
+      "terms": [
+        "Constructor",
+        "new",
+        "Parameter",
+        "Overloading",
+        "Default value",
+        "Default constructor",
+        "null"
+      ],
+      "questions": [
+        {
+          "q": "Ticket sınıfı için geçerli bir constructor başlığı hangisidir?",
+          "opts": [
+            "public void Ticket(int n)",
+            "public int Ticket(int n)",
+            "public Ticket(int n)",
+            "Ticket public(int n)"
+          ],
+          "a": 2,
+          "why": "*Constructor* sınıfla aynı adı taşır ve dönüş tipi yazılmaz. A ve B'de dönüş tipi olduğu için bunlar sıradan metotlardır; D'nin sırası geçersizdir."
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "null 7 false",
+            " 7 false",
+            "7",
+            "Derlenmez: name hiç atanmadı."
+          ],
+          "a": 0,
+          "why": "Atanmayan alanlar varsayılan değer alır: *String* için *null*, *boolean* için *false*. Yazıyla birleşen *null*, \"null\" olarak görünür. Atanmamış alan derleme hatası değildir.",
+          "fig": {
+            "type": "code",
+            "code": "// alanlar: private String name; private int power; private boolean active;\npublic Robot(int p) { power = p; }\npublic String info() { return name + \" \" + power + \" \" + active; }\n// istemci:\nSystem.out.println(new Robot(7).info());"
+          }
+        },
+        {
+          "q": "Lamp sınıfındaki tek constructor public Lamp(int level) başlığına sahip. Başka bir sınıfta Lamp x = new Lamp(); yazılırsa ne olur?",
+          "opts": [
+            "Derlenir; level 0 olur.",
+            "Derlenmez: parametresiz constructor yok.",
+            "Çalışma anında NullPointerException fırlatılır.",
+            "Derlenir; level null olur."
+          ],
+          "a": 1,
+          "why": "Sınıfa bir *constructor* yazıldığı anda Java parametresiz (varsayılan) *constructor*'ı eklemez. new Lamp() ile eşleşen başlık olmadığı için kod derlenmez."
+        },
+        {
+          "q": "LunchCard'ın constructor'ı aşağıdaki gibi yazılmış. getOwner owner alanını, getBalance balance alanını döndürüyor. Kod ne yazdırır?",
+          "opts": [
+            "Ece 40",
+            "null 0",
+            "Derlenmez.",
+            "null 40"
+          ],
+          "a": 3,
+          "why": "String owner = name; satırı alanı değil, yeni bir yerel değişkeni doldurur; alan *null* kalır. *balance* doğru atanır: 40. Kod derlenir.",
+          "fig": {
+            "type": "code",
+            "code": "public LunchCard(String name, int start) {\n  String owner = name;\n  balance = start;\n}\n// istemci:\nLunchCard c = new LunchCard(\"Ece\", 40);\nSystem.out.println(c.getOwner() + \" \" + c.getBalance());"
+          }
+        },
+        {
+          "q": "Pen sınıfında iki constructor var; getInk ink alanını döndürüyor. Kod ne yazdırır?",
+          "opts": [
+            "100 100",
+            "30 100",
+            "30 0",
+            "Derlenmez: iki constructor aynı adı taşıyamaz."
+          ],
+          "a": 1,
+          "why": "(\"mavi\", 30) iki parametreli *constructor*'la eşleşir: ink 30. (\"siyah\") tek parametreliyle eşleşir: ink 100. Parametre listeleri farklı olduğu için iki *constructor* yazılabilir (*overloading*).",
+          "fig": {
+            "type": "code",
+            "code": "public Pen(String c) { color = c; ink = 100; }\npublic Pen(String c, int i) { color = c; ink = i; }\n// istemci:\nPen p = new Pen(\"mavi\", 30);\nPen q = new Pen(\"siyah\");\nSystem.out.println(p.getInk() + \" \" + q.getInk());"
+          }
+        }
+      ]
     }
   ],
   "final": []
