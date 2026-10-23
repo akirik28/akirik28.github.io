@@ -3,6 +3,10 @@ window.KIT = {
   "store": "psych-u2:v1:",
   "course": "AP Psychology",
   "unitLabel": "Unit 2 — Cognition",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
