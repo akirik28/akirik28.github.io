@@ -40,7 +40,9 @@
     { id: "calc-u2", ders: "calc", unit: 2, path: "ap/calculus-bc/unit-2/", store: "calcbc-u2:v1:" },
     { id: "calc-u3", ders: "calc", unit: 3, path: "ap/calculus-bc/unit-3/", store: "calcbc-u3:v1:" },
     { id: "psych-u1", ders: "psych", unit: 1, path: "ap/psychology/unit-1/", store: "psych-u1:v1:" },
-    { id: "csa-u1", ders: "csa", unit: 1, path: "ap/computer-science-a/unit-1/", store: "csa-u1:v1:" }
+    { id: "psych-u2", ders: "psych", unit: 2, path: "ap/psychology/unit-2/", store: "psych-u2:v1:" },
+    { id: "csa-u1", ders: "csa", unit: 1, path: "ap/computer-science-a/unit-1/", store: "csa-u1:v1:" },
+    { id: "csa-u2", ders: "csa", unit: 2, path: "ap/computer-science-a/unit-2/", store: "csa-u2:v1:" }
   ];
   /* veritabanındaki ders adları (ap_profil_kaydet ve quizler bunlarla eşleşir; canlı kitora/dersler.js ile aynı) */
   var OKUL = {

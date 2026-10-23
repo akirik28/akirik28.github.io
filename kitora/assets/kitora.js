@@ -256,7 +256,8 @@
   /* ---------- kitler: katalog + bu hesabın (ya da misafirin) ilerlemesi ---------- */
   function dersler() {
     if (!C) return [];
-    return Object.keys(C.DERSLER).map(function (id) {
+    /* kiti henüz yayında olmayan ders (DERSLER'de var, KITLER'de yok) gösterilmez */
+    return Object.keys(C.DERSLER).filter(function (id) { return C.KITLER.some(function (k) { return k.ders === id; }); }).map(function (id) {
       var d = C.DERSLER[id], kits = C.KITLER.filter(function (k) { return k.ders === id; }), n = 0, b = 0, son = null;
       kits.forEach(function (k) {
         var o = C.ozet(k);
