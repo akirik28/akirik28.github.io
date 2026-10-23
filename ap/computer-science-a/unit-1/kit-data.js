@@ -671,6 +671,103 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "1.15-2",
+      "slug": "cs110",
+      "title": "String: indexOf, equals, compareTo",
+      "en": "Strings: indexOf, equals, compareTo",
+      "accent": "#2FD6B9",
+      "seconds": 274,
+      "terms": [
+        "indexOf(str)",
+        "equals(other)",
+        "compareTo(other)",
+        "== (reference comparison)",
+        "Lexicographic order",
+        "Case-sensitive",
+        "null",
+        "NullPointerException",
+        "Java Quick Reference"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "4",
+            "2",
+            "3",
+            "-1"
+          ],
+          "a": 2,
+          "why": "K0 i1 t2 o3 r4 a5: ilk \"o\" 3. *index*'te. *indexOf* sıfırdan sayar.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(\"Kitora\".indexOf(\"o\"));"
+          }
+        },
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "-1",
+            "0",
+            "1",
+            "Derleme hatası"
+          ],
+          "a": 0,
+          "why": "*indexOf* büyük küçük harfe duyarlıdır. Yazıda küçük k yok (baştaki büyük K); bulunamayınca −1 döner.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(\"Kitora\".indexOf(\"k\"));"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "true true",
+            "false false",
+            "true false",
+            "false true"
+          ],
+          "a": 3,
+          "why": "İki ayrı *new* iki ayrı nesne yaratır. == referansları karşılaştırır: farklı nesneler, false. *equals* harfleri karşılaştırır: aynı, true.",
+          "fig": {
+            "type": "code",
+            "code": "String a = new String(\"ok\");\nString b = new String(\"ok\");\nSystem.out.println((a == b) + \" \" + a.equals(b));"
+          }
+        },
+        {
+          "q": "Aşağıdaki ifade için hangisi doğrudur?",
+          "opts": [
+            "Pozitif bir tam sayıdır",
+            "Negatif bir tam sayıdır",
+            "Sıfırdır",
+            "true döndürür"
+          ],
+          "a": 0,
+          "why": "Sözlük sırasında \"elma\", \"armut\"'tan sonra gelir (e, a'dan sonra). Sonra gelen için *compareTo* pozitif döndürür. *compareTo* *boolean* değil, *int* döndürür.",
+          "fig": {
+            "type": "code",
+            "code": "\"elma\".compareTo(\"armut\")"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "@kitora",
+            "kitora",
+            "kitora.",
+            "can"
+          ],
+          "a": 1,
+          "why": "c0 a1 n2 @3 … .10: at = 3, dot = 10. substring(4, 10): 4 dahil, 10 hariç → \"kitora\".",
+          "fig": {
+            "type": "code",
+            "code": "String mail = \"can@kitora.app\";\nint at = mail.indexOf(\"@\");\nint dot = mail.indexOf(\".\");\nSystem.out.println(mail.substring(at + 1, dot));"
+          }
+        }
+      ]
     }
   ],
   "final": []
