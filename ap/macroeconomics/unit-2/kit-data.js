@@ -573,6 +573,141 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "2.3-1",
+      "slug": "mc205",
+      "title": "İşsizliği Ölçmek",
+      "en": "Measuring Unemployment",
+      "accent": "#A98BFF",
+      "seconds": 252,
+      "terms": [
+        "Adult population",
+        "Employed",
+        "Unemployed",
+        "Labor force",
+        "Not in the labor force",
+        "Unemployment rate",
+        "Labor force participation rate",
+        "Discouraged workers",
+        "Underemployment",
+        "Part-time workers"
+      ],
+      "questions": [
+        {
+          "q": "Tablodaki verilere göre işsizlik oranı ve işgücüne katılma oranı kaçtır?",
+          "opts": [
+            "İşsizlik yüzde 3, katılma yüzde 60",
+            "İşsizlik yüzde 5, katılma yüzde 60",
+            "İşsizlik yüzde 5,3, katılma yüzde 57",
+            "İşsizlik yüzde 5, katılma yüzde 40"
+          ],
+          "a": 1,
+          "why": "İşgücü = 1.140 + 60 = 1.200. İşsizlik oranı = 60 ÷ 1.200 × 100 = yüzde 5. Katılma oranı = 1.200 ÷ 2.000 × 100 = yüzde 60.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Grup",
+              "Kişi"
+            ],
+            "rows": [
+              [
+                "Adult population (16+)",
+                "2.000"
+              ],
+              [
+                "Employed",
+                "1.140"
+              ],
+              [
+                "Unemployed",
+                "60"
+              ],
+              [
+                "Not in labor force",
+                "800"
+              ]
+            ],
+            "caption": "Bir ilçenin işgücü verileri"
+          }
+        },
+        {
+          "q": "Başta 900 kişi çalışıyor, 100 kişi işsiz. Bir ay içinde işsizlerden 20'si iş buluyor, 30'u ise umudunu kesip iş aramayı bırakıyor. Yeni işsizlik oranı yaklaşık kaçtır?",
+          "opts": [
+            "Yüzde 5",
+            "Yüzde 5,2",
+            "Yüzde 7,2",
+            "Yüzde 10"
+          ],
+          "a": 1,
+          "why": "Çalışan 920, işsiz 100 − 20 − 30 = 50. Umutsuz 30 kişi işgücünden çıkar: işgücü 920 + 50 = 970. Oran = 50 ÷ 970 × 100 ≈ yüzde 5,2 (başta yüzde 10'du).",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Başta",
+              "Bir ay sonra"
+            ],
+            "rows": [
+              [
+                "Employed",
+                "900",
+                "?"
+              ],
+              [
+                "Unemployed",
+                "100",
+                "?"
+              ],
+              [
+                "İş bulan",
+                "",
+                "20"
+              ],
+              [
+                "Aramayı bırakan",
+                "",
+                "30"
+              ]
+            ],
+            "caption": "Bir aylık değişim"
+          }
+        },
+        {
+          "q": "ABD tanımına göre aşağıdakilerden hangisi *unemployed* sayılır?",
+          "opts": [
+            "Bir yıl iş aradıktan sonra aramayı bırakan 40 yaşında bir muhasebeci",
+            "Haftada 8 saat çalışan ama tam zamanlı iş isteyen bir garson",
+            "Lokantası kapandığı için iki haftadır iş görüşmelerine giden bir aşçı",
+            "İş aramayan, tam zamanlı bir üniversite öğrencisi"
+          ],
+          "a": 2,
+          "why": "Aşçının işi yok, çalışmaya hazır ve son dört haftada aktif olarak iş arıyor. Muhasebeci *discouraged*, öğrenci iş aramıyor; ikisi de işgücü dışında. Garson yarı zamanlı da olsa *employed* sayılır."
+        },
+        {
+          "q": "Uzun süren bir durgunlukta birçok işsiz umudunu kesip iş aramayı bırakıyor. Başka hiçbir şey değişmezse resmî işsizlik oranı ve işgücüne katılma oranı ne olur?",
+          "opts": [
+            "İşsizlik oranı artar, katılma oranı azalır",
+            "İşsizlik oranı değişmez, katılma oranı azalır",
+            "İşsizlik oranı azalır, katılma oranı değişmez",
+            "İşsizlik oranı azalır, katılma oranı da azalır"
+          ],
+          "a": 3,
+          "why": "Umutsuz işçiler hem işsizlerden hem işgücünden çıkar. Pay ve payda aynı sayıda azalır; pay paydadan çok küçük olduğu için işsizlik oranı düşer, örneğin 100 ÷ 1.000 yerine 70 ÷ 970; işgücü küçülürken yetişkin nüfus aynı kaldığı için katılma oranı da düşer."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "Yarı zamanlı çalışanlar, tam zamanlı iş isteseler bile resmî istatistikte *employed* sayılır.",
+            "İşsizlik oranı, işsizlerin toplam nüfusa bölünmesiyle bulunur.",
+            "Emekliler iş aramasalar da *unemployed* sayılır.",
+            "*Labor force participation rate*, çalışanların işgücüne oranıdır."
+          ],
+          "a": 0,
+          "why": "Geçen hafta parayla çalışan herkes *employed*'dır; bu yüzden *underemployment* resmî orana yansımaz. İşsizlik oranının paydası işgücüdür; emekliler işgücü dışındadır; katılma oranı işgücünün yetişkin nüfusa oranıdır."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "2.4",
       "slug": "mc207",
       "title": "Fiyat Endeksleri ve Enflasyon",
