@@ -199,7 +199,7 @@ window.DEFTER = {
     { q: "Aşırı doz opioid kullanan bir kişiye, opioid reseptörlerine bağlanıp onları kapatarak etkiyi tersine çeviren bir ilaç veriliyor. Bu ilaç nasıl adlandırılır?",
       opts: ["*Agonist*", "*Reuptake inhibitor*", "*Excitatory* nörotransmitter", "*Antagonist*"],
       a: 3,
-      why: "Reseptörü bloke ederek nörotransmitterin ya da ilacın bağlanmasını engelleyen madde antagonisttir. A en çekici yanlış: agonist reseptörü taklit eder ve etkiyi artırır, yani tam tersi." },
+      why: "Reseptörü bloke ederek nörotransmitterin ya da ilacın bağlanmasını engelleyen madde antagonisttir. A en çekici yanlış: agonist reseptöre bağlanıp nörotransmitteri taklit eder ve etkiyi artırır, yani tam tersi." },
     { q: "Bir öğrenci öğle yemeğini atlıyor; derste karnı guruldayarak yoğun bir açlık hissediyor. Bu hissi artıran hormon hangisidir?",
       opts: ["*Ghrelin*", "*Leptin*", "*Oxytocin*", "*Melatonin*"],
       a: 0,

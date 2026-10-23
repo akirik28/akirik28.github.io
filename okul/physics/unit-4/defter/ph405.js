@@ -235,7 +235,7 @@ window.DEFTER = {
       q: "At one end of a ripple tank 90 cm across, a 6 Hz wave generator produces waves of wavelength 30 mm. How long do the waves need to cross the tank?",
       opts: ["3 s", "5 s", "10 s", "7 s"],
       a: 1,
-      why: "v = λf = 3 cm × 6 Hz = 18 cm/s. t = yol ÷ hız = 90 ÷ 18 = 5 s. Birimleri karıştıran (30 mm ile 90 cm'i aynı birime çevirmeyen) 3 s ya da 10 s gibi cevaplara gider."
+      why: "v = λf = 3 cm × 6 Hz = 18 cm/s. t = yol ÷ hız = 90 ÷ 18 = 5 s. 3 s, frekansı kullanmadan uzaklığı dalga boyuna bölmektir (90 ÷ 30); 30 mm'yi 3 cm'ye çevirmeyi unutmak da hızı ve süreyi yanlış verir."
     },
     {
       q: "Water waves move from a shallow region into a deep region. Which statement is correct?",

@@ -32,7 +32,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "V", alt: "gerilim (V)" }, "=", { t: "W", alt: "enerji (J)" }, "÷", { t: "q", alt: "yük (C)" }
-          ], aciklama: "1 V = 1 J/C. Gerilim iki nokta arasında ==potansiyel farkıdır==; bu yüzden voltmetrenin iki girişi vardır. Pil, kimyasal tepkimeyle yükleri ayırarak bu farkı üretir (*emf*, ε). İdeal telin uçları arasında gerilim sıfırdır; tel pilin uçlarına bağlıysa ΔV tel = ΔV pil." },
+          ], aciklama: "1 V = 1 J/C. Gerilim iki nokta arasında ==potansiyel farkıdır==; bu yüzden voltmetrenin iki girişi vardır. Pil, kimyasal tepkimeyle yükleri ayırarak bu farkı üretir (*emf*, ε). İdeal (dirençsiz) bağlantı telinin uçları arasında gerilim sıfırdır. Pilin uçlarına tek başına bağlanan bir direnç telinde ise ΔV tel = ΔV pil olur." },
         { tip: "tablo", baslik: "Su devresi benzetmesi", head: ["Su devresi", "Elektrik devresi", "Sembol"], rows: [
             ["Pompa", "Pil (üreteç): basıncı üretir", "ε"],
             ["Geniş, pürüzsüz boru", "İletken tel: sürtünmesiz yol", "—"],

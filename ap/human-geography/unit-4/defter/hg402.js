@@ -60,7 +60,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "✊", terim: "Independence movement", tr: "bağımsızlık hareketi", tanim: "Bir sömürgenin ya da bölgenin yabancı yönetimden kurtulup kendi devletini kurmak için yürüttüğü siyasi mücadele.", ornek: "20. yüzyılda Asya ve Afrika'da çok sayıda sömürge bağımsızlığını kazandı." }
           ] },
-        { tip: "not", metin: "Yeni devletlerin çoğu, sömürgeden kalma sınırları korudu. Afrika Birliği'nin öncülü olan Afrika Birliği Örgütü (1964) de devletlere bağımsızlıktaki sınırlarına saygı çağrısı yaptı. Bu yüzden bugünkü sınırların birçoğu sömürge dönemine gider." }
+        { tip: "not", metin: "Yeni devletlerin çoğu, sömürgeden kalma sınırları korudu. Afrika Birliği'nin öncülü olan Afrika Birliği Örgütü (1963'te kuruldu) de 1964'te devletlere bağımsızlıktaki sınırlarına saygı çağrısı yaptı. Bu yüzden bugünkü sınırların birçoğu sömürge dönemine gider." }
       ]
     },
     {

@@ -150,7 +150,7 @@ window.DEFTER = {
       opts: ["Rostow'un kalkış aşaması", "Bağımlılık kuramı", "Yalnızca coğrafi şans", "Kitlesel tüketim çağı"],
       a: 1,
       why: "Ham madde satıp pahalı mamul almak, bağımlılık kuramının eşitsiz ticaret argümanıdır. A şıkkı en çekici yanlış: kalkış aşaması bu eşitsiz ticareti dikkate almaz, iç etkenlere odaklanır." },
-    { q: "Bir ülke devlet gelirinin yüzde 80'ini kakao ihracatından elde ediyor. Tabloya göre hangi sonuca ulaşılır?",
+    { q: "Bir ülke devlet gelirinin neredeyse tamamını kakao ihracatından elde ediyor. Tabloya göre hangi sonuca ulaşılır?",
       fig: { type: "table", caption: "Kakao fiyatı ve ülke geliri", head: ["Yıl", "Kakao fiyat endeksi", "Devlet geliri (milyar $)"], rows: [["1", 100, 10], ["2", 60, 6], ["3", 80, 8]] },
       opts: ["Gelir fiyatla ters yönde hareket eder", "Gelir fiyatla hiç ilgili değildir", "Fiyat 60'a inince devlet geliri de aynı oranda düşmüştür; ülke emtia bağımlısıdır ve kırılgandır", "Gelir her yıl artmıştır"],
       a: 2,

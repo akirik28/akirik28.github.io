@@ -56,7 +56,7 @@ window.DEFTER = {
             { metin: "Merkezde fark yaklaşık ==4 °C==: koyu asfalt ve beton ısıyı tutar, bitki ve su azdır, araç ve klima ısı salar. Buna ==kent ısı adası== denir.", goster: ["p"] },
             { metin: "Ağaçlandırma, parklar ve yeşil çatılar farkı ==azaltır== (eski eğri kesikli).", goster: ["eski", "yz"], set: { u: { noktalar: [[0, 0], [1, 0.1], [2, 0.4], [3, 1.2], [4, 2], [5, 3], [6, 2.1], [7, 1.3], [8, 0.3], [9, 0.1], [10, 0]] }, p: { y: 3, etiket: "Merkez: +3" } } }
           ] },
-        { tip: "not", metin: "Taşıt ve sanayi egzozu güneş ışığıyla tepkimeye girip yer seviyesinde ozon ve duman (*smog*) oluşturur. Vadi ya da çanak gibi çevresi yüksek kentlerde soğuk hava tabakası kirli havayı hapsedebilir (*thermal inversion*); hava kirliliği daha da kötüleşir." }
+        { tip: "not", metin: "Taşıt ve sanayi egzozu güneş ışığıyla tepkimeye girip yer seviyesinde ozon ve duman (*smog*) oluşturur. Vadi ya da çanak gibi çevresi yüksek kentlerde üstteki sıcak hava tabakası, yere yakın soğuk ve kirli havayı kapak gibi hapsedebilir (*thermal inversion*); hava kirliliği daha da kötüleşir." }
       ]
     },
     {

@@ -53,7 +53,7 @@ window.DEFTER = {
       kisa: "Fikir üründen değil, müşterinin sıkıntısından ya da pazardaki boşluktan doğar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "😖", terim: "Pain point", tr: "müşterinin sıkıntısı", tanim: "Müşterilerin yaşadığı belirli bir sıkıntı, zahmet ya da karşılanmamış ihtiyaç.", ornek: "Kaykayı okul dolabına sığmayan öğrenci, çantaya ve dolaba sığan 16 inçlik kaykay yaptı (Locker Board)." },
+            { ikon: "😖", terim: "Pain point", tr: "müşterinin sıkıntısı", tanim: "Müşterilerin yaşadığı belirli bir sıkıntı, zahmet ya da karşılanmamış ihtiyaç.", ornek: "Kaykayı okul dolabına sığmayan öğrenci, çantaya ve dolaba sığan yaklaşık 17 inçlik (43 cm) kaykay yaptı (Locker Board)." },
             { ikon: "🕳️", terim: "Market gap", tr: "pazar boşluğu", tanim: "Mevcut ürün ve hizmetlerin yeterince karşılayamadığı müşteri ihtiyacı; pazardaki boşluk.", ornek: "Taksi ve otobüs vardı ama daha hızlı, rahat yol eksikti; Uber var olan araçları bir uygulamayla düzenledi." }
           ] },
         { tip: "ikili", sol: { ikon: "😖", baslik: "*Pain point*", maddeler: ["Müşterinin yaşadığı sıkıntının kendisi", "Kantinde sıra beklemek"] },

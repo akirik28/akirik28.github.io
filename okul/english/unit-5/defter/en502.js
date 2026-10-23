@@ -161,7 +161,7 @@ window.DEFTER = {
             { metin: "Dualarınızı yerine getireyim, beni dinleyin (Fagles v. 245–247, parafraz).", cevap: "sol", neden: "Halka vaat eden kral: Oedipus." }
           ] },
         { tip: "liste", baslik: "Çalışma alıntı bankasından temalar (Fagles satır no.)", maddeler: [
-            { ikon: "🙈", baslik: "Körlük ve görme", metin: "Teiresias'ın kehaneti, dilenci-zengin tersine dönüşü; v. 359–362, 422–423." },
+            { ikon: "🙈", baslik: "Körlük ve görme", metin: "Teiresias'ın kehaneti, dilenci-zengin tersine dönüşü; v. 474–489, 422–423." },
             { ikon: "🦠", baslik: "Salgın ve katile lanet", metin: "Katil sürgün ya da kana kan (v. 113–114), katile lanet (v. 280–284)." },
             { ikon: "😡", baslik: "Öfke ve kuşku", metin: "Kavşaktaki cinayet öfkesi, Creon'u komplo ile suçlama, koronun “aklını kaybetmiş” demesi." },
             { ikon: "🧘", baslik: "Creon ve Jocasta", metin: "Creon'un sakin müdahalesi ve “krallık istemem” savunması (v. 663–665); Jocasta'nın kehanetlere saygıyı bırakması (v. 778–782)." },

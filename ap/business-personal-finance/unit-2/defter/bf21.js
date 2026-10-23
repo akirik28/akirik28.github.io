@@ -145,7 +145,7 @@ window.DEFTER = {
             { ikon: "🧑‍🍳", terim: "Personalized service", tr: "kişiye özel hizmet", tanim: "Müşteriye adıyla, tercihine göre davranmak.", ornek: "Barista \"Her zamankinden mi?\" diye sorar." }
           ] },
         { tip: "ornek", baslik: "Starbucks müşterisi kaç lira bırakır?", durum: "Bir müşteri her hafta Starbucks'tan 100 liralık kahve alıyor ve bunu on yıl sürdürüyor. *CLV* kaçtır?",
-          adimlar: ["Yılda 52 hafta: 52 × 100 = 5.200 TL.", "On yıl: 5.200 × 10 = 52.000 TL.", "Kimse tek ziyarette 100 lira harcamaz; ama sadık müşteri yıllar içinde çok para bırakır."],
+          adimlar: ["Yılda 52 hafta: 52 × 100 = 5.200 TL.", "On yıl: 5.200 × 10 = 52.000 TL.", "Tek bir ziyaret küçük bir tutardır; ama sadık müşteri yıllar içinde çok para bırakır."],
           sonuc: "*CLV* = ==52.000 TL==." },
         { tip: "ikili", ayirici: "↔", sol: { ikon: "🧲", baslik: "*CAC*", maddeler: ["Müşteriyi KAZANMAK için harcanan para", "Maliyet; işletme düşük ister", "Uzun vadeli ilişki onu düşürür"] },
           sag: { ikon: "♾️", baslik: "*CLV*", maddeler: ["Müşterinin ZAMAN İÇİNDE getirdiği para", "Gelir; işletme yüksek ister", "Uzun vadeli ilişki onu artırır"] },

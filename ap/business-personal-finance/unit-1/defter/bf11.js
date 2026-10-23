@@ -28,7 +28,7 @@ window.DEFTER = {
         { tip: "sayilar", ogeler: [
             { deger: 99.9, sonek: "%", etiket: "ABD'de işletmelerin küçük işletme oranı" },
             { deger: 80, sonek: "%", etiket: "bunların hiç çalışanı olmayanı (tek kişilik)" },
-            { deger: 97, sonek: "%", etiket: "işletmelerin temel amacı kâr olanı" }
+            { deger: 97, sonek: "%", etiket: "derste verilen tahmin: işletmelerin temel amacı kâr olanı" }
           ] },
         { tip: "tuzak", baslik: "Dev şirket tuzağı", metin: "Apple bir garajda, Walmart küçük bir kasabadaki tek mağazada, Amazon bir evde kitap satarak başladı. Hepsi bir sorunu çözdü; Kevin O'Leary'nin dediği gibi ==büyük bir sorunu çözmeden işletme kuramazsın.==", yanlis: "İşletmeler büyük şirketlerdir.", dogru: "İşletmelerin ezici çoğunluğu küçüktür ve çoğu tek kişiliktir." }
       ]

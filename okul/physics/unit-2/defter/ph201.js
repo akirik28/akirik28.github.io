@@ -118,7 +118,7 @@ window.DEFTER = {
             "Potansiyel enerji: PE = m · g · h = 4 · 10 · 3 = 120 J.",
             "İkisi eşit: sabit hızda net iş sıfır, uygulanan iş tamamen potansiyel enerjiye gitti."
           ],
-          sonuc: "W = 120 J = PE. İş yolun şekline bağlı değildir: dik kaldırsan da rampadan çıksan da 120 J. Sınavda böyle yaz: *The work done by the force is independent of the path.* *A machine can reduce the force but not the work.*" }
+          sonuc: "W = 120 J = PE. Sürtünme yokken iş yolun şekline bağlı değildir: dik kaldırsan da rampadan çıksan da 120 J. Sınavda böyle yaz: *The work done against gravity is independent of the path.* *A machine can reduce the force but not the work.*" }
       ]
     },
     {

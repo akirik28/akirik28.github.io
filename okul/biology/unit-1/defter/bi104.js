@@ -95,7 +95,7 @@ window.DEFTER = {
       kisa: "Su, mineraller ve pH; enzimleri ve pigmentleri etkileyerek hızı sınırlar.",
       bloklar: [
         { tip: "tablo", baslik: "Etkenin fotosentezdeki yeri", head: ["Etken", "Görevi / etkisi"], rows: [
-            ["Su", "Elektron ve hidrojen kaynağı; yapraktaki su oranı %15'in üstüne çıkınca enzim etkinliği artar; stomaların açılması suya bağlıdır"],
+            ["Su", "Elektron ve hidrojen kaynağı; su azalınca enzim etkinliği düşer (MEB: hücredeki su oranı %15'in altına inerse enzimler çalışmaz); stomaların açılması suya bağlıdır"],
             ["Magnezyum (Mg)", "Klorofilin yapısında bulunur, kofaktör olarak çalışır"],
             ["Potasyum, kalsiyum", "Kofaktör olarak enzimlere yardım eder"],
             ["Azot (N)", "Baz, vitamin ve amino asit yapısına girer"],

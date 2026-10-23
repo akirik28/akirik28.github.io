@@ -141,7 +141,7 @@ window.DEFTER = {
       q: "Aşağıdaki ifadelerden hangisi doğrudur?",
       opts: ["Her *geometric* sınır aynı zamanda *superimposed*'dır.", "*Geometric* şekle, *superimposed* çizen güce bakar; bir sınır ikisi de olabilir.", "*Geometric* sınır yalnızca nehirleri izler.", "*Geometric* ile *relict* aynı şeydir."],
       a: 1,
-      why: "Türler farklı ölçütlere bakar: şekil ve kim çizdi. Biri diğerini gerektirmez; ABD–Kanada sınırı *geometric* ve *antecedent*'tir ama *superimposed* değildir."
+      why: "Türler farklı ölçütlere bakar: şekil ve kim çizdi. Biri diğerini gerektirmez: Afrika'daki pek çok düz sınır hem *geometric* hem *superimposed*'dır; ABD–Kanada sınırının batı kesimi ise genellikle *geometric* ve *antecedent* örneği olarak verilir."
     },
     {
       q: "Bir şehri yıllarca ikiye bölen duvar yıkıldı, fakat duvarın izi hâlâ kaldırımlarda ve haritalarda görülüyor. Bu sınır hangi türdür?",

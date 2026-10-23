@@ -23,7 +23,7 @@ window.DEFTER = {
       kisa: "*Formal region*'da özellik baskındır, sınır bellidir; herkeste olması gerekmez.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🎨", terim: "Formal region = Uniform region", tr: "biçimsel / tekdüze bölge", tanim: "Herkesin ortak bir özelliği paylaştığı alan: aynı dil, aynı iklim, aynı yönetim. ==Sınırı bellidir.==", ornek: "Bir ülke ya da bir eyalet; Akdeniz ikliminin görüldüğü alan." }
+            { ikon: "🎨", terim: "Formal region = Uniform region", tr: "biçimsel / tekdüze bölge", tanim: "Ortak bir özelliğin baskın olduğu alan: aynı dil, aynı iklim, aynı yönetim. Özellik herkeste olmayabilir; çoğunlukta olması yeter. ==Sınırı bellidir.==", ornek: "Bir ülke ya da bir eyalet; Akdeniz ikliminin görüldüğü alan." }
           ] },
         { tip: "ornek", baslik: "Seçim haritasında eyalet neden tek renk?", durum: "Bir eyalette 1000 seçmenin 550'si bir partiye, 450'si diğer partilere oy verdi. Harita eyaleti nasıl boyar ve bu hangi tür bölgedir?",
           adimlar: ["Oy oranı: 550 ÷ 1000 = %55; çoğunluk (%50'den fazla).", "Harita, baskın özelliğe göre eyaleti tümüyle o partinin rengine boyar.", "Sınırlar belli ve ortak bir özellik (baskın tercih) var."],

@@ -106,7 +106,7 @@ window.DEFTER = (function () {
               ["*Monopoly*, *oligopoly*, *monopolistic competition*", "Firma fiyatı MC'nin üstüne koyar (P > MC)", "Etkinden az", "Unit 4"],
               ["Negatif dışsallık", "Dış maliyet karara girmez", "Etkinden fazla", "6.2"],
               ["Pozitif dışsallık", "Dış fayda karara girmez", "Etkinden az", "6.2"],
-              ["*Asymmetric information* (eksik bilgi)", "Bir taraf diğerinden fazlasını bilir; ikinci el telefonda kusuru yalnız satıcı bilir", "Etkin düzeyden sapar", "—"],
+              ["*Asymmetric information* (asimetrik bilgi)", "Bir taraf diğerinden fazlasını bilir; ikinci el telefonda kusuru yalnız satıcı bilir", "Etkin düzeyden sapar", "—"],
               ["Kamu malı", "Bedavacı sorunu yüzünden özel firma üretmez", "Etkinden az", "6.3"]
             ] }
         ]
@@ -136,7 +136,7 @@ window.DEFTER = (function () {
               "Etkin miktardan her sapma ölü ağırlık kaybı (*DWL*) doğurur.",
               "DWL = ½ × taban (miktar farkı) × yükseklik (MSB ile MSC arasındaki fark).",
               "Az üretimde MSB > MSC, fazla üretimde MSC > MSB'dir.",
-              "Etkinsizlik kaynakları: tekel, oligopol, tekelci rekabet, dışsallıklar, eksik bilgi, kamu malı yetersizliği.",
+              "Etkinsizlik kaynakları: tekel, oligopol, tekelci rekabet, dışsallıklar, asimetrik bilgi, kamu malı yetersizliği.",
               "Etkinlik ile eşitlik farklı şeylerdir.",
               "Politika yapıcılar maliyet-fayda analiziyle MSB'yi MSC'ye eşitlemeyi hedefler."
             ] }

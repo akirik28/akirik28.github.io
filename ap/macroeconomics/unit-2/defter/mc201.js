@@ -50,7 +50,7 @@ window.DEFTER = {
           oyun: [
             { metin: "Ece kantinde tost alıyor.", cevap: "sol", neden: "Son mal alıyor: ürün piyasası." },
             { metin: "Kantin, yeni bir aşçı tutuyor.", cevap: "sag", neden: "Emek satın alınıyor: faktör piyasası." },
-            { metin: "Bir ev sahibi dükkânını kantine kiraya veriyor.", cevap: "sag", neden: "Toprak (*land*) kiralanıyor: faktör piyasası." },
+            { metin: "Bir ev sahibi dükkânını kantine kiraya veriyor.", cevap: "sag", neden: "Bir üretim kaynağı (dükkân/mülk) kiralanıyor; karşılığı *rent*: faktör piyasası." },
             { metin: "Ada konser bileti satın alıyor.", cevap: "sol", neden: "Hizmet satın alıyor: ürün piyasası." }
           ] }
       ]

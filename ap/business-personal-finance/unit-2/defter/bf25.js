@@ -9,7 +9,7 @@ window.DEFTER = {
       kisa: "Fiyat bir sinyaldir; müşteri en fazla kaç para verir, ona göre fiyatlanır.",
       bloklar: [
         { tip: "hikaye", ikon: "🥂", baslik: "10 dolarlık mı, 90 dolarlık mı?",
-          metin: "Aynı içeceği iki bardağa koy; birine \"10 dolarlık\", diğerine \"90 dolarlık\" de. 2008'de bilim insanları bunu denedi: insanlar pahalı sandıkları bardağı daha lezzetli buldu, beyin taramaları da öyle gösterdi. (Videodaki asıl deney şarapla, 5 ile 90 dolar arası fiyatlarla yapıldı; aynı şarap bir kez ucuz, bir kez pahalı etiketle verildi (ör. 10 dolarlık şarap \"90 dolarlık\" diye).)" },
+          metin: "Aynı içeceği iki bardağa koy; birine \"10 dolarlık\", diğerine \"90 dolarlık\" de. 2008'de bilim insanları bunu denedi: insanlar pahalı sandıkları bardağı daha lezzetli buldu, beyin taramaları da öyle gösterdi. (Videodaki asıl deney şarapla, 5 ile 90 dolar arası fiyatlarla yapıldı; aynı şarap bir kez ucuz, bir kez pahalı etiketle verildi (ör. 90 dolarlık şarap bir kez \"10 dolarlık\", bir kez \"90 dolarlık\" diye).)" },
         { tip: "kavramlar", kartlar: [
             { ikon: "🏷️", terim: "Price", tr: "fiyat", tanim: "*Four Ps*'in ikincisi: ürün için müşteriden istenen para; aynı zamanda kalite hakkında müşteriye giden bir sinyal. Fiyatı belirleme yöntemine *pricing strategy* denir.", ornek: "Aynı içeceği \"90 dolarlık\" diye sunmak onu daha lezzetli gösterir." },
             { ikon: "👁️", terim: "Perceived value", tr: "algılanan değer", tanim: "Müşterinin gözünde ürünün değeri; fiyat değişince ürün aynı kalsa bile değişebilir.", ornek: "Aynı şarap, daha pahalı etiketle daha lezzetli bulundu." },

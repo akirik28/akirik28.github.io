@@ -121,7 +121,7 @@ window.DEFTER = {
             { metin: "Online forma 1.000 kişi katıldı.", cevap: "sol", neden: "Çok kişi, aynı sorular: *survey*." },
             { metin: "Bir müşteriye \"Neden bu tostu seçtin?\" diye ayrıntılı soruldu.", cevap: "sag", neden: "Birebir görüşme: *interview*." }
           ] },
-        { tip: "tuzak", baslik: "Survey mi interview mu, sormak mı izlemek mi?", metin: "Videoda *survey* ve *interview* tanım kartları ekranda yer değiştirmiş: *survey* kartında birebir görüşme, *interview* kartında anket tanımı yazıyor.", yanlis: "*Survey* tek kişiyle birebir derinlemesine konuşmadır; müşterinin ne yaptığını öğrenmenin tek yolu ona sormaktır.", dogru: "*Survey* aynı soruları çok kişiye sorar; *interview* tek kişiyle birebir konuşur. İnsanlar söylediklerini her zaman yapmaz: *observation* gerçekte ne yaptıklarına bakar, *experiment* tek bir şeyi değiştirip etkisini ölçer." }
+        { tip: "tuzak", baslik: "Survey mi interview mu, sormak mı izlemek mi?", metin: "İkisi sık karıştırılır: biri çok kişiye aynı soruları sorar, öbürü tek kişiyle derinlemesine konuşur.", yanlis: "*Survey* tek kişiyle birebir derinlemesine konuşmadır; müşterinin ne yaptığını öğrenmenin tek yolu ona sormaktır.", dogru: "*Survey* aynı soruları çok kişiye sorar; *interview* tek kişiyle birebir konuşur. İnsanlar söylediklerini her zaman yapmaz: *observation* gerçekte ne yaptıklarına bakar, *experiment* tek bir şeyi değiştirip etkisini ölçer." }
       ]
     },
     {

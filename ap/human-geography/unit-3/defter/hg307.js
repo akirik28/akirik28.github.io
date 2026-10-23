@@ -117,7 +117,7 @@ window.DEFTER = {
     { q: "İslam'ın Arap Yarımadası'ndan Güneydoğu Asya'ya büyük ölçüde tüccarlar aracılığıyla yayılması, hangi yayılma ve din türüne örnektir?",
       opts: ["*Universalizing religion*; *expansion diffusion* örneği", "*Ethnic religion*; *relocation* örneği", "*Ethnic religion*; *stimulus diffusion* örneği", "*Cultural convergence*; *hierarchical diffusion* örneği"],
       a: 0,
-      why: "İslam evrenselleştirici bir dindir; tüccarlar aracılığıyla temasla yayılmıştır. B şıkkı çekici yanlış: İslam etnik bir din değildir ve burada yayılma temas yoluyladır." },
+      why: "İslam evrenselleştirici bir dindir; tüccarlar aracılığıyla temasla yayılmıştır. B şıkkı çekici yanlış: İslam etnik bir din değildir. Tüccarlar dini taşıdı (relocation), ama asıl yaygınlaşma yerel halkın temasla benimsemesiyle (contagious expansion) oldu; şıklardan yalnız A bu yayılmayı evrenselleştirici bir dine bağlar." },
     { q: "Tabloya göre aşağıdakilerden hangisi söylenebilir?",
       fig: { type: "table", caption: "Üç sözcük", head: ["Anlam", "İngilizce", "İspanyolca", "Hintçe", "Türkçe"], rows: [["Üç", "three", "tres", "tīn", "üç"], ["Anne", "mother", "madre", "mātā", "anne"]] },
       opts: ["İngilizce, İspanyolca ve Hintçe sözcükleri ortak bir atadan geldiği için benzerlik gösterir", "Türkçe sözcükler, diğer üçüyle aynı dil ailesine girer", "Benzerlik yalnızca coğrafi yakınlıktan kaynaklanır", "İngilizce, Hintçeden türemiştir"],

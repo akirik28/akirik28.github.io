@@ -108,7 +108,7 @@ window.DEFTER = {
             ["Sunny ve Maurice", "Ch 13: otel odası ve asansörcü (hassas sahne; yalnızca olgular).", "Holden genç kadına dokunmaz, onunla konuşmak ister; yalnızlık ve çaresizlik. Maurice ile yaşanan tartışma güçsüzlüğünü pekiştirir."],
             ["Mercutio", "Ch 15: *Romeo and Juliet* sohbeti.", "Holden Mercutio'yu Romeo'dan çok sever; genç yaşta ölen bir arkadaş figürü Allie ve James Castle ile paralel okunabilir (bir yorum)."],
             ["Carl Luce", "Ch 19: eski öğrenci danışmanı.", "Holden'ın sorularına sıkılır ve erken ayrılır; soyadı *Luce* ‘ışık’ anlamına gelen *lux*'u çağrıştırır; Holden'ın reddedilme listesinin parçasıdır."],
-            ["James Castle", "Ch 23: Antolini ile konuşma sırasında anılır.", "Bir okul arkadaşının ölümü; Antolini'nin ona yardım ettiği anlatılır. Koruma ve sorumluluk temasıyla bağlanır."]
+            ["James Castle", "Ch 22: Holden Phoebe'ye anlatır; Ch 23'te Holden, cesedi kaldıranın Antolini olduğunu söyler.", "Bir okul arkadaşının ölümü; Antolini'nin ona yardım ettiği anlatılır. Koruma ve sorumluluk temasıyla bağlanır."]
           ], not: "James Castle ve Ch 13 gibi hassas yerlerde ayrıntıya girme; sınavda olguyu ve temaya bağını yaz." },
         { tip: "liste", baslik: "Sınavda böyle yaz", maddeler: [
             { ikon: "🎭", baslik: "Yan karakterler", metin: "*Minor characters such as Carl Luce reveal how Holden's search for guidance fails.*" },

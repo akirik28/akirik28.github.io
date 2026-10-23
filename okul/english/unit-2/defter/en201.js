@@ -71,7 +71,7 @@ window.DEFTER = {
           ],
           durumlar: [
             { metin: "Oyunun başında Oedipus saygın bir kral; halk ondan çare bekliyor. Konumu yüksek." },
-            { metin: "Teiresias onu suçlar, Creon’la tartışır. Konumu biraz sarsılır; ama Jocasta’nın hikâyesi ona umut verir.", set: { yol: { noktalar: [[1, 8], [2.5, 8.6], [4, 6.8], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4]] } } },
+            { metin: "Teiresias onu suçlar, Creon’la tartışır. Konumu sarsılır; Jocasta’nın üç yol hikâyesi onu korkutur, ama tanığın “haydutlar” demiş olması ona hâlâ umut bırakır.", set: { yol: { noktalar: [[1, 8], [2.5, 8.6], [4, 6.8], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4], [5.5, 7.4]] } } },
             { metin: "Polybus’un ölüm haberiyle umut zirveye çıkar. Ama haberci bir şey daha söyleyecek: işte ==*peripeteia*==, iyi haber tersine dönmek üzere.", set: { yol: { noktalar: [[1, 8], [2.5, 8.6], [4, 6.8], [5.5, 7.4], [7, 9], [7, 9], [7, 9], [7, 9]] } }, goster: ["zirve"] },
             { metin: "Çoban konuşunca Oedipus kim olduğunu anlar: ==*anagnorisis*==. Düşüş çok hızlıdır, çünkü tersine dönüş ve tanıma yan yanadır.", set: { yol: { noktalar: [[1, 8], [2.5, 8.6], [4, 6.8], [5.5, 7.4], [7, 9], [8, 2.5], [8, 2.5], [8, 2.5]] } }, goster: ["dusus"] },
             { metin: "Oedipus kendini kör eder, sürgün ister. Seyirci acıma ve korkuyla baş başa kalır; ==*catharsis*== burada gerçekleşir.", set: { yol: { noktalar: [[1, 8], [2.5, 8.6], [4, 6.8], [5.5, 7.4], [7, 9], [8, 2.5], [9, 0.8], [9.8, 0.8]] } }, goster: ["son"] }

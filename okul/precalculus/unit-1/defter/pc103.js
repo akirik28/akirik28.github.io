@@ -377,7 +377,7 @@ window.DEFTER = {
       q: "Which of the following functions has an inverse on ℝ?",
       opts: ["f(x) = x² + 1", "f(x) = |x − 2|", "f(x) = x³ − 5", "f(x) = 4"],
       a: 2,
-      why: "x³ − 5 hep artandır ve her gerçek değeri alır: birebir ve örten. x² + 1 ve |x − 2| birebir değil (f(1) = f(−1) gibi); 4 sabittir. En çekici yanlış B: |x − 2| tek köşeli ama V biçimli, yatay doğru iki kez keser."
+      why: "x³ − 5 hep artandır ve her gerçek değeri alır: birebir ve örten. x² + 1 ve |x − 2| birebir değil (x² + 1 için f(1) = f(−1), |x − 2| için f(1) = f(3)); 4 sabittir. En çekici yanlış B: |x − 2| tek köşeli ama V biçimli, yatay doğru iki kez keser."
     },
     {
       q: "The graph of f consists of four points: (1, 3), (2, 5), (3, 1) and (4, 2). What is f⁻¹(1) + f⁻¹(2)?",

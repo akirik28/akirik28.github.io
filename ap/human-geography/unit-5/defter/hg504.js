@@ -112,7 +112,7 @@ window.DEFTER = {
       opts: ["Fabrikaların artması tarımın verimini düşürdü.", "Tarımda çalışan sayısı arttığı için verim yükseldi.", "Verim artışı Yeşil Devrim'den kaynaklanıyor.", "Tarımda verim artınca daha az çiftçi yetti; boşa çıkan işgücü fabrikalara kaydı."],
       a: 3, why: "Verim iki katına çıkarken tarımdaki pay yarıya inmiş, fabrikadaki pay artmıştır: boşa çıkan işgücü sanayiye geçti. C yanlış: 1700-1850 arası İkinci Tarım Devrimi dönemidir, Yeşil Devrim değil." },
     { q: "İkinci Tarım Devrimi'ni Yeşil Devrim'den ayıran en önemli özellik hangisidir?",
-      opts: ["İkincisi gelişmekte olan ülkelerde, 1960'lardan sonra yaşandı.", "Yeşil Devrim'de hiç kimyasal kullanılmadı.", "İkinci devrim 1700-1800'lerde Britanya merkezlidir; Yeşil Devrim 1960'lardan sonra gelişmekte olan ülkelerde yüksek verimli tohum ve kimyasalla gerçekleşti.", "İkisi de aynı dönemde ve aynı bölgede yaşandı."],
+      opts: ["İkinci Tarım Devrimi gelişmekte olan ülkelerde, 1960'lardan sonra yaşandı.", "Yeşil Devrim'de hiç kimyasal kullanılmadı.", "İkinci devrim 1700-1800'lerde Britanya merkezlidir; Yeşil Devrim 1960'lardan sonra gelişmekte olan ülkelerde yüksek verimli tohum ve kimyasalla gerçekleşti.", "İkisi de aynı dönemde ve aynı bölgede yaşandı."],
       a: 2, why: "İkinci devrim erken sanayi dönemi Britanya'sının, Yeşil Devrim ise 1960'lar sonrası gelişmekte olan dünyanın hikâyesidir. A ikisini yer değiştirmiş: çekici ama yanlış." }
   ]
 };

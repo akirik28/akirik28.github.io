@@ -127,7 +127,7 @@ window.DEFTER = {
             { metin: "Çiftçi başına düşen toprak azsa tarım emek yoğun olabilir.", cevap: "sag", neden: "Çiftçi ÷ ekilebilir alan: tarımsal." },
             { metin: "Dağları, çölleri ve ormanları da paydaya katar.", cevap: "sol", neden: "Toplam alan kullanır: aritmetik." }
           ] },
-        { tip: "tuzak", metin: "Aritmetik yoğunluğa bakıp sonuç çıkarmak.", yanlis: "Aritmetik yoğunluğu düşük olan ülkede toprağa baskı yoktur.", dogru: "Aritmetik yoğunluk ekilemeyen alanları da paydaya katar. ==Baskı için fizyolojik ya da tarımsal yoğunluğa bak.== Mısır buna klasik örnektir: aritmetik değer düşük, nüfus Nil Vadisi'nde toplu." }
+        { tip: "tuzak", metin: "Aritmetik yoğunluğa bakıp sonuç çıkarmak.", yanlis: "Aritmetik yoğunluğu düşük olan ülkede toprağa baskı yoktur.", dogru: "Aritmetik yoğunluk ekilemeyen alanları da paydaya katar. ==Baskı için fizyolojik ya da tarımsal yoğunluğa bak.== Mısır buna klasik örnektir: aritmetik değer orta düzeyde (~110 kişi/km²), ama ekilebilir alan çok az olduğu için fizyolojik değer 3.000 kişi/km²'nin üstünde; nüfus Nil Vadisi'nde toplu." }
       ]
     },
     {

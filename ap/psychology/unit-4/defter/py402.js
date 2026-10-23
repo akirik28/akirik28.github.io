@@ -25,7 +25,7 @@ window.DEFTER = {
       kisa: "Stereotip düşünce, önyargı duygu, ayrımcılık davranıştır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🏷️", terim: "Stereotype", tr: "kalıp yargı", tanim: "Bir grup hakkındaki genelleştirilmiş kavram. Karar verirken **bilişsel yükü** azaltır ama çoğu zaman yanlıştır.", ornek: "\"Bilgisayar kulübündekiler hep sessizdir.\"" },
+            { ikon: "🏷️", terim: "Stereotype", tr: "kalıp yargı", tanim: "Bir grup hakkındaki genelleştirilmiş kavram. Karar verirken **bilişsel yükü** azaltır ama çoğu zaman aşırı genellemedir ve önyargıya temel olabilir.", ornek: "\"Bilgisayar kulübündekiler hep sessizdir.\"" },
             { ikon: "😒", terim: "Prejudice", tr: "önyargı", tanim: "Bir gruba yönelik önceden oluşmuş, çoğunlukla olumsuz tutum (duygu).", ornek: "O kulübe girmeyeceğim, sıkıcıdır." },
             { ikon: "🚫", terim: "Discrimination", tr: "ayrımcılık", tanim: "Bir grubun üyelerine karşı gösterilen haksız davranış.", ornek: "Kulüp üyelerini etkinliğe çağırmamak." }
           ] },

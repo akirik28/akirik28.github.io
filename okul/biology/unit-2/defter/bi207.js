@@ -34,7 +34,7 @@ window.DEFTER = {
         { tip: "adimlar", baslik: "Sera etkisi nasıl işler?", adimlar: [
             { baslik: "Güneş ışığı gelir", metin: "Görünür ışık atmosferden geçer ve yeryüzünü ısıtır." },
             { baslik: "Yer ısı yayar", metin: "Isınan yüzey, uzun dalgalı kızılötesi ışın (ısı) yayar." },
-            { baslik: "Sera gazları tutar", metin: "CO₂, su buharı, ozon, azot oksitler ve CH₄ bu ısının bir kısmını soğurur ve her yöne tekrar yayar; bir kısmı yere döner." },
+            { baslik: "Sera gazları tutar", metin: "CO₂, su buharı, ozon, diazot monoksit (N₂O) ve CH₄ bu ısının bir kısmını soğurur ve her yöne tekrar yayar; bir kısmı yere döner." },
             { baslik: "Yer daha sıcak kalır", metin: "Doğal sera etkisi olmasa ortalama sıcaklık yaklaşık −18 °C olurdu; etkiyle yaklaşık +15 °C'dir." },
             { baslik: "İnsan etkisi", metin: "Fosil yakıt kullanımı, sanayileşme, hızlı nüfus artışı, tarım için ormansızlaşma, yanlış arazi kullanımı ve kentleşme sera gazlarını artırır: ==güçlenmiş sera etkisi== (*enhanced greenhouse effect*)." }
           ] },

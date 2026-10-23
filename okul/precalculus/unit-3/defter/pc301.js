@@ -134,7 +134,7 @@ window.DEFTER = {
         },
         {
           tip: "not",
-          metin: "Dörtten çok terimli polinomlara genelde özel ad verilmez. Tek istisna *zero polynomial* P(x) = 0'dır: derecesi tanımsızdır (*undefined*). P(x) = a₀ ≠ 0 gibi sabit polinomlar ise 0. derecedendir."
+          metin: "Üçten çok terimli polinomlara genelde özel ad verilmez. Tek istisna *zero polynomial* P(x) = 0'dır: derecesi tanımsızdır (*undefined*). P(x) = a₀ ≠ 0 gibi sabit polinomlar ise 0. derecedendir."
         }
       ]
     },

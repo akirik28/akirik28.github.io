@@ -132,7 +132,7 @@ window.DEFTER = {
       a: 3,
       why: "Kutsal sayılan bir yer, kullanım biçimini (tırmanış yasağı) belirler. B ve C bu senaryoda hiç yok." },
     { q: "Aşağıdaki tabloya göre hangisi söylenebilir?",
-      fig: { type: "table", caption: "İki mahallenin peyzajı", head: ["Mahalle", "Belirgin özellikler"], rows: [["X", "Ahşap evler, dar sokaklar, cami, geleneksel çarşı"], ["Y", "Cam-çelik binalar, alışveriş merkezi, neon tabelalar"]] },
+      fig: { type: "table", caption: "İki mahallenin peyzajı", head: ["Mahalle", "Belirgin özellikler"], rows: [["X", "Ahşap evler, dar sokaklar, cami, geleneksel çarşı"], ["Y", "Klasik sütunlarla neon camı karıştıran binalar, alışveriş merkezi, neon tabelalar"]] },
       opts: ["Mahalle Y, geleneksel mimarinin güçlü olduğunu gösterir", "Mahalle X, yerel malzemeyi ve geleneksel düzeni; Y ise postmodern mimariyi yansıtır", "Her iki mahalle de aynı kültürel dönemden gelir", "Mahalle X'in fiziki özellikleri yoktur"],
       a: 1,
       why: "X'te yerel malzeme ve geleneksel çarşı; Y'de cam-çelik ve eklektik mekânlar var. A şıkkı yanlış: Y'nin özellikleri postmodern ya da modern yapılara işaret eder." },

@@ -100,7 +100,7 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Kovalent ağ katılarının çoğu yalıtkandır; grafit istisnadır.", yanlis: "Ametal elementlerden oluşan hiçbir katı elektriği iletmez.", dogru: "==Grafit== ametal (C) olduğu hâlde katmanları boyunca serbest elektronları olduğu için iletkendir." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: yapı", metin: "*Diamond is a covalent network solid, so melting it requires breaking strong covalent bonds.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: grafit", metin: "*Graphite conducts electricity because it has delocalized electrons between its layers.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: grafit", metin: "*Graphite conducts electricity because it has delocalized electrons that move freely within its layers.*" }
           ] }
       ]
     },

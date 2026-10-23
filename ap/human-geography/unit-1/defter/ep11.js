@@ -57,7 +57,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🏙️", terim: "Core", tr: "çekirdek", tanim: "Dünya ekonomisinin merkezi: ==Kuzey Amerika, Batı Avrupa ve Japonya==. Zenginlik, teknoloji ve karar gücü burada toplanır.", ornek: "Genel merkezler, bankalar, teknoloji şirketleri." },
-            { ikon: "🌾", terim: "Periphery", tr: "çevre", tanim: "Geri kalan bölgeler: ham madde ve ucuz iş gücü sağlar. Bazı derslerde aradaki hızlı gelişen kuşağa *semi-periphery* denir; sınav odağı *core* ve *periphery*'dir.", ornek: "Sahra Altı Afrika." },
+            { ikon: "🌾", terim: "Periphery", tr: "çevre", tanim: "Geri kalan bölgeler: ham madde ve ucuz iş gücü sağlar. Wallerstein'ın modelinde aradaki kuşağa *semi-periphery* denir (Unit 7'de ayrıntılı gelir); bu bölümde *core* ile *periphery* farkına odaklanıyoruz.", ornek: "Sahra Altı Afrika." },
             { ikon: "↔️", terim: "Uneven development", tr: "eşitsiz gelişme", tanim: "*Core* ile *periphery* arasındaki farkın açılması.", ornek: "Zengin bölgeler daha da zenginleşir; çevre ham madde sağlamaya devam eder." }
           ] },
         { tip: "ikili", sol: { ikon: "🏙️", baslik: "*Core*", maddeler: ["Kuzey Amerika, Batı Avrupa, Japonya", "Pahalı ürün üretir"] },

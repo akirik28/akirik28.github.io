@@ -136,9 +136,9 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Hangi besin nereden girer?", head: ["Besin", "Yıkım ürünü", "Giriş noktası"], rows: [
             ["Karbonhidrat", "Glikoz", "Glikoliz → piruvat → asetil-CoA → Krebs → elektron taşıma zinciri"],
             ["Yağ", "Yağ asidi + gliserol", "Yağ asidi → asetil-CoA → Krebs; gliserol (3C) glikolizin ara basamağına"],
-            ["Protein", "Amino asit (önce NH₂ grubu ayrılır)", "2C: asetil-CoA, 3C: piruvat, 4C ve üzeri: Krebs"]
+            ["Protein", "Amino asit (önce NH₂ grubu ayrılır)", "Derste: 2C → asetil-CoA, 3C → piruvat, 4C ve üzeri → Krebs (aslında belirleyici olan, karbon iskeletinin dönüştüğü ara üründür)"]
           ], vurgu: 1, not: "Sınavda böyle yaz: *Fatty acids are converted to acetyl-CoA and enter the Krebs cycle, whereas glycerol enters at an intermediate step of glycolysis.*" },
-        { tip: "tuzak", metin: "Amino asitler olduğu gibi solunuma girmez; önce amino grubu (NH₂) ayrılır ve azotlu atık oluşur.", yanlis: "Proteinler doğrudan glikoliz ile başlar.", dogru: "Amino asit, karbon sayısına göre asetil-CoA, piruvat ya da Krebs döngüsüne girer; amino grubu ayrılır." },
+        { tip: "tuzak", metin: "Amino asitler olduğu gibi solunuma girmez; önce amino grubu (NH₂) ayrılır ve azotlu atık oluşur.", yanlis: "Proteinler doğrudan glikoliz ile başlar.", dogru: "Amino asidin amino grubu ayrılır; kalan karbon iskeleti asetil-CoA, piruvat ya da Krebs ara ürünlerinden birine dönüşerek girer (derste kısaca karbon sayısına göre anlatılır)." },
         { tip: "not", metin: "Yağ, çok H atomu (enerji dolu elektron) taşıdığı için gram başına karbonhidrat ya da proteinden iki kattan fazla ATP verir. Üç besin de CO₂, H₂O, ATP ve ısı açığa çıkarır." }
       ]
     },
@@ -153,7 +153,7 @@ window.DEFTER = {
             "Elektron taşıma zinciri iç zardadır: H⁺ pompalanır, ATP sentazdan geçerken ATP yapılır; son elektron alıcısı O₂, ürün H₂O.",
             "NADH ve FADH₂ elektronları zincire taşır; lecture sayımıyla NADH ≈ 3, FADH₂ ≈ 2 ATP.",
             "Toplam en çok yaklaşık 38 ATP (2 + 2 + 34); ATP'nin %90'ı zincirden gelir. Güncel değer ≈ 30–32.",
-            "Karbonhidrat glikolizden, yağ asidi asetil-CoA olarak, amino asit karbon sayısına göre girer.",
+            "Karbonhidrat glikolizden, yağ asidi asetil-CoA olarak, amino asit karbon iskeletine göre girer.",
             "6 CO₂'nin hepsi glikoz karbonudur; piruvat oksidasyonu ve Krebs'ten çıkar.",
             "Zehirler zinciri (siyanür, CO), ATP sentazı ya da H⁺ gradyanını (DNP) bozar."
           ] }

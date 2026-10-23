@@ -325,7 +325,7 @@ window.DEFTER = {
       q: "The volume of a box is V(x) = x³ + kx² − 2x − 6 cm³ and its height is (x + 1) cm. If the volume is divisible by the height (remainder 0), what is k?",
       opts: ["5", "−5", "7", "−7"],
       a: 0,
-      why: "Kalan 0 ise P(−1) = 0: −1 + k + 2 − 6 = k − 5 = 0, yani k = 5. C şıkkı x + 1 için P(1) = 0 yazınca çıkan 7'dir; k = −1 alınmalıydı."
+      why: "Kalan 0 ise P(−1) = 0: −1 + k + 2 − 6 = k − 5 = 0, yani k = 5. C şıkkı x + 1 için P(1) = 0 yazınca çıkan 7'dir; x = −1 alınmalıydı."
     },
     {
       q: "The table gives some values of a polynomial P(x). Which statement is true?",

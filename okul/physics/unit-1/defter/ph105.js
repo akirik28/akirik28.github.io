@@ -182,7 +182,7 @@ window.DEFTER = (function () {
         why: "Her saniyede x 12 m artıyor: v₀ = 12 m/s. 2 s'de düşen yol 20 m olduğundan yükseklik 20 m. A yanlış: 24 m, 2 s sonraki yatay uzaklıktır; hız değil." },
       { q: "A rescue plane flies horizontally at 70 m/s and wants to drop supplies to climbers on a ridge 245 m below (g = 10 m/s²). How far in advance (horizontal distance) must the supplies be dropped?",
         opts: ["245 m", "350 m", "490 m", "980 m"], a: 2,
-        why: "245 = 5·t² → t = 7 s; yatay uzaklık x = 70 × 7 = 490 m. A yanlış: düşey yüksekliği yatay uzaklık sanmak. D yanlış: süreyi 14 s bulmak (karekök yerine ikiyle çarpmak)." }
+        why: "245 = 5·t² → t = 7 s; yatay uzaklık x = 70 × 7 = 490 m. A yanlış: düşey yüksekliği yatay uzaklık sanmak. D yanlış: süreyi 7 s yerine iki katı, 14 s almak (70 × 14 = 980 m)." }
     ]
   };
 })();

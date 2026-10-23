@@ -223,7 +223,7 @@ window.DEFTER = {
       q: "In a 5 km² area of a wetland, 1000 flamingos were counted. If the area stays the same and one year later the density is 300 flamingos/km², how many flamingos are there?",
       opts: ["60", "1200", "1800", "1500"],
       a: 3,
-      why: "Birey sayısı = yoğunluk × alan = 300 × 5 = 1500. 60, alanı yoğunluğa bölmekten çıkar; yoğunluğun birimi birey/alan olduğundan sayıyı bulmak için çarpmak gerekir."
+      why: "Birey sayısı = yoğunluk × alan = 300 × 5 = 1500. 60, yoğunluğu alana bölmekten çıkar (300 ÷ 5); yoğunluğun birimi birey/alan olduğundan sayıyı bulmak için çarpmak gerekir."
     },
     {
       q: "The size of a herd of deer released on a small island is given in the table. Which statement can be made?",

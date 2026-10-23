@@ -140,7 +140,7 @@ window.DEFTER = {
             ["*EEG*", "Kafa derisindeki elektrotlarla beyin dalgaları", "Zamanı çok hassas gösterir; uyku araştırmasında kullanılır", "Etkinliğin tam yerini belirleyemez"],
             ["*fMRI*", "Kan akışı ve oksijen kullanımı: hangi bölge çalışıyor", "Etkin bölgeleri ayrıntılı gösterir", "Daha yavaştır; dolaylı ölçümdür"],
             ["*PET* / *CT*", "PET: radyoaktif şekerle etkinlik; CT: X-ışınlarıyla yapı", "Etkinlik ya da yapı hakkında ipucu", "Radyasyon içerir; ayrıntısı sınırlı"],
-            ["*Lesioning*", "Belirli beyin dokusunu tahrip edip işlev kaybına bakar", "Bölge–işlev ilişkisi için ipucu", "Etik sınırlar; hayvanlarla yapılır"],
+            ["*Lesioning*", "Belirli beyin dokusunu tahrip edip işlev kaybına bakar", "Bölge–işlev ilişkisi için ipucu", "Etik sınırlar; deneysel olarak çoğunlukla hayvanlarla yapılır"],
             ["*Case study*", "Beyin hasarı olan kişiyi yakından inceler (Phineas Gage gibi)", "Nadir durumlara ışık tutar", "Tek kişiden genelleme zordur"]
           ] },
         { tip: "grafik", baslik: "Hangi yöntem neyi iyi gösterir? (göreli gösterim)", xlabel: "Yer ayrıntısı (nerede?)", ylabel: "Zaman ayrıntısı (ne zaman?)", xmax: 10, ymax: 10,

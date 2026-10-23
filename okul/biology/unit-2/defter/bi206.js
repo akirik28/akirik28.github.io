@@ -102,7 +102,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "☢️", terim: "Radioactive pollution", tr: "radyoaktif kirlilik", tanim: "Çevrede, vücutta ya da bir maddenin içinde istenmeyen radyoaktif madde birikmesi. Etkisi ışının şiddetine, maruz kalma süresine ve türüne bağlıdır.", ornek: "Çernobil (1986, Ukrayna) ve Fukushima (2011, Japonya) kazaları." },
             { ikon: "🛰️", terim: "Sources of radiation", tr: "ışın kaynakları", tanim: "Doğal: uzaydan ve Güneş'ten gelen kozmik ışınlar, yer kabuğundaki uranyum ve toryum. Yapay: tıbbi X-ışını cihazları, nükleer santraller, televizyon gibi ürünler.", ornek: "Hepsi insan, hayvan ve bitki sağlığını bozabilir." },
-            { ikon: "⚡", terim: "Ionizing radiation", tr: "iyonlaştırıcı ışın", tanim: "Çekirdeğinde nötron sayısı protondan çok fazla olan kararsız maddeler alfa, beta ve gama ışını yayarak bozunur. Bu ışın DNA'ya zarar verir: mutasyon, kanser.", ornek: "Alfa, beta ve gama ışınları." },
+            { ikon: "⚡", terim: "Ionizing radiation", tr: "iyonlaştırıcı ışın", tanim: "Kararsız (radyoaktif) çekirdekler alfa, beta ya da gama ışını yayarak bozunur. Bu ışınlar (X-ışını gibi) çarptıkları atomları iyonlaştırır ve DNA'ya zarar verir: mutasyon, kanser.", ornek: "Alfa, beta ve gama ışınları." },
             { ikon: "⏳", terim: "Half-life", tr: "yarı ömür", tanim: "Radyoaktif maddenin yarısının bozunması için geçen süre. Madde bozundukça tehlike azalır.", ornek: "Sezyum-137 ≈ 30 yıl; iyot-131 ≈ 8 gün; plütonyum-239 ≈ 24 bin yıl." }
           ] },
         { tip: "grafik", baslik: "Sezyum-137 bozunması (yarı ömür ≈ 30 yıl)", xlabel: "Zaman (yıl)", ylabel: "Kalan miktar (%)", xmax: 12, ymax: 10,

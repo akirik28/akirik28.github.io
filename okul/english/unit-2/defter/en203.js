@@ -31,7 +31,7 @@ window.DEFTER = {
       baslik: "Jocasta ve Creon: iki farklı akıl",
       kisa: "Jocasta kehaneti küçümseyip rahatlatır; Creon sakin ve sağduyulu kalır.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "👸", baslik: "*Jocasta*", maddeler: ["Kraliçe; Oedipus’un eşi, gerçekte annesi", "Kehanete bakışı: hiçbir insan geleceği bilemez, korkmaya değmez (Second Episode, Fagles 788–800 civarı)", "Gerçeği Oedipus’tan önce, Third Episode’da fark eder"] },
+        { tip: "ikili", sol: { ikon: "👸", baslik: "*Jocasta*", maddeler: ["Kraliçe; Oedipus’un eşi, gerçekte annesi", "Kehanete bakışı: hiçbir insan geleceği bilemez, korkmaya değmez (Second Episode, Fagles 778–782)", "Gerçeği Oedipus’tan önce, Third Episode’da fark eder"] },
           sag: { ikon: "🧑‍⚖️", baslik: "*Creon*", maddeler: ["Jocasta’nın kardeşi; Oedipus’un kayınbiraderi", "Sakin, hesaplı; krallık istemediğini söyleyip komplo suçlamasını reddeder (Fagles 663–665)", "Oyunun sonunda yönetimi devralır"] },
           oyun: [
             { metin: "“Kehanet yüzünden korkma, kimse geleceği bilemez.” diyen.", cevap: "sol", neden: "Jocasta rastlantıya ve insan aklına güvenir." },

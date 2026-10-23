@@ -34,7 +34,7 @@ window.DEFTER = {
       bloklar: [
         {
           tip: "grafik",
-          baslik: "Salıncağı farklı frekanslarla zorlamak (f₀ = 4 Hz)",
+          baslik: "Bir sistemi farklı frekanslarla zorlamak (f₀ = 4 Hz)",
           xlabel: "Zorlayıcı frekans f (Hz)",
           ylabel: "Genlik (cm)",
           xmax: 9,
@@ -66,7 +66,7 @@ window.DEFTER = {
             { metin: "Eğri, her zorlayıcı frekansta salıncağın ulaştığı genliği gösteriyor (yeşil: sürtünme az)." },
             { metin: "Zorlayıcı frekans f₀'dan uzaksa (2 Hz, 6 Hz) genlik küçük kalır.", goster: ["n1", "n3"] },
             { metin: "f = f₀ = 4 Hz olunca genlik çok büyür: ==rezonans==.", goster: ["f0", "f0x", "n2"], gizle: ["n1", "n3"] },
-            { metin: "Sürtünme (sönüm) artınca (kırmızı eğri) tepe alçalır ve yayvanlaşır; yine en büyük genlik f₀ civarındadır.", goster: ["c2", "c2x"] }
+            { metin: "Sürtünme (sönüm) artınca (kırmızı eğri) tepe alçalır, yayvanlaşır ve biraz daha düşük frekansa kayar; bu kadar çok sönümde belirgin bir rezonans tepesi kalmaz.", goster: ["c2", "c2x"] }
           ]
         },
         {

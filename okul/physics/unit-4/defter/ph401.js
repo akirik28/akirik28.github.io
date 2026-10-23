@@ -250,8 +250,8 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "Sonar yankısı ve ışığın hızı",
-          durum: "Duran bir geminin sonarı suya 5,0 × 10⁴ Hz frekanslı sinyal gönderiyor; sinyalin sudaki hızı 1,5 × 10³ m/s. Dipten dönen yankı 4,0 s sonra alınıyor. Dalga boyu ve deniz derinliği nedir? Ay'dan Dünya'ya olan 3,9 × 10⁸ m'yi ışık (3 × 10⁸ m/s) kaç saniyede alır?",
-          adimlar: ["λ = v ÷ f = 1,5 × 10³ ÷ 5,0 × 10⁴ = 0,03 m.", "Sinyal dibe gidip döndü: 2d = v × t = 1500 × 4 = 6000 → d = 3000 m.", "Işık: t = yol ÷ hız = 3,9 × 10⁸ ÷ 3 × 10⁸ = 1,3 s."],
+          durum: "Duran bir geminin sonarı suya 5,0 × 10⁴ Hz frekanslı sinyal gönderiyor; sinyalin sudaki hızı 1,5 × 10³ m/s. Dipten dönen yankı 4,0 s sonra alınıyor. Dalga boyu ve deniz derinliği nedir? Ay'dan Dünya'ya olan 3,84 × 10⁸ m'yi ışık (3 × 10⁸ m/s) kaç saniyede alır?",
+          adimlar: ["λ = v ÷ f = 1,5 × 10³ ÷ 5,0 × 10⁴ = 0,03 m.", "Sinyal dibe gidip döndü: 2d = v × t = 1500 × 4 = 6000 → d = 3000 m.", "Işık: t = yol ÷ hız = 3,84 × 10⁸ ÷ 3 × 10⁸ ≈ 1,28 ≈ 1,3 s."],
           sonuc: "λ = 0,03 m, derinlik 3000 m, ışık Ay'dan 1,3 s'de gelir. Gidiş-dönüş yolu için ikiye bölmeyi unutma. Sınavda böyle yaz: *The signal travels to the bottom and back, so the depth is half of the distance.*"
         },
         {
