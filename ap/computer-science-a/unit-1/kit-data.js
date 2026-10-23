@@ -389,6 +389,102 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "1.7–1.10",
+      "slug": "cs106",
+      "title": "API, Metot İmzası ve Static Metotlar",
+      "en": "APIs, Method Signatures, and Class Methods",
+      "accent": "#B9E552",
+      "seconds": 252,
+      "terms": [
+        "API",
+        "Library",
+        "Class",
+        "Precondition",
+        "Postcondition",
+        "Method signature",
+        "Parameter",
+        "Argument",
+        "void",
+        "Call by value",
+        "Overloading",
+        "static (class) method"
+      ],
+      "questions": [
+        {
+          "q": "add metodu aşağıdaki gibi tanımlı. Son satır ne yazdırır?",
+          "opts": [
+            "7",
+            "52",
+            "5",
+            "Derleme hatası"
+          ],
+          "a": 0,
+          "why": "add(2, 3) 5, add(1, 1) 2 döndürür. İki *int* toplanır: 7. Arada *String* olmadığı için 52 gibi yan yana yazılmaz.",
+          "fig": {
+            "type": "code",
+            "code": "public static int add(int a, int b) { return a + b; }\n\nSystem.out.println(add(2, 3) + add(1, 1));"
+          }
+        },
+        {
+          "q": "Greeter sınıfında aşağıdaki metot var. Greeter sınıfının içinde yazılan hangi satır derleme hatası verir?",
+          "opts": [
+            "hello();",
+            "Greeter.hello();",
+            "int x = hello();",
+            "hello(); hello();"
+          ],
+          "a": 2,
+          "why": "*void* metot değer döndürmez; sonucu bir *int* değişkene atanamaz. *static* metot aynı sınıfın içinden yalnız adıyla ya da sınıf adıyla çağrılabilir.",
+          "fig": {
+            "type": "code",
+            "code": "public static void hello() { System.out.println(\"Selam\"); }"
+          }
+        },
+        {
+          "q": "reset metodu aşağıdaki gibi tanımlı. Kod ne yazdırır?",
+          "opts": [
+            "0",
+            "3",
+            "Derleme hatası",
+            "Hiçbir şey yazmaz"
+          ],
+          "a": 1,
+          "why": "*Call by value*: reset, lives'ın bir kopyasını alır ve yalnız kendi kopyasını 0 yapar. lives 3 kalır.",
+          "fig": {
+            "type": "code",
+            "code": "public static void reset(int v) { v = 0; }\n\nint lives = 3;\nreset(lives);\nSystem.out.println(lives);"
+          }
+        },
+        {
+          "q": "Aşağıdaki metot başlığının *method signature*'ı hangisidir?",
+          "opts": [
+            "double avg",
+            "avg(a, b, c)",
+            "double avg(int, int, int)",
+            "avg(int, int, int)"
+          ],
+          "a": 3,
+          "why": "İmza, metodun adı ve parametre tiplerinin sırasıdır. Dönüş tipi (double) ve parametre adları imzanın parçası değildir.",
+          "fig": {
+            "type": "code",
+            "code": "public static double avg(int a, int b, int c)"
+          }
+        },
+        {
+          "q": "Bir metodun belgesinde \"Precondition: n > 0\" yazıyor. Bu ne anlama gelir?",
+          "opts": [
+            "Metot n'nin pozitif olup olmadığını kontrol edip hata mesajı yazar",
+            "Metodu çağıran, n > 0 olmasını sağlamalıdır; metodun bunu kontrol etmesi gerekmez",
+            "Metot her zaman pozitif bir değer döndürür",
+            "n > 0 değilse kod derlenmez"
+          ],
+          "a": 1,
+          "why": "*Precondition*, çağırmadan önce doğru olması gereken şarttır ve sorumluluk çağırandadır. Dönüş değeri hakkındaki söz *postcondition*'dır. Derleyici bu yorumu hiç okumaz."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.11",
       "slug": "cs107",
       "title": "Math Sınıfı ve Rastgele Sayılar",
@@ -481,7 +577,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "1.12–1.14",
       "slug": "cs108",
       "title": "Nesneler, Referanslar ve null",
@@ -576,7 +672,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "1.15-1",
       "slug": "cs109",
       "title": "String: Birleştirme ve substring",
@@ -673,7 +769,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 8,
+      "no": 9,
       "code": "1.15-2",
       "slug": "cs110",
       "title": "String: indexOf, equals, compareTo",
