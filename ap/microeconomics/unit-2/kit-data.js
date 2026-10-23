@@ -1,7 +1,7 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/mi2N/questions.json) */
 window.KIT = {
   "store": "micro-u2:v1:",
-  "course": "AP Microeconomics",
+  "course": "Microeconomics",
   "unitLabel": "Unit 2 — Supply and Demand",
   "denemeler": {
     "url": "deneme/",
@@ -1285,6 +1285,168 @@ window.KIT = {
     },
     {
       "no": 9,
+      "code": "2.6-2",
+      "slug": "mi205",
+      "title": "Tüketici ve Üretici Artığı",
+      "en": "Consumer and Producer Surplus",
+      "accent": "#FF7DB8",
+      "seconds": 254,
+      "terms": [
+        "Willingness to pay",
+        "Consumer surplus",
+        "Producer surplus",
+        "Total surplus",
+        "Allocative efficiency",
+        "Market efficiency",
+        "Deadweight loss",
+        "Equilibrium price",
+        "Equilibrium quantity"
+      ],
+      "questions": [
+        {
+          "q": "Grafikte dikey eksende 1 birim 10 lira, yatay eksende 1 birim 10 adettir. Piyasa E noktasında dengede. Tüketici artığı kaç liradır?",
+          "opts": [
+            "400 TL",
+            "1.600 TL",
+            "800 TL",
+            "1.200 TL"
+          ],
+          "a": 2,
+          "why": "Denge fiyatı 60 TL, miktarı 40 adet; talep fiyat eksenini 100 TL'de kesiyor. Tüketici artığı = ½ × 40 × (100 − 60) = 800 TL. 400 TL üretici artığıdır: ½ × 40 × (60 − 40); 1.600 TL ½'yi unutunca çıkar; 1.200 TL toplam artıktır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  10
+                ],
+                "to": [
+                  10,
+                  0
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  0,
+                  4
+                ],
+                "to": [
+                  10,
+                  9
+                ],
+                "label": "S"
+              }
+            ],
+            "points": [
+              {
+                "q": 4,
+                "p": 6,
+                "label": "E",
+                "guides": true
+              }
+            ],
+            "yticks": [
+              {
+                "v": 10,
+                "label": "100"
+              },
+              {
+                "v": 6,
+                "label": "60"
+              },
+              {
+                "v": 4,
+                "label": "40"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 4,
+                "label": "40"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Tablo, kulübün sattığı tek kişilik kamp çadırı kontenjanı için dört öğrencinin ödemeye razı olduğu en yüksek fiyatı gösteriyor. Fiyat 300 lira. Toplam tüketici artığı kaç liradır?",
+          "opts": [
+            "1.400 TL",
+            "600 TL",
+            "500 TL",
+            "300 TL"
+          ],
+          "a": 3,
+          "why": "Yalnızca razı olduğu fiyat 300 liraya eşit ya da üstünde olanlar alır: Aslı 500 − 300 = 200, Berk 400 − 300 = 100, Cem 300 − 300 = 0. Duru 200 liraya razı olduğu için almaz ve artığı yoktur. Toplam 300 TL.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Öğrenci",
+              "Willingness to pay (TL)"
+            ],
+            "rows": [
+              [
+                "Aslı",
+                "500"
+              ],
+              [
+                "Berk",
+                "400"
+              ],
+              [
+                "Cem",
+                "300"
+              ],
+              [
+                "Duru",
+                "200"
+              ]
+            ],
+            "caption": "Kamp kontenjanı · fiyat 300 TL"
+          }
+        },
+        {
+          "q": "Bir piyasada denge miktarı 100, denge fiyatı 50 liradır. Devlet satışları 60 adetle sınırlıyor. 60'ıncı birim için alıcılar 70 lira vermeye razıdır, birimin maliyeti 30 liradır. Doğrusal eğrilerle *deadweight loss* kaç liradır?",
+          "opts": [
+            "800 TL",
+            "1.600 TL",
+            "400 TL",
+            "2.400 TL"
+          ],
+          "a": 0,
+          "why": "DWL üçgeninin tabanı 100 − 60 = 40 adet, yüksekliği 70 − 30 = 40 lira. ½ × 40 × 40 = 800 TL. Yapılamayan 40 alışverişin her biri alıcıya maliyetinden daha değerliydi."
+        },
+        {
+          "q": "Aşağıdaki ifadelerden hangisi doğrudur?",
+          "opts": [
+            "Tüketici artığı, tüketicinin ödediği fiyat ile üreticinin maliyeti arasındaki farktır.",
+            "Rekabetçi piyasa dengesinde toplam artık en büyüktür; dengeden fazla üretim de *deadweight loss* yaratır.",
+            "Ne kadar çok üretilirse toplam artık o kadar büyür.",
+            "Alınıp satılmayan birimler de tüketici artığına eklenir."
+          ],
+          "a": 1,
+          "why": "Dengede son birimin alıcıya değeri maliyetine eşittir; ötesindeki her birimin maliyeti değerini aşar, bu yüzden fazla üretim de toplam artığı küçültür. Tüketici artığı ödemeye razı olunan fiyat eksi ödenen fiyattır; satılmayan birimden artık doğmaz."
+        },
+        {
+          "q": "Arz değişmeden bir malın talebi artıyor, yani talep eğrisi sağa kayıyor. Üretici artığına ne olur?",
+          "opts": [
+            "Azalır, çünkü alıcılar daha çok artık elde eder.",
+            "Değişmez, çünkü arz eğrisi kaymadı.",
+            "Artar, çünkü denge fiyatı da denge miktarı da yükselir.",
+            "Azalır, çünkü yeni dengede *deadweight loss* oluşur."
+          ],
+          "a": 2,
+          "why": "Talep sağa kayınca fiyat ve miktar artar; fiyatın altındaki, arzın üstündeki üçgen hem yükselir hem genişler. Yeni denge de verimlidir; kayma *deadweight loss* yaratmaz."
+        }
+      ]
+    },
+    {
+      "no": 10,
       "code": "2.7",
       "slug": "mc110",
       "title": "Dengenin Değişmesi ve Çift Kayma",
@@ -1451,7 +1613,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 10,
+      "no": 11,
       "code": "2.8-1",
       "slug": "mi206",
       "title": "Fiyat Tavanı ve Fiyat Tabanı",
@@ -1617,7 +1779,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 11,
+      "no": 12,
       "code": "2.9",
       "slug": "mi208",
       "title": "Uluslararası Ticaret ve Gümrük Vergisi",
