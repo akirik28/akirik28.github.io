@@ -574,6 +574,103 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "1.15-1",
+      "slug": "cs109",
+      "title": "String: Birleştirme ve substring",
+      "en": "Strings: Concatenation and substring",
+      "accent": "#F6B94A",
+      "seconds": 273,
+      "terms": [
+        "String",
+        "String literal",
+        "Index",
+        "length()",
+        "substring(from, to)",
+        "substring(from)",
+        "Concatenation",
+        "Immutable",
+        "StringIndexOutOfBoundsException"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "Kod7",
+            "Kod25",
+            "Kod 2 5",
+            "7Kod"
+          ],
+          "a": 1,
+          "why": "Soldan sağa: \"Kod\" + 2 → \"Kod2\" (artık bir *String*), sonra + 5 → \"Kod25\". Yazıya eklenen sayı toplanmaz.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(\"Kod\" + 2 + 5);"
+          }
+        },
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "25Kod",
+            "Kod7",
+            "7Kod",
+            "2 5 Kod"
+          ],
+          "a": 2,
+          "why": "Soldan sağa: önce 2 + 5, iki *int*, 7. Sonra 7 + \"Kod\" → \"7Kod\". Yazı devreye girmeden önceki sayılar toplanır.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(2 + 5 + \"Kod\");"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "lefon7",
+            "elefon7",
+            "lefon6",
+            "lef7"
+          ],
+          "a": 0,
+          "why": "t0 e1 l2 e3 f4 o5 n6: substring(2) → \"lefon\". length() 7. *String* + *int* birleştirilir: \"lefon7\".",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"telefon\";\nSystem.out.println(s.substring(2) + s.length());"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "aslar",
+            "as",
+            "masa",
+            "masalar"
+          ],
+          "a": 3,
+          "why": "*String* *immutable*: ikinci satırın ürettiği \"as\" hiçbir yere atanmadığı için kaybolur, s değişmez. Üçüncü satır s'yi \"masalar\" yazısına bağlar.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"masa\";\ns.substring(1, 3);\ns = s + \"lar\";\nSystem.out.println(s);"
+          }
+        },
+        {
+          "q": "s aşağıdaki gibi tanımlı. Hangi çağrı *StringIndexOutOfBoundsException* fırlatır?",
+          "opts": [
+            "s.substring(4)",
+            "s.substring(2, 5)",
+            "s.substring(0, 4)",
+            "s.substring(3, 3)"
+          ],
+          "a": 1,
+          "why": "length() 4. Sınırlar 0 ile 4 arasında olmalı: substring(2, 5)'te 5 sınırın dışında. substring(4) ve substring(3, 3) boş *String*, substring(0, 4) \"okul\" döndürür.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"okul\";"
+          }
+        }
+      ]
     }
   ],
   "final": []
