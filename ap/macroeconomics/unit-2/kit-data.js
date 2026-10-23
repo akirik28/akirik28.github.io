@@ -977,6 +977,132 @@ window.KIT = {
     },
     {
       "no": 8,
+      "code": "2.5",
+      "slug": "mc208",
+      "title": "Enflasyon Kime Zarar Verir?",
+      "en": "Costs of Inflation",
+      "accent": "#5C8DFF",
+      "seconds": 260,
+      "terms": [
+        "Purchasing power",
+        "Nominal income",
+        "Real income",
+        "Unanticipated inflation",
+        "Anticipated inflation",
+        "Fixed income",
+        "Nominal interest rate",
+        "Real interest rate",
+        "Menu costs",
+        "Shoe-leather costs",
+        "Hyperinflation"
+      ],
+      "questions": [
+        {
+          "q": "Tablo Mert'in iki yıllık maaşını ve *CPI*'ı gösteriyor. Mert'in real maaşı nasıl değişti?",
+          "opts": [
+            "Yüzde 20 arttı",
+            "Yüzde 4 azaldı",
+            "Yüzde 25 azaldı",
+            "Değişmedi"
+          ],
+          "a": 1,
+          "why": "Real maaş = nominal ÷ CPI × 100. 1. yıl: 30.000 ÷ 120 × 100 = 25.000; 2. yıl: 36.000 ÷ 150 × 100 = 24.000. Değişim (24.000 − 25.000) ÷ 25.000 = yüzde 4 azalış. Nominal maaş yüzde 20 artsa da fiyatlar yüzde 25 arttı.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yıl",
+              "Nominal maaş (TL)",
+              "CPI"
+            ],
+            "rows": [
+              [
+                "1",
+                "30.000",
+                "120"
+              ],
+              [
+                "2",
+                "36.000",
+                "150"
+              ]
+            ],
+            "caption": "Mert'in maaşı"
+          }
+        },
+        {
+          "q": "Tablodaki üç krediden hangisinde borç veren, bir yıl sonunda satın alma gücü kaybeder?",
+          "opts": [
+            "Yalnız Kredi 1",
+            "Yalnız Kredi 3",
+            "Yalnız Kredi 2",
+            "Kredi 1 ve Kredi 3"
+          ],
+          "a": 2,
+          "why": "Real faiz = nominal faiz − enflasyon. Kredi 1: 12 − 8 = 4; Kredi 2: 20 − 25 = −5; Kredi 3: 5 − 2 = 3. Real faizin eksi olduğu tek kredi 2; orada borç veren kaybeder, borçlu kazanır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Kredi",
+              "Nominal faiz (%)",
+              "Gerçekleşen enflasyon (%)"
+            ],
+            "rows": [
+              [
+                "1",
+                "12",
+                "8"
+              ],
+              [
+                "2",
+                "20",
+                "25"
+              ],
+              [
+                "3",
+                "5",
+                "2"
+              ]
+            ],
+            "caption": "Üç kredi"
+          }
+        },
+        {
+          "q": "Beklenmedik bir enflasyon artışı aşağıdakilerden en çok hangisine zarar verir?",
+          "opts": [
+            "Yıllardır aynı tutarda, zamsız emekli maaşı alan biri",
+            "Sabit faizli öğrenim kredisi kullanan bir öğrenci",
+            "Maaşı her ay enflasyon oranında otomatik artan bir çalışan",
+            "Sabit faizle borçlanmış bir firma"
+          ],
+          "a": 0,
+          "why": "Sabit gelirlinin nominal geliri artmazken fiyatlar artar; real geliri düşer. Sabit faizli borçlular (öğrenci, firma) değeri düşmüş lirayla öder ve kazanır; enflasyona endeksli maaşın satın alma gücü korunur."
+        },
+        {
+          "q": "Bir banka gelecek yıl enflasyonun yüzde 6 olacağını bekliyor ve verdiği kredilerden yüzde 4 real faiz kazanmak istiyor. Yaklaşık hangi nominal faizi istemelidir?",
+          "opts": [
+            "Yüzde 2",
+            "Yüzde 4",
+            "Yüzde 6",
+            "Yüzde 10"
+          ],
+          "a": 3,
+          "why": "Real faiz ≈ nominal faiz − beklenen enflasyon → nominal ≈ 4 + 6 = yüzde 10. Beklenen enflasyon bu şekilde sözleşmeye yazılır; bu yüzden asıl zararı beklenmeyen enflasyon verir."
+        },
+        {
+          "q": "Enflasyonun çok yüksek olduğu bir dönemde insanlar maaşları yatar yatmaz bankaya, kuyumcuya ve döviz bürosuna koşuyor. Bu zaman ve emek kaybına ne denir?",
+          "opts": [
+            "*Menu costs*",
+            "*Shoe-leather costs*",
+            "*Substitution bias*",
+            "*Disinflation*"
+          ],
+          "a": 1,
+          "why": "Parayı elde tutmamak için harcanan zaman ve emek *shoe-leather costs*'tur. *Menu costs* fiyat etiketlerini ve menüleri değiştirmenin maliyetidir; *substitution bias* bir CPI ölçüm sorunudur; *disinflation* enflasyonun yavaşlamasıdır."
+        }
+      ]
+    },
+    {
+      "no": 9,
       "code": "2.6",
       "slug": "mc209",
       "title": "Real ve Nominal GDP",
