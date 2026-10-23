@@ -141,7 +141,7 @@
     ["psych-u4", "psych", 4, "ap/psychology/unit-4/", "defter/defter-liste.js", "Social Psychology and Personality"],
     ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"],
     ["csa-u1", "csa", 1, "ap/computer-science-a/unit-1/", "ikisi", "Using Objects and Methods"],
-    ["csa-u2", "csa", 2, "ap/computer-science-a/unit-2/", "defter/defter-liste.js", "Selection and Iteration"],
+    ["csa-u2", "csa", 2, "ap/computer-science-a/unit-2/", "ikisi", "Selection and Iteration"],
     ["csa-u3", "csa", 3, "ap/computer-science-a/unit-3/", "defter/defter-liste.js", "Class Creation"],
     ["csa-u4", "csa", 4, "ap/computer-science-a/unit-4/", "defter/defter-liste.js", "Data Collections"],
     /* 10. sınıf okul defterleri (kitsiz; listede KIT.okul ve KIT.not var) */
