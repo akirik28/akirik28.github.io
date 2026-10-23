@@ -420,6 +420,83 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "M.4",
+      "slug": "pc105",
+      "title": "Vektör Çarpımı: Nokta ve Çapraz Çarpım",
+      "en": "Dot and Cross Products",
+      "accent": "#A98BFF",
+      "seconds": 277,
+      "terms": [
+        "Dot product",
+        "Scalar product",
+        "Cross product",
+        "Vector product",
+        "Right-hand rule",
+        "Projection",
+        "Perpendicular",
+        "Unit vector",
+        "Torque"
+      ],
+      "questions": [
+        {
+          "q": "A = î + 2ĵ − 2k̂ ve B = 4î + 3k̂ ise A·B kaçtır?",
+          "opts": [
+            "−2",
+            "10",
+            "4î − 6k̂",
+            "2"
+          ],
+          "a": 0,
+          "why": "AₓBₓ + A_yB_y + A_zB_z = (1)(4) + (2)(0) + (−2)(3) = 4 + 0 − 6 = −2. Sonuç bir sayıdır; 4î − 6k̂ gibi vektör yazılmaz."
+        },
+        {
+          "q": "Büyüklüğü 5 N olan bir kuvvet ile büyüklüğü 4 m olan bir yer değiştirme arasındaki açı 60°'dir. F·d kaçtır?",
+          "opts": [
+            "20 N·m",
+            "17,3 N·m",
+            "10 N·m",
+            "0"
+          ],
+          "a": 2,
+          "why": "F·d = Fd cos θ = (5)(4) cos 60° = 20 · 0,5 = 10 N·m. 17,3, sin 60° kullanmaktır; o çapraz çarpımın büyüklüğü olurdu."
+        },
+        {
+          "q": "|A| = 6, |B| = 5 ve aralarındaki açı 30° ise |A × B| kaçtır?",
+          "opts": [
+            "30",
+            "26",
+            "11",
+            "15"
+          ],
+          "a": 3,
+          "why": "|A × B| = AB sin θ = (6)(5) sin 30° = 30 · 0,5 = 15. 26, cos 30° kullanmaktır (nokta çarpım)."
+        },
+        {
+          "q": "î × k̂ nedir?",
+          "opts": [
+            "ĵ",
+            "−ĵ",
+            "0",
+            "k̂"
+          ],
+          "a": 1,
+          "why": "Döngü î → ĵ → k̂ → î. k̂ × î = ĵ ileri yöndedir; î × k̂ ters sıradır, bu yüzden −ĵ."
+        },
+        {
+          "q": "Sıfır olmayan iki vektör için A·B < 0 ise aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "Vektörler birbirine diktir",
+            "Vektörler paraleldir",
+            "Aralarındaki açı 90°'den büyüktür",
+            "A × B mutlaka sıfırdır"
+          ],
+          "a": 2,
+          "why": "A·B = AB cos θ; A ve B pozitif olduğuna göre cos θ < 0, yani 90° < θ ≤ 180°. Dik olsalardı A·B = 0 olurdu."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.1–1.2",
       "slug": "pc106",
       "title": "Konum, Yer Değiştirme ve Hız",
@@ -585,7 +662,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "1.2a",
       "slug": "pc107",
       "title": "İvme",
@@ -769,7 +846,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "1.3",
       "slug": "pc108",
       "title": "Hareket Grafikleri: Eğim ve Alan",
@@ -942,7 +1019,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 8,
+      "no": 9,
       "code": "1.2–1.3",
       "slug": "pc109",
       "title": "Sabit İvme ve Serbest Düşme",
@@ -1039,7 +1116,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 9,
+      "no": 10,
       "code": "1.2b",
       "slug": "pc110",
       "title": "Değişken İvme: İntegralle Hareket",
@@ -1164,7 +1241,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 10,
+      "no": 11,
       "code": "1.4–1.5",
       "slug": "pc111",
       "title": "İki Boyutta Hareket ve Göreli Hareket",
