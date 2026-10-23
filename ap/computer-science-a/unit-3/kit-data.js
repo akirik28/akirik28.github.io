@@ -355,6 +355,92 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "3.5-2",
+      "slug": "cs305",
+      "title": "toString, Parametre Kopyası ve Yardımcı Metotlar",
+      "en": "Writing Methods: toString, Parameters, and Helper Methods",
+      "accent": "#2FD6B9",
+      "defter": "cs304",
+      "defterBaslik": "Metot Yazmak",
+      "sessiz": true,
+      "seconds": 289,
+      "terms": [
+        "toString",
+        "Pass by value",
+        "Parameter",
+        "Argument",
+        "Helper method",
+        "Method overloading",
+        "Method signature"
+      ],
+      "questions": [
+        {
+          "q": "Pet sınıfının name alanını yazı olarak veren toString metodu hangisidir?",
+          "opts": [
+            "public void toString() { System.out.println(name); }",
+            "public String toString() { return name; }",
+            "public String toString(String s) { return name; }",
+            "private int toString() { return 0; }"
+          ],
+          "a": 1,
+          "why": "*toString*'in başlığı public String toString() olmalı ve yazıyı *return* ile döndürmelidir. A derlenmez bile: void toString, Object'teki String toString()'in yerine geçemez (dönüş tipi uyuşmaz); C'nin parametresi var; D'nin dönüş tipi ve erişimi yanlış."
+        },
+        {
+          "q": "Pet sınıfında toString yazılmamış. Pet p = new Pet(\"Pamuk\"); System.out.println(p); ne yazdırır?",
+          "opts": [
+            "Pamuk",
+            "Kod derlenmez.",
+            "Pet@ ile başlayan, adres benzeri bir yazı",
+            "null"
+          ],
+          "a": 2,
+          "why": "*toString* yazılmazsa Java'nın hazır sürümü çalışır: sınıf adı, @ işareti ve bir sayı. Kod derlenir; alanlar kendiliğinden yazdırılmaz."
+        },
+        {
+          "q": "c'nin bakiyesi 70 iken aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "0 45",
+            "25 70",
+            "0 70",
+            "25 45"
+          ],
+          "a": 3,
+          "why": "*amount*, m'nin kopyasıdır. Bakiye 70 − 25 = 45 olur; amount = 0 yalnızca kopyayı değiştirir, m 25 kalır.",
+          "fig": {
+            "type": "code",
+            "code": "public void spend(int amount) {\n  balance -= amount;\n  amount = 0;\n}\n// istemci:\nint m = 25;\nc.spend(m);\nSystem.out.println(m + \" \" + c.getBalance());"
+          }
+        },
+        {
+          "q": "Bir sınıfta zaten public int total(int a) metodu var. Aşağıdakilerden hangisi aynı sınıfa eklenirse derlenmez?",
+          "opts": [
+            "public int total(int a, int b)",
+            "public double total(int a)",
+            "public int total(double a)",
+            "public int total()"
+          ],
+          "a": 1,
+          "why": "*Overloading* için parametre listesi farklı olmalı. B'nin parametre listesi (int) ile aynı, yalnız dönüş tipi farklı; Java iki metodu ayıramaz. Öteki üçünün parametre listesi farklı."
+        },
+        {
+          "q": "c'nin bakiyesi 100 iken c.buyMany(35, 4) çağrılıyor. Metot ne döndürür ve bakiye ne olur?",
+          "opts": [
+            "2 döndürür, bakiye 30",
+            "4 döndürür, bakiye -40",
+            "3 döndürür, bakiye 0",
+            "2 döndürür, bakiye 65"
+          ],
+          "a": 0,
+          "why": "100 → 65 → 30; üçüncü ve dördüncü turda 35, 30'a sığmaz, *canAfford* false döner. İki alım yapıldı, bakiye 30. Yardımcı metot aynı sınıftan noktasız çağrılır.",
+          "fig": {
+            "type": "code",
+            "code": "private boolean canAfford(int price) { return price <= balance; }\npublic int buyMany(int price, int n) {\n  int bought = 0;\n  for (int i = 0; i < n; i++) {\n    if (canAfford(price)) { balance -= price; bought++; }\n  }\n  return bought;\n}"
+          }
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "3.6",
       "slug": "cs306",
       "title": "Nesne Referansı Geçirmek ve Döndürmek",
@@ -448,7 +534,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "3.7",
       "slug": "cs307",
       "title": "static Değişkenler ve Metotlar",
