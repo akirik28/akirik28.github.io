@@ -9,6 +9,8 @@
      ap_cek / ap_yaz                  ilerleme kayıtları (anahtarında hesap kimliği geçenler)
      ap_quiz_ekle / _sil / _ozet      yönetici: quiz aç, sil, özet
      ap_yonetici_ogrenciler / _not    yönetici: quizi alan öğrenciler adlarıyla, not gir / düzelt
+     ap_geribildirim_gonder           herkes: hata / öneri / beğendim mesajı (hesapsızsa isimsiz)
+     ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
    Yerelde:
      ap-hesap:v1:hesaplar   bu cihazda açılmış hesaplar [{ id, name, email }]
      ap-hesap:v1:oturum     açık oturumun kimliği ("Çıkış yap"a kadar)
@@ -149,7 +151,7 @@
     return null;
   }
 
-  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not))$/;
+  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not)|geribildirim_(liste|okundu))$/;
 
   window.HESAP = {
     hesaplar: hesaplar,
@@ -172,6 +174,11 @@
       return cagir("ap_profil_kaydet", { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim }).then(profilYenile);
     },
     notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
+    /* geri bildirim: hesapsız da gönderilebilir (o zaman isimsiz kaydedilir) */
+    geriBildirim: function (tur, mesaj, sayfa, cihaz) {
+      return rpc("ap_geribildirim_gonder", { p_id: aktifId(), p_tur: tur, p_mesaj: mesaj, p_sayfa: sayfa, p_tarayici: cihaz || "" })
+        .then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
+    },
     yonetim: function (f, args) {
       if (!YONETIM.test(f)) return Promise.reject(new Error("gecersiz"));
       return cagir(f, args || {});
@@ -195,7 +202,10 @@
         yetki_yok: "Bu işlem için yönetici hesabı gerekiyor.",
         gecersiz_max: "Tam puan 1 ile 1000 arasında olmalı.",
         eksik: "Başlık, ders ve son tarihi doldur.",
-        oturum_yok: "Önce giriş yap."
+        oturum_yok: "Önce giriş yap.",
+        mesaj_gerekli: "Birkaç kelime yaz.",
+        gecersiz_tur: "Önce türünü seç: hata, öneri ya da beğendim.",
+        cok_fazla: "Kısa sürede çok mesaj gitti; biraz sonra tekrar dene."
       })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
     },
     yaz: isaretle,
