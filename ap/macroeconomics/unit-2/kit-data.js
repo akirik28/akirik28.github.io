@@ -411,6 +411,140 @@ window.KIT = {
           "why": "Kayıt dışı üretim resmî kayıtlara girmediği için ölçülen GDP gerçek üretimin altında kalır. Kişi başına GDP bir ortalamadır, dağılımı göstermez; kalite artışı ve boş zaman GDP'de tam yansımaz."
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "2.4",
+      "slug": "mc207",
+      "title": "Fiyat Endeksleri ve Enflasyon",
+      "en": "Price Indices and Inflation",
+      "accent": "#FF7DB8",
+      "seconds": 281,
+      "terms": [
+        "Inflation",
+        "Deflation",
+        "Disinflation",
+        "Price level",
+        "Market basket",
+        "Consumer price index (CPI)",
+        "Base year",
+        "Inflation rate",
+        "Substitution bias",
+        "Quality improvements"
+      ],
+      "questions": [
+        {
+          "q": "Tablo bir kırtasiye sepetinin fiyatlarını gösteriyor; temel yıl 2023. 2025 yılının *CPI*'ı kaçtır?",
+          "opts": [
+            "40",
+            "140",
+            "280",
+            "980"
+          ],
+          "a": 1,
+          "why": "2023 sepeti: 4 × 50 + 10 × 10 + 1 × 400 = 700. 2025 sepeti: 4 × 70 + 10 × 14 + 1 × 560 = 980. *CPI* = 980 ÷ 700 × 100 = 140.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ürün",
+              "Miktar",
+              "2023 fiyatı (TL)",
+              "2025 fiyatı (TL)"
+            ],
+            "rows": [
+              [
+                "Defter",
+                "4",
+                "50",
+                "70"
+              ],
+              [
+                "Kalem",
+                "10",
+                "10",
+                "14"
+              ],
+              [
+                "Çanta",
+                "1",
+                "400",
+                "560"
+              ]
+            ],
+            "caption": "Kırtasiye sepeti · base year 2023"
+          }
+        },
+        {
+          "q": "Tabloya göre 2024'ten 2025'e enflasyon oranı kaçtır?",
+          "opts": [
+            "Yüzde 10",
+            "Yüzde 12",
+            "Yüzde 32",
+            "Yüzde 42"
+          ],
+          "a": 0,
+          "why": "Enflasyon oranı = (132 − 120) ÷ 120 × 100 = yüzde 10. Farkı (12) doğrudan yüzde saymak ya da temel yıla göre 32 demek yaygın hatalardır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yıl",
+              "CPI"
+            ],
+            "rows": [
+              [
+                "2022",
+                "90"
+              ],
+              [
+                "2023",
+                "100"
+              ],
+              [
+                "2024",
+                "120"
+              ],
+              [
+                "2025",
+                "132"
+              ]
+            ],
+            "caption": "Base year 2023"
+          }
+        },
+        {
+          "q": "Bir ülkede enflasyon oranı üç yıl boyunca yüzde 8, yüzde 5 ve yüzde 3 oluyor. Bu dönemi en iyi hangisi anlatır?",
+          "opts": [
+            "Deflation: fiyat düzeyi düşüyor",
+            "Fiyat düzeyi değişmiyor",
+            "Enflasyon hızlanıyor",
+            "Disinflation: fiyatlar artıyor ama daha yavaş"
+          ],
+          "a": 3,
+          "why": "Oranların hepsi sıfırın üstünde, yani fiyat düzeyi her yıl artıyor; ama artış hızı düşüyor. Bu *disinflation*'dır. *Deflation* için oranın eksi olması gerekirdi."
+        },
+        {
+          "q": "Kırmızı et çok pahalanınca aileler tavuğa yöneliyor, ama *CPI* sepeti hâlâ aynı miktarda kırmızı eti sayıyor. Bunun sonucu nedir?",
+          "opts": [
+            "*CPI* hayat pahalılığındaki artışı olduğundan küçük gösterir.",
+            "*CPI* temel yılı otomatik olarak değiştirir.",
+            "*CPI* hayat pahalılığındaki artışı olduğundan büyük gösterir.",
+            "*CPI* bu değişimden hiç etkilenmez, çünkü sepet sabittir."
+          ],
+          "a": 2,
+          "why": "Bu *substitution bias*'tır: insanlar pahalanan maldan kaçar, ama sabit sepet onları hâlâ pahalı malı alıyormuş gibi sayar. Bu yüzden *CPI* enflasyonu olduğundan büyük gösterir."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "*CPI* 130 ise o yılki enflasyon oranı yüzde 130'dur.",
+            "*CPI*'ın 90 olduğu bir yılda fiyatlar temel yıldan yüzde 10 düşüktür.",
+            "Yalnızca benzinin fiyatı artarsa bu kesinlikle enflasyondur.",
+            "*Disinflation*, genel fiyat düzeyinin düşmesi demektir."
+          ],
+          "a": 1,
+          "why": "*CPI* temel yıla göre bir endekstir: 90, fiyatların temel yılın yüzde 90'ı kadar, yani yüzde 10 düşük olduğunu söyler. 130 bir yüzde değil endekstir; enflasyon genel fiyat düzeyiyle ilgilidir; *disinflation* yavaşlama, *deflation* düşüştür."
+        }
+      ]
     }
   ],
   "final": []
