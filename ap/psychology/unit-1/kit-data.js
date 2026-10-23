@@ -454,6 +454,114 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "1.3-3",
+      "slug": "py105",
+      "title": "İlaçlar ve Sinirsel İletim",
+      "en": "Drugs and Neural Firing",
+      "accent": "#FF8A65",
+      "defter": "py103",
+      "defterBaslik": "Nöron ve Sinirsel İletim",
+      "seconds": 260,
+      "terms": [
+        "Psychoactive drugs",
+        "Agonist",
+        "Antagonist",
+        "Reuptake inhibitor",
+        "SSRI",
+        "Stimulants",
+        "Depressants",
+        "Opioids",
+        "Hallucinogens",
+        "Tolerance",
+        "Withdrawal",
+        "Addiction"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, dört maddenin sinapstaki etkisini özetliyor. Hangi madde bir *antagonist* gibi çalışır?",
+          "opts": [
+            "W",
+            "X",
+            "Y",
+            "Z"
+          ],
+          "a": 2,
+          "why": "*Antagonist* reseptöre bağlanır ama onu etkinleştirmez; doğal habercinin etkisini engeller. Y tam olarak bunu yapıyor. W ve Z haberciyi taklit eden ya da etkisini artıran *agonist* örnekleri, X ise geri alımı yavaşlatan bir *reuptake inhibitor*.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Madde",
+              "Sinapstaki etkisi"
+            ],
+            "rows": [
+              [
+                "W",
+                "Endorfin reseptörlerine bağlanıp onları etkinleştirir"
+              ],
+              [
+                "X",
+                "Serotoninin gönderen nörona geri alınmasını yavaşlatır"
+              ],
+              [
+                "Y",
+                "Asetilkolin reseptörlerine bağlanır ama etkinleştirmez; asetilkolinin bağlanmasını engeller"
+              ],
+              [
+                "Z",
+                "Doğal habercinin salınımını artırır"
+              ]
+            ],
+            "caption": "Dört madde · örnek tablo"
+          }
+        },
+        {
+          "q": "Bir partide birkaç kadeh alkol alan Kerem her zamankinden çok konuşuyor ve dans ediyor. Bir arkadaşı \"alkol onu canlandırdı, demek ki uyarıcı\" diyor. Bu yoruma en iyi yanıt hangisidir?",
+          "opts": [
+            "Doğru; alkol *dopamine* salınımını artırdığı için bir *stimulant*'tır",
+            "Doğru; alkol kalp hızını artıran bir *hallucinogen*'dir",
+            "Yanlış; alkol bir *opioid*'dir ve *endorphins*'i taklit eder",
+            "Yanlış; alkol bir *depressant*'tır; davranışı frenleyen bölgeleri yavaşlattığı için yasaklar gevşer"
+          ],
+          "a": 3,
+          "why": "Alkol sinir sistemini yavaşlatan bir *depressant*'tır ve *GABA*'nın etkisini güçlendirir. Davranışı frenleyen bölgeler yavaşlayınca kişi daha rahat davranır; bu canlılık sinir sisteminin hızlanması değildir."
+        },
+        {
+          "q": "Uzun süredir ağrı kesici olarak bir *opioid* kullanan bir hasta, aynı rahatlamayı sağlamak için giderek daha yüksek doza ihtiyaç duyduğunu söylüyor. Bu durum en iyi hangi kavramla açıklanır?",
+          "opts": [
+            "*Tolerance*",
+            "*Withdrawal*",
+            "*Reuptake*",
+            "*Refractory period*"
+          ],
+          "a": 0,
+          "why": "Aynı etki için daha fazla madde gerekmesi *tolerance*'tır; beyin maddeye uyum sağlamıştır, örneğin reseptör duyarlılığı azalmıştır. *Withdrawal* madde kesildiğinde ortaya çıkan belirtilerdir."
+        },
+        {
+          "q": "Bir araştırmacı, depresyon tanısı almış katılımcıları rastgele iki gruba ayırıyor: biri 8 hafta bir *SSRI*, öteki görünüşü aynı olan etkisiz bir hap alıyor. *SSRI* grubunda depresyon puanları daha çok düşüyor. Araştırmacı ilacın etki mekanizmasını hangi ifadeyle açıklamalıdır?",
+          "opts": [
+            "İlaç serotonin reseptörlerini tıkayarak serotoninin etkisini azaltmıştır",
+            "İlaç serotoninin geri alımını yavaşlatarak sinapsta daha uzun kalmasını sağlamıştır",
+            "İlaç *endorphins*'i taklit ederek acıyı bastırmıştır",
+            "İlaç *GABA*'yı engelleyerek sinir sistemini hızlandırmıştır"
+          ],
+          "a": 1,
+          "why": "*SSRI*, seçici serotonin geri alım engelleyicisidir: gönderen nöronun serotonini geri emmesini yavaşlatır, böylece serotonin sinapsta daha uzun kalır. Rastgele atama ve etkisiz hap kullanımı, farkın ilaçtan kaynaklandığı sonucunu güçlendirir."
+        },
+        {
+          "q": "Her gün birkaç bardak çay ve kahve içen Zeynep bir hafta kafeini tamamen bırakıyor. İlk günlerde baş ağrısı, yorgunluk ve dikkatsizlik yaşıyor. Bu belirtiler için hangi açıklama en uygundur?",
+          "opts": [
+            "Kafein bir *depressant*'tır; bırakılınca sinir sistemi aşırı hızlanır",
+            "Kafein bir *opioid*'dir; bırakılınca *endorphins* tamamen biter",
+            "Kafeine alışan beyin dengeyi kaybetmiştir; bu *withdrawal* belirtileridir",
+            "Bu belirtiler *tolerance*'ın kendisidir"
+          ],
+          "a": 2,
+          "why": "Kafein bir *stimulant*'tır ve uyku habercisi *adenosine*'in reseptörlerini tıkar. Düzenli kullanımda beyin buna uyum sağlar; kafein kesilince uyku hâli ve baş ağrısı gibi ters yönde *withdrawal* belirtileri görülür."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.4-2",
       "slug": "py107",
       "title": "Yarım Küreler, Plastisite ve Yöntemler",
@@ -566,7 +674,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "1.5",
       "slug": "py108",
       "title": "Uyku",
@@ -677,7 +785,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "1.6-1",
       "slug": "py109",
       "title": "Duyumun İlkeleri ve Beden Duyuları",
