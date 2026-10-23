@@ -974,6 +974,136 @@ window.KIT = {
           "why": "*CPI* temel yıla göre bir endekstir: 90, fiyatların temel yılın yüzde 90'ı kadar, yani yüzde 10 düşük olduğunu söyler. 130 bir yüzde değil endekstir; enflasyon genel fiyat düzeyiyle ilgilidir; *disinflation* yavaşlama, *deflation* düşüştür."
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "2.6",
+      "slug": "mc209",
+      "title": "Real ve Nominal GDP",
+      "en": "Real vs Nominal GDP",
+      "accent": "#F6B94A",
+      "seconds": 275,
+      "terms": [
+        "Nominal GDP",
+        "Real GDP",
+        "Base year",
+        "GDP deflator",
+        "Price level",
+        "Real GDP growth rate",
+        "Real GDP per capita",
+        "Consumer price index (CPI)"
+      ],
+      "questions": [
+        {
+          "q": "Tablo yalnızca kalem ve defter üreten bir ekonomiyi gösteriyor; temel yıl 2023. 2024'ün *real GDP*'si kaç liradır?",
+          "opts": [
+            "1.800",
+            "2.080",
+            "2.600",
+            "3.250"
+          ],
+          "a": 1,
+          "why": "Real GDP = 2024 miktarları × 2023 fiyatları: 110 × 8 + 60 × 20 = 880 + 1.200 = 2.080. 2.600 ise 2024 fiyatlarıyla hesaplanan *nominal GDP*'dir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yıl",
+              "Kalem P",
+              "Kalem Q",
+              "Defter P",
+              "Defter Q"
+            ],
+            "rows": [
+              [
+                "2023",
+                "8",
+                "100",
+                "20",
+                "50"
+              ],
+              [
+                "2024",
+                "10",
+                "110",
+                "25",
+                "60"
+              ]
+            ],
+            "caption": "Kalem–defter ekonomisi · base year 2023"
+          }
+        },
+        {
+          "q": "Aynı tabloya göre 2024'ün *GDP deflator*'ü kaçtır?",
+          "opts": [
+            "80",
+            "100",
+            "125",
+            "144"
+          ],
+          "a": 2,
+          "why": "Nominal 2024 = 110 × 10 + 60 × 25 = 2.600; real 2024 = 2.080. Deflator = 2.600 ÷ 2.080 × 100 = 125: fiyat düzeyi temel yıldan yüzde 25 yüksek. 144, 2024 nominalini 2023 nominaline bölmekle bulunur ve yanlıştır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yıl",
+              "Kalem P",
+              "Kalem Q",
+              "Defter P",
+              "Defter Q"
+            ],
+            "rows": [
+              [
+                "2023",
+                "8",
+                "100",
+                "20",
+                "50"
+              ],
+              [
+                "2024",
+                "10",
+                "110",
+                "25",
+                "60"
+              ]
+            ],
+            "caption": "Kalem–defter ekonomisi · base year 2023"
+          }
+        },
+        {
+          "q": "Bir yılda *nominal GDP* yüzde 8, *GDP deflator* da yüzde 8 artıyor. *Real GDP* için ne söylenebilir?",
+          "opts": [
+            "Yaklaşık yüzde 16 artmıştır.",
+            "Yaklaşık yüzde 8 azalmıştır.",
+            "Yaklaşık yüzde 8 artmıştır.",
+            "Yaklaşık olarak değişmemiştir."
+          ],
+          "a": 3,
+          "why": "Nominal artışın tamamı fiyat artışından geliyor: real = nominal ÷ deflator × 100 olduğu için pay ve payda aynı oranda büyür, *real GDP* aynı kalır. Üretim artmamıştır."
+        },
+        {
+          "q": "Aşağıdakilerden hangisi *CPI*'ı yükseltir ama *GDP deflator*'ü neredeyse hiç etkilemez?",
+          "opts": [
+            "Yurt dışından ithal edilen kahve makinelerinin fiyatının artması",
+            "Yerli bir fabrikanın ürettiği iş makinelerinin fiyatının artması",
+            "Devletin yaptırdığı köprülerin maliyetinin artması",
+            "Türkiye'de üretilip ihraç edilen fındığın fiyatının artması"
+          ],
+          "a": 0,
+          "why": "İthal mallar tüketici sepetinde yer alır, bu yüzden *CPI*'ı yükseltir; ama yurt içinde üretilmedikleri için *GDP*'nin ve dolayısıyla deflatörün dışındadır. Diğer üçü yurt içi üretimdir ve deflatöre girer."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "*GDP deflator* 90 ise *real GDP*, *nominal GDP*'den küçüktür.",
+            "*Real GDP*, her yılın kendi fiyatlarıyla hesaplanır.",
+            "Temel yılda *nominal GDP* ile *real GDP* birbirine eşittir.",
+            "*Nominal GDP* artıyorsa üretim de mutlaka artıyordur."
+          ],
+          "a": 2,
+          "why": "Temel yılda cari fiyatlar ile temel yıl fiyatları aynıdır; real ve nominal eşit, deflatör 100'dür. Deflatör 100'ün altındaysa real nominalden büyük çıkar; real GDP temel yıl fiyatlarıyla hesaplanır; nominal artış yalnızca fiyatlardan da gelebilir."
+        }
+      ]
     }
   ],
   "final": []
