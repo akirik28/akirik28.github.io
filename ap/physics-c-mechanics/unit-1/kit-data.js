@@ -339,6 +339,83 @@ window.KIT = {
     },
     {
       "no": 4,
+      "code": "1.1, 1.5",
+      "slug": "pc104",
+      "title": "Vektörler: Bileşenler ve Birim Vektörler",
+      "en": "Vectors: Components and Unit Vectors",
+      "accent": "#FF6F61",
+      "seconds": 277,
+      "terms": [
+        "Scalar",
+        "Vector",
+        "Magnitude",
+        "Resultant",
+        "Tip-to-tail method",
+        "Parallelogram method",
+        "Components",
+        "Unit vector",
+        "Displacement"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki niceliklerden hangi ikisi *vector*'dür?",
+          "opts": [
+            "Sürat ve zaman",
+            "Kütle ve yol",
+            "Zaman ve ivme",
+            "Yer değiştirme ve ivme"
+          ],
+          "a": 3,
+          "why": "Yer değiştirme ve ivmenin hem büyüklüğü hem yönü vardır. Sürat, zaman, kütle ve yol yalnızca büyüklükle anlatılır: *scalar*."
+        },
+        {
+          "q": "Bir hız vektörünün büyüklüğü 10 m/s'dir ve +x ekseninin 30° altını gösterir. Bileşenleri nedir?",
+          "opts": [
+            "vₓ = 8,66 m/s, v_y = −5 m/s",
+            "vₓ = 5 m/s, v_y = −8,66 m/s",
+            "vₓ = 8,66 m/s, v_y = 5 m/s",
+            "vₓ = −8,66 m/s, v_y = −5 m/s"
+          ],
+          "a": 0,
+          "why": "Açı x ekseninden: vₓ = 10 cos 30° = 8,66; v_y = 10 sin 30° = 5, ama aşağı doğru olduğu için −5 m/s."
+        },
+        {
+          "q": "A = 2î + 3ĵ ve B = 4î − ĵ ise A − B vektörünün büyüklüğü yaklaşık kaçtır?",
+          "opts": [
+            "6,3",
+            "2,0",
+            "4,5",
+            "8,5"
+          ],
+          "a": 2,
+          "why": "A − B = (2 − 4)î + (3 − (−1))ĵ = −2î + 4ĵ. Büyüklük √(4 + 16) = √20 ≈ 4,47. 6,3 bulan A + B'yi hesaplamıştır (√40)."
+        },
+        {
+          "q": "Bir vektörün bileşenleri Aₓ = −5 ve A_y = −5'tir. +x ekseninden saat yönünün tersine ölçülen açısı kaçtır?",
+          "opts": [
+            "45°",
+            "135°",
+            "225°",
+            "315°"
+          ],
+          "a": 2,
+          "why": "İki bileşen de eksi: vektör üçüncü bölgede. Hesap makinesi tan⁻¹(−5/−5) = 45° der, ama doğru açı 180° + 45° = 225°."
+        },
+        {
+          "q": "A = 2î − 3ĵ + 6k̂ vektörünün büyüklüğü kaçtır?",
+          "opts": [
+            "5",
+            "7",
+            "11",
+            "49"
+          ],
+          "a": 1,
+          "why": "Üç boyutta Pisagor: √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = 7. 11, bileşenleri doğrudan toplamaktır; 49 karekökü almayı unutmaktır."
+        }
+      ]
+    },
+    {
+      "no": 5,
       "code": "1.1–1.2",
       "slug": "pc106",
       "title": "Konum, Yer Değiştirme ve Hız",
