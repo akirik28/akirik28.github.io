@@ -1780,6 +1780,167 @@ window.KIT = {
     },
     {
       "no": 12,
+      "code": "2.8-2",
+      "slug": "mi207",
+      "title": "Vergiler, Sübvansiyonlar ve Vergi Yükü",
+      "en": "Taxes, Subsidies and Tax Incidence",
+      "accent": "#F6B94A",
+      "seconds": 246,
+      "terms": [
+        "Excise tax",
+        "Per-unit tax",
+        "Tax wedge",
+        "Tax revenue",
+        "Tax incidence",
+        "Deadweight loss",
+        "Per-unit subsidy",
+        "Elasticity and tax burden",
+        "Consumer surplus",
+        "Producer surplus"
+      ],
+      "questions": [
+        {
+          "q": "Grafikte dikey eksende 1 birim 10 lira, yatay eksende 1 birim 100 adettir. Devlet birim başına vergi koyunca arz S'den S_tax'a kayıyor. Devletin vergi geliri kaç liradır?",
+          "opts": [
+            "10.000 TL",
+            "4.000 TL",
+            "1.000 TL",
+            "8.000 TL"
+          ],
+          "a": 3,
+          "why": "Vergi, iki arz eğrisi arasındaki dikey mesafedir: 2 birim = 20 TL. Yeni miktar 400. Gelir = 20 × 400 = 8.000 TL. 10.000 eski miktarla (500) hesaplanır; 4.000 yalnızca alıcıların payıdır; 1.000 ise *deadweight loss*'tur: ½ × 100 × 20.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  10
+                ],
+                "to": [
+                  10,
+                  0
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  10,
+                  10
+                ],
+                "label": "S"
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  8,
+                  10
+                ],
+                "label": "S_tax"
+              }
+            ],
+            "points": [
+              {
+                "q": 5,
+                "p": 5,
+                "label": "E",
+                "guides": true
+              },
+              {
+                "q": 4,
+                "p": 6,
+                "label": "T",
+                "guides": true
+              },
+              {
+                "q": 4,
+                "p": 4,
+                "label": "F",
+                "guides": true
+              }
+            ]
+          }
+        },
+        {
+          "q": "Bir malın talebi *perfectly elastic*, arzı ise normal, yukarı eğimlidir. Birim başına vergi konursa yükü kim taşır?",
+          "opts": [
+            "Verginin tamamını tüketiciler öder.",
+            "Verginin tamamını üreticiler öder.",
+            "Tüketiciler ve üreticiler yükü yarı yarıya paylaşır.",
+            "Vergiyi kanunen kim ödüyorsa yükün tamamı ondadır."
+          ],
+          "a": 1,
+          "why": "Yatay talepte alıcılar fiyattaki en küçük artışta bile malı bırakır; fiyat değişemez. Arz vergi kadar yukarı kayınca miktar düşer ama alıcı fiyatı aynı kalır; verginin tamamı satıcının eline geçen fiyattan düşer. Yükü kanun değil, esneklik belirler."
+        },
+        {
+          "q": "Tablo, birim başına 6 liralık vergiden önce ve sonra alıcıların ödediği fiyatı gösteriyor. Hangisi doğrudur?",
+          "opts": [
+            "Satıcının eline 6 lira geçer; arz talepten daha *inelastic*'tir.",
+            "Satıcının eline 12 lira geçer; yükün tamamı alıcılardadır.",
+            "Satıcının eline 6 lira geçer; talep arzdan daha *inelastic*'tir.",
+            "Satıcının eline 4 lira geçer; yük eşit paylaşılır."
+          ],
+          "a": 0,
+          "why": "Satıcı fiyatı = 12 − 6 = 6 lira. Alıcılar 2 lira, satıcılar 10 − 6 = 4 lira yük taşıyor. Yükün çoğu satıcıda olduğuna göre daha *inelastic* olan taraf arzdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Vergiden önce",
+              "Vergiden sonra"
+            ],
+            "rows": [
+              [
+                "Alıcının ödediği fiyat (TL)",
+                "10",
+                "12"
+              ],
+              [
+                "Birim başına vergi (TL)",
+                "0",
+                "6"
+              ]
+            ],
+            "caption": "Birim başına 6 TL vergi"
+          }
+        },
+        {
+          "q": "Aynı arz eğrisine sahip dört piyasaya aynı birim başına vergi konuyor. Hangi durumda *deadweight loss* en küçük olur?",
+          "opts": [
+            "Talep çok *elastic* olduğunda",
+            "Talep *unit elastic* olduğunda",
+            "Talep çok *inelastic* olduğunda",
+            "Talep *perfectly elastic* olduğunda"
+          ],
+          "a": 2,
+          "why": "*Deadweight loss*, vergi yüzünden yapılmayan alışverişlerden doğar. Talep katıysa miktar çok az düşer; DWL üçgeni incecik kalır. Talep esnekleştikçe miktar daha çok düşer ve üçgen büyür."
+        },
+        {
+          "q": "Devlet bir malın üreticilerine birim başına sübvansiyon veriyor. Rekabetçi piyasada hangisi doğrudur?",
+          "opts": [
+            "Arz sola kayar; alıcı fiyatı yükselir.",
+            "Miktar artar, alıcı fiyatı düşer, satıcının eline geçen fiyat yükselir ve *deadweight loss* oluşur.",
+            "Miktar artar ve toplam artık en büyük değerine ulaşır; *deadweight loss* oluşmaz.",
+            "Sübvansiyonun tamamı alıcılara geçer; satıcının eline geçen fiyat değişmez."
+          ],
+          "a": 1,
+          "why": "Sübvansiyon arzı birim başına destek kadar aşağı, yani sağa kaydırır. Miktar dengenin üstüne çıkar; alıcı daha az öder, satıcı daha çok alır. Denge miktarının ötesindeki birimlerin maliyeti alıcıya değerinden yüksek olduğu için fazla üretimden *deadweight loss* doğar."
+        }
+      ]
+    },
+    {
+      "no": 13,
       "code": "2.9",
       "slug": "mi208",
       "title": "Uluslararası Ticaret ve Gümrük Vergisi",
