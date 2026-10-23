@@ -95,6 +95,102 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "2.3–2.4",
+      "slug": "cs202",
+      "title": "if ve İç İçe if",
+      "en": "if Statements and Nested if Statements",
+      "accent": "#FF8A65",
+      "defter": "cs202",
+      "seconds": 277,
+      "terms": [
+        "if statement",
+        "if-else",
+        "else if",
+        "Nested if",
+        "Dangling else",
+        "One-way selection",
+        "Multiway selection"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "5",
+            "16",
+            "10",
+            "8"
+          ],
+          "a": 2,
+          "why": "İki ayrı *if* var. 8 > 5 → x = 5. Sonra ikinci *if* yeni değere bakar: 5 > 4 → x = 10.",
+          "fig": {
+            "type": "code",
+            "code": "int x = 8;\nif (x > 5) {\n  x -= 3;\n}\nif (x > 4) {\n  x *= 2;\n}\nSystem.out.println(x);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "A",
+            "B",
+            "C",
+            "F"
+          ],
+          "a": 2,
+          "why": "Zincirde ilk *true* kazanır. 90 >= 50 hemen doğru olduğu için C atanır; daha dar koşullara hiç bakılmaz. Doğru sıra en dar koşulla (>= 85) başlamalıydı.",
+          "fig": {
+            "type": "code",
+            "code": "int p = 90;\nString s;\nif (p >= 50) s = \"C\";\nelse if (p >= 70) s = \"B\";\nelse if (p >= 85) s = \"A\";\nelse s = \"F\";\nSystem.out.println(s);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "X",
+            "XY",
+            "Hiçbir şey yazdırmaz.",
+            "Y"
+          ],
+          "a": 3,
+          "why": "*Dangling else*: *else* en yakın *if*'e, yani a > 5'e bağlanır. a > 1 doğru, a > 5 yanlış, bu yüzden *else* kolu çalışır: Y.",
+          "fig": {
+            "type": "code",
+            "code": "int a = 3;\nif (a > 1)\n  if (a > 5)\n    System.out.print(\"X\");\nelse\n  System.out.print(\"Y\");"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "0 0",
+            "1 1",
+            "1 0",
+            "0 1"
+          ],
+          "a": 3,
+          "why": "Süslü parantez olmadığı için *if* yalnız a++ satırını kapsar. k > 0 yanlış, a artmaz; b++ ise *if*'in dışında, her durumda çalışır.",
+          "fig": {
+            "type": "code",
+            "code": "int a = 0;\nint b = 0;\nint k = -2;\nif (k > 0)\n  a++;\n  b++;\nSystem.out.println(a + \" \" + b);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "15",
+            "5",
+            "0",
+            "5 ve ardından 0"
+          ],
+          "a": 1,
+          "why": "Dış koşul 120 > 100 doğru, içteki soruya geçilir. member *false* olduğu için içteki *else* çalışır: 5. Dıştaki *else* atlanır.",
+          "fig": {
+            "type": "code",
+            "code": "boolean member = false;\nint total = 120;\nif (total > 100) {\n  if (member) { System.out.println(15); }\n  else { System.out.println(5); }\n} else {\n  System.out.println(0);\n}"
+          }
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "2.5",
       "slug": "cs203",
       "title": "Bileşik Boolean İfadeler ve Kısa Devre",
@@ -183,7 +279,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 3,
+      "no": 4,
       "code": "2.6",
       "slug": "cs204",
       "title": "De Morgan, Eşdeğer İfadeler ve equals",
