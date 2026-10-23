@@ -887,6 +887,111 @@ window.KIT = {
           "why": "Olayı tekrar tekrar hayal etmek, yaşandığına inanmayı artırdı: *imagination inflation*. Bilginin annesinden mi geldiğini yoksa kendi yaşantısı mı olduğunu ayırt edememek: *source amnesia*. İkisi de belleğin *constructive* olduğunu gösterir."
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "2.8-2",
+      "slug": "py211",
+      "title": "Zekâ Testleri ve Başarı",
+      "en": "Intelligence Testing and Achievement",
+      "accent": "#F6B94A",
+      "defter": "py208",
+      "defterBaslik": "Zekâ ve Başarı",
+      "seconds": 264,
+      "terms": [
+        "Standardization",
+        "Norms",
+        "Normal curve",
+        "Reliability",
+        "Test-retest reliability",
+        "Split-half reliability",
+        "Validity",
+        "Predictive validity",
+        "Flynn effect",
+        "Achievement test",
+        "Aptitude test",
+        "Stereotype threat",
+        "Growth mindset"
+      ],
+      "questions": [
+        {
+          "q": "Bir zekâ testi ortalama 100, standart sapma 15 olacak biçimde normlanmış. Normal dağılım varsayımıyla, 1 000 kişilik rastgele bir örneklemde kabaca kaç kişinin 130'un üstünde puan alması beklenir?",
+          "opts": [
+            "Yaklaşık 160",
+            "Yaklaşık 25",
+            "Yaklaşık 340",
+            "Yaklaşık 680"
+          ],
+          "a": 1,
+          "why": "130, ortalamanın 2 standart sapma üstüdür. Puanların yaklaşık yüzde 95'i 70 ile 130 arasında; kalan yüzde 5 iki uca eşit bölünür, yani yaklaşık yüzde 2,5'i 130'un üstündedir. 1 000 × 0,025 = 25."
+        },
+        {
+          "q": "Yeni bir dikkat testi aynı öğrencilere iki hafta arayla veriliyor ve puanlar neredeyse aynı çıkıyor. Ama testin puanları öğretmenlerin derste dikkat değerlendirmeleriyle hiç ilişkili değil. Bu test için en doğru yorum hangisidir?",
+          "opts": [
+            "Test geçerli ama güvenilir değil",
+            "Test hem güvenilir hem geçerli",
+            "Test güvenilir görünüyor ama geçerliği şüpheli",
+            "Test ne güvenilir ne geçerli; çünkü puanlar aynı çıktı"
+          ],
+          "a": 2,
+          "why": "İki uygulamada benzer puan, iyi *test-retest reliability* demektir. Ama puanlar ölçülmek istenen davranışla ilişkili değilse test dikkati gerçekten ölçmüyor olabilir; *validity* şüphelidir. Güvenilir bir test geçersiz olabilir."
+        },
+        {
+          "q": "Bir üniversite, giriş sınavı puanlarının öğrencilerin birinci yıl not ortalamalarını ne kadar iyi tahmin ettiğini inceliyor ve güçlü bir pozitif korelasyon buluyor. Bu bulgu sınavın hangi özelliğinin kanıtıdır?",
+          "opts": [
+            "*Split-half reliability*",
+            "*Standardization*",
+            "*Flynn effect*",
+            "*Predictive validity*"
+          ],
+          "a": 3,
+          "why": "Puanın gelecekteki ilgili başarıyı tahmin etmesi *predictive validity*'dir. Korelasyon güçlüyse sınav gelecekteki notları iyi öngörüyor demektir; ama bu, sınavın notlara neden olduğunu göstermez."
+        },
+        {
+          "q": "Bir ülkede 1980'de normlanan bir zekâ testi 2020'de yeni bir temsil edici gruba aynı normlarla uygulanıyor. Sonuçlar tabloda. Bu veriler en çok neyi destekler ve ne yapılmalıdır?",
+          "opts": [
+            "*Flynn effect*; testin yeniden normlanması gerekir",
+            "*Stereotype threat*; testin sunuluşu değiştirilmelidir",
+            "Düşük *split-half reliability*; test ikiye bölünmelidir",
+            "Genetik değişim; normlar aynen korunmalıdır"
+          ],
+          "a": 0,
+          "why": "40 yılda ortalama 100'den 112'ye çıkmış: on yılda yaklaşık 3 puan. Bu, nesiller boyunca puanların yükselmesi, yani *Flynn effect*'tir. Bu kadar kısa sürede genler değişmez; eski normlar artık ortalamayı 100 göstermediği için test yeniden normlanmalıdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yıl",
+              "Ortalama puan (1980 normlarıyla)"
+            ],
+            "rows": [
+              [
+                "1980",
+                "100"
+              ],
+              [
+                "2000",
+                "106"
+              ],
+              [
+                "2020",
+                "112"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        },
+        {
+          "q": "Defne'nin AP Kimya sınav sonucu düşük geldi. \"Ben kimya kafalı değilim, bu doğuştan\" diyor. Öğretmeni ise sınavın Defne'nin bu yıl öğrendiklerini ölçtüğünü, doğru stratejilerle puanının artabileceğini söylüyor. Defne'nin inancı ve sınavın türü sırasıyla nedir?",
+          "opts": [
+            "*Growth mindset*; *aptitude test*",
+            "*Fixed mindset*; *achievement test*",
+            "*Fixed mindset*; *aptitude test*",
+            "*Growth mindset*; *achievement test*"
+          ],
+          "a": 1,
+          "why": "Yeteneğin doğuştan ve değişmez olduğuna inanmak *fixed mindset*'tir; öğretmeninki *growth mindset*'tir. AP Kimya sınavı bir yıl boyunca öğrenileni ölçtüğü için bir *achievement test*'tir."
+        }
+      ]
     }
   ],
   "final": []
