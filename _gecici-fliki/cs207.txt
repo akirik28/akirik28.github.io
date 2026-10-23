@@ -1,0 +1,23 @@
+Akıllı saatin pazar akşamı haftalık raporunu gönderiyor. Toplam adım, günlük ortalama, kaç gün 8 bin adım hedefini tuttun, en iyi ve en kötü gün. Bu beş satırın her biri bir döngü algoritması. Ve FRQ bir'in a şıkkı neredeyse her yıl bunlardan birini ister. Kalıpları bir kez öğren, her yerde kullan.
+
+Henüz dizileri bilmiyoruz; o dördüncü ünitede. FRQ'larda veri çoğu zaman hazır bir metottan gelir. Diyelim getSteps, parametre day, o günün adım sayısını döndürüyor. Sen sadece day 1'den 7'ye kadar dönen bir döngü kurar ve her turda bu metodu çağırırsın. Kural: soru sana bir metot veriyorsa onu kullan; yeniden yazmaya çalışma.
+
+Birinci kalıp: toplam. total 0. Döngüde total artı eşittir getSteps d. 6200, sonra 14700, 19000, 29200, 37000, 40900 ve 50000. Hafta toplamı 50 bin adım. Tuzak: total eşittir 0 satırını döngünün içine koyarsan her tur toplam sıfırlanır; sonunda yalnız son günü, 9100'ü görürsün.
+
+İkinci kalıp: ortalama, yani toplam bölü sayı. total bölü 7 iki int'tir; sonuç 7142, kesirli kısım gider. double avg eşittir total bölü 7 yazmak da kurtarmaz: önce int bölmesi yapılır, sonra 7142 nokta 0 olur. Doğrusu: parantez double total, bölü 7. Sonuç 7142 nokta 857 ve devamı. Cast, bölmeden önce yapılmalı.
+
+Üçüncü kalıp: sayma. count 0. Döngüde bir if: o günün adımı büyük eşittir 8000 ise count artı artı. Pazartesi 6200, hayır. Salı 8500, evet. Perşembe 10200 ve pazar 9100, evet. Hedef günleri: 3. Toplamdan tek farkı, eklemenin bir koşula bağlanması. Koşulu değiştir; çift sayıları, 7'ye bölünenleri, eksi sıcaklıkları sayarsın.
+
+Dördüncü kalıp: en büyük. max'a ilk günün değerini ver. Sonra 2'den 7'ye: o günün adımı max'tan büyükse max'ı güncelle. 6200, sonra 8500, sonra 10200; sonrakiler daha küçük. En iyi gün 10200. Tuzak: max'ı 0 ile başlatmak. Erzurum'da üç günün sıcaklığı eksi 12, eksi 8 ve eksi 15 olsun. 0'dan büyük gün yok; kod en sıcak gün 0 derece der. Doğru cevap eksi 8.
+
+En küçük de aynı kalıp, işaret ters: küçüktür. Başlangıç için ya ilk değeri kullanırsın ya da Integer nokta MAX VALUE'yu; her sayı ondan küçüktür. Hangi gün olduğunu da istiyorsan ikinci bir değişken tutarsın: min her değiştiğinde day de değişir. En kötü gün 6, cumartesi, 3900 adım. Eşitlik olursa küçüktür ilk günü, küçük eşittir son günü tutar.
+
+Son kodda küçük bir alışkanlık var: int s eşittir getSteps d. Metodu bir kez çağırıp sonucu saklıyoruz, sonra s'yi iki yerde kullanıyoruz. Metot her çağrıda farklı değer döndürebilir; rastgele bir sayı ya da sensörden gelen ölçüm gibi. İki kez çağırırsan karşılaştırdığın değerle sakladığın değer farklı olabilir. Kural: bir turda aynı değeri birden çok yerde kullanacaksan önce bir yerel değişkene al.
+
+Şimdi bir AP örneği. getTemp, beş günün sıcaklığını veriyor: eksi 3, 2, eksi 8, 5 ve eksi 1. Kod aynı döngüde hem en yüksek sıcaklığı hem de sıfırın altındaki günleri sayıyor. max 0'dan başlıyor. Eksi 3: max değişmez, below 1. 2: max 2. Eksi 8: below 2. 5: max 5. Eksi 1: below 3. Çıktı: 5 ve 3. max 0 burada şans eseri doğru çıktı; bütün günler eksi olsaydı yanlış olurdu. Güvenli başlangıç ilk değerdir.
+
+Sınav için bilmen gereken. Yazman gereken: toplam, sayma, ortalama, en büyük ve en küçük kalıpları; verilen metodu döngüde çağırmak, ortalamada double cast. Okuman gereken: başlangıç değeri yanlış ya da döngünün içinde olan kodları bulmak; eşitlikte hangi günün tutulduğunu izlemek. Bilmen gerekmeyen: diziler bu ünitede yok; Math nokta max ve Math nokta min de gerekmez, if ile yazarsın.
+
+Toparlayalım. Toplam ve sayaç döngüden önce sıfırlanır. Sayma, koşula bağlı bir artı artıdır. Ortalamada cast bölmeden önce gelir. En büyük ve en küçük ilk değerle başlar; eksi sayılara dikkat. Bir turda aynı değeri iki kez kullanacaksan önce bir değişkene al.
+
+Şimdi bir soru. i 1'den 7'ye. i mod 3 sıfır değilse total'a i eklenir, n bir artar. Sonunda total bölü n yazdırılıyor. Ne çıkar? Cevap: A, yani 3. 3'e bölünmeyenler 1, 2, 4, 5 ve 7: toplam 19, n 5. 19 bölü 5, iki int: 3. 3 nokta 8 diyen cast'i kendisi eklemiş; kodda cast yok.

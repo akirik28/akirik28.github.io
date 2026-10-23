@@ -1,0 +1,23 @@
+Sabah evden çıkıyorsun. Yağmur yağıyorsa şemsiyeni alırsın, yağmıyorsa almazsın. Durakta da otobüs gelene kadar beklersin; her dakika yola bakar, gelmediyse yine beklersin. Birinci ünitede programlar yukarıdan aşağı, satır satır akıyordu. Bu ünitede program karar verecek ve tekrar edecek. Bütün bunların kalbinde tek bir soru var: doğru mu, yanlış mı?
+
+Her algoritma üç parçadan yapılır. Sequencing: adımlar sırayla. Selection, yani seçim: bir koşula göre bir yolu seçmek. Iteration, yani tekrar: bir koşul doğru kaldıkça aynı adımları yinelemek. Akış şemasında karar bir baklava şeklidir; içinden evet ve hayır diye iki ok çıkar. Ok geri dönüp aynı baklavaya bağlanıyorsa, orada bir döngü vardır.
+
+Bu doğru ya da yanlış cevabın Java'daki tipi boolean; yalnız iki değeri var: true ve false. Sonucu true ya da false olan ifadeye boolean expression denir. Altı relational operator, yani karşılaştırma operatörü var: küçüktür, büyüktür, küçük eşittir, büyük eşittir, eşit eşittir ve eşit değildir. age 16 olsun. age büyük eşittir 18: false. 7 büyüktür 3: true.
+
+Bu ünitenin bir numaralı tuzağı. Tek eşittir atar; değeri kutuya koyar. Eşit eşittir karşılaştırır; doğru mu diye sorar. if parantezine x eşittir 5 yazarsan, x bir int olduğu için kod derlenmez. Ama boolean bir değişkende daha sinsi: done eşittir true yazarsan derlenir, done'a true atanır ve koşul her seferinde doğru çıkar.
+
+Karşılaştırmadan önce aritmetik hesaplanır. x artı 3 büyüktür 10: önce toplama, sonra karşılaştırma. En çok kullanacağın kalıp: n mod 2 eşit eşittir 0. Kalan sıfırsa sayı çifttir. n mod 5 eşit eşittir 0 ise n, 5'e tam bölünür. 35 için true. Tek sayı için n mod 2 eşit değildir 0 yazarsın.
+
+Bir karşılaştırmanın sonucunu bir değişkende saklayabilirsin. boolean pass eşittir score büyük eşittir 50. score 47 ise pass false olur. Yazdırınca ekranda kelime olarak false çıkar. İyi bir boolean adı bir soru gibi okunur: isEven, hasTicket, pass. Sonra if içinde tek başına kullanırsın.
+
+double sayıları eşit eşittir ile karşılaştırmak risklidir. 0 virgül 1 artı 0 virgül 2, 0 virgül 3'e eşit mi? Java false der, çünkü toplam aslında 0 nokta 30000000000000004. Birinci ünitedeki round-off hatası. Bir de String'ler: küçüktür, büyüktür onlarda çalışmaz; compareTo kullanırsın. String'ler için eşit eşittir de tuzaktır; onu dördüncü bölümde açacağız.
+
+Matematikte 1 küçüktür x küçüktür 10 yazabilirsin. Java'da yazamazsın. Soldan başlar: 1 küçüktür x, true ya da false olur. Sonra true küçüktür 10 sorusu kalır; bir boolean ile sayıyı karşılaştıramazsın ve kod derlenmez. Doğrusu iki ayrı karşılaştırmayı ve ile bağlamak. Onu üçüncü bölümde göreceğiz.
+
+Şimdi bir AP örneği. a 9, b 4. p eşittir a mod b eşit eşittir 1. q eşittir a bölü b büyüktür 2. Sonra p ve q yazdırılıyor. 9 mod 4, 1. 1 eşit eşittir 1: p true. 9 bölü 4: int bölmesi, 2 virgül 25 değil, 2. 2 büyüktür 2: q false. Çıktı true false. Tuzak: bölmeyi ondalıklı yaparsan q'yu true sanırsın.
+
+Sınav için bilmen gereken. Yazman gereken: koşulları doğru operatörle yazmak. Çift sayı için mod 2 eşit eşittir 0, sınır için büyük eşittir ya da küçük eşittir. Bir sonucu boolean değişkende saklamak. Okuman gereken: int bölmesi ve mod ile karışık bir ifadenin true mu false mu olduğu, akış şemasındaki dallar ve tek eşittirle eşit eşittir farkı. Bilmen gerekmeyen: tek ampersand gibi bit operatörleri, soru işaretli kısa if yazımı ve double'ları toleransla karşılaştıran kod.
+
+Toparlayalım. Algoritmalar sıra, seçim ve tekrardan yapılır. Karşılaştırmanın sonucu bir boolean: true ya da false. Tek eşittir atar, eşit eşittir karşılaştırır. Önce aritmetik, sonra karşılaştırma; int bölmesine dikkat. Matematikteki gibi iki karşılaştırmayı zincirleyemezsin.
+
+Şimdi bir soru. x 17, y 5. b eşittir x bölü y eşit eşittir 3 virgül 4. c eşittir x mod y büyük eşittir 2. b ve c yazdırılınca ne çıkar? Cevap: B, yani false true. 17 bölü 5, int bölmesiyle 3; 3, 3 virgül 4'e eşit değil, b false. 17 mod 5, 2; 2 büyük eşittir 2, c true. true diyen bölmeyi ondalıklı yapmış.

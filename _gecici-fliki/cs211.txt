@@ -1,0 +1,23 @@
+İki arkadaş aynı ödevi yapıyor: 1'den 1000'e kadar sayıları topla. Ece bir döngü yazıyor; bin kez toplama yapıyor. Can tek satır yazıyor, küçük Gauss'un formülünü: n çarpı n artı 1, bölü 2. İkisi de 500500 buluyor. Peki hangisi daha az iş yapıyor? Saniye ölçmüyoruz; bir satırın kaç kez çalıştığını sayıyoruz. Bu bölümün adı: informal run-time analysis.
+
+Yöntem basit: bir satır seç, o satırın kaç kez çalıştığını say. i 0'dan i küçüktür n'e, sum artı eşittir i. Bu satır tam n kez çalışır. n 10 ise 10 kez. Bir ayrıntı: koşul bir kez daha, n artı 1 kez kontrol edilir; son kontrol false çıkıp döngüyü bitiren kontroldür. Sınav çoğu zaman gövdedeki bir satırı sorar; hangi satırı sorduğuna dikkat et.
+
+Adım değişince sayım da değişir. i 0'dan küçüktür 10'a, ikişer: 0, 2, 4, 6, 8. Beş kez; yani yaklaşık n bölü 2. n 11 olsaydı 10 da girerdi: altı kez. Bir de ikiye katlayan döngü var: i 1'den başlar, küçüktür 100 oldukça i çarpı eşittir 2. 1, 2, 4, 8, 16, 32 ve 64. Yalnızca 7 kez. 100 sayıya karşı 7 tur; ikiye katlamak, ya da yarıya bölmek, çok hızlı büyür.
+
+İç içe döngülerde sayım çarpılır. Dış döngü n kez, iç döngü her seferinde m kez; içteki satır n çarpı m kez çalışır. n 10, m 20: 200 kez. n ile m eşitse n kare: n 100 olunca içteki satır 10 bin kez çalışır. Dış döngüdeki ama iç döngünün dışındaki bir satır ise yalnız n kez çalışır. Hangi satırın sorulduğuna bak.
+
+İç döngü dış değişkene bağlıysa üçgen sayım gelir. i 1'den n'e, j i'den n'e. İlk tur n kez, sonra n eksi 1, en son 1 kez. Toplam: 1'den n'e kadar sayıların toplamı, yani n çarpı n artı 1, bölü 2. n 10 için 55. Formülü unutursan küçük bir n seç, satır satır say ve topla; şıklar arasından doğruyu bulursun.
+
+Aynı işi yapan iki algoritmayı karşılaştıralım: 1000'in bölenlerini saymak. Birinci yol: d 1'den 1000'e; if satırı 1000 kez çalışır. İkinci yol: 1000'in yarısından büyük bir böleni olamaz, sayının kendisi hariç. d 1'den 500'e kadar say, sonra sayının kendisi için bir ekle. if 500 kez çalışır. İki yol da 16 böleni bulur. Doğruluk aynı, iş yarıya indi. Sınav sorusu: hangisi daha az satır çalıştırır ve sonuç değişir mi?
+
+Başa dönelim. Ece'nin döngüsünde toplama satırı n kez çalışıyor: 1000. Can'ın formülü n ne olursa olsun bir kez çalışıyor. n bir milyon olsa Ece'nin sayacı bir milyona çıkar, Can'ınki yine 1. İşte informal run-time fikri: n büyüdükçe çalışma sayısı nasıl büyüyor? Sabit mi, n gibi mi, n kare gibi mi?
+
+Sayım sorularının tuzakları. Küçük eşittir mi küçüktür mü? 1'den küçük eşittir n'e n tur, 0'dan küçük eşittir n'e n artı 1 tur. İç döngü nereden başlıyor? j eşittir i mi, i artı 1 mi? Üçgende bir satır fark eder. while döngüsünde de aynı: kaç kez yarıya bölündüğünü sayarsın; 64 için 6 kez. Her seferinde küçük bir n ile elle dene.
+
+Şimdi bir AP örneği. count 0. Dış i 0'dan küçüktür 6'ya, birer. İç j 0'dan küçüktür 6'ya, ikişer. count artı artı kaç kez çalışır? İç döngü: j 0, 2, 4. Üç tur. Dış döngü: altı tur. 6 çarpı 3: 18. 36 diyen iç adımı görmemiş; 12 diyen iç döngüyü iki tur saymış. Önce iç döngüyü tek başına say, sonra dışla çarp.
+
+Sınav için bilmen gereken. Yazman gereken: burada kod yazmayacaksın; ama gereksiz tur atmayan döngü yazmak FRQ'da hiçbir zaman zarar vermez. Okuman gereken: bir satırın kaç kez çalıştığı; birer, ikişer ya da katlanarak artan döngüler, iç içe dikdörtgen ve üçgen döngüler; aynı sonucu daha az işle bulan algoritmayı seçmek. Bilmen gerekmeyen: büyük O gösterimi, milisaniye ölçmek ve en iyi, en kötü durum analizinin resmî hali.
+
+Toparlayalım. Çalışma zamanını satır sayarak ölçeriz, saniyeyle değil. Birer artan döngü n, ikişer artan yaklaşık n bölü 2, ikiye katlanan çok az tur döner. İç içe sabit döngüler n çarpı m. Üçgen döngüler n çarpı n artı 1, bölü 2. Emin değilsen küçük bir n ile elle say.
+
+Şimdi bir soru. Dış i 1'den başlıyor, küçük eşittir 8 oldukça her turda iki katına çıkıyor. İç j 0'dan küçüktür i'ye. c artı artı kaç kez çalışır? Cevap: C, yani 15. i: 1, 2, 4 ve 8. İç döngü sırasıyla 1, 2, 4 ve 8 tur. Toplam 15. 32 diyen dışı 4, içi hep 8 saymış; 4 diyen yalnız dış turları saymış.

@@ -1,0 +1,23 @@
+Okulun bahar konserine girmek için iki şart var: biletin olacak ve 15 yaşından büyük olacaksın. Bursun şartı ise farklı: not ortalaman 85'in üstünde olacak ya da okul takımında oynayacaksın. Biri ve, biri veya. Tek bir kelime farkı, kapıdan kimin gireceğini tamamen değiştiriyor. Java'da bu kelimelerin üç operatörü var.
+
+Çift ampersand, yani and. İki taraf da true ise sonuç true; biri bile false ise false. Doğruluk tablosunda dört satırdan yalnız biri true: ikisinin de doğru olduğu satır. age büyüktür 15 ve hasTicket. 16 yaşında ama biletin yoksa: true ve false, sonuç false. Kapı açılmaz.
+
+Çift dik çizgi, yani or. En az biri true ise sonuç true. Tabloda yalnız bir satır false: ikisinin de yanlış olduğu satır. Dikkat: ikisi de doğruysa da true. Günlük dildeki ya o ya bu değil; ikisi birden de olur. Ortalaman 90 ve takımdasın: burs yine onaylanır.
+
+Ünlem işareti, yani not: değeri tersine çevirir. true'yu false, false'u true yapar. Öncelik: not en sıkı bağlanır ve yalnız hemen yanındaki değere uygulanır; bir karşılaştırmayı çevirmek için parantez gerekir. Sonra aritmetik, karşılaştırma, and, en son or. true veya false ve false. Önce and: false ve false, false. Sonra true veya false: true. Parantezle önce or'u yaparsan sonuç false olur. Emin değilsen parantez koy.
+
+En çok yazacağın bileşik ifade: aralık kontrolü. x 1 ile 10 arasında mı? x büyük eşittir 1 ve x küçük eşittir 10. Aralığın dışında mı? x küçüktür 1 veya x büyüktür 10. Tuzak: x büyüktür 1 veya x küçüktür 10 yazarsan her sayı en az birini sağlar; ifade hep true olur. Aralık içi için and, dışı için or.
+
+Şimdi bu bölümün yıldızı: short-circuit evaluation, yani kısa devre. and'de sol taraf false ise sonuç zaten false; Java sağ tarafa hiç bakmaz. Bunu kalkan olarak kullanırsın. count eşit değildir 0 ve total bölü count büyüktür 50. count sıfırsa sol taraf false, bölme hiç yapılmaz. Sırayı ters yazarsan önce sıfıra bölme denenir ve program ArithmeticException ile çöker.
+
+or'da da kısa devre var, ters yönde. Sol taraf true ise sonuç zaten true; sağ taraf atlanır. x eşit eşittir 0 veya 100 bölü x küçüktür 5. x sıfırsa sol taraf true, bölme yapılmaz, hata yok. Kısa kural: and'de false, or'da true gördüğün an dur. Tehlikeli işlemi her zaman sağ tarafa, korumayı sol tarafa koy.
+
+Türkçe bir cümleyi koda çevirmek sınavda puan getirir. Kantin, hafta sonu değilse ve saat 8 ile 17 arasındaysa açık. Ünlem weekend, ve hour büyük eşittir 8, ve hour küçüktür 17. Saat 10 ve hafta içi: true. Cumartesi: false. Saat tam 17: false, çünkü küçüktür yazdık. Sınırları hep ayrıca dene: eşittir dahil mi, değil mi?
+
+Şimdi bir AP örneği. Artık yıl kuralı: year mod 4 sıfır ve year mod 100 sıfır değil, veya year mod 400 sıfır. Bu ifade 1900, 2024 ve 2000 için ne verir? 1900: 4'e bölünür ama 100'e de bölünür; and kısmı false. 400'e bölünmez: false. 2024: and kısmı true; kısa devre, or'un sağına bakılmaz bile. 2000: and kısmı false, ama 400'e bölünür: true. Sonuç false, true, true. and önce bağlandığı için parantez gerekmedi.
+
+Sınav için bilmen gereken. Yazman gereken: koşulları and, or ve not ile birleştirmek; aralık kontrolü; sıfıra bölmeyi ya da null'ı önce kontrol eden kalkanlı koşul. Okuman gereken: bir bileşik ifadenin değeri, and'in or'dan önce bağlanması ve kısa devrede hangi parçanın hiç çalışmadığı. Bilmen gerekmeyen: tek ampersand ve tek dik çizgi ile yazılan, kısa devre yapmayan operatörler.
+
+Toparlayalım. and: ikisi de true olmalı. or: biri yeter. not: tersine çevirir. Önce not, sonra and, sonra or. Aralığın içi and, dışı or. Kısa devre: and'de sol false, or'da sol true ise sağ taraf çalışmaz. Korumayı sola, riskli işlemi sağa yaz.
+
+Şimdi bir soru. a 4, b 0. İlk if: b sıfır değil ve a bölü b büyüktür 1 ise X. else if: a büyüktür 3 veya a bölü b büyüktür 1 ise Y. Değilse Z. Ne yazdırılır? Cevap: B, yani Y. İlk koşulda b sıfır, and'in sol tarafı false; bölme yapılmaz. İkincide a büyüktür 3 true; or kısa devre yapar, yine bölme yok. ArithmeticException diyen kısa devreyi unutmuş.

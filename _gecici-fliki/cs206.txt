@@ -1,0 +1,23 @@
+Beden hocası diyor ki: pistte tam 10 tur. Bu kez kumbaradaki gibi bir hedefe kadar beklemiyorsun; kaç tur döneceğini baştan biliyorsun. Tur sayacını sıfırla, her turda bir artır, 10'a gelince dur. Java'da bu üç işi tek satıra sığdıran döngü for. Sayılı tekrarın en temiz yolu; sınavdaki döngülerin çoğu da bu kalıpta.
+
+for, parantez içinde üç bölüm, noktalı virgülle ayrılmış. Birincisi başlangıç: int i eşittir 0. Yalnız bir kez, en başta çalışır. İkincisi koşul: i küçüktür 5. Her turdan önce kontrol edilir. Üçüncüsü güncelleme: i artı artı. Her turun sonunda, gövdeden sonra çalışır. Sıra şu: başlangıç, koşul, gövde, güncelleme, yine koşul. i'yi yazdırırsan 0 1 2 3 4 çıkar.
+
+Her for döngüsü bir while döngüsüne çevrilebilir, tersi de. Başlangıç döngünün üstüne çıkar, koşul while'ın parantezine girer, güncelleme gövdenin en son satırı olur. İki kod aynı turu döner, aynı çıktıyı verir. Hangisini seçmeli? Tur sayısı belliyse for, bir şey olana kadar dönüyorsan while. Sınav sana çevirme yaptırabilir; bu üç hamleyi ezberle.
+
+Sınavın favori sorusu: döngü kaç tur döner? i a'dan başlıyor, i küçüktür b, birer artıyor: b eksi a tur. 0'dan küçüktür 10'a: 10 tur. Küçük eşittir b ise bir fazla: b eksi a artı 1. 3'ten küçük eşittir 10'a: 8 tur. Formülü unutursan küçük bir örnekle say: 3, 4, 5, 6, 7, 8, 9, 10. Sekiz tane.
+
+Güncelleme her zaman artı artı olmak zorunda değil. i artı eşittir 2 ile 0'dan 10'a: 0, 2, 4, 6, 8, 10. Çift sayılar, altı tur. Geri saymak için i 5'ten başlar, i büyük eşittir 1, i eksi eksi: 5, 4, 3, 2, 1. Yönü kontrol et: geri sayarken koşul büyüktür ya da büyük eşittir olmalı. Yoksa döngü ya hiç dönmez ya da durmaz.
+
+Küçük Gauss'un hikâyesi: öğretmeni 1'den 100'e kadar toplamı sormuş. sum 0. i 1'den küçük eşittir 100'e kadar, sum artı eşittir i. İlk turlar: 1, 3, 6, 10. Yüz turun sonunda 5050. Bu kalıp her FRQ'da karşına çıkar: döngüden önce toplamı sıfırla, döngüde ekle, döngüden sonra kullan.
+
+İki derleyici tuzağı. Başlıkta tanımladığın i yalnız döngünün içinde yaşar. Döngüden sonra i'yi yazdırmak istersen kod derlenmez. İkincisi: başlıktan hemen sonra noktalı virgül. Döngü boş bir gövdeyle üç kez döner, sonra altındaki blok bir kez çalışır. Ekranda üç X değil, tek bir X. Bir de gövdede i'yi değiştirme; tur sayısını izlemek kâbusa döner.
+
+off-by-one burada da var. Görev: 1'den 5'e kadar yazdır. i 1'den, i küçüktür 5: ekranda 1 2 3 4. Beş eksik; döngü 5'e gelince koşul false olur. Ya küçük eşittir 5 yazarsın ya da küçüktür 6. Sınavda şıklar çoğu zaman tam bu farkla ayrılır. İlk değeri, son değeri ve tur sayısını üç ayrı kontrol olarak yap.
+
+Şimdi bir AP örneği. total 0. k 10'dan başlıyor, k büyüktür 0 oldukça k eksi eşittir 3. Gövdede total artı eşittir k. Ne yazdırılır? k: 10, 7, 4 ve 1. Sonraki değer eksi 2; koşul false. 10 artı 7 artı 4 artı 1: 22. Cevap 22, dört tur. 21 diyen 1'i, 20 diyen eksi 2'yi de eklemiş; ikisi de sınır hatası.
+
+Sınav için bilmen gereken. Yazman gereken: n kez dönen bir for, bir aralıkta toplam ya da çarpım biriktirmek, for ile while arasında çevirme. Okuman gereken: tur sayısı, ilk ve son değer, adım ve geri sayma, başlıktan sonraki noktalı virgül. Bilmen gerekmeyen: başlıkta virgülle iki değişken yazmak ve dizilerde kullanılan gelişmiş for; o dördüncü ünitede.
+
+Toparlayalım. for başlığı: başlangıç bir kez, koşul her turdan önce, güncelleme her turdan sonra. Her for bir while'a çevrilebilir. Küçüktür b ile b eksi a tur, küçük eşittir b ile bir fazla. Adım ve yön koşulla uyumlu olmalı. Başlıktaki değişken döngüden sonra yaşamaz.
+
+Şimdi bir soru. s 0. i 2'den başlıyor, küçük eşittir 8, her turda 2 artıyor. Gövdede s artı eşittir i çarpı i. Ne yazdırılır? Cevap: A, yani 120. i: 2, 4, 6, 8. Kareleri 4, 16, 36 ve 64; toplamı 120. 56 diyen 8'i atlamış; 20 diyen kareleri değil sayıları toplamış.

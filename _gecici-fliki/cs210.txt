@@ -1,0 +1,23 @@
+Dijital saate bak. Saat 9'dayken dakika 0'dan 59'a kadar akar. Dakika 59'u geçince sıfırlanır ve saat bir artar. Dakikalar bir döngü, saatler başka bir döngü; dakika döngüsü saat döngüsünün içinde. Buna nested loop, yani iç içe döngü denir. Dördüncü ünitedeki iki boyutlu dizilerin anahtarı da tam olarak bu.
+
+Bir döngünün gövdesine bir döngü daha koyarsın. Dış döngü r 1'den 3'e; iç döngü c 1'den 4'e ve bir yıldız yazdırır. İç döngü bitince println ile alt satıra geçilir. r 1 iken iç döngü baştan sona çalışır: dört yıldız. Sonra r 2, yine dört yıldız. Sonra r 3. 3 satır, her satırda 4 yıldız: 12 yıldız. Kural: dış döngünün her turu için iç döngü tamamen, baştan sona çalışır.
+
+Sırayı görmek için ikisini birden yazdıralım. r 1'den 2'ye, c 1'den 3'e; her turda r ile c'yi yan yana yazdır. Çıktı: 11, 12, 13, sonra 21, 22, 23. Araba kilometre sayacı gibi: sağdaki hane, yani iç döngü hızlı döner; soldaki, yani dış döngü yalnız sağdaki tur tamamlanınca bir artar. Sınavda en sık sorulan: ilk ve son yazdırılan çiftler hangisi?
+
+İç döngü dış döngünün değişkenini kullanabilir. r ve c 1'den 3'e; her hücrede r çarpı c. Ekranda küçük bir çarpım tablosu: 1 2 3, 2 4 6, 3 6 9. Dış döngü 3 tur, iç döngü her seferinde 3 tur: 9 hücre. Genel kural: dış n kez, iç her seferinde m kez dönüyorsa iç gövde n çarpı m kez çalışır.
+
+Asıl ilginç olan, iç döngünün sınırının dış değişkene bağlı olması. r 1'den 4'e; iç döngü c 1'den r'ye. İlk satırda 1 yıldız, sonra 2, 3 ve 4. Ekranda bir üçgen; toplam 1 artı 2 artı 3 artı 4, yani 10 yıldız. 16 değil. Burada çarpım kuralı çalışmaz; her satırı ayrı say ve topla.
+
+İç içe döngü String'lerde ikili karşılaştırma için kullanılır. Soru: kayak kelimesinde aynı olan kaç harf çifti var? Dış i her harf; iç j, i artı 1'den başlayıp sağdaki harfler. k ile sondaki k, a ile ortadaki a. 2 çift. İç döngü neden i artı 1'den başlıyor? 0'dan başlarsa her harf kendisiyle eşleşir ve her çift iki kez sayılır: 9 çıkar.
+
+İç içe döngülerin tuzakları. İki döngüde aynı değişken adını, mesela iki i'yi kullanamazsın; kod derlenmez. Bir satırın toplamını tutuyorsan, satır toplamını dış döngünün içinde, iç döngüden önce sıfırla. Dışarıda sıfırlarsan toplamlar birikir. Alt satıra geçen println iç döngünün dışında, dış döngünün içinde olmalı. İçeride olursa her yıldız ayrı satıra düşer.
+
+İç içe döngüyü izlemenin en güvenli yolu: iki sütunlu bir tablo. Sol sütunda dış değişken, sağ sütunda iç değişkenin aldığı bütün değerler. r 1: c 1. r 2: c 1 ve 2. r 3: c 1, 2, 3. Sağ sütundaki değerleri sayarsan iç gövdenin kaç kez çalıştığını bulursun. Sınavda üç dört satırlık iç içe döngüleri böyle izlersen hata yapmazsın.
+
+Şimdi bir AP örneği. count 0. Dış i 1'den 4'e. İç j, i'den başlayıp 4'e kadar. Gövdede count artı artı. Sonunda count kaç? i 1 iken j 1, 2, 3, 4: dört tur. i 2 iken üç tur. i 3 iken iki. i 4 iken bir. 4 artı 3 artı 2 artı 1: 10. 16 diyen iç döngüyü hep 4 tur saymış; 6 diyen j eşittir i turlarını atlamış.
+
+Sınav için bilmen gereken. Yazman gereken: dış ve iç döngüyü doğru sınırlarla kurmak; satır satır desen yazdırmak, çiftleri karşılaştırmak, iç döngü sınırını dış değişkene bağlamak. Dördüncü ünitedeki iki boyutlu dizi sorusu tam bunu ister. Okuman gereken: çıktının sırası, toplam tur sayısı, üçgen döngüler. Bilmen gerekmeyen: etiketli break ve üçten fazla iç içe döngü.
+
+Toparlayalım. Dış döngünün her turunda iç döngü baştan sona çalışır. İç döngü hızlı, dış döngü yavaş döner; kilometre sayacı gibi. Sabit sınırlarla toplam n çarpı m. İç sınır dış değişkene bağlıysa her satırı ayrı say ve topla. Çiftlerde iç döngüyü i artı 1'den başlat.
+
+Şimdi bir soru. Dış a 1'den 3'e. İç b, a'dan başlayıp 3'e kadar. Her turda a çarpı b ve bir boşluk yazdırılıyor. Çıktı ne? Cevap: D, yani 1 2 3 4 6 9. a 1 iken b 1, 2, 3: 1, 2, 3. a 2 iken b 2, 3: 4, 6. a 3 iken yalnız 3: 9. Dokuz sayılı şık iç döngüyü 1'den başlatmış.

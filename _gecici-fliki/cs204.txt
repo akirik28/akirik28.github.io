@@ -1,0 +1,23 @@
+Müdür yardımcısı iki duyuru asıyor. Birincisi: güneşli ve sıcak bir gün değilse, beden dersi spor salonunda. İkincisi: güneşli değilse veya sıcak değilse, beden dersi spor salonunda. Bu iki cümle aynı şeyi mi söylüyor? Evet, tıpatıp aynı. Sınav bunu sever: farklı görünen iki koşul gerçekten eşdeğer mi?
+
+İki boolean ifade, her olası girdi için aynı değeri veriyorsa equivalent, yani eşdeğerdir. En basit örnek: x büyüktür 5'in değili. Bu, x küçük eşittir 5 demek. x küçüktür 5 değil; 5 sayısının kendisi unutulur. Kural: büyüktürün tersi küçük eşittir, küçüktürün tersi büyük eşittir, eşit eşittirin tersi eşit değildir.
+
+De Morgan's laws, yani De Morgan kuralları. Birincisi: a ve b'nin değili, a'nın değili veya b'nin değili demektir. Ünlemi parantezin içine dağıtırsın; her parça ters döner ve and, or'a dönüşür. Doğruluk tablosuyla bak: dört satırın dördünde de iki sütun aynı. Güneşli ve sıcak değilse demek, güneşli değil veya sıcak değil demektir.
+
+İkinci kural da aynı mantık: a veya b'nin değili, a'nın değili ve b'nin değili demektir. Ünlem içeri girer, or da and'e döner. Kantinde: ne çay ne kahve istiyorum. Yani çay istemiyorum ve kahve de istemiyorum. Hatırlama yolu: ünlem içeri girerken her şeyi çevirir; karşılaştırmaları da, and ve or'u da.
+
+Karşılaştırmalarla birlikte kullanınca iki işi aynı anda yaparsın. x büyük eşittir 1 ve x küçük eşittir 10'un değili. Önce and, or olur. Sonra her karşılaştırma ters döner: büyük eşittir 1, küçüktür 1 olur; küçük eşittir 10, büyüktür 10 olur. Sonuç: x küçüktür 1 veya x büyüktür 10. Aralığın dışı; geçen bölümle birebir aynı. En sık hata: and'i olduğu gibi bırakmak.
+
+Bir iddia doğru mu? Eşdeğer olmadıklarını göstermek için tek bir karşı örnek yeter. a ve b'nin değili ile a'nın değili ve b'nin değili eşdeğer mi? a true, b false dene. Birinci ifade: true ve false, false; değili true. İkinci ifade: false ve true, false. Biri true, biri false: eşdeğer değiller. Ünlemi dağıtıp operatörü çevirmeyi unutmak tam olarak bu hata.
+
+Şimdi nesneleri karşılaştıralım. new ile iki ayrı String oluştur; ikisinin de içinde ece yazsın. Eşit eşittir, referansları karşılaştırır: iki ok aynı nesneyi mi gösteriyor? Burada iki ayrı nesne var, sonuç false. equals ise içeriği karşılaştırır: harfler aynı mı? true. Üçüncü bir değişkene ilkini atarsan iki ok aynı nesneyi gösterir; o zaman eşit eşittir de true verir. Buna alias denir.
+
+null ile karşılaştırma ise her zaman eşit eşittir ile yapılır: s eşit eşittir null. s null iken s nokta equals dersen metot çağrılacak bir nesne yoktur; program NullPointerException ile çöker. Çözüm geçen bölümden: kısa devre. s eşit değildir null ve s nokta equals tırnak içinde evet. null ise sol taraf false, equals hiç çağrılmaz. Kural: içerik için equals, null için eşit eşittir.
+
+Şimdi bir AP örneği. Hangi ifade, score küçüktür 50 veya absent büyüktür 10'un değiline eşdeğerdir? Ünlemi dağıt. or, and olur. score küçüktür 50'nin tersi: score büyük eşittir 50. absent büyüktür 10'un tersi: absent küçük eşittir 10. Cevap: score büyük eşittir 50 ve absent küçük eşittir 10. Çeldiriciler or'u bırakmış ya da sınırı kaçırmış.
+
+Sınav için bilmen gereken. Yazman gereken: String'leri equals ile karşılaştırmak, null kontrolünü önce yazmak ve bir koşulun tersini doğru yazmak; mesela döngüyü durduran koşulu çevirmek. Okuman gereken: verilen ifadelerden hangisinin eşdeğer olduğu, De Morgan, karşı örnekle eleme ve eşit eşittirin referans karşılaştırdığı durumlar. Bilmen gerekmeyen: kendi equals metodunu yazmak ve String'lerin bellekte nasıl paylaşıldığı.
+
+Toparlayalım. Eşdeğer ifadeler her girdi için aynı değeri verir; tek karşı örnek eşdeğerliği bozar. De Morgan: ünlem içeri girer, and ile or yer değiştirir, her parça ters döner. Büyüktürün tersi küçük eşittir. Eşit eşittir aynı nesne mi diye sorar, equals aynı içerik mi diye. null'ı önce kontrol et.
+
+Şimdi bir soru. Hangi ifade, x büyüktür 3 ve y eşit değildir 0'ın değiline eşdeğerdir? Cevap: A. Ünlem içeri girer, and, or olur. x büyüktür 3, x küçük eşittir 3 olur; y eşit değildir 0, y eşit eşittir 0 olur. B, 3'ü unutmuş; C, and'i çevirmemiş; D ise ünlemi hiç uygulamamış.

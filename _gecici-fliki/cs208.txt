@@ -1,0 +1,23 @@
+Okul kartının numarası 2047. Basamaklarının toplamı kaç? Kaç basamaklı? Tersten okununca ne olur? Kafandan hemen bulursun; ama Java sayıyı tek parça görür, basamaklara kendiliğinden ayıramaz. İki küçük operatör bu işi çözer: mod 10 ve bölü 10. Bu bölümde ikisiyle bir sayıyı parça parça söküp yeniden kuracağız.
+
+Önce bölünebilme. n mod d eşit eşittir 0 ise n, d'ye tam bölünür. 84 mod 7, 0: 84, 7'ye tam bölünür. Şimdi asıl numara: 2047 mod 10, 7. Son basamak, çünkü 10'a bölümden kalan hep birler basamağıdır. 2047 bölü 10 ise 204; int bölmesi son basamağı siler. Mod 10 son basamağı verir, bölü 10 onu atar.
+
+İkisini bir while döngüsüne koyunca bütün basamakları sırayla gezersin. n büyüktür 0 olduğu sürece: d eşittir n mod 10, sum artı eşittir d, n bölü eşittir 10. 2047: d 7, sum 7, n 204. Sonra d 4, sum 11, n 20. Sonra d 0, sum 11, n 2. Son tur d 2, sum 13, n 0. n 0 olunca döngü biter. Basamak toplamı 13. Dikkat: basamaklar sağdan sola gelir.
+
+Aynı döngüyle basamak sayısını da bulursun: sum yerine count artı artı. 2047 için 4 tur, 4 basamak. Tuzak: n 0 ise koşul baştan false; döngü hiç dönmez, count 0 kalır. Ama 0 bir basamaklı bir sayı. Sınav sorusu bunu soruyorsa 0'ı ayrıca bir if ile ele alırsın. İkinci tuzak: döngü bitince n 0 olur. Asıl sayıya sonra yine ihtiyacın varsa önce bir kopyasını al.
+
+Bölen saymak da bölünebilme sorusunun döngülü hali. d 1'den n'e kadar; n mod d sıfırsa count artı artı. 12 için bölenler 1, 2, 3, 4, 6 ve 12: altı tane. 13 için yalnız 1 ve 13: iki tane. Bölen sayısı tam 2 ise sayı asaldır. Sınırlara dikkat: döngü 2'den başlayıp n'den önce bitiyorsa 1'i ve sayının kendisini saymaz.
+
+Sayıyı tersine çevirmek de aynı döngüde yapılır. rev 0. Her turda rev eşittir rev çarpı 10 artı n mod 10, sonra n bölü eşittir 10. 2047: rev 7, sonra 74, 740 ve 7402. Tersi kendine eşitse sayı palindromdur: 1221 gibi. Tuzak: 560'ın tersi 065 değil, 65; baştaki sıfır sayıda yaşamaz.
+
+Tek bir basamak istiyorsan döngü gerekmez. Onlar basamağı: önce bölü 10 ile birleri at, sonra mod 10 ile sonuncuyu al. 2047 bölü 10, 204; mod 10, 4. Yüzler basamağı: bölü 100, sonra mod 10. 2047 için 0. İlk basamak içinse döngü kurarsın: n büyük eşittir 10 olduğu sürece bölü 10. Sonunda tek basamak kalır: 2.
+
+Basamak döngülerinin üç tuzağı. Bölü eşittir 10 satırını unutursan n hiç küçülmez, sonsuz döngü. Eksi bir sayıda n büyüktür 0 koşulu baştan false; AP soruları zaten pozitif sayı verir, eksi sayılarda mod sınavda yok. Sıra: önce mod ile basamağı al, sonra böl. Ters yazarsan birler basamağını, 2047'deki 7'yi kaçırırsın.
+
+Şimdi bir AP örneği: en büyük basamak. n 4817, big 0. n büyüktür 0 oldukça: d eşittir n mod 10; d büyüktür big ise big eşittir d; n bölü eşittir 10. d 7: big 7. d 1: değişmez. d 8: big 8. d 4: değişmez. Çıktı 8. İki kalıbı birleştirdin: basamak döngüsü ve en büyük. Burada big 0 ile başlayabilir, çünkü basamaklar hiç eksi olmaz.
+
+Sınav için bilmen gereken. Yazman gereken: mod 10 ve bölü 10 ile basamak döngüsü; basamak toplamı, sayısı ya da en büyüğü; mod ile bölünebilme ve bölen sayma. Okuman gereken: basamak döngüsünün izleme tablosu, tek bir basamağı veren ifadeler ve 0 ile baştaki sıfır gibi uç durumlar. Bilmen gerekmeyen: sayıyı yazıya çevirip harf harf okumak ve eksi sayılarda mod.
+
+Toparlayalım. Mod sıfırsa tam bölünür. Mod 10 son basamağı verir, bölü 10 onu siler. Basamak döngüsü sağdan sola gider ve n 0 olunca biter. 0 için döngü hiç dönmez; asıl sayıya ihtiyacın varsa kopyala. Ters çevirirken çarpı 10 artı son basamak.
+
+Şimdi bir soru. n 9073, s 0. n büyüktür 9 olduğu sürece s artı eşittir n mod 10, n bölü eşittir 10. Sonra s ve n yazdırılıyor. Cevap: B, yani 10 ve 9. Önce 3 eklenir, n 907. Sonra 7, n 90. Sonra 0, n 9. 9 büyüktür 9 değil, döngü durur ve ilk basamak toplanmaz. 19 diyen koşulu büyüktür 0 sanmış.
