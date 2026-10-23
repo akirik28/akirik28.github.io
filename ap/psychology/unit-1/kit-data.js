@@ -892,6 +892,125 @@ window.KIT = {
           "why": "Burun kapanınca iki yiyecek ayırt edilemiyorsa, lezzetin büyük kısmı kokudan geliyordur; bir duyunun ötekini etkilemesi *sensory interaction*'dır. Kokunun *thalamus*'u atlaması doğru bir bilgidir ama bu sonucu açıklamaz."
         }
       ]
+    },
+    {
+      "no": 9,
+      "code": "1.6-2",
+      "slug": "py110",
+      "title": "Görme ve İşitme",
+      "en": "Vision and Hearing",
+      "accent": "#5BC0EB",
+      "defter": "py106",
+      "defterBaslik": "Duyum",
+      "seconds": 263,
+      "terms": [
+        "Wavelength",
+        "Hue",
+        "Amplitude",
+        "Retina",
+        "Rods",
+        "Cones",
+        "Fovea",
+        "Blind spot",
+        "Trichromatic theory",
+        "Opponent-process theory",
+        "Afterimage",
+        "Prosopagnosia",
+        "Blindsight",
+        "Cochlea",
+        "Place theory",
+        "Frequency theory",
+        "Volley theory",
+        "Sensorineural hearing loss"
+      ],
+      "questions": [
+        {
+          "q": "Gece kamp ateşinden uzaklaşan Defne, karanlıkta ağaçların ve çadırların biçimini seçebiliyor ama çadırların hangi renk olduğunu söyleyemiyor. Bunun en iyi açıklaması hangisidir?",
+          "opts": [
+            "Loş ışıkta renk görmeyen *rods* devreye girmiştir",
+            "*Cones* loş ışıkta daha iyi çalışır ama renkleri karıştırır",
+            "Görüntü *blind spot*'a düştüğü için renk kaybolmuştur",
+            "*Opponent-process* kanalları karanlıkta tamamen kapanır"
+          ],
+          "a": 0,
+          "why": "Loş ışıkta *rods* çalışır; bunlar ışığa çok duyarlıdır ama renk ayırt etmez. Renk ve ayrıntı için bol ışık isteyen *cones* gerekir. Bu yüzden karanlıkta biçimler seçilir, renkler seçilmez."
+        },
+        {
+          "q": "Bir öğrenci kırmızı bir bayrağa bir dakika baktıktan sonra beyaz bir duvara bakıyor ve bayrağın yeşil-mavi tonlu bir görüntüsünü görüyor. Bu deneyimi en iyi hangi kuram açıklar?",
+          "opts": [
+            "*Trichromatic theory*",
+            "*Place theory*",
+            "*Opponent-process theory*",
+            "*Frequency theory*"
+          ],
+          "a": 2,
+          "why": "Uzun süre kırmızıya bakınca kırmızı–yeşil karşıt çiftinin kırmızı kanalı yorulur; beyaza bakınca karşıtı öne çıkar ve *afterimage* görülür. *Trichromatic theory* üç koni türünü açıklar ama karşıt renkli art görüntüyü açıklamaz."
+        },
+        {
+          "q": "Tablo, dört sesin frekansını gösteriyor. Hangi ses için *place theory*'nin en iyi açıklama olduğu söylenebilir?",
+          "opts": [
+            "Ses 1",
+            "Ses 2",
+            "Ses 3",
+            "Ses 4"
+          ],
+          "a": 3,
+          "why": "*Place theory* yüksek frekanslı sesleri en iyi açıklar: farklı frekanslar *cochlea*'nın farklı yerlerini titreştirir. Tablodaki en yüksek frekans Ses 4'tür (8.000 Hz). Düşük frekanslı Ses 1 için *frequency theory* daha uygundur.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ses",
+              "Kaynak",
+              "Frekans"
+            ],
+            "rows": [
+              [
+                "1",
+                "Büyük davul",
+                "60 Hz"
+              ],
+              [
+                "2",
+                "Erkek konuşma sesi",
+                "150 Hz"
+              ],
+              [
+                "3",
+                "Piyanonun orta notası",
+                "260 Hz"
+              ],
+              [
+                "4",
+                "Kuş ötüşü",
+                "8.000 Hz"
+              ]
+            ],
+            "caption": "Yaklaşık frekanslar"
+          }
+        },
+        {
+          "q": "Bir kazadan sonra hastanın gözleri ve görme korteksi sağlam; nesneleri, renkleri ve harfleri sorunsuz tanıyor. Ama en yakın arkadaşını yüzünden tanıyamıyor, ancak sesini duyunca tanıyor. Bu durum en iyi hangi kavramla açıklanır?",
+          "opts": [
+            "*Blindsight*",
+            "*Prosopagnosia*",
+            "*Color vision deficiency*",
+            "*Sensory adaptation*"
+          ],
+          "a": 1,
+          "why": "Görme genel olarak sağlamken yalnızca yüzlerin tanınamaması *prosopagnosia*'dır. *Blindsight*'ta ise kişi bilinçli olarak görmediğini söylediği uyaranlara tepki verebilir; burada hasta yüzleri görüyor ama tanıyamıyor."
+        },
+        {
+          "q": "Kulak zarında yırtık olan bir hasta ile yıllarca gürültülü bir fabrikada çalışmış bir hastanın işitme kayıpları karşılaştırılıyor. Hangi ifade doğrudur?",
+          "opts": [
+            "İkisi de *sensorineural hearing loss*'tur",
+            "Yırtık zar *sensorineural*, gürültü *conduction* kaybına yol açar",
+            "İkisi de yalnızca işitme siniri hasarıdır",
+            "Yırtık zar *conduction*, gürültü ise tüy hücrelerine zarar vererek *sensorineural* kayba yol açar"
+          ],
+          "a": 3,
+          "why": "Kulak zarı ya da orta kulak kemikleri sesin iç kulağa iletilmesini sağlar; buradaki hasar *conduction hearing loss*'tur. Uzun süreli gürültü *cochlea*'daki tüy hücrelerini bozar; bu *sensorineural hearing loss*'tur."
+        }
+      ]
     }
   ],
   "final": []
