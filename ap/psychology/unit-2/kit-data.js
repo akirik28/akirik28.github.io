@@ -606,6 +606,87 @@ window.KIT = {
     },
     {
       "no": 7,
+      "code": "2.5",
+      "slug": "py207",
+      "title": "Bellekte Depolama",
+      "en": "Storing Memories",
+      "accent": "#5BC0EB",
+      "defter": "py205",
+      "seconds": 247,
+      "terms": [
+        "Sensory memory",
+        "Iconic memory",
+        "Echoic memory",
+        "Short-term memory",
+        "Maintenance rehearsal",
+        "Elaborative rehearsal",
+        "Long-term potentiation",
+        "HSAM",
+        "Anterograde amnesia",
+        "Retrograde amnesia",
+        "Alzheimer's disease",
+        "Infantile amnesia"
+      ],
+      "questions": [
+        {
+          "q": "Bir deneyde ekranda üç satır harf, toplam 12 harf, yalnız 0,05 saniye gösteriliyor. Ekran kararır kararmaz bir ses hangi satırın söyleneceğini belirtiyor; katılımcılar hangi satır istenirse istensin dört harfin çoğunu söyleyebiliyor. Ses bir saniye geciktirilince başarı çok düşüyor. Bu bulgular en çok neyi destekler?",
+          "opts": [
+            "*Iconic memory* bütün görüntüyü çok kısa süre tutar",
+            "*Short-term memory*'nin kapasitesi sınırsızdır",
+            "*Echoic memory* görsel bilgiyi tutar",
+            "Harfler doğrudan *long-term memory*'ye kodlanır"
+          ],
+          "a": 0,
+          "why": "Hangi satır istenirse istensin söylenebiliyorsa, o an üç satırın tamamı bellekte demektir. Bir saniye sonra iz kaybolur. Çok kısa süren, geniş kapasiteli görsel kayıt *iconic memory*'dir."
+        },
+        {
+          "q": "Doruk yeni tanıştığı birinin adını unutmamak için içinden \"Ilgın, Ilgın, Ilgın\" diye tekrar ediyor. Ardından adı, en sevdiği ağaç türü olan ılgınla ilişkilendiriyor. Bu iki strateji sırasıyla nedir?",
+          "opts": [
+            "*Elaborative rehearsal*; *maintenance rehearsal*",
+            "*Iconic memory*; *echoic memory*",
+            "*Maintenance rehearsal*; *elaborative rehearsal*",
+            "*Retrograde amnesia*; *long-term potentiation*"
+          ],
+          "a": 2,
+          "why": "Yalnızca tekrar etmek bilgiyi kısa süreli bellekte canlı tutar: *maintenance rehearsal*. Bilgiyi anlamlı bir bağlantıyla işlemek ise *elaborative rehearsal*'dır ve uzun süreli belleğe taşır."
+        },
+        {
+          "q": "Bir laboratuvar çalışmasında iki nöron arasındaki bağlantı kısa aralıklarla defalarca uyarılıyor. Haftalar sonra aynı zayıf uyaran, alıcı nöronda öncekinden çok daha güçlü bir tepki yaratıyor. Bu, belleğin hangi biyolojik temeline örnektir?",
+          "opts": [
+            "*Infantile amnesia*",
+            "*Long-term potentiation*",
+            "*Maintenance rehearsal*",
+            "*Echoic memory*"
+          ],
+          "a": 1,
+          "why": "Tekrarlanan uyarımla sinapsın kalıcı olarak güçlenmesi *long-term potentiation*'dır. Öğrenme ve uzun süreli belleğin hücresel temeli kabul edilir."
+        },
+        {
+          "q": "Bir futbolcu kafa travması geçiriyor. Hastanede, maçtan önceki iki günü hiç hatırlamadığını ama yeni tanıştığı hemşirenin adını ertesi gün rahatça söyleyebildiğini fark ediyorlar. Bu tablo en iyi hangisiyle açıklanır?",
+          "opts": [
+            "*Anterograde amnesia*",
+            "*Infantile amnesia*",
+            "*Alzheimer's disease*",
+            "*Retrograde amnesia*"
+          ],
+          "a": 3,
+          "why": "Kaybolan anılar hasardan öncesine ait; yeni anı oluşturma ise sağlam. Bu *retrograde amnesia*'dır. Yeni anı oluşturamasaydı *anterograde* olurdu."
+        },
+        {
+          "q": "Bir nöroloğun notlarında 75 yaşındaki bir hastanın son iki yılda giderek artan biçimde az önce yapılan konuşmaları unuttuğu, son aylarda torunlarının adlarını karıştırmaya ve yemek yaparken adımları şaşırmaya başladığı yazıyor. Hangi açıklama en uygundur?",
+          "opts": [
+            "Ani bir kaza sonrası *retrograde amnesia*",
+            "Yalnız *iconic memory*'yi etkileyen bir bozukluk",
+            "İlerleyici bir hastalık olan *Alzheimer's disease*",
+            "*Infantile amnesia*'nın yetişkinlikte ortaya çıkması"
+          ],
+          "a": 2,
+          "why": "Yavaş ve giderek artan, önce yeni bilgileri sonra eski anıları ve becerileri etkileyen kayıp *Alzheimer's disease*'in tipik seyridir. Ani bir hasar ya da bebeklik dönemiyle ilgili değildir."
+        }
+      ]
+    },
+    {
+      "no": 8,
       "code": "2.6",
       "slug": "py208",
       "title": "Bellekten Geri Getirme",
