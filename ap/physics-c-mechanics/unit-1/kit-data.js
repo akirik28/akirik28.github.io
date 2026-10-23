@@ -201,6 +201,141 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "M.3",
+      "slug": "pc103",
+      "title": "İntegral: Ters Türev ve Alan",
+      "en": "Antiderivatives, Initial Conditions and Area",
+      "accent": "#58C9FF",
+      "seconds": 277,
+      "terms": [
+        "Antiderivative",
+        "Indefinite integral",
+        "Constant of integration",
+        "Initial condition",
+        "Definite integral",
+        "Signed area",
+        "Riemann sum",
+        "Fundamental Theorem of Calculus",
+        "u-substitution"
+      ],
+      "questions": [
+        {
+          "q": "∫(4t³ − 6t) dt nedir?",
+          "opts": [
+            "12t² − 6 + C",
+            "t⁴ − 6t² + C",
+            "4t⁴ − 3t² + C",
+            "t⁴ − 3t² + C"
+          ],
+          "a": 3,
+          "why": "Kuvvet kuralı: 4t³ → 4t⁴/4 = t⁴; −6t → −6t²/2 = −3t². Kontrol: (t⁴ − 3t²)' = 4t³ − 6t. 12t² − 6 türevdir, integral değil."
+        },
+        {
+          "q": "Bir parçacık için dx/dt = 2t + 3 (m/s) ve x(0) = −1 m'dir. x(2) kaçtır?",
+          "opts": [
+            "10 m",
+            "9 m",
+            "7 m",
+            "−1 m"
+          ],
+          "a": 1,
+          "why": "x = t² + 3t + C; x(0) = C = −1. x(2) = 4 + 6 − 1 = 9 m. 10, C'yi unutup ters türevi yazandır."
+        },
+        {
+          "q": "∫ (1'den 4'e) √t dt kaçtır?",
+          "opts": [
+            "14/3",
+            "16/3",
+            "3",
+            "7/2"
+          ],
+          "a": 0,
+          "why": "√t = t^(1/2); ters türev (2/3)t^(3/2). (2/3)(4^(3/2) − 1) = (2/3)(8 − 1) = 14/3 ≈ 4,67. 16/3, alt sınırı çıkarmayı unutandır."
+        },
+        {
+          "q": "Grafikteki f fonksiyonu için ∫ (0'dan 2'ye) f(t) dt kaçtır?",
+          "opts": [
+            "8",
+            "4",
+            "6",
+            "2"
+          ],
+          "a": 2,
+          "why": "0–2 arasında alan bir yamuk: kenarlar f(0) = 4 ve f(2) = 2, genişlik 2. (4 + 2)/2 · 2 = 6. 8, 0–4 arasının tamamıdır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "t",
+            "ylabel": "f(t)",
+            "xmax": 5,
+            "ymax": 5,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  4
+                ],
+                "to": [
+                  4,
+                  0
+                ],
+                "label": "f"
+              }
+            ],
+            "points": [
+              {
+                "q": 0,
+                "p": 4,
+                "label": "(0, 4)"
+              },
+              {
+                "q": 2,
+                "p": 2,
+                "label": "(2, 2)"
+              },
+              {
+                "q": 4,
+                "p": 0,
+                "label": "(4, 0)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "caption": "f'nin grafiği"
+          }
+        },
+        {
+          "q": "∫cos(2t) dt nedir?",
+          "opts": [
+            "2 sin(2t) + C",
+            "½ sin(2t) + C",
+            "−½ sin(2t) + C",
+            "sin(2t) + C"
+          ],
+          "a": 1,
+          "why": "İç fonksiyon 2t'nin türevi 2; ona bölünür: ½ sin(2t) + C. Kontrol: (½ sin 2t)' = ½ · 2 cos 2t = cos 2t. 2 sin 2t'nin türevi 4 cos 2t olurdu."
+        }
+      ]
     }
   ],
   "final": [],
