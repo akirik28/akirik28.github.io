@@ -106,6 +106,87 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "2.1-2",
+      "slug": "py202",
+      "title": "Gestalt, Derinlik ve Sabitlik",
+      "en": "Gestalt, Depth Perception, and Constancy",
+      "accent": "#3FB5A0",
+      "defter": "py201",
+      "defterBaslik": "Algı",
+      "seconds": 241,
+      "terms": [
+        "Gestalt",
+        "Figure-ground",
+        "Proximity",
+        "Similarity",
+        "Closure",
+        "Retinal disparity",
+        "Convergence",
+        "Monocular cues",
+        "Perceptual constancy",
+        "Phi phenomenon",
+        "Stroboscopic motion"
+      ],
+      "questions": [
+        {
+          "q": "Okul broşüründe öğrenci kulüpleri listeleniyor. Tasarımcı her kulübün adını ve saatini birbirine çok yakın yazıyor, kulüpler arasına ise geniş boşluk bırakıyor. Okuyucular hangi bilginin hangi kulübe ait olduğunu kolayca anlıyor. Bu etki hangi Gestalt ilkesine dayanır?",
+          "opts": [
+            "*Closure*",
+            "*Similarity*",
+            "*Figure-ground*",
+            "*Proximity*"
+          ],
+          "a": 3,
+          "why": "Yakın duran öğeleri aynı grup olarak algılarız; bu *proximity*'dir. Renk ya da biçim benzerliği olsaydı *similarity*, eksik bir şekli tamamlama olsaydı *closure* olurdu."
+        },
+        {
+          "q": "Bir göz doktoru, bir gözünü kaza sonucu kaybeden bir hastanın merdiven inerken ve bardağa su koyarken zorlandığını not ediyor. Hasta uzak dağların hangisinin daha uzakta olduğunu ise rahatça söyleyebiliyor. Hastanın en çok kaybettiği ipucu hangisidir?",
+          "opts": [
+            "*Retinal disparity*",
+            "*Linear perspective*",
+            "*Texture gradient*",
+            "*Relative clarity*"
+          ],
+          "a": 0,
+          "why": "*Retinal disparity* iki gözün görüntüsünü karşılaştırır ve en çok yakın mesafede işe yarar; tek gözle kaybolur. Uzak dağlar için kullandığı *relative clarity*, *linear perspective* ve *texture gradient* tek gözle de çalışan *monocular cues*'dur."
+        },
+        {
+          "q": "Bir ressam tuvalinde yolun iki kenarını ufukta birleştiriyor, öndeki çimeni iri ve ayrıntılı, uzaktakini sık ve bulanık çiziyor. Ressam hangi iki ipucunu kullanıyor?",
+          "opts": [
+            "*Convergence* ve *retinal disparity*",
+            "*Linear perspective* ve *texture gradient*",
+            "*Interposition* ve *relative size*",
+            "*Closure* ve *proximity*"
+          ],
+          "a": 1,
+          "why": "Paralel çizgilerin uzakta birleşmesi *linear perspective*, dokunun uzaklaştıkça sıklaşıp bulanıklaşması *texture gradient*'tir. Tuval tek bir düz yüzey olduğundan ressam yalnızca *monocular cues* kullanabilir; *convergence* ve *retinal disparity* iki göz ister."
+        },
+        {
+          "q": "Defne, kuzeninin okul bahçesinin öbür ucuna yürüdüğünü izliyor. Kuzeninin retinadaki görüntüsü giderek küçülüyor ama Defne onun küçüldüğünü düşünmüyor. Bu hangi kavrama örnektir ve hangi ipucuna dayanır?",
+          "opts": [
+            "*Shape constancy*; *closure*",
+            "*Phi phenomenon*; *convergence*",
+            "*Size constancy*; uzaklık bilgisi",
+            "*Change blindness*; *proximity*"
+          ],
+          "a": 2,
+          "why": "Retina görüntüsü küçüldüğü hâlde cismin gerçek boyunu sabit algılamak *size constancy*'dir. Beyin küçülmeyi uzaklaşmaya bağlar; bunu derinlik ipuçlarıyla birlikte yapar."
+        },
+        {
+          "q": "Bir araştırmacı karanlık bir odada iki küçük ışığı, aralarında kısa bir süre bırakarak sırayla yakıp söndürüyor. Süre kısayken katılımcılar tek bir ışığın bir yerden ötekine kaydığını söylüyor; süre çok uzayınca iki ayrı ışık görüyorlar. Bu bulgu en iyi ne ile açıklanır?",
+          "opts": [
+            "*Size constancy*",
+            "*Phi phenomenon*",
+            "*Retinal disparity*",
+            "*Figure-ground*"
+          ],
+          "a": 1,
+          "why": "Hiçbir ışık hareket etmiyor; yeterince hızlı sırayla yanıp sönen ışıkları beyin tek bir hareket olarak algılıyor. Bu, *apparent motion*'ın bir türü olan *phi phenomenon*'dur. Aradaki süre uzayınca yanılsama kaybolur."
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "2.2-1",
       "slug": "py203",
       "title": "Kavramlar, Algoritmalar ve Sezgiseller",
