@@ -1445,6 +1445,172 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "2.8-1",
+      "slug": "mi206",
+      "title": "Fiyat Tavanı ve Fiyat Tabanı",
+      "en": "Price Ceilings and Price Floors",
+      "accent": "#5C8DFF",
+      "seconds": 239,
+      "terms": [
+        "Price ceiling",
+        "Price floor",
+        "Binding",
+        "Non-binding",
+        "Shortage",
+        "Surplus",
+        "Black market",
+        "Minimum wage",
+        "Quantity control (quota)",
+        "Deadweight loss"
+      ],
+      "questions": [
+        {
+          "q": "Grafikte dikey eksende 1 birim 10 lira, yatay eksende 1 birim 100 bilettir. Devlet konser biletine 30 liralık bir fiyat tavanı koyuyor. Sonuç nedir?",
+          "opts": [
+            "400 biletlik *surplus*",
+            "400 biletlik *shortage*",
+            "700 biletlik *shortage*",
+            "Hiçbir değişiklik olmaz; tavan bağlayıcı değildir"
+          ],
+          "a": 1,
+          "why": "Denge 50 lira. 30 liralık tavan dengenin altında, yani bağlayıcı. Bu fiyatta talep edilen miktar 700, arz edilen 300 bilet; fark 700 − 300 = 400 biletlik *shortage*. 700 yalnızca talep edilen miktardır.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "Quantity",
+            "ylabel": "Price",
+            "xmax": 10,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  10
+                ],
+                "to": [
+                  10,
+                  0
+                ],
+                "label": "D"
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  10,
+                  10
+                ],
+                "label": "S"
+              }
+            ],
+            "points": [
+              {
+                "q": 5,
+                "p": 5,
+                "label": "E",
+                "guides": true
+              },
+              {
+                "q": 3,
+                "p": 3,
+                "label": "A",
+                "guides": true
+              },
+              {
+                "q": 7,
+                "p": 3,
+                "label": "B",
+                "guides": true
+              }
+            ],
+            "hlines": [
+              {
+                "p": 3,
+                "label": "Ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "q": "Tablo süt piyasasını gösteriyor. Devlet litre başına 50 liralık bir fiyat tabanı koyuyor. Ne olur?",
+          "opts": [
+            "40 litrelik *surplus* oluşur; satılan miktar 30 litreye düşer.",
+            "40 litrelik *shortage* oluşur; fiyat 40 liraya iner.",
+            "Taban dengenin altında olduğu için bağlayıcı değildir.",
+            "70 litrelik *surplus* oluşur; satılan miktar 70 litre olur."
+          ],
+          "a": 0,
+          "why": "Denge 40 lira ve 50 litre. 50 liralık taban dengenin üstünde, yani bağlayıcı. Bu fiyatta 70 litre arz edilir ama yalnızca 30 litre talep edilir: 70 − 30 = 40 litre *surplus*. Alıcılar 30 litre aldığı için satılan miktar 30'dur.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Price (TL/litre)",
+              "Qd (litre)",
+              "Qs (litre)"
+            ],
+            "rows": [
+              [
+                "30",
+                "70",
+                "30"
+              ],
+              [
+                "40",
+                "50",
+                "50"
+              ],
+              [
+                "50",
+                "30",
+                "70"
+              ],
+              [
+                "60",
+                "10",
+                "90"
+              ]
+            ],
+            "caption": "Süt piyasası"
+          }
+        },
+        {
+          "q": "Bir malın denge fiyatı 100 liradır. Aşağıdaki kontrollerden hangisi bağlayıcıdır, yani piyasa sonucunu değiştirir?",
+          "opts": [
+            "120 liralık fiyat tavanı",
+            "80 liralık fiyat tabanı",
+            "80 liralık fiyat tavanı",
+            "90 liralık fiyat tabanı"
+          ],
+          "a": 2,
+          "why": "Tavan dengenin altındaysa, taban dengenin üstündeyse bağlayıcıdır. 80 liralık tavan fiyatın dengeye çıkmasını engeller ve *shortage* yaratır. 120'lik tavan ile 80 ve 90'lık tabanlar dengenin yanlış tarafında kaldığı için etkisizdir."
+        },
+        {
+          "q": "Emek piyasasında denge ücretinin üstünde bir asgari ücret uygulanıyor. Aşağıdakilerden hangisi doğrudur?",
+          "opts": [
+            "İşverenlerin talep ettiği emek, çalışmak isteyenlerden fazla olur.",
+            "Asgari ücret dengenin üstünde olduğu için bağlayıcı değildir.",
+            "Ücret düşer ve istihdam artar.",
+            "Çalışmak isteyen kişi sayısı işverenlerin talebini aşar; işsizlik oluşur."
+          ],
+          "a": 3,
+          "why": "Asgari ücret emek piyasasında bir fiyat tabanıdır. Dengenin üstünde olduğu için bağlayıcıdır: arz edilen emek artar, talep edilen emek azalır. Aradaki emek fazlası işsizliktir."
+        },
+        {
+          "q": "Rekabetçi bir piyasada bağlayıcı bir fiyat tavanı uygulanıyor. Aşağıdakilerden hangisi KESİNLİKLE doğrudur?",
+          "opts": [
+            "Tüketici artığı kesinlikle azalır.",
+            "Satılan miktar azalır, üretici artığı düşer ve *deadweight loss* oluşur.",
+            "Satılan miktar artar, çünkü fiyat düşer.",
+            "Toplam artık değişmez; artık yalnızca üreticiden tüketiciye geçer."
+          ],
+          "a": 1,
+          "why": "Tavanda üreticiler daha az arz eder; satılan miktar arz edilen miktara düşer, üretici artığı küçülür ve yapılamayan alışverişler *deadweight loss* olur. Tüketici artığı ise duruma göre artabilir ya da azalabilir: ucuza ev bulanlar kazanır, bulamayanlar kaybeder."
+        }
+      ]
     }
   ],
   "final": []
