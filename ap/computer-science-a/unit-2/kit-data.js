@@ -562,6 +562,103 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "2.10",
+      "slug": "cs209",
+      "title": "String Algoritmaları",
+      "en": "Implementing String Algorithms",
+      "accent": "#F25F5C",
+      "defter": "cs207",
+      "seconds": 310,
+      "terms": [
+        "Traverse",
+        "substring",
+        "length",
+        "indexOf",
+        "equals",
+        "Immutable",
+        "Palindrome",
+        "StringIndexOutOfBoundsException"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "okul",
+            "kulo",
+            "luko",
+            "l"
+          ],
+          "a": 2,
+          "why": "Her harf r'nin önüne eklenir: o → ko → uko → luko. Önüne eklemek kelimeyi ters çevirir.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"okul\";\nString r = \"\";\nfor (int i = 0; i < s.length(); i++) {\n  r = s.substring(i, i + 1) + r;\n}\nSystem.out.println(r);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod çalıştırılınca ne olur?",
+          "opts": [
+            "abc yazdırır ve normal biter.",
+            "ab yazdırır ve normal biter.",
+            "abc yazdırır, sonra StringIndexOutOfBoundsException fırlatır.",
+            "Kod derlenmez."
+          ],
+          "a": 2,
+          "why": "i = 0, 1, 2 için a, b, c yazdırılır. <= yüzünden i = 3 turu da çalışır; substring(3, 4) üç harfli bir String'in sınırı dışındadır ve istisna fırlatılır.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"abc\";\nfor (int i = 0; i <= s.length(); i++) {\n  System.out.print(s.substring(i, i + 1));\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "3",
+            "4",
+            "5",
+            "10"
+          ],
+          "a": 1,
+          "why": "bilgisayar: b-i-l-g-i-s-a-y-a-r. Sesli harfler i, i, a, a. vowels.indexOf bu dört harf için 0 ya da daha büyük, diğerleri için −1 döndürür.",
+          "fig": {
+            "type": "code",
+            "code": "String w = \"bilgisayar\";\nString vowels = \"aeıioöuü\";\nint count = 0;\nfor (int i = 0; i < w.length(); i++) {\n  String ch = w.substring(i, i + 1);\n  if (vowels.indexOf(ch) >= 0) count++;\n}\nSystem.out.println(count);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "2",
+            "5",
+            "3",
+            "6"
+          ],
+          "a": 2,
+          "why": "İki harflik parçalar: ne, en, ne, en, ne. ne üç kez geçer (index 0, 2, 4). Son başlangıç length − 2 = 4.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"nenene\";\nint c = 0;\nfor (int i = 0; i <= s.length() - 2; i++) {\n  if (s.substring(i, i + 2).equals(\"ne\")) c++;\n}\nSystem.out.println(c);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "ersler",
+            "ers",
+            "ler",
+            "dersler"
+          ],
+          "a": 3,
+          "why": "*String* değişmezdir (*immutable*). s.substring(1) yeni bir String üretir ama atanmadığı için kaybolur; s hâlâ ders. Sonra s += \"ler\" ile dersler olur.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"ders\";\ns.substring(1);\ns += \"ler\";\nSystem.out.println(s);"
+          }
+        }
+      ]
     }
   ],
   "final": []
