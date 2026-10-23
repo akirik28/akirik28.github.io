@@ -181,6 +181,101 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "2.6",
+      "slug": "cs204",
+      "title": "De Morgan, Eşdeğer İfadeler ve equals",
+      "en": "Equivalent Boolean Expressions and Comparing Objects",
+      "accent": "#5C8DFF",
+      "defter": "cs203",
+      "defterBaslik": "Bileşik Boolean İfadeler ve De Morgan",
+      "seconds": 279,
+      "terms": [
+        "Equivalent Boolean expressions",
+        "De Morgan's laws",
+        "Truth table",
+        "Counterexample",
+        "Reference equality (==)",
+        "equals",
+        "Alias",
+        "null",
+        "NullPointerException"
+      ],
+      "questions": [
+        {
+          "q": "a ve b boolean değişkenlerdir. Aşağıdaki ifadeye eşdeğer olan hangisi?",
+          "opts": [
+            "!a || b",
+            "a && !b",
+            "!a && b",
+            "!a && !b"
+          ],
+          "a": 2,
+          "why": "De Morgan: !(a || !b) → !a && !(!b). Çift değil kendini götürür: !a && b. Dört satırın hepsinde aynı değeri verir.",
+          "fig": {
+            "type": "code",
+            "code": "!(a || !b)"
+          }
+        },
+        {
+          "q": "n bir int değişkendir. Aşağıdaki ifadeye eşdeğer olan hangisi?",
+          "opts": [
+            "n % 2 != 0 && n <= 10",
+            "n % 2 != 0 || n <= 10",
+            "n % 2 != 0 || n < 10",
+            "n % 2 == 0 || n <= 10"
+          ],
+          "a": 1,
+          "why": "Ünlem içeri girer: && → ||; n % 2 == 0 → n % 2 != 0; n > 10 → n <= 10. n < 10 yazan şık n = 10'da, == bırakan şık n = 12'de yanlış sonuç verir.",
+          "fig": {
+            "type": "code",
+            "code": "!(n % 2 == 0 && n > 10)"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "true true true",
+            "false true false",
+            "false true true",
+            "true true false"
+          ],
+          "a": 2,
+          "why": "s1 ve s2 *new* ile oluşturulmuş iki ayrı nesne: == *false*. İçerikleri aynı: *equals* *true*. s3 = s1 bir *alias*; ikisi aynı nesneyi gösterir: == *true*.",
+          "fig": {
+            "type": "code",
+            "code": "String s1 = new String(\"kitap\");\nString s2 = new String(\"kitap\");\nString s3 = s1;\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2) + \" \" + (s1 == s3));"
+          }
+        },
+        {
+          "q": "name adlı String değişken null olabilir. Aşağıdaki koşullardan hangisi name null olsa bile hiçbir zaman NullPointerException fırlatmaz?",
+          "opts": [
+            "name.equals(\"Ali\") && name != null",
+            "name.length() > 0 || name == null",
+            "name != null && name.equals(\"Ali\")",
+            "name.equals(null)"
+          ],
+          "a": 2,
+          "why": "Kalkan solda olmalı: name null ise name != null *false* olur ve kısa devre *equals* çağrısını atlar. Diğer üçünde metot null bir referans üzerinde önce çağrılır."
+        },
+        {
+          "q": "p ve q boolean değişkenlerdir. Aşağıdakilerden hangisi !(p && q) ifadesine eşdeğerdir?",
+          "opts": [
+            "Yalnız I",
+            "Yalnız II",
+            "I ve II",
+            "Hiçbiri"
+          ],
+          "a": 1,
+          "why": "De Morgan: !(p && q) ≡ !p || !q, yani II. I için karşı örnek p = true, q = false: !(p && q) *true*, ama !p && !q *false*.",
+          "fig": {
+            "type": "code",
+            "code": "I.  !p && !q\nII. !p || !q"
+          }
+        }
+      ]
     }
   ],
   "final": []
