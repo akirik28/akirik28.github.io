@@ -599,6 +599,103 @@ window.KIT = {
           "why": "*Primacy effect* baştaki öğeleri tekrar etmeye bağlıdır; tekrar fırsatı olmayınca zayıflar. Hemen ardından yazıldığı için son isimler hâlâ kısa süreli bellektedir; *recency effect* korunur."
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "2.6",
+      "slug": "py208",
+      "title": "Bellekten Geri Getirme",
+      "en": "Retrieving Memories",
+      "accent": "#9BC53D",
+      "defter": "py206",
+      "seconds": 256,
+      "terms": [
+        "Recall",
+        "Recognition",
+        "Relearning",
+        "Retrieval cues",
+        "Context-dependent memory",
+        "State-dependent memory",
+        "Mood-congruent memory",
+        "Testing effect",
+        "Metacognition",
+        "Reconsolidation"
+      ],
+      "questions": [
+        {
+          "q": "Bir öğretmen 20 biyoloji terimini öğreten bir dersten sonra öğrencilerini iki biçimde test ediyor. Sonuçlar tabloda. Bu farkın en iyi açıklaması hangisidir?",
+          "opts": [
+            "*Recognition*'da seçenekler ipucu işlevi görür, bu yüzden *recall*'dan kolaydır",
+            "*Recall* testleri bilgiyi uzun süreli bellekten silmiştir",
+            "Öğrenciler *recognition* testinde *mood-congruent memory* kullanmıştır",
+            "Terimler yalnızca *sensory memory*'de depolanmıştır"
+          ],
+          "a": 0,
+          "why": "Boşluk doldurmada 20 terimin 7'si (yüzde 35), çoktan seçmelide 16'sı (yüzde 80) doğru. Çoktan seçmelide doğru cevap gözünün önünde ve bir *retrieval cue* gibi çalışır; *recognition* bu yüzden *recall*'dan kolaydır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Test türü",
+              "Doğru sayısı (20 üzerinden)"
+            ],
+            "rows": [
+              [
+                "Boşluk doldurma",
+                "7"
+              ],
+              [
+                "Çoktan seçmeli",
+                "16"
+              ]
+            ],
+            "caption": "Aynı öğrenciler, aynı terimler · örnek veri"
+          }
+        },
+        {
+          "q": "Yüzme takımı kaptanı Ege, antrenörün havuz kenarında anlattığı yeni taktikleri soyunma odasında hatırlayamıyor; havuza geri dönünce hepsi aklına geliyor. Bu durum en iyi neyle açıklanır?",
+          "opts": [
+            "*State-dependent memory*",
+            "*Context-dependent memory*",
+            "*Relearning*",
+            "*Metacognition*"
+          ],
+          "a": 1,
+          "why": "Bilgiyi kodladığı ortama dönünce ortamın kendisi bir *retrieval cue* oluyor. Bu *context-dependent memory*'dir. Bedensel durum değişmediği için *state-dependent* değildir."
+        },
+        {
+          "q": "Hangi eşleştirme doğrudur?",
+          "opts": [
+            "Moralsizken aklına hep başarısız olduğun sınavların gelmesi → *state-dependent memory*",
+            "Sınıfta öğrendiğini sınıfta daha iyi hatırlamak → *mood-congruent memory*",
+            "Grip ilacı etkisindeyken öğrendiğini yine ilaç etkisindeyken daha iyi hatırlamak → *state-dependent memory*",
+            "Unuttuğun bir şarkıyı ikinci kez daha çabuk öğrenmek → *recognition*"
+          ],
+          "a": 2,
+          "why": "Öğrenme ve hatırlama sırasındaki bedensel durumun aynı olması *state-dependent memory*'dir. Moralsizken kötü anıları hatırlamak *mood-congruent*, sınıf örneği *context-dependent*, şarkıyı daha çabuk öğrenmek *relearning*'dir."
+        },
+        {
+          "q": "Selin sınavdan önce notlarını dört kez okuyor ve her şeyin çok tanıdık geldiğini, konuya hâkim olduğunu düşünüyor. Sınavda açık uçlu soruların çoğunu cevaplayamıyor. Selin'in hatasını en iyi açıklayan ve ona önerilecek strateji hangisidir?",
+          "opts": [
+            "*Context-dependent memory* hatası; sınavdan önce odasını değiştirmeli",
+            "*Mood-congruent memory* hatası; çalışırken daha mutlu olmalı",
+            "*Recognition* hatası; notlarını beş kez okumalı",
+            "Zayıf *metacognition*; kendini test ederek çalışmalı"
+          ],
+          "a": 3,
+          "why": "Tanıdık gelmeyi bilmek sandı; kendi bilgisini yanlış değerlendirdi, bu zayıf *metacognition*'dır. Kendini test etmek hem gerçekte ne bildiğini gösterir hem de *testing effect* sayesinde bilgiyi daha kalıcı yapar."
+        },
+        {
+          "q": "Bir psikolog katılımcılara 15 kelimelik bir liste okuyor ve hemen ardından hatırlayabildikleri kelimeleri istedikleri sırayla yazmalarını istiyor. Kelimelerin listedeki sırasına göre hatırlanma oranı grafiğe döküldüğünde en olası şekil hangisidir?",
+          "opts": [
+            "Baştan sona düz bir çizgi",
+            "Başta ve sonda yüksek, ortada düşük bir U biçimi",
+            "Başta düşük, sona doğru sürekli düşen bir çizgi",
+            "Ortada yüksek, uçlarda düşük ters bir U biçimi"
+          ],
+          "a": 1,
+          "why": "*Serial position effect*: baştaki kelimeler tekrar edildiği için uzun süreli belleğe geçer (*primacy*), sondakiler hâlâ kısa süreli bellektedir (*recency*). Hemen hatırlamada iki uç da yüksek, orta düşük kalır."
+        }
+      ]
     }
   ],
   "final": []
