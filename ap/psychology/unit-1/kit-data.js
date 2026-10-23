@@ -562,6 +562,119 @@ window.KIT = {
     },
     {
       "no": 6,
+      "code": "1.4-1",
+      "slug": "py106",
+      "title": "Beynin Bölgeleri",
+      "en": "Regions of the Brain",
+      "accent": "#B77AD9",
+      "defter": "py104",
+      "defterBaslik": "Beyin",
+      "seconds": 255,
+      "terms": [
+        "Brainstem",
+        "Medulla",
+        "Reticular activating system",
+        "Cerebellum",
+        "Limbic system",
+        "Thalamus",
+        "Hypothalamus",
+        "Hippocampus",
+        "Amygdala",
+        "Cerebral cortex",
+        "Frontal lobe",
+        "Prefrontal cortex",
+        "Motor cortex",
+        "Parietal lobe",
+        "Somatosensory cortex",
+        "Occipital lobe",
+        "Temporal lobe"
+      ],
+      "questions": [
+        {
+          "q": "Tabloda dört hastanın belirtileri var. Hangi eşleştirme beyin bölgesiyle ilgili olarak en doğrudur?",
+          "opts": [
+            "Hasta 1 · Occipital lobe",
+            "Hasta 2 · Amygdala",
+            "Hasta 3 · Cerebellum",
+            "Hasta 4 · Hippocampus"
+          ],
+          "a": 2,
+          "why": "Dengeyi ve hareketlerin koordinasyonunu *cerebellum* yönetir; Hasta 3'ün belirtisi buna uyar. Hasta 1'in sorunu yeni anı kaydı (*hippocampus*), Hasta 2'ninki görme (*occipital lobe*), Hasta 4'ünkü korku tepkisi (*amygdala*) ile ilgilidir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Hasta",
+              "Belirti"
+            ],
+            "rows": [
+              [
+                "1",
+                "Kazadan önceki hayatını hatırlıyor ama yeni tanıştığı kişilerin adlarını birkaç dakika sonra unutuyor"
+              ],
+              [
+                "2",
+                "Gözleri sağlam ama görme alanının bir kısmında hiçbir şey görmüyor"
+              ],
+              [
+                "3",
+                "Yürürken sendeliyor, bardağa uzanırken elini ıskalıyor"
+              ],
+              [
+                "4",
+                "Tehlikeli durumlarda korku tepkisi neredeyse hiç görülmüyor"
+              ]
+            ],
+            "caption": "Dört hasta · kurgusal vakalar"
+          }
+        },
+        {
+          "q": "Sınav haftasında gece geç saate kadar ders çalışan Arda'nın yemek yemeyi unuttuğu hâlde birden çok acıktığını ve üşüdüğünü fark etmesinde rol oynayan temel bölge hangisidir?",
+          "opts": [
+            "*Hypothalamus*",
+            "*Thalamus*",
+            "*Medulla*",
+            "*Occipital lobe*"
+          ],
+          "a": 0,
+          "why": "Açlık, susuzluk ve vücut ısısı gibi temel ihtiyaçları izleyen ve düzenleyen bölge *hypothalamus*'tur. *Thalamus* duyuları yönlendirir, *medulla* kalp ve nefesi yönetir, *occipital lobe* görmeyi işler."
+        },
+        {
+          "q": "Araştırmacılar 13–25 yaş arası katılımcılara ani ödül ile beklenen daha büyük ödül arasında seçim yaptırıyor. Gençler ani ödülü daha sık seçiyor. Araştırmacılar bu farkı en iyi hangi beyin gelişimiyle açıklayabilir?",
+          "opts": [
+            "*Cerebellum*'un ergenlikte küçülmesi",
+            "*Occipital lobe*'un yirmili yaşlarda tamamlanması",
+            "*Medulla*'nın ergenlikte henüz çalışmaması",
+            "*Prefrontal cortex*'in yirmili yaşların ortasına kadar olgunlaşmaya devam etmesi"
+          ],
+          "a": 3,
+          "why": "Plan yapma, dürtüleri frenleme ve sonuçları tartma büyük ölçüde *prefrontal cortex*'in işidir ve bu bölge yirmili yaşların ortasına kadar olgunlaşır. *Medulla* doğumdan itibaren çalışır; öteki seçenekler dürtü kontrolüyle ilgili değildir."
+        },
+        {
+          "q": "Bir nöroloji muayenesinde doktor hastanın beyninin sol yarım küresinde *motor cortex*'in el bölgesini hafifçe uyarıyor. Ne olması beklenir?",
+          "opts": [
+            "Hastanın sol eli kıpırdar",
+            "Hastanın sağ eli kıpırdar",
+            "Hasta sağ elinde dokunma hisseder ama el hareket etmez",
+            "Hasta bir ses duyar"
+          ],
+          "a": 1,
+          "why": "*Motor cortex* istemli hareketi başlatır ve beyin vücudu çapraz yönetir: sol yarım küre sağ tarafı kontrol eder. Bu yüzden sağ el hareket eder. Dokunma hissi *somatosensory cortex*'e, ses ise *temporal lobe*'a aittir."
+        },
+        {
+          "q": "Bir kişi kalabalık bir kantinde arkadaşlarıyla konuşurken müziği, ışıkları ve yemeğin tadını aynı anda algılıyor. Gözden, kulaktan ve dilden gelen bu bilgilerin korteksteki ilgili bölgelere yönlendirilmesinde hangi bölge santral görevi görür?",
+          "opts": [
+            "*Amygdala*",
+            "*Hippocampus*",
+            "*Thalamus*",
+            "*Reticular activating system*"
+          ],
+          "a": 2,
+          "why": "*Thalamus* koku dışındaki duyusal bilgiyi alıp korteksteki doğru bölgeye yönlendiren santraldir. *Reticular activating system* genel uyanıklığı ayarlar ama duyuları yönlendirmez."
+        }
+      ]
+    },
+    {
+      "no": 7,
       "code": "1.4-2",
       "slug": "py107",
       "title": "Yarım Küreler, Plastisite ve Yöntemler",
@@ -674,7 +787,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "1.5",
       "slug": "py108",
       "title": "Uyku",
@@ -785,7 +898,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 8,
+      "no": 9,
       "code": "1.6-1",
       "slug": "py109",
       "title": "Duyumun İlkeleri ve Beden Duyuları",
@@ -894,7 +1007,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 9,
+      "no": 10,
       "code": "1.6-2",
       "slug": "py110",
       "title": "Görme ve İşitme",
