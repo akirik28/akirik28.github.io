@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Türev: Anlık Değişim Hızı",
       "en": "The Derivative as a Rate of Change",
       "accent": "#F6B94A",
-      "seconds": 276,
+      "seconds": 341,
       "terms": [
         "Rate",
         "Average velocity",
@@ -114,6 +114,7 @@ window.KIT = {
       "title": "Türev Kuralları ve Zincir Kuralı",
       "en": "Product, Quotient and Chain Rules",
       "accent": "#2FD6B9",
+      "sessiz": true,
       "seconds": 282,
       "terms": [
         "Product rule",
@@ -213,6 +214,7 @@ window.KIT = {
       "title": "İntegral: Ters Türev ve Alan",
       "en": "Antiderivatives, Initial Conditions and Area",
       "accent": "#58C9FF",
+      "sessiz": true,
       "seconds": 277,
       "terms": [
         "Antiderivative",
@@ -348,6 +350,7 @@ window.KIT = {
       "title": "Vektörler: Bileşenler ve Birim Vektörler",
       "en": "Vectors: Components and Unit Vectors",
       "accent": "#FF6F61",
+      "sessiz": true,
       "seconds": 277,
       "terms": [
         "Scalar",
@@ -425,6 +428,7 @@ window.KIT = {
       "title": "Vektör Çarpımı: Nokta ve Çapraz Çarpım",
       "en": "Dot and Cross Products",
       "accent": "#A98BFF",
+      "sessiz": true,
       "seconds": 277,
       "terms": [
         "Dot product",
@@ -502,6 +506,7 @@ window.KIT = {
       "title": "Konum, Yer Değiştirme ve Hız",
       "en": "Position, Displacement and Velocity",
       "accent": "#B9E552",
+      "sessiz": true,
       "seconds": 276,
       "terms": [
         "Kinematics",
@@ -668,6 +673,7 @@ window.KIT = {
       "title": "İvme",
       "en": "Acceleration",
       "accent": "#FF7DB8",
+      "sessiz": true,
       "seconds": 275,
       "terms": [
         "Acceleration",
@@ -852,6 +858,7 @@ window.KIT = {
       "title": "Hareket Grafikleri: Eğim ve Alan",
       "en": "Motion Graphs: Slopes and Areas",
       "accent": "#5C8DFF",
+      "sessiz": true,
       "seconds": 276,
       "terms": [
         "Position–time graph",
@@ -1025,6 +1032,7 @@ window.KIT = {
       "title": "Sabit İvme ve Serbest Düşme",
       "en": "Constant Acceleration and Free Fall",
       "accent": "#F6B94A",
+      "sessiz": true,
       "seconds": 275,
       "terms": [
         "Constant acceleration",
@@ -1122,6 +1130,7 @@ window.KIT = {
       "title": "Değişken İvme: İntegralle Hareket",
       "en": "Non-Constant Acceleration",
       "accent": "#2FD6B9",
+      "sessiz": true,
       "seconds": 276,
       "terms": [
         "Non-constant acceleration",
@@ -1247,6 +1256,7 @@ window.KIT = {
       "title": "İki Boyutta Hareket ve Göreli Hareket",
       "en": "Motion in Two Dimensions and Relative Motion",
       "accent": "#58C9FF",
+      "sessiz": true,
       "seconds": 276,
       "terms": [
         "Position vector",
@@ -1318,6 +1328,5 @@ window.KIT = {
       ]
     }
   ],
-  "final": [],
-  "defter": false
+  "final": []
 };
