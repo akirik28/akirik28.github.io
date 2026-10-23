@@ -1,0 +1,19 @@
+İki arkadaş, aynı biyoloji sınavı. Eda sınavdan önceki gece altı saat aralıksız çalışıyor. Kaan dört gün boyunca her gün bir buçuk saat. Toplam süre aynı. Sınavda ikisi de iyi. Ama bir hafta sonra sürpriz bir quiz yapılıyor; Eda'nın aklında çok az şey kalmış, Kaan hâlâ çoğunu hatırlıyor. Fark nereden çıktı? Cevap kodlamada saklı.
+
+Bazı bilgiler kendiliğinden kodlanır. Buna automatic processing denir. Bu sabah kahvaltıda ne yediğini, sınıfta hangi sırada oturduğunu ya da bu hafta kaç kez yağmur yağdığını çalışmadan bilirsin. Ama formüller, terimler, tarihler öyle girmez. Onlar effortful processing ister: dikkat ve çaba. Peki çabayı nasıl daha verimli harcarsın? İşte stratejiler.
+
+Birinci strateji derinlik. Geçen bölümden hatırla: anlamı düşünmek, yüzeye bakmaktan iyidir. En güçlü derinlik ise self-reference effect: bilgiyi kendinle ilişkilendirmek. Amygdala korkuyla ilgili diyorsa, köpeğin sana havladığı anı düşün. Kendinle ilgili bilgiyi zaten çok sık kullanırsın; yeni bilgi oraya bağlanınca çok sayıda tutamak kazanır.
+
+İkinci strateji: mnemonics, yani hafıza teknikleri. Kısaltma kurabilirsin. Unit 1'deki dört lobu sırayla hatırlamak için: Fıstıklı Pasta Tatlı Olur. Frontal, parietal, temporal, occipital. Ya da method of loci: bilgileri iyi bildiğin bir yerin odalarına yerleştirmek. Evinin kapısına bir nöron, mutfağa bir sinaps, salona bir dendrit koy; sınavda zihninde evde dolaş.
+
+Üçüncü strateji düzenlemek. Chunking: bilgiyi anlamlı gruplara bölmek. Sıfır beş üç iki, bir iki üç, kırk beş, altmış yedi. On bir rakamı tek tek tutamazsın, dört parçayı tutarsın. Categories: alışveriş listesini sebzeler, süt ürünleri, temizlik diye ayırmak. Hierarchies: genelden özele dallanan bir yapı. Sinir sistemi, onun altında merkezi ve çevresel, onların altında daha küçük dallar.
+
+Dördüncü strateji, baştaki bilmecenin cevabı: spacing effect. Aynı toplam süre, aralıklarla bölününce çok daha kalıcı öğrenme sağlar. Bir gecede yığmaya massed practice denir; kısa vadede iş görür ama çabuk unutturur. Günlere yaymaya distributed practice denir. Her yeni oturumda bilgiyi biraz unutmuş olarak yeniden çağırırsın; bu çaba izi güçlendirir. Kaan bu yüzden kazandı.
+
+Son olarak sıra önemli. Annen sana on iki maddelik bir alışveriş listesi okuyor. Büyük ihtimalle ilk birkaçını ve son birkaçını hatırlıyorsun; ortadakiler kayboluyor. Buna serial position effect denir. Baştakiler daha çok tekrar edildiği için uzun süreli belleğe geçer; buna primacy effect denir. Sondakiler hâlâ kısa süreli bellekte taze; buna recency effect denir.
+
+Sınavda bilmen gereken: senaryoda hangi stratejinin kullanıldığını tanımak ve neden işe yaradığını söylemek. Hangi tekniğin hangi mekanizmaya dayandığını, mesela recency'nin kısa süreli belleğe, primacy'nin tekrara bağlı olduğunu bilmek. Bilmen gerekmeyen: kaç gün arayla çalışılması gerektiğine dair kesin bir sayı ya da tekniklerin mucitleri. Soru "en kalıcı" diyorsa, cevap neredeyse hep anlam, kendinle bağ ve aralıklı tekrardır.
+
+Toparlayalım. Automatic processing kendiliğinden kodlar; effortful processing çaba ister. Derin işleme ve self-reference effect bilgiye tutamak ekler. Mnemonics: kısaltmalar ve method of loci. Chunking, categories ve hierarchies bilgiyi düzenler. Distributed practice massed practice'ten kalıcıdır; listelerde primacy ve recency baştakini ve sondakini korur.
+
+Şimdi bir soru. Araştırmacılar katılımcılara 15 kelimelik bir liste okuyor. Bir grup listeyi hemen hatırlamaya çalışıyor; diğer grup önce 30 saniye geriye doğru sayıyor, sonra hatırlıyor. Gecikmeli grupta son kelimelerin hatırlanması belirgin düşüyor, ilk kelimeler ise hemen hemen aynı kalıyor. Bu ne gösterir? Cevap: recency effect kısa süreli belleğe dayanır; geriye sayma onu sildi. Primacy ise uzun süreli bellekte olduğu için korunur.

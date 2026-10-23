@@ -1,0 +1,23 @@
+İnternette "beş dakikada IQ'nu öğren" testi. Pazartesi çözüyorsun: 145, dahi seviyesi! Çarşamba aynı testi tekrar çözüyorsun: 98. Hangisi doğru? Muhtemelen hiçbiri. İyi bir testin üç şartı var: standart mı, güvenilir mi, geçerli mi?
+
+Birinci şart standardization: testin herkese aynı koşullarda, aynı yönergeler ve aynı sürelerle verilmesi. Bir de testin önce büyük ve temsil edici bir gruba uygulanması; böylece norms, yani karşılaştırma ölçütleri çıkar. Puanının anlamını, bu dağılımdaki yerin verir.
+
+O dağılımın biçimi tanıdık: normal curve, yani çan eğrisi. Zekâ testlerinde ortalama 100'e ayarlanır, standart sapma 15'tir. İnsanların yaklaşık yüzde 68'i 85 ile 115 arasında. Yaklaşık yüzde 95'i 70 ile 130 arasında. Uçlar seyrek: 70'in altı, günlük işlevlerde de zorlukla birlikte intellectual disability; 130'un üstü çoğunlukla üstün yetenek sayılır.
+
+İkinci şart reliability, yani güvenirlik: test tutarlı sonuç veriyor mu? Test-retest reliability: aynı kişi testi iki hafta arayla tekrar alınca benzer puan alıyor mu? Split-half reliability: testin tek numaralı soruları ile çift numaralı soruları aynı sonucu veriyor mu? İnternetteki test 145 ve 98 verdi; güvenirliği yok.
+
+Üçüncü şart validity, yani geçerlik: test ölçmek istediği şeyi gerçekten ölçüyor mu? Content validity: sorular ölçülen alanı kapsıyor mu? Sadece toplama soran matematik testi zayıftır. Predictive validity: puan gelecekteki başarıyı tahmin ediyor mu? Dikkat: güvenilir ama geçersiz bir test olabilir. Her seferinde üç kilo fazla gösteren tartı tutarlıdır, ama yanlıştır.
+
+Normların bir de son kullanma tarihi var. Flynn effect: geçen yüzyılda pek çok ülkede zekâ testi puanları her on yılda yaklaşık üç puan yükseldi. Genler bu kadar hızlı değişmez; açıklama çevre: beslenme, eğitim, daha karmaşık bir dünya. Bu yüzden testler düzenli olarak yeniden normlanır; yoksa herkes eski ortalamaya göre zeki görünür.
+
+Testlerin amacı da farklıdır. Achievement test: zaten öğrendiğini ölçer. Mayıstaki AP sınavı ya da dönem sonu fizik sınavı. Aptitude test: gelecekte ne kadar iyi öğrenebileceğini tahmin etmeye çalışır; bir pilotaj okulunun yetenek testi gibi. Gerçekte ikisi iç içedir; yetenek testi de önceki öğrenmeye dayanır.
+
+Test puanını sadece bilgi belirlemez. Stereotype threat: kişinin kendi grubuyla ilgili olumsuz bir kalıp yargıyı doğrulama kaygısı, performansını düşürür. Bir matematik sınavından önce kızlara "bu testte kızlar genellikle daha düşük alıyor" denirse, kaygı çalışma belleğini doldurur ve puanlar düşer. Aynı test "cinsiyet farkı göstermeyen bir test" diye sunulunca fark küçülür.
+
+Zekâ hakkındaki inancın da başarını etkiler. Fixed mindset: "zekâ doğuştan gelir, değişmez" inancı. Zor bir soru seni "ben bu işte yokum" demeye iter. Growth mindset: "beceri çabayla ve doğru stratejilerle gelişir" inancı. Aynı zor soru bir antrenman olur. Bu yüzden "çok zekisin" yerine "iyi strateji kurdun" diye övmek pes etmeyi azaltabilir.
+
+Sınavda bilmen gereken: bir senaryodaki sorunun güvenirlik mi geçerlik mi olduğunu ayırmak, çan eğrisinde bir puanın yerini bulmak, Flynn effect'i ve stereotype threat'i deney sonuçlarında tanımak. Bilmen gerekmeyen: test markalarının adları ve alt testleri. Sor: tutarlı mı, doğru şeyi mi ölçüyor, yoksa koşullar puanı mı değiştirdi?
+
+Toparlayalım. Standardization aynı koşullar ve norms demektir; puanlar normal curve'de, ortalama 100, standart sapma 15. Reliability tutarlılıktır: test-retest ve split-half. Validity doğru şeyi ölçmektir: content ve predictive; güvenilir bir test geçersiz olabilir. Flynn effect puanların yükselmesi; achievement öğrendiğini, aptitude potansiyelini ölçer. Stereotype threat puanı düşürür; growth mindset çabayı korur.
+
+Şimdi bir soru. Araştırmacılar aynı matematik testini iki gruba veriyor. Rastgele seçilen bir gruba test öncesi "bu test zekâ ölçer ve grubunuz genelde düşük alır" deniyor, ötekine "bu bir bulmaca alıştırması" deniyor. İlk grup belirgin biçimde düşük puan alıyor. Bu ne gösterir? Cevap: stereotype threat. Test ve yetenek aynı; farkı yalnızca sunuş yarattı. Rastgele atama farkı bu koşula bağlamamızı sağlar.

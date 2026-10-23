@@ -1,0 +1,19 @@
+Markette iki yoğurt. Birinin üstünde "yüzde 80 yağsız" yazıyor. Ötekinde "yüzde 20 yağlı". Aynı yoğurt, aynı fiyat. Ama çoğu kişi ilkini alıyor. Bilginin nasıl sunulduğu kararı değiştiriyor; buna framing denir. Ameliyat için "yüzde 90 hayatta kalma" demek, "yüzde 10 ölüm" demekten çok daha fazla evet aldırır.
+
+Bir de priming var: bir uyaranın, farkında olmadan sonraki tepkini etkilemesi. Sana önce deniz, kum, güneş diyorum. Sonra "PLA" ile başlayan bir kelime soruyorum. Çoğu kişi plaj der; plan değil. İlk kelimeler bellekteki ilgili bağlantıları ısıttı. Reklamlar, şarkılar, ders öncesi konuşmalar sürekli bizi böyle hazırlar.
+
+Confirmation bias: inancını destekleyen kanıtı arayıp çürüten kanıtı görmezden gelmek. Zeynep, Ahmet'in kendisinden hoşlanmadığına inanıyor. Selam vermediği tek günü hatırlıyor, selam verdiği on günü unutuyor. Biri ona "o gün seni görmemiş" dese bile fikrinden vazgeçmiyor. Kanıt çürüse de inancı korumaya belief perseverance denir.
+
+Overconfidence: bildiğine ya da yargına gerçekte olduğundan daha çok güvenmek. "Bu konuyu biliyorum, çalışmama gerek yok" dersin; deneme sınavında soruların yarısını kaçırırsın. Ya da ödevi bir saatte bitireceğini düşünürsün, üç saat sürer. Çaresi basit: kendini test et. Tahminini gerçek sonuçla karşılaştır.
+
+İki klasik yanılgı daha. Gambler's fallacy: bağımsız olaylarda geçmişin geleceği değiştirdiğini sanmak. Bozuk para beş kez yazı geldi; "şimdi kesin tura" dersin. Ama olasılık yine yarı yarıya. Sunk cost fallacy: geri alamayacağın bir yatırım yüzünden kötü bir işe devam etmek. 300 liralık konser biletini aldın, hastasın ama yine de gidiyorsun; çünkü para gitti diye.
+
+Bu tuzaklara karşı elimizdeki araç executive functions: plan yapmak, dürtüyü durdurmak, bilgiyi akılda tutmak ve stratejiyi değiştirmek. Büyük ölçüde beynin ön kısmındaki prefrontal cortex'e dayanır. Sınav gecesi bildirimleri kapatıp bir çalışma planı yapmak ve diziyi yarına ertelemek tam olarak bu işlevlerin işi. Durup "başka bir açıklama olabilir mi?" diye sormak, yani eleştirel düşünmek bu işlevlerle mümkün.
+
+Problem çözmede de bir tuzak var: functional fixedness, yani bir nesneyi yalnızca alışılmış işleviyle görmek. Telefonuna yeni hat takacaksın, iğne yok. Masada ataş duruyor ama aklına gelmiyor; çünkü ataş kâğıt tutmak içindir. Bu kilidi kırmak yaratıcılık ister. Divergent thinking: bir soruya çok sayıda farklı cevap üretmek; bir kalemle yapılabilecek yirmi şey. Convergent thinking: tek doğru cevaba daralmak; test sorusunu çözmek gibi. Yaratıcılık ikisini de kullanır: önce aç, sonra seç.
+
+Sınavda bilmen gereken: senaryodaki hatanın adını koymak. Sunuş biçimi mi değişti, framing. Kanıt seçiliyor mu, confirmation bias. Geçmiş harcama mı tutuyor, sunk cost. Bağımsız olaylarda seri mi bekleniyor, gambler's fallacy. Bilmen gerekmeyen: olasılık formülleri ya da yanlılıkların uzun bir listesi. Senaryodaki tek kritik ayrıntıyı bul.
+
+Toparlayalım. Framing sunuş biçimiyle, priming önceki uyaranla kararı etkiler. Confirmation bias destekleyen kanıtı arar; belief perseverance çürük inancı korur; overconfidence fazla güvendir. Gambler's fallacy bağımsız olayda seri bekler; sunk cost batmış yatırıma takılır. Executive functions ve prefrontal cortex durup düşünmeyi sağlar. Functional fixedness yaratıcılığı kilitler; yaratıcılık divergent ve convergent düşünceyi birleştirir.
+
+Şimdi bir soru. Bir araştırmada öğrenciler rastgele iki gruba ayrılıyor. Birinci gruba yeni bir ders programı için "öğrencilerin yüzde 75'i geçiyor", ikinci gruba "öğrencilerin yüzde 25'i kalıyor" deniyor. Birinci grup programı çok daha fazla destekliyor. Bu bulgu neyi gösterir? Cevap: framing. Bilgi aynı, yalnız sunuş biçimi değişti; bu da kararı değiştirdi.

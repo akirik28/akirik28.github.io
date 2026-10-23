@@ -1,0 +1,19 @@
+Telefonundaki video aslında hareket etmiyor. Saniyede 30 tane durağan fotoğraf art arda geçiyor. Ekran da dümdüz; ama sen derinlik, uzaklık, koşan bir köpek görüyorsun. Beyin elindeki düz ve kesik kesik veriyi alıp üç boyutlu, akan bir dünyaya çeviriyor. Bugün bunu nasıl yaptığına bakıyoruz.
+
+Önce düzenleme. Gestalt psikologları şunu söyler: bütün, parçaların toplamından fazladır. Beyin parçaları kendiliğinden anlamlı bütünlere çevirir. İlk kural figure-ground: her sahnede bir şekli öne, gerisini zemine ayırırız. Siyah zemindeki beyaz vazo, bir bakarsın vazo, bir bakarsın karşılıklı iki yüz. Görüntü aynı; neyin şekil, neyin zemin olduğu değişiyor.
+
+Üç gruplama kuralı daha. Proximity, yani yakınlık: yakın duranları grup sanırız. Kantinde aynı masada oturanları arkadaş grubu sanman gibi. Similarity, yani benzerlik: benzeyenleri gruplarız. Tribünde aynı renk formalılar bir takım gibi görünür. Closure, yani tamamlama: boşlukları doldururuz. Yarısı silinmiş bir daireyi yine daire görürsün; birçok logo bu yüzden eksik çizilir.
+
+Şimdi derinlik. Retina düz bir yüzey; derinliği beyin ipuçlarından çıkarır. İki gözle çalışan ipuçlarına binocular cues denir. Parmağını burnunun önünde tut, bir sağ gözünü bir sol gözünü kapat; parmak zıplıyor. İki gözün biraz farklı görüntü alır. Buna retinal disparity denir; fark büyükse cisim yakındır. Kalemi burnuna yaklaştır: gözlerin içe döner. Bu convergence; ne kadar içe dönerse cisim o kadar yakın.
+
+Tek gözle de derinlik görürsün; ressamlar bunları kullanır. Bunlar monocular cues. Relative size: aynı boyda iki otobüsten küçük görünen uzaktadır. Interposition: önündekini kapatan yakındadır. Linear perspective: tren rayları uzakta birleşir gibi görünür. Texture gradient: kaldırım taşları yakında iri ve net, uzakta sık ve bulanık. Relative clarity: sisli günde Boğaz'daki tepeler soluk ve uzak görünür.
+
+Retina görüntüsü sürekli değişir ama dünya sabit kalır. Buna perceptual constancy denir. Size constancy: arkadaşın okul bahçesinin öbür ucuna yürüyor; retinadaki görüntüsü küçülüyor ama sen onun küçüldüğünü düşünmüyorsun. Shape constancy: açılan sınıf kapısı gözünde yamuğa dönüşür, sen yine dikdörtgen bilirsin. Color constancy: beyaz gömleğin gölgede griye kaçar, ama sen hâlâ beyaz görürsün.
+
+Son numara: aslında olmayan hareket. Buna apparent motion denir. Kebapçının tabelasındaki ampuller sırayla yanıp sönüyor; tek bir ampul bile yerinden oynamıyor ama ışık dönüyormuş gibi görünüyor. Bu phi phenomenon. Filmler de böyle: art arda gelen durağan kareleri beyin akıcı harekete çevirir; buna stroboscopic motion denir. Videodaki köpek bu yüzden koşuyordu.
+
+Sınavda bilmen gereken: bir resimde ya da senaryoda hangi Gestalt ilkesinin, hangi derinlik ipucunun, hangi sabitliğin işe yaradığını tanımak. En kritik ayrım: ipucu iki göz mü ister, tek göz yeter mi? Bilmen gerekmeyen: her ipucunun uzun bir listesi ya da tarihçesi. Kendine sor: bir gözümü kapatsam bu ipucu yine çalışır mı?
+
+Toparlayalım. Gestalt: bütün parçalardan fazladır; figure-ground, proximity, similarity, closure. Binocular cues: retinal disparity ve convergence; ikisi de iki göz ister. Monocular cues: relative size, interposition, linear perspective, texture gradient, relative clarity. Perceptual constancy: boy, şekil ve renk görüntü değişse de sabit algılanır. Apparent motion: phi phenomenon ve stroboscopic motion.
+
+Şimdi bir soru. Araştırmacılar katılımcılardan bir kalemi masadaki bir halkanın içine sokmalarını istiyor; bir kez iki gözle, bir kez bir gözü kapalı. Halka 40 santim uzaktayken tek gözle hatalar çok artıyor; 6 metre uzaktaki hedeflerde neredeyse fark yok. Hangi sonuç desteklenir? Cevap: binocular cues en çok yakın mesafede işe yarar. Uzakta iki gözün görüntüsü neredeyse aynı olduğundan retinal disparity küçülür.

@@ -1,0 +1,21 @@
+Matematik hocası tahtaya aceleyle bir şekil çiziyor. Harflerin arasında, A ile C'nin ortasında duruyor ve herkes B okuyor. Ama sayıların arasında, 12 ile 14'ün ortasında aynı şekli herkes 13 okuyor. Çizgi tek bir milimetre bile değişmedi. Değişen, senin beklentin. Gözün görür; anlamı beyin verir.
+
+Unit 1'den hatırla: duyu organının uyaranı alması duyumdu. Onu düzenleyip anlamlandırmak ise perception, yani algı. Algı iki yönden kurulur. Birincisi bottom-up processing: veriden başlarsın. Bahçede hiç görmediğin bir böcek: altı bacak, parlak yeşil kanat, uzun anten. Parçaları tek tek toplar, sonra bir bütüne varırsın. Önce veri, sonra anlam.
+
+İkincisi top-down processing: bilgi ve beklentiden başlarsın. Arkadaşın "yrn sınv var mı" diye yazıyor; harfler eksik ama sen hemen okuyorsun. Çünkü beynin cümleyi önceden tahmin ediyor. Gerçek hayatta ikisi aynı anda çalışır. Tahtadaki şekil verinin kendisi, A ile C ise beklenti. AP sorusundaki ipucu şu: kişi önceki bilgisi ya da beklentisi yüzünden mi böyle algılıyor? Öyleyse top-down.
+
+Beklentiler nereden gelir? Schemas'tan, yani dünyayı düzenleyen zihinsel çerçevelerden. Sınıf şeması dersen aklına sıralar, tahta, zil gelir. Bu çerçeveler bir perceptual set yaratır: belirli bir şeyi görmeye hazır olma hâli. Gece korku filmi izledin; odaya dönüyorsun ve askıdaki mont sana birinin silüeti gibi geliyor. Mont aynı mont; değişen, algıya hazır olduğun şey.
+
+Algıyı süzen başka etkenler de var. Motivasyon: açken yürürken bütün tabelalarda yemek kelimelerini fark edersin. Duygu: tuttuğun takım yenilirken hakemin her kararı sana haksız gelir. Bağlam: aynı gülümseme düğünde mutluluk, cenazede utanç gibi okunur. Kültür ve deneyim de çerçeveni biçimlendirir. Hepsi aynı kapıya çıkar: algı kayıtsız bir kamera değil, yorumlayan bir zihin.
+
+Şimdi dikkat. Aynı anda sana milyonlarca uyaran geliyor; hepsini işleyemezsin. Selective attention, yani seçici dikkat, bir şeye odaklanıp gerisini arka plana atmaktır. Kalabalık bir düğünde masandaki sohbete odaklandın; müzik, tabak sesleri kayboldu. Ama arkadan biri adını söyleyince kafan hemen dönüyor. Buna cocktail party effect denir: dikkat dışında kalan sesler bile süzülür, önemli olan sızar.
+
+Seçici dikkatin bir bedeli var. Inattentional blindness: dikkatin başka yerdeyken gözünün önündeki şeyi hiç görmemek. Diyelim voleybol maçında beyaz formalıların paslarını sayıyorsun. Sahanın ortasından ayı kostümlü biri el sallayarak geçiyor ve sen fark etmiyorsun. Telefona bakarak yürüyen biri de yanından geçen bisikletliyi kaçırır. Göz baktı, ama dikkat orada değildi.
+
+Akrabası change blindness: bir sahnedeki değişikliği fark etmemek. Dizide karakterin önündeki çay bardağı bir sahnede dolu, ardından boş, sonra yine dolu; çoğu izleyici görmez. Daha şaşırtıcısı: sokakta sana yol soran kişi, önünüzden bir panel geçerken başka biriyle değişiyor ve birçok kişi konuşmaya devam ediyor. Farkı tut: inattentional bir şeyin varlığını, change ise değişimi kaçırmaktır.
+
+Sınavda bilmen gereken: bir senaryoda bottom-up mı top-down mı olduğunu, bir algının hangi beklenti ya da perceptual set yüzünden değiştiğini tanımak. Ve görmeme türlerini ayırmak. Bilmen gerekmeyen: ünlü deneylerin araştırmacı adları, yılları ya da yüzdeleri. İpucu cümlesi hep aynı: önce ne beklediğine bak, sonra neye dikkat ettiğine.
+
+Toparlayalım. Perception duyu verisini düzenleyip anlamlandırmaktır. Bottom-up veriden, top-down bilgi ve beklentiden başlar; ikisi birlikte çalışır. Schemas ve perceptual set neyi göreceğimizi önceden ayarlar; motivasyon, duygu, bağlam ve kültür de süzer. Selective attention odaklanır; cocktail party effect önemli sesi içeri alır. Inattentional blindness nesneyi, change blindness değişimi kaçırır.
+
+Şimdi bir soru. Araştırmacılar öğrencileri rastgele iki gruba ayırıyor. Bir grup önce kuş resimleri, diğeri yüz resimleri görüyor. Sonra herkese aynı belirsiz çizim gösteriliyor; ilk grup çoğunlukla kuş, ikinci grup yüz görüyor. Bu sonucu en iyi ne açıklar? Cevap: perceptual set. Önceki resimler beklenti yarattı; aynı veri, farklı top-down yorum.

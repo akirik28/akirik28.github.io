@@ -1,0 +1,19 @@
+Hızlı bir oyun. Aklından bir kuş geçir. Büyük ihtimalle serçe ya da güvercin; penguen değil. Oysa penguen de kuş. Peki neden bazı örnekler akla hemen gelir, bazıları hiç gelmez? Ve neden bazen düşünmeden karar veririz, bazen saatlerce hesap yaparız? Bugün zihninin kısayollarını açıyoruz.
+
+Zihin dünyayı gruplara ayırır. Benzer şeyleri bir araya toplayan zihinsel kutuya concept, yani kavram denir: meyve, mobilya, kuş. Her kavramın en tipik örneğine de prototype denir. Kuş için serçe, meyve için elma. Yeni bir şeyi prototiple karşılaştırırız. Ne kadar benziyorsa o kadar hızlı kategoriye koyarız. Bu yüzden penguenin kuş olduğunu söylemek bir saniye daha uzun sürer.
+
+Kavramlar büyüyüp schemas hâline gelir ve iki yolla güncellenir. Assimilation: yeni bilgiyi var olan şemaya sokmak. Küçük kardeşin dört ayaklı her hayvana kedi diyor; köpeğe de kedi diyor. Accommodation: yeni bilgi sığmayınca şemayı değiştirmek. Köpek havlayınca kardeşin anlıyor: bu başka bir şey. Yeni bir köpek şeması açıyor. Sen de yapay zekâ sohbet botunu önce arama motoru sandın, sonra şemanı değiştirdin.
+
+Problem çözmenin iki yolu var. Algorithm: adım adım, sonunda doğru cevabı garanti eden yöntem. Üç haneli bir kilidin şifresini unuttun; 000'dan 999'a kadar hepsini denersen bin denemede mutlaka açarsın. Kesin ama yavaş. Heuristic: zihinsel kısayol, kaba kural. Doğum yılın ya da okul numaran gibi sık kullandığın sayıları önce denersin. Hızlı ama garanti yok.
+
+Kısayolların ünlü tuzakları var. Birincisi availability heuristic: aklına kolay gelen şeyi daha sık ya da daha olası sanmak. Bir hafta boyunca haberlerde uçak kazası izledin; artık uçağa binmekten korkuyorsun. Oysa kilometre başına araba çok daha riskli. Uçak kazası haberleri canlı ve akılda kalıcı; trafik kazaları ise sıradan. Soru şu: bunu sık olduğu için mi, kolay hatırladığım için mi düşünüyorum?
+
+İkincisi representativeness heuristic: bir şeyi prototipe ne kadar benzediğine göre yargılamak. Deniz sessiz, satranç oynuyor, şiir okuyor. Felsefe öğrencisi mi, işletme öğrencisi mi? Çoğu kişi felsefe der. Ama bir üniversitede işletme öğrencisi felsefecilerden on kat fazlaysa, işletme çok daha olası. Benzerliğe bakıp oranları, yani gerçekte kaç kişi olduğunu unutmak bu kısayolun tuzağı.
+
+Problem çözerken bir engel daha var. Mental set: daha önce işe yarayan yönteme takılıp kalmak. Matematik testinde ilk dokuz soru hep uzun bir formülle çözülüyor. Onuncu soru bir bakışta çözülebiliyor ama sen yine uzun formüle giriyorsun ve zaman kaybediyorsun. Mental set her zaman kötü değil; çoğu zaman hız kazandırır. Ama yeni bir problemde seni kör edebilir.
+
+Sınavda bilmen gereken: bir senaryoda algorithm mi heuristic mi kullanıldığını ve hangi kısayolun yanılttığını tanımak. Availability akla kolay gelmek, representativeness tipik olana benzemektir. Assimilation ile accommodation'ı da ayırmalısın. Bilmen gerekmeyen: bu kısayolları bulan araştırmacıların adları ya da hazır olasılık hesapları. Kendine sor: kişi neye dayanarak karar verdi?
+
+Toparlayalım. Concept zihinsel kategori, prototype en tipik örnektir. Şemalar assimilation ile genişler, accommodation ile değişir. Algorithm yavaş ama garanti; heuristic hızlı ama yanılabilir. Availability: aklına kolay geleni sık sanmak. Representativeness: benzerliğe bakıp oranları unutmak. Mental set: eski yönteme takılmak.
+
+Şimdi bir soru. Araştırmacılar öğrencileri rastgele iki gruba ayırıyor. Bir grup bir hafta boyunca köpek saldırısı haberleri okuyor, öteki grup bahçecilik haberleri. Sonra herkes köpek saldırısı riskini tahmin ediyor; ilk grubun tahmini çok daha yüksek. Bu en iyi neyle açıklanır? Cevap: availability heuristic. Haberler örnekleri akla kolay getirdi; kolay hatırlanan şey daha olası sanıldı.

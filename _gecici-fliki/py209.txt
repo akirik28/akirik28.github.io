@@ -1,0 +1,21 @@
+Cebindeki bir liralık bozuk parayı binlerce kez gördün. Gözlerini kapat: arka yüzünde ne yazıyor, kenarı tırtıklı mı? Çoğu kişi emin olamaz. Çünkü onu tanımak için ayrıntıya hiç ihtiyacın olmadı; ayrıntılar belleğe hiç girmedi. Unutmak her zaman silinmek değildir. Bugün belleğin kayıplarına ve hatalarına bakıyoruz.
+
+Unutmanın bir şekli var. Ebbinghaus kendine anlamsız heceler ezberletti ve zamanla ne kadarını tuttuğunu ölçtü. Sonuç forgetting curve, yani unutma eğrisi: unutma ilk saatlerde ve günlerde çok hızlıdır, sonra yavaşlar ve bir düzlüğe oturur. Bu yüzden ilk günlerdeki tekrar en değerlisidir.
+
+Unutmanın üç kapısı var. Birincisi encoding failure: bilgi hiç kodlanmadı. Bozuk paranın arka yüzü gibi. İkincisi depolamada solma: kullanılmayan iz zamanla zayıflar. Üçüncüsü retrieval failure: bilgi orada ama çıkaramıyorsun. En tanıdığı tip-of-the-tongue: o oyuncunun adı dilinin ucunda; ilk harfinin M olduğunu biliyorsun, ama ad gelmiyor. Akşam birden aklına geliyor.
+
+Geri getirmeyi en çok bozan şey başka anılardır; buna interference denir. Proactive interference: eski bilgi yeniyi bozar. Bu yıl yeni dolap şifren var ama elin hep geçen yılın şifresini çeviriyor. Retroactive interference: yeni bilgi eskiyi bozar. İspanyolca öğrenmeye başladın; şimdi İngilizce kelimelerin yerine İspanyolcası geliyor. Akılda tut: pro eskiden ileriye, retro yeniden geriye.
+
+Bir de tartışmalı bir açıklama var: repression. Freud'a göre zihin, kaygı veren anıları bilinçdışına iterek bizi korur. Ama araştırmalar karışık sonuçlar veriyor. Travma yaşayanların çoğu olayı unutmaz; tersine, istemeden tekrar tekrar hatırlar. Yıllar sonra "bastırılmış anıları geri getirme" iddiaları ise dikkatle ele alınmalı, çünkü bellek yeniden kurulabilir.
+
+Bellek sadece kaybetmez, değiştirir de. Misinformation effect: olaydan sonra verilen yanıltıcı bilgi anıyı bozar. Bir kazayı izlemiş iki gruba soru soruluyor. Birine "araçlar çarpıştığında", ötekine "araçlar birbirine girdiğinde" ne hızla gidiyorlardı deniyor. İkinci grup hızı daha yüksek tahmin ediyor. Bir hafta sonra ikinci grup, olmayan cam kırıklarını gördüğünü bile söylüyor. Tek bir kelime anıyı yeniden yazdı.
+
+Bazen içerik doğrudur ama kaynağı karışır. Source amnesia: bir bilgiyi hatırlayıp nereden öğrendiğini unutmak ya da yanlış kaynağa bağlamak. "Kahve çocukların boyunu kısaltır" sözünü bir videoda gördün; aylar sonra onu biyoloji öğretmeninden duyduğunu sanıyorsun. Rüyada gördüğün bir şeyi gerçekten yaşadığını sanmak da bir kaynak karışıklığıdır.
+
+Bütün bunların ortak noktası: constructive memory. Bellek bir video kaydı değil; her hatırlamada parçalardan, beklentilerden ve yeni bilgilerden yeniden kurulur. Bir şeyi tekrar tekrar hayal etmek bile onun yaşandığına inanmayı artırabilir; buna imagination inflation denir. Çocukken markette kaybolduğunu üç kez ayrıntılı hayal edersen, bir süre sonra sahiden yaşanmış gibi gelebilir. Emin olmak, doğru olmak demek değildir.
+
+Sınavda bilmen gereken: bir senaryoda unutmanın türünü koymak ve iki interference yönünü ayırmak. Bilgi sonradan mı eklendi, misinformation; kaynak mı karıştı, source amnesia; hayal mi gerçeğe döndü, imagination inflation. Bilmen gerekmeyen: Ebbinghaus'un hece sayıları, ünlü deneylerdeki hız rakamları. Sor: bilgi hiç girdi mi, başka bilgi mi karıştı, yoksa sonradan mı değişti?
+
+Toparlayalım. Forgetting curve: unutma başta hızlı, sonra yavaş. Üç neden: encoding failure, depolamada solma ve retrieval failure; tip-of-the-tongue bunun örneği. Proactive eskinin yeniyi, retroactive yeninin eskiyi bozmasıdır. Repression tartışmalıdır. Misinformation effect, source amnesia ve imagination inflation gösterir ki bellek constructive'dir.
+
+Şimdi bir soru. Bir deneyde katılımcılar bir hırsızlık videosu izliyor. Sonra rastgele seçilen yarısına "hırsızın şapkası ne renkti?" diye soruluyor; videoda şapka yok. Bir hafta sonra bu gruptakilerin çok daha fazlası hırsızın şapka taktığını hatırlıyor. Bu ne gösterir? Cevap: misinformation effect. Olaydan sonra verilen yanıltıcı soru anıya yeni bir ayrıntı ekledi; rastgele atama farkı bu soruya bağlamamızı sağlar.
