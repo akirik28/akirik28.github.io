@@ -1102,7 +1102,9 @@
 
   /* orijinal defter: canlı sitedeki defter motoru, v2 içinde çerçevede (defterler/cerceve.html) */
   function cerceveAdresi(u, slug, bolum) {
-    return ROOT + "defterler/cerceve.html?u=" + u.id + "&yol=" + encodeURIComponent(u.path) + "&liste=" + encodeURIComponent(u.liste) + "&b=" + encodeURIComponent(slug) +
+    /* kitsiz ünitenin kiti yayına girip KITLER'e eklenince defter kendiliğinden "ikisi" moduna geçer (konu listesi + kit) */
+    var liste = u.liste === "defter/defter-liste.js" && C.kit(u.id) ? "ikisi" : u.liste;
+    return ROOT + "defterler/cerceve.html?u=" + u.id + "&yol=" + encodeURIComponent(u.path) + "&liste=" + encodeURIComponent(liste) + "&b=" + encodeURIComponent(slug) +
       "&tema=" + (document.documentElement.getAttribute("data-theme") === "dark" ? "koyu" : "acik") + (HESAPLI ? "" : "&misafir=1") + (bolum > 0 ? "#b" + (bolum + 1) : "");
   }
   /* çerçeveden gelen mesajlar: bağlantılar v2 sayfalarına, okunan başlık "son defterin" kartına */
