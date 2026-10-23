@@ -229,6 +229,117 @@ window.KIT = {
           "why": "Refleks yayında bilgi duyu nöronuyla omuriliğe gelir, ara nöron onu doğrudan motor nörona aktarır ve kas kasılır. Beyin bilgiyi sonradan alır; bu yüzden Mert acıyı ayağını çektikten sonra fark eder."
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "1.5",
+      "slug": "py108",
+      "title": "Uyku",
+      "en": "Sleep",
+      "accent": "#E86A92",
+      "defter": "py105",
+      "seconds": 260,
+      "terms": [
+        "Consciousness",
+        "Circadian rhythm",
+        "Melatonin",
+        "Jet lag",
+        "NREM sleep",
+        "REM sleep",
+        "Sleep cycle",
+        "REM rebound",
+        "Restoration theory",
+        "Memory consolidation",
+        "Activation-synthesis theory",
+        "Insomnia",
+        "Narcolepsy",
+        "Sleep apnea",
+        "REM sleep behavior disorder",
+        "Sleepwalking (somnambulism)"
+      ],
+      "questions": [
+        {
+          "q": "Tablo, bir uyku laboratuvarında aynı gece kaydedilen dört gözlemi gösteriyor. Hangi gözlem büyük olasılıkla *NREM* üç evresinde yapılmıştır?",
+          "opts": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "a": 0,
+          "why": "Büyük ve yavaş dalgalar, uyandırmanın çok zor olması ve uyandırılınca sersemlik derin uykunun, yani *NREM* üçün özellikleridir. 2 *REM*'e (hızlı göz hareketi, kas felci), 3 *NREM* bire (hafif uyku, irkilme), 4 *NREM* ikiye (kısa dalga patlamaları) uyar.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "Gözlem"
+            ],
+            "rows": [
+              [
+                "1",
+                "Dalgalar büyük ve yavaş; katılımcı seslenmeye tepki vermiyor, uyandırılınca sersem"
+              ],
+              [
+                "2",
+                "Gözler hızla oynuyor, dalgalar uyanıklıktaki gibi hızlı, kaslar gevşek"
+              ],
+              [
+                "3",
+                "Uykuya yeni dalmış; düşüyormuş gibi irkilip uyanıyor"
+              ],
+              [
+                "4",
+                "Dalgalarda kısa, hızlı patlamalar; vücut ısısı düşmeye başlamış"
+              ]
+            ],
+            "caption": "Uyku laboratuvarı · kurgusal kayıt"
+          }
+        },
+        {
+          "q": "Araştırmacılar katılımcılara akşam bir kelime listesi öğretiyor. Bir grup gece normal uyuyor, öteki grup sabaha kadar uyanık tutuluyor. Ertesi gün uyuyan grup listeyi daha iyi hatırlıyor. Bu sonuç en çok hangi görüşü destekler?",
+          "opts": [
+            "*Activation-synthesis theory*",
+            "Uykunun *memory consolidation* işlevi",
+            "*Circadian rhythm*'in uykuyu hiç etkilemediği",
+            "*Sleep apnea*'nın belleği güçlendirdiği"
+          ],
+          "a": 1,
+          "why": "Uyku sırasında gün içinde öğrenilenler pekişir; uyuyan grubun daha iyi hatırlaması *memory consolidation* görüşünü destekler. *Activation-synthesis* rüyaların nasıl oluştuğunu açıklar, belleğin pekişmesini değil."
+        },
+        {
+          "q": "Ece İstanbul'dan Tokyo'ya uçuyor. Tokyo saatiyle 22.00'de yatağa giriyor ama hiç uykusu yok; sabah 07.00'de ise uyanmakta çok zorlanıyor. Bunun en iyi açıklaması hangisidir?",
+          "opts": [
+            "*REM rebound* nedeniyle fazla *REM*'e giriyor",
+            "*Narcolepsy* atakları yaşıyor",
+            "*Circadian rhythm*'i hâlâ İstanbul saatine göre ayarlı; bu bir *jet lag* durumudur",
+            "Uykuda nefesi durduğu için uyanıyor"
+          ],
+          "a": 2,
+          "why": "Tokyo 22.00, İstanbul'da 16.00'dır; Tokyo 07.00 ise İstanbul'da gece 01.00. İç saati hâlâ İstanbul'a ayarlı olduğu için vücudu yatma saatinde öğleden sonrada, uyanma saatinde gece yarısındadır. Bu *jet lag*'dir; iç saat ışıkla birkaç günde yeni düzene kayar."
+        },
+        {
+          "q": "Bir hastanın eşi, hastanın gece rüyasında tartıştığını, yumruk savurduğunu ve bir keresinde yataktan düştüğünü anlatıyor; hasta uyandırıldığında kavga ettiği bir rüyayı hatırlıyor. Hangi bozukluk en olasıdır?",
+          "opts": [
+            "*Insomnia*",
+            "*REM sleep behavior disorder*",
+            "*Sleepwalking* (somnambulism)",
+            "*Sleep apnea*"
+          ],
+          "a": 1,
+          "why": "Normalde *REM*'de kaslar neredeyse felçtir. Bu felç çalışmazsa kişi rüyasını fiziksel olarak yaşar: *REM sleep behavior disorder*. Uyurgezerlik ise derin *NREM* uykusunda olur ve kişi genellikle canlı bir rüya hatırlamaz."
+        },
+        {
+          "q": "*Activation-synthesis theory*'ye göre bir öğrencinin rüyasında okul koridorunun birden denize dönüşmesi en iyi nasıl açıklanır?",
+          "opts": [
+            "Bastırılmış gizli isteklerin sembolik bir anlatımıdır",
+            "Uyurken ışığın *melatonin*'i bastırmasıyla oluşur",
+            "Derin *NREM* uykusunda vücudun kendini onarmasının yan etkisidir",
+            "*REM* sırasında beyin sapından gelen rastgele sinyalleri korteksin bir hikâyeye dönüştürmeye çalışmasıdır"
+          ],
+          "a": 3,
+          "why": "*Activation-synthesis theory*, rüyaları *REM* sırasındaki rastgele beyin sapı etkinliğinin korteks tarafından anlamlandırılması olarak görür; saçma geçişler bu yüzden doğaldır. Gizli istekler yorumu bu kuramın değil, eski psikanalitik yaklaşımın iddiasıdır."
+        }
+      ]
     }
   ],
   "final": []
