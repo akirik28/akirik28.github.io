@@ -781,6 +781,112 @@ window.KIT = {
           "why": "*Serial position effect*: baştaki kelimeler tekrar edildiği için uzun süreli belleğe geçer (*primacy*), sondakiler hâlâ kısa süreli bellektedir (*recency*). Hemen hatırlamada iki uç da yüksek, orta düşük kalır."
         }
       ]
+    },
+    {
+      "no": 9,
+      "code": "2.7",
+      "slug": "py209",
+      "title": "Unutma ve Diğer Bellek Sorunları",
+      "en": "Forgetting and Other Memory Challenges",
+      "accent": "#F25F5C",
+      "defter": "py207",
+      "seconds": 254,
+      "terms": [
+        "Forgetting curve",
+        "Encoding failure",
+        "Retrieval failure",
+        "Tip-of-the-tongue",
+        "Proactive interference",
+        "Retroactive interference",
+        "Repression",
+        "Misinformation effect",
+        "Source amnesia",
+        "Constructive memory",
+        "Imagination inflation"
+      ],
+      "questions": [
+        {
+          "q": "Bir araştırmacı öğrencilere 40 yeni İngilizce kelime öğretiyor ve farklı zamanlarda ne kadarını hatırladıklarını ölçüyor. Sonuçlar tabloda. Bu veriler en çok neyi destekler?",
+          "opts": [
+            "Unutma zamanla sabit bir hızda ilerler",
+            "Unutma en çok bir ay sonra başlar",
+            "Unutma başta çok hızlı, sonra giderek yavaştır",
+            "Kelimeler bir ay sonra tamamen unutulmuştur"
+          ],
+          "a": 2,
+          "why": "İlk günde 42 puan kayıp var (100 → 58); sonraki altı günde 25 puan (58 → 33); sonraki üç haftada yalnız 8 puan (33 → 25). Kayıp giderek yavaşlıyor ve tamamen sıfırlanmıyor; bu *forgetting curve*'ün biçimidir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ölçüm zamanı",
+              "Hatırlanan (yüzde)"
+            ],
+            "rows": [
+              [
+                "Hemen sonra",
+                "100"
+              ],
+              [
+                "1 gün sonra",
+                "58"
+              ],
+              [
+                "7 gün sonra",
+                "33"
+              ],
+              [
+                "30 gün sonra",
+                "25"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        },
+        {
+          "q": "Kaan kimya hocasının adını kesinlikle bildiğini, \"A\" ile başladığını söylüyor ama adı bir türlü çıkaramıyor; arkadaşı \"Ayşe mi, Aslı mı?\" diye sorunca hemen \"Aslı!\" diyor. Bu durum hangi unutma türüne örnektir?",
+          "opts": [
+            "*Encoding failure*",
+            "*Retrieval failure*",
+            "*Retroactive interference*",
+            "*Repression*"
+          ],
+          "a": 1,
+          "why": "Ad bellekte depolanmış; bir ipucu verilince hemen geliyor. Sorun geri getirmede: bu *retrieval failure*'dır ve tipik bir *tip-of-the-tongue* örneğidir. Bilgi hiç kodlanmamış olsaydı ipucu da işe yaramazdı."
+        },
+        {
+          "q": "Ela bu dönem Almanca öğrenmeye başladı. Geçen yıl öğrendiği Fransızca kelimeleri hatırlamaya çalışırken aklına hep Almancaları geliyor. Bu en iyi hangi kavramla açıklanır?",
+          "opts": [
+            "*Proactive interference*",
+            "*Source amnesia*",
+            "*Imagination inflation*",
+            "*Retroactive interference*"
+          ],
+          "a": 3,
+          "why": "Hatırlanamayan eski bilgi (Fransızca), onu bozan ise yeni öğrenilen (Almanca). Yeni bilginin eskiyi bozması *retroactive interference*'dır. Tersi, eski Fransızcanın yeni Almancayı bozması *proactive* olurdu."
+        },
+        {
+          "q": "Bir mahkemede, olayı gören bir tanığa avukat \"Saldırgan kırmızı arabadan indikten sonra ne yaptı?\" diye soruyor. Oysa tanığın ilk ifadesinde arabadan hiç söz edilmemiş. Sonraki ifadelerde tanık kırmızı arabayı net biçimde hatırladığını söylüyor. Bu durum hangi kavramla en iyi açıklanır ve hangi sonuç çıkarılır?",
+          "opts": [
+            "*Misinformation effect*; yanıltıcı sorular tanık ifadesini değiştirebilir",
+            "*Repression*; tanık arabayı bilinçdışına itmişti",
+            "*Encoding failure*; tanık arabayı hiç görmediği için yeniden hatırladı",
+            "*Proactive interference*; eski anılar yeni ifadeyi bozdu"
+          ],
+          "a": 0,
+          "why": "Soru, olayda olmayabilecek bir ayrıntıyı (kırmızı araba) varsaymış; tanık bunu anısına eklemiş. Olaydan sonra gelen yanıltıcı bilginin anıyı değiştirmesi *misinformation effect*'tir. Bu yüzden tanığın kesinlikle hatırladığını söylemesi doğruluğunu kanıtlamaz."
+        },
+        {
+          "q": "Aylin bir köpek tarafından kovalandığını çocukken anlatılan aile hikâyelerinden biliyor. Bu sahneyi yıllarca defalarca zihninde canlandırdı; şimdi olayı kendi gözleriyle hatırladığını söylüyor ve hikâyeyi annesinden mi duyduğunu, kendisinin mi yaşadığını ayırt edemiyor. Bu durumda hangi iki kavram birlikte görülür?",
+          "opts": [
+            "*Retroactive interference* ve *encoding failure*",
+            "*Imagination inflation* ve *source amnesia*",
+            "*Proactive interference* ve *repression*",
+            "*Tip-of-the-tongue* ve *retrieval failure*"
+          ],
+          "a": 1,
+          "why": "Olayı tekrar tekrar hayal etmek, yaşandığına inanmayı artırdı: *imagination inflation*. Bilginin annesinden mi geldiğini yoksa kendi yaşantısı mı olduğunu ayırt edememek: *source amnesia*. İkisi de belleğin *constructive* olduğunu gösterir."
+        }
+      ]
     }
   ],
   "final": []
