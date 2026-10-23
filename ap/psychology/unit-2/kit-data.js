@@ -890,6 +890,108 @@ window.KIT = {
     },
     {
       "no": 10,
+      "code": "2.8-1",
+      "slug": "py210",
+      "title": "Zekâ Nedir, Nasıl Ölçülür?",
+      "en": "Theories and Measurement of Intelligence",
+      "accent": "#F6B94A",
+      "defter": "py208",
+      "defterBaslik": "Zekâ ve Başarı",
+      "seconds": 248,
+      "terms": [
+        "Intelligence",
+        "Factor analysis",
+        "General intelligence (g)",
+        "Multiple intelligences",
+        "Savant syndrome",
+        "Triarchic theory",
+        "Analytical intelligence",
+        "Creative intelligence",
+        "Practical intelligence",
+        "Mental age",
+        "IQ"
+      ],
+      "questions": [
+        {
+          "q": "Bir psikolog öğrencilerin altı farklı zihinsel testteki puanlarına *factor analysis* uyguluyor ve puanların büyük kısmının tek bir ortak faktörle açıklandığını buluyor. Bu bulgu hangi kuramla en uyumludur?",
+          "opts": [
+            "Gardner'ın *multiple intelligences* kuramı",
+            "Sternberg'in *triarchic theory*'si",
+            "Spearman'ın *general intelligence* kuramı",
+            "Binet'nin *mental age* kavramı"
+          ],
+          "a": 2,
+          "why": "Farklı testlerdeki puanların tek bir ortak faktörle açıklanması, hepsinin altında genel bir yeteneğin, yani *g*'nin yattığı fikrini destekler. Bu, Spearman'ın görüşüdür."
+        },
+        {
+          "q": "Kerem dil ve matematik testlerinde ortalamanın altında puan alıyor, ama duyduğu her melodiyi tek seferde piyanoda çalabiliyor. Bu durum en çok hangi görüşe kanıt olarak kullanılır?",
+          "opts": [
+            "Zekâ birbirinden görece bağımsız birçok yetenekten oluşur",
+            "Bütün zihinsel yetenekler tek bir *g* faktörüne bağlıdır",
+            "*IQ* bir çocuğun zihinsel yaşına eşittir",
+            "Zekâ yalnız akademik başarıyla ölçülebilir"
+          ],
+          "a": 0,
+          "why": "Genel testlerde düşük, tek bir alanda olağanüstü performans (*savant syndrome*'a benzer bir tablo), zekânın tek bir genel yetenek olmadığını, birbirinden ayrı yeteneklerden oluştuğunu savunan *multiple intelligences* görüşüne kanıt olarak kullanılır."
+        },
+        {
+          "q": "Selin okulda notları ortalama olan bir öğrenci. Ama ailesinin küçük dükkânında müşterilerle pazarlık etmede, stok sorunlarını çözmede ve tedarikçileri ikna etmede çok başarılı. Sternberg'e göre Selin'in en güçlü yönü hangisidir?",
+          "opts": [
+            "*Analytical intelligence*",
+            "*Creative intelligence*",
+            "*General intelligence*",
+            "*Practical intelligence*"
+          ],
+          "a": 3,
+          "why": "Gündelik hayattaki somut sorunları halletme, insanlarla işi yürütme becerisi Sternberg'in *practical intelligence*'ıdır. Okul tipi problem çözme *analytical* olurdu."
+        },
+        {
+          "q": "8 yaşındaki bir çocuk bir zekâ testinde, 10 yaşındaki çocukların ortalaması kadar başarı gösteriyor. Oran *IQ* formülüne göre bu çocuğun *IQ*'su kaçtır?",
+          "opts": [
+            "80",
+            "125",
+            "100",
+            "120"
+          ],
+          "a": 1,
+          "why": "*IQ* = (zihinsel yaş ÷ gerçek yaş) × 100 = (10 ÷ 8) × 100 = 1,25 × 100 = 125. Zihinsel yaş gerçek yaştan büyükse *IQ* 100'ün üstündedir."
+        },
+        {
+          "q": "Tablodaki iki çocuk için oran *IQ* hesaplanıyor. Hangi ifade doğrudur?",
+          "opts": [
+            "İki çocuğun *IQ*'su eşittir, çünkü gerçek yaşları aynıdır",
+            "Selim'in *IQ*'su 133, Ada'nınki 80'dir",
+            "Selim'in *IQ*'su 75, Ada'nınki 125'tir",
+            "Oran *IQ* formülü 12 yaşındaki çocuklar için kullanılamaz"
+          ],
+          "a": 2,
+          "why": "Selim: (9 ÷ 12) × 100 = 75. Ada: (15 ÷ 12) × 100 = 125. Formül çocuklar için anlamlıdır; yetişkinlerde zihinsel yaş kavramı işe yaramadığından bugün yaş grubu normlarıyla karşılaştırma yapılır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Çocuk",
+              "Gerçek yaş",
+              "Zihinsel yaş"
+            ],
+            "rows": [
+              [
+                "Selim",
+                "12",
+                "9"
+              ],
+              [
+                "Ada",
+                "12",
+                "15"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 11,
       "code": "2.8-2",
       "slug": "py211",
       "title": "Zekâ Testleri ve Başarı",
