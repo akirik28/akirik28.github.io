@@ -37,7 +37,8 @@
    ========================================================================== */
 (function () {
   "use strict";
-  var KIT = window.KIT || { episodes: [] };
+  /* "ikisi" modunda kit-data.js henüz yoksa (404) defter-liste.js tek başına kullanılır */
+  var KIT = window.KIT || window.KIT_LISTE || { episodes: [] };
   /* Bir konu birden çok videoya bölünmüşse (ep.defter aynı) tek defterde toplanır;
      her soru kendi bölümünü (_ep) taşır, ilerleme o bölüme yazılır. */
   var EPS = (function (src) {
