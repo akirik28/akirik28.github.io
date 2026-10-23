@@ -1,0 +1,23 @@
+Beden dersi, sınıfta 17 kişi var. Hoca dörderli takımlar kuruyor. Kaç takım çıkar? 4 takım. Ve 1 kişi açıkta kalır; hoca onu hakem yapar. Java tam sayılarla tam olarak böyle düşünür: 17 bölü 4, 4 eder; 4 virgül 25 demez. 17 mod 4 de 1. Bugünün iki yıldızı bunlar.
+
+Java'nın aritmetik operatörleri: artı, eksi, çarpı, bölü ve mod. Sıra matematikteki gibi: önce çarpma, bölme ve mod; sonra toplama ve çıkarma. Aynı seviyedekiler soldan sağa. 2 artı 3 çarpı 4: önce 3 çarpı 4, 12; sonra artı 2, 14. Parantez koyarsan sıra değişir: 2 artı 3'ün tamamı çarpı 4, 20 eder.
+
+Şimdi en meşhur tuzak: integer division. İki int birbirine bölünürse sonuç da int olur. Ondalık kısım yuvarlanmaz, kesilip atılır. 7 bölü 2, 3 virgül 5 değil, 3. 2 bölü 3, sıfır. Eksi 7 bölü 2 de eksi 3: sıfıra doğru kesilir. Kantinde 7 lirayı iki kişiye bozuk para olmadan paylaştırmak gibi: herkese 3 lira, gerisi masada. O masada kalan 1 lirayı bulan operatör de mod.
+
+Bölmenin bir tarafı double olursa sonuç double olur. 7 virgül 0 bölü 2, 3 virgül 5. 7 bölü 2 virgül 0 da 3 virgül 5. Peki şu? double avg eşittir, parantez içinde 85 artı 90, bölü 2. Sağ taraf önce kendi başına hesaplanır: 175 bölü 2, iki int, sonuç 87. Ancak sonra double kutuya girer ve 87 nokta 0 olur. Kutunun double olması bölmeyi kurtarmaz.
+
+Gelelim modulo'ya, yani mod operatörüne: bölmeden kalanı verir. 17 mod 4, 1. 8 mod 2, sıfır. Kalan sıfırsa tam bölünür; 27 mod 3 de sıfır, demek ki 27 üçe tam bölünür. 5 mod 7, 5: küçük sayı büyüğe bölünemez, kendisi kalır. En sık kullanımı tek çift testi: n mod 2 sıfırsa çift, 1 ise tek. Pozitif sayılarda mod 2 başka bir sonuç veremez; ya sıfır ya 1.
+
+Bölü ve mod birlikte süper güçtür. 2026 mod 10, 6: son basamak. 2026 bölü 10, 202: son basamak silinir. Bir film 135 dakika. Kaç saat kaç dakika? 135 bölü 60, 2 saat. 135 mod 60, 15 dakika. FRQ'larda saniyeyi dakikaya, kuruşu liraya çevirmek tam olarak bu iki satırdır.
+
+Bir adım ileri: int n eşittir 472. Basamaklarını ayıralım. Birler: n mod 10, yani 2. Onlar: n bölü 10, 47; onun mod 10'u, 7. Yüzler: n bölü 100, 4. Rakamların toplamı 13. Okul numaranın rakamlarını toplamak da, bir sayının tersini yazmak da hep bu fikirle çalışır.
+
+Bir uyarı: bir int'i sıfıra bölersen ya da sıfıra göre mod alırsan program çöker. Java ArithmeticException fırlatır; bu bir run-time error. Ve sıra her şeyi değiştirir. 7 bölü 2 çarpı 2: önce 7 bölü 2, 3; sonra çarpı 2, 6. Oysa 7 çarpı 2 bölü 2, 7 eder. Matematikte ikisi aynı, Java'da değil.
+
+Şimdi bir AP örneği. Sınıf 47 liralık pizzayı 5 kişi paylaşıyor. int total 47, int people 5. double share eşittir total bölü people. Ne yazar? Sağ taraf iki int: 47 bölü 5, 9. Sonra double kutuya: 9 nokta 0. Cevap 9 nokta 0, 9 nokta 4 değil. Tuzak yine integer division. Ortalama, pay, oran: bölme gördüğün her yerde önce iki tarafın tipine bak. Düzeltmesi bir sonraki bölümün konusu: total'ı önce double'a çevirmek.
+
+Sınav için bilmen gereken. Yazman gereken: tek çift ve tam bölünme testi için mod; basamak ayırmak, dakikayı saate çevirmek için bölü ve mod birlikte. Okuman gereken: işlem sırasını ve her bölmenin int mi double mı olduğunu adım adım izlemek. Bilmen gerekmeyen: negatif sayılarla mod; sınav onu sormaz.
+
+Toparlayalım. Önce çarpı, bölü, mod; sonra artı, eksi; aynı seviyede soldan sağa. int bölü int, int verir: ondalık kesilir, yuvarlanmaz. Bir taraf double ise sonuç double. Ama kutunun double olması geç kalır. Mod kalanı verir: tek çift, son basamak, saat dakika. Tam sayıyı sıfıra bölmek ArithmeticException.
+
+Şimdi bir soru. println içinde: 10 artı 7 mod 3 çarpı 2. Ne yazar? Cevap: A, yani 12. Mod ve çarpı aynı seviyede, soldan sağa: 7 mod 3, 1; 1 çarpı 2, 2. En son toplama: 10 artı 2, 12. B dediysen toplamayı öne almışsın; mod, toplamadan önce gelir.

@@ -1,0 +1,21 @@
+Bir konser bileti düşün. Matbaada tek bir tasarım var: grup adı, tarih, koltuk numarası yazacak yerler. Kalıp bir kez çiziliyor, o kalıptan binlerce bilet basılıyor. Hepsi aynı şekilde ama her birinin koltuğu farklı. İşte nesne yönelimli programlamanın özü bu.
+
+class kalıptır: bir şeyin hangi verileri ve hangi davranışları olacağını tanımlar. object ise o kalıptan üretilmiş tek bir örnek, yani instance. Ticket sınıfı kalıp; senin elindeki 12 numaralı bilet bir nesne. Aslında ilk günden beri nesne kullanıyorsun: String bir sınıf, tırnak içindeki Kitora da bir String nesnesi.
+
+Nesneyi new ile üretirsin. Ticket t eşittir new Ticket, parantez içinde tırnakla Duman ve 12. new'den sonra gelen, sınıfla aynı adı taşıyan şey constructor: nesneyi kurup ilk değerlerini veren özel bir metot. Argümanlar constructor'ın imzasına uymalı: önce bir String, sonra bir int. Sırayı ters verirsen derlenmez. Bazı sınıfların birden fazla constructor'ı olur, mesela boş parantezli bir tane daha. Bu da overloading.
+
+Şimdi en önemli fikir. t kutusunun içinde bilet yok. İçinde biletin bellekteki adresi var, yani bir ok. Buna reference denir. int seat eşittir 12 dediğinde kutuda 12'nin kendisi durur. Ticket t dediğinde kutuda yalnızca nesneye giden ok durur. Peki o ok başka bir kutuya kopyalanırsa ne olur? Birazdan göreceğiz. Bu farkı anlayan, bu ünitenin en zor sorularını rahat çözer.
+
+Nesnenin metotlarını nokta ile çağırırsın: t nokta getSeat. getSeat koltuk numarasını döndürür: 12. t nokta setSeat 20 ise void bir metot; değer döndürmez, nesnenin içini değiştirir. Koltuk 20 olur. Bunlara instance method denir: bir nesneye aittir, o yüzden önce bir nesne gerekir. Math nokta sqrt gibi static metotlarda ise sınıfın adı yeter.
+
+Şimdi sihirli kısım. Ticket a yeni bir bilet, koltuk 5. Sonra Ticket b eşittir a. Bu satır yeni bilet basmaz. Okun bir kopyasını alır. Artık iki kutu aynı bilete bakıyor. b nokta setSeat 9 dersen, a nokta getSeat de 9 döndürür. Buna aliasing denir: aynı nesnenin iki adı. Kardeşinle aynı Netflix hesabını kullanmak gibi; biri profili değiştirince ikiniz de görürsünüz.
+
+Bir kutu hiçbir nesneye bakmıyorsa içinde null vardır. Ticket c eşittir null. Ok yok, boşluk var. Bu kutu üzerinden metot çağırırsan, mesela c nokta getSeat, Java boşluğa gider ve çöker: NullPointerException. Bu derleme hatası değil, run-time error. Derleyici kutunun içinde ne olacağını bilemez; program çalışınca patlar.
+
+Şimdi bir AP örneği. x yeni bir bilet, koltuk 3. y eşittir x. y nokta setSeat 8. Sonra x eşittir new Ticket, koltuk 1. En sonda x'in ve y'nin koltukları yazdırılıyor. İlk iki satırdan sonra iki ok tek bilete bakıyor. setSeat 8 o ortak bileti 8 yapar. Şimdi x yeni bir bilete döner; y eskisinde kalır. Cevap: 1 ve 8. Tuzak: y eşittir x, sonsuza dek bağlı kalmak demek değil; o anki oku kopyalamak demek.
+
+Sınav için bilmen gereken. Yazman gereken: new ile, constructor argümanlarını doğru sırada vererek nesne üretmek ve nokta ile metot çağırmak. Okuman gereken: referans diyagramları, iki değişkenin aynı nesneye baktığı durumlar, ve null üzerinden çağrının NullPointerException vermesi. Bilmen gerekmeyen: gerçek bellek adresleri ve garbage collection ayrıntıları. Sınıfın içini yazmak ise Unit 3'ün işi.
+
+Toparlayalım. class kalıp, object o kalıptan bir örnek. Nesne new ve constructor ile kurulur; argümanlar imzaya uymalı. Nesne değişkeninde nesne değil, ona giden reference durur. Bir referansı başka değişkene atamak aliasing yaratır: iki ad, tek nesne. null bir referans üzerinden metot çağırmak NullPointerException.
+
+Şimdi bir soru. Ticket p eşittir null. Sonra p nokta getSeat'in sonucu yazdırılıyor. Ne olur? Cevap: C. Kod derlenir ama çalışırken NullPointerException fırlatılır. p hiçbir bilete bakmıyor; sıfır ya da null yazmaz, program orada durur. B diyenler null'ı yazdırılabilir bir değer sanıyor; oysa burada null üzerinden metot çağrılıyor.

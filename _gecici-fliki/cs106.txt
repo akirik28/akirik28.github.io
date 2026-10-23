@@ -1,0 +1,21 @@
+Telefonundaki yemek sipariş uygulamasını düşün: harita, ödeme, bildirim. Onu yazanlar haritayı sıfırdan çizmedi. Hazır parçaları Lego gibi taktılar. Sen de Java'da her şeyi baştan yazmayacaksın. Bugün hazır parçaları nasıl çağıracağını öğreniyorsun.
+
+Hazır kod koleksiyonuna library, onu kullanma kurallarına API denir. İçindeki her class bir alet çantası: veriler ve davranışlar, yani metotlar. Sınıflar package'larda durur; String ve Math gibi en temel olanlar otomatik gelir. API'nin belgesi, metodun ne yaptığını söyler, nasıl yaptığını değil. Sınavda bunun bir özeti elinde olacak: Java Quick Reference.
+
+Belgelerde iki kelimeyi çok görürsün. precondition: metodu çağırmadan önce doğru olması gereken şart. Mesela sayı sıfırdan büyük olmalı. postcondition: metot bitince garanti edilen sonuç. FRQ sorusunda precondition yazıyorsa, o şarta güven. Kontrol eden ekstra kod yazman gerekmez; puanını o kazandırmaz.
+
+Bir metodun kimliği method signature: adı ve parametre listesi. public static double average, parantez içinde int a ve int b. Adı average. Parametreler iki int. Baştaki double ise dönüş tipi: metot sana bir double geri verir. Dönüş tipi imzanın parçası sayılmaz; imza yalnızca average, int, int.
+
+İki tür metot var. void metot bir iş yapar, örneğin ekrana yazar, ama geriye değer vermez. Dönüş tipli metot bir değer döndürür; o değeri bir kutuya koyman ya da kullanman gerekir. int total eşittir add, parantez içinde 3 ve 4: total 7 olur. Ama sadece add 3 ve 4 yazıp bırakırsan, 7 hesaplanır ve çöpe gider; ekrana bir şey çıkmaz. void bir metodu da bir kutuya atayamazsın; derleyici izin vermez.
+
+Tanımdaki a ve b'ye parameter, çağrıda verdiğin 3 ve 4'e argument denir. Argümanlar sayı, sıra ve tip olarak imzaya uymalı. Java argümanın bir kopyasını gönderir; buna call by value denir. boost metodu parametresine 10 ekliyor. score 50 iken boost, parantez içinde score çağır. score yine 50. Metot kendi kopyasını büyüttü, seninkine dokunmadı.
+
+Aynı adı taşıyan birden fazla metot olabilir, yeter ki parametre listeleri farklı olsun. Buna overloading denir. area iki int alırsa dikdörtgen, bir double alırsa daire alanı hesaplasın. Java hangisini çağıracağına argümanlara bakarak karar verir. Bu metotlar static, yani sınıfa ait. Sınıfın dışından sınıf adı, nokta, metot adıyla çağrılır: Math nokta sqrt gibi. Aynı sınıfın içinden yalnız adıyla.
+
+Şimdi bir AP örneği. twice bir sayının iki katını döndürüyor, show ise yazdırıyor. Kod: int a eşittir twice 3. Sonra tek başına twice a. Sonra show a, ve show, parantez içinde twice a artı 1. a 6 olur. İkinci satır 12 hesaplar ama kimse almaz; a hâlâ 6. show a, 6 yazar. twice a 12, artı 1, 13 yazar. Cevap: 6 ve alt satırda 13. Tuzak, sonucu çöpe giden çağrı.
+
+Sınav için bilmen gereken. Yazman gereken: verilen bir metodu doğru argümanlarla çağırmak ve dönüş değerini kullanmak; static metodu sınıf adıyla çağırmak. FRQ'larda verilen yardımcı metotları kullanmak puan getirir. Okuman gereken: imzalar, precondition'lar ve Java Quick Reference. Bilmen gerekmeyen: import satırları ve kütüphanelerin paket adlarını ezberlemek.
+
+Toparlayalım. API ve library hazır sınıflar ve metotlardır; belge ne yaptığını söyler. Precondition'a güven; postcondition metodun sözüdür. İmza: ad ve parametre listesi. Argümanlar sayı, sıra ve tipte uymalı. void yalnız iş yapar; dönüş tipli metodun değerini kullanmazsan kaybolur. static metot sınıf adıyla çağrılır; aynı adlı metotlar overloading ile ayrılır.
+
+Şimdi bir soru. İki area metodu var: biri iki int, diğeri bir double alıyor. Hangi çağrı derlenmez? Cevap: D, area 2 virgül 5 ve 3. İki argüman alan metot iki int istiyor; 2 virgül 5 int değil. Şaşırtıcı olan B: area 5 derlenir, çünkü int 5 otomatik olarak double'a genişler.

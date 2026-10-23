@@ -1,0 +1,23 @@
+Kulüp kayıt formuna e-posta adresini yazdın: elif et okul nokta com. Site, kullanıcı adını ve alan adını ayrı ayrı göstermek istiyor. Ama nereden keseceğini nasıl bilecek? Et işaretinin yerini bulması lazım. Bugün yazının içinde arama yapmayı ve iki yazıyı karşılaştırmayı öğreniyoruz.
+
+indexOf bir yazının içinde başka bir yazıyı arar ve ilk bulduğu yerin index'ini döndürür. Tırnak içinde banana nokta indexOf an: 1. Sonra bir an daha var ama indexOf ilkinde durur. Bulamazsa eksi 1 döndürür: indexOf x, eksi 1. Büyük küçük harfe duyarlıdır. Kitora'da küçük k aranırsa, büyük K sayılmaz, sonuç eksi 1.
+
+Şimdi formu çözelim. mail nokta indexOf et işareti: 4. Kullanıcı adı sıfırdan 4'e kadar: substring sıfır ile at. Sonuç elif. Alan adı et işaretinin bir sonrasından sona: substring at artı 1. Sonuç okul nokta com. indexOf ile yer bul, substring ile kes. FRQ'ların en sevdiği ikili bu.
+
+İki yazı aynı mı? Bunun için equals. a nokta equals, parantez içinde b: harfler birebir aynıysa true, değilse false. Büyük küçük harf yine önemli: Evet ile küçük harfle evet eşit değil. equals bir boolean döndürür; yani cevabı hep true ya da false. Şifre kontrolü, cevap kontrolü, kullanıcı adı karşılaştırması; hepsi equals ile yapılır.
+
+Peki iki eşittir işaretiyle karşılaştırırsan? İşte büyük tuzak. İki eşittir String'lerde harfleri değil, okları karşılaştırır: iki değişken aynı nesneye mi bakıyor? a eşittir new String evet, b eşittir new String evet. a iki eşittir b: false. Harfler aynı ama iki ayrı nesne. a nokta equals b: true. Kural basit: yazıları her zaman equals ile karşılaştır.
+
+Sıralamak için compareTo. Sözlük sırasına bakar ve bir tam sayı döndürür. a nokta compareTo b negatifse a önce gelir. Ali, Can'dan önce: negatif. Sıfırsa ikisi eşittir. Pozitifse a sonra gelir. Sınavda yalnızca işaret önemli; sayının kendisini hesaplaman gerekmez.
+
+compareTo nerede işine yarar? Kulüp listesinde first Deniz, second Burak. first nokta compareTo second: D, B'den sonra gelir, sonuç pozitif. Demek ki listede önce Burak yazılmalı. indexOf da bir şeyin olup olmadığını söyler: sonuç eksi 1 değilse aranan yazı içeride var. Mesajda yasaklı bir kelime var mı, adreste et işareti var mı; hep böyle bakılır.
+
+İki ince ayrıntı. Bütün büyük harfler küçüklerden önce gelir: Zeynep, büyük Z ile, küçük harfle ahmet'ten önce. compareTo negatif. Bir yazı ötekinin başıysa, kısa olan önce gelir: kitap, kitaplik'ten önce. Bir de null: null bir String üzerinden length ya da equals çağırırsan NullPointerException alırsın. Ama dolu bir yazının equals'ına null verirsen sadece false döner.
+
+Şimdi bir AP örneği. x büyük harfle Mavi, y küçük harfle mavi. z eşittir x nokta substring 1. Yazdırılan üç şey: x equals y, z equals y'nin substring 1'i, ve x nokta indexOf i. Birincisi false: M ile m farklı. İkincisi true: iki taraf da avi. Üçüncüsü: M sıfır, a 1, v 2, i 3. Cevap: false, true, 3. Tuzak harf büyüklüğü; çoğu kişi ilkine true der.
+
+Sınav için bilmen gereken. Yazman gereken: indexOf ile yer bulup substring ile kesmek, yazıları equals ile karşılaştırmak, sıralamada compareTo'nun işaretini kullanmak. Okuman gereken: indexOf'un eksi 1 döndürdüğü durumlar ve iki eşittirin neden yanıldığı. Bilmen gerekmeyen: compareTo'nun tam sayı değeri, karakter kodları tablosu, toUpperCase gibi listede olmayan metotlar.
+
+Toparlayalım. indexOf ilk eşleşmenin index'ini, bulamazsa eksi 1 döndürür. indexOf ile yer bul, substring ile kes. equals harfleri karşılaştırır; iki eşittir okları. Yazılarda hep equals. compareTo negatifse önce, sıfırsa eşit, pozitifse sonra; büyük harfler önce gelir. null bir yazı üzerinden metot çağırmak NullPointerException.
+
+Şimdi bir soru. s tırnak içinde istanbul. Yazdırılan: s nokta indexOf an, artı s nokta substring, parantez içinde s nokta indexOf b. Cevap: C, 3bul. an 3'te başlıyor. b 5'te, oradan sona bul. 3 sayısı yazıya eklenince toplanmaz, önüne yapışır.
