@@ -258,6 +258,96 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 4,
+      "code": "3.5-1",
+      "slug": "cs304",
+      "title": "Metot Yazmak: void, return ve Mutator",
+      "en": "Writing Methods: void, return, Accessors, and Mutators",
+      "accent": "#5BC0EB",
+      "defter": "cs304",
+      "defterBaslik": "Metot Yazmak",
+      "seconds": 294,
+      "terms": [
+        "Method header",
+        "Return type",
+        "void",
+        "return",
+        "Parameter list",
+        "Accessor",
+        "Mutator",
+        "missing return statement"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki metot için hangisi doğrudur?",
+          "opts": [
+            "n <= 100 ise false döndürür.",
+            "Derlenmez: missing return statement.",
+            "Her zaman true döndürür.",
+            "n <= 100 ise null döndürür."
+          ],
+          "a": 1,
+          "why": "Koşul yanlış olduğunda hiçbir *return* çalışmaz. Değer döndüren bir metodun her yolu *return* ile bitmeli; bitmediği için derleyici hata verir.",
+          "fig": {
+            "type": "code",
+            "code": "public boolean isBig(int n) {\n  if (n > 100) {\n    return true;\n  }\n}"
+          }
+        },
+        {
+          "q": "LunchCard'da public void topUp(int amount) var. Başka bir sınıfta int x = c.topUp(10); yazılırsa ne olur?",
+          "opts": [
+            "x 10 olur.",
+            "x yeni bakiye olur.",
+            "Derlenmez: topUp bir değer döndürmüyor.",
+            "x 0 olur."
+          ],
+          "a": 2,
+          "why": "*void* metot değer döndürmez; sonucu bir değişkene atanamaz. c.topUp(10); tek başına yazılmalı."
+        },
+        {
+          "q": "pay metodu fiyat bakiyeden büyükse false döndürüp bakiyeyi değiştirmiyor; değilse fiyatı düşüp true döndürüyor. Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "2 10",
+            "3 -60",
+            "2 60",
+            "1 40"
+          ],
+          "a": 0,
+          "why": "90 → pay(50) true, 40 → pay(50) false (40 kalır) → topUp(20) 60 → pay(50) true, 10. İki ödeme oldu: ok 2, bakiye 10.",
+          "fig": {
+            "type": "code",
+            "code": "LunchCard c = new LunchCard(\"Selin\", 90);\nint ok = 0;\nif (c.pay(50)) { ok++; }\nif (c.pay(50)) { ok++; }\nc.topUp(20);\nif (c.pay(50)) { ok++; }\nSystem.out.println(ok + \" \" + c.getBalance());"
+          }
+        },
+        {
+          "q": "isEmpty metodu bakiye 0 ise true, değilse false döndürmeli ve hiçbir alanı değiştirmemeli. Hangisi doğru yazılmıştır?",
+          "opts": [
+            "public void isEmpty() { return balance == 0; }",
+            "public boolean isEmpty() { balance = 0; return true; }",
+            "public boolean isEmpty() { if (balance == 0) { return true; } }",
+            "public boolean isEmpty() { return balance == 0; }"
+          ],
+          "a": 3,
+          "why": "D karşılaştırmanın *boolean* sonucunu döndürür. A'da *void* ile *return* değeri çelişir; B bakiyeyi sıfırlar (*accessor* olmaktan çıkar); C'de koşul yanlışsa *return* yok, derlenmez."
+        },
+        {
+          "q": "Aşağıdaki metot LunchCard'ın içinde. c.test(14), c.test(15) ve c.test(5) sırasıyla ne döndürür?",
+          "opts": [
+            "4, 5, 15",
+            "7, 5, 2",
+            "7, 5, 15",
+            "7, 15, 15"
+          ],
+          "a": 2,
+          "why": "14 çift: 14 / 2 = 7 döner ve metot biter. 15 tek ve 10'dan büyük: 15 − 10 = 5. 5 tek ve 10'dan büyük değil: 5 · 3 = 15. İlk çalışan *return* metodu bitirir.",
+          "fig": {
+            "type": "code",
+            "code": "public int test(int n) {\n  if (n % 2 == 0) { return n / 2; }\n  if (n > 10) { return n - 10; }\n  return n * 3;\n}"
+          }
+        }
+      ]
     }
   ],
   "final": []
