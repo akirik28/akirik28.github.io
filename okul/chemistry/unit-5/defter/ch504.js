@@ -94,7 +94,7 @@ window.DEFTER = {
             { t: "i", alt: "tanecik sayısı" }, "×",
             { t: "Kb", alt: "su için 0,51 °C·kg/mol" }, "×",
             { t: "m", alt: "molalite (mol/kg)" }
-          ], aciklama: "Kb, 1 mol uçucu olmayan ve iyonlaşmayan çözünenin 1000 g suyun kaynama noktasını yükselttiği miktardır (0,51 °C). Derste bu bağıntı ΔT = derişim × i biçiminde de yazılır; seyreltik sulu çözeltilerde molarite ≈ molalite alınır. Kaynama ve donma noktaları dış basınca da bağlıdır (1 atm'de su 100 °C'de, 0,95 atm'de 98,6 °C'de kaynar); formüller 1 atm içindir." },
+          ], aciklama: "Kb, 1 mol uçucu olmayan ve iyonlaşmayan çözünenin 1000 g suyun kaynama noktasını yükselttiği miktardır (0,51 °C). Derste bu bağıntı ΔT = K × derişim × i biçiminde de yazılır; seyreltik sulu çözeltilerde molarite ≈ molalite alınır. Kaynama ve donma noktaları dış basınca da bağlıdır (1 atm'de su 100 °C'de, 0,95 atm'de 98,6 °C'de kaynar); formüller 1 atm içindir." },
         { tip: "ornek", baslik: "Tuzlu suyun kaynama noktası", durum: "a) 58,5 g NaCl 1 kg suda çözülüyor; çözeltinin kaynama noktası kaç °C'dir? b) Makarna suyuna 1 kg suda 10 g tuz atılırsa kaynama noktası ne kadar yükselir? (NaCl = 58,5 g/mol, Kb = 0,51)", adimlar: [
             "a) n = 58,5 ÷ 58,5 = 1 mol; m = 1 mol/kg; i = 2.",
             "a) ΔTb = 2 × 0,51 × 1 = 1,02 °C → kaynama noktası 100 + 1,02 = 101,02 °C.",
@@ -181,7 +181,7 @@ window.DEFTER = {
             { id: "gaz", tip: "yazi", x: 7.4, y: 2.5, metin: "GAZ", gizli: true }
           ],
           durumlar: [
-            { metin: "Her eğri, iki hâlin dengede olduğu basınç–sıcaklık çiftleridir. Sol altta katı, sağ altta gaz, üstte sıvı bölgesi.", goster: ["kat", "sivi", "gaz"] },
+            { metin: "Her eğri, iki hâlin dengede olduğu basınç–sıcaklık çiftleridir. Solda (düşük sıcaklık, yüksek basınç) katı, sağ altta (yüksek sıcaklık, düşük basınç) gaz, üstte ortada sıvı bölgesi.", goster: ["kat", "sivi", "gaz"] },
             { metin: "==Süblimleşme eğrisi== katı ile gaz arasında; ==erime/donma eğrisi== katı ile sıvı arasında; ==buharlaşma/yoğuşma eğrisi== sıvı ile gaz arasında.", goster: ["sg", "sl", "lg"] },
             { metin: "Üç eğri ==üçlü noktada== buluşur: katı, sıvı ve gaz birlikte bulunur. CO₂'de üçlü nokta 1 atm'in üstündedir (−56,6 °C, 5,1 atm).", goster: ["up"] },
             { metin: "1 atm'de sıvı bölgesine hiç girilmez: katı CO₂ doğrudan gaza geçer (−78,5 °C'de süblimleşir). Bu yüzden 'kuru buz'.", goster: ["atm", "atmt"] },

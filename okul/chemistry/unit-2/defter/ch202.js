@@ -44,7 +44,7 @@ window.DEFTER = {
             ["Alev", "Mavi", "Sarı, isli"],
             ["Tehlike", "—", "CO zehirlidir"]
           ] },
-        { tip: "tuzak", metin: "Magnezyum şeridi parlak ışıkla yanar: 2Mg + O₂ → 2MgO. Bu tepkime tek bir üründe birleştiği için sentez, oksijenle ısı ve ışık verdiği için yanmadır.", yanlis: "Bir tepkime yalnızca tek bir türe girer.", dogru: "Bir tepkime ==birden fazla türe== girebilir. Mg + O₂ hem sentez hem yanmadır; soru hangisini sorarsa onu yaz. Demirin paslanması da oksijenle yavaş bir yanmadır." },
+        { tip: "tuzak", metin: "Magnezyum şeridi parlak ışıkla yanar: 2Mg + O₂ → 2MgO. Bu tepkime tek bir üründe birleştiği için sentez, oksijenle ısı ve ışık verdiği için yanmadır.", yanlis: "Bir tepkime yalnızca tek bir türe girer.", dogru: "Bir tepkime ==birden fazla türe== girebilir. Mg + O₂ hem sentez hem yanmadır; soru hangisini sorarsa onu yaz. Demirin paslanması da oksijenle yavaş yürüyen bir tepkimedir (MEB kitaplarında \"yavaş yanma\" denir); ışık vermez." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: tam yanma", metin: "*Complete combustion of a hydrocarbon produces carbon dioxide and water.*" },
             { ikon: "✍️", baslik: "Sınavda böyle yaz: eksik yanma", metin: "*Incomplete combustion produces carbon monoxide or soot because there is not enough oxygen.*" }
@@ -60,7 +60,7 @@ window.DEFTER = {
             ["Aktif metaller", "Mg, Al, Zn, Fe, Ni, Sn, Pb", "Asitten H₂ çıkarır; az aktif metali tuzundan söker"],
             ["Az aktif metaller", "Cu, Ag, Au", "Asitten H₂ çıkaramaz"],
             ["Halojenler", "F₂ > Cl₂ > Br₂ > I₂", "Aktif halojen, az aktif halojenin iyonunu söker"]
-          ], not: "Genel biçim: A + BC → AC + B. A, B'den daha aktif olmalıdır (3Na + AlCl₃ → 3NaCl + Al). Tek yer değiştirme tepkimelerinin çoğu aynı zamanda redokstur (2.4)." },
+          ], not: "Genel biçim: A + BC → AC + B. A, B'den daha aktif olmalıdır (3Na + AlCl₃ → 3NaCl + Al). Tek yer değiştirme tepkimelerinin hepsi aynı zamanda redokstur (2.4)." },
         { tip: "grafik", baslik: "Zn + CuSO₄: çözeltideki iyonlar (model)", xlabel: "Zaman", ylabel: "İyon derişimi (birim)", xmax: 10, ymax: 10,
           xticks: [], yticks: [{ v: 4, label: "4" }, { v: 8, label: "8" }],
           ogeler: [

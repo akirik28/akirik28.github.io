@@ -221,7 +221,7 @@ window.DEFTER = {
             "g: y-kesişimi g(0) = −8. Sıfır: 2x − 8 = 0 → x = 4.",
             "h: y-kesişimi h(0) = √4 − 1 = 1. Sıfır: √(x + 4) = 1 → x + 4 = 1 → x = −3."
           ],
-          sonuc: "f: (3, 0), (−2, 0), (0, −6); g: (4, 0), (0, −8); h: (−3, 0), (0, 1). Sınavda böyle yaz: *The x-intercepts are −3, −1 and 5, and the y-intercept is −2.*"
+          sonuc: "f: (3, 0), (−2, 0), (0, −6); g: (4, 0), (0, −8); h: (−3, 0), (0, 1). Sınavda böyle yaz: *The x-intercepts of f are −2 and 3, and the y-intercept is −6.*"
         },
         {
           tip: "tuzak",
@@ -542,7 +542,7 @@ window.DEFTER = {
       why: "Domain, grafiğin x ekseninde kapladığı aralık: 1'den 8'e, uçlar dolu olduğundan [1, 8]. Range, y ekseninde kapladığı aralık: en alçak y = 2, en yüksek y = 6, yani [2, 6]. B seçeneği ikisini yer değiştirmiş."
     },
     {
-      q: "For the same graph, on which interval is f decreasing?",
+      q: "For the same graph, on which interval is f strictly decreasing?",
       fig: {
         type: "graph",
         xlabel: "x",

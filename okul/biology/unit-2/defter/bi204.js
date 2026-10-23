@@ -22,7 +22,7 @@ window.DEFTER = {
             { ikon: "🔁", terim: "Biogeochemical cycle", tr: "biyojeokimyasal döngü", tanim: "Bir elementin canlılar (*bio*) ile kayaç, su ve hava gibi cansız çevre (*geo*) arasında dolaşması.", ornek: "Karbon, azot, su, fosfor." },
             { ikon: "🏦", terim: "Reservoir", tr: "depo", tanim: "Elementin en çok bulunduğu yer. Karbon için fosil yakıt ve okyanus, azot için atmosfer (%78 N₂), su için okyanus (≈ %97).", ornek: "Atmosferin %78'i N₂'dir ama çoğu canlı onu doğrudan kullanamaz." }
           ] },
-        { tip: "not", metin: "*Biosphere-2* projesinde (1987–1989, Arizona çölü) kapalı bir alanda madde döngüleri kurulamadı: O₂ %14'e düştü, CO₂ arttı, 25 omurgalı türünün 19'u öldü. Gerçek döngüler bozulunca da sorun çıkar: azot bileşikleri asit yağmuruna, su döngüsünün bozulması kuraklık ve sele, karbon döngüsünün bozulması sıcaklık artışına yol açar. Sınavda böyle yaz: *Energy flows through an ecosystem, but matter is recycled.*" }
+        { tip: "not", metin: "*Biosphere-2* projesinde (1991–1993, Arizona çölü) kapalı bir alanda madde döngüleri kurulamadı: O₂ %14'e düştü, CO₂ arttı, 25 omurgalı türünün 19'u öldü. Gerçek döngüler bozulunca da sorun çıkar: azot bileşikleri asit yağmuruna, su döngüsünün bozulması kuraklık ve sele, karbon döngüsünün bozulması sıcaklık artışına yol açar. Sınavda böyle yaz: *Energy flows through an ecosystem, but matter is recycled.*" }
       ]
     },
     {

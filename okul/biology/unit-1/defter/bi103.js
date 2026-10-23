@@ -134,7 +134,7 @@ window.DEFTER = {
           ], aciklama: "Van Niel: mor sülfür bakterileri H₂S kullanır ve O₂ değil kükürt çıkarır. Bitkide H₂A = H₂O ise A = O, yani O₂ sudan gelir. Hill'in denklemi: 2H₂O → O₂ + 4H⁺ + 4e⁻." },
         { tip: "zaman", olaylar: [
             { tarih: "1643", baslik: "Van Helmont", metin: "Beş yıl sulayarak büyüttüğü bitkiyi tarttı: bitki 75 kg arttı, toprak neredeyse aynı kaldı. Kütlenin sudan geldiği sonucuna vardı." },
-            { tarih: "1770", baslik: "Priestley", metin: "Sönmüş mumun bulunduğu fanusa nane koyunca mum yeniden yandı: bitki yanma için gerekli gazı (O₂) salıyordu." },
+            { tarih: "1771", baslik: "Priestley", metin: "Sönmüş mumun bulunduğu fanusa nane koyunca mum yeniden yandı: bitki yanma için gerekli gazı (O₂) salıyordu." },
             { tarih: "1779", baslik: "Ingenhousz", metin: "Priestley'nin sonucunun yalnızca ışıkta ve yalnızca yeşil kısımlarda görüldüğünü gösterdi. Bitkiler karanlıkta CO₂ verir." },
             { tarih: "1931", baslik: "Van Niel", metin: "Bazı fotosentetik bakteriler su yerine H₂S kullanır ve O₂ yerine kükürt çıkarır. O₂ CO₂'den değil, hidrojen vericiden gelir." },
             { tarih: "1937", baslik: "Hill", metin: "Ağır oksijen izotopu ¹⁸O ile işaretli su ve CO₂ kullandı; çıkan O₂ sudan geldi. Ayrıca ayrılmış kloroplastlar ışıkta, CO₂ olmadan, uygun bir hidrojen alıcıyla O₂ çıkardı (*Hill reaction*)." },

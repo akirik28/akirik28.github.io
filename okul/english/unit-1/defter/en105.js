@@ -172,7 +172,7 @@ window.DEFTER = {
       a: 1,
       why: "Terute'nin planı tersine döner: beklenenin tersi olur. En çekici yanlış şık A: öncesinde bu olayı sezdiren belirgin bir ipucu yok." },
     { q: "What do the phrases \"Many, many years ago...\" and \"To this day there is preserved a piece of needle-work...\" show about the text?",
-      opts: ["A realistic, everyday narration", "That the narrator stays outside the story", "Fairy-tale conventions (a timeless opening and closing)", "First-person narration"],
+      opts: ["A realistic, everyday narration", "That the narrator never comments on or judges the events", "Fairy-tale conventions (a timeless opening and closing)", "First-person narration"],
       a: 2,
       why: "Formülsel başlangıç ve \"bugüne kadar\" biçiminde bitiş masal gelenekleridir. B yanlış: anlatıcı yorum yapar ve ahlaki hüküm verir (\"Thus was the wicked woman punished\")." },
     { q: "What do the mother's last words to Hase-Hime help to establish in the rest of the story?",

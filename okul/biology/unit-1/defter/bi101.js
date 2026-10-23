@@ -140,8 +140,8 @@ window.DEFTER = {
             { metin: "Nişastanın su girerek glikoza parçalanması.", cevap: "sag", neden: "Su girerek bağ kırılıyor: hidroliz, katabolik." }
           ] },
         { tip: "tablo", baslik: "ATP yapım yolları (ayrıntıları sonraki defterlerde)", head: ["Yol", "Nerede?", "Enerji kaynağı"], rows: [
-            ["*Photophosphorylation*", "Kloroplast (ökaryot), sitoplazma (prokaryot)", "Işık enerjisi, ETS"],
-            ["*Oxidative phosphorylation*", "Mitokondri (ökaryot), mesozom (aerobik bakteri)", "O₂ varlığında organik molekül yıkımı, ETS"],
+            ["*Photophosphorylation*", "Kloroplast (ökaryot), hücre zarı / tilakoid zarları (prokaryot)", "Işık enerjisi, ETS"],
+            ["*Oxidative phosphorylation*", "Mitokondri (ökaryot), hücre zarı (aerobik bakteri; MEB: mezozom)", "O₂ varlığında organik molekül yıkımı, ETS"],
             ["*Chemophosphorylation*", "Kemosentetik bakteriler", "İnorganik bileşiklerin oksidasyonu"],
             ["*Substrate-level phosphorylation*", "Glikoliz ve Krebs döngüsü", "Enzimin fosfatı substrattan ADP'ye aktarması"]
           ], not: "Sınavda böyle yaz: *Anabolic reactions use ATP, whereas catabolic reactions release the energy that is used to make ATP.*" }

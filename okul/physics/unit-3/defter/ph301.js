@@ -138,7 +138,7 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Ampulün teli ısındıkça direnci artar; bu yüzden V–I grafiği düz bir doğru olmaz.", yanlis: "Her eleman Ohm yasasına uyar ve V–I grafiği hep doğrudur.", dogru: "Ohm yasası bir doğa yasası değildir; yalnızca direnci sabit kalan (ohmik) malzemeler için geçerlidir. Pil ve kondansatör gibi elemanlar ohmik değildir." },
         { tip: "ornek", baslik: "Prizdeki ampulün teli", durum: "120 V'luk prize bağlanan 60 W'lık ampul 0,50 A akım çekiyor. Filamanın direnci kaç Ω? Teli 0,04 mm çapında ve ρ ≈ 5 × 10⁻⁷ Ω·m ise boyu yaklaşık ne kadar olmalı?",
           adimlar: ["R = V / I = 120 / 0,5 = 240 Ω.", "Kesit alanı A = π·r² = 3,14 · (2 × 10⁻⁵)² ≈ 1,26 × 10⁻⁹ m².", "ℓ = R·A / ρ = 240 · 1,26 × 10⁻⁹ / (5 × 10⁻⁷) ≈ 0,6 m."],
-          sonuc: "R = 240 Ω ve tel yaklaşık 0,6 m (iki ayak kadar). Bu direnç yalnızca tel akkor haldeyken geçerlidir. Sınavda böyle yaz: *The current through the bulb is I = V / R.* *The resistance of the bulb does not change.*" }
+          sonuc: "R = 240 Ω ve tel yaklaşık 0,6 m (iki ayak kadar). Bu direnç yalnızca tel akkor haldeyken geçerlidir. Sınavda böyle yaz: *The current through the bulb is I = V / R.* *The resistance of the filament increases as it gets hotter.*" }
       ]
     },
     {

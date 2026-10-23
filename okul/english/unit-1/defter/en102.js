@@ -149,7 +149,7 @@ window.DEFTER = {
           rows: [
             ["*Simile*", "“like” ya da “as” ile benzetme", "Felix'in fikri “like a gimlet” saplanır"],
             ["*Metaphor*", "“like” kullanmadan benzetme", "“a veil of tears”"],
-            ["*Motif*", "Öykü boyunca yinelenen öğe", "“This is not my child!”"],
+            ["*Motif*", "Öykü boyunca yinelenen öğe", "Hase öyküsünde dua: tapınakta çocuk duası, nehre okunan şiir-dua, dağda okunan Buddhist kutsal metinler"],
             ["*Juxtaposition*", "Zıt iki şeyi yan yana koymak", "Zézé'nin solgun yüzü ve yeğenlerinin canlı gençliği"],
             ["*Foreshadowing*", "Sonradan olacağa erken ipucu", "Felix'in sabırlı kini"],
             ["*Pacing*", "Olayların hızlanıp yavaşlaması", "Aylar süren hazırlık, kısa tuzak"],

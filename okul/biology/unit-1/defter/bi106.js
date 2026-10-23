@@ -23,7 +23,7 @@ window.DEFTER = {
             { baslik: "Zarlar arası boşluk", alt: "H⁺ birikir" }
           ] },
         { tip: "tuzak", metin: "“Solunum” iki ayrı olayın adıdır: akciğerlerle soluk alıp verme (gaz alışverişi) ve hücrede yapılan kimyasal enerji üretimi.", yanlis: "Hücresel solunum, akciğerlerin soluk alıp vermesidir.", dogru: "Hücresel solunum, hücrede glikozdaki enerjinin ATP'ye çevrilmesidir; akciğerler yalnızca O₂'yi getirip CO₂'yi uzaklaştırır." },
-        { tip: "not", metin: "Glikoz yakılsa enerji bir anda ısı ve ışık olarak dağılır; hücre ise onu kontrollü, küçük adımlarla bırakıp ATP'de tutar (enerjinin yaklaşık %34'ü). Ökaryotta solunum sitoplazmada başlar, mitokondride biter; prokaryotta sitoplazmada ve hücre zarının içe kıvrımlarında yürür. Sınavda böyle yaz: *In aerobic respiration, glucose is oxidized to carbon dioxide and water in the presence of oxygen, and the released energy is used to make ATP.*" }
+        { tip: "not", metin: "Glikoz yakılsa enerji bir anda ısı ve ışık olarak dağılır; hücre ise onu kontrollü, küçük adımlarla bırakıp ATP'de tutar (lecture'daki 38 ATP ile enerjinin yaklaşık %40'ı; güncel 30–32 ATP ile yaklaşık %34). Ökaryotta solunum sitoplazmada başlar, mitokondride biter; prokaryotta sitoplazmada ve hücre zarının içe kıvrımlarında yürür. Sınavda böyle yaz: *In aerobic respiration, glucose is oxidized to carbon dioxide and water in the presence of oxygen, and the released energy is used to make ATP.*" }
       ]
     },
     {

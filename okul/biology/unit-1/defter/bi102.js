@@ -87,7 +87,7 @@ window.DEFTER = {
             { metin: "Klorofil çözeltisinin hangi renkli ışığı ne kadar tuttuğu.", cevap: "sol", neden: "Soğurma ölçülüyor: absorpsiyon spektrumu." },
             { metin: "Mavi ışıkta CO₂ tüketiminin kırmızıdan fazla olması.", cevap: "sag", neden: "Fotosentez hızıyla ilgili: etki spektrumu." }
           ] },
-        { tip: "not", metin: "Lecture'a göre fotosentez hızı kırmızı ve mor ışıkta en yüksek, yeşilde en düşüktür. Kızılötesi, morötesi, radyo dalgaları ve X-ışınlarında hız sıfırdır. Klorofil, soğurduğu ışık miktarıyla orantılı ATP üretir." }
+        { tip: "not", metin: "Lecture'a göre fotosentez hızı kırmızı ve mor ışıkta en yüksek, yeşilde en düşüktür. Kızılötesi, morötesi, radyo dalgaları ve X-ışınlarında hız sıfırdır. Klorofilin soğurduğu ışık ne kadar fazlaysa elektron akışı ve dolayısıyla ATP üretimi o kadar artar." }
       ]
     },
     {

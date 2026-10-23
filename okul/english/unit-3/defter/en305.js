@@ -53,7 +53,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "liste", baslik: "Ördek sorusu", maddeler: [
             { ikon: "🦆", baslik: "Soru", metin: "Holden, Central Park'taki gölet donunca ördeklerin nereye gittiğini merak eder." },
-            { ikon: "🚕", baslik: "Taksi şoförleri (Ch 9, 12)", metin: "Bu soruyu taksi şoförlerine sorar; Ch 12'deki Horowitz soruya kızar ve ciddi bir cevap vermez." },
+            { ikon: "🚕", baslik: "Taksi şoförleri (Ch 9, 12)", metin: "Bu soruyu taksi şoförlerine sorar; Ch 12'deki Horwitz soruya kızar ve ciddi bir cevap vermez." },
             { ikon: "🥶", baslik: "Gölet (Ch 20)", metin: "Parkta gölete gider; ördekleri göremez, gölette buz görür." }
           ] },
         { tip: "tablo", baslik: "Olası okumalar", head: ["Okuma", "Metindeki iz", "Kalıp"], rows: [
@@ -70,13 +70,13 @@ window.DEFTER = {
         { tip: "liste", baslik: "Nesnelerin izleri", maddeler: [
             { ikon: "♟️", baslik: "Jane'in kralları (Ch 4, 6)", metin: "Jane dama oynarken kralları hep arka sıraya dizerdi (*kings in the back row*). Holden bunu anımsar; Woods'un örnek analizinde bu anı, Holden'ın ilgili ve gözlemci yanını gösterir." },
             { ikon: "💧", baslik: "Dama tahtasındaki gözyaşları", metin: "Jane bir gün tahtaya gözyaşı döker; Holden'ın ona bağlılığını ve Jane'in destek ihtiyacını gösterir." },
-            { ikon: "🧤", baslik: "Allie'nin eldiveni (Ch 5)", metin: "Allie'nin beyzbol eldiveninin üzerinde şiirler yazılıdır. Holden onu Stradlater'ın istediği kompozisyonun konusu yapar ve yalnızca Jane'e göstermiştir: derin güven." },
+            { ikon: "🧤", baslik: "Allie'nin eldiveni (Ch 5)", metin: "Allie'nin beyzbol eldiveninin üzerinde şiirler yazılıdır. Holden onu Stradlater'ın istediği kompozisyonun konusu yapar; eldiveni aile dışında yalnızca Jane'e göstermiştir: derin güven." },
             { ikon: "🩶", baslik: "Gri saç", metin: "Holden'ın saçında beyazlamalar vardır: yaşından yaşlı hissetmesi ve stres." }
           ] },
         { tip: "tablo", baslik: "Olası okumalar", head: ["Nesne", "Okuma", "Kalıp"], rows: [
             ["Dama taşları", "Kralları arkada tutmak: korumacılık, kırılgan masumiyet.", "*Jane's habit of keeping her kings in the back row suggests a protective, vulnerable innocence.*"],
             ["Eldiven", "Allie'nin anısı, yaratıcılığı ve Holden'ın yası.", "*The glove symbolizes Holden's grief and his attachment to Allie.*"],
-            ["Eldiven + Jane", "Yalnızca Jane'e göstermesi: derin güven.", "*Showing the glove only to Jane reveals how deeply Holden trusts her.*"],
+            ["Eldiven + Jane", "Aile dışında yalnızca Jane'e göstermesi: derin güven.", "*Showing the glove only to Jane reveals how deeply Holden trusts her.*"],
             ["Gri saç", "Çocuk ile yaşlı arasında sıkışmışlık.", "*His gray hair can be read as a sign of premature aging under stress.*"]
           ], not: "Bu nesneleri ‘bir liste’ gibi sıralama; seçtiğin bir ya da ikisini derinlemesine çözümle." }
       ]
@@ -143,7 +143,7 @@ window.DEFTER = {
             { metin: "Ch 25'te Holden bu görevi bırakır: Phoebe'yi atlıkarıncada izler ve ona engel olmaz. Hayal, kabullenmeye dönüşür.", set: { h: { x: 2.2 }, k3: { x: 4.5 } }, gizle: ["ok"] }
           ] },
         { tip: "liste", baslik: "Başlığın hikâyesi", maddeler: [
-            { ikon: "🎤", baslik: "Çocuk (Ch 16)", metin: "Holden sokakta bir çocuğun çavdar tarlasında karşılaşma üzerine bir şarkı mırıldandığını duyar ve sözü kendi kafasında *catch* (yakalamak) diye değiştirir." },
+            { ikon: "🎤", baslik: "Çocuk (Ch 16)", metin: "Holden sokakta bir çocuğun çavdar tarlasında karşılaşma üzerine bir şarkı mırıldandığını duyar; Holden'ın aktardığına göre çocuk *catch* (yakalamak) diye söyler. Holden bu biçimi benimser ve Ch 22'de Phoebe'ye de böyle aktarır." },
             { ikon: "🌾", baslik: "Hayal (Ch 22)", metin: "Phoebe ona ne olmak istediğini sorar; Holden çavdar tarlasında çocukları düşmekten koruyan bir *catcher* olmak istediğini anlatır. Holden Caulfield adı (*hold* ve *field*) başlıkla yankılanır." },
             { ikon: "✏️", baslik: "Düzeltme (Ch 22)", metin: "Phoebe, sözün *catch* değil *meet* olduğunu söyler. Şiir Robert Burns'e aittir (*Gin a body meet a body*; kamuya açık, 1782)." }
           ] },
@@ -184,8 +184,8 @@ window.DEFTER = {
     { q: "What is the relationship between the museum and the carousel?",
       opts: ["Both symbolize freezing time.", "Both represent death.", "The museum symbolizes a world that does not change, while the carousel symbolizes accepting risk and growth.", "Both appear in the same chapter and have no connection."],
       a: 2, why: "Müze değişmezlik isteğini, atlıkarınca bırakmayı simgeler; ikisi zıt bir çizgi oluşturur. A atlıkarıncayı yanlış okuyor; B fazla genel; D bağı yok sayıyor." },
-    { q: "Holden shows Allie's baseball glove to only one person, Jane. Which interpretation is best supported by the text?",
+    { q: "Outside his family, Holden has shown Allie's baseball glove to only one person, Jane. Which interpretation is best supported by the text?",
       opts: ["It shows he trusts Jane deeply, and the glove carries his love for Allie.", "It proves that the glove belongs to Stradlater.", "It shows that Jane is the team captain.", "It shows that the glove is only a toy."],
-      a: 0, why: "Eldivenin yalnızca Jane'e gösterilmesi derin güveni, eldiven ise Allie'nin anısını ve yası taşır. B, C ve D metindeki kanıtla uyuşmuyor." }
+      a: 0, why: "Eldivenin aile dışında yalnızca Jane'e gösterilmesi derin güveni, eldiven ise Allie'nin anısını ve yası taşır. B, C ve D metindeki kanıtla uyuşmuyor." }
   ]
 };

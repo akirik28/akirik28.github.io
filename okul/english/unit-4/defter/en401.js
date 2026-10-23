@@ -18,7 +18,7 @@ window.DEFTER = {
             ["Not payı", "Exam 2, Dönem 1: *Reading/Writing* (%50)", "Exam 2, Dönem 2: *Reading/Writing* (%50)"],
             ["Teslim", "Çarşamba 3 Aralık, 14:20", "Cuma 17 Nisan, 14:20"]
           ], not: "Sınavda böyle yaz: *In the first semester the outline is submitted; in the second semester the final paper is submitted.*" },
-        { tip: "not", metin: "Ayrıntılar sonraki defterlerde: MLA için en402, essay yapısı ve rubrik için en403, röportaj ve anket için en405, konuşma için en406, intihal ve yapay zekâ için en407. Dönem 1'de dil yalnız 10/100 puandır; işin tamamı sana ait olmalı (özel ders ya da yapay zekâ yok)." }
+        { tip: "not", metin: "Ayrıntılar sonraki defterlerde: MLA için en402, essay yapısı ve rubrik için en403, röportaj ve anket için en405, konuşma için en406, intihal ve yapay zekâ için en407. Dönem 1'de dil yalnız 10/100 puandır; işin tamamı sana ait olmalı (işi özel derse ya da yapay zekâya yaptırmak yasak; yapay zekâ yalnız beyin fırtınası ve küçük dilbilgisi düzeltmesi için, bildirilerek kullanılabilir, ayrıntı en407)." }
       ]
     },
     {
@@ -159,7 +159,7 @@ window.DEFTER = {
             { id: "b5", tip: "alan", renk: 1, noktalar: [[5.05, 0], [5.35, 0], [5.35, 0], [5.05, 0]], gizli: true },
             { id: "ta", tip: "yazi", x: 3, y: 5.7, metin: "Sol sütun: Kaynak A (tarihsiz, yazarsız blog)", gizli: true },
             { id: "tb", tip: "yazi", x: 3, y: 5.7, metin: "Sağ sütun: Kaynak B (hakemli dergi makalesi)", gizli: true },
-            { id: "tc", tip: "yazi", x: 3, y: 5.7, metin: "Fark en çok Authority ve Accuracy ölçütlerinde", gizli: true }
+            { id: "tc", tip: "yazi", x: 3, y: 5.7, metin: "Fark en çok Authority'de; ardından Currency ve Accuracy", gizli: true }
           ],
           durumlar: [
             { metin: "Her ölçüte 0–5 puan verilir. İki kaynağı karşılaştıralım." },

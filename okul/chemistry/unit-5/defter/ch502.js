@@ -83,7 +83,7 @@ window.DEFTER = {
             ["Yüzey alanını artırmak (ufalamak, toz yapmak)", "artar", "çözücüyle temas eden yüzey büyür"],
             ["Karıştırmak", "artar", "çözünenin çevresine hep taze çözücü gelir"],
             ["Sıcaklığı artırmak", "artar", "tanecikler daha hızlı hareket eder, daha sık çarpışır"],
-            ["Çözücü miktarı sabitken fazla katı eklemek", "azalır", "çözelti doygunluğa yaklaşır"]
+            ["Çözelti derişikleştikçe (doygunluğa yaklaştıkça)", "azalır", "çözünen ile çözelti arasındaki derişim farkı küçülür"]
           ], not: "Bu etkenler hızı değiştirir; çözünürlüğü yalnızca sıcaklık (ve gazlarda basınç) değiştirir." },
         { tip: "ornek", baslik: "Küp şekeri bölünce yüzey iki katına çıkar", durum: "Kenarı 2 cm olan bir küp, kenarı 1 cm olan 8 küçük küpe bölünüyor. Toplam yüzey alanı nasıl değişir?", adimlar: [
             "Büyük küp: 6 yüz × (2 × 2) = 24 cm².",

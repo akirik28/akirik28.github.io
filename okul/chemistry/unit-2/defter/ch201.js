@@ -91,7 +91,7 @@ window.DEFTER = {
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: kural", metin: "*The number of atoms of each element must be the same on both sides of the equation.*" },
             { ikon: "✍️", baslik: "Sınavda böyle yaz: yöntem", metin: "*Balance the equation by changing only the coefficients, not the subscripts.*" },
-            { ikon: "½", baslik: "Kesirli katsayı", metin: "Kesir yalnızca O₂, F₂, S₈, P₄ gibi element molekülleri için yazılabilir (H₂ + ½O₂ → H₂O). Bileşiklerde kesir kullanılmaz: 1/6 C₆H₁₂O₆ yanlıştır." }
+            { ikon: "½", baslik: "Kesirli katsayı", metin: "Kesirli katsayı çoğunlukla O₂, F₂, S₈, P₄ gibi element molekülleri için yazılır (H₂ + ½O₂ → H₂O). Bu derste bileşiklere kesir yazma: 1/6 C₆H₁₂O₆ yerine bütün denklemi tam sayıya çevir." }
           ] }
       ]
     },

@@ -16,7 +16,7 @@ window.DEFTER = {
             { baslik: "Biyosfer (*biosphere*)", metin: "Yaşamın bulunduğu bütün bölge (küresel ekosistem): yaklaşık 16 km kalınlığında; litosfer (kara), hidrosfer (su) ve atmosferi kapsar. Canlılar eşit dağılmaz: soğukta az, sıcakta çok tür vardır." }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🧬", terim: "Species", tr: "tür", tanim: "Aynı kökenden gelen, birbiriyle çiftleşip ==verimli (üreyebilen) döl== veren, kromozom sayısı ve gen havuzu ortak bireyler grubu.", ornek: "Bengal kaplanı (*Panthera tigris*) bir türdür; bir ormandaki kaplanlar popülasyondur." },
+            { ikon: "🧬", terim: "Species", tr: "tür", tanim: "Aynı kökenden gelen, birbiriyle çiftleşip ==verimli (üreyebilen) döl== veren, kromozom sayısı ve gen havuzu ortak bireyler grubu.", ornek: "Kaplan (*Panthera tigris*) bir türdür; bir ormandaki kaplanlar popülasyondur." },
             { ikon: "🌍", terim: "Biome", tr: "biyom (ek bilgi)", tanim: "Benzer iklim ve bitki örtüsüne sahip geniş ekosistem grubu.", ornek: "Tundra, tayga, step, çöl." }
           ] },
         { tip: "ikili", sol: { ikon: "🐦", baslik: "*Population*", maddeler: ["Tek tür", "Aynı yer, aynı zaman"] },
@@ -68,7 +68,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Abiyotik faktörler ve etkileri", head: ["Faktör", "Canlılara etkisi", "Örnek"], rows: [
             ["İklim (*climate*)", "Bölgenin uzun yıllık ortalama hava koşulları; enlem, yükselti ve denize uzaklık belirler", "Akdeniz iklimine uyumlu bitkiler"],
             ["Işık (*light*)", "Fotosentez için görünür ışık gerekir; UV DNA'ya zarar verir. Gün uzunluğu çiçeklenme, göç, kış uykusu ve üremeyi etkiler", "Uzun gün, kısa gün, gün-nötr bitkiler; gececil ve gündüzcül hayvanlar"],
-            ["Sıcaklık (*temperature*)", "Enzimleri etkiler (45 °C üstünde çalışmaz); bitkiler çoğunlukla 7–38 °C'de yaşar. Ekvator sıcak ve türce zengin, kutuplar soğuk", "Çöl ve kutup tilkisinin kulakları; devenin hörgücündeki yağ; kaktüs 50 °C üstüne dayanır"],
+            ["Sıcaklık (*temperature*)", "Enzimleri etkiler (çoğu canlının enzimi yaklaşık 45 °C üstünde bozulmaya başlar); bitkiler çoğunlukla 7–38 °C'de yaşar. Ekvator sıcak ve türce zengin, kutuplar soğuk", "Çöl ve kutup tilkisinin kulakları; devenin hörgücündeki yağ; kaktüs 50 °C üstüne dayanır"],
             ["Toprak ve mineral", "Kayaların su, rüzgâr ve ısı değişimiyle ufalanmasıyla oluşur; humus içerir. Mineral ve pH bitki türünü belirler", "Aynı iklimde farklı topraklarda farklı bitkiler"],
             ["Su (*water*)", "Bitki dağılımını belirler; enzim ve metabolizma için gerekli; terlemeyle ısı atılır; mineralleri çözer; fotosentezde hidrojen kaynağıdır", "Kanguru faresi susuz yaşar, kuru tohumla beslenir"],
             ["pH", "Denizde genelde sabit; göl, gölet ve toprakta asit yağmuru, gübre, atık ve çöple değişir. Enzimler sabit pH ister", "SO₂ ve NO₂ asit yağmuruna yol açar"]

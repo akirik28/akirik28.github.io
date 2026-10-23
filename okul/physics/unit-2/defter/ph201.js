@@ -89,7 +89,7 @@ window.DEFTER = {
           sonuc: "W = 8 J. Aynı sonuç W = ½ · k · x² formülünden de çıkar: ½ · 100 · 0,16 = 8 J." },
         { tip: "tuzak", metin: "Grafiğin türü sana neyin işe yaradığını söyler: F–x grafiğinde ==alan== iş demektir.", yanlis: "F–x grafiğinin eğimini hesaplayıp işi buldum.", dogru: "İş = eğri ile x ekseni arasındaki alan. Eksenin altında kalan alan negatif iştir." },
         { tip: "ornek", baslik: "Çekilen araç: F–x grafiğini tablodan kur",
-          durum: "Arızalı bir araç, yatay ve sabit 20 N'luk kuvvetle çekiliyor (sürtünme ihmal). Hızı 0, 1, 2, 3 saniyede sırayla 0, 6, 12, 18 m/s. İlk 3 saniyede yapılan iş kaç J?",
+          durum: "Oyuncak bir araba, yatay ve sabit 20 N'luk kuvvetle çekiliyor (sürtünme ihmal). Hızı 0, 1, 2, 3 saniyede sırayla 0, 6, 12, 18 m/s. İlk 3 saniyede yapılan iş kaç J?",
           adimlar: [
             "Hız her saniye 6 m/s artıyor: a = 6 m/s². 3 s'de yol x = ½ · a · t² = ½ · 6 · 9 = 27 m.",
             "F–x grafiği: 0–27 m arasında 20 N'luk yatay çizgi. Alan dikdörtgen: W = 20 · 27 = 540 J."

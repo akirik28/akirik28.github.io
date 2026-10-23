@@ -123,7 +123,7 @@ window.DEFTER = {
             { ikon: "🪖", terim: "Coping mechanism", tr: "başa çıkma yolu", tanim: "Zor duyguları yönetmek için gösterilen davranış ve tavır. Holden'da bu alay, kaçış ve etiketleme olarak görünür.", ornek: "Her şeyi sahte ilan etmek." }
           ] },
         { tip: "liste", baslik: "Yasın metindeki izleri", maddeler: [
-            { ikon: "🧤", baslik: "Allie'nin eldiveni", metin: "Kompozisyonunun konusu olur (Ch 5); Allie'nin anısını yaşatır. Eldiveni yalnızca Jane'e göstermiş olması derin güvene işaret eder." },
+            { ikon: "🧤", baslik: "Allie'nin eldiveni", metin: "Kompozisyonunun konusu olur (Ch 5); Allie'nin anısını yaşatır. Eldiveni aile dışında yalnızca Jane'e göstermiş olması derin güvene işaret eder." },
             { ikon: "🪟", baslik: "Öfke", metin: "Allie öldüğü gece öfkesini garajın camlarına yönelttiği anlatılır (Ch 5)." },
             { ikon: "💭", baslik: "Ölüm düşünceleri", metin: "Ch 14'te ‘ölüyorum’ korkusu, Ch 20'de parkta soğukta ölümü ve Phoebe'nin tepkisini düşünmesi." },
             { ikon: "🌧️", baslik: "Çöküş ve kabullenme", metin: "Ch 24–25'te bedensel ve zihinsel olarak tükenir; Ch 26'da anlattığı herkesi özlediğini söyler (“you start missing everybody”, Ch 26)." }

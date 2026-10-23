@@ -17,7 +17,7 @@ window.DEFTER = {
             ["ppm (milyonda bir)", "(m çözünen ÷ m çözelti) × 10⁶", "ppm"],
             ["Molarite (M)", "n çözünen ÷ V çözelti (L)", "mol/L"],
             ["Hacimce yüzde", "(V çözünen ÷ V çözelti) × 100", "%"]
-          ], not: "Kolonyadaki \"80 derece\", hacimce yaklaşık %80 etanol demektir. Çözelti kütlesi ve hacmi her zaman çözünen + çözücü toplamıdır." },
+          ], not: "Kolonyadaki \"80 derece\", hacimce yaklaşık %80 etanol demektir. Çözelti kütlesi her zaman çözünen + çözücü kütlelerinin toplamıdır; hacimler ise tam toplanmayabilir (50 mL etanol + 50 mL su ≈ 96–97 mL verir)." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Concentration tells us how much solute is dissolved in a given amount of solution.*" }
           ] }
@@ -182,8 +182,8 @@ window.DEFTER = {
             "n(glikoz) = 4,35 ÷ 180 ≈ 0,0242 mol.",
             "Su kütlesi = 25,0 mL × 1,00 g/mL = 25,0 g = 0,0250 kg.",
             "m = 0,0242 ÷ 0,0250 ≈ 0,97 mol/kg.",
-            "Kontrol: 0,97 × 0,0250 = 0,0242 mol ✓ (Derste cevap 0,964 m verilir; fark ara adımda n'nin 0,0241'e yuvarlanmasından gelir.)"
-          ], sonuc: "Molalite ≈ 0,97 m." },
+            "Kontrol: 0,97 × 0,0250 = 0,0242 mol ✓ (Derste cevap 0,964 m verilir; fark ara adımda n'nin 0,0241'e kesilmesinden (0,02417 → 0,0241) gelir.)"
+          ], sonuc: "Molalite ≈ 0,967 m." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Molality is the number of moles of solute per kilogram of solvent; unlike molarity, it does not change with temperature.*" }
           ] }

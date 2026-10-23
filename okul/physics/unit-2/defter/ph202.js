@@ -101,7 +101,7 @@ window.DEFTER = {
           sonuc: "PE = 1 J; sıkışma ikiye katlanırsa 4 J olur (PE ∝ x²)." },
         { tip: "ornek", baslik: "Yaya çarpan cisim", durum: "1 kg'lık cisim yatay zeminde 6 m/s ile gelip k = 100 N/m olan yayı sıkıştırıyor (sürtünme yok). Yay en çok kaç m sıkışır?",
           adimlar: ["Başlangıç kinetik enerjisi: ½ · 1 · 6² = 18 J.", "En çok sıkışmada cisim durur, enerjinin hepsi yaydadır: ½ · 100 · x² = 18.", "50 · x² = 18 → x² = 0,36 → x = 0,6 m."],
-          sonuc: "x = 0,6 m. Daha yüksek bir yaya ihtiyaç varsa k büyütülür ya da sıkışma artırılır." },
+          sonuc: "x = 0,6 m. Yay daha sert olsaydı (k daha büyük) aynı 18 J'lük enerjiyle daha az sıkışırdı: x = √(2·KE ÷ k)." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*The compressed spring stores elastic potential energy.*", metin: "Yay enerjisi için kullanılan kalıp." },
             { ikon: "✍️", baslik: "*Doubling the compression quadruples the stored energy.*", metin: "x²'ye bağlılığı bu cümleyle göster." }
@@ -164,6 +164,6 @@ window.DEFTER = {
       why: "Eğim m · g'dir. B'nin eğimi A'nın 2 katı olduğu için m_B = 2 · m_A. Aynı h'de B'nin PE'si 2 kat büyüktür; yükseklik farkı değil kütle farkıdır." },
     { q: "A 1 kg object moving at 6 m/s on a horizontal surface compresses a spring with spring constant k = 100 N/m. There is no friction. How far is the spring compressed at most?",
       opts: ["0.18 m", "0.36 m", "0.6 m", "6 m"], a: 2,
-      why: "½ · 1 · 36 = 18 J = ½ · 100 · x² → x² = 0,36 → x = 0,6 m. A yanlış: karekök almadan 0,36'yı ya da 18 ÷ 100'ü cevap sanmak (x² değeri x değildir)." }
+      why: "½ · 1 · 36 = 18 J = ½ · 100 · x² → x² = 0,36 → x = 0,6 m. B yanlış: karekök almadan x² = 0,36'yı cevap sanmak; A yanlış: 18 ÷ 100 = 0,18 yazıp ½'yi ve karekökü unutmak." }
   ]
 };

@@ -13,7 +13,7 @@ window.DEFTER = {
             { t: "1 *mole*", alt: "6,02×10²³ tane tanecik" }
           ], aciklama: "Yumurtayı düzineyle saydığın gibi kimyacı da atom ve molekülleri molle sayar. Bir mol suyun kütlesi yalnızca 18 gramdır (yaklaşık 18 mL); sayısı ise inanılmaz büyüktür." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "📦", terim: "Mole", tr: "mol", tanim: "Tam ==6,02×10²³== tane taneciği içeren madde miktarı birimi (sembolü mol).", ornek: "1 mol demir atomu, 1 mol su molekülü, 1 mol Na⁺ iyonu." },
+            { ikon: "📦", terim: "Mole", tr: "mol", tanim: "Yaklaşık ==6,02×10²³== (tam değeri 6,02214076×10²³) tane taneciği içeren madde miktarı birimi (sembolü mol).", ornek: "1 mol demir atomu, 1 mol su molekülü, 1 mol Na⁺ iyonu." },
             { ikon: "🔢", terim: "Avogadro's number", tr: "Avogadro sayısı", tanim: "1 moldeki tanecik sayısı: ==N_A = 6,02×10²³== tanecik/mol.", ornek: "0,5 mol Fe → 3,01×10²³ tane Fe atomu." }
           ] },
         { tip: "liste", maddeler: [
@@ -63,7 +63,7 @@ window.DEFTER = {
             "Her H₂O 3 atom içerir: 3 mol × 3 = 9 mol atom.",
             "Atom sayısı = 9 × 6,02×10²³ = 5,418×10²⁴ atom.",
             "Kontrol: 1,806×10²⁴ × 3 = 5,418×10²⁴ ✓"
-          ], sonuc: "3 mol H₂O; 9 mol atom (5,418×10²⁴ atom)." }
+          ], sonuc: "3 mol H₂O; 9 mol atom (5,42×10²⁴ atom)." }
       ]
     },
     {
@@ -105,7 +105,7 @@ window.DEFTER = {
             "Toplam atom = 0,2 mol × 8 = 1,6 mol atom.",
             "Atom sayısı = 1,6 × 6,02×10²³ = 9,632×10²³ atom.",
             "Kontrol: molekül sayısı 0,2 × 6,02×10²³ = 1,204×10²³; × 8 = 9,632×10²³ ✓"
-          ], sonuc: "9,632×10²³ atom (1,6 mol atom)." },
+          ], sonuc: "9,63×10²³ atom (1,6 mol atom)." },
         { tip: "ornek", baslik: "Formüldeki indis: mol atom sayısı", durum: "a) 0,300 mol P₂O₃ kaç mol O atomu içerir? b) Kaç mol (NH₄)₂SO₄ içinde 0,800 mol O atomu bulunur?", adimlar: [
             "Formüldeki alt indis, 1 mol bileşikteki o atomun mol sayısıdır.",
             "a) P₂O₃'te 3 O var: 0,300 × 3 = 0,900 mol O.",

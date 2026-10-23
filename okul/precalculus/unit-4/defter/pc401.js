@@ -39,7 +39,7 @@ window.DEFTER = (function () {
               { ikon: "📐", terim: "Standard position", tr: "standart konum", tanim: "Köşesi (*vertex*) orijinde, başlangıç kenarı (*initial side*) pozitif x ekseni üstünde olan açı; bitiş kenarı (*terminal side*) açının bittiği yerdir.", ornek: "90° dik (*right*), 40° dar (*acute*), 120° geniş (*obtuse*) açıdır; hepsinin başlangıç kenarı pozitif x eksenidir." },
               { ikon: "🔄", terim: "Positive / negative angle", tr: "pozitif / negatif açı", tanim: "Saatin tersi yönündeki dönüş (*counterclockwise*) pozitif, saat yönündeki dönüş (*clockwise*) negatiftir.", ornek: "−90° açısı çeyrek turu aşağı doğru döner." },
               { ikon: "🎯", terim: "Coterminal angles", tr: "eş uçlu açılar", tanim: "Bitiş kenarı aynı olan açılar; birbirinden tam tur kadar farklıdır: 360°·k ya da radyanda 2π·k.", ornek: "40°, 400° ve −320° aynı yerde biter." },
-              { ikon: "🧭", terim: "Principal angle", tr: "esas ölçü", tanim: "Saatin tersi yönünde ölçülen ve derecede [0°, 360°], radyanda [0, 2π] aralığına düşen açı. Eş uçlu bir açının esas ölçüsünü bulmak için tam tur ekle ya da çıkar.", ornek: "−330° açısının esas ölçüsü 30°." }
+              { ikon: "🧭", terim: "Principal angle", tr: "esas ölçü", tanim: "Saatin tersi yönünde ölçülen ve derecede [0°, 360°), radyanda [0, 2π) aralığına düşen açı. Eş uçlu bir açının esas ölçüsünü bulmak için tam tur ekle ya da çıkar.", ornek: "−330° açısının esas ölçüsü 30°." }
             ] },
           { tip: "ornek", baslik: "Eş uçlu açıyı bulmak", durum: "400° ve −50° açılarının 0° ile 360° arasındaki eş uçlu açılarını bul.",
             adimlar: ["400° − 360° = 40°: bir tam tur fazla, çıkar.", "−50° + 360° = 310°: negatif açıya bir tam tur ekle.", "Genel yazılış: θ + 360°·k (k bir tam sayı); radyanda θ + 2πk."],
@@ -139,7 +139,7 @@ window.DEFTER = (function () {
         kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
-              "Açı standart konumda orijinde başlar; saatin tersi pozitif. *Coterminal* açılar 360° (2π) farklıdır; esas ölçü [0°, 360°] aralığındadır.",
+              "Açı standart konumda orijinde başlar; saatin tersi pozitif. *Coterminal* açılar 360° (2π) farklıdır; esas ölçü [0°, 360°) aralığındadır.",
               "π rad = 180°. Derece → radyan: π/180; radyan → derece: 180/π.",
               "Yay uzunluğu l = rθ, daire dilimi alanı S = ½r²θ = ½rl; θ radyan olmak zorunda (derecede l = θ/360 · 2πr).",
               "Birim çemberde θ'nın noktası (cos θ, sin θ); x² + y² = 1 olduğu için sin²θ + cos²θ = 1.",

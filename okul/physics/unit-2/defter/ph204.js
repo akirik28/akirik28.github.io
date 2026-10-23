@@ -130,7 +130,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Kaynakların sınıflandırılması", head: ["Yenilenebilir (*renewable*)", "Yenilenemez (*non-renewable*)"], rows: [
             ["Güneş (*solar*), rüzgâr (*wind*)", "Kömür (*coal*)"],
             ["Hidroelektrik (*hydropower*), jeotermal (*geothermal*)", "Petrol (*oil*), doğal gaz (*natural gas*)"],
-            ["Biyokütle (*biomass*), gelgit ve dalga (*tidal and wave*), hidrojen", "Nükleer (uranyum fisyonu; karbonsuz ama yakıtı sınırlı, atığı radyoaktif)"]
+            ["Biyokütle (*biomass*), gelgit ve dalga (*tidal and wave*), hidrojen (yenilenebilir kaynakla üretilirse; aslında bir enerji taşıyıcısıdır)", "Nükleer (uranyum fisyonu; karbonsuz ama yakıtı sınırlı, atığı radyoaktif)"]
           ], not: "Yenilenemez kaynakların oluşumu, tüketiminden çok daha yavaştır. 1997'de imzalanan ==Kyoto Protokolü== sera gazı salımını azaltmayı hedefler." },
         { tip: "ikili", sol: { ikon: "♻️", baslik: "Yenilenebilir", maddeler: ["Sürdürülebilir", "Çevreyi az kirletir, dışa bağımlılığı azaltır"] },
           sag: { ikon: "⛽", baslik: "Yenilenemez", maddeler: ["Tüketim oluşumdan hızlı", "Depolaması kolay, hava koşullarından bağımsız"] },

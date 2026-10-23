@@ -89,7 +89,7 @@ window.DEFTER = {
       kisa: "Jane Holden'ın saklı sevgisidir; Sally sahte bulduğu toplumun parçasıdır.",
       bloklar: [
         { tip: "tablo", baslik: "Kim kim?", head: ["Karakter", "Kim?", "Roman için anlamı"], rows: [
-            ["Jane Gallagher", "Yaz komşusu; Holden'la dama oynardı ve kralları hep arka sıraya dizerdi (Ch 4, 6). Bir gün dama tahtasına gözyaşı döker. Allie'nin eldivenini gösterdiği tek kişidir.", "Masumiyet, destek ihtiyacı ve derin güven; Holden'ın özel, korunan bir anısı. Ama bir türlü arayamaz; Stradlater onunla çıkar."],
+            ["Jane Gallagher", "Yaz komşusu; Holden'la dama oynardı ve kralları hep arka sıraya dizerdi (Ch 4, 6). Bir gün dama tahtasına gözyaşı döker. Allie'nin eldivenini aile dışında gösterdiği tek kişidir.", "Masumiyet, destek ihtiyacı ve derin güven; Holden'ın özel, korunan bir anısı. Ama bir türlü arayamaz; Stradlater onunla çıkar."],
             ["Sally Hayes", "Holden'ın sosyal çevresinden biri; birlikte tiyatroya ve buz pistine giderler. Holden'ın canını sıkan yanları Ch 15'te sayılır.", "Konforlu, sıradan dünyayı temsil eder; Holden'ın kaçış planını reddeder (Ch 17)."],
             ["Rahibeler", "Pazar sabahı kahvaltı yaptığı iki nazik rahibe; İngilizce öğretmenliği ve *Romeo and Juliet* üzerine konuşurlar (Ch 15).", "Holden'ın içten, yargısız yüzü; ikiyüzlülükle (*hypocrisy*) kıyaslanan nokta."]
           ] },

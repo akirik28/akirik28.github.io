@@ -111,7 +111,7 @@ window.DEFTER = {
       kisa: "Çözünürlük eğrisi, her sıcaklıkta çözünebilen en çok madde miktarını gösterir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "📏", terim: "Solubility", tr: "çözünürlük", tanim: "Belirli sıcaklıkta 100 g suda çözünebilen en çok madde miktarı (g/100 g su).", ornek: "20 °C'de NaCl'nin çözünürlüğü 35,7 g/100 g sudur: 100 g suda 35,7 g'dan fazlası çözünmez." },
+            { ikon: "📏", terim: "Solubility", tr: "çözünürlük", tanim: "Belirli sıcaklıkta 100 g suda çözünebilen en çok madde miktarı (g/100 g su).", ornek: "20 °C'de NaCl'nin çözünürlüğü yaklaşık 36 g/100 g sudur (derste 35,7): 100 g suda yaklaşık 36 g'dan fazlası çözünmez." },
             { ikon: "✅", terim: "Saturated solution", tr: "doymuş çözelti", tanim: "O sıcaklıkta çözebileceği en çok maddeyi çözmüş çözelti; ==eğri üzerindeki== nokta.", ornek: "60 °C'de 100 g suda 55 g A tuzu." },
             { ikon: "🥄", terim: "Unsaturated solution", tr: "doymamış çözelti", tanim: "Daha fazla madde çözebilen çözelti; eğrinin ==altındaki== nokta.", ornek: "60 °C'de 100 g suda 30 g A tuzu." },
             { ikon: "⚠️", terim: "Supersaturated solution", tr: "aşırı doymuş çözelti", tanim: "Normalde çözünebileceğinden fazla madde taşıyan kararsız çözelti; eğrinin ==yukarısındaki== nokta. Dokunulunca fazlası çöker.", ornek: "60 °C'de 100 g suda 75 g A tuzu (özel hazırlanırsa)." }

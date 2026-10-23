@@ -120,7 +120,7 @@ window.DEFTER = (function () {
               { metin: "Bir periyot sonra (2π ekle) aynı iki nokta tekrar eder: 13π/6 ve 17π/6. Sonsuz çözüm: x = π/6 + 2kπ ve x = 5π/6 + 2kπ.", goster: ["s3", "s4"] }
             ] },
           { tip: "formul", parcalar: [{ t: "sin α = sin β", alt: "α = β + 2kπ  ya da  α = π − β + 2kπ" }, ",", { t: "cos α = cos β", alt: "α = β + 2kπ  ya da  α = −β + 2kπ" }, ",", { t: "tan α = tan β", alt: "α = β + kπ" }],
-            aciklama: "Her yerde k bir tam sayıdır (k ∈ ℤ). [0, 2π] aralığındaki çözümlere esas çözüm (*principal solution*), k içeren çözümlere genel çözüm (*general solution*) denir. Denklemin sağ tarafı bir sayıysa β = arcsin a, arccos a ya da arctan a alınır; örnek: tan x = −1 → x = −π/4 + kπ." },
+            aciklama: "Her yerde k bir tam sayıdır (k ∈ ℤ). [0, 2π) aralığındaki çözümlere esas çözüm (*principal solution*), k içeren çözümlere genel çözüm (*general solution*) denir. Denklemin sağ tarafı bir sayıysa β = arcsin a, arccos a ya da arctan a alınır; örnek: tan x = −1 → x = −π/4 + kπ." },
           { tip: "ornek", baslik: "İki tarafı da aynı fonksiyon yap", durum: "[0, 2π) aralığında cos 2x = cos x ve sin 3x = sin x denklemlerini çöz.",
             adimlar: ["cos 2x = cos x: 2x = x + 2kπ ⇒ x = 2kπ ⇒ x = 0. Ya da 2x = −x + 2kπ ⇒ x = 2kπ/3 ⇒ x = 0, 2π/3, 4π/3.", "sin 3x = sin x: 3x = x + 2kπ ⇒ x = kπ ⇒ x = 0, π.", "Ya da 3x = π − x + 2kπ ⇒ 4x = π + 2kπ ⇒ x = π/4 + kπ/2 ⇒ x = π/4, 3π/4, 5π/4, 7π/4.", "Ortak çözümleri bir kez yaz: x = 0 iki kolda da çıkar."],
             sonuc: "Birinci denklem: ==0, 2π/3, 4π/3==. İkinci denklem: ==0, π/4, 3π/4, π, 5π/4, 7π/4==. Sınavda böyle yaz: *If sin α = sin β, then α = β + 2kπ or α = π − β + 2kπ.*" }

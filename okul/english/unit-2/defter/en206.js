@@ -123,7 +123,7 @@ window.DEFTER = {
             ["Bağlam + iki nokta", "Tam cümle alıntılayacaksan", "*Oedipus admits his responsibility: “the right hand that dealt the blow / Was mine, none other” (Sophocles ___).*"],
             ["Cümlenin içine yedirmek (*embed*)", "Kısa parça için (en iyisi)", "*Oedipus insists that the hand that dealt the blow “was mine” (Sophocles ___).*"],
             ["Parafraz + numara", "Alıntı uzunsa", "*Oedipus blames Apollo for his suffering but owns the act of blinding (Sophocles ___).*"]
-          ], not: "Alıntı 4 satırdan uzunsa blok alıntı olarak girintili yazılır. Satır numarasını okulun verdiği (Fagles) baskıya göre yaz; Jebb ve Storr numaraları Yunanca metne göredir. Alıntı tek başına cümle olmasın; yazında “in the quote” deme." },
+          ], not: "Alıntı 4 satırdan uzunsa blok alıntı olarak girintili yazılır (okulun kuralı; MLA'da manzum metinde, örneğin dizeyle yazılmış bir çeviride, eşik 3 dizedir). Satır numarasını okulun verdiği (Fagles) baskıya göre yaz; Jebb ve Storr numaraları Yunanca metne göredir. Alıntı tek başına cümle olmasın; yazında “in the quote” deme." },
         { tip: "ornek", baslik: "Havada kalan alıntıyı onarmak", durum: "Zayıf cümle: *Oedipus blames himself. “the right hand that dealt the blow / Was mine, none other” (Sophocles ___).*",
           adimlar: [
             "Sorun: alıntı havada kalıyor; kim, ne zaman söylüyor belli değil.",

@@ -126,9 +126,9 @@ window.DEFTER = {
       kisa: "Kendi topladığın veri ve yapay zekâ konuşması da kaynakçada yer alır.",
       bloklar: [
         { tip: "tablo", baslik: "Röportaj ve anket girişleri (Dr Byrd'ün belgesi)", head: ["Kaynak", "Works Cited biçimi"], rows: [
-            ["Röportaj", "Soyadı, Ad. Personal Interview [ya da Email Interview]. Gün Ay Yıl."],
+            ["Röportaj", "Soyadı, Ad. Personal Interview [ya da Email Interview]. Gün Ay Yıl. (Öğretmenin biçimi; MLA 9 kitabı: Personal interview. 12 Feb. 2026.)"],
             ["Anonim röportaj", "Anonymous. Personal Interview. 11 February 2026."],
-            ["Google Forms ya da SurveyMonkey anketi", "Soyadın, Adın. “Anket Başlığı” Survey. Google Forms. UAA. [anketi oluşturduğun tarih]. Web. [veri topladığın tarih]. [canlı bağlantı; Dr Byrd görüntüleyici olarak eklenmiş]"],
+            ["Google Forms ya da SurveyMonkey anketi", "Soyadın, Adın. “Anket Başlığı” Survey. Google Forms. UAA. [anketi oluşturduğun tarih]. Web. [veri topladığın tarih]. (Öğretmenin biçimi; MLA 9'da \"Web.\" yazılmaz.) [canlı bağlantı; Dr Byrd görüntüleyici olarak eklenmiş]"],
             ["Elle yapılan anket", "Soyadın, Adın. “Anket Konusu.” Survey. [tarih]."]
           ], not: "Okul görevlisi rolü nedeniyle anonim olamaz. Metin içi atıf, girişin ilk öğesiyle başlar: (Yıldız) ya da (Anonymous). Sınavda böyle yaz: *Yıldız, Ayşe. Personal Interview. 12 February 2026.*" },
         { tip: "tablo", baslik: "Yapay zekâ konuşması girişi (yalnız izinli kullanımda)", head: ["MLA öğesi", "Yapay zekâ girişinde ne yazılır?"], rows: [

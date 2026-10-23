@@ -23,7 +23,7 @@ window.DEFTER = {
             ["Fotosentez", "Işık", "Kimyasal (bitkide)"],
             ["Mikrofon", "Ses", "Elektrik"]
           ] },
-        { tip: "not", metin: "Bütün enerji türlerinin ortak özellikleri: bir ==kaynağı== vardır, çevreye etkisi olur, birimi joule'dür, birbirine dönüşebilir ve dönüşümde bir kısım enerji (çoğu zaman ısı olarak) kaybolur. Gıdadaki kimyasal enerji vücutta ısıya, sonra harekete dönüşür." },
+        { tip: "not", metin: "Bütün enerji türlerinin ortak özellikleri: bir ==kaynağı== vardır, çevreye etkisi olur, birimi joule'dür, birbirine dönüşebilir ve dönüşümde bir kısım enerji (çoğu zaman ısı olarak) işe yaramaz hâle gelir; yok olmaz. Gıdadaki kimyasal enerji vücutta hem harekete (kinetik) hem ısıya dönüşür." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Energy cannot be created or destroyed; it can only be transformed from one form to another.*", metin: "Enerji korunumunun standart cümlesi." },
             { ikon: "✍️", baslik: "*Friction converts kinetic energy into thermal energy.*", metin: "Sürtünmeli dönüşümleri anlatırken kullan." }

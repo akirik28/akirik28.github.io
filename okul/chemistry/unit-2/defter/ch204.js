@@ -12,7 +12,7 @@ window.DEFTER = {
             { ikon: "➖", terim: "Oxidation", tr: "yükseltgenme", tanim: "Elektron kaybı; yükseltgenme basamağı artar.", ornek: "Zn → Zn²⁺ + 2e⁻" },
             { ikon: "➕", terim: "Reduction", tr: "indirgenme", tanim: "Elektron kazancı; yükseltgenme basamağı azalır.", ornek: "Cu²⁺ + 2e⁻ → Cu" },
             { ikon: "🔁", terim: "Redox reaction", tr: "redoks tepkimesi", tanim: "Yükseltgenme ve indirgenmenin birlikte olduğu tepkime; verilen elektron sayısı alınana eşittir.", ornek: "Zn + Cu²⁺ → Zn²⁺ + Cu" },
-            { ikon: "🔋", terim: "Oxidizing agent", tr: "yükseltgen madde", tanim: "Başka maddeyi yükselten madde; kendisi elektron alır, yani indirgenir.", ornek: "Zn + Cu²⁺ tepkimesinde Cu²⁺." },
+            { ikon: "🔋", terim: "Oxidizing agent", tr: "yükseltgen madde", tanim: "Başka maddeyi yükseltgeyen madde; kendisi elektron alır, yani indirgenir.", ornek: "Zn + Cu²⁺ tepkimesinde Cu²⁺." },
             { ikon: "⚡", terim: "Reducing agent", tr: "indirgen madde", tanim: "Başka maddeyi indirgeyen madde; kendisi elektron verir, yani yükseltgenir.", ornek: "Zn + Cu²⁺ tepkimesinde Zn." }
           ] },
         { tip: "ikili", sol: { ikon: "➖", baslik: "*Oxidation* (yükseltgenme)", maddeler: ["Elektron kaybı", "Yükseltgenme basamağı artar"] },

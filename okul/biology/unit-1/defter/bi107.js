@@ -52,9 +52,9 @@ window.DEFTER = {
         { tip: "adimlar", baslik: "Koşan kas hücresi", adimlar: [
             { baslik: "Hızlı koşu", metin: "Glikoz yıkımı, kasın kandan O₂ alımını aşar. Hücre oksijenli solunum ve fermantasyonu birlikte yürütür." },
             { baslik: "Fermantasyon", metin: "Piruvat laktata çevrilir ve glikoliz 2 ATP vermeye devam eder." },
-            { baslik: "Dinlenme", metin: "Laktat kanla karaciğere taşınır, piruvata dönüşür ve karaciğer hücrelerinin mitokondrisinde yükseltgenir." }
+            { baslik: "Dinlenme", metin: "Laktat kanla karaciğere taşınır, piruvata dönüşür; karaciğerde çoğunlukla yeniden glikoza çevrilir (Cori döngüsü), bir kısmı da mitokondride yükseltgenir." }
           ] },
-        { tip: "not", metin: "Bazı mantar ve bakteriler laktik asit fermantasyonuyla peynir ve yoğurt yapar. Olgun memeli alyuvarları da ATP'yi bu yolla üretir. Az miktarda laktik asit, yeterli O₂ geldiğinde kasın daha iyi çalışmasını sağlar; ısınma hareketleri bu yüzden yararlıdır. Sınavda böyle yaz: *In lactic acid fermentation, pyruvate is reduced to lactate and no carbon dioxide is released.*" }
+        { tip: "not", metin: "Bazı mantar ve bakteriler laktik asit fermantasyonuyla peynir ve yoğurt yapar. Olgun memeli alyuvarları da ATP'yi bu yolla üretir. Isınma hareketleri kas sıcaklığını ve kan akışını artırarak kasa daha çok O₂ ulaşmasını sağlar; bu yüzden yararlıdır (derste laktik asidin kasa yararı diye anlatılır). Sınavda böyle yaz: *In lactic acid fermentation, pyruvate is reduced to lactate and no carbon dioxide is released.*" }
       ]
     },
     {

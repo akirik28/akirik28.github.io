@@ -142,7 +142,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Works Cited biçimleri (Dr Byrd'ün belgesi)", head: ["Kaynak", "Biçim"], rows: [
             ["Röportaj", "Soyadı, Ad. Personal Interview [ya da Email Interview]. Gün Ay Yıl."],
             ["Anonim röportaj", "Anonymous. Personal Interview. 11 February 2026."],
-            ["Google Forms ya da SurveyMonkey anketi", "Soyadın, Adın. “Anket Başlığı” Survey. Google Forms. UAA. [anketi oluşturduğun tarih]. Web. [veri topladığın tarih]. [canlı bağlantı; Dr Byrd görüntüleyici]"],
+            ["Google Forms ya da SurveyMonkey anketi", "Soyadın, Adın. “Anket Başlığı” Survey. Google Forms. UAA. [anketi oluşturduğun tarih]. Web. [veri topladığın tarih]. [canlı bağlantı; Dr Byrd görüntüleyici] (Öğretmenin biçimi; MLA 9'da \"Web.\" yazılmaz, aylar kısaltılır.)"],
             ["Elle yapılan anket", "Soyadın, Adın. “Anket Konusu.” Survey. [tarih]."]
           ], not: "Metin içi atıf girişin ilk öğesiyle başlar. Ayrıntı en402'de." },
         { tip: "tablo", baslik: "Ek bilgi: sonucu böyle yaz", head: ["Amaç", "Kalıp"], rows: [

@@ -641,7 +641,7 @@ window.DEFTER = {
         "f is neither one-to-one nor onto."
       ],
       a: 0,
-      why: "Üç girdi üç farklı çıktı verdi: birebir. Ama hedef kümede d dışında b de var ve hiçbir girdi b'ye gitmiyor: f(A) = {a, c, d} ≠ B, yani örten değil. Eleman sayısı da bunu söyler: 3 girdi, 4 hedef; 4 elemanın hepsi dolamaz."
+      why: "Üç girdi üç farklı çıktı verdi: birebir. Ama hedef kümedeki b elemanına hiçbir girdi gitmiyor: f(A) = {a, c, d} ≠ B, yani örten değil. Eleman sayısı da bunu söyler: 3 girdi, 4 hedef; 4 elemanın hepsi dolamaz."
     },
     {
       q: "The function g(x) = (k − 3)x² + (k + 1)x is an odd function. What is the value of k?",

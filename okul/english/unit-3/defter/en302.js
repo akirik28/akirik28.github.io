@@ -81,7 +81,7 @@ window.DEFTER = {
             ["Ch 9", "Edmont Hotel; Faith Cavendish'e telefon.", "Otelde gördükleri karşısındaki kafa karışıklığı; kendi davranışının farkında oluşu; sahte isim kullanımı."],
             ["Ch 10", "Gece kulübü; Phoebe anlatılır.", "Phoebe'nin Holden için önemi; Jim Steele adının uydurulması; Marty'ye yalan."],
             ["Ch 11", "Jane ve Phoebe üzerine düşünceler.", "İkisinin ortak özellikleri (içtenlik, masumiyet)."],
-            ["Ch 12", "Taksi şoförü Horowitz.", "Ördekler kışın nereye gider? İnsanların hep yanlış şeylere alkış tutması."],
+            ["Ch 12", "Taksi şoförü Horwitz.", "Ördekler kışın nereye gider? İnsanların hep yanlış şeylere alkış tutması."],
             ["Ch 13", "Sunny ve asansörcü Maurice (hassas sahne, yalnızca olgular).", "Holden genç kadına dokunmaz; yalnızlık ve çaresizlik; sahte isim = güvensizlik; dile hassasiyet."],
             ["Ch 14", "Gecenin sonu.", "Din; “ölüyorum” korkusu."],
             ["Ch 15", "Pazar sabahı; iki rahibe.", "Sally Hayes'te canını sıkan şeyler; valizler; rahibelerle İngilizce öğretmenliği sohbeti; Holden'ın Mercutio'yu sevmesi."],

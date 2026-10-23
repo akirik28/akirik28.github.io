@@ -196,7 +196,7 @@ window.DEFTER = {
       fig: { type: "table", head: ["Year", "1850", "1950", "2000", "2020"], rows: [["CO₂ (ppm)", 285, 311, 369, 414]], caption: "Atmospheric CO₂" },
       opts: ["The CO₂ concentration has decreased since 1850.", "The CO₂ concentration has stayed constant.", "The CO₂ concentration has increased only since 2000.", "The CO₂ concentration has increased continuously and the rate of increase has become greater over time."],
       a: 3,
-      why: "1850–1950 arasında yaklaşık 26 ppm, 1950–2000 arasında 58 ppm, 2000–2020 arasında 45 ppm artış var: değer sürekli artıyor ve yıllık artış hızı yükseliyor. İkinci şık yalnızca son dönemi, ilk şık ise yönü yanlış okur."
+      why: "1850–1950 arasında yaklaşık 26 ppm, 1950–2000 arasında 58 ppm, 2000–2020 arasında 45 ppm artış var: değer sürekli artıyor ve yıllık artış hızı yükseliyor. Üçüncü şık yalnızca son dönemi, ilk şık ise yönü yanlış okur."
     },
     {
       q: "Which statement about the greenhouse effect is correct?",

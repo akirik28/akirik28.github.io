@@ -100,7 +100,7 @@ window.DEFTER = {
         },
         {
           tip: "not",
-          metin: "Neden ters döner? Atma sabit uca çarpınca ipi yukarı iter; Newton'un üçüncü yasası gereği uç ipi aynı büyüklükte aşağı iter ve bu aşağı kuvvet ters bir atma üretir. Serbest uçta ip engellenmediği için atma ters dönmez. ==Süperpozisyon==: iki atma aynı noktada buluşunca yer değiştirmeleri toplanır; sonra her biri kendi biçimiyle yoluna devam eder (ek bilgi: ders sunumunda başlık olarak geçiyor)."
+          metin: "Neden ters döner? Atma sabit uca gelince ip, ucu (duvarı) yukarı çeker; Newton'un üçüncü yasası gereği duvar da ipi aynı büyüklükte aşağı çeker ve bu aşağı kuvvet ters bir atma üretir. Serbest uçta ip engellenmediği için atma ters dönmez. ==Süperpozisyon==: iki atma aynı noktada buluşunca yer değiştirmeleri toplanır; sonra her biri kendi biçimiyle yoluna devam eder (ek bilgi: ders sunumunda başlık olarak geçiyor)."
         }
       ]
     },

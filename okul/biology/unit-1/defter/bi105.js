@@ -10,7 +10,7 @@ window.DEFTER = {
       kisa: "Kemosentezde enerji, inorganik maddelerin oksidasyonundan; karbon CO₂'den gelir.",
       bloklar: [
         { tip: "adimlar", baslik: "Kemosentezin yolu", adimlar: [
-            { baslik: "Yükseltgenme", metin: "Bakteri, inorganik bir maddeyi (H₂S, NH₄⁺, NO₂⁻, Fe²⁺, H₂, CH₄) yükseltger; bu tepkime enerji açığa çıkarır." },
+            { baslik: "Yükseltgenme", metin: "Bakteri, inorganik bir maddeyi (H₂S, NH₄⁺, NO₂⁻, Fe²⁺, H₂) yükseltger; bu tepkime enerji açığa çıkarır." },
             { baslik: "ATP", metin: "Açığa çıkan enerjinin bir kısmı ATP ve NADH gibi taşıyıcılarda depolanır." },
             { baslik: "CO₂ bağlanır", metin: "ATP ve indirgeyici güçle CO₂ organik maddeye çevrilir (fotosentezdeki gibi Calvin döngüsü)." },
             { baslik: "Besin", metin: "Bakteri kendi organik maddesini yapmış olur: ototroftur." }

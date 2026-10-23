@@ -53,7 +53,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "I", alt: "cihazın akımı (A)" }, "=", { t: "P", alt: "güç (W)" }, "÷", { t: "V", alt: "gerilim, ev: 220 V" }
-          ], aciklama: "Cihazlar prize paralel bağlıdır, akımları toplanır. Su ısıtıcısı 2200 W → 10 A; elektrikli ısıtıcı 1100 W → 5 A; TV 220 W → 1 A; saç kurutma makinesi 440 W → 2 A. Türkiye'de şebeke 220 V'tur; derste kullanılan 110 V'luk devre örneğinde de yöntem aynıdır (ph302'deki sigorta örneğine bak)." },
+          ], aciklama: "Cihazlar prize paralel bağlıdır, akımları toplanır. Su ısıtıcısı 2200 W → 10 A; elektrikli ısıtıcı 1100 W → 5 A; TV 220 W → 1 A; saç kurutma makinesi 440 W → 2 A. Türkiye'de şebeke gerilimi yaklaşık 220–230 V'tur (derste 220 V alınır); derste kullanılan 110 V'luk devre örneğinde de yöntem aynıdır (ph302'deki sigorta örneğine bak)." },
         { tip: "grafik", baslik: "Prize cihaz ekledikçe toplam akım (hat 16 A'lik sigortayla korunuyor)", xlabel: "prize eklenen cihaz", ylabel: "Toplam akım (A)", xmax: 7, ymax: 20,
           xticks: [{ v: 1.3, label: "Su ısıtıcı" }, { v: 2.7, label: "Isıtıcı" }, { v: 4.1, label: "TV" }, { v: 5.5, label: "Kurutma" }], yticks: [{ v: 10, label: "10" }, { v: 16, label: "16" }, { v: 20, label: "20" }],
           ogeler: [

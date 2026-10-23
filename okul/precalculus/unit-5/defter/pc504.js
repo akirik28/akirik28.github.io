@@ -150,7 +150,7 @@ window.DEFTER = {
       a: 0, why: "4 < 5 < 8 olduğundan 2² < 2^x < 2³, yani 2 < x < 3. Tam değer x = log₂ 5. C, aralığı doğru söyler ama çözümü yanlış (5 ÷ 2) yazar." },
     { q: "A rumor is known by 5 people at the start and the number of people who know it triples every hour: N(t) = 5·3^t. Using the table, at about what time t does N reach 270?",
       fig: { type: "table", head: ["log 2", "log 3"], rows: [["0.30103", "0.4771"]], caption: "Given values" },
-      opts: ["1.73 h", "3.63 h", "4.58 h", "18 h"],
+      opts: ["1.73 h", "3.63 h", "0.28 h", "18 h"],
       a: 1, why: "5·3^t = 270 ⇒ 3^t = 54 = 2·3³. t = log 54 ÷ log 3 = (0,30103 + 1,4313) ÷ 0,4771 ≈ 3,63. A, log 54'ü log 3'e bölmeyi unutur (payı 1,73); C oranı ters çevirir; D, 54 ÷ 3 yapar." }
   ]
 };

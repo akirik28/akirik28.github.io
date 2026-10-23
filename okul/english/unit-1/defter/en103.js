@@ -59,12 +59,12 @@ window.DEFTER = {
       kisa: "Evde yaşayan evlenmemiş kadın, o dönemde değeri yaptığı hizmetle ölçülen biriydi.",
       bloklar: [
         { tip: "liste", maddeler: [
-            { ikon: "🏠", baslik: "Aile düzeni", metin: "Öykü, yazarın yaşadığı dönemin (19. yüzyıl sonu, 20. yüzyıl başı) Brezilya'sında rahat bir şehir evini anlatır; metne göre genç kadınların hayatının tek amacı vardır: evlilik." },
+            { ikon: "🏠", baslik: "Aile düzeni", metin: "Öykü, yazarın yaşadığı dönemin (19. yüzyıl sonu, 20. yüzyıl başı) Brezilya'sında rahat bir şehir evini anlatır; metin, çevresindeki mutlu insanların hayatının \"tek bir amacı\" olduğunu söyler; bağlamdan (yeğenlere takılan \"younger households\" şakası) bu amacın evlilik olduğu anlaşılır." },
             { ikon: "👩", baslik: "Evlenmemiş kadın", metin: "Metindeki *old maid* ifadesi, evlenmemiş kadını damgalayan toplumsal bakışı yansıtır; Zézé, kardeşine bağımlı yaşar." },
             { ikon: "😇", baslik: "Fedakâr kadın ideali", metin: "Şairin övgüsü kadını melek ve anne-koruyucu bir figür olarak kutsar; bu, kadını hizmette tutan bir ideal." },
             { ikon: "🎭", baslik: "Salon kültürü", metin: "Şair, aile toplantısında şiir okuyan saygın bir figürdür; metindeki *alexandrines* göndermesi dönemin Fransız etkili şiir zevkini gösterir." }
           ] },
-        { tip: "not", metin: "Ek bilgi: yazar Carmen Dolores (Emilia Moncorva Bandeira de Mello, 1852–1910) Brezilyalı bir yazardır. Öykünün İngilizcesi Isaac Goldberg'in 1921 tarihli *Brazilian Tales* çevirisidir; bu yüzden dil eski ve resmîdir." }
+        { tip: "not", metin: "Ek bilgi: yazar Carmen Dolores (Emilia Moncorvo Bandeira de Mello, 1852–1910) Brezilyalı bir yazardır. Öykünün İngilizcesi Isaac Goldberg'in 1921 tarihli *Brazilian Tales* çevirisidir; bu yüzden dil eski ve resmîdir." }
       ]
     },
     {
