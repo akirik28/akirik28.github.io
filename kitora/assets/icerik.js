@@ -74,6 +74,7 @@
     stats: { ad: "Statistics", renk: "stats", art: "stats", grup: "ap" },
     hug: { ad: "Human Geography", renk: "hug", art: "hug", grup: "ap" },
     bpf: { ad: "Business with Personal Finance", kisa: "Business", renk: "bpf", art: "bpf", grup: "ap" },
+    calc: { ad: "Calculus BC", renk: "calc", art: "calc", grup: "ap" },
     psych: { ad: "Psychology", renk: "psych", art: "cep", grup: "ap" },
     /* 10. sınıf okul dersleri (okul/<ders>/unit-N/, geçen yılın müfredatı) */
     precalc: { ad: "Precalculus and Trigonometry", kisa: "Precalculus", renk: "precalc", art: "calc", grup: "okul" },
@@ -109,6 +110,9 @@
     ["bpf-u3", "bpf", 3, "ap/business-personal-finance/unit-3/", "defter/defter-liste.js", "Saving, Borrowing and Business Finance"],
     ["bpf-u4", "bpf", 4, "ap/business-personal-finance/unit-4/", "defter/defter-liste.js", "Management and Strategy"],
     ["bpf-u5", "bpf", 5, "ap/business-personal-finance/unit-5/", "defter/defter-liste.js", "Personal Goals, Budgeting, and Investing"],
+    ["calc-u1", "calc", 1, "ap/calculus-bc/unit-1/", "kit-data.js", "Limits and Continuity"],
+    ["calc-u2", "calc", 2, "ap/calculus-bc/unit-2/", "kit-data.js", "Differentiation: Definition and Fundamental Properties"],
+    ["calc-u3", "calc", 3, "ap/calculus-bc/unit-3/", "kit-data.js", "Differentiation: Composite, Implicit, and Inverse Functions"],
     ["psych-u1", "psych", 1, "ap/psychology/unit-1/", "defter/defter-liste.js", "Biological Bases of Behavior"],
     ["psych-u2", "psych", 2, "ap/psychology/unit-2/", "defter/defter-liste.js", "Cognition"],
     ["psych-u3", "psych", 3, "ap/psychology/unit-3/", "defter/defter-liste.js", "Development and Learning"],
