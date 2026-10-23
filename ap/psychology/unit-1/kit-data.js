@@ -232,6 +232,111 @@ window.KIT = {
     },
     {
       "no": 3,
+      "code": "1.3-1",
+      "slug": "py103",
+      "title": "Nöron ve Sinirsel İletim",
+      "en": "The Neuron and Neural Firing",
+      "accent": "#FF8A65",
+      "defter": "py103",
+      "defterBaslik": "Nöron ve Sinirsel İletim",
+      "seconds": 253,
+      "terms": [
+        "Neuron",
+        "Dendrites",
+        "Cell body",
+        "Axon",
+        "Myelin sheath",
+        "Terminal buttons",
+        "Glial cells",
+        "Resting potential",
+        "Threshold",
+        "Action potential",
+        "All-or-none",
+        "Refractory period",
+        "Synapse",
+        "Reuptake"
+      ],
+      "questions": [
+        {
+          "q": "Bir nöronun dendritlerine aynı anda 6 *excitatory* ve 4 *inhibitory* mesaj geliyor. Tabloya göre, her mesajın etkisi yaklaşık olarak gösterildiği gibiyse nöron ateşlenir mi? (Dinlenme −70 mV, eşik −55 mV.)",
+          "opts": [
+            "Hayır; potansiyel −62 mV olur ve eşiğin altında kalır",
+            "Evet; potansiyel −50 mV olur ve eşik aşılır",
+            "Evet; çünkü *excitatory* mesaj sayısı daha fazladır",
+            "Hayır; çünkü *inhibitory* mesaj geldiğinde nöron hiçbir zaman ateşlenmez"
+          ],
+          "a": 0,
+          "why": "Toplam etki: 6 × (+3) + 4 × (−2,5) = 18 − 10 = +8 mV. −70 + 8 = −62 mV; bu, −55'lik eşiğin altında. Ateşlemeyi mesaj sayısı değil, toplamın eşiği geçip geçmediği belirler.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Mesaj türü",
+              "Sayı",
+              "Her birinin etkisi"
+            ],
+            "rows": [
+              [
+                "Excitatory",
+                "6",
+                "+3 mV"
+              ],
+              [
+                "Inhibitory",
+                "4",
+                "−2,5 mV"
+              ]
+            ],
+            "caption": "Dinlenme potansiyeli −70 mV · eşik −55 mV (örnek değerler)"
+          }
+        },
+        {
+          "q": "Bir hastada görme bulanıklığı, kollarda uyuşma ve kas güçsüzlüğü giderek artıyor. Testler, aksonları saran yalıtım katmanının birçok yerde hasar gördüğünü gösteriyor. Bu hastanın sinir sinyalleri için en olası sonuç hangisidir?",
+          "opts": [
+            "Sinyaller daha hızlı iletilir",
+            "Sinyaller yavaşlar ya da kesintiye uğrar",
+            "Nöronlar *all-or-none* yerine yarım güçle ateşlenir",
+            "Sinapsta *reuptake* tamamen durur"
+          ],
+          "a": 1,
+          "why": "Hasar gören yalıtım *myelin sheath*'tir; bu tablo *multiple sclerosis*'e uyar. Miyelin sinyalin sıçrayarak hızlı gitmesini sağlar; yıprandığında iletim yavaşlar ya da kesilir. *All-or-none* kuralı değişmez."
+        },
+        {
+          "q": "Bir nöron ateşlendikten hemen sonra, çok güçlü bir uyaran gelse bile kısa bir süre yeniden ateşlenemiyor. Bu dönemin adı nedir?",
+          "opts": [
+            "*Resting potential*",
+            "*Threshold*",
+            "*Depolarization*",
+            "*Refractory period*"
+          ],
+          "a": 3,
+          "why": "Ateşlemeden sonra nöronun kendini toparladığı ve yeniden ateşlenemediği kısa süre *refractory period*'dur. *Depolarization* ateşlemenin kendisi, *resting potential* dinlenme yükü, *threshold* ise ateşleme için gereken sınırdır."
+        },
+        {
+          "q": "Bir sinapsta gönderen nöronun habercileri geri alma mekanizması engelleniyor. Bu durumda en olası sonuç hangisidir?",
+          "opts": [
+            "Haberci sinapsta daha uzun kalır ve alıcı nöronu daha uzun etkiler",
+            "Gönderen nöron artık aksiyon potansiyeli üretemez",
+            "Alıcı nöronun dendritleri yok olur",
+            "Akson üzerindeki miyelin kalınlaşır"
+          ],
+          "a": 0,
+          "why": "*Reuptake* engellenirse haberci boşlukta birikir ve reseptörlere tekrar tekrar bağlanabilir; etkisi uzar. Bu, birçok antidepresanın çalışma mantığıdır (bir sonraki bölümler). Aksiyon potansiyeli üretimi ya da miyelin bundan doğrudan etkilenmez."
+        },
+        {
+          "q": "Sinyalin bir nöron içinde ve iki nöron arasında taşınmasıyla ilgili hangi ifade doğrudur?",
+          "opts": [
+            "Nöron içinde de nöronlar arasında da sinyal kimyasaldır",
+            "Nöron içinde sinyal kimyasal, nöronlar arasında elektriktir",
+            "Nöron içinde sinyal elektrik, nöronlar arasında kimyasaldır",
+            "Nöronlar birbirine dokunduğu için arada sinyal taşımaya gerek yoktur"
+          ],
+          "a": 2,
+          "why": "Aksiyon potansiyeli akson boyunca ilerleyen elektriksel bir değişimdir; sinaps boşluğunu ise *neurotransmitters* adlı kimyasal haberciler geçer. Nöronlar birbirine dokunmaz; aralarında sinaps boşluğu vardır."
+        }
+      ]
+    },
+    {
+      "no": 4,
       "code": "1.3-2",
       "slug": "py104",
       "title": "Nörotransmitterler ve Hormonlar",
@@ -348,7 +453,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 4,
+      "no": 5,
       "code": "1.5",
       "slug": "py108",
       "title": "Uyku",
