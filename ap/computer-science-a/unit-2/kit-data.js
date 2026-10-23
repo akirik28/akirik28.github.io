@@ -375,6 +375,101 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "2.7",
+      "slug": "cs205",
+      "title": "while Döngüsü",
+      "en": "while Loops",
+      "accent": "#E86A92",
+      "defter": "cs204",
+      "seconds": 274,
+      "terms": [
+        "while loop",
+        "Iteration",
+        "Loop condition",
+        "Infinite loop",
+        "Off-by-one error",
+        "Trace table"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "26",
+            "10",
+            "15",
+            "25"
+          ],
+          "a": 2,
+          "why": "i = 2, 5, 8 iken gövde çalışır: 2 + 5 + 8 = 15. i 11 olunca 11 <= 10 *false*, döngü biter. 26 diyen 11'i de eklemiş.",
+          "fig": {
+            "type": "code",
+            "code": "int i = 2;\nint sum = 0;\nwhile (i <= 10) {\n  sum += i;\n  i += 3;\n}\nSystem.out.println(sum);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod Hi kelimesini kaç kez yazdırır?",
+          "opts": [
+            "3",
+            "5",
+            "Sonsuz kez",
+            "4"
+          ],
+          "a": 3,
+          "why": "c = 10, 7, 4, 1 iken koşul doğru: 4 tur. Sonra c = −2 olur, −2 > 0 *false*.",
+          "fig": {
+            "type": "code",
+            "code": "int c = 10;\nwhile (c > 0) {\n  System.out.print(\"Hi\");\n  c -= 3;\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki üç döngüden hangileri sonsuz döngüdür?",
+          "opts": [
+            "Yalnız I",
+            "Yalnız III",
+            "I ve III",
+            "I, II ve III"
+          ],
+          "a": 2,
+          "why": "I: a hep çift (0, 2, 4…), 7'ye asla eşit olmaz. III: c hiç değişmez. II: b = 20, 10, 5, 2, 1, 0; *int* bölmesiyle 0'a iner ve döngü biter.",
+          "fig": {
+            "type": "code",
+            "code": "int a = 0;  // I\nwhile (a != 7) { a += 2; }\nint b = 20;  // II\nwhile (b > 0) { b /= 2; }\nint c = 5;  // III\nwhile (c < 10) { System.out.print(c); }"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "0123",
+            "01234",
+            "1234",
+            "123"
+          ],
+          "a": 2,
+          "why": "Gövdede önce i++ sonra yazdırma var. i 0 iken artırılıp 1 yazılır; ... i 3 iken 4 yazılır. i 4 olunca 4 < 4 *false*.",
+          "fig": {
+            "type": "code",
+            "code": "int i = 0;\nwhile (i < 4) {\n  i++;\n  System.out.print(i);\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "5 3",
+            "10 3",
+            "1 6",
+            "5 4"
+          ],
+          "a": 3,
+          "why": "80, 40, 20, 10 çift: dört kez yarıya bölünür ve count 4 olur. n = 5'te 5 % 2 == 0 *false*, döngü durur.",
+          "fig": {
+            "type": "code",
+            "code": "int n = 80;\nint count = 0;\nwhile (n % 2 == 0) {\n  n /= 2;\n  count++;\n}\nSystem.out.println(n + \" \" + count);"
+          }
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "2.8",
       "slug": "cs206",
       "title": "for Döngüsü",
@@ -467,7 +562,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "2.9-1",
       "slug": "cs207",
       "title": "Toplam, Ortalama, Sayma, En Büyük ve En Küçük",
@@ -564,7 +659,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "2.10",
       "slug": "cs209",
       "title": "String Algoritmaları",
@@ -656,6 +751,100 @@ window.KIT = {
           "fig": {
             "type": "code",
             "code": "String s = \"ders\";\ns.substring(1);\ns += \"ler\";\nSystem.out.println(s);"
+          }
+        }
+      ]
+    },
+    {
+      "no": 9,
+      "code": "2.12",
+      "slug": "cs211",
+      "title": "Çalışma Zamanını Kabaca Ölçmek",
+      "en": "Informal Run-Time Analysis",
+      "accent": "#7C95FF",
+      "defter": "cs209",
+      "seconds": 306,
+      "terms": [
+        "Informal run-time analysis",
+        "Statement execution count",
+        "Iteration count",
+        "Nested loop",
+        "Algorithm efficiency"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kodda x++ satırı kaç kez çalışır?",
+          "opts": [
+            "9",
+            "30",
+            "27",
+            "10"
+          ],
+          "a": 3,
+          "why": "k = 3, 6, 9, …, 30: 30 / 3 = 10 değer. <= olduğu için 30 da dahil.",
+          "fig": {
+            "type": "code",
+            "code": "int x = 0;\nfor (int k = 3; k <= 30; k += 3) {\n  x++;\n}"
+          }
+        },
+        {
+          "q": "a ve b daha önce tanımlanmış int değişkenlerdir. Aşağıdaki kodda A ile işaretli satır ve B ile işaretli satır sırasıyla kaç kez çalışır?",
+          "opts": [
+            "4 ve 20",
+            "4 ve 9",
+            "5 ve 20",
+            "20 ve 20"
+          ],
+          "a": 0,
+          "why": "A dış döngüde ama iç döngünün dışında: 4 kez. B iç döngüde: her dış turda 5 kez, 4 · 5 = 20.",
+          "fig": {
+            "type": "code",
+            "code": "for (int i = 0; i < 4; i++) {\n  a++;            // A\n  for (int j = 0; j < 5; j++) {\n    b++;          // B\n  }\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "32",
+            "7",
+            "64",
+            "6"
+          ],
+          "a": 3,
+          "why": "64 → 32 → 16 → 8 → 4 → 2 → 1: altı kez yarıya bölünür. n 1 olunca 1 > 1 *false*.",
+          "fig": {
+            "type": "code",
+            "code": "int n = 64;\nint steps = 0;\nwhile (n > 1) {\n  n /= 2;\n  steps++;\n}\nSystem.out.println(steps);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kodda count++ satırı kaç kez çalışır?",
+          "opts": [
+            "15",
+            "10",
+            "25",
+            "20"
+          ],
+          "a": 1,
+          "why": "j, i + 1'den başlar: i = 0 için 4, i = 1 için 3, i = 2 için 2, i = 3 için 1, i = 4 için 0 tur. 4 + 3 + 2 + 1 = 10.",
+          "fig": {
+            "type": "code",
+            "code": "int count = 0;\nfor (int i = 0; i < 5; i++) {\n  for (int j = i + 1; j < 5; j++) {\n    count++;\n  }\n}"
+          }
+        },
+        {
+          "q": "n 1000 iken, I'deki sum += i satırı ve II'deki sum2 ataması sırasıyla kaç kez çalışır? İkisi de aynı toplamı hesaplar.",
+          "opts": [
+            "1000 ve 1",
+            "1000 ve 1000",
+            "1 ve 1000",
+            "500 ve 1"
+          ],
+          "a": 0,
+          "why": "I'deki sum += i döngünün gövdesinde: n = 1000 kez. II'deki formül n ne olursa olsun bir kez çalışır. Sonuç aynı (500500), iş çok farklı.",
+          "fig": {
+            "type": "code",
+            "code": "// I\nint sum = 0;\nfor (int i = 1; i <= n; i++) { sum += i; }\n// II\nint sum2 = n * (n + 1) / 2;"
           }
         }
       ]
