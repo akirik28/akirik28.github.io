@@ -1,8 +1,12 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/mi2N/questions.json) */
 window.KIT = {
   "store": "micro-u2:v1:",
-  "course": "Microeconomics",
+  "course": "AP Microeconomics",
   "unitLabel": "Unit 2 — Supply and Demand",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
