@@ -432,12 +432,12 @@
         return;
       }
       var cls = "nav-b" + (on ? " on" : "") + (q.done ? " done" : (q.ans || st.watched || h.n - h.open ? " part" : ""));
-      var label = "Bölüm " + epSay(ep) + ": " + ep.title +
+      var label = "Bölüm " + epSay(ep) + ": " + ep.title + (ep.sessiz ? ", şu an sessiz, ses yakında" : "") +
         (q.done ? ", tamamlandı, " + q.ok + "/" + q.n + " doğru" : q.ans ? ", " + q.ans + "/" + q.n + " soru çözüldü" : st.watched ? ", video izlendi" : "") +
         (h.n ? ", ödev " + (h.n - h.open) + "/" + h.n : "");
       var b = btn(cls, [
         el("span", { class: "nav-no", text: epNo(ep) }),
-        el("span", { class: "nav-t", text: ep.title }),
+        el("span", { class: "nav-t" }, [ep.title, ep.sessiz ? el("span", { style: "margin-left:6px;padding:1px 6px;border-radius:5px;background:#E5484D;color:#fff;font-size:11px;font-weight:700;white-space:nowrap", text: "🔇 ses yakında" }) : null]),
         el("span", { class: "nav-m", text: q.done ? q.ok + "/" + q.n : "" })
       ], function () { go(i, { scroll: true }); });
       b.setAttribute("aria-label", label);
@@ -723,6 +723,8 @@
       ]),
       title,
       el("p", { class: "ch-en serif", lang: "en", text: ep.en || "" }),
+      /* henüz seslendirilmemiş bölüm (kit-data: sessiz: true) */
+      ep.sessiz ? el("p", { role: "note", style: "display:inline-block;margin:8px 0 0;padding:6px 12px;border-radius:8px;background:#E5484D;color:#fff;font-weight:700;font-size:15px", text: "🔇 Ses yakında gelecek — bu video şu an sessiz." }) : null,
       (ep.terms && ep.terms.length) ? el("ul", { class: "chips", lang: "en", "aria-label": "Anahtar terimler" },
         ep.terms.map(function (t) { return el("li", { class: "chip", text: t }); })) : null,
       DEFTER ? el("p", { style: "margin:6px 0 0" }, el("a", { class: "btn ghost sm", href: "defter/?b=" + (ep.defter || ep.slug) }, "📓 Bu bölümü videosuz çalış: not defteri →")) : null
