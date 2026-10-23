@@ -126,6 +126,10 @@
           '<path class="a-ants" d="M32 40 Q 46 30 58 44 T 92 40 T 98 60" stroke-width="2.5" stroke-dasharray="5 6"/>' +
           '<circle class="a-tw" cx="32" cy="40" r="5" fill="#FFFFFF" stroke="none"/><circle class="a-tw" cx="58" cy="44" r="4" fill="#FFFFFF" stroke="none" style="animation-delay:.5s"/><circle class="a-tw" cx="92" cy="40" r="5" fill="#FFFFFF" stroke="none" style="animation-delay:1s"/><circle class="a-tw" cx="98" cy="60" r="4" fill="#FFFFFF" stroke="none" style="animation-delay:1.5s"/>' +
           '<g class="a-bounce"><path d="M112 8 l3 6 l6 1 l-4.5 4 l1 6 l-5.5 -3 l-5.5 3 l1 -6 l-4.5 -4 l6 -1z" fill="#FFFFFF" stroke="none"/></g></svg>';
+      case "phys":
+        /* fizik: sallanan sarkaç, kuvvet oku ve yörünge */
+        return open + '<path d="M20 10 H110" stroke-width="3"/><g style="transform-origin:65px 10px;animation:kSarkac 2.6s ease-in-out infinite"><path d="M65 10 V66" stroke-width="2.5"/><circle cx="65" cy="74" r="9" fill="#FFFFFF" stroke="none"/></g>' +
+          '<path d="M30 92 Q 65 70 100 92" stroke-width="2" stroke-dasharray="4 6" class="a-ants"/><path class="a-sway" d="M100 40 h18 m-6 -6 l6 6 -6 6" stroke-width="3"/>' + lbl(100, 30, "F") + '</svg>';
       case "csa":
         /* kod penceresi: büyüyen satırlar ve yanıp sönen imleç */
         return open + '<rect x="10" y="10" width="110" height="80" rx="10"/><path d="M10 26 H120" stroke-width="2"/><circle cx="20" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/><circle cx="29" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/><circle cx="38" cy="18" r="2.5" fill="#FFFFFF" stroke="none"/>' +

@@ -901,3 +901,4 @@ html.df-acik, html.df-acik body { overflow: hidden; }
   .kit-grid--raf .kit-card__title { font-size: 24px; }
   .kit-grid--raf .kit-add-card { min-height: 200px; }
 }
+@keyframes kSarkac { 0%, 100% { rotate: -22deg; } 50% { rotate: 22deg; } }

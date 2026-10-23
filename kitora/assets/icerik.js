@@ -82,10 +82,11 @@
     bpf: { ad: "Business with Personal Finance", kisa: "Business", renk: "bpf", art: "bpf", grup: "ap" },
     calc: { ad: "Calculus BC", renk: "calc", art: "calc", grup: "ap" },
     psych: { ad: "Psychology", renk: "psych", art: "psych", grup: "ap" },
+    csa: { ad: "Computer Science A", renk: "csa", art: "csa", grup: "ap" },
     /* 10. sınıf okul dersleri (okul/<ders>/unit-N/, geçen yılın müfredatı) */
     precalc: { ad: "Precalculus and Trigonometry", kisa: "Precalculus", renk: "precalc", art: "calc", grup: "okul" },
     chem: { ad: "Chemistry", renk: "chem", art: "cep", grup: "okul" },
-    phys: { ad: "Physics", renk: "phys", art: "cep", grup: "okul" },
+    phys: { ad: "Physics", renk: "phys", art: "phys", grup: "okul" },
     bio: { ad: "Biology", renk: "bio", art: "cep", grup: "okul" },
     eng: { ad: "English", renk: "eng", art: "cep", grup: "okul" }
   };
@@ -124,6 +125,7 @@
     ["psych-u3", "psych", 3, "ap/psychology/unit-3/", "defter/defter-liste.js", "Development and Learning"],
     ["psych-u4", "psych", 4, "ap/psychology/unit-4/", "defter/defter-liste.js", "Social Psychology and Personality"],
     ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"],
+    ["csa-u1", "csa", 1, "ap/computer-science-a/unit-1/", "kit-data.js", "Using Objects and Methods"],
     /* 10. sınıf okul defterleri (kitsiz; listede KIT.okul ve KIT.not var) */
     ["pre-u1", "precalc", 1, "okul/precalculus/unit-1/", "defter/defter-liste.js", "Functions"],
     ["pre-u2", "precalc", 2, "okul/precalculus/unit-2/", "defter/defter-liste.js", "Quadratics"],
