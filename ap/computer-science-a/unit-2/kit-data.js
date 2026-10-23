@@ -660,6 +660,97 @@ window.KIT = {
     },
     {
       "no": 8,
+      "code": "2.9-2",
+      "slug": "cs208",
+      "title": "Basamaklar ve Bölünebilme",
+      "en": "Loop Algorithms: Digits and Divisibility",
+      "accent": "#2FD6B9",
+      "defter": "cs206",
+      "seconds": 287,
+      "terms": [
+        "Divisible",
+        "Digit",
+        "Modulo (%)",
+        "Integer division",
+        "Divisor",
+        "Palindrome number"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "0",
+            "28",
+            "8",
+            "52"
+          ],
+          "a": 2,
+          "why": "Soldan sağa: 5280 % 100 = 80 (son iki basamak), 80 / 10 = 8. Bu ifade onlar basamağını verir.",
+          "fig": {
+            "type": "code",
+            "code": "int x = 5280;\nSystem.out.println(x % 100 / 10);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "6",
+            "4",
+            "5",
+            "3"
+          ],
+          "a": 1,
+          "why": "18'in bölenleri 1, 2, 3, 6, 9, 18. Döngü 2'den başlayıp 18'den önce bittiği için 1 ve 18 sayılmaz: 2, 3, 6, 9 → 4.",
+          "fig": {
+            "type": "code",
+            "code": "int c = 0;\nfor (int d = 2; d < 18; d++) {\n  if (18 % d == 0) {\n    c++;\n  }\n}\nSystem.out.println(c);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "065",
+            "560",
+            "65",
+            "56"
+          ],
+          "a": 2,
+          "why": "rev: 0 · 10 + 0 = 0, sonra 0 · 10 + 6 = 6, sonra 6 · 10 + 5 = 65. Bir int baştaki sıfırı tutmaz; 065 yazdırılamaz.",
+          "fig": {
+            "type": "code",
+            "code": "int n = 560;\nint rev = 0;\nwhile (n > 0) {\n  rev = rev * 10 + n % 10;\n  n /= 10;\n}\nSystem.out.println(rev);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "1",
+            "Sonsuz döngüye girer.",
+            "0",
+            "Kod derlenmez."
+          ],
+          "a": 2,
+          "why": "n 0 olduğu için 0 > 0 baştan *false*: döngü hiç dönmez ve count 0 kalır. 0 bir basamaklı olsa da bu kod onu yanlış sayar.",
+          "fig": {
+            "type": "code",
+            "code": "int n = 0;\nint count = 0;\nwhile (n > 0) {\n  n /= 10;\n  count++;\n}\nSystem.out.println(count);"
+          }
+        },
+        {
+          "q": "n pozitif bir int değişkendir. n'nin onlar basamağı 3 olduğunda true olan ifade hangisi?",
+          "opts": [
+            "n % 10 == 3",
+            "n / 10 == 3",
+            "n % 100 == 3",
+            "n / 10 % 10 == 3"
+          ],
+          "a": 3,
+          "why": "n / 10 birler basamağını atar; % 10 kalanın son basamağını, yani asıl sayının onlar basamağını verir. 1234 için 123 % 10 = 3. n / 10 == 3 yalnız 30–39 için doğrudur."
+        }
+      ]
+    },
+    {
+      "no": 9,
       "code": "2.10",
       "slug": "cs209",
       "title": "String Algoritmaları",
@@ -756,7 +847,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 9,
+      "no": 10,
       "code": "2.12",
       "slug": "cs211",
       "title": "Çalışma Zamanını Kabaca Ölçmek",
