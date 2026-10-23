@@ -884,3 +884,20 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .ders-uniteler { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .ders-uniteler .kit-card__body { gap: 10px; }
 .ders-uniteler .chip { align-self: flex-start; }
+
+/* Kitlerim rafı: satırda 3 büyük kart (Ada, 2026-10-23); tablette 2, telefonda 1 */
+.kit-grid--raf { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.kit-grid--raf .kit-card__band { height: 156px; padding: 16px; }
+.kit-grid--raf .kit-card__band .art { width: 170px; height: 128px; right: 14px; }
+.kit-grid--raf .kit-card__body { padding: 22px 24px 24px; gap: 14px; }
+.kit-grid--raf .kit-card__title { font-size: 28px; }
+.kit-grid--raf .kit-card__meta { font-size: 16px; }
+.kit-grid--raf .kit-add-card { min-height: 340px; }
+@media (max-width: 960px) { .kit-grid--raf { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) {
+  .kit-grid--raf { grid-template-columns: 1fr; gap: 16px; }
+  .kit-grid--raf .kit-card__band { height: 110px; }
+  .kit-grid--raf .kit-card__band .art { width: 120px; height: 90px; }
+  .kit-grid--raf .kit-card__title { font-size: 24px; }
+  .kit-grid--raf .kit-add-card { min-height: 200px; }
+}
