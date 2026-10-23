@@ -136,7 +136,7 @@
     ["calc-u9", "calc", 9, "ap/calculus-bc/unit-9/", "defter/defter-liste.js", "Parametric Equations, Polar Coordinates, and Vector-Valued Functions"],
     ["calc-u10", "calc", 10, "ap/calculus-bc/unit-10/", "defter/defter-liste.js", "Infinite Sequences and Series"],
     ["psych-u1", "psych", 1, "ap/psychology/unit-1/", "ikisi", "Biological Bases of Behavior"],
-    ["psych-u2", "psych", 2, "ap/psychology/unit-2/", "defter/defter-liste.js", "Cognition"],
+    ["psych-u2", "psych", 2, "ap/psychology/unit-2/", "ikisi", "Cognition"],
     ["psych-u3", "psych", 3, "ap/psychology/unit-3/", "defter/defter-liste.js", "Development and Learning"],
     ["psych-u4", "psych", 4, "ap/psychology/unit-4/", "defter/defter-liste.js", "Social Psychology and Personality"],
     ["psych-u5", "psych", 5, "ap/psychology/unit-5/", "defter/defter-liste.js", "Mental and Physical Health"],
