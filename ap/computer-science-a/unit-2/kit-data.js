@@ -465,6 +465,103 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 6,
+      "code": "2.9-1",
+      "slug": "cs207",
+      "title": "Toplam, Ortalama, Sayma, En Büyük ve En Küçük",
+      "en": "Loop Algorithms: Sum, Average, Count, Max, and Min",
+      "accent": "#9BC53D",
+      "defter": "cs206",
+      "seconds": 302,
+      "terms": [
+        "Accumulator",
+        "Counter",
+        "Average",
+        "Running maximum",
+        "Running minimum",
+        "Integer.MAX_VALUE",
+        "Local variable",
+        "Casting"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "2.5",
+            "2",
+            "10.0",
+            "2.0"
+          ],
+          "a": 3,
+          "why": "sum = 1 + 2 + 3 + 4 = 10. sum / 4 iki *int*: 2. Sonra *double* değişkene atanır: 2.0. Doğrusu (double) sum / 4.",
+          "fig": {
+            "type": "code",
+            "code": "int sum = 0;\nfor (int k = 1; k <= 4; k++) {\n  sum += k;\n}\ndouble avg = sum / 4;\nSystem.out.println(avg);"
+          }
+        },
+        {
+          "q": "getTemp(1), getTemp(2) ve getTemp(3) sırasıyla −4, −9 ve −2 döndürür. Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "-2",
+            "-4",
+            "-9",
+            "0"
+          ],
+          "a": 3,
+          "why": "max 0 ile başlıyor ve hiçbir sıcaklık 0'dan büyük değil; max hiç güncellenmez. Doğru başlangıç: int max = getTemp(1); o zaman −2 çıkardı.",
+          "fig": {
+            "type": "code",
+            "code": "int max = 0;\nfor (int d = 1; d <= 3; d++) {\n  if (getTemp(d) > max) {\n    max = getTemp(d);\n  }\n}\nSystem.out.println(max);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "8",
+            "5",
+            "7",
+            "3"
+          ],
+          "a": 2,
+          "why": "4'ün katları: 4, 8, 12, 16, 20 (5 tane). 6'nın katları: 6, 12, 18 (3 tane). 12 ikisinde de var ama *or* onu bir kez sayar: 5 + 3 − 1 = 7.",
+          "fig": {
+            "type": "code",
+            "code": "int c = 0;\nfor (int n = 1; n <= 20; n++) {\n  if (n % 4 == 0 || n % 6 == 0) {\n    c++;\n  }\n}\nSystem.out.println(c);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "60",
+            "30",
+            "0",
+            "10"
+          ],
+          "a": 1,
+          "why": "sum = 0 satırı döngünün içinde: her tur toplam sıfırlanır. Son turda sum = 0 + 3 · 10 = 30.",
+          "fig": {
+            "type": "code",
+            "code": "int sum = 0;\nfor (int i = 1; i <= 3; i++) {\n  sum = 0;\n  sum += i * 10;\n}\nSystem.out.println(sum);"
+          }
+        },
+        {
+          "q": "getPrice(1) ile getPrice(4) sırasıyla 40, 25, 30 ve 25 döndürür. Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "2",
+            "25",
+            "1",
+            "4"
+          ],
+          "a": 3,
+          "why": "<= kullanıldığı için eşit fiyat da güncelleme yapar. Gün 2: 25 <= 40 → best 2. Gün 3: 30 değil. Gün 4: 25 <= 25 → best 4. < olsaydı 2 çıkardı.",
+          "fig": {
+            "type": "code",
+            "code": "int best = 1;\nint low = getPrice(1);\nfor (int d = 2; d <= 4; d++) {\n  int p = getPrice(d);\n  if (p <= low) { low = p; best = d; }\n}\nSystem.out.println(best);"
+          }
+        }
+      ]
     }
   ],
   "final": []
