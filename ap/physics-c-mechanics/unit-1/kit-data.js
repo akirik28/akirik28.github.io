@@ -1,8 +1,12 @@
-/* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/pc1N/questions.json) */
+/* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/pcN/questions.json) */
 window.KIT = {
   "store": "physc-u1:v1:",
   "course": "AP Physics C: Mechanics",
   "unitLabel": "Unit 1 — Kinematics",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
@@ -582,7 +586,7 @@ window.KIT = {
     },
     {
       "no": 6,
-      "code": "1.2",
+      "code": "1.2a",
       "slug": "pc107",
       "title": "İvme",
       "en": "Acceleration",
