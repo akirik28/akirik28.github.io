@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Ekonominin Çarkı: Circular Flow",
       "en": "The Circular Flow Model",
       "accent": "#F6B94A",
-      "seconds": 254,
+      "seconds": 310,
       "terms": [
         "Circular flow model",
         "Households",
@@ -157,7 +157,7 @@ window.KIT = {
       "title": "GDP Nedir, Ne Sayılmaz?",
       "en": "What Counts in GDP",
       "accent": "#2FD6B9",
-      "seconds": 240,
+      "seconds": 303,
       "terms": [
         "GDP",
         "Gross domestic product",
@@ -293,7 +293,7 @@ window.KIT = {
       "title": "GDP'yi Hesaplamak: C + I + G + Xn",
       "en": "Measuring GDP",
       "accent": "#58C9FF",
-      "seconds": 255,
+      "seconds": 308,
       "terms": [
         "Expenditure approach",
         "Consumption",
@@ -452,7 +452,7 @@ window.KIT = {
       "title": "GDP'nin Göremedikleri",
       "en": "Limitations of GDP",
       "accent": "#FF6F61",
-      "seconds": 248,
+      "seconds": 308,
       "terms": [
         "Limitations of GDP",
         "Non-market production",
@@ -582,7 +582,7 @@ window.KIT = {
       "title": "İşsizliği Ölçmek",
       "en": "Measuring Unemployment",
       "accent": "#A98BFF",
-      "seconds": 252,
+      "seconds": 305,
       "terms": [
         "Adult population",
         "Employed",
