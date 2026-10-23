@@ -949,3 +949,24 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .kilit__on { z-index: 3; padding: 18px 22px 20px; border-radius: 22px; background: color-mix(in srgb, var(--surface) 92%, transparent); box-shadow: 0 18px 40px rgba(0, 0, 0, .28); }
 .kilit--kucuk .kilit__on { padding: 14px 14px 16px; }
 .kilit__on .kilit-dus { box-shadow: none; background: transparent; padding: 0; margin-top: -2px; }
+
+/* ---------- Kendini dene: anında geri bildirim ---------- */
+.opt:disabled { cursor: default; }
+.opt:disabled:hover { border-color: var(--line); }
+.opt:disabled:not([data-durum]) { opacity: .55; }
+.opt__text { flex: 1; }
+.opt__tag { font-size: 12px; font-weight: 600; white-space: nowrap; }
+.opt[data-durum="ok"] { border-color: var(--ok); background: var(--ok-bg); }
+.opt[data-durum="ok"]:hover { border-color: var(--ok); }
+.opt[data-durum="ok"] .opt__letter { background: var(--ok); border-color: var(--ok); color: var(--bg); }
+.opt[data-durum="ok"] .opt__tag { color: var(--ok); }
+.opt[data-durum="bad"] { border-color: var(--bad); background: var(--bad-bg); }
+.opt[data-durum="bad"]:hover { border-color: var(--bad); }
+.opt[data-durum="bad"] .opt__letter { background: var(--bad); border-color: var(--bad); color: var(--bg); }
+.opt[data-durum="bad"] .opt__tag { color: var(--bad); }
+.aciklama { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border-radius: var(--r-sm); animation: kRise .35s var(--ease) both; }
+.aciklama[data-durum="ok"] { background: var(--ok-bg); }
+.aciklama[data-durum="bad"] { background: var(--bad-bg); }
+.aciklama[data-durum="ok"] strong { color: var(--ok); }
+.aciklama[data-durum="bad"] strong { color: var(--bad); }
+.aciklama p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink); }

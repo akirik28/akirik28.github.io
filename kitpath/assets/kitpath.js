@@ -513,9 +513,19 @@
       var q = Q[qi], fig = q.fig, figHtml = "";
       if (fig && fig.type === "table") figHtml = '<div class="table-box">' + tabloHTML(fig, "table", "max-width:520px;font-size:14px") + '</div>' + (fig.caption ? '<span class="muted" style="font-size:13px">' + md(fig.caption) + '</span>' : "");
       else if (fig) figHtml = '<div data-k="check-fig"></div>';
-      sec.innerHTML = head(Q.length + " soru bitince hepsini birlikte görürsün") + '<p class="q-text">' + md(q.q) + '</p>' + figHtml +
-        '<div class="opts">' + q.opts.map(function (o, i) { return '<button type="button" class="opt" data-o="' + i + '" aria-pressed="' + (pick === i) + '"><span class="opt__letter">' + L[i] + '</span>' + md(o) + '</button>'; }).join("") + '</div>' +
-        '<div class="row" style="justify-content:flex-end"><button type="button" class="btn btn--primary" data-k="next-q">' + (ilkBosSonra() < 0 ? "Bitir, sonuçları gör" : "Sonraki soru →") + '</button></div>';
+      /* Kendini dene: şık işaretlenince doğru/yanlış ve açıklama hemen açılır (denemeler sonda kalır) */
+      var cev = e.ans[C.qid(q)], cevapli = typeof cev === "number", dogru = cevapli && cev === q.a;
+      sec.innerHTML = head(cevapli ? (dogru ? "doğru!" : "olsun, açıklamaya bak") : "işaretle, hemen gör") + '<p class="q-text">' + md(q.q) + '</p>' + figHtml +
+        '<div class="opts">' + q.opts.map(function (o, i) {
+          var durum = !cevapli ? "" : (i === q.a ? "ok" : (i === cev ? "bad" : ""));
+          return '<button type="button" class="opt" data-o="' + i + '"' + (cevapli ? " disabled" : "") + ' aria-pressed="' + (cev === i) + '"' + (durum ? ' data-durum="' + durum + '"' : "") + '>' +
+            '<span class="opt__letter">' + L[i] + '</span><span class="opt__text">' + md(o) + '</span>' +
+            (durum === "ok" ? '<span class="opt__tag">Doğru</span>' : (durum === "bad" ? '<span class="opt__tag">Senin cevabın</span>' : "")) + '</button>';
+        }).join("") + '</div>' +
+        (cevapli
+          ? '<div class="aciklama" data-durum="' + (dogru ? "ok" : "bad") + '" role="status"><strong>' + (dogru ? "Doğru!" : "Doğrusu " + L[q.a] + ".") + '</strong>' + (q.why ? '<p>' + md(q.why) + '</p>' : "") + '</div>' +
+            '<div class="row" style="justify-content:flex-end"><button type="button" class="btn btn--primary" data-k="next-q">' + (ilkBosSonra() < 0 ? "Bitir, özeti gör" : "Sonraki soru →") + '</button></div>'
+          : '<p class="muted" style="font-size:13px;margin:0">Bir şıkka dokun; doğru mu, neden, hemen görürsün.</p>');
       if (fig && fig.type !== "table") sekilKoy($('[data-k="check-fig"]', sec), fig);
     }
     function ilkBosSonra() {
@@ -558,13 +568,16 @@
     });
     $(".check-q").addEventListener("click", function (ev) {
       var o = ev.target.closest(".opt");
-      if (o) { pick = +o.dataset.o; $$(".opt", ev.currentTarget).forEach(function (x) { x.setAttribute("aria-pressed", String(+x.dataset.o === pick)); }); return; }
+      if (o) {
+        var e0 = est(), q0 = ep().questions[qi];
+        if (o.disabled || !q0 || typeof e0.ans[C.qid(q0)] === "number") return;
+        e0.ans[C.qid(q0)] = +o.dataset.o; pick = null; C.calisti(); save();
+        renderUst(); sorular();
+        var nx = $('[data-k="next-q"]', ev.currentTarget); if (nx) nx.focus({ preventScroll: true });
+        return;
+      }
       if (ev.target.closest('[data-k="next-q"]')) {
-        if (pick === null) { toast("Önce bir şık seç"); return; }
-        est().ans[C.qid(ep().questions[qi])] = pick;
-        pick = null; C.calisti();
-        qi = ilkBos();
-        save();
+        qi = ilkBos(); pick = null;
         renderUst(); sorular();
         if (qi < 0) toast("Bölümün soruları bitti");
         return;
