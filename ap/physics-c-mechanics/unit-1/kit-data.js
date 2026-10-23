@@ -1040,6 +1040,131 @@ window.KIT = {
     },
     {
       "no": 9,
+      "code": "1.2b",
+      "slug": "pc110",
+      "title": "Değişken İvme: İntegralle Hareket",
+      "en": "Non-Constant Acceleration",
+      "accent": "#2FD6B9",
+      "seconds": 276,
+      "terms": [
+        "Non-constant acceleration",
+        "Initial conditions",
+        "Constant of integration",
+        "Antiderivative",
+        "Area under the curve",
+        "Exponential decay",
+        "Separation of variables",
+        "Displacement",
+        "Distance"
+      ],
+      "questions": [
+        {
+          "q": "Bir parçacığın ivmesi a(t) = 6t (m/s²) ve v(0) = 1 m/s'dir. v(2) kaçtır?",
+          "opts": [
+            "12 m/s",
+            "13 m/s",
+            "25 m/s",
+            "7 m/s"
+          ],
+          "a": 1,
+          "why": "v = ∫6t dt = 3t² + C; v(0) = C = 1. v(2) = 12 + 1 = 13 m/s. 12, başlangıç hızını eklemeyi unutmaktır."
+        },
+        {
+          "q": "Bir arabanın hızı v(t) = 3t² + 2 (m/s) ve x(0) = 5 m'dir. x(2) kaçtır?",
+          "opts": [
+            "12 m",
+            "14 m",
+            "17 m",
+            "19 m"
+          ],
+          "a": 2,
+          "why": "x = ∫(3t² + 2) dt = t³ + 2t + C; x(0) = C = 5. x(2) = 8 + 4 + 5 = 17 m. 12, C'yi unutmaktır; 14 ise v(2)'dir."
+        },
+        {
+          "q": "Grafik bir cismin ivmesini gösteriyor. v(0) = 3 m/s ise v(4) kaçtır?",
+          "opts": [
+            "35 m/s",
+            "16 m/s",
+            "11 m/s",
+            "19 m/s"
+          ],
+          "a": 3,
+          "why": "a–t altındaki alan Δv: üçgen ½ · 4 · 8 = 16 m/s. v(4) = 3 + 16 = 19 m/s. 35, a(4) = 8'i sabit sanıp 8 · 4 = 32 eklemektir.",
+          "fig": {
+            "type": "graph",
+            "xlabel": "t (s)",
+            "ylabel": "a (m/s²)",
+            "xmax": 5,
+            "ymax": 10,
+            "lines": [
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  4,
+                  8
+                ],
+                "label": "a"
+              }
+            ],
+            "points": [
+              {
+                "q": 4,
+                "p": 8,
+                "label": "(4, 8)"
+              }
+            ],
+            "xticks": [
+              {
+                "v": 2,
+                "label": "2"
+              },
+              {
+                "v": 4,
+                "label": "4"
+              }
+            ],
+            "yticks": [
+              {
+                "v": 4,
+                "label": "4"
+              },
+              {
+                "v": 8,
+                "label": "8"
+              }
+            ],
+            "caption": "İvme–zaman grafiği"
+          }
+        },
+        {
+          "q": "Bir cismin ivmesi a = 2t (m/s²) ile veriliyor ve 3. saniyedeki hızı isteniyor. Hangi yöntem doğrudur?",
+          "opts": [
+            "a'yı zamana göre integrallemek ve başlangıç hızını kullanmak",
+            "v = v₀ + at denklemine a = 2 koymak",
+            "v = v₀ + at denklemine a = 6 koymak",
+            "v² = v₀² + 2aΔx denklemini kullanmak"
+          ],
+          "a": 0,
+          "why": "İvme zamanla değiştiği için sabit ivme denklemlerinin hiçbiri geçerli değil. v = ∫2t dt = t² + v₀; yalnızca integral doğru sonucu verir."
+        },
+        {
+          "q": "Bir parçacığın hızı v(t) = 8 − 2t (m/s). 0 ile 6 s arasındaki yer değiştirmesi ve aldığı yol nedir?",
+          "opts": [
+            "Δx = 12 m, yol = 12 m",
+            "Δx = 20 m, yol = 12 m",
+            "Δx = 12 m, yol = 20 m",
+            "Δx = 16 m, yol = 20 m"
+          ],
+          "a": 2,
+          "why": "x = 8t − t² (x₀ = 0 alınırsa). Δx = x(6) − x(0) = 48 − 36 = 12 m. v = 0 → t = 4: 0–4'te +16 m, 4–6'da x(6) − x(4) = 12 − 16 = −4 m. Yol 16 + 4 = 20 m."
+        }
+      ]
+    },
+    {
+      "no": 10,
       "code": "1.4–1.5",
       "slug": "pc111",
       "title": "İki Boyutta Hareket ve Göreli Hareket",
