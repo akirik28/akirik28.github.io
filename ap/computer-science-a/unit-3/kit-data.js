@@ -348,6 +348,99 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 5,
+      "code": "3.6",
+      "slug": "cs306",
+      "title": "Nesne Referansı Geçirmek ve Döndürmek",
+      "en": "Methods: Passing and Returning References of an Object",
+      "accent": "#9BC53D",
+      "defter": "cs305",
+      "seconds": 297,
+      "terms": [
+        "Reference",
+        "Reference copy",
+        "Alias",
+        "Object parameter",
+        "Return a reference",
+        "null",
+        "NullPointerException",
+        "Immutable"
+      ],
+      "questions": [
+        {
+          "q": "a'nın bakiyesi 50, b'nin bakiyesi 10. Aşağıdaki give metodu LunchCard'ın içinde. Kod ne yazdırır?",
+          "opts": [
+            "25 30",
+            "40 15",
+            "25 15",
+            "10 15"
+          ],
+          "a": 2,
+          "why": "*other*, b ile aynı kartı gösterir: b 10 + 15 = 25 olur. n, k'nin kopyasıdır; n = n * 2 yalnız kopyayı değiştirir, k 15 kalır.",
+          "fig": {
+            "type": "code",
+            "code": "public void give(LunchCard other, int n) {\n  other.topUp(n);\n  n = n * 2;\n}\n// istemci:\nint k = 15;\na.give(b, k);\nSystem.out.println(b.getBalance() + \" \" + k);"
+          }
+        },
+        {
+          "q": "b'nin bakiyesi 10. Aşağıdaki reset metodu LunchCard'ın içinde. a.reset(b); çalıştıktan sonra b.getBalance() ne döndürür?",
+          "opts": [
+            "0",
+            "10",
+            "50",
+            "NullPointerException fırlatılır."
+          ],
+          "a": 1,
+          "why": "Parametreye yeni bir nesne atamak yalnız *other*'ın okunu çevirir; b hâlâ eski kartı gösterir. b'nin kartına hiç dokunulmadı: 10.",
+          "fig": {
+            "type": "code",
+            "code": "public void reset(LunchCard other) {\n  other = new LunchCard(\"Yeni\", 0);\n}"
+          }
+        },
+        {
+          "q": "a ve b iki ayrı kart; b'nin bakiyesi 10. getBackup backup alanını döndürüyor. Kod ne yazdırır?",
+          "opts": [
+            "10 false",
+            "40 false",
+            "10 true",
+            "40 true"
+          ],
+          "a": 3,
+          "why": "getBackup b'nin kopyasını değil, b'ye giden referansın kopyasını döndürür. x ve b *alias*'tır: x.topUp(30) b'yi 40 yapar ve x == b *true*'dur.",
+          "fig": {
+            "type": "code",
+            "code": "a.setBackup(b);\nLunchCard x = a.getBackup();\nx.topUp(30);\nSystem.out.println(b.getBalance() + \" \" + (x == b));"
+          }
+        },
+        {
+          "q": "Yeni açılan bir kartta setBackup hiç çağrılmadı. c.getBackup().topUp(5); satırı çalışınca ne olur?",
+          "opts": [
+            "NullPointerException fırlatılır.",
+            "backup varsayılan olarak c'nin kendisini gösterir; c'ye 5 yüklenir.",
+            "Kod derlenmez.",
+            "Hiçbir şey olmaz; satır atlanır."
+          ],
+          "a": 0,
+          "why": "Nesne tipindeki alanın varsayılan değeri *null*'dır. getBackup *null* döndürür ve *null* üzerinden metot çağırmak çalışma anında *NullPointerException* verir. Kod derlenir."
+        },
+        {
+          "q": "a.getOwner() \"Ece\" döndürüyor. Kod ne yazdırır?",
+          "opts": [
+            "Ec Ec",
+            "Ece Ec",
+            "Ece Ece",
+            "Ec Ece"
+          ],
+          "a": 1,
+          "why": "*String* *immutable*'dır. substring yeni bir *String* üretir ve s ona döner; karttaki \"Ece\" değişmez.",
+          "fig": {
+            "type": "code",
+            "code": "String s = a.getOwner();\ns = s.substring(0, 2);\nSystem.out.println(a.getOwner() + \" \" + s);"
+          }
+        }
+      ]
     }
   ],
   "final": []
