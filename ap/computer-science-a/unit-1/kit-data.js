@@ -105,8 +105,100 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "1.5",
+      "slug": "cs104",
+      "title": "Casting, Yuvarlama ve Taşma",
+      "en": "Casting and Range of Variables",
+      "accent": "#FF6F61",
+      "seconds": 284,
+      "terms": [
+        "Casting",
+        "Widening",
+        "Truncation",
+        "Rounding",
+        "Integer.MAX_VALUE",
+        "Integer.MIN_VALUE",
+        "Integer overflow",
+        "Round-off error",
+        "Java Quick Reference"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "7",
+            "6.99",
+            "6",
+            "6.0"
+          ],
+          "a": 2,
+          "why": "(int) *cast* ondalık kısmı keser, yuvarlamaz: 6.99 → 6. Sonuç *int* olduğu için 6.0 da yazılmaz.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println((int) 6.99);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "3.5",
+            "3.0",
+            "3",
+            "4.0"
+          ],
+          "a": 1,
+          "why": "Önce parantez içi: a / b iki *int*, sonuç 3. *cast* bundan sonra uygulanır: (double) 3 → 3.0. 3.5 için (double) a / b yazılmalıydı.",
+          "fig": {
+            "type": "code",
+            "code": "int a = 7;\nint b = 2;\nSystem.out.println((double) (a / b));"
+          }
+        },
+        {
+          "q": "x negatif bir *double* (ör. −3.7). Hangi ifade x'i en yakın tam sayıya yuvarlar?",
+          "opts": [
+            "(int) (x - 0.5)",
+            "(int) (x + 0.5)",
+            "(int) x",
+            "(int) x - 0.5"
+          ],
+          "a": 0,
+          "why": "Negatif sayıda 0.5 çıkarılıp kesilir: −3.7 − 0.5 = −4.2 → −4. (int) (x + 0.5) = (int) (−3.2) = −3 verirdi; (int) x de −3. Son şık *int* eksi *double* olduğundan *double* sonuç verir."
+        },
+        {
+          "q": "Aşağıdaki kod çalıştıktan sonra big değişkeninin değeri nedir?",
+          "opts": [
+            "Integer.MAX_VALUE + 1'e eşit, daha büyük bir sayı",
+            "0",
+            "Çalışırken ArithmeticException fırlatılır",
+            "Integer.MIN_VALUE"
+          ],
+          "a": 3,
+          "why": "*int* sınırı aşılınca hata oluşmaz; değer öbür uca sarar ve en küçük *int* olur. Buna *integer overflow* denir.",
+          "fig": {
+            "type": "code",
+            "code": "int big = Integer.MAX_VALUE;\nbig = big + 1;"
+          }
+        },
+        {
+          "q": "Aşağıdaki değişkenler tanımlı. Hangi ifade 4.25 değerini verir?",
+          "opts": [
+            "(double) (sum / n)",
+            "(double) sum / n",
+            "sum / n",
+            "(int) (sum / (double) n)"
+          ],
+          "a": 1,
+          "why": "(double) sum önce 17.0 olur, sonra 17.0 / 4 = 4.25. (double) (sum / n) = 4.0; sum / n = 4; son şık 4.25'i hesaplar ama (int) ile 4'e keser.",
+          "fig": {
+            "type": "code",
+            "code": "int sum = 17;\nint n = 4;"
+          }
+        }
+      ]
     }
   ],
-  "final": [],
-  "defter": false
+  "final": []
 };
