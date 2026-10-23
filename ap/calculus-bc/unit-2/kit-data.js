@@ -3,6 +3,10 @@ window.KIT = {
   "store": "calcbc-u2:v1:",
   "course": "AP Calculus BC",
   "unitLabel": "Unit 2 — Differentiation: Definition and Fundamental Properties",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
