@@ -37,7 +37,20 @@
 (function () {
   "use strict";
   var KIT = window.KIT || { episodes: [] };
-  var EPS = KIT.episodes || [];
+  /* Bir konu birden çok videoya bölünmüşse (ep.defter aynı) tek defterde toplanır;
+     her soru kendi bölümünü (_ep) taşır, ilerleme o bölüme yazılır. */
+  var EPS = (function (src) {
+    var out = [], by = {};
+    src.forEach(function (e) {
+      var k = e.defter || e.slug;
+      var qs = (e.questions || []).map(function (q) { var c = {}, f; for (f in q) c[f] = q[f]; c._ep = e.slug; return c; });
+      if (by[k]) { by[k].questions = by[k].questions.concat(qs); return; }
+      var c = {}, f; for (f in e) c[f] = e[f];
+      c.slug = k; c._ep = e.slug; c.questions = qs; if (e.defterBaslik) c.title = e.defterBaslik;
+      by[k] = c; out.push(c);
+    });
+    return out;
+  })(KIT.episodes || []);
   if (!KIT.store) KIT.store = "hg-kit:v2:";                 /* kit.js ile aynı varsayılanlar (Human Geography) */
   var COURSE = KIT.course || "Human Geography", UNIT = KIT.unitLabel || "Unit 1";
   var APC = KIT.okul || /^AP\b/.test(COURSE) ? COURSE : "AP " + COURSE;
@@ -186,7 +199,7 @@
     var acc2 = ep.accent || "#7C95FF";
     document.documentElement.style.setProperty("--acc", acc2);
     var back = document.getElementById("dBack");
-    if (back) { back.href = KY ? "./" : "../#" + ep.slug; back.lastChild.textContent = KY ? " Ünitenin defterleri" : " Kite dön"; }
+    if (back) { back.href = KY ? "./" : "../#" + (ep._ep || ep.slug); back.lastChild.textContent = KY ? " Ünitenin defterleri" : " Kite dön"; }
     if ((!ep.questions || !ep.questions.length) && Array.isArray(D.sorular)) ep.questions = D.sorular.filter(function (q) { return q && q.q && Array.isArray(q.opts) && typeof q.a === "number"; });
 
     /* ilerleme çubuğu */
@@ -201,7 +214,7 @@
     var hero = el("section", { class: "d-hero nb" }, [
       el("p", { class: "d-course" }, [
         el("span", { text: APC + " · " + UNIT.split(" — ")[0] + " · Konu " + epNo(ep) }),
-        KY ? null : el("a", { href: "../#" + ep.slug, text: "▶ Videosu" })
+        KY ? null : el("a", { href: "../#" + (ep._ep || ep.slug), text: "▶ Videosu" })
       ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
@@ -729,14 +742,16 @@
   function writeAns(ep, q, k) {
     var s = readState();
     if (!s.eps || typeof s.eps !== "object") s.eps = {};
-    var e = s.eps[ep.slug] || (s.eps[ep.slug] = { watched: false, step: "video", ans: {}, hw: {} });
+    var es = q._ep || ep._ep || ep.slug;
+    var e = s.eps[es] || (s.eps[es] = { watched: false, step: "video", ans: {}, hw: {} });
     if (!e.ans) e.ans = {};
     e.ans[qid(q)] = k;
     if (e.step === "video") e.step = "quiz";
     if (acc) ls(stateKey(), JSON.stringify(s)); else try { window.localStorage.setItem(stateKey(), JSON.stringify(s)); } catch (x) {}
   }
   function quiz(ep, sec) {
-    var st = readState(), prev = (st.eps && st.eps[ep.slug] && st.eps[ep.slug].ans) || {};
+    var st = readState();
+    function prevAns(q) { var es = q._ep || ep._ep || ep.slug; return (st.eps && st.eps[es] && st.eps[es].ans) || {}; }
     var score = el("p", { class: "d-qs mono" });
     var tally = { n: ep.questions.length, a: 0, ok: 0 };
     function upd() { score.textContent = tally.a + " / " + tally.n + " cevaplandı · " + tally.ok + " doğru"; }
@@ -759,7 +774,7 @@
       }
       btns.forEach(function (b2, k) { b2.addEventListener("click", function () { lock(k, true); }); });
       add(box, [el("p", { class: "d-q-n mono", text: "Soru " + (qi + 1) }), el("p", { class: "d-q-t", html: md(q.q) }), fig, el("div", { class: "d-q-os" }, btns), why]);
-      var p = prev[qid(q)];
+      var p = prevAns(q)[qid(q)];
       if (typeof p === "number" && p >= 0 && p < q.opts.length) lock(p, false);
       sec.appendChild(watch(box));
     });
@@ -808,7 +823,7 @@
       if (window.location.hash) { var t = document.getElementById(window.location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
     };
     s.onerror = function () {
-      add(root, el("section", { class: "d-lock" }, [el("h1", { text: ep.title }), el("p", { class: "lead", text: "Bu bölümün defteri yakında geliyor. O zamana kadar videosundan çalışabilirsin." }), el("a", { class: "btn primary", href: "../#" + ep.slug, text: "Videoya git →" })]));
+      add(root, el("section", { class: "d-lock" }, [el("h1", { text: ep.title }), el("p", { class: "lead", text: "Bu bölümün defteri yakında geliyor. O zamana kadar videosundan çalışabilirsin." }), el("a", { class: "btn primary", href: "../#" + (ep._ep || ep.slug), text: "Videoya git →" })]));
     };
     document.body.appendChild(s);
   }

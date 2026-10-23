@@ -890,6 +890,5 @@ window.KIT = {
       ]
     }
   ],
-  "final": [],
-  "defter": false
+  "final": []
 };

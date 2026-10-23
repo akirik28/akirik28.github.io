@@ -59,7 +59,7 @@ window.KIT = {
                 "16,004"
               ]
             ],
-            "caption": "s(t) = 4t² için *average rate of change*"
+            "caption": "s(t) = 4t² için average rate of change"
           }
         },
         {
@@ -1257,6 +1257,5 @@ window.KIT = {
       ]
     }
   ],
-  "final": [],
-  "defter": false
+  "final": []
 };
