@@ -389,6 +389,99 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "1.6",
+      "slug": "cs105",
+      "title": "Bileşik Operatörler ve İzleme Tablosu",
+      "en": "Compound Assignment and Tracing",
+      "accent": "#A98BFF",
+      "seconds": 279,
+      "terms": [
+        "Compound assignment operator",
+        "+=",
+        "-=",
+        "/=",
+        "%=",
+        "Increment ++",
+        "Decrement --",
+        "Trace table",
+        "Integer division"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "3.5",
+            "4",
+            "2",
+            "3"
+          ],
+          "a": 3,
+          "why": "x = 20 − 6 = 14. Sonra x /= 4 → 14 / 4, iki *int*: 3 (ondalık kesilir).",
+          "fig": {
+            "type": "code",
+            "code": "int x = 20;\nx -= 6;\nx /= 4;\nSystem.out.println(x);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "-3 11",
+            "8 11",
+            "3 11",
+            "-3 8"
+          ],
+          "a": 0,
+          "why": "İzleme tablosu: a = 5 + 3 = 8; b = 3 + 8 = 11; a = 8 − 11 = −3. Her satırda en güncel değer kullanılır.",
+          "fig": {
+            "type": "code",
+            "code": "int a = 5;\nint b = 3;\na += b;\nb += a;\na -= b;\nSystem.out.println(a + \" \" + b);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "1",
+            "1.75",
+            "1.0",
+            "3.5"
+          ],
+          "a": 1,
+          "why": "d = 2.5 + 1 = 3.5; d = 3.5 / 2 = 1.75. d bir *double* olduğu için bölmede kesilme olmaz.",
+          "fig": {
+            "type": "code",
+            "code": "double d = 2.5;\nd += 1;\nd /= 2;\nSystem.out.println(d);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "12",
+            "13",
+            "11",
+            "2"
+          ],
+          "a": 2,
+          "why": "17 % 5 = 2; 2 + 10 = 12; n-- ile 11.",
+          "fig": {
+            "type": "code",
+            "code": "int n = 17;\nn %= 5;\nn += 10;\nn--;\nSystem.out.println(n);"
+          }
+        },
+        {
+          "q": "count değişkeninden 1 çıkarmak isteyen bir öğrenci hangi satırı yazmalı?",
+          "opts": [
+            "count =- 1;",
+            "count - 1;",
+            "count = 1 - count;",
+            "count -= 1;"
+          ],
+          "a": 3,
+          "why": "count -= 1; demek count = count − 1 demektir. count =- 1; derlenir ama count'a −1 atar; count - 1; tek başına bir komut değildir ve derlenmez; count = 1 − count başka bir hesap yapar."
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "1.7–1.10",
       "slug": "cs106",
       "title": "API, Metot İmzası ve Static Metotlar",
@@ -484,7 +577,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 6,
+      "no": 7,
       "code": "1.11",
       "slug": "cs107",
       "title": "Math Sınıfı ve Rastgele Sayılar",
@@ -577,7 +670,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 7,
+      "no": 8,
       "code": "1.12–1.14",
       "slug": "cs108",
       "title": "Nesneler, Referanslar ve null",
@@ -672,7 +765,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 8,
+      "no": 9,
       "code": "1.15-1",
       "slug": "cs109",
       "title": "String: Birleştirme ve substring",
@@ -769,7 +862,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 9,
+      "no": 10,
       "code": "1.15-2",
       "slug": "cs110",
       "title": "String: indexOf, equals, compareTo",
