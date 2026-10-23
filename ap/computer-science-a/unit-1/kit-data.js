@@ -108,6 +108,97 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "1.2",
+      "slug": "cs102",
+      "title": "Değişkenler ve İlkel Tipler",
+      "en": "Variables and Primitive Types",
+      "accent": "#2FD6B9",
+      "seconds": 261,
+      "terms": [
+        "Variable",
+        "Data type",
+        "Primitive type",
+        "int",
+        "double",
+        "boolean",
+        "Declaration",
+        "Initialization",
+        "Assignment",
+        "final",
+        "camelCase"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satırlardan hangisi derleme hatası (*compile-time error*) verir?",
+          "opts": [
+            "double avg = 5;",
+            "boolean ok = true;",
+            "int count = 2.0;",
+            "int n = 2 + 3;"
+          ],
+          "a": 2,
+          "why": "2.0 bir *double* değerdir; *int* kutusuna otomatik giremez. Tersi serbesttir: double avg = 5; geçerlidir ve avg 5.0 olur."
+        },
+        {
+          "q": "Aşağıdaki kod çalışınca ne yazdırılır?",
+          "opts": [
+            "2 5",
+            "5 2",
+            "7 5",
+            "2 2"
+          ],
+          "a": 0,
+          "why": "İzleme tablosu: p = 5 + 2 = 7; q = 7 − 2 = 5; p = 7 − 5 = 2. Sonuç 2 5: iki değer yer değiştirdi.",
+          "fig": {
+            "type": "code",
+            "code": "int p = 5;\nint q = 2;\np = p + q;\nq = p - q;\np = p - q;\nSystem.out.println(p + \" \" + q);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "4",
+            "4.0",
+            "Derleme hatası",
+            "d"
+          ],
+          "a": 1,
+          "why": "*int* değer 4, *double* kutusuna otomatik olarak 4.0 diye girer; *double* yazdırılınca ondalık kısmıyla görünür.",
+          "fig": {
+            "type": "code",
+            "code": "double d = 4;\nSystem.out.println(d);"
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi geçerli bir değişken adıdır?",
+          "opts": [
+            "2ndScore",
+            "total score",
+            "class",
+            "totalScore"
+          ],
+          "a": 3,
+          "why": "İsim harfle başlamalı, boşluk içermemeli ve *int*, *class* gibi anahtar sözcük olmamalı. totalScore hem geçerli hem de *camelCase* geleneğine uygun."
+        },
+        {
+          "q": "Aşağıdaki kod için hangisi doğrudur?",
+          "opts": [
+            "6 yazdırılır",
+            "Kod derlenmez",
+            "5 yazdırılır",
+            "Çalışırken *exception* fırlatılır"
+          ],
+          "a": 1,
+          "why": "*final* bir değişkene ilk atamadan sonra yeni değer verilemez. LIMIT = 6; satırı derleyici tarafından reddedilir; program hiç çalışmaz.",
+          "fig": {
+            "type": "code",
+            "code": "final int LIMIT = 5;\nLIMIT = 6;\nSystem.out.println(LIMIT);"
+          }
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "1.3",
       "slug": "cs103",
       "title": "İfadeler: Tam Sayı Bölmesi ve Mod",
@@ -204,7 +295,7 @@ window.KIT = {
       ]
     },
     {
-      "no": 3,
+      "no": 4,
       "code": "1.5",
       "slug": "cs104",
       "title": "Casting, Yuvarlama ve Taşma",
