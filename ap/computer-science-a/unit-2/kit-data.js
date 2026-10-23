@@ -848,6 +848,100 @@ window.KIT = {
     },
     {
       "no": 10,
+      "code": "2.11",
+      "slug": "cs210",
+      "title": "İç İçe Döngüler",
+      "en": "Nested Iteration",
+      "accent": "#F6B94A",
+      "defter": "cs208",
+      "seconds": 292,
+      "terms": [
+        "Nested loop",
+        "Outer loop",
+        "Inner loop",
+        "Inner loop bound",
+        "Trace table"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod X harfini kaç kez yazdırır?",
+          "opts": [
+            "8",
+            "15",
+            "12",
+            "24"
+          ],
+          "a": 1,
+          "why": "Dış döngü 5 tur, her dış turda iç döngü 3 tur: 5 · 3 = 15.",
+          "fig": {
+            "type": "code",
+            "code": "for (int i = 0; i < 5; i++) {\n  for (int j = 0; j < 3; j++) {\n    System.out.print(\"X\");\n  }\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod üç satır yazdırır. Üçüncü satır nedir?",
+          "opts": [
+            "333",
+            "3",
+            "123",
+            "321"
+          ],
+          "a": 2,
+          "why": "i = 3 iken iç döngü j = 1, 2, 3 değerlerini yazdırır: 123. Yazdırılan j'dir, i değil.",
+          "fig": {
+            "type": "code",
+            "code": "for (int i = 1; i <= 3; i++) {\n  for (int j = 1; j <= i; j++) {\n    System.out.print(j);\n  }\n  System.out.println();\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "16",
+            "10",
+            "4",
+            "6"
+          ],
+          "a": 3,
+          "why": "i = 1: j < 1, 0 tur. i = 2: 1 tur. i = 3: 2 tur. i = 4: 3 tur. Toplam 0 + 1 + 2 + 3 = 6.",
+          "fig": {
+            "type": "code",
+            "code": "int count = 0;\nfor (int i = 1; i <= 4; i++) {\n  for (int j = 1; j < i; j++) {\n    count++;\n  }\n}\nSystem.out.println(count);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "2",
+            "4",
+            "8",
+            "6"
+          ],
+          "a": 0,
+          "why": "j = i + 1 olduğu için her çift bir kez ve harf kendisiyle hiç karşılaştırılmaz. Eşit çiftler: (0, 3) a–a ve (1, 2) b–b. j = 0 olsaydı 8 çıkardı.",
+          "fig": {
+            "type": "code",
+            "code": "String s = \"abba\";\nint c = 0;\nfor (int i = 0; i < s.length(); i++) {\n  for (int j = i + 1; j < s.length(); j++) {\n    if (s.substring(i, i + 1).equals(s.substring(j, j + 1))) c++;\n  }\n}\nSystem.out.println(c);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "10",
+            "20",
+            "30",
+            "16"
+          ],
+          "a": 1,
+          "why": "rowSum her dış turda sıfırlanır: satır toplamları 1, 1 + 2 = 3, 6 ve 10. total = 1 + 3 + 6 + 10 = 20.",
+          "fig": {
+            "type": "code",
+            "code": "int total = 0;\nfor (int r = 1; r <= 4; r++) {\n  int rowSum = 0;\n  for (int c = 1; c <= r; c++) { rowSum += c; }\n  total += rowSum;\n}\nSystem.out.println(total);"
+          }
+        }
+      ]
+    },
+    {
+      "no": 11,
       "code": "2.12",
       "slug": "cs211",
       "title": "Çalışma Zamanını Kabaca Ölçmek",
