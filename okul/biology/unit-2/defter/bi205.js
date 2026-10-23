@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi205 · 2.5 Hava Kirliliği ve Asit Yağmuru
+/* Kitpath not defteri · bi205 · 2.5 Hava Kirliliği ve Asit Yağmuru
    Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: Air pollution, Ozone depletion, Acid rain) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi205",

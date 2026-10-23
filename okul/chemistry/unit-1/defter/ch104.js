@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch104 · 1.4 Sıvıların Özellikleri
+/* Kitpath not defteri · ch104 · 1.4 Sıvıların Özellikleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 1) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch104",

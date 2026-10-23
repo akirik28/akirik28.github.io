@@ -1,4 +1,4 @@
-/* Kitora not defteri · st201 · 2.1–2.2 İki Kategorik Değişkeni Göstermek
+/* Kitpath not defteri · st201 · 2.1–2.2 İki Kategorik Değişkeni Göstermek
    Kaynak: AP Statistics CED Unit 2 (2.1 Are Variables Related?, 2.2 Representing Two Categorical Variables). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st201",

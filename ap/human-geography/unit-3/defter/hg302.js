@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg302 · Kültürel Peyzajlar
+/* Kitpath not defteri · hg302 · Kültürel Peyzajlar
    Kaynak: AP HuG CED Topic 3.2 (PSO-3.B, PSO-3.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg302",

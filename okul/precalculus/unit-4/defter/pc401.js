@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc401 · 4.1 Açılar, Radyan ve Birim Çember
+/* Kitpath not defteri · pc401 · 4.1 Açılar, Radyan ve Birim Çember
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: birim çember grafiği için yardımcı işlevler yalnızca noktaları hesaplar (merkez (8, 5.5), yarıçap 4 birim = 1). */
 window.DEFTER = (function () {

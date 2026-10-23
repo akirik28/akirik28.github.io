@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb108 · 1.14 Sonsuz Limitler ve Dikey Asimptotlar
+/* Kitpath not defteri · cb108 · 1.14 Sonsuz Limitler ve Dikey Asimptotlar
    Kaynak: ap-videolar/src/episodes/cb108 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb108",

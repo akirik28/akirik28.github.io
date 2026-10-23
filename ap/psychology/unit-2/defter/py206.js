@@ -1,4 +1,4 @@
-/* Kitora not defteri · py206 · 2.6 Bellekten Geri Getirme
+/* Kitpath not defteri · py206 · 2.6 Bellekten Geri Getirme
    Kaynak: AP Psychology CED 2024, Topic 2.6 (2.6.A.1–3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py206",

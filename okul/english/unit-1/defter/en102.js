@@ -1,4 +1,4 @@
-/* Kitora not defteri · en102 · 1.2 Edebi Sanatlar Çantası
+/* Kitpath not defteri · en102 · 1.2 Edebi Sanatlar Çantası
    Kaynak: Kasım sınav rubriği (edebi ve yapısal araçlar 7 puan), Byrd/Woods passage-analysis dersi ve Two Kinds tartışma paketindeki terimler (öğretmen materyali özeti A1, D). Öğretmen belgesinde olmayan terimler "ek bilgi" etiketiyle işaretli. */
 window.DEFTER = {
   slug: "en102",
@@ -133,7 +133,7 @@ window.DEFTER = {
       baslik: "Hangi araç, hangi etki?",
       kisa: "Etki cümlesini önceden hazırla: araçtan sonra gelecek fiili bil.",
       bloklar: [
-        { tip: "tablo", baslik: "Araç → etki kalıpları (kalıplar Kitora'nın önerisidir)", head: ["Araç", "Etki fikri", "Sınavda böyle yaz"],
+        { tip: "tablo", baslik: "Araç → etki kalıpları (kalıplar Kitpath'in önerisidir)", head: ["Araç", "Etki fikri", "Sınavda böyle yaz"],
           rows: [
             ["*Irony*", "Eleştiri, acıma, şaşkınlık", "*The irony highlights the gap between…*"],
             ["*Imagery*", "Atmosfer, duygu", "*The vivid imagery of… evokes…*"],

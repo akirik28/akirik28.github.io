@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb206 · 2.6 Temel Türev Kuralları
+/* Kitpath not defteri · cb206 · 2.6 Temel Türev Kuralları
    Kaynak: ap-videolar/src/episodes/cb206 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb206",

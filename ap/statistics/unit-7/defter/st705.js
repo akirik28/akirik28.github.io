@@ -1,4 +1,4 @@
-/* Kitora not defteri · st705 · 7.6–7.7 İki Ortalama Farkı İçin Güven Aralığı
+/* Kitpath not defteri · st705 · 7.6–7.7 İki Ortalama Farkı İçin Güven Aralığı
    Kaynak: AP Statistics CED 7.6–7.7 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    Örnek: n₁ = n₂ = 25, x̄₁ = 52, s₁ = 20, x̄₂ = 40, s₂ = 15 → SE = 5; tablo df = 24 (t∗ = 2,064), hesap makinesi df ≈ 44,5 (t∗ ≈ 2,015).
    Grafikte x = fark + 10. */

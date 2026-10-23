@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1009 · 10.10 Alterne Seri Hata Sınırı
+/* Kitpath not defteri · cb1009 · 10.10 Alterne Seri Hata Sınırı
    Kaynak: College Board AP Calculus BC CED, Topic 10.10. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1009",

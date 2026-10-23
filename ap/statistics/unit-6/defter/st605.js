@@ -1,4 +1,4 @@
-/* Kitora not defteri · st605 · 6.6 Oran Testini Sonuçlandırmak
+/* Kitpath not defteri · st605 · 6.6 Oran Testini Sonuçlandırmak
    Kaynak: College Board CED, Unit 6 (konu 6.6). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st605",

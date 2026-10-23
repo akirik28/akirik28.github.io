@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc403 · 4.3 Her Açının Trigonometrik Değerleri ve Özdeşlikler
+/* Kitpath not defteri · pc403 · 4.3 Her Açının Trigonometrik Değerleri ve Özdeşlikler
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: ASTC grafiği birim çember çizer (merkez (8, 5.5), yarıçap 4 birim = 1); yardımcı işlevler yalnızca noktaları hesaplar. */
 window.DEFTER = (function () {

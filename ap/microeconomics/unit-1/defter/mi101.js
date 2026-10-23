@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi101 · 1.2 Ekonomik Sistemler ve Kaynak Dağılımı
+/* Kitpath not defteri · mi101 · 1.2 Ekonomik Sistemler ve Kaynak Dağılımı
    Kaynak: ap-videolar/src/episodes/mi101 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mi101",

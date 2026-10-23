@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb201 · 2.1 Ortalama ve Anlık Değişim Hızı
+/* Kitpath not defteri · cb201 · 2.1 Ortalama ve Anlık Değişim Hızı
    Kaynak: ap-videolar/src/episodes/cb201 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb201",

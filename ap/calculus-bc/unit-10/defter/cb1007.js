@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1007 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1007 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1007",
   amac: "Bu konu oran testini (*ratio test*) anlatıyor: bir serinin ardışık terimlerinin oranına bakarak yakınsak mı ıraksak mı olduğunu bulursun. Faktöriyelli ve üstel terimlerde neden çok işe yaradığını, L = 1 çıkınca neden sonuç vermediğini öğreneceksin.",

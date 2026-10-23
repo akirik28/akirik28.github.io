@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc602 · 6.2 Döviz Kurları
+/* Kitpath not defteri · mc602 · 6.2 Döviz Kurları
    Kaynak: CED Topic 6.2 (MKT-5.A). Blok türleri: /ap/_kit/defter.js başı.
    Varsayımsal kurlar: 1 $ = 20 TL (TL = 0,05 $), değer kazanınca 1 $ = 16 TL (0,0625 $), kaybedince 1 $ = 25 TL (0,04 $).
    Grafik: y ekseninde 1 birim = 0,01 $. */

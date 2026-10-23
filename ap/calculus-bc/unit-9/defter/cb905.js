@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb905 · 9.7 Kutupsal Koordinatlar ve Türev
+/* Kitpath not defteri · cb905 · 9.7 Kutupsal Koordinatlar ve Türev
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb905",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st404 · 4.5 Koşullu Olasılık
+/* Kitpath not defteri · st404 · 4.5 Koşullu Olasılık
    Kitsiz ünite: içerik College Board CED'in Unit 4 (VAR-4) hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st404",

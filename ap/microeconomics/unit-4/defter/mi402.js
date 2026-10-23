@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi402 · 4.2 Tekel
+/* Kitpath not defteri · mi402 · 4.2 Tekel
    Kaynak: CED Topic 4.2 (PRD-3.B.5–7). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar (sinema salonu): talep P = 100 − 0,1Q; MR = 100 − 0,2Q; MC = 20 TL; sabit maliyet 12.000 TL → ATC = 20 + 12.000/Q.
    Grafikte 1 birim = 10 TL ve 100 bilet (talep (0,10)–(10,0), MR (0,10)–(5,0), MC = 2, ATC = 2 + 12/Q).

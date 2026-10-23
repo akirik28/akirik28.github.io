@@ -1,4 +1,4 @@
-/* Kitora not defteri · st604 · 6.5 p-Değerini Yorumlamak
+/* Kitpath not defteri · st604 · 6.5 p-Değerini Yorumlamak
    Kaynak: College Board CED, Unit 6 (konu 6.5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st604",

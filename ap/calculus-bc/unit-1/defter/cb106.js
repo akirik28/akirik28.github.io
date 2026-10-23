@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb106 · 1.10–1.11 Süreklilik ve Süreksizlik Türleri
+/* Kitpath not defteri · cb106 · 1.10–1.11 Süreklilik ve Süreksizlik Türleri
    Kaynak: ap-videolar/src/episodes/cb106 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb106",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1001 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1001 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1001",
   amac: "Bu konu sonsuz serinin ne demek olduğunu anlatıyor: sonsuz sayıda sayıyı toplayınca neden bazen sonlu bir sayı çıkar, bazen çıkmaz? Kısmi toplamları (*partial sum*) kurup limitlerine bakarak seriyi yakınsak ya da ıraksak diye ayırmayı öğreneceksin.",

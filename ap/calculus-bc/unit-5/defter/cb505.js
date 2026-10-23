@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb505 · 5.6–5.7 Konkavlık ve İkinci Türev Testi
+/* Kitpath not defteri · cb505 · 5.6–5.7 Konkavlık ve İkinci Türev Testi
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb505",

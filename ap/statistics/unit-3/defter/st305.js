@@ -1,4 +1,4 @@
-/* Kitora not defteri · st305 · 3E Deney Tasarımı Seçmek (CED 3.6)
+/* Kitpath not defteri · st305 · 3E Deney Tasarımı Seçmek (CED 3.6)
    Kaynak: AP Statistics CED Unit 3 (3.6 Selecting an Experimental Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st305",

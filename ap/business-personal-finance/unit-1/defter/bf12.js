@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf12 · 1.2 Pazarlar ve Rekabet Avantajı
+/* Kitpath not defteri · bf12 · 1.2 Pazarlar ve Rekabet Avantajı
    Kaynak: ap-videolar/src/episodes/bf12 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf12",

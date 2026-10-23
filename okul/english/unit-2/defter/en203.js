@@ -1,4 +1,4 @@
-/* Kitora not defteri · en203 · 2.3 Karakterler
+/* Kitpath not defteri · en203 · 2.3 Karakterler
    Kaynak: öğretmen (Dr Byrd) Oedipus belgeleri (soru vurguları; satır no. Fagles baskısı, Fagles alıntısı yok) + oyunun standart karakter analizi. Alıntı: yalnız F. Storr çevirisi (1912). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en203",

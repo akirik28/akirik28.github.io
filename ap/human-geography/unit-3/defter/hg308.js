@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg308 · Yayılmanın Etkileri
+/* Kitpath not defteri · hg308 · Yayılmanın Etkileri
    Kaynak: AP HuG CED Topic 3.8 (SPS-3.B.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg308",

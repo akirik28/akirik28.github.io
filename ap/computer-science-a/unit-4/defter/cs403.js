@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs403 · 4.4 Diziyi Dolaşmak
+/* Kitpath not defteri · cs403 · 4.4 Diziyi Dolaşmak
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs403",

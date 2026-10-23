@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph105 · 1.5 Yatay Atış
+/* Kitpath not defteri · ph105 · 1.5 Yatay Atış
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı.
    Not: g = 10 m/s². Yardımcı işlev yalnızca yörünge noktalarını üretir: 20 m yükseklik, v₀ = 15 m/s, t = 0…2 s.
    Grafikte bir kare 5 m: x = 15t/5 = 3t, y = (20 − 5t²)/5 = 4 − t². */

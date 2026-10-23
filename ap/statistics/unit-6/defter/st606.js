@@ -1,4 +1,4 @@
-/* Kitora not defteri · st606 · 6.7 Tip I ve Tip II Hatalar
+/* Kitpath not defteri · st606 · 6.7 Tip I ve Tip II Hatalar
    Kaynak: College Board CED, Unit 6 (konu 6.7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st606",

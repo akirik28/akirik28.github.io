@@ -1,4 +1,4 @@
-/* Kitora not defteri · st405 · 4.6 Bağımsız Olaylar ve Birleşim
+/* Kitpath not defteri · st405 · 4.6 Bağımsız Olaylar ve Birleşim
    Kitsiz ünite: içerik College Board CED'in Unit 4 (VAR-4) hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st405",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch502 · 5.2 Çözünürlüğü Etkileyenler
+/* Kitpath not defteri · ch502 · 5.2 Çözünürlüğü Etkileyenler
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 4: çözünürlüğü ve çözünme hızını etkileyenler). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch502",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb103 · 1.5, 1.9 Limit Kuralları ve Gösterimleri Bağlamak
+/* Kitpath not defteri · cb103 · 1.5, 1.9 Limit Kuralları ve Gösterimleri Bağlamak
    Kaynak: ap-videolar/src/episodes/cb103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb103",

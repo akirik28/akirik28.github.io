@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb602 · 6.2–6.3 Riemann Toplamları ve Belirli İntegral Gösterimi
+/* Kitpath not defteri · cb602 · 6.2–6.3 Riemann Toplamları ve Belirli İntegral Gösterimi
    Kaynak: AP Calculus BC CED, Topic 6.2 ve 6.3. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb602",

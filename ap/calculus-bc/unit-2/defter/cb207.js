@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb207 · 2.7 sin x, cos x, eˣ ve ln x'in Türevleri
+/* Kitpath not defteri · cb207 · 2.7 sin x, cos x, eˣ ve ln x'in Türevleri
    Kaynak: ap-videolar/src/episodes/cb207 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb207",

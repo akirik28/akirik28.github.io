@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1002 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1002 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1002",
   amac: "Bu konu geometrik serileri anlatıyor: terimler her adımda aynı sayıyla çarpılıyorsa sonsuz toplam ne zaman sonlu olur ve kaça eşittir? Yakınsama koşulunu (|r| < 1), toplam formülünü a/(1 − r) ve tekrar eden ondalık gibi uygulamalarını öğreneceksin.",

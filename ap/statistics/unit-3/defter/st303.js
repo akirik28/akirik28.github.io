@@ -1,4 +1,4 @@
-/* Kitora not defteri · st303 · 3C Örneklemedeki Sorunlar (CED 3.4)
+/* Kitpath not defteri · st303 · 3C Örneklemedeki Sorunlar (CED 3.4)
    Kaynak: AP Statistics CED Unit 3 (3.4 Potential Problems with Sampling). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st303",

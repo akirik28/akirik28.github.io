@@ -1,4 +1,4 @@
-/* Kitora not defteri · st112 · 1F-2 Investigative Question ve Sonucun Kapsamı
+/* Kitpath not defteri · st112 · 1F-2 Investigative Question ve Sonucun Kapsamı
    Kaynak: ap-videolar/src/episodes/st112 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st112",

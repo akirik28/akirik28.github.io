@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf503 · 5.3 Eğitim, Konut ve Emeklilik İçin Birikim ve Yatırım
+/* Kitpath not defteri · bf503 · 5.3 Eğitim, Konut ve Emeklilik İçin Birikim ve Yatırım
    Kaynak: College Board CED, Topic 5.3 (5.3.A–5.3.C). Blok türleri: /ap/_kit/defter.js başı.
    Para birimi TL; oranlar ve sayılar anlatım için varsayımsaldır. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc104 · 1.4 Fonksiyon Grafiklerini Okumak
+/* Kitpath not defteri · pc104 · 1.4 Fonksiyon Grafiklerini Okumak
    Kaynak: öğretmenin ders sunumu (Unit#1_4 Analyzing Graphs of Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc104",

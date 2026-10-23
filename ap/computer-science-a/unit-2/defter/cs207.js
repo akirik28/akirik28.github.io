@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs207 · 2.10 String Algoritmaları
+/* Kitpath not defteri · cs207 · 2.10 String Algoritmaları
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı; String metotları Java Quick Reference'tan: length, substring, indexOf, equals, compareTo.
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {

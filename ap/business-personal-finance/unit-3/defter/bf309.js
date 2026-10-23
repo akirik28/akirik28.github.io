@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf309 · 3.9 Etik ve Finansal Raporlama
+/* Kitpath not defteri · bf309 · 3.9 Etik ve Finansal Raporlama
    Kaynak: AP Business with Personal Finance CED, Topic 3.9. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf309",

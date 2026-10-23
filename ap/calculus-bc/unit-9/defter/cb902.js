@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb902 · 9.3 Parametrik Eğrinin Yay Uzunluğu
+/* Kitpath not defteri · cb902 · 9.3 Parametrik Eğrinin Yay Uzunluğu
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb902",

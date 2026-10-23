@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc108 · 1.5 Arz Yasası ve Arzı Kaydıranlar
+/* Kitpath not defteri · mc108 · 1.5 Arz Yasası ve Arzı Kaydıranlar
    Kaynak: ap-videolar/src/episodes/mc108 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı.
    Not: bu dosyadaki küçük yardımcı işlevler yalnızca tekrar eden arz eğrisi kayma durumlarını üretir. */
 window.DEFTER = (function () {

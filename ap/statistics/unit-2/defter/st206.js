@@ -1,4 +1,4 @@
-/* Kitora not defteri · st206 · 2.8 En Küçük Kareler Regresyonu
+/* Kitpath not defteri · st206 · 2.8 En Küçük Kareler Regresyonu
    Kaynak: AP Statistics CED Unit 2, Topic 2.8 (Least Squares Regression). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st206",

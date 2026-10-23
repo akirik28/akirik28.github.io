@@ -1,4 +1,4 @@
-/* Kitora not defteri · st504 · 5.5 Örneklem Oranının Dağılımı
+/* Kitpath not defteri · st504 · 5.5 Örneklem Oranının Dağılımı
    Kapsam: p̂ sampling distribution (mean p, SD √(p(1−p)/n)), 10% ve Large Counts koşulları, normal yaklaşıklıkla olasılık. */
 window.DEFTER = {
   slug: "st504",

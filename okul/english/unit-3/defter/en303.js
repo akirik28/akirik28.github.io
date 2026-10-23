@@ -1,4 +1,4 @@
-/* Kitora not defteri · en303 · 3.3 Karakterler
+/* Kitpath not defteri · en303 · 3.3 Karakterler
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): öğretmenin bölüm sorularındaki karakter vurguları (Byrd) + Ch 8–11 çalışma rehberi (Akyürek) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Telif: romandan alıntı yok; karakterler kendi cümlelerimizle ve bölüm numaralarıyla anlatılır. Hassas konular (Ch 13, James Castle, Antolini) olgusal ve ayrıntısız. */
 window.DEFTER = {

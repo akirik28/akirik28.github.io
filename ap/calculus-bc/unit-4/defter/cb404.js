@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb404 · 4.4–4.5 İlişkili Oranlar
+/* Kitpath not defteri · cb404 · 4.4–4.5 İlişkili Oranlar
    Videosuz ünite: CED 4.4 (Introduction to Related Rates) ve 4.5 (Solving Related Rates Problems). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb404",

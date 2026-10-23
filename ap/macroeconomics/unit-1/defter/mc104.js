@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc104 · 1.3 Mutlak ve Karşılaştırmalı Üstünlük
+/* Kitpath not defteri · mc104 · 1.3 Mutlak ve Karşılaştırmalı Üstünlük
    Kaynak: ap-videolar/src/episodes/mc104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc104",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph106 · 1.6 Eğik Atış
+/* Kitpath not defteri · ph106 · 1.6 Eğik Atış
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı.
    Not: g = 10 m/s², v₀ = 50 m/s; sin37° = cos53° = 0,6 ve cos37° = sin53° = 0,8 (sınavda verilir).
    Grafikte bir kare 25 m (yatay ve düşey). Yardımcı işlev yalnızca yörünge noktalarını üretir: x = vx·t, y = vy·t − 5t². */

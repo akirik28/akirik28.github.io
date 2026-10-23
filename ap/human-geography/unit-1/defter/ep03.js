@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep03 · Mesafe ve Etkileşim
+/* Kitpath not defteri · ep03 · Mesafe ve Etkileşim
    Kaynak: ap-videolar/src/episodes/ep03 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep03",

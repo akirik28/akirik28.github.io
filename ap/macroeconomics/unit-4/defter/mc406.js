@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc406 · 4.6 Para Politikası
+/* Kitpath not defteri · mc406 · 4.6 Para Politikası
    Kaynak: AP Macroeconomics CED, Topic 4.6 (POL-1.D, POL-1.E). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca durumları üretir; üç grafik var.
    (1) Para piyasası (kıt rezerv): MD (1,9)→(9,1), MS dikey x = 5, denge (5,5); 1 birim = %1 ve 100 milyar TL.

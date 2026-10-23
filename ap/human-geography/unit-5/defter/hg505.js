@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg505 · Yeşil Devrim (5.5)
+/* Kitpath not defteri · hg505 · Yeşil Devrim (5.5)
    Kaynak: AP HuG CED Topic 5.5 (SPS-5.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg505",

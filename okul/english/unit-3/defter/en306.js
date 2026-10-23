@@ -1,4 +1,4 @@
-/* Kitora not defteri · en306 · 3.6 Catcher Üzerine Yazmak
+/* Kitpath not defteri · en306 · 3.6 Catcher Üzerine Yazmak
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): MEB sınav biçimleri (Mart ve Haziran), Byrd passage-analysis slaytları, Woods örnek analizi/peer editing, okulun yapay zekâ kuralı + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Bu defter hazır essay ya da konuşma metni VERMEZ: yapı, kriter ve cümle iskeletleri verir. Telif: romandan gerçek alıntı yok (alıntı yerleri [kısa alıntı] ile gösterilir). Mart R/W rubriği belgede yoktur; Kasım paragraf rubriği "ek bilgi" olarak etiketlidir. */
 window.DEFTER = {

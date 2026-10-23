@@ -1,4 +1,4 @@
-/* Kitora not defteri · py407 · 4.7 Duygu
+/* Kitpath not defteri · py407 · 4.7 Duygu
    Kaynak: College Board CED, Topic 4.7 (4.7.A, 4.7.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py407",

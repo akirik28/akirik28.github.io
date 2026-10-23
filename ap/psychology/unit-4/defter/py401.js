@@ -1,4 +1,4 @@
-/* Kitora not defteri · py401 · 4.1 Yükleme Kuramı ve Kişi Algısı
+/* Kitpath not defteri · py401 · 4.1 Yükleme Kuramı ve Kişi Algısı
    Kaynak: College Board CED, Topic 4.1 (4.1.A, 4.1.B, 4.1.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py401",

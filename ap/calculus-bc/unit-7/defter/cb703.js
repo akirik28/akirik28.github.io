@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb703 · 7.5 Euler Yöntemi
+/* Kitpath not defteri · cb703 · 7.5 Euler Yöntemi
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb703",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf11 · 1.1 İşletme Nedir?
+/* Kitpath not defteri · bf11 · 1.1 İşletme Nedir?
    Kaynak: ap-videolar/src/episodes/bf11 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf11",

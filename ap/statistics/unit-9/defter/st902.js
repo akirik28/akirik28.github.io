@@ -1,4 +1,4 @@
-/* Kitora not defteri · st902 · 9.3 Güven Aralığıyla Eğim Hakkında İddia
+/* Kitpath not defteri · st902 · 9.3 Güven Aralığıyla Eğim Hakkında İddia
    Kaynak: AP Statistics CED Unit 9 (Topic 9.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st902",

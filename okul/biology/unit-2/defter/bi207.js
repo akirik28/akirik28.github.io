@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi207 · 2.7 Küresel İklim Değişikliği
+/* Kitpath not defteri · bi207 · 2.7 Küresel İklim Değişikliği
    Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: Global Climate Change; Topic 2.4 greenhouse gases) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi207",

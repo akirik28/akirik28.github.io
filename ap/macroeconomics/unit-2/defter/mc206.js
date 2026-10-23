@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc206 · 2.6 Reel ve Nominal GSYH
+/* Kitpath not defteri · mc206 · 2.6 Reel ve Nominal GSYH
    Kaynak: College Board CED, Topic 2.6 (MEA-1.I, J). Blok türleri: /ap/_kit/defter.js başı.
    Hesap: Y1 (baz) tost 10×10 + kola 5×20 = 200 · Y2 nominal 12×11 + 6×20 = 252, reel (Y1 fiyatı) 10×11 + 5×20 = 210, deflatör 120. */
 window.DEFTER = {

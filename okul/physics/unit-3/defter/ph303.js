@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph303 · 3.3 Üreteçlerin Bağlanması (Cells in Series and Parallel)
+/* Kitpath not defteri · ph303 · 3.3 Üreteçlerin Bağlanması (Cells in Series and Parallel)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 3; FİZ.10.3.5) + MEB FİZ.10 Elektrik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph303",

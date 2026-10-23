@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg610 · Kentsel Değişimin Sorunları
+/* Kitpath not defteri · hg610 · Kentsel Değişimin Sorunları
    Kaynak: AP HuG CED Topic 6.10 (SPS-6.A.1 – 6.A.5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg610",

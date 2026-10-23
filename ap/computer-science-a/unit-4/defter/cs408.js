@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs408 · 4.9–4.10 ArrayList Dolaşma ve Algoritmalar
+/* Kitpath not defteri · cs408 · 4.9–4.10 ArrayList Dolaşma ve Algoritmalar
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs408",

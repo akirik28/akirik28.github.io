@@ -1,4 +1,4 @@
-/* Kitora not defteri · py501 · 5.1 Sağlık Psikolojisine Giriş
+/* Kitpath not defteri · py501 · 5.1 Sağlık Psikolojisine Giriş
    Kaynak: College Board CED, Topic 5.1 (5.1.A–D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py501",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb307 · 3.4 Ters Trigonometrik Fonksiyonların Türevi
+/* Kitpath not defteri · cb307 · 3.4 Ters Trigonometrik Fonksiyonların Türevi
    Kaynak: ap-videolar/src/episodes/cb307 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb307",

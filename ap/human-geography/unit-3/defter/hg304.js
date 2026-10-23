@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg304 · Yayılma Türleri
+/* Kitpath not defteri · hg304 · Yayılma Türleri
    Kaynak: AP HuG CED Topic 3.4 (IMP-3.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg304",

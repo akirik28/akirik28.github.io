@@ -110,10 +110,10 @@
     for (k = 1; k <= 5; k++) s += '<i' + (k <= v ? ' class="on"' : '') + '></i>';
     return s + '</span>';
   }
-  /* giriş yapan hesap: tek satır; hesap değiştirmek için Kitora'dan çıkış yapılır */
+  /* giriş yapan hesap: tek satır; hesap değiştirmek için Kitpath'ten çıkış yapılır */
   function whoLine() {
     return pid ? '<p class="who-line">Sonuçlar <b>' + h(nameOf(pid)) + '</b> hesabına kaydedilir.</p>'
-               : '<p class="who-line">Sonucun kaydedilsin diye <a href="/kitora/giris/?devam=' + encodeURIComponent(location.pathname + location.search) + '">giriş yap</a>.</p>';
+               : '<p class="who-line">Sonucun kaydedilsin diye <a href="/kitpath/giris/?devam=' + encodeURIComponent(location.pathname + location.search) + '">giriş yap</a>.</p>';
   }
 
   var BM = '<svg viewBox="0 0 16 18" aria-hidden="true"><path d="M2.5 1.5h11v15L8 12.5l-5.5 4z"/></svg>';

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb303 · 3.1-3 Tablo ve Grafikle Zincir Kuralı
+/* Kitpath not defteri · cb303 · 3.1-3 Tablo ve Grafikle Zincir Kuralı
    Kaynak: ap-videolar/src/episodes/cb303 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb303",

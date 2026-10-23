@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc301 · 3.1 Polinomlar ve İşlemler
+/* Kitpath not defteri · pc301 · 3.1 Polinomlar ve İşlemler
    Kaynak: öğretmenin ders sunumu (Unit#3_1 Polynomials) + Review for Exam#3; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc301",

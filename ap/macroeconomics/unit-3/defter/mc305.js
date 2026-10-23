@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc305 · 3.5 AD–AS Modelinde Denge
+/* Kitpath not defteri · mc305 · 3.5 AD–AS Modelinde Denge
    Kaynak: College Board CED, Topic 3.5 (MOD-2.G). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye.
    Grafik: AD: P = 11 − Y, SRAS: P = Y − 1, LRAS: Y = 6 → E₀ = (6, 5). */

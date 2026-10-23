@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs106 · 1.7–1.10 API, Metot İmzası ve Static Metotlar
+/* Kitpath not defteri · cs106 · 1.7–1.10 API, Metot İmzası ve Static Metotlar
    Kaynak: ap-videolar/src/episodes/cs106 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs106",

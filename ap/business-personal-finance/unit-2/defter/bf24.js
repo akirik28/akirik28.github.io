@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf24 · 2.4 Ürün
+/* Kitpath not defteri · bf24 · 2.4 Ürün
    Kaynak: ap-videolar/src/episodes/bf24 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf24",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st104 · 1C-2 Stemplot ve Histogram
+/* Kitpath not defteri · st104 · 1C-2 Stemplot ve Histogram
    Kaynak: ap-videolar/src/episodes/st104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st104",

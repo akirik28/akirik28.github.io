@@ -1,4 +1,4 @@
-/* Kitora not defteri · py104 · 1.4 Beyin
+/* Kitpath not defteri · py104 · 1.4 Beyin
    Kaynak: AP Psychology CED (2024) Topic 1.4. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafiklerdeki değerler göreli ve kavramsaldır (gerçek ölçüm değil). */
 window.DEFTER = {

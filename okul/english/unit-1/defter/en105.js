@@ -1,4 +1,4 @@
-/* Kitora not defteri · en105 · 1.5 The Story of Princess Hase (A Story of Old Japan)
+/* Kitpath not defteri · en105 · 1.5 The Story of Princess Hase (A Story of Old Japan)
    Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Yei Theodora Ozaki, Japanese Fairy Tales, 1908; kamuya açık). Öğretmen belgesinde bu öykü için ayrı çalışma kâğıdı yok; yorumlar ek bilgi niteliğinde, Kasım sınav biçimi (özet A1) ve pasaj analizi yöntemiyle (özet D) uyumlu. */
 window.DEFTER = {
   slug: "en105",

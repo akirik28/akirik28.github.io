@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg403 · 4.3 Siyasi Güç ve Toprak Hâkimiyeti
+/* Kitpath not defteri · hg403 · 4.3 Siyasi Güç ve Toprak Hâkimiyeti
    Kaynak: AP HuG CED Topic 4.3 (PSO-4.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg403",

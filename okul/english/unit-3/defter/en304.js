@@ -1,4 +1,4 @@
-/* Kitora not defteri · en304 · 3.4 Temalar
+/* Kitpath not defteri · en304 · 3.4 Temalar
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): öğretmenin bütün kitap tartışma soruları ve bölüm vurguları (Byrd, Akyürek) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Telif: romandan yalnız 1 kısa alıntı (Ch 26, ≤10 kelime); gerisi kendi cümlelerimizle. Ruh sağlığı ve yas olgusal anlatılır, tanı konmaz. */
 window.DEFTER = {

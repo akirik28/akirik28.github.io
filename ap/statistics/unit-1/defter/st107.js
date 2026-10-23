@@ -1,4 +1,4 @@
-/* Kitora not defteri · st107 · 1D-3 Outlier ve Boxplot
+/* Kitpath not defteri · st107 · 1D-3 Outlier ve Boxplot
    Kaynak: ap-videolar/src/episodes/st107 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st107",

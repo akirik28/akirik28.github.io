@@ -1,4 +1,4 @@
-/* Kitora not defteri · py101 · 1.1 Kalıtım ve Çevrenin Etkileşimi
+/* Kitpath not defteri · py101 · 1.1 Kalıtım ve Çevrenin Etkileşimi
    Kaynak: AP Psychology CED (2024) Topic 1.1. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py101",

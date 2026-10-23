@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph104 · 1.4 Serbest Düşme
+/* Kitpath not defteri · ph104 · 1.4 Serbest Düşme
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı.
    Not: g = 10 m/s² alınır. Yardımcı işlev yalnızca yukarı atış eğrisinin noktalarını üretir: h(t) = 20t − 5t², t = 0…4. */
 window.DEFTER = (function () {

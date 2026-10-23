@@ -1,4 +1,4 @@
-/* Kitora not defteri · st403 · 4.4 Ayrık Olaylar
+/* Kitpath not defteri · st403 · 4.4 Ayrık Olaylar
    Kitsiz ünite: içerik College Board CED'in Unit 4 (VAR-4) hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st403",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg301 · Kültüre Giriş
+/* Kitpath not defteri · hg301 · Kültüre Giriş
    Kaynak: AP HuG CED Topic 3.1 (PSO-3.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg301",

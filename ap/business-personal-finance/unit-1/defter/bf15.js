@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf15 · 1.5 Vizyon
+/* Kitpath not defteri · bf15 · 1.5 Vizyon
    Kaynak: ap-videolar/src/episodes/bf15 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf15",

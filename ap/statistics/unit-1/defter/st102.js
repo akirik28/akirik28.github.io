@@ -1,4 +1,4 @@
-/* Kitora not defteri · st102 · 1B Kategorik Veri
+/* Kitpath not defteri · st102 · 1B Kategorik Veri
    Kaynak: ap-videolar/src/episodes/st102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st102",

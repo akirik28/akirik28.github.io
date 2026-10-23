@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs104 · 1.5 Casting, Yuvarlama ve Taşma
+/* Kitpath not defteri · cs104 · 1.5 Casting, Yuvarlama ve Taşma
    Kaynak: ap-videolar/src/episodes/cs104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs104",

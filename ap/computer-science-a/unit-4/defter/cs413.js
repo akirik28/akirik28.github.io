@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs413 · 4.16 Özyineleme
+/* Kitpath not defteri · cs413 · 4.16 Özyineleme
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs413",

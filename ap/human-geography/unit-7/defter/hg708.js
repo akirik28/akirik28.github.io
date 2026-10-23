@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg708 · Sürdürülebilir Kalkınma
+/* Kitpath not defteri · hg708 · Sürdürülebilir Kalkınma
    Kaynak: AP HuG CED Topic 7.8 (IMP-7.A.1–A.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg708",

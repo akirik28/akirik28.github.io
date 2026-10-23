@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg504 · İkinci Tarım Devrimi (5.4)
+/* Kitpath not defteri · hg504 · İkinci Tarım Devrimi (5.4)
    Kaynak: AP HuG CED Topic 5.4 (SPS-5.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg504",

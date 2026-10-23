@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg609 · Kentsel Veri
+/* Kitpath not defteri · hg609 · Kentsel Veri
    Kaynak: AP HuG CED Topic 6.9 (IMP-6.E.1, IMP-6.E.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg609",

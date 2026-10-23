@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb606 · 6.8 Belirsiz İntegral: Temel Kurallar
+/* Kitpath not defteri · cb606 · 6.8 Belirsiz İntegral: Temel Kurallar
    Kaynak: AP Calculus BC CED, Topic 6.8. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb606",

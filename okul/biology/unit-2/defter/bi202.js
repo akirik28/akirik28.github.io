@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi202 · 2.2 Topluluk ve Popülasyon
+/* Kitpath not defteri · bi202 · 2.2 Topluluk ve Popülasyon
    Kaynak: öğretmen lecture'ı (Topic 2.2 Interactions and Changes in Communities and Populations) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi202",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf403 · 4.3 Strateji ve Karar Verme
+/* Kitpath not defteri · bf403 · 4.3 Strateji ve Karar Verme
    Kaynak: College Board CED, Topic 4.3 (4.3.A–4.3.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf403",

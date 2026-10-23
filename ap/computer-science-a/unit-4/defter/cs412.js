@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs412 · 4.15 Sıralama Algoritmaları
+/* Kitpath not defteri · cs412 · 4.15 Sıralama Algoritmaları
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs412",

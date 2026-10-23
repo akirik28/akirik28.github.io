@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb102 · 1.3–1.4 Grafikten ve Tablodan Limit
+/* Kitpath not defteri · cb102 · 1.3–1.4 Grafikten ve Tablodan Limit
    Kaynak: ap-videolar/src/episodes/cb102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb102",

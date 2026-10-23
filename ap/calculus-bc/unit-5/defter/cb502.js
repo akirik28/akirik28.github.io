@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb502 · 5.2 Ekstremum Değer Teoremi ve Kritik Noktalar
+/* Kitpath not defteri · cb502 · 5.2 Ekstremum Değer Teoremi ve Kritik Noktalar
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb502",

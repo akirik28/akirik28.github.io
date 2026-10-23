@@ -1,4 +1,4 @@
-/* Kitora not defteri · py404 · 4.4 Psikodinamik ve Hümanistik Kişilik Kuramları
+/* Kitpath not defteri · py404 · 4.4 Psikodinamik ve Hümanistik Kişilik Kuramları
    Kaynak: College Board CED, Topic 4.4 (4.4.A, 4.4.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py404",

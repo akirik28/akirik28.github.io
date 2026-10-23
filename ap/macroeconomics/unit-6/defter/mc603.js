@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc603 · 6.3 Döviz Piyasası
+/* Kitpath not defteri · mc603 · 6.3 Döviz Piyasası
    Kaynak: CED Topic 6.3 (MKT-5.B, C, D). Blok türleri: /ap/_kit/defter.js başı.
    TL piyasası: D (1,9)→(9,1), S (1,1)→(9,9), denge (5,5) = 0,05 $ ve 100 milyar TL; 1 birim = 0,01 $ ve 20 milyar TL. */
 window.DEFTER = (function () {

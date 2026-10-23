@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg502 · Yerleşme Desenleri ve Arazi Ölçümü (5.2)
+/* Kitpath not defteri · hg502 · Yerleşme Desenleri ve Arazi Ölçümü (5.2)
    Kaynak: AP HuG CED Topic 5.2 (PSO-5.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg502",

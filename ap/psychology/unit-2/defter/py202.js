@@ -1,4 +1,4 @@
-/* Kitora not defteri · py202 · 2.2 Düşünme, Problem Çözme ve Karar Verme
+/* Kitpath not defteri · py202 · 2.2 Düşünme, Problem Çözme ve Karar Verme
    Kaynak: AP Psychology CED 2024, Topic 2.2 (2.2.A.1–8). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py202",

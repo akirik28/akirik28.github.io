@@ -1,4 +1,4 @@
-/* Kitora not defteri · en403 · 4.3 Tez ve Argüman Yapısı
+/* Kitpath not defteri · en403 · 4.3 Tez ve Argüman Yapısı
    Okul dersi (10. sınıf English · Unit 4). Yapı ve cümle iskeletleri verir; hazır essay yazmaz.
    Kaynak: Argumentative Essay belgesi, Full Outline kontrol noktası ve essay rubriği (Dr Byrd). "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */
 window.DEFTER = {

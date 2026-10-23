@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1012 · 10.13 Yakınsaklık Yarıçapı ve Aralığı
+/* Kitpath not defteri · cb1012 · 10.13 Yakınsaklık Yarıçapı ve Aralığı
    Kaynak: College Board AP Calculus BC CED, Topic 10.13. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1012",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi604 · 6.4 Farklı Piyasalarda Devlet Müdahalesi
+/* Kitpath not defteri · mi604 · 6.4 Farklı Piyasalarda Devlet Müdahalesi
    Kaynak: CED Topic 6.4 (POL-4.A). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar:
    Vergi/sübvansiyon: D y=10−x, S y=x, vergi 2 → alıcı 6, satıcı 4, Q 5→4; sübvansiyon 2 → alıcı 4, satıcı 6, Q 5→6. 1 birim = 10 bardak, 1 TL.

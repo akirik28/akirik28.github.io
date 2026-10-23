@@ -1,4 +1,4 @@
-/* Kitora not defteri · st506 · 5.7 Örneklem Ortalamasının Dağılımı
+/* Kitpath not defteri · st506 · 5.7 Örneklem Ortalamasının Dağılımı
    Kapsam: x̄ sampling distribution (mean μ, SD σ/√n), n ile daralma, koşullar (Random, 10%, normal popülasyon ya da n ≥ 30), olasılık hesabı. */
 window.DEFTER = {
   slug: "st506",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi306 · 3.6 Üretme, Girme ve Çıkma Kararları
+/* Kitpath not defteri · mi306 · 3.6 Üretme, Girme ve Çıkma Kararları
    Kaynak: AP Micro CED, Topic 3.6 (PRD-2.A.1–2). Blok türleri: /ap/_kit/defter.js başı.
    Unit 3'ün ortak kantin verisi (FC 60): VC 0,9,12,15,24,45,84 · MC 9,3,3,9,21,39 · AVC en düşük 5 (Q=3) · ATC en düşük 21 (Q=4–5).
    Karar tablosu: P=30 → Q 5, kâr 45 · P=21 → Q 5, kâr 0 · P=15 → Q 4, kâr −24 · P=5 → Q 3, kâr −60 (= −FC) · P=4 → kapat, kayıp 60.

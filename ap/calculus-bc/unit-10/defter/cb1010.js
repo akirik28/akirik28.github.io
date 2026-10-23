@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1010 · 10.11 Taylor Polinomları
+/* Kitpath not defteri · cb1010 · 10.11 Taylor Polinomları
    Kaynak: College Board AP Calculus BC CED, Topic 10.11. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1010",

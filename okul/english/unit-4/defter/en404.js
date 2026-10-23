@@ -1,4 +1,4 @@
-/* Kitora not defteri · en404 · 4.4 Karşı Argüman, İkna Yolları ve Safsatalar
+/* Kitpath not defteri · en404 · 4.4 Karşı Argüman, İkna Yolları ve Safsatalar
    Okul dersi (10. sınıf English · Unit 4). Yapı ve kalıpları verir; hazır essay yazmaz.
    Kaynak: Argumentative Essay ve Persuasive Speech belgeleri (Dr Byrd). Ethos/pathos/logos ve safsata kısımları "ek bilgi"dir, öğretmen belgesinde yoktur. */
 window.DEFTER = {

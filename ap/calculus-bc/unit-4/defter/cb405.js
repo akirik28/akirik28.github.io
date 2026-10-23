@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb405 · 4.6 Doğrusal Yaklaşım (Linearization)
+/* Kitpath not defteri · cb405 · 4.6 Doğrusal Yaklaşım (Linearization)
    Videosuz ünite: CED 4.6 (Approximating Values of a Function Using Local Linearity and Linearization). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb405",

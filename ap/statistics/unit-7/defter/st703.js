@@ -1,4 +1,4 @@
-/* Kitora not defteri · st703 · 7.4–7.5 Ortalama İçin t Testi
+/* Kitpath not defteri · st703 · 7.4–7.5 Ortalama İçin t Testi
    Kaynak: AP Statistics CED 7.4–7.5 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    t∗ ve P-değeri aralıkları t tablosundan; eğriler gerçek t yoğunluğuyla çizildi (x = t + 4, y = yoğunluk × 10). */
 window.DEFTER = {

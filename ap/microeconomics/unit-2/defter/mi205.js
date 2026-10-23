@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi205 · 2.5 Diğer Esneklikler
+/* Kitpath not defteri · mi205 · 2.5 Diğer Esneklikler
    Kaynak: AP Micro CED, Topic 2.5 (MKT-3.E.9–11). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */

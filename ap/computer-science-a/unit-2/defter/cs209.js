@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs209 · 2.12 Çalışma Zamanını Kabaca Ölçmek
+/* Kitpath not defteri · cs209 · 2.12 Çalışma Zamanını Kabaca Ölçmek
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs209",

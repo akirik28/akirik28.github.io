@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc603 · 6.3 Algoritmik Düşünme
+/* Kitpath not defteri · pc603 · 6.3 Algoritmik Düşünme
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus, Unit 6). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc603",

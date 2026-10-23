@@ -1,4 +1,4 @@
-/* Kitora not defteri · st804 · 8.5–8.6 Homojenlik ve Bağımsızlık Testleri
+/* Kitpath not defteri · st804 · 8.5–8.6 Homojenlik ve Bağımsızlık Testleri
    Kaynak: AP Statistics CED Unit 8 (Topic 8.5–8.6). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st804",

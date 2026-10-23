@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf402 · 4.2 KPI'larla Performans Değerlendirme
+/* Kitpath not defteri · bf402 · 4.2 KPI'larla Performans Değerlendirme
    Kaynak: College Board CED, Topic 4.2 (4.2.A–4.2.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf402",

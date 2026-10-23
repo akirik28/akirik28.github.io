@@ -1,4 +1,4 @@
-/* Kitora not defteri · st302 · 3B Rastgele Örnekleme (CED 3.3)
+/* Kitpath not defteri · st302 · 3B Rastgele Örnekleme (CED 3.3)
    Kaynak: AP Statistics CED Unit 3 (3.3 Random Sampling and Data Collection). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st302",

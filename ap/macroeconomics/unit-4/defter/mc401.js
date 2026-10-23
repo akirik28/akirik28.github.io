@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc401 · 4.1 Finansal Varlıklar
+/* Kitpath not defteri · mc401 · 4.1 Finansal Varlıklar
    Kaynak: AP Macroeconomics CED, Topic 4.1 (MEA-3.A). Blok türleri: /ap/_kit/defter.js başı.
    Bono grafiği: bir yıl sonra 1.200 TL ödeyen eski tahvil; fiyat = 1.200 ÷ (1 + faiz). 1 birim = %10 ve 100 TL. */
 window.DEFTER = {

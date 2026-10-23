@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi603 · 6.3 Kamu Malları ve Özel Mallar
+/* Kitpath not defteri · mi603 · 6.3 Kamu Malları ve Özel Mallar
    Kaynak: CED Topic 6.3 (POL-3.C). Blok türleri: /ap/_kit/defter.js başı.
    Not: dört mal türü grafiği iki eksenli bir 2×2 tablodur (x: dışlanabilir mi, y: rakip mi).
    Ortak kaynak grafiği: MB y=10−x, MPC y=x, MSC y=x+4 → serbest erişim (5,5), optimum (3,7). DWL = ½×20×40 = 400 TL. */

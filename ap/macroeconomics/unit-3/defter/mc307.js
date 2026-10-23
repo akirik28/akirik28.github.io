@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc307 · 3.7 Uzun Dönemde Kendiliğinden Düzelme
+/* Kitpath not defteri · mc307 · 3.7 Uzun Dönemde Kendiliğinden Düzelme
    Kaynak: College Board CED, Topic 3.7 (MOD-2.I). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye.
    Grafikler: AD: P = a − Y, SRAS: P = Y + c, LRAS: Y = 6 (veya 8). Denge hesapla bulunur. */

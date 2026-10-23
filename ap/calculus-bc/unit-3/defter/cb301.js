@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb301 · 3.1-1 Zincir Kuralı
+/* Kitpath not defteri · cb301 · 3.1-1 Zincir Kuralı
    Kaynak: ap-videolar/src/episodes/cb301 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb301",

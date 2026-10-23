@@ -1,4 +1,4 @@
-/* Kitora not defteri · py102 · 1.2 Sinir Sistemine Genel Bakış
+/* Kitpath not defteri · py102 · 1.2 Sinir Sistemine Genel Bakış
    Kaynak: AP Psychology CED (2024) Topic 1.2 (+ endokrin sistem). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py102",

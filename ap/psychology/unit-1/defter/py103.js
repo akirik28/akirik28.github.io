@@ -1,4 +1,4 @@
-/* Kitora not defteri · py103 · 1.3 Nöron ve Sinirsel İletim
+/* Kitpath not defteri · py103 · 1.3 Nöron ve Sinirsel İletim
    Kaynak: AP Psychology CED (2024) Topic 1.3. Blok türleri: /ap/_kit/defter.js başı.
    Not: voltaj grafiğinde y = (mV + 100) / 15 (−70 mV → 2; −55 mV → 3; 0 mV → 6,67; +40 mV → 9,33). */
 window.DEFTER = {

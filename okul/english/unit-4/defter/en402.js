@@ -1,4 +1,4 @@
-/* Kitora not defteri · en402 · 4.2 MLA Kaynak Gösterme
+/* Kitpath not defteri · en402 · 4.2 MLA Kaynak Gösterme
    Okul dersi (10. sınıf English · Unit 4). Kaynak: UAA English Dept MLA Handbook (MLA 9. baskı) ve Dr Byrd'ün röportaj/anket ve yapay zekâ biçimleri.
    Örnek kaynaklar ve kişiler uydurmadır; kaynakçana yazma. "Ek bilgi" etiketli kısımlar öğretmen özetinde yoktur. */
 window.DEFTER = {

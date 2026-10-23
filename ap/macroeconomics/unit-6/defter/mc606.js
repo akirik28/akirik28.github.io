@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc606 · 6.6 Reel Faiz ve Uluslararası Sermaye Akımları
+/* Kitpath not defteri · mc606 · 6.6 Reel Faiz ve Uluslararası Sermaye Akımları
    Kaynak: CED Topic 6.6 (MKT-5.G). Blok türleri: /ap/_kit/defter.js başı.
    Varsayım: Türkiye'de reel faiz %6, ABD'de %4. Türkiye ödünç fon: D y = 11 − x, S₁ y = x + 1 (denge (5;6)), S₂ y = x − 1 (denge (6;5)).
    ABD ödünç fon: D y = 9 − x, S₁ y = x − 1 (denge (5;4)), S₂ y = x + 1 (denge (4;5)). İki ülkede de reel faiz %5'te eşitlenir.

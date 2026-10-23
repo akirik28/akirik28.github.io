@@ -1,4 +1,4 @@
-/* Kitora not defteri · en405 · 4.5 Röportaj ve Anket
+/* Kitpath not defteri · en405 · 4.5 Röportaj ve Anket
    Okul dersi (10. sınıf English · Unit 4). Hazır soru listesi ya da e-posta metni vermez; yapı ve kalıp verir.
    Kaynak: Argumentative Essay belgesindeki röportaj ve anket protokolü (Dr Byrd; kaynak olarak Purdue OWL) ve Byrd'ün Works Cited biçimleri.
    "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */

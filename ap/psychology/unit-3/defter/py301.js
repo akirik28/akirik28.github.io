@@ -1,4 +1,4 @@
-/* Kitora not defteri · py301 · 3.1 Gelişim Psikolojisinin Temaları ve Yöntemleri
+/* Kitpath not defteri · py301 · 3.1 Gelişim Psikolojisinin Temaları ve Yöntemleri
    Kaynak: AP Psychology CED (2024) Topic 3.1. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py301",

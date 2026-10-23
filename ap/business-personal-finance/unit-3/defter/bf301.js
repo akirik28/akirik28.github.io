@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf301 · 3.1 Gelecekteki Alımlar İçin Birikim
+/* Kitpath not defteri · bf301 · 3.1 Gelecekteki Alımlar İçin Birikim
    Kaynak: AP Business with Personal Finance CED, Topic 3.1. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf301",

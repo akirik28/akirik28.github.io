@@ -1,4 +1,4 @@
-/* Kitora not defteri · st117 · 1H-3 Statistically Significant ve Çıkarımın Kapsamı
+/* Kitpath not defteri · st117 · 1H-3 Statistically Significant ve Çıkarımın Kapsamı
    Kaynak: ap-videolar/src/episodes/st117 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 (function () {
   /* 100 denemelik randomization distribution (notes.md tablosu): fark → adet */

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi208 · 2.8 Devletin Piyasaya Müdahalesi
+/* Kitpath not defteri · mi208 · 2.8 Devletin Piyasaya Müdahalesi
    Kaynak: AP Micro CED, Topic 2.8 (POL-1.A.1–6). Blok türleri: /ap/_kit/defter.js başı.
    Sayısal taban: D: P = 100 − Q, S: P = Q; denge (50 adet, 50 TL). Grafikte 1 birim = 10 TL ve 10 adet. */
 window.DEFTER = (function () {

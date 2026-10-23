@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi209 · 2.9 Ayak İzleri, Sürdürülebilirlik ve Atık Yönetimi
+/* Kitpath not defteri · bi209 · 2.9 Ayak İzleri, Sürdürülebilirlik ve Atık Yönetimi
    Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: ecological sustainability, ecological footprint, waste management) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi209",

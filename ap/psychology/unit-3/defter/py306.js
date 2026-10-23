@@ -1,4 +1,4 @@
-/* Kitora not defteri · py306 · 3.6 Yaşam Boyu Sosyal-Duygusal Gelişim
+/* Kitpath not defteri · py306 · 3.6 Yaşam Boyu Sosyal-Duygusal Gelişim
    Kaynak: AP Psychology CED (2024) Topic 3.6. Blok türleri: /ap/_kit/defter.js başı.
    Not: psikoseksüel (Freud) evre kuramı CED'de sınav dışıdır; defterde yalnızca Erikson'un psikososyal kuramı var. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs404 · 4.5 Dizi Algoritmaları
+/* Kitpath not defteri · cs404 · 4.5 Dizi Algoritmaları
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs404",

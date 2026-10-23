@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc402 · 4.2 Nominal ve Reel Faiz
+/* Kitpath not defteri · mc402 · 4.2 Nominal ve Reel Faiz
    Kaynak: AP Macroeconomics CED, Topic 4.2 (MEA-3.B). Blok türleri: /ap/_kit/defter.js başı.
    Grafikler: (1) reel faiz %3 sabitken nominal faiz = 3 + beklenen enflasyon; (2) nominal faiz %9 sabitken reel faiz = 9 − gerçekleşen enflasyon. 1 birim = %1. */
 window.DEFTER = {

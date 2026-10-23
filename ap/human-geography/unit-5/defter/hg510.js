@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg510 · Tarımsal Uygulamaların Sonuçları (5.10)
+/* Kitpath not defteri · hg510 · Tarımsal Uygulamaların Sonuçları (5.10)
    Kaynak: AP HuG CED Topic 5.10 (IMP-5.A.1–3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg510",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch304 · 3.4 Stokiyometri
+/* Kitpath not defteri · ch304 · 3.4 Stokiyometri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 3: stokiyometri). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch304",

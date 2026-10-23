@@ -1,4 +1,4 @@
-/* Kitora not defteri · st505 · 5.6 Oran Farkının Dağılımı
+/* Kitpath not defteri · st505 · 5.6 Oran Farkının Dağılımı
    Kapsam: p̂₁ − p̂₂ sampling distribution (mean p₁ − p₂, SD √(…+…)), bağımsızlık, 10% ve Large Counts (dört sayı), normal yaklaşıklıkla olasılık. */
 window.DEFTER = {
   slug: "st505",

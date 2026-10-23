@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc207 · 2.7 Konjonktür Dalgalanmaları
+/* Kitpath not defteri · mc207 · 2.7 Konjonktür Dalgalanmaları
    Kaynak: College Board CED, Topic 2.7 (MEA-2.A). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikteki dalga hesaplanır: potansiyel çıktı Yp(x) = 4 + 0,3x; gerçek çıktı Y(x) = Yp(x) + 1,2·sin(π(x−1,5)/3).
    Tepe x≈3,25 ve dip x≈5,75'te (türev sıfır); yeni dalganın tepesi x≈9,25. */

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st707 · 7.10 Doğru Çıkarım Yöntemini Seçmek
+/* Kitpath not defteri · st707 · 7.10 Doğru Çıkarım Yöntemini Seçmek
    Kaynak: AP Statistics CED 7.10 (öğrenme hedefleri kendi anlatımımla); Unit 6 oran prosedürleri karşılaştırma için kısaca özetlendi.
    Sayılar: 1-Prop z: n = 100, p̂ = 0,40, p₀ = 0,30 → z ≈ 2,18, iki yönlü P ≈ 0,029. Grafik: t = 2,0 için z ve t (df = 15) kuyruk alanları.
    Grafikte x = değer + 4, y = yoğunluk × 10. */

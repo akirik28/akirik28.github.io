@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi502 · 5.2 Faktör Talebi ve Arzındaki Değişimler
+/* Kitpath not defteri · mi502 · 5.2 Faktör Talebi ve Arzındaki Değişimler
    Kaynak: CED Topic 5.2 (PRD-4.B). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafik, ürün piyasasındaki kayma kalıbının emek piyasası uyarlamasıdır.
    Taban: D (2,8)→(8,2), S (2,2)→(8,8), denge (5,5); kaymalar 2 birim. */

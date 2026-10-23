@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg701 · Sanayi Devrimi
+/* Kitpath not defteri · hg701 · Sanayi Devrimi
    Kaynak: AP HuG CED Topic 7.1 (SPS-7.A.1–A.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg701",

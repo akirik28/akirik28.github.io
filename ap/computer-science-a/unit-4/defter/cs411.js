@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs411 · 4.14 Arama Algoritmaları
+/* Kitpath not defteri · cs411 · 4.14 Arama Algoritmaları
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs411",

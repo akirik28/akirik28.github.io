@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi201 · 2.1 Ekosistemin Bileşenleri
+/* Kitpath not defteri · bi201 · 2.1 Ekosistemin Bileşenleri
    Kaynak: öğretmen lecture'ı (Topic 2.1 Ecosystem Components) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi201",

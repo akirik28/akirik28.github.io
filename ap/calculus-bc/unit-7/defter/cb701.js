@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb701 · 7.1-7.2 Diferansiyel Denklemle Modelleme ve Çözümü Doğrulama
+/* Kitpath not defteri · cb701 · 7.1-7.2 Diferansiyel Denklemle Modelleme ve Çözümü Doğrulama
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb701",

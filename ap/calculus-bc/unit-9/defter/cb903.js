@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb903 · 9.4–9.5 Vektör Değerli Fonksiyonlar
+/* Kitpath not defteri · cb903 · 9.4–9.5 Vektör Değerli Fonksiyonlar
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb903",

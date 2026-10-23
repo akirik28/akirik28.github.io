@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs406 · 4.7 Wrapper Sınıfları
+/* Kitpath not defteri · cs406 · 4.7 Wrapper Sınıfları
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs406",

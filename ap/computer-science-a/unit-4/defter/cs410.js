@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs410 · 4.12–4.13 2D Dizi Dolaşma ve Algoritmalar
+/* Kitpath not defteri · cs410 · 4.12–4.13 2D Dizi Dolaşma ve Algoritmalar
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs410",

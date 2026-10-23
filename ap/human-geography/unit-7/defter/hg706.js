@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg706 · Ticaret ve Dünya Ekonomisi
+/* Kitpath not defteri · hg706 · Ticaret ve Dünya Ekonomisi
    Kaynak: AP HuG CED Topic 7.6 (PSO-7.A.1–A.4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg706",

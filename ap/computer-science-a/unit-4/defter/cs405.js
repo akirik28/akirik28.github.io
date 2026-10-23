@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs405 · 4.6 Metin Dosyalarından Okumak
+/* Kitpath not defteri · cs405 · 4.6 Metin Dosyalarından Okumak
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs405",

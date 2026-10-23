@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep08 · Harita Türleri
+/* Kitpath not defteri · ep08 · Harita Türleri
    Kaynak: ap-videolar/src/episodes/ep08 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep08",

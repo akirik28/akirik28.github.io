@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc303 · 3.3 Kısa Dönem Toplam Arz (SRAS)
+/* Kitpath not defteri · mc303 · 3.3 Kısa Dönem Toplam Arz (SRAS)
    Kaynak: College Board CED, Topic 3.3 (MOD-2.C, MOD-2.D). Blok türleri: /ap/_kit/defter.js başı.
    Grafikler AD–AS yardımcılarıyla üretilir (SRAS: P = Y + c). */
 window.DEFTER = (function () {

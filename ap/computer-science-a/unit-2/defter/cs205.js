@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs205 · 2.8 for Döngüsü
+/* Kitpath not defteri · cs205 · 2.8 for Döngüsü
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs205",

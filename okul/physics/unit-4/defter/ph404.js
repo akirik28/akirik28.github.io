@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph404 · 4.4 Periyodik Hareket
+/* Kitpath not defteri · ph404 · 4.4 Periyodik Hareket
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Physics Unit 4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph404",

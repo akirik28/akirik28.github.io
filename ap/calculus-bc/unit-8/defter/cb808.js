@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb808 · AP Calculus BC 8.11–8.12
+/* Kitpath not defteri · cb808 · AP Calculus BC 8.11–8.12
    Video kiti yok; içerik College Board CED öğrenme hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb808",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py308 · 3.8 Edimsel Koşullanma
+/* Kitpath not defteri · py308 · 3.8 Edimsel Koşullanma
    Kaynak: AP Psychology CED (2024) Topic 3.8. Blok türleri: /ap/_kit/defter.js başı.
    Not: pekiştirme tarifesi grafiği birikimli kayıt biçiminde şematiktir (eğim = tepki hızı). */
 window.DEFTER = {

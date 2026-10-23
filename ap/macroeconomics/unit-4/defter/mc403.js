@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc403 · 4.3 Paranın Tanımı, Ölçümü ve İşlevleri
+/* Kitpath not defteri · mc403 · 4.3 Paranın Tanımı, Ölçümü ve İşlevleri
    Kaynak: AP Macroeconomics CED, Topic 4.3 (MEA-3.C). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca üst üste dizilmiş sütunları (alan) üretir.
    Veri (milyar TL): nakit 200, vadesiz 800, tasarruf 1.000, küçük vadeli 400, bankaların rezervi 200.

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st301 · 3A Bir Çalışmayı Planlamak (CED 3.1–3.2)
+/* Kitpath not defteri · st301 · 3A Bir Çalışmayı Planlamak (CED 3.1–3.2)
    Kaynak: AP Statistics CED Unit 3 (3.1 Introduction to Planning a Study, 3.2 Approaches to Studying Data). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st301",

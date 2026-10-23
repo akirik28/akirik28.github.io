@@ -1,4 +1,4 @@
-/* Kitora not defteri · st805 · 8.7 Kategorik Veride Yöntem Seçimi
+/* Kitpath not defteri · st805 · 8.7 Kategorik Veride Yöntem Seçimi
    Kaynak: AP Statistics CED Unit 8 (Topic 8.7; Unit 6'daki z yöntemlerini de kapsar). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st805",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb302 · 3.1-2 Üstel, Logaritmik ve İç İçe Zincirler
+/* Kitpath not defteri · cb302 · 3.1-2 Üstel, Logaritmik ve İç İçe Zincirler
    Kaynak: ap-videolar/src/episodes/cb302 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb302",

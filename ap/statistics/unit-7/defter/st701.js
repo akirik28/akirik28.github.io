@@ -1,4 +1,4 @@
-/* Kitora not defteri · st701 · 7.1–7.2 Ortalama İçin Güven Aralığı (t)
+/* Kitpath not defteri · st701 · 7.1–7.2 Ortalama İçin Güven Aralığı (t)
    Kaynak: AP Statistics CED 7.1–7.2 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    t∗ değerleri t tablosundan; t eğrileri gerçek t yoğunluğuyla çizildi (x = t + 4, y = yoğunluk × 10). */
 window.DEFTER = {

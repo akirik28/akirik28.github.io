@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch203 · 2.3 Çözünürlük Kuralları ve İyonik Denklemler
+/* Kitpath not defteri · ch203 · 2.3 Çözünürlük Kuralları ve İyonik Denklemler
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 1-2) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch203",

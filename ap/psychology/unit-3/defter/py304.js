@@ -1,4 +1,4 @@
-/* Kitora not defteri · py304 · 3.4 Yaşam Boyu Bilişsel Gelişim
+/* Kitpath not defteri · py304 · 3.4 Yaşam Boyu Bilişsel Gelişim
    Kaynak: AP Psychology CED (2024) Topic 3.4. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafiklerdeki eğriler şematiktir (genel eğilimi gösterir, ölçüm değildir). */
 window.DEFTER = {

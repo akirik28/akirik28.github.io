@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb904 · 9.6 Parametrik ve Vektörel Hareket Problemleri
+/* Kitpath not defteri · cb904 · 9.6 Parametrik ve Vektörel Hareket Problemleri
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb904",

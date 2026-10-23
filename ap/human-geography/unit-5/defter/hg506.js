@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg506 · Tarımsal Üretim Bölgeleri (5.6)
+/* Kitpath not defteri · hg506 · Tarımsal Üretim Bölgeleri (5.6)
    Kaynak: AP HuG CED Topic 5.6 (PSO-5.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg506",

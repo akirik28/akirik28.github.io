@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb503 · 5.3–5.4 Artan/Azalan Aralıklar ve Birinci Türev Testi
+/* Kitpath not defteri · cb503 · 5.3–5.4 Artan/Azalan Aralıklar ve Birinci Türev Testi
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb503",

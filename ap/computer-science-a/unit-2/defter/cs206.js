@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs206 · 2.9 Seçim ve Döngü Algoritmaları
+/* Kitpath not defteri · cs206 · 2.9 Seçim ve Döngü Algoritmaları
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı. Blok türleri: /ap/_kit/defter.js başı.
    Not: metin alanlarında çift eşittir "=​=" ile yazıldı (araya görünmez boşluk), vurgu işaretiyle karışmasın diye. */
 window.DEFTER = {

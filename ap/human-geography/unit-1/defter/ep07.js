@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep07 · Ölçek
+/* Kitpath not defteri · ep07 · Ölçek
    Kaynak: ap-videolar/src/episodes/ep07 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep07",

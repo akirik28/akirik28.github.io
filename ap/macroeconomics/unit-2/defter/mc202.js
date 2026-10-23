@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc202 · 2.2 GSYH'nin Sınırları
+/* Kitpath not defteri · mc202 · 2.2 GSYH'nin Sınırları
    Kaynak: College Board CED, Topic 2.2 (MEA-1.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc202",

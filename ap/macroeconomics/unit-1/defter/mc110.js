@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc110 · 1.6 Dengenin Değişmesi ve Çift Kayma
+/* Kitpath not defteri · mc110 · 1.6 Dengenin Değişmesi ve Çift Kayma
    Kaynak: ap-videolar/src/episodes/mc110 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca tekrar eden arz-talep kayma durumlarını üretir.
    Taban: D (2,8)→(8,2), S (2,2)→(8,8), denge (5,5); kaymalar 2 birim. */

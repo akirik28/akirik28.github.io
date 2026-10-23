@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf17 · 1.7 Organizasyon ve Roller
+/* Kitpath not defteri · bf17 · 1.7 Organizasyon ve Roller
    Kaynak: ap-videolar/src/episodes/bf17 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf17",

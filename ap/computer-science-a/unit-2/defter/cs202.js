@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs202 · 2.3–2.4 if ve İç İçe if
+/* Kitpath not defteri · cs202 · 2.3–2.4 if ve İç İçe if
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı. Blok türleri: /ap/_kit/defter.js başı.
    Not: metin alanlarında çift eşittir "=​=" ile yazıldı (araya görünmez boşluk), vurgu işaretiyle karışmasın diye. */
 window.DEFTER = {

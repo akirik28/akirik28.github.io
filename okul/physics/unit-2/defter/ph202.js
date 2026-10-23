@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph202 · 2.2 Kinetik ve Potansiyel Enerji (Kinetic and Potential Energy)
+/* Kitpath not defteri · ph202 · 2.2 Kinetik ve Potansiyel Enerji (Kinetic and Potential Energy)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 2) + MEB FİZ.10 Enerji. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph202",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi503 · 5.3 Tam Rekabetçi Faktör Piyasası
+/* Kitpath not defteri · mi503 · 5.3 Tam Rekabetçi Faktör Piyasası
    Kaynak: CED Topic 5.3 (PRD-4.C). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikte MRP = 60 − 10L (TL); yatay eksen işçi, düşey eksen 10 TL birimi. Ücret 30 TL → L = 3. */
 window.DEFTER = (function () {

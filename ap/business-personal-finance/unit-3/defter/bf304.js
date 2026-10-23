@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf304 · 3.4 İşletme Giderleri
+/* Kitpath not defteri · bf304 · 3.4 İşletme Giderleri
    Kaynak: AP Business with Personal Finance CED, Topic 3.4. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf304",

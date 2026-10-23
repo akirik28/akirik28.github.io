@@ -1,4 +1,4 @@
-/* Kitora not defteri · en305 · 3.5 Semboller
+/* Kitpath not defteri · en305 · 3.5 Semboller
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): Ch 8–11 çalışma rehberi (Akyürek) + öğretmenin bölüm soruları (Byrd) + Woods örnek analizi + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Telif: romandan gerçek alıntı yok (terimler italik, olaylar kendi cümlelerimizle). Robert Burns dizesi (1782) kamuya açıktır, italik verildi. */
 window.DEFTER = {

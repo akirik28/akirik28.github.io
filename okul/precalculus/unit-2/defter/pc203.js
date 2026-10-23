@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc203 · 2.3 İkinci Dereceden Fonksiyonlar
+/* Kitpath not defteri · pc203 · 2.3 İkinci Dereceden Fonksiyonlar
    Kaynak: öğretmenin ders sunumu (Unit#2_2 Quadratic Functions) + Review for Exam#2; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc203",

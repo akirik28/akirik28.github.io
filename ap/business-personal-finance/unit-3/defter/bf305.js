@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf305 · 3.5 Finansal Sermaye
+/* Kitpath not defteri · bf305 · 3.5 Finansal Sermaye
    Kaynak: AP Business with Personal Finance CED, Topic 3.5. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf305",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep11 · Küreselleşme ve Sürdürülebilirlik
+/* Kitpath not defteri · ep11 · Küreselleşme ve Sürdürülebilirlik
    Kaynak: ap-videolar/src/episodes/ep11 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep11",

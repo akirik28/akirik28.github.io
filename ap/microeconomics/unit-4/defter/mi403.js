@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi403 · 4.3 Fiyat Farklılaştırması
+/* Kitpath not defteri · mi403 · 4.3 Fiyat Farklılaştırması
    Kaynak: CED Topic 4.3 (PRD-3.B.8–9). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar (sinema salonu, mi402 ile aynı): talep P = 100 − 0,1Q, MC = 20 TL, sabit maliyet 12.000 TL.
    Grafikte 1 birim = 10 TL ve 100 bilet. Yetişkin D1: (0,10)–(10,0); öğrenci D2: P = 60 − 0,1Q → grafikte (0,6)–(6,0).

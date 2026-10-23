@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi301 · 3.1 Üretim Fonksiyonu
+/* Kitpath not defteri · mi301 · 3.1 Üretim Fonksiyonu
    Kaynak: AP Micro CED, Topic 3.1 (PRD-1.A.1–3). Blok türleri: /ap/_kit/defter.js başı.
    Kantin verisi: 1 fırın, işçi sayısı L. TP = 0, 10, 28, 54, 76, 90, 96, 91.
    MP = 10, 18, 26, 22, 14, 6, −5.  AP = 10, 14, 18, 19, 18, 16, 13. */

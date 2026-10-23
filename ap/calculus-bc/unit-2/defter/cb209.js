@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb209 · 2.9 Bölüm Kuralı
+/* Kitpath not defteri · cb209 · 2.9 Bölüm Kuralı
    Kaynak: ap-videolar/src/episodes/cb209 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb209",

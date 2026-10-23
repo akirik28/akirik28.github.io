@@ -1,4 +1,4 @@
-/* Kitora not defteri · en206 · 2.6 Oedipus Üzerine Yazmak
+/* Kitpath not defteri · en206 · 2.6 Oedipus Üzerine Yazmak
    Kaynak: öğretmen (Dr Byrd, Mrs Akyürek, Ms Woods) materyali: 2025-26'da Oedipus'un ölçülmesi, yapay zekâ kuralı, passage-analysis yazma dersi (topic sentence, context, evidence = quote-paraphrase-connect, analysis). Oedipus için okulda essay yoktur; yazma bölümleri ek bilgi etiketlidir. Hazır metin yoktur, yalnız iskelet. Alıntılar: F. Storr çevirisi (1912, kısa). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en206",

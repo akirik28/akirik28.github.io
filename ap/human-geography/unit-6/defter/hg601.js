@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg601 · Kentleşmenin Kökeni ve Etkenleri
+/* Kitpath not defteri · hg601 · Kentleşmenin Kökeni ve Etkenleri
    Kaynak: AP HuG CED Topic 6.1 (PSO-6.A.1, PSO-6.A.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg601",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs305 · 3.6 Nesne Referansı Geçirmek ve Döndürmek
+/* Kitpath not defteri · cs305 · 3.6 Nesne Referansı Geçirmek ve Döndürmek
    Kaynak: AP CSA 2025–26 CED, Unit 3 (Class Creation) öğrenme hedefleri; sınav biçimi FRQ 2 (Class Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs305",

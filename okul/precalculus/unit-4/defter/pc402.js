@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc402 · 4.2 Dik Üçgen ve Trigonometrik Oranlar
+/* Kitpath not defteri · pc402 · 4.2 Dik Üçgen ve Trigonometrik Oranlar
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikteki üçgen 3-4-5 üçgeninin 2 katı ölçekli çizimidir: A (3, 2), C (11, 2), B (11, 8); gerçek kenarlar 4, 3 ve 5. */
 window.DEFTER = (function () {

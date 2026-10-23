@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc306 · 3.6 Kısa Dönemde AD–AS Değişimleri
+/* Kitpath not defteri · mc306 · 3.6 Kısa Dönemde AD–AS Değişimleri
    Kaynak: College Board CED, Topic 3.6 (MOD-2.H). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye.
    Grafikler: AD: P = a − Y, SRAS: P = Y + c, LRAS: Y = 6; taban E₀ = (6, 5). */

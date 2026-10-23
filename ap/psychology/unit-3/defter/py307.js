@@ -1,4 +1,4 @@
-/* Kitora not defteri · py307 · 3.7 Klasik Koşullanma
+/* Kitpath not defteri · py307 · 3.7 Klasik Koşullanma
    Kaynak: AP Psychology CED (2024) Topic 3.7. Blok türleri: /ap/_kit/defter.js başı.
    Not: gecikmeli, iz, eşzamanlı ve geri koşullanma türleri ile beklenti kuramı CED'de sınav dışıdır. */
 window.DEFTER = {

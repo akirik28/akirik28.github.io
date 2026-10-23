@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc107 · 1.4 Talebi Kaydıran Etkenler
+/* Kitpath not defteri · mc107 · 1.4 Talebi Kaydıran Etkenler
    Kaynak: ap-videolar/src/episodes/mc107 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı.
    Not: bu dosyadaki küçük yardımcı işlevler yalnızca tekrar eden talep eğrisi kayma durumlarını üretir. */
 window.DEFTER = (function () {

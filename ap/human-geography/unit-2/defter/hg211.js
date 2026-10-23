@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg211 · Zorunlu ve Gönüllü Göç
+/* Kitpath not defteri · hg211 · Zorunlu ve Gönüllü Göç
    Kaynak: AP HuG CED Unit 2, Topic 2.11 (IMP-2.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg211",

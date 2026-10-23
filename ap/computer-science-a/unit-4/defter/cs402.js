@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs402 · 4.3 Dizi Oluşturma ve Erişim
+/* Kitpath not defteri · cs402 · 4.3 Dizi Oluşturma ve Erişim
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs402",

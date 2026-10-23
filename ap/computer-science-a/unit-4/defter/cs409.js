@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs409 · 4.11 2D Dizi Oluşturma ve Erişim
+/* Kitpath not defteri · cs409 · 4.11 2D Dizi Oluşturma ve Erişim
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs409",

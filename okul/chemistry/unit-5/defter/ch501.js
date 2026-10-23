@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch501 · 5.1 Çözünme ve Çözünürlük
+/* Kitpath not defteri · ch501 · 5.1 Çözünme ve Çözünürlük
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 4: çözünme, çözünürlük, doygunluk, elektrolitler, çözünürlük grafikleri). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch501",

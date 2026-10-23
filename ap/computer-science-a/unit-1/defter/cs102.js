@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs102 · 1.2 Değişkenler ve İlkel Tipler
+/* Kitpath not defteri · cs102 · 1.2 Değişkenler ve İlkel Tipler
    Kaynak: ap-videolar/src/episodes/cs102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs102",

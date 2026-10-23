@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf404 · 4.4 Porter'ın Beş Gücü ve SWOT
+/* Kitpath not defteri · bf404 · 4.4 Porter'ın Beş Gücü ve SWOT
    Kaynak: College Board CED, Topic 4.4 (4.4.A–4.4.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf404",

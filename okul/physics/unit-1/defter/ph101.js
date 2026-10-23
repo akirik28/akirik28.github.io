@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph101 · 1.1 Sabit Hızlı Hareket
+/* Kitpath not defteri · ph101 · 1.1 Sabit Hızlı Hareket
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph101",

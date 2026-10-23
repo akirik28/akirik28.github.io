@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg702 · Ekonomik Sektörler ve Örüntüler
+/* Kitpath not defteri · hg702 · Ekonomik Sektörler ve Örüntüler
    Kaynak: AP HuG CED Topic 7.2 (SPS-7.B.1–B.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg702",

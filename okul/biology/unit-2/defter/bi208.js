@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi208 · 2.8 Biyoçeşitlilik
+/* Kitpath not defteri · bi208 · 2.8 Biyoçeşitlilik
    Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: habitat degradation, forest fires, biodiversity loss, conservation in Turkey) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi208",

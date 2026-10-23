@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg509 · Küresel Tarım Sistemi (5.9)
+/* Kitpath not defteri · hg509 · Küresel Tarım Sistemi (5.9)
    Kaynak: AP HuG CED Topic 5.9 (PSO-5.E.1–3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg509",

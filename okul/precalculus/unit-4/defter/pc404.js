@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc404 · 4.4 Trigonometrik Fonksiyonların Grafikleri
+/* Kitpath not defteri · pc404 · 4.4 Trigonometrik Fonksiyonların Grafikleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafiklerde x ekseni 4π'yi 14 birime, y ekseni (orta çizgi y = 0) 5.5'e oturtur: ızgara x = 3.5·x/π, y = 5.5 + 1.5·y.
    Yardımcı işlevler yalnızca eğri noktalarını hesaplar; her eğri aynı sayıda noktayla çizilir (durumlar arası yumuşak geçiş için). */

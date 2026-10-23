@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph204 · 2.4 Güç ve Verim (Power and Efficiency)
+/* Kitpath not defteri · ph204 · 2.4 Güç ve Verim (Power and Efficiency)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 2) + MEB FİZ.10 Enerji. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph204",

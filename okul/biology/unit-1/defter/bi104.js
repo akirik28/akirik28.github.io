@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi104 · 1.4 Fotosentezi Etkileyen Faktörler
+/* Kitpath not defteri · bi104 · 1.4 Fotosentezi Etkileyen Faktörler
    Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: Factors Affecting Rate of Photosynthesis) + 10.1.3 sınıf etkinliği + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafikler şematiktir: eğrilerin biçimi doğrudur, sayılar göreli birimdir. */
 window.DEFTER = {

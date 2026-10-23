@@ -1,4 +1,4 @@
-/* Kitora not defteri · st407 · 4.8 Rastgele Değişkenin Ortalaması ve Standart Sapması
+/* Kitpath not defteri · st407 · 4.8 Rastgele Değişkenin Ortalaması ve Standart Sapması
    Kaynak: AP Statistics CED Topic 4.8 (video kiti yok). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st407",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi101 · 1.1 Canlılar ve Enerji, ATP
+/* Kitpath not defteri · bi101 · 1.1 Canlılar ve Enerji, ATP
    Kaynak: öğretmen lecture'ı (1.1 Importance of Energy for Living Things) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi101",

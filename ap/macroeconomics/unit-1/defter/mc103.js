@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc103 · 1.2 PPC'nin Şekli ve Kayması
+/* Kitpath not defteri · mc103 · 1.2 PPC'nin Şekli ve Kayması
    Kaynak: ap-videolar/src/episodes/mc103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc103",

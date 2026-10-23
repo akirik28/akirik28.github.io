@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs105 · 1.6 Bileşik Operatörler ve İzleme Tablosu
+/* Kitpath not defteri · cs105 · 1.6 Bileşik Operatörler ve İzleme Tablosu
    Kaynak: ap-videolar/src/episodes/cs105 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs105",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st608 · 6.10–6.11 İki Oran Farkı Testi
+/* Kitpath not defteri · st608 · 6.10–6.11 İki Oran Farkı Testi
    Kaynak: College Board CED, Unit 6 (konu 6.10–6.11). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st608",

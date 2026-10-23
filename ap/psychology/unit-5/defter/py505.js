@@ -1,4 +1,4 @@
-/* Kitora not defteri · py505 · 5.5 Psikolojik Bozuklukların Tedavisi
+/* Kitpath not defteri · py505 · 5.5 Psikolojik Bozuklukların Tedavisi
    Kaynak: College Board CED, Topic 5.5 (5.5.A–G). Blok türleri: /ap/_kit/defter.js başı.
    Not: tedavi anlatımı bilgilendiricidir; kimseye tedavi önerilmez, ilaç ve tedaviye uzman karar verir. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1005 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1005 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1005",
   amac: "Bu konu iki karşılaştırma testini anlatıyor: bilmediğin pozitif terimli bir seriyi, kaderini bildiğin bir seriyle (p-serisi ya da geometrik) kıyaslayarak yakınsak mı ıraksak mı olduğunu bulursun. Doğrudan karşılaştırmanın hangi yönde işlediğini ve limit karşılaştırmanın ne zaman gerektiğini öğreneceksin.",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs301 · 3.1–3.2 Soyutlama ve Program Tasarımı
+/* Kitpath not defteri · cs301 · 3.1–3.2 Soyutlama ve Program Tasarımı
    Kaynak: AP CSA 2025–26 CED, Unit 3 (Class Creation) öğrenme hedefleri; sınav biçimi FRQ 2 (Class Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs301",

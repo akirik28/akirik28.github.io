@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc204 · 2.4 İkinci Dereceden Eşitsizlikler
+/* Kitpath not defteri · pc204 · 2.4 İkinci Dereceden Eşitsizlikler
    Kaynak: ders sunumunda ayrı başlık yok (Unit#2_2 ve Review for Exam#2'deki "her x için pozitif" ve domain soruları); kalan içerik ek bilgi. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc204",

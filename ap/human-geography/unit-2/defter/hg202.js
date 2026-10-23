@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg202 · Nüfus Dağılımının Sonuçları (Consequences of Population Distribution)
+/* Kitpath not defteri · hg202 · Nüfus Dağılımının Sonuçları (Consequences of Population Distribution)
    Kaynak: AP HuG CED Topic 2.2 (PSO-2.D.1, 2.D.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg202",

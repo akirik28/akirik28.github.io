@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc601 · 6.1 Ödemeler Dengesi
+/* Kitpath not defteri · mc601 · 6.1 Ödemeler Dengesi
    Kaynak: CED Topic 6.1 (MEA-4.A). Blok türleri: /ap/_kit/defter.js başı.
    Grafik: bir yıllık dış hesaplar, sıfır çizgisi y = 5 (1 birim = 10 milyar $). */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc309 · 3.9 Otomatik Stabilizatörler
+/* Kitpath not defteri · mc309 · 3.9 Otomatik Stabilizatörler
    Kaynak: College Board CED, Topic 3.9 (POL-1.C). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye.
    Konjonktür dalgası: y = 5 + A·sin(2πx/8); stabilizatörsüz A = 3, stabilizatörlü A = 1,5. */

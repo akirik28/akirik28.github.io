@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1006 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1006 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1006",
   amac: "Bu konu alterne seri testini anlatıyor: terimlerinin işareti sırayla değişen bir seri, terimlerin büyüklüğü azalıp 0'a giderse yakınsar. Zikzak yapan kısmi toplamların nasıl sıkıştığını, iki koşulu nasıl kontrol edeceğini ve testin ne zaman sonuç vermediğini öğreneceksin.",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg401 · 4.1 Siyasi Coğrafyaya Giriş
+/* Kitpath not defteri · hg401 · 4.1 Siyasi Coğrafyaya Giriş
    Kaynak: AP HuG CED Topic 4.1 (PSO-4.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg401",

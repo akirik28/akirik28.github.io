@@ -1,4 +1,4 @@
-/* Kitora not defteri · st607 · 6.8–6.9 İki Oran Farkı İçin Güven Aralığı
+/* Kitpath not defteri · st607 · 6.8–6.9 İki Oran Farkı İçin Güven Aralığı
    Kaynak: College Board CED, Unit 6 (konu 6.8–6.9). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st607",

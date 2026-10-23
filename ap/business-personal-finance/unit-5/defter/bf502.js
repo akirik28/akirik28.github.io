@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf502 · 5.2 Kişisel Riskleri Yönetmek
+/* Kitpath not defteri · bf502 · 5.2 Kişisel Riskleri Yönetmek
    Kaynak: College Board CED, Topic 5.2 (5.2.A–5.2.D). Blok türleri: /ap/_kit/defter.js başı.
    Para birimi TL; sayılar anlatım için varsayımsaldır. */
 window.DEFTER = {

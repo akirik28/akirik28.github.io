@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1008 · 10.9 Mutlak ve Koşullu Yakınsaklık
+/* Kitpath not defteri · cb1008 · 10.9 Mutlak ve Koşullu Yakınsaklık
    Kaynak: College Board AP Calculus BC CED, Topic 10.9. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1008",

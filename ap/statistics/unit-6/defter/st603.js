@@ -1,4 +1,4 @@
-/* Kitora not defteri · st603 · 6.4 Oran Testi Kurmak
+/* Kitpath not defteri · st603 · 6.4 Oran Testi Kurmak
    Kaynak: College Board CED, Unit 6 (konu 6.4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st603",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc103 · 1.3 Ters Fonksiyon
+/* Kitpath not defteri · pc103 · 1.3 Ters Fonksiyon
    Kaynak: öğretmenin ders sunumu (Unit#1_3 Inverse Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc103",

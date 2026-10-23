@@ -3,84 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hoş geldin · Kitora</title>
-<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-<script src="../assets/tema.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/kitora.css?v=39">
+<title>Kitpath</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://akirik28.github.io/kitpath/hosgeldin/">
+<script>location.replace("/kitpath/hosgeldin/" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=/kitpath/hosgeldin/">
 </head>
-<body data-page="hosgeldin" data-root="../">
-<div class="ob" data-k="ob">
-  <div class="ob__top">
-    <a class="brand" href="../index.html"><svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="28" fill="#17110C"/><rect x="26" y="26" width="30" height="30" rx="8" fill="#F4EAD9"/><rect x="26" y="64" width="30" height="30" rx="8" fill="#F4EAD9"/><rect x="64" y="64" width="30" height="30" rx="8" fill="#F4EAD9"/><g transform="rotate(12 79 41)"><rect x="66" y="22" width="30" height="30" rx="8" fill="#E9B949"/></g></svg><span class="brand__name hide-sm">Kitora</span></a>
-    <div class="ob__segs" data-k="ob-progress" role="img" aria-label="Adım 1 / 3"><i class="on"></i><i></i><i></i></div>
-    <button type="button" class="icon-btn theme-toggle" data-k-toggle-theme aria-label="Temayı değiştir"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
-  </div>
-
-  <main class="ob__main" id="main">
-    <div class="ob__inner">
-      <section class="ob__step" data-step="1">
-        <div class="stack" style="gap:10px">
-          <span class="eyebrow">// Adım 1 / 3</span>
-          <h1 class="display" tabindex="-1" style="font-size:clamp(38px,5vw,56px)">Selam Ada! <span class="hl">Kaçıncı sınıftasın?</span></h1>
-          <p class="lead" style="font-size:17px">Rafını buna göre dizeceğiz. Sonra profilinden değiştirebilirsin.</p>
-        </div>
-        <div class="pick-grid">
-          <button type="button" class="pick" data-grade="10" aria-pressed="false"><span class="pick__big">10</span><span class="stack" style="gap:4px"><strong style="font-size:17px">10. sınıf</strong><span class="muted" style="font-size:14px">Ortak dersler otomatik eklenir</span></span></button>
-          <button type="button" class="pick" data-grade="11" aria-pressed="true"><span class="pick__big">11</span><span class="stack" style="gap:4px"><strong style="font-size:17px">11. sınıf</strong><span class="muted" style="font-size:14px">Seçmeli AP derslerini sen seçersin</span></span></button>
-        </div>
-      </section>
-
-      <section class="ob__step" data-step="2" hidden>
-        <div class="stack" style="gap:10px" data-for-grade="11">
-          <span class="eyebrow">// Adım 2 / 3</span>
-          <h1 class="display" tabindex="-1" style="font-size:clamp(36px,5vw,52px)">Hangi <span class="hl">seçmeli AP'leri</span> alıyorsun?</h1>
-          <p class="lead" style="font-size:17px">Birden fazla seçebilirsin. Kendi kendine çalıştığın AP'ler (Macro, HuG…) herkese açık, onları seçmene gerek yok.</p>
-        </div>
-        <div class="pick-grid" data-for-grade="11">
-          <button type="button" class="pick pick--course" data-el="calc" aria-pressed="true" style="--c:#E0A43F">
-            <span class="band" data-el-art><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></span>
-            <span class="body"><span class="mono muted">AP · MATH</span><span class="h3" style="font-size:26px">Calculus BC</span><span class="muted" style="font-size:14px">Kiti yolda; seçersen hazır olunca rafına düşer.</span></span>
-          </button>
-          <button type="button" class="pick pick--course" data-el="stats" aria-pressed="true" style="--c:#2FA37A">
-            <span class="band" data-el-art><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></span>
-            <span class="body"><span class="mono muted">AP · STAT</span><span class="h3" style="font-size:26px">Statistics</span><span class="muted" style="font-size:14px">Unit 1 hazır.</span></span>
-          </button>
-        </div>
-        <div class="row" style="gap:10px;align-items:center" data-for-grade="11">
-          <button type="button" class="filter" data-el="calcx" aria-pressed="false">Calculus (AP değil) alıyorum</button>
-          <span class="muted" style="font-size:13px">Matematik dersin hangisiyse onu seç; quiz notların ona göre gelir.</span>
-        </div>
-        <div class="stack" style="gap:10px" data-for-grade="10" hidden>
-          <span class="eyebrow">// Adım 2 / 3</span>
-          <h1 class="display" tabindex="-1" style="font-size:clamp(36px,5vw,52px)">Derslerin <span class="hl">hazır!</span></h1>
-          <p class="lead" style="font-size:17px">10. sınıfların ortak dersleri otomatik eklendi. Seçmeli AP'ler 11. sınıfta açılıyor.</p>
-        </div>
-      </section>
-
-      <section class="ob__step" data-step="3" hidden style="align-items:center;text-align:center">
-        <div class="done-mark" aria-hidden="true">
-          <svg class="done-mark__orbit" viewBox="0 0 132 132"><circle cx="66" cy="6" r="5" fill="#E07A3F"/><circle cx="126" cy="66" r="5" fill="#2FA37A"/><circle cx="66" cy="126" r="5" fill="#3D7BFF"/><circle cx="6" cy="66" r="5" fill="#9B6BDB"/></svg>
-          <span class="done-mark__core"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-        </div>
-        <h1 class="display" tabindex="-1" style="font-size:clamp(42px,5vw,56px)">Rafın <span class="hl">hazır.</span></h1>
-        <p class="lead" style="font-size:17px;max-width:520px" data-k="summary" aria-live="polite"></p>
-        <span class="hand" style="rotate:-2deg">ilk bölüm 5 dakika, hadi!</span>
-      </section>
-
-      <div class="ob__nav">
-        <button type="button" class="btn btn--ghost" data-k="back" style="visibility:hidden">← Geri</button>
-        <button type="button" class="btn btn--primary btn--lg" data-k="fwd">Devam →</button>
-        <a class="btn btn--primary btn--lg" href="../panel/" data-k="go" hidden>Rafıma git →</a>
-      </div>
-    </div>
-  </main>
-</div>
-<script src="../assets/data.js?v=39"></script>
-<script src="../assets/hesap.js?v=39"></script>
-<script src="../assets/icerik.js?v=39"></script>
-<script src="../assets/kitora.js?v=39"></script>
-</body>
+<body style="font-family:system-ui,sans-serif;padding:24px">Kitora artık <a href="/kitpath/hosgeldin/">Kitpath</a>.</body>
 </html>

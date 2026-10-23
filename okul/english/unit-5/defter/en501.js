@@ -1,4 +1,4 @@
-/* Kitora not defteri · en501 · 5.1 Dinleme Bölümü (MEB Skills Exams · Listening)
+/* Kitpath not defteri · en501 · 5.1 Dinleme Bölümü (MEB Skills Exams · Listening)
    Kaynak: öğretmen/bölüm belgeleri (G10MEB ENGLISH EXAM FORMAT: Kasım 2025, Mart 2026, Haziran beceri sınavı). Biçim bilgileri belgelerden; strateji, boşluk türleri ve çalışma önerileri "Ek bilgi" etiketli. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en501",

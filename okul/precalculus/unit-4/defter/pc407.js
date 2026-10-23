@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc407 · 4.7 Ters Trigonometrik Fonksiyonlar ve Denklemler
+/* Kitpath not defteri · pc407 · 4.7 Ters Trigonometrik Fonksiyonlar ve Denklemler
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4, Exam 4 tekrar kitapçığı) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: 1. grafikte merkez (8, 5.5) ve 1 birim = 3 ızgara birimi (sin x ile arcsin x aynı ölçekte, y = x'e göre simetrik).
    2. grafikte x ekseni 4π'yi 14 birime, y ekseni 5.5 + 1.5·y'ye oturtur. Yardımcı işlevler yalnızca nokta hesaplar. */

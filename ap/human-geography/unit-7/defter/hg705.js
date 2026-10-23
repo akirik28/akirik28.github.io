@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg705 · Kalkınma Kuramları
+/* Kitpath not defteri · hg705 · Kalkınma Kuramları
    Kaynak: AP HuG CED Topic 7.5 (SPS-7.E.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg705",

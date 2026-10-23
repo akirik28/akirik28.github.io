@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb306 · 3.3 Ters Fonksiyonların Türevi
+/* Kitpath not defteri · cb306 · 3.3 Ters Fonksiyonların Türevi
    Kaynak: ap-videolar/src/episodes/cb306 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb306",

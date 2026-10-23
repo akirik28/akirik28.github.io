@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg604 · Kentlerin Büyüklüğü ve Dağılımı
+/* Kitpath not defteri · hg604 · Kentlerin Büyüklüğü ve Dağılımı
    Kaynak: AP HuG CED Topic 6.4 (PSO-6.C.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg604",

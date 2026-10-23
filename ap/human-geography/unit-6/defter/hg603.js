@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg603 · Kentler ve Küreselleşme
+/* Kitpath not defteri · hg603 · Kentler ve Küreselleşme
    Kaynak: AP HuG CED Topic 6.3 (PSO-6.B.1, PSO-6.B.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg603",

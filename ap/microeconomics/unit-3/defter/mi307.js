@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi307 · 3.7 Tam Rekabet
+/* Kitpath not defteri · mi307 · 3.7 Tam Rekabet
    Kaynak: AP Micro CED, Topic 3.7 (PRD-3.A.1–9). Blok türleri: /ap/_kit/defter.js başı.
    Unit 3'ün ortak kantin verisi (FC 60): MC 9,3,3,9,21,39 · ATC 69,36,25,21,21,24 · en düşük ATC 21 (Q = 4–5).
    Piyasa: D: P = 51 − 0,6Q · S0 (7 firma): P = 19,5 + 0,3Q → E0 (35; 30) · S1 (10 firma): P = 6 + 0,3Q → E1 (50; 21).

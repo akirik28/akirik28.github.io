@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc302 · 3.2 Polinom Bölmesi
+/* Kitpath not defteri · pc302 · 3.2 Polinom Bölmesi
    Kaynak: öğretmenin ders sunumu (Unit#3_1 Polynomials, Dividing Polynomials ve Synthetic Division bölümleri) + Review for Exam#3; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc302",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs107 · 1.11 Math Sınıfı ve Rastgele Sayılar
+/* Kitpath not defteri · cs107 · 1.11 Math Sınıfı ve Rastgele Sayılar
    Kaynak: ap-videolar/src/episodes/cs107 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs107",

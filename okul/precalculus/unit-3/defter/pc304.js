@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc304 · 3.4 Polinomların Kökleri ve Grafikleri
+/* Kitpath not defteri · pc304 · 3.4 Polinomların Kökleri ve Grafikleri
    Kaynak: ders sunumunda (Unit#3_1 Polynomials) polinom grafiği bölümü yok; yalnızca "zeros of the polynomial" ve bilinen sıfırdan çözüm kümesi örneği var. Kalan içerik ek bilgi. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc304",

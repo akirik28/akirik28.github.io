@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb109 · 1.15 Sonsuzda Limit ve Yatay Asimptotlar
+/* Kitpath not defteri · cb109 · 1.15 Sonsuzda Limit ve Yatay Asimptotlar
    Kaynak: ap-videolar/src/episodes/cb109 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb109",

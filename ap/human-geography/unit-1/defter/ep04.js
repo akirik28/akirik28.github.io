@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep04 · Bölgeler
+/* Kitpath not defteri · ep04 · Bölgeler
    Kaynak: ap-videolar/src/episodes/ep04 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep04",

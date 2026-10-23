@@ -1,4 +1,4 @@
-/* Kitora not defteri · py502 · 5.2 Pozitif Psikoloji
+/* Kitpath not defteri · py502 · 5.2 Pozitif Psikoloji
    Kaynak: College Board CED, Topic 5.2 (5.2.A, 5.2.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py502",

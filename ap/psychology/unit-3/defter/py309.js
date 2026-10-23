@@ -1,4 +1,4 @@
-/* Kitora not defteri · py309 · 3.9 Öğrenmede Sosyal, Bilişsel ve Nörolojik Etkenler
+/* Kitpath not defteri · py309 · 3.9 Öğrenmede Sosyal, Bilişsel ve Nörolojik Etkenler
    Kaynak: AP Psychology CED (2024) Topic 3.9. Blok türleri: /ap/_kit/defter.js başı.
    Not: öğrenilmiş çaresizlik py308'de; burada örtük öğrenme ve ayna nöronlar CED'in başlığındaki "nörolojik etkenler" için kısa eklenmiştir.
    Grafiklerdeki eğriler şematiktir (genel örüntüyü gösterir). */

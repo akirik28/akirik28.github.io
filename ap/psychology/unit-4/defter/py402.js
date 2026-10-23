@@ -1,4 +1,4 @@
-/* Kitora not defteri · py402 · 4.2 Tutumların Oluşumu ve Değişimi
+/* Kitpath not defteri · py402 · 4.2 Tutumların Oluşumu ve Değişimi
    Kaynak: College Board CED, Topic 4.2 (4.2.A, 4.2.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py402",

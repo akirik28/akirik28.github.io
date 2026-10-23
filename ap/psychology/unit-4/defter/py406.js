@@ -1,4 +1,4 @@
-/* Kitora not defteri · py406 · 4.6 Güdülenme
+/* Kitpath not defteri · py406 · 4.6 Güdülenme
    Kaynak: College Board CED, Topic 4.6 (4.6.A, 4.6.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py406",

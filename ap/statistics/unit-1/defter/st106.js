@@ -1,4 +1,4 @@
-/* Kitora not defteri · st106 · 1D-2 Yayılım: Range, SD, IQR
+/* Kitpath not defteri · st106 · 1D-2 Yayılım: Range, SD, IQR
    Kaynak: ap-videolar/src/episodes/st106 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st106",

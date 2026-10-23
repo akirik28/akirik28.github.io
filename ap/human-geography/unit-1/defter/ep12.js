@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep12 · Sınavda Çıkanlar
+/* Kitpath not defteri · ep12 · Sınavda Çıkanlar
    Kaynak: ap-videolar/src/episodes/ep12 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep12",

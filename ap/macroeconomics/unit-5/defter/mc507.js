@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc507 · 5.7 Kamu Politikası ve Büyüme
+/* Kitpath not defteri · mc507 · 5.7 Kamu Politikası ve Büyüme
    Kaynak: CED Topic 5.7 (POL-4.A). Blok türleri: /ap/_kit/defter.js başı.
    Taban (ödünç fon): D y = 10 − x, S₁ y = x, S₂ y = x − 2. Taban (AD–AS): LRAS₁ x = 6, SRAS₁ y = x, AD₁ y = 12 − x; LRAS₂ x = 8, SRAS₂ y = x − 2, AD₂ y = 14 − x. */
 window.DEFTER = (function () {

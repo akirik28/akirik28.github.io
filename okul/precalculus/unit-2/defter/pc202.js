@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc202 · 2.2 Kökler ve Katsayılar
+/* Kitpath not defteri · pc202 · 2.2 Kökler ve Katsayılar
    Kaynak: öğretmenin ders sunumu (Unit#2_1 Quadratic Equations, Vieta's Theorem bölümü) + Review for Exam#2; ders notuyla aynı terim ve gösterim (kökler r₁, r₂). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc202",

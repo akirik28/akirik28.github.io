@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi103 · 1.3 Fotosentezin Evreleri
+/* Kitpath not defteri · bi103 · 1.3 Fotosentezin Evreleri
    Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: photosystems, light reactions, Calvin cycle; 1.3 Molecules used and produced) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Z şeması: y ekseni elektronun enerji düzeyidir (şematik, sayısal değer yok). */
 window.DEFTER = {

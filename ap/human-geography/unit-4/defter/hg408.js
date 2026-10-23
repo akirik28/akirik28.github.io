@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg408 · 4.8 Yetki Devrini Doğuran Etkenler
+/* Kitpath not defteri · hg408 · 4.8 Yetki Devrini Doğuran Etkenler
    Kaynak: AP HuG CED Topic 4.8 (SPS-4.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg408",

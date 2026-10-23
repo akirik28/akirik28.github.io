@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg306 · Yayılmanın Günümüzdeki Nedenleri
+/* Kitpath not defteri · hg306 · Yayılmanın Günümüzdeki Nedenleri
    Kaynak: AP HuG CED Topic 3.6 (SPS-3.A.3, SPS-3.A.4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg306",

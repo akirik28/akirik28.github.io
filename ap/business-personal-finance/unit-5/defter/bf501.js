@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf501 · 5.1 Vergiler, Net Gelir ve Bütçe
+/* Kitpath not defteri · bf501 · 5.1 Vergiler, Net Gelir ve Bütçe
    Kaynak: College Board CED, Topic 5.1 (5.1.A–5.1.C). Blok türleri: /ap/_kit/defter.js başı.
    Para birimi TL; oranlar ve dilimler anlatım için varsayımsaldır, gerçek oranlar her yıl değişir. */
 window.DEFTER = {

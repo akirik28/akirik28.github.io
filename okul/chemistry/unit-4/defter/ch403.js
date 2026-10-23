@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch403 · 4.3 İdeal Gaz Denklemi
+/* Kitpath not defteri · ch403 · 4.3 İdeal Gaz Denklemi
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 3: gazlar) + MEB 10. sınıf standart içeriği (PV = nRT, mol kütlesi, yoğunluk, kısmi basınç). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch403",

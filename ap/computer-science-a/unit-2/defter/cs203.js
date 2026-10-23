@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs203 · 2.5–2.6 Bileşik Boolean İfadeler ve De Morgan
+/* Kitpath not defteri · cs203 · 2.5–2.6 Bileşik Boolean İfadeler ve De Morgan
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı. Blok türleri: /ap/_kit/defter.js başı.
    Not: metin alanlarında çift eşittir "=​=" ile yazıldı (araya görünmez boşluk), vurgu işaretiyle karışmasın diye. */
 window.DEFTER = {

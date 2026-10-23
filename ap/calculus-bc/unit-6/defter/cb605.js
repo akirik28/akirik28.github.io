@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb605 · 6.7 Temel Teoremle Belirli İntegral Hesabı
+/* Kitpath not defteri · cb605 · 6.7 Temel Teoremle Belirli İntegral Hesabı
    Kaynak: AP Calculus BC CED, Topic 6.7. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb605",

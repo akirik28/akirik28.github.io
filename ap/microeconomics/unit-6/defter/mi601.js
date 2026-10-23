@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi601 · 6.1 Etkin ve Etkin Olmayan Sonuçlar
+/* Kitpath not defteri · mi601 · 6.1 Etkin ve Etkin Olmayan Sonuçlar
    Kaynak: CED Topic 6.1 (POL-2.A, B, C). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikte MSB = D: (0,10)→(9,1), MSC = S: (0,0)→(9,9); denge (5,5). 1 birim = 10 tost, 10 TL.
    Az üretim Q=3: MSB 7, MSC 3; fazla üretim Q=7: MSB 3, MSC 7. DWL = ½ × 2 × 4 = 4 birim = 400 TL. */

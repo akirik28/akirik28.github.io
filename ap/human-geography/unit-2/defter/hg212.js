@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg212 · Göçün Etkileri
+/* Kitpath not defteri · hg212 · Göçün Etkileri
    Kaynak: AP HuG CED Unit 2, Topic 2.12 (IMP-2.E). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg212",

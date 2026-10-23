@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi103 · 1.6-1 Marjinal Analiz ve Fayda
+/* Kitpath not defteri · mi103 · 1.6-1 Marjinal Analiz ve Fayda
    Kaynak: ap-videolar/src/episodes/mi103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mi103",

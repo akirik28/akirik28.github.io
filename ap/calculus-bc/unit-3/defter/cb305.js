@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb305 · 3.2-2 Kapalı Eğrilerde Teğet Doğruları
+/* Kitpath not defteri · cb305 · 3.2-2 Kapalı Eğrilerde Teğet Doğruları
    Kaynak: ap-videolar/src/episodes/cb305 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb305",

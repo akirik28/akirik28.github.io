@@ -1,4 +1,4 @@
-/* Kitora not defteri · py403 · 4.3 Sosyal Durumların Psikolojisi
+/* Kitpath not defteri · py403 · 4.3 Sosyal Durumların Psikolojisi
    Kaynak: College Board CED, Topic 4.3 (4.3.A, 4.3.B, 4.3.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py403",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py303 · 3.3 Toplumsal Cinsiyet ve Cinsel Yönelim
+/* Kitpath not defteri · py303 · 3.3 Toplumsal Cinsiyet ve Cinsel Yönelim
    Kaynak: AP Psychology CED (2024) Topic 3.3. Blok türleri: /ap/_kit/defter.js başı.
    Not: konu olgusal ve saygılı bir dille, CED'deki çerçevede (cinsiyet ve toplumsal cinsiyetin sosyalleşmeye ve gelişime etkisi) anlatılır. */
 window.DEFTER = {

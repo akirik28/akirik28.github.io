@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc501 · 5.1 Kısa Dönemde Maliye ve Para Politikası
+/* Kitpath not defteri · mc501 · 5.1 Kısa Dönemde Maliye ve Para Politikası
    Kaynak: CED Topic 5.1 (POL-1.F). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlev yalnızca grafik durumlarında "hangi ögeler görünür" listesini üretir. */
 window.DEFTER = (function () {

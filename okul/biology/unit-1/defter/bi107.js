@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi107 · 1.7 Oksijensiz Solunum ve Fermantasyon
+/* Kitpath not defteri · bi107 · 1.7 Oksijensiz Solunum ve Fermantasyon
    Kaynak: öğretmen lecture'ı (1.9 Fermentation, Anaerobic Respiration) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10.
    ATP: oksijenli solunum için lecture'daki en çok yaklaşık 38 kullanıldı (38 ÷ 2 = 19 kat); güncel ~30–32 yalnız kısa not. */
 window.DEFTER = {

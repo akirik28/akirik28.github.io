@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb105 · 1.8 Sıkıştırma Teoremi ve Trigonometrik Limitler
+/* Kitpath not defteri · cb105 · 1.8 Sıkıştırma Teoremi ve Trigonometrik Limitler
    Kaynak: ap-videolar/src/episodes/cb105 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb105",

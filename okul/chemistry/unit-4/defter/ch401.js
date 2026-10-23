@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch401 · 4.1 Gazların Özellikleri
+/* Kitpath not defteri · ch401 · 4.1 Gazların Özellikleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 3: gazlar) + MEB 10. sınıf standart içeriği (kinetik teori, basınç, sıcaklık). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch401",

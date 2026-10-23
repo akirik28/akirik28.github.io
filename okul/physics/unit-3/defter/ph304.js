@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph304 · 3.4 Elektrik Güvenliği ve Topraklama (Electrical Safety and Grounding)
+/* Kitpath not defteri · ph304 · 3.4 Elektrik Güvenliği ve Topraklama (Electrical Safety and Grounding)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 3; FİZ.10.3.6–3.7) + MEB FİZ.10 Elektrik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph304",

@@ -3,70 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yönetim · Kitora</title>
-<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-<script src="../assets/tema.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/kitora.css?v=39">
+<title>Kitpath</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://akirik28.github.io/kitpath/yonetim/">
+<script>location.replace("/kitpath/yonetim/" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=/kitpath/yonetim/">
 </head>
-<body data-page="yonetim" data-root="../">
-<a class="skip" href="#main">İçeriğe geç</a>
-<div class="wrap wrap--wide">
-  <header class="k-header" data-k="header" data-variant="admin"></header>
-
-  <div class="admin" style="padding-bottom:64px">
-    <nav class="card admin__nav" aria-label="Yönetim menüsü">
-      <button type="button" data-view="quiz" aria-current="page">Quizler</button>
-      <button type="button" data-view="not">Not girişi <span class="count">2</span></button>
-      <button type="button" data-view="ogr">Öğrenciler</button>
-      <button type="button" data-view="kit">Kitler</button>
-    </nav>
-
-    <main class="admin__main" id="main">
-      <section class="admin__view" data-view="quiz">
-        <div class="section__head"><h1 class="display" style="font-size:44px;letter-spacing:-.03em"><span class="hl">Quizler</span></h1><button type="button" class="btn btn--primary" data-k="quiz-ac" aria-expanded="false" aria-controls="yeni-quiz">+ Yeni quiz</button></div>
-        <form class="card card--pad stack" style="gap:18px" data-k="new-quiz" id="yeni-quiz" novalidate hidden>
-          <h2 class="h3">Yeni quiz</h2>
-          <div class="form-grid">
-            <label class="field">Ders
-              <select name="ders"><option value="stats">AP Statistics</option><option value="calc">AP Calculus BC</option><option value="macro">AP Macroeconomics</option><option value="hug">AP Human Geography</option></select>
-            </label>
-            <label class="field">Başlık<input name="baslik" type="text" placeholder="Quiz 4 · Sampling"></label>
-            <label class="field">Son tarih<input name="tarih" type="datetime-local"></label>
-            <label class="field">Kaç üzerinden<input name="uzerinden" type="number" min="1" value="20" inputmode="numeric"></label>
-          </div>
-          <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Son tarih geçince, notu girilmeyen öğrencinin kitleri <strong>not girilene kadar</strong> kilitlenir. Öğrenci bunu panelinde görür.</span></div>
-          <div class="row" style="justify-content:flex-end;gap:10px">
-            <button type="reset" class="btn btn--ghost">Temizle</button>
-            <button type="submit" class="btn btn--primary">Quizi yayınla</button>
-          </div>
-        </form>
-        <section class="card" style="padding:10px 26px" aria-label="Quiz listesi" data-k="quiz-list"></section>
-      </section>
-
-      <section class="admin__view" data-view="not" hidden>
-        <div class="section__head">
-          <div><span class="mono muted">NOT GİRİŞİ · 100 ÜZERİNDEN · SON TARİH 20 EKİM</span><h1 class="display" style="font-size:40px;letter-spacing:-.03em">AP Human Geography · <span class="hl">Unit 1</span></h1></div>
-          <span class="hand accent" data-k="locked-note" aria-live="polite"></span>
-        </div>
-        <div class="card stack" style="gap:8px;padding:20px 26px">
-          <div class="row" style="align-items:center;gap:14px;flex-wrap:nowrap;padding-bottom:10px"><div class="progress"><span data-k="entered-bar" style="--c:#3D7BFF"></span></div><span class="mono" data-k="entered"></span></div>
-          <div class="table-box"><table class="table" style="min-width:560px"><thead><tr><th>Öğrenci</th><th>Sınıf</th><th>Kit durumu</th><th style="text-align:right">Not / 100</th></tr></thead><tbody data-k="students"></tbody></table></div>
-          <div class="row" style="justify-content:flex-end;gap:10px;padding-top:10px">
-            <button type="button" class="btn btn--ghost" data-k="to-quiz">← Quizler</button>
-            <button type="button" class="btn--danger-link" data-k="delete-quiz" style="margin-right:auto;order:-1">Quizi sil</button>
-            <button type="button" class="btn btn--primary" data-k="save-grades">Notları kaydet ve kilitleri aç</button>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-</div>
-<script src="../assets/data.js?v=39"></script>
-<script src="../assets/hesap.js?v=39"></script>
-<script src="../assets/icerik.js?v=39"></script>
-<script src="../assets/kitora.js?v=39"></script>
-</body>
+<body style="font-family:system-ui,sans-serif;padding:24px">Kitora artık <a href="/kitpath/yonetim/">Kitpath</a>.</body>
 </html>

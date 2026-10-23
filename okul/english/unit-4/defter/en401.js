@@ -1,4 +1,4 @@
-/* Kitora not defteri · en401 · 4.1 Araştırma Süreci ve Güvenilir Kaynaklar
+/* Kitpath not defteri · en401 · 4.1 Araştırma Süreci ve Güvenilir Kaynaklar
    Okul dersi (10. sınıf English · Unit 4). Blok türleri: /ap/_kit/defter.js başı.
    Kaynak: Dr Byrd'ün Research Process Project ve Argument Paper belgeleri. "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */
 window.DEFTER = {

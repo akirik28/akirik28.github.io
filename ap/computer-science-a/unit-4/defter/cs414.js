@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs414 · 4.17 Özyinelemeli Arama ve Sıralama
+/* Kitpath not defteri · cs414 · 4.17 Özyinelemeli Arama ve Sıralama
    Kaynak: AP CSA CED 2025–26 (Unit 4) kapsamı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs414",

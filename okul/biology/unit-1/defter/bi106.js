@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi106 · 1.6 Oksijenli Solunum
+/* Kitpath not defteri · bi106 · 1.6 Oksijenli Solunum
    Kaynak: öğretmen lecture'ı (1.7 Cellular Respiration, 1.8 Pathways of Nutrients) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10.
    ATP sayıları lecture'a göre: en çok yaklaşık 38 (NADH = 3, FADH₂ = 2 ATP; bir slaytta "up to 36"). Güncel ~30–32 değeri yalnız kısa not. */
 window.DEFTER = {

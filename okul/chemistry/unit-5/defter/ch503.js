@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch503 · 5.3 Derişim
+/* Kitpath not defteri · ch503 · 5.3 Derişim
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 4: kütlece yüzde, ppm, molarite, iyon derişimi, seyreltme, çözelti hazırlama). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch503",

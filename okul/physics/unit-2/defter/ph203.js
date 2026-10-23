@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph203 · 2.3 Enerjinin Korunumu ve Dönüşümü (Conservation and Transformation of Energy)
+/* Kitpath not defteri · ph203 · 2.3 Enerjinin Korunumu ve Dönüşümü (Conservation and Transformation of Energy)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 2) + MEB FİZ.10 Enerji. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph203",

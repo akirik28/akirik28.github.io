@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1004 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1004 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1004",
   amac: "Bu konu integral testini, harmonik seriyi ve p-serilerini anlatıyor: terimleri f(n) biçiminde yazılan bir serinin kaderini, f'nin altındaki alana (yani bir integrale) bakarak nasıl anlarız? Sonuçta Σ 1/nᵖ serisinin ne zaman yakınsadığını (p > 1) öğreneceksin.",

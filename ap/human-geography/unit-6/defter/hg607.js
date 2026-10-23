@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg607 · Altyapı
+/* Kitpath not defteri · hg607 · Altyapı
    Kaynak: AP HuG CED Topic 6.7 (IMP-6.B.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg607",

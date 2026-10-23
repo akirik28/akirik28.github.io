@@ -1,4 +1,4 @@
-/* Kitora not defteri · en202 · 2.2 Olay Örgüsü
+/* Kitpath not defteri · en202 · 2.2 Olay Örgüsü
    Kaynak: öğretmen (Dr Byrd) Oedipus belgeleri (sahne yapısı ve satır aralıkları: Fagles baskısı, defterde Fagles alıntısı yok) + oyunun standart olay örgüsü. Alıntı: yalnız F. Storr çevirisi (1912) ve R. C. Jebb çevirisi (1887). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en202",

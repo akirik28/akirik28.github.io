@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi501 · 5.1 Faktör Piyasalarına Giriş
+/* Kitpath not defteri · mi501 · 5.1 Faktör Piyasalarına Giriş
    Kaynak: CED Topic 5.1 (PRD-4.A). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlev yalnızca grafik durumlarında "yalnız bu ögeler görünsün" kuralını uygular. */
 window.DEFTER = (function () {

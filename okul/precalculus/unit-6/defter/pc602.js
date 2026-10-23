@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc602 · 6.2 EBOB ve EKOK
+/* Kitpath not defteri · pc602 · 6.2 EBOB ve EKOK
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus, Unit 6). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc602",

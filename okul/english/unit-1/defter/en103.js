@@ -1,4 +1,4 @@
-/* Kitora not defteri · en103 · 1.3 Aunt Zeze's Tears (Carmen Dolores)
+/* Kitpath not defteri · en103 · 1.3 Aunt Zeze's Tears (Carmen Dolores)
    Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Isaac Goldberg çevirisi, Brazilian Tales, 1921; kamuya açık). Öğretmen belgesinde bu öykü için ayrı çalışma kâğıdı yok; yorumlar ek bilgi niteliğinde, Kasım sınav biçimi (özet A1) ve pasaj analizi yöntemiyle (özet D) uyumlu. */
 window.DEFTER = {
   slug: "en103",

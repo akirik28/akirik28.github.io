@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb603 · 6.4–6.5 Analizin Temel Teoremi ve Birikim Fonksiyonları
+/* Kitpath not defteri · cb603 · 6.4–6.5 Analizin Temel Teoremi ve Birikim Fonksiyonları
    Kaynak: AP Calculus BC CED, Topic 6.4 ve 6.5. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb603",

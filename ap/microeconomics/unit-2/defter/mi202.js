@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi202 · 2.2 Arz
+/* Kitpath not defteri · mi202 · 2.2 Arz
    Kaynak: AP Micro CED, Topic 2.2 (MKT-3.C, MKT-3.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */

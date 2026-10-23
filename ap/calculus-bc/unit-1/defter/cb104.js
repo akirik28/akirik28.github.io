@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb104 · 1.6–1.7 Cebirsel Teknikler ve Yöntem Seçimi
+/* Kitpath not defteri · cb104 · 1.6–1.7 Cebirsel Teknikler ve Yöntem Seçimi
    Kaynak: ap-videolar/src/episodes/cb104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb104",

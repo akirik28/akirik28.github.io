@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc203 · 2.3 İşsizlik
+/* Kitpath not defteri · mc203 · 2.3 İşsizlik
    Kaynak: College Board CED, Topic 2.3 (MEA-1.C, D, E). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikteki gerçek işsizlik eğrisi, doğal oranın (5) etrafında hesaplanan noktalardan çizilir. */
 window.DEFTER = (function () {

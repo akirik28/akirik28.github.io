@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb702 · 7.3-7.4 Eğim Alanları
+/* Kitpath not defteri · cb702 · 7.3-7.4 Eğim Alanları
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb702",

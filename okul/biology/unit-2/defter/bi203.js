@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi203 · 2.3 Ekosistemde Enerji Akışı
+/* Kitpath not defteri · bi203 · 2.3 Ekosistemde Enerji Akışı
    Kaynak: öğretmen lecture'ı (Topic 2.3 Energy Flow in Ecosystems) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi203",

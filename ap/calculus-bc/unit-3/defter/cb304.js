@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb304 · 3.2-1 Kapalı Türev
+/* Kitpath not defteri · cb304 · 3.2-1 Kapalı Türev
    Kaynak: ap-videolar/src/episodes/cb304 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb304",

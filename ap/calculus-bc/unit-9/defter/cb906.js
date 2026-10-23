@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb906 · 9.8–9.9 Kutupsal Bölgelerin Alanı
+/* Kitpath not defteri · cb906 · 9.8–9.9 Kutupsal Bölgelerin Alanı
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb906",

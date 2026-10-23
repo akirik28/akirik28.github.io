@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg605 · Kentlerin İç Yapısı
+/* Kitpath not defteri · hg605 · Kentlerin İç Yapısı
    Kaynak: AP HuG CED Topic 6.5 (PSO-6.D.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg605",

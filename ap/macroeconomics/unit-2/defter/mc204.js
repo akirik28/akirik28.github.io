@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc204 · 2.4 Fiyat Endeksleri ve Enflasyon
+/* Kitpath not defteri · mc204 · 2.4 Fiyat Endeksleri ve Enflasyon
    Kaynak: College Board CED, Topic 2.4 (MEA-1.F, G). Blok türleri: /ap/_kit/defter.js başı.
    Sepet: 10 tost + 5 kola + 2 sinema bileti. Y0: 400+100+200=700 · Y1: 500+120+220=840 · Y2: 550+120+240=910. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg209 · Yaşlanan Nüfuslar
+/* Kitpath not defteri · hg209 · Yaşlanan Nüfuslar
    Kaynak: AP HuG CED Unit 2, Topic 2.9 (SPS-2.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg209",

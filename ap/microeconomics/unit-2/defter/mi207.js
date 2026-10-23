@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi207 · 2.7 Dengesizlik ve Dengenin Değişmesi
+/* Kitpath not defteri · mi207 · 2.7 Dengesizlik ve Dengenin Değişmesi
    Kaynak: AP Micro CED, Topic 2.7 (MKT-4.B.1–2). Blok türleri: /ap/_kit/defter.js başı.
    Sayısal taban: D: P = 100 − Q, S: P = Q + 20; denge (40 adet, 60 TL). Grafikte 1 birim = 10 TL ve 10 adet. */
 window.DEFTER = (function () {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · en302 · 3.2 Olay Örgüsü
+/* Kitpath not defteri · en302 · 3.2 Olay Örgüsü
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): öğretmenin bölüm bölüm tartışma soruları (Byrd) ve çalışma rehberi vurguları (Akyürek) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Telif: romandan yalnız 1 kısa alıntı (Ch 26, ≤10 kelime); gerisi kendi cümlelerimizle. Hassas sahneler (Ch 13, Ch 24) olgusal ve ayrıntısız anlatılır. */
 window.DEFTER = {

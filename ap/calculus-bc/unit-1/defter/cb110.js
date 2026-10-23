@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb110 · 1.16 Ara Değer Teoremi
+/* Kitpath not defteri · cb110 · 1.16 Ara Değer Teoremi
    Kaynak: ap-videolar/src/episodes/cb110 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb110",

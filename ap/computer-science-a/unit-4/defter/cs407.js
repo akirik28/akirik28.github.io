@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs407 · 4.8 ArrayList Metotları
+/* Kitpath not defteri · cs407 · 4.8 ArrayList Metotları
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs407",

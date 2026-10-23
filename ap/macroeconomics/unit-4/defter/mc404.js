@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc404 · 4.4 Bankacılık ve Para Arzının Genişlemesi
+/* Kitpath not defteri · mc404 · 4.4 Bankacılık ve Para Arzının Genişlemesi
    Kaynak: AP Macroeconomics CED, Topic 4.4 (POL-2.A). Blok türleri: /ap/_kit/defter.js başı.
    Para yaratma zinciri: 1.000 TL nakit mevduat, zorunlu karşılık oranı %20; toplam mevduat 1.000 ÷ 0,20 = 5.000 TL'ye yaklaşır.
    Grafikte 1 birim = 1.000 TL (dikey) ve 1 tur (yatay). Toplam mevduat: 1; 1,8; 2,44; 2,952; 3,3616; 3,689; … */

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py106 · 1.6 Duyum
+/* Kitpath not defteri · py106 · 1.6 Duyum
    Kaynak: AP Psychology CED (2024) Topic 1.6. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafiklerdeki eğriler kavramsaldır. Koni grafiğinde x = (dalga boyu − 400 nm) / 30; JND grafiğinde k = 0,1 varsayımsaldır. */
 window.DEFTER = {

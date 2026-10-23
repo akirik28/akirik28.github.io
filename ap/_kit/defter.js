@@ -153,7 +153,7 @@
   var acc = H && H.aktif ? H.aktif() : null;
   var guest = !!H && !acc;
   function locked(i) { return guest && i !== 0; }
-  function loginUrl() { return "/kitora/giris/?devam=" + encodeURIComponent(window.location.pathname + window.location.search); }
+  function loginUrl() { return "/kitpath/giris/?devam=" + encodeURIComponent(window.location.pathname + window.location.search); }
   if (acc && H.engel && H.profil) {
     var eng = H.engel(H.profil());
     if (eng) { try { window.location.replace(eng + "?devam=" + encodeURIComponent(window.location.pathname + window.location.search)); } catch (e) {} return; }
@@ -165,7 +165,7 @@
   function readMap() { try { return JSON.parse(lg(KIT.store + (acc ? acc.id : "misafir") + ":defter") || "{}") || {}; } catch (e) { return {}; } }
 
   function listView() {
-    document.title = "Not defterleri · " + COURSE + " · Kitora";
+    document.title = "Not defterleri · " + COURSE + " · Kitpath";
     var read = readMap();
     root.classList.add("d-list-v");
     var hero = el("section", { class: "d-hero" }, [
@@ -210,7 +210,7 @@
   }
 
   function notebookView(ep, D) {
-    document.title = ep.title + " · Not defteri · Kitora";
+    document.title = ep.title + " · Not defteri · Kitpath";
     var acc2 = ep.accent || "#7C95FF";
     document.documentElement.style.setProperty("--acc", acc2);
     var back = document.getElementById("dBack");

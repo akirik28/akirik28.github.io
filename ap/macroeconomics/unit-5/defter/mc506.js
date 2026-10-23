@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc506 · 5.6 Ekonomik Büyüme
+/* Kitpath not defteri · mc506 · 5.6 Ekonomik Büyüme
    Kaynak: CED Topic 5.6 (MEA-2.B, MOD-1.C). Blok türleri: /ap/_kit/defter.js başı.
    Taban: üretim fonksiyonu Y = 3·√L (teknoloji/sermaye artınca 4·√L). Yardımcı işlevler yalnızca noktaları ve durumları üretir. */
 window.DEFTER = (function () {

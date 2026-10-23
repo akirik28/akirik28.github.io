@@ -1,4 +1,4 @@
-/* Kitora not defteri · st111 · 1F-1 Deney mi, Gözlem mi?
+/* Kitpath not defteri · st111 · 1F-1 Deney mi, Gözlem mi?
    Kaynak: ap-videolar/src/episodes/st111 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st111",

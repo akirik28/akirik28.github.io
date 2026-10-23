@@ -1,4 +1,4 @@
-/* Kitora not defteri · st103 · 1C-1 Dotplot ve Dağılımı Anlatmak
+/* Kitpath not defteri · st103 · 1C-1 Dotplot ve Dağılımı Anlatmak
    Kaynak: ap-videolar/src/episodes/st103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st103",

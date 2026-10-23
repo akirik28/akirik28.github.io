@@ -1,4 +1,4 @@
-/* Kitora not defteri · st801 · 8.1–8.2 Ki-Kare Uyum İyiliği Testini Kurmak
+/* Kitpath not defteri · st801 · 8.1–8.2 Ki-Kare Uyum İyiliği Testini Kurmak
    Kaynak: AP Statistics CED Unit 8 (Topic 8.1–8.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st801",

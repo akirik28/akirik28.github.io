@@ -1,4 +1,4 @@
-/* Kitora not defteri · py302 · 3.2 Yaşam Boyu Fiziksel Gelişim
+/* Kitpath not defteri · py302 · 3.2 Yaşam Boyu Fiziksel Gelişim
    Kaynak: AP Psychology CED (2024) Topic 3.2. Blok türleri: /ap/_kit/defter.js başı.
    Not: motor dönüm noktası aralıkları ve büyüme hızı eğrileri yaklaşık, şematik değerlerdir. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg503 · Tarımın Kökenleri ve Yayılması (5.3)
+/* Kitpath not defteri · hg503 · Tarımın Kökenleri ve Yayılması (5.3)
    Kaynak: AP HuG CED Topic 5.3 (SPS-5.A, SPS-5.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg503",

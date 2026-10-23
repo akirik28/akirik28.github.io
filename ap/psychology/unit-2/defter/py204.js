@@ -1,4 +1,4 @@
-/* Kitora not defteri · py204 · 2.4 Belleğe Kodlama
+/* Kitpath not defteri · py204 · 2.4 Belleğe Kodlama
    Kaynak: AP Psychology CED 2024, Topic 2.4 (2.4.A.1–5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py204",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg602 · Dünyanın Kentleri
+/* Kitpath not defteri · hg602 · Dünyanın Kentleri
    Kaynak: AP HuG CED Topic 6.2 (PSO-6.A.3, PSO-6.A.4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg602",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc604 · 6.4 Politikalar ve Döviz Piyasası
+/* Kitpath not defteri · mc604 · 6.4 Politikalar ve Döviz Piyasası
    Kaynak: CED Topic 6.4 (MKT-5.E). Blok türleri: /ap/_kit/defter.js başı.
    TL piyasası: D (1,9)→(9,1), S (1,1)→(9,9), denge (5,5) = 0,05 $ (1 $ = 20 TL). Dolar piyasası: aynı çizim, 1 birim = 4 TL (5 → 20 TL, 4 → 16 TL).
    Kayma sonuçları: talep +2,5 sağa → (6,25; 6,25) = 0,0625 $ · talep 2 sola → (4;4) = 0,04 $ · arz 2 sola → (4;6) · arz 2 sağa → (6;4) · dolar arzı 2 sağa → (6;4) = 16 TL. */

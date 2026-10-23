@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf302 · 3.2 Borçlanma, Kredi ve Borç
+/* Kitpath not defteri · bf302 · 3.2 Borçlanma, Kredi ve Borç
    Kaynak: AP Business with Personal Finance CED, Topic 3.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf302",

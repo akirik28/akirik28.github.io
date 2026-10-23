@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch201 · 2.1 Tepkimeler Nasıl Olur, Nasıl Denkleştirilir
+/* Kitpath not defteri · ch201 · 2.1 Tepkimeler Nasıl Olur, Nasıl Denkleştirilir
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 1-2) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch201",

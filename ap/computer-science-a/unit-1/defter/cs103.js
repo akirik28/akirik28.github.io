@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs103 · 1.3 İfadeler: Tam Sayı Bölmesi ve Mod
+/* Kitpath not defteri · cs103 · 1.3 İfadeler: Tam Sayı Bölmesi ve Mod
    Kaynak: ap-videolar/src/episodes/cs103 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs103",

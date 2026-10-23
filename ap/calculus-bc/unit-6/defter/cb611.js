@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb611 · 6.13 Has Olmayan İntegraller
+/* Kitpath not defteri · cb611 · 6.13 Has Olmayan İntegraller
    Kaynak: AP Calculus BC CED 6.13. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb611",

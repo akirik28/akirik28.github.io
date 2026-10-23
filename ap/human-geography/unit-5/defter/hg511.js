@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg511 · Günümüz Tarımının Sorunları (5.11)
+/* Kitpath not defteri · hg511 · Günümüz Tarımının Sorunları (5.11)
    Kaynak: AP HuG CED Topic 5.11 (IMP-5.B.1–4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg511",

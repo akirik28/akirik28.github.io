@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc101 · 1.1 Kıtlık ve Ekonomist Gibi Düşünmek
+/* Kitpath not defteri · mc101 · 1.1 Kıtlık ve Ekonomist Gibi Düşünmek
    Kaynak: ap-videolar/src/episodes/mc101 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc101",

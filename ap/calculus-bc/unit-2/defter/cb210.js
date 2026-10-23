@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb210 · 2.10 tan x, cot x, sec x ve csc x'in Türevleri
+/* Kitpath not defteri · cb210 · 2.10 tan x, cot x, sec x ve csc x'in Türevleri
    Kaynak: ap-videolar/src/episodes/cb210 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb210",

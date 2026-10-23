@@ -1,4 +1,4 @@
-/* Kitora not defteri · st903 · 9.4–9.5 Eğim İçin t Testi
+/* Kitpath not defteri · st903 · 9.4–9.5 Eğim İçin t Testi
    Kaynak: AP Statistics CED Unit 9 (Topic 9.4–9.5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st903",

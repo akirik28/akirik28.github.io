@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb202 · 2.2 Türevin Tanımı ve Gösterimleri
+/* Kitpath not defteri · cb202 · 2.2 Türevin Tanımı ve Gösterimleri
    Kaynak: ap-videolar/src/episodes/cb202 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb202",

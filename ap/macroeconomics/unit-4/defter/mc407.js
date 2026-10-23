@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc407 · 4.7 Ödünç Fon Piyasası
+/* Kitpath not defteri · mc407 · 4.7 Ödünç Fon Piyasası
    Kaynak: AP Macroeconomics CED, Topic 4.7 (MKT-4). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca durumları üretir. Taban: D (1,9)→(9,1), S (1,1)→(9,9), denge (5,5);
    1 birim = %1 (dikey) ve 100 milyar TL (yatay). Kaymalar 2 birim. */

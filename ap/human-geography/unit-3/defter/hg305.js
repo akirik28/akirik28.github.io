@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg305 · Yayılmanın Tarihsel Nedenleri
+/* Kitpath not defteri · hg305 · Yayılmanın Tarihsel Nedenleri
    Kaynak: AP HuG CED Topic 3.5 (SPS-3.A.1, SPS-3.A.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg305",

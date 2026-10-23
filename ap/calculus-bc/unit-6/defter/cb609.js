@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb609 · 6.11 Kısmi İntegrasyon
+/* Kitpath not defteri · cb609 · 6.11 Kısmi İntegrasyon
    Kaynak: AP Calculus BC CED 6.11. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb609",

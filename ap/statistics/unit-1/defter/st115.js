@@ -1,4 +1,4 @@
-/* Kitora not defteri · st115 · 1H-1 İyi Deneyin Dört İlkesi
+/* Kitpath not defteri · st115 · 1H-1 İyi Deneyin Dört İlkesi
    Kaynak: ap-videolar/src/episodes/st115 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st115",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb508 · 5.12 Kapalı Bağıntıların Davranışı
+/* Kitpath not defteri · cb508 · 5.12 Kapalı Bağıntıların Davranışı
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb508",

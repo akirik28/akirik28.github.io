@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb205 · 2.5 Kuvvet Kuralı
+/* Kitpath not defteri · cb205 · 2.5 Kuvvet Kuralı
    Kaynak: ap-videolar/src/episodes/cb205 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb205",

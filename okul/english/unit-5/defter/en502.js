@@ -1,4 +1,4 @@
-/* Kitora not defteri · en502 · 5.2 Konuşma Bölümü (MEB Skills Exams · Speaking)
+/* Kitpath not defteri · en502 · 5.2 Konuşma Bölümü (MEB Skills Exams · Speaking)
    Kaynak: öğretmen/bölüm belgeleri (G10MEB ENGLISH EXAM FORMAT: Kasım 2025, Mart 2026, Haziran beceri sınavı; Oedipus Quote Review, Aralık 2025). Sayılar ve rubrikler belgelerden; plan önerileri ve kalıplar "Ek bilgi" etiketli. Hazır konuşma metni yok. Telif: Catcher'dan alıntı yok; Czapnik ve Will yalnız ana fikir düzeyinde; Oedipus'tan yalnız Fagles satır numaraları ve parafraz. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en502",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · en205 · 2.5 Dramatik İroni ve Kilit Pasajlar
+/* Kitpath not defteri · en205 · 2.5 Dramatik İroni ve Kilit Pasajlar
    Kaynak: öğretmen (Dr Byrd) Oedipus belgeleri: Aralık "Quote Review" konuşma sınavı biçimi ve rubriği (özet A4) + çalışma alıntı bankası temaları (satır no. Fagles baskısı; Fagles alıntısı yok, yalnız parafraz). Alıntılar: yalnız F. Storr çevirisi (1912, Gutenberg metninden kontrol edildi) ve R. C. Jebb çevirisi (1887, doğrulanmış satır). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en205",

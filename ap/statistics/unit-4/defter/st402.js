@@ -1,4 +1,4 @@
-/* Kitora not defteri · st402 · 4.3 Olasılığa Giriş
+/* Kitpath not defteri · st402 · 4.3 Olasılığa Giriş
    Kitsiz ünite: içerik College Board CED'in Unit 4 (VAR-4) hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st402",

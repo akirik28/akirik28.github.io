@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf308 · 3.8 Nakit Akış Tablosu
+/* Kitpath not defteri · bf308 · 3.8 Nakit Akış Tablosu
    Kaynak: AP Business with Personal Finance CED, Topic 3.8. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf308",

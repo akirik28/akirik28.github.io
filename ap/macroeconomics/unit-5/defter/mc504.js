@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc504 · 5.4 Bütçe Açıkları ve Kamu Borcu
+/* Kitpath not defteri · mc504 · 5.4 Bütçe Açıkları ve Kamu Borcu
    Kaynak: CED Topic 5.4 (POL-3.B). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca çubukları (alan) ve grafik durumlarını üretir. */
 window.DEFTER = (function () {

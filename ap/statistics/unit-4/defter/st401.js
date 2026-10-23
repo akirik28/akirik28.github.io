@@ -1,4 +1,4 @@
-/* Kitora not defteri · st401 · 4.1–4.2 Rastgelelik ve Simülasyon
+/* Kitpath not defteri · st401 · 4.1–4.2 Rastgelelik ve Simülasyon
    Kitsiz ünite: içerik College Board CED'in Unit 4 (VAR-4) hedeflerine göre yazıldı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st401",

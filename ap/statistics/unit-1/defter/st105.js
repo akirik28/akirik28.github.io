@@ -1,4 +1,4 @@
-/* Kitora not defteri · st105 · 1D-1 Merkez: Mean ve Median
+/* Kitpath not defteri · st105 · 1D-1 Merkez: Mean ve Median
    Kaynak: ap-videolar/src/episodes/st105 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st105",

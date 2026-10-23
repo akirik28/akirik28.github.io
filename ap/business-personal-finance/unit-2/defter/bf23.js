@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf23 · 2.3 Pazar Araştırması
+/* Kitpath not defteri · bf23 · 2.3 Pazar Araştırması
    Kaynak: ap-videolar/src/episodes/bf23 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf23",

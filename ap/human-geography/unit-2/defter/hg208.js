@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg208 · Kadınlar ve Demografik Değişim
+/* Kitpath not defteri · hg208 · Kadınlar ve Demografik Değişim
    Kaynak: AP HuG CED Unit 2, Topic 2.8 (SPS-2.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg208",

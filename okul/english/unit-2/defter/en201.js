@@ -1,4 +1,4 @@
-/* Kitora not defteri · en201 · 2.1 Yunan Tragedyası
+/* Kitpath not defteri · en201 · 2.1 Yunan Tragedyası
    Kaynak: öğretmen (Dr Byrd) Oedipus belgeleri (sahne yapısı, Chorus Project) + Aristoteles'in Poetics'indeki standart içerik (ek bilgi etiketli). Sınıfın baskısı Fagles (telifli): defterde Fagles alıntısı yok, yalnız satır numarası. Alıntı: F. Storr çevirisi (1912). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en201",

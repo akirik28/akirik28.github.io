@@ -1,4 +1,4 @@
-/* Kitora not defteri · st406 · 4.7 Rastgele Değişkenler ve Olasılık Dağılımları
+/* Kitpath not defteri · st406 · 4.7 Rastgele Değişkenler ve Olasılık Dağılımları
    Kaynak: AP Statistics CED Topic 4.7 (video kiti yok). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st406",

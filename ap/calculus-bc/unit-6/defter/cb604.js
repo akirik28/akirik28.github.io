@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb604 · 6.6 Belirli İntegralin Özellikleri
+/* Kitpath not defteri · cb604 · 6.6 Belirli İntegralin Özellikleri
    Kaynak: AP Calculus BC CED, Topic 6.6. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb604",

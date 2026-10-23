@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg406 · 4.6 İç Sınırlar
+/* Kitpath not defteri · hg406 · 4.6 İç Sınırlar
    Kaynak: AP HuG CED Topic 4.6 (IMP-4.B.5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg406",

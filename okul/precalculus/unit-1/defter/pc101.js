@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc101 · 1.1 Fonksiyonlara Giriş
+/* Kitpath not defteri · pc101 · 1.1 Fonksiyonlara Giriş
    Kaynak: öğretmenin ders sunumu (Unit#1_1 Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc101",

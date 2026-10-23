@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi602 · 6.2 Dışsallıklar
+/* Kitpath not defteri · mi602 · 6.2 Dışsallıklar
    Kaynak: CED Topic 6.2 (POL-3.A, POL-3.B). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar: 1 birim = 10 kutu (ya da aşı) ve 10 TL. Dış maliyet / dış fayda 20 TL (2 birim).
    Negatif: D=MPB=MSB y=10−x, S=MPC y=x, MSC y=x+2 → piyasa (5,5), optimum (4,6). DWL = ½×1×2 = 1 birim = 100 TL.

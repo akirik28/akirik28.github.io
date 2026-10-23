@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg508 · Von Thünen Modeli (5.8)
+/* Kitpath not defteri · hg508 · Von Thünen Modeli (5.8)
    Kaynak: AP HuG CED Topic 5.8 (PSO-5.D.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg508",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb601 · 6.1 Değişimin Birikimi
+/* Kitpath not defteri · cb601 · 6.1 Değişimin Birikimi
    Kaynak: AP Calculus BC CED, Topic 6.1. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb601",

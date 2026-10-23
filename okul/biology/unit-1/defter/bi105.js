@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi105 · 1.5 Kemosentez
+/* Kitpath not defteri · bi105 · 1.5 Kemosentez
    Kaynak: öğretmen lecture'ı (1.4 Chemosynthesis) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafik şematiktir: eğrilerin biçimi doğrudur, sayılar göreli birimdir. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py305 · 3.5 İletişim ve Dil Gelişimi
+/* Kitpath not defteri · py305 · 3.5 İletişim ve Dil Gelişimi
    Kaynak: AP Psychology CED (2024) Topic 3.5. Blok türleri: /ap/_kit/defter.js başı.
    Not: sözcük sayısı eğrisi şematik ve ortalamadır; bebekler arasında çok fark vardır. Dilin pragmatiği CED'de sınav dışıdır. */
 window.DEFTER = {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb403 · 4.3 Hareket Dışında Değişim Hızları
+/* Kitpath not defteri · cb403 · 4.3 Hareket Dışında Değişim Hızları
    Videosuz ünite: CED 4.3 (Rates of Change in Applied Contexts Other Than Motion). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb403",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb706 · 7.9 Lojistik Modeller
+/* Kitpath not defteri · cb706 · 7.9 Lojistik Modeller
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb706",

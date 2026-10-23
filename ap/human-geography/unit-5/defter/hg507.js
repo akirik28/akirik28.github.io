@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg507 · Tarımın Mekânsal Düzeni (5.7)
+/* Kitpath not defteri · hg507 · Tarımın Mekânsal Düzeni (5.7)
    Kaynak: AP HuG CED Topic 5.7 (PSO-5.C.3–5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg507",

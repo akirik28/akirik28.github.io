@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch303 · 3.3 Basit ve Molekül Formül
+/* Kitpath not defteri · ch303 · 3.3 Basit ve Molekül Formül
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 2: basit ve molekül formül). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch303",

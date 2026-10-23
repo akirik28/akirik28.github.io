@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph102 · 1.2 İvme ve Hız-Zaman Grafikleri
+/* Kitpath not defteri · ph102 · 1.2 İvme ve Hız-Zaman Grafikleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph102",

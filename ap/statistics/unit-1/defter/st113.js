@@ -1,4 +1,4 @@
-/* Kitora not defteri · st113 · 1G-1 Rastgele Örnekleme Yöntemleri
+/* Kitpath not defteri · st113 · 1G-1 Rastgele Örnekleme Yöntemleri
    Kaynak: ap-videolar/src/episodes/st113 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st113",

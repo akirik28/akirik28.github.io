@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi405 · 4.5 Oligopol ve Oyun Teorisi
+/* Kitpath not defteri · mi405 · 4.5 Oligopol ve Oyun Teorisi
    Kaynak: CED Topic 4.5 (PRD-3.C.1–7). Blok türleri: /ap/_kit/defter.js başı.
    Kapsam dışı (CED): 2'den fazla oyuncu ya da eylem, karma strateji, kapsamlı biçim. Burada yalnız 2 × 2 oyunlar var.
    Kartel grafiği: sinema salonu talebi P = 100 − 0,1Q, MC = 20 TL (grafikte 1 birim = 10 TL ve 100 bilet).

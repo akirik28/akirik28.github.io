@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph406 · 4.6 Rezonans ve Deprem
+/* Kitpath not defteri · ph406 · 4.6 Rezonans ve Deprem
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Physics Unit 4: 4.6 rezonans ve deprem, 4.7 deprem modeli). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph406",

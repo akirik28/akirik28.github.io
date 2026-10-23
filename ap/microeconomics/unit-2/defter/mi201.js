@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi201 · 2.1 Talep
+/* Kitpath not defteri · mi201 · 2.1 Talep
    Kaynak: AP Micro CED, Topic 2.1 (MKT-3.A, MKT-3.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py207 · 2.7 Unutma ve Diğer Bellek Sorunları
+/* Kitpath not defteri · py207 · 2.7 Unutma ve Diğer Bellek Sorunları
    Kaynak: AP Psychology CED 2024, Topic 2.7 (2.7.A.1–4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py207",

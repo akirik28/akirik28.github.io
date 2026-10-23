@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc503 · 5.3 Para Arzı Artışı ve Enflasyon
+/* Kitpath not defteri · mc503 · 5.3 Para Arzı Artışı ve Enflasyon
    Kaynak: CED Topic 5.3 (POL-3.A). Blok türleri: /ap/_kit/defter.js başı.
    Taban (merdiven grafiği): LRAS x = 6; SRAS₁ y = x, SRAS₂ y = x + 2, SRAS₃ y = x + 4; AD₁ y = 12 − x, AD₂ y = 14 − x, AD₃ y = 16 − x. */
 window.DEFTER = (function () {

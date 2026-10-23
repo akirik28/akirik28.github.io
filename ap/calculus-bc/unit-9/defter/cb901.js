@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb901 · 9.1–9.2 Parametrik Denklemler ve Türevleri
+/* Kitpath not defteri · cb901 · 9.1–9.2 Parametrik Denklemler ve Türevleri
    Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb901",

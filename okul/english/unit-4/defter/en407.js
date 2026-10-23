@@ -1,4 +1,4 @@
-/* Kitora not defteri · en407 · 4.7 Akademik Dürüstlük ve Yapay Zekâ
+/* Kitpath not defteri · en407 · 4.7 Akademik Dürüstlük ve Yapay Zekâ
    Okul dersi (10. sınıf English · Unit 4). Okulun yapay zekâ kuralını açıklar; öğrencinin işini yapmaz.
    Kaynak: Dr Byrd'ün Research Process Project (Grade 10 AI belgesi) ve Argument Essay belgeleri. İki projenin kuralı biraz farklı yazıldığı için ayrı ele alınır.
    "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */

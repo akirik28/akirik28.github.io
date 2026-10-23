@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc302 · 3.2 Çarpanlar
+/* Kitpath not defteri · mc302 · 3.2 Çarpanlar
    Kaynak: College Board CED, Topic 3.2 (MOD-2.B). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar: MPC = 0,8 ise çarpan 5, vergi çarpanı −4; MPC = 0,75 ise çarpan 4, vergi çarpanı −3. */
 window.DEFTER = (function () {

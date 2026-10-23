@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi302 · 3.2 Kısa Dönem Maliyetler
+/* Kitpath not defteri · mi302 · 3.2 Kısa Dönem Maliyetler
    Kaynak: AP Micro CED, Topic 3.2 (PRD-1.A.4–8). Blok türleri: /ap/_kit/defter.js başı.
    Kantin maliyet verisi (unit 3'ün ortak tablosu): FC = 60; VC(Q) = Q³ − 6Q² + 14Q.
    Q=1…6: VC 9,12,15,24,45,84 · TC 69,72,75,84,105,144 · MC 9,3,3,9,21,39

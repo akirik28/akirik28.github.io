@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf16 · 1.6 İş Etiği
+/* Kitpath not defteri · bf16 · 1.6 İş Etiği
    Kaynak: ap-videolar/src/episodes/bf16 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf16",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi303 · 3.3 Uzun Dönem Maliyetler
+/* Kitpath not defteri · mi303 · 3.3 Uzun Dönem Maliyetler
    Kaynak: AP Micro CED, Topic 3.3 (PRD-1.A.9–12). Blok türleri: /ap/_kit/defter.js başı.
    LRATC grafiği: f(q) = 5 + 0,3·max(0, 5−q)² + 0,3·max(0, q−7)²  (q = 5…7 arası düz, MES = 5).
    SRATC_i = f(qi) + f'(qi)(q − qi) + 0,45(q − qi)²  (her biri qi noktasında LRATC'ye teğet; qi = 2,5 / 6 / 9). */

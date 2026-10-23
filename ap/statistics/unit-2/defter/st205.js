@@ -1,4 +1,4 @@
-/* Kitora not defteri · st205 · 2.6–2.7 Doğrusal Regresyon Modeli ve Artıklar
+/* Kitpath not defteri · st205 · 2.6–2.7 Doğrusal Regresyon Modeli ve Artıklar
    Kaynak: AP Statistics CED Unit 2, Topics 2.6 (Linear Regression Models) ve 2.7 (Residuals). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st205",

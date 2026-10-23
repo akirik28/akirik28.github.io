@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs302 · 3.3 Bir Sınıfın Anatomisi
+/* Kitpath not defteri · cs302 · 3.3 Bir Sınıfın Anatomisi
    Kaynak: AP CSA 2025–26 CED, Unit 3 (Class Creation) öğrenme hedefleri; sınav biçimi FRQ 2 (Class Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs302",

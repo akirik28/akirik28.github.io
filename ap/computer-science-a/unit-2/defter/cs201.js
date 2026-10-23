@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs201 · 2.1–2.2 Seçim ve Tekrar İçeren Algoritmalar, Boolean İfadeler
+/* Kitpath not defteri · cs201 · 2.1–2.2 Seçim ve Tekrar İçeren Algoritmalar, Boolean İfadeler
    Kaynak: AP CSA CED 2025–26 (Unit 2) kapsamı; ap-videolar/kaynak/csa-u1/PLAN.md. Blok türleri: /ap/_kit/defter.js başı.
    Not: metin alanlarında çift eşittir işareti "=​=" (araya görünmez boşluk) ile yazıldı; yoksa vurgu işaretiyle karışır. */
 window.DEFTER = {

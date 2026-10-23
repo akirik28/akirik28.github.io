@@ -1,4 +1,4 @@
-/* Kitora not defteri · st204 · 2.5 Korelasyon
+/* Kitpath not defteri · st204 · 2.5 Korelasyon
    Kaynak: AP Statistics CED Unit 2, Topic 2.5 (Correlation). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st204",

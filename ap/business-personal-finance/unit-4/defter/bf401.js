@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf401 · 4.1 Yönetim ve Liderlik
+/* Kitpath not defteri · bf401 · 4.1 Yönetim ve Liderlik
    Kaynak: College Board CED, Topic 4.1 (4.1.A–4.1.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf401",

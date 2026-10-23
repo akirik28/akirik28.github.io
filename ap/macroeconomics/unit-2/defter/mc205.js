@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc205 · 2.5 Enflasyonun Maliyetleri
+/* Kitpath not defteri · mc205 · 2.5 Enflasyonun Maliyetleri
    Kaynak: College Board CED, Topic 2.5 (MEA-1.H). Blok türleri: /ap/_kit/defter.js başı.
    Not: shoe-leather ve menu maliyetleri CED'de adı geçmeyen, sık öğretilen ek maliyetlerdir. */
 window.DEFTER = {

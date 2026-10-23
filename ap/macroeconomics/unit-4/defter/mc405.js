@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc405 · 4.5 Para Piyasası
+/* Kitpath not defteri · mc405 · 4.5 Para Piyasası
    Kaynak: AP Macroeconomics CED, Topic 4.5 (MKT-3). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca durumları üretir. Taban: MD (1,9)→(9,1), MS dikey x = 5, denge (5,5);
    1 birim = %1 (dikey) ve 100 milyar TL (yatay). Kaymalar 2 birim. */

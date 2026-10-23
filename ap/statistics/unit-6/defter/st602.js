@@ -1,4 +1,4 @@
-/* Kitora not defteri · st602 · 6.3 Güven Aralığına Dayanarak İddia
+/* Kitpath not defteri · st602 · 6.3 Güven Aralığına Dayanarak İddia
    Kaynak: College Board CED, Unit 6 (konu 6.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st602",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st202 · 2.3 İki Kategorik Değişken İçin İstatistikler
+/* Kitpath not defteri · st202 · 2.3 İki Kategorik Değişken İçin İstatistikler
    Kaynak: AP Statistics CED Unit 2, Topic 2.3 (Statistics for Two Categorical Variables). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st202",

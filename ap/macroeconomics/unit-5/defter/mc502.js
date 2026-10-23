@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc502 · 5.2 Phillips Eğrisi
+/* Kitpath not defteri · mc502 · 5.2 Phillips Eğrisi
    Kaynak: CED Topic 5.2 (MOD-3.A, MOD-3.B). Blok türleri: /ap/_kit/defter.js başı.
    Taban: SRPC enflasyon = 15 ÷ işsizlik (+ kayma); doğal işsizlik (NRU) %5, denge (5, 3).
    Yardımcı işlevler yalnızca eğri noktalarını ve grafik durumlarını üretir. */

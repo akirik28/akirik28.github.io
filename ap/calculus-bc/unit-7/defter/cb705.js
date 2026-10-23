@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb705 · 7.8 Üstel Modeller
+/* Kitpath not defteri · cb705 · 7.8 Üstel Modeller
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb705",

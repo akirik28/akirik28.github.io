@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch301 · 3.1 Mol ve Avogadro Sayısı
+/* Kitpath not defteri · ch301 · 3.1 Mol ve Avogadro Sayısı
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 2: mol kavramı, Avogadro sayısı). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch301",

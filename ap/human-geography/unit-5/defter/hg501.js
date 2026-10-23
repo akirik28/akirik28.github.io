@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg501 · Tarıma Giriş (5.1)
+/* Kitpath not defteri · hg501 · Tarıma Giriş (5.1)
    Kaynak: AP HuG CED Topic 5.1 (PSO-5.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg501",

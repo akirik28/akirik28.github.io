@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg409 · 4.9 Egemenliğe Meydan Okumalar
+/* Kitpath not defteri · hg409 · 4.9 Egemenliğe Meydan Okumalar
    Kaynak: AP HuG CED Topic 4.9 (SPS-4.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg409",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py504 · 5.4 Psikolojik Bozukluk Kategorileri
+/* Kitpath not defteri · py504 · 5.4 Psikolojik Bozukluk Kategorileri
    Kaynak: College Board CED, Topic 5.4 (5.4.A–J). Blok türleri: /ap/_kit/defter.js başı.
    Dil: tanılar olgusal anlatılır; "bozukluğu olan kişi" biçimi kullanılır, kimseye tanı konmaz. */
 window.DEFTER = {

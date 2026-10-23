@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg606 · Yoğunluk ve Arazi Kullanımı
+/* Kitpath not defteri · hg606 · Yoğunluk ve Arazi Kullanımı
    Kaynak: AP HuG CED Topic 6.6 (IMP-6.A.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg606",

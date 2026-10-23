@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc301 · 3.1 Toplam Talep (AD)
+/* Kitpath not defteri · mc301 · 3.1 Toplam Talep (AD)
    Kaynak: College Board CED, Topic 3.1 (MOD-2.A). Blok türleri: /ap/_kit/defter.js başı.
    Grafikler AD–AS yardımcılarıyla üretilir (AD: P = a − Y), yön ve kayma miktarı hesapla kurulur. */
 window.DEFTER = (function () {

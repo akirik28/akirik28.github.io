@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg307 · Din ve Dilin Yayılması
+/* Kitpath not defteri · hg307 · Din ve Dilin Yayılması
    Kaynak: AP HuG CED Topic 3.7 (IMP-3.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg307",

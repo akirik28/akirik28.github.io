@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg201 · Nüfusun Dağılımı (Population Distribution)
+/* Kitpath not defteri · hg201 · Nüfusun Dağılımı (Population Distribution)
    Kaynak: AP HuG CED Topic 2.1 (PSO-2.A.1, 2.A.2, 2.B.1, 2.C.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg201",

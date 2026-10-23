@@ -1,4 +1,4 @@
-/* Kitora not defteri · py201 · 2.1 Algı
+/* Kitpath not defteri · py201 · 2.1 Algı
    Kaynak: AP Psychology CED 2024, Topic 2.1 (2.1.A.1–5, 2.1.B.1–4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py201",

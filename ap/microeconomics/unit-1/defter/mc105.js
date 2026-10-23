@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc105 · 1.3 Uzmanlaşma ve Ticaretten Kazanç
+/* Kitpath not defteri · mc105 · 1.3 Uzmanlaşma ve Ticaretten Kazanç
    Kaynak: ap-videolar/src/episodes/mc105 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc105",

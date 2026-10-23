@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg303 · Kültürel Örüntüler
+/* Kitpath not defteri · hg303 · Kültürel Örüntüler
    Kaynak: AP HuG CED Topic 3.3 (PSO-3.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg303",

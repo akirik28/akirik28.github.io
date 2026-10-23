@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc308 · 3.8 Maliye Politikası
+/* Kitpath not defteri · mc308 · 3.8 Maliye Politikası
    Kaynak: College Board CED, Topic 3.8 (POL-1.A, POL-1.B). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye.
    Sayılar: MPC = 0,75 → harcama çarpanı 4, vergi çarpanı −3; MPC = 0,8 → 5 ve −4. */

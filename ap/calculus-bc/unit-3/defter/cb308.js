@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb308 · 3.5–3.6 Yöntem Seçimi ve Yüksek Mertebeden Türevler
+/* Kitpath not defteri · cb308 · 3.5–3.6 Yöntem Seçimi ve Yüksek Mertebeden Türevler
    Kaynak: ap-videolar/src/episodes/cb308 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb308",

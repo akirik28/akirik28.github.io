@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi404 · 4.4 Tekelci Rekabet
+/* Kitpath not defteri · mi404 · 4.4 Tekelci Rekabet
    Kaynak: CED Topic 4.4 (PRD-3.B.10). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar (okul çevresindeki kafe): grafikte 1 birim = 10 TL ve 50 menü.
    Maliyet: ATC = 4/Q + 1 + Q/4, MC = 1 + Q/2 (en düşük ATC: Q = 4, ATC = 3, MC ile kesişir). Sabit maliyet 2.000 TL.

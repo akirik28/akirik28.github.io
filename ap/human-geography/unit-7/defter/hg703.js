@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg703 · Kalkınma Ölçütleri
+/* Kitpath not defteri · hg703 · Kalkınma Ölçütleri
    Kaynak: AP HuG CED Topic 7.3 (SPS-7.C.1–C.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg703",

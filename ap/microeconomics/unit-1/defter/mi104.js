@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi104 · 1.6-2 Tüketici Seçimi ve Fayda Maksimizasyonu
+/* Kitpath not defteri · mi104 · 1.6-2 Tüketici Seçimi ve Fayda Maksimizasyonu
    Kaynak: ap-videolar/src/episodes/mi104 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mi104",

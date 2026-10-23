@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb608 · 6.10 Uzun Bölme ve Tam Kareye Tamamlama
+/* Kitpath not defteri · cb608 · 6.10 Uzun Bölme ve Tam Kareye Tamamlama
    Kaynak: AP Calculus BC CED 6.10. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb608",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc106 · 1.4 Talep Yasası
+/* Kitpath not defteri · mc106 · 1.4 Talep Yasası
    Kaynak: ap-videolar/src/episodes/mc106 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc106",

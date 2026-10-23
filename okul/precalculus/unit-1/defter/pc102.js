@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc102 · 1.2 Fonksiyonlarda İşlemler
+/* Kitpath not defteri · pc102 · 1.2 Fonksiyonlarda İşlemler
    Kaynak: öğretmenin ders sunumu (Unit#1_2 Operations on Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc102",

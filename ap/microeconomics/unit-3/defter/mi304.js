@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi304 · 3.4 Kâr Türleri
+/* Kitpath not defteri · mi304 · 3.4 Kâr Türleri
    Kaynak: AP Micro CED, Topic 3.4 (CBA-2.C.1–2). Blok türleri: /ap/_kit/defter.js başı.
    Zeynep'in kafesi (aylık, bin TL): gelir 100; açık maliyet 20 + 30 + 10 = 60; muhasebe kârı 40;
    örtük maliyet 20 (zamanı) + 5 (sermaye) + 5 (risk) = 30; ekonomik kâr 10.

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf14 · 1.4 İş Fikirleri Nereden Çıkar?
+/* Kitpath not defteri · bf14 · 1.4 İş Fikirleri Nereden Çıkar?
    Kaynak: ap-videolar/src/episodes/bf14 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf14",

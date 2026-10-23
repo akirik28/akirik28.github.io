@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf18 · 1.8 Tedarik Zincirleri
+/* Kitpath not defteri · bf18 · 1.8 Tedarik Zincirleri
    Kaynak: ap-videolar/src/episodes/bf18 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf18",

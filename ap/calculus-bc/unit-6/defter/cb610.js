@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb610 · 6.12 Basit Kesirlere Ayırma
+/* Kitpath not defteri · cb610 · 6.12 Basit Kesirlere Ayırma
    Kaynak: AP Calculus BC CED 6.12. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb610",

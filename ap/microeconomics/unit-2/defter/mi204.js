@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi204 · 2.4 Arzın Fiyat Esnekliği
+/* Kitpath not defteri · mi204 · 2.4 Arzın Fiyat Esnekliği
    Kaynak: AP Micro CED, Topic 2.4 (MKT-3.E.6–8). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */

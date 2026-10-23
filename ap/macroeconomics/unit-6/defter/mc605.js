@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc605 · 6.5 Döviz Piyasası ve Net İhracat
+/* Kitpath not defteri · mc605 · 6.5 Döviz Piyasası ve Net İhracat
    Kaynak: CED Topic 6.5 (MKT-5.F). Blok türleri: /ap/_kit/defter.js başı.
    Kurlar: 1 $ = 20 TL (TL = 0,05 $); değerlenince 1 $ = 16 TL (0,0625 $); değer kaybedince 1 $ = 25 TL (0,04 $).
    AD–AS grafiği: AD₁ y = 10 − x, SRAS y = x, LRAS x = 8; AD₂ (sağa 2) y = 12 − x → (6,6); AD₃ (sola 2) y = 8 − x → (4,4). */

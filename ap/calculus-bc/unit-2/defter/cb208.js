@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb208 · 2.8 Çarpım Kuralı
+/* Kitpath not defteri · cb208 · 2.8 Çarpım Kuralı
    Kaynak: ap-videolar/src/episodes/cb208 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb208",

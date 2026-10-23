@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi203 · 2.3 Talebin Fiyat Esnekliği
+/* Kitpath not defteri · mi203 · 2.3 Talebin Fiyat Esnekliği
    Kaynak: AP Micro CED, Topic 2.3 (MKT-3.E.1–5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = (function () {
   /* Yardımcı: yalnız `acik` listesindeki ögeler görünür; geri kalan ögeler gizlenir (set, kümülatif) */

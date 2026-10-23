@@ -1,4 +1,4 @@
-/* Kitora not defteri · en406 · 4.6 İkna Konuşması
+/* Kitpath not defteri · en406 · 4.6 İkna Konuşması
    Okul dersi (10. sınıf English · Unit 4). Hazır konuşma metni vermez; yapı, süre ve kalıp verir.
    Kaynak: Persuasive Speech belgeleri ve 100 puanlık rubrik (Dr Byrd). "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */
 window.DEFTER = {

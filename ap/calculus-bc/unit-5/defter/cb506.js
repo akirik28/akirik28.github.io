@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb506 · 5.8–5.9 f, f′ ve f″ Grafiklerini Bağlamak
+/* Kitpath not defteri · cb506 · 5.8–5.9 f, f′ ve f″ Grafiklerini Bağlamak
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb506",

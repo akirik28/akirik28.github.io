@@ -1,4 +1,4 @@
-/* Kitora not defteri · en101 · 1.1 Pasaj Analizi Paragrafı
+/* Kitpath not defteri · en101 · 1.1 Pasaj Analizi Paragrafı
    Kaynak: Kasım MEB sınavı biçimi ve rubriği + Byrd/Woods passage-analysis dersi (öğretmen materyali özeti A1 ve D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en101",
@@ -82,7 +82,7 @@ window.DEFTER = {
           ] },
         { tip: "formul", parcalar: [
             { t: "35", alt: "eser + bağlam" }, "+", { t: "30", alt: "konu cümlesi" }, "+", { t: "3 × 45", alt: "üç analiz" }, "+", { t: "15", alt: "kapanış" }, "=", { t: "≈ 215", alt: "kelime (hedef 200–250)" }
-          ], aciklama: "Hedef 200–250 kelime sınav yönergesindendir; parça parça bütçe Kitora'nın önerisidir (ek bilgi). Yazdıktan sonra kelimeleri say." }
+          ], aciklama: "Hedef 200–250 kelime sınav yönergesindendir; parça parça bütçe Kitpath'in önerisidir (ek bilgi). Yazdıktan sonra kelimeleri say." }
       ]
     },
     {

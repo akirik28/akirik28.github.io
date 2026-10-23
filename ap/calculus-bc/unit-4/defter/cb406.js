@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb406 · 4.7 L'Hôpital Kuralı
+/* Kitpath not defteri · cb406 · 4.7 L'Hôpital Kuralı
    Videosuz ünite: CED 4.7 (Using L'Hospital's Rule for Determining Limits of Indeterminate Forms). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb406",

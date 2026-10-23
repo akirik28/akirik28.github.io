@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg404 · 4.4 Siyasi Sınırların Tanımlanması
+/* Kitpath not defteri · hg404 · 4.4 Siyasi Sınırların Tanımlanması
    Kaynak: AP HuG CED Topic 4.4 (IMP-4.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg404",

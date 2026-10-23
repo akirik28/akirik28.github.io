@@ -1,4 +1,4 @@
-/* Kitora not defteri · st503 · 5.4 Yanlı ve Yansız Tahminler
+/* Kitpath not defteri · st503 · 5.4 Yanlı ve Yansız Tahminler
    Kapsam: point estimate, unbiased / biased estimator, bias ile variability farkı, n'nin rolü, benzetim yorumu. */
 window.DEFTER = {
   slug: "st503",

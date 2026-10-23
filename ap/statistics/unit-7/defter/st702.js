@@ -1,4 +1,4 @@
-/* Kitora not defteri · st702 · 7.3 Güven Aralığıyla Ortalama Hakkında İddia
+/* Kitpath not defteri · st702 · 7.3 Güven Aralığıyla Ortalama Hakkında İddia
    Kaynak: AP Statistics CED 7.3 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    t∗ değerleri t tablosundan (df = 24, %95 → 2,064). */
 window.DEFTER = {

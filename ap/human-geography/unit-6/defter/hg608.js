@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg608 · Kentsel Sürdürülebilirlik
+/* Kitpath not defteri · hg608 · Kentsel Sürdürülebilirlik
    Kaynak: AP HuG CED Topic 6.8 (IMP-6.C.1, IMP-6.D.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg608",

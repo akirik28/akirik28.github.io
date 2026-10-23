@@ -1,4 +1,4 @@
-/* Kitora not defteri · st802 · 8.3 Uyum İyiliği Testini Yapmak
+/* Kitpath not defteri · st802 · 8.3 Uyum İyiliği Testini Yapmak
    Kaynak: AP Statistics CED Unit 8 (Topic 8.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st802",

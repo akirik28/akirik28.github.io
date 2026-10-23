@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph103 · 1.3 Hareket Denklemleri
+/* Kitpath not defteri · ph103 · 1.3 Hareket Denklemleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics · Unit 1) + MEB 10. sınıf Fizik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph103",

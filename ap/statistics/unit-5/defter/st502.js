@@ -1,4 +1,4 @@
-/* Kitora not defteri · st502 · 5.3 Merkezi Limit Teoremi
+/* Kitpath not defteri · st502 · 5.3 Merkezi Limit Teoremi
    Kapsam: CLT, x̄'nin şekli (normal popülasyon / n ≥ 30), merkez ve yayılımın özeti, koşullar, CLT ile olasılık. */
 window.DEFTER = {
   slug: "st502",

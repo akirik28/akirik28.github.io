@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc303 · 3.3 Kalan ve Çarpan Teoremi
+/* Kitpath not defteri · pc303 · 3.3 Kalan ve Çarpan Teoremi
    Kaynak: öğretmenin ders sunumu (Unit#3_1 Polynomials, Remainder Theorem bölümü) + Review for Exam#3; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc303",

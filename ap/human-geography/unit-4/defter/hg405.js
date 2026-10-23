@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg405 · 4.5 Siyasi Sınırların İşlevi
+/* Kitpath not defteri · hg405 · 4.5 Siyasi Sınırların İşlevi
    Kaynak: AP HuG CED Topic 4.5 (IMP-4.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg405",

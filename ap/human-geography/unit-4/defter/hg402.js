@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg402 · 4.2 Siyasi Süreçler
+/* Kitpath not defteri · hg402 · 4.2 Siyasi Süreçler
    Kaynak: AP HuG CED Topic 4.2 (PSO-4.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg402",

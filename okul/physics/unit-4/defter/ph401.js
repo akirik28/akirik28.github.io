@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph401 · 4.1 Dalgaların Temel Kavramları
+/* Kitpath not defteri · ph401 · 4.1 Dalgaların Temel Kavramları
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Physics Unit 4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph401",

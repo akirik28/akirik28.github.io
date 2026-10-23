@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi401 · 4.1 Eksik Rekabete Giriş
+/* Kitpath not defteri · mi401 · 4.1 Eksik Rekabete Giriş
    Kaynak: CED Topic 4.1 (PRD-3.B.1–4). Blok türleri: /ap/_kit/defter.js başı.
    Sayılar: sinema salonu; talep P = 100 − 0,1Q, MC = 20 TL. Grafikte 1 birim = 10 TL ve 100 bilet. */
 window.DEFTER = {

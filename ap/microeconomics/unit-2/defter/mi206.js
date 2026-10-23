@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi206 · 2.6 Piyasa Dengesi, Tüketici ve Üretici Rantı
+/* Kitpath not defteri · mi206 · 2.6 Piyasa Dengesi, Tüketici ve Üretici Rantı
    Kaynak: AP Micro CED, Topic 2.6 (MKT-4.A.1–5). Blok türleri: /ap/_kit/defter.js başı.
    Sayısal taban: D: P = 100 − Q, S: P = Q; denge (50 TL, 50 adet). Grafikte 1 birim = 10 TL ve 10 adet. */
 window.DEFTER = (function () {

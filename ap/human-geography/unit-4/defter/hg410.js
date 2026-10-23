@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg410 · 4.10 Merkezkaç ve Merkezcil Güçler
+/* Kitpath not defteri · hg410 · 4.10 Merkezkaç ve Merkezcil Güçler
    Kaynak: AP HuG CED Topic 4.10 (SPS-4.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg410",

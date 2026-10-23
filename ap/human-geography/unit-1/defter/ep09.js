@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep09 · Projeksiyonlar
+/* Kitpath not defteri · ep09 · Projeksiyonlar
    Kaynak: ap-videolar/src/episodes/ep09 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep09",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st110 · 1E Dağılımları Karşılaştırmak
+/* Kitpath not defteri · st110 · 1E Dağılımları Karşılaştırmak
    Kaynak: ap-videolar/src/episodes/st110 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st110",

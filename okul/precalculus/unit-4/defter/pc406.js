@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc406 · 4.6 Toplam-Fark ve İki Kat Açı Formülleri
+/* Kitpath not defteri · pc406 · 4.6 Toplam-Fark ve İki Kat Açı Formülleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4, Exam 4 tekrar kitapçığı) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikte x ekseni 4π'yi 14 birime, y ekseni (y = 0) 5.5'e oturtur: ızgara x = 3.5·x/π, y = 5.5 + 1.5·y. Yardımcı işlevler yalnızca nokta hesaplar. */
 window.DEFTER = (function () {

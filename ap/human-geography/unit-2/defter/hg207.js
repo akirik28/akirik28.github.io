@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg207 · Nüfus Politikaları
+/* Kitpath not defteri · hg207 · Nüfus Politikaları
    Kaynak: AP HuG CED Unit 2, Topic 2.7 (SPS-2.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg207",

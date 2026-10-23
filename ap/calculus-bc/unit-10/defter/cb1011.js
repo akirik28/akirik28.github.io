@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1011 · 10.12 Lagrange Hata Sınırı
+/* Kitpath not defteri · cb1011 · 10.12 Lagrange Hata Sınırı
    Kaynak: College Board AP Calculus BC CED, Topic 10.12. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1011",

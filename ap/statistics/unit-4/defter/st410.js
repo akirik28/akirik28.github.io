@@ -1,4 +1,4 @@
-/* Kitora not defteri · st410 · 4.12 Geometrik Dağılım
+/* Kitpath not defteri · st410 · 4.12 Geometrik Dağılım
    Kaynak: AP Statistics CED Topic 4.12 (video kiti yok). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st410",

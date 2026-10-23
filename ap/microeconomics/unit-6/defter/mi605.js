@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi605 · 6.5 Eşitsizlik
+/* Kitpath not defteri · mi605 · 6.5 Eşitsizlik
    Kaynak: CED Topic 6.5 (POL-5). Blok türleri: /ap/_kit/defter.js başı.
    Not: CED, Lorenz eğrisi çizmeyi ve Gini hesaplamayı sınav kapsamı dışında tutar; yorumlama kapsamdadır.
    Sayılar (gelir paylarının beşte birlik dilimleri): önce 5-10-15-25-45 → kümülatif 5,15,30,55,100 → Gini 0,38.

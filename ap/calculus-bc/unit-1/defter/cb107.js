@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb107 · 1.12–1.13 Aralıkta Süreklilik ve Süreksizliği Giderme
+/* Kitpath not defteri · cb107 · 1.12–1.13 Aralıkta Süreklilik ve Süreksizliği Giderme
    Kaynak: ap-videolar/src/episodes/cb107 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb107",

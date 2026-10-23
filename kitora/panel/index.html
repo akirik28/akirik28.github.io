@@ -3,101 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panelim · Kitora</title>
-<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-<script src="../assets/tema.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/kitora.css?v=39">
+<title>Kitpath</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://akirik28.github.io/kitpath/panel/">
+<script>location.replace("/kitpath/panel/" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=/kitpath/panel/">
 </head>
-<body data-page="panel" data-root="../">
-<a class="skip" href="#main">İçeriğe geç</a>
-<div class="wrap">
-  <header class="k-header" data-k="header" data-variant="app" data-active="panel"></header>
-
-  <main id="main" class="stack" style="gap:32px;padding-bottom:64px">
-    <section class="hello rise">
-      <h1 class="display" style="font-size:clamp(44px,5vw,60px)">Selam <span class="hl">Ada!</span></h1>
-      <span class="hand" data-k="cheer" style="font-size:28px;rotate:-2deg">3 günlük serin var, bozma!</span>
-    </section>
-
-    <section class="alert rise" role="alert" data-k="alert" hidden>
-      <svg class="a-sway" width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="32" width="40" height="30" rx="7"/><path d="M24 32v-8a12 12 0 0 1 24 0v8"/><circle cx="36" cy="46" r="4" fill="currentColor"/><path d="M36 50v5"/></svg>
-      <div class="alert__body"><strong>Kitlerin kısa bir mola verdi.</strong><span style="font-size:15px;line-height:1.55">AP Human Geography · Unit 1 quizinin son tarihi geçti. Hocan notunu girince kitlerin kendiliğinden açılır; senin bir şey yapmana gerek yok.</span></div>
-      <span class="chip chip--plain mono">NOT BEKLENİYOR</span>
-    </section>
-
-    <section class="card empty rise" data-k="empty" hidden>
-      <svg width="280" height="190" viewBox="0 0 280 190" fill="none" stroke="var(--muted)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M20 150 H260"/><path d="M30 150 V170 M250 150 V170"/>
-        <rect class="a-sway" x="60" y="70" width="26" height="80" rx="4" stroke-dasharray="6 7"/>
-        <rect x="96" y="90" width="26" height="60" rx="4" stroke-dasharray="6 7"/>
-        <rect x="132" y="60" width="26" height="90" rx="4" stroke-dasharray="6 7"/>
-        <path d="M196 150 l26 -70 l18 7 l-26 70z" fill="#E07A3F" stroke="#E07A3F"/>
-      </svg>
-      <div class="stack" style="flex:1 1 320px;gap:12px">
-        <span class="hand" style="color:var(--macro);font-size:30px">raf boş… şimdilik</span>
-        <h2 class="h2" style="font-size:34px">Henüz bir kite başlamadın.</h2>
-        <p class="muted" style="line-height:1.6">Bir ders seç, ilk videoyu aç; ilerlemen burada birikmeye başlasın.</p>
-        <a class="btn btn--primary" style="align-self:flex-start" href="../index.html#sinav">Bir kit seç →</a>
-      </div>
-    </section>
-
-    <div class="stack" style="gap:32px" data-k="full">
-      <section class="row" style="gap:24px">
-        <a class="card resume rise d1" href="../unite/" data-dim>
-          <div class="resume__band" aria-hidden="true">
-            <span class="bob-dot"></span>
-            <svg viewBox="0 0 130 100" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M10 6 V90 H124"/><path d="M10 20 C 60 22, 100 50, 116 90"/><g><circle r="5" fill="#FFFFFF" stroke="none"/><circle r="10" fill="#FFFFFF" fill-opacity=".3" stroke="none"/><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" path="M10 20 C 60 22, 100 50, 116 90"/></g></svg>
-          </div>
-          <div class="resume__body">
-            <span class="mono muted">KALDIĞIN YER · AP MACRO · UNIT 1</span>
-            <span class="display" style="font-size:32px;line-height:1.05;letter-spacing:-.02em">1.2-1 Fırsat Maliyeti ve PPC</span>
-            <span class="muted" style="font-size:15px">Video 3:59 · ardından 5 soru</span>
-            <div class="row" style="align-items:center;gap:12px;margin-top:auto;flex-wrap:nowrap"><div class="progress" role="progressbar" aria-label="Unit 1 ilerleme" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span style="--w:10%"></span></div><span class="mono">%10</span></div>
-            <span class="btn btn--primary" style="align-self:flex-start;margin-top:6px">Devam et →</span>
-          </div>
-        </a>
-        <div class="card week rise d2" aria-labelledby="hafta-h">
-          <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3" id="hafta-h">Bu hafta</h2><span class="streak" data-k="w-seri"></span></div>
-          <div class="week__days" data-k="w-gunler" role="img" aria-label="Bu haftanın çalışma günleri"></div>
-          <div class="week__stats">
-            <div><b data-k="w-bolum">0</b><span>bölüm bitti</span></div>
-            <div><b data-k="w-soru">0</b><span>soru çözüldü</span></div>
-            <div><b data-k="w-oran">—</b><span>doğru</span></div>
-          </div>
-          <span class="hand" style="font-size:22px;rotate:-2deg;align-self:flex-end" data-k="w-not"></span>
-        </div>
-      </section>
-
-      <section class="dash rise d3">
-        <div class="card dash__card" aria-labelledby="mk-h">
-          <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3" id="mk-h">Kitlerim</h2><a class="btn btn--link" style="font-size:14px" href="../kitlerim/">Hepsi →</a></div>
-          <div class="mini-kits" data-k="mini-kits" data-dim></div>
-        </div>
-        <div class="card quiz-list dash__card">
-          <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3">Yaklaşan quizler</h2><a class="btn btn--link" style="font-size:14px" href="../notlarim/">Notlarım →</a></div>
-          <div class="stack" style="gap:12px" data-k="quizzes"></div>
-        </div>
-        <div class="card dash__card son-defter" aria-labelledby="sd-h">
-          <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3" id="sd-h">Son defterin</h2><a class="btn btn--link" style="font-size:14px" href="../defterler/">Defterler →</a></div>
-          <div data-k="son-defter"></div>
-        </div>
-        <div class="card dash__card next-badge" aria-labelledby="nb-h">
-          <div class="row" style="align-items:center;justify-content:space-between"><h2 class="h3" id="nb-h">Sıradaki rozet</h2><a class="btn btn--link" style="font-size:14px" href="../profil/">Rozetler →</a></div>
-          <div class="next-badge__body" data-k="next-badge"></div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-</div>
-<nav data-k="bottom-nav" data-active="panel"></nav>
-<script src="../assets/data.js?v=39"></script>
-<script src="../assets/hesap.js?v=39"></script>
-<script src="../assets/icerik.js?v=39"></script>
-<script src="../assets/defter.js?v=39"></script>
-<script src="../assets/kitora.js?v=39"></script>
-</body>
+<body style="font-family:system-ui,sans-serif;padding:24px">Kitora artık <a href="/kitpath/panel/">Kitpath</a>.</body>
 </html>

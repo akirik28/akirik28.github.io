@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph301 · 3.1 Akım, Gerilim ve Direnç (Current, Voltage and Resistance)
+/* Kitpath not defteri · ph301 · 3.1 Akım, Gerilim ve Direnç (Current, Voltage and Resistance)
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 3) + MEB FİZ.10 Elektrik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph301",

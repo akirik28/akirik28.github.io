@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg203 · Nüfusun Yapısı (Population Composition)
+/* Kitpath not defteri · hg203 · Nüfusun Yapısı (Population Composition)
    Kaynak: AP HuG CED Topic 2.3 (PSO-2.E.1, 2.F.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg203",

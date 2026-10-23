@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg407 · 4.7 Yönetim Biçimleri
+/* Kitpath not defteri · hg407 · 4.7 Yönetim Biçimleri
    Kaynak: AP HuG CED Topic 4.7 (IMP-4.C, IMP-4.D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg407",

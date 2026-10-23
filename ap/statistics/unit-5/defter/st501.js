@@ -1,4 +1,4 @@
-/* Kitora not defteri · st501 · 5.1–5.2 Normal Dağılıma Yeniden Bakış
+/* Kitpath not defteri · st501 · 5.1–5.2 Normal Dağılıma Yeniden Bakış
    Kapsam: parameter / statistic, sampling variability, sampling distribution, normal model (z, 68-95-99.7, tablo). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st501",

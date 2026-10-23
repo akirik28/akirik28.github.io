@@ -385,7 +385,7 @@
   function locked(view) { return isGuest() && view !== 0; }
   function loginUrl(view, kayit) {
     var d = window.location.pathname + (view == null ? "" : "#" + (view >= N ? "sinav" : EPS[view].slug));
-    return "/kitora/giris/?" + (kayit ? "mod=kayit&" : "") + "devam=" + encodeURIComponent(d);
+    return "/kitpath/giris/?" + (kayit ? "mod=kayit&" : "") + "devam=" + encodeURIComponent(d);
   }
   var LOCK_SVG = '<svg viewBox="0 0 160 120" aria-hidden="true">' +
     '<g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity=".55">' +
@@ -1326,7 +1326,7 @@
   /* oturum yoksa giriş sayfasına git; giriş yapınca bu kite dönülür */
   function toLogin() {
     var u = window.location.pathname + window.location.hash;
-    try { window.location.replace("/kitora/giris/?devam=" + encodeURIComponent(u)); } catch (e) { window.location.href = "/kitora/giris/"; }
+    try { window.location.replace("/kitpath/giris/?devam=" + encodeURIComponent(u)); } catch (e) { window.location.href = "/kitpath/giris/"; }
   }
   function showPicker() {
     active = null; ui.pick = null;
@@ -1342,7 +1342,7 @@
     save(); closeMenu();
     try { var v = document.querySelector(".frame video"); if (v) v.pause(); } catch (e) {}
     if (H) H.cikis();
-    try { window.location.assign("/kitora/giris/"); } catch (e) { window.location.href = "/kitora/giris/"; }
+    try { window.location.assign("/kitpath/giris/"); } catch (e) { window.location.href = "/kitpath/giris/"; }
   }
   function closeMenu() { if (whoMenu) whoMenu.hidden = true; if (whoBtn) whoBtn.setAttribute("aria-expanded", "false"); }
   function openMenu() {

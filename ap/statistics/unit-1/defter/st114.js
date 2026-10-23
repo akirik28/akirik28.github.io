@@ -1,4 +1,4 @@
-/* Kitora not defteri · st114 · 1G-2 Kötü Örnekleme ve Bias
+/* Kitpath not defteri · st114 · 1G-2 Kötü Örnekleme ve Bias
    Kaynak: ap-videolar/src/episodes/st114 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st114",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st803 · 8.4 İki Yönlü Tabloda Beklenen Sayılar
+/* Kitpath not defteri · st803 · 8.4 İki Yönlü Tabloda Beklenen Sayılar
    Kaynak: AP Statistics CED Unit 8 (Topic 8.4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st803",

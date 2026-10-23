@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch302 · 3.2 Mol Kütlesi ve Mol Hacmi
+/* Kitpath not defteri · ch302 · 3.2 Mol Kütlesi ve Mol Hacmi
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 2: mol kütlesi, mol hacmi, bilinmeyen mol kütlesi). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch302",

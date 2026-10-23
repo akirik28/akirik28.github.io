@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg205 · Demografik Dönüşüm Modeli (The Demographic Transition Model)
+/* Kitpath not defteri · hg205 · Demografik Dönüşüm Modeli (The Demographic Transition Model)
    Kaynak: AP HuG CED Topic 2.5 (IMP-2.B.1, 2.B.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg205",

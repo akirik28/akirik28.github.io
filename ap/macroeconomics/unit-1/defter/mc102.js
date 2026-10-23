@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc102 · 1.2 Fırsat Maliyeti ve PPC
+/* Kitpath not defteri · mc102 · 1.2 Fırsat Maliyeti ve PPC
    Kaynak: ap-videolar/src/episodes/mc102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc102",

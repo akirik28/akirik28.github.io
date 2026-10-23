@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf26 · 2.6 Yer ve Dağıtım Kanalları
+/* Kitpath not defteri · bf26 · 2.6 Yer ve Dağıtım Kanalları
    Kaynak: ap-videolar/src/episodes/bf26 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf26",

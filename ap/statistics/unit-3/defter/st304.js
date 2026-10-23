@@ -1,4 +1,4 @@
-/* Kitora not defteri · st304 · 3D Deney Tasarımına Giriş (CED 3.5)
+/* Kitpath not defteri · st304 · 3D Deney Tasarımına Giriş (CED 3.5)
    Kaynak: AP Statistics CED Unit 3 (3.5 Introduction to Experimental Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st304",

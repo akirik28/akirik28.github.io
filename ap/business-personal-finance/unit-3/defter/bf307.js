@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf307 · 3.7 Bilanço ve Net Değer
+/* Kitpath not defteri · bf307 · 3.7 Bilanço ve Net Değer
    Kaynak: AP Business with Personal Finance CED, Topic 3.7. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf307",

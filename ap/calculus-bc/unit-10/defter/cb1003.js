@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1003 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · cb1003 · AP Calculus BC Unit 10 (videosuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1003",
   amac: "Bu konu *nth term test for divergence* yani n. terim testini anlatıyor: terimler 0'a gitmiyorsa seri kesin ıraksar. Testin yalnızca ıraksaklığı kanıtladığını, terimler 0'a giderken ise hiçbir şey söylemediğini öğreneceksin.",

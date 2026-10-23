@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc505 · 5.5 Dışlama Etkisi
+/* Kitpath not defteri · mc505 · 5.5 Dışlama Etkisi
    Kaynak: CED Topic 5.5 (POL-3.C). Blok türleri: /ap/_kit/defter.js başı.
    Taban (ödünç fon): S y = x, D₁ y = 10 − x, D₂ y = 12 − x; denge (5,5) → (6,6). Grafik biriminde 1 = 100 milyar TL. */
 window.DEFTER = (function () {

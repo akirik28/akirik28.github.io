@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc201 · 2.1 İkinci Dereceden Denklemler
+/* Kitpath not defteri · pc201 · 2.1 İkinci Dereceden Denklemler
    Kaynak: öğretmenin ders sunumu (Unit#2_1 Quadratic Equations) + Review for Exam#2; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc201",

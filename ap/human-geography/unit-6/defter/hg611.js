@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg611 · Kentsel Sürdürülebilirliğin Sorunları
+/* Kitpath not defteri · hg611 · Kentsel Sürdürülebilirliğin Sorunları
    Kaynak: AP HuG CED Topic 6.11 (SPS-6.B.1, SPS-6.B.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg611",

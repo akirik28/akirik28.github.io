@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb401 · 4.1 Türevin Bağlamdaki Anlamı
+/* Kitpath not defteri · cb401 · 4.1 Türevin Bağlamdaki Anlamı
    Videosuz ünite: CED 4.1 (Interpreting the Meaning of the Derivative in Context). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb401",

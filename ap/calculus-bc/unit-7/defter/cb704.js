@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb704 · 7.6-7.7 Değişkenlerine Ayırma ve Başlangıç Koşulu
+/* Kitpath not defteri · cb704 · 7.6-7.7 Değişkenlerine Ayırma ve Başlangıç Koşulu
    Kaynak: College Board CED (Calculus BC, Unit 7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb704",

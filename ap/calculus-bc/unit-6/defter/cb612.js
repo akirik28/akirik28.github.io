@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb612 · 6.14 İntegral Yöntemi Seçmek
+/* Kitpath not defteri · cb612 · 6.14 İntegral Yöntemi Seçmek
    Kaynak: AP Calculus BC CED 6.14. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb612",

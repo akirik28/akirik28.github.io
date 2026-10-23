@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi102 · 1.5 Fayda-Maliyet Analizi
+/* Kitpath not defteri · mi102 · 1.5 Fayda-Maliyet Analizi
    Kaynak: ap-videolar/src/episodes/mi102 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mi102",

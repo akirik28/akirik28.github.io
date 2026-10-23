@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi206 · 2.6 Su, Toprak, Radyoaktif ve Gürültü Kirliliği
+/* Kitpath not defteri · bi206 · 2.6 Su, Toprak, Radyoaktif ve Gürültü Kirliliği
    Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: water, soil, radioactive pollution, erosion) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi206",

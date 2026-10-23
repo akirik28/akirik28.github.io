@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch204 · 2.4 Yükseltgenme ve İndirgenme
+/* Kitpath not defteri · ch204 · 2.4 Yükseltgenme ve İndirgenme
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 2) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch204",

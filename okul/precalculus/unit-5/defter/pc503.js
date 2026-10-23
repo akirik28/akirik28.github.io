@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc503 · 5.3 Logaritmik Fonksiyonlar ve Grafikler
+/* Kitpath not defteri · pc503 · 5.3 Logaritmik Fonksiyonlar ve Grafikler
    Kaynak: okul-10-2025-26.md (Precalculus Unit 5) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc503",

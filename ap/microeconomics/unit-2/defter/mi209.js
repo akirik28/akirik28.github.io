@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi209 · 2.9 Uluslararası Ticaret ve Kamu Politikası
+/* Kitpath not defteri · mi209 · 2.9 Uluslararası Ticaret ve Kamu Politikası
    Kaynak: AP Micro CED, Topic 2.9 (POL-1.B.1–3). Blok türleri: /ap/_kit/defter.js başı.
    Sayısal taban: D: P = 100 − Q, S: P = Q; otarşi dengesi (50 adet, 50 TL). Grafikte 1 birim = 10 TL ve 10 adet.
    Not: CED, kota grafiğinin çizimini sınav dışı bırakır; kotanın miktar etkisi kapsam içidir. */

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py203 · 2.3 Belleğe Giriş
+/* Kitpath not defteri · py203 · 2.3 Belleğe Giriş
    Kaynak: AP Psychology CED 2024, Topic 2.3 (2.3.A.1–5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py203",

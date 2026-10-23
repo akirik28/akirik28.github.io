@@ -1,4 +1,4 @@
-/* Kitora not defteri · py105 · 1.5 Uyku
+/* Kitpath not defteri · py105 · 1.5 Uyku
    Kaynak: AP Psychology CED (2024) Topic 1.5. Blok türleri: /ap/_kit/defter.js başı.
    Not: uyku grafiği kavramsal bir gece örneğidir (gerçek kayıt değil). Y: Uyanık 8 · REM 6,5 · N1 5 · N2 3,2 · N3 1,2. */
 window.DEFTER = {

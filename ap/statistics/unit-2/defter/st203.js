@@ -1,4 +1,4 @@
-/* Kitora not defteri · st203 · 2.4 Saçılım Grafiği
+/* Kitpath not defteri · st203 · 2.4 Saçılım Grafiği
    Kaynak: AP Statistics CED Unit 2, Topic 2.4 (Representing the Relationship Between Two Quantitative Variables). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st203",

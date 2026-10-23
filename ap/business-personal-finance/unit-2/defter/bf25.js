@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf25 · 2.5 Fiyat
+/* Kitpath not defteri · bf25 · 2.5 Fiyat
    Kaynak: ap-videolar/src/episodes/bf25 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf25",

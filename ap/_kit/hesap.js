@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KİTORA HESAPLARI — Kitora sayfaları, kit.js, bluebook.js ve Deneme 2 bunu kullanır.
+   KİTORA HESAPLARI — Kitpath sayfaları, kit.js, bluebook.js ve Deneme 2 bunu kullanır.
    Hesap: ad + e-posta + şifre (ap_kayit), giriş: e-posta + şifre (ap_giris).
    - Bu cihazda giriş yapılmış hesaplar: localStorage "ap-hesap:v1:hesaplar"
    - Açık oturum:                        localStorage "ap-hesap:v1:oturum"
@@ -152,10 +152,10 @@
   }
   /* kitler açılmadan önce tamamlanması gereken adım: kurulum ya da süresi geçen quiz notu */
   function engel(p) {
-    if (!p) return "/kitora/baslangic/";
-    if (!p.onay || !p.sinif || p.katilim == null) return "/kitora/baslangic/";
-    if (p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "/kitora/baslangic/";   /* seçmeliler yalnızca 11. sınıftan istenir */
-    if (p.katilim && p.bekleyen && p.bekleyen.length) return "/kitora/notlar/";
+    if (!p) return "/kitpath/baslangic/";
+    if (!p.onay || !p.sinif || p.katilim == null) return "/kitpath/baslangic/";
+    if (p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "/kitpath/baslangic/";   /* seçmeliler yalnızca 11. sınıftan istenir */
+    if (p.katilim && p.bekleyen && p.bekleyen.length) return "/kitpath/notlar/";
     return null;
   }
 

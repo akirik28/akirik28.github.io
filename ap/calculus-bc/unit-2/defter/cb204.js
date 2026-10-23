@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb204 · 2.4 Türevlenebilirlik ve Süreklilik
+/* Kitpath not defteri · cb204 · 2.4 Türevlenebilirlik ve Süreklilik
    Kaynak: ap-videolar/src/episodes/cb204 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb204",

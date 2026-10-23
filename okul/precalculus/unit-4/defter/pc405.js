@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc405 · 4.5 Sinüs ve Kosinüs Teoremleri
+/* Kitpath not defteri · pc405 · 4.5 Sinüs ve Kosinüs Teoremleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus Unit 4) + MEB 10. sınıf trigonometri. Blok türleri: /ap/_kit/defter.js başı.
    Not: SSA grafiğinde A (1, 2), C (7.93, 6) ve yer çizgisi y = 2; A = 30°, b = 8 birim, h = 4. a = 3, 4, 5, 8.5 için B noktaları
    C'den yere inen çemberin kesimidir: x = 7.93 ± √(a² − 16). */

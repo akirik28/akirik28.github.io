@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi504 · 5.4 Monopson
+/* Kitpath not defteri · mi504 · 5.4 Monopson
    Kaynak: CED Topic 5.4 (PRD-4.D). Blok türleri: /ap/_kit/defter.js başı.
    Not: grafikte yatay eksen işçi, düşey eksen 10 TL birimi. MRP = 60 − 10L, arz W = 10L, MRC = 20L.
    Rekabet: MRP = S → L = 3, W = 30. Monopson: MRP = MRC → L = 2; ücret arz eğrisinden 20. DWL = ½ × 1 × 20 = 10 TL. */

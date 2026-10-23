@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf13 · 1.3 PESTEL ve İş Ortamı
+/* Kitpath not defteri · bf13 · 1.3 PESTEL ve İş Ortamı
    Kaynak: ap-videolar/src/episodes/bf13 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf13",

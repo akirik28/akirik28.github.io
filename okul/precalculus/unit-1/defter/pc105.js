@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc105 · 1.5 Fonksiyon Dönüşümleri
+/* Kitpath not defteri · pc105 · 1.5 Fonksiyon Dönüşümleri
    Kaynak: öğretmenin ders sunumu (Unit#1_5 Transformations of Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc105",

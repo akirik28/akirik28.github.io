@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg707 · Dünya Ekonomisinin Yol Açtığı Değişimler
+/* Kitpath not defteri · hg707 · Dünya Ekonomisinin Yol Açtığı Değişimler
    Kaynak: AP HuG CED Topic 7.7 (PSO-7.A.5–A.7). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg707",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf27 · 2.7 Tutundurma
+/* Kitpath not defteri · bf27 · 2.7 Tutundurma
    Kaynak: ap-videolar/src/episodes/bf27 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf27",

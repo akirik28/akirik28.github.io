@@ -1,4 +1,4 @@
-/* Kitora not defteri · st507 · 5.8 Ortalama Farkının Dağılımı
+/* Kitpath not defteri · st507 · 5.8 Ortalama Farkının Dağılımı
    Kapsam: x̄₁ − x̄₂ sampling distribution (mean μ₁ − μ₂, SD √(σ₁²/n₁ + σ₂²/n₂)), bağımsızlık, 10%, her grup için normal ya da n ≥ 30, olasılık hesabı. */
 window.DEFTER = {
   slug: "st507",

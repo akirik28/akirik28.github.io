@@ -1,4 +1,4 @@
-/* Kitora not defteri · en301 · 3.1 Bağlam ve Anlatıcı
+/* Kitpath not defteri · en301 · 3.1 Bağlam ve Anlatıcı
    Kaynak: okul 10. sınıf English Unit 3 (The Catcher in the Rye): öğretmen/bölüm materyali (Byrd, Akyürek, Woods) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı.
    Telif: romandan yalnız 2 kısa alıntı (Ch 1, her biri ≤10 kelime); gerisi kendi cümlelerimizle. Materyalde olmayan ekler "Ek bilgi" etiketlidir. */
 window.DEFTER = {

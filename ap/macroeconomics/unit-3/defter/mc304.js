@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc304 · 3.4 Uzun Dönem Toplam Arz (LRAS)
+/* Kitpath not defteri · mc304 · 3.4 Uzun Dönem Toplam Arz (LRAS)
    Kaynak: College Board CED, Topic 3.4 (MOD-2.E, MOD-2.F). Blok türleri: /ap/_kit/defter.js başı.
    Not: yazıda tam istihdam çıktısı "Y∗" (U+2217) ile yazılır; "*" metin işaretiyle karışmasın diye. */
 window.DEFTER = (function () {

@@ -1,4 +1,4 @@
-/* Kitora not defteri · py503 · 5.3 Psikolojik Bozuklukları Açıklamak ve Sınıflandırmak
+/* Kitpath not defteri · py503 · 5.3 Psikolojik Bozuklukları Açıklamak ve Sınıflandırmak
    Kaynak: College Board CED, Topic 5.3 (5.3.A, 5.3.B, 5.3.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py503",

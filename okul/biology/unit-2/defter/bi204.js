@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi204 · 2.4 Madde Döngüleri
+/* Kitpath not defteri · bi204 · 2.4 Madde Döngüleri
    Kaynak: öğretmen lecture'ı (Topic 2.4 Cycles: water, carbon, nitrogen; Biosphere-2) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 /* Not: lecture'ın azot slaytlarında bazı ifadeler karışık (ör. nitratın azot bağlayıcı bakterilerle atmosfere döndüğü yazıyor); standart bilgi ve lecture'ın kendi şemasındaki adlandırma (denitrifying bacteria) kullanıldı. */
 window.DEFTER = {

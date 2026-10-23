@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf303 · 3.3 Muhasebe ve Finansal Yönetim
+/* Kitpath not defteri · bf303 · 3.3 Muhasebe ve Finansal Yönetim
    Kaynak: AP Business with Personal Finance CED, Topic 3.3. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf303",

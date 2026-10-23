@@ -1,4 +1,4 @@
-/* Kitora not defteri · ep10 · Coğrafi Araçlar
+/* Kitpath not defteri · ep10 · Coğrafi Araçlar
    Kaynak: ap-videolar/src/episodes/ep10 (script.ts) + AP HuG Unit 1 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ep10",

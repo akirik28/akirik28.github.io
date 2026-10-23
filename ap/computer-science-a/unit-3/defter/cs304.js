@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs304 · 3.5 Metot Yazmak
+/* Kitpath not defteri · cs304 · 3.5 Metot Yazmak
    Kaynak: AP CSA 2025–26 CED, Unit 3 (Class Creation) öğrenme hedefleri; sınav biçimi FRQ 2 (Class Design). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cs304",

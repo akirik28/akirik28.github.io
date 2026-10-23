@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch402 · 4.2 Gaz Yasaları
+/* Kitpath not defteri · ch402 · 4.2 Gaz Yasaları
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 3: gazlar) + MEB 10. sınıf standart içeriği (Boyle, Charles, Gay-Lussac, Avogadro). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch402",

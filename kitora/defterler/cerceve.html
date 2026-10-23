@@ -2,91 +2,12 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Not defteri · Kitora</title>
-<!--
-  Kitora UI v2 · orijinal not defteri çerçevesi.
-  Canlı sitedeki defteri birebir (kendi motoru _kit/defter.js ve stili defter.css ile) gösterir;
-  v2 sayfaları bunu iframe içinde açar: defterler/cerceve.html?u=<ünite>&yol=ap|okul/<ders>/unit-N/&liste=kit-data.js|defter/defter-liste.js|ikisi&b=<bölüm>&tema=koyu|acik[&misafir=1]#b2
-  - Defter dosyaları canlı siteden gelir (<base>), hiçbiri kopyalanmaz.
-  - Hesap: v2'nin hesap.js'i (aynı anahtarlar); misafirde hiç yüklenmez, böylece Unit 1 defterlerinin hepsi açık kalır.
-  - Defterin kendi bağlantıları (önceki/sonraki defter, "Videosu", "Bütün defterler") v2 sayfalarına çevrilir.
--->
-<script>
-(function () {
-  "use strict";
-  var p = new URLSearchParams(location.search);
-  var yol = p.get("yol") || "", liste = p.get("liste") || "", b = p.get("b") || "";
-  if (!/^(ap|okul)\/[a-z-]+\/unit-\d+\/$/.test(yol) || !/^(kit-data\.js|defter\/defter-liste\.js|ikisi)$/.test(liste) || !/^[a-z0-9-]+$/i.test(b)) { window.CERCEVE_HATA = true; return; }
-  var KOK = /(^|\.)akirik28\.github\.io$/.test(location.hostname) ? location.origin + "/" : "https://akirik28.github.io/";
-  var AYNA = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && location.pathname.match(/^.*\/_test\/ayna\//);   /* yerel deneme (icerik.js'teki gibi) */
-  if (AYNA) KOK = location.origin + AYNA[0];
-  var gun = new Date().toISOString().slice(0, 10).replace(/-/g, "");   /* günde bir önbellek tazelemesi */
-  window.CERCEVE = { v2: location.href, kok: KOK, taban: KOK + yol + "defter/", u: p.get("u") || "", b: b, misafir: p.get("misafir") === "1" };
-  if (p.get("tema") === "koyu") document.documentElement.setAttribute("data-tema", "koyu");
-  var hesap = new URL("../assets/hesap.js?v=22", location.href).href;
-  var w = [];
-  w.push('<base href="' + window.CERCEVE.taban + '">');
-  w.push('<link rel="stylesheet" href="' + KOK + 'assets/fonts/fonts.css">');
-  w.push('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap">');
-  w.push('<link rel="stylesheet" href="' + KOK + 'ap/_kit/kit.css?g=' + gun + '">');
-  w.push('<link rel="stylesheet" href="' + KOK + 'ap/_kit/defter.css?g=' + gun + '">');
-  /* liste: kit-data.js (kit tam) · defter/defter-liste.js (kitsiz) · ikisi (kit yarım: konu listesi + kit, canlı defter sayfası gibi KIT_LISTE) */
-  var listeler = liste === "kit-data.js" ? ["../kit-data.js?g=" + gun] : liste === "ikisi" ? ["defter-liste.js?g=" + gun, "@liste", "../kit-data.js?g=" + gun] : ["defter-liste.js?g=" + gun];
-  window.CERCEVE.betikler = [KOK + "assets/js/motion.js"].concat(listeler, [KOK + "ap/_kit/figs.js?g=" + gun])
-    .concat(window.CERCEVE.misafir ? [] : [hesap]);
-  window.CERCEVE.motor = KOK + "ap/_kit/defter.js?g=" + gun;
-  document.write(w.join(""));
-})();
-</script>
-<style>
-  /* v2 sayfası kendi üst menüsünü ve dönüş bağlantısını gösterir */
-  .top, .foot, .skip-link { display: none !important; }
-  body { padding-top: 6px; }
-  .cerceve-hata { font: 16px/1.6 system-ui, sans-serif; padding: 24px; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitpath</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://akirik28.github.io/kitpath/defterler/cerceve.html">
+<script>location.replace("/kitpath/defterler/cerceve.html" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=/kitpath/defterler/cerceve.html">
 </head>
-<body>
-<main class="wrap d-root" id="defter"></main>
-<script>
-(function () {
-  "use strict";
-  var C = window.CERCEVE;
-  if (!C) { document.body.innerHTML = '<p class="cerceve-hata">Defter bulunamadı.</p>'; return; }
-  window.DEFTER_V = C.b && new Date().toISOString().slice(0, 10).replace(/-/g, "");
-  function yukle(src) { return new Promise(function (ok, no) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = no; document.body.appendChild(s); }); }
-  var i = 0;
-  (function sira() {
-    if (i < C.betikler.length && C.betikler[i] === "@liste") { i++; window.KIT_LISTE = window.KIT; window.KIT = null; sira(); return; }
-    if (i < C.betikler.length) { yukle(C.betikler[i++]).then(sira, sira); return; }
-    /* v2 sayfası kurulum ve not kilidini zaten denetledi; defter motorunun kendi yönlendirmesi çalışmasın */
-    if (window.HESAP) window.HESAP.engel = function () { return null; };
-    yukle(C.motor).then(null, function () { document.getElementById("defter").innerHTML = '<p class="cerceve-hata">Defter şu an yüklenemedi. İnternetini kontrol edip sayfayı yenile.</p>'; });
-  })();
-
-  /* defterin kendi bağlantıları → v2 sayfaları (üst pencerede) */
-  document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest("a[href]");
-    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
-    var h = a.getAttribute("href");
-    if (h.charAt(0) === "#") return;                               /* defter içi başlık bağlantıları */
-    e.preventDefault();
-    try { parent.postMessage({ kitoraDefter: "git", href: new URL(h, C.taban).href }, location.origin); } catch (x) {}
-  }, true);
-
-  /* hangi başlıktasın: üst sayfa "son defterin" kartı için kullanır */
-  var son = -2;
-  function bildir() {
-    var secs = document.querySelectorAll(".d-sec[id^='b']"), cur = -1, k;
-    for (k = 0; k < secs.length; k++) if (secs[k].getBoundingClientRect().top < innerHeight * .35) cur = k;
-    if (cur === son) return;
-    son = cur;
-    try { parent.postMessage({ kitoraDefter: "bolum", bolum: Math.max(0, cur), toplam: secs.length }, location.origin); } catch (x) {}
-  }
-  addEventListener("scroll", bildir, { passive: true });
-  addEventListener("keydown", function (e) { if (e.key === "Escape") try { parent.postMessage({ kitoraDefter: "esc" }, location.origin); } catch (x) {} });
-  setTimeout(bildir, 1500);
-})();
-</script>
-</body>
+<body style="font-family:system-ui,sans-serif;padding:24px">Kitora artık <a href="/kitpath/defterler/cerceve.html">Kitpath</a>.</body>
 </html>

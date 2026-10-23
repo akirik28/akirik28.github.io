@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf21 · 2.1 Müşteriye Pazarlama
+/* Kitpath not defteri · bf21 · 2.1 Müşteriye Pazarlama
    Kaynak: ap-videolar/src/episodes/bf21 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf21",

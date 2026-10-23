@@ -1,4 +1,4 @@
-/* Kitora not defteri · mi305 · 3.5 Kâr Maksimizasyonu
+/* Kitpath not defteri · mi305 · 3.5 Kâr Maksimizasyonu
    Kaynak: AP Micro CED, Topic 3.5 (CBA-2.D.1). Blok türleri: /ap/_kit/defter.js başı.
    Unit 3'ün ortak kantin verisi (FC 60): TC 60,69,72,75,84,105,144 · MC 9,3,3,9,21,39 · ATC(Q=2…6) 36,25,21,21,24.
    P = 30: TR 0,30,…,180; kâr −60,−39,−12,15,36,45,36 → Q∗ = 5, kâr 45.  P = 24: Q∗ = 5, kâr 15. */

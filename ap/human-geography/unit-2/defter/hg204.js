@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg204 · Nüfus Dinamikleri (Population Dynamics)
+/* Kitpath not defteri · hg204 · Nüfus Dinamikleri (Population Dynamics)
    Kaynak: AP HuG CED Topic 2.4 (IMP-2.A.1, 2.A.2, 2.A.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg204",

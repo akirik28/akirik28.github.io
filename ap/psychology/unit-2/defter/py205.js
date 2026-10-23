@@ -1,4 +1,4 @@
-/* Kitora not defteri · py205 · 2.5 Bellekte Depolama
+/* Kitpath not defteri · py205 · 2.5 Bellekte Depolama
    Kaynak: AP Psychology CED 2024, Topic 2.5 (2.5.A.1–4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py205",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb1013 · 10.14–10.15 Taylor/Maclaurin Serileri ve Kuvvet Serileri
+/* Kitpath not defteri · cb1013 · 10.14–10.15 Taylor/Maclaurin Serileri ve Kuvvet Serileri
    Kaynak: College Board AP Calculus BC CED, Topics 10.14 ve 10.15. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb1013",

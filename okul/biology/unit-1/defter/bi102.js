@@ -1,4 +1,4 @@
-/* Kitora not defteri · bi102 · 1.2 Işık ve Pigmentler
+/* Kitpath not defteri · bi102 · 1.2 Işık ve Pigmentler
    Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: light, pigments, spectra) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafik notu: x ekseni dalga boyu − 400 nm (0 = 400 nm, 300 = 700 nm); y ekseni göreli değerdir (şematik, 0–100). */
 window.DEFTER = {

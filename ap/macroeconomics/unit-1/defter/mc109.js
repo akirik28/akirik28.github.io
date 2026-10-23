@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc109 · 1.6 Denge, Fazla ve Kıtlık
+/* Kitpath not defteri · mc109 · 1.6 Denge, Fazla ve Kıtlık
    Kaynak: ap-videolar/src/episodes/mc109 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı.
    Not: yardımcı işlevler yalnızca ortak eksen ve D/S eğrilerini üretir (1 birim = 10 tost, 1 birim = 10 TL). */
 window.DEFTER = (function () {

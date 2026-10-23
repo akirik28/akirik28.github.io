@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc502 · 5.2 Logaritma ve Özellikleri
+/* Kitpath not defteri · pc502 · 5.2 Logaritma ve Özellikleri
    Kaynak: okul-10-2025-26.md (Precalculus Unit 5) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc502",

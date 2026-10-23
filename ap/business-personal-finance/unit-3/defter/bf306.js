@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf306 · 3.6 Gelir Tablosu
+/* Kitpath not defteri · bf306 · 3.6 Gelir Tablosu
    Kaynak: AP Business with Personal Finance CED, Topic 3.6. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf306",

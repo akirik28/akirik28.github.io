@@ -1,4 +1,4 @@
-/* Kitora not defteri · py405 · 4.5 Sosyal-Bilişsel ve Özellik Kuramları
+/* Kitpath not defteri · py405 · 4.5 Sosyal-Bilişsel ve Özellik Kuramları
    Kaynak: College Board CED, Topic 4.5 (4.5.A, 4.5.B). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py405",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg704 · Kadınlar ve Ekonomik Kalkınma
+/* Kitpath not defteri · hg704 · Kadınlar ve Ekonomik Kalkınma
    Kaynak: AP HuG CED Topic 7.4 (SPS-7.D.1–D.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg704",

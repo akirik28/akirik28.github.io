@@ -1,4 +1,4 @@
-/* Kitora not defteri · cs401 · 4.1–4.2 Veri Toplamanın Etiği ve Veri Setleri
+/* Kitpath not defteri · cs401 · 4.1–4.2 Veri Toplamanın Etiği ve Veri Setleri
    Kaynak: AP CSA 2025–26 CED (Unit 4) öğrenme hedefleri; videosuz defter. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   "slug": "cs401",

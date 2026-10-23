@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph402 · 4.2 Dalga Türleri
+/* Kitpath not defteri · ph402 · 4.2 Dalga Türleri
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Physics Unit 4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph402",

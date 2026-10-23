@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg512 · Tarımda Kadınlar (5.12)
+/* Kitpath not defteri · hg512 · Tarımda Kadınlar (5.12)
    Kaynak: AP HuG CED Topic 5.12 (IMP-5.C.1). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg512",

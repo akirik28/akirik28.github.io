@@ -1,4 +1,4 @@
-/* Kitora not defteri · ph403 · 4.3 Dalga Hızını Etkileyenler
+/* Kitpath not defteri · ph403 · 4.3 Dalga Hızını Etkileyenler
    Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Physics Unit 4). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph403",

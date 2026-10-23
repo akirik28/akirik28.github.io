@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch102 · 1.2 Molekül Arası Kuvvet Türleri
+/* Kitpath not defteri · ch102 · 1.2 Molekül Arası Kuvvet Türleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 1) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch102",

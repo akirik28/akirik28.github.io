@@ -1,4 +1,4 @@
-/* Kitora not defteri · pc504 · 5.4 Üstel ve Logaritmik Denklemler
+/* Kitpath not defteri · pc504 · 5.4 Üstel ve Logaritmik Denklemler
    Kaynak: okul-10-2025-26.md (Precalculus Unit 5) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc504",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st207 · 2.9 Doğrusallıktan Sapmalar
+/* Kitpath not defteri · st207 · 2.9 Doğrusallıktan Sapmalar
    Kaynak: AP Statistics CED Unit 2, Topic 2.9 (Analyzing Departures from Linearity). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st207",

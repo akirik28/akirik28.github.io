@@ -1,4 +1,4 @@
-/* Kitora not defteri · en204 · 2.4 Temalar ve Motifler
+/* Kitpath not defteri · en204 · 2.4 Temalar ve Motifler
    Kaynak: öğretmen (Dr Byrd) Oedipus belgeleri (soru vurguları, çeviri karşılaştırma belgesi; satır no. Fagles baskısı, Fagles alıntısı yok) + oyunun standart tema analizi. Alıntılar: F. Storr çevirisi (1912) ve R. C. Jebb çevirisi (1887, yalnız doğrulanmış satır). Storr satırları Gutenberg metninden kontrol edildi; satır numarası verilmedi (Yunanca numaralama Fagles'tan farklıdır). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en204",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch504 · 5.4 Koligatif Özellikler
+/* Kitpath not defteri · ch504 · 5.4 Koligatif Özellikler
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 4: donma noktası alçalması, kaynama noktası yükselmesi, i değeri, yolda buzlanmaya karşı tuz). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch504",

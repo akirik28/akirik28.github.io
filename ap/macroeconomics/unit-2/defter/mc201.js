@@ -1,4 +1,4 @@
-/* Kitora not defteri · mc201 · 2.1 Döngüsel Akış ve GSYH
+/* Kitpath not defteri · mc201 · 2.1 Döngüsel Akış ve GSYH
    Kaynak: College Board CED, Topic 2.1 (MEA-1.A). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "mc201",

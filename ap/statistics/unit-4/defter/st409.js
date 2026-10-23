@@ -1,4 +1,4 @@
-/* Kitora not defteri · st409 · 4.10–4.11 Binom Dağılımı ve Parametreleri
+/* Kitpath not defteri · st409 · 4.10–4.11 Binom Dağılımı ve Parametreleri
    Kaynak: AP Statistics CED Topics 4.10 ve 4.11 (video kiti yok). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st409",

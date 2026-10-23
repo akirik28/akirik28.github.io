@@ -1,4 +1,4 @@
-/* Kitora not defteri · st408 · 4.9 Rastgele Değişkenleri Birleştirmek
+/* Kitpath not defteri · st408 · 4.9 Rastgele Değişkenleri Birleştirmek
    Kaynak: AP Statistics CED Topic 4.9 (video kiti yok). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st408",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · bf22 · 2.2 Tüketici Davranışı
+/* Kitpath not defteri · bf22 · 2.2 Tüketici Davranışı
    Kaynak: ap-videolar/src/episodes/bf22 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bf22",

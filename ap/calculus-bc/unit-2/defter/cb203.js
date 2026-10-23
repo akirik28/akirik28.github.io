@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb203 · 2.3 Türevi Tahmin Etmek
+/* Kitpath not defteri · cb203 · 2.3 Türevi Tahmin Etmek
    Kaynak: ap-videolar/src/episodes/cb203 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb203",

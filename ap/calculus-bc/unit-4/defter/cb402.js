@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb402 · 4.2 Doğrusal Hareket: Konum, Hız, İvme
+/* Kitpath not defteri · cb402 · 4.2 Doğrusal Hareket: Konum, Hız, İvme
    Videosuz ünite: CED 4.2 (Straight-Line Motion: Position, Velocity, and Acceleration). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb402",

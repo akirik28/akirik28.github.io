@@ -1,4 +1,4 @@
-/* Kitora not defteri · st109 · 1D-5 Veriyi Dönüştürmek
+/* Kitpath not defteri · st109 · 1D-5 Veriyi Dönüştürmek
    Kaynak: ap-videolar/src/episodes/st109 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st109",

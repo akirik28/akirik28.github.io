@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg210 · Göçün Nedenleri
+/* Kitpath not defteri · hg210 · Göçün Nedenleri
    Kaynak: AP HuG CED Unit 2, Topic 2.10 (IMP-2.C). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg210",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb607 · 6.9 Değişken Değiştirme (u-substitution)
+/* Kitpath not defteri · cb607 · 6.9 Değişken Değiştirme (u-substitution)
    Kaynak: AP Calculus BC CED 6.9. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb607",

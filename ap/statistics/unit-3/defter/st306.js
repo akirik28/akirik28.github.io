@@ -1,4 +1,4 @@
-/* Kitora not defteri · st306 · 3F Deneylerden Çıkarım (CED 3.7)
+/* Kitpath not defteri · st306 · 3F Deneylerden Çıkarım (CED 3.7)
    Kaynak: AP Statistics CED Unit 3 (3.7 Inference and Experiments). Blok türleri: /ap/_kit/defter.js başı.
    Benzetim sayıları (1000 yeniden atama) betikle üretildi; tohumlu rastgele sayı üreteci. */
 window.DEFTER = {

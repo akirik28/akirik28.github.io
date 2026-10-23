@@ -1,4 +1,4 @@
-/* Kitora not defteri · st108 · 1D-4 Percentile ve z-score
+/* Kitpath not defteri · st108 · 1D-4 Percentile ve z-score
    Kaynak: ap-videolar/src/episodes/st108 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st108",

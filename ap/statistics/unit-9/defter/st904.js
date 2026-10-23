@@ -1,4 +1,4 @@
-/* Kitora not defteri · st904 · 9.6 Bütün Çıkarım Yöntemleri: Seçim
+/* Kitpath not defteri · st904 · 9.6 Bütün Çıkarım Yöntemleri: Seçim
    Kaynak: AP Statistics CED Unit 9 (Topic 9.6; Unit 6–9 yöntemlerinin hepsini kapsar). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st904",

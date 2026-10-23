@@ -1,4 +1,4 @@
-/* Kitora not defteri · st116 · 1H-2 Blocking ve Matched Pairs
+/* Kitpath not defteri · st116 · 1H-2 Blocking ve Matched Pairs
    Kaynak: ap-videolar/src/episodes/st116 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st116",

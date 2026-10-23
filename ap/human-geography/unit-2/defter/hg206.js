@@ -1,4 +1,4 @@
-/* Kitora not defteri · hg206 · Malthus Kuramı (Malthusian Theory)
+/* Kitpath not defteri · hg206 · Malthus Kuramı (Malthusian Theory)
    Kaynak: AP HuG CED Topic 2.6 (IMP-2.B.3). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "hg206",

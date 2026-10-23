@@ -1,4 +1,4 @@
-/* Kitora not defteri · ch103 · 1.3 Katı Türleri
+/* Kitpath not defteri · ch103 · 1.3 Katı Türleri
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry Exam 1) + MEB 10. sınıf kimya programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch103",

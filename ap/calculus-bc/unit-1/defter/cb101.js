@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb101 · 1.1–1.2 Limit Nedir?
+/* Kitpath not defteri · cb101 · 1.1–1.2 Limit Nedir?
    Kaynak: ap-videolar/src/episodes/cb101 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb101",

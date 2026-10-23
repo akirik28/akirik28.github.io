@@ -1,4 +1,4 @@
-/* Kitora not defteri · st601 · 6.1–6.2 Oran İçin Güven Aralığı
+/* Kitpath not defteri · st601 · 6.1–6.2 Oran İçin Güven Aralığı
    Kaynak: College Board CED, Unit 6 (konu 6.1–6.2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st601",

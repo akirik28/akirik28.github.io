@@ -1,4 +1,4 @@
-/* Kitora not defteri · cb501 · 5.1 Ortalama Değer Teoremi
+/* Kitpath not defteri · cb501 · 5.1 Ortalama Değer Teoremi
    CED: College Board AP Calculus AB/BC (Unit 5). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb501",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st101 · 1A Veriyle Tanış
+/* Kitpath not defteri · st101 · 1A Veriyle Tanış
    Kaynak: ap-videolar/src/episodes/st101 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st101",

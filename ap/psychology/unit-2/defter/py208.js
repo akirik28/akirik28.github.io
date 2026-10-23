@@ -1,4 +1,4 @@
-/* Kitora not defteri · py208 · 2.8 Zekâ ve Başarı
+/* Kitpath not defteri · py208 · 2.8 Zekâ ve Başarı
    Kaynak: AP Psychology CED 2024, Topic 2.8 (2.8.A.1, 2.8.B.1–3, 2.8.C.1–3, 2.8.D.1–2). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "py208",

@@ -1,4 +1,4 @@
-/* Kitora not defteri · st706 · 7.8–7.9 İki Ortalama Farkı Testi
+/* Kitpath not defteri · st706 · 7.8–7.9 İki Ortalama Farkı Testi
    Kaynak: AP Statistics CED 7.8–7.9 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    Deney: n₁ = n₂ = 16, x̄₁ = 80, s₁ = 8, x̄₂ = 74, s₂ = 6 → SE = 2,5, t = 2,4; tablo df = 15 (0,01 < P < 0,025; tam 0,015), hesap makinesi df ≈ 27,8 (P ≈ 0,012).
    İkinci örnek: n = 25'er, x̄ = 7,4 ve 6,8, s = 1,5 ve 2,0 → SE = 0,5, t = 1,2; df = 24'te iki yönlü P > 0,20 (hesap makinesi ≈ 0,24).

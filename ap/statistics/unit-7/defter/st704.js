@@ -1,4 +1,4 @@
-/* Kitora not defteri · st704 · 7.4–7.5 Eşleştirilmiş Veri
+/* Kitpath not defteri · st704 · 7.4–7.5 Eşleştirilmiş Veri
    Kaynak: AP Statistics CED 7.4–7.5 (öğrenme hedefleri kendi anlatımımla). Blok türleri: /ap/_kit/defter.js başı.
    Veri: 9 öğrenci, telefon yanında / dışarıda test puanı; farklar d = dışarıda − yanında: −1, −1, 0, 3, 4, 4, 5, 6, 7 (x̄_d = 3, s_d = 3).
    Grafikte y = (puan − 60) / 4. t∗ (df = 8, %95) = 2,306 tablodan. */
