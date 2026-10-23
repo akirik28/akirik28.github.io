@@ -85,6 +85,91 @@ window.KIT = {
           "why": "Beklenmedik girdide çökmek bir güvenilirlik sorunudur. Çözüm, sınır durumlarını sınayıp kodu düzeltmektir. Alanı *public* yapmak ya da yorumları silmek sorunu çözmez."
         }
       ]
+    },
+    {
+      "no": 2,
+      "code": "3.3",
+      "slug": "cs302",
+      "title": "Bir Sınıfın Anatomisi",
+      "en": "Anatomy of a Class",
+      "accent": "#B77AD9",
+      "defter": "cs302",
+      "seconds": 282,
+      "terms": [
+        "Class",
+        "Object",
+        "Instance variable",
+        "private",
+        "public",
+        "Encapsulation",
+        "Accessor",
+        "Mutator"
+      ],
+      "questions": [
+        {
+          "q": "Belirtim: \"WaterBottle sınıfı şişenin kapasitesini (ml) ve içindeki su miktarını (ml) tam sayı olarak tutar.\" Hangisi en uygun alan bildirimidir?",
+          "opts": [
+            "public int capacity; public int amount;",
+            "int capacity(); int amount();",
+            "private int capacity; private int amount;",
+            "private capacity; private amount;"
+          ],
+          "a": 2,
+          "why": "Alanlar *private*, tip ve ad sırasıyla yazılır. A çalışır ama kapsüllemeyi bozar; B metot gibi görünen geçersiz bir yazım; D'de tip eksik, derlenmez."
+        },
+        {
+          "q": "Aşağıdaki kod LunchCard dışındaki bir sınıfta yazılıyor. Ne olur?",
+          "opts": [
+            "50 yazdırır, sonra bakiye 0 olur.",
+            "Kod derlenmez: balance alanı private.",
+            "30 yazdırır.",
+            "Çalışma anında NullPointerException fırlatılır."
+          ],
+          "a": 1,
+          "why": "*balance* *private* olduğu için başka bir sınıftan c.balance yazmak derleme hatasıdır. Bir satır derlenmezse program hiç çalışmaz; hiçbir şey yazdırılmaz.",
+          "fig": {
+            "type": "code",
+            "code": "LunchCard c = new LunchCard(\"Mert\", 30);\nc.topUp(20);\nSystem.out.println(c.getBalance());\nc.balance = 0;"
+          }
+        },
+        {
+          "q": "LunchCard sınıfındaki şu metotlardan hangisi bir mutator'dır?",
+          "opts": [
+            "public int getBalance()",
+            "public String getOwner()",
+            "public boolean isEmpty()",
+            "public void topUp(int amount)"
+          ],
+          "a": 3,
+          "why": "*topUp* bakiyeyi değiştirir: *mutator*. Öteki üçü yalnızca bilgi okuyup döndürür; nesnenin durumunu değiştirmez (*accessor*)."
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "55",
+            "1540",
+            "25",
+            "30"
+          ],
+          "a": 0,
+          "why": "x: 10 + 5 = 15. y: 10 + 15 · 2 = 40. println içinde iki *int* toplanır (yazı yok): 15 + 40 = 55. Her nesnenin kendi *balance*'ı vardır.",
+          "fig": {
+            "type": "code",
+            "code": "LunchCard x = new LunchCard(\"Ece\", 10);\nLunchCard y = new LunchCard(\"Ece\", 10);\nx.topUp(5);\ny.topUp(x.getBalance() * 2);\nSystem.out.println(x.getBalance() + y.getBalance());"
+          }
+        },
+        {
+          "q": "FRQ 2'de bir sınıf yazarken hangisi puan kaybettirir?",
+          "opts": [
+            "Alanları private yazmak",
+            "Alanları public yazmak",
+            "Metot başlıklarını soruda verildiği gibi yazmak",
+            "Constructor'da her alana bir değer vermek"
+          ],
+          "a": 1,
+          "why": "*Instance variable*'lar *private* olmalı; *public* alan derlenir ama kapsüllemeyi bozar ve puan kaybettirir. Öteki üçü doğru alışkanlıklar."
+        }
+      ]
     }
   ],
   "final": []
