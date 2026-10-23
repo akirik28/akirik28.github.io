@@ -147,7 +147,7 @@
     info: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>',
     star: function (c, size, style) { return '<svg class="sparkle" aria-hidden="true" viewBox="0 0 24 24" style="width:' + size + 'px;height:' + size + 'px;' + (style || "") + '"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z" fill="' + c + '"/></svg>'; }
   };
-  var LOGO = '<svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="28" fill="#17110C"/><rect x="26" y="26" width="30" height="30" rx="8" fill="#F4EAD9"/><rect x="26" y="64" width="30" height="30" rx="8" fill="#F4EAD9"/><rect x="64" y="64" width="30" height="30" rx="8" fill="#F4EAD9"/><g transform="rotate(12 79 41)"><rect x="66" y="22" width="30" height="30" rx="8" fill="#E9B949"/></g></svg>';
+  var LOGO = '<svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="28" fill="#1F2A44"/><rect x="28" y="26" width="18" height="68" rx="9" fill="#F6F1E7"/><path d="M50 64 L84 94" stroke="#F6F1E7" stroke-width="18" stroke-linecap="round"/><circle cx="56" cy="55" r="4.5" fill="#F6F1E7"/><circle cx="65" cy="47" r="4.5" fill="#F6F1E7"/><circle cx="74" cy="39" r="4.5" fill="#F6F1E7"/><g transform="rotate(12 86 30)"><rect x="74" y="18" width="24" height="24" rx="7" fill="#F5D85E"/></g></svg>';
 
   /* ---------- ders illüstrasyonları (hepsi döngüde hareket eder) ---------- */
   function art(kind, color) {
