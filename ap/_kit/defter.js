@@ -30,6 +30,7 @@
      tuzak     { baslik?, metin, yanlis?, dogru? }                    sınav tuzağı
      ozet      { maddeler[] }                                         işaretlenen özet listesi
      ders      { tarih?, baslik?, bloklar[] }                         derste işlenen ek notlar (sonradan eklenir)
+     kod       { baslik?, kod, vurgu?:[satır no], cikti?, not? }      kod parçası (satır numaralı); cikti: programın yazdırdığı
    Kiti olmayan ünitelerde (KIT.kitYok) defter kendi sorularını taşır:
      sorular   [{ q, opts:[4 şık], a: doğru şık 0–3, why, fig? }]      5 soru; "Kendini dene"de çıkar
    Defterin sonunda bölümün "Kendini dene" soruları otomatik gelir; cevaplar kitteki ilerlemeye yazılır.
@@ -49,6 +50,20 @@
       c.slug = k; c._ep = e.slug; c.questions = qs; if (e.defterBaslik) c.title = e.defterBaslik;
       by[k] = c; out.push(c);
     });
+    /* Kit yarım olabilir: defter-liste.js de yüklendiyse (window.KIT_LISTE) defterin konu sırası ve
+       adları esas alınır; henüz videosu olmayan konular videosuz (_yok) defter olarak listede kalır. */
+    var LS = window.KIT_LISTE && window.KIT_LISTE.episodes;
+    if (LS && LS.length && !KIT.kitYok) {
+      var sirali = [];
+      LS.forEach(function (l) {
+        var c = by[l.slug];
+        if (c) { delete by[l.slug]; if (!c.defterBaslik) { c.title = l.title; c.en = l.en || c.en; } c.code = l.code || c.code; c.no = l.no; }
+        else { c = {}; for (var f in l) c[f] = l[f]; c.questions = []; c._yok = true; }
+        sirali.push(c);
+      });
+      out.forEach(function (c) { if (by[c.slug]) sirali.push(c); });
+      out = sirali;
+    }
     return out;
   })(KIT.episodes || []);
   if (!KIT.store) KIT.store = "hg-kit:v2:";                 /* kit.js ile aynı varsayılanlar (Human Geography) */
@@ -214,7 +229,7 @@
     var hero = el("section", { class: "d-hero nb" }, [
       el("p", { class: "d-course" }, [
         el("span", { text: APC + " · " + UNIT.split(" — ")[0] + " · Konu " + epNo(ep) }),
-        KY ? null : el("a", { href: "../#" + (ep._ep || ep.slug), text: "▶ Videosu" })
+        KY || ep._yok ? null : el("a", { href: "../#" + (ep._ep || ep.slug), text: "▶ Videosu" })
       ]),
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
@@ -463,6 +478,19 @@
       el("ol", { class: "d-ex-s" }, steps),
       res,
       el("div", { class: "d-ex-a" }, [nb, all])
+    ]));
+  };
+
+  B.kod = function (b) {
+    var on = {}; (b.vurgu || []).forEach(function (n) { on[n] = 1; });
+    var lines = String(b.kod || "").replace(/\s+$/, "").split("\n").map(function (t, i) {
+      return el("span", { class: "d-code-l" + (on[i + 1] ? " on" : ""), style: "--i:" + i, text: t || " " });
+    });
+    return watch(el("figure", { class: "d-blk d-code-w" }, [
+      b.baslik ? el("figcaption", { class: "d-h3", html: md(b.baslik) }) : null,
+      el("pre", { class: "d-code" }, [el("code", null, lines)]),
+      b.cikti != null ? el("div", { class: "d-code-o" }, [el("span", { class: "mono", text: "Çıktı" }), el("pre", { text: String(b.cikti) })]) : null,
+      b.not ? el("p", { class: "d-cap", html: md(b.not) }) : null
     ]));
   };
 

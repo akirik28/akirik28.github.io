@@ -454,6 +454,24 @@ html[data-tema="koyu"] .d-about { background: rgba(255,255,255,.03); }
 
 .d-root .mono { text-transform: none; letter-spacing: 0; }
 
+/* kod bloğu: satır numaralı, ekrana girince satır satır yazılır */
+.d-code-w { margin: 18px 0 var(--ln); }
+.d-code { margin: 6px 0 0; padding: 12px 14px 12px 0; background: #FBF7EC; border: 1.5px solid rgba(40,52,90,.25); border-radius: 6px; box-shadow: 2px 3px 0 rgba(0,0,0,.08); overflow-x: auto; counter-reset: ln; font: 15px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: #1F2A44; tab-size: 4; }
+.d-code code { display: block; min-width: max-content; }
+.d-code-l { display: block; padding-left: 46px; position: relative; white-space: pre; opacity: 0; transform: translateX(-6px); transition: opacity .3s ease calc(var(--i) * 60ms), transform .3s ease calc(var(--i) * 60ms); }
+.d-code-l::before { counter-increment: ln; content: counter(ln); position: absolute; left: 0; width: 34px; text-align: right; color: rgba(40,52,90,.38); }
+.d-code-w.in .d-code-l { opacity: 1; transform: none; }
+.d-code-l.on { background: rgba(255,226,92,.55); }
+.d-code-o { margin-top: 8px; padding: 8px 12px; border-left: 4px solid var(--rd, #D8433B); background: rgba(0,0,0,.035); }
+.d-code-o .mono { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.d-code-o pre { margin: 4px 0 0; font: 15px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; }
+@media (prefers-reduced-motion: reduce) { .d-code-l { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 640px) { .d-code, .d-code-o pre { font-size: 13px; } }
+html[data-tema="koyu"] .d-code { background: #12151C; border-color: rgba(255,255,255,.15); color: #E6E9F2; }
+html[data-tema="koyu"] .d-code-l::before { color: rgba(230,233,242,.35); }
+html[data-tema="koyu"] .d-code-l.on { background: rgba(255,214,64,.22); }
+html[data-tema="koyu"] .d-code-o { background: rgba(255,255,255,.05); }
+
 /* =====================================================================
    KOYU TEMA — siyah defter, jel kalem. <html data-tema="koyu"> (sağ üstteki düğme; seçim hatırlanır)
    ===================================================================== */
