@@ -108,6 +108,103 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "1.3",
+      "slug": "cs103",
+      "title": "İfadeler: Tam Sayı Bölmesi ve Mod",
+      "en": "Expressions, Integer Division, and Modulo",
+      "accent": "#58C9FF",
+      "seconds": 287,
+      "terms": [
+        "Expression",
+        "Operator precedence",
+        "Integer division",
+        "Modulo",
+        "Remainder",
+        "Truncation",
+        "ArithmeticException",
+        "int",
+        "double"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "3.4",
+            "3",
+            "4",
+            "2"
+          ],
+          "a": 1,
+          "why": "İki *int* bölünürse sonuç *int* olur: 17 / 5 = 3,4 değil, ondalık kısım kesilir ve 3 kalır. Yuvarlanmaz, o yüzden 4 de değil.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(17 / 5);"
+          }
+        },
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "3",
+            "3.83",
+            "5",
+            "1"
+          ],
+          "a": 2,
+          "why": "23 = 6 · 3 + 5. Mod operatörü kalanı verir: 5. Bölümün kendisi (3) değil.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(23 % 6);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "7.5",
+            "7",
+            "8.0",
+            "7.0"
+          ],
+          "a": 3,
+          "why": "Sağ taraf önce kendi başına hesaplanır: 15 / 2, iki *int*, sonuç 7. Ancak sonra *double* değişkene girer ve 7.0 olur. Değişkenin *double* olması *integer division*'ı engellemez.",
+          "fig": {
+            "type": "code",
+            "code": "double avg = (7 + 8) / 2;\nSystem.out.println(avg);"
+          }
+        },
+        {
+          "q": "Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "3 sa 20 dk",
+            "3.33 sa 20 dk",
+            "3 sa 2 dk",
+            "20 sa 3 dk"
+          ],
+          "a": 0,
+          "why": "200 / 60 = 3 (kalan atılır) ve 200 % 60 = 20. Bölü ve mod birlikte dakikayı saat ve dakikaya ayırır.",
+          "fig": {
+            "type": "code",
+            "code": "int t = 200;\nSystem.out.println(t / 60 + \" sa \" + t % 60 + \" dk\");"
+          }
+        },
+        {
+          "q": "Aşağıdaki satır ne yazdırır?",
+          "opts": [
+            "4.5",
+            "5",
+            "5.5",
+            "4"
+          ],
+          "a": 1,
+          "why": "Önce bölme: 9 / 2 = 4 (*integer division*). Sonra soldan sağa: 2 + 4 − 1 = 5.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(2 + 9 / 2 - 1);"
+          }
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "1.5",
       "slug": "cs104",
       "title": "Casting, Yuvarlama ve Taşma",
