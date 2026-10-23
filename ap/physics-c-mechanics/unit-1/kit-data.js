@@ -940,6 +940,103 @@ window.KIT = {
           "why": "İşaretli alanlar: +3 · 4 = +12 m ve −5 · 2 = −10 m. Δx = 12 − 10 = 2 m. Yol, mutlak değerlerin toplamı: 12 + 10 = 22 m."
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "1.2–1.3",
+      "slug": "pc109",
+      "title": "Sabit İvme ve Serbest Düşme",
+      "en": "Constant Acceleration and Free Fall",
+      "accent": "#F6B94A",
+      "seconds": 275,
+      "terms": [
+        "Constant acceleration",
+        "Kinematic equations",
+        "Initial velocity",
+        "Initial position",
+        "Free fall",
+        "Acceleration due to gravity",
+        "Maximum height",
+        "Air resistance",
+        "Sign convention"
+      ],
+      "questions": [
+        {
+          "q": "Saniyede 20 metreyle giden bir araba sabit −5 m/s² ivmeyle fren yapıyor. Duruncaya kadar ne kadar yol alır?",
+          "opts": [
+            "40 m",
+            "80 m",
+            "4 m",
+            "20 m"
+          ],
+          "a": 0,
+          "why": "Zaman bilinmiyor: v² = v₀² + 2aΔx → 0 = 400 + 2(−5)Δx → Δx = 400/10 = 40 m. 80, 2'yi unutmaktır."
+        },
+        {
+          "q": "Bir top 29,4 m/s ile dümdüz yukarı atılıyor (g = 9,8 m/s², hava direnci yok). Tepeye kaç saniyede ulaşır?",
+          "opts": [
+            "6 s",
+            "1,5 s",
+            "3 s",
+            "9,8 s"
+          ],
+          "a": 2,
+          "why": "Tepede v = 0: 0 = 29,4 − 9,8t → t = 3 s. 6 s, topun atıldığı yüksekliğe geri dönme süresidir."
+        },
+        {
+          "q": "Bir top 14 m/s ile dümdüz yukarı atılıyor (g = 9,8 m/s²). Atıldığı noktadan en fazla kaç metre yükselir?",
+          "opts": [
+            "20 m",
+            "1,4 m",
+            "14 m",
+            "10 m"
+          ],
+          "a": 3,
+          "why": "Tepede v = 0: 0 = 14² − 2(9,8)Δy → Δy = 196/19,6 = 10 m. 20 m, 2'yi paydaya koymayı unutmaktır."
+        },
+        {
+          "q": "Yukarı atılan bir top en yüksek noktadayken hangisi doğrudur? (Yukarı +, hava direnci yok.)",
+          "opts": [
+            "v = 0 ve a = 0",
+            "v = 0 ve a = −9,8 m/s²",
+            "v = −9,8 m/s ve a = 0",
+            "v ve a ikisi de pozitif"
+          ],
+          "a": 1,
+          "why": "Tepede hız bir an için sıfırdır, ama yerçekimi hâlâ etkili: a = −g = −9,8 m/s². a sıfır olsaydı top orada asılı kalırdı."
+        },
+        {
+          "q": "Durgun hâlden harekete başlayan bir arabanın konumu sabit ivmeyle tabloda verilmiştir. İvmesi kaçtır?",
+          "opts": [
+            "3 m/s²",
+            "6 m/s²",
+            "9 m/s²",
+            "12 m/s²"
+          ],
+          "a": 1,
+          "why": "x₀ = 0, v₀ = 0 olduğundan x = ½at². t = 1'de 3 = ½a → a = 6 m/s². Kontrol: t = 3'te ½ · 6 · 9 = 27 ✓. 3 bulan ½'yi unutmuştur.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "t (s)",
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "rows": [
+              [
+                "x (m)",
+                "0",
+                "3",
+                "12",
+                "27"
+              ]
+            ],
+            "caption": "Arabanın konumu"
+          }
+        }
+      ]
     }
   ],
   "final": [],
