@@ -3,6 +3,10 @@ window.KIT = {
   "store": "csa-u2:v1:",
   "course": "AP Computer Science A",
   "unitLabel": "Unit 2 — Selection and Iteration",
+  "denemeler": {
+    "url": "deneme/",
+    "count": 5
+  },
   "episodes": [
     {
       "no": 1,
