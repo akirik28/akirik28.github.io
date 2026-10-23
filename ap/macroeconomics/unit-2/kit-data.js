@@ -1,7 +1,7 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/mc2N/questions.json) */
 window.KIT = {
   "store": "macro-u2:v1:",
-  "course": "AP Macroeconomics",
+  "course": "Macroeconomics",
   "unitLabel": "Unit 2 — Economic Indicators and the Business Cycle",
   "denemeler": {
     "url": "deneme/",
