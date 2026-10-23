@@ -281,6 +281,136 @@ window.KIT = {
           "why": "Otomobil fabrikasına satılan lastik bir *intermediate good*'dur; değeri otomobilin fiyatının içindedir. İkisini de toplamak *double counting*'dir."
         }
       ]
+    },
+    {
+      "no": 3,
+      "code": "2.2",
+      "slug": "mc204",
+      "title": "GDP'nin Göremedikleri",
+      "en": "Limitations of GDP",
+      "accent": "#FF6F61",
+      "seconds": 248,
+      "terms": [
+        "Limitations of GDP",
+        "Non-market production",
+        "Underground economy",
+        "Leisure",
+        "Quality improvements",
+        "New goods",
+        "Environmental costs",
+        "Income distribution",
+        "GDP per capita",
+        "Standard of living"
+      ],
+      "questions": [
+        {
+          "q": "Tabloya göre ülkeleri kişi başına GDP'ye göre en yüksekten en düşüğe doğru sıralarsak hangisini buluruz?",
+          "opts": [
+            "X, Y, Z",
+            "Y, X, Z",
+            "Z, X, Y",
+            "Z, Y, X"
+          ],
+          "a": 2,
+          "why": "Kişi başına GDP = GDP ÷ nüfus. X: 600 milyar ÷ 30 milyon = 20.000; Y: 900 milyar ÷ 60 milyon = 15.000; Z: 300 milyar ÷ 10 milyon = 30.000. Sıra: Z, X, Y. En büyük toplam GDP Y'de olsa da kişi başına en düşük Y'dir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ülke",
+              "GDP (milyar TL)",
+              "Nüfus (milyon)"
+            ],
+            "rows": [
+              [
+                "X",
+                "600",
+                "30"
+              ],
+              [
+                "Y",
+                "900",
+                "60"
+              ],
+              [
+                "Z",
+                "300",
+                "10"
+              ]
+            ],
+            "caption": "Üç ülke"
+          }
+        },
+        {
+          "q": "Tablodaki iki ülkenin kişi başına GDP'si aynı. Bu verilere göre en makul yorum hangisidir?",
+          "opts": [
+            "A'da yaşam kalitesi muhtemelen daha yüksek; GDP boş zamanı ve hava kirliliğini hesaba katmaz.",
+            "Kişi başına GDP aynı olduğu için iki ülkede refah kesinlikle eşittir.",
+            "B'de insanlar daha çok çalıştığı için B'nin refahı kesinlikle daha yüksektir.",
+            "B'nin GDP'si kirlilik yüzünden daha düşük hesaplanmıştır."
+          ],
+          "a": 0,
+          "why": "Aynı üretim A'da daha az çalışma saatiyle ve daha temiz havayla elde ediliyor. GDP boş zamanı ve çevre zararını görmediği için refahı tam ölçmez. Kirlilik GDP'den düşülmez.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "",
+              "A ülkesi",
+              "B ülkesi"
+            ],
+            "rows": [
+              [
+                "Kişi başına GDP (TL)",
+                "25.000",
+                "25.000"
+              ],
+              [
+                "Haftalık çalışma saati",
+                "38",
+                "52"
+              ],
+              [
+                "Hava kirliliği",
+                "Düşük",
+                "Yüksek"
+              ]
+            ],
+            "caption": "Aynı GDP, farklı hayatlar"
+          }
+        },
+        {
+          "q": "Aşağıdakilerden hangisi GDP'yi artırır ama halkın refahını artırmaz?",
+          "opts": [
+            "Bir annenin evde ailesine yemek pişirmesi",
+            "Bir fabrikanın kirlettiği gölün parayla temizletilmesi",
+            "Gönüllülerin hafta sonu sahil temizlemesi",
+            "Fişsiz yapılan bir boya badana işi"
+          ],
+          "a": 1,
+          "why": "Temizlik şirketine ödenen para GDP'ye eklenir, ama göl yalnızca kirlenmeden önceki hâline döner. Diğer üç faaliyet piyasa dışı ya da kayıt dışı olduğu için GDP'ye hiç girmez."
+        },
+        {
+          "q": "Bir aile, çocuğuna evde kendisi bakmayı bırakıp bir bakıcıya ayda 25 bin lira ödemeye başlıyor. Bakımın miktarı ve kalitesi aynı kalıyor. Ne olur?",
+          "opts": [
+            "GDP değişmez, çünkü bakım hizmeti aynı kaldı.",
+            "GDP azalır, çünkü aile gelirinin bir kısmını harcadı.",
+            "Ölçülen GDP ayda 25 bin lira azalır, çünkü ebeveyn emeği kayboldu.",
+            "Ölçülen GDP ayda 25 bin lira artar, ama gerçek üretim değişmemiştir."
+          ],
+          "a": 3,
+          "why": "Evdeki bakım piyasa dışıydı ve sayılmıyordu; bakıcıya ödenen maaş piyasa işlemi olduğu için sayılır. Üretilen bakım aynı, ölçülen GDP ise artar. Bu, piyasa dışı üretimin GDP'nin bir sınırı olduğunu gösterir."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "Kişi başına GDP, gelirin insanlar arasında nasıl dağıldığını gösterir.",
+            "Bir ürünün kalitesi artarsa GDP de otomatik olarak aynı oranda artar.",
+            "Kayıt dışı ekonomisi büyük bir ülkede resmî GDP, gerçek üretimi olduğundan düşük gösterir.",
+            "Boş zamanın değeri tahmin edilerek GDP'ye eklenir."
+          ],
+          "a": 2,
+          "why": "Kayıt dışı üretim resmî kayıtlara girmediği için ölçülen GDP gerçek üretimin altında kalır. Kişi başına GDP bir ortalamadır, dağılımı göstermez; kalite artışı ve boş zaman GDP'de tam yansımaz."
+        }
+      ]
     }
   ],
   "final": []
