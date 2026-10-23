@@ -188,7 +188,7 @@ window.DEFTER = {
             { ikon: "🔒", terim: "Direct control", tr: "doğrudan denetim", tanim: "*Treatment* dışındaki değişkenleri bütün *experimental unit*'ler için aynı tutmak.", ornek: "Herkes ilacı günde iki kez, yağlı yiyecekle alır." }
           ] },
         { tip: "tablo", baslik: "Trikafta deneyi: 403 hasta, rastgele iki grup. Herkes için aynı tutulanlar", head: ["Ne sabit?", "Trikafta grubu", "Placebo grubu"], rows: [
-            ["Doz", "375 mg", "375 mg"],
+            ["Doz", "Aynı doz", "Aynı doz (plasebo)"],
             ["Süre", "24 hafta", "24 hafta"],
             ["Sıklık", "Günde iki kez", "Günde iki kez"],
             ["Yiyecek", "Yağlı yiyecekle", "Yağlı yiyecekle"],
@@ -204,7 +204,7 @@ window.DEFTER = {
           oyun: [
             { metin: "Herkes ilacı yağlı yiyecekle alıyor.", cevap: "sol", neden: "Bilinen değişken sabit tutulmuş." },
             { metin: "Hastalar zarla gruplara dağıtılıyor.", cevap: "sag", neden: "Bilinmeyenleri de dengeleyen rastgele atama." },
-            { metin: "Herkesin dozu 375 mg ve süresi 24 hafta.", cevap: "sol", neden: "Doz ve süre sabit." },
+            { metin: "Herkesin dozu aynı ve süresi 24 hafta.", cevap: "sol", neden: "Doz ve süre sabit." },
             { metin: "Yaş ve başlangıç sağlığı gibi bilinmeyen değişkenler kabaca eşit dağılıyor.", cevap: "sag", neden: "Rastgele atamanın işi." }
           ] }
       ]
