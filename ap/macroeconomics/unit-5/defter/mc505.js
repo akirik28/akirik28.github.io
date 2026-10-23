@@ -140,7 +140,7 @@ window.DEFTER = (function () {
         kisa: "Fazla veren hükümet faizi düşürür; para otoritesi faizi sabit tutarsa dışlama azalır.",
         bloklar: [
           { tip: "ikili", sol: { ikon: "🚪", baslik: "*Crowding out*", maddeler: ["Bütçe açığı, hükümet borçlanır", "Fon talebi sağa, reel faiz ↑", "Özel yatırım ↓"] },
-            sag: { ikon: "🧲", baslik: "*Crowding in*", maddeler: ["Bütçe fazlası, hükümet borçlanmayı azaltır", "Fon talebi sola, reel faiz ↓", "Özel yatırım ↑"] },
+            sag: { ikon: "🧲", baslik: "*Crowding in*", maddeler: ["Bütçe fazlası, hükümet borçlanmayı azaltır", "Kamu tasarrufu ↑: fon arzı sağa, reel faiz ↓", "Özel yatırım ↑"] },
             oyun: [
               { metin: "Hükümet vergileri indirip açığı büyüttü, tahvil satışı arttı.", cevap: "sol", neden: "Borçlanma artıyor: dışlama." },
               { metin: "Bütçe fazlası veren hükümet borcunu geri ödüyor, faiz düşüyor.", cevap: "sag", neden: "Borçlanma azalıyor: özel yatırım artar." },

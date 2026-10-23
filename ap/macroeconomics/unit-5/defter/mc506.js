@@ -153,7 +153,7 @@ window.DEFTER = (function () {
           { tip: "not", metin: "Ekonomik büyüme, üretim kapasitesinin artmasıdır: ==PPC dışa kayar== ya da aynı şey için ==LRAS sağa kayar==. İki grafik aynı olayı farklı dille anlatır." },
           G2,
           G3,
-          { tip: "tuzak", metin: "PPC'nin içindeki bir noktadan kenarına gitmek de çıktıyı artırır, ama kapasiteyi artırmaz.", yanlis: "İşsizlik azalıp çıktı arttıysa ekonomi büyümüştür (PPC kaymıştır).", dogru: "Atıl kaynakları çalıştırmak PPC ==üzerinde hareket==tir (boşluğu kapatmak). Büyüme için ==PPC (ve LRAS) kaymalı==." }
+          { tip: "tuzak", metin: "PPC'nin içindeki bir noktadan kenarına gitmek de çıktıyı artırır, ama kapasiteyi artırmaz.", yanlis: "İşsizlik azalıp çıktı arttıysa ekonomi büyümüştür (PPC kaymıştır).", dogru: "Atıl kaynakları çalıştırmak PPC'nin ==içinden eğriye doğru bir hareket==tir (boşluğu kapatmak); eğri kaymaz. Büyüme için ==PPC (ve LRAS) kaymalı==." }
         ]
       },
       {

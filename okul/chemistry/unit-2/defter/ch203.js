@@ -6,7 +6,7 @@ window.DEFTER = {
   bolumler: [
     {
       baslik: "Çözünür ve çözünmez tuzlar: çözünürlük kuralları",
-      kisa: "Na⁺, K⁺, NH₄⁺ ve NO₃⁻ içeren tuzlar çözünür; diğer kuralların istisnalarını bil.",
+      kisa: "Grup 1 iyonları, NH₄⁺ ve NO₃⁻ içeren tuzlar çözünür; diğer kuralların istisnalarını bil.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "💧", terim: "Soluble", tr: "çözünür", tanim: "Suda belirgin miktarda çözünüp iyonlarına ayrılan madde.", ornek: "NaNO₃, K₂CO₃." },
@@ -14,7 +14,7 @@ window.DEFTER = {
             { ikon: "📋", terim: "Solubility rules", tr: "çözünürlük kuralları", tanim: "Hangi iyonik bileşiğin suda çözüneceğini söyleyen deneysel kurallar.", ornek: "Bütün nitratlar çözünür." }
           ] },
         { tip: "tablo", baslik: "Çözünürlük kuralları", head: ["İyon", "Genelde", "İstisnalar"], rows: [
-            ["Na⁺, K⁺, NH₄⁺", "Bütün tuzları çözünür", "Yok"],
+            ["Grup 1 iyonları (Na⁺, K⁺, Cs⁺ ...), NH₄⁺", "Bütün tuzları çözünür", "Yok"],
             ["NO₃⁻, CH₃COO⁻", "Çözünür", "Yok (ders düzeyinde)"],
             ["Cl⁻, Br⁻, I⁻", "Çözünür", "Ag⁺, Pb²⁺, Hg₂²⁺ ile çökelek verir"],
             ["SO₄²⁻", "Çözünür", "Ba²⁺, Pb²⁺, Sr²⁺ ile çökelek verir (Ca²⁺ ile az çözünür)"],
@@ -24,11 +24,11 @@ window.DEFTER = {
         { tip: "ikili", sol: { ikon: "💧", baslik: "Suda çözünür", maddeler: ["İyonlarına ayrılıp çözeltide kalır", "Çökelek vermez"] },
           sag: { ikon: "🧱", baslik: "Suda çözünmez", maddeler: ["Katı olarak kalır", "Çökelek verir"] },
           oyun: [
-            { metin: "NaNO₃", cevap: "sol", neden: "Na⁺ ve NO₃⁻ tuzları her zaman çözünür." },
+            { metin: "CsCl", cevap: "sol", neden: "Cs⁺ grup 1 iyonudur: tuzları çözünür." },
             { metin: "AgCl", cevap: "sag", neden: "Klorürlerin istisnası: Ag⁺ ile çökelir." },
             { metin: "K₂CO₃", cevap: "sol", neden: "K⁺ tuzları çözünür; karbonat kuralının istisnası." },
             { metin: "BaSO₄", cevap: "sag", neden: "Sülfatların istisnası: Ba²⁺ ile çökelir." },
-            { metin: "CaCO₃", cevap: "sag", neden: "Karbonatlar çözünmez (grup 1 ve NH₄⁺ hariç)." }
+            { metin: "Pb(OH)₂", cevap: "sag", neden: "Hidroksitler çözünmez (grup 1 ve Ba²⁺ gibi istisnalar hariç)." }
           ] },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: çözünür", metin: "*All nitrates and all sodium, potassium and ammonium salts are soluble in water.*" },
@@ -87,8 +87,14 @@ window.DEFTER = {
             ["Çökelek (↓)", "Çözünmeyen tuz verebilen iki çözelti", "AgNO₃ + NaCl → AgCl↓ + NaNO₃"],
             ["Su (H₂O)", "Asit + baz", "HCl + NaOH → NaCl + H₂O"],
             ["Gaz (↑)", "Karbonat + asit (CO₂)", "Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑"],
-            ["Gaz (↑)", "Amonyum tuzu + baz (NH₃)", "NH₄Cl + NaOH → NaCl + H₂O + NH₃↑"]
+            ["Gaz (↑)", "Amonyum tuzu + baz (NH₃)", "NH₄Cl + NaOH → NaCl + H₂O + NH₃↑"],
+            ["Gaz (↑)", "Sülfür + asit (H₂S)", "Na₂S + 2HCl → 2NaCl + H₂S↑"]
           ], not: "Karbonat asitle H₂CO₃ verir; H₂CO₃ kararsızdır ve hemen H₂O + CO₂'ye ayrışır." },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🍋", terim: "Arrhenius acid", tr: "Arrhenius asidi", tanim: "Suda çözününce H⁺ iyonu veren madde.", ornek: "HCl, HBr, HNO₃." },
+            { ikon: "🧼", terim: "Arrhenius base", tr: "Arrhenius bazı", tanim: "Suda çözününce OH⁻ iyonu veren madde.", ornek: "NaOH, Ca(OH)₂." },
+            { ikon: "⚖️", terim: "Neutralization", tr: "nötrleşme", tanim: "Asit ile bazın tepkimesinden tuz ve su oluşması; çift yer değiştirmenin bir alt türüdür.", ornek: "NaOH + HBr → NaBr + H₂O." }
+          ] },
         { tip: "ikili", sol: { ikon: "✅", baslik: "Tepkime yürür", maddeler: ["Çökelek, su ya da gaz oluşur", "İyon sayısı azalır"] },
           sag: { ikon: "❌", baslik: "Tepkime yürümez (NR)", maddeler: ["Ürünlerin hepsi çözünür; su ve gaz yok", "İyonlar çözeltide aynen kalır"] },
           oyun: [
@@ -110,7 +116,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "adimlar", baslik: "Molekül → tam iyonik → net iyonik", adimlar: [
             { baslik: "Molekül denklemi", metin: "Denkleştir, hâl sembollerini (aq), (s), (l), (g) ekle." },
-            { baslik: "Tam iyonik denklem", metin: "Yalnızca (aq) olan güçlü elektrolitleri iyonlarına ayır. Çökelek (s), su (l), gaz (g) ve zayıf asit/baz olduğu gibi kalır." },
+            { baslik: "Tam iyonik denklem (*complete* ya da *overall ionic equation*)", metin: "Yalnızca (aq) olan güçlü elektrolitleri iyonlarına ayır. Çökelek (s), su (l), gaz (g) ve zayıf asit/baz olduğu gibi kalır." },
             { baslik: "Seyirci iyonlar", metin: "İki tarafta da aynen duran iyonlar (*spectator ions*) tepkimeye katılmaz." },
             { baslik: "Net iyonik denklem", metin: "Seyircileri çıkar. Kalanlar gerçekten tepkime verenlerdir. Atom ve yük iki tarafta eşit olmalı." }
           ] },
@@ -168,25 +174,25 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Aşağıdaki tuzlardan hangisi suda çözünmez?",
+    { q: "Which of the following salts is insoluble in water?",
       opts: ["NaNO₃", "K₂CO₃", "(NH₄)₂SO₄", "BaSO₄"],
       a: 3,
       why: "BaSO₄ sülfat kuralının istisnasıdır: Ba²⁺ ile çökelir. B en çekici yanlış şık: karbonatlar genelde çözünmez ama K⁺ tuzları her zaman çözünür." },
-    { q: "Aşağıdaki çözelti çiftlerinden hangisi karıştırılınca çökelek oluşur?",
+    { q: "Which of the following pairs of solutions forms a precipitate when mixed?",
       opts: ["NaCl + KNO₃", "KOH + NaNO₃", "Pb(NO₃)₂ + Na₂SO₄", "NH₄Cl + K₂SO₄"],
       a: 2,
       why: "Pb²⁺ ve SO₄²⁻ birleşince PbSO₄ çözünmez ve çöker. Diğer üç karışımda olası ürünlerin hepsi çözünür. B en çekici yanlış şık: hidroksitler çözünmez diye düşünür ama Na⁺ ve K⁺ ile çözünür." },
-    { q: "Na₂CO₃(aq) ve CaCl₂(aq) çözeltileri karıştırılınca beyaz çökelek oluşuyor. Net iyonik denklem hangisidir?",
+    { q: "A white precipitate forms when Na₂CO₃(aq) and CaCl₂(aq) are mixed. Which is the net ionic equation?",
       opts: ["Ca²⁺(aq) + CO₃²⁻(aq) → CaCO₃(s)", "Na⁺(aq) + Cl⁻(aq) → NaCl(s)", "Na₂CO₃(aq) + CaCl₂(aq) → CaCO₃(s) + 2NaCl(aq)", "2Na⁺(aq) + CO₃²⁻(aq) → Na₂CO₃(s)"],
       a: 0,
       why: "Çöken CaCO₃'tür; Na⁺ ve Cl⁻ seyircidir ve çıkarılır. C en çekici yanlış şık: molekül denklemidir, net iyonik denklem değildir." },
-    { q: "Pb²⁺(aq) + 2NO₃⁻(aq) + 2K⁺(aq) + 2I⁻(aq) → PbI₂(s) + 2K⁺(aq) + 2NO₃⁻(aq) tam iyonik denkleminde seyirci iyonlar hangileridir?",
-      opts: ["Pb²⁺ ve I⁻", "K⁺ ve NO₃⁻", "Pb²⁺ ve NO₃⁻", "K⁺ ve I⁻"],
+    { q: "In the complete ionic equation Pb²⁺(aq) + 2NO₃⁻(aq) + 2K⁺(aq) + 2I⁻(aq) → PbI₂(s) + 2K⁺(aq) + 2NO₃⁻(aq), which ions are the spectator ions?",
+      opts: ["Pb²⁺ and I⁻", "K⁺ and NO₃⁻", "Pb²⁺ and NO₃⁻", "K⁺ and I⁻"],
       a: 1,
       why: "K⁺ ve NO₃⁻ iki tarafta da (aq) olarak aynen durur: seyirci iyonlardır. A en çekici yanlış şık: bunlar tepkimeye giren ve PbI₂ oluşturan iyonlardır." },
-    { q: "Ba(OH)₂ çözeltisine H₂SO₄ eklenirken ölçülen iletkenlik grafikte gösterilmiştir. Minimum noktada çözeltide ne olmuştur?",
-      fig: { type: "graph", xlabel: "Eklenen H₂SO₄ (mL)", ylabel: "İletkenlik", xmax: 14, ymax: 9, lines: [{ from: [0, 8], to: [10, 0.2] }, { from: [10, 0.2], to: [14, 6.2] }] },
-      opts: ["Ba²⁺ ve SO₄²⁻ en yüksek derişimdedir", "BaSO₄ çökmüş ve H⁺ ile OH⁻ suya dönüşmüştür; serbest iyon neredeyse kalmamıştır", "Çözelti saf H₂SO₄ olmuştur", "Tepkime durmuş, hiç ürün oluşmamıştır"],
+    { q: "The conductivity measured while H₂SO₄ is added to a Ba(OH)₂ solution is shown in the graph. What has happened in the solution at the minimum point?",
+      fig: { type: "graph", xlabel: "H₂SO₄ added (mL)", ylabel: "Conductivity", xmax: 14, ymax: 9, lines: [{ from: [0, 8], to: [10, 0.2] }, { from: [10, 0.2], to: [14, 6.2] }] },
+      opts: ["Ba²⁺ and SO₄²⁻ are at their highest concentration", "BaSO₄ has precipitated and H⁺ and OH⁻ have formed water; almost no free ions are left", "The solution has become pure H₂SO₄", "The reaction has stopped and no products have formed"],
       a: 1,
       why: "Ba²⁺ + SO₄²⁻ → BaSO₄(s) ve H⁺ + OH⁻ → H₂O ile iyonlar tükenir, iletkenlik sıfıra yaklaşır. A en çekici yanlış şık: bu iyonlar tam tersine çökerek çözeltiden çıkmıştır." }
   ]

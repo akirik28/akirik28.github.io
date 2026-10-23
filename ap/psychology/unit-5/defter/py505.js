@@ -17,7 +17,7 @@ window.DEFTER = {
         { tip: "zaman", olaylar: [
             { tarih: "20. yüzyıl ortası", baslik: "Büyük kurumlar", metin: "Çok sayıda kişi hastane ve bakımevlerinde uzun süre kalıyordu." },
             { tarih: "20. yüzyıl ortası–sonu", baslik: "Psikotropik ilaçlar", metin: "İlaç tedavisi yaygınlaştı ve etkililiği arttı." },
-            { tarih: "20. yüzyıl sonu", baslik: "Kurumsuzlaştırma", metin: "Kurumlardaki çok sayıda kişi toplum içinde yaşamaya geçti (*deinstitutionalization*)." },
+            { tarih: "20. yüzyıl ikinci yarısı (1950'ler–1980'ler)", baslik: "Kurumsuzlaştırma", metin: "Kurumlardaki çok sayıda kişi toplum içinde yaşamaya geçti (*deinstitutionalization*)." },
             { tarih: "Bugün", baslik: "Merkezsiz tedavi", metin: "Çoğunlukla ilaç ile psikolojik terapi birlikte, toplum içinde uygulanır." }
           ] },
         { tip: "kavramlar", kartlar: [

@@ -173,7 +173,7 @@ window.DEFTER = {
       fig: { type: "graph", xlabel: "Zaman", ylabel: "Toplam tepki", xmax: 11, ymax: 10, lines: [{ from: [0, 0], to: [1.2, 0.1], color: 0 }, { from: [1.2, 0.1], to: [3.2, 1.6], color: 0 }, { from: [3.2, 1.6], to: [4.4, 1.7], color: 0 }, { from: [4.4, 1.7], to: [6.4, 3.2], color: 0 }, { from: [6.4, 3.2], to: [7.6, 3.3], color: 0 }, { from: [7.6, 3.3], to: [10, 5], color: 0, label: "A" }, { from: [0, 0], to: [10, 9.5], color: 1, label: "B" }] },
       opts: ["A: *Fixed interval*, B: *Variable ratio*", "A: *Variable interval*, B: *Fixed ratio*", "A: *Fixed ratio*, B: *Variable interval*", "A: *Variable ratio*, B: *Fixed interval*"],
       a: 0,
-      why: "Ödül sonrası duraklama ve yaklaşırken artan hız tarak (*scalloped*) desenidir: sabit aralık. Dik ve düzgün çizgi, ne zaman ödül geleceği bilinmeyen değişken orandır. En çekici yanlış şık B: değişken aralık da düzgündür ama dik değil, orta eğimlidir." },
+      why: "Ödül sonrası duraklama ve yaklaşırken artan hız tarak (*scalloped*) desenidir: sabit aralık. Dik ve düzgün çizgi, ne zaman ödül geleceği bilinmeyen değişken orandır. En çekici yanlış şık B: değişken aralık düzgün ve orta eğimli bir çizgi verir, A'daki duraklamaları açıklamaz; sabit oran da ödül sonrası duraklama gösterir, B'nin kesintisiz dik çizgisine uymaz." },
     { q: "Bir grup köpek önce kaçamayacakları şoklara maruz bırakılıyor. Daha sonra kaçışın mümkün olduğu bir kutuya konduklarında çoğu kaçmayı denemeden yatıp şoku bekliyor, kontrol grubu ise hemen kaçıyor. Bu sonuç en iyi hangi kavramı örnekler?",
       opts: ["*Shaping*", "*Instinctive drift*", "*Learned helplessness*", "*Superstitious behavior*"],
       a: 2,

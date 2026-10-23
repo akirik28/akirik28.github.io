@@ -65,7 +65,7 @@ window.DEFTER = (function () {
           { tip: "tablo", baslik: "Önce ve sonra", head: ["Durum", "Çalışan", "İşsiz", "İşgücü", "İşsizlik oranı", "Katılım oranı"], rows: [
               ["Önce", "570", "30", "600", "%5", "%60"],
               ["10 kişi aramayı bırakınca", "570", "20", "590", "≈ %3,4", "%59"]
-            ], vurgu: 1, not: "Resmî işsizlik oranı umudunu kaybedenleri ve yarı zamanlı çalışanları saymadığı için çoğu zaman işsizliği olduğundan düşük gösterir." }
+            ], vurgu: 1, not: "Resmî işsizlik oranı umudunu kaybedenleri işsiz saymadığı ve tam zamanlı çalışmak isteyen yarı zamanlıları çalışan saydığı için çoğu zaman işsizliği olduğundan düşük gösterir." }
         ]
       },
       {
@@ -149,7 +149,7 @@ window.DEFTER = (function () {
               "İşsizlik oranı = işsiz ÷ işgücü × 100. Katılım oranı = işgücü ÷ yetişkin nüfus × 100.",
               "Öğrenci, emekli ve aramayı bırakan kişi işgücü dışındadır.",
               "Aramayı bırakmak işsizlik oranını da katılım oranını da düşürür; iş yaratılmış olmaz.",
-              "Resmî oran umudunu kaybedenleri ve yarı zamanlı çalışanları saymaz; işsizliği olduğundan düşük gösterir.",
+              "Resmî oran umudunu kaybedenleri işsiz saymaz, isteksizce yarı zamanlı çalışanları da tam çalışan sayar; işsizliği olduğundan düşük gösterir.",
               "*Frictional*: geçici arama. *Structural*: beceri ya da yer uyuşmazlığı. *Cyclical*: ekonominin daralması.",
               "Doğal oran = sürtünmeli + yapısal; tam istihdamda sıfır değildir.",
               "Konjonktürel işsizlik = gerçek oran − doğal oran. Doğal oran zamanla yavaşça değişebilir."

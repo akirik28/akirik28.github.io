@@ -69,7 +69,9 @@ window.DEFTER = {
             ["5", "Son rakam 0 ya da 5", "745"],
             ["8", "Son üç basamak 8'in katı", "1224 (224 = 8·28)"],
             ["9", "Rakamlar toplamı 9'un katı", "459 (4 + 5 + 9 = 18)"],
-            ["11", "Tek sıradaki rakamlar toplamı ile çift sıradakilerin farkı 0 ya da 11'in katı", "418 ((4 + 8) − 1 = 11)"]
+            ["11", "Tek sıradaki rakamlar toplamı ile çift sıradakilerin farkı 0 ya da 11'in katı", "418 ((4 + 8) − 1 = 11)"],
+            ["16", "Son dört basamak 16'nın katı", "5216 (16·326)"],
+            ["6, 15, 45", "Aralarında asal çarpanların kuralları birlikte: 6 = 2·3, 15 = 3·5, 45 = 5·9", "744 (çift ve rakamlar toplamı 15)"]
           ],
           not: "Sınavda böyle yaz: *The number is divisible by 9 because the sum of its digits is 18.*"
         },
@@ -89,6 +91,17 @@ window.DEFTER = {
           durum: "Küçük asallardan başlayarak böl.",
           adimlar: ["360 ÷ 2 = 180, 180 ÷ 2 = 90, 90 ÷ 2 = 45.", "45 ÷ 3 = 15, 15 ÷ 3 = 5.", "5 ÷ 5 = 1: dur."],
           sonuc: "360 = 2³·3²·5. Kontrol: 8·9·5 = 360. Sınavda böyle yaz: *The prime factorization of 360 is 2³ · 3² · 5.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Eksik rakamı bulmak",
+          durum: "74a sayısı 6'ya, 28m6 sayısı 9'a bölünüyor. a ve m kaçtır?",
+          adimlar: [
+            "6'ya bölünme: hem çift hem 3'e bölünür. 7 + 4 + a = 11 + a, 3'ün katı olmalı: a = 1, 4 ya da 7.",
+            "Çift olması için a = 4 (744 = 6·124).",
+            "9'a bölünme: rakamlar toplamı 9'un katı. 2 + 8 + m + 6 = 16 + m = 18 ⇒ m = 2 (2826 = 9·314)."
+          ],
+          sonuc: "a = 4 ve m = 2. Sınavda böyle yaz: *The sum of the digits must be a multiple of 9.*"
         }
       ]
     },
@@ -99,7 +112,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [{ t: "A = aᵐ·bⁿ·cʳ", alt: "a, b, c farklı asallar" }, "⇒", { t: "(m + 1)(n + 1)(r + 1)", alt: "pozitif bölen sayısı" }],
-          aciklama: "Sınavda böyle yaz: *The number of positive divisors of A is (m + 1)(n + 1)(r + 1).*"
+          aciklama: "Her pozitif böleni −1 ile çarpınca bir negatif bölen bulunur: negatif bölen sayısı da (m + 1)(n + 1)(r + 1), bütün tam sayı bölenler ise bunun iki katıdır. Sınavda böyle yaz: *The number of positive divisors of A is (m + 1)(n + 1)(r + 1).*"
         },
         {
           tip: "tablo",
@@ -201,6 +214,19 @@ window.DEFTER = {
         {
           tip: "not",
           metin: "Bölenler d ve n ÷ d diye çiftlenir. Tam karede √n kendisiyle eşleşir, bu yüzden bölen sayısı tek olur. Formülden de görülür: bütün üsler çifttir, her (üs + 1) tektir, çarpım tektir. Sınavda böyle yaz: *A positive integer has an odd number of divisors if and only if it is a perfect square.*"
+        },
+        {
+          tip: "tablo",
+          baslik: "Bölen sayılarını tabloda topla",
+          head: ["Sayı", "Asal çarpanlara ayrılış", "Farklı asal çarpan sayısı", "Pozitif bölen sayısı", "Negatif bölen sayısı"],
+          rows: [
+            ["36", "2²·3²", "2", "(2 + 1)(2 + 1) = 9", "9"],
+            ["73", "73 (asal)", "1", "2", "2"],
+            ["123", "3·41", "2", "(1 + 1)(1 + 1) = 4", "4"],
+            ["456", "2³·3·19", "3", "(3 + 1)(1 + 1)(1 + 1) = 16", "16"],
+            ["840", "2³·3·5·7", "4", "(3 + 1)(1 + 1)(1 + 1)(1 + 1) = 32", "32"]
+          ],
+          not: "Farklı asal çarpan sayısı ile bölen sayısı aynı şey değildir. 36 tam kare olduğu için bölen sayısı tektir (9)."
         }
       ]
     },
@@ -232,6 +258,17 @@ window.DEFTER = {
           sonuc: "En küçük sayı 60: 2²·3·5 ⇒ (2 + 1)(1 + 1)(1 + 1) = 12 bölen."
         },
         {
+          tip: "ornek",
+          baslik: "Üssü bilinmeyen ve toplam biçimli sayılar",
+          durum: "(a) 8·9ⁿ sayısının 36 pozitif böleni varsa n kaçtır? (b) 2³·5² + 2⁴·5² sayısının kaç pozitif böleni vardır?",
+          adimlar: [
+            "(a) 8·9ⁿ = 2³·3²ⁿ: (3 + 1)(2n + 1) = 36 ⇒ 2n + 1 = 9 ⇒ n = 4.",
+            "(b) Toplamı çarpım yapmak için ortak çarpanı dışarı al: 2³·5²·(1 + 2) = 2³·3·5².",
+            "Bölen sayısı: (3 + 1)(1 + 1)(2 + 1) = 4·2·3 = 24."
+          ],
+          sonuc: "(a) n = 4 (sayı 8·6561); (b) 24 pozitif bölen. Sınavda böyle yaz: *First write the number as a product of prime powers.*"
+        },
+        {
           tip: "liste",
           maddeler: [
             { ikon: "1️⃣", baslik: "Tek bölenler", metin: "2'yi at; kalan kısmın bölen sayısını bul." },
@@ -250,10 +287,10 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "Asalın tam iki pozitif böleni vardır; 1 asal ya da bileşik değildir, 2 tek çift asaldır.",
-            "Bölünebilme: 2 son rakam çift, 3 ve 9 rakamlar toplamı, 4 son iki basamak, 5 son rakam, 8 son üç basamak, 11 rakamların dönüşümlü farkı.",
+            "Bölünebilme: 2 son rakam çift, 3 ve 9 rakamlar toplamı, 4 son iki basamak, 5 son rakam, 8 son üç basamak, 16 son dört basamak, 11 rakamların dönüşümlü farkı.",
             "Asal çarpanlara ayırırken küçük asallardan başla: A = aᵐ·bⁿ·cʳ.",
             "Pozitif bölen sayısı (m + 1)(n + 1)(r + 1): her üsse 1 ekle, sonra çarp.",
-            "Asalın 2, tam karenin tek sayıda böleni vardır.",
+            "Asalın 2, tam karenin tek sayıda pozitif böleni vardır; negatif bölen sayısı pozitifle aynıdır.",
             "Tek bölen: 2'yi at. Çift bölen: toplam − tek. Tam kare bölen: çift üsleri say.",
             "Bölen sayısı verilince sayıyı bulmak için küçük asallara büyük üsleri ver.",
             "Bölenlerin toplamı: (1 + a + … + aᵐ)(1 + b + … + bⁿ)…"
@@ -264,35 +301,35 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "A = 2³·3·5² sayısının kaç pozitif böleni vardır?",
+      q: "How many positive divisors does A = 2³·3·5² have?",
       opts: ["6", "24", "18", "12"],
       a: 1,
       why: "Her üsse 1 ekleyip çarparız: (3 + 1)(1 + 1)(2 + 1) = 4·2·3 = 24. A şıkkı, üsleri toplayarak (3 + 1 + 2) ya da çarparak (3·1·2) bulunan yaygın yanlış sonuçtur."
     },
     {
-      q: "72 öğrenci, grup sayısı 1'den fazla ve her grupta 1'den fazla öğrenci olacak biçimde eşit sayılı gruplara ayrılacak. Kaç farklı grup sayısı seçilebilir?",
+      q: "72 students will be divided into equal groups. The number of groups must be more than 1, and each group must have more than 1 student. How many different numbers of groups are possible?",
       opts: ["12", "11", "8", "10"],
       a: 3,
       why: "72 = 2³·3² ⇒ 4·3 = 12 pozitif bölen. Grup sayısı 1 olamaz (tek grup) ve 72 olamaz (her grupta 1 kişi): 12 − 2 = 10. A, bu iki durumu da saymaktan çıkar."
     },
     {
-      q: "n = 2ᵃ·3 sayısının tam 12 pozitif böleni varsa a kaçtır?",
+      q: "The number n = 2ᵃ·3 has exactly 12 positive divisors. What is a?",
       opts: ["3", "4", "5", "6"],
       a: 2,
       why: "Bölen sayısı (a + 1)(1 + 1) = 12 ⇒ a + 1 = 6 ⇒ a = 5 (n = 96). D şıkkı, a + 1 = 6 eşitliğini a = 6 diye okumaktır."
     },
     {
-      q: "Tabloda asal çarpanları verilen A sayısının kaç pozitif çift böleni vardır?",
-      fig: { type: "table", head: ["Asal", "2", "3", "5"], rows: [["Üs", "3", "2", "1"]], caption: "A sayısının asal çarpanları (A = 2³·3²·5)" },
+      q: "The table gives the prime factorization of A (A = 2³·3²·5). How many positive even divisors does A have?",
+      fig: { type: "table", head: ["Prime", "2", "3", "5"], rows: [["Exponent", "3", "2", "1"]], caption: "Prime factorization of A" },
       opts: ["18", "24", "6", "12"],
       a: 0,
       why: "Toplam bölen (3 + 1)(2 + 1)(1 + 1) = 24. Tek bölenler 2 içermez: (2 + 1)(1 + 1) = 6. Çift bölen 24 − 6 = 18. B toplam bölen sayısıdır, C ise tek bölen sayısıdır."
     },
     {
-      q: "Aşağıdaki sayılardan hangisinin tam 3 pozitif böleni vardır?",
-      opts: ["15", "49", "21", "16"],
-      a: 1,
-      why: "Tam 3 böleni olan sayı p² biçimindedir (üs 2 ⇒ 2 + 1 = 3). 49 = 7² ⇒ 1, 7, 49. 16 = 2⁴ ⇒ 5 bölen; 15 ve 21'in dörder böleni var."
+      q: "How many integer divisors (positive and negative together) does 360 have?",
+      opts: ["24", "36", "48", "12"],
+      a: 2,
+      why: "360 = 2³·3²·5 için pozitif bölen sayısı (3 + 1)(2 + 1)(1 + 1) = 24. Her pozitif bölenin negatifi de bölendir: 24 + 24 = 48. A yalnızca pozitif bölenleri sayar."
     }
   ]
 };

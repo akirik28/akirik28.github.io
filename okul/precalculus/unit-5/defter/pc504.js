@@ -41,15 +41,15 @@ window.DEFTER = {
             { metin: "Çözmek istediğimiz denklem: **2^x = 5**. 2^x eğrisi ile y = 5 doğrusunun nerede kesiştiğini arıyoruz.", goster: ["l", "lt"] },
             { metin: "2² = 4 ve 2³ = 8 olduğundan, 5 bunların arasında: çözüm ==2 ile 3 arasında==.", goster: ["p2", "p3"] },
             { metin: "5, 2'nin tam kuvveti olmadığından tabanları eşitleyemeyiz. Çözüm ==x = log₂ 5== olarak yazılır.", goster: ["ip", "ipt"] },
-            { metin: "Sayıya çevir: x = log 5 ÷ log 2 ≈ 0,699 ÷ 0,301 ≈ 2,32. Gerçekten 2 ile 3 arasında." }
+            { metin: "Sayıya çevir: x = log 5 ÷ log 2 ≈ 0,69897 ÷ 0,30103 ≈ 2,32. Gerçekten 2 ile 3 arasında." }
           ] },
         { tip: "formul", parcalar: [
             { t: "2^x = 5" }, "⇒",
             { t: "x·log 2 = log 5" }, "⇒",
             { t: "x = log 5 ÷ log 2", alt: "= log₂ 5" }
           ], aciklama: "Genel kural: a^x = c ise x = log_a c. Üstteki x'i aşağı indirmek için iki tarafın logaritmasını alıp kuvvet kuralını kullan." },
-        { tip: "ornek", baslik: "3^x = 10", durum: "log 3 ≈ 0,477 verilsin. 3^x = 10 denklemini çöz.",
-          adimlar: ["İki tarafın onluk logaritmasını al: log(3^x) = log 10.", "Kuvvet kuralı: x·log 3 = 1.", "x = 1 ÷ log 3 ≈ 1 ÷ 0,477.", "1 ÷ 0,477 ≈ 2,1.", "Kontrol: 3² = 9 ve 3³ = 27; 10, 9'a yakın olduğundan x ≈ 2,1 mantıklı."],
+        { tip: "ornek", baslik: "3^x = 10", durum: "log 3 = 0,4771 verilsin. 3^x = 10 denklemini çöz.",
+          adimlar: ["İki tarafın onluk logaritmasını al: log(3^x) = log 10.", "Kuvvet kuralı: x·log 3 = 1.", "x = 1 ÷ log 3 = 1 ÷ 0,4771.", "1 ÷ 0,4771 ≈ 2,096 ≈ 2,1.", "Kontrol: 3² = 9 ve 3³ = 27; 10, 9'a yakın olduğundan x ≈ 2,1 mantıklı."],
           sonuc: "x = log₃ 10 = 1 ÷ log 3 ≈ 2,1. **Sınavda böyle yaz:** *Take the logarithm of both sides and use the power rule.*" },
         { tip: "tuzak", metin: "Bölme, logaritmanın içinde değil, iki logaritmanın arasındadır.", yanlis: "2^x = 5 ise x = log(5 ÷ 2).", dogru: "x·log 2 = log 5 olduğundan x = log 5 ÷ log 2. log(5 ÷ 2) = log 5 − log 2 başka bir sayıdır." }
       ]
@@ -94,11 +94,23 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Farklı tabanlı logaritmalar: tek tabana in",
+      kisa: "Tabanı değiştir: log_x 2 = 1 ÷ log₂ x ve log₄ x = (log₂ x) ÷ 2.",
+      bloklar: [
+        { tip: "ornek", baslik: "log₂ x = log_x 2", durum: "Denklemi çöz (x > 0 ve x ≠ 1).",
+          adimlar: ["t = log₂ x yaz. Taban değiştirme: log_x 2 = 1 ÷ log₂ x = 1/t.", "Denklem t = 1/t olur: t² = 1, yani t = 1 ya da t = −1.", "log₂ x = 1 ⇒ x = 2; log₂ x = −1 ⇒ x = 1/2.", "Kontrol: x = 1/2 için log₂(1/2) = −1 ve log_(1/2) 2 = −1."],
+          sonuc: "x = ==2== ya da x = ==1/2==. **Sınavda böyle yaz:** *Change the base so that every logarithm has the same base.*" },
+        { tip: "ornek", baslik: "log₄ x + log₂ x = 3", durum: "Denklemi çöz.",
+          adimlar: ["log₄ x = log₂ x ÷ log₂ 4 = (1/2) log₂ x.", "(1/2) log₂ x + log₂ x = (3/2) log₂ x = 3.", "log₂ x = 2 ⇒ x = 4.", "Kontrol: log₄ 4 + log₂ 4 = 1 + 2 = 3."],
+          sonuc: "x = ==4==. **Sınavda böyle yaz:** *Write both logarithms in base 2 and add them.*" }
+      ]
+    },
+    {
       baslik: "Uygulama: süre bulma",
       kisa: "Süre bulurken üstel terimi yalnız bırak, sonra logaritma al.",
       bloklar: [
-        { tip: "ornek", baslik: "Söylenti hızla yayılıyor", durum: "Bir videoyu başta 2 kişi izliyor ve izleyenler her saat 3 katına çıkıyor: N(t) = 2·3^t. Kaç saatte 108 kişi olur? (log 2 ≈ 0,301; log 3 ≈ 0,477)",
-          adimlar: ["2·3^t = 108 ⇒ 3^t = 54.", "54 = 2·3³ olduğundan log 54 = log 2 + 3 log 3.", "İki tarafın logu: t·log 3 = log 2 + 3 log 3.", "t = (0,301 + 3·0,477) ÷ 0,477 = (0,301 + 1,431) ÷ 0,477.", "1,732 ÷ 0,477 ≈ 3,63."],
+        { tip: "ornek", baslik: "Söylenti hızla yayılıyor", durum: "Bir videoyu başta 2 kişi izliyor ve izleyenler her saat 3 katına çıkıyor: N(t) = 2·3^t. Kaç saatte 108 kişi olur? (log 2 = 0,30103; log 3 = 0,4771)",
+          adimlar: ["2·3^t = 108 ⇒ 3^t = 54.", "54 = 2·3³ olduğundan log 54 = log 2 + 3 log 3.", "İki tarafın logu: t·log 3 = log 2 + 3 log 3.", "t = (0,30103 + 3·0,4771) ÷ 0,4771 = (0,30103 + 1,4313) ÷ 0,4771.", "1,73233 ÷ 0,4771 ≈ 3,63."],
           sonuc: "t = 3 + log 2 ÷ log 3 ≈ 3,63 saat. **Sınavda böyle yaz:** *The number of viewers reaches 108 after about 3.63 hours.*" },
         { tip: "ornek", baslik: "Sürekli faizle iki katına çıkma", durum: "2000 TL, yıllık %5 sürekli bileşik faizle yatırılıyor: A(t) = 2000·e^(0,05t). Kaç yılda 4000 TL olur?",
           adimlar: ["2000·e^(0,05t) = 4000 ⇒ e^(0,05t) = 2.", "Doğal logaritma al: 0,05t = ln 2.", "t = ln 2 ÷ 0,05 = 20 ln 2.", "ln 2 ≈ 0,693 alınırsa t ≈ 20·0,693 = 13,9."],
@@ -117,28 +129,28 @@ window.DEFTER = {
             "Toplam ya da fark varsa önce tek logaritma yap; sonra üstel biçime çevir.",
             "Her logaritmik denklemde kökü tanım kümesinde kontrol et; uymayan kök *extraneous solution* olur.",
             "Değişken değiştirme: 4^x − 3·2^x − 4 = 0 için t = 2^x. Üstel ifade pozitiftir, t = −1 elenir.",
-            "Hesap makinesi yok: log 2 ≈ 0,301 ve log 3 ≈ 0,477 ile 54 = 2·3³ gibi çarpanlara ayır."
+            "Hesap makinesi yok: log 2 = 0,30103 ve log 3 = 0,4771 ile 54 = 2·3³ gibi çarpanlara ayır. Farklı tabanlarda önce tek tabana in."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "e^(2x) = 7 denkleminin çözümü nedir?",
+    { q: "What is the solution of the equation e^(2x) = 7?",
       opts: ["x = 2 ln 7", "x = ln 7 − 2", "x = (ln 7) ÷ 2", "x = ln(7 ÷ 2)"],
       a: 2, why: "Doğal logaritma al: 2x = ln 7, x = (ln 7) ÷ 2. A, bölmek yerine çarpar; D ise ln'in içinde bölme yapar ve ln 7 − ln 2'yi verir." },
-    { q: "4^x − 6·2^x + 8 = 0 denkleminin çözüm kümesi hangisidir?",
-      opts: ["x = 2 ya da x = 4", "x = 1 ya da x = 2", "x = 1", "x = 2"],
+    { q: "What is the solution set of 4^x − 6·2^x + 8 = 0?",
+      opts: ["x = 2 or x = 4", "x = 1 or x = 2", "x = 1", "x = 2"],
       a: 1, why: "t = 2^x: t² − 6t + 8 = 0 ⇒ (t − 2)(t − 4) = 0 ⇒ t = 2 ya da 4. Sonra 2^x = 2 ise x = 1, 2^x = 4 ise x = 2. A, t değerlerini x sanar; C ve D ise bir kökü atlar." },
-    { q: "log₂ x + log₂(x − 2) = 3 denkleminin çözümü nedir?",
-      opts: ["x = −2 ya da x = 4", "x = 8", "x = 2", "x = 4"],
+    { q: "What is the solution of log₂ x + log₂(x − 2) = 3?",
+      opts: ["x = −2 or x = 4", "x = 8", "x = 2", "x = 4"],
       a: 3, why: "Tek log: log₂[x(x − 2)] = 3 ⇒ x² − 2x = 8 ⇒ (x − 4)(x + 2) = 0. Tanım kümesi x > 2 olduğundan x = −2 yabancı köktür; x = 4 (kontrol: 2 + 1 = 3)." },
-    { q: "Tablo 2^x değerlerini veriyor. 2^x = 5 denkleminin çözümü için hangisi doğrudur?",
-      fig: { type: "table", head: ["x", "2^x"], rows: [["1", "2"], ["2", "4"], ["3", "8"], ["4", "16"]], caption: "2^x değerleri" },
-      opts: ["2 ile 3 arasında; x = log₂ 5", "1 ile 2 arasında; x = log₂ 5", "2 ile 3 arasında; x = 5 ÷ 2", "3 ile 4 arasında; x = log₂ 5"],
+    { q: "The table shows values of 2^x. Which statement about the solution of 2^x = 5 is correct?",
+      fig: { type: "table", head: ["x", "2^x"], rows: [["1", "2"], ["2", "4"], ["3", "8"], ["4", "16"]], caption: "Values of 2^x" },
+      opts: ["It lies between 2 and 3; x = log₂ 5", "It lies between 1 and 2; x = log₂ 5", "It lies between 2 and 3; x = 5 ÷ 2", "It lies between 3 and 4; x = log₂ 5"],
       a: 0, why: "4 < 5 < 8 olduğundan 2² < 2^x < 2³, yani 2 < x < 3. Tam değer x = log₂ 5. C, aralığı doğru söyler ama çözümü yanlış (5 ÷ 2) yazar." },
-    { q: "Bir söylentiyi başta 5 kişi biliyor ve bilenlerin sayısı her saat 3 katına çıkıyor: N(t) = 5·3^t. N = 270 olduğu an t yaklaşık kaçtır?",
-      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0,301", "0,477"]], caption: "Verilen değerler" },
-      opts: ["1,73", "3,63", "4,58", "18"],
-      a: 1, why: "5·3^t = 270 ⇒ 3^t = 54 = 2·3³. t = log 54 ÷ log 3 = (0,301 + 1,431) ÷ 0,477 ≈ 3,63. A, log 54'ü log 3'e bölmeyi unutur; C oranı ters çevirir (3 + 0,477 ÷ 0,301); D, 54 ÷ 3 yapar." }
+    { q: "A rumor is known by 5 people at the start and the number of people who know it triples every hour: N(t) = 5·3^t. Using the table, at about what time t does N reach 270?",
+      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0.30103", "0.4771"]], caption: "Given values" },
+      opts: ["1.73 h", "3.63 h", "4.58 h", "18 h"],
+      a: 1, why: "5·3^t = 270 ⇒ 3^t = 54 = 2·3³. t = log 54 ÷ log 3 = (0,30103 + 1,4313) ÷ 0,4771 ≈ 3,63. A, log 54'ü log 3'e bölmeyi unutur (payı 1,73); C oranı ters çevirir; D, 54 ÷ 3 yapar." }
   ]
 };

@@ -1,8 +1,8 @@
 /* Kitora not defteri · en105 · 1.5 The Story of Princess Hase (A Story of Old Japan)
-   Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Yei Theodora Ozaki, Japanese Fairy Tales, 1908; kamuya açık). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Yei Theodora Ozaki, Japanese Fairy Tales, 1908; kamuya açık). Öğretmen belgesinde bu öykü için ayrı çalışma kâğıdı yok; yorumlar ek bilgi niteliğinde, Kasım sınav biçimi (özet A1) ve pasaj analizi yöntemiyle (özet D) uyumlu. */
 window.DEFTER = {
   slug: "en105",
-  amac: "Bu defter *The Story of Princess Hase* öyküsünü sınav gözüyle çözüyor: olay örgüsü, karakterler, Nara dönemi Japonya'sının kültürel bağlamı, temalar, araçlar ve sınavda çıkabilecek pasajlar. Sonunda kendi analiz paragrafın için bir iskelet var.",
+  amac: "Bu defter *The Story of Princess Hase* öyküsünü Kasım sınavındaki pasaj analizi gözüyle çözüyor: olay, karakterler, bağlam, temalar, araçlar. Yorumlar ek bilgidir (öğretmen belgesinde bu öykü için çalışma kâğıdı yok); sondaki iskelet kendi paragrafın içindir.",
   bolumler: [
     {
       baslik: "Olay: sabrın ödülü",
@@ -54,14 +54,14 @@ window.DEFTER = {
           ], vurgu: 0 },
         { tip: "kavramlar", kartlar: [
             { ikon: "🙏", terim: "Filial", tr: "evlat saygısına ait", tanim: "Çocuğun anne babasına saygı ve bağlılığı.", ornek: "Hase, annesinin sözünü tutar." },
-            { ikon: "🕊️", terim: "Submissive", tr: "itaatkâr", tanim: "Üstlerine boyun eğen.", ornek: "Anne, kızından “submissive to superiors” olmasını ister." },
+            { ikon: "🕊️", terim: "Submissive", tr: "itaatkâr", tanim: "Üstlerine boyun eğen.", ornek: "Anne, kızından “submissive to those who are your superiors” olmasını ister." },
             { ikon: "🪷", terim: "Devout", tr: "dindar, adanmış", tanim: "Dinine içtenlikle bağlı.", ornek: "Hase kutsal metinleri okur." },
             { ikon: "🔥", terim: "Jealousy / envy", tr: "kıskançlık", tanim: "Başkasının başarısına duyulan acı.", ornek: "Terute'nin “envy and jealousy”si yanar." }
           ] }
       ]
     },
     {
-      baslik: "Kültürel bağlam",
+      baslik: "Kültürel bağlam (ek bilgi)",
       kisa: "Hikâye, Budist inanç, saray töreni ve evlat saygısı üzerine kurulu bir Nara Japonya'sını anlatır.",
       bloklar: [
         { tip: "liste", maddeler: [
@@ -71,7 +71,7 @@ window.DEFTER = {
             { ikon: "🎶", baslik: "Kadın yetenekleri", metin: "Koto çalmak, şiir ve hat yazmak soylu kadınlar için değerli sayılırdı; Hase'nin gücü de buradan gelir." },
             { ikon: "👨‍👩‍👧", baslik: "Aile ve varis", metin: "Erkek çocuk soyu devam ettirir; Prens oğlu olmadığı için bir varis evlat edinir." }
           ] },
-        { tip: "not", metin: "Bu metin, Yei Theodora Ozaki'nin 1908'de İngilizce okurlar için derlediği *Japanese Fairy Tales* kitabındandır. Anlatıcı, Japon âdetlerini açıklar (“koto (Japanese harp)”); yani bir Batılı okura kültür tanıtmak da öykünün amaçlarından biridir." }
+        { tip: "not", metin: "Ek bilgi: bu metin, Yei Theodora Ozaki'nin 1908'de İngilizce okurlar için derlediği *Japanese Fairy Tales* kitabındandır. Anlatıcı, Japon âdetlerini açıklar (“koto (Japanese harp)”); yani bir Batılı okura kültür tanıtmak da öykünün amaçlarından biridir." }
       ]
     },
     {
@@ -102,10 +102,10 @@ window.DEFTER = {
             ["*Fairy-tale conventions*", "“Many, many years ago”; “To this day…”", "Zamansız, öğretici bir hava"],
             ["*Direct characterization*", "“noble, good, and beautiful”; “a cruel, bad heart”", "İyi ile kötü net ayrılır"],
             ["*Foil*", "Murasaki ve Terute; Hase'nin çalışkanlığı ve Terute'nin tembelliği", "Erdemin parlaması"],
-            ["*Foreshadowing / proverb*", "“As the soul is at three so it is at one hundred”", "Hase'nin iyiliğinin kalıcı olacağını sezdirir"],
+            ["*End orientation / proverb*", "“As the soul is at three so it is at one hundred”", "Açılıştaki sözün Hase'nin sonraki yaşamına işaret etmesi"],
             ["*Situational irony*", "Zehirli kadeh kendi oğluna gider", "Kötülüğün kendini cezalandırması"],
-            ["*Motif / repetition*", "“This is not my child!”", "Üvey annenin saplantısı"],
-            ["*Simile / symbol*", "“burned in her heart like fire”; lotus ve Buddha işlemesi", "Kıskançlığın yakıcılığı; saflığın kalıcı mirası"]
+            ["*Repetition*", "“This is not my child!”", "Üvey annenin saplantısı"],
+            ["*Simile / symbolism*", "“burned in her heart like fire”; lotus ve Buddha işlemesi", "Kıskançlığın yakıcılığı; saflığın kalıcı mirası"]
           ], vurgu: 4 },
         { tip: "tuzak", metin: "Bu öykü gerçekçi bir psikoloji anlatmaz; karakterler arketiptir. Analizde “neden bu kadar kötü?” diye sorma, “yazar hangi dersi vermek için bu zıtlığı kurdu?” diye sor.", yanlis: "Terute gerçekçi değil, bu yüzden kötü bir öykü.", dogru: "Düz karakterler masalın ahlak amacını güçlendirir." }
       ]
@@ -117,10 +117,10 @@ window.DEFTER = {
         { tip: "tablo", head: ["Pasaj", "Nerede?", "Odak", "Olası anlam"],
           rows: [
             ["Giriş", "Prens ve eşinin duası", "Bağlam, inanç", "İnsan umudu ve ilahi merhamet."],
-            ["Annenin son sözleri", "Ölüm yatağı", "*Foreshadowing*, değerler", "Evlat saygısı ve sabır."],
+            ["Annenin son sözleri", "Ölüm yatağı", "*End orientation*, değerler", "Evlat saygısı ve sabır."],
             ["Kiraz Çiçeği Şenliği", "Sarayda performans", "*Foil*, kıskançlık", "Yetenek ve çalışma karşısında tembellik."],
             ["Zehirli şarap", "Erkek çocuklar bayramı", "*Situational irony*", "Kötülük sahibine döner."],
-            ["Nehir ve şiir", "Tatsuta Nehri", "*Symbol*, *allusion*", "Sanat ve inancın gücü."],
+            ["Nehir ve şiir", "Tatsuta Nehri", "*Symbolism*, *allusion*", "Sanat ve inancın gücü."],
             ["Dağda kavuşma", "Hibari Dağları", "Sadakat, tanınma", "Vicdan ve sevgi kazanır."]
           ] },
         { tip: "tablo", baslik: "Hatırlanacak kısa alıntılar (Ozaki derlemesi)", head: ["Alıntı", "Ne gösterir?"],
@@ -131,20 +131,21 @@ window.DEFTER = {
             ["“Thus was the wicked woman punished”", "Ahlaki sonuç"],
             ["“burned in her heart like fire”", "Kıskançlık benzetmesi"],
             ["“The waters ceased their roaring”", "Erdemin gücü"]
-          ] }
+          ] },
+        { tip: "not", metin: "Kasım sınavındaki pasaj, Cultural Perspectives ünitesindeki bir kısa öykü ya da denemeden gelir; bu öykünün çıkacağı garanti değildir. Ek bilgi: sınıfta ayrıca Amy Tan'ın *Two Kinds* öyküsü, Orwell'in *A Hanging* denemesi ve Achebe'nin *Things Fall Apart* kitabının ilk bölümleri de işlendi; yöntemi (QPC) hepsinde aynı uygula." }
       ]
     },
     {
       baslik: "Örnek analiz paragrafının iskeleti",
       kisa: "İskeleti kullan, kanıtı pasajdan kendin seç; paragrafı kendin yaz.",
       bloklar: [
-        { tip: "adimlar", baslik: "Cümle başlangıçları (boşluklar sende)", adimlar: [
-            { baslik: "Konu cümlesi", metin: "*In “The Story of Princess Hase,” the narrator uses [araç 1] and [araç 2] to show that [anlam], so that readers [amaç].*" },
-            { baslik: "Bağlam", metin: "*In this passage, Hase-Hime, the daughter of a minister in ancient Nara, [durum].*" },
-            { baslik: "Kanıt 1", metin: "*The narrator describes Terute as “[alıntı]”, which contrasts with…. This foil suggests…*" },
-            { baslik: "Kanıt 2", metin: "*The poisoned cup is ironic because Terute [__], yet [__]. This reveals…*" },
-            { baslik: "Kanıt 3", metin: "*The final sentence / the closing detail of [tapınak işlemesi] shows that…*" },
-            { baslik: "Kapanış", metin: "*Ultimately, the story teaches that… / Through Hase-Hime's patience, the author…*" }
+        { tip: "adimlar", baslik: "Cümle başlangıçları (boşluklar sende; Woods'un sırasıyla)", adimlar: [
+            { baslik: "Eser + bağlam", metin: "*This passage from “The Story of Princess Hase” comes at the point where Hase-Hime, the daughter of a minister in ancient Nara, [durum].*" },
+            { baslik: "Konu cümlesi (konu + görüş)", metin: "*In this passage, the narrator shows that [anlam] in order to [amaç].* Araçları burada sıralama." },
+            { baslik: "Analiz 1 (QPC)", metin: "*The narrator describes Terute as having “[alıntı]”, which contrasts with…. This foil suggests…*" },
+            { baslik: "Analiz 2 (QPC)", metin: "*The poisoned cup is ironic because Terute [__], yet [__]. This reveals…*" },
+            { baslik: "Analiz 3 (QPC)", metin: "*The final sentence / the closing detail of [tapınak işlemesi] shows that…*" },
+            { baslik: "Kapanış (isteğe bağlı)", metin: "*Ultimately, the story teaches that… / Through Hase-Hime's patience, the narrator…*" }
           ] },
         { tip: "tuzak", baslik: "Ezber paragraf tuzağı", metin: "Sınavdaki pasaj bu öyküden olsa bile farklı bir bölüm olabilir. Ezberlenmiş bir paragraf pasaja uymazsa kanıt puanı gider.", yanlis: "Bir paragraf ezberler, hepsini oraya yapıştırırım.", dogru: "Cümle kalıbını bil, kanıtı ve açıklamayı o gün pasajdan seç." }
       ]
@@ -159,30 +160,30 @@ window.DEFTER = {
             "Hase şiiriyle nehri susturur; imparatordan rütbe alır; sonra dağa sürülür, babası onu bulur.",
             "Bağlam: Nara, Budizm, Kwannon, imparator ve perde, kadın sanatları, varis evlat edinme; Batılı okura derlenmiş bir masal.",
             "Temalar: erdemin ödülü, kıskançlığın cezası, evlat saygısı, sanatın ve inancın gücü.",
-            "Araçlar: *fairy-tale conventions, direct characterization, foil, foreshadowing, motif, simile, symbol*.",
+            "Araçlar: *fairy-tale conventions, direct characterization, foil, end orientation, repetition, simile, symbolism*.",
             "Analiz iskeleti: konu cümlesi + bağlam + üç kanıt + kapanış; paragrafı kendin yaz."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Zehirli kadehin Terute'nin kendi oğluna gitmesi hangi edebi aracı örnekler?",
+    { q: "Terute's poisoned cup goes to her own son. Which literary device does this illustrate?",
       opts: ["Foreshadowing", "Situational irony", "Simile", "Allusion"],
       a: 1,
       why: "Terute'nin planı tersine döner: beklenenin tersi olur. En çekici yanlış şık A: öncesinde bu olayı sezdiren belirgin bir ipucu yok." },
-    { q: "“Many, many years ago…” ve “To this day there is preserved a piece of needle-work…” cümleleri hangi özelliği gösterir?",
-      opts: ["Gerçekçi bir günlük anlatımı", "Anlatıcının öykünün dışında kaldığını", "Masal geleneklerini (zamansız başlangıç ve bitiş)", "Birinci kişi anlatımı"],
+    { q: "What do the phrases \"Many, many years ago...\" and \"To this day there is preserved a piece of needle-work...\" show about the text?",
+      opts: ["A realistic, everyday narration", "That the narrator stays outside the story", "Fairy-tale conventions (a timeless opening and closing)", "First-person narration"],
       a: 2,
-      why: "Formülsel başlangıç ve “bugüne kadar” biçiminde bitiş masal gelenekleridir. B yanlış: anlatıcı yorum yapar ve ahlaki hüküm verir (“Thus was the wicked woman punished”)." },
-    { q: "Annenin ölürken Hase'ye verdiği öğütler öykü boyunca neyi kurar?",
-      opts: ["Hase'nin ailesinden nefret etmesini", "Üvey annenin suçsuzluğunu", "Hase'nin imparatordan kaçışını", "Hase'nin davranışına yön veren değerleri; ayrıca sonraki sabrını sezdirir"],
+      why: "Formülsel başlangıç ve \"bugüne kadar\" biçiminde bitiş masal gelenekleridir. B yanlış: anlatıcı yorum yapar ve ahlaki hüküm verir (\"Thus was the wicked woman punished\")." },
+    { q: "What do the mother's last words to Hase-Hime help to establish in the rest of the story?",
+      opts: ["That Hase-Hime hates her family", "That the stepmother is innocent", "That Hase-Hime runs away from the emperor", "The values (obedience, patience) that guide Hase-Hime's behavior later on"],
       a: 3,
-      why: "Öğütler (itaat, sabır) Hase'nin sonraki davranışını açıklar ve önceden sezdirir (*foreshadowing*). B yanlış: öğüt üvey anneyi savunmaz, kızı ona karşı sabra çağırır." },
-    { q: "Anlatıcının “koto (Japanese harp)” gibi açıklamalar yapması neyi gösterir?",
-      opts: ["Metnin yabancı okurlara kültür tanıttığını", "Metnin yalnızca Japon okurlara yazıldığını", "Yazarın Japonya'yı bilmediğini", "Metnin bir bilim kitabı olduğunu"],
+      why: "Öğütler (itaat, sabır) Hase'nin sonraki davranışını açıklar ve açılışın sona işaret etmesine (*end orientation*) örnektir. B yanlış: öğüt üvey anneyi savunmaz, kızı ona karşı sabra çağırır." },
+    { q: "Why does the narrator explain terms such as \"koto (Japanese harp)\"?",
+      opts: ["Because the text was compiled for English-speaking readers and introduces the culture to them", "Because the text was written only for Japanese readers", "Because the author does not know Japan", "Because the text is a science book"],
       a: 0,
       why: "Ozaki, İngilizce okurlar için derlemiştir; bilinmeyen sözcükler açıklanır. B yanlış: bunun tersi doğru." },
-    { q: "Aşağıdakilerden hangisi bu öykü için en iyi *meaning* (anlam) cümlesidir?",
+    { q: "Which of the following is the best meaning (theme) statement for this story?",
       opts: ["The story is about a girl who plays the koto.", "The emperor lives behind a curtain.", "Patience, devotion and goodness are rewarded, while envy destroys the envious.", "Stepmothers are always cruel."],
       a: 2,
       why: "C tema düzeyinde bir mesaj verir. A ve B ayrıntıdır; D genellemedir ve metne dayanmaz." }

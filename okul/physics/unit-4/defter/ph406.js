@@ -342,33 +342,32 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Doğal frekansı 2 Hz olan bir salıncak, aşağıdaki sıklıklardan hangisiyle itilirse genliği en çok artar?",
-      opts: ["Her 0,5 saniyede bir", "Her 1 saniyede bir", "Her 2 saniyede bir", "Her 4 saniyede bir"],
-      a: 0,
+      q: "A swing has a natural frequency of 2 Hz. At which pushing interval will its amplitude increase the most?",
+      opts: ["Every 0.5 seconds", "Every 1 second", "Every 2 seconds", "Every 4 seconds"], a: 0,
       why: "Rezonans için itme frekansı doğal frekansa eşit olmalı: f = 2 Hz → T = 1/f = 0,5 s. C en çekici yanlış şıktır: 2 Hz ile 2 saniye karıştırılmış."
     },
     {
-      q: "Bir depremde zemin 0,5 Hz frekansla sallanıyor. Üç binanın doğal frekansları tabloda verilmiştir. Hangi bina rezonansa girer ve en çok hasar görür?",
-      fig: { type: "table", head: ["Bina", "Doğal frekans"], rows: [["X", "4 Hz"], ["Y", "0,5 Hz"], ["Z", "1 Hz"]] },
-      opts: ["X", "Y", "Z", "Üçü de eşit hasar görür"],
+      q: "During an earthquake the ground shakes at a frequency of 0.5 Hz. The natural frequencies of three buildings are given in the table. Which building goes into resonance and is damaged the most?",
+      fig: { type: "table", head: ["Building", "Natural frequency"], rows: [["X", "4 Hz"], ["Y", "0.5 Hz"], ["Z", "1 Hz"]] },
+      opts: ["X", "Y", "Z", "All three are damaged equally"],
       a: 1,
       why: "Rezonans zemin frekansı doğal frekansa eşit olunca olur: yalnızca Y binasında 0,5 Hz = 0,5 Hz. Z'de 1 Hz ≠ 0,5 Hz olduğundan frekanslar eşleşmez ve genlik daha küçük kalır."
     },
     {
-      q: "Bir istasyonda P ve S dalgaları arasındaki zaman farkı 40 s ölçülüyor. P dalgasının hızı 8 km/s, S dalgasının hızı 4 km/s'dir. Deprem istasyondan kaç km uzaktadır?",
+      q: "At a station, the time difference between the arrival of the P wave and the S wave is 40 s. The speed of the P wave is 8 km/s and that of the S wave is 4 km/s. How far away is the earthquake from the station?",
       opts: ["80 km", "160 km", "320 km", "640 km"],
       a: 2,
       why: "t_S − t_P = d/4 − d/8 = d/8 = 40 → d = 320 km. Kontrol: t_P = 40 s, t_S = 80 s, fark 40 s ✓. B şıkkı yalnızca S dalgasının süresini (d/4) farka eşitlemekten gelir."
     },
     {
-      q: "Deprem dalgalarıyla ilgili aşağıdakilerden hangisi doğrudur?",
-      opts: ["P dalgaları enine dalgalardır.", "Yüzey dalgaları sismografa ilk ulaşan dalgalardır.", "S dalgası P dalgasından daha hızlıdır.", "S dalgaları sıvı olan dış çekirdekten geçemez."],
+      q: "Which of the following statements about seismic waves is correct?",
+      opts: ["P waves are transverse waves.", "Surface waves are the first waves to reach a seismograph.", "S waves travel faster than P waves.", "S waves cannot pass through the liquid outer core."],
       a: 3,
       why: "S dalgaları enine dalgadır ve sıvıda yayılamaz. P dalgaları boyunadır ve en hızlıdır (ilk gelir). Yüzey dalgaları en son gelir ama en yıkıcıdır."
     },
     {
-      q: "Bir gökdelenin tepesine büyük kütleli bir sönümleyici (kütle sönümleyici) yerleştiriliyor. Bunun amacı aşağıdakilerden hangisidir?",
-      opts: ["Binanın doğal frekansını zemin frekansına eşitlemek.", "Titreşim enerjisini soğurarak binanın salınım genliğini azaltmak.", "Binayı yerçekiminden korumak.", "P dalgalarını durdurmak."],
+      q: "A large mass damper is placed at the top of a skyscraper. What is its purpose?",
+      opts: ["To make the natural frequency of the building equal to the frequency of the ground", "To absorb vibration energy and reduce the amplitude of the building's oscillation", "To protect the building from gravity", "To stop the P waves"],
       a: 1,
       why: "Kütle sönümleyici titreşim enerjisini soğurup ısıya çevirerek bina genliğini küçültür. A en çekici yanlış şıktır: amaç tam tersine, rezonansa girmemektir."
     }

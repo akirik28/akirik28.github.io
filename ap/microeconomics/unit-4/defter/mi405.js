@@ -152,7 +152,7 @@ window.DEFTER = {
       fig: { type: "table", head: ["", "B: Sol", "B: Sağ"], rows: [["A: Yukarı", "5 , 2", "4 , 3"], ["A: Aşağı", "3 , 6", "1 , 2"]] },
       opts: ["Yalnız A'nın baskın stratejisi vardır (Yukarı); Nash dengesi (Yukarı, Sağ)'dır.", "Her iki oyuncunun da baskın stratejisi vardır; Nash dengesi (Aşağı, Sol)'dur.", "Yalnız B'nin baskın stratejisi vardır; Nash dengesi (Yukarı, Sol)'dur.", "Hiçbir oyuncunun baskın stratejisi yoktur; Nash dengesi yoktur."], a: 0,
       why: "A için Yukarı her iki durumda da yüksek (5 > 3 ve 4 > 1). B için Sol/Sağ A'nın seçimine göre değişir (Yukarı'ya karşı Sağ, Aşağı'ya karşı Sol), baskın strateji yok. A Yukarı oynar, B ona karşı Sağ seçer: (4, 3). Baskın strateji olmayan oyuncu da Nash dengesinin parçası olabilir." },
-    { q: "Apartmanda iki komşu ortak merdiveni temizleyip temizlememeye karar veriyor (T: temizle, N: temizleme). Ödüller memnuniyet puanıdır (A, B). Yönetim, temizleyene her durumda b puan bonus verecek. Temizlemeyi baskın strateji yapacak en küçük tam sayı b kaçtır?",
+    { q: "Apartmanda iki komşu ortak merdiveni temizleyip temizlememeye karar veriyor (T: temizle, N: temizleme). Ödüller memnuniyet puanıdır (A, B). Yönetim, temizleyene her durumda b puan bonus verecek. \"Temizle\" (T) stratejisini baskın strateji yapacak en küçük tam sayı b kaçtır?",
       fig: { type: "table", head: ["", "B: Temizle", "B: Temizleme"], rows: [["A: Temizle", "6 , 6", "2 , 8"], ["A: Temizleme", "8 , 2", "3 , 3"]] },
       opts: ["1", "2", "3", "4"], a: 2,
       why: "Temizlemenin baskın olması için 6 + b > 8 (b > 2) ve 2 + b > 3 (b > 1) birlikte sağlanmalı: b > 2. b = 1'de 7 < 8 ve 3 = 3; b = 2'de 8 = 8, eşitlik baskınlık sağlamaz; b = 3'te 9 > 8 ve 5 > 3. 4 de çalışır ama en küçük değildir." },

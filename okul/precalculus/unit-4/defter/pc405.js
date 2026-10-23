@@ -33,7 +33,7 @@ window.DEFTER = {
       kisa: "Kenarın sinüsüne oranı üç kenarda da aynıdır.",
       bloklar: [
         { tip: "formul", parcalar: [{ t: "a / sin A", alt: "" }, "=", { t: "b / sin B" }, "=", { t: "c / sin C" }, "=", { t: "2R", alt: "R: çevrel çemberin yarıçapı" }],
-          aciklama: "Büyük açının karşısındaki kenar büyüktür. Üçgenin iç açıları toplamı 180°'dir: A + B + C = 180°." },
+          aciklama: "Büyük açının karşısındaki kenar büyüktür. Üçgenin iç açıları toplamı 180°'dir: A + B + C = 180°. Buradan sin A : sin B : sin C = a : b : c ve (sin A − sin B) / (sin A + sin B) = (a − b) / (a + b) çıkar." },
         { tip: "ornek", baslik: "Okul bahçesindeki üçgen", durum: "Kantin (K), spor salonu (S) ve yurt (Y) bir üçgen oluşturuyor. K'deki açı 45°, S'deki açı 60° ve SY mesafesi 12√2 m. KY mesafesi kaç m?",
           adimlar: ["SY, K açısının karşısında (a = 12√2, A = 45°); KY, S açısının karşısında (b, B = 60°).", "a / sin A = b / sin B → 12√2 / (√2/2) = b / (√3/2).", "12√2 · 2/√2 = 24, yani b = 24 · √3/2 = 12√3."],
           sonuc: "KY = ==12√3 m==. Sınavda böyle yaz: *By the Law of Sines, a / sin A = b / sin B.*" },
@@ -96,11 +96,14 @@ window.DEFTER = {
       baslik: "Üçgenin alanı ve uygulama",
       kisa: "İki kenar ve aralarındaki açıyla alan: ½ · a · b · sin C.",
       bloklar: [
-        { tip: "formul", parcalar: [{ t: "Alan", alt: "*area*" }, "=", { t: "½ · a · b · sin C", alt: "C, a ile b arasındaki açı" }],
-          aciklama: "Taban × yükseklik / 2'nin trigonometrik hali: yükseklik h = b sin C. Aynı üçgen için ½ac sin B ve ½bc sin A da geçerlidir." },
+        { tip: "formul", parcalar: [{ t: "A(∆ABC)", alt: "üçgenin alanı (*area*)" }, "=", { t: "½ · a · b · sin C", alt: "C, a ile b arasındaki açı" }],
+          aciklama: "Taban × yükseklik / 2'nin trigonometrik hali: yükseklik h = b sin C. Aynı üçgen için A(∆ABC) = ½ac sin B = ½bc sin A de geçerlidir." },
         { tip: "ornek", baslik: "3-5-7 üçgeninin alanı", durum: "Kenarları 3, 5 ve 7 olan üçgenin alanını bul. (C = 120° bulundu.)",
           adimlar: ["3 ve 5 kenarları arasındaki açı 120°: sin 120° = √3/2.", "Alan = ½ · 3 · 5 · √3/2 = 15√3/4."],
           sonuc: "Alan ==15√3/4==. Sınavda böyle yaz: *The area is ½ab sin C = ½ · 3 · 5 · sin 120°.*" },
+        { tip: "ornek", baslik: "Verilen bağıntıdan açıyı bulmak", durum: "ABC üçgeninde c² = a² + b² + √2·ab. C açısı kaç derecedir?",
+          adimlar: ["Kosinüs teoremi: c² = a² + b² − 2ab cos C.", "İki eşitliği karşılaştır: −2ab cos C = √2·ab, yani cos C = −√2/2.", "0° ile 180° arasında cos C = −√2/2 olan açı 135°."],
+          sonuc: "C = ==135°== (geniş açı). Sınavda böyle yaz: *Compare the given relation with the Law of Cosines.*" },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Draw and label the triangle first.*", metin: "Önce şekil çiz, bilinenleri işaretle." },
             { ikon: "✍️", baslik: "*Two sides and the included angle are given.*", metin: "SAS: aradaki açı." },
@@ -119,23 +122,23 @@ window.DEFTER = {
             "SSA'da h = b sin A ile karşılaştır: a < h → 0, a = h → 1, h < a < b → 2, a ≥ b → 1 üçgen.",
             "sin B = k iken B ve 180° − B iki aday; toplamı 180°'yi aşanı ele.",
             "SSS'de önce en büyük açıyı kosinüs teoremiyle bul; cos negatifse açı geniştir.",
-            "Alan = ½ab sin C (a ve b arasındaki açı C).",
+            "A(∆ABC) = ½ab sin C (a ve b arasındaki açı C).",
             "Hesap makinesi yok: özel açılar kullanılır, cevap kök biçiminde bırakılır."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Bir üçgende A = 30°, B = 45° ve a = 10 ise b kenarının uzunluğu kaçtır?", opts: ["5√2", "10√2", "10√3", "20"], a: 1,
+    { q: "In triangle ABC, A = 30°, B = 45° and a = 10. What is the length of side b?", opts: ["5√2", "10√2", "10√3", "20"], a: 1,
       why: "b = a sin B / sin A = 10 · (√2/2) / (1/2) = 10√2. 5√2, sin 30°'yi paya yazmaktan çıkar." },
-    { q: "Okul kapısından iki patika 60° açıyla ayrılıyor ve 4 km ile 6 km sonra bitiyor. Patikaların uçları arasındaki mesafe kaç km'dir?", opts: ["2√7", "2√13", "√10", "10"], a: 0,
+    { q: "Two paths leave the school gate at an angle of 60° and end 4 km and 6 km from the gate. What is the distance between the ends of the paths?", opts: ["2√7 km", "2√13 km", "√10 km", "10 km"], a: 0,
       why: "c² = 4² + 6² − 2 · 4 · 6 · cos 60° = 52 − 24 = 28, c = 2√7. 2√13 (= √52), −2ab cos C terimini unutmaktır." },
-    { q: "Kenarları 3, 5 ve 7 olan üçgen şeklindeki bir arsanın en büyük köşe açısı kaç derecedir?", opts: ["60°", "90°", "120°", "150°"], a: 2,
+    { q: "The sides of a triangular plot of land are 3, 5 and 7. What is the largest angle of the plot?", opts: ["60°", "90°", "120°", "150°"], a: 2,
       why: "En büyük açı 7'nin karşısında: cos C = (9 + 25 − 49)/30 = −1/2, C = 120°. 90° olsaydı 3² + 5² = 7² gerekirdi (34 ≠ 49)." },
-    { q: "Tabloda verilenlerle kaç farklı üçgen çizilebilir?", opts: ["Hiç üçgen", "Tek bir üçgen", "Üçgen sayısı belirlenemez", "İki farklı üçgen"], a: 3,
+    { q: "Using the information in the table, how many different triangles can be drawn?", opts: ["No triangle", "Exactly one triangle", "The number cannot be determined", "Two different triangles"], a: 3,
       why: "SSA, A dar açı: h = b sin A = 10 · 1/2 = 5. h < a < b yani 5 < 6 < 10: iki üçgen. Tek üçgen cevabı, a ≥ b koşulu için geçerlidir.",
-      fig: { type: "table", head: ["Verilen", "Değer"], rows: [["A", "30°"], ["a (A'nın karşısı)", "6"], ["b", "10"]], caption: "Bir üçgenin bilinen parçaları" } },
-    { q: "İki kenarı 6 ve 8, bu kenarlar arasındaki açı 30° olan üçgenin alanı kaçtır?", opts: ["12", "24", "12√3", "24√3"], a: 0,
-      why: "Alan = ½ · 6 · 8 · sin 30° = 24 · 1/2 = 12. 24, ½ ya da sin 30°'yi unutmaktır." }
+      fig: { type: "table", head: ["Given", "Value"], rows: [["A", "30°"], ["a (opposite A)", "6"], ["b", "10"]], caption: "Known parts of a triangle" } },
+    { q: "Two sides of a triangle are 6 and 8, and the angle between them is 30°. What is the area of the triangle?", opts: ["12", "24", "12√3", "24√3"], a: 0,
+      why: "A(∆ABC) = ½ · 6 · 8 · sin 30° = 24 · 1/2 = 12. 24, ½ ya da sin 30°'yi unutmaktır." }
   ]
 };

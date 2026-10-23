@@ -60,6 +60,9 @@ window.DEFTER = {
             { metin: "Eşdeğer direnç, en küçük dirençten bile küçüktür.", cevap: "sag", neden: "Yeni yol akımı kolaylaştırır: paralel." },
             { metin: "Gerilimler toplanıp pil gerilimine eşit olur.", cevap: "sol", neden: "V = V₁ + V₂: seri." }
           ] },
+        { tip: "ornek", baslik: "Prizdeki sigorta", durum: "110 V'luk bir evde 20 A'lik sigortaya bağlı prizlerde 1800 W'lık mikrodalga, 1000 W'lık tost makinesi ve 800 W'lık kahve makinesi paralel bağlı. Mikrodalga ile kahve makinesi birlikte çalışırsa sigorta atar mı? (P = V · I)",
+          adimlar: ["Paralelde her cihaz 110 V alır; akımlar toplanır. Mikrodalga: I = 1800 / 110 ≈ 16,4 A.", "Kahve makinesi: I = 800 / 110 ≈ 7,3 A.", "Toplam: 16,4 + 7,3 ≈ 23,6 A, sigorta sınırı 20 A'in üzerinde."],
+          sonuc: "Evet, sigorta atar (erir). Paralel kol eklendikçe toplam akım artar. Sınavda böyle yaz: *The total current is the sum of the branch currents, which exceeds the 20 A rating of the fuse.*" },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*In a series circuit the voltage is shared between the resistors.*", metin: "Seri devrede gerilim paylaşılır." },
             { ikon: "✍️", baslik: "*In a parallel circuit the current is shared between the branches.*", metin: "Paralel devrede akım paylaşılır." }
@@ -108,10 +111,9 @@ window.DEFTER = {
             ["Toplam (R_eş)", "4", "12", "3"]
           ], vurgu: 3, not: "Her satırda V = I · R'yi, seri kısımda 6 + 6 = 12 V'u ve paralel kısımda 1 + 2 = 3 A'i kontrol et." },
         { tip: "tuzak", metin: "Toplam akım yalnızca pilden ve seri bağlı elemandan geçer; paralel kolda paylaşılır.", yanlis: "R₂'nin gerilimi V = I_toplam · R₂ = 3 · 6 = 18 V.", dogru: "R₂'den yalnızca 1 A geçer: V₂ = 1 · 6 = 6 V. 18 V pil geriliminden bile büyük olamaz." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*First I find the equivalent resistance of the parallel part.*", metin: "Çözüm sırasını cümleyle göster." },
-            { ikon: "✍️", baslik: "*The total current is 3 A, so the voltage across R₁ is 6 V.*", metin: "Her adımın sonucunu birimle yaz." }
-          ] }
+        { tip: "ornek", baslik: "İki kollu karma devre", durum: "240 V'luk kaynağa iki kol bağlı. Birinci kol yalnızca 60 Ω'luk dirençten oluşuyor. İkinci kolda 10 Ω'luk direnç, birbirine paralel 90 Ω ve 45 Ω'luk dirençlerle seri. Kaynaktan çekilen toplam akım ve her direncin akımı nedir?",
+          adimlar: ["En içteki paralel: 90 ile 45 Ω → (90 · 45) / 135 = 30 Ω. İkinci kol: 10 + 30 = 40 Ω.", "İki kol paralel: R_eş = (60 · 40) / 100 = 24 Ω. Toplam akım I = 240 / 24 = 10 A.", "60 Ω'dan I = 240 / 60 = 4 A; ikinci koldan 10 − 4 = 6 A. 10 Ω'da V = 6 · 10 = 60 V.", "Geriye kalan 240 − 60 = 180 V, 90 Ω ve 45 Ω'un ortak gerilimi: I₉₀ = 180 / 90 = 2 A, I₄₅ = 180 / 45 = 4 A. Kontrol: 2 + 4 = 6 A ✓."],
+          sonuc: "I_toplam = 10 A; 60 Ω: 4 A; 10 Ω: 6 A; 90 Ω: 2 A; 45 Ω: 4 A. Şema karışıksa devreyi yeniden çiz. Sınavda böyle yaz: *First I find the equivalent resistance of the parallel part.* *The total current is 10 A, so the voltage across the 10 Ω resistor is 60 V.*" }
       ]
     },
     {
@@ -132,21 +134,20 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "6 Ω ve 3 Ω'luk iki direnç paralel bağlanıyor. Eşdeğer direnç kaç Ω'dur?",
-      opts: ["9 Ω", "4,5 Ω", "2 Ω", "18 Ω"], a: 2,
+    { q: "Two resistors of 6 Ω and 3 Ω are connected in parallel. What is the equivalent resistance?",
+      opts: ["9 Ω", "4.5 Ω", "2 Ω", "18 Ω"], a: 2,
       why: "R_eş = (6 · 3) / (6 + 3) = 18 / 9 = 2 Ω. 9 Ω seri bağlantının sonucudur; 18 Ω yalnızca çarpımı almaktır. Paralel eşdeğer 3 Ω'dan küçük olmalıdır." },
-    { q: "12 V'luk bir pile 2 Ω ve 4 Ω'luk iki direnç seri bağlanmıştır. 4 Ω'luk direncin uçları arasındaki gerilim kaç V'tur?",
+    { q: "Resistors of 2 Ω and 4 Ω are connected in series to a 12 V battery. What is the voltage across the 4 Ω resistor?",
       opts: ["8 V", "4 V", "6 V", "12 V"], a: 0,
       why: "R_eş = 6 Ω, I = 12 / 6 = 2 A, V = 2 · 4 = 8 V. 6 V, gerilimin eşit paylaşıldığını sanmaktır; 12 V paralel mantığıdır." },
-    { q: "Tabloda 12 V'luk bir kaynağa paralel bağlı iki kol veriliyor. Kaynaktan çekilen toplam akım kaç A'dir?",
-      fig: { type: "table", head: ["Kol", "Direnç", "Uçlardaki gerilim"], rows: [["K₁", "6 Ω", "12 V"], ["K₂", "3 Ω", "12 V"]], caption: "Paralel kollar" },
-      opts: ["2 A", "4 A", "1,5 A", "6 A"], a: 3,
-      why: "I₁ = 12 / 6 = 2 A, I₂ = 12 / 3 = 4 A; I = I₁ + I₂ = 6 A. Tek koldaki akımı toplam sanan 2 A ya da 4 A'e gider." },
-    { q: "12 V'luk pile R₁ = 2 Ω seri bağlı; ardından R₂ = 6 Ω ve R₃ = 3 Ω paralel bağlıdır. R₂'den geçen akım kaç A'dir?",
+    { q: "R₁ = 15 Ω and R₂ = 9 Ω are connected in series, and this combination is connected in parallel with R₃ = 8 Ω. What is the total resistance of the load?",
+      opts: ["3.3 Ω", "6 Ω", "13.6 Ω", "32 Ω"], a: 1,
+      why: "Seri kol: 15 + 9 = 24 Ω. Paralel: (24 · 8) / (24 + 8) = 192 / 32 = 6 Ω. 32 Ω hepsini seri toplamaktır; 3,3 Ω hepsini paralel sanmaktır." },
+    { q: "A 12 V battery is connected to R₁ = 2 Ω in series with R₂ = 6 Ω and R₃ = 3 Ω, which are in parallel with each other. What is the current through R₂?",
       opts: ["3 A", "1 A", "2 A", "6 A"], a: 1,
       why: "Paralel kısım 2 Ω, R_eş = 4 Ω, I_toplam = 3 A. R₁'de 6 V düşer, paralel kolda 6 V kalır; I₂ = 6 / 6 = 1 A. 3 A, toplam akımdır." },
-    { q: "Aynı üç özdeş ampul bir pile paralel bağlıdır. Ampullerden biri sökülürse diğer iki ampulün parlaklığı ve pilden çekilen toplam akım nasıl değişir?",
-      opts: ["Parlaklıkları artar, toplam akım artar", "Parlaklıkları azalır, toplam akım azalır", "Parlaklıkları değişmez, toplam akım azalır", "Parlaklıkları değişmez, toplam akım değişmez"], a: 2,
+    { q: "Three identical bulbs are connected in parallel to a battery. One bulb is removed. What happens to the brightness of the other two bulbs and to the total current drawn from the battery?",
+      opts: ["Their brightness increases, total current increases", "Their brightness decreases, total current decreases", "Their brightness stays the same, total current decreases", "Their brightness stays the same, total current stays the same"], a: 2,
       why: "Paralelde her ampul pil gerilimini tek başına alır, bu yüzden parlaklık değişmez. Bir kol azaldığı için toplam akım azalır (I = I₁ + I₂)." }
   ]
 };

@@ -165,7 +165,7 @@ window.DEFTER = (function () {
         a: 3, why: "W₁ denge ücretinin üstündedir: Ls > Ld, yani fazla arz (işsizlik). A şıkkı ücretin dengenin altında olduğu durumu anlatır; C şıkkı ise ücret değişimini kaymayla karıştırır." },
       { q: "Ücreti belirleyemeyen bir firma, 3 işçiyle çalışırken toplam işçilik maliyeti 90 TL'dir. 4. işçiyi alınca toplam işçilik maliyeti 120 TL oluyor. 4. işçinin MRC'si kaç TL'dir?",
         opts: ["90 TL", "30 TL", "120 TL", "40 TL"],
-        a: 1, why: "MRC = ΔTC/ΔL = (120 − 90)/1 = 30 TL; ücret sabit olduğu için MRC ücrete eşittir. D şıkkı toplam maliyeti işçi sayısına bölüyor (ortalama), marjinal değil." }
+        a: 1, why: "MRC = ΔTC/ΔL = (120 − 90)/1 = 30 TL; ücret sabit olduğu için MRC ücrete eşittir. D şıkkı 120 TL'yi önceki işçi sayısına (3) bölüyor (120 ÷ 3 = 40); bu ne ortalama ne de marjinal maliyettir. Ücret sabit olduğundan 4 işçide ortalama maliyet de 120 ÷ 4 = 30 TL'dir." }
     ]
   };
 })();

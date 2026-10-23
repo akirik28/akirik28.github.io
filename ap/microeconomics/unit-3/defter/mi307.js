@@ -167,7 +167,7 @@ window.DEFTER = (function () {
               ["*Constant cost*", "Girdi fiyatları değişmez", "Kaymaz", "Yatay", "Aynı kalır"],
               ["*Increasing cost*", "Girdi fiyatları yükselir", "Yukarı kayar", "Yukarı eğimli", "Yükselir"],
               ["*Decreasing cost*", "Maliyetler düşer", "Aşağı kayar", "Aşağı eğimli", "Düşer"]
-            ], not: "Her durumda uzun dönemde firmalar yine P = en düşük ATC (sıfır kâr) dengesine ulaşır. Uzun dönem fiyatı, firmaların uzun dönem maliyet eğrisinin hangi kısmında çalıştığına bağlıdır: endüstri büyürken bu eğri yukarı kayarsa fiyat yükselir, aşağı kayarsa düşer, kaymazsa aynı kalır." }
+            ], not: "Her durumda uzun dönemde firmalar yine P = en düşük ATC (sıfır kâr) dengesine ulaşır. Uzun dönem fiyatı, endüstri büyürken firmaların en düşük ATC düzeyinin değişip değişmediğine bağlıdır: maliyet eğrileri yukarı kayarsa fiyat yükselir, aşağı kayarsa düşer, kaymazsa aynı kalır." }
         ]
       },
       {

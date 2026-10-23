@@ -1,8 +1,8 @@
 /* Kitora not defteri · bi202 · 2.2 Topluluk ve Popülasyon
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (Topic 2.2 Interactions and Changes in Communities and Populations) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi202",
-  amac: "Canlıların bir arada nasıl yaşadığını öğreneceksin: boş bir alanın ormana dönüşmesi (süksesyon), türler arası ilişkiler (av-avcı, savunma, rekabet, simbiyoz) ve popülasyonların yoğunluğu ile büyümesi. Grafikleri ve senaryoları İngilizce yorumlayabileceksin.",
+  amac: "Canlıların bir arada nasıl yaşadığını öğreneceksin: boş bir alanın ormana dönüşmesi (süksesyon), komünite yapısı, türler arası ilişkiler (av-avcı, savunma, rekabet, simbiyoz) ve popülasyonların yoğunluğu ile büyümesi. Grafikleri ve senaryoları İngilizce yorumlayabileceksin.",
   bolumler: [
     {
       baslik: "Süksesyon: boş alan nasıl orman olur?",
@@ -42,6 +42,18 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Komünite yapısı ve çeşitlilik",
+      kisa: "Komünitenin yapısı ve çeşitliliği abiyotik koşullara göre değişir.",
+      bloklar: [
+        { tip: "tablo", baslik: "Çeşitliliği ne belirler?", head: ["Ortam", "Belirleyen etken", "Sonuç"], rows: [
+            ["Karasal", "Enlem, yer şekli, iklim; ışık miktarı ve süresi, nem, sıcaklık, yağış", "Yağışlı tropik bölgelerde tür çeşitliliği fazla; kutup ve çöllerde az"],
+            ["Sucul", "Derinlik, kıyıya uzaklık, bulanıklık", "Işık ulaşan yerde fotosentetik canlı çok; derinleştikçe ışık, çözünmüş O₂ ve çeşitlilik azalır"],
+            ["Kirlenmiş su", "Evsel ve endüstriyel atık", "Bazı türler anormal artar, birçoğu azalır ya da yok olur"]
+          ], not: "Sınavda böyle yaz: *Species diversity is greater in tropical regions with abundant rainfall than in polar regions and deserts.*" },
+        { tip: "not", metin: "İki komünite arasındaki geçiş bölgesine *ecotone* denir. Komünitenin yapısı (*community structure*), türlerin birbiriyle ilişkilerine göre düzenlenir: rekabet, av-avcı ve simbiyoz." }
+      ]
+    },
+    {
       baslik: "Av-avcı ilişkisi ve savunma",
       kisa: "Avcı ve av sayıları birbirini döngüsel izler; avlar savunmayla yaşar.",
       bloklar: [
@@ -60,8 +72,8 @@ window.DEFTER = {
             { metin: "Av azalınca avcı aç kalıp azalır, av yeniden çoğalır ve döngü başlar. Klasik örnek: Kanada'da vaşak ile kar ayakkabılı tavşanın yaklaşık 10 yıllık döngüsü." }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🍂", terim: "Camouflage", tr: "kamuflaj", tanim: "Av, rengi ve şekliyle çevreye karışır ve fark edilmez.", ornek: "Ağaç kabuğuna benzeyen bir güve." },
-            { ikon: "🐝", terim: "Mimicry", tr: "taklit", tanim: "Zararsız bir tür, zehirli ya da zararlı bir türe benzer.", ornek: "Arıya benzeyen ama sokmayan çiçek sineği." },
+            { ikon: "🍂", terim: "Camouflage", tr: "kamuflaj", tanim: "Av, rengi ve şekliyle çevreye karışır ve fark edilmez; pasif bir savunmadır.", ornek: "Ağaç kabuğuna benzeyen bir güve." },
+            { ikon: "🐝", terim: "Mimicry", tr: "taklit", tanim: "Zararsız bir tür, zehirli ya da zararlı bir türe benzer (*Batesian mimicry*).", ornek: "Arıya benzeyen ama sokmayan çiçek sineği." },
             { ikon: "🦎", terim: "Warning coloration", tr: "uyarı rengi", tanim: "Zehirli canlı, parlak renklerle avcıya ==dokunma== der.", ornek: "Ateş semenderinin siyah-sarı derisi." },
             { ikon: "🦔", terim: "Chemical and physical defense", tr: "kimyasal ve fiziksel savunma", tanim: "Zehir, kötü koku, diken ya da sert kabukla korunmak.", ornek: "Kirpinin dikenleri, kaplumbağanın kabuğu." }
           ] },
@@ -94,12 +106,13 @@ window.DEFTER = {
       baslik: "Simbiyoz: yakın ve uzun süreli birliktelik",
       kisa: "Simbiyozun türü, iki tarafın kazanç ve zararına göre belirlenir.",
       bloklar: [
-        { tip: "tablo", baslik: "Üç simbiyoz türü", head: ["İlişki", "Tür 1", "Tür 2", "Örnek"],
+        { tip: "tablo", baslik: "Dört simbiyoz türü", head: ["İlişki", "Tür 1", "Tür 2", "Örnek"],
           rows: [
-            ["Mutualizm (*mutualism*)", "+", "+", "Baklagil kökü ve *Rhizobium*; liken (mantar + alg)"],
-            ["Kommensalizm (*commensalism*)", "+", "0", "Ağaç dalına tutunan orkide; köpek balığına yapışan remora"],
+            ["Mutualizm (*mutualism*)", "+", "+", "Liken (mantar + alg), mikoriza, *Paramecium bursaria* + *Chlorella*, baklagil + *Rhizobium*"],
+            ["Kommensalizm (*commensalism*)", "+", "0", "Köpek balığı ve remora; balina ya da deniz kaplumbağasına tutunan midye kabuklusu (*barnacle*)"],
+            ["Amensalizm (*amensalism*)", "0", "−", "Ceviz ağacının salgısı altındaki otsu bitkilerin büyümesini engeller"],
             ["Parazitlik (*parasitism*)", "+", "−", "Kene ve memeli; ökseotu ve ağaç"]
-          ], not: "+ yarar görür · 0 etkilenmez · − zarar görür" },
+          ], not: "+ yarar görür · 0 etkilenmez · − zarar görür. Sınavda böyle yaz: *Mutualism is a relationship in which both species benefit.* *In commensalism, one species benefits and the other is neither helped nor harmed.* *In parasitism, the parasite benefits at the expense of the host.*" },
         { tip: "ikili", sol: { ikon: "🤝", baslik: "*Mutualism*", maddeler: ["İki taraf da yarar görür (+ / +)"] },
           sag: { ikon: "🦟", baslik: "*Parasitism*", maddeler: ["Parazit yarar, konak zarar görür (+ / −)"] },
           oyun: [
@@ -110,10 +123,11 @@ window.DEFTER = {
             { metin: "Anemon balığı anemonun dokunaçlarında korunur, anemonu temiz tutar.", cevap: "sol", neden: "İki taraf da yarar görür: *mutualism*." }
           ] },
         { tip: "tuzak", metin: "Kommensalizmde yalnızca bir taraf yarar görür, ötekinin ne kazancı ne zararı vardır.", yanlis: "Kommensalizm ile parazitliği ayırmak zordur; ikisinde de biri yarar görür.", dogru: "Sorun ==zarar var mı?==: zarar varsa parazitlik, yoksa kommensalizm. Ayrıca parazit konağını genelde hemen öldürmez; avcı ise avını öldürür." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Mutualism is a relationship in which both species benefit.*", metin: "Mutualizm." },
-            { ikon: "✍️", baslik: "*In commensalism, one species benefits and the other is neither helped nor harmed.*", metin: "Kommensalizm." },
-            { ikon: "✍️", baslik: "*In parasitism, the parasite benefits at the expense of the host.*", metin: "Parazitlik." }
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🪰", terim: "Ectoparasite", tr: "dış parazit", tanim: "Konağın üstünde yaşar; kan, deri ya da kılla beslenir ve hastalık bulaştırabilir.", ornek: "Bit, pire, kene, sülük, sivrisinek." },
+            { ikon: "🪱", terim: "Endoparasite", tr: "iç parazit", tanim: "Konağın sindirim sistemi ya da vücut sıvılarında yaşar; çok hızlı ürer ve zarar verir.", ornek: "Tenya, bağırsak solucanı." },
+            { ikon: "🌿", terim: "Semi-parasitic plant", tr: "yarı parazit bitki", tanim: "Klorofili vardır, fotosentez yapar; konaktan yalnız su ve mineral alır.", ornek: "Ökseotu." },
+            { ikon: "🥀", terim: "Fully parasitic plant", tr: "tam parazit bitki", tanim: "Kloroplastı yoktur, fotosentez yapamaz; tüm maddeleri konaktan alır.", ornek: "Küsküt (*Cuscuta*, dodder)." }
           ] }
       ]
     },
@@ -125,17 +139,18 @@ window.DEFTER = {
             { t: "Yoğunluk", alt: "birey / alan" }, "=",
             { t: "Birey sayısı", alt: "N" }, "÷",
             { t: "Alan ya da hacim", alt: "m², km², L" }
-          ], aciklama: "Birimi hep yaz: kuş/km², papatya/m²." },
-        { tip: "ornek", baslik: "Çayırdaki papatyaları tahmin et", durum: "Bir çayır 200 m². Rastgele atılan beş adet 1 m²'lik çerçevede (*quadrat*) sırayla 4, 6, 3, 7 ve 5 papatya sayılıyor. Çayırda yaklaşık kaç papatya vardır?",
+          ], aciklama: "Birimi hep yaz: kuş/km², papatya/m². Sınavda böyle yaz: *Population density is the number of individuals per unit area.*" },
+        { tip: "ornek", baslik: "Çayırdaki papatyaları tahmin et (ek bilgi)", durum: "Bir çayır 200 m². Rastgele atılan beş adet 1 m²'lik çerçevede (*quadrat*) sırayla 4, 6, 3, 7 ve 5 papatya sayılıyor. Çayırda yaklaşık kaç papatya vardır?",
           adimlar: [
             "Ortalama yoğunluk = (4 + 6 + 3 + 7 + 5) ÷ 5 = 25 ÷ 5 = 5 papatya/m².",
             "Toplam alan 200 m² olduğuna göre toplam = 5 × 200 = 1000 papatya.",
             "Çerçeveler ==rastgele== atılmalı ve ne kadar çok çerçeve olursa tahmin o kadar güvenilir olur."
           ], sonuc: "Yaklaşık 1000 papatya." },
         { tip: "tuzak", metin: "Yoğunluk tek bir ortalama sayıdır.", yanlis: "Yoğunluk yüksekse bireyler alana eşit dağılmıştır.", dogru: "Aynı yoğunlukta bireyler kümelenmiş, düzgün ya da rastgele dağılabilir. Yoğunluk \"ne kadar\", dağılım \"nasıl\" sorusunu yanıtlar." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Population density is the number of individuals per unit area.*", metin: "Tanım." },
-            { ikon: "✍️", baslik: "*Density = number of individuals ÷ area.*", metin: "Formül cümlesi." }
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🟣", terim: "Clumped distribution", tr: "kümelenmiş dağılım", tanim: "Bireyler gruplar hâlinde toplanır.", ornek: "Sürü hayvanları, kaynağın yoğun olduğu yerler." },
+            { ikon: "🎲", terim: "Random distribution", tr: "rastgele dağılım", tanim: "Bireylerin konumu birbirinden bağımsızdır.", ornek: "Rüzgârla yayılan tohumlardan çıkan otlar." },
+            { ikon: "🔲", terim: "Uniform (regular) distribution", tr: "düzgün dağılım", tanim: "Bireyler aralarında eşit uzaklık bırakır.", ornek: "Kendi bölgesini koruyan hayvanlar." }
           ] }
       ]
     },
@@ -161,14 +176,10 @@ window.DEFTER = {
           durumlar: [
             { metin: "Kaynaklar sınırsızsa popülasyon ==üstel== artar: J eğrisi. Gerçekte uzun süre sürmez.", goster: ["j"] },
             { metin: "Gerçek ortamda kaynak sınırlıdır; büyüme yavaşlar ve S biçimli eğri oluşur.", goster: ["s"] },
-            { metin: "Eğri bir tavana yaklaşır: ==*carrying capacity*== (taşıma kapasitesi, K). Ortamın uzun süre besleyebileceği en çok birey sayısı.", goster: ["k", "kl"] },
+            { metin: "Eğri bir tavana yaklaşır: ==*carrying capacity*== (taşıma kapasitesi, K). Ortamın taşıyabileceği en çok birey sayısı. Büyümeyi engelleyen her biyotik ya da abiyotik etken ==*environmental resistance*== (çevre direnci) olup K'ya yaklaştıkça artar.", goster: ["k", "kl"] },
             { metin: "S eğrisinin üç evresi: yavaş başlangıç, hızlı artış, denge. Dengede doğum + içe göç ≈ ölüm + dışa göç.", goster: ["e1", "e2", "e3"] }
           ] },
-        { tip: "not", metin: "K'yi düşüren etkenlerin bir kısmı yoğunluğa bağlıdır (*density-dependent*): besin, rekabet, hastalık, avcı. Popülasyon büyüdükçe etkileri artar. Bir kısmı yoğunluktan bağımsızdır (*density-independent*): yangın, sel, don, kuraklık. Popülasyon küçük de olsa aynı etkiyi yapar." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The population grows exponentially when resources are unlimited.*", metin: "J eğrisi." },
-            { ikon: "✍️", baslik: "*The population levels off at the carrying capacity.*", metin: "S eğrisi sonu." }
-          ] }
+        { tip: "not", metin: "(Ek bilgi) K'yi düşüren etkenlerin bir kısmı yoğunluğa bağlıdır (*density-dependent*): besin, rekabet, hastalık, avcı. Popülasyon büyüdükçe etkileri artar. Bir kısmı yoğunluktan bağımsızdır (*density-independent*): yangın, sel, don, kuraklık. Popülasyon küçük de olsa aynı etkiyi yapar. Sınavda böyle yaz: *The population levels off at the carrying capacity.*" }
       ]
     },
     {
@@ -178,10 +189,10 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "Birincil süksesyon topraksız yerde (kaya, lav), ikincil süksesyon toprak kalmış yerde (yangın, tarla) başlar; öncü türler → klimaks.",
             "Av-avcı grafiğinde avcı zirvesi avın zirvesinden sonra gelir; ikisi birbirini sınırlar.",
-            "Kamuflaj gizlenir, mimikri başka türe benzer, uyarı rengi dikkat çeker.",
+            "Komünite çeşitliliği yağışlı tropiklerde fazladır; suda derinlikle azalır. Kamuflaj gizlenir, mimikri başka türe benzer, uyarı rengi dikkat çeker.",
             "Rekabet: türiçi (aynı tür) ve türler arası; aynı nişi paylaşan iki tür birlikte yaşayamaz.",
-            "Simbiyoz: mutualizm (+/+), kommensalizm (+/0), parazitlik (+/−).",
-            "Yoğunluk = birey sayısı ÷ alan; birimi yaz.",
+            "Simbiyoz: mutualizm (+/+), kommensalizm (+/0), amensalizm (0/−), parazitlik (+/−).",
+            "Yoğunluk = birey sayısı ÷ alan; dağılım kümelenmiş, rastgele ya da düzgün olabilir.",
             "ΔN = doğum + içe göç − ölüm − dışa göç.",
             "J eğrisi sınırsız kaynakta, S eğrisi sınırlı kaynakta; K taşıma kapasitesidir."
           ] }
@@ -190,34 +201,34 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir orman yangınından sonra aynı bölgede ilk yıl otlar, birkaç yıl sonra çalılar, daha sonra çam fidanları yeşermiştir. Bu süreç nedir?",
-      opts: ["Birincil süksesyon", "İkincil süksesyon", "Biyolojik büyütme", "Rekabetle dışlama"],
+      q: "After a forest fire, grasses appear in the same area in the first year, shrubs a few years later and then pine seedlings. What is this process?",
+      opts: ["Primary succession", "Secondary succession", "Biomagnification", "Competitive exclusion"],
       a: 1,
       why: "Yangın toprağı ve kökleri yok etmediği için süreç ikincil süksesyondur. Birincil süksesyon çıplak kayada ya da lavda başlar, yani toprak yoktur."
     },
     {
-      q: "Tabloda bir adadaki tavşan ve vaşak sayıları verilmiştir. Tabloya göre hangi çıkarım doğrudur?",
-      fig: { type: "table", head: ["Yıl", "1", "2", "3", "4", "5", "6"], rows: [["Tavşan", 300, 800, 500, 200, 100, 400], ["Vaşak", 20, 30, 70, 80, 30, 20]], caption: "Av ve avcı sayıları" },
-      opts: ["Vaşak sayısı artınca tavşanlar çoğaldığı için vaşak zirvesi önce gelir.", "İki popülasyonun zirvesi aynı yılda görülür.", "Avcı zirvesi avın zirvesinden sonra gelir; tavşan azalırken vaşak bir süre daha artabilir.", "Tavşan sayısındaki azalma vaşak sayısını etkilemez."],
+      q: "The table shows the numbers of hares and lynx on an island. Which conclusion is correct?",
+      fig: { type: "table", head: ["Year", "1", "2", "3", "4", "5", "6"], rows: [["Hare", 300, 800, 500, 200, 100, 400], ["Lynx", 20, 30, 70, 80, 30, 20]], caption: "Prey and predator numbers" },
+      opts: ["The lynx peak comes first because the hares increase when lynx increase.", "The peaks of both populations occur in the same year.", "The predator peak follows the prey peak; the lynx can still increase for a while as the hares decline.", "The decrease in hares does not affect the number of lynx."],
       a: 2,
       why: "Tavşan 2. yılda, vaşak 4. yılda zirve yapıyor: avcı avı gecikmeyle izler. Tavşanın azalması da sonunda vaşakları azaltır (5. ve 6. yıl); bu yüzden son şık yanlış. İlk şık nedeni sonucla karıştırıyor."
     },
     {
-      q: "Bir orkide, yağmur ormanındaki bir ağacın dalına tutunarak yaşar ve ışığa daha kolay ulaşır; ağaç ne yarar ne zarar görür. Bu ilişki hangisidir?",
-      opts: ["Kommensalizm", "Mutualizm", "Parazitlik", "Türler arası rekabet"],
+      q: "An orchid grows on a branch of a rainforest tree and reaches light more easily; the tree is neither helped nor harmed. What is this relationship?",
+      opts: ["Commensalism", "Mutualism", "Parasitism", "Interspecific competition"],
       a: 0,
       why: "Orkide yarar (+) ağaç etkilenmiyor (0): kommensalizm. Ağaç zarar görseydi parazitlik, ikisi de yarar görseydi mutualizm olurdu."
     },
     {
-      q: "Bir sulak alanda 5 km²'lik bölgede 1000 flamingo sayılmıştır. Alan aynı kalmak üzere bir yıl sonra yoğunluk 300 flamingo/km² olduysa flamingo sayısı kaçtır?",
+      q: "In a 5 km² area of a wetland, 1000 flamingos were counted. If the area stays the same and one year later the density is 300 flamingos/km², how many flamingos are there?",
       opts: ["60", "1200", "1800", "1500"],
       a: 3,
       why: "Birey sayısı = yoğunluk × alan = 300 × 5 = 1500. 60, alanı yoğunluğa bölmekten çıkar; yoğunluğun birimi birey/alan olduğundan sayıyı bulmak için çarpmak gerekir."
     },
     {
-      q: "Küçük bir adaya bırakılan geyik sürüsünün büyüklüğü tabloda verilmiştir. Tabloya göre hangisi söylenebilir?",
-      fig: { type: "table", head: ["Yıl", "0", "1", "2", "3", "4", "5", "6"], rows: [["Geyik sayısı", 10, 20, 40, 70, 95, 100, 100]], caption: "Geyik popülasyonu" },
-      opts: ["Popülasyon sınırsız büyür ve taşıma kapasitesi 10'dur.", "Büyüme 5. yıldan sonra durmuştur; taşıma kapasitesi yaklaşık 100'dür ve kaynaklar sınırlıdır.", "6. yılda geyiklerin hepsi ölmüştür.", "Doğum sayısı her yıl ölüm sayısına eşittir."],
+      q: "The size of a herd of deer released on a small island is given in the table. Which statement can be made?",
+      fig: { type: "table", head: ["Year", "0", "1", "2", "3", "4", "5", "6"], rows: [["Number of deer", 10, 20, 40, 70, 95, 100, 100]], caption: "Deer population" },
+      opts: ["The population grows without limit and the carrying capacity is 10.", "Growth stopped after year 5; the carrying capacity is about 100 and resources are limited.", "All the deer died in year 6.", "The number of births equals the number of deaths every year."],
       a: 1,
       why: "Sayı önce hızlı artıp 100 civarında sabitleniyor: S eğrisi ve K ≈ 100. Doğum ve ölüm eşitliği yalnızca dengede (5. yıldan sonra) geçerlidir, bütün yıllarda değil."
     }

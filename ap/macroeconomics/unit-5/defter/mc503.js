@@ -176,7 +176,7 @@ window.DEFTER = (function () {
           points: [{ q: 6, p: 6, label: "E₁", guides: true }, { q: 6, p: 8, label: "E₂", guides: true }],
           xticks: [{ v: 6, label: "Yf" }], yticks: [{ v: 6, label: "P₁" }, { v: 8, label: "P₂" }] },
         opts: ["Reel GSYH artar, fiyat düzeyi değişmez.", "Fiyat düzeyi artar, reel GSYH değişmez.", "Fiyat düzeyi ve reel GSYH birlikte artar.", "İşsizlik doğal oranın altına kalıcı olarak düşer."], a: 1,
-        why: "LRAS dikey: uzun dönemde çıktı Yf'te kalır, AD'deki kayma yalnız fiyat düzeyini P₁'den P₂'ye çıkarır. A şıkkı kısa dönem hikâyesidir; uzun dönemde para nötrdür." },
+        why: "LRAS dikey: uzun dönemde çıktı Yf'te kalır, AD'deki kayma yalnız fiyat düzeyini P₁'den P₂'ye çıkarır. C şıkkı kısa dönem hikâyesidir (çıktı ve fiyat birlikte artar); A şıkkında fiyat hiç değişmiyor. Uzun dönemde para nötrdür." },
       { q: "Bir ülkenin nominal GSYH'si 600 milyar TL, para arzı 150 milyar TL'dir. Paranın dolaşım hızı kaçtır?",
         opts: ["0,25", "450", "750", "4"], a: 3,
         why: "V = PY ÷ M = 600 ÷ 150 = 4: her lira yılda ortalama 4 kez el değiştirir. 0,25 şıkkı oranı ters çevirir." },

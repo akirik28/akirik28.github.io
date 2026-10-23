@@ -100,7 +100,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Aynı %9 faiz, farklı enflasyonlar", head: ["Gerçekleşen enflasyon (π)", "Reel faiz (9 − π)", "Kim kazanır?"], rows: [
             ["%3 (beklentiden düşük)", "%6", "Borç veren"],
             ["%6 (beklendiği gibi)", "%3", "Kimse: plan tuttu"],
-            ["%9", "%0", "Borç veren kazanmadı"],
+            ["%9 (beklentiden yüksek)", "%0", "Borç alan (borç veren hiç reel getiri almadı)"],
             ["%12 (beklentiden yüksek)", "−%3", "Borç alan"]
           ], not: "Faiz sözleşmede sabitse, beklenenden yüksek enflasyon borç alanın, düşük enflasyon borç verenin işine yarar." }
       ]

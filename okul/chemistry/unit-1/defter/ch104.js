@@ -15,7 +15,9 @@ window.DEFTER = {
           ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "💨", terim: "Vapor pressure", tr: "buhar basıncı", tanim: "Kapalı kapta, sıvı ile dengedeki buharın yaptığı basınç. Aynı sıcaklıkta sıvıya özgü bir değerdir.", ornek: "20 °C'de suyun buhar basıncı yaklaşık 2,3 kPa'dır." },
-            { ikon: "🧴", terim: "Volatile liquid", tr: "uçucu sıvı", tanim: "Moleküller arası kuvvetleri zayıf, kolay buharlaşan ve buhar basıncı yüksek sıvı.", ornek: "Aseton, dietil eter." }
+            { ikon: "🧴", terim: "Volatile liquid", tr: "uçucu sıvı", tanim: "Moleküller arası kuvvetleri zayıf, kolay buharlaşan ve buhar basıncı yüksek sıvı.", ornek: "Aseton, dietil eter." },
+            { ikon: "🌫️", terim: "Evaporation", tr: "buharlaşma", tanim: "Her sıcaklıkta, yalnızca sıvının yüzeyinde olur; yüzeydeki moleküllerin bir kısmı gaza geçer.", ornek: "Çamaşırın kuruması." },
+            { ikon: "🫕", terim: "Boiling", tr: "kaynama", tanim: "Buhar basıncı dış basınca eşit (P_buhar ≥ P_dış) olunca sıvının her yerinde kabarcık oluşur; moleküllerin çoğu gaza geçebilir. Yalnızca belirli bir sıcaklıkta olur.", ornek: "Çaydanlıktaki su 100 °C'de." }
           ] },
         { tip: "ikili", sol: { ikon: "🌬️", baslik: "Uçucu (yüksek buhar basıncı)", maddeler: ["Moleküller arası kuvvet zayıf", "Çabuk buharlaşır"] },
           sag: { ikon: "🍯", baslik: "Az uçucu (düşük buhar basıncı)", maddeler: ["Moleküller arası kuvvet güçlü", "Zor buharlaşır"] },
@@ -27,7 +29,8 @@ window.DEFTER = {
           ] },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: tanım", metin: "*Vapor pressure is the pressure of the vapor in equilibrium with its liquid in a closed container.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: uçuculuk", metin: "*Liquids with weak intermolecular forces are volatile and have a high vapor pressure.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: uçuculuk", metin: "*Liquids with weak intermolecular forces are volatile and have a high vapor pressure.*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: buharlaşma ve kaynama", metin: "*Evaporation occurs at any temperature but only at the surface, whereas boiling occurs throughout the liquid when the vapor pressure equals the external pressure.*" }
           ] }
       ]
     },
@@ -106,7 +109,8 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Kaynayan suyun sıcaklığı basınca göre değişir. Bu yüzden dağda yemek geç pişer.", yanlis: "Su her yerde kaynarken 100 °C'dedir.", dogru: "100 °C yalnızca 1 atm'de geçerlidir. Yükseklikte su daha düşük sıcaklıkta kaynar; sıcaklık düşük olduğu için yemek ==geç pişer.==" },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: kaynama koşulu", metin: "*A liquid boils when its vapor pressure equals the external pressure.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: yükseklik", metin: "*At higher altitude the atmospheric pressure is lower, so water boils at a lower temperature.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: yükseklik", metin: "*At higher altitude the atmospheric pressure is lower, so water boils at a lower temperature.*" },
+            { ikon: "📏", baslik: "Birimler", metin: "Normal kaynama noktası, buhar basıncının 1 atm = 760 mmHg = 760 torr = 76 cmHg ≈ 101,3 kPa olduğu sıcaklıktır. Suyun normal kaynama noktası 100 °C'dir." }
           ] }
       ]
     },
@@ -115,10 +119,10 @@ window.DEFTER = {
       kisa: "Sıvı kendi moleküllerini mi (kohezyon) yoksa kabı mı (adezyon) daha çok çekiyor?",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🫧", terim: "Cohesion", tr: "kohezyon", tanim: "Aynı cins moleküllerin birbirini çekmesi.", ornek: "Su damlasının yuvarlak kalması." },
-            { ikon: "🧪", terim: "Adhesion", tr: "adezyon", tanim: "Farklı cins moleküllerin (sıvı ile kap) birbirini çekmesi.", ornek: "Suyun cam çeperine yapışması." },
-            { ikon: "🌙", terim: "Meniscus", tr: "menisküs", tanim: "Dar bir tüpte sıvı yüzeyinin eğriliği: içbükey (konkav) ya da dışbükey (konveks).", ornek: "Mezürde suyun kenarlardan yukarı kıvrılması." },
-            { ikon: "🧻", terim: "Capillary action", tr: "kılcallık", tanim: "Sıvının dar bir tüpte kendiliğinden yükselmesi ya da alçalması. Tüp daraldıkça etki artar.", ornek: "Kâğıt havlunun suyu emmesi." }
+            { ikon: "🫧", terim: "Cohesion", tr: "kohezyon", tanim: "Aynı cins moleküllerin birbirini çekmesi.", ornek: "Su damlasının yuvarlak kalması (sudaki hidrojen bağları)." },
+            { ikon: "🧪", terim: "Adhesion", tr: "adezyon", tanim: "Farklı cins moleküllerin (sıvı ile kap) birbirini çekmesi.", ornek: "Suyun cam çeperine ya da çam iğnesine yapışması." },
+            { ikon: "🌙", terim: "Meniscus", tr: "menisküs", tanim: "Dar bir tüpte sıvı yüzeyinin eğriliği: adezyon > kohezyon ise kenarlar yukarı kıvrılır (içbükey, konkav); kohezyon > adezyon ise aşağıda kalır (dışbükey, konveks).", ornek: "Mezürde suyun kenarlardan yukarı kıvrılması." },
+            { ikon: "🧻", terim: "Capillary action", tr: "kılcallık", tanim: "Sıvının dar bir tüpte kendiliğinden yükselmesi ya da alçalması; adezyon ve kohezyonun dengesinden doğar. Tüp daraldıkça etki artar.", ornek: "Bitkilerde suyun ve minerallerin yukarı çıkması; kâğıt havlunun suyu emmesi." }
           ] },
         { tip: "grafik", baslik: "Cam tüpte sıvı yüzeyinin şekli", xlabel: "Tüp kesiti", ylabel: "Yüzey yüksekliği", xmax: 10, ymax: 10,
           xticks: [], yticks: [],
@@ -176,7 +180,8 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Yağ suda yüzer (yoğunluğu az) ama sudan çok daha viskozdur.", yanlis: "Viskozitesi yüksek sıvı, yoğunluğu da yüksek olan sıvıdır.", dogru: "==Viskozite== akmaya direnç, ==yoğunluk== hacim başına kütledir; ikisi birbirinden bağımsızdır." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: sıcaklık", metin: "*Viscosity decreases as temperature increases because the molecules have more kinetic energy to overcome intermolecular forces.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: karşılaştırma", metin: "*Glycerol is more viscous than water because it forms more hydrogen bonds.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: karşılaştırma", metin: "*Glycerol is more viscous than water because it forms more hydrogen bonds.*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: etanol ve dimetil eter", metin: "*Ethanol (C₂H₅OH) is more viscous than dimethyl ether (CH₃OCH₃) because ethanol molecules form hydrogen bonds, which dimethyl ether cannot.*" }
           ] }
       ]
     },
@@ -219,7 +224,7 @@ window.DEFTER = {
             "Buhar basıncı: kapalı kapta sıvı ile dengedeki buharın basıncı; buharlaşma hızı = yoğuşma hızı.",
             "Buhar basıncı yalnızca sıvıya (kuvvet) ve sıcaklığa bağlıdır; miktar ve kap hacmi etkilemez.",
             "Zayıf kuvvet → yüksek buhar basıncı → düşük kaynama noktası. Güçlü kuvvet (hidrojen bağı) → tersi.",
-            "Sıvı, buhar basıncı dış basınca eşit olunca kaynar. Yükseklikte basınç düşer, kaynama noktası düşer (≈ 3000 m'de 90 °C); düdüklü tencerede artar.",
+            "Sıvı, buhar basıncı dış basınca eşit olunca kaynar (her yerinde kabarcık); buharlaşma ise her sıcaklıkta yalnızca yüzeyde olur. Yükseklikte kaynama noktası düşer (≈ 3000 m'de 90 °C); düdüklü tencerede artar.",
             "Kohezyon: aynı cins molekül çekimi; adezyon: sıvı–kap çekimi. Su cam tüpte konkav (adezyon > kohezyon), cıva konveks (kohezyon > adezyon).",
             "Kılcallık: dar tüpte sıvı yükselir (su) ya da alçalır (cıva); tüp daraldıkça etki artar.",
             "Viskozite akmaya direnç; güçlü kuvvet ve çok hidrojen bağı artırır, sıcaklık artınca azalır. Viskozite yoğunluk değildir.",
@@ -229,26 +234,26 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Tabloda üç sıvının 25 °C'deki buhar basınçları verilmiştir. Hangi sıvının moleküller arası kuvvetleri en zayıf ve normal kaynama noktası en düşüktür?",
-      fig: { type: "table", caption: "25 °C'de buhar basıncı", head: ["Sıvı", "X", "Y", "Z"], rows: [["Buhar basıncı (kPa)", "71", "7,9", "3,2"]] },
-      opts: ["X; çünkü buhar basıncı en yüksektir", "Y; çünkü buhar basıncı ortadadır", "Z; çünkü buhar basıncı en düşüktür", "Üçünün de normal kaynama noktası aynıdır"],
+    { q: "The table gives the vapor pressures of three liquids at 25 °C. Which liquid has the weakest intermolecular forces and the lowest normal boiling point?",
+      fig: { type: "table", caption: "Vapor pressure at 25 °C", head: ["Liquid", "X", "Y", "Z"], rows: [["Vapor pressure (kPa)", "71", "7.9", "3.2"]] },
+      opts: ["X, because it has the highest vapor pressure", "Y, because its vapor pressure is in the middle", "Z, because it has the lowest vapor pressure", "All three have the same normal boiling point"],
       a: 0,
       why: "Aynı sıcaklıkta buhar basıncı en yüksek olan sıvı en uçucudur: kuvvetleri en zayıf ve normal kaynama noktası en düşüktür. C en çekici yanlış şık: düşük buhar basıncı güçlü kuvvete, yani yüksek kaynama noktasına işaret eder." },
-    { q: "Tabloda suyun buhar basıncı verilmiştir. Dış basıncın 47 kPa olduğu bir dağ evinde su kaç °C'de kaynar?",
-      fig: { type: "table", caption: "Suyun buhar basıncı", head: ["Sıcaklık (°C)", "70", "80", "90", "100"], rows: [["Buhar basıncı (kPa)", "31", "47", "70", "101"]] },
+    { q: "The table gives the vapor pressure of water. At what temperature does water boil in a mountain cabin where the external pressure is 47 kPa?",
+      fig: { type: "table", caption: "Vapor pressure of water", head: ["Temperature (°C)", "70", "80", "90", "100"], rows: [["Vapor pressure (kPa)", "31", "47", "70", "101"]] },
       opts: ["70 °C", "80 °C", "90 °C", "100 °C"],
       a: 1,
       why: "Su, buhar basıncı dış basınca eşit olunca kaynar: 47 kPa → 80 °C. D en çekici yanlış şık: 100 °C yalnızca 1 atm'de (101 kPa) geçerlidir." },
-    { q: "Cam bir tüpte su içbükey, cıva ise dışbükey bir yüzey oluşturur. Bunun nedeni aşağıdakilerden hangisidir?",
-      opts: ["İkisinde de adezyon kohezyondan büyüktür", "Suda kohezyon, cıvada adezyon baskındır", "Cıvada adezyon kohezyondan büyüktür", "Cıvada kohezyon cam ile adezyondan büyüktür; suda adezyon kohezyondan büyüktür"],
+    { q: "In a glass tube, water forms a concave surface while mercury forms a convex surface. What is the reason for this?",
+      opts: ["Adhesion is greater than cohesion in both liquids", "Cohesion dominates in water and adhesion dominates in mercury", "Adhesion is greater than cohesion in mercury", "In mercury, cohesion is greater than adhesion to the glass; in water, adhesion is greater than cohesion"],
       a: 3,
       why: "Su cama kendi kendine olduğundan daha çok çekilir (adezyon > kohezyon): konkav. Cıva kendi atomlarını cama göre daha güçlü çeker (kohezyon > adezyon): konveks. B en çekici yanlış şık: ikisini yer değiştirir." },
-    { q: "Hekzan (apolar, yalnızca London), su (hidrojen bağı) ve gliserin (üç O–H grubu, çok sayıda hidrojen bağı) 20 °C'de karşılaştırılıyor. Viskozitelerinin sıralaması nasıldır?",
-      opts: ["Gliserin < su < hekzan", "Su < hekzan < gliserin", "Hekzan < su < gliserin", "Hekzan < gliserin < su"],
+    { q: "Hexane (nonpolar, only London forces), water (hydrogen bonds) and glycerol (three O–H groups, many hydrogen bonds) are compared at 20 °C. What is the order of their viscosities?",
+      opts: ["Glycerol < water < hexane", "Water < hexane < glycerol", "Hexane < water < glycerol", "Hexane < glycerol < water"],
       a: 2,
       why: "Moleküller arası kuvvet ve hidrojen bağı sayısı arttıkça viskozite artar: hekzan < su < gliserin. B en çekici yanlış şık: hekzanın mol kütlesine bakıp onu sudan daha viskoz sanır." },
-    { q: "Su yüzeyinde duran bir su sineği, suya deterjan damlatılınca batıyor. Bunun nedeni aşağıdakilerden hangisidir?",
-      opts: ["Deterjan suyun yüzey gerilimini artırır", "Deterjan suyun yüzey gerilimini azaltır, yüzey artık böceği taşıyamaz", "Deterjan suyun yoğunluğunu artırır", "Deterjan suyun buhar basıncını sıfır yapar"],
+    { q: "A water strider standing on the surface of water sinks when detergent is added to the water. What is the reason for this?",
+      opts: ["Detergent increases the surface tension of water", "Detergent lowers the surface tension of water, so the surface can no longer support the insect", "Detergent increases the density of water", "Detergent reduces the vapor pressure of water to zero"],
       a: 1,
       why: "Sıvının yüzey gerilimi yüzeydeki net içe çekimden gelir; deterjan bunu azaltır ve zar zayıflar. A en çekici yanlış şık: yönü tersine çevirir." }
   ]

@@ -80,7 +80,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Kim neyi taşıdı?", head: ["", "Eski Dünya → Yeni Dünya", "Yeni Dünya → Eski Dünya"], rows: [
             ["Bitkiler", "Buğday, pirinç, şeker kamışı, kahve, muz", "Mısır, patates, domates, biber, kakao, manyok, tütün"],
             ["Hayvanlar", "At, sığır, domuz, koyun, tavuk", "Hindi"],
-            ["Hastalıklar", "Çiçek, kızamık, grip", "—"]
+            ["Hastalıklar", "Çiçek, kızamık, grip", "Frengi (syphilis; kökeni tartışmalı)"]
           ] }
       ]
     },

@@ -59,7 +59,7 @@ window.DEFTER = {
             { metin: "Gece ilerledikçe ==N3 kısalır, REM uzar==.", goster: ["c3", "c4", "r3", "r4"], gizle: ["yz1"] },
             { metin: "Sabaha doğru N3 neredeyse kalmaz; en uzun REM dönemleri son döngülerdedir. Uyanıklığa geçiş.", goster: ["c5", "r5", "yz2"] }
           ] },
-        { tip: "not", metin: "Bir gecede 4–5 döngü olur ve sıra hep aynıdır: N1 → N2 → N3 → N2 → REM. Yani ==NREM süresi gece boyunca azalır, REM süresi artar.==" }
+        { tip: "not", metin: "Bir gecede 4–5 döngü olur; ilk döngünün tipik sırası N1 → N2 → N3 → N2 → REM'dir. Sonraki döngülerde N1 genellikle atlanır, sabaha doğru N3 kaybolur. Yani ==NREM süresi gece boyunca azalır, REM süresi artar.==" }
       ]
     },
     {

@@ -2,7 +2,7 @@
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 3; FİZ.10.3.5) + MEB FİZ.10 Elektrik. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph303",
-  amac: "Bu defter *cell* yani üreteç (pil) bağlantılarını anlatıyor: üreteçleri seri ve paralel bağlayınca devreye verilen gerilimin nasıl değiştiğini, ters bağlamanın ne yaptığını ve karma bağlamayı öğreneceksin. Üreteçler ideal alınır, iç direnç ihmal edilir.",
+  amac: "Bu defter *cell* yani üreteç (pil) bağlantılarını anlatıyor: üreteçleri seri ve paralel bağlayınca devreye verilen gerilimin nasıl değiştiğini, ters bağlamanın ne yaptığını ve karma bağlamayı öğreneceksin. Önce üreteçler ideal alınır; sonra gerçek pilin iç direncini ve pil ömrünü göreceksin.",
   bolumler: [
     {
       baslik: "Üreteç ve *emf*",
@@ -109,11 +109,25 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "İç direnç ve uç gerilimi",
+      kisa: "Gerçek pilin iç direnci vardır; devreye verilen gerilim ε'dan küçük olur.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "V uç", alt: "devreye verilen gerilim" }, "=", { t: "ε", alt: "ideal gerilim (emf)" }, "−", { t: "I·r", alt: "iç dirençte düşen" }
+          ], aciklama: "r pilin iç direncidir. Devreden akım çekilmiyorsa (açık devre) V uç = ε. Tüm devre için ε = I·(R + r). Akım arttıkça uç gerilimi düşer." },
+        { tip: "ornek", baslik: "İç dirençli pil", durum: "ε = 6 V ve iç direnci r = 1 Ω olan pil, 5 Ω'luk bir dirence bağlanıyor. Akım ve uç gerilimi nedir?",
+          adimlar: ["Toplam direnç: R + r = 5 + 1 = 6 Ω. I = ε / (R + r) = 6 / 6 = 1 A.", "İç dirençte düşen: I·r = 1 · 1 = 1 V.", "V uç = ε − I·r = 6 − 1 = 5 V. Kontrol: I·R = 1 · 5 = 5 V ✓."],
+          sonuc: "I = 1 A, V uç = 5 V (ε = 6 V'tan küçük). Sınavda böyle yaz: *The battery has an internal resistance, so the voltage across the resistor is less than the emf.*" },
+        { tip: "not", metin: "Pilin ömrü: Zamanla iç direnç artar ve pil devreye enerji veremez hale gelir. Ömür, pilin malzeme kalitesine, kapasitesine ve çekilen akıma bağlıdır. ==Özdeş pillerde tükenme süresi çekilen akımla ters orantılıdır==: akım yarıya inerse süre 2 katına çıkar. Paralel bağlamanın pili daha yavaş tüketmesinin nedeni budur." },
+        { tip: "tuzak", metin: "Pilin üstündeki 1,5 V yazısı, yalnızca akım çekilmediğinde ölçülen değerdir.", yanlis: "Pil devreye her zaman tam ε kadar gerilim verir.", dogru: "Akım çekildikçe iç dirençte I·r kadar gerilim düşer; devreye verilen gerilim ε'dan küçüktür." }
+      ]
+    },
+    {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "*Cell*: tek üreteç; ε volt cinsinden, geçen her coulomb'a verilen enerjidir. Bu düzeyde iç direnç ihmal edilir.",
+            "*Cell*: tek üreteç; ε volt cinsinden, geçen her coulomb'a verilen enerjidir. Gerçek pilde V uç = ε − I·r; ömür çekilen akımla ters orantılıdır.",
             "*Series*: ε_toplam = ε₁ + ε₂ + …; özdeş n pilde n·ε. + ucu diğerinin − ucuna bağlanır.",
             "Seride her pilden aynı akım geçer.",
             "*Parallel* (özdeş piller): ε_toplam = ε; akım pillere paylaşılır, piller daha yavaş tükenir.",
@@ -126,21 +140,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "1,5 V'luk 4 özdeş pil seri bağlanıyor. Toplam emf kaç V'tur?",
-      opts: ["1,5 V", "3 V", "7,5 V", "6 V"], a: 3,
-      why: "Seride ε toplanır: 4 · 1,5 = 6 V. 1,5 V paralel bağlantının sonucudur; 7,5 V ise 5 pil için doğru olurdu." },
-    { q: "1,5 V'luk üç özdeş pil seri bağlanmış, ancak pillerden biri ters çevrilmiştir. Toplam emf kaç V'tur?",
-      opts: ["4,5 V", "1,5 V", "3 V", "0 V"], a: 1,
+    { q: "A battery has an emf of 6 V and an internal resistance of 1 Ω. It is connected to a 5 Ω resistor. What is the voltage across the resistor (the terminal voltage)?",
+      opts: ["6 V", "5 V", "1 V", "4 V"], a: 1,
+      why: "I = 6 / (5 + 1) = 1 A; V uç = ε − I·r = 6 − 1 = 5 V (aynı zamanda I·R = 5 V). 6 V iç direnci yok saymaktır; 1 V yalnızca iç dirençteki düşüştür." },
+    { q: "Three identical 1.5 V cells are connected in series, but one of the cells is connected the wrong way round. What is the total emf?",
+      opts: ["4.5 V", "3 V", "0 V", "1.5 V"], a: 3,
       why: "Ters bağlı pil toplamdan çıkarılır: 1,5 + 1,5 − 1,5 = 1,5 V. 4,5 V tuzak cevaptır, ters bağlanmayı yok sayar; 3 V yalnızca iki doğru pili sayar." },
-    { q: "1,5 V'luk iki özdeş pil paralel bağlanarak 3 Ω'luk bir ampule bağlanıyor. Ampulden geçen akım ve her pilden geçen akım nedir?",
-      opts: ["0,5 A ve 0,25 A", "1 A ve 0,5 A", "0,5 A ve 0,5 A", "1 A ve 1 A"], a: 0,
+    { q: "Two identical 1.5 V cells are connected in parallel to a 3 Ω bulb. What are the current through the bulb and the current through each cell?",
+      opts: ["0.5 A and 0.25 A", "1 A and 0.5 A", "0.5 A and 0.5 A", "1 A and 1 A"], a: 0,
       why: "Paralelde ε = 1,5 V: I = 1,5 / 3 = 0,5 A. Akım iki pile eşit paylaşılır: her pil 0,25 A verir. 1 A cevabı pilleri seri sanmaktır." },
-    { q: "Grafik, 1,5 V'luk özdeş pillerin iki farklı bağlanışında toplam gerilimi pil sayısına göre gösteriyor. I ve II doğrularının bağlantı türleri ile n = 4 için gerilimleri hangi şıkta doğru verilmiştir?",
-      fig: { type: "graph", xlabel: "n", ylabel: "V (V)", xmax: 5, ymax: 8, lines: [{ from: [1, 1.5], to: [4, 6], label: "I" }, { from: [1, 1.5], to: [4, 1.5], label: "II" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }], yticks: [{ v: 1.5, label: "1,5" }, { v: 6, label: "6" }], caption: "Toplam gerilim – pil sayısı" },
-      opts: ["I paralel: 1,5 V; II seri: 6 V", "I seri: 1,5 V; II paralel: 6 V", "I seri: 6 V; II paralel: 1,5 V", "I seri: 4,5 V; II paralel: 1,5 V"], a: 2,
+    { q: "The graph shows the total voltage of identical 1.5 V cells against the number of cells for two different connections. Which option correctly identifies the connections of lines I and II and their voltages for n = 4?",
+      fig: { type: "graph", xlabel: "n", ylabel: "V (V)", xmax: 5, ymax: 8, lines: [{ from: [1, 1.5], to: [4, 6], label: "I" }, { from: [1, 1.5], to: [4, 1.5], label: "II" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }], yticks: [{ v: 1.5, label: "1.5" }, { v: 6, label: "6" }], caption: "Total voltage against number of cells" },
+      opts: ["I parallel: 1.5 V; II series: 6 V", "I series: 1.5 V; II parallel: 6 V", "I series: 6 V; II parallel: 1.5 V", "I series: 4.5 V; II parallel: 1.5 V"], a: 2,
       why: "Pil sayısı arttıkça yükselen doğru seri bağlantıdır: n = 4'te 4 · 1,5 = 6 V. Sabit kalan doğru paralel bağlantıdır: 1,5 V." },
-    { q: "1,5 V'luk 6 özdeş pil, her sırada 3 pil seri olacak şekilde iki sıra hâlinde paralel bağlanıyor. Toplam emf kaç V'tur?",
-      opts: ["9 V", "4,5 V", "3 V", "1,5 V"], a: 1,
+    { q: "Six identical 1.5 V cells are connected as two parallel rows, each row containing 3 cells in series. What is the total emf?",
+      opts: ["9 V", "3 V", "4.5 V", "1.5 V"], a: 2,
       why: "Bir sıradaki seri gerilim 3 · 1,5 = 4,5 V'tur. Paralel bağlı sıralar gerilimi artırmaz; yalnızca akımı paylaşır. 9 V, 6 pilin hepsini seri saymaktır." }
   ]
 };

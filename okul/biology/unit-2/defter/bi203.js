@@ -1,9 +1,20 @@
 /* Kitora not defteri · bi203 · 2.3 Ekosistemde Enerji Akışı
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (Topic 2.3 Energy Flow in Ecosystems) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi203",
-  amac: "Enerjinin ekosistemde nasıl aktığını öğreneceksin: besin zinciri ve ağı, trofik düzeyler, enerji ve biyokütle piramitleri (%10 kuralı) ve zehirli maddelerin besin zincirinde nasıl biriktiğini (biyobirikim ve biyolojik büyütme).",
+  amac: "Enerjinin ekosistemde nasıl aktığını öğreneceksin: termodinamik yasalar, besin zinciri ve ağı, trofik düzeyler, enerji ve biyokütle piramitleri (%10 kuralı) ve zehirli maddelerin besin zincirinde nasıl biriktiğini (biyobirikim ve biyolojik büyütme).",
   bolumler: [
+    {
+      baslik: "Enerji akışı ve termodinamik yasalar",
+      kisa: "Enerji yoktan var olmaz ve yok olmaz; her aktarımda bir kısmı ısıya dönüşür.",
+      bloklar: [
+        { tip: "kavramlar", kartlar: [
+            { ikon: "♾️", terim: "First law of thermodynamics", tr: "termodinamiğin 1. yasası", tanim: "Enerji yoktan var edilemez, yok edilemez; yalnız aktarılır ve bir biçimden başka bir biçime dönüşür.", ornek: "Bitkiler enerji üretmez, güneş enerjisini kimyasal enerjiye dönüştürür." },
+            { ikon: "🔥", terim: "Second law of thermodynamics", tr: "termodinamiğin 2. yasası", tanim: "Her aktarım ya da dönüşümde enerjinin bir kısmı ısıya dönüşüp çevreye dağılır; iş yapabilecek enerji azalır.", ornek: "Çekirgenin yediği otun enerjisinin büyük kısmı ısı olarak kaybolur." }
+          ] },
+        { tip: "not", metin: "Ekosistemde enerji akışı, kimyasal enerjinin beslenmeyle bir canlıdan diğerine aktarılmasıdır. Sınavda böyle yaz: *Energy cannot be created or destroyed; it is transferred, and part of it is lost as heat at each step.*" }
+      ]
+    },
     {
       baslik: "Besin zinciri ve besin ağı",
       kisa: "Zincir tek bir yolu, ağ bütün yolları gösterir; ok enerjinin yönünü gösterir.",
@@ -38,7 +49,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🌱", terim: "Producer", tr: "üretici", tanim: "Işık ya da kimyasal enerjiyle kendi organik besinini yapar; 1. trofik düzey.", ornek: "Çam ağacı, fitoplankton, kemosentetik bakteri." },
             { ikon: "🐛", terim: "Primary consumer", tr: "1. derece tüketici", tanim: "Üreticiyle beslenen otçul (*herbivore*); 2. trofik düzey.", ornek: "Çekirge, geyik, zooplankton." },
-            { ikon: "🦊", terim: "Secondary and tertiary consumers", tr: "2. ve 3. derece tüketici", tanim: "Başka hayvanları yiyen etçiller (*carnivore*); 3. ve 4. trofik düzey.", ornek: "Kurbağa, yılan, tilki." },
+            { ikon: "🦊", terim: "Secondary, tertiary consumers and apex predator", tr: "2., 3. derece tüketici ve tepe avcı", tanim: "Başka hayvanları yiyen etçiller (*carnivore*); 3. ve 4. trofik düzey. Doğal düşmanı olmayan tepe avcı (*apex predator*) zincirin en üstündedir.", ornek: "Kurbağa, yılan; büyük beyaz köpek balığı, Sibirya kaplanı." },
             { ikon: "🍄", terim: "Decomposer", tr: "ayrıştırıcı", tanim: "Ölü canlıyı ve atıkları parçalayıp mineralleri toprağa verir. Solucan gibi ölü maddeyi yiyenlere *detritivore* denir.", ornek: "Mantar, bakteri." },
             { ikon: "🐻", terim: "Omnivore", tr: "hepçil", tanim: "Hem bitki hem hayvan yer; birden çok trofik düzeyde yer alır.", ornek: "Boz ayı, domuz, insan." }
           ] },
@@ -82,7 +93,7 @@ window.DEFTER = {
             { metin: "Üreticiler güneş enerjisinin küçük bir kısmını fotosentezle bağlar. Örnek: ==10 000 kJ==.", set: { a1: { noktalar: [[2.5, 0], [7.5, 0], [7.5, 2], [2.5, 2]] } }, goster: ["t1"] },
             { metin: "1. derece tüketici bunun yaklaşık ==%10'unu== alır: 1 000 kJ.", set: { a2: { noktalar: [[3.4, 2.2], [6.6, 2.2], [6.6, 4.2], [3.4, 4.2]] } }, goster: ["t2"] },
             { metin: "2. derece tüketici yine %10'unu alır: 100 kJ.", set: { a3: { noktalar: [[4.1, 4.4], [5.9, 4.4], [5.9, 6.4], [4.1, 6.4]] } }, goster: ["t3"] },
-            { metin: "3. derece tüketicide yalnızca 10 kJ kalır. Bu yüzden besin zincirleri genellikle 4–5 halkayı geçmez.", set: { a4: { noktalar: [[4.6, 6.6], [5.4, 6.6], [5.4, 8.6], [4.6, 8.6]] } }, goster: ["t4"] },
+            { metin: "3. derece tüketicide yalnızca 10 kJ kalır; en tepedeki tepe avcıya 1 kJ gider. Bu yüzden besin zincirleri genellikle 4–5 halkayı geçmez.", set: { a4: { noktalar: [[4.6, 6.6], [5.4, 6.6], [5.4, 8.6], [4.6, 8.6]] } }, goster: ["t4"] },
             { metin: "Kalan %90 nereye gitti? Çoğu solunumda ==ısı== olarak kaybolur; geri kalanı dışkı ve yenmeyen kısımlarla (kemik, kök) ayrıştırıcılara gider. Enerji bir basamaktan diğerine geçerken azaldığı için piramit her zaman diktir.", goster: ["h1", "h2", "h3", "h4", "ht"] }
           ] },
         { tip: "ornek", baslik: "Büyük balığa ulaşan enerji", durum: "Bir gölde fitoplanktonun bağladığı enerji 20 000 kJ'dir. Zincir: fitoplankton → zooplankton → küçük balık → büyük balık. Her geçişte %10 aktarılıyorsa büyük balığa ne kadar enerji ulaşır?",
@@ -104,7 +115,7 @@ window.DEFTER = {
       kisa: "Enerji piramidi hep dik durur; biyokütle piramidi ters olabilir.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "⚡", baslik: "*Pyramid of energy*", maddeler: ["Birim zamanda geçen enerji (akış)", "Birimi: kJ/m²/yıl", "Her zaman dik"] },
-          sag: { ikon: "⚖️", baslik: "*Pyramid of biomass*", maddeler: ["Bir anda mevcut canlı madde miktarı (stok)", "Birimi: g/m² (kuru kütle)", "Genelde dik, okyanusta ters olabilir"] },
+          sag: { ikon: "⚖️", baslik: "*Pyramid of biomass*", maddeler: ["Bir trofik düzeydeki toplam kuru kütle (stok)", "Birimi: g/m²", "Genelde dik, okyanusta ters olabilir"] },
           oyun: [
             { metin: "Hiçbir ekosistemde ters çizilemez.", cevap: "sol", neden: "Her basamakta enerji %90 azalır: *energy*." },
             { metin: "Bir andaki canlı madde miktarını gösterir.", cevap: "sag", neden: "Stok, akış değil: *biomass*." },
@@ -189,33 +200,33 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir gölde fitoplankton 50 000 kJ enerji bağlamaktadır. Zincir: fitoplankton → zooplankton → küçük balık → balıkçıl. %10 kuralına göre balıkçıla ulaşan enerji kaç kJ'dir?",
-      opts: ["5 000", "500", "50", "5"],
+      q: "In a lake, phytoplankton fix 50 000 kJ of energy. The chain is phytoplankton → zooplankton → small fish → heron. According to the 10% rule, how much energy reaches the heron?",
+      opts: ["5 000 kJ", "500 kJ", "50 kJ", "5 kJ"],
       a: 2,
       why: "Üç geçiş vardır: 50 000 → 5 000 → 500 → 50 kJ. 500, iki geçiş yapılıp üçüncüsünün unutulduğu hatalı sonuçtur."
     },
     {
-      q: "Grafikte bir göldeki organizmaların dokularındaki DDT derişimi verilmiştir. Bu grafikte görülen olay ve nedeni hangisidir?",
-      fig: { type: "bar", cats: ["Fitoplankton", "Zooplankton", "Küçük balık", "Büyük balık", "Balıkçıl"], series: [{ name: "DDT (ppm)", values: [0.04, 0.2, 2, 20, 200] }], ylabel: "DDT (ppm)" },
-      opts: ["Biyobirikim; yalnızca balıkçılın DDT alması", "Biyolojik büyütme; DDT atılamadığı için zincirde yukarı çıktıkça derişim artar", "Enerji kaybı; DDT her basamakta %10 azalır", "Süksesyon; DDT türleri değiştirir"],
+      q: "The graph shows the DDT concentration in the tissues of organisms in a lake. Which process is shown and what is the reason?",
+      fig: { type: "bar", cats: ["Phytoplankton", "Zooplankton", "Small fish", "Large fish", "Heron"], series: [{ name: "DDT (ppm)", values: [0.04, 0.2, 2, 20, 200] }], ylabel: "DDT (ppm)" },
+      opts: ["Bioaccumulation; only the heron takes in DDT", "Biomagnification; DDT cannot be excreted, so its concentration increases up the food chain", "Energy loss; DDT decreases by 10% at each level", "Succession; DDT changes the species present"],
       a: 1,
       why: "Derişim her basamakta artıyor: bu biyolojik büyütmedir. DDT kalıcıdır, yağda birikir ve atılmaz. Enerji kaybında %10 aktarılır, ama burada tersine bir artış görülüyor."
     },
     {
-      q: "Okyanusta fitoplanktonun anlık biyokütlesi zooplanktondan daha azdır. Bu durumla ilgili hangi ifade doğrudur?",
-      opts: ["Enerji piramidi de aynı sebeple ters olur.", "Bu bir ölçüm hatasıdır; biyokütle piramidi ters olamaz.", "Fitoplankton, zooplanktondan daha az enerji üretir.", "Fitoplanktonun anlık stoku az olsa da çok hızlı çoğalması zooplanktonu besleyebilir."],
+      q: "In the ocean the instantaneous biomass of phytoplankton is smaller than that of zooplankton. Which statement is correct?",
+      opts: ["The pyramid of energy is inverted for the same reason.", "This is a measurement error; a pyramid of biomass cannot be inverted.", "Phytoplankton produce less energy than zooplankton.", "Although the phytoplankton stock is small, its very fast reproduction can still support the zooplankton."],
       a: 3,
       why: "Biyokütle bir anlık stoktur; fitoplankton hızlı çoğaldığı için küçük bir stok bile büyük bir enerji akışı sağlar. Enerji piramidi akışı gösterdiği için her zaman diktir."
     },
     {
-      q: "Çayırda fare, yılan, kurbağa ve çekirge bulunmaktadır. Yılan hem fare hem kurbağa yemektedir. Bir salgınla fare sayısı çok azalırsa hangisi beklenir?",
-      opts: ["Yılanlar kurbağayı daha çok avlayabilir; kurbağa azalır ve çekirge çoğalabilir.", "Yılanlar hemen yok olur çünkü tek besini fare olmuştur.", "Çekirge sayısı kesin olarak azalır.", "Ot miktarı azalır çünkü fare ot yemeyi bırakmıştır."],
+      q: "A meadow contains mice, snakes, frogs and grasshoppers. The snake eats both mice and frogs. If an epidemic greatly reduces the mouse population, what is expected?",
+      opts: ["Snakes may eat more frogs; frogs decrease and grasshoppers may increase.", "Snakes die out immediately because mice were their only food.", "The grasshopper population certainly decreases.", "The amount of grass decreases because mice stopped eating it."],
       a: 0,
       why: "Besin ağında yılanın birden çok yolu vardır, bu yüzden fare azalınca kurbağaya yönelebilir. Kurbağa azalınca çekirgeyi yiyen azalır, çekirge çoğalabilir. Tek besini fare olsaydı ikinci şık doğru olurdu."
     },
     {
-      q: "Bir besin zincirinde sıralama şöyledir: bitki → fare → yılan → kartal. Kartal için hangisi doğrudur?",
-      opts: ["3. trofik düzeydedir ve 2. derece tüketicidir.", "4. trofik düzeydedir ve 3. derece tüketicidir.", "4. trofik düzeydedir ve 4. derece tüketicidir.", "1. trofik düzeydedir çünkü zincirin sonundadır."],
+      q: "In a food chain the order is plant → mouse → snake → eagle. Which statement about the eagle is correct?",
+      opts: ["It is at the 3rd trophic level and is a secondary consumer.", "It is at the 4th trophic level and is a tertiary consumer.", "It is at the 4th trophic level and is a quaternary consumer.", "It is at the 1st trophic level because it is at the end of the chain."],
       a: 1,
       why: "Bitki 1. trofik düzeydir (üretici). Fare 2. düzey (1. derece tüketici), yılan 3. düzey (2. derece), kartal 4. düzey (3. derece tüketici). Trofik düzey numarası, tüketici derecesinden her zaman bir fazladır; üçüncü şık bu farkı gözden kaçırır."
     }

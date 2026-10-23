@@ -10,7 +10,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "👩", terim: "TFR", tr: "toplam doğurganlık hızı (*total fertility rate*)", tanim: "Bir kadının doğurganlık çağı boyunca ortalama kaç çocuk doğuracağı. Doğurganlığın en çok kullanılan ölçüsüdür.", ornek: "Türkiye'de TFR son on yılda 2,1'in altına indi." },
-            { ikon: "♻️", terim: "Replacement-level fertility", tr: "yenileme düzeyi doğurganlık", tanim: "Göç olmadan nüfusun kendini yenilemesi için gereken TFR: yaklaşık 2,1. Fazladan 0,1, çocukluk çağında ölenleri telafi eder.", ornek: "TFR 2,1 ise bir kuşak yerini bir sonraki kuşağa bırakır." }
+            { ikon: "♻️", terim: "Replacement-level fertility", tr: "yenileme düzeyi doğurganlık", tanim: "Göç olmadan nüfusun kendini yenilemesi için gereken TFR: yaklaşık 2,1. Fazladan 0,1, doğumda erkek fazlasını (100 kıza ≈105 erkek) ve doğurganlık çağına gelmeden ölenleri telafi eder.", ornek: "TFR 2,1 ise bir kuşak yerini bir sonraki kuşağa bırakır." }
           ] },
         { tip: "ornek", baslik: "TFR 1,4 olan ülkede kuşaklar", durum: "Bir ülkede göç yok ve TFR 1,4. Yenileme düzeyi 2,1 ise bir sonraki kuşak, mevcut kuşağın yaklaşık yüzde kaçı kadar olur?",
           adimlar: ["Yenileme düzeyinde bir kuşak kendini tam yeniler: 2,1 ÷ 2,1 = 1 (yani %100).", "Bu ülkede doğan çocuk sayısı yenileme düzeyinin 1,4 ÷ 2,1 = 0,67 katıdır."],

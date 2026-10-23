@@ -18,8 +18,12 @@ window.DEFTER = {
             ["Kinetik", "Hareket", "Koşan sprinter"],
             ["Çekim potansiyeli", "Yükseklik", "Raftaki kitap"],
             ["Esneklik potansiyeli", "Gerilmiş ya da sıkışmış yay", "Gerilmiş ok yayı"],
-            ["Isı (termal)", "Taneciklerin hareketi", "Sıcak çay"],
-            ["Kimyasal", "Bağlarda depolu", "Yemek, pil"]
+            ["Isı (termal)", "Taneciklerin hareketi; sıcaklık farkıyla aktarılır (birimi joule, günlük hayatta kalori de)", "Sıcak çay"],
+            ["Kimyasal", "Bağlarda depolu; pil kimyasal enerjiyi elektriğe çevirir", "Yemek, pil"],
+            ["Nükleer", "Atom çekirdeğinden; Güneş'te füzyonla, santralde uranyum fisyonuyla", "Nükleer santral"],
+            ["Işık", "Dalga olarak yayılan elektromanyetik enerji; fotonlarla taşınır", "Güneş, lamba"],
+            ["Ses", "Ortamın titreşimiyle yayılır; boşlukta yayılmaz", "Hoparlör"],
+            ["Elektrik", "İletkenin uçları arasındaki gerilimle serbest elektronların hareketi", "Prizdeki enerji"]
           ], not: "Kinetik ve potansiyel enerji ==mekanik== enerjidir; ısı, kimyasal ve elektrik enerjisi mekanik enerji sayılmaz." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Energy is the ability to do work.*", metin: "Enerjinin tanımı; birimi *joule*." },
@@ -60,7 +64,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "PE", alt: "çekim potansiyel enerjisi (J)" }, "=", { t: "m", alt: "kütle (kg)" }, "×", { t: "g", alt: "10 m/s²" }, "×", { t: "h", alt: "referanstan yükseklik (m)" }
-          ], aciklama: "h, ==referans seviyesinden== ölçülür. Yukarı çıkarken PE artar, aşağı inerken azalır." },
+          ], aciklama: "h, ==referans seviyesinden== ölçülür. Yukarı çıkarken PE artar, aşağı inerken azalır. Değişim için ΔPE = m·g·Δh yazılır." },
         { tip: "grafik", baslik: "PE–yükseklik grafiği (g = 10 m/s²)", xlabel: "Yükseklik h (m)", ylabel: "PE (J)", xmax: 4, ymax: 9,
           xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }], yticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }],
           ogeler: [
@@ -75,10 +79,14 @@ window.DEFTER = {
             { metin: "Kütle 2 katına (4 kg) çıkarsa doğrunun eğimi de 2 katına çıkar.", goster: ["l4"] }
           ] },
         { tip: "tuzak", metin: "2 kg'lık kitap masada duruyor, masa zeminden 1 m yüksekte. Referansı zemin alırsan PE = 2 · 10 · 1 = 20 J; referansı masa alırsan PE = 0 J.", yanlis: "Kitabın PE'si tek bir sayıdır.", dogru: "PE referansa bağlıdır; ama ==PE farkı== (kitap yere düşerken kaybedilen 20 J) her referansta aynıdır." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The reference level is the ground, so h = 1 m.*", metin: "Referansı mutlaka belirt." },
-            { ikon: "✍️", baslik: "*Gravitational potential energy depends on mass, height and g.*", metin: "PE = m · g · h'nin açıklaması." }
-          ] }
+        { tip: "ornek", baslik: "Derinkuyu'da kat değiştirmek",
+          durum: "Her katının yüksekliği h olan sekiz katlı Derinkuyu Yeraltı Şehri'nde 4. kattaki kütlesi m olan iki turistten biri 2. kata çıkıyor, öteki 7. kata iniyor. Potansiyel enerji değişimleri nedir? Hangisi yerçekimine karşı iş yapmıştır?",
+          adimlar: [
+            "2. kata çıkan 2 kat yükselir: ΔPE = +2·m·g·h.",
+            "7. kata inen 3 kat alçalır: ΔPE = −3·m·g·h.",
+            "Yerçekimine karşı iş, yukarı çıkan turist tarafından yapılır; inenin potansiyel enerjisi azalır."
+          ],
+          sonuc: "+2mgh (çıkan) ve −3mgh (inen). Sınavda böyle yaz: *The reference level is the 4th floor, so the change in potential energy depends only on the height difference.* *Gravitational potential energy depends on mass, height and g.*" }
       ]
     },
     {
@@ -87,10 +95,13 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "PE", alt: "esneklik enerjisi (J)" }, "=", { t: "½", alt: "" }, "×", { t: "k", alt: "yay sabiti (N/m)" }, "×", { t: "x²", alt: "uzama ya da sıkışma (m)" }
-          ], aciklama: "Bu, ph201'deki F–x grafiğinin altındaki alandır: W = ½ · F · x = ½ · k · x²." },
+          ], aciklama: "Bu, ph201'deki F–x grafiğinin altındaki alandır: W = ½ · F · x = ½ · k · x². Yay kuvveti F = k · x; k yay sabiti yayın sertliğini gösterir. Esneklik sınırı aşılırsa kalıcı şekil bozulur." },
         { tip: "ornek", baslik: "Sıkıştırılan yay", durum: "Yay sabiti k = 200 N/m olan yay 0,1 m sıkıştırılıyor. Depolanan enerji kaç J? 0,2 m sıkıştırılırsa ne olur?",
           adimlar: ["PE = ½ · k · x² = ½ · 200 · 0,1² = 100 · 0,01 = 1 J.", "x = 0,2 m: PE = ½ · 200 · 0,2² = 100 · 0,04 = 4 J.", "Sıkışma 2 katına çıktı, enerji 4 katına çıktı."],
           sonuc: "PE = 1 J; sıkışma ikiye katlanırsa 4 J olur (PE ∝ x²)." },
+        { tip: "ornek", baslik: "Yaya çarpan cisim", durum: "1 kg'lık cisim yatay zeminde 6 m/s ile gelip k = 100 N/m olan yayı sıkıştırıyor (sürtünme yok). Yay en çok kaç m sıkışır?",
+          adimlar: ["Başlangıç kinetik enerjisi: ½ · 1 · 6² = 18 J.", "En çok sıkışmada cisim durur, enerjinin hepsi yaydadır: ½ · 100 · x² = 18.", "50 · x² = 18 → x² = 0,36 → x = 0,6 m."],
+          sonuc: "x = 0,6 m. Daha yüksek bir yaya ihtiyaç varsa k büyütülür ya da sıkışma artırılır." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*The compressed spring stores elastic potential energy.*", metin: "Yay enerjisi için kullanılan kalıp." },
             { ikon: "✍️", baslik: "*Doubling the compression quadruples the stored energy.*", metin: "x²'ye bağlılığı bu cümleyle göster." }
@@ -137,22 +148,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "3 kg'lık bir cisim 4 m/s hızla hareket ediyor. Kinetik enerjisi kaç J'dür?",
-      opts: ["12 J", "48 J", "24 J", "6 J"], a: 2,
-      why: "KE = ½ · m · v² = ½ · 3 · 16 = 24 J. 48 J cevabı ½ çarpanını unutmaktır; 12 J ise m · v hesaplamaktır." },
-    { q: "Tabloda üç cismin kütlesi ve hızı verilmiştir. Hangisinin kinetik enerjisi en büyüktür?",
-      fig: { type: "table", head: ["Cisim", "Kütle", "Hız"], rows: [["A", "1 kg", "6 m/s"], ["B", "4 kg", "2 m/s"], ["C", "2 kg", "4 m/s"]], caption: "Üç cismin kütle ve hızı" },
-      opts: ["A", "B", "C", "Üçünün KE'si eşittir"], a: 0,
+    { q: "A paratrooper falling at 4 m/s has a kinetic energy of 560 J. What is the mass of the paratrooper?",
+      opts: ["35 kg", "70 kg", "140 kg", "280 kg"], a: 1,
+      why: "KE = ½ · m · v² → 560 = ½ · m · 16 = 8m → m = 70 kg. 35 kg cevabı ½ çarpanını unutmaktır (560 ÷ 16); 280 kg ise v² yerine v kullanmaktır." },
+    { q: "The table gives the mass and speed of three objects. Which object has the greatest kinetic energy?",
+      fig: { type: "table", head: ["Object", "Mass", "Speed"], rows: [["A", "1 kg", "6 m/s"], ["B", "4 kg", "2 m/s"], ["C", "2 kg", "4 m/s"]], caption: "Mass and speed of three objects" },
+      opts: ["A", "B", "C", "All three have equal kinetic energy"], a: 0,
       why: "KE_A = ½ · 1 · 36 = 18 J; KE_B = ½ · 4 · 4 = 8 J; KE_C = ½ · 2 · 16 = 16 J. B en ağır olduğu için çekici ama hızı küçüktür ve hız karesiyle girer." },
-    { q: "4 kg'lık bir kitap, referans olarak alınan zeminden 1,5 m yüksekteki rafta duruyor (g = 10 m/s²). Kitabın çekim potansiyel enerjisi kaç J'dür?",
+    { q: "A 4 kg book is on a shelf 1.5 m above the floor, which is taken as the reference level (g = 10 m/s²). What is its gravitational potential energy?",
       opts: ["6 J", "15 J", "40 J", "60 J"], a: 3,
       why: "PE = m · g · h = 4 · 10 · 1,5 = 60 J. 15 J cevabı kütleyi unutmaktır (10 · 1,5); 40 J yalnızca ağırlığı (m · g) verir." },
-    { q: "Grafik, aynı gezegende iki cismin çekim potansiyel enerjisinin yükseklikle değişimini gösteriyor. Cisimlerin kütleleri için hangisi doğrudur?",
-      fig: { type: "graph", xlabel: "h (m)", ylabel: "PE (J)", xmax: 5, ymax: 8, lines: [{ from: [0, 0], to: [4, 4], label: "A" }, { from: [0, 0], to: [2, 4], label: "B" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }], yticks: [{ v: 4, label: "40" }], caption: "PE–h grafiği" },
-      opts: ["B'nin kütlesi A'nın yarısıdır", "B'nin kütlesi A'nın 2 katıdır", "Kütleler eşittir, B daha yüksektedir", "B'nin kütlesi A'nın 4 katıdır"], a: 1,
+    { q: "The graph shows how the gravitational potential energy of two objects changes with height on the same planet. Which statement about their masses is correct?",
+      fig: { type: "graph", xlabel: "h (m)", ylabel: "PE (J)", xmax: 5, ymax: 8, lines: [{ from: [0, 0], to: [4, 4], label: "A" }, { from: [0, 0], to: [2, 4], label: "B" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }], yticks: [{ v: 4, label: "40" }], caption: "PE–h graph" },
+      opts: ["The mass of B is half the mass of A.", "The mass of B is twice the mass of A.", "The masses are equal; B is higher.", "The mass of B is four times the mass of A."], a: 1,
       why: "Eğim m · g'dir. B'nin eğimi A'nın 2 katı olduğu için m_B = 2 · m_A. Aynı h'de B'nin PE'si 2 kat büyüktür; yükseklik farkı değil kütle farkıdır." },
-    { q: "2 kg'lık bir top, referans seviyesinden 5 m yukarıda ve 4 m/s hızla gidiyor (g = 10 m/s²). Topun mekanik enerjisi kaç J'dür?",
-      opts: ["100 J", "16 J", "116 J", "84 J"], a: 2,
-      why: "KE = ½ · 2 · 16 = 16 J ve PE = 2 · 10 · 5 = 100 J; E = 116 J. 100 J cevabı hızı yok saymaktır; mekanik enerji ikisinin toplamıdır." }
+    { q: "A 1 kg object moving at 6 m/s on a horizontal surface compresses a spring with spring constant k = 100 N/m. There is no friction. How far is the spring compressed at most?",
+      opts: ["0.18 m", "0.36 m", "0.6 m", "6 m"], a: 2,
+      why: "½ · 1 · 36 = 18 J = ½ · 100 · x² → x² = 0,36 → x = 0,6 m. A yanlış: karekök almadan 0,36'yı ya da 18 ÷ 100'ü cevap sanmak (x² değeri x değildir)." }
   ]
 };

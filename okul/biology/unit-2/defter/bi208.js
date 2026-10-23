@@ -1,5 +1,5 @@
 /* Kitora not defteri · bi208 · 2.8 Biyoçeşitlilik
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: habitat degradation, forest fires, biodiversity loss, conservation in Turkey) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi208",
   amac: "Biyoçeşitliliğin ne olduğunu ve neden değerli olduğunu, Türkiye'nin neden bu kadar zengin olduğunu, endemik türleri, biyoçeşitliliği tehdit eden etkenleri (habitat kaybı ve orman yangınları dahil) ve korunma yollarını öğreneceksin.",
@@ -9,9 +9,9 @@ window.DEFTER = {
       kisa: "Biyoçeşitlilik genlerden ekosistemlere kadar üç düzeyde ölçülür.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🧬", terim: "Genetic diversity", tr: "genetik çeşitlilik", tanim: "Bir türün bireyleri arasındaki gen farkları. Çevre değişince bazı bireylerin ayakta kalma şansını artırır.", ornek: "Anadolu'daki çok sayıda yerel buğday ve fasulye çeşidi (ata tohumu)." },
-            { ikon: "🦋", terim: "Species diversity", tr: "tür çeşitliliği", tanim: "Bir bölgedeki tür sayısı (*species richness*) ve türlerin birbirine göre bolluğu (*evenness*).", ornek: "Bir orman, bir tarlaya göre çok daha fazla tür barındırır." },
-            { ikon: "🌍", terim: "Ecosystem diversity", tr: "ekosistem çeşitliliği", tanim: "Bir bölgedeki orman, step, sulak alan, göl ve deniz gibi farklı ekosistemlerin çeşitliliği.", ornek: "Türkiye'de Karadeniz ormanları ile İç Anadolu bozkırı bir arada bulunur." }
+            { ikon: "🧬", terim: "Genetic diversity", tr: "genetik çeşitlilik", tanim: "Bir popülasyonda bireyler arasındaki genetik değişkenlik. Çevre değişince bazı bireylerin ayakta kalma şansını artırır.", ornek: "Anadolu'daki çok sayıda yerel buğday ve fasulye çeşidi (ata tohumu)." },
+            { ikon: "🦋", terim: "Species diversity", tr: "tür çeşitliliği", tanim: "Bir bölgede yaşayan türlerin sayısı ve bolluğu (*species richness*, *evenness*).", ornek: "Bir orman, bir tarlaya göre çok daha fazla tür barındırır." },
+            { ikon: "🌍", terim: "Ecosystem diversity", tr: "ekosistem çeşitliliği", tanim: "Biyosferdeki orman, bozkır, okyanus, kıyı, çöl ve dağ gibi farklı ekosistemlerin çeşitliliği.", ornek: "Türkiye'de Karadeniz ormanları ile İç Anadolu bozkırı bir arada bulunur." }
           ] },
         { tip: "ornek", baslik: "Tür zenginliği aynı, çeşitlilik farklı", durum: "İki çayırın her birinde 100 bitki var. Çayır A'da 4 tür, her biri 25 birey. Çayır B'de de 4 tür var: 97, 1, 1 ve 1 birey. Hangisi daha çeşitlidir?",
           adimlar: [
@@ -24,26 +24,23 @@ window.DEFTER = {
             { ikon: "🐝", baslik: "Ekosistem hizmetleri", metin: "Tozlaşma, temiz su ve hava, toprak oluşumu, iklimin düzenlenmesi." },
             { ikon: "🛡️", baslik: "Dayanıklılık", metin: "Çeşitli ekosistem; hastalığa, kuraklığa ve değişime daha dayanıklıdır. Genetik çeşitlilik, bir tehdit gelince en az bir bireyin ayakta kalma şansını artırır." }
           ] },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Biodiversity includes genetic diversity, species diversity and ecosystem diversity.*", metin: "Üç düzey." },
-            { ikon: "✍️", baslik: "*A more diverse ecosystem is generally more resilient to environmental change.*", metin: "Önemi." }
-          ] }
+        { tip: "not", metin: "Biyoçeşitlilik türlerin, genlerin, ekosistemlerin ve ekolojik süreçlerin çeşitliliğidir; ülkenin doğal zenginliğidir ve insan yaşamı ona bağlıdır. Anadolu'da fil, aslan, kunduz ve uzun boyunlu kuş (Amik Gölü kurutulunca) gibi türler yok oldu. Sınavda böyle yaz: *Biodiversity includes genetic diversity, species diversity and ecosystem diversity.*" }
       ]
     },
     {
       baslik: "Türkiye neden biyoçeşitlilikte zengin?",
-      kisa: "Anadolu; iklim, yükselti ve coğrafi konumuyla çok çeşitli yaşam alanları sunar.",
+      kisa: "Türkiye, Avrupa ve Orta Doğu'nun en zengin biyoçeşitlilik ülkesidir; coğrafyası bunun nedenidir.",
       bloklar: [
         { tip: "harita", merkez: "Türkiye'nin biyoçeşitliliği", dallar: [
-            { baslik: "Üç fitocoğrafi bölge", alt: "Avrupa–Sibirya, Akdeniz, İran–Turan" },
-            { baslik: "Üç sıcak nokta", alt: "Akdeniz Havzası, Kafkasya, İran–Anadolu (*biodiversity hotspot*)" },
+            { baslik: "Üç fitocoğrafi bölge (ek bilgi)", alt: "Avrupa–Sibirya, Akdeniz, İran–Turan" },
+            { baslik: "Üç sıcak nokta (ek bilgi)", alt: "Akdeniz Havzası, Kafkasya, İran–Anadolu (*biodiversity hotspot*)" },
             { baslik: "İklim çeşitliliği", alt: "Nemli Karadeniz, kurak İç Anadolu, Akdeniz iklimi" },
             { baslik: "Dağlar ve yükselti", alt: "Kuzey Anadolu, Toroslar, Kazdağları: yükseltiyle değişen yaşam kuşakları" },
             { baslik: "Üç deniz", alt: "Karadeniz, Ege ve Akdeniz: birbirinden farklı deniz ekosistemleri" },
             { baslik: "Kıtalar arası köprü", alt: "Asya, Avrupa ve Afrika'dan türler karışır; buzul çağında sığınak" },
-            { baslik: "Zengin bitki varlığı", alt: "Yaklaşık 12 bin bitki türü ve alt türü; yaklaşık üçte biri endemik" }
+            { baslik: "Zengin canlı varlığı", alt: "173 memeli, 493 kuş, 180 sürüngen, 369 tatlı su balığı; 12 150 damarlı bitki (3 496'sı endemik, ≈ %29)" }
           ] },
-        { tip: "tablo", baslik: "Türkiye'deki sıcak noktalar", head: ["Sıcak nokta", "Türkiye'de nerede?"],
+        { tip: "tablo", baslik: "Türkiye'deki sıcak noktalar (ek bilgi)", head: ["Sıcak nokta", "Türkiye'de nerede?"],
           rows: [
             ["Akdeniz Havzası", "Ege ve Akdeniz kıyıları, Toroslar"],
             ["Kafkasya", "Doğu Karadeniz ve Kuzeydoğu Anadolu"],
@@ -86,13 +83,13 @@ window.DEFTER = {
       kisa: "Habitat kaybı, istilacı türler, kirlilik, aşırı avlanma ve iklim değişikliği türleri yok eder.",
       bloklar: [
         { tip: "harita", merkez: "Tehditler", dallar: [
-            { baslik: "Habitat kaybı ve parçalanması", alt: "Ormansızlaşma, tarım, kentleşme, yol, baraj, yangın" },
+            { baslik: "Habitat kaybı ve parçalanması", alt: "Tarım, kentleşme, ormancılık, madencilik, baraj, yangın, sulak alan kurutma" },
             { baslik: "İstilacı türler", alt: "Akdeniz'e Süveyş Kanalı'ndan geçen aslan balığı ve gümüş balonbalığı" },
-            { baslik: "Kirlilik", alt: "Pestisit, plastik, ötrofikasyon" },
-            { baslik: "Aşırı avlanma", alt: "Aşırı balıkçılık, kaçak avcılık, bitki toplama" },
-            { baslik: "İklim değişikliği", alt: "Habitat kayması, mercan beyazlaşması" }
+            { baslik: "Kirlilik", alt: "Hava, su ve toprak kirliliği; pestisit, ötrofikasyon" },
+            { baslik: "Aşırı kaynak kullanımı", alt: "Aşırı balıkçılık, kaçak avcılık, nüfus artışıyla kaynak tüketimi" },
+            { baslik: "İklim değişikliği", alt: "Deniz seviyesi yükselmesi, habitat kayması, tür dağılımının değişmesi" }
           ] },
-        { tip: "grafik", baslik: "Habitat küçülürse kaç tür kalır? (tür–alan ilişkisi)", xlabel: "Kalan habitat alanı (%)", ylabel: "Kalan tür oranı (%)", xmax: 10, ymax: 10,
+        { tip: "grafik", baslik: "Habitat küçülürse kaç tür kalır? (tür–alan ilişkisi; ek bilgi)", xlabel: "Kalan habitat alanı (%)", ylabel: "Kalan tür oranı (%)", xmax: 10, ymax: 10,
           xticks: [{ v: 1, label: "10" }, { v: 3, label: "30" }, { v: 5, label: "50" }, { v: 7, label: "70" }, { v: 10, label: "100" }],
           yticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }, { v: 10, label: "100" }],
           ogeler: [
@@ -107,11 +104,25 @@ window.DEFTER = {
             { metin: "Alanın ==%90'ı== yok olunca türlerin yaklaşık ==%44'ü== kaybolur. Alan küçüldükçe eğri dikleşir: kayıp hızlanır.", goster: ["c"] },
             { metin: "Habitat parçalandığında küçük parçalarda kalan popülasyonlar birbirinden kopar, kenar etkisi artar ve genetik çeşitlilik düşer." }
           ] },
-        { tip: "not", metin: "==Habitat kaybı== en büyük tehdittir. Orman yangınları da bu başlığa girer: Akdeniz ormanlarında yangın doğal bir etkendir ve bazı çam türlerinin kozalakları yangınla açılır. Ama sıcak hava dalgası, kuraklık ve insan ihmali yangın sayısını ve şiddetini artırdığında orman kendini yenileyemez; yanan toprak erozyona uğrar. Yangın sonrası yeniden yeşerme ikincil süksesyondur." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Habitat loss is the main threat to biodiversity, followed by invasive species, pollution, overexploitation and climate change.*", metin: "Tehditleri sayar." },
             { ikon: "✍️", baslik: "*Invasive species outcompete native species and disrupt food webs.*", metin: "İstilacı tür etkisi." }
           ] }
+      ]
+    },
+    {
+      baslik: "Habitat kaybı, parçalanma ve orman yangınları",
+      kisa: "Habitat kaybı yaşam alanını yok eder; parçalanma onu bölerek türleri yalnızlaştırır.",
+      bloklar: [
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🏚️", terim: "Habitat loss", tr: "habitat kaybı", tanim: "Bir canlının yaşaması için gerekli yaşam alanının insan etkinlikleriyle tamamen yok edilmesi. Başka alanı yoksa tür yok olabilir.", ornek: "Tarım, kentleşme, ormancılık, madencilik, kirlilik." },
+            { ikon: "🧩", terim: "Habitat fragmentation", tr: "habitat parçalanması", tanim: "Büyük, bitişik yaşam alanlarının insan etkisiyle küçük parçalara bölünmesi. Parçalar arası uzaklık arttıkça türlerin yayılması zorlaşır.", ornek: "Bitkide çimlenme gücü ve rekabet gücü düşer; hayvanda yuva yapma, üreme ve göç bozulur." }
+          ] },
+        { tip: "tablo", baslik: "Orman yangınlarının nedenleri", head: ["Tür", "Neden"], rows: [
+            ["Doğal", "Yıldırım düşmesi, yanardağ patlaması, çöp depolama alanında sıkışan metan gazının patlaması"],
+            ["İnsan kaynaklı", "Elektrik hattı kazası, makine ve araç kıvılcımı, tarla ya da mera açmak için yakma, ormanda bitki yakma, söndürülmemiş ateş, cam kırığı, söndürülmemiş sigara ve kibrit"]
+          ], not: "Yangın için yanıcı madde, ısı kaynağı ve uygun hava koşulu birlikte gerekir. Çoğu yangının nedeni bilinmez; bilinenlerin çoğu insan ihmalinden kaynaklanır." },
+        { tip: "not", metin: "Ormanlar biyoçeşitliliği korur, havayı ve suyu arıtır, su döngüsüne katılır, toprağı tutarak erozyonu önler ve canlılara yaşam alanı olur. Yangın bu alanları bozar: tür sayısı azalır, iklim etkenleri (sıcaklık, rüzgâr, nem, yağış) bozulur, erozyon, sel ve hava kirliliği artar. Türkiye'de orman yangınlarının yaklaşık %97'si yaz aylarında çıkar. Sınavda böyle yaz: *Forest fires destroy habitats, reduce biodiversity and increase erosion and flooding.*" }
       ]
     },
     {
@@ -129,16 +140,18 @@ window.DEFTER = {
           ] },
         { tip: "tablo", baslik: "Biyoçeşitlilik için uluslararası anlaşmalar", head: ["Anlaşma", "Yıl", "Odak"],
           rows: [
-            ["Ramsar Sözleşmesi", "1971", "Sulak alanların ve göçmen kuşların korunması"],
+            ["Ramsar Sözleşmesi (sulak alanlar)", "1971", "Sulak alanların ve su kuşu yaşam alanlarının korunması"],
+            ["Bern Sözleşmesi", "1979", "Avrupa yaban hayatı ve doğal yaşam alanlarının korunması"],
             ["CITES", "1973", "Nesli tehlike altındaki türlerin uluslararası ticaretinin denetimi"],
             ["Biyolojik Çeşitlilik Sözleşmesi (*CBD*)", "1992 (Rio)", "Koruma, sürdürülebilir kullanım, faydanın adil paylaşımı"],
+            ["Akdeniz ve Karadeniz protokolleri", "—", "Özel korunan alanlar ve biyolojik çeşitliliğin (Karadeniz'de peyzajın da) korunması"],
             ["Kunming–Montreal Küresel Biyoçeşitlilik Çerçevesi", "2022", "2030'a kadar kara ve denizlerin en az %30'unu koruma (\"30×30\")"]
           ] },
-        { tip: "not", metin: "==IUCN Kırmızı Listesi== türleri yok olma riskine göre sınıflar: en az endişe (*LC*), yakın tehdit altında (*NT*), hassas (*VU*), tehlikede (*EN*), kritik tehlikede (*CR*), doğada tükenmiş (*EW*), nesli tükenmiş (*EX*). Koruma önceliği riski yüksek türlere verilir." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*In situ conservation protects species in their natural habitat, whereas ex situ conservation protects them outside it.*", metin: "İki koruma yöntemi." },
-            { ikon: "✍️", baslik: "*National parks and protected areas help conserve biodiversity.*", metin: "Koruma alanları." }
-          ] }
+        { tip: "tablo", baslik: "Türkiye'de koruma örnekleri", head: ["Yöntem", "Örnek"], rows: [
+            ["Tür koruma", "Deniz kaplumbağası (21 önemli yuvalama alanı), Akdeniz foku (Ulusal Komite ve pilot alanlar), Şanlıurfa-Birecik'te üreme istasyonu"],
+            ["Alan koruma (*in situ*)", "Milli park, tabiat koruma alanı, tabiat parkı, yaban hayatı geliştirme sahası, sulak alan: Kazdağı Milli Parkı, Hatay Dağ Ceylanı Yaban Hayatı Geliştirme Sahası"],
+            ["Yer dışı koruma (*ex situ*)", "Tohum gen bankaları (Ege Tarımsal Araştırma Enstitüsü: 55 000'den fazla örnek, 3 339 tür; Ankara Tohum Gen Bankası ≈ 51 000), arboretumlar ve botanik bahçeleri (Ankara, Nezahat Gökyiğit, Ali Nihat Gökyiğit, Atatürk Arboretumu)"]
+          ], not: "(Ek bilgi) IUCN Kırmızı Listesi türleri yok olma riskine göre sınıflar: LC, NT, VU, EN, CR, EW, EX. Sınavda böyle yaz: *In situ conservation protects species in their natural habitat, whereas ex situ conservation protects them outside it.*" }
       ]
     },
     {
@@ -148,48 +161,48 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "Biyoçeşitlilik üç düzeydedir: genetik, tür ve ekosistem çeşitliliği.",
             "Çeşitlilik hem tür sayısına hem türlerin dengeli dağılımına bakar.",
-            "Türkiye'de 3 fitocoğrafi bölge, 3 sıcak nokta, farklı iklimler, dağlar ve 3 deniz bulunur; bitki türlerinin yaklaşık üçte biri endemiktir.",
+            "Türkiye, Avrupa ve Orta Doğu'nun en zengin biyoçeşitlilik ülkesidir: farklı iklimler, dağlar, 3 deniz; 12 150 bitki taksonunun 3 496'sı endemiktir.",
             "Endemik tür yalnızca bir bölgede doğal olarak bulunur: inci kefali (Van Gölü), Kazdağı göknarı. Van kedisi bir tür değil, yerel ırktır.",
             "Simge olmak endemik olmak değildir (ters lale doğal olarak başka ülkelerde de yetişir).",
-            "Tehditler: habitat kaybı (en büyüğü), istilacı türler, kirlilik, aşırı avlanma, iklim değişikliği.",
+            "Tehditler: habitat kaybı ve parçalanması (en büyüğü), istilacı türler, kirlilik, aşırı kaynak kullanımı, iklim değişikliği, orman yangınları.",
             "Alan küçülünce tür sayısı azalır: alanın %90'ı giderse türlerin yaklaşık %44'ü kaybolur.",
-            "Koruma: *in situ* (milli park, Ramsar alanı) ve *ex situ* (gen bankası, botanik bahçesi); IUCN Kırmızı Listesi riski sınıflar."
+            "Koruma: *in situ* (milli park, Ramsar alanı) ve *ex situ* (gen bankası, botanik bahçesi); uluslararası anlaşmalar: CBD, CITES, Ramsar, Bern."
           ] }
       ]
     }
   ],
   sorular: [
     {
-      q: "Tabloda iki çayırdaki tür sayıları verilmiştir. Hangisi doğrudur?",
-      fig: { type: "table", head: ["Tür", "Tür 1", "Tür 2", "Tür 3", "Tür 4"], rows: [["Çayır A (birey)", 25, 25, 25, 25], ["Çayır B (birey)", 97, 1, 1, 1]], caption: "Her çayırda toplam 100 bireyi" },
-      opts: ["Çayır B daha çeşitlidir çünkü bir türü çok bollaşmıştır.", "Çayır A'da tür zenginliği daha fazladır.", "İkisinde tür zenginliği aynıdır, ama A'da türler daha dengeli dağıldığı için A daha çeşitlidir.", "İkisi de aynı derecede çeşitlidir."],
+      q: "The table shows the number of individuals of each species in two meadows. Which statement is correct?",
+      fig: { type: "table", head: ["Species", "Species 1", "Species 2", "Species 3", "Species 4"], rows: [["Meadow A (individuals)", 25, 25, 25, 25], ["Meadow B (individuals)", 97, 1, 1, 1]], caption: "Each meadow has 100 individuals in total" },
+      opts: ["Meadow B is more diverse because one species has become very abundant.", "Meadow A has greater species richness.", "Both have the same species richness, but meadow A is more diverse because its species are more evenly distributed.", "Both are equally diverse."],
       a: 2,
       why: "Her iki çayırda da 4 tür var (zenginlik eşit). Çeşitlilik tür dengesini de hesaba katar; A'da bütün türler eşit bollukta, B'de tek tür baskın. Bu yüzden son şık eksiktir."
     },
     {
-      q: "Aşağıdakilerden hangisi endemik tür tanımına en iyi uyar?",
-      opts: ["Dünyanın her yerinde yaşayan bir tür", "Doğal olarak yalnızca Van Gölü havzasında bulunan inci kefali", "Nesli tükenmekte olan her tür", "Bir ülkenin ulusal simgesi olan her çiçek"],
+      q: "Which of the following best fits the definition of an endemic species?",
+      opts: ["A species living all over the world", "The pearl mullet, which is found naturally only in the Lake Van basin", "Every species that is close to extinction", "Every flower that is a national symbol of a country"],
       a: 1,
       why: "Endemik tür, doğal yayılışı tek bir bölgeyle sınırlı olan türdür. Nesli tehlikede olmak ya da simge olmak endemik olmayı göstermez."
     },
     {
-      q: "Tabloda bir ormanın kalan alanı ile içinde yaşayan türlerin kalan oranı verilmiştir (tür–alan ilişkisi). Habitat alanının %90'ı yok edildiğinde (kalan alan %10) yaklaşık kaç türün kaybolması beklenir?",
-      fig: { type: "table", head: ["Kalan alan (%)", "100", "50", "10", "1"], rows: [["Kalan tür (%)", 100, 84, 56, 32]], caption: "Tür–alan ilişkisi" },
-      opts: ["Yaklaşık %10", "Yaklaşık %16", "Yaklaşık %90", "Yaklaşık %44"],
+      q: "The table shows the remaining area of a forest and the remaining proportion of the species living in it (species–area relationship). If 90% of the habitat is destroyed (10% of the area remains), about what percentage of the species is expected to be lost?",
+      fig: { type: "table", head: ["Remaining area (%)", "100", "50", "10", "1"], rows: [["Remaining species (%)", 100, 84, 56, 32]], caption: "Species–area relationship" },
+      opts: ["About 10%", "About 16%", "About 90%", "About 44%"],
       a: 3,
       why: "Kalan alan %10 iken kalan tür oranı %56; yani kayıp 100 − 56 = %44. %16 alanın yarısı kaybolduğunda görülen kayıptır; %90 alan kaybıyla türlerin %90'ı kaybolmaz."
     },
     {
-      q: "Nesli tükenmekte olan bir bitkinin tohumları gen bankasında saklanmakta, bitki ayrıca botanik bahçesinde yetiştirilmektedir. Bu koruma yöntemi hangisidir?",
-      opts: ["Yer dışı (*ex situ*) koruma", "Yerinde (*in situ*) koruma", "Doğal süksesyon", "Biyolojik büyütme"],
+      q: "The seeds of an endangered plant are stored in a gene bank and the plant is also grown in a botanical garden. Which conservation method is this?",
+      opts: ["*Ex situ* conservation", "*In situ* conservation", "Natural succession", "Biomagnification"],
       a: 0,
       why: "Tür doğal ortamının dışında korunuyorsa *ex situ*'dur. *In situ* koruma, türü milli park gibi doğal yaşam alanında korur."
     },
     {
-      q: "Süveyş Kanalı'ndan Akdeniz'e geçen aslan balığı, yerli balık popülasyonlarını azaltmaktadır. Bu durum hangi tehdit türüne girer?",
-      opts: ["Habitat parçalanması", "İstilacı tür", "Aşırı avlanma", "Asit yağmuru"],
-      a: 1,
-      why: "Yeni bir bölgeye giren ve yerli türlerle rekabet edip onları avlayan tür istilacı türdür. Aslan balığı yerli türlerin besinini ve habitatını da etkiler."
+      q: "Which of the following is a human-caused reason for forest fires?",
+      opts: ["Lightning strikes", "Volcanic eruptions", "Unextinguished cigarette butts and burning vegetation to clear fields", "Explosion of methane trapped in landfills"],
+      a: 2,
+      why: "Söndürülmemiş sigara ve tarla açmak için bitki yakmak insan kaynaklıdır. Yıldırım, yanardağ ve çöplükteki metan patlaması doğal nedenlerdir."
     }
   ]
 };

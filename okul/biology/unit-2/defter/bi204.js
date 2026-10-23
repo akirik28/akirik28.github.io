@@ -1,5 +1,6 @@
 /* Kitora not defteri · bi204 · 2.4 Madde Döngüleri
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (Topic 2.4 Cycles: water, carbon, nitrogen; Biosphere-2) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+/* Not: lecture'ın azot slaytlarında bazı ifadeler karışık (ör. nitratın azot bağlayıcı bakterilerle atmosfere döndüğü yazıyor); standart bilgi ve lecture'ın kendi şemasındaki adlandırma (denitrifying bacteria) kullanıldı. */
 window.DEFTER = {
   slug: "bi204",
   amac: "Enerji ekosistemden geçip giderken madde döner. Karbon, azot ve su döngülerini adım adım öğreneceksin: hangi süreç, hangi canlı, hangi biçim. İnsanın bu döngülere etkisini de göreceksin.",
@@ -21,9 +22,7 @@ window.DEFTER = {
             { ikon: "🔁", terim: "Biogeochemical cycle", tr: "biyojeokimyasal döngü", tanim: "Bir elementin canlılar (*bio*) ile kayaç, su ve hava gibi cansız çevre (*geo*) arasında dolaşması.", ornek: "Karbon, azot, su, fosfor." },
             { ikon: "🏦", terim: "Reservoir", tr: "depo", tanim: "Elementin en çok bulunduğu yer. Karbon için fosil yakıt ve okyanus, azot için atmosfer (%78 N₂), su için okyanus (≈ %97).", ornek: "Atmosferin %78'i N₂'dir ama çoğu canlı onu doğrudan kullanamaz." }
           ] },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Energy flows through an ecosystem, but matter is recycled.*", metin: "Enerji ve madde farkı." }
-          ] }
+        { tip: "not", metin: "*Biosphere-2* projesinde (1987–1989, Arizona çölü) kapalı bir alanda madde döngüleri kurulamadı: O₂ %14'e düştü, CO₂ arttı, 25 omurgalı türünün 19'u öldü. Gerçek döngüler bozulunca da sorun çıkar: azot bileşikleri asit yağmuruna, su döngüsünün bozulması kuraklık ve sele, karbon döngüsünün bozulması sıcaklık artışına yol açar. Sınavda böyle yaz: *Energy flows through an ecosystem, but matter is recycled.*" }
       ]
     },
     {
@@ -37,9 +36,9 @@ window.DEFTER = {
             { baslik: "Ölü madde → atmosfer", metin: "Ayrıştırıcılar ölü bitki ve hayvanı parçalar; karbon CO₂ olarak havaya, kısmen toprağa gider." },
             { baslik: "Gömülme → fosil yakıt", metin: "Ayrışmadan kaçan organik madde milyonlarca yılda kömür, petrol, doğal gaza dönüşür. Karbon yüzlerce milyon yıl depoda kalır." },
             { baslik: "Yanma → atmosfer", metin: "Fosil yakıt, odun ve orman yangınları depodaki karbonu hızla CO₂ olarak havaya verir." },
-            { baslik: "Atmosfer ⇄ okyanus", metin: "CO₂ suda çözünür; deniz canlıları kabuklarını CaCO₃ ile yapar. Ölünce kireçtaşı kayaçlarına dönüşür." }
+            { baslik: "Atmosfer ⇄ okyanus ve kayaç", metin: "Suda karbon CO₂ ve bikarbonat olarak bulunur; deniz canlıları kabuklarını CaCO₃ ile yapar. Kireçtaşı karbonu tutar; aşındıkça karbon döngüye döner." }
           ] },
-        { tip: "grafik", baslik: "Atmosfer nefes alıp verir: bir yılda CO₂ (Mauna Loa, yaklaşık değerler)", xlabel: "Ay", ylabel: "CO₂ (ppm)", xmax: 12, ymax: 12,
+        { tip: "grafik", baslik: "Atmosfer nefes alıp verir: bir yılda CO₂ (Mauna Loa, yaklaşık değerler; ek bilgi)", xlabel: "Ay", ylabel: "CO₂ (ppm)", xmax: 12, ymax: 12,
           xticks: [{ v: 1, label: "Oca" }, { v: 3, label: "Mar" }, { v: 5, label: "May" }, { v: 7, label: "Tem" }, { v: 9, label: "Eyl" }, { v: 11, label: "Kas" }],
           yticks: [{ v: 2, label: "418" }, { v: 4, label: "420" }, { v: 6, label: "422" }, { v: 8, label: "424" }],
           ogeler: [
@@ -96,20 +95,20 @@ window.DEFTER = {
       kisa: "Güneş suyu buharlaştırır; yağış ve akışla su yeryüzüne döner.",
       bloklar: [
         { tip: "adimlar", baslik: "Bir su damlasının yolu", adimlar: [
-            { baslik: "Buharlaşma (*evaporation*)", metin: "Güneş enerjisi deniz, göl ve toprak yüzeyindeki suyu buhara çevirir." },
-            { baslik: "Terleme (*transpiration*)", metin: "Bitkiler kökten aldıkları suyu yapraklardaki gözeneklerden buhar olarak verir. İkisi birlikte *evapotranspiration*." },
+            { baslik: "Buharlaşma (*evaporation*)", metin: "Güneş enerjisi deniz, göl, nehir ve toprak yüzeyindeki suyu buhara çevirir. Dünya, suyun sıvı, katı ve gaz hâlinin birlikte bulunduğu tek gezegendir." },
+            { baslik: "Terleme (*transpiration*)", metin: "Bitkiler kökten aldıkları suyu yapraklardaki gözeneklerden buhar olarak verir; canlıların solunumu da atmosfere su katar." },
             { baslik: "Yoğuşma (*condensation*)", metin: "Yükselen buhar soğuyup damlacıklara dönüşür; bulut oluşur." },
-            { baslik: "Yağış (*precipitation*)", metin: "Yağmur, kar, dolu olarak su yeryüzüne iner." },
+            { baslik: "Yağış (*precipitation*)", metin: "Yağmur, kar ya da dolu olarak su yeryüzüne iner; bir kısmı yeniden buharlaşır." },
             { baslik: "Akış ve sızma", metin: "Su yüzeyden akarak (*runoff*) akarsulara ve denize gider ya da toprağa sızarak (*infiltration*) yeraltı suyu olur." }
           ] },
-        { tip: "tablo", baslik: "Dünya suyu nerede?", head: ["Depo", "Yaklaşık pay"],
+        { tip: "tablo", baslik: "Dünya suyu nerede? (ek bilgi)", head: ["Depo", "Yaklaşık pay"],
           rows: [
             ["Okyanuslar ve denizler (tuzlu)", "≈ %97"],
             ["Tatlı sular (toplam)", "≈ %2,5–3"],
             ["— buzullar ve kalıcı kar", "tatlı suyun yaklaşık üçte ikisi"],
             ["— yeraltı suyu", "tatlı suyun yaklaşık üçte biri"],
             ["Göller, nehirler, atmosfer", "Dünya suyunun binde birinden az"]
-          ], not: "İnsan etkisi: ormanlar kesilince terleme azalır; yeraltı suyu yenilenebildiğinden hızlı çekilirse tükenir. Konya Ovası'nda yeraltı su seviyesi düşüyor ve obruk (çöküntü çukuru) sayısı artıyor." },
+          ], not: "(Ek bilgi) İnsan etkisi: ormanlar kesilince terleme azalır; yeraltı suyu yenilenebildiğinden hızlı çekilirse tükenir. Konya Ovası'nda yeraltı su seviyesi düşüyor ve obruk (çöküntü çukuru) sayısı artıyor." },
         { tip: "tuzak", metin: "Terleme ile buharlaşma aynı yönde sonuç verir ama kaynakları farklıdır.", yanlis: "Terleme, suyun denizlerden buharlaşmasıdır.", dogru: "==Terleme== canlıdan (bitki yaprağı), ==buharlaşma== cansız yüzeyden (deniz, göl, toprak) olan su kaybıdır." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Transpiration is the loss of water vapor from the leaves of plants.*", metin: "Terleme tanımı." },
@@ -152,33 +151,33 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Tabloda Mauna Loa'da (Kuzey Yarımküre) ölçülen aylık atmosfer CO₂ değerleri verilmiştir. Mayıstan eylüle kadar CO₂'nin azalmasının nedeni hangisidir?",
-      fig: { type: "table", head: ["Ay", "Oca", "Mar", "May", "Tem", "Eyl", "Kas"], rows: [["CO₂ (ppm)", 420, 422, 424, 421.5, 418, 419]], caption: "Yaklaşık aylık CO₂" },
-      opts: ["Ayrıştırıcıların yazın daha aktif olması", "Yaz aylarında fotosentezin solunumdan fazla olması", "Fosil yakıt kullanımının yazın durması", "Okyanusların yazın CO₂ salması"],
+      q: "The table gives monthly atmospheric CO₂ values measured at Mauna Loa (Northern Hemisphere). What is the reason for the decrease in CO₂ from May to September?",
+      fig: { type: "table", head: ["Month", "Jan", "Mar", "May", "Jul", "Sep", "Nov"], rows: [["CO₂ (ppm)", 420, 422, 424, 421.5, 418, 419]], caption: "Approximate monthly CO₂" },
+      opts: ["Decomposers are more active in summer", "Photosynthesis exceeds respiration in the summer months", "Fossil fuel use stops in summer", "The oceans release CO₂ in summer"],
       a: 1,
       why: "Yazın ormanlar yapraklanır ve fotosentez, solunum ve ayrışmadan fazla olur; atmosferden net CO₂ çekilir. Ayrıştırıcıların aktivitesi yazın artsa bile CO₂'yi düşürmez, artırır."
     },
     {
-      q: "Bir çiftçi buğday ekilen tarlaya bir sonraki yıl nohut ekiyor ve toprağın azot bakımından zenginleştiğini görüyor. Bunun nedeni hangisidir?",
-      opts: ["Nohut kökündeki *Rhizobium* bakterilerinin N₂'yi bağlaması", "Nohutun toprağa daha çok CO₂ vermesi", "*Nitrobacter*'in N₂'yi doğrudan amonyağa çevirmesi", "Denitrifikasyonun artması"],
+      q: "A farmer plants chickpeas in a field where wheat was grown the year before and finds that the soil is richer in nitrogen. What is the reason?",
+      opts: ["*Rhizobium* bacteria in the chickpea roots fix N₂", "Chickpeas release more CO₂ into the soil", "*Nitrobacter* converts N₂ directly into ammonia", "Denitrification increases"],
       a: 0,
       why: "Baklagiller kökleriyle *Rhizobium* ile simbiyoz yapar; bakteri N₂'yi bağlayıp bitkiye amonyum sağlar, artanlar toprağa kalır. *Nitrobacter* nitriti nitrata çevirir, N₂'yi bağlamaz; denitrifikasyon ise toprakta azalma yapar."
     },
     {
-      q: "Yağışla su altında kalmış ve havasız hâle gelmiş bir tarla toprağında nitrat miktarı hızla düşmüştür. Hangi süreç bu duruma yol açmıştır?",
-      opts: ["Nitrifikasyon", "Azot bağlama", "Amonifikasyon", "Denitrifikasyon"],
+      q: "The nitrate content of a field soil that has been flooded and has become oxygen-poor drops quickly. Which process caused this?",
+      opts: ["Nitrification", "Nitrogen fixation", "Ammonification", "Denitrification"],
       a: 3,
       why: "Oksijensiz ortamda denitrifiye eden bakteriler NO₃⁻'ı N₂'ye çevirir ve azot atmosfere gider. Nitrifikasyon oksijenli ortamda olur ve nitrat miktarını artırır."
     },
     {
-      q: "Bir dağ yamacındaki ormanın tamamen kesilmesinin yerel su döngüsü üzerindeki beklenen etkisi hangisidir?",
-      opts: ["Terleme artar ve yerel yağış kesinlikle artar", "Toprağa sızma artar çünkü kökler yok olmuştur", "Terleme azalır; yerel nem ve yağış azalabilir, yüzey akışı artar", "Su döngüsü tamamen durur"],
+      q: "What is the expected effect on the local water cycle if the forest on a mountain slope is completely cut down?",
+      opts: ["Transpiration increases and local rainfall certainly increases", "Infiltration increases because the roots are gone", "Transpiration decreases; local humidity and rainfall may decrease and surface runoff increases", "The water cycle stops completely"],
       a: 2,
       why: "Yapraklar yok olduğu için terleme azalır; kök tutmadığı için su toprağa sızmadan yüzeyden akar. Su döngüsü Güneş enerjisiyle sürdüğü için durmaz."
     },
     {
-      q: "Ölü bir hayvanın vücudundaki proteinlerden amonyum oluşmasını sağlayan canlılar ve süreç hangisidir?",
-      opts: ["*Rhizobium*, nitrifikasyon", "Ayrıştırıcı bakteri ve mantarlar, amonifikasyon", "*Nitrobacter*, denitrifikasyon", "Fotosentez yapan bitkiler, asimilasyon"],
+      q: "Which organisms and which process produce ammonium from the proteins in the body of a dead animal?",
+      opts: ["*Rhizobium*, nitrification", "Decomposer bacteria and fungi, ammonification", "*Nitrobacter*, denitrification", "Photosynthetic plants, assimilation"],
       a: 1,
       why: "Organik azotun (protein, üre) amonyuma çevrilmesine amonifikasyon denir ve ayrıştırıcılar yapar. Nitrifikasyon amonyumun nitrata çevrilmesidir; ters yönlüdür."
     }

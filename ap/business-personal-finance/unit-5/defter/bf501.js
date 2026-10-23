@@ -12,7 +12,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Beş vergi türü (ABD terimleriyle)", head: ["Vergi", "Neye göre hesaplanır?", "Nasıl ödenir?", "Türkiye'de benzeri"], rows: [
             ["*Income tax* (gelir vergisi)", "Gelirin bir yüzdesi", "İşveren maaştan keser ve devlete yatırır; yıl sonunda beyanla fark ödenir ya da iade alınır", "Gelir vergisi"],
             ["*Capital gains tax* (sermaye kazancı vergisi)", "Hisse ya da ev gibi bir varlığı kârla satmaktan doğan kazanç (*capital gain*)", "Gelir vergisi beyannamesiyle gönderilir; oranı genelde gelir vergisinden düşüktür", "Değer artış kazançları (kendi kurallarıyla)"],
-            ["*Payroll taxes* (bordro vergileri)", "Maaşa bağlı; ABD'de *Social Security*, *Medicare*, *Medicaid*, işsizlik ödeneği", "Maaştan kesilir; işveren yarısını öder", "SGK ve işsizlik sigortası primleri"],
+            ["*Payroll taxes* (bordro vergileri)", "Maaşa bağlı; ABD'de *Social Security*, *Medicare* (FICA) ve işsizlik sigortası", "Maaştan kesilir; Social Security ve Medicare'in yarısını işveren öder (işsizlik vergisini çoğunlukla tamamen işveren öder)", "SGK ve işsizlik sigortası primleri"],
             ["*Property tax* (mülk vergisi)", "Mülkün değeri: ev, arsa, araba", "Yıllık, 6 aylık ya da aylık", "Emlak vergisi, motorlu taşıtlar vergisi"],
             ["*Sales tax* (satış vergisi)", "Ürünün satış fiyatı", "Satıcı işletme toplar ve devlete öder", "KDV (*VAT*)"]
           ], not: "ABD'de vergiler federal, eyalet ve yerel yönetimlere ödenir; vergi türleri ve tutarı eyalete göre değişir." },

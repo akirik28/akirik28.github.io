@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc103 · 1.3 Ters Fonksiyon
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#1_3 Inverse Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc103",
   amac: "Bu konu ters fonksiyonu anlatıyor: f'nin yaptığını geri alan fonksiyon. Tersin ne zaman var olduğunu (birebir ve örten), nasıl bulunduğunu, grafiğinin y = x'e göre simetrisini ve doğrulama yöntemlerini öğreneceksin.",
@@ -29,11 +29,11 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "f(a) = b", alt: "f, a'yı b'ye götürür" },
+            { t: "f(x) = y", alt: "f, x'i y'ye götürür" },
             "⇔",
-            { t: "f⁻¹(b) = a", alt: "f⁻¹, b'yi a'ya geri getirir" }
+            { t: "f⁻¹(y) = x", alt: "f⁻¹, y'yi x'e geri getirir" }
           ],
-          aciklama: "f⁻¹, \"f üzeri eksi bir\" diye okunur ve 1/f(x) **değildir**. Sınavda böyle yaz: *The inverse function f⁻¹ undoes the action of f.*"
+          aciklama: "Ders tanımı: f birebir ve örten, domain A, range B ise f⁻¹'in domain'i B, range'i A'dır. f⁻¹, \"f üzeri eksi bir\" diye okunur ve 1/f(x) **değildir**. Sınavda böyle yaz: *The inverse function f⁻¹ undoes the action of f.*"
         }
       ]
     },
@@ -48,21 +48,21 @@ window.DEFTER = {
               ikon: "1️⃣",
               terim: "Injective",
               tr: "birebir",
-              tanim: "Farklı girdiler farklı çıktı verir: f(a) = f(b) ise a = b.",
+              tanim: "f(x₁) = f(x₂) ise x₁ = x₂ olur: farklı girdiler farklı çıktı verir.",
               ornek: "f(x) = 2x + 1."
             },
             {
               ikon: "🎯",
               terim: "Surjective",
               tr: "örten",
-              tanim: "Range = codomain: hedef kümede boşta eleman kalmaz.",
+              tanim: "Her y ∈ B için f(x) = y olan bir x ∈ A vardır: f(A) = B, hedefte boşta eleman kalmaz.",
               ornek: "f: ℝ → ℝ, f(x) = x³."
             },
             {
               ikon: "🔁",
               terim: "Bijective",
               tr: "birebir ve örten",
-              tanim: "İkisi birden. Yalnızca bijective fonksiyonların (kendi codomain'lerine göre) tersi vardır.",
+              tanim: "İkisi birden. Ters fonksiyon yalnızca bijective (birebir ve örten) fonksiyonlar için vardır.",
               ornek: "f: ℝ → ℝ, f(x) = 3x − 6."
             },
             {
@@ -159,7 +159,8 @@ window.DEFTER = {
             "Paydadan kurtul: x(y − 3) = 2y + 1 → xy − 3x = 2y + 1.",
             "y'li terimleri topla: xy − 2y = 3x + 1 → y(x − 2) = 3x + 1.",
             "g⁻¹(x) = (3x + 1)/(x − 2), x ≠ 2.",
-            "Kontrol: g(x) = 2 + 7/(x − 3) hiçbir zaman 2 olamaz: R(g) = ℝ∖{2} ve D(g⁻¹) = ℝ∖{2} ✓."
+            "Kontrol: g(x) = 2 + 7/(x − 3) hiçbir zaman 2 olamaz: R(g) = ℝ∖{2} ve D(g⁻¹) = ℝ∖{2} ✓.",
+            "Genel kural: f(x) = (ax + b)/(cx + d) için D = ℝ∖{−d/c}, R = ℝ∖{a/c}. Örnek: (4x − 7)/(3x + 5) fonksiyonu ℝ∖{−5/3} → ℝ∖{4/3} olarak birebir ve örtendir."
           ],
           sonuc: "f⁻¹(x) = (x + 6)/3 ve g⁻¹(x) = (3x + 1)/(x − 2). Sınavda böyle yaz: *Swap x and y, then solve for y.*"
         },
@@ -315,10 +316,10 @@ window.DEFTER = {
               "(f⁻¹)⁻¹ = f",
               "İki kez geri almak başa döndürür"
             ],
-            ["Eşdeğerlik", "f(a) = b ⇔ f⁻¹(b) = a", "Girdi ve çıktı rol değiştirir"],
+            ["Eşdeğerlik", "f(x) = y ⇔ f⁻¹(y) = x", "Girdi ve çıktı rol değiştirir"],
             ["Bileşke", "f∘f⁻¹ = f⁻¹∘f = I", "Sonuç birim fonksiyon"],
             ["Bileşkenin tersi", "(f∘g)⁻¹ = g⁻¹∘f⁻¹", "Sıra tersine döner"],
-            ["Monotonluk", "f artan ise f⁻¹ artan", "Azalansa azalan"]
+            ["Monotonluk (ek bilgi)", "f artan ise f⁻¹ artan", "Azalansa azalan"]
           ],
           not: "Sınavda böyle yaz: *The inverse of f∘g is g⁻¹∘f⁻¹; the order is reversed.*"
         },
@@ -330,9 +331,11 @@ window.DEFTER = {
             "f⁻¹(9) = ? Formül bulmak yerine f(x) = 9 çöz: x³ + 1 = 9 → x³ = 8 → x = 2. Demek f⁻¹(9) = 2.",
             "(g∘k)(x) = 2x + 1 → tersi (x − 1)/2.",
             "k⁻¹(g⁻¹(x)) = k⁻¹(x − 1) = (x − 1)/2 ✓ (doğru sıra).",
-            "g⁻¹(k⁻¹(x)) = g⁻¹(x/2) = x/2 − 1 ✗ (yanlış sıra)."
+            "g⁻¹(k⁻¹(x)) = g⁻¹(x/2) = x/2 − 1 ✗ (yanlış sıra).",
+            "Bilinmeyeni bul: (f∘g) = h ise g = f⁻¹∘h. f(x) = 2x + 1 ve (f∘g)(x) = 4x − 3 için g(x) = ((4x − 3) − 1)/2 = 2x − 2.",
+            "Diğer yandan: g(x) = 2x − 3 ve (f∘g)(x) = 4x + 1 ise f = h∘g⁻¹. g⁻¹(t) = (t + 3)/2 olduğundan f(t) = 4(t + 3)/2 + 1 = 2t + 7."
           ],
-          sonuc: "f⁻¹(k) değerini, f(x) = k denklemini çözerek bulmak çoğu zaman en hızlı yoldur."
+          sonuc: "f⁻¹(k) değerini, f(x) = k denklemini çözerek bulmak çoğu zaman en hızlı yoldur. Bileşkeden fonksiyon bulmak için ters fonksiyonu kullan."
         },
         {
           tip: "tuzak",
@@ -349,14 +352,15 @@ window.DEFTER = {
         {
           tip: "ozet",
           maddeler: [
-            "f(a) = b ⇔ f⁻¹(b) = a; f⁻¹ işlemi geri alır.",
+            "f(x) = y ⇔ f⁻¹(y) = x; f⁻¹ işlemi geri alır.",
             "Tersin var olması için fonksiyon *bijective* (birebir ve örten) olmalı; yatay doğru testi.",
             "Domain'i kısıtlayarak ters oluşturulabilir: x² için x ≥ 0 → √x.",
             "D(f⁻¹) = R(f) ve R(f⁻¹) = D(f).",
             "Ters bulma: y = f(x), x ile y'yi değiştir, y'yi çöz.",
             "f ve f⁻¹ grafikleri y = x doğrusuna göre simetrik; (a, b) ↔ (b, a).",
             "Doğrulama: f(f⁻¹(x)) = x ve f⁻¹(f(x)) = x; geometrik: orta nokta y = x üzerinde.",
-            "(f⁻¹)⁻¹ = f ve (f∘g)⁻¹ = g⁻¹∘f⁻¹. f⁻¹ ≠ 1/f."
+            "(f⁻¹)⁻¹ = f ve (f∘g)⁻¹ = g⁻¹∘f⁻¹. f⁻¹ ≠ 1/f.",
+            "Bileşkeden fonksiyon bulma: (f∘g) = h ise g = f⁻¹∘h ve f = h∘g⁻¹."
           ]
         }
       ]
@@ -364,19 +368,19 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "f(x) = (x + 1)/(x − 2), x ≠ 2 için f⁻¹(x) hangisidir?",
+      q: "Find f⁻¹(x) if f(x) = (x + 1)/(x − 2), x ≠ 2.",
       opts: ["(2x + 1)/(x − 1)", "(x − 2)/(x + 1)", "(x + 1)/(2x − 1)", "(2x − 1)/(x + 1)"],
       a: 0,
       why: "y = (x + 1)/(x − 2) → yer değiştir: x = (y + 1)/(y − 2) → xy − 2x = y + 1 → y(x − 1) = 2x + 1 → y = (2x + 1)/(x − 1). Kontrol: f(3) = 4 ve f⁻¹(4) = 9/3 = 3 ✓. B seçeneği 1/f(x)'tir; ters fonksiyon değil."
     },
     {
-      q: "Aşağıdaki fonksiyonlardan hangisinin ℝ üzerinde tersi vardır?",
+      q: "Which of the following functions has an inverse on ℝ?",
       opts: ["f(x) = x² + 1", "f(x) = |x − 2|", "f(x) = x³ − 5", "f(x) = 4"],
       a: 2,
       why: "x³ − 5 hep artandır ve her gerçek değeri alır: birebir ve örten. x² + 1 ve |x − 2| birebir değil (f(1) = f(−1) gibi); 4 sabittir. En çekici yanlış B: |x − 2| tek köşeli ama V biçimli, yatay doğru iki kez keser."
     },
     {
-      q: "Şekilde f fonksiyonunun grafiği dört noktadan oluşuyor: (1, 3), (2, 5), (3, 1), (4, 2). f⁻¹(1) + f⁻¹(2) kaçtır?",
+      q: "The graph of f consists of four points: (1, 3), (2, 5), (3, 1) and (4, 2). What is f⁻¹(1) + f⁻¹(2)?",
       fig: {
         type: "graph",
         xlabel: "x",
@@ -407,13 +411,13 @@ window.DEFTER = {
       why: "f⁻¹(1) = ? f(x) = 1 olan x'i ara: f(3) = 1 → f⁻¹(1) = 3. f(4) = 2 → f⁻¹(2) = 4. Toplam 7. D seçeneği f(1) + f(2) = 3 + 5 = 8: ters yerine kendisini kullanmak."
     },
     {
-      q: "f(x) = x + 1 ve g(x) = 2x veriliyor. (f∘g)⁻¹(5) kaçtır?",
+      q: "If f(x) = x + 1 and g(x) = 2x, what is (f∘g)⁻¹(5)?",
       opts: ["3/2", "3", "2", "5/2"],
       a: 2,
       why: "(f∘g)(x) = 2x + 1. 2x + 1 = 5 → x = 2. Aynı sonuç (f∘g)⁻¹(x) = (x − 1)/2 formülünden de gelir: (5 − 1)/2 = 2. Sırayı karıştırıp f⁻¹(g⁻¹(5)) = 5/2 − 1 = 3/2 bulmak çekici bir hatadır."
     },
     {
-      q: "f(x) = x² − 4x tanımlı olduğu aralık kısıtlanarak tersi olan bir fonksiyon yapılmak isteniyor. Hangi aralık bunu sağlar?",
+      q: "The function f(x) = x² − 4x is restricted to an interval so that it has an inverse. Which interval works?",
       opts: ["x ≥ 0", "−2 ≤ x ≤ 6", "x ≤ 3", "x ≥ 2"],
       a: 3,
       why: "f(x) = (x − 2)² − 4, tepe noktası x = 2'de. Birebir olması için tepe noktasının tek tarafı seçilmeli: x ≥ 2 (ya da x ≤ 2). x ≥ 0 tepe noktasını aşar: f(0) = f(4) = 0. −2 ≤ x ≤ 6 ve x ≤ 3 de x = 2'nin iki yanını içerir."

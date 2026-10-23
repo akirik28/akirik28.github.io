@@ -113,7 +113,7 @@ window.DEFTER = {
     { q: "Bir ülke kalkındıkça kadınlarla ilgili aşağıdakilerden hangisinin gerçekleşmesi beklenir?",
       opts: ["Kadın eğitimi azalır ve doğurganlık artar", "Kadınların ücretsiz bakım emeği hemen sıfıra iner", "Kadınlar işgücünden tamamen çıkar", "Kadın eğitimi ve ücretli işgücüne katılım artar; doğurganlık düşer"],
       a: 3,
-      why: "Kalkınma eğitim ve ücretli çalışmayı artırır, doğurganlığı azaltır. C şıkkı en çekici yanlış: bakım emeği kendiliğinden ortadan kalkmaz, hâlâ büyük ölçüde kadınların üzerindedir." },
+      why: "Kalkınma eğitim ve ücretli çalışmayı artırır, doğurganlığı azaltır. B şıkkı en çekici yanlış: bakım emeği kendiliğinden ortadan kalkmaz, hâlâ büyük ölçüde kadınların üzerindedir." },
     { q: "Tabloya göre aşağıdaki yorumlardan hangisi doğrudur?",
       fig: { type: "table", caption: "İki ülkede kadın göstergeleri", head: ["Gösterge", "A ülkesi", "B ülkesi"], rows: [["Kadın işgücüne katılımı (%)", 25, 70], ["Kadınların erkek ücretine oranı (%)", 70, 82], ["Kadın başına doğum", 4.8, 1.7]] },
       opts: ["A ülkesi daha gelişmiş olmalıdır; çünkü doğurganlığı yüksektir", "B ülkesinde kadın katılımı yüksektir ama kadınlar hâlâ erkeklerden daha az kazanmaktadır", "B ülkesinde kadın-erkek ücret eşitliği tamamen sağlanmıştır", "İki ülkede de kadınların rolü kalkınmayla değişmemiştir"],

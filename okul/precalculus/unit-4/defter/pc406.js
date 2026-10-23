@@ -10,26 +10,26 @@ window.DEFTER = (function () {
 
   return {
     slug: "pc406",
-    amac: "Bu konu iki açının toplamı, farkı ve iki katı için sin, cos ve tan formüllerini veriyor. Bunlarla 75° ve 105° gibi açıların değerini özel açılardan kurmayı, ifadeleri sadeleştirmeyi ve özdeşlik ispatlamayı öğreneceksin.",
+    amac: "Bu konu iki açının toplamı, farkı, iki katı ve yarısı için sin, cos ve tan formüllerini veriyor. Bunlarla 75° ve 105° gibi açıların değerini özel açılardan kurmayı, ifadeleri sadeleştirmeyi ve özdeşlik ispatlamayı öğreneceksin.",
     bolumler: [
       {
         baslik: "Toplam ve fark formülleri",
-        kisa: "sin(A + B), sin A + sin B değildir; çapraz çarpımlar gerekir.",
+        kisa: "sin(α + β), sin α + sin β değildir; çapraz çarpımlar gerekir.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "➕", terim: "Sum and difference identities", tr: "toplam-fark özdeşlikleri", tanim: "İki açının toplamının ya da farkının trigonometrik değerini, açıların ayrı değerleriyle veren formüller.", ornek: "sin(45° + 30°) değerini sin 45°, cos 30° gibi bilinenlerden kurarız." },
-              { ikon: "✖️", terim: "Double-angle identities", tr: "iki kat açı özdeşlikleri", tanim: "Toplam formülünde A = B = θ alınınca çıkan, 2θ'nın değerini θ'dan veren formüller.", ornek: "sin 2θ'yı sin θ ve cos θ ile yazarız." }
+              { ikon: "✖️", terim: "Double-angle identities", tr: "iki kat açı özdeşlikleri", tanim: "Toplam formülünde α = β = θ alınınca çıkan, 2θ'nın değerini θ'dan veren formüller.", ornek: "sin 2θ'yı sin θ ve cos θ ile yazarız." }
             ] },
-          { tip: "tablo", baslik: "Toplam ve fark formülleri", head: ["Fonksiyon", "Toplam (A + B)", "Fark (A − B)"],
-            rows: [["sin", "sin A cos B + cos A sin B", "sin A cos B − cos A sin B"], ["cos", "cos A cos B − sin A sin B", "cos A cos B + sin A sin B"], ["tan", "(tan A + tan B) / (1 − tan A tan B)", "(tan A − tan B) / (1 + tan A tan B)"]],
-            not: "cos'ta işaret terstir: toplamda eksi, farkta artı. Sınavda böyle yaz: *Use the sum formula for sine with A = 45° and B = 30°.*" },
-          { tip: "adimlar", baslik: "cos(A − B) nereden geliyor?", adimlar: [
-              { baslik: "Birim çemberde iki nokta", metin: "P = (cos A, sin A) ve Q = (cos B, sin B). İkisini birleştiren PQ doğrusunun uzunluğunu iki farklı yoldan yazacağız." },
-              { baslik: "Uzaklık formülü", metin: "PQ² = (cos A − cos B)² + (sin A − sin B)² = 2 − 2(cos A cos B + sin A sin B)." },
-              { baslik: "Döndürerek", metin: "Çemberi döndürmek PQ'yu değiştirmez: Q'yu (1, 0)'a getirirsek P, (cos(A − B), sin(A − B)) olur ve PQ² = 2 − 2cos(A − B)." },
-              { baslik: "Eşitle", metin: "cos(A − B) = cos A cos B + sin A sin B. B yerine −B yazınca cos(A + B) = cos A cos B − sin A sin B çıkar." }
+          { tip: "tablo", baslik: "Toplam ve fark formülleri", head: ["Fonksiyon", "Toplam (α + β)", "Fark (α − β)"],
+            rows: [["sin", "sin α cos β + sin β cos α", "sin α cos β − sin β cos α"], ["cos", "cos α cos β − sin α sin β", "cos α cos β + sin α sin β"], ["tan", "(tan α + tan β) / (1 − tan α tan β)", "(tan α − tan β) / (1 + tan α tan β)"]],
+            not: "cos'ta işaret terstir: toplamda eksi, farkta artı. Sınavda böyle yaz: *Use the sum formula for sine with α = 45° and β = 30°.*" },
+          { tip: "adimlar", baslik: "cos(α − β) nereden geliyor?", adimlar: [
+              { baslik: "Birim çemberde iki nokta", metin: "P = (cos α, sin α) ve Q = (cos β, sin β). İkisini birleştiren PQ doğrusunun uzunluğunu iki farklı yoldan yazacağız." },
+              { baslik: "Uzaklık formülü", metin: "PQ² = (cos α − cos β)² + (sin α − sin β)² = 2 − 2(cos α cos β + sin α sin β)." },
+              { baslik: "Döndürerek", metin: "Çemberi döndürmek PQ'yu değiştirmez: Q'yu (1, 0)'a getirirsek P, (cos(α − β), sin(α − β)) olur ve PQ² = 2 − 2cos(α − β)." },
+              { baslik: "Eşitle", metin: "cos(α − β) = cos α cos β + sin α sin β. β yerine −β yazınca cos(α + β) = cos α cos β − sin α sin β çıkar." }
             ] },
-          { tip: "tuzak", metin: "Toplamın sinüsü sinüslerin toplamı olmaz; sayıyla dene.", yanlis: "sin(A + B) = sin A + sin B.", dogru: "sin(30° + 60°) = sin 90° = 1, ama sin 30° + sin 60° = 1/2 + √3/2 ≠ 1." }
+          { tip: "tuzak", metin: "Toplamın sinüsü sinüslerin toplamı olmaz; sayıyla dene.", yanlis: "sin(α + β) = sin α + sin β.", dogru: "sin(30° + 60°) = sin 90° = 1, ama sin 30° + sin 60° = 1/2 + √3/2 ≠ 1." }
         ]
       },
       {
@@ -43,13 +43,16 @@ window.DEFTER = (function () {
             adimlar: ["sin 75° = sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4.", "tan 75° = (tan 45° + tan 30°)/(1 − tan 45° tan 30°) = (1 + √3/3)/(1 − √3/3) = (3 + √3)/(3 − √3). Payda eşleniğiyle çarp: (3 + √3)²/(9 − 3) = (12 + 6√3)/6 = 2 + √3.", "cos 105° = cos(60° + 45°) = cos 60° cos 45° − sin 60° sin 45° = √2/4 − √6/4 = (√2 − √6)/4."],
             sonuc: "sin 75° = ==(√6 + √2)/4==, tan 75° = ==2 + √3==, cos 105° = ==(√2 − √6)/4==. Sınavda böyle yaz: *Write 75° as 45° + 30° and substitute the exact values.*" },
           { tip: "ornek", baslik: "Formülü tersten kullan", durum: "cos 40° cos 20° − sin 40° sin 20° ve sin 50° cos 20° − cos 50° sin 20° ifadelerinin değerini bul.",
-            adimlar: ["İlk ifade cos A cos B − sin A sin B kalıbında: cos(40° + 20°) = cos 60° = 1/2.", "İkinci ifade sin A cos B − cos A sin B kalıbında: sin(50° − 20°) = sin 30° = 1/2."],
-            sonuc: "İkisi de ==1/2==. Sınavda böyle yaz: *This matches the cosine sum formula, so it equals cos 60°.*" }
+            adimlar: ["İlk ifade cos α cos β − sin α sin β kalıbında: cos(40° + 20°) = cos 60° = 1/2.", "İkinci ifade sin α cos β − sin β cos α kalıbında: sin(50° − 20°) = sin 30° = 1/2."],
+            sonuc: "İkisi de ==1/2==. Sınavda böyle yaz: *This matches the cosine sum formula, so it equals cos 60°.*" },
+          { tip: "ornek", baslik: "İki orandan toplam ve fark", durum: "α ve β dar açı, sin α = 3/5 ve sin β = 5/13. cos(α + β), cos(α − β) ve sin(α + β) değerlerini bul.",
+            adimlar: ["Dar açılarda cos pozitif: cos α = 4/5 (3-4-5) ve cos β = 12/13 (5-12-13).", "cos(α + β) = cos α cos β − sin α sin β = (4/5)(12/13) − (3/5)(5/13) = 48/65 − 15/65 = 33/65.", "cos(α − β) = 48/65 + 15/65 = 63/65.", "sin(α + β) = sin α cos β + sin β cos α = (3/5)(12/13) + (5/13)(4/5) = 36/65 + 20/65 = 56/65. Kontrol: 33² + 56² = 65²."],
+            sonuc: "cos(α + β) = ==33/65==, cos(α − β) = ==63/65==, sin(α + β) = ==56/65==. Sınavda böyle yaz: *Since α and β are acute, all their ratios are positive.*" }
         ]
       },
       {
         baslik: "İki kat açı formülleri",
-        kisa: "Toplam formülünde A = B = θ yazınca iki kat açı formülleri çıkar.",
+        kisa: "Toplam formülünde α = β = θ yazınca iki kat açı formülleri çıkar.",
         bloklar: [
           { tip: "formul", parcalar: [{ t: "sin 2θ = 2 sin θ cos θ" }, ",", { t: "cos 2θ = cos²θ − sin²θ", alt: "= 2cos²θ − 1 = 1 − 2sin²θ" }, ",", { t: "tan 2θ = 2 tan θ / (1 − tan²θ)" }],
             aciklama: "cos 2θ'nın üç biçimi vardır; elindeki bilgiye göre seç. Bunlardan cos²θ = (1 + cos 2θ)/2 ve sin²θ = (1 − cos 2θ)/2 çıkar." },
@@ -77,6 +80,20 @@ window.DEFTER = (function () {
         ]
       },
       {
+        baslik: "Yarım açı formülleri",
+        kisa: "cos 2θ'nın iki biçiminden yarım açı çıkar; işaret bölgeden gelir.",
+        bloklar: [
+          { tip: "formul", parcalar: [{ t: "sin(x/2) = ±√((1 − cos x)/2)" }, ",", { t: "cos(x/2) = ±√((1 + cos x)/2)" }, ",", { t: "tan(x/2) = sin x / (1 + cos x)" }],
+            aciklama: "cos 2θ = 1 − 2sin²θ ve cos 2θ = 2cos²θ − 1 formüllerinde θ = x/2 yazınca çıkar. İşaret x/2'nin bölgesinden gelir; 0 < x < π ise x/2 birinci bölgede olduğundan kök pozitif alınır." },
+          { tip: "ornek", baslik: "Özel açının yarısı", durum: "cos(5π/8) değerini bul.",
+            adimlar: ["5π/8 = (5π/4)/2: yarım açı formülü, x = 5π/4.", "5π/8 (112,5°) ikinci bölgede, cos negatif: kökün önüne eksi koy.", "cos(5π/4) = −√2/2 yerine yaz: cos(5π/8) = −√((1 − √2/2)/2) = −√((2 − √2)/4) = −√(2 − √2)/2."],
+            sonuc: "cos(5π/8) = ==−√(2 − √2)/2== (yaklaşık −0,383). Sınavda böyle yaz: *Use the half-angle formula with x = 5π/4; cosine is negative in quadrant II.*" },
+          { tip: "ornek", baslik: "sin 3x = 3 sin x − 4 sin³x", durum: "Toplam ve iki kat açı formülleriyle sin 3x'i ispatla.",
+            adimlar: ["sin 3x = sin(2x + x) = sin 2x cos x + cos 2x sin x.", "sin 2x = 2 sin x cos x ve cos 2x = 1 − 2sin²x yaz: 2 sin x cos²x + (1 − 2sin²x) sin x.", "cos²x = 1 − sin²x: 2 sin x − 2sin³x + sin x − 2sin³x."],
+            sonuc: "sin 3x = ==3 sin x − 4 sin³x==. Sınavda böyle yaz: *Write 3x as 2x + x and expand.*" }
+        ]
+      },
+      {
         baslik: "Sadeleştirme ve ispatta kullanmak",
         kisa: "Tek tarafı sin ve cos'a çevir, formülü uygula, sadeleştir.",
         bloklar: [
@@ -85,7 +102,7 @@ window.DEFTER = (function () {
             oyun: [
               { metin: "sin 75° hesabı (45° + 30° yazılır).", cevap: "sol", neden: "İki farklı açının toplamı." },
               { metin: "Verilen cos θ ile cos 2θ'yı bulmak.", cevap: "sag", neden: "Açı ve onun iki katı." },
-              { metin: "cos 40° cos 20° − sin 40° sin 20°.", cevap: "sol", neden: "cos(A + B) kalıbı: iki farklı açı." },
+              { metin: "cos 40° cos 20° − sin 40° sin 20°.", cevap: "sol", neden: "cos(α + β) kalıbı: iki farklı açı." },
               { metin: "2 sin 15° cos 15°.", cevap: "sag", neden: "2 sin θ cos θ = sin 2θ = sin 30°." },
               { metin: "tan 105° (60° + 45° yazılır).", cevap: "sol", neden: "İki farklı açının toplamı." }
             ] },
@@ -102,11 +119,12 @@ window.DEFTER = (function () {
         kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
-              "sin(A ± B) = sin A cos B ± cos A sin B; cos(A ± B) = cos A cos B ∓ sin A sin B (cos'ta işaret ters).",
-              "tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B).",
-              "sin(A + B) ≠ sin A + sin B; sayıyla denerken sin 90° = 1'i kullan.",
+              "sin(α ± β) = sin α cos β ± sin β cos α; cos(α ± β) = cos α cos β ∓ sin α sin β (cos'ta işaret ters).",
+              "tan(α ± β) = (tan α ± tan β)/(1 ∓ tan α tan β).",
+              "sin(α + β) ≠ sin α + sin β; sayıyla denerken sin 90° = 1'i kullan.",
               "15°, 75°, 105° gibi açıları 30°, 45°, 60°'nin toplam ya da farkı olarak yaz.",
               "sin 2θ = 2 sin θ cos θ; cos 2θ = cos²θ − sin²θ = 2cos²θ − 1 = 1 − 2sin²θ; tan 2θ = 2 tan θ/(1 − tan²θ).",
+              "Yarım açı: cos(x/2) = ±√((1 + cos x)/2), sin(x/2) = ±√((1 − cos x)/2); işaret x/2'nin bölgesinden gelir.",
               "Verilen orandan cos 2θ bulurken en kısa biçimi seç: sin verilmişse 1 − 2sin²θ, cos verilmişse 2cos²θ − 1.",
               "Verilen oranda bölgeyi unutma: cos θ'nın işareti bölgeden gelir.",
               "İspatta karmaşık taraftan başla, iki kat açı formülüyle sin ve cos'a çevir."
@@ -115,17 +133,17 @@ window.DEFTER = (function () {
       }
     ],
     sorular: [
-      { q: "cos 75° değeri aşağıdakilerden hangisidir?", opts: ["(√6 + √2)/4", "(√6 − √2)/4", "(√2 − √6)/4", "√3/2"], a: 1,
+      { q: "What is the exact value of cos 75°?", opts: ["(√6 + √2)/4", "(√6 − √2)/4", "(√2 − √6)/4", "√3/2"], a: 1,
         why: "cos 75° = cos(45° + 30°) = cos 45° cos 30° − sin 45° sin 30° = √6/4 − √2/4. (√6 + √2)/4 sin 75°'tir (işaret farkı: cos'ta toplam formülünde eksi vardır)." },
-      { q: "cos 20° cos 10° − sin 20° sin 10° ifadesinin değeri kaçtır?", opts: ["√3/2", "1/2", "cos 10°", "1"], a: 0,
-        why: "Kalıp cos A cos B − sin A sin B = cos(A + B): cos 30° = √3/2." },
-      { q: "θ II. bölgede bir açıdır ve değerleri tabloda verilmiştir. sin 2θ kaçtır?", opts: ["120/169", "−120/169", "10/13", "−10/13"], a: 1,
+      { q: "What is the value of cos 20° cos 10° − sin 20° sin 10°?", opts: ["√3/2", "1/2", "cos 10°", "1"], a: 0,
+        why: "Kalıp cos α cos β − sin α sin β = cos(α + β): cos 30° = √3/2." },
+      { q: "θ is an angle in the second quadrant, with values given in the table. What is sin 2θ?", opts: ["120/169", "−120/169", "10/13", "−10/13"], a: 1,
         why: "II. bölgede cos θ = −12/13 (5² + 12² = 13²). sin 2θ = 2 · (5/13) · (−12/13) = −120/169. 120/169 işareti unutmaktır.",
-        fig: { type: "table", head: ["Bilgi", "Değer"], rows: [["sin θ", "5/13"], ["θ'nın bölgesi", "II"]], caption: "θ hakkında bilgi" } },
-      { q: "cos θ = 3/5 ise cos 2θ kaçtır?", opts: ["6/5", "7/25", "−6/25", "−7/25"], a: 3,
+        fig: { type: "table", head: ["Information", "Value"], rows: [["sin θ", "5/13"], ["Quadrant of θ", "II"]], caption: "Information about θ" } },
+      { q: "If cos θ = 3/5, what is cos 2θ?", opts: ["6/5", "7/25", "−6/25", "−7/25"], a: 3,
         why: "cos 2θ = 2cos²θ − 1 = 2 · 9/25 − 1 = −7/25. 6/5, 2cos θ'dır; 7/25 işaret hatasıdır." },
-      { q: "Bir öğrenci sin 2θ = 2 sin θ yazıyor. Aşağıdaki θ değerlerinden hangisi bu eşitliğin yanlış olduğunu gösterir?", opts: ["θ = 0°", "θ = 180°", "θ = 360°", "θ = 30°"], a: 3,
-        why: "θ = 30° için sin 60° = √3/2, 2 sin 30° = 1; eşit değil. 0°, 180° ve 360°'de iki taraf da 0 çıkar; bu yüzden bu değerler yanlışı göstermez." }
+      { q: "If cos x = 1/8 and 0 < x < π, what is cos(x/2)?", opts: ["9/16", "3/8", "3/4", "−3/4"], a: 2,
+        why: "0 < x < π ise x/2 birinci bölgede: cos(x/2) = +√((1 + 1/8)/2) = √(9/16) = 3/4. 9/16 karekökü almamaktır; −3/4 işareti yanlış seçer." }
     ]
   };
 })();

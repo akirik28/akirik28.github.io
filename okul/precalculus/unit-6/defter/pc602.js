@@ -13,9 +13,9 @@ window.DEFTER = {
           kartlar: [
             {
               ikon: "✂️",
-              terim: "GCD",
+              terim: "GCF",
               tr: "EBOB (en büyük ortak bölen)",
-              tanim: "İki ya da daha fazla sayıyı birlikte kalansız bölen en büyük sayı. *GCF* ya da *HCF* de denir.",
+              tanim: "İki ya da daha fazla sayıyı birlikte kalansız bölen en büyük sayı (*greatest common factor*). *GCD* ya da *HCF* de denir.",
               ornek: "12 ve 18'in ortak bölenleri 1, 2, 3, 6: EBOB 6."
             },
             {
@@ -37,7 +37,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [{ t: "EBOB(a, b)" }, "·", { t: "EKOK(a, b)" }, "=", { t: "a · b" }],
-          aciklama: "Yalnızca iki sayı için geçerlidir. 12 ve 18: 6·36 = 216 = 12·18. Sınavda böyle yaz: *The product of the GCD and the LCM of two numbers equals the product of the numbers.*"
+          aciklama: "Yalnızca iki sayı için geçerlidir. 12 ve 18: 6·36 = 216 = 12·18. Sınavda böyle yaz: *The product of the GCF and the LCM of two numbers equals the product of the numbers.*"
         },
         {
           tip: "tuzak",
@@ -68,7 +68,7 @@ window.DEFTER = {
             "EKOK: her asalın en büyük üssü: 2³ ve 3³ ⇒ 8·27 = 216.",
             "Kontrol: 36·216 = 7776 = 72·108."
           ],
-          sonuc: "EBOB = 36 ve EKOK = 216. Sınavda böyle yaz: *The GCD of 72 and 108 is 36 and their LCM is 216.*"
+          sonuc: "EBOB = 36 ve EKOK = 216. Sınavda böyle yaz: *The GCF of 72 and 108 is 36 and their LCM is 216.*"
         }
       ]
     },
@@ -91,7 +91,7 @@ window.DEFTER = {
           baslik: "EBOB(252, 105) ve EKOK(252, 105)",
           durum: "Asal çarpan aramadan Öklid algoritmasını uygula.",
           adimlar: ["252 = 2·105 + 42.", "105 = 2·42 + 21.", "42 = 2·21 + 0: kalan 0, son bölen 21."],
-          sonuc: "EBOB = 21. EKOK = 252·105 ÷ 21 = 1260. Kontrol: 252 = 2²·3²·7 ve 105 = 3·5·7 ⇒ ortak 3·7 = 21. Sınavda böyle yaz: *By the Euclidean algorithm, the GCD of 252 and 105 is 21.*"
+          sonuc: "EBOB = 21. EKOK = 252·105 ÷ 21 = 1260. Kontrol: 252 = 2²·3²·7 ve 105 = 3·5·7 ⇒ ortak 3·7 = 21. Sınavda böyle yaz: *By the Euclidean algorithm, the GCF of 252 and 105 is 21.*"
         },
         {
           tip: "grafik",
@@ -192,7 +192,7 @@ window.DEFTER = {
             "Çevre = 2(60 + 48) = 216 m.",
             "Kapalı çevrede fidan sayısı = çevre ÷ aralık = 216 ÷ 12 = 18."
           ],
-          sonuc: "En az 18 fidan. Sınavda böyle yaz: *The distance between two saplings is the GCD of 60 and 48.*"
+          sonuc: "En az 18 fidan. Sınavda böyle yaz: *The distance between two saplings is the GCF of 60 and 48.*"
         },
         {
           tip: "ornek",
@@ -206,6 +206,34 @@ window.DEFTER = {
           metin: "Kapalı bir çevrede (bahçe gibi) başlangıç ve bitiş aynı noktadır. Düz bir yolda iki uca da fidan dikilecekse sayı bir fazladır.",
           yanlis: "Bahçe çevresinde fidan sayısı = çevre ÷ aralık + 1.",
           dogru: "Kapalı çevrede fidan sayısı = çevre ÷ aralık = 216 ÷ 12 = 18."
+        }
+      ]
+    },
+    {
+      baslik: "EBOB problemleri 2: yola bitişik bahçe ve çuvallar",
+      kisa: "Açık yolda fidan sayısı bir fazladır; toplam bilinirse EBOB'un katlarını yaz.",
+      bloklar: [
+        {
+          tip: "ornek",
+          baslik: "Bir kenarı yola bitişik bahçe: yol kenarındaki iki köşeye de fidan dikilecek",
+          durum: "Uzun kenarı (90 m) yola bitişik, kısa kenarı 54 m olan dikdörtgen bahçenin yola bitişik olmayan üç kenarına eşit aralıklarla en az kaç fidan dikilir?",
+          adimlar: [
+            "Aralık hem 90'ı hem 54'ü bölmeli ve en büyük olmalı: 90 = 2·3²·5 ve 54 = 2·3³ ⇒ EBOB = 2·3² = 18 m.",
+            "Fidan dikilen yolun uzunluğu 54 + 90 + 54 = 198 m (açık yol, iki uç da dahil).",
+            "Aralık sayısı 198 ÷ 18 = 11; açık yolda fidan sayısı aralık sayısından bir fazladır."
+          ],
+          sonuc: "Aralık 18 m, en az 11 + 1 = 12 fidan. Sınavda böyle yaz: *The sapling at each end of the path adds one more to the number of gaps.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Toplam kütle ve EBOB: iki çuval",
+          durum: "İki çuvalın toplamı 56 kg. İkisi de artmadan, mümkün olan en büyük eşit kütleli torbalara bölünüyor ve torba 7 kg. Her çuval 10 kg'dan ağır ve ikincisi daha ağır. Çuvallar kaç kg?",
+          adimlar: [
+            "Torba kütlesi EBOB olduğundan çuvallar 7k ve 7m biçiminde ve k + m = 8.",
+            "EBOB tam 7 olacağı için k ile m aralarında asal olmalı: (1, 7) ya da (3, 5).",
+            "(1, 7) için çuvallardan biri 7 kg, 10'dan hafif: elenir. Kalan (3, 5): 21 ve 35 kg."
+          ],
+          sonuc: "Çuvallar ==21 kg== ve ==35 kg==. Kontrol: EBOB(21, 35) = 7 ve 21 + 35 = 56."
         }
       ]
     },
@@ -240,7 +268,7 @@ window.DEFTER = {
         },
         {
           tip: "tuzak",
-          metin: "Bir sayı iki sayıya bölününce aynı kalanı veriyorsa EKOK'un katına kalanı ekleriz.",
+          metin: "Bir sayı iki sayıya bölününce aynı kalanı veriyorsa EKOK'un katına kalanı ekleriz. Kalanlar bölenlerden hep 1 eksikse (3, 5, 9'a bölünce 2, 4, 8) sayı + 1 ortak kat olur: en küçük sayı EKOK(3, 5, 9) − 1 = 44.",
           yanlis: "6'ya ve 8'e bölününce 5 kalanı veren 5'ten büyük en küçük sayı 24'tür.",
           dogru: "n = 24k + 5 olur; 5'ten büyük en küçük sayı 29'dur (29 = 6·4 + 5 = 8·3 + 5)."
         }
@@ -260,7 +288,7 @@ window.DEFTER = {
             "Eşit parçalama, gruplama, en uzun ve en az fidan: EBOB.",
             "Birlikte buluşma, ilk ortak zaman, en küçük kare döşeme: EKOK.",
             "Kapalı çevrede fidan sayısı = çevre ÷ aralık.",
-            "Aynı kalan verilirse sayı = EKOK·k + kalan."
+            "Aynı kalan verilirse sayı = EKOK·k + kalan; kalanlar bölenden hep 1 eksikse sayı = EKOK·k − 1."
           ]
         }
       ]
@@ -268,28 +296,28 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "İki doğal sayının EBOB'u 12, çarpımı 8640 ise EKOK'ları kaçtır?",
+      q: "The GCF of two natural numbers is 12 and their product is 8640. What is their LCM?",
       opts: ["720", "1440", "360", "108"],
       a: 0,
       why: "EBOB·EKOK = a·b olduğundan EKOK = 8640 ÷ 12 = 720. B, 8640 ÷ 6 işleminin sonucudur: EBOB'u yanlış (yarısı olarak) kullanmaktan çıkar."
     },
     {
-      q: "Kenarları 40 m ve 24 m olan dikdörtgen bir tarlanın çevresine, köşelere de gelecek biçimde eşit aralıklarla en az kaç direk dikilir?",
+      q: "A rectangular field is 40 m by 24 m. Posts are placed at equal distances around the whole perimeter, including the corners. What is the minimum number of posts?",
       opts: ["8", "16", "17", "32"],
       a: 1,
       why: "Direk sayısı en az ise aralık en büyük olmalı: EBOB(40, 24) = 8 m. Çevre = 2(40 + 24) = 128 m; kapalı çevrede 128 ÷ 8 = 16 direk. C şıkkı, kapalı çevrede bir fazla saymaktan çıkar."
     },
     {
-      q: "Üç ışık sırasıyla 6, 9 ve 12 saniyede bir yanıp sönüyor. Birlikte yandıktan sonra ilk kez kaç saniye sonra yeniden birlikte yanarlar?",
+      q: "Three lights blink every 6, 9 and 12 seconds. After they blink together, after how many seconds will they first blink together again?",
       opts: ["72", "18", "36", "108"],
       a: 2,
       why: "6 = 2·3, 9 = 3², 12 = 2²·3: en büyük üsler 2² ve 3² ⇒ EKOK = 36. A (72) de ortak bir kattır ama ilk kez değildir."
     },
     {
-      q: "Tablo, EBOB(168, 60) için Öklid algoritmasının adımlarını gösteriyor. EBOB kaçtır?",
+      q: "The table shows the steps of the Euclidean algorithm for GCF(168, 60). What is the GCF?",
       fig: {
         type: "table",
-        head: ["Bölünen", "Bölen", "Bölüm", "Kalan"],
+        head: ["Dividend", "Divisor", "Quotient", "Remainder"],
         rows: [["168", "60", "2", "48"], ["60", "48", "1", "12"], ["48", "12", "4", "0"]],
         caption: "168 = 2·60 + 48, 60 = 1·48 + 12, 48 = 4·12 + 0"
       },
@@ -298,7 +326,7 @@ window.DEFTER = {
       why: "Kalan 0 olduğunda son bölen EBOB'tur: 12. A, ilk kalandır (algoritma bitmemiştir); C ise son bölümdür."
     },
     {
-      q: "Bir sayı 4'e, 6'ya ve 9'a bölündüğünde her seferinde 3 kalanını veriyor. Bu özellikteki 3'ten büyük en küçük doğal sayı kaçtır?",
+      q: "A number leaves remainder 3 when divided by 4, by 6 and by 9. What is the smallest such number greater than 3?",
       opts: ["36", "39", "33", "75"],
       a: 1,
       why: "Sayıdan 3 çıkarınca 4, 6 ve 9'a tam bölünmeli: EKOK(4, 6, 9) = 36 ⇒ sayı 36 + 3 = 39. A kalanı eklemeyi unutur (36, kalan 0 verir). D de koşulu sağlar (2·36 + 3) ama en küçük değildir."

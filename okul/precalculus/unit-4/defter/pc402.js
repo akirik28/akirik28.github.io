@@ -88,7 +88,7 @@ window.DEFTER = (function () {
         bloklar: [
           { tip: "tablo", head: ["Oran", "Tersi", "Tanım"],
             rows: [["sin θ", "*csc θ* = 1/sin θ", "hipotenüs / karşı"], ["cos θ", "*sec θ* = 1/cos θ", "hipotenüs / komşu"], ["tan θ", "*cot θ* = 1/tan θ", "komşu / karşı"]],
-            not: "Sınavda böyle yaz: *The cosecant is the reciprocal of the sine.*" },
+            not: "Ayrıca tan θ = sin θ / cos θ, cot θ = cos θ / sin θ ve tan θ · cot θ = 1. Sınavda böyle yaz: *The cosecant is the reciprocal of the sine.*" },
           { tip: "formul", parcalar: [{ t: "sin θ" }, "=", { t: "cos(90° − θ)", alt: "tamamlayan açı (*complementary*)" }],
             aciklama: "Aynı şekilde tan θ = cot(90° − θ) ve sec θ = csc(90° − θ). Dar açıların toplamı 90° olduğu için birinin karşısı diğerinin komşusudur: sin 30° = cos 60° = 1/2." },
           { tip: "tuzak", metin: "Üstteki −1 ile ters çarpma işlemi aynı şey değildir.", yanlis: "sin⁻¹ x = 1/sin x.", dogru: "1/sin x = csc x. sin⁻¹ x ise sinüsü x olan açıdır (ters fonksiyon, son konuda)." }
@@ -108,8 +108,8 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Yükselme ve alçalma açıları",
-        kisa: "İkisi de yataydan ölçülür; problemi dik üçgene çevir.",
+        baslik: "Yükselme ve alçalma açıları (ek bilgi)",
+        kisa: "Ek bilgi: ikisi de yataydan ölçülür; problemi dik üçgene çevir.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "🔭", terim: "Angle of elevation", tr: "yükselme açısı", tanim: "Gözün yatay doğrusu ile yukarıdaki bir noktaya bakış çizgisi arasındaki açı.", ornek: "Yerden bayrak direğinin tepesine bakmak." },
@@ -135,22 +135,22 @@ window.DEFTER = (function () {
               "csc = 1/sin, sec = 1/cos, cot = 1/tan; sin θ = cos(90° − θ).",
               "sin⁻¹ x ile 1/sin x aynı şey değildir.",
               "Bilinen ve istenen kenara göre oranı seç; sonucu Pisagor ile kontrol et.",
-              "Yükselme ve alçalma açıları yataydan ölçülür; ikisi de dik üçgende tan ile çözülür."
+              "Ek bilgi (derste yok): yükselme ve alçalma açıları yataydan ölçülür; ikisi de dik üçgende tan ile çözülür."
             ] }
         ]
       }
     ],
     sorular: [
-      { q: "Dik üçgende θ dar açısı için kenar uzunlukları tabloda verilmiştir. cos θ kaçtır?", opts: ["5/13", "12/13", "5/12", "13/12"], a: 1,
+      { q: "In a right triangle, the sides relative to an acute angle θ are given in the table. What is cos θ?", opts: ["5/13", "12/13", "5/12", "13/12"], a: 1,
         why: "cos θ = komşu / hipotenüs = 12/13. 5/13, karşı kenarı kullanan sin θ'dır; 5/12 ise tan θ'dır.",
-        fig: { type: "table", head: ["Kenar", "Uzunluk"], rows: [["θ'nın karşısındaki", "5"], ["θ'ya komşu", "12"], ["Hipotenüs", "13"]], caption: "Dik üçgenin kenarları" } },
-      { q: "Boyu 10 m olan bir kaydırak yatayla 30° açı yapıyor. Kaydırağın yerden en yüksek noktasının yüksekliği kaç metredir?", opts: ["10 m", "5√3 m", "5 m", "10√3 m"], a: 2,
+        fig: { type: "table", head: ["Side", "Length"], rows: [["Opposite to θ", "5"], ["Adjacent to θ", "12"], ["Hypotenuse", "13"]], caption: "Sides of the right triangle" } },
+      { q: "A slide is 10 m long and makes an angle of 30° with the ground. How high above the ground is the top of the slide?", opts: ["10 m", "5√3 m", "5 m", "10√3 m"], a: 2,
         why: "Yükseklik karşı kenardır: 10 · sin 30° = 10 · 1/2 = 5 m. 5√3 m, yatay uzunluktur (10 · cos 30°)." },
-      { q: "Aşağıdakilerden hangisi sin 20°'ye eşittir?", opts: ["cos 70°", "cos 20°", "tan 70°", "1/cos 70°"], a: 0,
+      { q: "Which of the following is equal to sin 20°?", opts: ["cos 70°", "cos 20°", "tan 70°", "1/cos 70°"], a: 0,
         why: "Tamamlayan açılarda sin θ = cos(90° − θ): sin 20° = cos 70°. cos 20° ise sin 70°'e eşittir." },
-      { q: "Bir gözlemci kuleden 30 m uzakta duruyor ve kulenin tepesine yükselme açısı 60°. Göz yüksekliğini ihmal edersek kule kaç metredir?", opts: ["10√3 m", "30√3 m", "30 m", "60 m"], a: 1,
-        why: "tan 60° = h/30 ve tan 60° = √3 olduğundan h = 30√3 m. 10√3 ise tan 30° kullanılırsa çıkar (30 · √3/3)." },
-      { q: "θ dar açı ve cos θ = 5/13 ise csc θ kaçtır?", opts: ["12/13", "5/12", "13/5", "13/12"], a: 3,
+      { q: "In a right triangle with acute angle x, tan x = 1/2. What is the value of sin x · cos x?", opts: ["1/5", "2/√5", "1/2", "2/5"], a: 3,
+        why: "tan x = karşı/komşu = 1/2: karşı 1, komşu 2, hipotenüs √5. sin x · cos x = (1/√5)(2/√5) = 2/5. 2/√5 yalnızca cos x'in değeridir." },
+      { q: "θ is an acute angle and cos θ = 5/13. What is csc θ?", opts: ["12/13", "5/12", "13/5", "13/12"], a: 3,
         why: "Komşu 5, hipotenüs 13 ise karşı kenar 12 (5² + 12² = 13²). sin θ = 12/13 ve csc θ = 1/sin θ = 13/12. 13/5 ise sec θ'dır." }
     ]
   };

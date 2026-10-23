@@ -1,5 +1,5 @@
 /* Kitora not defteri · bi102 · 1.2 Işık ve Pigmentler
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
+   Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: light, pigments, spectra) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafik notu: x ekseni dalga boyu − 400 nm (0 = 400 nm, 300 = 700 nm); y ekseni göreli değerdir (şematik, 0–100). */
 window.DEFTER = {
   slug: "bi102",
@@ -17,7 +17,7 @@ window.DEFTER = {
             { t: "Dalga boyu", alt: "kısalır" }, "→",
             { t: "Enerji", alt: "artar" }, "=",
             { t: "E = h·c / λ", alt: "h: sabit, c: ışık hızı" }
-          ], aciklama: "Mor ve mavi ışığın fotonu, kırmızı ışığın fotonundan daha çok enerji taşır." },
+          ], aciklama: "Mor ve mavi ışığın fotonu, kırmızı ışığın fotonundan daha çok enerji taşır. Elektromanyetik spektrumda sıra: gamma, X-ışını, UV, görünür ışık, IR, mikrodalga, radyo; dalga boyu bu yönde uzar, enerji azalır." },
         { tip: "tablo", baslik: "Görünür ışığın renkleri (yaklaşık)", head: ["Renk", "Dalga boyu (nm)", "Enerji"], rows: [
             ["Mor–mavi", "400–500", "Yüksek"],
             ["Yeşil–sarı", "500–600", "Orta"],
@@ -32,9 +32,11 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🟢", terim: "Chlorophyll a", tr: "klorofil a", tanim: "Fotosentezin ana pigmenti. Mavi-mor ve kırmızıyı iyi soğurur, yeşili yansıtır.", ornek: "Tepkime merkezinde ışık enerjisini kimyasal enerjiye çevirir." },
             { ikon: "🟩", terim: "Chlorophyll b", tr: "klorofil b", tanim: "Yardımcı pigment. Soğurduğu enerjiyi klorofil a'ya aktarır.", ornek: "Yaprağın daha çok ışıktan yararlanmasını sağlar." },
-            { ikon: "🥕", terim: "Carotenoids", tr: "karotenoitler", tanim: "Karoten (turuncu) ve ksantofil (sarı). Mavi-yeşil bölgeyi soğurur ve klorofili aşırı ışıktan korur.", ornek: "Sonbaharda yaprak sararır, çünkü klorofil yıkılınca karotenoitler görünür." }
+            { ikon: "🥕", terim: "Carotenoids", tr: "karotenoitler", tanim: "Turuncu, kırmızı ve sarı yardımcı pigmentler. Mavi-yeşil bölgeyi soğurur ve klorofili hasar verecek aşırı ışıktan korur.", ornek: "Sonbaharda yaprak sararır, çünkü klorofil yıkılınca karotenoitler görünür." },
+            { ikon: "🎨", terim: "Phycoerythrin, phycocyanin, xanthophyll", tr: "diğer yardımcı pigmentler", tanim: "Phycoerythrin kırmızımsı, phycocyanin mavi, xanthophyll sarı pigmenttir. Hepsi klorofilin kullanamadığı dalga boylarını soğurur.", ornek: "Farklı pigment çeşidi ne kadar fazlaysa fotosentez o kadar hızlıdır." }
           ] },
-        { tip: "tuzak", metin: "Yaprak yeşil görünür çünkü yeşil ışığı ==yansıtır==; bunun anlamı yeşil ışığın hiç kullanılmadığı değil, az kullanıldığıdır.", yanlis: "Bitkiler yeşil ışığı soğurup fotosentez yapar.", dogru: "Klorofiller en çok mavi-mor ve kırmızıyı soğurur. Yeşil ışık büyük ölçüde yansıtılır, bu yüzden yaprak yeşil görünür." }
+        { tip: "tuzak", metin: "Yaprak yeşil görünür çünkü yeşil ışığı ==yansıtır==; bunun anlamı yeşil ışığın hiç kullanılmadığı değil, az kullanıldığıdır.", yanlis: "Bitkiler yeşil ışığı soğurup fotosentez yapar.", dogru: "Klorofiller en çok mavi-mor ve kırmızıyı soğurur. Yeşil ışık büyük ölçüde yansıtılır, bu yüzden yaprak yeşil görünür." },
+        { tip: "not", metin: "Işık pigmente çarpınca soğurulur, yansıtılır ya da geçer (*absorbed*, *reflected*, *transmitted*). Klorofilin ışık soğuran başı ==porphyrin ring== (ortasında Mg atomu), hidrokarbon kuyruğu tilakoid zarına tutunur. Pigment foton soğurunca elektron *ground state*'ten kararsız *excited state*'e çıkar; enerji ısı ya da floresan olarak dağılır veya tepkime merkezine aktarılır." }
       ]
     },
     {
@@ -56,7 +58,7 @@ window.DEFTER = {
             { metin: "==Karotenoitler== mavi-yeşil bölgeyi (~450–500 nm) soğurur, kırmızıyı hiç soğurmaz.", goster: ["kar"] },
             { metin: "Üçü birlikte kullanılınca yaprak ışığın geniş bir kısmını soğurur; yalnız ==yeşilde çukur== kalır. Sınavda böyle yaz: *The graph shows that chlorophylls absorb mostly blue-violet and red light.*", goster: ["yes"] }
           ] },
-        { tip: "not", metin: "Absorpsiyon spektrumu, saflaştırılmış pigment çözeltisi ışık ölçerden (*spectrophotometer*) geçirilerek ölçülür. Ölçülen şey ==soğurulan ışıktır==; fotosentezin kendisi değil." }
+        { tip: "not", metin: "Absorpsiyon spektrumu, pigment çözeltisi ışık ölçerden (*spectrophotometer*) geçirilerek ölçülür; cihaz her dalga boyunda geçen ışık oranını okur. Yeşilde geçen ışık yüksek (soğurma düşük), mavide geçen ışık düşüktür (soğurma yüksek). Ölçülen şey ==soğurulan ışıktır==; fotosentezin kendisi değil." }
       ]
     },
     {
@@ -84,15 +86,16 @@ window.DEFTER = {
             { metin: "Her dalga boyunda çıkan O₂ kabarcıklarının sayısı.", cevap: "sag", neden: "Fotosentez hızını ölçüyor: etki spektrumu." },
             { metin: "Klorofil çözeltisinin hangi renkli ışığı ne kadar tuttuğu.", cevap: "sol", neden: "Soğurma ölçülüyor: absorpsiyon spektrumu." },
             { metin: "Mavi ışıkta CO₂ tüketiminin kırmızıdan fazla olması.", cevap: "sag", neden: "Fotosentez hızıyla ilgili: etki spektrumu." }
-          ] }
+          ] },
+        { tip: "not", metin: "Lecture'a göre fotosentez hızı kırmızı ve mor ışıkta en yüksek, yeşilde en düşüktür. Kızılötesi, morötesi, radyo dalgaları ve X-ışınlarında hız sıfırdır. Klorofil, soğurduğu ışık miktarıyla orantılı ATP üretir." }
       ]
     },
     {
       baslik: "Engelmann deneyi",
       kisa: "Engelmann, oksijen seven bakterilerle fotosentezin en çok hangi renkte olduğunu gösterdi.",
       bloklar: [
-        { tip: "adimlar", baslik: "Deneyin kurulumu (1880'ler)", adimlar: [
-            { baslik: "Alg ipliği", metin: "Mikroskop lamında uzun, yeşil bir alg ipliği (*Spirogyra* gibi) ve oksijen seven (aerobik) bakteriler bulunur." },
+        { tip: "adimlar", baslik: "Deneyin kurulumu (Engelmann, 1883)", adimlar: [
+            { baslik: "Alg ipliği", metin: "Mikroskop lamında uzun, yeşil bir alg ipliği (*filamentous alga*) ve oksijen seven (aerobik) bakteriler bulunur." },
             { baslik: "Prizma", metin: "Beyaz ışık prizmadan geçirilir ve renklerine ayrılır; her renk ipliğin ayrı bir bölgesine düşer." },
             { baslik: "Bakteriler yer değiştirir", metin: "Bakteriler O₂'nin çok çıktığı bölgelere yığılır." },
             { baslik: "Sonuç", metin: "En çok bakteri ==mavi-mor== ve ==kırmızı== bölgede, en az yeşil bölgede toplanır: bu renklerde fotosentez hızlıdır." }
@@ -115,28 +118,29 @@ window.DEFTER = {
             "Klorofiller mavi-mor ve kırmızıyı çok soğurur; yeşili yansıtır, yaprak bu yüzden yeşil görünür.",
             "*Absorption spectrum*: pigmentin soğurduğu ışık; *action spectrum*: o renkteki fotosentez hızı.",
             "İki spektrum çok benzer ama tam örtüşmez; yardımcı pigmentler yeşilde de az fotosentez sağlar.",
-            "Engelmann: aerobik bakteriler prizmayla ayrılmış alg ipliğinde mavi-mor ve kırmızı bölgede toplanır.",
+            "Engelmann (1883): aerobik bakteriler prizmayla ayrılmış alg ipliğinde mavi-mor ve kırmızı bölgede toplanır.",
+            "Fotosentez hızı kırmızı ve mor ışıkta en yüksek, yeşilde en düşük; IR, UV, radyo ve X-ışınlarında sıfırdır.",
             "Bakterilerin yığıldığı yer = O₂ çıkışının fazla olduğu yer = fotosentezin hızlı olduğu yer."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Klorofil a'nın absorpsiyon spektrumunda hangi iki bölgede tepe görülür?",
-      opts: ["Yeşil ve sarı", "Yalnızca kırmızı", "Turuncu ve yeşil", "Mavi-mor ve kırmızı"], a: 3,
+    { q: "In the absorption spectrum of chlorophyll a, which two regions show peaks?",
+      opts: ["Green and yellow", "Red only", "Orange and green", "Blue-violet and red"], a: 3,
       why: "Klorofil a hem mavi-mor (~430 nm) hem kırmızı (~660 nm) bölgede yüksek soğurur. Yeşil–sarı çukurdur; A şıkkı bu yüzden yanlış." },
-    { q: "Engelmann deneyinde aerobik bakteriler aşağıdaki gibi dağılmıştır. Bu sonuç neyi gösterir?",
-      fig: { type: "table", head: ["Işık rengi", "Bakteri sayısı"], rows: [["Mor–mavi", "Çok"], ["Yeşil", "Az"], ["Kırmızı", "Çok"]] },
-      opts: ["Yeşil ışıkta O₂ çıkışı en fazladır.", "Mavi ve kırmızı ışıkta fotosentez daha hızlıdır.", "Bakteriler yeşil ışıktan kaçar.", "Algler yalnızca yeşil ışığı soğurur."], a: 1,
+    { q: "In Engelmann's experiment, aerobic bacteria were distributed as shown in the table. What does this result show?",
+      fig: { type: "table", head: ["Colour of light", "Number of bacteria"], rows: [["Violet-blue", "Many"], ["Green", "Few"], ["Red", "Many"]] },
+      opts: ["The most O₂ is released in green light.", "Photosynthesis is faster in blue and red light.", "Bacteria avoid green light.", "Algae absorb only green light."], a: 1,
       why: "Aerobik bakteriler O₂'nin çok çıktığı yerde toplanır; bu da fotosentezin mavi ve kırmızıda hızlı olduğunu gösterir. C şıkkı çekici ama bakterilerin davranışı O₂ ile ilgilidir, renkten kaçışla değil." },
-    { q: "Bir yaprak ekstraktı spektrofotometrede ölçülüyor ve her dalga boyunda soğurulan ışık grafiğe çiziliyor. Bu grafiğin adı nedir?",
+    { q: "A leaf extract is placed in a spectrophotometer and the light absorbed at each wavelength is plotted. What is this graph called?",
       opts: ["*Action spectrum*", "*Emission spectrum*", "*Absorption spectrum*", "*Rate curve*"], a: 2,
       why: "Dalga boyuna karşı soğurulan ışık absorpsiyon spektrumudur. Etki spektrumu fotosentez hızı ölçer; A şıkkı en çekici yanlıştır." },
-    { q: "Dalga boyu 450 nm olan ışığın bir fotonu ile 650 nm olan ışığın bir fotonu kıyaslanırsa hangisi doğrudur?",
-      opts: ["Her ikisi aynı enerjiye sahiptir.", "650 nm'lik foton daha çok enerji taşır.", "450 nm'lik foton daha çok enerji taşır.", "Foton enerjisi dalga boyuna bağlı değildir."], a: 2,
+    { q: "Compare a photon of 450 nm light with a photon of 650 nm light. Which statement is correct?",
+      opts: ["Both have the same energy.", "The 650 nm photon carries more energy.", "The 450 nm photon carries more energy.", "Photon energy does not depend on wavelength."], a: 2,
       why: "E = h·c/λ olduğundan dalga boyu kısaldıkça enerji artar. 450 nm mavi, 650 nm kırmızıdır; B şıkkı bu ilişkiyi ters yazar." },
-    { q: "Sonbaharda yaprakların sararması hangi nedenle olur?",
-      opts: ["Klorofil yıkılır, karotenoitler görünür hâle gelir.", "Yaprak yeşil ışığı soğurmaya başlar.", "Klorofil a'nın miktarı artar.", "Karotenoitler yıkılır."], a: 0,
+    { q: "Which pigments are responsible for the yellow-orange colour of leaves in autumn, and why do they become visible?",
+      opts: ["Carotenoids; chlorophyll breaks down and no longer masks them.", "Chlorophyll b; it begins to absorb green light.", "Chlorophyll a; its amount increases.", "Carotenoids; they are newly broken down."], a: 0,
       why: "Yeşil klorofil yıkılınca altında bulunan sarı ve turuncu karotenoitler görünür. Karotenoitler yeni oluşmaz, yalnızca klorofil bastırdığı için görünmüyordu; D şıkkı tersini söyler." }
   ]
 };

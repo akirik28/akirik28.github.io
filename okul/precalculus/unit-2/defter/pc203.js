@@ -1,8 +1,8 @@
 /* Kitora not defteri · pc203 · 2.3 İkinci Dereceden Fonksiyonlar
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#2_2 Quadratic Functions) + Review for Exam#2; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc203",
-  amac: "Bu konu ikinci dereceden fonksiyonun grafiği olan parabolü anlatıyor. Tepe noktasını, simetri eksenini, eksenleri kestiği noktaları, tepe noktası biçimini ve en büyük ya da en küçük değer problemlerini öğreneceksin.",
+  amac: "Bu konu ikinci dereceden fonksiyonun grafiği olan parabolü anlatıyor. Tepe noktasını, simetri eksenini, eksenleri kestiği noktaları, üç biçimi, bir doğru ile parabolün konumunu ve en büyük ya da en küçük değer problemlerini öğreneceksin.",
   bolumler: [
     {
       baslik: "Parabol ve a katsayısı",
@@ -15,7 +15,7 @@ window.DEFTER = {
               ikon: "📈",
               terim: "Quadratic function",
               tr: "ikinci dereceden fonksiyon",
-              tanim: "f(x) = ax² + bx + c, a ≠ 0. Domain ℝ; grafiği parabol.",
+              tanim: "f(x) = ax² + bx + c, a, b, c ∈ ℝ ve a ≠ 0. Domain (−∞, ∞); grafiği parabol.",
               ornek: "f(x) = x² − 4x + 3."
             },
             {
@@ -155,20 +155,20 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "x_t = −b/2a", alt: "simetri ekseni: x = −b/2a" },
+            { t: "h = −b/2a", alt: "simetri ekseni: x = h" },
             "→",
-            { t: "y_t = f(x_t)", alt: "ya da −Δ/4a" }
+            { t: "k = f(h)", alt: "ya da (4ac − b²)/4a = −Δ/4a" }
           ],
-          aciklama: "Sınavda böyle yaz: *The vertex is at x = −b/2a; the axis of symmetry is the line x = −b/2a.*"
+          aciklama: "Tepe noktası V(h, k). Ders notunda da böyle yazılır. Sınavda böyle yaz: *The vertex is at x = −b/2a; the axis of symmetry is the line x = −b/2a.*"
         },
         {
           tip: "ornek",
           baslik: "İki parabolün tepe noktası",
           durum: "f(x) = x² − 4x + 3 ve g(x) = −2x² + 8x − 5.",
           adimlar: [
-            "f: a = 1, b = −4. x_t = −(−4)/(2·1) = 2. f(2) = 4 − 8 + 3 = −1. Tepe (2, −1).",
+            "f: a = 1, b = −4. h = −(−4)/(2·1) = 2. f(2) = 4 − 8 + 3 = −1. Tepe (2, −1).",
             "a > 0 → minimum değer −1; simetri ekseni x = 2; range [−1, ∞).",
-            "g: a = −2, b = 8. x_t = −8/(2·(−2)) = 2. g(2) = −8 + 16 − 5 = 3. Tepe (2, 3).",
+            "g: a = −2, b = 8. h = −8/(2·(−2)) = 2. g(2) = −8 + 16 − 5 = 3. Tepe (2, 3).",
             "a < 0 → maksimum değer 3; simetri ekseni x = 2; range (−∞, 3]."
           ],
           sonuc: "f'nin minimumu −1, g'nin maksimumu 3; ikisi de x = 2'de."
@@ -176,8 +176,8 @@ window.DEFTER = {
         {
           tip: "tuzak",
           metin: "Tepe formülünde işaret ve max/min karışır.",
-          yanlis: "x² − 6x + 5 için x_t = b/2a = −3. Ayrıca a < 0 iken tepe noktası minimumdur.",
-          dogru: "x_t = −b/2a = 6/2 = 3. a < 0 ise parabol aşağı açılır ve tepe noktası maksimumdur."
+          yanlis: "x² − 6x + 5 için h = b/2a = −3. Ayrıca a < 0 iken tepe noktası minimumdur.",
+          dogru: "h = −b/2a = 6/2 = 3. a < 0 ise parabol aşağı açılır ve tepe noktası maksimumdur."
         }
       ]
     },
@@ -192,7 +192,7 @@ window.DEFTER = {
           adimlar: [
             "y-kesişimi: f(0) = −2 → (0, −2).",
             "x-kesişimleri: 2x² − 3x − 2 = (2x + 1)(x − 2) = 0 → x = −1/2 ve x = 2.",
-            "Tepe: x_t = 3/4 (köklerin ortası: (−1/2 + 2)/2 = 3/4 ✓).",
+            "Tepe: h = 3/4 (köklerin ortası: (−1/2 + 2)/2 = 3/4 ✓).",
             "f(3/4) = 2·9/16 − 9/4 − 2 = 9/8 − 18/8 − 16/8 = −25/8. Kontrol: −Δ/4a = −25/8 ✓ (Δ = 25)."
           ],
           sonuc: "(0, −2), (−1/2, 0), (2, 0) ve tepe (3/4, −25/8). Sınavda böyle yaz: *The y-intercept is (0, −2) and the x-intercepts are (−1/2, 0) and (2, 0).*"
@@ -234,14 +234,14 @@ window.DEFTER = {
           rows: [
             ["Standart (*standard form*)", "f(x) = ax² + bx + c", "y-kesişimi (0, c)"],
             [
-              "Tepe (*vertex form*)",
+              "Tepe (*vertex form*, tamamlanmış kare biçimi)",
               "f(x) = a(x − h)² + k",
               "tepe (h, k) ve simetri ekseni x = h"
             ],
             [
-              "Çarpan (*factored form*)",
-              "f(x) = a(x − x₁)(x − x₂)",
-              "x-kesişimleri x₁ ve x₂"
+              "Çarpan (*intercept / factored form*)",
+              "f(x) = a(x − r₁)(x − r₂)",
+              "x-kesişimleri r₁ ve r₂"
             ]
           ],
           not: "h = −b/2a ve k = f(h). Sınavda böyle yaz: *Write the function in vertex form to find the vertex.*"
@@ -261,14 +261,15 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "Bilgilerden denklem yazmak",
-          durum: "(a) Tepesi (2, −1) olan ve (0, 3)'ten geçen parabol. (b) Tepesi (1, 4) olan ve (3, 0)'dan geçen parabol.",
+          durum: "Ders notundaki üç yol: (a) tepesi (2, −1) olan ve (0, 3)'ten geçen; (b) x-kesişimleri −1 ve 4, y-kesişimi −8 olan; (c) (−1, −4), (0, −3), (1, 0) noktalarından geçen parabol.",
           adimlar: [
-            "(a) f(x) = a(x − 2)² − 1. (0, 3): a·4 − 1 = 3 → a = 1. f(x) = (x − 2)² − 1 = x² − 4x + 3.",
-            "(b) f(x) = a(x − 1)² + 4. (3, 0): a·4 + 4 = 0 → a = −1.",
-            "f(x) = −(x − 1)² + 4 = −x² + 2x + 3.",
-            "Kontrol (b): f(3) = −9 + 6 + 3 = 0 ✓."
+            "(a) Tepe ve bir nokta bilinirse f(x) = a(x − h)² + k: f(x) = a(x − 2)² − 1. (0, 3): a·4 − 1 = 3 → a = 1. f(x) = (x − 2)² − 1 = x² − 4x + 3.",
+            "(b) x-kesişimleri ve bir nokta bilinirse f(x) = a(x − r₁)(x − r₂): f(x) = a(x + 1)(x − 4). (0, −8): a·1·(−4) = −8 → a = 2. f(x) = 2x² − 6x − 8.",
+            "(c) Üç nokta bilinirse f(x) = ax² + bx + c: (0, −3) → c = −3. (1, 0): a + b − 3 = 0. (−1, −4): a − b − 3 = −4 → a − b = −1.",
+            "a + b = 3 ve a − b = −1 → a = 1, b = 2: f(x) = x² + 2x − 3.",
+            "Kontrol (c): f(−1) = 1 − 2 − 3 = −4 ✓ ve f(1) = 1 + 2 − 3 = 0 ✓."
           ],
-          sonuc: "(a) f(x) = x² − 4x + 3, (b) f(x) = −x² + 2x + 3."
+          sonuc: "(a) x² − 4x + 3, (b) 2x² − 6x − 8, (c) x² + 2x − 3. Hangi yol? Tepe → tepe biçimi, kökler → çarpan biçimi, üç nokta → standart biçim."
         }
       ]
     },
@@ -360,6 +361,97 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Parabol ile doğrunun konumu",
+      kisa: "Denklemleri eşitle: elde edilen ikinci dereceden denklemin Δ'sı kesişim sayısını verir.",
+      bloklar: [
+        {
+          tip: "grafik",
+          baslik: "y = x² parabolü ve y = 2x + k doğrusu",
+          xlabel: "x",
+          ylabel: "y",
+          xmax: 7,
+          ymax: 12,
+          xticks: [
+            { v: 0, label: "−2" },
+            { v: 1, label: "−1" },
+            { v: 3, label: "1" },
+            { v: 4, label: "2" },
+            { v: 5, label: "3" }
+          ],
+          yticks: [
+            { v: 0, label: "−3" },
+            { v: 1, label: "−2" },
+            { v: 2, label: "−1" },
+            { v: 4, label: "1" },
+            { v: 6, label: "3" },
+            { v: 9, label: "6" },
+            { v: 12, label: "9" }
+          ],
+          ogeler: [
+            { id: "ax", tip: "cizgi", renk: 3, from: [0, 3], to: [7, 3], etiket: "x" },
+            { id: "ay", tip: "cizgi", renk: 3, from: [2, 0], to: [2, 12], etiket: "y" },
+            {
+              id: "par",
+              tip: "egri",
+              noktalar: [
+                [0.0, 7.0], [0.25, 6.062], [0.5, 5.25], [0.75, 4.562], [1.0, 4.0], [1.25, 3.562],
+                [1.5, 3.25], [1.75, 3.062], [2.0, 3.0], [2.25, 3.062], [2.5, 3.25], [2.75, 3.562],
+                [3.0, 4.0], [3.25, 4.562], [3.5, 5.25], [3.75, 6.062], [4.0, 7.0], [4.25, 8.062],
+                [4.5, 9.25], [4.75, 10.562], [5.0, 12.0]
+              ],
+              renk: 0,
+              etiket: "y = x²"
+            },
+            { id: "l", tip: "cizgi", from: [0, 2], to: [5, 12], renk: 2, etiket: "y = 2x + k" },
+            { id: "p1", tip: "nokta", x: 1, y: 4, etiket: "(−1, 1)", renk: 3, gizli: true },
+            { id: "p2", tip: "nokta", x: 5, y: 12, etiket: "(3, 9)", renk: 3, gizli: true },
+            { id: "tp", tip: "nokta", x: 3, y: 4, etiket: "(1, 1)", renk: 3, gizli: true }
+          ],
+          durumlar: [
+            { metin: "Parabol y = x² ve doğru y = 2x + k, önce k = 3. Doğru parabolü kaç noktada keser?" },
+            {
+              metin: "x² = 2x + 3 → x² − 2x − 3 = 0, Δ = 16 > 0: ==iki ortak nokta==, (−1, 1) ve (3, 9).",
+              goster: ["p1", "p2"]
+            },
+            {
+              metin: "k = −1: x² − 2x + 1 = (x − 1)² = 0, Δ = 0: doğru parabole ==teğet==, tek ortak nokta (1, 1).",
+              gizle: ["p1", "p2"],
+              goster: ["tp"],
+              set: { l: { from: [1, 0], to: [5, 8] } }
+            },
+            {
+              metin: "k = −3: x² − 2x + 3 = 0, Δ = −8 < 0: doğru parabolü ==kesmez==.",
+              gizle: ["tp"],
+              set: { l: { from: [2, 0], to: [5, 6] } }
+            }
+          ]
+        },
+        {
+          tip: "tablo",
+          baslik: "Konum ve diskriminant",
+          head: ["Δ (eşitlenen denklemin)", "Doğru ve parabol", "İki parabol"],
+          rows: [
+            ["Δ > 0", "iki ortak nokta (keser)", "iki ortak nokta"],
+            ["Δ = 0", "teğet, tek ortak nokta", "tek ortak nokta (teğet)"],
+            ["Δ < 0", "ortak nokta yok", "ortak nokta yok"]
+          ],
+          not: "Doğru için parabolün denklemiyle y = mx + n'yi, iki parabol için f(x) = g(x)'i eşitle; ax² + bx + c = 0 çıkar. Sınavda böyle yaz: *Set the two expressions equal and use the discriminant.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Teğet doğru ve kesişim toplamları",
+          durum: "(a) y = x + 1 doğrusu g(x) = 2x² + kx + 3 parabolüne teğet; k? (b) f(x) = x² − 5x + 7 ile y = x + 5 kesişince A ve B noktalarının y-koordinatları toplamı? (c) y = 3x² + 4x + m ile y = −x² + 5x + n iki noktada kesişiyorsa x-koordinatları toplamı?",
+          adimlar: [
+            "(a) 2x² + kx + 3 = x + 1 → 2x² + (k − 1)x + 2 = 0. Teğet: Δ = (k − 1)² − 16 = 0 → k − 1 = ±4 → k = 5 ya da k = −3.",
+            "(b) x² − 5x + 7 = x + 5 → x² − 6x + 2 = 0. Vieta: x_A + x_B = 6.",
+            "A ve B doğru üzerinde: y_A + y_B = (x_A + 5) + (x_B + 5) = 6 + 10 = 16.",
+            "(c) 3x² + 4x + m = −x² + 5x + n → 4x² − x + (m − n) = 0. Vieta: x-koordinatları toplamı = −(−1)/4 = 1/4."
+          ],
+          sonuc: "(a) k = 5 ya da k = −3, (b) 16, (c) 1/4. Kesişim noktalarını bulmadan Vieta kullanılır."
+        }
+      ]
+    },
+    {
       baslik: "Dönüşüm yorumu, domain ve range",
       kisa: "f(x) = a(x − h)² + k, y = x²'nin dönüşümüdür; range k'dan başlar ya da biter.",
       bloklar: [
@@ -387,9 +479,15 @@ window.DEFTER = {
               "a > 0",
               "(−3, −4)",
               "[−4, ∞)"
+            ],
+            [
+              "f(x) = x² + 4x + 7, x ∈ [−4, 1]",
+              "a > 0",
+              "(−2, 3), aralığın içinde",
+              "[3, 12]"
             ]
           ],
-          not: "Domain her zaman ℝ. a > 0 ise range [k, ∞), a < 0 ise (−∞, k]."
+          not: "Domain kısıtlanmadıkça ℝ. a > 0 ise range [k, ∞), a < 0 ise (−∞, k]. Aralık kısıtlıysa tepe aralığın içinde mi bak ve uç noktaları da hesapla: f(−4) = 7, f(1) = 12, en küçük f(−2) = 3."
         },
         {
           tip: "ikili",
@@ -432,10 +530,21 @@ window.DEFTER = {
           sonuc: "En yüksek nokta 20 m (t = 2 s), top 4 saniyede yere iner. Sınavda böyle yaz: *The maximum height is 20 m, reached after 2 seconds.*"
         },
         {
+          tip: "ornek",
+          baslik: "Çevresi sabit dikdörtgen",
+          durum: "Çevresi 32 cm olan dikdörtgenin en büyük alanı kaç cm²'dir?",
+          adimlar: [
+            "Kenarlar x ve 16 − x (yarım çevre 16).",
+            "A(x) = x(16 − x) = −x² + 16x. a = −1 < 0: maksimum var.",
+            "h = −16/(−2) = 8; A(8) = 8·8 = 64."
+          ],
+          sonuc: "En büyük alan 64 cm² (kare, kenar 8 cm)."
+        },
+        {
           tip: "tuzak",
           metin: "Soruya dikkat: maksimum değer mi, onu veren x mi isteniyor?",
           yanlis: "\"En büyük gelir kaç TL?\" sorusuna 10 yazmak.",
-          dogru: "10 TL, en büyük geliri veren fiyattır (x_t). En büyük gelir f(x_t) = 500 TL'dir. Birimi de yaz."
+          dogru: "10 TL, en büyük geliri veren fiyattır (h). En büyük gelir f(h) = 500 TL'dir. Birimi de yaz."
         }
       ]
     },
@@ -447,13 +556,14 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "f(x) = ax² + bx + c bir paraboldür; a > 0 yukarı, a < 0 aşağı açar; |a| büyüdükçe dar.",
-            "Simetri ekseni ve tepe: x_t = −b/2a, y_t = f(x_t); a > 0 minimum, a < 0 maksimum.",
+            "Simetri ekseni ve tepe: h = −b/2a, k = f(h); a > 0 minimum, a < 0 maksimum.",
             "y-kesişimi (0, c); x-kesişimleri ax² + bx + c = 0'ın kökleri; Δ < 0 ise yok.",
-            "Üç biçim: standart (y-kesişimi), tepe a(x − h)² + k (tepe), çarpan a(x − x₁)(x − x₂) (kökler).",
+            "Üç biçim: standart (y-kesişimi), tepe a(x − h)² + k (tepe), çarpan a(x − r₁)(x − r₂) (kökler). Parabol denklemi: tepe → tepe biçimi, kökler → çarpan biçimi, üç nokta → standart.",
             "Tepe biçimine tam kare tamamlamayla geçilir; h = −b/2a, k = f(h).",
             "Çizim: yön, y-kesişimi, kökler, simetri ekseni ve tepe, ayna noktası.",
             "Domain ℝ; range a > 0 için [k, ∞), a < 0 için (−∞, k].",
-            "Problemde x_t optimum girdiyi, f(x_t) optimum değeri verir."
+            "Doğru ile parabol (ya da iki parabol): denklemleri eşitle; Δ > 0 kesişir, Δ = 0 teğet, Δ < 0 kesişmez.",
+            "Problemde h optimum girdiyi, f(h) optimum değeri verir."
           ]
         }
       ]
@@ -461,44 +571,44 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "f(x) = x² − 6x + 5 fonksiyonunun grafiğinin tepe noktası hangisidir?",
-      opts: ["(3, −4)", "(−3, −4)", "(3, 4)", "(6, 5)"],
-      a: 0,
-      why: "x_t = −b/2a = 6/2 = 3 ve f(3) = 9 − 18 + 5 = −4. Tepe (3, −4). B seçeneği −b/2a'nın işaretini kaçırır; D seçeneği (6, 5), f(6) = 5 olan simetrik bir nokta (y-kesişimi (0, 5)'in aynadaki karşılığı), tepe değil."
+      q: "The line y = x + 1 is tangent to the graph of g(x) = 2x² + kx + 3. What are the possible values of k?",
+      opts: ["k = 5 only", "k = −3 only", "k = 5 or k = −3", "k = 3 or k = −5"],
+      a: 2,
+      why: "2x² + kx + 3 = x + 1 → 2x² + (k − 1)x + 2 = 0. Teğet olduğu için Δ = (k − 1)² − 16 = 0 → k − 1 = ±4 → k = 5 ya da k = −3. A ve B seçenekleri iki durumdan yalnız birini alır; D seçeneği işareti ters alır."
     },
     {
-      q: "f(x) = −2x² + 8x + 1 fonksiyonu için hangisi doğrudur?",
+      q: "Which statement is true for f(x) = −2x² + 8x + 1?",
       opts: [
-        "En küçük değeri 9'dur.",
-        "En büyük değeri 2'dir ve x = 9'da alınır.",
-        "En büyük değeri 9'dur ve x = 2'de alınır.",
-        "En büyük değeri 1'dir."
+        "Its minimum value is 9.",
+        "Its maximum value is 2 and it occurs at x = 9.",
+        "Its maximum value is 9 and it occurs at x = 2.",
+        "Its maximum value is 1."
       ],
       a: 2,
-      why: "a = −2 < 0: aşağı açık, maksimum var. x_t = −8/(−4) = 2 ve f(2) = −8 + 16 + 1 = 9. Maksimum değer 9, x = 2'de. B seçeneği x ve y'yi birbirine karıştırmış; D seçeneği y-kesişimi olan 1'i maksimum sanmış."
+      why: "a = −2 < 0: aşağı açık, maksimum var. h = −8/(−4) = 2 ve f(2) = −8 + 16 + 1 = 9. Maksimum değer 9, x = 2'de. B seçeneği x ve y'yi birbirine karıştırmış; D seçeneği y-kesişimi olan 1'i maksimum sanmış."
     },
     {
-      q: "Tabloda f ikinci dereceden bir fonksiyon olarak veriliyor. f(x) hangisidir?",
+      q: "The table gives values of a quadratic function f. What is f(x)?",
       fig: {
         type: "table",
         head: ["x", "0", "1", "2", "3", "4"],
         rows: [
           ["f(x)", "3", "0", "−1", "0", "3"]
         ],
-        caption: "f(x) değerleri"
+        caption: "Values of f(x)"
       },
       opts: ["(x − 2)² + 1", "(x − 2)² − 1", "(x + 2)² − 1", "−(x − 2)² − 1"],
       a: 1,
       why: "Değerler x = 2'ye göre simetrik (f(1) = f(3) = 0, f(0) = f(4) = 3), en küçük değer f(2) = −1: tepe (2, −1), a > 0. f(x) = (x − 2)² − 1; kontrol f(0) = 4 − 1 = 3 ✓. A seçeneği f(2) = 1 verirdi; C seçeneği simetri eksenini x = −2'ye koyardı."
     },
     {
-      q: "Bir kafe tost fiyatını p TL belirlerse günde 60 − 3p tost satıyor. Günlük en büyük gelir kaç TL'dir?",
+      q: "A café sells 60 − 3p toasts per day when the price of a toast is p TL. What is the maximum daily revenue in TL?",
       opts: ["200", "300", "600", "10"],
       a: 1,
-      why: "R(p) = p(60 − 3p) = −3p² + 60p. p_t = −60/(−6) = 10 TL; R(10) = 10·30 = 300 TL. 10 cevabı en büyük geliri veren fiyattır, gelirin kendisi değil. 600 ise satışın fiyat arttıkça azaldığını yok sayan hatalı bir çarpımdır (60 · 10)."
+      why: "R(p) = p(60 − 3p) = −3p² + 60p. h = −60/(−6) = 10 TL; R(10) = 10·30 = 300 TL. 10 cevabı en büyük geliri veren fiyattır, gelirin kendisi değil. 600 ise satışın fiyat arttıkça azaldığını yok sayan hatalı bir çarpımdır (60 · 10)."
     },
     {
-      q: "Tepe noktası (−1, 2) olan ve (1, −6) noktasından geçen parabolün denklemi hangisidir?",
+      q: "A parabola has vertex (−1, 2) and passes through the point (1, −6). Which equation describes it?",
       opts: ["2(x + 1)² + 2", "−2(x − 1)² + 2", "−(x + 1)² + 2", "−2(x + 1)² + 2"],
       a: 3,
       why: "f(x) = a(x + 1)² + 2. (1, −6): a·4 + 2 = −6 → a = −2. f(x) = −2(x + 1)² + 2. A seçeneğinde f(1) = 10; B seçeneğinde tepe (1, 2); C seçeneğinde f(1) = −2: üçü de verilen noktayı sağlamıyor."

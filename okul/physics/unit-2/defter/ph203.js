@@ -19,8 +19,11 @@ window.DEFTER = {
             ["Güneş paneli", "Işık", "Elektrik"],
             ["Ok yayı", "Esneklik PE", "Okun KE'si"],
             ["Bisiklet freni", "Bisikletin KE'si", "Isı"],
-            ["Telefon pili", "Kimyasal", "Elektrik → ışık, ses, ısı"]
+            ["Telefon pili", "Kimyasal", "Elektrik → ışık, ses, ısı"],
+            ["Fotosentez", "Işık", "Kimyasal (bitkide)"],
+            ["Mikrofon", "Ses", "Elektrik"]
           ] },
+        { tip: "not", metin: "Bütün enerji türlerinin ortak özellikleri: bir ==kaynağı== vardır, çevreye etkisi olur, birimi joule'dür, birbirine dönüşebilir ve dönüşümde bir kısım enerji (çoğu zaman ısı olarak) kaybolur. Gıdadaki kimyasal enerji vücutta ısıya, sonra harekete dönüşür." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Energy cannot be created or destroyed; it can only be transformed from one form to another.*", metin: "Enerji korunumunun standart cümlesi." },
             { ikon: "✍️", baslik: "*Friction converts kinetic energy into thermal energy.*", metin: "Sürtünmeli dönüşümleri anlatırken kullan." }
@@ -122,14 +125,13 @@ window.DEFTER = {
           ] },
         { tip: "formul", parcalar: [
             { t: "E ilk", alt: "KE₁ + PE₁" }, "=", { t: "E son", alt: "KE₂ + PE₂" }, "+", { t: "Q", alt: "ısıya giden = f × yol" }
-          ], aciklama: "Sürtünme kuvveti f, yol x ise ısıya giden enerji Q = f · x. Isı da bir enerjidir: ==toplam enerji değişmez==." },
+          ], aciklama: "Sürtünme kuvveti f, yol x ise ısıya giden enerji Q = f · x. Isı da bir enerjidir: ==toplam enerji değişmez==. Dışarıdan itme de varsa: PE₁ + KE₁ + F_dış · x − f · x = KE₂ + PE₂." },
         { tip: "ornek", baslik: "Sürtünmeli eğik yol", durum: "2 kg'lık kutu, 3 m yükseklikten durgun bırakılıyor ve 6 m'lik eğik yoldan sürtünmeli olarak kayıyor. Altta hızı 6 m/s. Sürtünme kuvveti kaç N?",
           adimlar: ["Başlangıç: PE = 2 · 10 · 3 = 60 J, KE = 0.", "Son: KE = ½ · 2 · 6² = 36 J, PE = 0.", "Isıya giden: Q = 60 − 36 = 24 J.", "Q = f · x → 24 = f · 6 → f = 4 N."],
           sonuc: "Sürtünme kuvveti 4 N, ısıya giden enerji 24 J." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The remaining energy was converted into thermal energy by friction.*", metin: "Eksik enerjinin nereye gittiğini söyle." },
-            { ikon: "✍️", baslik: "*The mechanical energy decreased, but the total energy is conserved.*", metin: "İki ayrı korunum cümlesini ayır." }
-          ] }
+        { tip: "ornek", baslik: "Kamyondan kutu indirmek", durum: "Kasa yüksekliği 5 m olan kamyona 10 m'lik bir tahta dayanıyor. 4 kg'lık kutu tahtadan kayarak iniyor (g = 10 m/s²). Yere varış hızı sürtünmesizde ve 15 N sabit sürtünmede kaç m/s olur?",
+          adimlar: ["Sürtünmesiz: m · g · h = ½ · m · v² → v² = 2 · 10 · 5 = 100 → v = 10 m/s.", "Sürtünmeli: başlangıç enerjisi 4 · 10 · 5 = 200 J. Isıya giden Q = 15 · 10 = 150 J.", "Yerde KE = 200 − 150 = 50 J = ½ · 4 · v² → v² = 25 → v = 5 m/s."],
+          sonuc: "10 m/s ve 5 m/s. Sınavda böyle yaz: *The remaining energy was converted into thermal energy by friction.* *The mechanical energy decreased, but the total energy is conserved.*" }
       ]
     },
     {
@@ -168,22 +170,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "1 kg'lık bir cisim, sürtünmesiz ortamda 20 m yükseklikten serbest bırakılıyor (g = 10 m/s²). Yere çarpma hızı kaç m/s'dir?",
+    { q: "A 1 kg object is released from rest from a height of 20 m in a frictionless environment (g = 10 m/s²). What is its speed just before it hits the ground?",
       opts: ["10 m/s", "20 m/s", "40 m/s", "200 m/s"], a: 1,
       why: "m · g · h = ½ · m · v² → v² = 2 · 10 · 20 = 400 → v = 20 m/s. 200 m/s cevabı karekökü ve ½'yi atlamaktır; kütle sadeleştiği için sonucu etkilemez." },
-    { q: "Bir top serbest bırakılıyor. Tablo, topun üç konumdaki kinetik ve potansiyel enerjisini gösteriyor. Tabloya göre hangisi söylenebilir?",
-      fig: { type: "table", head: ["Konum", "KE (J)", "PE (J)"], rows: [["K (başlangıç)", "0", "80"], ["L", "30", "50"], ["M", "50", "10"]], caption: "Topun enerjileri" },
-      opts: ["Mekanik enerji tüm yol boyunca korunmuştur.", "L ile M arasında azalan PE tamamen KE'ye dönüşmüştür.", "K ile L arasında 30 J ısıya dönüşmüştür.", "L ile M arasında 20 J mekanik enerji ısıya dönüşmüştür."], a: 3,
+    { q: "A ball is released. The table shows its kinetic and potential energy at three positions. Which statement can be made from the table?",
+      fig: { type: "table", head: ["Position", "KE (J)", "PE (J)"], rows: [["K (start)", "0", "80"], ["L", "30", "50"], ["M", "50", "10"]], caption: "Energies of the ball" },
+      opts: ["Mechanical energy is conserved along the whole path.", "The decrease in PE between L and M is completely converted into KE.", "30 J is converted into thermal energy between K and L.", "20 J of mechanical energy is converted into thermal energy between L and M."], a: 3,
       why: "Toplamlar: K 80 J, L 80 J, M 60 J. K–L arasında kayıp yok. L–M arasında PE 40 J azaldı ama KE yalnızca 20 J arttı; fark 20 J ısıya gitti." },
-    { q: "Sürtünmesiz ortamda yerden 20 m/s hızla düşey yukarı atılan 1 kg'lık top en fazla kaç m yükselir (g = 10 m/s²)?",
+    { q: "A 1 kg ball is thrown vertically upward from the ground at 20 m/s in a frictionless environment (g = 10 m/s²). What is the maximum height it reaches?",
       opts: ["20 m", "40 m", "10 m", "2 m"], a: 0,
       why: "Tepede v = 0: ½ · m · v₀² = m · g · h → h = v₀² / 2g = 400 / 20 = 20 m. 40 m cevabı paydadaki 2'yi unutmaktır (v₀² / g)." },
-    { q: "Grafik, serbest düşen 2 kg'lık bir cismin kinetik ve potansiyel enerjisinin yerden yüksekliğe göre değişimini gösteriyor (sürtünme yok, 1 birim = 10 J). Cismin KE'si ile PE'si hangi yükseklikte eşit olur?",
-      fig: { type: "graph", xlabel: "h (m)", ylabel: "Enerji (10 J)", xmax: 6, ymax: 11, lines: [{ from: [0, 0], to: [5, 10], label: "PE" }, { from: [0, 10], to: [5, 0], label: "KE" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }, { v: 5, label: "5" }], yticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }], caption: "KE ve PE – yükseklik" },
-      opts: ["1 m", "2 m", "2,5 m", "4 m"], a: 2,
+    { q: "The graph shows the kinetic and potential energy of a freely falling 2 kg object against its height above the ground (no friction, 1 unit = 10 J). At what height are the kinetic and potential energies equal?",
+      fig: { type: "graph", xlabel: "h (m)", ylabel: "Energy (10 J)", xmax: 6, ymax: 11, lines: [{ from: [0, 0], to: [5, 10], label: "PE" }, { from: [0, 10], to: [5, 0], label: "KE" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }, { v: 5, label: "5" }], yticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }], caption: "KE and PE against height" },
+      opts: ["1 m", "2 m", "2.5 m", "4 m"], a: 2,
       why: "Toplam 100 J olduğundan KE = PE = 50 J (grafikte 5 birim) olduğu yerde iki doğru kesişir; PE = 20 · h = 50 → h = 2,5 m. Yolun tam ortasıdır." },
-    { q: "4 kg'lık bir top, 5 m yükseklikten bırakılıyor ve yere 8 m/s hızla çarpıyor (g = 10 m/s²). Hava direnci yüzünden ısıya dönüşen enerji kaç J'dür?",
-      opts: ["128 J", "200 J", "328 J", "72 J"], a: 3,
-      why: "Başlangıç PE = 4 · 10 · 5 = 200 J. Sondaki KE = ½ · 4 · 64 = 128 J. Isı = 200 − 128 = 72 J. 128 J, kalan KE'dir; ısıya giden değil." }
+    { q: "A 4 kg box slides down a 10 m long plank from a height of 5 m. A constant friction force of 15 N acts on the box (g = 10 m/s²). What is the speed of the box at the bottom?",
+      opts: ["10 m/s", "7.5 m/s", "5 m/s", "2.5 m/s"], a: 2,
+      why: "Başlangıç enerjisi 4 · 10 · 5 = 200 J; ısıya giden 15 · 10 = 150 J; KE = 50 J = ½ · 4 · v² → v = 5 m/s. 10 m/s sürtünmeyi unutan cevaptır." }
   ]
 };

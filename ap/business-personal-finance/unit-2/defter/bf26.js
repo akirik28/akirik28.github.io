@@ -128,19 +128,19 @@ window.DEFTER = {
             { tarih: "Sonuç 1", baslik: "Rakipler yükseldi", metin: "Boşalan raflara Hoka ve On Running yerleşti." },
             { tarih: "Sonuç 2", baslik: "Stok birikti", metin: "Elde kalan stok TJ Maxx gibi indirim mağazalarına ucuza verildi; marka imajı zedelendi." }
           ] },
-        { tip: "grafik", baslik: "Nike'ın bıraktığı raflarda büyüyenler", xlabel: "Şirket ve yıl", ylabel: "Gelir (milyar $)", xmax: 5, ymax: 2.2, xticks: [{ v: 1, label: "Hoka 2018" }, { v: 2, label: "Hoka 2023" }, { v: 3, label: "On 2018" }, { v: 4, label: "On 2023" }], yticks: [{ v: 0.4, label: "0,4" }, { v: 1.8, label: "1,8" }],
+        { tip: "grafik", baslik: "Nike'ın bıraktığı raflarda büyüyenler", xlabel: "Şirket ve yıl", ylabel: "Gelir (milyar $)", xmax: 5, ymax: 2.2, xticks: [{ v: 1, label: "Hoka 2018" }, { v: 2, label: "Hoka 2023" }, { v: 3, label: "On 2018" }, { v: 4, label: "On 2023" }], yticks: [{ v: 0.22, label: "0,22" }, { v: 1.8, label: "1,8" }],
           ogeler: [
             { id: "h18", tip: "alan", renk: 0, noktalar: [[0.65, 0], [1.35, 0], [1.35, 0], [0.65, 0]] },
             { id: "h23", tip: "alan", renk: 1, noktalar: [[1.65, 0], [2.35, 0], [2.35, 0], [1.65, 0]] },
             { id: "o18", tip: "alan", renk: 0, noktalar: [[2.65, 0], [3.35, 0], [3.35, 0], [2.65, 0]] },
             { id: "o23", tip: "alan", renk: 1, noktalar: [[3.65, 0], [4.35, 0], [4.35, 0], [3.65, 0]] },
-            { id: "t1", tip: "yazi", x: 1, y: 0.55, metin: "0,4", gizli: true },
+            { id: "t1", tip: "yazi", x: 1, y: 0.37, metin: "0,22", gizli: true },
             { id: "t2", tip: "yazi", x: 2, y: 1.95, metin: "1,8", gizli: true },
             { id: "t3", tip: "yazi", x: 3, y: 0.4, metin: "0,25", gizli: true },
             { id: "t4", tip: "yazi", x: 4, y: 1.85, metin: "1,7", gizli: true }
           ],
           durumlar: [
-            { metin: "Hoka'nın geliri 2018'de ==400 milyon $==.", set: { h18: { noktalar: [[0.65, 0], [1.35, 0], [1.35, 0.4], [0.65, 0.4]] } }, goster: ["t1"] },
+            { metin: "Hoka'nın geliri 2018'de ==yaklaşık 220 milyon $==.", set: { h18: { noktalar: [[0.65, 0], [1.35, 0], [1.35, 0.22], [0.65, 0.22]] } }, goster: ["t1"] },
             { metin: "2023'te ==1,8 milyar $==: Nike'ın bıraktığı rafa yerleşti.", set: { h23: { noktalar: [[1.65, 0], [2.35, 0], [2.35, 1.8], [1.65, 1.8]] } }, goster: ["t1", "t2"] },
             { metin: "On Running 2018'de ==250 milyon $==.", set: { o18: { noktalar: [[2.65, 0], [3.35, 0], [3.35, 0.25], [2.65, 0.25]] } }, goster: ["t1", "t2", "t3"] },
             { metin: "2023'te ==1,7 milyar $==. Koşu kategorisinde Nike'ın payı %34'ten %26'ya düştü.", set: { o23: { noktalar: [[3.65, 0], [4.35, 0], [4.35, 1.7], [3.65, 1.7]] } }, goster: ["t1", "t2", "t3", "t4"] }

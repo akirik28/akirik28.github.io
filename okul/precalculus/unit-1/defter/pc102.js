@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc102 · 1.2 Fonksiyonlarda İşlemler
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#1_2 Operations on Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc102",
   amac: "Bu konu fonksiyonlarla işlem yapmayı anlatıyor. Toplama, çıkarma, çarpma ve bölmeyi, iki fonksiyonun toplamının grafiğini, bileşke fonksiyonu ve onun özelliklerini öğreneceksin.",
@@ -13,12 +13,12 @@ window.DEFTER = {
           baslik: "Dört işlem",
           head: ["İşlem", "Tanım", "Domain"],
           rows: [
-            ["Toplam (*sum*)", "(f + g)(x) = f(x) + g(x)", "D_f ∩ D_g"],
-            ["Fark (*difference*)", "(f − g)(x) = f(x) − g(x)", "D_f ∩ D_g"],
-            ["Çarpım (*product*)", "(f · g)(x) = f(x) · g(x)", "D_f ∩ D_g"],
-            ["Bölüm (*quotient*)", "(f/g)(x) = f(x) / g(x)", "D_f ∩ D_g ve g(x) ≠ 0"]
+            ["Toplam (*sum*)", "(f + g)(x) = f(x) + g(x)", "A ∩ B"],
+            ["Fark (*difference*)", "(f − g)(x) = f(x) − g(x)", "A ∩ B"],
+            ["Çarpım (*product*)", "(fg)(x) = f(x) · g(x)", "A ∩ B"],
+            ["Bölüm (*quotient*)", "(f/g)(x) = f(x) / g(x)", "A ∩ B ve g(x) ≠ 0"]
           ],
-          not: "D_f ∩ D_g: iki fonksiyonun da tanımlı olduğu ortak x'ler."
+          not: "f'nin domain'i A, g'nin domain'i B olsun (bu defterde D_f ve D_g de yazılır). A ∩ B: iki fonksiyonun da tanımlı olduğu ortak x'ler."
         },
         {
           tip: "ornek",
@@ -27,11 +27,11 @@ window.DEFTER = {
           adimlar: [
             "(f + g)(x) = (2x + 1) + (x − 3) = 3x − 2.",
             "(f − g)(x) = (2x + 1) − (x − 3) = x + 4. Parantez önemli: −(x − 3) = −x + 3.",
-            "(f · g)(x) = (2x + 1)(x − 3) = 2x² − 6x + x − 3 = 2x² − 5x − 3.",
+            "(fg)(x) = (2x + 1)(x − 3) = 2x² − 6x + x − 3 = 2x² − 5x − 3.",
             "(f/g)(x) = (2x + 1)/(x − 3), x ≠ 3.",
             "Kontrol x = 4: f(4) = 9, g(4) = 1. Toplam 10 = 3·4 − 2 ✓. Çarpım 9 = 2·16 − 20 − 3 ✓."
           ],
-          sonuc: "(f + g)(x) = 3x − 2, (f − g)(x) = x + 4, (f · g)(x) = 2x² − 5x − 3, (f/g)(x) = (2x + 1)/(x − 3). Sınavda böyle yaz: *(f + g)(x) means f(x) + g(x).*"
+          sonuc: "(f + g)(x) = 3x − 2, (f − g)(x) = x + 4, (fg)(x) = 2x² − 5x − 3, (f/g)(x) = (2x + 1)/(x − 3). Sınavda böyle yaz: *(f + g)(x) means f(x) + g(x).*"
         }
       ]
     },
@@ -53,15 +53,15 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "İki kökün işlemleri",
-          durum: "f(x) = √(x + 1), g(x) = √(4 − x). f + g, f · g, f/g ve g/f'nin domain'leri?",
+          durum: "f(x) = √(x + 1), g(x) = √(4 − x). f + g, fg, f/g ve g/f'nin domain'leri?",
           adimlar: [
             "D_f: x + 1 ≥ 0 → x ≥ −1, yani [−1, ∞).",
             "D_g: 4 − x ≥ 0 → x ≤ 4, yani (−∞, 4].",
-            "Kesişim: [−1, 4]. f + g ve f · g bu aralıkta tanımlı.",
+            "Kesişim: [−1, 4]. f + g ve fg bu aralıkta tanımlı.",
             "f/g için g(x) ≠ 0: g(4) = 0 olduğundan 4 atılır → [−1, 4).",
             "g/f için f(x) ≠ 0: f(−1) = 0 olduğundan −1 atılır → (−1, 4]."
           ],
-          sonuc: "D(f+g) = D(f·g) = [−1, 4], D(f/g) = [−1, 4), D(g/f) = (−1, 4]. Sınavda böyle yaz: *The domain of f/g excludes the values where g(x) = 0.*"
+          sonuc: "D(f+g) = D(fg) = [−1, 4], D(f/g) = [−1, 4), D(g/f) = (−1, 4]. Sınavda böyle yaz: *The domain of f/g excludes the values where g(x) = 0.*"
         },
         {
           tip: "tuzak",
@@ -216,34 +216,16 @@ window.DEFTER = {
           sonuc: "(f∘g)(x) = 4x² − 12x + 10 ve (g∘f)(x) = 2x² − 1. Sınavda böyle yaz: *(f∘g)(2) = f(g(2)) = f(1) = 2.*"
         },
         {
-          tip: "ikili",
-          sol: { ikon: "🔗", baslik: "Bileşke (f∘g)", maddeler: ["İç içe yazılır: f(g(x))", "Önce g uygulanır"] },
-          sag: {
-            ikon: "✖️",
-            baslik: "Çarpım (f · g)",
-            maddeler: [
-              "İki değer çarpılır: f(x) · g(x)",
-              "İkisi de aynı x'ten başlar"
-            ]
-          },
-          oyun: [
-            {
-              metin: "f(g(2)) hesapla: önce g(2)'yi bul.",
-              cevap: "sol",
-              neden: "İçteki g önce uygulanır: bileşke."
-            },
-            { metin: "f(2) · g(2) hesapla.", cevap: "sag", neden: "İki ayrı değer çarpılıyor: çarpım." },
-            {
-              metin: "(2x − 3)² + 1 ifadesi: g'nin çıktısı f'ye girdi.",
-              cevap: "sol",
-              neden: "g(x) = 2x − 3, f'nin içine yazılmış: bileşke."
-            },
-            {
-              metin: "(x² + 1)(2x − 3) ifadesi.",
-              cevap: "sag",
-              neden: "İki ifade yan yana çarpılmış: çarpım."
-            }
-          ]
+          tip: "ornek",
+          baslik: "Bileşkeyi parçalara ayır, bilinmeyeni bul",
+          durum: "(a) h(x) = (1 − 2x)³ için h = f∘g olacak f ve g bul. (b) f(x) = 2x + 1 ve (f∘g)(x) = 4x − 3 ise g(x) nedir?",
+          adimlar: [
+            "(a) İçteki ifade g: g(x) = 1 − 2x. Dıştaki işlem küp almak: f(x) = x³. Kontrol: f(g(x)) = (1 − 2x)³ ✓.",
+            "(b) (f∘g)(x) = f(g(x)) = 2·g(x) + 1 = 4x − 3.",
+            "2·g(x) = 4x − 4 → g(x) = 2x − 2.",
+            "Kontrol: f(g(x)) = 2(2x − 2) + 1 = 4x − 3 ✓."
+          ],
+          sonuc: "(a) f(x) = x³, g(x) = 1 − 2x (başka seçimler de olur). (b) g(x) = 2x − 2. Sınavda böyle yaz: *Let g be the inner function and f the outer function.*"
         }
       ]
     },
@@ -289,10 +271,10 @@ window.DEFTER = {
           head: ["Özellik", "Yazılışı", "Doğru mu?"],
           rows: [
             ["*Associative* (birleşme)", "(f∘g)∘h = f∘(g∘h)", "Her zaman doğru"],
-            ["*Commutative* (değişme)", "f∘g = g∘f", "Genelde yanlış"],
+            ["*Commutative* (değişme)", "f∘g = g∘f", "Genelde yanlış (ders notu: f = g ya da biri birim fonksiyon ise eşit)"],
             ["*Identity* (birim)", "f∘I = I∘f = f, I(x) = x", "Her zaman doğru"]
           ],
-          not: "Sınavda böyle yaz: *Composition is associative but, in general, not commutative.*"
+          not: "Ders notuna göre f = g ya da f, g'den biri birim fonksiyon değilse f∘g ≠ g∘f. (Ek bilgi: f(x) = 2x ve g(x) = 3x gibi başka istisnalar da vardır.) Sınavda böyle yaz: *Composition is associative but, in general, not commutative.*"
         },
         {
           tip: "ornek",
@@ -302,9 +284,10 @@ window.DEFTER = {
             "Birleşme: (f∘g)(x) = 2x + 1; bunu h ile bileşkele: ((f∘g)∘h)(x) = 2x² + 1. Öbür gruplama: (g∘h)(x) = 2x², (f∘(g∘h))(x) = 2x² + 1. Aynı: x = 3 için 19.",
             "Sayıyla: h(3) = 9, g(9) = 18, f(18) = 19. Üç fonksiyonu içten dışa uygulamak yeterli.",
             "Değişme: (f∘g)(x) = 2x + 1 ama (g∘f)(x) = 2(x + 1) = 2x + 2. Farklı.",
-            "Birim: (f∘I)(x) = f(I(x)) = f(x) = x + 1; I'nın etkisi yok."
+            "Birim: (f∘I)(x) = f(I(x)) = f(x) = x + 1; I'nın etkisi yok.",
+            "Uygulama: f(x) = 3mx − 6m ve g(x) = 3x + 2 için f∘g birim fonksiyon ise f(g(x)) = 3m(3x + 2) − 6m = 9mx olmalı. 9mx = x → m = 1/9."
           ],
-          sonuc: "Birleşme ve birim özelliği çalışıyor; değişme çalışmıyor."
+          sonuc: "Birleşme ve birim özelliği çalışıyor; değişme çalışmıyor. Birim fonksiyon şartı katsayıları eşitleyerek çözülür."
         },
         {
           tip: "ikili",
@@ -358,13 +341,14 @@ window.DEFTER = {
         {
           tip: "ozet",
           maddeler: [
-            "(f ± g)(x) = f(x) ± g(x), (f · g)(x) = f(x) · g(x), (f/g)(x) = f(x)/g(x) ve g(x) ≠ 0.",
-            "Toplam, fark, çarpım için domain D_f ∩ D_g; bölümde ayrıca g(x) = 0 olan x'ler atılır.",
+            "(f ± g)(x) = f(x) ± g(x), (fg)(x) = f(x) · g(x), (f/g)(x) = f(x)/g(x) ve g(x) ≠ 0.",
+            "Toplam, fark, çarpım için domain A ∩ B (A = D_f, B = D_g); bölümde ayrıca g(x) = 0 olan x'ler atılır.",
             "Domain'i sadeleştirmeden önce belirle.",
             "(f + g)'nin grafiği: her x'te iki yüksekliği topla.",
             "(f∘g)(x) = f(g(x)): içten dışa, önce g.",
             "D(f∘g) = x ∈ D_g ve g(x) ∈ D_f.",
             "Bileşke birleşmelidir, genelde değişmeli değildir, birim fonksiyon etkisizdir.",
+            "Bileşkeyi parçala: h = f∘g için g içteki, f dıştaki işlemdir; f ve g verilmişse bilinmeyeni denklemle bul.",
             "Tablo ya da grafikten bileşke: önce iç fonksiyonun değerini oku."
           ]
         }
@@ -373,19 +357,19 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "f(x) = x² − 1 ve g(x) = x + 3 için (f∘g)(2) kaçtır?",
+      q: "If f(x) = x² − 1 and g(x) = x + 3, what is (f∘g)(2)?",
       opts: ["6", "8", "15", "24"],
       a: 3,
       why: "(f∘g)(2) = f(g(2)) = f(5) = 25 − 1 = 24. 6, ters sıradaki (g∘f)(2) = g(3) değeri; 8 toplam (f + g)(2) = 3 + 5; 15 ise çarpım f(2)·g(2) = 3·5. En çekici yanlış 6'dır: bileşkede sırayı karıştırmak."
     },
     {
-      q: "f(x) = √(x − 2) ve g(x) = 1/(x − 5) için (f · g)(x) fonksiyonunun domain'i nedir?",
+      q: "If f(x) = √(x − 2) and g(x) = 1/(x − 5), what is the domain of (fg)(x)?",
       opts: ["[2, ∞)", "[2, 5) ∪ (5, ∞)", "(2, ∞)", "ℝ ∖ {5}"],
       a: 1,
-      why: "f için x − 2 ≥ 0 → x ≥ 2. g için x ≠ 5. Çarpımın domain'i ikisinin kesişimi: [2, 5) ∪ (5, ∞). A seçeneği f'nin domain'i; g'nin 5'te tanımsız olduğu unutulmuş. D seçeneği ise g'nin domain'i, f'nin kısıtı yok sayılmış."
+      why: "f için x − 2 ≥ 0 → x ≥ 2. g için x ≠ 5. Çarpımın domain'i ikisinin kesişimi A ∩ B: [2, 5) ∪ (5, ∞). A seçeneği f'nin domain'i; g'nin 5'te tanımsız olduğu unutulmuş. D seçeneği ise g'nin domain'i, f'nin kısıtı yok sayılmış."
     },
     {
-      q: "Tabloda f ve g veriliyor. (g∘f)(3) + (f∘g)(3) kaçtır?",
+      q: "The functions f and g are given by the table. What is (g∘f)(3) + (f∘g)(3)?",
       fig: {
         type: "table",
         head: ["x", "1", "2", "3", "4"],
@@ -393,20 +377,20 @@ window.DEFTER = {
           ["f(x)", "3", "1", "4", "2"],
           ["g(x)", "2", "3", "4", "1"]
         ],
-        caption: "f ve g"
+        caption: "Functions f and g"
       },
       opts: ["3", "2", "4", "6"],
       a: 0,
       why: "(g∘f)(3) = g(f(3)) = g(4) = 1. (f∘g)(3) = f(g(3)) = f(4) = 2. Toplam 1 + 2 = 3. Tabloda içteki fonksiyonun değerini bulup dıştakine sokmak gerekir; f(3) + g(3) = 8 gibi doğrudan toplamak yanlış olurdu."
     },
     {
-      q: "Hangisi f, g ve h fonksiyonlarının her seçimi için doğrudur?",
+      q: "Which of the following is true for all functions f, g and h?",
       opts: ["f∘g = g∘f", "(f∘g)(x) = f(x) · g(x)", "(f∘g)∘h = f∘(g∘h)", "(f∘g)(x) = g(f(x))"],
       a: 2,
       why: "Bileşke birleşme özelliğine sahiptir: gruplama sonucu değiştirmez. A ve D değişme özelliğini ima eder; bu genelde yanlıştır (f(x) = x + 1, g(x) = 2x için 2x + 1 ≠ 2x + 2). B bileşkeyi çarpımla karıştırır."
     },
     {
-      q: "Grafikte f doğrusu (0, 1) ve (4, 5) noktalarından, g doğrusu (0, 5) ve (4, 1) noktalarından geçiyor. (f + g)(x)'in grafiği nasıl olur?",
+      q: "The graph of f is the line through (0, 1) and (4, 5). The graph of g is the line through (0, 5) and (4, 1). What does the graph of f + g look like?",
       fig: {
         type: "graph",
         xlabel: "x",
@@ -430,10 +414,10 @@ window.DEFTER = {
         ]
       },
       opts: [
-        "Eğimi 2 olan bir doğru",
-        "y = 6 yatay doğrusu",
-        "İki doğrunun kesiştiği tek bir nokta",
-        "x = 2'de kırılan V biçimi"
+        "A line with slope 2",
+        "The horizontal line y = 6",
+        "A single point where the two lines meet",
+        "A V-shape that bends at x = 2"
       ],
       a: 1,
       why: "f(x) = x + 1 ve g(x) = 5 − x. Toplam (f + g)(x) = 6, her x için aynı: yatay doğru y = 6. Eğimler +1 ve −1 olduğundan birbirini götürür. C seçeneği çekici: f ve g (2, 3)'te kesişir, ama bu toplamın grafiğiyle ilgisizdir."

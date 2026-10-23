@@ -1,8 +1,8 @@
 /* Kitora not defteri · bi101 · 1.1 Canlılar ve Enerji, ATP
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (1.1 Importance of Energy for Living Things) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi101",
-  amac: "Bu konu canlıların enerjiyi nereden bulduğunu anlatıyor: ototrof ve heterotrof beslenme, ardından hücrenin enerji parası *ATP*. ATP'nin yapısını, nasıl yapılıp yıkıldığını (*phosphorylation*, *dephosphorylation*) öğreneceksin.",
+  amac: "Bu konu canlıların enerjiyi nereden bulduğunu anlatıyor: *metabolism* ile enerji biçimleri, ototrof ve heterotrof beslenme, sonra hücrenin enerji parası *ATP*. ATP'nin yapısını ve nasıl yapılıp yıkıldığını (*phosphorylation*, *dephosphorylation*) öğreneceksin.",
   bolumler: [
     {
       baslik: "Canlılar neden enerjiye ihtiyaç duyar?",
@@ -16,6 +16,23 @@ window.DEFTER = {
             { baslik: "İş", metin: "ATP'nin enerjisi kas kasılmasında, taşımada ve sentezde harcanır." }
           ] },
         { tip: "not", metin: "Sınavda böyle yaz: *Living things need energy for growth, movement and repair.* ve *Energy is not created or destroyed; it is converted from one form to another.*" }
+      ]
+    },
+    {
+      baslik: "*Metabolism* ve enerji biçimleri",
+      kisa: "Metabolizma = anabolizma + katabolizma; enerji ekosisteme ışıkla girer, ısıyla çıkar.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "*Anabolism*", alt: "enerji harcar" }, "+",
+            { t: "*Catabolism*", alt: "enerji verir" }, "=",
+            { t: "*Metabolism*", alt: "tüm kimyasal tepkimeler" }
+          ], aciklama: "*Bioenergetics* (biyoenerjetik), canlıların enerji kaynaklarını nasıl yönettiğini inceler: enerji akışı, üretimi ve tüketimi." },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🏃", terim: "Kinetic energy", tr: "kinetik enerji", tanim: "Hareketle ilgili enerji. *Heat* (ısı), atom ve moleküllerin rastgele hareketiyle ilgili kinetik enerjidir.", ornek: "Kasılan kas, titreşen moleküller." },
+            { ikon: "⛰️", terim: "Potential energy", tr: "potansiyel enerji", tanim: "Maddenin konumundan ya da yapısından gelen enerji. *Chemical energy* tepkimede açığa çıkabilen potansiyel enerjidir.", ornek: "Glikozun bağlarındaki enerji." },
+            { ikon: "🔒", terim: "Open system", tr: "açık sistem", tanim: "Çevresiyle enerji ve madde alışverişi yapar. Canlılar açık sistemdir; *closed system* (termos gibi) çevreden yalıtılmıştır.", ornek: "Hücre, ekosistem." }
+          ] },
+        { tip: "not", metin: "Enerji ekosisteme ==ışık== olarak girer, ==ısı== olarak çıkar. *Photosynthesis* ışığı kimyasal enerjiye çevirir; hücresel solunum besindeki kimyasal enerjiyi ATP'nin fosfat bağlarına aktarır. Sınavda böyle yaz: *Energy can be converted from one form to another, and organisms are open systems.*" }
       ]
     },
     {
@@ -57,7 +74,7 @@ window.DEFTER = {
             { ikon: "🐄", terim: "Consumer", tr: "tüketici (holozoik beslenen)", tanim: "Besini bütün olarak alır, vücudunda sindirir. Otçul, etçil ve her şeyi yiyen olabilir.", ornek: "Otlayan inek, balık yiyen martı." },
             { ikon: "🍄", terim: "Decomposer (saprophyte)", tr: "ayrıştırıcı", tanim: "Ölü organik maddeyi dışarıya salgıladığı enzimlerle parçalar ve oluşan küçük molekülleri emer.", ornek: "Ekmek küfü, bazı bakteriler." },
             { ikon: "🪱", terim: "Parasite", tr: "asalak", tanim: "Canlı bir konağın içinde ya da üstünde yaşar, besinini ondan alır ve konağa zarar verir.", ornek: "Bağırsak solucanı, bit." },
-            { ikon: "🌿", terim: "Mixotroph", tr: "karma beslenen", tanim: "Hem fotosentez yapabilir hem hazır organik madde alabilir. Işık yoksa heterotrof gibi beslenir.", ornek: "*Euglena* (öglena)." }
+            { ikon: "🌿", terim: "Mixotroph", tr: "karma beslenen (ek bilgi)", tanim: "Hem fotosentez yapabilir hem hazır organik madde alabilir. Işık yoksa heterotrof gibi beslenir.", ornek: "*Euglena* (öglena); lecture onu ışıkla besin yapan ökaryotlar arasında sayar." }
           ] },
         { tip: "tuzak", metin: "Mantarlar ve çoğu bakteri bitki gibi görünmez ya da toprakta yaşar diye ototrof sanılır. Oysa klorofilleri yoktur.", yanlis: "Heterotrof demek hayvan demektir.", dogru: "Hayvanlar, mantarlar ve çoğu bakteri heterotroftur. Ayrıştırıcılar da parazitler de heterotrofa dahildir." },
         { tip: "not", metin: "Sınavda böyle yaz: *Decomposers feed on dead organic matter, whereas parasites feed on a living host and harm it.*" }
@@ -72,13 +89,13 @@ window.DEFTER = {
             { t: "Riboz", alt: "5 karbonlu şeker" }, "+",
             { t: "3 fosfat", alt: "P–P–P" }, "=",
             { t: "*ATP*", alt: "adenozin trifosfat" }
-          ], aciklama: "Adenin + riboz = adenozin. Üç fosfat zincir gibi sıralanır; son iki bağ yüksek enerjilidir." },
+          ], aciklama: "Adenin + riboz = adenozin. Riboz ile fosfat arasında ==ester bond==, riboz ile adenin arasında ==glycosidic bond== vardır. Fosfat sayısı 1, 2, 3 olunca sırasıyla AMP, ADP, ATP; enerji uçtaki fosfat bağı kopunca açığa çıkar." },
         { tip: "kavramlar", kartlar: [
             { ikon: "🔋", terim: "ATP", tr: "adenozin trifosfat", tanim: "Üç fosfatlı enerji taşıyıcı. ==Enerji fosfatlar arasındaki bağlarda== bulunur, adeninde değil.", ornek: "Kasın bir kez kasılması için ATP harcanır." },
             { ikon: "🪫", terim: "ADP", tr: "adenozin difosfat", tanim: "İki fosfatlı, enerjisi azalmış hâl. ATP'nin bir fosfat vermesiyle oluşur.", ornek: "Boşalmış pil gibi, tekrar şarj edilebilir." }
           ] },
         { tip: "tuzak", metin: "ATP uzun süreli depo değildir; hücrede çok az bulunur ve saniyeler içinde kullanılıp yenilenir. Uzun süreli depo yağ ve nişasta ya da glikojendir.", yanlis: "ATP, hücrenin enerji deposudur.", dogru: "ATP, enerjinin ==kısa süreli taşıyıcısı== yani hücrenin enerji parasıdır. Asıl enerji kaynağı besindir." },
-        { tip: "not", metin: "Sınavda böyle yaz: *ATP consists of adenine, ribose and three phosphate groups; the energy is stored in the bonds between the phosphate groups.*" }
+        { tip: "not", metin: "Her hücre ATP'sini kendisi yapar; ATP büyük bir molekül olduğu için hücreler arasında taşınmaz. Sınavda böyle yaz: *ATP consists of adenine, ribose and three phosphate groups; the energy is stored in the bonds between the phosphate groups.*" }
       ]
     },
     {
@@ -104,6 +121,7 @@ window.DEFTER = {
             ["Tepkime", "ADP + Pᵢ + enerji → ATP + H₂O", "ATP + H₂O → ADP + Pᵢ + enerji"],
             ["Enerji", "Alınır (*endergonic*)", "Verilir (*exergonic*)"],
             ["Tür", "*Dehydration synthesis* (su çıkar)", "*Hydrolysis* (su girer)"],
+            ["Serbest enerji", "ΔG > 0, kendiliğinden yürümez", "ΔG < 0, kendiliğinden yürür"],
             ["Sonuç", "ATP yapılır", "ATP yıkılır"]
           ], vurgu: 1, not: "Sınavda böyle yaz: *Phosphorylation is an endergonic reaction because energy is needed to attach a phosphate group to ADP.*" },
         { tip: "tuzak", metin: "Fosforilasyon–defosforilasyon karışıklığı çok yapılır. ATP'nin enerji vermesi ATP'nin ==yıkılması== demektir.", yanlis: "Defosforilasyonda ATP oluşur.", dogru: "Defosforilasyonda ATP yıkılır (ADP + Pᵢ) ve enerji açığa çıkar. ATP'nin oluşması fosforilasyondur." }
@@ -121,10 +139,11 @@ window.DEFTER = {
             { metin: "İki glikozun su çıkararak maltoz yapması.", cevap: "sol", neden: "Su çıkıyor, bağ kuruluyor: dehidrasyon sentezi, anabolik." },
             { metin: "Nişastanın su girerek glikoza parçalanması.", cevap: "sag", neden: "Su girerek bağ kırılıyor: hidroliz, katabolik." }
           ] },
-        { tip: "tablo", baslik: "ATP üç yolla yapılır (ayrıntıları sonraki defterlerde)", head: ["Yol", "Nerede?", "Enerji kaynağı"], rows: [
-            ["*Substrate-level phosphorylation*", "Sitoplazma, mitokondri matriksi", "Bir molekülden doğrudan fosfat aktarımı"],
-            ["*Oxidative phosphorylation*", "Mitokondri iç zarı", "Elektron taşıma zinciri (besin yıkımı)"],
-            ["*Photophosphorylation*", "Kloroplast tilakoid zarı", "Işık enerjisi"]
+        { tip: "tablo", baslik: "ATP yapım yolları (ayrıntıları sonraki defterlerde)", head: ["Yol", "Nerede?", "Enerji kaynağı"], rows: [
+            ["*Photophosphorylation*", "Kloroplast (ökaryot), sitoplazma (prokaryot)", "Işık enerjisi, ETS"],
+            ["*Oxidative phosphorylation*", "Mitokondri (ökaryot), mesozom (aerobik bakteri)", "O₂ varlığında organik molekül yıkımı, ETS"],
+            ["*Chemophosphorylation*", "Kemosentetik bakteriler", "İnorganik bileşiklerin oksidasyonu"],
+            ["*Substrate-level phosphorylation*", "Glikoliz ve Krebs döngüsü", "Enzimin fosfatı substrattan ADP'ye aktarması"]
           ], not: "Sınavda böyle yaz: *Anabolic reactions use ATP, whereas catabolic reactions release the energy that is used to make ATP.*" }
       ]
     },
@@ -133,7 +152,7 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Canlılar büyüme, hareket ve onarım için enerji ister; enerji dönüşür, yok olmaz.",
+            "Canlılar büyüme, hareket ve onarım için enerji ister; *metabolism* = *anabolism* + *catabolism*; enerji ışıkla girer, ısıyla çıkar.",
             "*Autotroph* organik maddeyi kendi yapar; *heterotroph* hazır alır.",
             "*Photoautotroph* ışık, *chemoautotroph* inorganik maddelerin oksidasyonundan enerji alır.",
             "Heterotroflar: tüketici, ayrıştırıcı (*saprophyte*), parazit; *Euglena* karma beslenir.",
@@ -141,27 +160,27 @@ window.DEFTER = {
             "*Phosphorylation*: ADP + Pᵢ + enerji → ATP (*endergonic*, su çıkar).",
             "*Dephosphorylation*: ATP + H₂O → ADP + Pᵢ + enerji (*exergonic*, *hydrolysis*).",
             "*Anabolism* ATP harcar; *catabolism* ATP yapımına enerji sağlar.",
-            "ATP üç yolla yapılır: *substrate-level*, *oxidative*, *photophosphorylation*."
+            "ATP yapım yolları: *photo-*, *oxidative-*, *chemophosphorylation* ve solunumdaki *substrate-level*."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Derin deniz bacasında, güneş ışığının hiç ulaşmadığı yerde yaşayan bir bakteri H₂S'yi yükseltgeyerek enerji elde eder ve CO₂'den organik madde yapar. Bu bakteri hangi gruptadır?",
+    { q: "A bacterium living near a deep-sea hydrothermal vent, where sunlight never reaches, oxidizes H₂S to obtain energy and builds organic molecules from CO₂. Which group does it belong to?",
       opts: ["*Photoautotroph*", "*Chemoautotroph*", "*Decomposer*", "*Parasite*"], a: 1,
       why: "Besinini kendi yapıyor (ototrof) ve enerjisi ışıktan değil inorganik maddenin yükseltgenmesinden geliyor: kemoototrof. Fotoototrof şıkkı çekici ama burada ışık yok." },
-    { q: "ATP'nin yapısı hakkında hangisi doğrudur?",
-      opts: ["Adenin, glikoz ve iki fosfattan oluşur.", "Enerji adeninin içinde depolanır.", "Uzun süreli enerji deposudur.", "Adenin, riboz ve üç fosfattan oluşur; enerji fosfatlar arasındaki bağlardadır."], a: 3,
+    { q: "Which statement about the structure of ATP is correct?",
+      opts: ["It consists of adenine, glucose and two phosphate groups.", "The energy is stored inside the adenine base.", "It is the long-term energy store of the cell.", "It consists of adenine, ribose and three phosphate groups; the energy is in the bonds between the phosphates."], a: 3,
       why: "ATP adenin + riboz + 3 fosfattır, enerji fosfat bağlarındadır. Uzun süreli depo yağ ve glikojendir; C şıkkı bu yüzden yanlış." },
-    { q: "Aşağıdaki tabloda iki tepkime verilmiştir. Hangisi doğru eşleştirilmiştir?",
-      fig: { type: "table", head: ["Tepkime", "Su"], rows: [["I. ADP + Pᵢ + enerji → ATP + H₂O", "Çıkar"], ["II. ATP + H₂O → ADP + Pᵢ + enerji", "Girer"]] },
-      opts: ["I *hydrolysis*, *exergonic*", "II *dehydration synthesis*, *endergonic*", "I *phosphorylation*, *endergonic*", "II *phosphorylation*, *exergonic*"], a: 2,
+    { q: "Two reactions are shown in the table. Which statement about them is correct?",
+      fig: { type: "table", head: ["Reaction", "Water"], rows: [["I. ADP + Pi + energy → ATP + H₂O", "Released"], ["II. ATP + H₂O → ADP + Pi + energy", "Used"]] },
+      opts: ["I is *hydrolysis* and *exergonic*.", "II is *dehydration synthesis* and *endergonic*.", "I is *phosphorylation* and *endergonic*.", "II is *phosphorylation* and *exergonic*."], a: 2,
       why: "I numaralı tepkime ADP'ye fosfat ekler: fosforilasyon, enerji ister (endergonik). II hidrolizdir ve ekzergoniktir; D şıkkındaki ‘phosphorylation’ adlandırması yanlıştır." },
-    { q: "Bir öğrenci kantinde sandviçi yerken ‘Sandviçteki ATP bana enerji verdi’ diyor. Bu ifadeyle ilgili en doğru yorum hangisidir?",
-      opts: ["Yanlış; besindeki enerji önce hücresel solunumla ATP'ye aktarılır.", "Doğru; besinlerde hazır ATP bulunur.", "Yanlış; ATP yalnızca bitkilerde bulunur.", "Doğru; ATP'yi sindirim sistemi doğrudan emer."], a: 0,
-      why: "Besinler organik moleküllerin bağ enerjisini taşır; hücre bunu solunumla ATP'ye çevirir. B şıkkı çekici ama ATP hazır besin değildir, hücre içinde yapılır." },
-    { q: "Hangisi anabolik bir tepkimedir ve ATP harcar?",
-      opts: ["Nişastanın glikoza hidrolizi", "Glikozun solunumla yıkımı", "Amino asitlerden protein sentezi", "ATP'nin ADP'ye parçalanması"], a: 2,
+    { q: "Which of the following correctly identifies the bonds in an ATP molecule?",
+      opts: ["Ribose and adenine are joined by an ester bond.", "Ribose and phosphate are joined by an ester bond; ribose and adenine by a glycosidic bond.", "Ribose and phosphate are joined by a glycosidic bond.", "All parts of ATP are joined by glycosidic bonds."], a: 1,
+      why: "Lecture'a göre riboz–fosfat arası ester, riboz–adenin arası glycosidic bağdır. A ve C şıkları bağ adlarını yer değiştirmiş." },
+    { q: "Which reaction is anabolic and uses ATP?",
+      opts: ["Hydrolysis of starch to glucose", "Breakdown of glucose by respiration", "Synthesis of a protein from amino acids", "Hydrolysis of ATP to ADP"], a: 2,
       why: "Küçük birimlerden büyük molekül yapmak anabolizmadır, endergoniktir ve ATP harcar. Glikozun yıkımı katabolik (ATP yapımına enerji sağlar); nişasta hidrolizi de katabolizmadır." }
   ]
 };

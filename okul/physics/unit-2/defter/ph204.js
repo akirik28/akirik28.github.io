@@ -2,7 +2,7 @@
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Physics, Unit 2) + MEB FİZ.10 Enerji. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ph204",
-  amac: "Bu defter *power* yani gücü ve *efficiency* yani verimi anlatıyor: işin ne kadar hızlı yapıldığını (P = W/t) ve verilen enerjinin ne kadarının işe yaradığını (η). Güç grafiklerini okumayı ve kWh hesabını öğreneceksin.",
+  amac: "Bu defter *power* yani gücü ve *efficiency* yani verimi anlatıyor: işin ne kadar hızlı yapıldığını (P = W/t) ve verilen enerjinin ne kadarının işe yaradığını (η). Güç grafiklerini okumayı, kWh hesabını ve enerji kaynaklarıyla tasarruf yollarını öğreneceksin.",
   bolumler: [
     {
       baslik: "*Power*: işin hızı",
@@ -36,10 +36,9 @@ window.DEFTER = {
           adimlar: ["Yol: x = v · t = 2 · 10 = 20 m.", "İş: W = F · x = 500 · 20 = 10 000 J. Güç: P = W / t = 10 000 / 10 = 1000 W.", "Kısa yol: P = F · v = 500 · 2 = 1000 W. İki yol aynı sonucu verir."],
           sonuc: "P = 1000 W = 1 kW." },
         { tip: "tuzak", metin: "A kişisi 3 s'de 600 J iş yapıyor (P = 200 W). B kişisi 10 s'de 1000 J iş yapıyor (P = 100 W).", yanlis: "B daha çok iş yaptığı için daha güçlüdür.", dogru: "Güçlü olan, işi ==daha hızlı== yapandır. B'nin işi büyük ama gücü küçüktür." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The engine is more powerful because it does the same work in less time.*", metin: "İki makineyi karşılaştırırken kullan." },
-            { ikon: "✍️", baslik: "*Power equals force times speed.*", metin: "Araç ve çekiş sorularında formülü böyle açıkla." }
-          ] }
+        { tip: "ornek", baslik: "Depoda iki işçi", durum: "Serkan 40 N'luk yatay kuvvetle kutuyu 20 m, Sabri 20 N'luk yatay kuvvetle kutuyu 16 m çekiyor; ikisi aynı anda başlayıp aynı anda bitiriyor (sürtünme ihmal). Serkan 100 W güç kullandıysa Sabri'nin gücü kaç W?",
+          adimlar: ["Serkan'ın işi: 40 · 20 = 800 J. Süre: t = W / P = 800 / 100 = 8 s.", "Sabri'nin işi: 20 · 16 = 320 J, aynı 8 s'de yapıldı.", "Sabri'nin gücü: P = 320 / 8 = 40 W."],
+          sonuc: "40 W. Sınavda böyle yaz: *The engine is more powerful because it does the same work in less time.* *Power equals force times speed.*" }
       ]
     },
     {
@@ -72,7 +71,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "*Efficiency*: verim",
+      baslik: "*Efficiency*: verim (ek bilgi)",
       kisa: "Verim, verilen enerjinin ne kadarının işe yaradığını gösterir.",
       bloklar: [
         { tip: "formul", parcalar: [
@@ -119,9 +118,32 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Elektrik enerjisi", durum: "2 kW'lık elektrikli ısıtıcı 3 saat çalışıyor. Harcadığı enerji kaç kWh ve kaç J?",
           adimlar: ["E = P · t = 2 kW · 3 h = 6 kWh.", "1 kWh = 3,6 × 10⁶ J olduğundan E = 6 · 3,6 × 10⁶ = 21,6 × 10⁶ J."],
           sonuc: "6 kWh = 2,16 × 10⁷ J." },
+        { tip: "ornek", baslik: "Aylık elektrik tüketimi", durum: "Bir evde saç kurutma makinesi (1800 W) ayda 3 saat, fırın (3000 W) 15 saat, çamaşır makinesi (ortalama 500 W) 20 saat çalışıyor. Toplam enerji kaç kWh? kWh fiyatı 15 TL ise fatura ne olur?",
+          adimlar: ["Kurutma: 1,8 kW · 3 h = 5,4 kWh. Fırın: 3 kW · 15 h = 45 kWh. Çamaşır makinesi: 0,5 kW · 20 h = 10 kWh.", "Toplam: 5,4 + 45 + 10 = 60,4 kWh.", "Fatura: 60,4 · 15 = 906 TL."],
+          sonuc: "60,4 kWh ve 906 TL. Sınavda böyle yaz: *The efficiency of the motor is 80%.* *The kilowatt-hour is a unit of energy, not of power.*" }
+      ]
+    },
+    {
+      baslik: "Enerji kaynakları ve tasarruf",
+      kisa: "Yenilenebilir kaynaklar tükenmez; tasarruf hem bütçeyi hem çevreyi korur.",
+      bloklar: [
+        { tip: "tablo", baslik: "Kaynakların sınıflandırılması", head: ["Yenilenebilir (*renewable*)", "Yenilenemez (*non-renewable*)"], rows: [
+            ["Güneş (*solar*), rüzgâr (*wind*)", "Kömür (*coal*)"],
+            ["Hidroelektrik (*hydropower*), jeotermal (*geothermal*)", "Petrol (*oil*), doğal gaz (*natural gas*)"],
+            ["Biyokütle (*biomass*), gelgit ve dalga (*tidal and wave*), hidrojen", "Nükleer (uranyum fisyonu; karbonsuz ama yakıtı sınırlı, atığı radyoaktif)"]
+          ], not: "Yenilenemez kaynakların oluşumu, tüketiminden çok daha yavaştır. 1997'de imzalanan ==Kyoto Protokolü== sera gazı salımını azaltmayı hedefler." },
+        { tip: "ikili", sol: { ikon: "♻️", baslik: "Yenilenebilir", maddeler: ["Sürdürülebilir", "Çevreyi az kirletir, dışa bağımlılığı azaltır"] },
+          sag: { ikon: "⛽", baslik: "Yenilenemez", maddeler: ["Tüketim oluşumdan hızlı", "Depolaması kolay, hava koşullarından bağımsız"] },
+          oyun: [
+            { metin: "Kullanım hızı, oluşum hızından çok daha fazla.", cevap: "sag", neden: "Fosil yakıtlar milyonlarca yılda oluştu, hızla tükeniyor." },
+            { metin: "Sera etkisini büyük ölçüde artırmaz, hava kirletmez.", cevap: "sol", neden: "Güneş ve rüzgârda yakıt yanmaz." },
+            { metin: "Dışa bağımlılığı azaltır.", cevap: "sol", neden: "Yerli güneş, rüzgâr ve su kaynakları ithalatı azaltır." },
+            { metin: "Hava koşullarından etkilenmez, kolay depolanır.", cevap: "sag", neden: "Kömür ve petrol stoklanır; güneş ve rüzgâr havaya bağlıdır." }
+          ] },
         { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The efficiency of the motor is 80%.*", metin: "Yüzde işaretini unutma; verim birimsizdir." },
-            { ikon: "✍️", baslik: "*The kilowatt-hour is a unit of energy, not of power.*", metin: "kWh ile kW'yi karıştırma." }
+            { ikon: "🔌", baslik: "Hayalet cihaz (*vampire power*)", metin: "Bekleme modundaki TV, uyku modundaki bilgisayar, prizde duran şarj cihazı sessizce enerji harcar; kullanılmayınca fişten çek." },
+            { ikon: "🏷️", baslik: "Enerji etiketi", metin: "A'dan G'ye gidildikçe verim düşer, tüketim artar. Koyu yeşil en az enerji tüketimi demektir." },
+            { ikon: "💡", baslik: "Verimli lamba", metin: "Akkor lamba enerjisinin çoğunu ısı olarak kaybeder; aynı parlaklık için 50 W akkor yerine 6 W LED yeterlidir." }
           ] }
       ]
     },
@@ -137,28 +159,29 @@ window.DEFTER = {
             "*Efficiency*: η = yararlı / verilen × 100; her zaman %100'den küçüktür.",
             "Verilen = yararlı + kayıp; kayıp çoğunlukla ısıdır ve yok olmaz.",
             "kWh bir enerji birimidir: 1 kWh = 3,6 × 10⁶ J; E = P · t.",
+            "Yenilenebilir kaynaklar (güneş, rüzgâr, hidroelektrik) tükenmez; fosil yakıtlar ve uranyum sınırlıdır. Hayalet cihazı fişten çek, A sınıfı etiket ve LED seç.",
             "Yazarken birimi (W, J, %) ve sonuç cümlesini unutma."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "60 kg'lık bir öğrenci 3 m yüksekliğindeki merdiveni 6 s'de çıkıyor (g = 10 m/s²). Öğrencinin ortalama gücü kaç W'dır?",
-      opts: ["30 W", "180 W", "300 W", "1800 W"], a: 2,
-      why: "W = m · g · h = 60 · 10 · 3 = 1800 J; P = 1800 / 6 = 300 W. 1800 W süreye bölmeyi unutmaktır; 30 W, m · h / t gibi ağırlığı yok sayan yanlış bir hesaptır." },
-    { q: "Grafik, iki makinenin yaptığı işi zamana göre gösteriyor. Hangisi doğrudur?",
-      fig: { type: "graph", xlabel: "t (s)", ylabel: "W (J)", xmax: 11, ymax: 11, lines: [{ from: [0, 0], to: [5, 10], label: "X" }, { from: [0, 0], to: [10, 10], label: "Y" }], xticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }], yticks: [{ v: 10, label: "10" }], caption: "W–t grafiği" },
-      opts: ["X, Y'nin 2 katı güçlüdür.", "Y, X'in 2 katı güçlüdür.", "İkisi de 10 J iş yaptığı için güçleri eşittir.", "Y daha uzun çalıştığı için daha güçlüdür."], a: 0,
+    { q: "A forklift lifts a 5-ton load to a height of 3 m in 20 s. Neglect friction and take g = 10 m/s². What is the power of the forklift?",
+      opts: ["0.75 kW", "7.5 kW", "75 kW", "750 kW"], a: 1,
+      why: "5 ton = 5000 kg: W = m · g · h = 5000 · 10 · 3 = 150 000 J; P = W / t = 150 000 / 20 = 7500 W = 7,5 kW. 75 kW cevabı birim çevirmede ondalık hatasıdır; 0,75 kW da tersine bir kayma." },
+    { q: "The graph shows the work done by two machines X and Y against time. Which statement is correct?",
+      fig: { type: "graph", xlabel: "t (s)", ylabel: "W (J)", xmax: 11, ymax: 11, lines: [{ from: [0, 0], to: [5, 10], label: "X" }, { from: [0, 0], to: [10, 10], label: "Y" }], xticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }], yticks: [{ v: 10, label: "10" }], caption: "W–t graph" },
+      opts: ["X is twice as powerful as Y.", "Y is twice as powerful as X.", "Their powers are equal because both do 10 J of work.", "Y is more powerful because it works for a longer time."], a: 0,
       why: "Eğim güçtür: P_X = 10 / 5 = 2 W, P_Y = 10 / 10 = 1 W. İkisi de 10 J iş yaptı ama X bunu yarı sürede yaptı. Eşit güç diyen şık, işi gücün yerine koyar." },
-    { q: "Bir motor 800 W elektrik gücü alıyor ve 600 W mekanik güç veriyor. Motorun verimi kaçtır?",
-      opts: ["%25", "%60", "%133", "%75"], a: 3,
+    { q: "A motor takes 800 W of electrical power and delivers 600 W of mechanical power. What is the efficiency of the motor?",
+      opts: ["25%", "60%", "133%", "75%"], a: 3,
       why: "Verim = yararlı / verilen × 100 = 600 / 800 × 100 = %75. %25 kayıp oranıdır; %133 ise oranı tersine çevirmektir (verim 100'ü geçemez)." },
-    { q: "Bir araç 2000 N'luk sabit direnç kuvvetine karşı 20 m/s sabit hızla gidiyor. Motorun araca verdiği yararlı güç kaç W'dır?",
-      opts: ["100 W", "40 000 W", "2000 W", "400 W"], a: 1,
-      why: "Sabit hızda çekiş kuvveti direnç kuvvetine eşittir: P = F · v = 2000 · 20 = 40 000 W (40 kW). 100 W, F / v işlemidir." },
-    { q: "Tabloda üç cihazın gücü ve çalışma süresi verilmiştir. Hangisi en çok enerji harcamıştır?",
-      fig: { type: "table", head: ["Cihaz", "Güç", "Süre"], rows: [["Saç kurutma makinesi", "2 kW", "0,5 saat"], ["Lamba", "100 W", "10 saat"], ["Ütü", "1 kW", "2 saat"]], caption: "Cihazların gücü ve süresi" },
-      opts: ["Saç kurutma makinesi", "Lamba", "Ütü", "Üçü de aynı enerjiyi harcamıştır"], a: 2,
+    { q: "A motorized cart is pulled along a level road by a horizontal rope. The rope exerts a constant force of 250 N and the cart moves at a constant velocity of 5.0 m/s. What is the power delivered by the rope to the cart?",
+      opts: ["50 W", "1250 W", "255 W", "245 W"], a: 1,
+      why: "Sabit hızda P = F · v = 250 · 5 = 1250 W. 50 W, F / v işlemidir; 255 ve 245 W kuvvet ile hızı toplayıp çıkarmaktır." },
+    { q: "The table gives the power and running time of three appliances. Which one uses the most energy?",
+      fig: { type: "table", head: ["Appliance", "Power", "Time"], rows: [["Hair dryer", "2 kW", "0.5 h"], ["Lamp", "100 W", "10 h"], ["Iron", "1 kW", "2 h"]], caption: "Power and time of the appliances" },
+      opts: ["Hair dryer", "Lamp", "Iron", "All use the same energy"], a: 2,
       why: "E = P · t: kurutma 2 · 0,5 = 1 kWh; lamba 0,1 · 10 = 1 kWh; ütü 1 · 2 = 2 kWh. En büyük güçlü cihaz (kurutma makinesi) çekicidir ama süresi kısadır." }
   ]
 };

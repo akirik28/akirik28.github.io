@@ -1,23 +1,23 @@
 /* Kitora not defteri · bi104 · 1.4 Fotosentezi Etkileyen Faktörler
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
+   Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: Factors Affecting Rate of Photosynthesis) + 10.1.3 sınıf etkinliği + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafikler şematiktir: eğrilerin biçimi doğrudur, sayılar göreli birimdir. */
 window.DEFTER = {
   slug: "bi104",
-  amac: "Bu konu fotosentez hızını hangi çevre etkenlerinin değiştirdiğini anlatıyor: ışık şiddeti, CO₂ derişimi ve sıcaklık. Her etkenin grafiğini okuyup çizmeyi ve hızı en az bulunan etkenin sınırladığını (minimum yasası) öğreneceksin.",
+  amac: "Bu konu fotosentez hızını hangi etkenlerin değiştirdiğini anlatıyor: ışık şiddeti, CO₂, sıcaklık, su, mineral, pH ve bitkinin kalıtsal özellikleri. Etkenlerin grafiğini okuyup çizmeyi ve hızı en az bulunan etkenin sınırladığını (minimum yasası) öğreneceksin.",
   bolumler: [
     {
       baslik: "Fotosentez hızı: etkenler ve ölçüm",
       kisa: "Hız, birim zamanda yapılan fotosentez miktarıdır; çevre etkenleri onu değiştirir.",
       bloklar: [
         { tip: "harita", merkez: "*Rate of photosynthesis* (fotosentez hızı)", dallar: [
-            { baslik: "*Light intensity*", alt: "Işık şiddeti (ayrıca dalga boyu ve süre)" },
+            { baslik: "*Light intensity*", alt: "Işık şiddeti (dalga boyu: Işık ve Pigmentler konusunda)" },
             { baslik: "*CO₂ concentration*", alt: "CO₂ derişimi" },
             { baslik: "*Temperature*", alt: "Sıcaklık (enzimleri etkiler)" },
-            { baslik: "Diğerleri", alt: "Su, klorofil ve mineral miktarı" }
+            { baslik: "Diğerleri", alt: "Su, mineral, pH ve bitkiye ait (genetik) etkenler" }
           ] },
         { tip: "adimlar", baslik: "Deneyle ölçüm: su bitkisi (*Elodea*)", adimlar: [
-            { baslik: "Kurulum", metin: "*Elodea*, az miktar sodyum bikarbonatlı (CO₂ kaynağı) suya batırılır; lamba bitkiden belli uzaklığa konur." },
-            { baslik: "Ölçüm", metin: "Bitkinin kesik ucundan çıkan O₂ kabarcıkları dakikada sayılır. Kabarcık sayısı fotosentez hızını gösterir." },
+            { baslik: "Kurulum", metin: "*Elodea* kesik ucu yukarıda suya konur, üstüne huni ve su dolu ters tüp yerleştirilir; lamba bitkiden belli uzaklığa konur (sınıf etkinliği). Sodyum bikarbonat eklemek CO₂ sağlar (ek bilgi)." },
+            { baslik: "Ölçüm", metin: "Çıkan O₂ kabarcıkları sayılır; hız, kullanılan CO₂ ya da salınan O₂ miktarıyla ölçülür. Kabarcık sayısı fotosentez hızını gösterir." },
             { baslik: "Değiştir ve tekrarla", metin: "Yalnız bir etken değiştirilir (ör. lamba uzaklığı), diğerleri sabit tutulur. Her koşulda birkaç kez sayılır, ortalama alınır." }
           ] },
         { tip: "tablo", baslik: "Işık deneyinde değişkenler", head: ["Değişken", "Bu deneyde", "Grafikte"], rows: [
@@ -43,7 +43,7 @@ window.DEFTER = {
             { metin: "CO₂ artırılırsa plato daha yukarıda olur: platoyu sınırlayan etken CO₂ idi. Düşük ışıkta iki eğri aynıdır, çünkü orada ışık sınırlar.", goster: ["b"] },
             { metin: "Sınavda böyle yaz: *The graph shows that the rate increases with light intensity until a plateau is reached, after which light is no longer the limiting factor.*", goster: ["b"] }
           ] },
-        { tip: "tuzak", metin: "Plato, fotosentezin durduğu anlamına gelmez; hız en yüksek değerde sabit kalır. Hızı artırmak için ışık dışındaki sınırlayıcı etkeni artırmak gerekir.", yanlis: "Işık şiddeti artınca fotosentez hızı sürekli artar.", dogru: "Işık şiddeti arttıkça hız artar, plato noktasından sonra sabitlenir." },
+        { tip: "tuzak", metin: "Plato, fotosentezin durduğu anlamına gelmez; hız en yüksek değerde sabit kalır. Hızı artırmak için ışık dışındaki sınırlayıcı etkeni artırmak gerekir.", yanlis: "Işık şiddeti artınca fotosentez hızı sürekli artar.", dogru: "Işık şiddeti arttıkça hız artar, plato noktasından sonra sabitlenir. Çok yüksek şiddette hız hatta yavaşlayabilir." },
         { tip: "kavramlar", kartlar: [
             { ikon: "⚖️", terim: "Light compensation point", tr: "ışık dengeleme noktası", tanim: "Fotosentezle solunumun birbirine eşit olduğu ışık şiddeti. Bu noktada net O₂ ya da CO₂ alışverişi sıfırdır.", ornek: "Çok loş bir odada bitki, yaptığı fotosentezi solunumda harcar." }
           ] }
@@ -65,7 +65,7 @@ window.DEFTER = {
             { metin: "Işık güçlendirilirse hem plato yükselir hem hız daha hızlı artar: ışık yüksekken CO₂ daha çok değerlendirilir.", goster: ["yk"] },
             { metin: "Sınavda böyle yaz: *As the carbon dioxide concentration increases, the rate of photosynthesis increases until another factor becomes limiting.*", goster: ["yk"] }
           ] },
-        { tip: "not", metin: "Bitkiler CO₂'yi yaprakların alt yüzündeki gözeneklerden (*stomata*) alır. Seralarda verimi artırmak için CO₂ eklenmesinin nedeni budur; ışık ve sıcaklık da uygun olmalıdır." }
+        { tip: "not", metin: "Bitkiler CO₂'yi yaprakların gözeneklerinden (*stomata*) alır. Seralarda verimi artırmak için CO₂ eklenmesinin nedeni budur; ışık ve sıcaklık da uygun olmalıdır. Ortamdaki CO₂'yi tutan Ba(OH)₂, Ca(OH)₂ ve KOH ise fotosentezi azaltır." }
       ]
     },
     {
@@ -86,7 +86,45 @@ window.DEFTER = {
             { metin: "Optimum sıcaklıkta (birçok bitkide yaklaşık 25–35 °C) enzimler en verimlidir.", goster: ["opt"], gizle: ["soguk"] },
             { metin: "Optimumdan sonra enzimler yapısı bozularak (*denaturation*) çalışmaz; hız hızla düşer. Sınavda böyle yaz: *At high temperatures the enzymes are denatured, so the rate of photosynthesis decreases.*", goster: ["sicak"], gizle: ["opt"] }
           ] },
-        { tip: "tuzak", metin: "Işığa bağlı tepkimeler doğrudan ışıkla yürür, sıcaklıktan çok az etkilenir. Sıcaklığın asıl etkisi enzimlerle yürüyen Calvin döngüsü üzerindendir.", yanlis: "Sıcaklık arttıkça fotosentez hızı sonsuza kadar artar.", dogru: "Hız optimum sıcaklıkta tepe yapar; daha yüksek sıcaklıkta enzimler bozulur ve hız düşer." }
+        { tip: "tuzak", metin: "Işığa bağlı tepkimeler doğrudan ışıkla yürür, sıcaklıktan çok az etkilenir. Sıcaklığın asıl etkisi enzimlerle yürüyen Calvin döngüsü üzerindendir.", yanlis: "Sıcaklık arttıkça fotosentez hızı sonsuza kadar artar.", dogru: "Hız optimum sıcaklıkta tepe yapar; daha yüksek sıcaklıkta enzimler bozulur ve hız düşer." },
+        { tip: "not", metin: "Yüksek sıcaklıkta terleme (*transpiration*) artar. Bitki su kaybını durdurmak için stomalarını kapatır, CO₂ alamaz ve fotosentez azalır." }
+      ]
+    },
+    {
+      baslik: "Su, mineral ve pH",
+      kisa: "Su, mineraller ve pH; enzimleri ve pigmentleri etkileyerek hızı sınırlar.",
+      bloklar: [
+        { tip: "tablo", baslik: "Etkenin fotosentezdeki yeri", head: ["Etken", "Görevi / etkisi"], rows: [
+            ["Su", "Elektron ve hidrojen kaynağı; yapraktaki su oranı %15'in üstüne çıkınca enzim etkinliği artar; stomaların açılması suya bağlıdır"],
+            ["Magnezyum (Mg)", "Klorofilin yapısında bulunur, kofaktör olarak çalışır"],
+            ["Potasyum, kalsiyum", "Kofaktör olarak enzimlere yardım eder"],
+            ["Azot (N)", "Baz, vitamin ve amino asit yapısına girer"],
+            ["Demir (Fe)", "Elektron taşıma zinciri üyelerinin (ferredoksin) yapısında; klorofil sentezinde"],
+            ["Fosfor (P)", "ATP, DNA ve RNA yapısında"],
+            ["pH", "Aşırı asidik ya da bazik ortamda enzimler denatüre olur; toprak yapısı, kirlilik ve asit yağmuru pH'yı değiştirir"]
+          ], vurgu: 0, not: "Minerallerden hangisi azsa fotosentez hızını o sınırlar. Sınavda böyle yaz: *Water is the source of electrons and hydrogen, and magnesium is part of the chlorophyll molecule.*" }
+      ]
+    },
+    {
+      baslik: "Bitkiye ait (genetik) etkenler",
+      kisa: "Kloroplast, yaprak, stoma, kütikül ve pigment özellikleri hızı belirler.",
+      bloklar: [
+        { tip: "tablo", baslik: "Genetik etkenler ve hıza etkisi", head: ["Etken", "Hız nasıl değişir?"], rows: [
+            ["Kloroplast ve klorofil miktarı", "Fazla olunca hız artar; kloroplast en çok palisade parenkimasındadır"],
+            ["Yaprak sayısı ve yüzeyi", "Yaprak sayısı ve boyutu arttıkça kloroplast ve hız artar"],
+            ["Stoma sayısı, boyutu, dizilişi", "Stoma çoksa daha çok CO₂ alınır; stomalar sıcaklığa göre açılıp kapanır"],
+            ["Kütikül kalınlığı", "Kalınsa hız düşer; çöl bitkilerinde kalın, nemli yerlerde incedir"],
+            ["Kök tüyü yüzeyi", "Yüzey genişse bitki daha çok su alır, hız artar"],
+            ["Fotosentetik pigment miktarı", "Pigment çeşidi ve miktarı çoksa farklı dalga boyları soğurulur, hız artar"]
+          ], not: "Sınavda böyle yaz: *The rate of photosynthesis is higher in a leaf with more chloroplasts, more stomata and a thinner cuticle.*" },
+        { tip: "ikili", sol: { ikon: "🌍", baslik: "Çevresel etken", maddeler: ["Işık şiddeti ve dalga boyu", "CO₂, sıcaklık, su", "Mineral ve pH"] },
+          sag: { ikon: "🧬", baslik: "Genetik etken", maddeler: ["Kloroplast ve pigment miktarı", "Yaprak sayısı ve boyutu", "Stoma, kütikül, kök tüyü"] },
+          oyun: [
+            { metin: "Çöl bitkisinin kalın kütikülü.", cevap: "sag", neden: "Bitkinin kendi yapısıdır: genetik." },
+            { metin: "Serada CO₂ derişiminin artırılması.", cevap: "sol", neden: "Ortam koşuludur: çevresel." },
+            { metin: "Topraktaki magnezyumun az olması.", cevap: "sol", neden: "Ortamdaki mineral miktarı: çevresel." },
+            { metin: "Yaprağın stoma sayısının fazla olması.", cevap: "sag", neden: "Bitkinin yapısı: genetik." }
+          ] }
       ]
     },
     {
@@ -116,7 +154,8 @@ window.DEFTER = {
             "Grafikte bağımsız değişken x, bağımlı değişken y eksenindedir; sabit tutulanlar yazılır.",
             "Işık: hız önce artar, sonra plato yapar; plato ışık dışındaki bir etkenin sınırıdır.",
             "CO₂: hız artar, sonra düzleşir; ışık güçlüyse plato daha yüksektir.",
-            "Sıcaklık: çan eğrisi; optimumda tepe, yüksek sıcaklıkta enzimler denatüre olur.",
+            "Sıcaklık: çan eğrisi; optimumda tepe, yüksek sıcaklıkta enzimler denatüre olur, stomalar kapanır.",
+            "Su, mineral (Mg, Fe, N, P…) ve pH ile bitkiye ait etkenler (kloroplast, stoma, kütikül, kök tüyü, pigment) de hızı belirler.",
             "*Light compensation point*: fotosentez hızı = solunum hızı, net alışveriş sıfır.",
             "Minimum yasası: hızı en yetersiz etken belirler; yalnız o etkeni artırmak hızı yükseltir."
           ] }
@@ -124,22 +163,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Aşağıdaki tabloda ışık şiddeti arttırılırken (diğer etkenler sabit) fotosentez hızı ölçülmüştür. 4 ve 5 birim ışıkta hızın artmamasının nedeni nedir?",
-      fig: { type: "table", head: ["Işık şiddeti (birim)", "1", "2", "3", "4", "5"], rows: [["Fotosentez hızı", "2", "4", "6", "6", "6"]] },
-      opts: ["Işık hâlâ sınırlayıcı etkendir.", "Işık dışındaki bir etken (ör. CO₂ ya da sıcaklık) sınırlayıcı hâle gelmiştir.", "Klorofil tamamen yok olmuştur.", "Fotosentez durmuştur."], a: 1,
+    { q: "In the table below, the rate of photosynthesis was measured while light intensity was increased (all other factors constant). Why does the rate not increase at 4 and 5 units of light?",
+      fig: { type: "table", head: ["Light intensity (units)", "1", "2", "3", "4", "5"], rows: [["Rate of photosynthesis", "2", "4", "6", "6", "6"]] },
+      opts: ["Light is still the limiting factor.", "A factor other than light (e.g. CO₂ or temperature) has become limiting.", "Chlorophyll has been completely destroyed.", "Photosynthesis has stopped."], a: 1,
       why: "Hız 3 birimden sonra sabitlendiğine göre ışık artık sınırlayıcı değildir; hızı başka bir etken sınırlıyor. Fotosentez durmadı, sadece hız plato yaptı; D şıkkı bu yüzden yanlış." },
-    { q: "Bir serada ışık çok güçlü, sıcaklık 28 °C ve CO₂ derişimi çok düşüktür. Verimi artırmak için en etkili önlem hangisidir?",
-      opts: ["Lambayı daha parlak yapmak", "Sera sıcaklığını 40 °C'ye çıkarmak", "Bitkiye daha fazla su vermek", "Sera havasındaki CO₂ derişimini artırmak"], a: 3,
+    { q: "In a greenhouse the light is very strong, the temperature is 28 °C and the CO₂ concentration is very low. Which measure would increase the yield most effectively?",
+      opts: ["Making the lamp brighter", "Raising the temperature to 40 °C", "Giving the plants more water", "Increasing the CO₂ concentration of the greenhouse air"], a: 3,
       why: "Hızı en yetersiz etken, yani CO₂ sınırlıyor; yalnız onu artırmak hızı yükseltir. A şıkkı çekici ama ışık zaten bol, etkisi olmaz; 40 °C ise enzimleri bozabilir." },
-    { q: "Fotosentez hızı 50 °C'de 30 °C'dekinden daha düşüktür. Bunun en olası nedeni hangisidir?",
-      opts: ["Yüksek sıcaklıkta enzimlerin yapısı bozulur.", "CO₂ derişimi 50 °C'de artar.", "Su fotolizi yüksek sıcaklıkta hızlanır.", "Işığın dalga boyu değişir."], a: 0,
+    { q: "The rate of photosynthesis is lower at 50 °C than at 30 °C. What is the most likely reason?",
+      opts: ["The enzymes are denatured at high temperature.", "The CO₂ concentration increases at 50 °C.", "Photolysis of water speeds up at high temperature.", "The wavelength of light changes."], a: 0,
       why: "Optimum sıcaklığın üstünde enzimler denatüre olur, Calvin döngüsü yavaşlar. B şıkkı yanlış: sıcaklık CO₂ derişimini artırmaz." },
-    { q: "Öğrenci su bitkisiyle ışığın etkisini ölçüyor: lambayı 10, 20 ve 30 cm uzağa koyup dakikada çıkan kabarcıkları sayıyor. Bu deneyde bağımlı değişken hangisidir?",
-      opts: ["Lambanın uzaklığı", "Suyun sıcaklığı", "Dakikadaki kabarcık sayısı", "Bitkinin boyu"], a: 2,
+    { q: "A student investigates the effect of light on a water plant by placing a lamp 10, 20 and 30 cm away and counting the bubbles released per minute. What is the dependent variable?",
+      opts: ["The distance of the lamp", "The temperature of the water", "The number of bubbles per minute", "The height of the plant"], a: 2,
       why: "Bağımlı değişken ölçülen sonuçtur: kabarcık sayısı. Lamba uzaklığı bağımsız değişkendir; suyun sıcaklığı ve bitki boyu sabit tutulmalıdır." },
-    { q: "Aşağıdaki deneyde ışık ve CO₂ birlikte değiştirilmiştir. Sonuçlardan hangi çıkarım yapılabilir?",
-      fig: { type: "table", head: ["Koşul", "Işık", "CO₂", "Fotosentez hızı"], rows: [["I", "Düşük", "Düşük", "2"], ["II", "Yüksek", "Düşük", "2"], ["III", "Düşük", "Yüksek", "4"]] },
-      opts: ["Işık I koşulunda sınırlayıcıdır.", "I koşulunda CO₂ sınırlayıcıdır.", "Hız yalnız ışıkla belirlenir.", "CO₂ hızı hiç etkilemez."], a: 1,
+    { q: "In the experiment below, light and CO₂ were changed together. Which conclusion can be drawn?",
+      fig: { type: "table", head: ["Condition", "Light", "CO₂", "Rate of photosynthesis"], rows: [["I", "Low", "Low", "2"], ["II", "High", "Low", "2"], ["III", "Low", "High", "4"]] },
+      opts: ["Light is the limiting factor in condition I.", "CO₂ is the limiting factor in condition I.", "The rate is determined only by light.", "CO₂ has no effect on the rate."], a: 1,
       why: "Işığı artırmak (II) hızı değiştirmedi, CO₂'yi artırmak (III) hızı yükseltti: I koşulunda CO₂ sınırlayıcıdır. A şıkkı tam tersini söyler." }
   ]
 };

@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc104 · 1.4 Fonksiyon Grafiklerini Okumak
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#1_4 Analyzing Graphs of Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc104",
   amac: "Bu konu bir fonksiyonun grafiğini okumayı anlatıyor. Grafikten domain ve range'i, artan ve azalan aralıkları ve eksenleri kestiği noktaları bulmayı, aralık gösterimini ve sınavda cevabı İngilizce nasıl yazacağını öğreneceksin.",
@@ -56,6 +56,13 @@ window.DEFTER = {
               tr: "y-kesişimi",
               tanim: "Grafiğin y eksenini kestiği nokta: x = 0, yani (0, f(0)). En fazla bir tane olur.",
               ornek: "(0, −2)."
+            },
+            {
+              ikon: "📈",
+              terim: "Average rate of change",
+              tr: "ortalama değişim hızı",
+              tanim: "[a, b] aralığında (f(b) − f(a))/(b − a): (a, f(a)) ve (b, f(b)) noktalarını birleştiren sekant doğrusunun (*secant line*) eğimi.",
+              ornek: "f(x) = x², [1, 3]: (9 − 1)/(3 − 1) = 4."
             }
           ]
         }
@@ -231,13 +238,15 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "x₁ < x₂ ⇒ f(x₁) < f(x₂)", alt: "artan (*increasing*)" },
+            { t: "x < y ⇒ f(x) ≤ f(y)", alt: "artan (*increasing*)" },
             "·",
-            { t: "x₁ < x₂ ⇒ f(x₁) > f(x₂)", alt: "azalan (*decreasing*)" },
+            { t: "x < y ⇒ f(x) < f(y)", alt: "kesin artan (*strictly increasing*)" },
             "·",
-            { t: "f(x₁) = f(x₂)", alt: "sabit (*constant*)" }
+            { t: "x < y ⇒ f(x) ≥ f(y)", alt: "azalan (*decreasing*)" },
+            "·",
+            { t: "x < y ⇒ f(x) > f(y)", alt: "kesin azalan (*strictly decreasing*)" }
           ],
-          aciklama: "Aralıklar **x değerleriyle** verilir. Dönüm noktalarında fonksiyon artan ya da azalan sayılmaz; en güvenlisi açık aralık yazmak."
+          aciklama: "x ve y aralıktaki iki sayıdır. Ders tanımında \"artan\" eşitliğe izin verir, yani yatay parça da girer; \"kesin\" (*strictly*) denince yatay parça dışarıda kalır. Aralıklar **x değerleriyle** verilir; en güvenlisi açık aralık yazmak."
         },
         {
           tip: "grafik",
@@ -293,6 +302,19 @@ window.DEFTER = {
               goster: ["c1"]
             }
           ]
+        },
+        {
+          tip: "ornek",
+          baslik: "Tanımla kanıtla: artan mı, azalan mı?",
+          durum: "f(x) = 3 − 2x fonksiyonunun ℝ'de azalan, g(x) = 4/(2 − x) fonksiyonunun (2, ∞)'da artan olduğunu göster.",
+          adimlar: [
+            "f: x < y alalım. İki tarafı −2 ile çarpınca eşitsizlik döner: −2x > −2y.",
+            "3 ekle: 3 − 2x > 3 − 2y, yani f(x) > f(y). Her x < y için doğru: f kesin azalan.",
+            "g: 2 < x < y olsun. O zaman 0 < x − 2 < y − 2.",
+            "Pozitif sayıların çarpmaya göre tersi eşitsizliği çevirir: 1/(x − 2) > 1/(y − 2).",
+            "g(x) = −4/(x − 2). −4 ile çarpınca eşitsizlik tekrar döner: −4/(x − 2) < −4/(y − 2), yani g(x) < g(y)."
+          ],
+          sonuc: "f ℝ'de kesin azalan, g (2, ∞)'da kesin artan. Sınavda böyle yaz: *Let x < y in the interval. We show that g(x) < g(y).*"
         },
         {
           tip: "tuzak",
@@ -411,7 +433,8 @@ window.DEFTER = {
             "f(x) = 2 olan x'ler: y = 2 yatay doğrusu grafiği (−2, 2) ve (6, 2)'de keser: x = −2 ve x = 6.",
             "f(x) = −4 olan x'ler: yatay parça boyunca 1 ≤ x ≤ 3 (sonsuz sayıda).",
             "f(x) > 0: grafik x ekseninin üstünde. (−3, −1) ve (5, 6] aralıklarında.",
-            "f(f(5)) = ? f(5) = 0, f(0) = −2: f(f(5)) = −2."
+            "f(f(5)) = ? f(5) = 0, f(0) = −2: f(f(5)) = −2.",
+            "f⁻¹(2) sorulsaydı: f(x) = 2'nin iki çözümü var (−2 ve 6). f birebir değil, bu yüzden f⁻¹ tanımsız."
           ],
           sonuc: "Sınavda böyle yaz: *f(x) > 0 when −3 < x < −1 or 5 < x ≤ 6.*"
         },
@@ -463,7 +486,7 @@ window.DEFTER = {
             "Domain: grafiğin x ekseninde kapladığı aralık; range: y ekseninde kapladığı aralık.",
             "İçi boş uç nokta dahil değildir; ama aynı y başka yerde alınıyorsa range'dedir.",
             "x-kesişimi (sıfır): y = 0, f(x) = 0 çözümleri. y-kesişimi: x = 0, (0, f(0)); en fazla bir tane.",
-            "Artan: soldan sağa yükselir; azalan: alçalır; sabit: yatay.",
+            "Artan: soldan sağa yükselir (x < y ⇒ f(x) ≤ f(y)); kesin artanda f(x) < f(y). Azalan ve sabit de aynı mantıkla.",
             "Artan, azalan ve sabit aralıkları x değerleriyle ve mümkünse açık aralıkla yaz.",
             "f(a): x = a'da yüksekliği oku; f(x) = k: y = k doğrusuyla kesişimi bul.",
             "Cümleyi bitir: *The function is increasing on …*"
@@ -474,7 +497,7 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Şekilde f fonksiyonunun grafiği (uçlar dolu nokta) veriliyor. Domain ve range hangisidir?",
+      q: "The graph of f is shown below (endpoints are filled dots). What are the domain and the range of f?",
       fig: {
         type: "graph",
         xlabel: "x",
@@ -519,7 +542,7 @@ window.DEFTER = {
       why: "Domain, grafiğin x ekseninde kapladığı aralık: 1'den 8'e, uçlar dolu olduğundan [1, 8]. Range, y ekseninde kapladığı aralık: en alçak y = 2, en yüksek y = 6, yani [2, 6]. B seçeneği ikisini yer değiştirmiş."
     },
     {
-      q: "Aynı grafikte f hangi aralıkta azalandır?",
+      q: "For the same graph, on which interval is f decreasing?",
       fig: {
         type: "graph",
         xlabel: "x",
@@ -556,10 +579,10 @@ window.DEFTER = {
       },
       opts: ["(1, 3)", "(3, 5)", "(5, 7)", "(3, 7)"],
       a: 1,
-      why: "x = 3'ten 5'e grafik 6'dan 2'ye iniyor: azalan (3, 5). (5, 7) aralığı yataydır: sabit. D seçeneği, sabit parçayı da azalan sayar; çekici ama yanlış, çünkü yatay parçada f(x₁) = f(x₂)."
+      why: "x = 3'ten 5'e grafik 6'dan 2'ye iniyor: kesin azalan (3, 5). (5, 7) aralığı yataydır: sabit. D seçeneği, sabit parçayı da azalan sayar; çekici ama yanlış, çünkü yatay parçada f(x) = f(y) olur ve kesin azalan değildir."
     },
     {
-      q: "f(x) = √(x − 3) − 2 fonksiyonunun domain ve range'i hangisidir?",
+      q: "What are the domain and the range of f(x) = √(x − 3) − 2?",
       opts: [
         "Domain [3, ∞), range [2, ∞)",
         "Domain [−2, ∞), range [3, ∞)",
@@ -570,13 +593,18 @@ window.DEFTER = {
       why: "√ içi ≥ 0: x − 3 ≥ 0 → x ≥ 3. √ ifadesi en az 0 olduğundan f(x) = √(x − 3) − 2 ≥ −2: range [−2, ∞). A seçeneği −2'yi +2 almış; B seçeneği iki aralığı yer değiştirmiş."
     },
     {
-      q: "f(x) = x² − 2x − 8 fonksiyonunun grafiği eksenleri hangi noktalarda keser?",
-      opts: ["x: −4 ve 2; y: 8", "x: 4 ve 2; y: −8", "x: 4 ve −2; y: 8", "x: 4 ve −2; y: −8"],
+      q: "At which points does the graph of f(x) = x² − 2x − 8 cross the axes?",
+      opts: [
+        "x-intercepts: −4 and 2; y-intercept: 8",
+        "x-intercepts: 4 and 2; y-intercept: −8",
+        "x-intercepts: 4 and −2; y-intercept: 8",
+        "x-intercepts: 4 and −2; y-intercept: −8"
+      ],
       a: 3,
       why: "y-kesişimi f(0) = −8. x-kesişimleri: x² − 2x − 8 = (x − 4)(x + 2) = 0 → x = 4 ve x = −2. En çekici yanlış A: kökleri ters işaretle almak (−4, 2) ve y'yi +8 yazmak."
     },
     {
-      q: "g fonksiyonunun grafiği (−2, 3) noktasında içi boş bir daireyle başlıyor, doğrusal olarak (1, −1) noktasına iniyor, oradan (5, 4) dolu noktasına kadar doğrusal yükseliyor. g'nin range'i nedir?",
+      q: "The graph of g starts at an open circle at (−2, 3), goes down in a straight line to (1, −1), then rises in a straight line to the filled point (5, 4). What is the range of g?",
       opts: ["[−1, 4]", "(−1, 4]", "[−1, 3)", "(3, 4]"],
       a: 0,
       why: "En alçak değer −1 (dolu nokta, dahil), en yüksek 4 (dahil). Başlangıçtaki y = 3 boş noktada alınmıyor ama g, −1'den 4'e çıkarken y = 3'ü geçiyor; yani 3 range'dedir. Boş nokta range'i daraltmaz: [−1, 4]. B seçeneği −1'i yanlışlıkla hariç tutuyor."

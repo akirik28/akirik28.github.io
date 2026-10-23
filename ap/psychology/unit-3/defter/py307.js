@@ -128,7 +128,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🤢", terim: "Taste aversion", tr: "tat tiksintisi", tanim: "Bir yiyeceğin tadını midede bulantıyla ilişkilendirip o yiyecekten tiksinmek.", ornek: "Midye yedikten üç saat sonra hasta olup o günden sonra midye kokusundan bile tiksinmek." },
-            { ikon: "1️⃣", terim: "One-trial learning", tr: "tek denemede öğrenme", tanim: "Çağrışımın tek bir eşleşmeyle öğrenilmesi ve daha fazla eşleşmeyle güçlenmemesi.", ornek: "Tek bir bulantı deneyimi sonrası o yiyeceğin yıllarca reddedilmesi." },
+            { ikon: "1️⃣", terim: "One-trial learning", tr: "tek denemede öğrenme", tanim: "Çağrışımın tek bir eşleşmeyle (çoğu zaman uzun bir gecikmeye rağmen) öğrenilmesi.", ornek: "Tek bir bulantı deneyimi sonrası o yiyeceğin yıllarca reddedilmesi." },
             { ikon: "🧬", terim: "Biological preparedness", tr: "biyolojik hazırlık", tanim: "Hayvanların bazı uyaran–tepki çiftlerini diğerlerinden daha çabuk öğrenmeye biyolojik olarak yatkın olması.", ornek: "Tadın bulantıyla çabuk eşleşmesi: zehirli yiyeceklerden korunmaya yarar." }
           ] },
         { tip: "tablo", baslik: "Garcia ve Koelling: sıçanlar neyi neyle çabuk eşleştirir?", head: ["CS", "UCS", "Öğrenme"], rows: [

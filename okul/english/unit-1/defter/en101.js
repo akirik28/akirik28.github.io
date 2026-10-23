@@ -1,8 +1,8 @@
 /* Kitora not defteri · en101 · 1.1 Pasaj Analizi Paragrafı
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Kasım MEB sınavı rubriği). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: Kasım MEB sınavı biçimi ve rubriği + Byrd/Woods passage-analysis dersi (öğretmen materyali özeti A1 ve D). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "en101",
-  amac: "Kasım sınavının Reading & Writing bölümünde tek bir görev var: bir pasajın anlamını ve amacını 200–250 kelimelik bir *passage analysis* paragrafıyla açıklamak. Rubriği, paragrafın iskeletini ve alıntıyı nasıl yerleştireceğini öğreneceksin.",
+  amac: "Kasım sınavının Reading & Writing bölümünde Cultural Perspectives ünitesinden bir öykü ya da deneme pasajı gelir; görev, anlamını ve amacını 200–250 kelimelik bir *passage analysis* paragrafıyla açıklamak. Rubriği, yazının sırasını, QPC yöntemini ve alıntıyı cümleye gömmeyi öğreneceksin.",
   bolumler: [
     {
       baslik: "Sınav sorusu ne istiyor?",
@@ -16,6 +16,12 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "💡", terim: "Meaning", tr: "anlam", tanim: "Pasajın söylediği asıl fikir; yani *theme* ya da mesaj. Olay özeti değildir, olayın ne anlama geldiğidir.", ornek: "Başkalarının fedakârlığı görmezden gelinebilir." },
             { ikon: "🎯", terim: "Purpose", tr: "amaç", tanim: "Yazarın bu pasajı neden yazdığı: eleştirmek, uyarmak, düşündürmek, öğretmek, eğlendirmek.", ornek: "Yazar, aileyi ve toplumu eleştirmek için bir kadının görünmezliğini gösteriyor." }
+          ] },
+        { tip: "liste", maddeler: [
+            { ikon: "📄", baslik: "Pasaj", metin: "Cultural Perspectives ünitesindeki bir kısa öykü ya da denemeden gelir." },
+            { ikon: "✏️", baslik: "Notlar", metin: "Notları pasajın üstüne alabilirsin; paragrafı ise satır aralıksız (*single-spaced*) çizgili kâğıda yazarsın." },
+            { ikon: "👁️", baslik: "Okunaklılık", metin: "Okunmayan yazı puan kaybettirir; harfleri ve girintiyi net yaz." },
+            { ikon: "📅", baslik: "Mart sınavı ayrı", metin: "Mart sınavı farklıdır (60 dk, Catcher üzerine 4+ paragraflık *essay*); onun için en306'ya bak." }
           ] },
         { tip: "tuzak", baslik: "Özet yazma tuzağı", metin: "Soru “What is the meaning and purpose of the passage?” diye soruyor; “What happens in the passage?” demiyor. Olayları baştan sona anlatan paragraf, rubrikteki puanların çoğunu kaçırır.", yanlis: "Pasajda olanları sırayla anlatırım.", dogru: "Önce iddiamı yazarım; olayları yalnızca iddiamı kanıtlamak için kullanırım." }
       ]
@@ -51,67 +57,69 @@ window.DEFTER = {
           ] },
         { tip: "tablo", baslik: "Her kriter için ne yapmalı?", head: ["Kriter (puan)", "Notlandıran ne arıyor?", "Sende ne olmalı?"],
           rows: [
-            ["Paragraf düzeni (3)", "Tek, düzenli paragraf", "Konu cümlesi → destek → kapanış sırası ve geçiş sözcükleri"],
-            ["Konu cümlesi (5)", "Net bir iddia", "Başlık, yazar ve *meaning + purpose* tek cümlede"],
-            ["Bağlam (2)", "Pasajın nerede geçtiği", "Kim, ne zaman, nerede, ne oluyor; en fazla 2 cümle"],
-            ["Kanıt (25)", "Çok sayıda pasaj kanıtı", "Alıntı ve parafraz karışık, her biri açıklanmış"],
-            ["Alıntı yerleştirme (3)", "Alıntı cümleye uyuyor mu?", "Tırnak, giriş ifadesi, kaynak; alıntı yoksa bu kriterden 0"],
-            ["Edebi ve yapısal araçlar (7)", "Araç adı + etkisi", "En az 2 araç; her biri kanıtla ve anlamla bağlı"],
-            ["Dil (5)", "Dilbilgisi ve kelime", "Doğru zaman, çeşitli kelime, yazım"]
-          ], vurgu: 3, not: "Rubrik, ünitenin sınav belgesindeki puanlara göre verilmiştir; kriter açıklamaları sınava hazırlık için sadeleştirilmiştir." }
+            ["Paragraf biçimi ve düzeni (3)", "Düzenli, tek paragraf", "Net girinti, mantıklı sıra, cümleler arası geçişler"],
+            ["Konu cümlesi (5)", "Net ve doğru bir iddia", "Konu + görüş (*subject + opinion*): pasajın anlamı ve yazarın amacı"],
+            ["Bağlam (2)", "Pasajın bağlamı net ve doğru", "Eser, yazar ve pasajda olan; kısa"],
+            ["Kanıt (25)", "Bol kanıt: alıntı ve parafraz; metni anladığını gösterir, konu cümlesini destekler", "QPC zincirleri; her kanıt konu cümlesine bağlı"],
+            ["Alıntı yerleştirme (3)", "Alıntı doğru yerleştirilmiş", "Alıntı cümlenin parçası; hiç alıntı yoksa bu kriterden 0"],
+            ["Edebi ve yapısal araçlar (7)", "Önemli ve ilgili araçlar belirlenmiş", "Araçları listeleme; kanıtı çözümlerken adlandır"],
+            ["İngilizce kullanımı (5)", "Az hata", "Doğru zaman (*literary present*), zengin sözcük, yazım"]
+          ], vurgu: 3, not: "Puanlar sınav belgesindeki gibidir; açıklamalar sadeleştirilmiştir." },
+        { tip: "not", metin: "==Rubrik sırası ile yazı sırası ayrı şeylerdir.== Notlandıran kriterleri düzen, konu cümlesi, bağlam, kanıt diye işaretler. Sen ise paragrafı farklı kurarsın: önce eser ve bağlam, sonra konu cümlesi, sonra kanıt zincirleri (sıra bir sonraki başlıkta)." }
       ]
     },
     {
       baslik: "Paragrafın iskeleti",
-      kisa: "Konu cümlesi, bağlam, üç kanıt, kapanış: yaklaşık 215 kelime.",
+      kisa: "Eser ve bağlam, konu cümlesi, kanıt zincirleri: yaklaşık 215 kelime.",
       bloklar: [
-        { tip: "adimlar", baslik: "Tek paragrafın sırası", adimlar: [
-            { baslik: "1 · Konu cümlesi (~30 kelime)", metin: "Öykünün adı, yazarı ve *meaning + purpose* iddiası." },
-            { baslik: "2 · Bağlam (~25 kelime)", metin: "Kim, nerede, ne zaman; pasajdaki durum 1–2 cümlede." },
-            { baslik: "3 · Kanıt 1 (~45 kelime)", metin: "Alıntı ya da parafraz, ardından iddiayla bağlayan açıklama." },
-            { baslik: "4 · Kanıt 2 (~45 kelime)", metin: "Başka bir yerden kanıt; burada bir edebi araç adını ver." },
-            { baslik: "5 · Kanıt 3 (~45 kelime)", metin: "Üçüncü kanıt; yapısal bir araç (sıra, tekrar, son cümle) olabilir." },
-            { baslik: "6 · Kapanış (~25 kelime)", metin: "İddiayı farklı sözcüklerle tekrar et; yeni kanıt ekleme." }
+        { tip: "adimlar", baslik: "Yazının sırası (Woods'un örnek paragrafındaki gibi)", adimlar: [
+            { baslik: "1 · Yazar, eser adı ve bağlam (~35 kelime)", metin: "Pasaj hangi eserden, yazarı kim, pasajda ne oluyor; kısa tut." },
+            { baslik: "2 · Konu cümlesi / tez (~30 kelime)", metin: "Konu + görüş: pasajın anlamı ve yazarın amacı. Araçları burada sıralama." },
+            { baslik: "3 · Analiz 1 (~45 kelime)", metin: "QPC: kısa alıntı, parafraz, konu cümlesine bağlantı." },
+            { baslik: "4 · Analiz 2 (~45 kelime)", metin: "Başka bir yerden kanıt; ilgili edebi aracı çözümlerken adlandır." },
+            { baslik: "5 · Analiz 3 (~45 kelime)", metin: "Üçüncü kanıt; yapısal bir araç (sıra, tekrar, bitiş) olabilir." },
+            { baslik: "6 · Kapanış (~15 kelime)", metin: "Ek bilgi (öğretmen belgesinde yok): isteğe bağlı kısa cümle; iddiayı başka sözcüklerle bağlar, yeni kanıt eklemez." }
           ] },
         { tip: "formul", parcalar: [
-            { t: "30", alt: "konu cümlesi" }, "+", { t: "25", alt: "bağlam" }, "+", { t: "3 × 45", alt: "üç kanıt" }, "+", { t: "25", alt: "kapanış" }, "=", { t: "≈ 215", alt: "kelime (hedef 200–250)" }
-          ], aciklama: "Bütçeyi aşma: kanıt çok önemli ama uzatırsan 250'yi geçersin; yazdıktan sonra kelimeleri say." }
+            { t: "35", alt: "eser + bağlam" }, "+", { t: "30", alt: "konu cümlesi" }, "+", { t: "3 × 45", alt: "üç analiz" }, "+", { t: "15", alt: "kapanış" }, "=", { t: "≈ 215", alt: "kelime (hedef 200–250)" }
+          ], aciklama: "Hedef 200–250 kelime sınav yönergesindendir; parça parça bütçe Kitora'nın önerisidir (ek bilgi). Yazdıktan sonra kelimeleri say." }
       ]
     },
     {
       baslik: "Konu cümlesi ve bağlam (7 puan)",
-      kisa: "Güçlü konu cümlesi iddia taşır; bağlam yalnızca zemini kurar.",
+      kisa: "Bağlam zemini kurar; konu cümlesi (konu + görüş) paragrafın iddiasıdır.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "📄", baslik: "Zayıf konu cümlesi", maddeler: ["Sadece özet ya da duygu", "İddia yok, neden yok"] },
-          sag: { ikon: "🎯", baslik: "Güçlü konu cümlesi", maddeler: ["Yazar + araç/yöntem + mesaj", "Tartışılabilir ve kanıtlanabilir"] },
+        { tip: "ikili", sol: { ikon: "📄", baslik: "Zayıf konu cümlesi", maddeler: ["Sadece özet ya da duygu", "Görüş yok, tartışılacak bir şey yok"] },
+          sag: { ikon: "🎯", baslik: "Güçlü konu cümlesi", maddeler: ["Konu + görüş (anlam ve amaç)", "Tartışılabilir ve kanıtlanabilir"] },
           oyun: [
             { metin: "This passage is about an old woman who cries at a dinner.", cevap: "sol", neden: "Yalnızca özet; anlam ve amaç yok." },
-            { metin: "In the passage, Dolores presents Zézé as invisible to her own family in order to criticize how society treats unmarried women.", cevap: "sag", neden: "Yazar, yöntem ve amaç var; kanıtlanabilir bir iddia." },
+            { metin: "In the passage, Dolores presents Zézé as invisible to her own family in order to criticize how society treats unmarried women.", cevap: "sag", neden: "Yazar, görüş ve amaç var; kanıtlanabilir bir iddia." },
             { metin: "The Vengeance of Felix is a very interesting story and I liked it.", cevap: "sol", neden: "Kişisel beğeni; sınavda puan getirmez." },
             { metin: "Through Felix's patient revenge, Medeiros e Albuquerque suggests that hatred can destroy the hater as well as the enemy.", cevap: "sag", neden: "Net tema (*meaning*) ve yazar bakışı." }
           ] },
         { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "Konu cümlesi kalıbı", metin: "Sınavda böyle yaz: *In [title], [author] uses [device] to show that [meaning], so that readers [purpose].*" },
-            { ikon: "🗺️", baslik: "Bağlam kalıbı", metin: "Sınavda böyle yaz: *In this passage, [character] is [situation] in [place/time], when [key event].*" },
+            { ikon: "🗺️", baslik: "Eser + bağlam kalıbı", metin: "Sınavda böyle yaz: *This passage from “[title]” by [author] comes at the point where [context].*" },
+            { ikon: "✍️", baslik: "Konu cümlesi kalıbı", metin: "Sınavda böyle yaz: *In this passage, [author] shows that [meaning] in order to [purpose].* Kullanacağın araçları buraya yığma; kanıtı çözümlerken adlandır." },
             { ikon: "🔁", baslik: "Amaç fiilleri", metin: "*to criticize, to expose, to warn, to challenge, to illustrate, to question*; “to show” tek başına zayıf kalır." }
           ] },
-        { tip: "tuzak", metin: "Bağlam 2 puandır; uzatırsan kanıt için yer kalmaz.", yanlis: "Bağlamda bütün olay örgüsünü anlatırım.", dogru: "Bağlam en fazla iki cümle; olayları kanıt kısmında gerektikçe kullan." }
+        { tip: "tuzak", metin: "Bağlam 2 puandır; uzatırsan kanıt için yer kalmaz.", yanlis: "Bağlamda bütün olay örgüsünü anlatırım.", dogru: "Bağlam kısa ve doğru olsun; olayları kanıt kısmında gerektikçe kullan." }
       ]
     },
     {
-      baslik: "Kanıt: alıntı, parafraz, açıklama (25 puan)",
-      kisa: "Her kanıtı üç adımda ver: giriş, alıntı ya da parafraz, açıklama.",
+      baslik: "Kanıt: QPC ve point–example–explanation (25 puan)",
+      kisa: "Her kanıt: kısa alıntı, kendi sözlerinle parafraz, konu cümlesine bağlantı.",
       bloklar: [
-        { tip: "adimlar", baslik: "Kanıt sandviçi", adimlar: [
-            { baslik: "Giriş (introduce)", metin: "Kanıtı iddiaya bağla: *This is shown when…, Dolores writes that…*" },
-            { baslik: "Kanıt (cite)", metin: "Kısa alıntı ya da kendi sözlerinle parafraz." },
-            { baslik: "Açıklama (explain)", metin: "Kanıtın neden iddiayı desteklediğini ve hangi aracı kullandığını söyle: *This suggests… because…*" }
+        { tip: "adimlar", baslik: "QPC: Quote – Paraphrase – Connect", adimlar: [
+            { baslik: "Quote (alıntı)", metin: "Anahtar sözcükleri ya da kısa bir öbeği seç; alıntıyı kendi cümlenin parçası yap." },
+            { baslik: "Paraphrase (parafraz)", metin: "Alıntının ne dediğini kendi sözlerinle yaz; metni anladığını bu gösterir." },
+            { baslik: "Connect (bağlantı)", metin: "İlgili edebi aracı adlandır, kanıtı konu cümlene bağla: *This suggests… because…*" }
           ] },
+        { tip: "not", metin: "Çalışma pasajında (Woods) kanıt başka adlarla istenir: her kanıt için bir **point**, bir **example** ve ikisinin anlamla nasıl bağlandığını gösteren bir **explanation**. Aynı zinciri iki adla öğreniyorsun; hangisini kullanırsan kullan zincir eksiksiz olsun." },
         { tip: "tablo", baslik: "Alıntı mı, parafraz mı?", head: ["", "Alıntı (*quotation*)", "Parafraz (*paraphrase*)"],
           rows: [
             ["Nedir?", "Metnin kelimesi kelimesine kısa parçası", "Aynı fikrin kendi cümlenle anlatımı"],
             ["Ne zaman?", "Etkili ya da çarpıcı kelimeler varken", "Uzun bir bölümü kısaca özetlemek gerekirken"],
-            ["Kural", "Tırnak içinde, kaynağıyla", "Tırnak yok; ama fikir metne ait olduğundan yine bağla"],
+            ["Kural", "Tırnak içinde, kısa ve seçici", "Tırnak yok; fikir metne ait olduğundan konu cümlene bağla"],
             ["Sınavda böyle yaz", "*Dolores writes that Zézé feels “a glacial chill”.*", "*Dolores shows that Zézé realizes the poem is not meant for her.*"]
           ], vurgu: 3 },
         { tip: "tuzak", metin: "En sık iki kayıp: açıklamasız alıntı ve alıntısız yorum. İkisi de “bol kanıt” puanını düşürür.", yanlis: "Güzel bir cümle seçtim, o kendi başına yeter.", dogru: "Her alıntının arkasında en az bir cümle yorum olsun: *This suggests that…*" }
@@ -119,38 +127,56 @@ window.DEFTER = {
     },
     {
       baslik: "Alıntıyı doğru yerleştirmek (3 puan)",
-      kisa: "Alıntı, cümlenin dilbilgisine uymalı; tırnak ve kaynak eksik olmamalı.",
+      kisa: "Alıntı cümlenin parçası olmalı; tek başına cümle olmamalı.",
       bloklar: [
         { tip: "liste", maddeler: [
             { ikon: "❝", baslik: "Tırnak işareti", metin: "Metinden alınan her kelime grubu tırnak içinde olmalı." },
-            { ikon: "🔗", baslik: "Cümleye uydur", metin: "Alıntı kendi cümlenin dilbilgisine oturmalı: *Zézé feels “stricken by sudden disillusionment”.*" },
-            { ikon: "✂️", baslik: "Kısa tut", metin: "Gereken kelimeleri al; atladığın yeri *…* ile, eklediğin kelimeyi *[ ]* ile göster." },
-            { ikon: "🏷️", baslik: "Kaynak", metin: "Sınav kâğıdında paragraf ya da satır numarası varsa onu, yoksa yazar soyadını parantez içinde yaz; nokta parantezden sonra gelir." }
+            { ikon: "🔗", baslik: "Cümleye göm (*embed*)", metin: "Alıntı kendi cümlenin dilbilgisine oturmalı: *Zézé feels “stricken by sudden disillusionment”.*" },
+            { ikon: "✂️", baslik: "Kısa ve seçici", metin: "Gereken kelimeleri al. Ek bilgi (öğretmen belgesinde yok): atladığın yeri *…* ile, eklediğin kelimeyi *[ ]* ile göster." },
+            { ikon: "🚫", baslik: "“In the quote” yazma", metin: "Alıntıyı tırnak zaten gösterir; sözü doğrudan cümlene kat ve ne gösterdiğini söyle." },
+            { ikon: "🏷️", baslik: "Eser adı", metin: "Roman/kitap adı el yazısında altı çizili; kısa öykü ya da deneme adı tırnak içinde. Çalışma pasajında sayfa numarası istenmedi." }
           ] },
-        { tip: "ikili", sol: { ikon: "✅", baslik: "Doğru yerleştirilmiş", maddeler: ["Giriş ifadesi var", "Tırnak ve kaynak var, yorum var"] },
+        { tip: "ikili", sol: { ikon: "✅", baslik: "Doğru yerleştirilmiş", maddeler: ["Alıntı cümlenin parçası", "Tırnak var, yorum var"] },
           sag: { ikon: "⚠️", baslik: "Hatalı", maddeler: ["Kopuk, tırnaksız ya da yorumsuz", "Cümleyle uyumsuz"] },
           oyun: [
-            { metin: "Dolores writes that the family “hardly considered her in the light of a living person” (Dolores).", cevap: "sol", neden: "Giriş, tırnak, kaynak var." },
-            { metin: "“Aunt Zézé's tears are the most beautiful homage.”", cevap: "sag", neden: "Giriş ifadesi ve yorum yok; alıntı tek başına bırakılmış." },
+            { metin: "Dolores writes that the family “hardly considered her in the light of a living person.”", cevap: "sol", neden: "Giriş, tırnak ve gömülü alıntı var." },
+            { metin: "“They hardly considered her in the light of a living person.”", cevap: "sag", neden: "Alıntı tek başına cümle olmuş; giriş ve yorum yok." },
             { metin: "Zézé feels “stricken by sudden disillusionment” when she understands the poem.", cevap: "sol", neden: "Alıntı cümleye dilbilgisel olarak oturuyor." },
+            { metin: "In the quote, the narrator says Zézé feels “a glacial chill.”", cevap: "sag", neden: "“In the quote” kalıbı kullanılmamalı; sözü doğrudan cümleye kat." },
             { metin: "Felix wants revenge. exceedingly patient in his vindictiveness.", cevap: "sag", neden: "Tırnak yok, cümle kopuk." }
           ] },
-        { tip: "tuzak", metin: "Alıntı yoksa bu kriterden 0 alırsın. Üç puan küçük görünür ama bir kısa alıntı bile onu kurtarır.", yanlis: "Sadece parafraz yazarım, alıntıya gerek yok.", dogru: "Her paragrafta en az bir doğru yerleştirilmiş alıntı kullan." }
+        { tip: "tuzak", metin: "Pasajdan hiç alıntı yoksa bu kriterden 0 alırsın. Üç puan küçük görünür ama kısa bir alıntı bile onu kurtarır.", yanlis: "Sadece parafraz yazarım, alıntıya gerek yok.", dogru: "Paragrafta en az bir doğru yerleştirilmiş kısa alıntı kullan." }
       ]
     },
     {
       baslik: "Araçlar, dil ve yapay zekâ kuralı (12 puan)",
-      kisa: "Araç + kanıt + etki: üçünü bir cümlede bağla; paragrafı kendin yaz.",
+      kisa: "Araçları sayma, çözümle; şimdiki zamanla yaz; paragrafı kendin kur.",
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "Araç", alt: "adı" }, "+", { t: "Kanıt", alt: "alıntı ya da parafraz" }, "+", { t: "Etki", alt: "anlama katkısı" }, "=", { t: "7 puan", alt: "edebi ve yapısal araçlar" }
-          ], aciklama: "Sınavda böyle yaz: *The author uses irony when…, which shows that…* Araç ve etki sıralaması en102'de ayrıntılı." },
+          ], aciklama: "Sınavda böyle yaz: *The irony here shows that…* Aracı kanıtı çözümlerken adlandır; paragrafın başında ya da sonunda araç listesi yazma. Araçlar en102'de." },
         { tip: "liste", maddeler: [
-            { ikon: "⏱️", baslik: "Zaman", metin: "Edebi analizde olaylar hep şimdiki zamanla anlatılır: *Zézé weeps*, *Felix stabs himself*." },
-            { ikon: "🔤", baslik: "Geçiş sözcükleri", metin: "*First, In addition, Moreover, However, As a result, In conclusion*." },
-            { ikon: "🚫", baslik: "Akademik ton", metin: "*I think* yerine kanıt ve *suggests, reveals, implies* fiillerini kullan." }
+            { ikon: "⏱️", baslik: "Literary present", metin: "Edebi analizde şimdiki zaman: *Zézé weeps*. Flashback'te geçmiş, ileride olacakta gelecek zaman kullanılabilir." },
+            { ikon: "🔍", baslik: "Kanıt fiilleri", metin: "*show, demonstrate, illustrate, indicate, point to, reveal, underscore, highlight*; ayrıca *evidence of* kalıbı." },
+            { ikon: "🚫", baslik: "Araçları listeleme", metin: "“The author uses irony, imagery and symbolism” gibi sıralama yazma; her aracı kanıtıyla çözümle." },
+            { ikon: "🔤", baslik: "Dil ve sözcük", metin: "Karakter adlarını doğru yaz, canlı sözcük seç (*nice, bad* gibi belirsiz sözcüklerden kaçın), temel dilbilgisi hatası yapma." }
           ] },
-        { tip: "not", metin: "==Yapay zekâ kuralı:== okulda araştırmada ve yazmada üretken yapay zekâ yasaktır; yalnızca sınırlı kullanım (düzen önerisi, kısaltma, yazım denetimi) tanınıyor. Sınavda paragrafı tek başına yazarsın. Bu defter hazır paragraf vermez, yalnızca iskelet ve kalıp verir; paragrafı sen kurarsın." }
+        { tip: "not", metin: "==Yapay zekâ kuralı:== okulda üretken yapay zekâ araştırma ya da yazma yerine geçemez. Yalnız çok sınırlı kullanım tanınıyor: düzen önerisi (içerik değil), ağdalı cümleyi kısaltma, yazım denetimiyle hataları kendin düzeltme. Sınavda paragrafı zaten tek başına yazarsın; bu defter hazır paragraf değil, iskelet ve kalıp verir." }
+      ]
+    },
+    {
+      baslik: "Yazdıktan sonra: peer-editing kontrol listesi",
+      kisa: "Paragrafını bir arkadaşın gözüyle altı soruda kontrol et.",
+      bloklar: [
+        { tip: "liste", maddeler: [
+            { ikon: "🎯", baslik: "Tez", metin: "Konu cümlende konu ve görüş (*subject + opinion*) var mı?" },
+            { ikon: "📚", baslik: "Bağlam", metin: "Pasajın eserdeki yeri doğru ve kısa anlatılmış mı?" },
+            { ikon: "🛠️", baslik: "Araçlar ve dil", metin: "Yazarın dil kullanımı ve teknikleri kanıtla çözümlenmiş mi, yoksa sıralanmış mı?" },
+            { ikon: "🧭", baslik: "Amaç", metin: "Pasajın amacı (yazar bunu neden koymuş) açıkça söylenmiş mi?" },
+            { ikon: "❝", baslik: "Kanıt", metin: "Alıntı ve/veya parafraz var mı; alıntı cümleye gömülü mü?" },
+            { ikon: "✅", baslik: "İngilizce", metin: "Dilbilgisi, zaman, yazım ve okunaklılık düzgün mü?" }
+          ] },
+        { tip: "not", metin: "Ek bilgi (öğretmen belgesinde yok): bu yöntem Cultural Perspectives'te işlenen diğer metinlerde de çalışıldı: Amy Tan'ın *Two Kinds* öyküsü (200–300 kelimelik çalışma paragrafı), Orwell'in *A Hanging* denemesi, Achebe'nin *Things Fall Apart* kitabından ilk bölümler. Bu defterler telifli metinlerden alıntı yapmaz; yöntemi kamuya açık yaz okuması öykülerinde (en103–en105) dene." }
       ]
     },
     {
@@ -159,37 +185,37 @@ window.DEFTER = {
       bloklar: [
         { tip: "ozet", maddeler: [
             "Görev: *What is the meaning and purpose of the passage?* En az bir paragraf, 200–250 kelime, 40 dakika, 50 puan.",
-            "*Meaning* = mesaj; *purpose* = yazarın niyeti. İkisi de konu cümlesinde olmalı.",
-            "Puanlar: düzen 3, konu cümlesi 5, bağlam 2, kanıt 25, alıntı yerleştirme 3, araçlar 7, dil 5.",
-            "İskelet: konu cümlesi, bağlam, üç kanıt, kapanış (≈ 215 kelime).",
-            "Kanıt = giriş + alıntı ya da parafraz + açıklama; açıklamasız alıntı puan kaybettirir.",
-            "Alıntı yoksa yerleştirme kriteri 0: kısa bir alıntıyı doğru yerleştir.",
-            "Araç + kanıt + etki cümlesi kur; edebi analiz şimdiki zamanla yazılır.",
-            "Paragrafı sen yaz; üretken yapay zekâ yazmada yasak."
+            "Puanlar: düzen 3, konu cümlesi 5, bağlam 2, kanıt 25, alıntı yerleştirme 3, araçlar 7, İngilizce 5.",
+            "Rubrik sırası ayrı, yazı sırası ayrı: eser + bağlam, konu cümlesi, kanıt zincirleri.",
+            "Konu cümlesi = konu + görüş; *meaning* mesaj, *purpose* yazarın niyetidir.",
+            "Kanıt = QPC (alıntı, parafraz, bağlantı); çalışma pasajında *point–example–explanation*.",
+            "Alıntıyı cümleye göm; “in the quote” yazma; hiç alıntı yoksa yerleştirme kriteri 0.",
+            "Araçları listeleme, çözümle; *literary present* ve *reveal, underscore, highlight* gibi fiiller.",
+            "Paragrafı sen yaz; üretken yapay zekâ yazmada yasak. Mart sınavı farklıdır (en306)."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Rubriğe göre Reading & Writing bölümünde en çok puan hangi kriterden gelir?",
-      opts: ["Pasajdan bol kanıt (alıntı ve parafraz)", "Konu cümlesi", "Edebi ve yapısal araçlar", "Dil"],
+    { q: "According to the Reading & Writing rubric, which criterion is worth the most points?",
+      opts: ["Abundant evidence from the passage (quotations and paraphrases)", "A clear and accurate topic sentence", "Identifying literary and structural devices", "English usage"],
       a: 0,
-      why: "Kanıt 25 puandır; konu cümlesi 5, araçlar 7, dil 5. En çekici yanlış şık C: araçlar önemlidir ama 7 puandır, kanıt ise tek başına notun yarısıdır." },
-    { q: "Bir öğrenci paragrafa şöyle başlıyor: “The story is about a woman who lives with her sister and cries at a dinner.” Bu cümle için en doğru yorum hangisidir?",
-      opts: ["Güçlü bir konu cümlesidir, çünkü olay anlatır", "Zayıftır, çünkü anlam ve amaç içermeyen bir özettir", "Zayıftır, çünkü cümle çok kısadır", "Güçlüdür, çünkü yazarın adını içermez"],
+      why: "Kanıt 25 puandır; konu cümlesi 5, araçlar 7, İngilizce 5. En çekici yanlış şık C: araçlar önemlidir ama 7 puandır, kanıt ise tek başına notun yarısıdır." },
+    { q: "A student begins a paragraph with: \"The story is about a woman who lives with her sister and cries at a dinner.\" What is the best evaluation of this sentence?",
+      opts: ["It is a strong topic sentence because it describes the plot", "It is weak because it only summarizes and gives no opinion about meaning or purpose", "It is weak because it is too short", "It is strong because it does not name the author"],
       a: 1,
-      why: "Konu cümlesi *meaning + purpose* iddiası taşımalıdır; bu cümle yalnızca olay özetidir. Kısalık ya da uzunluk ölçüt değildir; C bu yüzden yanlış." },
-    { q: "Hangi cümlede alıntı doğru yerleştirilmiştir?",
-      opts: ["Felix is stubborn. exceedingly patient in his vindictiveness.", "“Exceedingly patient in his vindictiveness.” Felix is angry.", "The narrator says Felix is “exceedingly patient in his vindictiveness” (Medeiros e Albuquerque).", "Felix is exceedingly patient in his vindictiveness (Medeiros e Albuquerque)."],
+      why: "Konu cümlesi konu + görüş taşımalı (anlam ve amaç); bu cümle yalnızca olay özeti. Kısalık ölçüt değildir; C bu yüzden yanlış." },
+    { q: "Which sentence places the quotation correctly?",
+      opts: ["Felix is stubborn. exceedingly patient in his vindictiveness.", "\"Exceedingly patient in his vindictiveness.\" Felix is angry.", "The narrator says Felix is \"exceedingly patient in his vindictiveness.\"", "In the quote, Felix is exceedingly patient in his vindictiveness."],
       a: 2,
-      why: "C'de giriş ifadesi, tırnak ve kaynak var; alıntı cümleye uyuyor. D'de kelimeler tırnaksız kullanılmış; bu, alıntının hatalı yerleştirilmesidir." },
-    { q: "Bir öğrenci 200–250 kelimelik paragrafında bağlam bölümüne 120 kelime ayırmıştır. En büyük risk nedir?",
-      opts: ["Konu cümlesi puan alamaz", "Dil kriteri sıfırlanır", "Hiçbir risk yoktur; uzun bağlam daha fazla puan getirir", "Bağlam 2 puandır; kanıt ve araçlar için yer kalmaz, kanıt puanı düşer"],
+      why: "C'de alıntı cümlenin parçası ve tırnak içinde. B'de alıntı tek başına bırakılmış, D'de tırnak yok ve \"in the quote\" kalıbı kullanılmış; A'da cümle kopuk." },
+    { q: "A student spends 120 words of a 200-250 word paragraph on the context of the passage. What is the biggest risk?",
+      opts: ["The topic sentence will receive no points", "The English usage criterion will drop to zero", "There is no risk; a longer context earns more points", "Context is worth only 2 points, so little room is left for the evidence, which is worth 25"],
       a: 3,
-      why: "Bağlam 2 puandır, kanıt 25. Yer harcamak yanlış yerde puan harcamak demektir. C yanlış: bağlam uzadıkça puan artmaz." },
-    { q: "Pasaj analizinde bir kanıt cümlesinden sonra neden ayrıca açıklama cümlesi yazılır?",
-      opts: ["Kelime sayısını artırmak için", "Alıntının iddiayı nasıl desteklediğini ve hangi aracı kullandığını göstermek için", "Öğretmenin pasajı unutmaması için", "Konu cümlesini tekrar etmek için"],
-      a: 1,
-      why: "Açıklama, kanıt ile iddia arasındaki bağı kurar; *This suggests that…* gibi cümleler bunun içindir. A tek başına anlamsızdır; açıklama uzatmak için değil, bağlamak için yazılır." }
+      why: "Bağlam 2 puan, kanıt 25 puandır; yer yanlış yerde harcanır. C yanlış: bağlam uzadıkça puan artmaz." },
+    { q: "Which sentence follows the rule \"analyze the literary devices, do not list them\"?",
+      opts: ["The final line is ironic: Monjardin praises the tears as a tribute to his poetry, which shows that he misreads Zézé's pain.", "The author uses irony, imagery, symbolism and diction in this passage.", "In the quote, the author uses irony.", "Irony, imagery and symbolism are devices in the story."],
+      a: 0,
+      why: "A aracı adlandırır, kanıta ve etkisine bağlar. B ve D araç sayar; C hem araç sayar hem de yasak \"in the quote\" kalıbını kullanır." }
   ]
 };

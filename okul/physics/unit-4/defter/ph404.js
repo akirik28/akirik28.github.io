@@ -32,7 +32,7 @@ window.DEFTER = {
       bloklar: [
         {
           tip: "formul",
-          parcalar: [{ t: "T", alt: "periyot (s)" }, "=", { t: "2π √( L / g )", alt: "L: ip uzunluğu (m) · g ≈ 9,8 m/s²" }],
+          parcalar: [{ t: "T", alt: "periyot (s)" }, "=", { t: "2π √( L / g )", alt: "L: ip uzunluğu (m) · g ≈ 10 m/s² (kesin değer 9,8)" }],
           aciklama: "Küçük açılarda (yaklaşık 15°'ye kadar) geçerlidir. Kütle formülde yok. Kolay hesap için: yer yüzünde T ≈ 2√L (L metre, T saniye)."
         },
         {
@@ -187,6 +187,13 @@ window.DEFTER = {
           durum: "Bir sarkacın 20 tam salınımı 36 s sürüyor. Periyodunu, frekansını ve (T ≈ 2√L ile) yaklaşık uzunluğunu bul.",
           adimlar: ["T = 36 ÷ 20 = 1,8 s.", "f = 1 ÷ 1,8 ≈ 0,56 Hz.", "T ≈ 2√L → √L = 0,9 → L = 0,81 m ≈ 0,8 m."],
           sonuc: "==T = 1,8 s, f ≈ 0,56 Hz, L ≈ 0,8 m.== Sınavda böyle yaz: *We measured the time of 20 oscillations and divided by 20 to reduce the error.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Yay-kütle deneyi: T² – m grafiğinden k",
+          durum: "Bir yaya 500 g'dan 1500 g'a kadar kütleler asılıp 10 salınımın süresi üçer kez ölçülüyor. Ortalama değerler: 0,5 kg için 10 salınım 6,36 s, 1,5 kg için 11,08 s. Yayın sabiti k nedir? Verilen kuramsal değer 50 N/m ise yüzde hata kaç?",
+          adimlar: ["Periyot: 6,36 ÷ 10 = 0,636 s ve 11,08 ÷ 10 = 1,108 s. Kareleri: T² ≈ 0,40 ve ≈ 1,23 s².", "T = 2π√(m/k) → T² = (4π² ÷ k) · m: T²–m grafiği başlangıçtan geçen doğrudur, eğim = 4π² ÷ k.", "Eğim = (1,23 − 0,40) ÷ (1,5 − 0,5) ≈ 0,83 s²/kg → k = 4π² ÷ 0,83 ≈ 39,5 ÷ 0,83 ≈ 48 N/m.", "Yüzde hata = |50 − 48| ÷ 50 × 100 = 4 %."],
+          sonuc: "k ≈ 48 N/m, hata yaklaşık yüzde 4. T–m grafiği eğridir (T ∝ √m), T²–m grafiği doğrudur. Hata çubukları ölçüm belirsizliğini gösterir. Sınavda böyle yaz: *The slope of the T² against m graph is 4π² divided by k.*"
         }
       ]
     },
@@ -213,33 +220,33 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir basit sarkacın ipi dört katına uzatılıyor; yerçekimi ivmesi aynı. Sarkacın periyodu nasıl değişir?",
-      opts: ["4 katına çıkar.", "2 katına çıkar.", "Değişmez.", "Yarıya iner."],
+      q: "The string of a simple pendulum is made four times as long, while the gravitational acceleration stays the same. How does the period of the pendulum change?",
+      opts: ["It becomes 4 times larger.", "It becomes 2 times larger.", "It does not change.", "It is halved."],
       a: 1,
       why: "T = 2π√(L/g) olduğundan T, √L ile orantılıdır: √4 = 2. A en çekici yanlış şıktır: periyodun boyla doğru orantılı olduğu sanılır."
     },
     {
-      q: "Dünya'da periyodu 2 s olan bir basit sarkaç, yerçekimi ivmesinin Dünya'dakinin dörtte biri olduğu bir gezegene götürülüyor. Sarkacın periyodu kaç s olur?",
+      q: "A simple pendulum has a period of 2 s on Earth. It is taken to a planet where the gravitational acceleration is one quarter of that on Earth. What is the period of the pendulum there?",
       opts: ["1 s", "2 s", "4 s", "8 s"],
       a: 2,
       why: "T, 1/√g ile orantılıdır. g dörtte birine inince 1/√(1/4) = 2 katı: T = 2 × 2 = 4 s. D'de g'deki dörtte bir düşüş doğrudan T'ye dört kat olarak yansıtılmış."
     },
     {
-      q: "Aynı yaya bağlanan farklı kütlelerin periyotları tabloda verilmiştir. m = 9 kg olduğunda periyot kaç s olur?",
-      fig: { type: "table", head: ["Kütle m (kg)", "Periyot T (s)"], rows: [["1", "0,6"], ["4", "1,2"]] },
-      opts: ["5,4 s", "2,4 s", "3,6 s", "1,8 s"],
+      q: "The periods of different masses attached to the same spring are given in the table. What is the period when m = 9 kg?",
+      fig: { type: "table", head: ["Mass m (kg)", "Period T (s)"], rows: [["1", "0.6"], ["4", "1.2"]] },
+      opts: ["5.4 s", "2.4 s", "3.6 s", "1.8 s"],
       a: 3,
       why: "Kütle 4 katına çıkınca periyot 2 katına çıkıyor: T, √m ile orantılı (T = 0,6√m). m = 9 kg için T = 0,6 × 3 = 1,8 s. A'da periyot kütleyle doğru orantılı alınmış (0,6 × 9)."
     },
     {
-      q: "Dünya'da 0,5 s periyotla titreşen bir yay-kütle sistemi Ay'a götürülüyor. Periyot için hangisi doğrudur?",
-      opts: ["Değişmez; çünkü periyot g'ye bağlı değildir.", "Artar; çünkü Ay'da g daha küçüktür.", "Azalır; çünkü Ay'da cisim daha hafiftir.", "Önce artar sonra azalır."],
+      q: "A spring-mass system oscillates with a period of 0.5 s on Earth. It is taken to the Moon. Which statement about its period is correct?",
+      opts: ["It does not change, because the period does not depend on g.", "It increases, because g is smaller on the Moon.", "It decreases, because the object is lighter on the Moon.", "It first increases and then decreases."],
       a: 0,
       why: "T = 2π√(m/k) formülünde g yoktur; m (kütle) Ay'da da aynıdır, k yay özelliğidir. B en çekici yanlış şıktır: sarkaç için doğru olan fikir yay-kütle sistemine yanlışlıkla uygulanmış."
     },
     {
-      q: "Sürtünmesiz bir basit sarkacın gülle denge konumundan geçerken aşağıdakilerden hangisi doğrudur?",
-      opts: ["Potansiyel enerji en büyük, kinetik enerji sıfırdır.", "Kinetik enerji en büyük, potansiyel enerji en küçüktür.", "Toplam mekanik enerji en küçüktür.", "Hem kinetik hem potansiyel enerji sıfırdır."],
+      q: "A frictionless simple pendulum bob passes through the equilibrium position. Which statement is correct?",
+      opts: ["The potential energy is maximum and the kinetic energy is zero.", "The kinetic energy is maximum and the potential energy is minimum.", "The total mechanical energy is minimum.", "Both the kinetic and potential energies are zero."],
       a: 1,
       why: "Denge konumunda gülle en alçak noktadadır (PE en küçük) ve en hızlıdır (KE en büyük). Toplam mekanik enerji sürtünmesiz sistemde sabittir. A, uç noktanın tarifidir."
     }

@@ -53,7 +53,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "I", alt: "cihazın akımı (A)" }, "=", { t: "P", alt: "güç (W)" }, "÷", { t: "V", alt: "gerilim, ev: 220 V" }
-          ], aciklama: "Cihazlar prize paralel bağlıdır, akımları toplanır. Su ısıtıcısı 2200 W → 10 A; elektrikli ısıtıcı 1100 W → 5 A; TV 220 W → 1 A; saç kurutma makinesi 440 W → 2 A." },
+          ], aciklama: "Cihazlar prize paralel bağlıdır, akımları toplanır. Su ısıtıcısı 2200 W → 10 A; elektrikli ısıtıcı 1100 W → 5 A; TV 220 W → 1 A; saç kurutma makinesi 440 W → 2 A. Türkiye'de şebeke 220 V'tur; derste kullanılan 110 V'luk devre örneğinde de yöntem aynıdır (ph302'deki sigorta örneğine bak)." },
         { tip: "grafik", baslik: "Prize cihaz ekledikçe toplam akım (hat 16 A'lik sigortayla korunuyor)", xlabel: "prize eklenen cihaz", ylabel: "Toplam akım (A)", xmax: 7, ymax: 20,
           xticks: [{ v: 1.3, label: "Su ısıtıcı" }, { v: 2.7, label: "Isıtıcı" }, { v: 4.1, label: "TV" }, { v: 5.5, label: "Kurutma" }], yticks: [{ v: 10, label: "10" }, { v: 16, label: "16" }, { v: 20, label: "20" }],
           ogeler: [
@@ -150,21 +150,20 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "220 V'luk bir prize ıslak elle dokunan kişinin vücut direnci 2200 Ω olarak alınırsa vücuttan geçen akım kaç A'dir?",
-      opts: ["0,1 A", "0,01 A", "10 A", "484 000 A"], a: 0,
+    { q: "A person touches a 220 V socket with a wet hand. Take the body resistance as 2200 Ω. What current flows through the body?",
+      opts: ["0.1 A", "0.01 A", "10 A", "484 000 A"], a: 0,
       why: "I = V / R = 220 / 2200 = 0,1 A (100 mA). 0,01 A kuru derinin (22 000 Ω) sonucudur; 484 000 A ise gerilim ile direnci çarpmaktır." },
-    { q: "Sigorta, bir elektrik devresine nasıl bağlanır ve neden?",
-      opts: ["Cihaza paralel; gerilimi cihazla paylaşması için", "Cihaza paralel; akımı kollara ayırması için", "Seri; devreden geçen toplam akımın sigortadan geçmesi için", "Seri; direnci artırarak akımı sürekli sınırladığı için"], a: 2,
+    { q: "How is a fuse connected in an electric circuit, and why?",
+      opts: ["In parallel with the appliance, so that it shares the voltage", "In parallel with the appliance, so that it splits the current into branches", "In series, so that the total current of the circuit passes through it", "In series, so that it limits the current all the time by increasing the resistance"], a: 2,
       why: "Sigorta, devrenin toplam akımının içinden geçmesi için seri bağlanır; akım sınırı aşılınca teli erir ve devre açılır. Görevi akımı sürekli sınırlamak değil, devreyi kesmektir." },
-    { q: "Tabloda 220 V'luk bir priz hattına bağlı üç cihazın gücü verilmiştir. Hat 16 A'lik sigortayla korunuyorsa üçü birlikte çalıştırılınca ne olur?",
-      fig: { type: "table", head: ["Cihaz", "Güç"], rows: [["Su ısıtıcısı", "2200 W"], ["Elektrikli ısıtıcı", "1320 W"], ["Lamba", "220 W"]], caption: "Prize bağlı cihazlar" },
-      opts: ["Toplam akım 10 A olur; sigorta atmaz", "Toplam akım 6 A olur; sigorta atmaz", "Toplam akım 17 A olur; cihazlar paralel olduğu için sigorta atmaz", "Toplam akım 17 A olur; 16 A'lik sigorta devreyi keser"], a: 3,
-      why: "P toplam = 2200 + 1320 + 220 = 3740 W; I = 3740 / 220 = 17 A > 16 A. Cihazların paralel olması, akımların toplanmasını engellemez; tersine, toplanmalarının nedenidir." },
-    { q: "Normal çalışırken 22 Ω direnci olan bir ütünün kablosunda yalıtım soyuluyor ve devrenin direnci 1,1 Ω'a düşüyor (220 V). Devreden geçen akım kaç A olur?",
+    { q: "In a 110 V household circuit, an 1800 W microwave and an 800 W coffeemaker are both on. The circuit is protected by a 20 A fuse. What is the total current, and what happens to the fuse?",
+      opts: ["16.4 A; the fuse does not melt", "23.6 A; the fuse melts", "7.3 A; the fuse does not melt", "23.6 A; the fuse does not melt"], a: 1,
+      why: "Cihazlar paralel; I = P / V: 1800 / 110 ≈ 16,4 A ve 800 / 110 ≈ 7,3 A. Toplam ≈ 23,6 A > 20 A: sigorta erir. A yalnızca mikrodalgayı sayar; D, akımın sınırı aştığını görmezden gelir." },
+    { q: "An iron has a resistance of 22 Ω in normal operation on 220 V. The insulation of its cable is damaged and the resistance of the circuit drops to 1.1 Ω. What is the current in the circuit now?",
       opts: ["20 A", "200 A", "10 A", "242 A"], a: 1,
       why: "I = V / R = 220 / 1,1 = 200 A. 10 A, ütünün normal akımıdır; 242 A cevabı V ile R'yi çarpmaktır." },
-    { q: "Metal kasalı topraklı bir çamaşır makinesinde faz teli kasaya değiyor. Aşağıdakilerden hangisi olur?",
-      opts: ["Kasa 220 V'a çıkar ve dokunan kişiden akım geçer", "Hiçbir şey olmaz, çünkü toprak hattı yalnızca cihazın gürültüsünü azaltır", "Büyük kaçak akım toprak teline gider, kasa tehlikeli gerilim kazanmaz ve sigorta devreyi keser", "Toprak hattı akımı sınırlar ve makine çalışmaya devam eder"], a: 2,
+    { q: "A washing machine with a metal case is grounded. The live wire touches the case. What happens?",
+      opts: ["The case rises to 220 V and current passes through the person who touches it", "Nothing happens, because the earth wire only reduces the noise of the machine", "A large leakage current flows through the earth wire, the case does not become dangerous, and the fuse cuts the circuit", "The earth wire limits the current and the machine keeps working"], a: 2,
       why: "Toprak teli çok küçük dirençli bir yol sağlar; akım buradan akar, kasada tehlikeli gerilim oluşmaz ve akım büyüdüğü için sigorta devreyi açar. İlk şık topraksız cihazın sonucudur." }
   ]
 };

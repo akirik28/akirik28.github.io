@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc202 · 2.2 Kökler ve Katsayılar
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#2_1 Quadratic Equations, Vieta's Theorem bölümü) + Review for Exam#2; ders notuyla aynı terim ve gösterim (kökler r₁, r₂). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc202",
   amac: "Bu konu ikinci dereceden denklemde kökler ile katsayılar arasındaki bağı anlatıyor. Kök toplamını ve çarpımını (Vieta), köklerden denklem yazmayı, kökleri bulmadan ifade hesaplamayı ve köklerin işaretini öğreneceksin.",
@@ -11,33 +11,33 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "x₁ + x₂ = −b/a", alt: "kök toplamı (S)" },
+            { t: "r₁ + r₂ = −b/a", alt: "kök toplamı (S)" },
             "ve",
-            { t: "x₁ · x₂ = c/a", alt: "kök çarpımı (P)" }
+            { t: "r₁ · r₂ = c/a", alt: "kök çarpımı (P)" }
           ],
-          aciklama: "ax² + bx + c = 0 denklemi için. Sınavda böyle yaz: *By Vieta's formulas, the sum of the roots is −b/a and the product is c/a.*"
+          aciklama: "ax² + bx + c = 0 denklemi için. Sınavda böyle yaz: *By Vieta's theorem, the sum of the roots is −b/a and the product is c/a.*"
         },
         {
           tip: "kavramlar",
           kartlar: [
             {
               ikon: "📐",
-              terim: "Vieta's formulas",
-              tr: "Vieta formülleri",
-              tanim: "Kökler ile katsayılar arasındaki bağıntılar: toplam −b/a, çarpım c/a.",
+              terim: "Vieta's theorem",
+              tr: "Vieta teoremi (formülleri)",
+              tanim: "Kökler ile katsayılar arasındaki bağıntılar: toplam −b/a, çarpım c/a. Kökleri hesaplamadan toplam ve çarpım bulunur.",
               ornek: "x² − 5x + 6 = 0 için toplam 5, çarpım 6."
             },
             {
               ikon: "🔁",
               terim: "Symmetric expression",
-              tr: "simetrik ifade",
-              tanim: "x₁ ile x₂'nin yeri değişince değişmeyen ifade; S ve P ile yazılabilir.",
-              ornek: "x₁² + x₂², 1/x₁ + 1/x₂."
+              tr: "simetrik ifade (ek bilgi)",
+              tanim: "r₁ ile r₂'nin yeri değişince değişmeyen ifade; S ve P ile yazılabilir.",
+              ornek: "r₁² + r₂², 1/r₁ + 1/r₂."
             },
             {
               ikon: "🪞",
               terim: "Conjugate roots",
-              tr: "eşlenik kökler",
+              tr: "eşlenik kökler (ek bilgi)",
               tanim: "Katsayılar rasyonelse a + √b kök olduğunda a − √b de köktür.",
               ornek: "2 + √3 kök ise 2 − √3 de kök."
             }
@@ -47,7 +47,7 @@ window.DEFTER = {
           tip: "adimlar",
           baslik: "Neden böyle?",
           adimlar: [
-            { baslik: "Kökler", metin: "x₁ = (−b + √Δ)/2a ve x₂ = (−b − √Δ)/2a." },
+            { baslik: "Kökler", metin: "r₁ = (−b + √Δ)/2a ve r₂ = (−b − √Δ)/2a." },
             { baslik: "Toplam", metin: "√Δ'lar birbirini götürür: (−b − b)/2a = −b/a." },
             { baslik: "Çarpım", metin: "(b² − Δ)/4a² = (b² − b² + 4ac)/4a² = c/a." }
           ]
@@ -68,14 +68,14 @@ window.DEFTER = {
     },
     {
       baslik: "Kökleri bilinen denklemi yazmak",
-      kisa: "Kökleri x₁ ve x₂ olan denklem: x² − (x₁ + x₂)x + x₁x₂ = 0.",
+      kisa: "Kökleri r₁ ve r₂ olan denklem: x² − (r₁ + r₂)x + r₁r₂ = 0.",
       bloklar: [
         {
           tip: "formul",
           parcalar: [
-            { t: "x² − S·x + P = 0", alt: "S = x₁ + x₂, P = x₁ · x₂" }
+            { t: "x² − S·x + P = 0", alt: "S = r₁ + r₂, P = r₁ · r₂" }
           ],
-          aciklama: "İstersen denklemi bir sayıyla çarpıp kesirlerden kurtul. Sınavda böyle yaz: *The equation with roots x₁ and x₂ is x² − (x₁ + x₂)x + x₁x₂ = 0.*"
+          aciklama: "İstersen denklemi bir sayıyla çarpıp kesirlerden kurtul. Sınavda böyle yaz: *The equation with roots r₁ and r₂ is x² − (r₁ + r₂)x + r₁r₂ = 0.*"
         },
         {
           tip: "ornek",
@@ -93,7 +93,7 @@ window.DEFTER = {
     },
     {
       baslik: "Kökleri bulmadan ifade hesaplamak",
-      kisa: "Simetrik ifadeler S = x₁ + x₂ ve P = x₁x₂ ile yazılır.",
+      kisa: "Simetrik ifadeler S = r₁ + r₂ ve P = r₁r₂ ile yazılır.",
       bloklar: [
         {
           tip: "tablo",
@@ -101,27 +101,27 @@ window.DEFTER = {
           head: ["İfade", "S ve P ile", "Nereden?"],
           rows: [
             [
-              "x₁² + x₂²",
+              "r₁² + r₂²",
               "S² − 2P",
-              "(x₁ + x₂)² = x₁² + 2x₁x₂ + x₂²"
+              "(r₁ + r₂)² = r₁² + 2r₁r₂ + r₂²"
             ],
-            ["1/x₁ + 1/x₂", "S / P", "(x₁ + x₂)/(x₁x₂)"],
-            ["(x₁ − x₂)²", "S² − 4P", "x₁² + x₂² − 2P"],
-            ["x₁³ + x₂³", "S³ − 3PS", "(x₁ + x₂)³ açılımı"],
-            ["|x₁ − x₂|", "√(S² − 4P) = √Δ / |a|", "yukarıdakinin karekökü"]
+            ["1/r₁ + 1/r₂", "S / P", "(r₁ + r₂)/(r₁r₂)"],
+            ["(r₁ − r₂)²", "S² − 4P", "r₁² + r₂² − 2P"],
+            ["r₁³ + r₂³", "S³ − 3PS", "(r₁ + r₂)³ açılımı"],
+            ["|r₁ − r₂|", "√(S² − 4P) = √Δ / |a|", "yukarıdakinin karekökü"]
           ],
           not: "Sınavda böyle yaz: *Express the expression in terms of the sum and the product of the roots.*"
         },
         {
           tip: "ornek",
           baslik: "x² − 5x + 3 = 0",
-          durum: "Kökleri x₁, x₂ olsun. Dört ifadeyi hesapla.",
+          durum: "Kökleri r₁, r₂ olsun. Dört ifadeyi hesapla.",
           adimlar: [
             "S = 5, P = 3.",
-            "x₁² + x₂² = S² − 2P = 25 − 6 = 19.",
-            "1/x₁ + 1/x₂ = S/P = 5/3.",
-            "(x₁ − x₂)² = S² − 4P = 25 − 12 = 13 (Δ de 13: Δ/a² ile aynı).",
-            "x₁³ + x₂³ = S³ − 3PS = 125 − 3·3·5 = 125 − 45 = 80."
+            "r₁² + r₂² = S² − 2P = 25 − 6 = 19.",
+            "1/r₁ + 1/r₂ = S/P = 5/3.",
+            "(r₁ − r₂)² = S² − 4P = 25 − 12 = 13 (Δ de 13: Δ/a² ile aynı).",
+            "r₁³ + r₂³ = S³ − 3PS = 125 − 3·3·5 = 125 − 45 = 80."
           ],
           sonuc: "19, 5/3, 13 ve 80."
         }
@@ -133,7 +133,7 @@ window.DEFTER = {
       bloklar: [
         {
           tip: "tablo",
-          baslik: "Koşul → sonuç",
+          baslik: "Koşul → sonuç (derste \"iki negatif kök\", \"zıt işaretli kök\" sorularında kullanılır)",
           head: ["Koşul", "Sonuç"],
           rows: [
             [
@@ -142,13 +142,14 @@ window.DEFTER = {
             ],
             ["P > 0, S > 0, Δ ≥ 0", "iki kök de pozitif"],
             ["P > 0, S < 0, Δ ≥ 0", "iki kök de negatif"],
+            ["P < 0, S < 0", "zıt işaretli; negatif kökün mutlak değeri büyük (r₁ < 0 < r₂ ve |r₁| > |r₂|)"],
             [
               "S = 0 (b = 0), Δ > 0",
-              "kökler birbirinin toplama tersi: x₁ = −x₂"
+              "kökler birbirinin toplama tersi: r₁ = −r₂"
             ],
             [
               "P = 1 (c = a)",
-              "kökler birbirinin çarpma tersi: x₁ = 1/x₂"
+              "kökler birbirinin çarpma tersi: r₁ = 1/r₂"
             ],
             ["c = 0", "bir kök 0"],
             ["a + b + c = 0", "bir kök 1, öbürü c/a"],
@@ -206,7 +207,7 @@ window.DEFTER = {
           baslik: "Kök ilişkileri",
           durum: "(a) x² − 7x + k = 0'ın kökleri farkı 3. (b) x² − 9x + k = 0'ın bir kökü diğerinin 2 katı. k?",
           adimlar: [
-            "(a) x₁ + x₂ = 7 ve x₁ − x₂ = 3 → toplayınca 2x₁ = 10, x₁ = 5, x₂ = 2.",
+            "(a) r₁ + r₂ = 7 ve r₁ − r₂ = 3 → toplayınca 2r₁ = 10, r₁ = 5, r₂ = 2.",
             "k = P = 5·2 = 10. Kontrol: Δ = 49 − 40 = 9 = 3² ✓.",
             "(b) Kökler r ve 2r: toplam 3r = 9 → r = 3, kökler 3 ve 6.",
             "k = P = 3·6 = 18."
@@ -216,11 +217,11 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "Bilinen kök ve kök karelerinin toplamı",
-          durum: "(a) x = 2, x² + kx − 10 = 0'ın kökü. (b) x² − mx + 2 = 0'da x₁² + x₂² = 5. k ve m?",
+          durum: "(a) x = 2, x² + kx − 10 = 0'ın kökü. (b) x² − mx + 2 = 0'da r₁² + r₂² = 5. k ve m?",
           adimlar: [
             "(a) x = 2'yi yerine koy: 4 + 2k − 10 = 0 → k = 3.",
-            "Diğer kök: P = −10 ise x₂ = −10/2 = −5. Kontrol: S = 2 + (−5) = −3 = −k ✓.",
-            "(b) S = m, P = 2. x₁² + x₂² = S² − 2P = m² − 4 = 5 → m² = 9 → m = ±3.",
+            "Diğer kök: P = −10 ise r₂ = −10/2 = −5. Kontrol: S = 2 + (−5) = −3 = −k ✓.",
+            "(b) S = m, P = 2. r₁² + r₂² = S² − 2P = m² − 4 = 5 → m² = 9 → m = ±3.",
             "Kontrol: Δ = m² − 8 = 1 > 0, kökler gerçek ✓."
           ],
           sonuc: "(a) k = 3 (diğer kök −5), (b) m = ±3."
@@ -228,7 +229,7 @@ window.DEFTER = {
         {
           tip: "tuzak",
           metin: "S ve P'den bulduğun parametre, kökleri gerçek yapmayabilir.",
-          yanlis: "x² − mx + 9 = 0'da x₁² + x₂² = 2 ise m² − 18 = 2, yani m = ±2√5.",
+          yanlis: "x² − mx + 9 = 0'da r₁² + r₂² = 2 ise m² − 18 = 2, yani m = ±2√5.",
           dogru: "Δ = m² − 36 = 20 − 36 < 0: gerçek kök yok, dolayısıyla gerçek köklerle çözüm yok. Sınavda böyle yaz: *Check that Δ ≥ 0 so that the roots are real.*"
         }
       ]
@@ -242,10 +243,11 @@ window.DEFTER = {
           baslik: "Dönüşüm kuralları",
           head: ["Yeni kökler", "Yeni toplam", "Yeni çarpım"],
           rows: [
-            ["x₁ + k, x₂ + k", "S + 2k", "P + kS + k²"],
-            ["k·x₁, k·x₂", "k·S", "k²·P"],
-            ["1/x₁, 1/x₂", "S / P", "1 / P"],
-            ["x₁², x₂²", "S² − 2P", "P²"]
+            ["r₁ + k, r₂ + k", "S + 2k", "P + kS + k²"],
+            ["k·r₁, k·r₂", "k·S", "k²·P"],
+            ["1/r₁, 1/r₂", "S / P", "1 / P"],
+            ["r₁², r₂²", "S² − 2P", "P²"],
+            ["p·r₁ + q, p·r₂ + q", "pS + 2q", "p²P + pqS + q²"]
           ]
         },
         {
@@ -257,9 +259,10 @@ window.DEFTER = {
             "(b) S' = S/P = 3, P' = 1/P = 1 → x² − 3x + 1 = 0 (denklem aynı kalıyor).",
             "(c) S' = S² − 2P = 9 − 2 = 7, P' = P² = 1 → x² − 7x + 1 = 0.",
             "(d) S' = 2·3 = 6, P' = 4·1 = 4 → x² − 6x + 4 = 0.",
-            "Kontrol (a): α = (3 + √5)/2 → α + 1 = (5 + √5)/2, β + 1 = (5 − √5)/2; toplam 5, çarpım (25 − 5)/4 = 5 ✓."
+            "Kontrol (a): α = (3 + √5)/2 → α + 1 = (5 + √5)/2, β + 1 = (5 − √5)/2; toplam 5, çarpım (25 − 5)/4 = 5 ✓.",
+            "(e) Ders tarzı: x² − x − 3 = 0'ın kökleri r₁, r₂ ise kökleri 2r₁ + 1 ve 2r₂ + 1 olan denklem: S = 1, P = −3 → S' = 2·1 + 2 = 4, P' = 4·(−3) + 2·1 + 1 = −9 → x² − 4x − 9 = 0."
           ],
-          sonuc: "x² − 5x + 5 = 0, x² − 3x + 1 = 0, x² − 7x + 1 = 0, x² − 6x + 4 = 0."
+          sonuc: "x² − 5x + 5 = 0, x² − 3x + 1 = 0, x² − 7x + 1 = 0, x² − 6x + 4 = 0 ve (e) için x² − 4x − 9 = 0."
         }
       ]
     },
@@ -307,15 +310,15 @@ window.DEFTER = {
               renk: 0,
               etiket: "f"
             },
-            { id: "r1", tip: "nokta", x: 2, y: 5, etiket: "x₁ = 1", renk: 2, gizli: true },
-            { id: "r2", tip: "nokta", x: 6, y: 5, etiket: "x₂ = 5", renk: 2, gizli: true },
+            { id: "r1", tip: "nokta", x: 2, y: 5, etiket: "r₁ = 1", renk: 2, gizli: true },
+            { id: "r2", tip: "nokta", x: 6, y: 5, etiket: "r₂ = 5", renk: 2, gizli: true },
             { id: "ax2", tip: "cizgi", from: [4, 0], to: [4, 11], renk: 1, kesik: true, gizli: true },
             { id: "m", tip: "nokta", x: 4, y: 5, etiket: "(3, 0)", renk: 1, gizli: true },
             { id: "t", tip: "nokta", x: 4, y: 1, etiket: "(3, −4)", renk: 3, gizli: true }
           ],
           durumlar: [
             { metin: "f(x) = x² − 6x + 5. Katsayılar: a = 1, b = −6, c = 5." },
-            { metin: "Kökler x₁ = 1 ve x₂ = 5. Toplam 6 = −b/a ✓, çarpım 5 = c/a ✓.", goster: ["r1", "r2"] },
+            { metin: "Kökler r₁ = 1 ve r₂ = 5. Toplam 6 = −b/a ✓, çarpım 5 = c/a ✓.", goster: ["r1", "r2"] },
             {
               metin: "Köklerin ortası (1 + 5)/2 = 3 = S/2. Parabol bu dikey doğruya göre simetrik: x = 3.",
               goster: ["ax2", "m"]
@@ -329,7 +332,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "(x₁ + x₂)/2", alt: "köklerin ortası" },
+            { t: "(r₁ + r₂)/2", alt: "köklerin ortası" },
             "=",
             { t: "−b/2a", alt: "simetri ekseni ve tepe noktasının x'i" }
           ],
@@ -355,14 +358,14 @@ window.DEFTER = {
         {
           tip: "ozet",
           maddeler: [
-            "x₁ + x₂ = −b/a, x₁ · x₂ = c/a; kökleri bulmadan okunur.",
-            "Kökleri x₁, x₂ olan denklem: x² − (x₁ + x₂)x + x₁x₂ = 0.",
-            "x₁² + x₂² = S² − 2P, 1/x₁ + 1/x₂ = S/P, (x₁ − x₂)² = S² − 4P, x₁³ + x₂³ = S³ − 3PS.",
+            "r₁ + r₂ = −b/a, r₁ · r₂ = c/a; kökleri bulmadan okunur.",
+            "Kökleri r₁, r₂ olan denklem: x² − (r₁ + r₂)x + r₁r₂ = 0.",
+            "r₁² + r₂² = S² − 2P, 1/r₁ + 1/r₂ = S/P, (r₁ − r₂)² = S² − 4P, r₁³ + r₂³ = S³ − 3PS.",
             "P < 0 zıt işaret; P > 0 ve S > 0 iki pozitif; P > 0 ve S < 0 iki negatif; Δ ≥ 0 koşulunu unutma.",
             "a + b + c = 0 → x = 1 kök; a − b + c = 0 → x = −1 kök.",
             "Parametre problemlerinde bilgiyi S ve P'ye çevir; sonunda Δ ≥ 0 kontrol et.",
             "Yeni kökler için S' ve P'yi eski S ve P'den hesapla.",
-            "Köklerin ortası = simetri ekseni = −b/2a."
+            "Köklerin ortası = simetri ekseni = −b/2a. Derste kökler r₁, r₂ diye yazılır."
           ]
         }
       ]
@@ -370,31 +373,31 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "3x² − 12x + 5 = 0 denkleminin kökleri x₁ ve x₂ ise x₁ + x₂ ve x₁·x₂ kaçtır?",
-      opts: ["4 ve 5/3", "−4 ve 5/3", "4 ve 5", "12 ve 5"],
+      q: "If r₁ and r₂ are the roots of 3x² − 12x + 5 = 0, what are r₁ + r₂ and r₁ · r₂?",
+      opts: ["4 and 5/3", "−4 and 5/3", "4 and 5", "12 and 5"],
       a: 0,
       why: "S = −b/a = −(−12)/3 = 4 ve P = c/a = 5/3. B seçeneği toplamın işaretini ters alır; C ve D, a = 3'e bölmeyi unutur."
     },
     {
-      q: "x² − 4x + 2 = 0 denkleminin kökleri x₁ ve x₂ ise x₁² + x₂² kaçtır?",
+      q: "If r₁ and r₂ are the roots of x² − 4x + 2 = 0, what is r₁² + r₂²?",
       opts: ["8", "12", "14", "16"],
       a: 1,
-      why: "S = 4 ve P = 2. x₁² + x₂² = S² − 2P = 16 − 4 = 12. 14 seçeneği S² − P'yi hesaplar; 16 ise yalnızca S²'dir. Köklerin çarpımının iki katını çıkarmayı unutmamak gerekir."
+      why: "S = 4 ve P = 2. r₁² + r₂² = S² − 2P = 16 − 4 = 12. 14 seçeneği S² − P'yi hesaplar; 16 ise yalnızca S²'dir. Köklerin çarpımının iki katını çıkarmayı unutmamak gerekir."
     },
     {
-      q: "Kökleri 3 + √2 ve 3 − √2 olan, x² katsayısı 1 olan denklem hangisidir?",
+      q: "Which quadratic equation with leading coefficient 1 has the roots 3 + √2 and 3 − √2?",
       opts: ["x² + 6x + 7 = 0", "x² − 3x + 7 = 0", "x² − 6x + 7 = 0", "x² − 6x + 11 = 0"],
       a: 2,
       why: "S = (3 + √2) + (3 − √2) = 6 ve P = 3² − (√2)² = 9 − 2 = 7. Denklem x² − 6x + 7 = 0. D seçeneği çarpımı 9 + 2 diye hesaplamış; A seçeneği toplamın işaretini değiştirmiş."
     },
     {
-      q: "x² − 8x + k = 0 denkleminin köklerinden biri diğerinin 3 katıdır. k kaçtır?",
+      q: "In x² − 8x + k = 0, one root is three times the other. What is k?",
       opts: ["6", "8", "16", "12"],
       a: 3,
       why: "Kökler r ve 3r: toplam 4r = 8 → r = 2, kökler 2 ve 6. k = P = 12. Kontrol: Δ = 64 − 48 = 16 > 0 ✓. 16 seçeneği, r'yi 4 alıp 4·4 = 16 yapmaktır; toplamdan r'yi doğru bulmak gerekir."
     },
     {
-      q: "f(x) = ax² + bx + c parabolü için tabloda üç nokta veriliyor: kökler x = −1 ve x = 5, tepe noktası (2, −9). a + b + c kaçtır?",
+      q: "The parabola f(x) = ax² + bx + c has x-intercepts x = −1 and x = 5 and vertex (2, −9), as shown in the table. What is a + b + c?",
       fig: {
         type: "table",
         head: ["x", "−1", "2", "5"],

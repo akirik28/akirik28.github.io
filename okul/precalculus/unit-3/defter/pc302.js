@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc302 · 3.2 Polinom Bölmesi
-   Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus, Unit 3). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#3_1 Polynomials, Dividing Polynomials ve Synthetic Division bölümleri) + Review for Exam#3; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc302",
   amac: "Bu konu bir polinomu başka bir polinoma bölmeyi anlatıyor: uzun bölme, sentetik bölme ve kalanın anlamı. Sonunda bölümü ve kalanı bulacak, tam bölünmeyi çarpanlara ayırmada kullanacaksın.",
@@ -11,7 +11,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [{ t: "P(x)", alt: "bölünen" }, "=", { t: "D(x)", alt: "bölen" }, "·", { t: "Q(x)", alt: "bölüm" }, "+", { t: "R(x)", alt: "kalan" }],
-          aciklama: "Tam sayılardaki gibi: 29 = 4·7 + 1. Polinomlarda \"küçük\" demek \"derecesi küçük\" demektir. Sınavda böyle yaz: *When P(x) is divided by D(x), the quotient is Q(x) and the remainder is R(x).*"
+          aciklama: "Ders tanımı: deg P ≥ deg D ≥ 1 iken Q ve R vardır ve deg R < deg D. R = 0 ise P, D ile *divisible* (tam bölünür) ve P(x) = D(x)·Q(x). Tam sayılardaki gibi: 29 = 4·7 + 1. Sınavda böyle yaz: *When P(x) is divided by D(x), the quotient is Q(x) and the remainder is R(x).*"
         },
         {
           tip: "kavramlar",
@@ -91,6 +91,18 @@ window.DEFTER = {
           sonuc: "Bölüm x, kalan −5x + 3. Kontrol: (x² + 1)·x + (−5x + 3) = x³ − 4x + 3. Sınavda böyle yaz: *The remainder has a lower degree than the divisor, so we stop.*"
         },
         {
+          tip: "ornek",
+          baslik: "(3x⁵ − 2x⁴ + x² − 3) ÷ (x² − 1)",
+          durum: "x³ ve x terimleri eksik: katsayılar 3, −2, 0, 1, 0, −3. x² − 1 = (x − 1)(x + 1) olduğundan iki kez sentetik bölme de çalışır.",
+          adimlar: [
+            "Uzun bölme: 3x⁵ ÷ x² = 3x³, sonra −2x², sonra 3x, sonra −1. Bölüm 3x³ − 2x² + 3x − 1.",
+            "Kalan: 3x − 4. Derecesi 1, bölenin derecesi 2'den küçük.",
+            "İki adımlı sentetik: önce (x − 1) ile böl: kalan −1; çıkan bölümü (x + 1) ile böl: kalan 3. Toplam kalan 3(x − 1) + (−1) = 3x − 4 ✓.",
+            "Kontrol: P(1) = 3 − 2 + 1 − 3 = −1 ve kalan 3·1 − 4 = −1 ✓."
+          ],
+          sonuc: "Bölüm 3x³ − 2x² + 3x − 1, kalan 3x − 4. Sınavda böyle yaz: *The quotient is 3x³ − 2x² + 3x − 1 and the remainder is 3x − 4.*"
+        },
+        {
           tip: "tuzak",
           metin: "Kalan her zaman sayı değildir: bölen ikinci derece ise kalan birinci derece olabilir. Eksik terim yazılmazsa benzer terimler alt alta gelmez.",
           yanlis: "x³ − 4x + 3'ü yazarken x² terimini atlayıp −4x'i hemen x³'ün yanına koymak.",
@@ -106,7 +118,7 @@ window.DEFTER = {
           tip: "adimlar",
           baslik: "x − a ile sentetik bölme",
           adimlar: [
-            { baslik: "Hazırla", metin: "a'yı sola yaz. Bölünenin katsayılarını sırayla yaz; eksik terime 0 koy." },
+            { baslik: "Hazırla", metin: "Bölen x − a ise a'yı sola yaz (x + 3 için a = −3, işaret ters). Bölünenin katsayılarını sırayla yaz; eksik terime 0 koy." },
             { baslik: "İndir", metin: "İlk katsayıyı olduğu gibi aşağı indir." },
             { baslik: "Çarp ve topla", metin: "İndirdiğin sayıyı a ile çarp, sonraki katsayının altına yaz ve topla. Sona kadar tekrarla." },
             { baslik: "Oku", metin: "Son sayı kalandır; öncekiler bölümün katsayılarıdır (bölümün derecesi bölünenden 1 az)." }
@@ -133,20 +145,26 @@ window.DEFTER = {
           sonuc: "Bölüm x³ − 3x² + 4x − 8, kalan 21."
         },
         {
-          tip: "tuzak",
-          metin: "Bölen 2x − 4 gibi başkatsayısı 1 olmayan bir ifadeyse önce 2(x − 2) diye yaz. x − 2 ile bölünce kalan aynı çıkar, ama bölüm 2'ye bölünmelidir.",
-          yanlis: "x + 3'e bölerken sola 3 yazmak.",
-          dogru: "x + 3 = x − (−3) olduğu için sola −3 yazılır."
+          tip: "ornek",
+          baslik: "(x³ − 4x² + 2x − 1) ÷ (3x − 6)",
+          durum: "Bölenin başkatsayısı 1 değil: 3x − 6 = 3(x − 2). Ders notu bu tür (ax + b) bölenleri de sentetik bölmede işler.",
+          adimlar: [
+            "(x − 2) ile sentetik böl, a = 2: 1; −4 + 2 = −2; 2 + (−4) = −2; −1 + (−4) = −5.",
+            "Yani P(x) = (x − 2)(x² − 2x − 2) − 5.",
+            "3x − 6 = 3(x − 2) olduğundan P(x) = (3x − 6)·(x² − 2x − 2)/3 − 5.",
+            "Bölüm (x² − 2x − 2)/3, kalan −5. Kontrol: (x − 2)(x² − 2x − 2) = x³ − 4x² + 2x + 4; −5 ekleyince P(x) ✓."
+          ],
+          sonuc: "Bölüm (x² − 2x − 2)/3, kalan −5. Başkatsayısı 1 olmayan bölende bölüm o başkatsayıya bölünür, kalan değişmez. Sınavda böyle yaz: *Factor the divisor as 3(x − 2) first.*"
         }
       ]
     },
     {
       baslik: "Hangi yöntem, hangi bölen?",
-      kisa: "Bölen x − a ise sentetik, değilse uzun bölme kullan.",
+      kisa: "Bölen birinci derece ise sentetik, ikinci derece ise uzun bölme kullan.",
       bloklar: [
         {
           tip: "ikili",
-          sol: { ikon: "⚡", baslik: "*Synthetic division*", maddeler: ["Bölen yalnızca x − a biçiminde", "Yalnızca katsayılar yazılır, hızlıdır"] },
+          sol: { ikon: "⚡", baslik: "*Synthetic division*", maddeler: ["Bölen birinci derece: x − a ya da ax + b", "Yalnızca katsayılar yazılır, hızlıdır"] },
           sag: { ikon: "📐", baslik: "*Long division*", maddeler: ["Her bölen için çalışır", "x² + 1 gibi ikinci derece bölenler için tek yol"] },
           oyun: [
             { metin: "(x³ − 2x + 5) ÷ (x + 4)", cevap: "sol", neden: "x + 4 = x − (−4): sentetik bölme olur." },
@@ -302,7 +320,7 @@ window.DEFTER = {
             "Uzun bölme: böl, çarp, çıkar, indir; kalanın derecesi bölenden küçük olunca dur.",
             "Eksik terimlere 0 yaz (x³ + 0x² − 4x + 3 gibi); çıkarırken işareti değiştirmeyi unutma.",
             "Sentetik bölme yalnızca x − a için: x + 3 ise a = −3. Son sayı kalan, öncekiler bölümün katsayılarıdır.",
-            "2x − 4 gibi bölenlerde 2(x − 2) olarak ayır; kalan aynı, bölüm 2'ye bölünür.",
+            "2x − 4 ya da 3x − 6 gibi bölenlerde başkatsayıyı dışarı al, 2(x − 2) yaz; kalan aynı, bölüm başkatsayıya bölünür. x² − 1 gibi bölenler uzun bölmeyle ya da iki kez sentetikle bölünür.",
             "Kalan 0 ise bölen çarpandır ve grafik o noktada x eksenine değer.",
             "Sonucu *quotient* ve *remainder* kelimeleriyle yaz: P(x) = D(x)Q(x) + R(x)."
           ]
@@ -312,38 +330,43 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir P(x) polinomu ikinci derece bir D(x) polinomuna bölünüyor ve kalan R(x) sıfırdan farklı. R(x) için hangisi kesinlikle doğrudur?",
-      opts: ["Derecesi en az 2'dir", "Derecesi en fazla 1'dir", "Her zaman bir sabit sayıdır", "Derecesi P(x)'in derecesine eşittir"],
+      q: "A polynomial P(x) is divided by a polynomial D(x) of degree 2, and the remainder R(x) is not zero. Which statement about R(x) must be true?",
+      opts: ["Its degree is at least 2", "Its degree is at most 1", "It is always a constant", "Its degree equals the degree of P(x)"],
       a: 1,
       why: "Kalanın derecesi bölenin derecesinden küçük olmak zorundadır: 2'den küçük, yani 1 ya da 0. C yanlıştır; bölen ikinci derece ise kalan birinci derece de olabilir (örneğin −5x + 3)."
     },
     {
-      q: "(x⁴ − 3x² + 2x + 5) ÷ (x − 2) işleminde kalan kaçtır?",
+      q: "What is the remainder when x⁴ − 3x² + 2x + 5 is divided by x − 2?",
       opts: ["5", "9", "−3", "13"],
       a: 3,
       why: "x³ eksik, katsayısı 0 olarak yazılır: 1, 0, −3, 2, 5. a = 2 ile: 1, 2, 1, 4, 13. Kalan 13. A şıkkı 0'ı yazmayı unutup 1, −3, 2, 5 ile bölünce çıkan 5'tir."
     },
     {
-      q: "(x³ + 2x² − 5x − 6) ÷ (x + 1) işleminin bölümü ve kalanı nedir?",
-      opts: ["Bölüm x² + x − 6, kalan 0", "Bölüm x² + 3x − 2, kalan −8", "Bölüm x² + 2x − 3, kalan 0", "Bölüm x² − x − 6, kalan 0"],
+      q: "What are the quotient and the remainder of (x³ + 2x² − 5x − 6) ÷ (x + 1)?",
+      opts: [
+        "Quotient x² + x − 6, remainder 0",
+        "Quotient x² + 3x − 2, remainder −8",
+        "Quotient x² + 2x − 3, remainder 0",
+        "Quotient x² − x − 6, remainder 0"
+      ],
       a: 0,
       why: "x + 1 = x − (−1) olduğu için a = −1: 1; 2 − 1 = 1; −5 − 1 = −6; −6 + 6 = 0. B şıkkı a = 1 almanın sonucudur."
     },
     {
-      q: "Alanı 2x² + 3x − 2 m² olan dikdörtgen bir bahçenin bir kenarı (2x − 1) m ise diğer kenarı kaç metredir?",
+      q: "A rectangular garden has area 2x² + 3x − 2 m², and one of its sides is (2x − 1) m. How long is the other side, in meters?",
       opts: ["2x + 4", "x − 2", "x + 2", "2x + 2"],
       a: 2,
       why: "Alan = kenar × kenar. (2x − 1)(x + 2) = 2x² + 4x − x − 2 = 2x² + 3x − 2. A şıkkı x − ½ ile sentetik bölmenin sonucudur; 2x − 1 = 2(x − ½) olduğu için ayrıca 2'ye bölmek gerekir."
     },
     {
-      q: "Tablo, bir P(x) polinomunun (x − 3)'e sentetik bölmesini gösteriyor. Hangisi doğrudur?",
+      q: "The table shows the synthetic division of P(x) by (x − 3). Which statement is true?",
       fig: {
         type: "table",
-        head: ["Satır", "x³", "x²", "x", "sabit"],
-        rows: [["Katsayılar", "1", "−2", "−5", "6"], ["a = 3 ile çarpım", "", "3", "3", "−6"], ["Toplam", "1", "1", "−2", "0"]],
+        head: ["Row", "x³", "x²", "x", "constant"],
+        rows: [["Coefficients", "1", "−2", "−5", "6"], ["Times a = 3", "", "3", "3", "−6"], ["Sum", "1", "1", "−2", "0"]],
         caption: "P(x) ÷ (x − 3)"
       },
-      opts: ["Kalan 1'dir", "x − 3 bir çarpandır ve P(x) = (x − 3)(x² + x − 2)", "Bölüm x² − 2x − 5'tir", "Kalan 6'dır"],
+      opts: ["The remainder is 1", "x − 3 is a factor and P(x) = (x − 3)(x² + x − 2)", "The quotient is x² − 2x − 5", "The remainder is 6"],
       a: 1,
       why: "Son sayı 0, yani kalan 0 ve x − 3 çarpandır. Bölümün katsayıları son satırın ilk üç sayısıdır: 1, 1, −2. C şıkkı katsayıları bölünenin satırından okur."
     }

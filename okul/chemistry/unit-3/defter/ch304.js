@@ -116,7 +116,8 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📐", terim: "Theoretical yield", tr: "teorik verim", tanim: "Denklem ve sınırlayıcı bileşenden hesaplanan en çok ürün miktarı.", ornek: "20 g CaCO₃ ısıtılırsa teorik olarak 8,8 g CO₂." },
-            { ikon: "🧪", terim: "Actual yield", tr: "gerçek verim", tanim: "Deneyde gerçekten elde edilen ürün miktarı. Yan tepkime ve kayıplar yüzünden genelde teorikten azdır.", ornek: "Deneyde yalnızca 4,4 g CO₂ toplandı." }
+            { ikon: "🧪", terim: "Actual yield", tr: "gerçek verim", tanim: "Deneyde gerçekten elde edilen ürün miktarı. Yan tepkime ve kayıplar yüzünden genelde teorikten azdır.", ornek: "Deneyde yalnızca 4,4 g CO₂ toplandı." },
+            { ikon: "🧂", terim: "Percent purity", tr: "yüzde saflık", tanim: "Numunedeki saf maddenin kütlesinin numune kütlesine oranı (× 100). Tepkime hesabında yalnızca saf kısım kullanılır.", ornek: "50 g kirli numunenin 45 g'ı saf ise saflık %90; hesapta 45 g alınır." }
           ] },
         { tip: "formul", parcalar: [
             { t: "% verim", alt: "yüzde verim" }, "=",
@@ -150,22 +151,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "N₂ + 3H₂ → 2NH₃ tepkimesinde yeterli N₂ varken 6 mol H₂ tüketiliyor. Kaç mol NH₃ oluşur?",
+    { q: "In the reaction N₂ + 3H₂ → 2NH₃, 6 mol of H₂ is consumed while there is enough N₂. How many moles of NH₃ form?",
       opts: ["2 mol", "3 mol", "4 mol", "6 mol"], a: 2,
       why: "Oran H₂ : NH₃ = 3 : 2 olduğundan 6 × 2/3 = 4 mol NH₃ oluşur. 6 mol (D) katsayıları dikkate almadan mol sayısını aynen yazmaktır." },
-    { q: "CH₄ + 2O₂ → CO₂ + 2H₂O tepkimesinde 8 g CH₄ tamamen yanarsa kaç g CO₂ oluşur? (C = 12, H = 1, O = 16)",
+    { q: "In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, how many grams of CO₂ form when 8 g of CH₄ burn completely? (C = 12, H = 1, O = 16)",
       opts: ["11 g", "22 g", "44 g", "16 g"], a: 1,
       why: "n(CH₄) = 8 ÷ 16 = 0,5 mol; oran 1 : 1 olduğundan 0,5 mol CO₂ = 0,5 × 44 = 22 g. 44 g (C) 1 mol CO₂ kütlesidir; CH₄'ü mole çevirmemek bu şıkka götürür." },
-    { q: "2H₂ + O₂ → 2H₂O tepkimesi iki ayrı deneyde yapılıyor. Tablodaki miktarlara göre sınırlayıcı bileşenler hangisidir?",
-      fig: { type: "table", head: ["Deney", "H₂ (mol)", "O₂ (mol)"], rows: [["1", "4", "1"], ["2", "2", "2"]], caption: "Girenlerin miktarları" },
-      opts: ["Deney 1'de O₂, Deney 2'de H₂", "Deney 1'de H₂, Deney 2'de O₂", "İki deneyde de H₂", "İki deneyde de O₂"], a: 0,
+    { q: "The reaction 2H₂ + O₂ → 2H₂O is carried out in two separate experiments. According to the amounts in the table, what are the limiting reagents?",
+      fig: { type: "table", head: ["Experiment", "H₂ (mol)", "O₂ (mol)"], rows: [["1", "4", "1"], ["2", "2", "2"]], caption: "Amounts of reactants" },
+      opts: ["O₂ in Experiment 1, H₂ in Experiment 2", "H₂ in Experiment 1, O₂ in Experiment 2", "H₂ in both experiments", "O₂ in both experiments"], a: 0,
       why: "Mol ÷ katsayı: Deney 1'de H₂ 4 ÷ 2 = 2, O₂ 1 ÷ 1 = 1 → O₂ sınırlayıcı. Deney 2'de H₂ 2 ÷ 2 = 1, O₂ 2 ÷ 1 = 2 → H₂ sınırlayıcı. Mol sayısı büyük olan maddenin fazla olduğunu varsaymak (B) yanılgıdır." },
-    { q: "Grafik, 1 mol O₂'ye eklenen H₂ miktarına göre oluşan H₂O miktarını gösteriyor (2H₂ + O₂ → 2H₂O). Hangi yorum doğrudur?",
-      fig: { type: "graph", xlabel: "H₂ (mol)", ylabel: "H₂O (mol)", xmax: 4, ymax: 4, lines: [{ from: [0, 0], to: [2, 2] }, { from: [2, 2], to: [4, 2] }], points: [{ q: 3, p: 2, label: "3 mol H₂", guides: true }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }], yticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }], caption: "Ürün miktarı–H₂ grafiği" },
-      opts: ["2 mol H₂'den sonra H₂ sınırlayıcıdır", "H₂O, H₂ eklendikçe sınırsız artar", "En çok 1 mol H₂O oluşur", "2 mol H₂'den sonra O₂ bittiği için ürün artmaz"], a: 3,
+    { q: "The graph shows the amount of H₂O formed as H₂ is added to 1 mol of O₂ (2H₂ + O₂ → 2H₂O). Which interpretation is correct?",
+      fig: { type: "graph", xlabel: "H₂ (mol)", ylabel: "H₂O (mol)", xmax: 4, ymax: 4, lines: [{ from: [0, 0], to: [2, 2] }, { from: [2, 2], to: [4, 2] }], points: [{ q: 3, p: 2, label: "3 mol H₂", guides: true }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }], yticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }], caption: "Amount of product vs. H₂" },
+      opts: ["After 2 mol of H₂, H₂ is the limiting reagent", "H₂O increases without limit as H₂ is added", "At most 1 mol of H₂O can form", "After 2 mol of H₂, the product does not increase because O₂ has run out"], a: 3,
       why: "H₂ ile O₂ 2 : 1 oranında tepkimeye girer; 1 mol O₂ en çok 2 mol H₂ harcar. Sonrasında O₂ sınırlayıcıdır ve fazla H₂ ürün artırmaz. A seçeneği sınırlayıcıyı tersine yorumlar." },
-    { q: "20 g CaCO₃ ısıtılınca (CaCO₃ → CaO + CO₂) 6,6 g CO₂ toplanıyor (Ca = 40, C = 12, O = 16). Yüzde verim kaçtır?",
-      opts: ["%50", "%66", "%75", "%88"], a: 2,
+    { q: "When 20 g of CaCO₃ is heated (CaCO₃ → CaO + CO₂), 6.6 g of CO₂ is collected (Ca = 40, C = 12, O = 16). What is the percent yield?",
+      opts: ["50%", "66%", "75%", "88%"], a: 2,
       why: "Teorik CO₂ = 0,2 mol × 44 = 8,8 g; verim = 6,6 ÷ 8,8 × 100 = %75. %66 (B) sayıyı 6,6 diye yüzdeymiş gibi okumaktır; gerçek ÷ teorik hesaplanmalıdır." }
   ]
 };

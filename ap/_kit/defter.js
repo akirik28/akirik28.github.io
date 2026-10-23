@@ -352,7 +352,7 @@
           el("span", { class: "d-term-f" }, [
             el("span", { class: "d-term-ic", "aria-hidden": "true", text: k.ikon || "◆" }),
             el("span", { class: "d-term-en", lang: "en", text: k.terim }),
-            el("span", { class: "d-term-tr", text: k.tr || "" }),
+            el("span", { class: "d-term-tr", html: md(k.tr || "") }),
             el("span", { class: "d-term-hint mono", text: "çevir ↻" })
           ]),
           el("span", { class: "d-term-b" }, [

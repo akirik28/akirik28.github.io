@@ -109,10 +109,10 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Birikim ve ödeme araçları", head: ["Araç", "Faiz", "Paraya erişim", "Şartlar", "Sigorta"], rows: [
             ["*Savings account* (tasarruf hesabı)", "Genelde öder", "Kolay", "Asgari mevduat ve aylık ücret bankaya göre değişir", "Sigortalı"],
             ["*Money market account*", "Savings'ten genelde yüksek", "Daha kolay (nakit erişimi)", "Daha büyük asgari mevduat, daha yüksek aylık ücret olabilir", "Sigortalı"],
-            ["*Certificate of deposit* (CD, vadeli mevduat)", "Tipik olarak en yüksek", "Süre bitene dek çekilemez (1 ay–5 yıl)", "Büyük asgari mevduat; aylık ücret yok", "Sigortalı"],
+            ["*Certificate of deposit* (CD, vadeli mevduat)", "Tipik olarak en yüksek", "Süre bitmeden çekilirse erken çekim cezası ödenir (1 ay–5 yıl)", "Büyük asgari mevduat; aylık ücret yok", "Sigortalı"],
             ["*Checking account* (vadesiz hesap)", "Az ya da hiç", "Çok kolay (kart, ATM)", "Aylık bakım ücreti, hesap açığı ücreti olabilir", "Sigortalı"],
             ["Mobil ödeme hesabı, kripto", "Genelde yok", "Harcaması kolay (mobil); kripto için kullanıcı değer artışı umar", "Sigortalı kurum sunmuyorsa risk size ait", "Çoğunlukla sigortasız"]
-          ], not: "ABD'de sigorta sınırı 2024'te hesap başına 250.000 $; Türkiye'de benzer güvenceyi TMSF sağlar." },
+          ], not: "ABD'de sigorta sınırı (FDIC/NCUA) mevduat sahibi başına, her banka ve hesap sahipliği türü için 250.000 $; Türkiye'de benzer güvenceyi TMSF sağlar." },
         { tip: "ikili", ayirici: "↔", sol: { ikon: "🔓", baslik: "Esneklik önde", maddeler: ["Para her an çekilebilir", "Faiz daha düşüktür", "Acil durum fonu için uygun"] },
           sag: { ikon: "🔒", baslik: "Faiz önde", maddeler: ["Para belli süre kilitli (CD)", "Faiz genelde daha yüksek", "Süreyi bekleyebilecek para için uygun"] },
           oyun: [

@@ -1,8 +1,8 @@
 /* Kitora not defteri · pc201 · 2.1 İkinci Dereceden Denklemler
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#2_1 Quadratic Equations) + Review for Exam#2; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc201",
-  amac: "Bu konu ikinci dereceden denklemleri çözmeyi anlatıyor. Çarpanlara ayırmayı, tam kare tamamlamayı, kök formülünü ve diskriminantın kök sayısını nasıl belirlediğini; ayrıca sınavda çözümü İngilizce nasıl yazacağını öğreneceksin.",
+  amac: "Bu konu ikinci dereceden denklemleri çözmeyi anlatıyor. Çarpanlara ayırmayı, tam kare tamamlamayı, kök formülünü, diskriminantla kök sayısını ve kökler karmaşıksa nasıl yazılacağını; sınavda çözümü İngilizce nasıl yazacağını öğreneceksin.",
   bolumler: [
     {
       baslik: "İkinci dereceden denklem nedir?",
@@ -13,9 +13,9 @@ window.DEFTER = {
           parcalar: [
             { t: "ax² + bx + c = 0", alt: "standart biçim (*standard form*), a ≠ 0" },
             "→",
-            { t: "x₁, x₂", alt: "kökler (*roots*)" }
+            { t: "r₁, r₂", alt: "kökler (*roots*)" }
           ],
-          aciklama: "Sınavda böyle yaz: *A quadratic equation has at most two real roots.*"
+          aciklama: "Karmaşık sayılarda her ikinci dereceden denklemin iki kökü vardır. Sınavda böyle yaz: *A quadratic equation has at most two real roots.*"
         },
         {
           tip: "kavramlar",
@@ -30,7 +30,7 @@ window.DEFTER = {
             {
               ikon: "🎯",
               terim: "Root / solution / zero",
-              tr: "kök / çözüm / sıfır",
+              tr: "kök / çözüm / sıfır (ders notunda kökler r₁, r₂)",
               tanim: "Denklemi sağlayan x değeri. Grafikte parabolün x eksenini kestiği noktanın x'i.",
               ornek: "x² − 5x + 6 = 0 için 2 ve 3."
             },
@@ -116,10 +116,12 @@ window.DEFTER = {
           tip: "adimlar",
           baslik: "Tam kare tamamlama",
           adimlar: [
-            { baslik: "1. x²'nin katsayısını 1 yap", metin: "Bütün denklemi a'ya böl." },
-            { baslik: "2. Sabiti sağa at", metin: "x² + bx = −c." },
-            { baslik: "3. İki yana (b/2)² ekle", metin: "Sol taraf tam kare olur: (x + b/2)²." },
-            { baslik: "4. Kök al, ± koy", metin: "x + b/2 = ±√(sağ taraf), sonra x'i bul." }
+            { baslik: "1. a = 1 yap", metin: "a ≠ 1 ise her terimi a'ya böl." },
+            { baslik: "2. Sabit terimi tek başına bırak", metin: "x² + bx = −c." },
+            { baslik: "3. x'in katsayısının yarısını al, karesini hesapla", metin: "(b/2)²." },
+            { baslik: "4. Bu sayıyı iki yana ekle", metin: "Denge bozulmaz." },
+            { baslik: "5. Sol tarafı tam kare yaz", metin: "x² + bx + (b/2)² = (x + b/2)²." },
+            { baslik: "6. Karekök özelliğiyle çöz", metin: "x + b/2 = ±√(sağ taraf), sonra x'i bul." }
           ]
         },
         {
@@ -254,10 +256,10 @@ window.DEFTER = {
           head: ["Δ", "Gerçek kök", "Parabol", "Örnek"],
           rows: [
             ["Δ > 0", "iki farklı", "x eksenini iki noktada keser", "x² − 2x − 3: Δ = 16"],
-            ["Δ = 0", "bir çift kök", "x eksenine teğet", "x² − 2x + 1: Δ = 0"],
-            ["Δ < 0", "yok (iki karmaşık kök)", "x eksenine hiç değmez", "x² − 2x + 3: Δ = −8"]
+            ["Δ = 0", "bir gerçek kök (çift kök)", "x eksenine teğet", "x² − 2x + 1: Δ = 0"],
+            ["Δ < 0", "gerçek kök yok; iki farklı karmaşık kök", "x eksenine hiç değmez", "x² − 2x + 3: Δ = −8"]
           ],
-          not: "a, b, c tam sayı ve Δ tam kare ise kökler rasyoneldir. Sınavda böyle yaz: *Since Δ < 0, the equation has no real roots.*"
+          not: "Ders notundaki söyleyiş: Δ > 0 iki farklı gerçek kök, Δ = 0 bir gerçek kök (çift kök), Δ < 0 iki farklı karmaşık kök. Sınavda böyle yaz: *Since Δ < 0, the equation has no real roots.*"
         },
         {
           tip: "ornek",
@@ -275,7 +277,7 @@ window.DEFTER = {
           tip: "tuzak",
           metin: "Δ < 0 demek \"kök yok\" demek değil.",
           yanlis: "Δ < 0 ise denklemin hiç çözümü yoktur.",
-          dogru: "Gerçek sayılar içinde çözüm yoktur; iki karmaşık kök vardır. Sınavda *no real roots* yaz."
+          dogru: "Gerçek sayılar içinde çözüm yoktur; iki karmaşık (*complex*) kök vardır. x ∈ ℂ isteniyorsa √Δ yerine i·√(−Δ) yaz. Örnek: 3x² − 12x + 15 = 0 → Δ = −36 → x = (12 ± 6i)/6 = 2 ± i. Aksi söylenmedikçe *no real roots* yaz."
         }
       ]
     },
@@ -296,7 +298,9 @@ window.DEFTER = {
               "çarpanlara ayır"
             ],
             ["x² + 6x + 4 = 0", "çarpanlar belli değil", "formül ya da tam kare"],
-            ["x⁴ − 5x² + 4 = 0", "x² tekrarlanıyor", "u = x² değişken değiştirme"]
+            ["x⁴ − 5x² + 4 = 0", "x² tekrarlanıyor", "u = x² değişken değiştirme"],
+            ["√(2x − 5) + x = 4", "kök işareti var", "kökü yalnız bırak, karesini al, mutlaka kontrol et"],
+            ["|x² − 5x + 3| = 3", "mutlak değer", "iki durum: = 3 ve = −3"]
           ]
         },
         {
@@ -311,6 +315,19 @@ window.DEFTER = {
             "Kontrol: x = 2 → 16 − 20 + 4 = 0 ✓."
           ],
           sonuc: "{−1, 5} ve {−2, −1, 1, 2}. Sınavda böyle yaz: *Let u = x². Then the equation becomes u² − 5u + 4 = 0.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Köklü ve mutlak değerli denklem",
+          durum: "√(2x − 5) + x = 4 ve |x² − 5x + 3| = 3 denklemlerini çöz.",
+          adimlar: [
+            "Köklü denklem: kökü yalnız bırak: √(2x − 5) = 4 − x.",
+            "İki tarafın karesini al: 2x − 5 = 16 − 8x + x² → x² − 10x + 21 = 0 → (x − 3)(x − 7) = 0.",
+            "Kontrol zorunlu: x = 3 → √1 + 3 = 4 ✓. x = 7 → √9 + 7 = 10 ≠ 4 ✗ (yabancı kök).",
+            "Mutlak değer: |A| = 3 ise A = 3 ya da A = −3. x² − 5x + 3 = 3 → x² − 5x = 0 → x = 0 ya da 5.",
+            "x² − 5x + 3 = −3 → x² − 5x + 6 = 0 → (x − 2)(x − 3) = 0 → x = 2 ya da 3."
+          ],
+          sonuc: "{3} ve {0, 2, 3, 5}. Sınavda böyle yaz: *We check the solutions because squaring can introduce extraneous roots.*"
         }
       ]
     },
@@ -363,8 +380,8 @@ window.DEFTER = {
             "Çarpanlara ayırma: sağ taraf 0 olmalı; her çarpanı sıfıra eşitle.",
             "Tam kare: a'ya böl, (b/2)² iki yana ekle, kök alırken ±.",
             "Formül: x = (−b ± √(b² − 4ac)) / 2a; −b ve payın tamamı 2a'ya bölünür.",
-            "Δ = b² − 4ac: Δ > 0 iki kök, Δ = 0 çift kök (teğet), Δ < 0 gerçek kök yok.",
-            "Yöntem: önce kök alma / ortak çarpan / çarpanlara ayırma, olmazsa formül; x⁴ biçiminde u = x².",
+            "Δ = b² − 4ac: Δ > 0 iki gerçek kök, Δ = 0 çift kök (teğet), Δ < 0 iki karmaşık kök (x ∈ ℂ için i kullan).",
+            "Yöntem: önce kök alma / ortak çarpan / çarpanlara ayırma, olmazsa formül; x⁴ biçiminde u = x²; köklü denklemde karesini alıp kontrol et.",
             "Problem: değişkeni seç, denklem kur, anlamsız kökü ele, kontrol et.",
             "Cümle: *The equation has two distinct real roots because Δ > 0.*"
           ]
@@ -374,31 +391,31 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "2x² − 5x − 3 = 0 denkleminin çözüm kümesi nedir?",
-      opts: ["{−1/2, 3}", "{−3, 1/2}", "{1/2, 3}", "{−3, −1/2}"],
+      q: "Solve 3x² − 12x + 15 = 0 for x ∈ ℂ.",
+      opts: ["x = 2 ± i", "x = 2 ± 2i", "x = −2 ± i", "x = 4 ± i"],
       a: 0,
-      why: "Δ = 25 + 24 = 49 → x = (5 ± 7)/4 → x = 3 ya da x = −1/2. Çarpanlarla: (2x + 1)(x − 3) = 2x² − 5x − 3 ✓. B seçeneği, köklerin işaretlerinin ters alınmış hâli; formülde −b = +5 olduğunu unutmamak gerekir."
+      why: "Her terimi 3'e böl: x² − 4x + 5 = 0. Δ = 16 − 20 = −4 < 0, √Δ = 2i. x = (4 ± 2i)/2 = 2 ± i. Kontrol: toplam 4 = −b/a ✓, çarpım (2 + i)(2 − i) = 5 ✓. B seçeneği, paydadaki 2'ye yalnızca 4'ü bölüp 2i'yi bölmemek."
     },
     {
-      q: "x² − 6x + k = 0 denkleminin çift kökü vardır. k ve kök kaçtır?",
+      q: "The equation x² − 6x + k = 0 has a double root. What are the values of k and of the root?",
       opts: ["k = 9, x = −3", "k = 9, x = 3", "k = 6, x = 3", "k = 36, x = 6"],
       a: 1,
       why: "Çift kök için Δ = 36 − 4k = 0 → k = 9. Denklem x² − 6x + 9 = (x − 3)² = 0, kök x = 3. A seçeneği kökün işaretini ters almış; D seçeneği b² = 36 sayısını k sanmış."
     },
     {
-      q: "Bir topun yerden yüksekliği h(t) = −5t² + 20t (metre, t saniye) olarak veriliyor. Top, fırlatıldıktan kaç saniye sonra yere iner?",
+      q: "The height of a ball above the ground is h(t) = −5t² + 20t (in meters, t in seconds). How many seconds after it is thrown does the ball hit the ground?",
       opts: ["2", "5", "20", "4"],
       a: 3,
       why: "Yere iniş: h(t) = 0 → −5t(t − 4) = 0 → t = 0 (fırlatma anı) ya da t = 4. Cevap 4 saniye. 2 saniye, topun en yüksek noktaya çıktığı andır (tepe noktası); en çekici yanlış cevap."
     },
     {
-      q: "x² − 8x + 5 = 0 denklemi tam kare tamamlama ile (x − p)² = q biçimine getirilirse p + q kaçtır?",
+      q: "Completing the square on x² − 8x + 5 = 0 gives (x − p)² = q. What is p + q?",
       opts: ["9", "15", "11", "21"],
       a: 1,
       why: "x² − 8x = −5 → (8/2)² = 16 ekle: (x − 4)² = 11. p = 4, q = 11, p + q = 15. 21 cevabı, 16 + 5 = 21'i q sanmaktır (sabit sağa atılırken işareti değişmeli: −5 + 16)."
     },
     {
-      q: "Tabloda f(x) = x² − 4x − 5 fonksiyonunun değerleri veriliyor. f(x) = −8 denkleminin çözüm kümesi nedir?",
+      q: "The table shows values of f(x) = x² − 4x − 5. What is the solution set of f(x) = −8?",
       fig: {
         type: "table",
         head: ["x", "−1", "0", "1", "2", "3", "4", "5"],

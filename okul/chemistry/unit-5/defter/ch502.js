@@ -51,7 +51,7 @@ window.DEFTER = {
       kisa: "Gazın çözünürlüğü, gazın kısmi basıncıyla doğru orantılıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🥤", terim: "Henry's law", tr: "Henry yasası", tanim: "Sabit sıcaklıkta bir gazın sıvıdaki çözünürlüğü, o gazın sıvı üzerindeki basıncıyla doğru orantılıdır.", ornek: "Basınç iki katına çıkarsa çözünen gaz miktarı da iki katına çıkar." }
+            { ikon: "🥤", terim: "Henry's law", tr: "Henry yasası (ek bilgi)", tanim: "Ek bilgi (derste adı geçmeyebilir). Sabit sıcaklıkta bir gazın sıvıdaki çözünürlüğü, o gazın sıvı üzerindeki basıncıyla doğru orantılıdır.", ornek: "Basınç iki katına çıkarsa çözünen gaz miktarı da iki katına çıkar." }
           ] },
         { tip: "grafik", baslik: "Gazın çözünürlüğü basınçla doğru orantılıdır", xlabel: "Basınç (atm)", ylabel: "Çözünen gaz (göreli)", xmax: 5, ymax: 10,
           xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }],
@@ -106,7 +106,7 @@ window.DEFTER = {
             ["Karıştırma", "değişmez", "↑"],
             ["Yüzey alanı ↑ (toz)", "değişmez", "↑"],
             ["Çözünen–çözücü türü", "değişir (benzer benzeri çözer)", "—"]
-          ] },
+          ], not: "Derste çözünürlüğü etkileyenler: maddenin ve çözücünün cinsi (polarlık), sıcaklık, basınç. Ortak iyon etkisi ve \"en çok düzensizlik, en az enerji\" ilkesi 11. sınıfta işlenecek." },
         { tip: "ikili", sol: { ikon: "📏", baslik: "Çözünürlüğü değiştirir", maddeler: ["Sıcaklık", "Gazlarda basınç", "Madde ve çözücü cinsi"] },
           sag: { ikon: "⏱️", baslik: "Yalnız hızı değiştirir", maddeler: ["Karıştırma", "Katıyı ufalamak (yüzey alanı)"] },
           oyun: [
@@ -127,7 +127,7 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "*Solubility* \"ne kadar\", *rate of dissolving* \"ne çabuk\" sorusudur; karıştırma ve yüzey alanı yalnız hızı değiştirir.",
             "Çoğu katının çözünürlüğü sıcaklıkla artar; gazların çözünürlüğü sıcaklıkla azalır.",
-            "Gazın çözünürlüğü basınçla doğru orantılıdır (*Henry's law*); katı ve sıvıda basınç etkisi ihmal edilir.",
+            "Gazın çözünürlüğü basınçla doğru orantılıdır (*Henry's law*, ek bilgi); katı ve sıvıda basınç etkisi ihmal edilir.",
             "Gazoz kapağı açılınca basınç düşer, CO₂ çıkar; ısınan suda oksijen azalır.",
             "Yüzey alanı büyüdükçe temas artar; küp 8 parçaya bölününce yüzey iki katına çıkar.",
             "Sıcaklık artınca tanecikler daha sık çarpışır; hem hız hem (çoğu katıda) çözünürlük artar.",
@@ -137,21 +137,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir öğrenci aynı sıcaklıktaki iki bardak suya aynı kütlede küp şeker ve toz şeker atıyor. Hangisi doğrudur?",
-      opts: ["Toz şeker daha hızlı çözünür; çözünürlükleri aynıdır", "Toz şekerin çözünürlüğü daha yüksektir", "Küp şeker daha hızlı çözünür", "İkisi de aynı hızda çözünür"], a: 0,
+    { q: "A student drops the same mass of sugar cubes and powdered sugar into two glasses of water at the same temperature. Which statement is correct?",
+      opts: ["Powdered sugar dissolves faster; their solubilities are the same", "Powdered sugar has a higher solubility", "Sugar cubes dissolve faster", "Both dissolve at the same rate"], a: 0,
       why: "Toz şekerin yüzey alanı büyüktür, hızı artar. Çözünürlük (en çok çözünen miktar) yüzey alanına bağlı değildir; toz şeker daha yüksek çözünürlüğe sahip değildir (B)." },
-    { q: "Gazoz şişesinin kapağı açıldığında köpürmenin nedeni nedir?",
-      opts: ["Şişe içindeki sıcaklığın artması", "Basınç düştüğü için CO₂'nin çözünürlüğünün azalması", "Şekerin suda çözünmesi", "Suyun buharlaşması"], a: 1,
+    { q: "What is the reason for the fizzing when the cap of a soda bottle is opened?",
+      opts: ["The temperature inside the bottle rises", "The pressure drops, so the solubility of CO₂ decreases", "The sugar dissolves in the water", "The water evaporates"], a: 1,
       why: "Gazın çözünürlüğü basınçla orantılıdır; kapak açılınca basınç düşer, CO₂ çözeltiden çıkar. Sıcaklık artışı (A) bu olayın nedeni değildir." },
-    { q: "Tabloda A tuzunun çözünürlüğü verilmiştir. 60 °C'de 50 g suda en çok kaç g A tuzu çözünür?",
-      fig: { type: "table", head: ["Sıcaklık (°C)", "Çözünürlük (g / 100 g su)"], rows: [["20", "20"], ["40", "35"], ["60", "55"], ["80", "80"]], caption: "A tuzunun çözünürlüğü" },
-      opts: ["55 g", "35 g", "80 g", "27,5 g"], a: 3,
+    { q: "The table gives the solubility of salt A. What is the maximum mass of salt A that can dissolve in 50 g of water at 60 °C?",
+      fig: { type: "table", head: ["Temperature (°C)", "Solubility (g / 100 g water)"], rows: [["20", "20"], ["40", "35"], ["60", "55"], ["80", "80"]], caption: "Solubility of salt A" },
+      opts: ["55 g", "35 g", "80 g", "27.5 g"], a: 3,
       why: "60 °C'de 100 g suda 55 g çözünür; 50 g su bunun yarısı kadar çözer: 27,5 g. 55 g (A) su miktarını yarıya indirmeyi unutmaktır." },
-    { q: "Grafikte üç maddenin (X, Y, Z) çözünürlüğü sıcaklığa karşı gösterilmiştir. Hangi yorum doğrudur?",
-      fig: { type: "graph", xlabel: "Sıcaklık (°C)", ylabel: "Çözünürlük (göreli)", xmax: 10, ymax: 10, lines: [{ from: [0, 1], to: [8, 7], label: "X" }, { from: [0, 3.4], to: [8, 3.9], label: "Y" }, { from: [0, 8], to: [8, 1.6], label: "Z" }], xticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }], caption: "Çözünürlük–sıcaklık" },
-      opts: ["X gazdır çünkü eğrisi en diktir", "Z katıdır çünkü çözünürlüğü sıcaklıkla azalır", "Z büyük olasılıkla gazdır; çözünürlüğü sıcaklıkla azalır", "Y'nin çözünürlüğü sıcaklıkla belirgin biçimde artar"], a: 2,
+    { q: "The graph shows the solubility of three substances (X, Y and Z) against temperature. Which interpretation is correct?",
+      fig: { type: "graph", xlabel: "Temperature (°C)", ylabel: "Solubility (relative)", xmax: 10, ymax: 10, lines: [{ from: [0, 1], to: [8, 7], label: "X" }, { from: [0, 3.4], to: [8, 3.9], label: "Y" }, { from: [0, 8], to: [8, 1.6], label: "Z" }], xticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }], caption: "Solubility vs. temperature" },
+      opts: ["X is a gas because its curve is the steepest", "Z is a solid because its solubility decreases with temperature", "Z is most likely a gas; its solubility decreases with temperature", "The solubility of Y increases noticeably with temperature"], a: 2,
       why: "Gazların çözünürlüğü sıcaklıkla azalır; yalnız Z böyle davranır. Çoğu katı ise X gibi artış gösterir; Y'nin eğrisi neredeyse yataydır (D yanlış)." },
-    { q: "Sabit sıcaklıkta bir gazın sıvıdaki çözünürlüğü 1 atm'de 2 birimdir. Gazın basıncı 3 atm olursa çözünürlük kaç birim olur?",
+    { q: "At constant temperature, the solubility of a gas in a liquid is 2 units at 1 atm. What is the solubility if the pressure of the gas becomes 3 atm?",
       opts: ["6", "3", "9", "2"], a: 0,
       why: "Gazın çözünürlüğü basınçla doğru orantılıdır: 2 × 3 = 6 birim. 9 (C) basıncın karesi gibi yorumlamaktır; ilişki doğrusaldır." }
   ]

@@ -97,6 +97,10 @@ window.DEFTER = {
             { metin: "İp ucu bir halkada serbestçe kayıyor; gelen tepe tepe olarak döner.", cevap: "sag", neden: "Serbest uç atmayı ters çevirmez." },
             { metin: "Yansıyan atma gelenle aynı tarafta (aynı yönde) görünüyor.", cevap: "sag", neden: "Ters dönmemiş: serbest uç." }
           ]
+        },
+        {
+          tip: "not",
+          metin: "Neden ters döner? Atma sabit uca çarpınca ipi yukarı iter; Newton'un üçüncü yasası gereği uç ipi aynı büyüklükte aşağı iter ve bu aşağı kuvvet ters bir atma üretir. Serbest uçta ip engellenmediği için atma ters dönmez. ==Süperpozisyon==: iki atma aynı noktada buluşunca yer değiştirmeleri toplanır; sonra her biri kendi biçimiyle yoluna devam eder (ek bilgi: ders sunumunda başlık olarak geçiyor)."
         }
       ]
     },
@@ -182,7 +186,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Kırılma hesabı ve kıyıdaki dalgalar",
+      baslik: "Kırılma hesabı (ek bilgi) ve kıyıdaki dalgalar",
       kisa: "Açıların sinüsleri oranı, hızlar ve dalga boyları oranına eşittir.",
       bloklar: [
         {
@@ -222,35 +226,34 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Dalga leğeninde düz dalga cepheleri düz bir engele çarpıp yansıyor. Gelen ışın engelle 40° açı yaptığına göre yansıma açısı kaç derecedir?",
+      q: "Plane water waves in a ripple tank hit a flat barrier and are reflected. The incident ray makes an angle of 40° with the barrier. What is the angle of reflection?",
       opts: ["40°", "50°", "80°", "100°"],
       a: 1,
       why: "Açılar normalden ölçülür: i = 90° − 40° = 50°. Yansıma kuralına göre r = i = 50°. A en çekici yanlış şıktır: verilen açı yüzeyle ışın arasındadır, gelme açısı değildir."
     },
     {
-      q: "Frekansı 5 Hz olan bir su dalgası derin bölgeden sığ bölgeye geçiyor. Dalga boyları tabloda verilmiştir. Sığ bölgedeki dalga hızı ve ışının sınırda nasıl döndüğü için hangisi doğrudur?",
-      fig: { type: "table", head: ["Bölge", "Dalga boyu"], rows: [["Derin", "8 cm"], ["Sığ", "6 cm"]] },
-      opts: ["30 cm/s; ışın normale yaklaşır.", "40 cm/s; ışın normale yaklaşır.", "30 cm/s; ışın normalden uzaklaşır.", "50 cm/s; ışın normale yaklaşır."],
-      a: 0,
-      why: "Frekans değişmez: v₂ = λ₂f = 6 × 5 = 30 cm/s (derinde 8 × 5 = 40 cm/s). Yavaş ortama giren dalga normale yaklaşır. B şıkkı derin bölgenin hızıdır."
+      q: "At one end of a ripple tank 90 cm across, a 6 Hz wave generator produces waves of wavelength 30 mm. How long do the waves need to cross the tank?",
+      opts: ["3 s", "5 s", "10 s", "7 s"],
+      a: 1,
+      why: "v = λf = 3 cm × 6 Hz = 18 cm/s. t = yol ÷ hız = 90 ÷ 18 = 5 s. Birimleri karıştıran (30 mm ile 90 cm'i aynı birime çevirmeyen) 3 s ya da 10 s gibi cevaplara gider."
     },
     {
-      q: "Dalgalar sığ bölgeden derin bölgeye geçiyor. Aşağıdakilerden hangisi doğrudur?",
-      opts: ["Hız azalır, ışın normale yaklaşır.", "Frekans artar, dalga boyu değişmez.", "Dalga boyu azalır, periyot artar.", "Hız ve dalga boyu artar, ışın normalden uzaklaşır."],
+      q: "Water waves move from a shallow region into a deep region. Which statement is correct?",
+      opts: ["The speed decreases and the ray bends toward the normal.", "The frequency increases and the wavelength does not change.", "The wavelength decreases and the period increases.", "The speed and the wavelength increase and the ray bends away from the normal."],
       a: 3,
       why: "Derin ortam hızlı ortamdır: v artar, f sabit olduğundan λ = v/f de artar. Hızlı ortama giren ışın normalden uzaklaşır. A, derinden sığa geçişin sonucudur."
     },
     {
-      q: "Bir ipin ucu duvara sabitlenmiştir. İpte ilerleyen bir tepe atması sabit uca çarpıp yansıyor. Yansıyan atma için hangisi doğrudur?",
-      opts: ["Hızı yarıya iner, tepe olarak döner.", "Tepe olarak aynı yönde döner.", "Çukur olarak (ters çevrilmiş) döner; hızı değişmez.", "Hiç yansımaz, ipin ucunda söner."],
+      q: "One end of a rope is fixed to a wall. A crest pulse travels along the rope, hits the fixed end and is reflected. Which statement about the reflected pulse is correct?",
+      opts: ["Its speed is halved and it returns as a crest.", "It returns as a crest in the same direction.", "It returns as a trough (inverted) and its speed does not change.", "It is not reflected; it dies out at the end of the rope."],
       a: 2,
       why: "Sabit uç atmayı ters çevirir: tepe çukur olarak döner. Aynı ortamda yansıyan atmanın hızı değişmez. B serbest uçtaki durumdur."
     },
     {
-      q: "Su dalgası derin bölgeden sığ bölgeye geçiyor. Dalga boyu derinde 4 cm, sığda 2 cm; gelme açısı 30° (sin 30° = 0,5). Kırılma açısının sinüsü kaçtır?",
-      opts: ["0,5", "1", "0,25", "0,75"],
+      q: "A water wave moves from the deep region to the shallow region of a ripple tank. The frequency is 5 Hz, and the speed is 20 cm/s in the deep region and 15 cm/s in the shallow region. What is the wavelength in the shallow region?",
+      opts: ["4 cm", "1.5 cm", "3 cm", "75 cm"],
       a: 2,
-      why: "sin i / sin r = λ₁ / λ₂ = 4 / 2 = 2 → sin r = sin i / 2 = 0,5 ÷ 2 = 0,25. A'da dalga yön değiştirmemiş gibi 0,5 alınmış (oysa dalga yavaşladığı için normale yaklaşır, r < i)."
+      why: "Frekans değişmez: λ₂ = v₂ ÷ f = 15 ÷ 5 = 3 cm. A derin bölgenin dalga boyudur (20 ÷ 5 = 4 cm); sığ bölgede dalga boyu küçülür."
     }
   ]
 };

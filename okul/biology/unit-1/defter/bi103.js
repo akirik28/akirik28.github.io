@@ -1,9 +1,9 @@
 /* Kitora not defteri · bi103 · 1.3 Fotosentezin Evreleri
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
+   Kaynak: öğretmen lecture'ı (1.2 Photosynthesis: photosystems, light reactions, Calvin cycle; 1.3 Molecules used and produced) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Z şeması: y ekseni elektronun enerji düzeyidir (şematik, sayısal değer yok). */
 window.DEFTER = {
   slug: "bi103",
-  amac: "Bu konu fotosentezin iki evresini anlatıyor: ışığa bağlı tepkimeler ve Calvin döngüsü. Hangi evrede neyin girip neyin çıktığını, O₂'nin sudan geldiğinin nasıl kanıtlandığını ve suyun fotofosforilasyondaki önemini öğreneceksin.",
+  amac: "Bu konu fotosentezin iki evresini anlatıyor: ışığa bağlı tepkimeler ve Calvin döngüsü. Hangi evrede neyin girip neyin çıktığını, O₂'nin sudan geldiğinin tarihsel deneylerle nasıl kanıtlandığını ve suyun fotofosforilasyondaki önemini öğreneceksin.",
   bolumler: [
     {
       baslik: "Fotosentezin genel tepkimesi ve kloroplast",
@@ -21,7 +21,12 @@ window.DEFTER = {
             { baslik: "*Stroma*", alt: "Sıvı kısım: Calvin döngüsü burada" },
             { baslik: "Çift zar", alt: "Dış ve iç zar organeli sarar" }
           ] },
-        { tip: "not", metin: "Sınavda böyle yaz: *Photosynthesis takes place in chloroplasts; the light reactions occur in the thylakoid membranes and the Calvin cycle occurs in the stroma.*" }
+        { tip: "tablo", baslik: "Fotosentez tepkimelerinin türleri (hepsinde enerji kaynağı ışık)", head: ["Hidrojen kaynağı", "Eşitlik", "Görüldüğü canlılar"], rows: [
+            ["H₂O", "6CO₂ + 12H₂O + ışık → C₆H₁₂O₆ + 6O₂ + 6H₂O", "Bitkiler, algler, siyanobakteriler, *Euglena*, *phytoplankton*"],
+            ["H₂", "6CO₂ + 12H₂ + ışık → C₆H₁₂O₆ + 6H₂O", "Bazı bakteriler (hidrojen bakterileri)"],
+            ["H₂S", "6CO₂ + 12H₂S + ışık → C₆H₁₂O₆ + 12S + 6H₂O", "Bazı bakteriler (O₂ yerine S çıkar)"]
+          ], not: "Üçünde de enerji ışıktan gelir, yalnız hidrojen kaynağı değişir." },
+        { tip: "not", metin: "Fotosentez bir ==redox== tepkimesidir: H₂O yükseltgenir (O₂ olur), CO₂ indirgenir (şeker olur). Yükseltgenme elektron kaybı (OIL), indirgenme elektron kazancıdır (RIG). Tepkime *endergonic*; ışık enerjisi şekerin bağlarında depolanır. Sınavda böyle yaz: *Photosynthesis takes place in chloroplasts; the light reactions occur in the thylakoid membranes and the Calvin cycle occurs in the stroma.*" }
       ]
     },
     {
@@ -74,7 +79,8 @@ window.DEFTER = {
             { metin: "Elektron son olarak NADP⁺'ya aktarılır ==NADPH== oluşur. Sınavda böyle yaz: *Light excites the electrons in photosystem II and photosystem I, and the electrons finally reduce NADP⁺ to NADPH.*", goster: ["e3", "nadph"] }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "💡", terim: "Photosystem", tr: "fotosistem", tanim: "Tilakoid zarında klorofil ve proteinlerden oluşan ışık toplama birimi. PSII (P680) ve PSI (P700) vardır.", ornek: "PSII suyun parçalanmasını başlatır." },
+            { ikon: "💡", terim: "Photosystem", tr: "fotosistem", tanim: "Tilakoid zarında, tepkime merkezi (klorofil a) ve ışık enerjisini ona yönlendiren anten pigmentlerinden oluşan birim. PSII (P680) önce çalışır, PSI (P700) sonra.", ornek: "PSII suyun parçalanmasını başlatır." },
+            { ikon: "🌀", terim: "Chemiosmosis", tr: "kemiozmoz", tanim: "Elektron taşınırken H⁺ stromadan tilakoid içine pompalanır. H⁺ ATP sentaz kanalından stromaya dönerken ATP yapılır.", ornek: "Kloroplastta ATP yapımı bu mekanizmayla olur." },
             { ikon: "💦", terim: "Photolysis", tr: "suyun fotolizi", tanim: "Işık enerjisiyle suyun parçalanması: 2H₂O → 4H⁺ + 4e⁻ + O₂.", ornek: "Atmosferdeki oksijenin kaynağı budur." }
           ] }
       ]
@@ -88,8 +94,8 @@ window.DEFTER = {
             { ikon: "🔋", baslik: "Proton (H⁺) kaynağı", metin: "Tilakoid içinde H⁺ birikir. H⁺ ATP sentazdan geçerken ATP, geri kalanı NADP⁺'ya bağlanıp NADPH yapılır." },
             { ikon: "🌬️", baslik: "O₂ kaynağı", metin: "Suyun fotolizinden çıkan O₂ atmosfere verilir (yan ürün)." }
           ] },
-        { tip: "ikili", sol: { ikon: "↻", baslik: "*Non-cyclic photophosphorylation* (devirsiz)", maddeler: ["PSII ve PSI birlikte çalışır", "Su gerekir", "Ürün: ATP + NADPH + O₂"] },
-          sag: { ikon: "⟲", baslik: "*Cyclic photophosphorylation* (devirli)", maddeler: ["Yalnız PSI çalışır, elektron PSI'ye geri döner", "Su gerekmez", "Ürün: yalnız ATP; NADPH ve O₂ yok"] },
+        { tip: "ikili", sol: { ikon: "↻", baslik: "*Non-cyclic photophosphorylation* (devirsiz; ek bilgi)", maddeler: ["PSII ve PSI birlikte çalışır", "Su gerekir", "Ürün: ATP + NADPH + O₂"] },
+          sag: { ikon: "⟲", baslik: "*Cyclic photophosphorylation* (devirli; ek bilgi)", maddeler: ["Yalnız PSI çalışır, elektron PSI'ye geri döner", "Su gerekmez", "Ürün: yalnız ATP; NADPH ve O₂ yok"] },
           oyun: [
             { metin: "Tepkimede O₂ açığa çıkıyor.", cevap: "sol", neden: "O₂ suyun fotolizinden gelir; su yalnızca devirsizde kullanılır." },
             { metin: "Yalnızca ATP yapılıyor, NADPH yapılmıyor.", cevap: "sag", neden: "Elektron NADP⁺'ya gitmez, PSI'ye döner: devirli." },
@@ -111,12 +117,12 @@ window.DEFTER = {
             "Gereken CO₂ sayısı: 6 karbon ÷ 1 karbon = 6 CO₂ (6 tur).",
             "ATP: 6 × 3 = 18 ATP.",
             "NADPH: 6 × 2 = 12 NADPH."
-          ], sonuc: "1 glikoz için yaklaşık 6 CO₂, 18 ATP ve 12 NADPH gerekir. Bu sayılar ek bilgidir; özet şemada yalnız girdi-çıktı adlarını bilmek yeterlidir." },
-        { tip: "not", metin: "Sınavda böyle yaz: *The Calvin cycle takes place in the stroma, uses CO₂, ATP and NADPH, and produces glucose, ADP + Pi and NADP⁺.*" }
+          ], sonuc: "1 glikoz için yaklaşık 6 CO₂, 18 ATP ve 12 NADPH gerekir. Net 1 G3P için döngü 3 kez döner (3 CO₂); bu G3P'nin 2 tanesi glikoz yapar." },
+        { tip: "not", metin: "*G3P* (*PGAL*) yalnız glikoz yapmaz: nişasta (depo), sakkaroz (taşınan şeker), yağ asidi, gliserol, amino asit ve vitamin sentezinin de ham maddesidir. Amino asit için topraktan alınan azot gerekir. Sınavda böyle yaz: *The Calvin cycle takes place in the stroma, uses CO₂, ATP and NADPH, and produces glucose, ADP + Pi and NADP⁺.*" }
       ]
     },
     {
-      baslik: "O₂ nereden gelir? Van Niel, Hill ve izotop kanıtı",
+      baslik: "O₂ nereden gelir? Van Niel, Hill ve tarihçe",
       kisa: "Fotosentezde çıkan O₂ sudan gelir, CO₂'den değil.",
       bloklar: [
         { tip: "formul", parcalar: [
@@ -125,13 +131,17 @@ window.DEFTER = {
             { t: "(CH₂O)", alt: "şeker" }, "+",
             { t: "H₂O", alt: "" }, "+",
             { t: "2A", alt: "S ya da O" }
-          ], aciklama: "Van Niel: mor sülfür bakterileri H₂S kullanır ve O₂ değil kükürt çıkarır. Bitkide H₂A = H₂O ise A = O, yani O₂ sudan gelir." },
+          ], aciklama: "Van Niel: mor sülfür bakterileri H₂S kullanır ve O₂ değil kükürt çıkarır. Bitkide H₂A = H₂O ise A = O, yani O₂ sudan gelir. Hill'in denklemi: 2H₂O → O₂ + 4H⁺ + 4e⁻." },
         { tip: "zaman", olaylar: [
-            { tarih: "1930'lar", baslik: "Van Niel", metin: "Bakterilerden yola çıkarak O₂'nin CO₂'den değil, hidrojen verici maddeden (bitkide sudan) geldiğini ileri sürdü." },
-            { tarih: "1937", baslik: "Hill", metin: "Ayrılmış kloroplastlar ışıkta ve CO₂ yokken, yapay bir elektron alıcıyla (demir III tuzu) O₂ çıkardı: O₂ CO₂'den gelemez." },
-            { tarih: "1941", baslik: "Ruben ve Kamen", metin: "Ağır oksijen (¹⁸O) izotopuyla işaretlenen suyla yapılan deneyde O₂ işaretli çıktı." }
+            { tarih: "1643", baslik: "Van Helmont", metin: "Beş yıl sulayarak büyüttüğü bitkiyi tarttı: bitki 75 kg arttı, toprak neredeyse aynı kaldı. Kütlenin sudan geldiği sonucuna vardı." },
+            { tarih: "1770", baslik: "Priestley", metin: "Sönmüş mumun bulunduğu fanusa nane koyunca mum yeniden yandı: bitki yanma için gerekli gazı (O₂) salıyordu." },
+            { tarih: "1779", baslik: "Ingenhousz", metin: "Priestley'nin sonucunun yalnızca ışıkta ve yalnızca yeşil kısımlarda görüldüğünü gösterdi. Bitkiler karanlıkta CO₂ verir." },
+            { tarih: "1931", baslik: "Van Niel", metin: "Bazı fotosentetik bakteriler su yerine H₂S kullanır ve O₂ yerine kükürt çıkarır. O₂ CO₂'den değil, hidrojen vericiden gelir." },
+            { tarih: "1937", baslik: "Hill", metin: "Ağır oksijen izotopu ¹⁸O ile işaretli su ve CO₂ kullandı; çıkan O₂ sudan geldi. Ayrıca ayrılmış kloroplastlar ışıkta, CO₂ olmadan, uygun bir hidrojen alıcıyla O₂ çıkardı (*Hill reaction*)." },
+            { tarih: "1941", baslik: "Ruben ve Kamen (ek bilgi)", metin: "Birçok kaynak ¹⁸O ile işaretli su deneyini bu iki bilim insanına atfeder; sonuç aynıdır." },
+            { tarih: "1961", baslik: "Calvin ve Mitchell", metin: "Calvin, CO₂'nin organik maddeye dönüştüğü döngüyü çözdü ve Nobel Ödülü aldı. Mitchell kemiozmoz kuramını önerdi." }
           ] },
-        { tip: "tablo", baslik: "İzotop deneyinin sonucu (Ruben ve Kamen)", head: ["Verilen", "Çıkan O₂", "Sonuç"], rows: [
+        { tip: "tablo", baslik: "¹⁸O deneyinin sonucu (lecture'a göre Hill)", head: ["Verilen", "Çıkan O₂", "Sonuç"], rows: [
             ["H₂¹⁸O + CO₂", "¹⁸O₂ (işaretli)", "O₂ sudan gelir"],
             ["H₂O + C¹⁸O₂", "O₂ (işaretsiz)", "O₂ CO₂'den gelmez"]
           ], vurgu: 0, not: "Sınavda böyle yaz: *The oxygen released in photosynthesis comes from water, not from carbon dioxide.*" },
@@ -146,32 +156,31 @@ window.DEFTER = {
             "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (ışık, klorofil). Tepkimeler kloroplastta geçer.",
             "Işığa bağlı tepkimeler tilakoid zarında olur; girdi: ışık, H₂O, ADP + Pᵢ, NADP⁺; çıktı: O₂, ATP, NADPH.",
             "Calvin döngüsü stromadadır; girdi: CO₂, ATP, NADPH; çıktı: glikoz, ADP + Pᵢ, NADP⁺.",
-            "Calvin döngüsü “karanlık tepkime” değil; ışık yoksa ATP ve NADPH bitince durur.",
+            "Calvin döngüsü “karanlık tepkime” değil; ışık yoksa ATP ve NADPH bitince durur. 1 CO₂ için 3 ATP ve 2 NADPH gerekir.",
             "Su fotolizi: elektron, H⁺ ve O₂ verir. PSII → taşıma zinciri (ATP) → PSI → NADPH.",
-            "Devirsiz yolda ATP + NADPH + O₂, devirli yolda yalnız ATP yapılır.",
-            "Van Niel: H₂A hidrojen vericidir; bitkide verici H₂O'dur, O₂ sudan gelir.",
-            "Hill: ayrılmış kloroplast, CO₂ yokken yapay elektron alıcıyla O₂ çıkarır.",
-            "Ruben ve Kamen: H₂¹⁸O verilince ¹⁸O₂ çıkar; C¹⁸O₂ verilince O₂ işaretsizdir."
+            "ATP, kemiozmozla yapılır: H⁺ tilakoid içine pompalanır, ATP sentazdan geri akar.",
+            "Van Niel (1931): H₂A hidrojen vericidir; bitkide verici H₂O'dur, O₂ sudan gelir.",
+            "Hill (1937): ¹⁸O ile işaretli su verilince ¹⁸O₂ çıkar; ayrılmış kloroplast CO₂ yokken hidrojen alıcıyla O₂ çıkarır."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Işığa bağlı tepkimelerin Calvin döngüsüne doğrudan sağladığı moleküller hangileridir?",
-      opts: ["O₂ ve H₂O", "CO₂ ve glikoz", "ATP ve NADPH", "ADP ve NADP⁺"], a: 2,
+    { q: "Which molecules do the light reactions supply directly to the Calvin cycle?",
+      opts: ["O₂ and H₂O", "CO₂ and glucose", "ATP and NADPH", "ADP and NADP⁺"], a: 2,
       why: "Işığa bağlı evrede yapılan ATP ve NADPH stromada Calvin döngüsünde harcanır. ADP ve NADP⁺ ise Calvin'in çıktılarıdır ve geri döner; D şıkkı ilişkiyi tersine çevirir." },
-    { q: "Bir öğrenci aşağıdaki iki deneyin sonuçlarını inceliyor. Sonuçlardan hangi çıkarım yapılabilir?",
-      fig: { type: "table", head: ["Deney", "Verilen", "Çıkan O₂"], rows: [["1", "H₂¹⁸O + CO₂", "¹⁸O₂"], ["2", "H₂O + C¹⁸O₂", "Normal O₂"]] },
-      opts: ["Fotosentezde çıkan O₂ sudan gelir.", "Fotosentezde çıkan O₂ CO₂'den gelir.", "Glikozdaki O atomları sudan gelir.", "Her iki deneyde O₂ aynı kaynaktan gelir."], a: 0,
+    { q: "A student examines the results of the two experiments below. Which conclusion can be drawn?",
+      fig: { type: "table", head: ["Experiment", "Supplied", "O₂ released"], rows: [["1", "H₂¹⁸O + CO₂", "¹⁸O₂"], ["2", "H₂O + C¹⁸O₂", "Normal O₂"]] },
+      opts: ["The oxygen released in photosynthesis comes from water.", "The oxygen released in photosynthesis comes from CO₂.", "The oxygen atoms in glucose come from water.", "The oxygen in both experiments comes from the same source."], a: 0,
       why: "İşaretli su verilince işaretli O₂ çıkıyor, işaretli CO₂ verilince çıkmıyor: O₂ sudan gelir. B şıkkı en çekici yanlıştır; ikinci deney tam tersini gösterir." },
-    { q: "Hill deneyinde ayrılmış kloroplastlar ışıkta, CO₂ olmadan ve yapay bir elektron alıcı varken O₂ çıkarmıştır. Bu deney neyi gösterir?",
-      opts: ["O₂ çıkışı CO₂ tutulmasına bağlıdır.", "Kloroplast olmadan fotosentez olur.", "O₂ ve glikoz aynı anda yapılır.", "O₂ üretimi CO₂'den bağımsız olarak ışıkta gerçekleşir; kaynağı CO₂ değildir."], a: 3,
+    { q: "In Hill's experiment, isolated chloroplasts released O₂ in the light with no CO₂ but with an artificial hydrogen acceptor. What does this show?",
+      opts: ["O₂ release depends on CO₂ fixation.", "Photosynthesis can occur without chloroplasts.", "O₂ and glucose are produced at the same time.", "O₂ is produced in the light independently of CO₂, so CO₂ is not its source."], a: 3,
       why: "CO₂ yokken de O₂ çıkıyorsa O₂ CO₂'den gelmez. A şıkkı tam tersini söyler." },
-    { q: "Bir bitki uzun süre karanlıkta tutulursa Calvin döngüsü neden yavaşlar ve durur?",
-      opts: ["Stromada CO₂ biter.", "ATP ve NADPH yapılamadığı için döngünün girdileri tükenir.", "RuBisCO ışıkta çalışır.", "Kloroplast çift zarı kapanır."], a: 1,
+    { q: "Why does the Calvin cycle slow down and stop if a plant is kept in the dark for a long time?",
+      opts: ["The stroma runs out of CO₂.", "ATP and NADPH can no longer be made, so the inputs of the cycle run out.", "RuBisCO only works in light.", "The double membrane of the chloroplast closes."], a: 1,
       why: "Calvin döngüsü ışığı doğrudan kullanmaz ama ATP ve NADPH'ye ihtiyaç duyar; bunlar ışığa bağlı tepkimelerden gelir. A şıkkı çekici ama karanlıkta CO₂ girişi yine olabilir." },
-    { q: "Aşağıdakilerden hangisi suyun fotofosforilasyondaki görevlerinden biri DEĞİLDİR?",
-      opts: ["PSII'ye elektron sağlamak", "Tilakoid içinde H⁺ kaynağı olmak", "Calvin döngüsünde CO₂'yi bağlamak", "Atmosfere verilen O₂'nin kaynağı olmak"], a: 2,
+    { q: "Which of the following is NOT a role of water in photophosphorylation?",
+      opts: ["Supplying electrons to photosystem II", "Being a source of H⁺ inside the thylakoid", "Binding CO₂ in the Calvin cycle", "Being the source of the O₂ released to the atmosphere"], a: 2,
       why: "CO₂'yi bağlayan şey RuBisCO ile RuBP'dir, su değildir. Diğer üç şık suyun gerçek görevleridir." }
   ]
 };

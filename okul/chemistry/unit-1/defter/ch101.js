@@ -8,7 +8,12 @@ window.DEFTER = {
       baslik: "Güçlü ve zayıf etkileşim: ne kopar, ne kopmaz?",
       kisa: "Güçlü etkileşim atomları bağlar; zayıf etkileşim molekülleri birbirine tutar.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🔗", baslik: "Güçlü etkileşimler (*chemical bonds*)", maddeler: ["Atomlar ya da iyonlar arasında: iyonik, kovalent, metalik bağ", "Koparmak için çok enerji gerekir; maddenin kimliğini belirler"] },
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🧩", terim: "Interparticular forces", tr: "taneciklerarası etkileşimler", tanim: "Saf maddedeki tanecikler (atom, iyon ya da molekül) arasındaki çekimler. Tanecik türü kuvvetin türünü, madde kuvvetin gücünü belirler.", ornek: "Au ve Na'da atomlar, NaCl'de iyonlar, H₂O'da moleküller arasında." },
+            { ikon: "⚛️", terim: "Intramolecular forces", tr: "molekül içi kuvvetler", tanim: "Bir molekülün içindeki atomları tutan kimyasal bağlar.", ornek: "H₂O'daki O–H kovalent bağları." },
+            { ikon: "🧲", terim: "Intermolecular forces", tr: "moleküller arası kuvvetler", tanim: "Moleküller arasındaki çekimler; molekül içi kuvvetlerden zayıftır. Fiziksel özellikleri (hâl, erime ve kaynama noktası) belirler.", ornek: "H₂O molekülleri arasındaki hidrojen bağı." }
+          ] },
+        { tip: "ikili", sol: { ikon: "🔗", baslik: "Güçlü etkileşimler (*chemical bonds*)", maddeler: ["Atomlar ya da iyonlar arasında: iyonik bağ, metalik bağ ve kovalent bağ (molekülde ya da kovalent ağ katıda)", "Koparmak için çok enerji gerekir; maddenin kimliğini belirler"] },
           sag: { ikon: "🧲", baslik: "Zayıf etkileşimler (*intermolecular forces*)", maddeler: ["Moleküller (ya da tanecikler) arasında", "Çok daha az enerjiyle yenilir; hâl değişimini ve kaynama noktasını belirler"] },
           oyun: [
             { metin: "Su kaynarken H₂O molekülleri birbirinden ayrılıyor.", cevap: "sag", neden: "Moleküller arası çekim yenilir; molekülün içi bozulmaz." },
@@ -131,7 +136,7 @@ window.DEFTER = {
       kisa: "London, dipol-dipol, hidrojen bağı ve iyon-dipol; ayrıntıları sonraki konuda.",
       bloklar: [
         { tip: "harita", merkez: "*Intermolecular forces*", dallar: [
-            { baslik: "*London dispersion*", alt: "Her atom ve molekül arasında; geçici dipol" },
+            { baslik: "*London dispersion*", alt: "Her atom ve molekül arasında; geçici dipol (bazen *van der Waals* da denir ama en doğru terim değil)" },
             { baslik: "*Dipole-dipole*", alt: "Kalıcı dipolü olan polar moleküller arasında" },
             { baslik: "*Hydrogen bond*", alt: "H, F/O/N'ye bağlıysa; en güçlü dipol-dipol" },
             { baslik: "*Ion-dipole*", alt: "İyon ile polar molekül arasında; NaCl'nin suda çözünmesi" }
@@ -167,26 +172,26 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir öğrenci, kaynayan suda yükselen kabarcıkların H₂ ve O₂ gazı olduğunu söylüyor. Aşağıdakilerden hangisi doğrudur?",
-      opts: ["Doğru; kaynarken H–O bağları kopar ve gazlar oluşur", "Yanlış; kabarcıklar su buharıdır, kaynarken moleküller arası etkileşimler yenilir ve H–O bağları kopmaz", "Doğru; hidrojen bağları kopunca H₂ ve O₂ serbest kalır", "Yanlış; kabarcıklar havadır ve suyla hiçbir ilgisi yoktur"],
+    { q: "A student says that the bubbles rising in boiling water are H₂ and O₂ gas. Which statement is correct?",
+      opts: ["Correct; the H–O bonds break when water boils and gases form", "Incorrect; the bubbles are water vapor, because boiling overcomes intermolecular forces and the H–O bonds do not break", "Correct; when hydrogen bonds break, H₂ and O₂ are released", "Incorrect; the bubbles are air and have nothing to do with water"],
       a: 1,
       why: "Kaynama fiziksel bir değişimdir: moleküller arası etkileşimler (hidrojen bağları) yenilir, kovalent H–O bağları yerinde kalır; kabarcıklar su buharıdır. A en çekici yanlış şık: hidrojen bağını kovalent bağla karıştırır." },
-    { q: "Tabloda bazı atomların elektronegatiflik değerleri verilmiştir. Aşağıdaki kovalent bağlardan hangisi en polardır?",
-      fig: { type: "table", caption: "Elektronegatiflik", head: ["Atom", "H", "O", "Cl"], rows: [["EN", "2,1", "3,5", "3,0"]] },
+    { q: "The table gives the electronegativity values of some atoms. Which of the following covalent bonds is the most polar?",
+      fig: { type: "table", caption: "Electronegativity", head: ["Atom", "H", "O", "Cl"], rows: [["EN", "2.1", "3.5", "3.0"]] },
       opts: ["H–H", "H–Cl", "O–Cl", "O–H"],
       a: 3,
       why: "ΔEN değerleri: H–H = 0, H–Cl = 0,9, O–Cl = 0,5, O–H = 1,4. En büyük fark O–H'dedir, en polar bağ odur. B en çekici yanlış şık: Cl bir atom olarak elektronegatiftir ama farkın büyüklüğü belirleyicidir." },
-    { q: "Aşağıdaki maddelerden hangisinin molekülü, polar bağlar içermesine rağmen apolardır?",
+    { q: "Which of the following molecules contains polar bonds but is nonpolar overall?",
       opts: ["H₂O", "NH₃", "HCl", "CCl₄"],
       a: 3,
       why: "CCl₄ düzgün dörtyüzlü ve simetriktir; polar C–Cl bağlarının dipolleri birbirini götürür, molekül apolar olur. A en çekici yanlış şık: H₂O da polar bağlıdır ama kırık şekil yüzünden polardır." },
-    { q: "Grafikte 1 mol su için iki işlemin enerjisi verilmiştir. Grafikten hangi sonuç çıkarılabilir?",
-      fig: { type: "bar", cats: ["Kaynama", "Atomlara ayırma"], series: [{ name: "1 mol H₂O için enerji", values: [41, 930] }], ylabel: "kJ/mol" },
-      opts: ["Hidrojen bağlarını yenmek, O–H bağlarını koparmaktan çok daha az enerji ister", "Kaynama sırasında O–H bağları kopar", "Moleküller arası etkileşimler kovalent bağlardan daha güçlüdür", "İki işlem aynı türde bağları etkiler"],
+    { q: "The graph shows the energy needed for two processes with 1 mol of water. Which conclusion can be drawn from the graph?",
+      fig: { type: "bar", cats: ["Boiling", "Breaking into atoms"], series: [{ name: "Energy for 1 mol H₂O", values: [41, 930] }], ylabel: "kJ/mol" },
+      opts: ["Overcoming hydrogen bonds takes much less energy than breaking the O–H bonds", "O–H bonds break while water boils", "Intermolecular forces are stronger than covalent bonds", "Both processes affect the same type of bond"],
       a: 0,
       why: "Kaynama ≈ 41 kJ, atomlarına ayırma ≈ 930 kJ: moleküller arası etkileşimler kovalent bağlardan çok daha zayıftır. C en çekici yanlış şık: ilişkiyi tam tersine çevirir." },
-    { q: "Sofra tuzu (NaCl) eritildiğinde hangi etkileşimler yenilir?",
-      opts: ["NaCl molekülleri arasındaki London kuvvetleri", "Na⁺ ve Cl⁻ iyonları arasındaki iyonik bağlar", "Hidrojen bağları", "Na ve Cl atomları arasındaki kovalent bağlar"],
+    { q: "Which interactions are overcome when table salt (NaCl) melts?",
+      opts: ["London forces between NaCl molecules", "Ionic bonds between Na⁺ and Cl⁻ ions", "Hydrogen bonds", "Covalent bonds between Na and Cl atoms"],
       a: 1,
       why: "NaCl metal + ametal bileşiğidir; molekül yoktur, iyon kafesi vardır. Erirken iyonlar arasındaki güçlü iyonik bağlar yenilir (801 °C). A en çekici yanlış şık: NaCl için \"molekül\" kavramı geçerli değildir." }
   ]

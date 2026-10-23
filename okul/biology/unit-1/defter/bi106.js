@@ -1,9 +1,9 @@
 /* Kitora not defteri · bi106 · 1.6 Oksijenli Solunum
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
-   ATP sayıları: NADH ≈ 2,5 ATP, FADH₂ ≈ 1,5 ATP (toplam ≈ 32). Eski kitaplar NADH = 3, FADH₂ = 2 alıp 36–38 yazar; konu içinde belirtildi. */
+   Kaynak: öğretmen lecture'ı (1.7 Cellular Respiration, 1.8 Pathways of Nutrients) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10.
+   ATP sayıları lecture'a göre: en çok yaklaşık 38 (NADH = 3, FADH₂ = 2 ATP; bir slaytta "up to 36"). Güncel ~30–32 değeri yalnız kısa not. */
 window.DEFTER = {
   slug: "bi106",
-  amac: "Bu konu hücrenin glikozu oksijenle yıkıp ATP elde etmesini anlatıyor: *aerobic respiration*. Glikoliz, Krebs döngüsü ve elektron taşıma zincirinin yerini, girdi-çıktılarını ve toplam ATP sayısını öğreneceksin.",
+  amac: "Bu konu hücrenin glikozu oksijenle yıkıp ATP elde etmesini anlatıyor: *aerobic respiration*. Glikoliz, Krebs döngüsü ve elektron taşıma zincirinin yerini, girdi-çıktılarını, toplam ATP sayısını ve karbonhidrat, yağ, proteinin solunuma nasıl girdiğini öğreneceksin.",
   bolumler: [
     {
       baslik: "Oksijenli solunumun genel tepkimesi",
@@ -14,16 +14,16 @@ window.DEFTER = {
             { t: "6O₂", alt: "oksijen" }, "→",
             { t: "6CO₂", alt: "karbondioksit" }, "+",
             { t: "6H₂O", alt: "su" }, "+",
-            { t: "ATP", alt: "≈ 32 + ısı" }
-          ], aciklama: "Glikoz yükseltgenir (elektron ve hidrojen verir), O₂ indirgenir (su olur). Süreç üç basamakta yürür: glikoliz, Krebs döngüsü, elektron taşıma zinciri." },
+            { t: "ATP", alt: "en çok ≈ 38 + ısı" }
+          ], aciklama: "Glikoz yükseltgenir (elektron ve hidrojen verir), O₂ indirgenir (su olur). Süreç üç basamakta yürür: glikoliz, Krebs döngüsü, oksidatif fosforilasyon (elektron taşıma zinciri + kemiozmoz)." },
         { tip: "harita", merkez: "*Mitochondrion* (mitokondri)", dallar: [
             { baslik: "Sitoplazma", alt: "Glikoliz burada (mitokondri dışında)" },
-            { baslik: "*Matrix* (matriks)", alt: "Piruvat oksidasyonu ve Krebs döngüsü" },
+            { baslik: "*Matrix* (matriks)", alt: "Piruvat oksidasyonu, Krebs; mitokondrinin kendi DNA, RNA, ribozomu" },
             { baslik: "İç zar (*cristae*)", alt: "Elektron taşıma zinciri ve ATP sentaz" },
             { baslik: "Zarlar arası boşluk", alt: "H⁺ birikir" }
           ] },
         { tip: "tuzak", metin: "“Solunum” iki ayrı olayın adıdır: akciğerlerle soluk alıp verme (gaz alışverişi) ve hücrede yapılan kimyasal enerji üretimi.", yanlis: "Hücresel solunum, akciğerlerin soluk alıp vermesidir.", dogru: "Hücresel solunum, hücrede glikozdaki enerjinin ATP'ye çevrilmesidir; akciğerler yalnızca O₂'yi getirip CO₂'yi uzaklaştırır." },
-        { tip: "not", metin: "Sınavda böyle yaz: *In aerobic respiration, glucose is oxidized to carbon dioxide and water in the presence of oxygen, and the released energy is used to make ATP.*" }
+        { tip: "not", metin: "Glikoz yakılsa enerji bir anda ısı ve ışık olarak dağılır; hücre ise onu kontrollü, küçük adımlarla bırakıp ATP'de tutar (enerjinin yaklaşık %34'ü). Ökaryotta solunum sitoplazmada başlar, mitokondride biter; prokaryotta sitoplazmada ve hücre zarının içe kıvrımlarında yürür. Sınavda böyle yaz: *In aerobic respiration, glucose is oxidized to carbon dioxide and water in the presence of oxygen, and the released energy is used to make ATP.*" }
       ]
     },
     {
@@ -42,8 +42,8 @@ window.DEFTER = {
       kisa: "Sitoplazmada glikoz 2 piruvata bölünür; net 2 ATP ve 2 NADH kazanılır.",
       bloklar: [
         { tip: "adimlar", baslik: "Glikoliz (*glycolysis*), O₂ istemez", adimlar: [
-            { baslik: "Hazırlık", metin: "6 karbonlu glikoz 2 ATP harcanarak fosforillenir; hazırlanan şeker ikiye bölünür." },
-            { baslik: "Kazanç", metin: "İki 3 karbonlu molekül yükseltgenir: toplam 4 ATP yapılır ve 2 NADH oluşur." },
+            { baslik: "Enerji yatırımı", metin: "6 karbonlu glikoz 2 ATP harcanarak fosforillenir; hazırlanan şeker ikiye bölünür." },
+            { baslik: "Enerji kazancı", metin: "İki 3 karbonlu molekül (G3P) yükseltgenir: toplam 4 ATP yapılır ve 2 NADH oluşur." },
             { baslik: "Sonuç", metin: "2 piruvat (3 karbonlu) çıkar. Net kazanç: 4 − 2 = 2 ATP (*substrate-level phosphorylation*)." }
           ] },
         { tip: "tablo", head: ["Glikoliz", "Miktar (1 glikoz için)"], rows: [
@@ -52,7 +52,7 @@ window.DEFTER = {
             ["Çıktı", "2 piruvat, 4 ATP (net 2), 2 NADH"],
             ["O₂ gerekir mi?", "Hayır"]
           ], vurgu: 2, not: "Sınavda böyle yaz: *Glycolysis occurs in the cytoplasm and produces two pyruvate, a net gain of two ATP and two NADH from one glucose.*" },
-        { tip: "tuzak", metin: "Glikoliz oksijenli solunumun ilk basamağıdır ama oksijene ihtiyaç duymaz ve mitokondride değil sitoplazmada olur. O₂ yokken de devam edebilir.", yanlis: "Glikoliz mitokondride gerçekleşir ve O₂ ister.", dogru: "Glikoliz sitoplazmada yapılır, O₂ gerektirmez; ürünü piruvattır." }
+        { tip: "tuzak", metin: "Glikoliz oksijenli solunumun ilk basamağıdır ama oksijene ihtiyaç duymaz ve mitokondride değil sitoplazmada olur. O₂ yokken de devam edebilir.", yanlis: "Glikoliz mitokondride gerçekleşir ve O₂ ister.", dogru: "Glikoliz sitoplazmada yapılır, O₂ gerektirmez; ürünü piruvattır. Tüm canlılarda ortaktır ve her solunum türünün ilk basamağıdır." }
       ]
     },
     {
@@ -83,45 +83,63 @@ window.DEFTER = {
             { baslik: "O₂ son alıcı", metin: "Elektronlar sonunda O₂'ye aktarılır; O₂, H⁺ ile birleşip ==H₂O== oluşturur." }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "⚙️", terim: "Oxidative phosphorylation", tr: "oksidatif fosforilasyon", tanim: "Elektron taşıma zincirinin enerjisiyle ADP'ye fosfat eklenmesi. Solunumdaki ATP'nin büyük kısmı buradan gelir.", ornek: "Yaklaşık 28 ATP." }
+            { ikon: "⚙️", terim: "Oxidative phosphorylation", tr: "oksidatif fosforilasyon", tanim: "Elektron taşıma zincirinin enerjisiyle ADP'ye fosfat eklenmesi. Solunumdaki ATP'nin yaklaşık %90'ı buradan gelir; O₂ gerekir.", ornek: "Yaklaşık 34 ATP." }
           ] },
-        { tip: "tuzak", metin: "O₂ ATP'yi doğrudan üretmez; elektronların zincirden akabilmesi için son alıcıdır. O₂ olmazsa zincir tıkanır ve ATP yapımı çöker.", yanlis: "O₂, glikozu parçalayarak ATP'yi üretir.", dogru: "O₂ elektron taşıma zincirinde son elektron alıcısıdır; solunumda oluşan suyun oksijeni O₂'den gelir." }
+        { tip: "tuzak", metin: "O₂ ATP'yi doğrudan üretmez; elektronların zincirden akabilmesi için son alıcıdır. O₂ olmazsa zincir tıkanır ve ATP yapımı çöker.", yanlis: "O₂, glikozu parçalayarak ATP'yi üretir.", dogru: "O₂ elektron taşıma zincirinde son elektron alıcısıdır; solunumda oluşan suyun oksijeni O₂'den gelir." },
+        { tip: "tablo", baslik: "Oksidatif fosforilasyonu engelleyen zehirler", head: ["Etki", "Örnek"], rows: [
+            ["Elektron taşıma zincirini bloke eder", "Rotenone, siyanür (*cyanide*), karbon monoksit (CO)"],
+            ["ATP sentazı engeller", "Oligomisin (antibiyotik)"],
+            ["Zarı H⁺'a sızdırır (*uncoupler*): gradyan kaybolur", "Dinitrofenol (DNP)"]
+          ], not: "Sınavda böyle yaz: *Cyanide blocks the electron transport chain, so oxidative phosphorylation stops and very little ATP is made.*" }
       ]
     },
     {
       baslik: "ATP muhasebesi: toplam kaç ATP?",
-      kisa: "Bir glikozdan oksijenli solunumla yaklaşık 30–32 ATP elde edilir.",
+      kisa: "Bir glikozdan oksijenli solunumla en çok yaklaşık 38 ATP elde edilir.",
       bloklar: [
-        { tip: "grafik", baslik: "Basamaklara göre ATP (1 glikoz)", xlabel: "Basamak", ylabel: "ATP sayısı", xmax: 10, ymax: 32,
+        { tip: "grafik", baslik: "Basamaklara göre ATP (1 glikoz)", xlabel: "Basamak", ylabel: "ATP sayısı", xmax: 10, ymax: 40,
           xticks: [{ v: 2, label: "Glikoliz" }, { v: 5, label: "Krebs" }, { v: 8, label: "ETS" }],
-          yticks: [{ v: 10, label: "10" }, { v: 20, label: "20" }, { v: 30, label: "30" }],
+          yticks: [{ v: 10, label: "10" }, { v: 20, label: "20" }, { v: 30, label: "30" }, { v: 40, label: "40" }],
           ogeler: [
             { id: "b1", tip: "alan", renk: 1, noktalar: [[1.2, 0], [2.8, 0], [2.8, 0], [1.2, 0]] },
             { id: "t1", tip: "yazi", x: 2, y: 3.4, metin: "2", gizli: true },
             { id: "b2", tip: "alan", renk: 1, noktalar: [[4.2, 0], [5.8, 0], [5.8, 0], [4.2, 0]] },
             { id: "t2", tip: "yazi", x: 5, y: 3.4, metin: "2", gizli: true },
             { id: "b3", tip: "alan", renk: 0, noktalar: [[7.2, 0], [8.8, 0], [8.8, 0], [7.2, 0]] },
-            { id: "t3", tip: "yazi", x: 8, y: 29.6, metin: "≈ 28", gizli: true },
-            { id: "tp", tip: "yazi", x: 5, y: 15, metin: "Toplam ≈ 32 ATP", gizli: true }
+            { id: "t3", tip: "yazi", x: 8, y: 35.6, metin: "≈ 34", gizli: true },
+            { id: "tp", tip: "yazi", x: 5, y: 18, metin: "Toplam ≈ 38 ATP", gizli: true }
           ],
           durumlar: [
             { metin: "1 glikozdan elde edilen ATP'yi üç basamakta toplayalım." },
             { metin: "==Glikoliz==: net 2 ATP (*substrate-level*).", set: { b1: { noktalar: [[1.2, 0], [2.8, 0], [2.8, 2], [1.2, 2]] } }, goster: ["t1"] },
             { metin: "==Krebs döngüsü==: 2 tur, toplam 2 ATP (*substrate-level*).", set: { b2: { noktalar: [[4.2, 0], [5.8, 0], [5.8, 2], [4.2, 2]] } }, goster: ["t2"] },
-            { metin: "==Elektron taşıma zinciri==: 10 NADH ve 2 FADH₂'den yaklaşık 28 ATP (*oxidative*). Bar en yüksek: ATP'nin çoğu burada.", set: { b3: { noktalar: [[7.2, 0], [8.8, 0], [8.8, 28], [7.2, 28]] } }, goster: ["t3"] },
-            { metin: "Toplam: 2 + 2 + 28 ≈ 32 ATP. Sınavda böyle yaz: *The graph shows that most of the ATP is produced in the electron transport chain.*", goster: ["tp"] }
+            { metin: "==Elektron taşıma zinciri==: 10 NADH ve 2 FADH₂'den yaklaşık 34 ATP (*oxidative*). Bar en yüksek: ATP'nin yaklaşık %90'ı burada.", set: { b3: { noktalar: [[7.2, 0], [8.8, 0], [8.8, 34], [7.2, 34]] } }, goster: ["t3"] },
+            { metin: "Toplam: 2 + 2 + 34 ≈ 38 ATP (en çok). Sınavda böyle yaz: *The graph shows that most of the ATP is produced in the electron transport chain.*", goster: ["tp"] }
           ] },
-        { tip: "ornek", baslik: "ATP hesabı", durum: "1 glikozdan oluşan taşıyıcılar: glikolizde 2 NADH, piruvat oksidasyonunda 2 NADH, Krebs'te 6 NADH ve 2 FADH₂. Kabul: 1 NADH ≈ 2,5 ATP, 1 FADH₂ ≈ 1,5 ATP.", adimlar: [
+        { tip: "ornek", baslik: "ATP hesabı", durum: "1 glikozdan oluşan taşıyıcılar: glikolizde 2 NADH, piruvat oksidasyonunda 2 NADH, Krebs'te 6 NADH ve 2 FADH₂. Lecture'daki en yüksek sayım: 1 NADH ≈ 3 ATP, 1 FADH₂ ≈ 2 ATP.", adimlar: [
             "Doğrudan ATP (*substrate-level*): 2 (glikoliz) + 2 (Krebs) = 4 ATP.",
-            "NADH sayısı: 2 + 2 + 6 = 10. ATP: 10 × 2,5 = 25.",
-            "FADH₂ sayısı: 2. ATP: 2 × 1,5 = 3.",
-            "Toplam: 4 + 25 + 3 = 32 ATP."
-          ], sonuc: "Yaklaşık 32 ATP. Bazı kitaplar NADH = 3 ve FADH₂ = 2 alıp 38 (ya da 36) yazar; sınavda öğretmeninin kitabındaki sayıyı kullan." },
+            "NADH sayısı: 2 + 2 + 6 = 10. ATP: 10 × 3 = 30.",
+            "FADH₂ sayısı: 2. ATP: 2 × 2 = 4.",
+            "Toplam: 4 + 30 + 4 = 38 ATP (34'ü oksidatif fosforilasyondan)."
+          ], sonuc: "En çok yaklaşık 38 ATP (lecture bir yerde 'up to 36' de yazıyor). Güncel ölçümler NADH ≈ 2,5 ve FADH₂ ≈ 1,5 ATP alıp toplamı yaklaşık 30–32 bulur; sınavda lecture'daki 38'i kullan." },
         { tip: "tablo", head: ["Basamak", "Yer", "Girdi", "Çıktı"], rows: [
             ["Glikoliz", "Sitoplazma", "Glikoz", "2 piruvat, 2 NADH, net 2 ATP"],
             ["Piruvat oks. + Krebs", "Matriks", "2 piruvat", "6 CO₂, 8 NADH, 2 FADH₂, 2 ATP"],
-            ["Elektron taşıma zinciri", "İç zar (krista)", "NADH, FADH₂, O₂", "H₂O, yaklaşık 28 ATP"]
+            ["Elektron taşıma zinciri", "İç zar (krista)", "NADH, FADH₂, O₂", "H₂O, yaklaşık 34 ATP"]
           ], not: "Sınavda böyle yaz: *Glycolysis occurs in the cytoplasm, the Krebs cycle in the matrix and the electron transport chain in the inner mitochondrial membrane.*" }
+      ]
+    },
+    {
+      baslik: "Besinlerin solunuma girişi",
+      kisa: "Karbonhidrat, yağ ve protein, yıkım ürününe göre solunumun farklı basamaklarına girer.",
+      bloklar: [
+        { tip: "tablo", baslik: "Hangi besin nereden girer?", head: ["Besin", "Yıkım ürünü", "Giriş noktası"], rows: [
+            ["Karbonhidrat", "Glikoz", "Glikoliz → piruvat → asetil-CoA → Krebs → elektron taşıma zinciri"],
+            ["Yağ", "Yağ asidi + gliserol", "Yağ asidi → asetil-CoA → Krebs; gliserol (3C) glikolizin ara basamağına"],
+            ["Protein", "Amino asit (önce NH₂ grubu ayrılır)", "2C: asetil-CoA, 3C: piruvat, 4C ve üzeri: Krebs"]
+          ], vurgu: 1, not: "Sınavda böyle yaz: *Fatty acids are converted to acetyl-CoA and enter the Krebs cycle, whereas glycerol enters at an intermediate step of glycolysis.*" },
+        { tip: "tuzak", metin: "Amino asitler olduğu gibi solunuma girmez; önce amino grubu (NH₂) ayrılır ve azotlu atık oluşur.", yanlis: "Proteinler doğrudan glikoliz ile başlar.", dogru: "Amino asit, karbon sayısına göre asetil-CoA, piruvat ya da Krebs döngüsüne girer; amino grubu ayrılır." },
+        { tip: "not", metin: "Yağ, çok H atomu (enerji dolu elektron) taşıdığı için gram başına karbonhidrat ya da proteinden iki kattan fazla ATP verir. Üç besin de CO₂, H₂O, ATP ve ısı açığa çıkarır." }
       ]
     },
     {
@@ -133,30 +151,31 @@ window.DEFTER = {
             "Glikoliz: sitoplazma, O₂ gerekmez; 1 glikoz → 2 piruvat, net 2 ATP, 2 NADH.",
             "Piruvat → asetil-CoA: matriks, 2 CO₂ + 2 NADH. Krebs (2 tur): 4 CO₂, 6 NADH, 2 FADH₂, 2 ATP.",
             "Elektron taşıma zinciri iç zardadır: H⁺ pompalanır, ATP sentazdan geçerken ATP yapılır; son elektron alıcısı O₂, ürün H₂O.",
-            "NADH ve FADH₂ elektronları zincire taşır; NADH ≈ 2,5, FADH₂ ≈ 1,5 ATP.",
-            "Toplam yaklaşık 30–32 ATP (eski kitaplarda 36–38); ATP'nin çoğu zincirden gelir.",
+            "NADH ve FADH₂ elektronları zincire taşır; lecture sayımıyla NADH ≈ 3, FADH₂ ≈ 2 ATP.",
+            "Toplam en çok yaklaşık 38 ATP (2 + 2 + 34); ATP'nin %90'ı zincirden gelir. Güncel değer ≈ 30–32.",
+            "Karbonhidrat glikolizden, yağ asidi asetil-CoA olarak, amino asit karbon sayısına göre girer.",
             "6 CO₂'nin hepsi glikoz karbonudur; piruvat oksidasyonu ve Krebs'ten çıkar.",
-            "O₂ yoksa zincir çalışmaz, NAD⁺ yenilenmez ve Krebs yavaşlar."
+            "Zehirler zinciri (siyanür, CO), ATP sentazı ya da H⁺ gradyanını (DNP) bozar."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Krebs döngüsü hücrenin neresinde gerçekleşir ve en önemli çıktıları nelerdir?",
-      opts: ["Sitoplazmada; piruvat ve 2 ATP", "Mitokondri matriksinde; CO₂, NADH, FADH₂ ve az ATP", "Mitokondri iç zarında; H₂O ve çok ATP", "Kloroplast stromasında; glikoz"], a: 1,
+    { q: "Where does the Krebs cycle take place, and what are its main products?",
+      opts: ["In the cytoplasm; pyruvate and 2 ATP", "In the mitochondrial matrix; CO₂, NADH, FADH₂ and a little ATP", "In the inner mitochondrial membrane; H₂O and a lot of ATP", "In the chloroplast stroma; glucose"], a: 1,
       why: "Krebs döngüsü matrikste yürür ve CO₂, NADH, FADH₂ ile az miktarda ATP üretir. Çok ATP ve H₂O elektron taşıma zincirinde oluşur; C şıkkı iki basamağı karıştırır." },
-    { q: "Aşağıdaki tabloya göre bir glikozun oksijenli solunumunda oluşan toplam CO₂ kaç moleküldür?",
-      fig: { type: "table", head: ["Basamak", "CO₂"], rows: [["Glikoliz", "0"], ["Piruvat → asetil-CoA", "2"], ["Krebs döngüsü (2 tur)", "4"], ["Elektron taşıma zinciri", "0"]] },
+    { q: "According to the table, how many CO₂ molecules are produced in total when one glucose is completely broken down by aerobic respiration?",
+      fig: { type: "table", head: ["Stage", "CO₂"], rows: [["Glycolysis", "0"], ["Pyruvate → acetyl-CoA", "2"], ["Krebs cycle (2 turns)", "4"], ["Electron transport chain", "0"]] },
       opts: ["2", "4", "5", "6"], a: 3,
       why: "0 + 2 + 4 + 0 = 6 CO₂; glikozun 6 karbonunun hepsi CO₂ olur. Yalnız Krebs'e bakıp 4 yazmak çekici ama piruvat oksidasyonundaki 2 CO₂ unutulmuştur." },
-    { q: "Bir hücre oksijensiz bırakılırsa elektron taşıma zincirinde ne olur ve Krebs döngüsü neden yavaşlar?",
-      opts: ["Zincir durur; NAD⁺ ve FAD yenilenemediği için Krebs yavaşlar.", "Zincir hızlanır; Krebs da hızlanır.", "Zincir sürer; Krebs etkilenmez.", "Glikoliz durur ve Krebs hızlanır."], a: 0,
+    { q: "What happens in the electron transport chain if a cell is deprived of oxygen, and why does the Krebs cycle slow down?",
+      opts: ["The chain stops; NAD⁺ and FAD cannot be regenerated, so the Krebs cycle slows down.", "The chain speeds up; the Krebs cycle speeds up too.", "The chain continues; the Krebs cycle is not affected.", "Glycolysis stops and the Krebs cycle speeds up."], a: 0,
       why: "O₂ son elektron alıcısıdır; yoksa elektronlar boşaltılamaz, NADH ve FADH₂ boşalmaz, NAD⁺ ve FAD tükenir ve Krebs yavaşlar. C şıkkı çekici ama Krebs, taşıyıcıların yenilenmesine bağlıdır." },
-    { q: "Bir glikozdan oksijenli solunumla elde edilen toplam ATP için hangisi doğrudur?",
-      opts: ["Yaklaşık 2", "Yaklaşık 4", "Yaklaşık 30–38 (kaynağa göre); büyük kısmı elektron taşıma zincirinden", "Yaklaşık 100"], a: 2,
-      why: "Glikoliz ve Krebs toplam yalnız 4 ATP verir; kalanı zincirden gelir ve toplam yaklaşık 30–32 (eski kitaplarda 36–38). A şıkkı glikolizin net ATP'sidir." },
-    { q: "ATP sentaz hangi yönde H⁺ akışıyla ATP yapar?",
-      opts: ["Matriksten zarlar arası boşluğa", "Sitoplazmadan matrikse", "Zarlar arası boşluktan matrikse", "Stromadan tilakoide"], a: 2,
-      why: "Elektron taşıma zinciri H⁺'ları zarlar arası boşluğa pompalar; H⁺'lar bu birikimden matrikse ATP sentaz içinden geri akarken ATP yapılır. A şıkkı pompalama yönüdür, ATP yapımı yönü değil." }
+    { q: "How much ATP is obtained from one glucose by aerobic respiration, according to the lecture notes?",
+      opts: ["About 2", "About 4", "At most about 38, most of it from the electron transport chain", "About 100"], a: 2,
+      why: "Glikoliz ve Krebs toplam yalnız 4 ATP verir; kalanı (≈ 34) zincirden gelir ve toplam en çok yaklaşık 38 olur. A şıkkı glikolizin net ATP'sidir." },
+    { q: "Which statement about fats entering cellular respiration is correct?",
+      opts: ["Fatty acids and glycerol both enter as pyruvate.", "Fatty acids are converted to acetyl-CoA and enter the Krebs cycle; glycerol enters at an intermediate step of glycolysis.", "Fats enter directly at the electron transport chain.", "Fats cannot be used as an energy source."], a: 1,
+      why: "Yağ asidi asetil-CoA'ya çevrilip Krebs'e, gliserol (3C) glikolizin ara basamağına girer. A şıkkı ikisini de piruvat sayar; C şıkkı giriş noktasını yanlış yere koyar." }
   ]
 };

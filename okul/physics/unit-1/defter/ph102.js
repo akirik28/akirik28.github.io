@@ -17,7 +17,7 @@ window.DEFTER = {
             { t: "a", alt: "ivme (m/s²)" }, "=",
             { t: "v − v₀", alt: "hız değişimi (m/s)" }, "÷",
             { t: "t", alt: "süre (s)" }
-          ], aciklama: "Önce artı yönü seç. Hız artı yönde artıyorsa a > 0, azalıyorsa a < 0 çıkar." },
+          ], aciklama: "Önce artı yönü seç. Hız artı yönde artıyorsa a > 0, azalıyorsa a < 0 çıkar. Aynı bağıntıyı v = v₀ + a·t diye de yazarız (durgun halden v = a·t); yavaşlamada ivmenin büyüklüğüyle v = v₀ − a·t olur." },
         { tip: "ornek", baslik: "Kalkış ve fren",
           durum: "Okul servisi durgun halden kalkıp 5 s sonra 20 m/s hıza ulaşıyor. Sonra fren yapıp 4 s'de duruyor. Her aşamanın ivmesini bul.",
           adimlar: [
@@ -48,6 +48,7 @@ window.DEFTER = {
             { metin: "Yukarı fırlatılan top yükselirken (ivme aşağı).", cevap: "sag", neden: "Hız yukarı, ivme aşağı: zıt yön, top yavaşlar." },
             { metin: "Aşağı düşen taş (hız aşağı, ivme aşağı).", cevap: "sol", neden: "Hız ve ivme aynı yönde: hızlanır." }
           ] },
+        { tip: "not", metin: "Neden hızlanır ya da yavaşlar? Çünkü cisme net kuvvet etki eder: ==F = m·a==. Net kuvvet hızla aynı yöndeyse cisim hızlanır, zıt yöndeyse yavaşlar. İvmenin yönü her zaman net kuvvetin yönüdür." },
         { tip: "tuzak", metin: "İvmenin eksi çıkması tek başına cismin yavaşladığını söylemez.",
           yanlis: "a negatifse cisim yavaşlıyordur.",
           dogru: "Yavaşlamak için v ile a zıt işaretli olmalı. v de negatifse ve a negatifse cisim eksi yönde ==hızlanır==." }
@@ -101,6 +102,7 @@ window.DEFTER = {
             { metin: "Üstteki üçgen hızlanmadan gelen fazladır: ½ × 4 × 4 = 8 m.", goster: ["T", "tT"], set: { T: { noktalar: [[0, 2], [4, 2], [4, 6]] } } },
             { metin: "Toplam alan 8 + 8 = 16 m, yer değiştirmedir. Yamuk olarak da: (2 + 6) ÷ 2 × 4 = 16 m.", goster: ["tS"] }
           ] },
+        { tip: "not", metin: "Sabit ivmede hız düzgün değiştiği için ==ortalama hız, ilk ve son hızın aritmetik ortalamasıdır==: v_ort = (v₀ + v) ÷ 2. Bu yüzden Δx = v_ort·t yazılabilir. Yukarıdaki örnekte (2 + 6) ÷ 2 = 4 m/s ve 4 × 4 = 16 m." },
         { tip: "tuzak", metin: "Çizgi eksenin altına inerse (hız eksi yönde) o bölümün alanı negatif yer değiştirmedir.",
           yanlis: "Alanların hepsi toplanır; sonuç her zaman alınan yoldur.",
           dogru: "Alan işaretiyle toplanırsa ==yer değiştirme==; yol istenirse alanların mutlak değerleri toplanır." },
@@ -189,27 +191,27 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir motosiklet 4 s içinde hızını 6 m/s'den 18 m/s'ye çıkarıyor. İvmesi kaç m/s²'dir?",
-      opts: ["3", "4,5", "6", "12"], a: 0,
+    { q: "A motorcycle increases its speed from 6 m/s to 18 m/s in 4 s. What is its acceleration in m/s²?",
+      opts: ["3", "4.5", "6", "12"], a: 0,
       why: "a = (v − v₀) ÷ t = (18 − 6) ÷ 4 = 3 m/s². En çekici yanlış B: ilk hızı unutup 18 ÷ 4 = 4,5 yazmak." },
-    { q: "Grafik K ve L araçlarının hız-zaman grafiğidir. Hangisi doğrudur?",
+    { q: "The graph shows the velocity-time graphs of cars K and L. Which statement is correct?",
       fig: { type: "graph", xlabel: "t (s)", ylabel: "v (m/s)", xmax: 8, ymax: 9,
         lines: [{ from: [0, 0], to: [4, 8], label: "K" }, { from: [0, 6], to: [6, 0], label: "L" }],
         xticks: [{ v: 4, label: "4" }, { v: 6, label: "6" }], yticks: [{ v: 6, label: "6" }, { v: 8, label: "8" }] },
-      opts: ["İki araç da hızlanıyor.", "K'nin ivmesi 2 m/s², L'nin ivmesi −1 m/s²'dir.", "L'nin ivmesi K'ninkinden büyüktür.", "K ve L'nin ivmeleri eşittir."], a: 1,
+      opts: ["Both cars are speeding up.", "The acceleration of K is 2 m/s² and the acceleration of L is −1 m/s².", "The acceleration of L is greater than that of K.", "K and L have equal accelerations."], a: 1,
       why: "K'nin eğimi (8 − 0) ÷ 4 = +2 m/s², L'nin eğimi (0 − 6) ÷ 6 = −1 m/s². L hızı azaldığı için yavaşlıyor (A yanlış). C yanlış: L'nin ivmesinin büyüklüğü 1, K'ninki 2." },
-    { q: "Bir aracın hız-zaman grafiği şekildeki gibidir. Aracın 0–4 s arasındaki yer değiştirmesi kaç metredir?",
+    { q: "The velocity-time graph of a car is shown. What is the displacement of the car between 0 and 4 s?",
       fig: { type: "graph", xlabel: "t (s)", ylabel: "v (m/s)", xmax: 6, ymax: 9,
         lines: [{ from: [0, 3], to: [4, 7] }],
         xticks: [{ v: 4, label: "4" }], yticks: [{ v: 3, label: "3" }, { v: 7, label: "7" }] },
       opts: ["12 m", "28 m", "20 m", "40 m"], a: 2,
       why: "Alan yamuktur: (3 + 7) ÷ 2 × 4 = 20 m. A ilk hızla (3 × 4), B son hızla (7 × 4) hesap yapar; D iki hızı toplayıp süreyle çarpar ve ikiye bölmeyi unutur." },
-    { q: "Doğuyu artı yön alalım. Bir cismin hızı −8 m/s, ivmesi −2 m/s²'dir. Cisim için hangisi doğrudur?",
-      opts: ["Doğuya doğru yavaşlıyor.", "Batıya doğru yavaşlıyor.", "Duruyor.", "Batıya doğru hızlanıyor."], a: 3,
+    { q: "Take east as the positive direction. An object has a velocity of −8 m/s and an acceleration of −2 m/s². Which statement is correct?",
+      opts: ["It is slowing down while moving east.", "It is slowing down while moving west.", "It is at rest.", "It is speeding up while moving west."], a: 3,
       why: "Hız ve ivme aynı işaretli (ikisi de batı yönünde): cisim batıya doğru hızlanır; her saniye hız 2 m/s artar (−8, −10, −12…). B en çekici yanlış: ivme negatif diye yavaşlıyor sanmak." },
-    { q: "Durgun halden başlayan bir cismin konumu tabloda verilmiştir. Hareket için ne söylenebilir?",
+    { q: "The position of an object that starts from rest is given in the table. What can be said about its motion?",
       fig: { type: "table", head: ["t (s)", "0", "1", "2", "3"], rows: [["x (m)", "0", "2", "8", "18"]] },
-      opts: ["Sabit hızla gidiyor, çünkü konum artıyor.", "Hızlanıyor, çünkü her saniyede aldığı yol artıyor (2, 6, 10 m).", "Yavaşlıyor, çünkü konum farkı küçülüyor.", "Duruyor, çünkü ivmesi sıfırdır."], a: 1,
+      opts: ["It moves at a constant velocity because its position increases.", "It is speeding up because the distance covered each second increases (2, 6, 10 m).", "It is slowing down because the position differences get smaller.", "It is at rest because its acceleration is zero."], a: 1,
       why: "Ardışık saniyelerdeki yer değiştirmeler 2, 6 ve 10 m: hız sürekli artıyor, yani cisim hızlanıyor (x–t grafiği yukarı bükülen parabol). A yanlış: sabit hızda her saniyedeki yer değiştirme eşit olurdu." }
   ]
 };

@@ -54,7 +54,7 @@ window.DEFTER = (function () {
             ],
             durumlar: [
               ["**Dikey** arz: fiyat ne olursa miktar sabit. E_s = 0, *perfectly inelastic*. Örnek: kısa dönemde stadyumdaki koltuk sayısı.", ["v"]],
-              ["**Yatay** arz: o fiyatta istenen her miktar sunulur, biraz düşük fiyatta hiç sunulmaz. E_s = ∞, *perfectly elastic*. Örnek: boş kapasitesi ve sabit maliyeti olan fabrika (yaklaşık).", ["h"]],
+              ["**Yatay** arz: o fiyatta istenen her miktar sunulur, biraz düşük fiyatta hiç sunulmaz. E_s = ∞, *perfectly elastic*. Örnek: boş kapasitesi olan ve her ek birimi aynı marjinal maliyetle üreten fabrika (yaklaşık).", ["h"]],
               ["Aynı N noktasından geçen iki eğri: ==dik olan daha inelastik==, yatık olan daha elastiktir.", ["dik", "yat", "N"]]
             ] }),
           { tip: "not", metin: "Gerçek hayatta arz çoğunlukla bu iki uç arasındadır. Ayrım noktası ==1==dir: fiyat yüzdesi ile miktar yüzdesi eşitse birim elastik, miktar yüzdece daha çok değişiyorsa elastik, daha az değişiyorsa inelastiktir." }

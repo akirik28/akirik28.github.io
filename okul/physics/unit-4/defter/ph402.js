@@ -12,7 +12,7 @@ window.DEFTER = {
           tip: "harita",
           merkez: "*Types of waves*",
           dallar: [
-            { baslik: "Ortama göre", alt: "*Mechanical* (ortam ister) · *Electromagnetic* (boşlukta da gider)" },
+            { baslik: "Ortama göre", alt: "*Mechanical* (ortam ister) · *Electromagnetic* (boşlukta da gider) · *Matter waves* (madde dalgaları)" },
             { baslik: "Titreşim yönüne göre", alt: "*Transverse* (enine) · *Longitudinal* (boyuna)" },
             { baslik: "Yayılma boyutuna göre", alt: "Tek boyutlu (ip) · iki boyutlu (su yüzeyi) · üç boyutlu (ses, ışık)" },
             { baslik: "Süresine göre", alt: "*Pulse* (atma) · *Periodic wave* (periyodik dalga)" }
@@ -54,6 +54,10 @@ window.DEFTER = {
             ["Gama ışını (*gamma ray*)", "Radyoterapi"]
           ],
           not: "Hepsi boşlukta aynı hızla (c ≈ 3 × 10⁸ m/s) ilerler ve enine dalgadır; birbirinden frekans ve dalga boyuyla ayrılır."
+        },
+        {
+          tip: "not",
+          metin: "Derste ortama göre üçüncü bir grup da anılıyor: ==madde dalgaları== (*matter waves*), yani elektron gibi parçacıkların dalga özelliği göstermesi. Bu düzeyde yalnızca adını ve sınıfını bil. Mekanik dalga örnekleri: taş atılan suda halkalar, hoparlörün titreşiminden havada ses, elin salladığı ip ya da yay, yer kabuğundaki kırılmadan çıkan deprem dalgası."
         },
         {
           tip: "tuzak",
@@ -345,7 +349,7 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "Dalgalar ortama göre mekanik / elektromanyetik, titreşim yönüne göre enine / boyuna, boyuta göre 1, 2, 3 boyutlu sınıflanır.",
-            "Mekanik dalga ortam ister (ses, su, ip, deprem); elektromanyetik dalga boşlukta da gider (ışık, radyo, X-ışını).",
+            "Mekanik dalga ortam ister (ses, su, ip, deprem); elektromanyetik dalga boşlukta da gider (ışık, radyo, X-ışını); madde dalgaları (*matter waves*) üçüncü gruptur.",
             "Elektromanyetik dalgaların hepsi boşlukta c ≈ 3 × 10⁸ m/s hızla gider ve enine dalgadır.",
             "Enine dalgada titreşim yayılmaya diktir; tepe ve çukur oluşur.",
             "Boyuna dalgada titreşim yayılmayla aynı doğrultudadır; sıkışma ve seyrelme oluşur, λ iki sıkışma arasıdır.",
@@ -359,38 +363,38 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Aşağıdaki dalgalardan hangisi boşlukta yayılabilir?",
-      opts: ["Ses dalgası", "Su yüzeyi dalgası", "X-ışını", "Depremde yer kabuğundaki dalga"],
+      q: "Which of the following waves can travel through a vacuum?",
+      opts: ["Sound wave", "Water surface wave", "X-ray", "Seismic wave in the Earth's crust"],
       a: 2,
       why: "X-ışını elektromanyetik bir dalgadır ve ortam gerektirmez. Diğer üçü mekanik dalgadır: ses havaya, su dalgası suya, deprem dalgası kayaca ihtiyaç duyar. A en çekici yanlış şıktır: ses çok bilinir ama boşlukta gitmez."
     },
     {
-      q: "Bir öğrenci uzun bir yayın ucunu yay ekseni doğrultusunda ileri geri sallayarak yayda sıkışma ve seyrelme bölgeleri oluşturuyor. Bu dalga için hangisi doğrudur?",
-      opts: ["Boyuna, elektromanyetik", "Boyuna, mekanik", "Enine, mekanik", "Enine, elektromanyetik"],
+      q: "A student pushes and pulls the end of a long spring along the axis of the spring and creates compressions and rarefactions along it. Which statement is correct for this wave?",
+      opts: ["Longitudinal, electromagnetic", "Longitudinal, mechanical", "Transverse, mechanical", "Transverse, electromagnetic"],
       a: 1,
       why: "Halkalar yayılma doğrultusunda titreştiği için dalga boyunadır; yay madde olduğundan mekaniktir. C en çekici yanlış şıktır: yayda enine atma da gönderilebilir ama burada sallama yay ekseni doğrultusundadır."
     },
     {
-      q: "Tabloda dört dalganın özellikleri verilmiştir. Hangi dalganın satırı hatalıdır?",
-      fig: { type: "table", head: ["Dalga", "Ortam gerekir mi?", "Titreşim yönü"], rows: [["Ses", "Evet", "Boyuna"], ["Işık", "Hayır", "Enine"], ["Gerili ip", "Evet", "Enine"], ["Radyo dalgası", "Evet", "Boyuna"]] },
-      opts: ["Ses", "Işık", "Gerili ip", "Radyo dalgası"],
+      q: "The table gives the properties of four waves. Which row contains an error?",
+      fig: { type: "table", head: ["Wave", "Needs a medium?", "Direction of vibration"], rows: [["Sound", "Yes", "Longitudinal"], ["Light", "No", "Transverse"], ["Wave on a taut rope", "Yes", "Transverse"], ["Radio wave", "Yes", "Longitudinal"]] },
+      opts: ["Sound", "Light", "Wave on a taut rope", "Radio wave"],
       a: 3,
       why: "Radyo dalgası elektromanyetiktir: ortam gerekmez ve enine dalgadır. Satırda iki bilgi de yanlış. Diğer satırlar doğrudur."
     },
     {
-      q: "Uzay boşluğunda uzay giysisiyle yüz yüze duran iki astronot birbirinin sesini duyamıyor ama telsizle konuşabiliyor. Bunun nedeni hangisidir?",
+      q: "Two astronauts stand face to face in outer space wearing space suits. They cannot hear each other's voice but they can talk by radio. What is the reason?",
       opts: [
-        "Ses boşlukta yayılamaz; telsiz dalgası elektromanyetiktir ve boşlukta yayılır.",
-        "Telsiz dalgası mekaniktir, ses elektromanyetiktir.",
-        "Ses boşlukta çok yavaş ilerler, telsiz dalgası daha hızlıdır.",
-        "Telsiz dalgası boyuna, ses ise enine dalgadır."
+        "Sound cannot travel in a vacuum; radio waves are electromagnetic and travel in a vacuum.",
+        "Radio waves are mechanical and sound is electromagnetic.",
+        "Sound travels very slowly in a vacuum, and radio waves are faster.",
+        "Radio waves are longitudinal and sound is transverse."
       ],
       a: 0,
       why: "Ses mekanik dalgadır ve ortam ister; boşlukta yayılamaz (yavaş değil, hiç yayılmaz). Telsiz dalgası elektromanyetiktir, boşlukta ilerler. C en çekici yanlış şıktır: ses boşlukta yavaşlamaz, hiç yayılmaz."
     },
     {
-      q: "Boyuna bir dalgada art arda iki sıkışma merkezi arası 12 cm'dir. Ortamın parçacıkları saniyede 5 kez ileri geri titreşiyor. Dalganın hızı kaçtır?",
-      opts: ["2,4 cm/s", "60 cm/s", "17 cm/s", "30 cm/s"],
+      q: "In a longitudinal wave the distance between two consecutive compressions is 12 cm. The particles of the medium vibrate back and forth 5 times per second. What is the speed of the wave?",
+      opts: ["2.4 cm/s", "60 cm/s", "17 cm/s", "30 cm/s"],
       a: 1,
       why: "Boyuna dalgada λ iki sıkışma arasıdır: λ = 12 cm. f = 5 Hz. v = λf = 12 × 5 = 60 cm/s. A'da λ ÷ f yapılmış, D'de λ yarıya bölünmüş."
     }

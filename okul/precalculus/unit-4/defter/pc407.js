@@ -50,8 +50,11 @@ window.DEFTER = (function () {
               { metin: "(π/6, 1/2) noktası (1/2, π/6)'ya yansır: sin(π/6) = 1/2 olduğundan arcsin(1/2) = π/6.", goster: ["p1", "p2"] }
             ] },
           { tip: "tablo", baslik: "Üç ters fonksiyonun tanım ve değer aralıkları", head: ["Fonksiyon", "Kısıtlanmış tanım", "Tersi", "Tersin tanım kümesi", "Tersin değer kümesi"],
-            rows: [["sin x", "[−π/2, π/2]", "arcsin x", "[−1, 1]", "[−π/2, π/2]"], ["cos x", "[0, π]", "arccos x", "[−1, 1]", "[0, π]"], ["tan x", "(−π/2, π/2)", "arctan x", "ℝ", "(−π/2, π/2)"]],
-            not: "Sınavda böyle yaz: *The domain of arcsin is [−1, 1] and its range is [−π/2, π/2].*" }
+            rows: [["sin x", "[−π/2, π/2]", "arcsin x", "[−1, 1]", "[−π/2, π/2]"], ["cos x", "[0, π]", "arccos x", "[−1, 1]", "[0, π]"], ["tan x", "(−π/2, π/2)", "arctan x", "ℝ", "(−π/2, π/2)"], ["cot x", "(0, π)", "arccot x (cot⁻¹ x)", "ℝ", "(0, π)"]],
+            not: "Tanım: y = arcsin x ⇔ x = sin y; arccos ve arctan için de aynı. Sınavda böyle yaz: *The domain of arcsin is [−1, 1] and its range is [−π/2, π/2].*" },
+          { tip: "ornek", baslik: "Tanım kümesini bul", durum: "f(x) = arccos(3 + x), g(x) = arcsin(2x − 1) ve h(x) = arctan(x²) fonksiyonlarının tanım kümesini bul.",
+            adimlar: ["arccos'un içi [−1, 1] aralığında olmalı: −1 ≤ 3 + x ≤ 1 ⇒ −4 ≤ x ≤ −2.", "arcsin için: −1 ≤ 2x − 1 ≤ 1 ⇒ 0 ≤ 2x ≤ 2 ⇒ 0 ≤ x ≤ 1.", "arctan'ın içine her reel sayı girer: x² her x için tanımlı."],
+            sonuc: "Dom f = ==[−4, −2]==, Dom g = ==[0, 1]==, Dom h = ==ℝ==. Sınavda böyle yaz: *The input of arcsin and arccos must lie in [−1, 1].*" }
         ]
       },
       {
@@ -85,6 +88,9 @@ window.DEFTER = (function () {
           { tip: "ornek", baslik: "Aralığın dışına dikkat", durum: "arcsin(sin(5π/6)), arccos(cos(−π/3)) ve tan(arctan 7) değerlerini bul.",
             adimlar: ["5π/6, [−π/2, π/2] dışında. sin(5π/6) = 1/2, yani arcsin(1/2) = π/6.", "−π/3, [0, π] dışında. cos(−π/3) = 1/2, yani arccos(1/2) = π/3.", "tan(arctan 7) = 7 (arctan'ın tanımı her reel sayıda geçerli)."],
             sonuc: "==π/6==, ==π/3== ve ==7==." },
+          { tip: "ornek", baslik: "İki arctan'ın toplamı", durum: "arctan(1/2) + arctan(1/3) ve arctan 2 + arctan 3 değerlerini bul.",
+            adimlar: ["tan(arctan(1/2) + arctan(1/3)) = (1/2 + 1/3)/(1 − 1/6) = (5/6)/(5/6) = 1. İki terim de π/4'ten küçük, toplam (0, π/2) içinde: toplam π/4.", "tan(arctan 2 + arctan 3) = (2 + 3)/(1 − 6) = −1. İki terim de π/4'ten büyük, toplam (π/2, π) içinde: toplam 3π/4 (π/4 değil)."],
+            sonuc: "==π/4== ve ==3π/4==. Sınavda böyle yaz: *Use the tangent addition formula and check which quadrant the sum lies in.*" },
           { tip: "tuzak", metin: "Ters fonksiyon her açıyı geri vermez; yalnız ana aralıktakini.", yanlis: "arcsin(sin(5π/6)) = 5π/6.", dogru: "Cevap π/6: arcsin sonucunu hep [−π/2, π/2] içine koyar." }
         ]
       },
@@ -113,8 +119,11 @@ window.DEFTER = (function () {
               { metin: "Doğruyu çizince [0, 2π) içinde iki kesişim var: x = π/6 ve x = 5π/6.", goster: ["h", "hl", "s1", "s2"] },
               { metin: "Bir periyot sonra (2π ekle) aynı iki nokta tekrar eder: 13π/6 ve 17π/6. Sonsuz çözüm: x = π/6 + 2kπ ve x = 5π/6 + 2kπ.", goster: ["s3", "s4"] }
             ] },
-          { tip: "formul", parcalar: [{ t: "sin x = a", alt: "α = arcsin a" }, "→", { t: "x = α + 2kπ  ya da  x = π − α + 2kπ" }],
-            aciklama: "cos x = a (α = arccos a): x = ±α + 2kπ. tan x = a (α = arctan a): x = α + kπ. Her yerde k bir tam sayıdır. Örnek: tan x = −1 → x = −π/4 + kπ." }
+          { tip: "formul", parcalar: [{ t: "sin α = sin β", alt: "α = β + 2kπ  ya da  α = π − β + 2kπ" }, ",", { t: "cos α = cos β", alt: "α = β + 2kπ  ya da  α = −β + 2kπ" }, ",", { t: "tan α = tan β", alt: "α = β + kπ" }],
+            aciklama: "Her yerde k bir tam sayıdır (k ∈ ℤ). [0, 2π] aralığındaki çözümlere esas çözüm (*principal solution*), k içeren çözümlere genel çözüm (*general solution*) denir. Denklemin sağ tarafı bir sayıysa β = arcsin a, arccos a ya da arctan a alınır; örnek: tan x = −1 → x = −π/4 + kπ." },
+          { tip: "ornek", baslik: "İki tarafı da aynı fonksiyon yap", durum: "[0, 2π) aralığında cos 2x = cos x ve sin 3x = sin x denklemlerini çöz.",
+            adimlar: ["cos 2x = cos x: 2x = x + 2kπ ⇒ x = 2kπ ⇒ x = 0. Ya da 2x = −x + 2kπ ⇒ x = 2kπ/3 ⇒ x = 0, 2π/3, 4π/3.", "sin 3x = sin x: 3x = x + 2kπ ⇒ x = kπ ⇒ x = 0, π.", "Ya da 3x = π − x + 2kπ ⇒ 4x = π + 2kπ ⇒ x = π/4 + kπ/2 ⇒ x = π/4, 3π/4, 5π/4, 7π/4.", "Ortak çözümleri bir kez yaz: x = 0 iki kolda da çıkar."],
+            sonuc: "Birinci denklem: ==0, 2π/3, 4π/3==. İkinci denklem: ==0, π/4, 3π/4, π, 5π/4, 7π/4==. Sınavda böyle yaz: *If sin α = sin β, then α = β + 2kπ or α = π − β + 2kπ.*" }
         ]
       },
       {
@@ -127,7 +136,7 @@ window.DEFTER = (function () {
           { tip: "ornek", baslik: "İki kat açı ve açının katı", durum: "[0, 2π) aralığında sin 2x = cos x ve sin 2x = 1/2 denklemlerini çöz.",
             adimlar: ["sin 2x = 2 sin x cos x: 2 sin x cos x − cos x = 0 → cos x (2 sin x − 1) = 0.", "cos x = 0: x = π/2, 3π/2. sin x = 1/2: x = π/6, 5π/6.", "sin 2x = 1/2: 2x, [0, 4π) aralığında π/6, 5π/6, 13π/6, 17π/6 olur. Yarısını al: x = π/12, 5π/12, 13π/12, 17π/12."],
             sonuc: "Birinci denklem: ==π/6, π/2, 5π/6, 3π/2==. İkinci denklem: ==π/12, 5π/12, 13π/12, 17π/12==." },
-          { tip: "tuzak", metin: "Denklemi sadeleştirmek çözüm kaybettirir; açının katında ise aralık da katlanır.", yanlis: "sin 2x = cos x için iki tarafı cos x'e bölüp 2 sin x = 1 çözerim. Ya da sin 2x = 1/2'de 2x'i yalnızca [0, 2π)'de ararım.", dogru: "Çarpanlara ayır (cos x = 0 çözümü kaybolmaz). sin 2x için 2x'i [0, 4π) aralığında ara, sonra 2'ye böl." }
+          { tip: "tuzak", metin: "Denklemi sadeleştirmek çözüm kaybettirir; açının katında ise aralık da katlanır. sin x = 2 gibi kollar çözümsüzdür.", yanlis: "sin 2x = cos x için iki tarafı cos x'e bölüp 2 sin x = 1 çözerim. Ya da sin 2x = 1/2'de 2x'i yalnızca [0, 2π)'de ararım.", dogru: "Çarpanlara ayır (cos x = 0 çözümü kaybolmaz). sin 2x için 2x'i [0, 4π) aralığında ara, sonra 2'ye böl." }
         ]
       },
       {
@@ -135,12 +144,12 @@ window.DEFTER = (function () {
         kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
-              "arcsin: tanım [−1, 1], değer [−π/2, π/2]. arccos: tanım [−1, 1], değer [0, π]. arctan: tanım ℝ, değer (−π/2, π/2).",
+              "arcsin: tanım [−1, 1], değer [−π/2, π/2]. arccos: tanım [−1, 1], değer [0, π]. arctan: tanım ℝ, değer (−π/2, π/2); arccot: değer (0, π).",
               "sin⁻¹ x = arcsin x'tir, 1/sin x değil (o csc x).",
               "arcsin(a), sinüsü a olan ana aralıktaki açıdır: arcsin(−1/2) = −π/6, arccos(−1/2) = 2π/3.",
               "sin(arcsin x) = x hep doğru; arcsin(sin x) = x yalnız [−π/2, π/2] içinde (arcsin(sin 5π/6) = π/6).",
               "[0, 2π) çözümleri: referans açıyı bul, ASTC ile bölgeleri seç.",
-              "Genel çözüm: sin x = a → α + 2kπ ve π − α + 2kπ; cos x = a → ±α + 2kπ; tan x = a → α + kπ.",
+              "Genel çözüm: sin α = sin β ⇒ α = β + 2kπ ya da π − β + 2kπ; cos α = cos β ⇒ α = ±β + 2kπ; tan α = tan β ⇒ α = β + kπ (k ∈ ℤ).",
               "İkinci dereceden denklemde çarpanlara ayır ya da sin²x = 1 − cos²x ile tek fonksiyona in.",
               "sin 2x = cos x gibi denklemde bölme, çarpanlara ayır; açının katında aralığı da katla."
             ] }
@@ -148,16 +157,16 @@ window.DEFTER = (function () {
       }
     ],
     sorular: [
-      { q: "arccos(−√2/2) değeri aşağıdakilerden hangisidir?", opts: ["−π/4", "π/4", "3π/4", "5π/4"], a: 2,
+      { q: "What is the value of arccos(−√2/2)?", opts: ["−π/4", "π/4", "3π/4", "5π/4"], a: 2,
         why: "arccos'un değer kümesi [0, π]. cos'u −√2/2 olan açı 3π/4'tür. −π/4 aralık dışında, 5π/4 de aralığın dışında." },
-      { q: "arcsin(sin(7π/6)) değeri kaçtır?", opts: ["−π/6", "7π/6", "π/6", "5π/6"], a: 0,
+      { q: "What is the value of arcsin(sin(7π/6))?", opts: ["−π/6", "7π/6", "π/6", "5π/6"], a: 0,
         why: "sin(7π/6) = −1/2 ve arcsin(−1/2) = −π/6 (ana aralık [−π/2, π/2]). 7π/6 aralığın dışında olduğu için cevap olamaz." },
-      { q: "Boyu 13 m olan bir rampa 5 m yükseliyor. Rampanın yatayla yaptığı açı θ = arcsin(5/13) olduğuna göre cos θ kaçtır?", opts: ["5/12", "12/13", "13/12", "5/13"], a: 1,
+      { q: "A ramp is 13 m long and rises 5 m. Its angle with the ground is θ = arcsin(5/13). What is cos θ?", opts: ["5/12", "12/13", "13/12", "5/13"], a: 1,
         why: "θ ∈ [−π/2, π/2] olduğundan cos θ ≥ 0. Karşı 5, hipotenüs 13 ise komşu 12: cos θ = 12/13. 5/12 tan θ'dır." },
-      { q: "Bir salıncağın yerden yüksekliği h(θ) = 2 + 2 sin θ metredir. [0, 2π) aralığında yükseklik 3 m olan açılar hangileridir?", opts: ["π/6 ve 5π/6", "π/6 ve 11π/6", "π/3 ve 2π/3", "π/3 ve 5π/3"], a: 0,
-        why: "2 + 2 sin θ = 3 → sin θ = 1/2: θ = π/6 ve π − π/6 = 5π/6. π/3 ve 2π/3, sin'i √3/2 yapar." },
-      { q: "cos x = 1/2 denkleminin genel çözümü aşağıdakilerden hangisidir (k bir tam sayı)?", opts: ["x = π/3 + kπ", "x = π/3 + 2kπ", "x = π/6 + 2kπ", "x = ±π/3 + 2kπ"], a: 3,
-        why: "α = arccos(1/2) = π/3 ve cos çift olduğundan çözüm x = ±α + 2kπ. Yalnız π/3 + 2kπ yazmak 5π/3 çözümünü kaçırır." }
+      { q: "What is the domain of the function f(x) = arccos(3 + x)?", opts: ["[−4, −2]", "[−2, 4]", "[0, π]", "[−1, 1]"], a: 0,
+        why: "arccos'un içi [−1, 1] aralığında olmalı: −1 ≤ 3 + x ≤ 1 ⇒ −4 ≤ x ≤ −2. [0, π] fonksiyonun değer kümesidir; [−1, 1] ise 3 + x için gerekli aralıktır, x için değil." },
+      { q: "Which expression gives all solutions of the equation cos x = 1/2 (k is an integer)?", opts: ["x = π/3 + kπ", "x = π/3 + 2kπ", "x = π/6 + 2kπ", "x = ±π/3 + 2kπ"], a: 3,
+        why: "cos x = cos(π/3) ve cos α = cos β ⇒ α = ±β + 2kπ olduğundan x = ±π/3 + 2kπ. Yalnız π/3 + 2kπ yazmak 5π/3 çözümünü kaçırır." }
     ]
   };
 })();

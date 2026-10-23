@@ -23,7 +23,7 @@ window.DEFTER = {
           oyun: [
             { metin: "Din görevlileri başka ülkelere gidip herkesi inanca davet ediyor.", cevap: "sol", neden: "Yeni inananlar kazanmak ister: evrenselleştirici." },
             { metin: "Bir inanç, esas olarak belli bir halkın geleneği olarak ocağında sürüyor.", cevap: "sag", neden: "Halka bağlı ve ocak çevresinde: etnik." },
-            { metin: "İslam, tüccarların Güneydoğu Asya'ya ulaşmasıyla bu bölgede yayıldı.", cevap: "sol", neden: "*Expansion* ile yayılan evrenselleştirici din." },
+            { metin: "İslam, tüccarların Güneydoğu Asya'ya ulaşmasıyla bu bölgede yayıldı.", cevap: "sol", neden: "Tüccarların taşıdığı (*relocation*), sonra yerel halkın temasla benimsediği (*contagious expansion*) evrenselleştirici din." },
             { metin: "Hint kökenli işçiler, uzak bir ada ülkesine göç edip kendi inançlarını sürdürüyor.", cevap: "sag", neden: "Göçle, yani *relocation* ile yayılma: etnik." }
           ] },
         { tip: "tuzak", metin: "Etnik din, küçük din demek değildir.", yanlis: "Etnik dinler küçüktür; bir din belli bir bölgede yoğunsa etniktir.", dogru: "Ayrım ==yayılma biçimine== ve kime seslendiğine bakar. Hinduizm milyonlarca inananı olan etnik bir dindir; Sikhizm ise Pencap'ta yoğun olsa da ==evrenselleştirici== sayılır." }

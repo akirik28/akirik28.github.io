@@ -1,11 +1,11 @@
 /* Kitora not defteri · pc304 · 3.4 Polinomların Kökleri ve Grafikleri
-   Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus, Unit 3). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: ders sunumunda (Unit#3_1 Polynomials) polinom grafiği bölümü yok; yalnızca "zeros of the polynomial" ve bilinen sıfırdan çözüm kümesi örneği var. Kalan içerik ek bilgi. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc304",
-  amac: "Bu konu polinomun denklemi ile grafiği arasındaki bağı kuruyor: kökler, katlılık, uç davranışı, dönüm noktaları ve işaret. Bir polinomun grafiğini eskiz olarak çizecek ve grafikten polinomu yazacaksın.",
+  amac: "Bu konu polinomun denklemi ile grafiği arasındaki bağı kuruyor: kökler, katlılık, uç davranışı, dönüm noktaları ve işaret. Ders notunda ayrı bölümü yok; yalnızca sıfırlar (*zeros*) ve bilinen sıfırdan çözüm kümesi geçer, geri kalanı ek bilgidir.",
   bolumler: [
     {
-      baslik: "Grafiğin kimlik bilgileri",
+      baslik: "Grafiğin kimlik bilgileri (ek bilgi)",
       kisa: "Derece, kökler, katlılık ve P(0) grafiğin şeklini belirler.",
       bloklar: [
         {
@@ -14,7 +14,7 @@ window.DEFTER = {
             {
               ikon: "🔑",
               terim: "Zero / root",
-              tr: "sıfır / kök",
+              tr: "sıfır / kök (derste *zeros of the polynomial*)",
               tanim: "P(a) = 0 yapan a değeri; grafiğin x eksenine geldiği yer.",
               ornek: "(x − 1)(x + 2)'nin sıfırları 1 ve −2."
             },
@@ -62,7 +62,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Köklerden polinom yazmak",
+      baslik: "Köklerden polinom yazmak (ek bilgi)",
       kisa: "Kökleri bilinen polinom a(x − r₁)(x − r₂)… olur; a bir noktadan bulunur.",
       bloklar: [
         {
@@ -86,7 +86,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Katlılık ve grafiğin davranışı",
+      baslik: "Katlılık ve grafiğin davranışı (ek bilgi)",
       kisa: "Tek katlı kökte eğri eksenden geçer; çift katlıda eksene değip döner.",
       bloklar: [
         {
@@ -225,7 +225,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Uç davranışı (*end behavior*)",
+      baslik: "Uç davranışı (*end behavior*, ek bilgi)",
       kisa: "Uçları yalnızca derecenin tek ya da çift olması ve başkatsayının işareti belirler.",
       bloklar: [
         {
@@ -389,7 +389,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Kaç kök, kaç dönüm noktası?",
+      baslik: "Kaç kök, kaç dönüm noktası? (ek bilgi)",
       kisa: "Derece n ise en çok n kök ve en çok n − 1 dönüm noktası vardır.",
       bloklar: [
         {
@@ -398,7 +398,7 @@ window.DEFTER = {
             { ikon: "🔢", baslik: "En çok n gerçek kök", metin: "Derece n ise katlılıklarla birlikte n kök vardır; bazıları gerçek olmayabilir." },
             { ikon: "↕️", baslik: "En çok n − 1 dönüm noktası", metin: "Dördüncü derecede en çok 3 tepe ya da çukur olur." },
             { ikon: "📉", baslik: "Tek derece: en az bir gerçek kök", metin: "Uçlar zıt yöne gider; sürekli grafik x eksenini mutlaka keser." },
-            { ikon: "🪞", baslik: "Eşlenik kökler", metin: "Katsayılar tam sayıysa 1 + √2 kökse 1 − √2 de köktür." }
+            { ikon: "🪞", baslik: "Eşlenik kökler (ek bilgi)", metin: "Katsayılar tam sayıysa 1 + √2 kökse 1 − √2 de köktür." }
           ]
         },
         {
@@ -421,7 +421,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Grafik çizme adımları",
+      baslik: "Grafik çizme adımları (ek bilgi)",
       kisa: "Uçlar, kökler, katlılık, y kesişimi; sonra eğriyi birleştir.",
       bloklar: [
         {
@@ -510,7 +510,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "İşaret incelemesi: P(x) ≥ 0 nerede?",
+      baslik: "İşaret incelemesi: P(x) ≥ 0 nerede? (ek bilgi)",
       kisa: "Kökler sayı doğrusunu aralıklara böler; her aralıkta işaret sabittir.",
       bloklar: [
         {
@@ -557,43 +557,53 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "P(x) = −2(x + 1)²(x − 3) polinomunun grafiği için hangisi doğrudur?",
+      q: "Which statement about the graph of P(x) = −2(x + 1)²(x − 3) is true?",
       opts: [
-        "x = −1'de eksene değip döner; sağ uç aşağı gider",
-        "x = −1'de eksenden geçer; sağ uç aşağı gider",
-        "x = −1'de eksene değip döner; sağ uç yukarı gider",
-        "x = 3'te eksene değip döner; sol uç aşağı gider"
+        "It touches the x-axis and turns around at x = −1; the right end goes down",
+        "It crosses the x-axis at x = −1; the right end goes down",
+        "It touches the x-axis and turns around at x = −1; the right end goes up",
+        "It touches the x-axis and turns around at x = 3; the left end goes down"
       ],
       a: 0,
       why: "(x + 1)² çift katlı: eğri x = −1'de eksene değer. Derece 3 (tek) ve başkatsayı −2 < 0: sol uç yukarı, sağ uç aşağı. C sağ ucu yanlış okur; B katlılığı yanlış yorumlar."
     },
     {
-      q: "Üçüncü dereceden bir P(x) polinomunun değer tablosu verilmiş. P'nin sıfırları ve katlılıkları için hangisi doğrudur?",
+      q: "The table shows values of a cubic polynomial P(x). Which statement about its zeros and their multiplicities is true?",
       fig: {
         type: "table",
         head: ["x", "−3", "−2", "−1", "0", "1", "2", "3"],
         rows: [["P(x)", "−16", "0", "4", "2", "0", "4", "20"]],
-        caption: "P(x) değer tablosu"
+        caption: "Values of P(x)"
       },
-      opts: ["−2 ve 1, ikisi de tek katlı", "−2 çift katlı, 1 tek katlı", "−2 tek katlı, 1 çift katlı", "Yalnızca −2, üç katlı"],
+      opts: [
+        "−2 and 1, both of multiplicity 1",
+        "−2 has multiplicity 2 and 1 has multiplicity 1",
+        "−2 has multiplicity 1 and 1 has multiplicity 2",
+        "Only −2, with multiplicity 3"
+      ],
       a: 2,
       why: "P(1) = 0 ve iki yanında değerler pozitif (P(0) = 2, P(2) = 4): işaret değişmiyor, çift katlı. P(−2) = 0 iken P(−3) < 0 < P(−1): işaret değişiyor, tek katlı. Derece 1 + 2 = 3 uyuyor; A'da toplam derece 2 olurdu."
     },
     {
-      q: "Kökleri −1 ve 2 (iki katlı) olan ve P(0) = −8 koşulunu sağlayan en düşük dereceli polinom hangisidir?",
+      q: "What is the polynomial of least degree with zeros −1 and 2 (of multiplicity 2) and P(0) = −8?",
       opts: ["P(x) = (x + 1)(x − 2)²", "P(x) = 2(x + 1)(x − 2)²", "P(x) = −2(x + 1)(x − 2)", "P(x) = −2(x + 1)(x − 2)²"],
       a: 3,
       why: "P(x) = a(x + 1)(x − 2)²; P(0) = a·1·4 = 4a = −8 ⇒ a = −2. B, a'yı +2 alır (P(0) = 8 olur); C çift katlılığı unutur (P(0) = −2·1·(−2) = 4 olur)."
     },
     {
-      q: "P(x) = (x + 3)(x − 1)²(x − 4) için P(x) ≥ 0 eşitsizliğinin çözüm kümesi nedir?",
+      q: "What is the solution set of P(x) ≥ 0 for P(x) = (x + 3)(x − 1)²(x − 4)?",
       opts: ["(−∞, −3] ∪ [4, ∞)", "(−∞, −3] ∪ {1} ∪ [4, ∞)", "[−3, 4]", "[−3, 1] ∪ [4, ∞)"],
       a: 1,
       why: "x < −3: (−)(+)(−) = +; −3 < x < 1: (+)(+)(−) = −; 1 < x < 4: − ; x > 4: +. Pozitif aralıklar ve kökler: x ≤ −3, x ≥ 4 ve çift katlı kök x = 1 (P = 0). A, x = 1 noktasını unutur."
     },
     {
-      q: "Derecesi 5 olan bir P(x) polinomunun grafiği için hangisi her zaman doğrudur?",
-      opts: ["x eksenini tam 5 kez keser", "En az 5 dönüm noktası vardır", "x eksenini en az bir kez keser", "İki ucu da aynı yöne gider"],
+      q: "The polynomial P(x) has degree 5. Which statement about its graph is always true?",
+      opts: [
+        "It crosses the x-axis exactly 5 times",
+        "It has at least 5 turning points",
+        "It crosses the x-axis at least once",
+        "Both ends go in the same direction"
+      ],
       a: 2,
       why: "Tek derecede uçlar zıt yöne gider ve grafik kesiksiz olduğundan x eksenini mutlaka keser. D yanlış (tek derecede uçlar zıt yöne gider), B yanlış (en çok 4 dönüm noktası), A yanlış (kökler katlı ya da gerçek olmayabilir)."
     }

@@ -2,7 +2,7 @@
    Kaynak: okul-10-2025-26.md (Precalculus Unit 5) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc503",
-  amac: "Bu konu *logarithmic function* yani logaritmik fonksiyonu anlatıyor: y = log_b x. Grafiğini, üstel fonksiyonun tersi olduğunu (y = x simetrisi), dönüşümleri, tanım kümesi koşullarını ve pH gibi logaritmik ölçeği öğreneceksin.",
+  amac: "Bu konu *logarithmic function* yani logaritmik fonksiyonu anlatıyor: y = log_b x. Grafiğini, üstel fonksiyonun tersi olduğunu (y = x simetrisi), dönüşümleri, tanım kümesi koşullarını öğreneceksin. Ek bilgi olarak pH gibi logaritmik ölçeğe de değiniliyor.",
   bolumler: [
     {
       baslik: "Logaritmik fonksiyon ve grafiği",
@@ -83,7 +83,7 @@ window.DEFTER = {
     },
     {
       baslik: "Logaritmik grafikte dönüşümler",
-      kisa: "log_b(x − h) + k: asimptot x = h, tanım kümesi x > h.",
+      kisa: "a·log_b(x − h) + k: asimptot x = h, tanım kümesi x > h.",
       bloklar: [
         { tip: "grafik", baslik: "f(x) = log₂ x grafiğinden h(x) = log₂(x − 2) + 1", xlabel: "x", ylabel: "y", xmax: 9, ymax: 7,
           yticks: [{ v: 1, label: "−2" }, { v: 2, label: "−1" }, { v: 3, label: "0" }, { v: 4, label: "1" }, { v: 5, label: "2" }, { v: 6, label: "3" }],
@@ -135,8 +135,8 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Uygulama: pH ölçeği",
-      kisa: "Logaritmik ölçekte eşit adımlar 10 kat farkı anlatır.",
+      baslik: "Uygulama: pH ölçeği (ek bilgi)",
+      kisa: "Ek bilgi: logaritmik ölçekte eşit adımlar 10 kat farkı anlatır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📏", terim: "Logarithmic scale", tr: "logaritmik ölçek", tanim: "Eşit adımların eşit farkı değil, eşit oranı (örneğin 10 katı) gösterdiği ölçek.", ornek: "pH ölçeğinde her 1 birim, derişimde 10 kat demektir." },
@@ -157,30 +157,30 @@ window.DEFTER = {
             "Grafik (1, 0) ve (b, 1) noktalarından geçer. b > 1 artan, 0 < b < 1 azalan.",
             "b^x ile log_b x birbirinin tersidir; grafikleri y = x doğrusuna göre simetriktir. Tanım ve değer kümeleri yer değiştirir.",
             "Ters bulma: y yaz, x ile y'yi değiştir, y'yi çöz. f(x) = 3^(x−1) + 2 için f⁻¹(x) = log₃(x − 2) + 1.",
-            "log_b(x − h) + k: h kadar sağa, k kadar yukarı. Düşey asimptot x = h, tanım kümesi x > h.",
+            "f(x) = a·log_b(x − h) + k: h kadar sağa, k kadar yukarı. Düşey asimptot x = h, tanım kümesi x > h, değer kümesi bütün reel sayılar.",
             "−log_b x x eksenine, log_b(−x) y eksenine göre yansımadır; ikincisinde tanım kümesi x < 0.",
             "Tanım kümesi: logun içi > 0, taban > 0 ve ≠ 1. log(x² − 4) için x < −2 ya da x > 2.",
-            "pH = −log [H⁺]: pH'da 1 birim fark, derişimde 10 kat fark."
+            "Ek bilgi (derste yok): pH = −log [H⁺]; pH'da 1 birim fark, derişimde 10 kat fark."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "f(x) = log(x² − 9) fonksiyonunun tanım kümesi hangisidir?",
-      opts: ["x > 3", "−3 < x < 3", "x < −3 ya da x > 3", "x ≠ 3"],
+    { q: "What is the domain of f(x) = log(x² − 9)?",
+      opts: ["x > 3", "−3 < x < 3", "x < −3 or x > 3", "x ≠ 3"],
       a: 2, why: "x² − 9 > 0 ise (x − 3)(x + 3) > 0 olur: x < −3 ya da x > 3. B, ifadenin negatif olduğu aralıktır; x = 3 dışındaki her değer de uygun değildir, bu yüzden D de yanlıştır." },
-    { q: "f(x) = 2^(x+1) − 3 fonksiyonunun tersi hangisidir?",
+    { q: "What is the inverse of f(x) = 2^(x+1) − 3?",
       opts: ["f⁻¹(x) = log₂(x − 3) − 1", "f⁻¹(x) = log₂(x + 3) − 1", "f⁻¹(x) = log₂(x + 3) + 1", "f⁻¹(x) = 2^(x−1) + 3"],
       a: 1, why: "x = 2^(y+1) − 3 ise x + 3 = 2^(y+1), y + 1 = log₂(x + 3) ve y = log₂(x + 3) − 1. C, son adımda −1 yerine +1 yazar." },
-    { q: "Tablo, g(x) = log_b(x − h) biçimindeki bir fonksiyonun değerlerini gösteriyor. g'nin düşey asimptotu hangisidir?",
+    { q: "The table shows values of a function g(x) = log_b(x − h). What is the vertical asymptote of g?",
       fig: { type: "table", head: ["x", "g(x)"], rows: [["2", "0"], ["4", "1"], ["10", "2"]], caption: "g(x) = log_b(x − h)" },
       opts: ["x = 0", "x = 1", "x = 2", "y = 1"],
       a: 1, why: "log yalnızca içi 1 iken 0 olur: g(2) = 0 ise 2 − h = 1 ve h = 1. Kontrol: g(4) = log_b 3 = 1 ise b = 3, g(10) = log₃ 9 = 2. Asimptot x = h = 1. C, tablodaki ilk x değerini asimptot sanır." },
-    { q: "y = log₂ x grafiği 3 birim sola ve 2 birim aşağı kaydırılırsa elde edilen fonksiyon ve düşey asimptotu hangisidir?",
+    { q: "The graph of y = log₂ x is shifted 3 units to the left and 2 units down. What are the new function and its vertical asymptote?",
       opts: ["y = log₂(x + 3) − 2 ; x = −3", "y = log₂(x − 3) − 2 ; x = 3", "y = log₂(x + 3) + 2 ; x = −3", "y = log₂(x − 2) + 3 ; x = 2"],
       a: 0, why: "Sola kayma x yerine x + 3, aşağı kayma −2 getirir; asimptot x = −3 olur. B sağa kaymayı, C yukarı kaymayı anlatır." },
-    { q: "pH 2 olan bir çözeltinin H⁺ derişimi, pH 6 olan bir çözeltinin H⁺ derişiminin kaç katıdır?",
-      opts: ["4", "100", "1000", "10 000"],
-      a: 3, why: "[H⁺] = 10^(−pH): 10^(−2) ÷ 10^(−6) = 10^4 = 10 000. A, pH farkını (4) derişim farkı sanar; logaritmik ölçekte her pH birimi 10 kat demektir." }
+    { q: "Let f(x) = e^x + 2. Which statement about the inverse function f⁻¹ is correct?",
+      opts: ["f⁻¹(x) = ln(x) − 2, with vertical asymptote x = 0", "f⁻¹(x) = ln(x + 2), with vertical asymptote x = −2", "f⁻¹(x) = e^(x−2), with horizontal asymptote y = −2", "f⁻¹(x) = ln(x − 2), with vertical asymptote x = 2"],
+      a: 3, why: "y = e^x + 2: x ile y yer değiştirir, x − 2 = e^y ve y = ln(x − 2). f'nin asimptotu y = 2 idi; f⁻¹'in asimptotu x = 2, tanım kümesi x > 2 ve x-kesişimi (3, 0). A, 2'yi logaritmanın dışında çıkarmaktır." }
   ]
 };

@@ -106,8 +106,15 @@ window.DEFTER = {
             "Atom sayısı = 1,6 × 6,02×10²³ = 9,632×10²³ atom.",
             "Kontrol: molekül sayısı 0,2 × 6,02×10²³ = 1,204×10²³; × 8 = 9,632×10²³ ✓"
           ], sonuc: "9,632×10²³ atom (1,6 mol atom)." },
+        { tip: "ornek", baslik: "Formüldeki indis: mol atom sayısı", durum: "a) 0,300 mol P₂O₃ kaç mol O atomu içerir? b) Kaç mol (NH₄)₂SO₄ içinde 0,800 mol O atomu bulunur?", adimlar: [
+            "Formüldeki alt indis, 1 mol bileşikteki o atomun mol sayısıdır.",
+            "a) P₂O₃'te 3 O var: 0,300 × 3 = 0,900 mol O.",
+            "b) (NH₄)₂SO₄'te 4 O var (SO₄): 0,800 ÷ 4 = 0,200 mol bileşik.",
+            "Kontrol: 0,200 mol × 4 = 0,800 mol O ✓"
+          ], sonuc: "a) 0,900 mol O  b) 0,200 mol (NH₄)₂SO₄." },
         { tip: "liste", maddeler: [
-            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*First, find the number of moles. Then multiply by the number of atoms in one molecule.*" }
+            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*First, find the number of moles. Then multiply by the number of atoms in one molecule.*" },
+            { ikon: "🔢", baslik: "Sonucu nasıl yaz?", metin: "Derste cevaplar bilimsel gösterimle ve üç anlamlı basamakla istenir: 9,63×10²³ gibi." }
           ] }
       ]
     },
@@ -128,22 +135,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir öğrenci 2 mol H₂O için molekül sayısını hesaplamak istiyor. Doğru değer hangisidir?",
-      opts: ["6,02×10²³", "1,204×10²⁴", "3,612×10²⁴", "1,806×10²⁴"], a: 1,
+    { q: "A student wants to calculate the number of molecules in 2 mol of H₂O. Which value is correct?",
+      opts: ["6.02×10²³", "1.204×10²⁴", "3.612×10²⁴", "1.806×10²⁴"], a: 1,
       why: "N = n × N_A = 2 × 6,02×10²³ = 1,204×10²⁴ molekül. 3,612×10²⁴ (C) toplam atom sayısıdır (6 mol atom); soru molekül sayısını sorduğu için yanlıştır." },
-    { q: "0,25 mol NH₃ gazındaki toplam atom sayısı kaçtır?",
-      opts: ["1,505×10²³", "3,01×10²³", "6,02×10²³", "2,408×10²⁴"], a: 2,
+    { q: "What is the total number of atoms in 0.25 mol of NH₃ gas?",
+      opts: ["1.505×10²³", "3.01×10²³", "6.02×10²³", "2.408×10²⁴"], a: 2,
       why: "Her NH₃ molekülünde 4 atom (1 N + 3 H) vardır: 0,25 × 4 = 1 mol atom = 6,02×10²³. 1,505×10²³ (A) yalnızca molekül sayısıdır (0,25 × 6,02×10²³); atomla çarpmayı unutmaktır." },
-    { q: "Tabloda üç numunenin tanecik sayıları verilmiştir. En çok mol içeren numune hangisidir?",
-      fig: { type: "table", head: ["Numune", "Verilen miktar"], rows: [["A", "0,1 mol"], ["B", "3,01×10²³ tanecik"], ["C", "1,204×10²⁴ tanecik"]], caption: "Üç numune" },
-      opts: ["A, çünkü 0,1 en küçük sayıdır", "B, çünkü üssü büyüktür", "A ve B eşit mol içerir", "C, çünkü 1,204×10²⁴ ÷ 6,02×10²³ = 2 mol"], a: 3,
+    { q: "The table gives the amounts of three samples. Which sample contains the most moles?",
+      fig: { type: "table", head: ["Sample", "Amount given"], rows: [["A", "0.1 mol"], ["B", "3.01×10²³ particles"], ["C", "1.204×10²⁴ particles"]], caption: "Three samples" },
+      opts: ["A, because it is the only one given in moles", "B, because its exponent is larger", "A and B contain equal moles", "C, because 1.204×10²⁴ ÷ 6.02×10²³ = 2 mol"], a: 3,
       why: "B = 0,5 mol, C = 2 mol, A = 0,1 mol; en çoğu C'dedir. Üssü büyük olan sayının mol olduğunu sanmak (B) yaygın hatadır; hepsini önce mole çevir." },
-    { q: "Grafikte bir maddenin tanecik sayısı (N) mol sayısına (n) karşı çizilmiştir. Doğrunun eğimi neyi verir?",
-      fig: { type: "graph", xlabel: "n (mol)", ylabel: "N (×10²³)", xmax: 5, ymax: 30, lines: [{ from: [0, 0], to: [4.9, 29.5], label: "N" }], points: [{ q: 2, p: 12.04, label: "2 mol", guides: true }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }], yticks: [{ v: 12.04, label: "12,04" }], caption: "N–n grafiği" },
-      opts: ["Mol kütlesini", "Molar hacmi", "Avogadro sayısını (N_A)", "Moleküldeki atom sayısını"], a: 2,
+    { q: "In the graph, the number of particles (N) of a substance is plotted against the number of moles (n). What does the slope of the line give?",
+      fig: { type: "graph", xlabel: "n (mol)", ylabel: "N (×10²³)", xmax: 5, ymax: 30, lines: [{ from: [0, 0], to: [4.9, 29.5], label: "N" }], points: [{ q: 2, p: 12.04, label: "2 mol", guides: true }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }], yticks: [{ v: 12.04, label: "12.04" }], caption: "N–n graph" },
+      opts: ["The molar mass", "The molar volume", "Avogadro's number (N_A)", "The number of atoms in a molecule"], a: 2,
       why: "N = n × N_A olduğundan N–n doğrusunun eğimi N_A = 6,02×10²³ tanecik/mol'dür. Mol kütlesi (A) kütle–mol grafiğinin eğimidir; karıştırma." },
-    { q: "1 mol Na atomu ile 1 mol Fe atomu karşılaştırılıyor. Hangisi doğrudur?",
-      opts: ["Fe'nin atom sayısı daha fazladır", "İkisinin atom sayısı eşit, kütleleri farklıdır", "İkisinin kütlesi eşittir", "Na'nın atom sayısı daha azdır"], a: 1,
+    { q: "1 mol of Na atoms is compared with 1 mol of Fe atoms. Which statement is correct?",
+      opts: ["Fe has more atoms", "Both have the same number of atoms but different masses", "Both have the same mass", "Na has fewer atoms"], a: 1,
       why: "1 mol her maddede 6,02×10²³ tanecik demektir; kütle ise mol kütlesine bağlıdır (Na 23 g, Fe 56 g). \"Ağır olan daha çok atom içerir\" (A) yanılgısına düşme." }
   ]
 };

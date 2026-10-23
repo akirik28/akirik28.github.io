@@ -94,7 +94,7 @@ window.DEFTER = {
       kisa: "Tarih çizgisini doğuya geçersen bir gün geri, batıya geçersen ileri.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "📅", terim: "International Date Line", tr: "uluslararası tarih değiştirme çizgisi", tanim: "Yaklaşık 180° boylamda, takvim gününün değiştiği çizgi. Düz değil, zikzaklıdır; ülkeleri ikiye bölmez.", ornek: "Tokyo'dan pazartesi kalkan uçak, Los Angeles'a pazar günü iner." }
+            { ikon: "📅", terim: "International Date Line", tr: "uluslararası tarih değiştirme çizgisi", tanim: "Yaklaşık 180° boylamda, takvim gününün değiştiği çizgi. Düz değil, zikzaklıdır; ülkeleri ikiye bölmez.", ornek: "Tokyo'dan pazartesi akşamı kalkan uçak, Los Angeles'a yine pazartesi, hem de kalktığı saatten daha erken bir saatte iner." }
           ] },
         { tip: "ikili", sol: { ikon: "➡️", baslik: "Doğuya doğru (Amerika'ya)", maddeler: ["Takvim: −1 gün", "Pazartesi → pazar"] },
           sag: { ikon: "⬅️", baslik: "Batıya doğru (Asya'ya)", maddeler: ["Takvim: +1 gün", "Pazar → pazartesi"] },

@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc301 · 3.1 Polinomlar ve İşlemler
-   Kapsam: defter-araclari/kaynak/okul-10-2025-26.md (Precalculus, Unit 3). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#3_1 Polynomials) + Review for Exam#3; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc301",
   amac: "Bu konu polinomları tanıtıyor: derece, katsayı ve sabit terim gibi parçalarını, toplama, çıkarma ve çarpmayı, özel çarpımları ve P(a) değerini. Sonraki konuların (bölme, kök, grafik) temeli burası.",
@@ -48,9 +48,9 @@ window.DEFTER = {
             {
               ikon: "👑",
               terim: "Leading coefficient",
-              tr: "başkatsayı",
-              tanim: "En büyük kuvvetli terimin katsayısı.",
-              ornek: "Yukarıdaki polinomda 3."
+              tr: "başkatsayı (en büyük dereceli terime *leading term* denir)",
+              tanim: "En büyük dereceli terim *leading term*, onun katsayısı *leading coefficient*.",
+              ornek: "Yukarıdaki polinomda leading term 3x⁴, leading coefficient 3."
             },
             {
               ikon: "🪨",
@@ -120,7 +120,7 @@ window.DEFTER = {
             ["2", "*quadratic*", "x² − 4x + 3"],
             ["3", "*cubic*", "x³ − x"],
             ["4", "*quartic*", "x⁴ − 5x² + 4"],
-            ["5", "*quintic*", "x⁵ + 2x"]
+            ["5", "*quintic* (ek bilgi)", "x⁵ + 2x"]
           ],
           not: "Sınavda böyle yaz: *P is a cubic polynomial.*"
         },
@@ -134,7 +134,7 @@ window.DEFTER = {
         },
         {
           tip: "not",
-          metin: "Tek istisna *zero polynomial* P(x) = 0'dır: derecesi tanımsızdır (*undefined*). 7 gibi sıfırdan farklı sabitler ise 0. derecedendir."
+          metin: "Dörtten çok terimli polinomlara genelde özel ad verilmez. Tek istisna *zero polynomial* P(x) = 0'dır: derecesi tanımsızdır (*undefined*). P(x) = a₀ ≠ 0 gibi sabit polinomlar ise 0. derecedendir."
         }
       ]
     },
@@ -260,7 +260,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Özel çarpımlar ve çarpanlara ayırma",
+      baslik: "Özel çarpımlar ve çarpanlara ayırma (ek bilgi)",
       kisa: "Kalıpları tanırsan çarpmayı da çarpanlara ayırmayı da kısaltırsın.",
       bloklar: [
         {
@@ -318,8 +318,39 @@ window.DEFTER = {
             { ikon: "0️⃣", baslik: "P(0) = sabit terim", metin: "x yerine 0 yazınca yalnızca a₀ kalır." },
             { ikon: "1️⃣", baslik: "P(1) = katsayılar toplamı", metin: "Bütün x'ler 1 olur." },
             { ikon: "➖", baslik: "P(−1) = çift kuvvetli terimlerin toplamı − tek kuvvetlilerin toplamı", metin: "Örnekte (−1 − 5) − (2 + 4) = −12." },
+            { ikon: "➗", baslik: "Ders teoremi: P_o = (P(1) − P(−1))/2 ve P_e = (P(1) + P(−1))/2", metin: "P_o tek, P_e çift kuvvetli terimlerin katsayıları toplamıdır. Örnekte P_o = (0 + 12)/2 = 6, P_e = (0 − 12)/2 = −6." },
             { ikon: "✍️", baslik: "Sınavda böyle yaz", metin: "*Evaluate P(2).* → *P(2) = 15.*" }
           ]
+        }
+      ]
+    },
+    {
+      baslik: "İç içe polinom ve parametre soruları",
+      kisa: "x yerine uygun sayıyı yaz; sabit ve sıfır polinomda katsayıları eşitle.",
+      bloklar: [
+        {
+          tip: "ornek",
+          baslik: "P(2x − 4) = 3x² − 5x + 4 ve benzerleri",
+          durum: "(a) P(−2)? (b) P(x + 4) = 2x² − 9x + 7 ise P(x² − 3)'ün sabit terimi? (c) P(2x − 3) = 5x² + 4x − 1 ise P(x)'in katsayılar toplamı?",
+          adimlar: [
+            "(a) P(−2) için 2x − 4 = −2 → x = 1. P(−2) = 3 − 5 + 4 = 2.",
+            "(b) Sabit terim, x = 0 yazınca bulunur: P(0² − 3) = P(−3). x + 4 = −3 → x = −7.",
+            "P(−3) = 2·49 − 9·(−7) + 7 = 98 + 63 + 7 = 168.",
+            "(c) Katsayılar toplamı P(1)'dir. 2x − 3 = 1 → x = 2. P(1) = 5·4 + 4·2 − 1 = 27."
+          ],
+          sonuc: "(a) 2, (b) 168, (c) 27. Sınavda böyle yaz: *To find the constant term, substitute x = 0.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Sabit, sıfır ve polinom olma şartları",
+          durum: "(a) P(x) = (2a − 3)x² − (3b + 2)x − 5 sabit polinom ise a + b + P(100)? (b) P(x) = (a − 5)x² − (b + 3)x − 2c + 5 sıfır polinom ise a + b + c? (c) 5x^(m+2) − 6x^(4−m) + 3 bir polinom ise m'nin tam sayı değerleri?",
+          adimlar: [
+            "(a) Sabit polinomda x'li terimlerin katsayıları 0: 2a − 3 = 0 → a = 3/2 ve 3b + 2 = 0 → b = −2/3.",
+            "P(100) = −5 (sabit). a + b + P(100) = 3/2 − 2/3 − 5 = 5/6 − 5 = −25/6.",
+            "(b) Sıfır polinomda bütün katsayılar 0: a = 5, b = −3, −2c + 5 = 0 → c = 5/2. a + b + c = 5 − 3 + 5/2 = 9/2.",
+            "(c) Kuvvetler 0, 1, 2… olmalı: m + 2 ≥ 0 ve 4 − m ≥ 0 → −2 ≤ m ≤ 4."
+          ],
+          sonuc: "(a) −25/6, (b) 9/2, (c) m ∈ {−2, −1, 0, 1, 2, 3, 4}. Sınavda böyle yaz: *All coefficients of the zero polynomial are 0.*"
         }
       ]
     },
@@ -337,6 +368,7 @@ window.DEFTER = {
             "Çarpımın derecesi derecelerin toplamıdır: deg(P · Q) = deg P + deg Q.",
             "Kalıplar: (a ± b)², a² − b², (a ± b)³, a³ ± b³. Dört terimde gruplama dene.",
             "P(0) sabit terim, P(1) katsayılar toplamı; P(a) = 0 ise a bir köktür.",
+            "İç içe polinomda iç ifadeyi hedef sayıya eşitle: P(2x − 3) için P(1), x = 2'de bulunur. Sabit polinomda x'li katsayılar, sıfır polinomda bütün katsayılar 0.",
             "Sınavda hep *degree*, *leading coefficient*, *factor completely* ifadelerini kullan."
           ]
         }
@@ -345,36 +377,36 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Aşağıdakilerden hangisi bir *polynomial*dır?",
+      q: "Which of the following is a polynomial?",
       opts: ["x² + 3/x − 1", "√x + 4", "x³ − √2·x + ½", "2ˣ + x"],
       a: 2,
       why: "C'de x'in kuvvetleri 3 ve 1'dir; √2 ve ½ yalnızca katsayıdır. A'da x paydada (x⁻¹), B'de x kökün içinde (x^(1/2)), D'de x üstte olduğu için polinom değildirler."
     },
     {
-      q: "(2x² − 1)(x³ + 4x − 3) çarpımının *degree* ve *leading coefficient* değerleri nedir?",
-      opts: ["Derece 6, başkatsayı 2", "Derece 5, başkatsayı 2", "Derece 5, başkatsayı −1", "Derece 3, başkatsayı 2"],
+      q: "What are the degree and the leading coefficient of the product (2x² − 1)(x³ + 4x − 3)?",
+      opts: ["Degree 6, leading coefficient 2", "Degree 5, leading coefficient 2", "Degree 5, leading coefficient −1", "Degree 3, leading coefficient 2"],
       a: 1,
       why: "Dereceler toplanır: 2 + 3 = 5; başkatsayılar çarpılır: 2·1 = 2. A şıkkı dereceleri çarpmak (2·3 = 6) gibi yaygın bir hatadan çıkar."
     },
     {
-      q: "A(x) = x³ − 2x + 1 ve B(x) = x³ + x² − 3 ise A(x) − B(x) nedir?",
+      q: "If A(x) = x³ − 2x + 1 and B(x) = x³ + x² − 3, what is A(x) − B(x)?",
       opts: ["−x² − 2x + 4", "−x² − 2x − 2", "2x³ + x² − 2x − 2", "x² + 2x − 4"],
       a: 0,
       why: "x³ terimleri sadeleşir; x²: 0 − 1 = −1; x: −2; sabit: 1 − (−3) = 4. B, −3'ün işaretini dağıtmayı unutur; C aslında A + B'dir."
     },
     {
-      q: "Kantin tabanı kare olan bir kutu satıyor: taban kenarı x cm, yüksekliği (x + 3) cm. Kutunun hacmi V(x) ve V(2) nedir?",
+      q: "A canteen sells a box with a square base of side x cm and height (x + 3) cm. What are the volume V(x) and V(2)?",
       opts: ["V(x) = x³ + 3, V(2) = 11", "V(x) = x² + 3x, V(2) = 10", "V(x) = 2x² + 3x, V(2) = 14", "V(x) = x³ + 3x², V(2) = 20"],
       a: 3,
       why: "Taban alanı x², hacim = taban × yükseklik = x²(x + 3) = x³ + 3x². x = 2 için 8 + 12 = 20. A dağıtmayı unutur; B tabanın alanı yerine bir dikdörtgenin alanını yazar."
     },
     {
-      q: "Tabloda katsayıları verilen P(x) için P(1) − P(−1) kaçtır?",
+      q: "The table gives the coefficients of P(x). What is P(1) − P(−1)?",
       fig: {
         type: "table",
-        head: ["Kuvvet", "x⁴", "x³", "x²", "x¹", "x⁰"],
-        rows: [["Katsayı", "2", "0", "−3", "5", "−4"]],
-        caption: "P(x) polinomunun katsayıları"
+        head: ["Power", "x⁴", "x³", "x²", "x¹", "x⁰"],
+        rows: [["Coefficient", "2", "0", "−3", "5", "−4"]],
+        caption: "Coefficients of P(x)"
       },
       opts: ["−10", "10", "0", "5"],
       a: 1,

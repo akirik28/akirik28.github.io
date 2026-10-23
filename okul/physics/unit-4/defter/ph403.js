@@ -52,7 +52,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "İpte ve yayda hız: gerginlik ve kalınlık",
+      baslik: "İpte ve yayda hız: gerginlik ve kalınlık (ek bilgi: sayılar)",
       kisa: "Gerginlik arttıkça hız artar; ip kalın (ağır) olursa hız azalır.",
       bloklar: [
         {
@@ -94,7 +94,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [{ t: "v", alt: "hız (m/s)" }, "=", { t: "√( T / μ )", alt: "T: gerginlik (N) · μ: ipin birim uzunluğunun kütlesi (kg/m)" }],
-          aciklama: "Önce yönü bil: T arttıkça v artar; μ (ip kalınlığı) arttıkça v azalır. Sayı gerekirse formülü kullan."
+          aciklama: "Önce yönü bil: T arttıkça v artar; μ (ip kalınlığı) arttıkça v azalır. Ek bilgi: bu sayısal formül ders sunumlarında görülmedi; asıl önemli olan yön ilişkisidir."
         },
         {
           tip: "ornek",
@@ -239,35 +239,35 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Gerili bir ipin ucunu sallayarak ipte periyodik dalga oluşturuyorsun. Sallama frekansını iki katına çıkarırsan aşağıdakilerden hangisi olur?",
-      opts: ["Dalga hızı iki katına çıkar, dalga boyu değişmez.", "Dalga hızı değişmez, dalga boyu yarıya iner.", "Dalga hızı yarıya iner, dalga boyu değişmez.", "Hem dalga hızı hem dalga boyu yarıya iner."],
+      q: "You create periodic waves on a taut rope by shaking one end. If you double the frequency of shaking, which of the following happens?",
+      opts: ["The wave speed doubles and the wavelength does not change.", "The wave speed does not change and the wavelength is halved.", "The wave speed is halved and the wavelength does not change.", "Both the wave speed and the wavelength are halved."],
       a: 1,
       why: "Hızı ipin kendisi (gerginlik, kalınlık) belirler; kaynağın frekansı hızı değiştirmez. v sabit, f iki katına çıkınca λ = v/f yarıya iner. A en çekici yanlış şıktır: \"daha hızlı sallarsam dalga da hızlı gider\" sanılır."
     },
     {
-      q: "Aynı gerili ipte farklı gerginliklerde ölçülen dalga hızları tabloda verilmiştir. Gerginlik 25 N olursa dalga hızı yaklaşık kaç m/s olur?",
-      fig: { type: "table", head: ["Gerginlik T (N)", "Dalga hızı v (m/s)"], rows: [["1", "10"], ["4", "20"], ["9", "30"]] },
+      q: "The wave speeds measured on the same rope at different tensions are given in the table. About what speed would the wave have when the tension is 25 N?",
+      fig: { type: "table", head: ["Tension T (N)", "Wave speed v (m/s)"], rows: [["1", "10"], ["4", "20"], ["9", "30"]] },
       opts: ["50 m/s", "100 m/s", "250 m/s", "25 m/s"],
       a: 0,
       why: "Tabloda T 4 katına çıkınca v 2 katına çıkıyor: v, T'nin karekökü ile orantılı (v = 10√T). T = 25 N için v = 10 × 5 = 50 m/s. C'de hız gerginlikle doğru orantılı sanılmış (10 × 25)."
     },
     {
-      q: "Bir su dalgası derin bölgeden sığ bölgeye geçiyor. Frekans 2 Hz; derin bölgede dalga boyu 6 cm, sığ bölgede 3 cm'dir. Sığ bölgedeki dalga hızı kaç cm/s'dir?",
-      opts: ["3 cm/s", "12 cm/s", "6 cm/s", "1,5 cm/s"],
+      q: "A water wave travels from a deep region into a shallow region. Its frequency is 2 Hz; the wavelength is 6 cm in the deep region and 3 cm in the shallow region. What is the wave speed in the shallow region?",
+      opts: ["3 cm/s", "12 cm/s", "6 cm/s", "1.5 cm/s"],
       a: 2,
       why: "Frekans ortam değiştirince değişmez: f = 2 Hz. Sığ bölgede v = λf = 3 × 2 = 6 cm/s. B şıkkı derin bölgenin hızıdır (6 × 2 = 12); sığ bölge yavaştır, bu yüzden elenir."
     },
     {
-      q: "Bir öğrenci şimşeği gördükten 4 saniye sonra gök gürültüsünü duyuyor. Havada ses hızı 340 m/s olduğuna göre şimşek yaklaşık kaç metre uzaktadır? (Işığın süresi ihmal edilir.)",
+      q: "A student sees lightning and hears the thunder 4 seconds later. The speed of sound in air is 340 m/s. About how far away is the lightning? (Ignore the travel time of light.)",
       opts: ["85 m", "340 m", "680 m", "1360 m"],
       a: 3,
       why: "Ölçülen süre sesin yolculuk süresidir: d = v × t = 340 × 4 = 1360 m. A'da hız süreye bölünmüş (340 ÷ 4), B'de süre hiç kullanılmamış."
     },
     {
-      q: "Biri ince, biri kalın iki ip aynı gerginlikte geriliyor ve uçları aynı frekansta sallanıyor. Aşağıdakilerden hangisi doğrudur?",
-      opts: ["Kalın ipte dalga hızı daha büyüktür.", "Kalın ipte dalga boyu daha küçüktür.", "Kalın ipte frekans daha küçüktür.", "İki ipte de dalga boyu aynıdır."],
-      a: 1,
-      why: "Aynı gerginlikte kalın (ağır) ipte hız daha küçüktür. Frekans kaynağa bağlı olduğu için aynıdır; λ = v/f olduğundan kalın ipte dalga boyu da küçüktür. D en çekici yanlış şıktır: frekans aynı diye dalga boyu da aynı sanılır."
+      q: "As a periodic wave travels from one medium to another, which pair of the wave's characteristics cannot change?",
+      opts: ["period and amplitude", "frequency and velocity", "period and frequency", "amplitude and wavelength"],
+      a: 2,
+      why: "Frekansı kaynak belirler, periyot T = 1/f olduğundan o da değişmez. Hız ve dalga boyu ortama göre değişir (v = λf). B en çekici yanlış şıktır: frekans değişmez ama hız ortamla değişir."
     }
   ]
 };

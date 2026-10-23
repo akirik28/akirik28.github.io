@@ -6,7 +6,7 @@ window.DEFTER = {
   bolumler: [
     {
       baslik: "Neden yön değişir? Artan ve azalan logaritma",
-      kisa: "b > 1 ise log artar, 0 < b < 1 ise azalır; yön buna bağlıdır.",
+      kisa: "a > 1 ise log artar, 0 < a < 1 ise azalır; yön buna bağlıdır.",
       bloklar: [
         { tip: "grafik", baslik: "log₂ x > 1 ve log_(1/2) x > 1", xlabel: "x", ylabel: "y", xmax: 9, ymax: 7,
           yticks: [{ v: 1, label: "−2" }, { v: 2, label: "−1" }, { v: 3, label: "0" }, { v: 4, label: "1" }, { v: 5, label: "2" }, { v: 6, label: "3" }],
@@ -29,8 +29,8 @@ window.DEFTER = {
             { metin: "Şimdi **g(x) = log_(1/2) x**: taban 1/2 < 1, grafik soldan sağa ==alçalır==. x büyüdükçe log küçülür.", gizle: ["f", "p2", "ok1", "t1"], goster: ["g"] },
             { metin: "log_(1/2) x > 1: eğri y = 1'in üstünde yalnızca kesişim x = 1/2'nin ==solunda==: 0 < x < 1/2. Yön DEĞİŞTİ.", goster: ["p3", "ok2", "t2"] }
           ] },
-        { tip: "ikili", sol: { ikon: "📈", baslik: "b > 1 (artan)", maddeler: ["Yön aynı kalır", "log_b A > log_b B ⇒ A > B"] },
-          sag: { ikon: "📉", baslik: "0 < b < 1 (azalan)", maddeler: ["Yön değişir", "log_b A > log_b B ⇒ A < B"] },
+        { tip: "ikili", sol: { ikon: "📈", baslik: "a > 1 (artan)", maddeler: ["Yön aynı kalır", "log_a x < log_a y ⇔ x < y"] },
+          sag: { ikon: "📉", baslik: "0 < a < 1 (azalan)", maddeler: ["Yön değişir", "log_a x < log_a y ⇔ x > y"] },
           oyun: [
             { metin: "log₃ x > log₃ 5", cevap: "sol", neden: "Taban 3 > 1: yön aynı, x > 5." },
             { metin: "log_(0,5) x > log_(0,5) 5", cevap: "sag", neden: "Taban 0,5 < 1: yön değişir, 0 < x < 5." },
@@ -38,8 +38,8 @@ window.DEFTER = {
             { metin: "ln x < ln 7", cevap: "sol", neden: "Taban e ≈ 2,718 > 1: yön aynı, 0 < x < 7." }
           ] },
         { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Since the base is greater than 1, the logarithmic function is increasing, so the inequality sign stays the same.*", metin: "b > 1 iken." },
-            { ikon: "✍️", baslik: "*Since 0 < b < 1, the logarithmic function is decreasing, so the inequality sign is reversed.*", metin: "0 < b < 1 iken." }
+            { ikon: "✍️", baslik: "*Since the base is greater than 1, the logarithmic function is increasing, so the inequality sign stays the same.*", metin: "a > 1 iken." },
+            { ikon: "✍️", baslik: "*Since 0 < a < 1, the logarithmic function is decreasing, so the inequality sign is reversed.*", metin: "0 < a < 1 iken." }
           ] }
       ]
     },
@@ -107,6 +107,9 @@ window.DEFTER = {
         { tip: "ornek", baslik: "log₂(x² − 3x) ≤ 2", durum: "Eşitsizliği çöz.",
           adimlar: ["Tanım kümesi: x² − 3x > 0 ⇒ x(x − 3) > 0 ⇒ x < 0 ya da x > 3.", "2 = log₂ 4; taban 2 > 1, yön aynı: x² − 3x ≤ 4.", "x² − 3x − 4 ≤ 0 ⇒ (x − 4)(x + 1) ≤ 0 ⇒ −1 ≤ x ≤ 4.", "Kesiştir: (x < 0 ya da x > 3) ve (−1 ≤ x ≤ 4).", "Kontrol: x = −1 için x² − 3x = 4, log₂ 4 = 2 ≤ 2 ; x = 1 için −2, tanımsız."],
           sonuc: "−1 ≤ x < 0 ya da 3 < x ≤ 4. **Sınavda böyle yaz:** *The solution set is the intersection of the domain and the solution of the inequality.*" },
+        { tip: "ornek", baslik: "1 + log ve iç içe log", durum: "(a) log(3x + 2) > 1 + log(x − 4) ve (b) log₂(log(x − 3)) ≤ 0 eşitsizliklerini çöz.",
+          adimlar: ["(a) Tanım kümesi: 3x + 2 > 0 ve x − 4 > 0 ⇒ x > 4.", "1 = log 10 olduğundan 1 + log(x − 4) = log(10(x − 4)). Taban 10 > 1, yön aynı: 3x + 2 > 10x − 40 ⇒ x < 6. Kesişim: 4 < x < 6.", "(b) Tanım kümesi: x − 3 > 0 ve log(x − 3) > 0 ⇒ x − 3 > 1 ⇒ x > 4.", "Taban 2 > 1: log(x − 3) ≤ 2⁰ = 1 ⇒ x − 3 ≤ 10 ⇒ x ≤ 13. Kesişim: 4 < x ≤ 13. Kontrol: x = 13 için log₂(log 10) = log₂ 1 = 0."],
+          sonuc: "(a) ==4 < x < 6==; (b) ==4 < x ≤ 13==. **Sınavda böyle yaz:** *First find the domain, then solve and intersect.*" },
         { tip: "grafik", baslik: "0 < x² − 3x ≤ 4 grafikte", xlabel: "x", ylabel: "y", xmax: 7, ymax: 10,
           ogeler: [
             { id: "xax", tip: "cizgi", renk: 0, from: [0, 3], to: [7, 3], etiket: "x" },
@@ -139,11 +142,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "b > 1 iken log artandır: log_b A > log_b B ⇒ A > B (yön aynı).",
-            "0 < b < 1 iken log azalandır: log_b A > log_b B ⇒ A < B (yön ters).",
+            "a > 1 iken log artandır: log_a x < log_a y ⇔ x < y (yön aynı).",
+            "0 < a < 1 iken log azalandır: log_a x < log_a y ⇔ x > y (yön ters).",
             "Önce tanım kümesini yaz: her logun içi pozitif. Sonuçta çözümü tanım kümesiyle kesiştir.",
             "Sayıyı log yap: 3 = log₂ 8, −1 = log_(1/3) 3. Sonra içleri karşılaştır.",
-            "log_b x < c için: b > 1 ise 0 < x < b^c; 0 < b < 1 ise x > b^c.",
+            "log_a x < c için: a > 1 ise 0 < x < a^c; 0 < a < 1 ise x > a^c.",
             "Üstel eşitsizlikte de tabana bak: (1/2)^x > 8 ⇒ x < −3. Negatifle çarpınca da yön değişir.",
             "Tam kuvvet değilse logaritmayla yaz: 2^x > 5 ⇒ x > log₂ 5.",
             "Aralığı yaz: log₂(x² − 3x) ≤ 2 için −1 ≤ x < 0 ya da 3 < x ≤ 4. Log içi 0 olamaz, ≤ ile gelen uç dahildir."
@@ -152,21 +155,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "(1/3)^x < 9 eşitsizliğinin çözümü hangisidir?",
+    { q: "What is the solution of (1/3)^x < 9?",
       opts: ["x < −2", "x > −2", "x > 2", "x < 2"],
       a: 1, why: "9 = 3² ve (1/3)^x = 3^(−x) olduğundan −x < 2, ve −1 ile bölünce yön değişir: x > −2. Kontrol: x = 0 için 1 < 9 doğru. A, yönü değiştirmeyi unutur." },
-    { q: "log_(1/2)(x − 1) ≥ 2 eşitsizliğinin çözümü hangisidir?",
+    { q: "What is the solution of log_(1/2)(x − 1) ≥ 2?",
       opts: ["1 < x ≤ 5/4", "x ≥ 5/4", "x > 1", "x ≤ 5/4"],
       a: 0, why: "2 = log_(1/2)(1/4). Taban 1/2 < 1 olduğundan yön değişir: 0 < x − 1 ≤ 1/4, yani 1 < x ≤ 5/4. B yönü değiştirmez; D tanım kümesini (x > 1) unutur." },
-    { q: "Tablo f(x) = log_(1/2) x fonksiyonunun değerlerini veriyor. f(x) > 1 eşitsizliğinin çözümü hangisidir?",
+    { q: "The table shows values of f(x) = log_(1/2) x. What is the solution of f(x) > 1?",
       fig: { type: "table", head: ["x", "1/4", "1/2", "1", "2", "4"], rows: [["f(x)", "2", "1", "0", "−1", "−2"]], caption: "f(x) = log_(1/2) x" },
       opts: ["x > 1/2", "x < 1/2", "0 < x < 2", "0 < x < 1/2"],
       a: 3, why: "f azalan olduğundan f(x) > 1 değerleri x = 1/2'nin solundadır (f(1/4) = 2 > 1). Tanım kümesi x > 0 olduğundan çözüm 0 < x < 1/2. B, x > 0 koşulunu yazmaz." },
-    { q: "Bir öğrenci log_(0,5) x > log_(0,5) 3 eşitsizliğinde \"log'ları atınca x > 3\" buldu. Hatası ve doğru çözüm hangisidir?",
-      opts: ["Hata yok; çözüm x > 3.", "Yön değişmeliydi; çözüm x < 3.", "Yön değişmeliydi; çözüm 0 < x < 3.", "Yön doğru; yalnızca x > 0 koşulu eklenmeli."],
+    { q: "A student solves log_(0.5) x > log_(0.5) 3 by \"dropping the logs\" and writes x > 3. What is the error and what is the correct solution?",
+      opts: ["There is no error; the solution is x > 3.", "The sign should be reversed; the solution is x < 3.", "The sign should be reversed; the solution is 0 < x < 3.", "The sign is correct; only x > 0 must be added."],
       a: 2, why: "Taban 0,5 < 1 olduğundan log azalandır: yön değişir, x < 3; tanım kümesi x > 0 ile kesişince 0 < x < 3. B, tanım kümesini unutur." },
-    { q: "log₃(x² − x) < log₃ 6 eşitsizliğinin çözüm kümesi hangisidir?",
-      opts: ["−2 < x < 3", "−2 < x < 0 ya da 1 < x < 3", "x < −2 ya da x > 3", "1 < x < 3"],
+    { q: "What is the solution set of log₃(x² − x) < log₃ 6?",
+      opts: ["−2 < x < 3", "−2 < x < 0 or 1 < x < 3", "x < −2 or x > 3", "1 < x < 3"],
       a: 1, why: "Tanım kümesi: x² − x > 0 ⇒ x < 0 ya da x > 1. Taban 3 > 1, yön aynı: x² − x < 6 ⇒ (x − 3)(x + 2) < 0 ⇒ −2 < x < 3. Kesişim −2 < x < 0 ya da 1 < x < 3. A, tanım kümesini unutur." }
   ]
 };

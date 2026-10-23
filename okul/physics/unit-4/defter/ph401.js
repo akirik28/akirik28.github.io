@@ -159,6 +159,13 @@ window.DEFTER = {
           durum: "Göldeki bir şamandıra 10 saniyede 20 kez yukarı aşağı titreşiyor. Frekansı ve periyodu kaçtır?",
           adimlar: ["Frekans = titreşim sayısı ÷ süre = 20 ÷ 10 = 2 Hz.", "Periyot = 1 ÷ f = 1 ÷ 2 = 0,5 s.", "Kontrol: T = süre ÷ titreşim sayısı = 10 ÷ 20 = 0,5 s ✓."],
           sonuc: "==f = 2 Hz, T = 0,5 s.== Sınavda böyle yaz: *The frequency is the number of oscillations per second.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Tepe saymak: 4 tepe = 3 dalga",
+          durum: "Bir dalga leğeninde cetvelin önünden art arda 4 tepe geçmesi 1,5 s sürdü. Periyodu ve frekansı bul.",
+          adimlar: ["4 tepe arasında 3 tam dalga var (başlangıç tepesi sayılmaz).", "T = 1,5 ÷ 3 = 0,5 s.", "f = 1 ÷ T = 2 Hz."],
+          sonuc: "T = 0,5 s ve f = 2 Hz. Tuzak: 4 ÷ 1,5 ≈ 2,7 Hz yazmak. Sınavda böyle yaz: *There are three waves between four crests.*"
         }
       ]
     },
@@ -208,6 +215,13 @@ window.DEFTER = {
           ]
         },
         {
+          tip: "ornek",
+          baslik: "İki iskele arasındaki tepeler",
+          durum: "Bir gölde dalga, birbirinden 40,0 m uzaktaki iki iskeleden geçiyor. Her iskelede bir tepe var ve ikisinin arasında 3 tepe daha bulunuyor. Bir iskeleden 16,0 s'de 10 dalga geçiyor. Dalga boyunu, periyodu, frekansı ve hızı bul.",
+          adimlar: ["Toplam 5 tepe var, arada 4 dalga boyu: 4λ = 40 m → λ = 10 m.", "10 dalga 16 s'de: T = 16 ÷ 10 = 1,6 s; f = 1 ÷ 1,6 = 0,625 Hz.", "v = λ × f = 10 × 0,625 = 6,25 m/s."],
+          sonuc: "λ = 10 m, T = 1,6 s, f = 0,625 Hz, v = 6,25 m/s. Sınavda böyle yaz: *The distance between consecutive crests is the wavelength.*"
+        },
+        {
           tip: "tablo",
           baslik: "Grafikte hangi uzaklık neyi verir?",
           head: ["Ölçülen uzaklık", "Grafik", "Değer"],
@@ -232,6 +246,13 @@ window.DEFTER = {
           durum: "Bir ipteki dalganın y–x grafiğinde art arda iki tepe arası 40 cm. İpteki bir noktanın y–t grafiğinde art arda iki tepe arası 0,5 s. Dalganın hızı kaçtır?",
           adimlar: ["y–x grafiğinden λ = 40 cm = 0,4 m.", "y–t grafiğinden T = 0,5 s.", "v = λ ÷ T = 0,4 ÷ 0,5 = 0,8 m/s.", "Kontrol: f = 1/T = 2 Hz ve v = λf = 0,4 × 2 = 0,8 m/s ✓."],
           sonuc: "==v = 0,8 m/s (80 cm/s).== Sınavda böyle yaz: *The graph shows that the period is 0.5 s, so the speed is 0.8 m/s.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Sonar yankısı ve ışığın hızı",
+          durum: "Duran bir geminin sonarı suya 5,0 × 10⁴ Hz frekanslı sinyal gönderiyor; sinyalin sudaki hızı 1,5 × 10³ m/s. Dipten dönen yankı 4,0 s sonra alınıyor. Dalga boyu ve deniz derinliği nedir? Ay'dan Dünya'ya olan 3,9 × 10⁸ m'yi ışık (3 × 10⁸ m/s) kaç saniyede alır?",
+          adimlar: ["λ = v ÷ f = 1,5 × 10³ ÷ 5,0 × 10⁴ = 0,03 m.", "Sinyal dibe gidip döndü: 2d = v × t = 1500 × 4 = 6000 → d = 3000 m.", "Işık: t = yol ÷ hız = 3,9 × 10⁸ ÷ 3 × 10⁸ = 1,3 s."],
+          sonuc: "λ = 0,03 m, derinlik 3000 m, ışık Ay'dan 1,3 s'de gelir. Gidiş-dönüş yolu için ikiye bölmeyi unutma. Sınavda böyle yaz: *The signal travels to the bottom and back, so the depth is half of the distance.*"
         },
         {
           tip: "tuzak",
@@ -264,36 +285,36 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir gölde duran mantar bir şamandıra, dalgalar kıyıya doğru ilerlerken yukarı aşağı oynuyor. Aşağıdakilerden hangisi doğrudur?",
-      opts: ["Şamandıra dalgayla birlikte kıyıya doğru sürüklenir.", "Dalga şamandıraya enerji aktarır ama şamandıra ortalama konumunda kalır.", "Dalga yalnızca madde taşır, enerji taşımaz.", "Şamandıranın frekansı dalganın hızına eşittir."],
+      q: "A cork floating on a lake bobs up and down while waves travel toward the shore. Which statement is correct?",
+      opts: ["The cork is carried toward the shore with the wave.", "The wave transfers energy to the cork, but the cork stays around its average position.", "The wave transfers only matter, not energy.", "The frequency of the cork is equal to the speed of the wave."],
       a: 1,
       why: "Dalga enerji taşır; ortamın parçacıkları denge konumları etrafında titreşir. A en çekici yanlış şıktır: \"dalga suyu da getirir\" yanılgısıdır. D'de frekans (Hz) ile hız (m/s) farklı büyüklüklerdir."
     },
     {
-      q: "Bir ipteki periyodik dalga için yapılan ölçümler tabloda verilmiştir. Dalganın hızı kaçtır?",
-      fig: { type: "table", head: ["Ölçüm", "Değer"], rows: [["Art arda iki tepe arası uzaklık", "0,6 m"], ["Denge çizgisinden tepeye uzaklık", "0,1 m"], ["Bir noktanın 5 saniyedeki titreşim sayısı", "10"]] },
-      opts: ["0,3 m/s", "0,6 m/s", "1,2 m/s", "6 m/s"],
+      q: "The measurements for a periodic wave on a string are given in the table. What is the speed of the wave?",
+      fig: { type: "table", head: ["Measurement", "Value"], rows: [["Distance between two consecutive crests", "0.6 m"], ["Distance from the equilibrium line to a crest", "0.1 m"], ["Number of oscillations of a point in 5 seconds", "10"]] },
+      opts: ["0.3 m/s", "0.6 m/s", "1.2 m/s", "6 m/s"],
       a: 2,
       why: "λ = 0,6 m (genlik hıza girmez). f = 10 ÷ 5 = 2 Hz. v = λf = 0,6 × 2 = 1,2 m/s. D'de titreşim sayısı (10) frekans sanılmış; A'da λ ÷ f hesaplanmış."
     },
     {
-      q: "Bir dalganın y–x grafiğinden ve ipteki bir noktanın y–t grafiğinden okunan değerler tabloda verilmiştir. Dalganın hızı kaçtır?",
-      fig: { type: "table", head: ["Grafik", "Okunan değer"], rows: [["y–x: art arda iki tepe arası", "3 m"], ["y–t: art arda iki çukur arası", "0,25 s"]] },
-      opts: ["0,75 m/s", "3 m/s", "4 m/s", "12 m/s"],
+      q: "The values read from the y–x graph of a wave and from the y–t graph of one point on the rope are given in the table. What is the speed of the wave?",
+      fig: { type: "table", head: ["Graph", "Value read"], rows: [["y–x: distance between two consecutive crests", "3 m"], ["y–t: time between two consecutive troughs", "0.25 s"]] },
+      opts: ["0.75 m/s", "3 m/s", "4 m/s", "12 m/s"],
       a: 3,
       why: "y–x grafiğinden λ = 3 m, y–t grafiğinden T = 0,25 s. v = λ ÷ T = 3 ÷ 0,25 = 12 m/s. A'da λ ile T çarpılmış; C'deki 4 ise frekanstır (1/T), hız değil."
     },
     {
-      q: "Bir öğrenci gerili bir ipi aynı frekansta ama iki kat daha büyük genlikle sallıyor. Aşağıdakilerden hangisi doğrudur?",
-      opts: ["Dalga hızı iki katına çıkar.", "Dalga boyu iki katına çıkar.", "Dalga hızı ve dalga boyu değişmez; dalga daha çok enerji taşır.", "Periyot yarıya iner."],
+      q: "A student shakes a taut rope at the same frequency as before but with twice the amplitude. Which statement is correct?",
+      opts: ["The wave speed doubles.", "The wavelength doubles.", "The wave speed and the wavelength do not change; the wave carries more energy.", "The period is halved."],
       a: 2,
       why: "Hızı ortam, frekansı kaynağın frekansı belirler; ikisi aynı kaldığı için λ = v/f de aynı kalır. Genlik büyürse yalnızca taşınan enerji artar. A en çekici yanlış şıktır: \"sert sallarsam hızlı gider\" sanılır."
     },
     {
-      q: "Bir su dalgasında bir tepe ile hemen yanındaki çukur arasındaki yatay uzaklık 0,5 m, frekans 4 Hz'dir. Dalganın hızı kaçtır?",
-      opts: ["4 m/s", "2 m/s", "8 m/s", "0,5 m/s"],
+      q: "A student counts the crests of a water wave passing a ruler in a ripple tank. Four crests pass in 1.5 s. What is the frequency of the wave?",
+      opts: ["2 Hz", "2.7 Hz", "0.5 Hz", "6 Hz"],
       a: 0,
-      why: "Tepe–komşu çukur λ/2'dir; yani λ = 1 m. v = λf = 1 × 4 = 4 m/s. B'de 0,5 m doğrudan dalga boyu alınmış (0,5 × 4 = 2)."
+      why: "4 tepe arasında 3 tam dalga vardır: T = 1,5 ÷ 3 = 0,5 s ve f = 1 ÷ 0,5 = 2 Hz. 2,7 Hz tuzak cevaptır (4 ÷ 1,5): başlangıç tepesini de dalga saymaktır."
     }
   ]
 };

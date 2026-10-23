@@ -1,5 +1,5 @@
 /* Kitora not defteri · pc105 · 1.5 Fonksiyon Dönüşümleri
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#1_5 Transformations of Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc105",
   amac: "Bu konu fonksiyon grafiklerinin dönüşümlerini anlatıyor: ana fonksiyon ve fonksiyon ailesi, dikey ve yatay öteleme, dikey ve yatay germe ve sıkıştırma, x ve y eksenine göre yansıma. Grafikten denklem yazmayı ve denklemden grafik çizmeyi öğreneceksin.",
@@ -29,7 +29,7 @@ window.DEFTER = {
               ikon: "🔧",
               terim: "Transformation",
               tr: "dönüşüm",
-              tanim: "Grafiği taşıyan (*translation*), geren ya da sıkıştıran (*stretch / compression*) ve aynalayan (*reflection*) işlem.",
+              tanim: "Grafiği taşıyan (*translation / shift*), geren ya da sıkıştıran (*stretch / shrink / compress, dilation*) ve aynalayan (*reflection / flip*) işlem.",
               ornek: "x² → (x − 2)² + 1."
             },
             {
@@ -59,20 +59,20 @@ window.DEFTER = {
     },
     {
       baslik: "Dikey öteleme",
-      kisa: "f(x) + k grafiği, f'yi k > 0 ise yukarı, k < 0 ise aşağı taşır.",
+      kisa: "f(x) + c grafiği, f'yi c > 0 ise yukarı, c < 0 ise aşağı taşır.",
       bloklar: [
         {
           tip: "formul",
           parcalar: [
-            { t: "g(x) = f(x) + k", alt: "dikey öteleme (*vertical shift*)" },
+            { t: "g(x) = f(x) + c", alt: "dikey öteleme (*vertical translation*)" },
             "→",
-            { t: "(x, y) → (x, y + k)", alt: "k > 0 yukarı, k < 0 aşağı" }
+            { t: "(x, y) → (x, y + c)", alt: "c > 0 yukarı, c < 0 aşağı" }
           ],
           aciklama: "Sınavda böyle yaz: *The graph of g is the graph of f shifted 2 units up.*"
         },
         {
           tip: "grafik",
-          baslik: "Dikey öteleme: f(x) + k",
+          baslik: "Dikey öteleme: f(x) + c",
           xlabel: "x",
           ylabel: "y",
           xmax: 8,
@@ -157,11 +157,11 @@ window.DEFTER = {
     },
     {
       baslik: "Yatay öteleme",
-      kisa: "f(x − h) grafiği f'yi sağa taşır; işaret sezgiye terstir.",
+      kisa: "f(x − c) grafiği f'yi sağa taşır; işaret sezgiye terstir.",
       bloklar: [
         {
           tip: "grafik",
-          baslik: "Yatay öteleme: f(x − h)",
+          baslik: "Yatay öteleme: f(x − c)",
           xlabel: "x",
           ylabel: "y",
           xmax: 12,
@@ -246,7 +246,7 @@ window.DEFTER = {
           tip: "tuzak",
           metin: "Parantezin içindeki işaret kaymanın yönünü tersine gösterir: köşe, içi sıfır yapan x'tedir.",
           yanlis: "f(x + 3) grafiği f'yi sağa 3 birim kaydırır (artı, artı yönü).",
-          dogru: "x + 3 = 0 → x = −3: grafik sola 3 birim kayar. f(x − h) sağa h, f(x + h) sola h. Sınavda böyle yaz: *The graph of g(x) = f(x + 3) is f shifted 3 units to the left.*"
+          dogru: "x + 3 = 0 → x = −3: grafik sola 3 birim kayar. f(x − c) sağa c, f(x + c) sola c; (x, y) noktası (x + c, y) olur. Sınavda böyle yaz: *The graph of g(x) = f(x + 3) is f shifted 3 units to the left.*"
         }
       ]
     },
@@ -505,11 +505,11 @@ window.DEFTER = {
     },
     {
       baslik: "Yatay germe ve sıkıştırma",
-      kisa: "f(bx): her x'i 1/b ile çarpar; b > 1 sıkıştırır, 0 < b < 1 gerer.",
+      kisa: "f(ax): her x'i 1/a ile çarpar; a > 1 sıkıştırır, 0 < a < 1 gerer.",
       bloklar: [
         {
           tip: "grafik",
-          baslik: "Yatay germe ve sıkıştırma: f(b·x)",
+          baslik: "Yatay germe ve sıkıştırma: f(a·x)",
           xlabel: "x",
           ylabel: "y",
           xmax: 10,
@@ -601,9 +601,9 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "g(x) = f(b · x)", alt: "yatay germe / sıkıştırma" },
+            { t: "g(x) = f(a · x)", alt: "yatay germe / sıkıştırma" },
             "→",
-            { t: "(x, y) → (x/b, y)", alt: "b > 1 sıkıştırır · 0 < b < 1 gerer · b < 0 ayrıca yansıtır" }
+            { t: "(x, y) → (x/a, y)", alt: "a > 1 sıkıştırır · 0 < a < 1 gerer · a < 0 ayrıca yansıtır" }
           ],
           aciklama: "y-kesişimi değişmez, x-kesişimleri değişir. Sınavda böyle yaz: *The graph of g(x) = f(2x) is a horizontal compression of f by a factor of 1/2.*"
         },
@@ -617,7 +617,7 @@ window.DEFTER = {
     },
     {
       baslik: "Dönüşümleri birleştirmek, denklem yazmak",
-      kisa: "g(x) = a·f(b(x − h)) + k: önce şekli değiştir, sonra taşı.",
+      kisa: "g(x) = a·f(b(x − c)) + d: önce şekli değiştir, sonra taşı.",
       bloklar: [
         {
           tip: "grafik",
@@ -724,14 +724,14 @@ window.DEFTER = {
           baslik: "Altı dönüşüm tek tabloda",
           head: ["Denklem", "Dönüşüm", "Nokta kuralı"],
           rows: [
-            ["y = f(x) + k", "dikey öteleme", "(x, y + k)"],
-            ["y = f(x − h)", "yatay öteleme (h > 0 sağa)", "(x + h, y)"],
+            ["y = f(x) + c", "dikey öteleme", "(x, y + c)"],
+            ["y = f(x − c)", "yatay öteleme (c > 0 sağa)", "(x + c, y)"],
             ["y = a·f(x)", "dikey germe / sıkıştırma", "(x, a·y)"],
-            ["y = f(bx)", "yatay sıkıştırma / germe", "(x/b, y)"],
+            ["y = f(ax)", "yatay sıkıştırma / germe", "(x/a, y)"],
             ["y = −f(x)", "x eksenine yansıma", "(x, −y)"],
             ["y = f(−x)", "y eksenine yansıma", "(−x, y)"]
           ],
-          not: "Birden çok dönüşümde sıra: germe ve yansıma önce, öteleme sonra."
+          not: "Birden çok dönüşüm verilirse sırayla uygulanır; sıra değişince denklem değişir (aşağıdaki tuzağa bak). Genel biçim a·f(b(x − c)) + d (ek bilgi): a dikey, b yatay çarpan; burada önce germe ve yansıma, sonra öteleme yapılır."
         },
         {
           tip: "ornek",
@@ -748,9 +748,57 @@ window.DEFTER = {
         },
         {
           tip: "tuzak",
-          metin: "Sıra önemli: germeyi kaydırmadan önce yap.",
-          yanlis: "2(x − 1)² + 3, \"önce 3 yukarı\" kaydırılıp sonra 2 ile çarpılmış fonksiyon.",
-          dogru: "Önce 2 ile gerilir, sonra (1, 3) köşesine taşınır. Önce kaydırıp sonra çarpmak 2((x − 1)² + 3) = 2(x − 1)² + 6 başka bir fonksiyondur."
+          metin: "Dönüşümler verilen sırayla uygulanır; germe, önceki kaymayı da ölçekler.",
+          yanlis: "√x'i 3 sola, 4 aşağı kaydırıp sonra dikey 2 ile germek de 2√(x + 3) − 4 verir.",
+          dogru: "3 sola, dikey ×2 germe, 4 aşağı: 2√(x + 3) − 4. 3 sola, 4 aşağı, sonra ×2 germe: 2(√(x + 3) − 4) = 2√(x + 3) − 8. Sıra değişince sonuç değişir."
+        }
+      ]
+    },
+    {
+      baslik: "Nokta, kök ve sıra: dönüşümleri uygulamak",
+      kisa: "İçteki ifade x'i, dıştaki ifade y'yi değiştirir; adımları sırayla uygula.",
+      bloklar: [
+        {
+          tip: "tablo",
+          baslik: "P(2, −3) noktası f grafiğinde; yeni grafikte nerede?",
+          head: ["Yeni grafik", "P'nin yeni yeri"],
+          rows: [
+            ["y = f(x) + 3", "(2, 0)"],
+            ["y = f(x + 3)", "(−1, −3)"],
+            ["y = f(x − 1)", "(3, −3)"],
+            ["y = 3f(x)", "(2, −9)"],
+            ["y = f(3x)", "(2/3, −3)"],
+            ["y = −f(x)", "(2, 3)"],
+            ["y = f(−x)", "(−2, −3)"],
+            ["y = f(x − 3) + 1", "(5, −2)"],
+            ["y = 3f(2x) − 1", "(1, −10)"],
+            ["y = 4 − f(3x − 1)", "(1, 7)"]
+          ],
+          not: "Kural: içteki ifadeyi eski x'i verecek şekilde çöz, dıştakini y'ye uygula. Son satır: 3x − 1 = 2 → x = 1; y = 4 − (−3) = 7."
+        },
+        {
+          tip: "ornek",
+          baslik: "Denklemin köklerini dönüşümle bul",
+          durum: "x³ − x + 4 = 0 denkleminin gerçek kökü üç ondalık basamakla −1,796'dır. (x − 1)³ − (x − 1) + 4 = 0 ve 8x³ − 2x + 4 = 0 denklemlerinin gerçek kökleri nedir?",
+          adimlar: [
+            "p(t) = t³ − t + 4 olsun. (x − 1)³ − (x − 1) + 4 = p(x − 1). p(t) = 0 için t ≈ −1,796.",
+            "x − 1 = −1,796 → x ≈ −0,796. Grafik 1 birim sağa kaydı, kök de 1 birim sağa kaydı.",
+            "8x³ − 2x + 4 = (2x)³ − (2x) + 4 = p(2x). 2x ≈ −1,796 → x ≈ −0,898.",
+            "Grafik yatayda yarıya sıkıştı, kök de yarıya indi."
+          ],
+          sonuc: "x ≈ −0,796 ve x ≈ −0,898. Sınavda böyle yaz: *Replacing x with x − 1 shifts the graph, and therefore the root, 1 unit to the right.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "f(x) = √x ile adım adım: sıra önemli",
+          durum: "Her dönüşüm listesini verilen sırayla uygula.",
+          adimlar: [
+            "x eksenine yansıt, sonra 1 yukarı: −√x, sonra +1 → −√x + 1.",
+            "1 yukarı, sonra x eksenine yansıt: √x + 1, sonra hepsinin işareti döner → −(√x + 1) = −√x − 1.",
+            "1 sola, y eksenine yansıt, 2 yukarı: √(x + 1); x yerine −x: √(−x + 1); +2 → √(1 − x) + 2.",
+            "3 sağa, yatay ×2 sıkıştırma, 1 yukarı: √(x − 3); x yerine 2x: √(2x − 3); +1 → √(2x − 3) + 1."
+          ],
+          sonuc: "Her adım, o ana kadar elde edilen fonksiyona uygulanır; ilk iki satır bu yüzden farklı çıkar (+1 ya da −1). Sınavda böyle yaz: *First reflect in the x-axis, then shift up 1 unit.*"
         }
       ]
     },
@@ -762,13 +810,13 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "Ana fonksiyonlar: x, x², x³, |x|, √x, 1/x; dönüşümlerle aile oluşur.",
-            "f(x) + k: dikey öteleme; k > 0 yukarı.",
-            "f(x − h): yatay öteleme; h > 0 sağa. Köşe, parantez içini sıfır yapan x'tedir.",
+            "f(x) + c: dikey öteleme; c > 0 yukarı.",
+            "f(x − c): yatay öteleme; c > 0 sağa. Köşe, parantez içini sıfır yapan x'tedir.",
             "−f(x): x eksenine, f(−x): y eksenine göre yansıma.",
             "a·f(x): dikey germe (|a| > 1) ya da sıkıştırma (0 < |a| < 1); y-kesişimi a ile çarpılır.",
-            "f(bx): x'ler 1/b ile çarpılır; b > 1 sıkıştırır, 0 < b < 1 gerer; y-kesişimi sabit.",
-            "Nokta kuralı: (x, y) → (x/b + h, a·y + k).",
-            "Sıra: germe ve yansıma önce, öteleme sonra. Cümle: *g is f shifted … reflected … stretched …*"
+            "f(ax): x'ler 1/a ile çarpılır; a > 1 sıkıştırır, 0 < a < 1 gerer; y-kesişimi sabit.",
+            "Nokta kuralı (ek bilgi): a·f(b(x − c)) + d için (x, y) → (x/b + c, a·y + d).",
+            "Dönüşümler verilen sırayla uygulanır; sıra değişirse denklem değişir. Cümle: *g is f shifted … reflected … stretched …*"
           ]
         }
       ]
@@ -776,30 +824,30 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "y = −2√(x + 3) + 1 grafiği, y = √x grafiğinden nasıl elde edilir?",
+      q: "How is the graph of y = −2√(x + 3) + 1 obtained from the graph of y = √x?",
       opts: [
-        "3 sola, dikey ×2 germe, x eksenine yansıma, 1 yukarı",
-        "3 sağa, dikey ×2 germe, x eksenine yansıma, 1 yukarı",
-        "3 sola, yatay ×2 germe, y eksenine yansıma, 1 aşağı",
-        "3 sola, dikey ×2 germe, y eksenine yansıma, 1 yukarı"
+        "Shift 3 units left, stretch vertically by a factor of 2, reflect in the x-axis, shift 1 unit up",
+        "Shift 3 units right, stretch vertically by a factor of 2, reflect in the x-axis, shift 1 unit up",
+        "Shift 3 units left, stretch horizontally by a factor of 2, reflect in the y-axis, shift 1 unit down",
+        "Shift 3 units left, stretch vertically by a factor of 2, reflect in the y-axis, shift 1 unit up"
       ],
       a: 0,
       why: "(x + 3) içeride: 3 sola. −2 dışarıda: dikey ×2 germe ve x eksenine yansıma. +1 dışarıda: 1 yukarı. B seçeneği yönü yanlış alır (+3 sağa değil, sola). D, dıştaki eksiyi y eksenine yansıma sanıyor."
     },
     {
-      q: "f grafiği üzerinde (4, −6) noktası var. g(x) = 3f(x − 2) + 1 grafiğinde hangi nokta vardır?",
+      q: "The point (4, −6) lies on the graph of f. Which point lies on the graph of g(x) = 3f(x − 2) + 1?",
       opts: ["(2, −17)", "(6, −15)", "(6, −17)", "(6, −5)"],
       a: 2,
       why: "x − 2 = 4 → x = 6 (2 sağa). y: 3·(−6) + 1 = −17 (önce 3 ile çarp, sonra 1 ekle). (6, −15) sırayı karıştırır: 3(−6 + 1). (6, −5) ×3'ü unutur. (2, −17) kaydırmayı ters yönde yapar."
     },
     {
-      q: "f(x) = x² − 4 ise g(x) = f(2x) grafiğinin x-kesişimleri nedir?",
+      q: "Let f(x) = x² − 4. What are the x-intercepts of g(x) = f(2x)?",
       opts: ["x = ±4", "x = ±1", "x = ±2", "x = ±1/4"],
       a: 1,
       why: "g(x) = (2x)² − 4 = 4x² − 4 = 0 → x = ±1. f(2x) yatayda yarıya sıkıştırır: f'nin x-kesişimleri ±2 idi, şimdi ±1. A seçeneği 2 katına gerilmiş (f(x/2) için) olurdu."
     },
     {
-      q: "Şekilde mavi grafik f(x), kesikli grafik g(x) olarak gösteriliyor. g, f'nin hangi dönüşümüdür?",
+      q: "The solid graph is f(x) and the dashed graph is g(x). Which transformation of f gives g?",
       fig: {
         type: "graph",
         xlabel: "x",
@@ -835,12 +883,12 @@ window.DEFTER = {
       why: "f'nin köşesi (3, 2), g'nin köşesi (5, 2): grafik aynı yükseklikte 2 birim sağa kaymış. Sağa kayma f(x − 2) ile yazılır. B seçeneği (f(x + 2)) sola kayma olurdu; A ve C dikey kaymadır."
     },
     {
-      q: "f grafiği x eksenini x = −2 ve x = 3'te, y eksenini y = −6'da kesiyor. Hangisi doğrudur?",
+      q: "The graph of f crosses the x-axis at x = −2 and x = 3, and the y-axis at y = −6. Which statement is true?",
       opts: [
-        "y = −f(x): x-kesişimleri 2 ve −3, y-kesişimi −6",
-        "y = −f(x): x-kesişimleri −2 ve 3, y-kesişimi 6",
-        "y = f(−x): x-kesişimleri −2 ve 3, y-kesişimi 6",
-        "y = f(−x): x-kesişimleri 2 ve −3, y-kesişimi 6"
+        "y = −f(x) has x-intercepts 2 and −3 and y-intercept −6",
+        "y = −f(x) has x-intercepts −2 and 3 and y-intercept 6",
+        "y = f(−x) has x-intercepts −2 and 3 and y-intercept 6",
+        "y = f(−x) has x-intercepts 2 and −3 and y-intercept 6"
       ],
       a: 1,
       why: "−f(x) yalnız y'leri çevirir: x-kesişimleri aynı kalır (−2, 3), y-kesişimi −6 → 6. f(−x) yalnız x'leri çevirir: x-kesişimleri 2 ve −3, y-kesişimi aynı kalır (−6). Diğer şıklar bu iki etkiyi karıştırıyor."

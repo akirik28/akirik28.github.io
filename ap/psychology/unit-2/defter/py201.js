@@ -58,7 +58,7 @@ window.DEFTER = {
           oyun: [
             { metin: "Sıralarda yan yana oturan üç öğrenci tek bir grup gibi görünüyor.", cevap: "sol", neden: "Mesafe yakın: *proximity*." },
             { metin: "Kırmızı ve mavi balonlar karışık dizilmiş, ama gözün kırmızıları kendi arasında gruplayabiliyor.", cevap: "sag", neden: "Renk aynı: *similarity*." },
-            { metin: "Aynı aralıkla dizilmiş noktalardan, daha sık duranlar bir küme gibi algılanıyor.", cevap: "sol", neden: "Sıklık, yani yakınlık: *proximity*." },
+            { metin: "Aynı tür noktalardan birbirine daha yakın duranlar bir küme gibi algılanıyor.", cevap: "sol", neden: "Sıklık, yani yakınlık: *proximity*." },
             { metin: "Beyaz formalı takım ile siyah formalı takım sahada ayrı iki grup görünüyor.", cevap: "sag", neden: "Renk ortaklığı: *similarity*." }
           ] },
         { tip: "tuzak", metin: "*Closure* de *figure-ground* da \"beynin işi kolaylaştırması\" gibi görünür ama farklı sorunları çözer.", yanlis: "Eksik parçayı tamamlayan ilke *figure-ground*'dur.", dogru: "Eksik parçayı tamamlamak ==*closure*==, nesneyi arka plandan ayırmak ==*figure-ground*==. Sınavda iki cümleyi karıştırma." }

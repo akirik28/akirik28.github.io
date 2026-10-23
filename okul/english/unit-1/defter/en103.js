@@ -1,8 +1,8 @@
 /* Kitora not defteri · en103 · 1.3 Aunt Zeze's Tears (Carmen Dolores)
-   Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Isaac Goldberg çevirisi, Brazilian Tales, 1921; kamuya açık). Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: defter-araclari/kaynak/en10-yaz-okumasi-oykuler.txt (Isaac Goldberg çevirisi, Brazilian Tales, 1921; kamuya açık). Öğretmen belgesinde bu öykü için ayrı çalışma kâğıdı yok; yorumlar ek bilgi niteliğinde, Kasım sınav biçimi (özet A1) ve pasaj analizi yöntemiyle (özet D) uyumlu. */
 window.DEFTER = {
   slug: "en103",
-  amac: "Bu defter *Aunt Zeze's Tears* öyküsünü sınav gözüyle çözüyor: olay örgüsü, karakterler, Brezilya'daki toplumsal bağlam, temalar, araçlar ve sınavda çıkabilecek pasajlar. Sonunda kendi analiz paragrafın için bir iskelet var.",
+  amac: "Bu defter *Aunt Zeze's Tears* öyküsünü Kasım sınavındaki pasaj analizi gözüyle çözüyor: olay, karakterler, bağlam, temalar, araçlar. Yorumlar ek bilgidir (öğretmen belgesinde bu öykü için çalışma kâğıdı yok); sondaki iskelet kendi paragrafın içindir.",
   bolumler: [
     {
       baslik: "Olay: bir doğum günü yemeği",
@@ -12,8 +12,8 @@ window.DEFTER = {
             { baslik: "1 · Sıradan günler", metin: "Zézé (Maria-José) on sekiz yıldır küçük kız kardeşi Engracigna'nın evinde yaşar, çocuklara bakar, genç kızlar gibi giyinir." },
             { baslik: "2 · Fedakârlık sayılır", metin: "Aile tiyatroya giderken onu “çocuklarla kal” diyerek evde bırakır; kimse onu gerçek bir kişi gibi görmez." },
             { baslik: "3 · Gizli aşk", metin: "Eniştesi Fabio'nun arkadaşı şair Monjardin'i sevmektedir; şair şiirlerini ona okur." },
-            { baslik: "4 · Umut", metin: "Şair, doğum günü yemeğinde ona bir şiir okuyacağını söyler; aile “evlilik ne zaman?” diye takılır." },
-            { baslik: "5 · Şiir", metin: "Şiir onu melek gibi, fedakâr bir kadın olarak över ve ileride “büyükanne” olacağını söyler; Zézé çöker." },
+            { baslik: "4 · Umut", metin: "Şair, doğum günü yemeğinde ona bir şiir okuyacağını söyler; aile ona düğünün ne zaman olacağını sorarak takılır." },
+            { baslik: "5 · Şiir", metin: "Şiir onu melek gibi, fedakâr bir kadın olarak över ve ileride büyükanne olacağını söyler; Zézé çöker." },
             { baslik: "6 · Son söz", metin: "Şair, gözyaşlarının şiirine verilmiş en güzel övgü olduğunu söyler." }
           ] },
         { tip: "grafik", baslik: "Gerilim nasıl çıkar ve düşer?", xlabel: "Öykünün akışı", ylabel: "Zézé'nin umudu ve gerilim", xmax: 10, ymax: 10,
@@ -55,16 +55,16 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Kültürel bağlam",
+      baslik: "Kültürel bağlam (ek bilgi)",
       kisa: "Evde yaşayan evlenmemiş kadın, o dönemde değeri yaptığı hizmetle ölçülen biriydi.",
       bloklar: [
         { tip: "liste", maddeler: [
             { ikon: "🏠", baslik: "Aile düzeni", metin: "Öykü, yazarın yaşadığı dönemin (19. yüzyıl sonu, 20. yüzyıl başı) Brezilya'sında rahat bir şehir evini anlatır; metne göre genç kadınların hayatının tek amacı vardır: evlilik." },
             { ikon: "👩", baslik: "Evlenmemiş kadın", metin: "Metindeki *old maid* ifadesi, evlenmemiş kadını damgalayan toplumsal bakışı yansıtır; Zézé, kardeşine bağımlı yaşar." },
-            { ikon: "😇", baslik: "Fedakâr kadın ideali", metin: "Şairin övgüsü kadını “melek” ve “koruyucu anne” olarak kutsar; bu, kadını hizmette tutan bir ideal." },
+            { ikon: "😇", baslik: "Fedakâr kadın ideali", metin: "Şairin övgüsü kadını melek ve anne-koruyucu bir figür olarak kutsar; bu, kadını hizmette tutan bir ideal." },
             { ikon: "🎭", baslik: "Salon kültürü", metin: "Şair, aile toplantısında şiir okuyan saygın bir figürdür; metindeki *alexandrines* göndermesi dönemin Fransız etkili şiir zevkini gösterir." }
           ] },
-        { tip: "not", metin: "Yazar Carmen Dolores (Emilia Moncorva Bandeira de Mello, 1852–1910) Brezilyalı bir yazardır. Öykünün İngilizcesi Isaac Goldberg'in 1921 tarihli *Brazilian Tales* çevirisidir; bu yüzden dil eski ve resmîdir." }
+        { tip: "not", metin: "Ek bilgi: yazar Carmen Dolores (Emilia Moncorva Bandeira de Mello, 1852–1910) Brezilyalı bir yazardır. Öykünün İngilizcesi Isaac Goldberg'in 1921 tarihli *Brazilian Tales* çevirisidir; bu yüzden dil eski ve resmîdir." }
       ]
     },
     {
@@ -80,22 +80,23 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Tema + kanıt", head: ["Tema", "Kısa kanıt", "Amaç cümlesi"],
           rows: [
             ["Görünmezlik", "“hardly considered her in the light of a living person”", "*to expose how a family stops seeing one of its members*"],
-            ["Fedakârlık", "Şiirdeki melek ve koruyucu anne övgüsü (parafraz)", "*to criticize praise that traps women in service*"],
+            ["Fedakârlık", "Şiirdeki melek ve anne-koruyucu övgüsü (parafraz)", "*to criticize praise that traps women in service*"],
             ["Boş umut", "Gül, beyaz elbise, yemek öncesi heyecan", "*to evoke sympathy for a hopeful woman*"]
           ] }
       ]
     },
     {
       baslik: "Araçlar: ne, nerede, etkisi?",
-      kisa: "Ironi ve zıtlık, öykünün acısını okura göstermenin ana yoludur.",
+      kisa: "İroni ve zıtlık, öykünün acısını okura göstermenin ana yoludur.",
       bloklar: [
         { tip: "tablo", head: ["Araç", "Nerede?", "Etkisi"],
           rows: [
             ["*Characterization*", "Girişte yüz ve giysi tasviri; ailenin sözleri", "Görünüşü ile iç dünyası arasındaki acı fark"],
             ["*Situational irony*", "Aşk şiiri beklerken fedakârlık övgüsü", "Hayal kırıklığı ve eleştiri"],
-            ["*Juxtaposition*", "Zézé ve yeğenlerinin parlak renkleri", "Kaybedilen gençlik"],
-            ["*Imagery / symbol*", "Beyaz elbise, gül, “marble cheeks”, yıldızlar", "Umut, yalnızlık ve kırılganlık"],
-            ["*Narrator's rhetorical question*", "“Who can depict the secret chagrin…?”", "Okuru empatiye çağırır"],
+            ["*Juxtaposition* (ek bilgi)", "Zézé ve yeğenlerinin parlak renkleri", "Kaybedilen gençlik"],
+            ["*Diction*", "“faded old maid”, “obscure accessory”", "Zézé'yi küçülten, nesneleştiren etiketler"],
+            ["*Imagery / symbolism*", "Beyaz elbise, gül, “marble cheeks”, yıldızlar", "Umut, yalnızlık ve kırılganlık"],
+            ["*Rhetorical question*", "“Who can depict the secret chagrin…?”", "Okuru empatiye çağırır"],
             ["*Structure*", "Uzun umut inşası, ani çöküş, şairin son sözü", "Sessiz acıyı ve şairin duyarsızlığını vurgular"]
           ], vurgu: 1 },
         { tip: "tuzak", metin: "Son cümle Zézé'ye değil, Monjardin'e aittir. Bu bir tercihtir: acı çeken susar, duyarsız olan konuşur.", yanlis: "Öykü Zézé'nin kendi açıklamasıyla biter.", dogru: "Son söz Monjardin'indir; bu yapı ironiyi ve Zézé'nin sessizliğini güçlendirir." }
@@ -122,20 +123,21 @@ window.DEFTER = {
             ["“less lonely, surely, than she upon earth”", "Yalnızlık imgesi"],
             ["“stricken by sudden disillusionment”", "Umudun çöküşü"],
             ["“the most beautiful homage that could be rendered to my poor verses”", "Şairin ironik, kibirli sözü"]
-          ] }
+          ] },
+        { tip: "not", metin: "Kasım sınavındaki pasaj, Cultural Perspectives ünitesindeki bir kısa öykü ya da denemeden gelir; bu öykünün çıkacağı garanti değildir. Ek bilgi: sınıfta ayrıca Amy Tan'ın *Two Kinds* öyküsü, Orwell'in *A Hanging* denemesi ve Achebe'nin *Things Fall Apart* kitabının ilk bölümleri de işlendi; yöntemi (QPC) hepsinde aynı uygula." }
       ]
     },
     {
       baslik: "Örnek analiz paragrafının iskeleti",
       kisa: "İskeleti kullan, kanıtı pasajdan kendin seç; paragrafı kendin yaz.",
       bloklar: [
-        { tip: "adimlar", baslik: "Cümle başlangıçları (boşluklar sende)", adimlar: [
-            { baslik: "Konu cümlesi", metin: "*In “Aunt Zeze's Tears,” Carmen Dolores uses [araç 1] and [araç 2] to show that [anlam], so that readers [amaç].*" },
-            { baslik: "Bağlam", metin: "*In this passage, Zézé, an unmarried woman who lives with her sister's family, [durum].*" },
-            { baslik: "Kanıt 1", metin: "*Dolores shows that the family [parafraz: Zézé'yi görmezden gelmeleri]. For example, “[kısa alıntı]” (Dolores). This suggests that…*" },
-            { baslik: "Kanıt 2", metin: "*The scene is ironic because Zézé expects [__], but Monjardin [__]. The phrase “[alıntı]” reveals…*" },
-            { baslik: "Kanıt 3", metin: "*The final line, “[alıntı],” ends the story on a [ton] note because…*" },
-            { baslik: "Kapanış", metin: "*Ultimately, the story warns that… / Through Zézé's tears, Dolores criticizes…*" }
+        { tip: "adimlar", baslik: "Cümle başlangıçları (boşluklar sende; Woods'un sırasıyla)", adimlar: [
+            { baslik: "Eser + bağlam", metin: "*This passage from “Aunt Zeze's Tears” by Carmen Dolores comes at the point where Zézé, an unmarried woman who lives with her sister's family, [durum].*" },
+            { baslik: "Konu cümlesi (konu + görüş)", metin: "*In this passage, Dolores shows that [anlam] in order to [amaç].* Araçları burada sıralama." },
+            { baslik: "Analiz 1 (QPC)", metin: "*Dolores shows that the family [parafraz: Zézé'yi görmezden gelmeleri], for they [kısa alıntı]. This suggests that…*" },
+            { baslik: "Analiz 2 (QPC)", metin: "*The scene is ironic because Zézé expects [__], but Monjardin [__]. The phrase “[alıntı]” reveals…*" },
+            { baslik: "Analiz 3 (QPC)", metin: "*The final line, “[alıntı],” ends the story on a [ton] note because…*" },
+            { baslik: "Kapanış (isteğe bağlı)", metin: "*Ultimately, the story warns that… / Through Zézé's tears, Dolores criticizes…*" }
           ] },
         { tip: "tuzak", baslik: "Ezber paragraf tuzağı", metin: "Sınavdaki pasaj bu öyküden olsa bile farklı bir bölüm olabilir. Ezberlenmiş bir paragraf pasaja uymazsa kanıt puanı gider.", yanlis: "Bir paragraf ezberler, hepsini oraya yapıştırırım.", dogru: "Cümle kalıbını bil, kanıtı ve açıklamayı o gün pasajdan seç." }
       ]
@@ -146,7 +148,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "ozet", maddeler: [
             "Zézé on sekiz yıldır kardeşinin evinde yaşayan, görünmez ve kullanılan bir hala; aile onu gerçek bir kişi gibi görmüyor.",
-            "Şair Monjardin, doğum günü şiirinde onu “melek” ve “koruyucu” olarak över; Zézé umut ederken çöker.",
+            "Şair Monjardin, doğum günü şiirinde onu melek ve koruyucu bir figür olarak över; Zézé umut ederken çöker.",
             "Son söz şairindir: gözyaşlarını kendi şiirine övgü sayar (*irony*).",
             "Bağlam: yazarın dönemindeki Brezilya, evlenmemiş kadına bakış ve fedakâr kadın ideali.",
             "Temalar: görünmezlik, kullanılan fedakârlık, boş umut, bencillik.",
@@ -157,25 +159,25 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Öykünün sonunda Monjardin, Zézé'nin gözyaşları için “the most beautiful homage that could be rendered to my poor verses” der. Bu sözün asıl etkisi nedir?",
-      opts: ["Şairin Zézé'nin acısını anlayıp ona saygı gösterdiğini gösterir", "Şairin kibrini ve Zézé'nin acısını anlamadığını ironik biçimde ortaya çıkarır", "Zézé'nin aslında mutlu olduğunu gösterir", "Öykünün komik bir sonla bittiğini gösterir"],
+    { q: "At the end of the story, Monjardin says that Zézé's tears are \"the most beautiful homage that could be rendered to my poor verses.\" What is the main effect of this remark?",
+      opts: ["It shows that the poet understands her pain and respects her", "It ironically reveals the poet's vanity and his failure to understand her pain", "It shows that Zézé is actually happy", "It shows that the story ends comically"],
       a: 1,
       why: "Şair, acıyı kendi şiirine övgü sanır; okur gerçeği bilir. En çekici yanlış şık A: söz saygılı görünür ama niyeti bencildir." },
-    { q: "Aşağıdaki cümlelerden hangisi Zézé'nin ailedeki konumunu en iyi kanıtlar?",
-      opts: ["Zézé beyaz bir elbise giyer.", "Monjardin siyah bıyıklıdır.", "Anlatıcı, ailenin onu neredeyse yaşayan bir kişi saymadığını belirtir (“hardly considered her in the light of a living person”).", "Yemekte şampanya içilir."],
+    { q: "Which piece of evidence best supports the idea that Zézé is invisible in her own family?",
+      opts: ["Zézé wears a white dress.", "Monjardin has a black moustache.", "The narrator says the family hardly considered her in the light of a living person.", "Champagne is served at the dinner."],
       a: 2,
-      why: "C doğrudan görünmezliği kanıtlar: ailenin onu gerçek bir kişi gibi görmediğini söyler. Elbise ya da şampanya ayrıntı olarak doğru ama temayı kanıtlamaz." },
-    { q: "Şiirin okunduğu sahnede aşağıdakilerden hangisi *situational irony*'dir?",
-      opts: ["Zézé'nin kırmızı renk seçmeye çekinmesi", "Çocukların kavga etmesi", "Şampanya kadehlerinin parıldaması", "Şiirin aşk yerine fedakârlığı övmesi"],
+      why: "C doğrudan görünmezliği kanıtlar: ailenin onu gerçek bir kişi gibi görmediğini söyler. Elbise ya da şampanya doğru ayrıntılardır ama temayı kanıtlamaz." },
+    { q: "In the poem scene, which of the following is an example of situational irony?",
+      opts: ["Zézé hesitates to choose a red fabric", "The children quarrel", "The champagne glasses sparkle", "Zézé hopes for a love poem, but the poem praises her self-sacrifice"],
       a: 3,
       why: "Zézé aşk şiiri umar, tersi gerçekleşir. Diğer şıklar ironi değil, sahne ayrıntısıdır." },
-    { q: "Aşağıdaki konu cümlelerinden hangisi sınavda en çok puan getirir?",
-      opts: ["In “Aunt Zeze's Tears,” Dolores uses irony to show that praise for women's sacrifice can hide neglect, so that readers question social expectations.", "Aunt Zeze's Tears is a sad story about an old woman.", "Zézé cries at a dinner after a poem.", "I think the story is about love."],
+    { q: "Which topic sentence would earn the most points in the exam?",
+      opts: ["In \"Aunt Zeze's Tears,\" Dolores shows that praise for women's sacrifice can hide neglect, in order to make readers question social expectations.", "Aunt Zeze's Tears is a sad story about an old woman.", "Zézé cries at a dinner after a poem.", "I think the story is about love."],
       a: 0,
-      why: "A yazar, araç, anlam ve amacı içerir. B özettir, C olay anlatır, D kişisel yorumdur." },
-    { q: "Giriş bölümünde Zézé'nin parlak renkli elbiseleri ile solgun yüzünün yan yana verilmesi hangi araçtır ve etkisi nedir?",
-      opts: ["Juxtaposition; görünüş ile gerçek arasındaki acıyı vurgular", "Allusion; bir mitolojiye gönderme yapar", "Foreshadowing; Zézé'nin öleceğini sezdirir", "Pacing; olayları hızlandırır"],
-      a: 0,
+      why: "A yazarı, anlamı (görüş) ve amacı içerir; araçları sıralamaz. B özettir, C olay anlatır, D kişisel yorumdur." },
+    { q: "In the opening, Zézé's bright dresses are placed beside her pale, aged face. Which device is this and what is its effect?",
+      opts: ["Allusion; it refers to a myth", "Juxtaposition; it stresses the painful gap between appearance and reality", "Foreshadowing; it hints that Zézé will die", "Pacing; it speeds up the events"],
+      a: 1,
       why: "Zıt iki öğe yan yana: genç giysiler ve yaşlanmış yüz. Etki, acıma ve görünmezliktir. C yanlış: ölüm gibi bir ipucu yok." }
   ]
 };

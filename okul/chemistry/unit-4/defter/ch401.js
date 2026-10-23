@@ -46,7 +46,7 @@ window.DEFTER = {
             ["Taneciklerin arası", "uzak", "yakın"],
             ["Çekim kuvvetleri", "ihmal edilebilir", "önemli olur"],
             ["Gerçek gaz davranışı", "ideale çok yakın", "idealden sapar, sıvılaşabilir"]
-          ], not: "Gerçek gazlar ideal gibi davranmaz ama bu koşulda hatalı sonuç çok küçüktür." },
+          ], not: "Gerçek gazlar ideal gibi davranmaz ama bu koşulda hatalı sonuç çok küçüktür. Molekül arası kuvveti ve molekül hacmi büyük olan gaz idealden daha çok sapar (H₂O, O₂'den daha çok sapar)." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Real gases behave most like ideal gases at high temperature and low pressure.*" }
           ] }
@@ -93,6 +93,12 @@ window.DEFTER = {
             "Gaz tarafındaki cıva daha yüksekse gaz basıncı atmosferden küçüktür: 760 − 40 = 720 mmHg.",
             "Kontrol: 720 ÷ 760 ≈ 0,95 atm ✓"
           ], sonuc: "Gaz tarafı alçaksa 800 mmHg; yüksekse 720 mmHg." },
+        { tip: "ornek", baslik: "Sulu manometre", durum: "Bir manometrede cıva yerine su kullanılıyor ve iki kol arasındaki seviye farkı 68 cm. Bu fark kaç cmHg ve kaç mmHg'dir? (d(su) = 1,00 g/cm³, d(Hg) = 13,6 g/cm³)", adimlar: [
+            "Aynı basıncı taşıyan sütunlarda yükseklik, yoğunlukla ters orantılıdır: h(Hg) × 13,6 = h(su) × 1,00.",
+            "h(Hg) = 68 × 1,00 ÷ 13,6 = 5,0 cm.",
+            "5,0 cmHg = 50 mmHg.",
+            "Kontrol: cıva sudan 13,6 kat yoğundur, sütun 13,6 kat kısa olmalı: 68 ÷ 13,6 = 5 ✓"
+          ], sonuc: "5,0 cmHg = 50 mmHg. Manometrede su gibi hafif sıvı kullanılırsa sütun uzar." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*A barometer measures atmospheric pressure; a manometer measures the pressure of a gas in a container.*" }
           ] }
@@ -119,7 +125,7 @@ window.DEFTER = {
           durumlar: [
             { metin: "Düşük sıcaklıkta (T₁) çoğu molekül yavaştır; tepe noktası solda ve yüksektedir.", goster: ["t1", "l1"] },
             { metin: "Sıcaklık artınca (T₂) eğri sağa kayar, alçalır ve yayılır: daha çok molekül hızlıdır.", goster: ["t2", "l2"] },
-            { metin: "Tepe sağa kaydı: ==ortalama hız ve ortalama kinetik enerji artar.== İki eğrinin altındaki alan (toplam molekül sayısı) aynıdır.", goster: ["ok"] }
+            { metin: "Tepe sağa kaydı: ==ortalama hız ve ortalama kinetik enerji artar.== İki eğrinin altındaki alan (toplam molekül sayısı) aynıdır. Aynı sıcaklıkta hafif gaz (He) ağır gazdan (Ar) daha hızlıdır; çünkü kinetik enerji eşit, kütle farklıdır.", goster: ["ok"] }
           ] },
         { tip: "tuzak", metin: "Ortalama kinetik enerji, sıcaklığın °C değeriyle değil Kelvin değeriyle orantılıdır. 27 °C → 327 °C (300 K → 600 K) enerjiyi iki katına çıkarır; 25 °C → 50 °C ise yalnızca 298 K → 323 K, yani yaklaşık %8 artırır.", yanlis: "25 °C'den 50 °C'ye çıkınca kinetik enerji 2 katına çıkar.", dogru: "Önce Kelvin'e çevir: 323 ÷ 298 ≈ 1,08 kat." },
         { tip: "liste", maddeler: [
@@ -161,21 +167,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "1,5 atm basınç kaç mmHg'ye eşittir?",
+    { q: "How many mmHg is 1.5 atm equal to?",
       opts: ["760", "1140", "1520", "507"], a: 1,
       why: "1 atm = 760 mmHg olduğundan 1,5 × 760 = 1140 mmHg. 507 (D) bölme yapıldığında çıkar (760 ÷ 1,5); atm'den mmHg'ye geçerken çarpılır." },
-    { q: "Kapalı bir kaptaki gaz 27 °C'den 327 °C'ye ısıtılırsa gaz moleküllerinin ortalama kinetik enerjisi nasıl değişir?",
-      opts: ["Değişmez", "12 katına çıkar", "2 katına çıkar", "Yaklaşık 1,2 katına çıkar"], a: 2,
+    { q: "A gas in a closed container is heated from 27 °C to 327 °C. How does the average kinetic energy of the gas molecules change?",
+      opts: ["It does not change", "It increases 12 times", "It doubles", "It increases about 1.2 times"], a: 2,
       why: "Ortalama kinetik enerji Kelvin ile orantılıdır: 300 K → 600 K, yani 2 kat. 12 kat (B) °C değerlerini oranlamaktır (327 ÷ 27 ≈ 12); bu yanlıştır." },
-    { q: "Açık hava basıncının 760 mmHg olduğu bir laboratuvarda açık uçlu cıvalı manometrenin gaz tarafındaki cıva, açık uçtakinden 50 mm daha yüksektir. Gazın basıncı kaç mmHg'dir?",
+    { q: "In a laboratory where atmospheric pressure is 760 mmHg, the mercury on the gas side of an open-ended mercury manometer is 50 mm higher than the mercury on the open side. What is the pressure of the gas in mmHg?",
       opts: ["810", "760", "50", "710"], a: 3,
       why: "Gaz tarafındaki cıva yüksekse gaz basıncı atmosferden küçüktür: 760 − 50 = 710 mmHg. 810 (A) seviye farkının yanlış yönde eklenmesidir." },
-    { q: "Tabloda üç gazın basıncı farklı birimlerle verilmiştir (1 atm = 760 mmHg = 101,3 kPa). Basıncı en büyük olan gaz hangisidir?",
-      fig: { type: "table", head: ["Gaz", "Basınç"], rows: [["X", "0,8 atm"], ["Y", "600 mmHg"], ["Z", "90 kPa"]], caption: "Üç gazın basıncı" },
-      opts: ["X", "Y", "Z", "Üçü eşittir"], a: 2,
+    { q: "The table gives the pressures of three gases in different units (1 atm = 760 mmHg = 101.3 kPa). Which gas has the highest pressure?",
+      fig: { type: "table", head: ["Gas", "Pressure"], rows: [["X", "0.8 atm"], ["Y", "600 mmHg"], ["Z", "90 kPa"]], caption: "Pressures of three gases" },
+      opts: ["X", "Y", "Z", "All three are equal"], a: 2,
       why: "Hepsini mmHg'ye çevir: X = 0,8 × 760 = 608; Y = 600; Z = 90 ÷ 101,3 × 760 ≈ 675 mmHg. En büyük Z'dir. Sayısı en büyük olanı seçmek yanlıştır; birimler farklı olduğu için önce ortak birime çevrilir." },
-    { q: "Gerçek bir gaz hangi koşulda ideal gaza en çok benzer?",
-      opts: ["Yüksek sıcaklık ve düşük basınç", "Düşük sıcaklık ve yüksek basınç", "Düşük sıcaklık ve düşük basınç", "Yüksek sıcaklık ve yüksek basınç"], a: 0,
+    { q: "Under which conditions does a real gas behave most like an ideal gas?",
+      opts: ["High temperature and low pressure", "Low temperature and high pressure", "Low temperature and low pressure", "High temperature and high pressure"], a: 0,
       why: "Yüksek sıcaklık ve düşük basınçta tanecikler hızlı ve birbirinden uzaktır; çekim kuvvetleri ve tanecik hacmi ihmal edilebilir. Düşük sıcaklık ve yüksek basınç (B) gazı yoğunlaşmaya yaklaştırır." }
   ]
 };

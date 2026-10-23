@@ -61,7 +61,7 @@ window.DEFTER = (function () {
             ] },
           { tip: "tablo", baslik: "İşaret tablosu", head: ["Bölge", "θ aralığı", "sin", "cos", "tan"],
             rows: [["I", "0° – 90°", "+", "+", "+"], ["II", "90° – 180°", "+", "−", "−"], ["III", "180° – 270°", "−", "−", "+"], ["IV", "270° – 360°", "−", "+", "−"]],
-            not: "Sınavda böyle yaz: *In the second quadrant, sine is positive and cosine is negative because y > 0 and x < 0.*" },
+            not: "csc θ, sin θ ile; sec θ, cos θ ile; cot θ, tan θ ile aynı işaretlidir. Sınavda böyle yaz: *In the second quadrant, sine is positive and cosine is negative because y > 0 and x < 0.*" },
           { tip: "ikili", sol: { ikon: "➕", baslik: "Pozitif", maddeler: ["I. bölgede hepsi", "II'de sin, III'te tan, IV'te cos"] },
             sag: { ikon: "➖", baslik: "Negatif", maddeler: ["Geri kalan oranlar", "Önce bölgeyi bul, sonra işarete bak"] },
             oyun: [
@@ -84,6 +84,18 @@ window.DEFTER = (function () {
             adimlar: ["150° II. bölgede, referans 180° − 150° = 30°; sin 30° = 1/2, sin II'de pozitif → sin 150° = 1/2.", "225° III. bölgede, referans 225° − 180° = 45°; cos 45° = √2/2, cos III'te negatif → cos 225° = −√2/2.", "300° IV. bölgede, referans 360° − 300° = 60°; tan 60° = √3, tan IV'te negatif → tan 300° = −√3.", "7π/6 III. bölgede, referans 7π/6 − π = π/6; sin π/6 = 1/2, sin III'te negatif → sin(7π/6) = −1/2."],
             sonuc: "1/2, −√2/2, −√3, −1/2. Sınavda böyle yaz: *The reference angle is 30° and sine is positive in quadrant II.*" },
           { tip: "tuzak", metin: "Referans açı her zaman x eksenine göre ölçülür, y eksenine göre değil.", yanlis: "120°'nin referans açısı 30° (çünkü 120° − 90°).", dogru: "Referans açı 180° − 120° = 60°. Bu yüzden sin 120° = sin 60° = √3/2." }
+        ]
+      },
+      {
+        baslik: "Eksen çevresindeki açılar: π ± α ve π/2 ± α",
+        kisa: "π çevresinde işlev adı aynı kalır, π/2 çevresinde sin ile cos yer değiştirir.",
+        bloklar: [
+          { tip: "tablo", baslik: "α dar açı olmak üzere indirgeme", head: ["Açı", "sin", "cos", "tan"],
+            rows: [["π − α", "sin α", "−cos α", "−tan α"], ["π + α", "−sin α", "−cos α", "tan α"], ["2π − α (ya da −α)", "−sin α", "cos α", "−tan α"], ["π/2 − α", "cos α", "sin α", "cot α"], ["π/2 + α", "cos α", "−sin α", "−cot α"], ["3π/2 − α", "−cos α", "−sin α", "cot α"], ["3π/2 + α", "−cos α", "sin α", "−cot α"]],
+            not: "Kural: x ekseni çevresinde (π, 2π) işlev adı aynı kalır; y ekseni çevresinde (π/2, 3π/2) sin ile cos (tan ile cot) yer değiştirir. İşareti, α dar sanılarak açının düştüğü bölgeden al. Sınavda böyle yaz: *The angle π + α lies in the third quadrant, where sine is negative.*" },
+          { tip: "ornek", baslik: "Büyük katlı açıları sadeleştir", durum: "0 < α < π/2 için sin(5π − α) + cos(7π/2 + α) − sin(−π − α) ifadesini sadeleştir.",
+            adimlar: ["sin(5π − α) = sin(π − α) = sin α (5π, tam turlar atılınca π olur; π − α, II. bölge, sin pozitif).", "cos(7π/2 + α): 7π/2 − 2π = 3π/2, yani cos(3π/2 + α) = sin α (IV. bölge, cos pozitif, ad değişir).", "sin(−π − α) = −sin(π + α) = −(−sin α) = sin α.", "Toplam: sin α + sin α − sin α."],
+            sonuc: "İfade ==sin α==. Sınavda böyle yaz: *Remove full rotations first, then use the reduction formulas.*" }
         ]
       },
       {
@@ -123,7 +135,7 @@ window.DEFTER = (function () {
               "ASTC: I'de hepsi, II'de sin, III'te tan, IV'te cos pozitif.",
               "Referans açı x eksenine göredir: II'de 180° − θ, III'te θ − 180°, IV'te 360° − θ.",
               "Değer = referans açının değeri, işaret = bölgeden (ASTC).",
-              "Negatif ya da 360°'den büyük açıda tam tur çıkar ya da ekle.",
+              "Negatif ya da 360°'den büyük açıda tam tur çıkar ya da ekle. π ± α çevresinde ad aynı, π/2 ± α çevresinde sin ile cos yer değiştirir (işaret bölgeden).",
               "sin²θ + cos²θ = 1, 1 + tan²θ = sec²θ, 1 + cot²θ = csc²θ.",
               "sin ve tan tektir, cos çifttir: sin(−θ) = −sin θ, cos(−θ) = cos θ.",
               "İspatta karmaşık taraftan başla, sin ve cos'a çevir."
@@ -132,17 +144,17 @@ window.DEFTER = (function () {
       }
     ],
     sorular: [
-      { q: "Standart konumdaki θ açısının bitiş kenarı (−5, 12) noktasından geçiyor. cos θ kaçtır?", opts: ["5/13", "−5/13", "−12/13", "−13/5"], a: 1,
-        why: "r = √(25 + 144) = 13 ve cos θ = x/r = −5/13. 5/13 işareti unutmuş cevaptır; −12/13 ise sin değildir (sin = +12/13)." },
-      { q: "Aşağıdaki değerlerden hangisi pozitiftir?", opts: ["sin 210°", "cos 150°", "tan 300°", "tan 225°"], a: 3,
+      { q: "θ is an angle in the fourth quadrant and sin θ = −5/13. What is cos θ?", opts: ["12/13", "−12/13", "5/13", "−5/12"], a: 0,
+        why: "cos²θ = 1 − 25/169 = 144/169, cos θ = ±12/13. IV. bölgede x pozitif olduğundan cos θ = 12/13. −12/13, bölgeyi unutmaktır." },
+      { q: "Which of the following values is positive?", opts: ["sin 210°", "cos 150°", "tan 300°", "tan 225°"], a: 3,
         why: "225° III. bölgede; sin ve cos negatif, oranları tan pozitif. 210°'de sin, 150°'de cos, 300°'de tan negatiftir." },
-      { q: "sin(7π/6) · cos(5π/6) çarpımının değeri kaçtır?", opts: ["√3/4", "−√3/4", "3/4", "−1/4"], a: 0,
+      { q: "What is the exact value of sin(7π/6) · cos(5π/6)?", opts: ["√3/4", "−√3/4", "3/4", "−1/4"], a: 0,
         why: "sin(7π/6) = −1/2 (III. bölge, referans π/6) ve cos(5π/6) = −√3/2 (II. bölge, referans π/6). Çarpım (−1/2)(−√3/2) = √3/4; iki negatif çarpım pozitif verir." },
-      { q: "Tablodaki bilgilere göre θ için tan θ kaçtır?", opts: ["−3/4", "4/3", "−4/3", "3/4"], a: 2,
+      { q: "The table gives information about the angle θ. What is tan θ?", opts: ["−3/4", "4/3", "−4/3", "3/4"], a: 2,
         why: "cos θ pozitif ve sin θ = −4/5 ise θ IV. bölgede. cos² = 1 − 16/25 = 9/25, cos θ = 3/5. tan θ = (−4/5)/(3/5) = −4/3.",
-        fig: { type: "table", head: ["Verilen", "Değer"], rows: [["sin θ", "−4/5"], ["cos θ", "pozitif"]], caption: "θ hakkında bilgi" } },
-      { q: "(1 − sin²θ) / cos θ ifadesi aşağıdakilerden hangisine eşittir (cos θ ≠ 0)?", opts: ["sec θ", "cos θ", "1", "tan θ"], a: 1,
-        why: "1 − sin²θ = cos²θ olduğundan ifade cos²θ / cos θ = cos θ olur. sec θ, 1/cos θ'dır." }
+        fig: { type: "table", head: ["Given", "Value"], rows: [["sin θ", "−4/5"], ["cos θ", "positive"]], caption: "Information about θ" } },
+      { q: "For 0 < α < π/2, what is sin(π + α) + cos(3π/2 − α) in simplest form?", opts: ["0", "−2 sin α", "2 sin α", "−2 cos α"], a: 1,
+        why: "sin(π + α) = −sin α (III. bölge, ad aynı). cos(3π/2 − α) = −sin α (III. bölge, cos negatif; 3π/2 olduğu için ad değişir). Toplam −2 sin α. Cevabın 0 çıkması, ikinci terimi +sin α sanmaktan gelir." }
     ]
   };
 })();

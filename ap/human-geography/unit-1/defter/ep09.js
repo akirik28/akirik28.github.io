@@ -59,7 +59,7 @@ window.DEFTER = {
             { id: "p45", tip: "nokta", x: 4.5, y: 2, etiket: "45°: 2×", kilavuz: true, gizli: true },
             { id: "p60", tip: "nokta", x: 6, y: 4, etiket: "60°: 4×", kilavuz: true, gizli: true },
             { id: "p70", tip: "nokta", x: 7, y: 8.55, etiket: "70°: ~8,5×", kilavuz: true, gizli: true },
-            { id: "gr", tip: "yazi", x: 3.3, y: 12, metin: "Grönland: yaklaşık 10× şişmiş", gizli: true }
+            { id: "gr", tip: "yazi", x: 3.3, y: 12, metin: "Grönland: 10×'tan fazla şişmiş (kuzeyde 30×'u aşar)", gizli: true }
           ],
           durumlar: [
             { metin: "Ekvatorda (0°) alan doğrudur. Kutuplara gittikçe şişme hızla artar." },

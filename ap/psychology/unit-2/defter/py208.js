@@ -155,7 +155,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "😰", terim: "Stereotype threat", tr: "stereotip tehdidi", tanim: "Kendi grubuyla ilgili olumsuz bir klişeyi doğrulamaktan kaygılanmak ve bu yüzden daha kötü performans göstermek.", ornek: "Sınavdan önce \"senin gibiler bu konuda zayıftır\" klişesini duyan öğrencinin kaygıyla puanının düşmesi." },
-            { ikon: "⬆️", terim: "Stereotype lift", tr: "stereotip yükselmesi", tanim: "Olumsuz klişeye konu olmayan grubun üyelerinin, klişe hatırlatılınca performansında artış göstermesi; ==eşitsizliği büyütebilir==.", ornek: "Klişeyle karşılaştırılan bir grup, hatırlatma sonrası biraz daha iyi puan alabilir." }
+            { ikon: "⬆️", terim: "Stereotype lift", tr: "stereotip yükselmesi", tanim: "Olumsuz klişeye konu olmayan grubun üyelerinin, klişe hatırlatılınca performansında artış göstermesi; ==eşitsizliği büyütebilir==.", ornek: "Olumsuz klişenin hedefi olmayan grup, klişe hatırlatılınca kendini o grupla kıyaslayıp biraz daha iyi puan alabilir." }
           ] },
         { tip: "adimlar", baslik: "Stereotip tehdidi nasıl işler?", adimlar: [
             { baslik: "Klişe hatırlatılır", metin: "Sınavdan önce, kişinin grubuyla ilgili olumsuz bir klişe akla getirilir." },

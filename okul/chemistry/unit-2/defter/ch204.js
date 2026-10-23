@@ -32,7 +32,7 @@ window.DEFTER = {
     },
     {
       baslik: "Yükseltgenme basamağı (yük) belirleme",
-      kisa: "Yükseltgenme basamağı toplamı, tanecikin yüküne eşit olmalıdır.",
+      kisa: "Yükseltgenme basamaklarının toplamı, taneciğin yüküne eşit olmalıdır.",
       bloklar: [
         { tip: "tablo", baslik: "Yükseltgenme basamağı kuralları", head: ["Kural", "Örnek"], rows: [
             ["Serbest elementte 0", "Na, O₂, Fe, S₈ → 0"],
@@ -148,24 +148,24 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Cr₂O₇²⁻ iyonunda krom atomunun yükseltgenme basamağı kaçtır?",
+    { q: "What is the oxidation number of chromium in the Cr₂O₇²⁻ ion?",
       opts: ["+3", "+6", "+7", "+12"],
       a: 1,
       why: "2Cr + 7(−2) = −2 → 2Cr = +12 → Cr = +6. D en çekici yanlış şık: toplam +12'yi iki atoma bölmeyi unutur." },
-    { q: "Aşağıdaki tepkimelerden hangisi redoks tepkimesi değildir?",
+    { q: "Which of the following reactions is NOT a redox reaction?",
       opts: ["Zn + 2HCl → ZnCl₂ + H₂", "2Mg + O₂ → 2MgO", "HCl + NaOH → NaCl + H₂O", "CH₄ + 2O₂ → CO₂ + 2H₂O"],
       a: 2,
       why: "Nötrleşmede hiçbir atomun yükseltgenme basamağı değişmez (H +1, Cl −1, Na +1, O −2). B en çekici yanlış şık: bu bir sentez ama Mg 0 → +2 ve O 0 → −2 olduğu için redokstur." },
-    { q: "Zn + CuSO₄ → ZnSO₄ + Cu tepkimesinde indirgen madde hangisidir?",
+    { q: "In the reaction Zn + CuSO₄ → ZnSO₄ + Cu, which species is the reducing agent?",
       opts: ["Zn", "Cu²⁺", "SO₄²⁻", "Cu"],
       a: 0,
       why: "Zn 0 → +2 ile elektron verir, yükseltgenir; bu yüzden indirgen maddedir. B en çekici yanlış şık: Cu²⁺ elektron alır, indirgenir; yükseltgen maddedir." },
-    { q: "Tabloda bazı kükürt bileşiklerinde S'nin yükseltgenme basamağı verilmiştir. SO₂ → SO₃ dönüşümü için ne söylenebilir?",
-      fig: { type: "table", caption: "S'nin yükseltgenme basamağı", head: ["Madde", "H₂S", "S₈", "SO₂", "SO₃"], rows: [["Basamak", "−2", "0", "+4", "+6"]] },
-      opts: ["S indirgenir, 2e⁻ alır", "S yükseltgenir, 2e⁻ verir", "S yükseltgenir, 6e⁻ verir", "S'nin basamağı değişmez"],
+    { q: "The table gives the oxidation number of S in some sulfur species. What can be said about the change SO₂ → SO₃?",
+      fig: { type: "table", caption: "Oxidation number of S", head: ["Species", "H₂S", "S₈", "SO₂", "SO₃"], rows: [["Oxidation number", "−2", "0", "+4", "+6"]] },
+      opts: ["S is reduced, gaining 2e⁻", "S is oxidized, losing 2e⁻", "S is oxidized, losing 6e⁻", "The oxidation number of S does not change"],
       a: 1,
       why: "+4'ten +6'ya çıkış: 2 elektron kaybı, yükseltgenme. C en çekici yanlış şık: son basamağı (+6) verilen elektron sayısı sanır." },
-    { q: "2Al + 3Cu²⁺ → 2Al³⁺ + 3Cu tepkimesinde toplam kaç elektron aktarılır?",
+    { q: "How many electrons are transferred in total in the reaction 2Al + 3Cu²⁺ → 2Al³⁺ + 3Cu?",
       opts: ["2", "3", "5", "6"],
       a: 3,
       why: "2Al → 2Al³⁺ + 6e⁻ ve 3Cu²⁺ + 6e⁻ → 3Cu: verilen = alınan = 6 elektron. C en çekici yanlış şık: 2 ve 3 katsayılarını toplar (2 + 3)." }

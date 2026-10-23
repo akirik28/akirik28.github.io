@@ -88,7 +88,7 @@ window.DEFTER = {
             ["H₂", "4 g", "2 mol", "44,8 L"],
             ["NH₃", "1,7 g", "0,1 mol", "2,24 L"]
           ], not: "Hacim ile mol sayısı doğru orantılıdır: V = n × 22,4 L. Mol sayısı için n = V ÷ 22,4." },
-        { tip: "tuzak", metin: "22,4 L yalnızca gazlar ve yalnızca NŞA için geçerlidir. Sıvı ve katılar çok daha küçük hacim kaplar; oda koşullarında (25 °C, 1 atm) 1 mol gaz yaklaşık 24,5 L'dir.", yanlis: "NŞA'da 1 mol su 22,4 L kaplar.", dogru: "1 mol sıvı su yaklaşık 18 mL'dir. 22,4 L yalnızca NŞA'daki gazlar içindir." },
+        { tip: "tuzak", metin: "22,4 L yalnızca gazlar ve yalnızca NŞA için geçerlidir. Sıvı ve katılar çok daha küçük hacim kaplar; ek bilgi: oda koşullarında (25 °C, 1 atm) 1 mol gaz yaklaşık 24,5 L'dir.", yanlis: "NŞA'da 1 mol su 22,4 L kaplar.", dogru: "1 mol sıvı su yaklaşık 18 mL'dir. 22,4 L yalnızca NŞA'daki gazlar içindir." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*At STP, one mole of any gas occupies 22.4 L.*" }
           ] }
@@ -139,6 +139,12 @@ window.DEFTER = {
             "X = 44 − 32 = 12 g/mol.",
             "Kontrol: 12 + 32 = 44; 0,2 × 44 = 8,8 g ✓ (X = C, bileşik CO₂)."
           ], sonuc: "X'in atom kütlesi 12 g/mol (karbon)." },
+        { tip: "ornek", baslik: "C₂X₄ gazında X hangi elementtir?", durum: "NŞA'da 5,60 L hacim kaplayan C₂X₄ gazının kütlesi 25 g. Gazın mol kütlesini ve X'in atom kütlesini bul.", adimlar: [
+            "Mol: n = 5,60 ÷ 22,4 = 0,25 mol.",
+            "M(C₂X₄) = 25 ÷ 0,25 = 100 g/mol.",
+            "2 C: 2 × 12 = 24 g/mol; geriye 100 − 24 = 76 g/mol, 4 X'e aittir.",
+            "X = 76 ÷ 4 = 19 g/mol (F, bileşik C₂F₄)."
+          ], sonuc: "M = 100 g/mol; X'in atom kütlesi 19 g/mol." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Molar mass = mass ÷ number of moles = 4 g ÷ 0.25 mol = 16 g/mol.*" }
           ] }
@@ -161,22 +167,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "9 g su (H = 1, O = 16 g/mol) kaç tane H₂O molekülü içerir?",
-      opts: ["6,02×10²²", "3,01×10²³", "6,02×10²³", "9,03×10²³"], a: 1,
+    { q: "How many H₂O molecules are there in 9 g of water? (H = 1, O = 16 g/mol)",
+      opts: ["6.02×10²²", "3.01×10²³", "6.02×10²³", "9.03×10²³"], a: 1,
       why: "n = 9 ÷ 18 = 0,5 mol; molekül sayısı 0,5 × 6,02×10²³ = 3,01×10²³. 9,03×10²³ (D) toplam atom sayısıdır (0,5 × 3 = 1,5 mol atom); soru molekülü sorduğu için yanlıştır." },
-    { q: "NŞA'da 8,96 L CO₂ gazının kütlesi kaç gramdır? (C = 12, O = 16)",
-      opts: ["17,6 g", "8,8 g", "22,4 g", "44 g"], a: 0,
+    { q: "What is the mass of 8.96 L of CO₂ gas at STP? (C = 12, O = 16)",
+      opts: ["17.6 g", "8.8 g", "22.4 g", "44 g"], a: 0,
       why: "n = 8,96 ÷ 22,4 = 0,4 mol; m = 0,4 × 44 = 17,6 g. 44 g (D) tam 1 mol'ün kütlesidir; hacmi 22,4 L'ye bölmeden mol kütlesini yazmak yaygın hatadır." },
-    { q: "Tablodaki ölçümler NŞA'da yapılmıştır. Y gazının mol kütlesi kaçtır?",
-      fig: { type: "table", head: ["Gaz", "NŞA'da hacim", "Kütle"], rows: [["X", "11,2 L", "8 g"], ["Y", "5,6 L", "11 g"]], caption: "İki gazın ölçümleri" },
+    { q: "The measurements in the table were made at STP. What is the molar mass of gas Y?",
+      fig: { type: "table", head: ["Gas", "Volume at STP", "Mass"], rows: [["X", "11.2 L", "8 g"], ["Y", "5.6 L", "11 g"]], caption: "Measurements of two gases" },
       opts: ["11 g/mol", "22 g/mol", "44 g/mol", "88 g/mol"], a: 2,
       why: "Y için n = 5,6 ÷ 22,4 = 0,25 mol; M = 11 ÷ 0,25 = 44 g/mol. 22 g/mol (B) ise 0,5 mol sanıp hesap yapılırsa çıkar." },
-    { q: "Grafikte X ve Y maddelerinin kütlesi (×10 g) mol sayısına karşı çizilmiştir. Hangi yorum doğrudur?",
-      fig: { type: "graph", xlabel: "n (mol)", ylabel: "m (×10 g)", xmax: 3, ymax: 9, lines: [{ from: [0, 0], to: [2.5, 4.5], label: "X" }, { from: [0, 0], to: [2, 8.8], label: "Y" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }], yticks: [{ v: 1.8, label: "18" }, { v: 4.4, label: "44" }], caption: "Kütle–mol grafiği" },
-      opts: ["Doğrusu daha uzun olan X'in mol kütlesi daha büyüktür", "Her iki doğru da orijinden geçtiği için mol kütleleri eşittir", "Eğim mol hacmini verir", "Y'nin eğimi daha büyük olduğundan Y'nin mol kütlesi daha büyüktür"], a: 3,
+    { q: "In the graph, the masses of substances X and Y (×10 g) are plotted against the number of moles. Which interpretation is correct?",
+      fig: { type: "graph", xlabel: "n (mol)", ylabel: "m (×10 g)", xmax: 3, ymax: 9, lines: [{ from: [0, 0], to: [2.5, 4.5], label: "X" }, { from: [0, 0], to: [2, 8.8], label: "Y" }], xticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }], yticks: [{ v: 1.8, label: "18" }, { v: 4.4, label: "44" }], caption: "Mass–mole graph" },
+      opts: ["X has the larger molar mass because its line is longer", "Both lines pass through the origin, so their molar masses are equal", "The slope gives the molar volume", "Y has the larger molar mass because its slope is steeper"], a: 3,
       why: "Kütle–mol doğrusunun eğimi mol kütlesidir; Y daha diktir, M(Y) > M(X). Doğrunun uzunluğunun anlamı yoktur (A), orijinden geçmek yalnızca orantı olduğunu gösterir (B)." },
-    { q: "Aşağıdakilerden hangisi NŞA'da yaklaşık 22,4 L hacim kaplar?",
-      opts: ["18 g H₂O (sıvı)", "6,02×10²³ tane Fe atomu", "44 g CO₂ gazı", "1 mol NaCl katısı"], a: 2,
+    { q: "Which of the following occupies about 22.4 L at STP?",
+      opts: ["18 g of H₂O (liquid)", "6.02×10²³ Fe atoms", "44 g of CO₂ gas", "1 mol of solid NaCl"], a: 2,
       why: "44 g CO₂ = 1 mol gazdır ve NŞA'da 22,4 L kaplar. Sıvı ve katılar için 22,4 L kuralı geçerli değildir; 1 mol su yalnızca yaklaşık 18 mL'dir (A)." }
   ]
 };

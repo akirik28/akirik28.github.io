@@ -1,8 +1,8 @@
 /* Kitora not defteri · pc204 · 2.4 İkinci Dereceden Eşitsizlikler
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: ders sunumunda ayrı başlık yok (Unit#2_2 ve Review for Exam#2'deki "her x için pozitif" ve domain soruları); kalan içerik ek bilgi. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc204",
-  amac: "Bu konu ikinci dereceden eşitsizlikleri çözmeyi anlatıyor. Parabolün x eksenine göre konumunu okumayı, işaret tablosunu, başkatsayısı negatif ve Δ ≤ 0 durumlarını, çarpım ve bölüm eşitsizliklerini ve problemleri öğreneceksin.",
+  amac: "Bu konu ikinci dereceden eşitsizlikleri çözmeyi anlatıyor. Ders notunda ayrı bir başlık yok; domain ve \"her x için pozitif\" sorularında işine yarar. Parabol konumu, işaret tablosu, Δ ≤ 0 ve çarpım/bölüm eşitsizlikleri ek bilgi olarak anlatılıyor.",
   bolumler: [
     {
       baslik: "Eşitsizlik ve parabol",
@@ -103,15 +103,15 @@ window.DEFTER = {
           baslik: "a ve işaret",
           head: ["Parabol (Δ > 0)", "f(x) > 0", "f(x) < 0"],
           rows: [
-            ["a > 0 (yukarı açık)", "x < x₁ ya da x > x₂ (dışı)", "x₁ < x < x₂ (içi)"],
-            ["a < 0 (aşağı açık)", "x₁ < x < x₂ (içi)", "x < x₁ ya da x > x₂ (dışı)"]
+            ["a > 0 (yukarı açık)", "x < r₁ ya da x > r₂ (dışı)", "r₁ < x < r₂ (içi)"],
+            ["a < 0 (aşağı açık)", "r₁ < x < r₂ (içi)", "x < r₁ ya da x > r₂ (dışı)"]
           ],
           not: "≥ ya da ≤ varsa kökler çözüme dahildir. Sınavda böyle yaz: *The solution set is the set of x for which the parabola lies above the x-axis.*"
         }
       ]
     },
     {
-      baslik: "Çözüm adımları ve işaret tablosu",
+      baslik: "Çözüm adımları ve işaret tablosu (ek bilgi)",
       kisa: "Sağ tarafı sıfırla, kökleri bul, işaret tablosuyla aralıkları seç.",
       bloklar: [
         {
@@ -231,7 +231,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Çarpım ve bölüm eşitsizlikleri",
+      baslik: "Çarpım ve bölüm eşitsizlikleri (ek bilgi)",
       kisa: "Her çarpanın kökünü işaretle; paydayı sıfır yapan x'i çözüm dışı bırak.",
       bloklar: [
         {
@@ -268,7 +268,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Parametre: her x için eşitsizlik",
+      baslik: "Parametre: her x için eşitsizlik (derste de var)",
       kisa: "Her x için pozitiflik şartı: a > 0 ve Δ < 0.",
       bloklar: [
         {
@@ -286,14 +286,16 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "k hangi değerlerde?",
-          durum: "(a) x² − 2kx + 4 > 0 her x için. (b) kx² − 4x + k < 0 her x için.",
+          durum: "(a) x² − 2kx + 4 > 0 her x için. (b) kx² − 4x + k < 0 her x için. (c) px² + 4x + p > 0 her x için. (d) f(x) = 1/(x² + mx + 6) fonksiyonunun domain'i ℝ.",
           adimlar: [
             "(a) a = 1 > 0 tamam. Δ = (−2k)² − 4·1·4 = 4k² − 16 < 0 → k² < 4 → −2 < k < 2.",
             "Kontrol k = 0: x² + 4 > 0 ✓.",
             "(b) a = k < 0 gerekli. Δ = 16 − 4k² < 0 → k² > 4 → k < −2 ya da k > 2.",
-            "k < 0 ile kesişim: k < −2. Kontrol k = −3: −3x² − 4x − 3, Δ = 16 − 36 < 0 ✓."
+            "k < 0 ile kesişim: k < −2. Kontrol k = −3: −3x² − 4x − 3, Δ = 16 − 36 < 0 ✓.",
+            "(c) a = p > 0 ve Δ = 16 − 4p² < 0 → p² > 4 → p > 2 (p > 0 ile birlikte).",
+            "(d) Payda hiçbir x için 0 olmamalı: x² + mx + 6 = 0'ın gerçek kökü olmamalı → Δ = m² − 24 < 0 → −2√6 < m < 2√6."
           ],
-          sonuc: "(a) −2 < k < 2; (b) k < −2. Sınavda böyle yaz: *For all real x, the expression is positive when a > 0 and Δ < 0.*"
+          sonuc: "(a) −2 < k < 2; (b) k < −2; (c) p > 2; (d) −2√6 < m < 2√6. Sınavda böyle yaz: *For all real x, the expression is positive when a > 0 and Δ < 0.*"
         }
       ]
     },
@@ -355,40 +357,40 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "x² − 3x − 10 < 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      q: "What is the solution set of x² − 3x − 10 < 0?",
       opts: ["(−2, 5)", "(−∞, −2) ∪ (5, ∞)", "(−5, 2)", "(−∞, −5) ∪ (2, ∞)"],
       a: 0,
       why: "x² − 3x − 10 = (x − 5)(x + 2), kökler −2 ve 5. a > 0 olduğundan < 0 aralığı iki kökün arasıdır: (−2, 5). B seçeneği > 0 çözümüdür; C ve D, köklerin işaretlerini yanlış almış."
     },
     {
-      q: "−x² + 2x + 8 ≥ 0 eşitsizliğinin çözüm kümesi hangisidir?",
+      q: "What is the solution set of −x² + 2x + 8 ≥ 0?",
       opts: ["(−∞, −2] ∪ [4, ∞)", "(−2, 4)", "[−2, 4]", "[−4, 2]"],
       a: 2,
       why: "−1 ile çarp, yön döner: x² − 2x − 8 ≤ 0 → (x − 4)(x + 2) ≤ 0 → −2 ≤ x ≤ 4. ≥ kökleri dahil eder: [−2, 4]. A seçeneği yön çevirmeyi unutanların cevabıdır; B ise kökleri hariç bırakır."
     },
     {
-      q: "Tabloda f ikinci dereceden bir fonksiyon (a > 0) olarak veriliyor. f(x) > 0 eşitsizliğinin çözüm kümesi nedir?",
+      q: "The table gives values of a quadratic function f with a > 0. What is the solution set of f(x) > 0?",
       fig: {
         type: "table",
         head: ["x", "−2", "−1", "0", "1", "2", "3", "4"],
         rows: [
           ["f(x)", "5", "0", "−3", "−4", "−3", "0", "5"]
         ],
-        caption: "f(x) değerleri"
+        caption: "Values of f(x)"
       },
       opts: ["(−1, 3)", "[−1, 3]", "(−∞, −1] ∪ [3, ∞)", "(−∞, −1) ∪ (3, ∞)"],
       a: 3,
       why: "Tablodan f(−1) = f(3) = 0: kökler −1 ve 3. Aralarında f negatif, dışında pozitif. f(x) > 0 kökleri hariç tutar: (−∞, −1) ∪ (3, ∞). C seçeneği ≥ 0 çözümü; A ve B ise f(x) < 0 ve ≤ 0 çözümleridir."
     },
     {
-      q: "Bir topun yüksekliği h(t) = −5t² + 20t metredir. Top kaç saniye boyunca 15 metrenin üstünde kalır?",
+      q: "The height of a ball is h(t) = −5t² + 20t meters. For how many seconds is the ball higher than 15 meters?",
       opts: ["1", "2", "3", "4"],
       a: 1,
       why: "−5t² + 20t > 15 → t² − 4t + 3 < 0 → 1 < t < 3. Süre 3 − 1 = 2 saniye. 4 saniye, topun toplam uçuş süresidir; 3, üst sınırı süre sanan hatadır."
     },
     {
-      q: "x² − 2kx + 4 > 0 eşitsizliği her gerçek x için doğru ise k hangi aralıktadır?",
-      opts: ["k < 2", "−2 < k < 2", "k < −2 ya da k > 2", "−4 < k < 4"],
+      q: "The inequality x² − 2kx + 4 > 0 is true for every real x. In which interval does k lie?",
+      opts: ["k < 2", "−2 < k < 2", "k < −2 or k > 2", "−4 < k < 4"],
       a: 1,
       why: "a = 1 > 0 olduğundan Δ < 0 olmalı: Δ = 4k² − 16 < 0 → k² < 4 → −2 < k < 2. C seçeneği Δ > 0 yani iki gerçek kökün olduğu durumdur; D seçeneği 4k² < 16'dan k² < 16 diye yanlış sadeleşmiştir."
     }

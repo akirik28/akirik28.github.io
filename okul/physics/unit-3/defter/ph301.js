@@ -14,11 +14,12 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🔌", terim: "Electric current", tr: "elektrik akımı", tanim: "Yüklerin (metallerde elektronların) bir iletken boyunca düzenli akışı. Birimi amper (A), ölçen alet ampermetre.", ornek: "Telefon şarj aletinden geçen akım yaklaşık 1–2 A." },
             { ikon: "⚡", terim: "Charge", tr: "elektrik yükü", tanim: "Yük birimi coulomb (C). Elektronun yükü çok küçüktür; 1 C yaklaşık 6 × 10¹⁸ elektrona denk gelir.", ornek: "Bir akım 2 A ise her saniye 2 C yük geçer." },
-            { ikon: "➡️", terim: "Conventional current", tr: "akımın yönü", tanim: "Akımın yönü, pilin + ucundan − ucuna doğru kabul edilir. ==Elektronlar ise tersine, − uçtan + uca akar.==", ornek: "Devre şemalarındaki oklar elektronları değil akımı gösterir." }
+            { ikon: "➡️", terim: "Conventional current", tr: "akımın yönü", tanim: "Akımın yönü, pilin + ucundan − ucuna (yüksek potansiyelden düşüğe) doğru kabul edilir. ==Metallerdeki serbest elektronlar ise tersine, − uçtan + uca akar.==", ornek: "Devre şemalarındaki oklar elektronları değil akımı gösterir." },
+            { ikon: "🔀", terim: "Kirchhoff's junction law", tr: "akımın korunumu (düğüm kuralı)", tanim: "Bir düğüme (telin dallandığı nokta) giren akımların toplamı, çıkanların toplamına eşittir: ΣI giren = ΣI çıkan. Lambadan çıkan akım, lambaya girene eşittir.", ornek: "Düğüme 3 A ve 5 A giriyor, bir koldan 2 A çıkıyorsa diğer kol 6 A taşır." }
           ] },
-        { tip: "ornek", baslik: "Geçen yük", durum: "Bir telden 4 s'de 12 C yük geçiyor. Akım kaç A? Aynı telden 0,5 A akım 20 s akarsa kaç C geçer?",
-          adimlar: ["I = q / t = 12 / 4 = 3 A.", "q = I · t = 0,5 · 20 = 10 C."],
-          sonuc: "İlk durumda 3 A, ikinci durumda 10 C yük geçer." },
+        { tip: "ornek", baslik: "Geçen yük", durum: "Bir telden 4 s'de 12 C yük geçiyor. Akım kaç A? Aynı telden 0,5 A akım 20 s akarsa kaç C geçer? Bir telin kesitinden dakikada 120 C geçiyorsa akım nedir?",
+          adimlar: ["I = q / t = 12 / 4 = 3 A.", "q = I · t = 0,5 · 20 = 10 C.", "Dakika = 60 s: I = 120 / 60 = 2 A."],
+          sonuc: "3 A, 10 C ve 2 A. Dakikayı saniyeye çevirmeden 120 A yazma." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*The current is the amount of charge passing through a cross-section per second.*", metin: "Akımın tanımı." },
             { ikon: "✍️", baslik: "*The conventional current flows from the positive to the negative terminal.*", metin: "Akım yönünü belirtirken kullan." }
@@ -31,12 +32,14 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "V", alt: "gerilim (V)" }, "=", { t: "W", alt: "enerji (J)" }, "÷", { t: "q", alt: "yük (C)" }
-          ], aciklama: "1 V = 1 J/C. Gerilim iki nokta arasında ==potansiyel farkıdır==; bu yüzden hep iki uç arasında ölçülür." },
+          ], aciklama: "1 V = 1 J/C. Gerilim iki nokta arasında ==potansiyel farkıdır==; bu yüzden voltmetrenin iki girişi vardır. Pil, kimyasal tepkimeyle yükleri ayırarak bu farkı üretir (*emf*, ε). İdeal telin uçları arasında gerilim sıfırdır; tel pilin uçlarına bağlıysa ΔV tel = ΔV pil." },
         { tip: "tablo", baslik: "Su devresi benzetmesi", head: ["Su devresi", "Elektrik devresi", "Sembol"], rows: [
-            ["Pompa", "Pil (üreteç)", "ε"],
-            ["Suyun akışı", "Elektrik akımı", "I"],
+            ["Pompa", "Pil (üreteç): basıncı üretir", "ε"],
+            ["Geniş, pürüzsüz boru", "İletken tel: sürtünmesiz yol", "—"],
+            ["Vana (açık-kapalı)", "Anahtar", "S"],
+            ["Suyun debisi", "Elektrik akımı", "I"],
             ["Basınç farkı", "Gerilim (potansiyel farkı)", "V"],
-            ["Dar boru", "Direnç", "R"]
+            ["Dar boru, kum filtresi", "Direnç: akışı kısıtlar", "R"]
           ] },
         { tip: "ornek", baslik: "Yüke verilen enerji", durum: "Bir pil 2 C'luk yüke 12 J enerji veriyor. Gerilimi kaç V? 1,5 V'luk pil 4 C'a ne kadar enerji verir?",
           adimlar: ["V = W / q = 12 / 2 = 6 V.", "W = V · q = 1,5 · 4 = 6 J."],
@@ -76,7 +79,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "R", alt: "direnç (Ω)" }, "=", { t: "ρ", alt: "özdirenç (malzeme)" }, "×", { t: "ℓ", alt: "uzunluk (m)" }, "÷", { t: "A", alt: "kesit alanı (m²)" }
-          ], aciklama: "Birim: ohm (Ω). ρ maddenin cinsine ve sıcaklığa bağlıdır; metallerde sıcaklık artınca direnç de artar." },
+          ], aciklama: "Birim: ohm (Ω); 1 Ω = 1 V/A. ρ (*resistivity*) maddenin cinsine ve sıcaklığa bağlıdır; iyi iletkenlerde küçük, yalıtkanlarda büyüktür. Metallerde sıcaklık artınca atomların titreşimi elektronlara daha büyük hedef olur, direnç artar. Direnç elemanları ısıtıcı tel (elektriği ısıya çevirir), devre elemanı (renk bantları değerini gösterir) ya da sensör (ışıkla direnci değişir) olarak kullanılır." },
         { tip: "tablo", head: ["Ne değişir?", "R nasıl değişir?", "Neden?"], rows: [
             ["Uzunluk ℓ iki katı", "2 katına çıkar", "Elektronlar daha uzun yol alır"],
             ["Kesit alanı A iki katı", "Yarıya iner", "Daha geniş yol vardır"],
@@ -132,11 +135,10 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Birim dönüşümü", durum: "Bir sensör 5 V ile çalışırken 20 mA akım çekiyor. Direnci kaç Ω?",
           adimlar: ["20 mA = 20 / 1000 = 0,02 A.", "R = V / I = 5 / 0,02 = 250 Ω."],
           sonuc: "R = 250 Ω. Hesaptan önce mA'i A'e, kΩ'u Ω'a çevir." },
-        { tip: "tuzak", metin: "Ampulün teli ısındıkça direnci artar; bu yüzden V–I grafiği düz bir doğru olmaz.", yanlis: "Her eleman Ohm yasasına uyar ve V–I grafiği hep doğrudur.", dogru: "Ohm yasasındaki doğrusal ilişki yalnızca direnci sabit olan (ohmik) elemanlar için geçerlidir." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*The current through the bulb is I = V / R = 9 / 3 = 3 A.*", metin: "Formülü, sayıyı ve birimi sırayla yaz." },
-            { ikon: "✍️", baslik: "*The resistance of the bulb does not change.*", metin: "\"Direnç sabit\" varsayımını açıkça belirt." }
-          ] }
+        { tip: "tuzak", metin: "Ampulün teli ısındıkça direnci artar; bu yüzden V–I grafiği düz bir doğru olmaz.", yanlis: "Her eleman Ohm yasasına uyar ve V–I grafiği hep doğrudur.", dogru: "Ohm yasası bir doğa yasası değildir; yalnızca direnci sabit kalan (ohmik) malzemeler için geçerlidir. Pil ve kondansatör gibi elemanlar ohmik değildir." },
+        { tip: "ornek", baslik: "Prizdeki ampulün teli", durum: "120 V'luk prize bağlanan 60 W'lık ampul 0,50 A akım çekiyor. Filamanın direnci kaç Ω? Teli 0,04 mm çapında ve ρ ≈ 5 × 10⁻⁷ Ω·m ise boyu yaklaşık ne kadar olmalı?",
+          adimlar: ["R = V / I = 120 / 0,5 = 240 Ω.", "Kesit alanı A = π·r² = 3,14 · (2 × 10⁻⁵)² ≈ 1,26 × 10⁻⁹ m².", "ℓ = R·A / ρ = 240 · 1,26 × 10⁻⁹ / (5 × 10⁻⁷) ≈ 0,6 m."],
+          sonuc: "R = 240 Ω ve tel yaklaşık 0,6 m (iki ayak kadar). Bu direnç yalnızca tel akkor haldeyken geçerlidir. Sınavda böyle yaz: *The current through the bulb is I = V / R.* *The resistance of the bulb does not change.*" }
       ]
     },
     {
@@ -157,22 +159,22 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir iletken telin kesitinden 20 s boyunca 0,5 A akım geçiyor. Bu sürede kesitten geçen yük kaç C'dur?",
-      opts: ["40 C", "10 C", "0,025 C", "20,5 C"], a: 1,
-      why: "q = I · t = 0,5 · 20 = 10 C. 0,025 C cevabı I / t yapmaktır; 40 C ise t / I'dır." },
-    { q: "Grafik, X ve Y dirençlerinin uçlarına uygulanan gerilimle üzerlerinden geçen akımı gösteriyor. Hangisi doğrudur?",
-      fig: { type: "graph", xlabel: "I (A)", ylabel: "V (V)", xmax: 5, ymax: 10, lines: [{ from: [0, 0], to: [2, 8], label: "X" }, { from: [0, 0], to: [4, 8], label: "Y" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }], yticks: [{ v: 8, label: "8" }], caption: "V–I grafiği" },
-      opts: ["R_X = 2 Ω ve R_Y = 4 Ω", "R_X = R_Y, çünkü ikisi de başlangıçtan geçer", "R_X, R_Y'nin yarısıdır", "R_X = 4 Ω ve R_Y = 2 Ω"], a: 3,
+    { q: "Every minute, 120 C of charge flows through a cross-section of a wire. What is the current in the wire?",
+      opts: ["240 A", "120 A", "60 A", "2 A"], a: 3,
+      why: "Dakika 60 s'dir: I = q / t = 120 / 60 = 2 A. 120 A cevabı süreyi hiç hesaba katmamaktır; 60 A ise 120 ÷ 2 gibi yanlış bir işlemdir." },
+    { q: "The graph shows the voltage across resistors X and Y against the current through them. Which statement is correct?",
+      fig: { type: "graph", xlabel: "I (A)", ylabel: "V (V)", xmax: 5, ymax: 10, lines: [{ from: [0, 0], to: [2, 8], label: "X" }, { from: [0, 0], to: [4, 8], label: "Y" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }], yticks: [{ v: 8, label: "8" }], caption: "V–I graph" },
+      opts: ["R_X = 2 Ω and R_Y = 4 Ω", "R_X = R_Y because both lines pass through the origin", "R_X is half of R_Y", "R_X = 4 Ω and R_Y = 2 Ω"], a: 3,
       why: "Eğim R'dir: R_X = 8 / 2 = 4 Ω, R_Y = 8 / 4 = 2 Ω. Dik olan doğru daha büyük dirençtir; ilk şık eğimleri ters yorumlar." },
-    { q: "Bir lambanın uçları arasındaki gerilimi ve lambadan geçen akımı ölçmek için ampermetre ve voltmetre nasıl bağlanmalıdır?",
-      opts: ["Ampermetre seri, voltmetre lambaya paralel", "İkisi de seri", "İkisi de lambaya paralel", "Ampermetre paralel, voltmetre seri"], a: 0,
+    { q: "How should an ammeter and a voltmeter be connected to measure the current through a lamp and the voltage across it?",
+      opts: ["Ammeter in series, voltmeter in parallel with the lamp", "Both in series", "Both in parallel with the lamp", "Ammeter in parallel, voltmeter in series"], a: 0,
       why: "Akım ölçmek için alet devrenin içinden geçmeli (seri), gerilim ölçmek için elemanın uçlarına bağlanmalı (paralel). Son şık tam tersidir ve ampermetreyle kısa devre yapar." },
-    { q: "Aynı maddeden yapılmış bir telin boyu 2 katına, çapı da 2 katına çıkarılırsa direnci nasıl değişir?",
-      opts: ["2 katına çıkar", "Değişmez", "Yarıya iner", "4 katına çıkar"], a: 2,
+    { q: "Wire 2 is made of the same material as wire 1, but it is twice as long and has twice the diameter. What is the ratio R₂/R₁ of their resistances?",
+      opts: ["2", "1", "1/2", "4"], a: 2,
       why: "Boy 2 katı → R × 2. Çap 2 katı → alan 4 katı → R ÷ 4. Sonuç R × 2 / 4 = R / 2. Alanı da 2 katı sanan, \"değişmez\" ya da \"2 katı\" cevabına gider." },
-    { q: "Bir direncin uçlarına farklı gerilimler uygulanıyor ve akım ölçülüyor (tablo). Direncin değeri kaç Ω'dur?",
-      fig: { type: "table", head: ["V (V)", "I (A)"], rows: [["2", "0,5"], ["4", "1"], ["6", "1,5"]], caption: "Ölçüm sonuçları" },
-      opts: ["0,25 Ω", "4 Ω", "12 Ω", "Sabit olmadığı için bulunamaz"], a: 1,
+    { q: "Different voltages are applied across a resistor and the current is measured (table). What is the resistance of the resistor?",
+      fig: { type: "table", head: ["V (V)", "I (A)"], rows: [["2", "0.5"], ["4", "1"], ["6", "1.5"]], caption: "Measurements" },
+      opts: ["0.25 Ω", "4 Ω", "12 Ω", "It cannot be found because it is not constant"], a: 1,
       why: "Her satırda V / I = 4 Ω olduğu için direnç sabit ve 4 Ω'dur. 0,25 Ω, I / V hesaplamaktır." }
   ]
 };

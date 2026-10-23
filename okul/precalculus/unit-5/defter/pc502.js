@@ -6,19 +6,19 @@ window.DEFTER = {
   bolumler: [
     {
       baslik: "Logaritma: üssü soran işlem",
-      kisa: "log_b x = y demek b^y = x demektir.",
+      kisa: "log_a x = y demek a^y = x demektir.",
       bloklar: [
         { tip: "formul", parcalar: [
-            { t: "log_b x = y", alt: "b kaç üssü x eder?" }, "⇔",
-            { t: "b^y = x", alt: "b > 0, b ≠ 1, x > 0" }
+            { t: "log_a x = y", alt: "a kaç üssü x eder?" }, "⇔",
+            { t: "a^y = x", alt: "a > 0, a ≠ 1, x > 0" }
           ], aciklama: "Logaritma, üssün adıdır: sonuç bir üs. Sınavda böyle yaz: *Rewrite in exponential form.* ya da *Write in logarithmic form.*" },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🔑", terim: "Logarithm", tr: "logaritma", tanim: "log_b x, b tabanını x yapmak için gereken üstür.", ornek: "log₂ 8 = 3, çünkü 2^3 = 8." },
+            { ikon: "🔑", terim: "Logarithm", tr: "logaritma", tanim: "log_a x, a tabanını x yapmak için gereken üstür.", ornek: "log₂ 8 = 3, çünkü 2^3 = 8." },
             { ikon: "🔟", terim: "Common logarithm", tr: "onluk logaritma", tanim: "Taban yazılmayan log, taban 10 demektir: log x = log₁₀ x.", ornek: "log 1000 = 3, çünkü 10^3 = 1000." },
             { ikon: "🌱", terim: "Natural logarithm", tr: "doğal logaritma", tanim: "Tabanı e ≈ 2,718 olan logaritma: ln x = log_e x.", ornek: "ln e^2 = 2." }
           ] },
-        { tip: "ikili", sol: { ikon: "⬆️", baslik: "Üstel biçim", maddeler: ["Üs yazılıdır: b^y = x", "Örnek: 2^5 = 32"] },
-          sag: { ikon: "🔑", baslik: "Logaritmik biçim", maddeler: ["Üs sonuçtur: log_b x = y", "Örnek: log₂ 32 = 5"] },
+        { tip: "ikili", sol: { ikon: "⬆️", baslik: "Üstel biçim", maddeler: ["Üs yazılıdır: a^y = x", "Örnek: 2^5 = 32"] },
+          sag: { ikon: "🔑", baslik: "Logaritmik biçim", maddeler: ["Üs sonuçtur: log_a x = y", "Örnek: log₂ 32 = 5"] },
           oyun: [
             { metin: "5^2 = 25", cevap: "sol", neden: "Üs yazılı: üstel biçim." },
             { metin: "log₂ 8 = 3", cevap: "sag", neden: "Üs sonuç olarak yazılmış: logaritmik biçim." },
@@ -29,18 +29,18 @@ window.DEFTER = {
     },
     {
       baslik: "Hesap makinesiz hesap ve özel değerler",
-      kisa: "Tabanı kaç üslü yaparsan sayı olur diye sor; log_b 1 = 0, log_b b = 1.",
+      kisa: "Tabanı kaç üslü yaparsan sayı olur diye sor; log_a 1 = 0, log_a a = 1.",
       bloklar: [
         { tip: "tablo", baslik: "Her sınavda işine yarayacak değerler", head: ["Özellik", "Neden?", "Örnek"], rows: [
-            ["log_b 1 = 0", "b^0 = 1", "log₇ 1 = 0 ve ln 1 = 0"],
-            ["log_b b = 1", "b^1 = b", "log₅ 5 = 1, log 10 = 1, ln e = 1"],
-            ["log_b (b^x) = x", "log ile üs birbirini geri alır", "log₂ 2^7 = 7 ve ln e^3 = 3"],
-            ["b^(log_b x) = x", "aynı sebep", "3^(log₃ 5) = 5 ve e^(ln 4) = 4"]
+            ["log_a 1 = 0", "a^0 = 1", "log₇ 1 = 0 ve ln 1 = 0"],
+            ["log_a a = 1", "a^1 = a", "log₅ 5 = 1, log 10 = 1, ln e = 1"],
+            ["log_a (a^x) = x", "log ile üs birbirini geri alır", "log₂ 2^7 = 7 ve ln e^3 = 3"],
+            ["a^(log_a x) = x", "aynı sebep", "3^(log₃ 5) = 5 ve e^(ln 4) = 4"]
           ] },
         { tip: "ornek", baslik: "Hesap makinesi olmadan hesapla", durum: "log₂ 32, log₃(1/9), log₁₆ 4 ve log 0,001 değerlerini bul.",
           adimlar: ["log₂ 32: 2^? = 32. 2^5 = 32 olduğundan 5.", "log₃(1/9): 3^? = 1/9 = 3^(−2). Sonuç −2.", "log₁₆ 4: 16^? = 4. 16^(1/2) = 4 olduğundan 1/2.", "log 0,001: taban 10; 10^? = 1/1000 = 10^(−3). Sonuç −3."],
           sonuc: "5, −2, 1/2 ve −3. **Sınavda böyle yaz:** *Evaluate without a calculator: log₂ 32 = 5 because 2^5 = 32.*" },
-        { tip: "tuzak", metin: "Logaritmanın içi pozitif olmak zorundadır; çünkü b^y hiçbir zaman 0 ya da negatif olmaz.", yanlis: "log₂ 0 = 0 ve log₂(−4) = −2.", dogru: "log₂ 0 ve log₂(−4) tanımsızdır. Sıfır eden değer log_b 1'dir: log_b 1 = 0." }
+        { tip: "tuzak", metin: "Logaritmanın içi pozitif olmak zorundadır; çünkü b^y hiçbir zaman 0 ya da negatif olmaz.", yanlis: "log₂ 0 = 0 ve log₂(−4) = −2.", dogru: "log₂ 0 ve log₂(−4) tanımsızdır. Sıfır eden değer log_a 1'dir: log_a 1 = 0." }
       ]
     },
     {
@@ -48,14 +48,14 @@ window.DEFTER = {
       kisa: "Çarpım toplam, bölüm fark, kuvvet çarpan olur.",
       bloklar: [
         { tip: "tablo", baslik: "Logaritma kuralları", head: ["Kural", "Formül ve örnek", "Sınavda böyle yaz"], rows: [
-            ["Çarpım (*product rule*)", "log_b(xy) = log_b x + log_b y · log₂(8·4) = 3 + 2 = 5", "*Use the product rule to write the log of a product as a sum.*"],
-            ["Bölüm (*quotient rule*)", "log_b(x/y) = log_b x − log_b y · log₃(81/9) = 4 − 2 = 2", "*Use the quotient rule to write the log of a quotient as a difference.*"],
-            ["Kuvvet (*power rule*)", "log_b(x^n) = n·log_b x · log₅ 25^3 = 3·2 = 6", "*Use the power rule to bring the exponent to the front.*"]
+            ["Çarpım (*product rule*)", "log_a(MN) = log_a M + log_a N · log₂(8·4) = 3 + 2 = 5", "*Use the product rule to write the log of a product as a sum.*"],
+            ["Bölüm (*quotient rule*)", "log_a(M/N) = log_a M − log_a N · log₃(81/9) = 4 − 2 = 2", "*Use the quotient rule to write the log of a quotient as a difference.*"],
+            ["Kuvvet (*power rule*)", "log_a(M^r) = r·log_a M · log₅ 25^3 = 3·2 = 6", "*Use the power rule to bring the exponent to the front.*"]
           ] },
         { tip: "adimlar", baslik: "Çarpım kuralı neden doğru?", adimlar: [
-            { baslik: "Üs olarak yaz", metin: "x = b^m ve y = b^n olsun; yani log_b x = m ve log_b y = n." },
-            { baslik: "Çarp", metin: "Üsler toplanır: xy = b^m · b^n = b^(m+n)." },
-            { baslik: "Logaritmaya çevir", metin: "log_b(xy) = m + n = log_b x + log_b y." }
+            { baslik: "Üs olarak yaz", metin: "M = a^m ve N = a^n olsun; yani log_a M = m ve log_a N = n." },
+            { baslik: "Çarp", metin: "Üsler toplanır: MN = a^m · a^n = a^(m+n)." },
+            { baslik: "Logaritmaya çevir", metin: "log_a(MN) = m + n = log_a M + log_a N." }
           ] },
         { tip: "grafik", baslik: "Kurallar y = log₂ x grafiğinde", xlabel: "x", ylabel: "y", xmax: 9, ymax: 4,
           xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 8, label: "8" }],
@@ -93,12 +93,12 @@ window.DEFTER = {
     },
     {
       baslik: "Taban değiştirme",
-      kisa: "log_b a = log a ÷ log b; istediğin tabana geçebilirsin.",
+      kisa: "log_b x = log x ÷ log b; istediğin tabana geçebilirsin.",
       bloklar: [
         { tip: "formul", parcalar: [
-            { t: "log_b a" }, "=",
-            { t: "log_c a ÷ log_c b", alt: "c: seçtiğin yeni taban" }
-          ], aciklama: "En çok kullanılan hâlleri: log_b a = log a ÷ log b = ln a ÷ ln b ve log_b a = 1 ÷ log_a b. Sınavda böyle yaz: *Use the change of base formula.*" },
+            { t: "log_b x" }, "=",
+            { t: "log_a x ÷ log_a b", alt: "a: seçtiğin yeni taban (a, b ≠ 1)" }
+          ], aciklama: "En çok kullanılan hâlleri: log_b x = log x ÷ log b = ln x ÷ ln b ve log_b a = 1 ÷ log_a b. Tabanda ve içte üs varsa log_(a^n)(b^m) = (m/n)·log_a b; örnek: log₈ 16 = log_(2³)(2⁴) = 4/3. Sınavda böyle yaz: *Use the change of base formula.*" },
         { tip: "ornek", baslik: "Ortak tabana geç", durum: "Hesap makinesi olmadan log₄ 8 ve log₈ 4 değerlerini bul.",
           adimlar: ["Ortak taban 2: log₄ 8 = log₂ 8 ÷ log₂ 4.", "log₂ 8 = 3 ve log₂ 4 = 2 olduğundan log₄ 8 = 3/2.", "log₈ 4 = log₂ 4 ÷ log₂ 8 = 2/3.", "İkisi birbirinin çarpmaya göre tersidir: log_b a · log_a b = 1."],
           sonuc: "log₄ 8 = 3/2 ve log₈ 4 = 2/3. **Sınavda böyle yaz:** *By the change of base formula, log₄ 8 = log₂ 8 / log₂ 4 = 3/2.*" },
@@ -110,22 +110,22 @@ window.DEFTER = {
       kisa: "Sayıyı 2, 3 ve 10'un çarpanlarına ayır; kuralları uygula.",
       bloklar: [
         { tip: "sayilar", ogeler: [
-            { onek: "≈ ", deger: "0,301", etiket: "log 2 (daha kesin 0,30103)" },
-            { onek: "≈ ", deger: "0,477", etiket: "log 3 (daha kesin 0,4771)" },
+            { onek: "≈ ", deger: "0,30103", etiket: "log 2" },
+            { onek: "≈ ", deger: "0,4771", etiket: "log 3" },
             { deger: "1", etiket: "log 10" }
           ] },
         { tip: "tablo", baslik: "Sayıyı parçala, kuralı uygula", head: ["Sayı", "Parçalama", "log değeri"], rows: [
-            ["6", "2·3", "0,301 + 0,477 = 0,778"],
-            ["8", "2^3", "3·0,301 = 0,903"],
-            ["12", "2²·3", "2·0,301 + 0,477 = 1,079"],
-            ["5", "10 ÷ 2", "1 − 0,301 = 0,699"],
-            ["15", "3·10 ÷ 2", "0,477 + 1 − 0,301 = 1,176"],
-            ["0,3", "3 ÷ 10", "0,477 − 1 = −0,523"],
-            ["18", "2·3²", "0,301 + 2·0,477 = 1,255"]
+            ["6", "2·3", "0,30103 + 0,4771 = 0,77813"],
+            ["8", "2^3", "3·0,30103 = 0,90309"],
+            ["12", "2²·3", "2·0,30103 + 0,4771 = 1,07916"],
+            ["5", "10 ÷ 2", "1 − 0,30103 = 0,69897"],
+            ["1/5", "2 ÷ 10", "0,30103 − 1 = −0,69897"],
+            ["30", "3·10", "0,4771 + 1 = 1,4771"],
+            ["18", "2·3²", "0,30103 + 2·0,4771 = 1,25523"]
           ] },
-        { tip: "ornek", baslik: "Üç ayrı hesap", durum: "log 2 ≈ 0,301 ve log 3 ≈ 0,477 verilsin. (a) log 45, (b) log₃ 2, (c) 2^20 kaç basamaklıdır?",
-          adimlar: ["(a) 45 = 9·10 ÷ 2: log 45 = 2·0,477 + 1 − 0,301 = 0,954 + 1 − 0,301 = 1,653.", "(b) Taban değiştir: log₃ 2 = log 2 ÷ log 3 ≈ 0,301 ÷ 0,477 ≈ 0,63.", "(c) log(2^20) = 20·0,301 = 6,02.", "Logaritmanın tam kısmı + 1 basamak sayısıdır: 6 + 1 = 7."],
-          sonuc: "log 45 ≈ 1,653; log₃ 2 ≈ 0,63; 2^20 yedi basamaklıdır (1 048 576). **Sınavda böyle yaz:** *Given that log 2 ≈ 0.301 and log 3 ≈ 0.477, find log 45.*" }
+        { tip: "ornek", baslik: "Üç ayrı hesap", durum: "log 2 = 0,30103 ve log 3 = 0,4771 verilsin. (a) log 45, (b) log₃ 2, (c) ek bilgi: 2^20 kaç basamaklıdır?",
+          adimlar: ["(a) 45 = 9·10 ÷ 2: log 45 = 2·0,4771 + 1 − 0,30103 = 0,9542 + 1 − 0,30103 = 1,65317.", "(b) Taban değiştir: log₃ 2 = log 2 ÷ log 3 = 0,30103 ÷ 0,4771 ≈ 0,631.", "(c) log(2^20) = 20·0,30103 = 6,0206.", "Logaritmanın tam kısmı + 1 basamak sayısıdır: 6 + 1 = 7."],
+          sonuc: "log 45 ≈ 1,65317; log₃ 2 ≈ 0,631; 2^20 yedi basamaklıdır (1 048 576). **Sınavda böyle yaz:** *Given that log 2 = 0.30103 and log 3 = 0.4771, find log 45.*" }
       ]
     },
     {
@@ -133,34 +133,34 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "log_b x = y ⇔ b^y = x. Koşullar: b > 0, b ≠ 1, x > 0. Logaritma bir üstür.",
+            "log_a x = y ⇔ a^y = x. Koşullar: a > 0, a ≠ 1, x > 0. Logaritma bir üstür.",
             "log x = log₁₀ x (*common logarithm*), ln x = log_e x (*natural logarithm*).",
-            "log_b 1 = 0, log_b b = 1, log_b(b^x) = x, b^(log_b x) = x. log 0 ve negatif sayının logu tanımsızdır.",
-            "*Product rule*: log_b(xy) = log_b x + log_b y. *Quotient rule*: log_b(x/y) = log_b x − log_b y.",
-            "*Power rule*: log_b(x^n) = n·log_b x. Toplamın logaritması için sadeleştirme yoktur.",
+            "log_a 1 = 0, log_a a = 1, log_a(a^x) = x, a^(log_a x) = x (ve e^(ln x) = x). log 0 ve negatif sayının logu tanımsızdır.",
+            "*Product rule*: log_a(MN) = log_a M + log_a N. *Quotient rule*: log_a(M/N) = log_a M − log_a N.",
+            "*Power rule*: log_a(M^r) = r·log_a M. Toplamın logaritması için sadeleştirme yoktur.",
             "Tek logaritma yaparken önce katsayıyı üs yap, sonra topla-çıkar kurallarını uygula.",
-            "*Change of base*: log_b a = log a ÷ log b = ln a ÷ ln b = 1 ÷ log_a b.",
-            "Sınavda hesap makinesi yok: log 2 ≈ 0,301 ve log 3 ≈ 0,477 ile sayıyı 2, 3 ve 10 çarpanlarına ayır; log 5 = 1 − log 2."
+            "*Change of base*: log_b x = log_a x ÷ log_a b; log_b a = log a ÷ log b = ln a ÷ ln b = 1 ÷ log_a b.",
+            "Sınavda hesap makinesi yok: log 2 = 0,30103 ve log 3 = 0,4771 ile sayıyı 2, 3 ve 10 çarpanlarına ayır; log 5 = 1 − log 2."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "log₉ 27 değeri kaçtır?",
+    { q: "What is the value of log₉ 27?",
       opts: ["2/3", "3/2", "3", "1/3"],
       a: 1, why: "9^y = 27 ise 3^(2y) = 3^3 olur, 2y = 3 ve y = 3/2. Taban değiştirmeyle de log₃ 27 ÷ log₃ 9 = 3/2. A seçeneği log₂₇ 9 değeridir; sıra tersine çevrilmiştir." },
-    { q: "2 log₃ x + log₃ 4 − log₃ 2 ifadesi (x > 0) tek logaritma olarak hangisidir?",
+    { q: "For x > 0, which single logarithm is equal to 2 log₃ x + log₃ 4 − log₃ 2?",
       opts: ["log₃(2x²)", "log₃(x² ÷ 2)", "log₃(x² + 2)", "log₃(8x²)"],
       a: 0, why: "2 log₃ x = log₃ x²; toplam çarpıma, fark bölüme dönüşür: log₃(x²·4 ÷ 2) = log₃(2x²). D seçeneği 4 ile 2'yi bölmek yerine çarpar." },
-    { q: "Tablodaki değerler verildiğine göre log 18 yaklaşık kaçtır?",
-      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0,301", "0,477"]], caption: "Verilen değerler" },
-      opts: ["0,778", "1,079", "1,431", "1,255"],
-      a: 3, why: "18 = 2·3², log 18 = 0,301 + 2·0,477 = 1,255. A, log 6'nın; B, log 12'nin; C ise log 27'nin değeridir." },
-    { q: "Tablodaki değerler verildiğine göre log₂ 3 yaklaşık kaçtır?",
-      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0,301", "0,477"]], caption: "Verilen değerler" },
-      opts: ["0,78", "0,63", "1,58", "0,18"],
-      a: 2, why: "Taban değiştirme: log₂ 3 = log 3 ÷ log 2 ≈ 0,477 ÷ 0,301 ≈ 1,58. B seçeneği log₃ 2'dir (oran ters çevrilmiş); A toplamı, D farkı alır ve kural dışıdır." },
-    { q: "Hangi eşitlik doğrudur?",
+    { q: "Given the values in the table, what is log 18?",
+      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0.30103", "0.4771"]], caption: "Given values" },
+      opts: ["0.77813", "1.07916", "1.43130", "1.25523"],
+      a: 3, why: "18 = 2·3², log 18 = 0,30103 + 2·0,4771 = 1,25523. A, log 6'nın; B, log 12'nin; C ise log 27'nin değeridir." },
+    { q: "Given the values in the table, what is log₂ 3 (to three decimal places)?",
+      fig: { type: "table", head: ["log 2", "log 3"], rows: [["0.30103", "0.4771"]], caption: "Given values" },
+      opts: ["0.778", "0.631", "1.585", "0.176"],
+      a: 2, why: "Taban değiştirme: log₂ 3 = log 3 ÷ log 2 = 0,4771 ÷ 0,30103 ≈ 1,585. B seçeneği log₃ 2'dir (oran ters çevrilmiş); A toplamı, D farkı alır ve kural dışıdır." },
+    { q: "Which equation is true?",
       opts: ["log 7 + log 3 = log 10", "log 50 − log 5 = 1", "log 8 ÷ log 2 = log 4", "log₂(−4) = −2"],
       a: 1, why: "log 50 − log 5 = log(50 ÷ 5) = log 10 = 1. A'da toplam çarpıma dönüşür: log 7 + log 3 = log 21. C'de bölüm kuralı değil taban değiştirme vardır: log 8 ÷ log 2 = 3. D tanımsızdır." }
   ]

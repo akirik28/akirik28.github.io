@@ -58,7 +58,7 @@ window.DEFTER = (function () {
         kisa: "Gelir etkisi, ikame etkisi ve azalan marjinal fayda eğriyi aşağı indirir.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
-              { ikon: "👛", terim: "Income effect", tr: "gelir etkisi", tanim: "Fiyat düşünce aynı parayla daha çok şey alabilirsin; gerçek satın alma gücün artar ve malı daha çok alırsın.", ornek: "Simit 5 TL'den 3 TL'ye inince aynı harçlıkla fazladan bir çay da alırsın." },
+              { ikon: "👛", terim: "Income effect", tr: "gelir etkisi", tanim: "Fiyat düşünce aynı parayla daha çok şey alabilirsin; gerçek satın alma gücün artar ve malı daha çok alırsın.", ornek: "Simit 5 TL'den 3 TL'ye inince aynı harçlıkla daha çok simit alabilirsin." },
               { ikon: "🔄", terim: "Substitution effect", tr: "ikame etkisi", tanim: "Mal öbürlerine göre ucuzlayınca pahalı kalan benzerlerinden vazgeçip bu mala geçersin.", ornek: "Dolmuş ucuzlayınca yürümek yerine dolmuşa binersin." },
               { ikon: "🍕", terim: "Diminishing marginal utility", tr: "azalan marjinal fayda", tanim: "Aynı maldan her ek birim sana bir öncekinden daha az fayda verir; ek birim için daha az ödemek istersin.", ornek: "İlk pizza dilimi harika, beşincisi neredeyse yük." }
             ] },

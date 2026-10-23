@@ -1,6 +1,6 @@
 /* Kitora not defteri · bi107 · 1.7 Oksijensiz Solunum ve Fermantasyon
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
-   ATP: oksijenli solunum için bi106'daki yaklaşık 32 kullanıldı. */
+   Kaynak: öğretmen lecture'ı (1.9 Fermentation, Anaerobic Respiration) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10.
+   ATP: oksijenli solunum için lecture'daki en çok yaklaşık 38 kullanıldı (38 ÷ 2 = 19 kat); güncel ~30–32 yalnız kısa not. */
 window.DEFTER = {
   slug: "bi107",
   amac: "Bu konu oksijen olmadan ATP elde etmeyi anlatıyor: *anaerobic respiration* ve *fermentation* (laktik asit ve etil alkol). İkisinin farkını, fermantasyonun NAD⁺'yı neden yenilediğini ve neden oksijenli solunumdan çok daha az ATP verdiğini öğreneceksin.",
@@ -9,7 +9,7 @@ window.DEFTER = {
       baslik: "Oksijensiz solunum ve fermantasyon farkı",
       kisa: "Oksijensiz solunumda elektron taşıma zinciri vardır; fermantasyonda yoktur.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🦠", baslik: "*Anaerobic respiration* (oksijensiz solunum)", maddeler: ["Elektron taşıma zinciri ==var==", "Son elektron alıcısı: ==inorganik== (NO₃⁻, SO₄²⁻, CO₂)", "Bazı bakteri ve arkeler", "Fermantasyondan çok, oksijenliden az ATP"] },
+        { tip: "ikili", sol: { ikon: "🦠", baslik: "*Anaerobic respiration* (oksijensiz solunum)", maddeler: ["Elektron taşıma zinciri ==var==", "Son elektron alıcısı: ==inorganik== (SO₄²⁻, S⁰, NO₃⁻, CO₂, Fe³⁺)", "Derin toprak ve durgun gölet bakterileri, arkeler", "Fermantasyondan çok, oksijenliden az ATP"] },
           sag: { ikon: "🍞", baslik: "*Fermentation* (fermantasyon)", maddeler: ["Elektron taşıma zinciri ==yok==", "Son alıcı: ==organik== molekül (piruvat ya da türevi)", "ATP yalnız glikolizden: net 2", "Örnek: kas, maya, *Lactobacillus*"] },
           oyun: [
             { metin: "Sülfat (SO₄²⁻) son elektron alıcısı olan, zinciri olan bakteri.", cevap: "sol", neden: "İnorganik alıcı ve zincir: oksijensiz solunum." },
@@ -17,10 +17,12 @@ window.DEFTER = {
             { metin: "Maya hamurunda CO₂ çıkarken etil alkol oluşuyor.", cevap: "sag", neden: "Organik moleküller ürün: alkol fermantasyonu." },
             { metin: "Nitratı (NO₃⁻) azot gazına çeviren toprak bakterisi.", cevap: "sol", neden: "NO₃⁻ inorganik son alıcıdır: oksijensiz solunum." }
           ] },
-        { tip: "tablo", baslik: "Oksijensiz solunum örnekleri", head: ["Son elektron alıcısı", "Ürün", "Örnek canlı"], rows: [
+        { tip: "tablo", baslik: "Oksijensiz solunum: son elektron alıcıları", head: ["Son elektron alıcısı", "Ürün", "Örnek canlı"], rows: [
             ["NO₃⁻ (nitrat)", "N₂ ve diğer azotlu bileşikler", "Denitrifikasyon bakterileri"],
             ["SO₄²⁻ (sülfat)", "H₂S", "Sülfat indirgeyen bakteriler"],
-            ["CO₂", "CH₄ (metan)", "Metan üreten arkeler (*methanogens*)"]
+            ["CO₂", "CH₄ (metan)", "Metan üreten arkeler (*methanogens*)"],
+            ["S⁰ (kükürt)", "H₂S (ek bilgi)", "Kükürt indirgeyen bakteriler"],
+            ["Fe³⁺", "Fe²⁺ (ek bilgi)", "Demir indirgeyen bakteriler"]
           ], not: "Sınavda böyle yaz: *In anaerobic respiration the final electron acceptor is an inorganic substance, but in fermentation it is an organic molecule.*" }
       ]
     },
@@ -48,11 +50,11 @@ window.DEFTER = {
             { t: "2 ATP", alt: "net" }
           ], aciklama: "Piruvat + NADH → laktat + NAD⁺. CO₂ ==çıkmaz==. Yer: sitoplazma." },
         { tip: "adimlar", baslik: "Koşan kas hücresi", adimlar: [
-            { baslik: "Hızlı koşu", metin: "Kas O₂'yi yetiştiremez; oksijenli solunum ATP ihtiyacını karşılayamaz." },
+            { baslik: "Hızlı koşu", metin: "Glikoz yıkımı, kasın kandan O₂ alımını aşar. Hücre oksijenli solunum ve fermantasyonu birlikte yürütür." },
             { baslik: "Fermantasyon", metin: "Piruvat laktata çevrilir ve glikoliz 2 ATP vermeye devam eder." },
-            { baslik: "Dinlenme", metin: "O₂ gelince laktat piruvata dönüşüp solunumda kullanılır ya da karaciğerde glikoza çevrilir." }
+            { baslik: "Dinlenme", metin: "Laktat kanla karaciğere taşınır, piruvata dönüşür ve karaciğer hücrelerinin mitokondrisinde yükseltgenir." }
           ] },
-        { tip: "not", metin: "Aynı yol *Lactobacillus* bakterilerinde de çalışır: yoğurt, kefir, turşu ve şalgam suyu laktik asit fermantasyonuyla yapılır. Laktik asit ortamı ekşitir ve besinin bozulmasını geciktirir. Sınavda böyle yaz: *In lactic acid fermentation, pyruvate is reduced to lactate and no carbon dioxide is released.*" }
+        { tip: "not", metin: "Bazı mantar ve bakteriler laktik asit fermantasyonuyla peynir ve yoğurt yapar. Olgun memeli alyuvarları da ATP'yi bu yolla üretir. Az miktarda laktik asit, yeterli O₂ geldiğinde kasın daha iyi çalışmasını sağlar; ısınma hareketleri bu yüzden yararlıdır. Sınavda böyle yaz: *In lactic acid fermentation, pyruvate is reduced to lactate and no carbon dioxide is released.*" }
       ]
     },
     {
@@ -64,50 +66,50 @@ window.DEFTER = {
             { t: "2 C₂H₅OH", alt: "etil alkol" }, "+",
             { t: "2 CO₂", alt: "gaz" }, "+",
             { t: "2 ATP", alt: "net" }
-          ], aciklama: "Yer: sitoplazma. Mayalarda ve bazı bakterilerde görülür." },
+          ], aciklama: "Yer: sitoplazma. Mayalarda (tek hücreli mantar), bazı bakterilerde ve bazı bitki tohumlarında görülür." },
         { tip: "adimlar", baslik: "İki basamak", adimlar: [
             { baslik: "Piruvat → asetaldehit", metin: "Piruvattan 1 CO₂ ayrılır; 2 karbonlu asetaldehit kalır." },
             { baslik: "Asetaldehit → etil alkol", metin: "Asetaldehit, NADH'den elektron alıp etil alkole indirgenir; NAD⁺ yenilenir." }
           ] },
-        { tip: "not", metin: "Mayalar (*Saccharomyces*) ekmek hamurunu CO₂ ile kabartır; fırında alkol buharlaşır. Aynı süreç yakıt etanolü yapımında kullanılır. Sınavda böyle yaz: *In alcoholic fermentation, pyruvate is converted to ethanol and carbon dioxide.*" }
+        { tip: "not", metin: "Maya fermantasyonu bira ve şarap yapımında ve ekmek hamurunu CO₂ ile kabartmada kullanılır; fırında alkol buharlaşır (ek bilgi). Sınavda böyle yaz: *In alcoholic fermentation, pyruvate is converted to ethanol and carbon dioxide.*" }
       ]
     },
     {
       baslik: "Üç yolun karşılaştırması",
-      kisa: "Oksijenli solunum, fermantasyondan yaklaşık 16 kat daha çok ATP verir.",
+      kisa: "Oksijenli solunum, fermantasyondan en çok yaklaşık 19 kat daha çok ATP verir.",
       bloklar: [
-        { tip: "grafik", baslik: "1 glikozdan elde edilen ATP", xlabel: "Yol", ylabel: "ATP sayısı", xmax: 10, ymax: 36,
+        { tip: "grafik", baslik: "1 glikozdan elde edilen ATP", xlabel: "Yol", ylabel: "ATP sayısı", xmax: 10, ymax: 44,
           xticks: [{ v: 2, label: "Oksijenli" }, { v: 5, label: "Laktik" }, { v: 8, label: "Alkol" }],
-          yticks: [{ v: 10, label: "10" }, { v: 20, label: "20" }, { v: 30, label: "30" }],
+          yticks: [{ v: 10, label: "10" }, { v: 20, label: "20" }, { v: 30, label: "30" }, { v: 40, label: "40" }],
           ogeler: [
             { id: "b1", tip: "alan", renk: 0, noktalar: [[1.2, 0], [2.8, 0], [2.8, 0], [1.2, 0]] },
-            { id: "t1", tip: "yazi", x: 2, y: 33.6, metin: "≈ 32", gizli: true },
+            { id: "t1", tip: "yazi", x: 2, y: 40.6, metin: "≈ 38", gizli: true },
             { id: "b2", tip: "alan", renk: 1, noktalar: [[4.2, 0], [5.8, 0], [5.8, 0], [4.2, 0]] },
             { id: "t2", tip: "yazi", x: 5, y: 3.4, metin: "2", gizli: true },
             { id: "b3", tip: "alan", renk: 1, noktalar: [[7.2, 0], [8.8, 0], [8.8, 0], [7.2, 0]] },
             { id: "t3", tip: "yazi", x: 8, y: 3.4, metin: "2", gizli: true },
-            { id: "oran", tip: "yazi", x: 6, y: 19, metin: "32 ÷ 2 = 16 kat", gizli: true }
+            { id: "oran", tip: "yazi", x: 6, y: 19, metin: "38 ÷ 2 = 19 kat", gizli: true }
           ],
           durumlar: [
             { metin: "Aynı 1 glikozdan ne kadar ATP çıkar? Önce oksijenli solunum." },
-            { metin: "==Oksijenli solunum==: yaklaşık 32 ATP (glikoliz + Krebs + elektron taşıma zinciri).", set: { b1: { noktalar: [[1.2, 0], [2.8, 0], [2.8, 32], [1.2, 32]] } }, goster: ["t1"] },
+            { metin: "==Oksijenli solunum==: en çok yaklaşık 38 ATP (glikoliz 2 + Krebs 2 + elektron taşıma zinciri ≈ 34).", set: { b1: { noktalar: [[1.2, 0], [2.8, 0], [2.8, 38], [1.2, 38]] } }, goster: ["t1"] },
             { metin: "==Laktik asit fermantasyonu==: yalnız glikolizin net 2 ATP'si.", set: { b2: { noktalar: [[4.2, 0], [5.8, 0], [5.8, 2], [4.2, 2]] } }, goster: ["t2"] },
             { metin: "==Alkol fermantasyonu== da net 2 ATP verir.", set: { b3: { noktalar: [[7.2, 0], [8.8, 0], [8.8, 2], [7.2, 2]] } }, goster: ["t3"] },
-            { metin: "Fermantasyon yapan hücre aynı ATP için yaklaşık 16 kat daha çok glikoz yakar. Sınavda böyle yaz: *The graph shows that aerobic respiration produces much more ATP than fermentation.*", goster: ["oran"] }
+            { metin: "Fermantasyon yapan hücre aynı ATP için yaklaşık 19 kat daha çok glikoz yakar (güncel ≈ 30–32 ATP ile 15–16 kat). Sınavda böyle yaz: *The graph shows that aerobic respiration produces much more ATP than fermentation.*", goster: ["oran"] }
           ] },
         { tip: "tablo", head: ["", "Oksijenli solunum", "Laktik asit ferm.", "Alkol ferm."], rows: [
             ["O₂", "Gerekir", "Gerekmez", "Gerekmez"],
             ["Elektron taşıma zinciri", "Var", "Yok", "Yok"],
             ["CO₂ çıkışı", "Var (6)", "Yok", "Var (2)"],
             ["Ürün", "H₂O + CO₂", "Laktat", "Etil alkol + CO₂"],
-            ["Net ATP", "≈ 32", "2", "2"],
+            ["Net ATP", "≈ 38 (en çok)", "2", "2"],
             ["Yer", "Sitoplazma + mitokondri", "Sitoplazma", "Sitoplazma"]
           ], vurgu: 4, not: "Sınavda böyle yaz: *Fermentation yields only two ATP per glucose because glucose is only partly broken down.*" },
         { tip: "tuzak", metin: "Fermantasyonda glikoz tam yıkılmaz: laktat ya da alkol hâlâ enerji taşır. Bu yüzden ATP verimi düşüktür.", yanlis: "Laktik asit fermantasyonu da CO₂ açığa çıkarır.", dogru: "CO₂ yalnız oksijenli solunumda ve alkol fermantasyonunda çıkar; laktik asit fermantasyonunda çıkmaz." }
       ]
     },
     {
-      baslik: "Oksijenle ilişkilerine göre canlılar",
+      baslik: "Oksijenle ilişkilerine göre canlılar (ek bilgi)",
       kisa: "Zorunlu anaeroplar O₂'den zarar görür; fakültatifler iki yolu da kullanır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
@@ -123,33 +125,33 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Oksijensiz solunum: zincir var, son alıcı inorganik (NO₃⁻, SO₄²⁻, CO₂). Fermantasyon: zincir yok, son alıcı organik.",
+            "Oksijensiz solunum: zincir var, son alıcı inorganik (SO₄²⁻, S⁰, NO₃⁻, CO₂, Fe³⁺). Fermantasyon: zincir yok, son alıcı organik.",
             "Fermantasyonun görevi NADH'yi NAD⁺'ya çevirmektir; böylece glikoliz sürer.",
             "Fermantasyonda ATP yalnız glikolizden gelir: net 2 ATP.",
-            "Laktik asit: piruvat + NADH → laktat + NAD⁺; CO₂ yok. Kas, *Lactobacillus* (yoğurt, turşu).",
-            "Etil alkol: piruvat → asetaldehit + CO₂ → etil alkol; maya (ekmek kabarması).",
-            "Oksijenli solunum yaklaşık 32 ATP verir, fermantasyondan yaklaşık 16 kat fazla.",
+            "Laktik asit: piruvat + NADH → laktat + NAD⁺; CO₂ yok. Kas, olgun alyuvar, *Lactobacillus* (yoğurt, peynir).",
+            "Etil alkol: piruvat → asetaldehit + CO₂ → etil alkol; maya (bira, şarap, ekmek).",
+            "Oksijenli solunum en çok yaklaşık 38 ATP verir, fermantasyondan yaklaşık 19 kat fazla (38 ÷ 2).",
             "Zorunlu anaerop O₂'siz yaşar; fakültatif ikisini de yapar; zorunlu aerop O₂ ister."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Hangi özellik alkol fermantasyonunu laktik asit fermantasyonundan ayırır?",
-      opts: ["CO₂ açığa çıkması", "Elektron taşıma zincirinin bulunması", "Net ATP sayısının 32 olması", "Mitokondride gerçekleşmesi"], a: 0,
+    { q: "Which feature distinguishes alcoholic fermentation from lactic acid fermentation?",
+      opts: ["Release of CO₂", "Presence of an electron transport chain", "A net yield of 38 ATP", "Occurrence in the mitochondria"], a: 0,
       why: "Alkol fermantasyonunda piruvattan CO₂ ayrılır; laktik asit fermantasyonunda CO₂ çıkmaz. İkisinde de zincir yoktur ve net ATP 2'dir; B şıkkı yanlış." },
-    { q: "Kapalı iki kavanozdan birinde şekerli suda maya, diğerinde şekerli sütte *Lactobacillus* vardır. Sonuçlar aşağıdaki gibidir. Bu gözlemi en iyi hangisi açıklar?",
-      fig: { type: "table", head: ["Kavanoz", "Kabarcık", "pH"], rows: [["Maya", "Çok", "Hafif düşer"], ["Lactobacillus", "Yok", "Belirgin düşer"]] },
-      opts: ["İkisi de oksijenli solunum yapar.", "İkisi de laktik asit fermantasyonu yapar.", "Maya laktik asit, bakteri alkol fermantasyonu yapar.", "Maya alkol fermantasyonuyla CO₂ çıkarır; bakteri laktik asit fermantasyonuyla CO₂ çıkarmadan ortamı asitleştirir."], a: 3,
+    { q: "One closed jar contains yeast in sugar water and another contains *Lactobacillus* in sweetened milk. The results are shown below. Which explanation fits the observation best?",
+      fig: { type: "table", head: ["Jar", "Bubbles", "pH"], rows: [["Yeast", "Many", "Falls slightly"], ["Lactobacillus", "None", "Falls clearly"]] },
+      opts: ["Both carry out aerobic respiration.", "Both carry out lactic acid fermentation.", "Yeast carries out lactic acid fermentation and the bacterium carries out alcoholic fermentation.", "Yeast releases CO₂ by alcoholic fermentation; the bacterium acidifies the medium by lactic acid fermentation without releasing CO₂."], a: 3,
       why: "Kabarcık CO₂'dir ve alkol fermantasyonunda çıkar; pH'ın belirgin düşmesi laktik asit birikimini gösterir. C şıkkı iki sürecin adını tersine çevirir." },
-    { q: "Fermantasyonun hücre için asıl yararı nedir?",
-      opts: ["Çok sayıda ATP üretmek", "NADH'yi NAD⁺'ya çevirerek glikolizin sürmesini sağlamak", "O₂'yi hücreden uzaklaştırmak", "Piruvatı CO₂ ve suya yıkmak"], a: 1,
+    { q: "What is the main benefit of fermentation for the cell?",
+      opts: ["Producing a large amount of ATP", "Converting NADH to NAD⁺ so that glycolysis can continue", "Removing O₂ from the cell", "Breaking pyruvate down to CO₂ and water"], a: 1,
       why: "NAD⁺ yenilenmezse glikoliz durur; fermantasyon bu yüzden gereklidir. A şıkkı çekici ama fermantasyonun ATP'si yalnız glikolizden gelir, ek ATP üretmez." },
-    { q: "Oksijenli solunumun yaklaşık 32 ATP verdiği, fermantasyonun ise net 2 ATP verdiği kabul edilirse, bir hücre fermantasyonla oksijenli solunumla elde ettiği ATP kadar ATP elde etmek için yaklaşık kaç kat glikoz yakmalıdır?",
-      opts: ["2 kat", "4 kat", "16 kat", "32 kat"], a: 2,
-      why: "32 ÷ 2 = 16 kat. 32 kat diyenler 2'ye bölmeyi unutur." },
-    { q: "Bir göl dibindeki çamurda yaşayan bir bakteri, sülfatı (SO₄²⁻) son elektron alıcısı olarak kullanıp H₂S çıkarıyor ve bir elektron taşıma zinciri taşıyor. Bu bakteri hangi süreci yürütür?",
-      opts: ["Laktik asit fermantasyonu", "Alkol fermantasyonu", "Oksijenli solunum", "Oksijensiz solunum"], a: 3,
+    { q: "Aerobic respiration yields at most about 38 ATP per glucose, whereas fermentation yields a net 2 ATP. About how many times more glucose must a cell ferment to obtain the same amount of ATP?",
+      opts: ["2 times", "4 times", "19 times", "38 times"], a: 2,
+      why: "38 ÷ 2 = 19 kat. 38 kat diyenler 2'ye bölmeyi unutur." },
+    { q: "A bacterium living in lake-bottom mud uses sulfate (SO₄²⁻) as the final electron acceptor, releases H₂S and has an electron transport chain. Which process does it carry out?",
+      opts: ["Lactic acid fermentation", "Alcoholic fermentation", "Aerobic respiration", "Anaerobic respiration"], a: 3,
       why: "İnorganik bir son alıcı (SO₄²⁻) ve elektron taşıma zinciri oksijensiz solunumun işaretidir. Fermantasyonlarda zincir yoktur; C şıkkı yanlış çünkü son alıcı O₂ değil." }
   ]
 };

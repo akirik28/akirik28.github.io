@@ -115,12 +115,18 @@ window.DEFTER = {
             { t: "n₁", alt: "ilk mol" }, "=",
             { t: "V₂", alt: "son hacim" }, "÷",
             { t: "n₂", alt: "son mol" }
-          ], aciklama: "Aynı sıcaklık ve basınçta eşit hacimli gazlar eşit sayıda molekül içerir. NŞA'da 1 mol gaz 22,4 L kaplar." },
+          ], aciklama: "Aynı sıcaklık ve basınçta eşit hacimli gazlar eşit sayıda molekül içerir. NŞA'da 1 mol gaz 22,4 L kaplar. Sabit hacim ve sıcaklıkta aynı mantıkla basınç mol sayısıyla doğru orantılıdır: P₁/n₁ = P₂/n₂ (*pressure-mole relationship*)." },
         { tip: "ornek", baslik: "Balona gaz eklemek", durum: "Aynı sıcaklık ve basınçta 0,2 mol gaz 4,8 L hacim kaplıyor. Balona toplam 0,5 mol gaz olacak şekilde ekleme yapılırsa hacim kaç L olur?", adimlar: [
             "Avogadro: V₁/n₁ = V₂/n₂ → V₂ = 4,8 × 0,5 ÷ 0,2.",
             "V₂ = 12 L.",
             "Kontrol: 4,8 ÷ 0,2 = 24 L/mol ve 12 ÷ 0,5 = 24 L/mol ✓"
           ], sonuc: "V₂ = 12 L." },
+        { tip: "ornek", baslik: "Valf açılınca gaz kaçarsa", durum: "Sabit hacimli bir kapta 12 g C₃H₄ gazı P basıncındadır. Valf kısa süre açılıp 0,2 mol gaz kaçıyor. Sıcaklık sabit; kalan gazın basıncı kaç P'dir? (C = 12, H = 1)", adimlar: [
+            "M(C₃H₄) = 40 g/mol → başlangıçta n = 12 ÷ 40 = 0,3 mol.",
+            "Kalan gaz: 0,3 − 0,2 = 0,1 mol.",
+            "V ve T sabit: P₁/n₁ = P₂/n₂ → P₂ = P × 0,1 ÷ 0,3.",
+            "Kontrol: mol sayısı üçte bire düştü, basınç da üçte bire düşer ✓"
+          ], sonuc: "Kalan gazın basıncı P/3." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Equal volumes of gases at the same temperature and pressure contain the same number of moles.*" }
           ] }
@@ -171,21 +177,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Sabit sıcaklıkta 2 atm basınçta 6 L hacim kaplayan gazın basıncı 4 atm'e çıkarılırsa hacmi kaç L olur?",
+    { q: "A gas occupies 6 L at 2 atm and constant temperature. If its pressure is raised to 4 atm, what is its volume?",
       opts: ["12 L", "3 L", "2 L", "8 L"], a: 1,
       why: "Boyle: 2 × 6 = 4 × V₂ → V₂ = 3 L. 12 L (A) basınç ile hacmi doğru orantılı sanmaktır; oysa basınç artınca hacim azalır." },
-    { q: "Esnek bir balonda 4 L hava vardır (sıcaklık 27 °C). Basınç sabit tutularak balon 87 °C'ye ısıtılırsa hacmi kaç L olur?",
-      opts: ["4,8 L", "3,3 L", "12,9 L", "4,0 L"], a: 0,
+    { q: "A flexible balloon contains 4 L of air at 27 °C. If the balloon is heated to 87 °C at constant pressure, what is its volume?",
+      opts: ["4.8 L", "3.3 L", "12.9 L", "4.0 L"], a: 0,
       why: "Kelvin: 300 K → 360 K; V₂ = 4 × 360 ÷ 300 = 4,8 L. 12,9 L (C) Celsius değerleriyle (4 × 87 ÷ 27) yapılan hatalı hesaptır; 3,3 L (B) ise oranı ters kurmaktır." },
-    { q: "Kapalı, sert bir kaptaki gazın (hacim ve mol sayısı sabit) iki durumu tabloda verilmiştir. Durum 2'deki basınç kaç atm'dir?",
-      fig: { type: "table", head: ["Durum", "Sıcaklık", "Basınç"], rows: [["1", "27 °C", "1,5 atm"], ["2", "327 °C", "?"]], caption: "Sabit hacimli kap" },
-      opts: ["18,2 atm", "1,5 atm", "2,0 atm", "3,0 atm"], a: 3,
+    { q: "Two states of a gas in a closed, rigid container (constant volume and amount) are given in the table. What is the pressure in State 2?",
+      fig: { type: "table", head: ["State", "Temperature", "Pressure"], rows: [["1", "27 °C", "1.5 atm"], ["2", "327 °C", "?"]], caption: "Constant-volume container" },
+      opts: ["18.2 atm", "1.5 atm", "2.0 atm", "3.0 atm"], a: 3,
       why: "Gay-Lussac: T₁ = 300 K, T₂ = 600 K; P₂ = 1,5 × 600 ÷ 300 = 3,0 atm. 18,2 atm (A) Celsius değerlerinin oranından (1,5 × 327 ÷ 27) çıkar; sıcaklık Kelvin'e çevrilmelidir." },
-    { q: "Grafikteki noktalar sabit sıcaklıktaki bir gazın basınç ve hacim ölçümlerini gösteriyor. Hangi sonuç çıkarılır?",
-      fig: { type: "graph", xlabel: "V (mL)", ylabel: "P (atm)", xmax: 12, ymax: 12, points: [{ q: 1, p: 12, label: "12" }, { q: 2, p: 6, label: "6" }, { q: 3, p: 4, label: "4" }, { q: 4, p: 3, label: "3" }, { q: 6, p: 2, label: "2" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }], yticks: [{ v: 2, label: "2" }, { v: 6, label: "6" }, { v: 12, label: "12" }], caption: "P–V noktaları" },
-      opts: ["P ile V doğru orantılıdır", "P ile V'nin toplamı sabittir", "P × V çarpımı sabittir; P ile V ters orantılıdır", "Sıcaklık değişmiştir"], a: 2,
+    { q: "The points in the graph show pressure and volume measurements of a gas at constant temperature. Which conclusion can be drawn?",
+      fig: { type: "graph", xlabel: "V (mL)", ylabel: "P (atm)", xmax: 12, ymax: 12, points: [{ q: 1, p: 12, label: "12" }, { q: 2, p: 6, label: "6" }, { q: 3, p: 4, label: "4" }, { q: 4, p: 3, label: "3" }, { q: 6, p: 2, label: "2" }], xticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }, { v: 6, label: "6" }], yticks: [{ v: 2, label: "2" }, { v: 6, label: "6" }, { v: 12, label: "12" }], caption: "P–V points" },
+      opts: ["P and V are directly proportional", "The sum of P and V is constant", "The product P × V is constant; P and V are inversely proportional", "The temperature has changed"], a: 2,
       why: "1 × 12 = 2 × 6 = 3 × 4 = 4 × 3 = 6 × 2 = 12: çarpım sabit, yani ters orantı (Boyle). Sıcaklığın değiştiği (D) söylenemez; soruda sabit olduğu verilmiştir." },
-    { q: "6 L gaz 1 atm ve 300 K'dedir. Mol sayısı değişmeden basınç 2 atm'ye, sıcaklık 400 K'ye çıkarılırsa hacim kaç L olur?",
+    { q: "6 L of gas is at 1 atm and 300 K. If the pressure is raised to 2 atm and the temperature to 400 K with no change in the number of moles, what is the volume?",
       opts: ["4 L", "8 L", "9 L", "12 L"], a: 0,
       why: "V₂ = (1 × 6 × 400) ÷ (300 × 2) = 4 L. 8 L (B) yalnızca sıcaklığı hesaba katıp basınç artışını unutmaktır (6 × 400 ÷ 300)." }
   ]

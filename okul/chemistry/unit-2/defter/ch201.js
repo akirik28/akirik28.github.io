@@ -66,7 +66,8 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Ekzotermik bir tepkime enerji verir ama yine de başlamak için enerji ister. Bu yüzden odun kendiliğinden tutuşmaz, kıvılcım gerekir.", yanlis: "Ekzotermik tepkimeler aktivasyon enerjisi gerektirmeden kendiliğinden başlar.", dogru: "Ekzotermik de endotermik de ==Ea== gerektirir. Ekzotermikte ürünler daha düşük enerjidedir (ΔH < 0), endotermikte daha yüksek (ΔH > 0)." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: koşul", metin: "*For a reaction to occur, the particles must collide with enough energy and the correct orientation.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: tanım", metin: "*Activation energy is the minimum energy needed to start a reaction.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: tanım", metin: "*Activation energy is the minimum energy needed to start a reaction.*" },
+            { ikon: "3️⃣", baslik: "Başarılı tepkime için 3 şart, tepkimede olan 3 olay", metin: "Şartlar: tanecikler çarpışmalı, doğru geometriyle ve yeterli enerjiyle. Olaylar: girenlerdeki bağlar kırılır, atomlar yeniden düzenlenir, yeni bağlar kurulur." }
           ] }
       ]
     },
@@ -77,7 +78,7 @@ window.DEFTER = {
         { tip: "formul", parcalar: [
             { t: "Girenlerin kütlesi", alt: "*reactants*" }, "=",
             { t: "Ürünlerin kütlesi", alt: "*products*" }
-          ], aciklama: "Lavoisier'nin *law of conservation of mass* kuralı. Tepkimede atomlar yeniden dizilir, yok olmaz ve yoktan var olmaz; bu yüzden her elementin atom sayısı iki tarafta aynıdır." },
+          ], aciklama: "Lavoisier'nin *law of conservation of mass* kuralı. Kütle, atom sayısı ve atom türleri korunur (H₂ + ½O₂ → H₂O: 2 g H + 16 g O → 18 g su). Molekül sayısı her zaman korunmaz. Girenler hep tamamen harcanmaz; artan madde (*excess reactant*) kalabilir (2 g H + 20 g O → 18 g su + 4 g O artar)." },
         { tip: "adimlar", baslik: "Denkleştirmenin dört adımı", adimlar: [
             { baslik: "Say", metin: "Okla ayrılan iki tarafta her elementin atom sayısını yaz." },
             { baslik: "Katsayı yaz", metin: "Eşit olmayan elementi seç; formülün önüne katsayı koyarak dengele. Bir seferde bir elementle uğraş." },
@@ -89,7 +90,8 @@ window.DEFTER = {
           sonuc: "==4Al + 3O₂ → 2Al₂O₃==" },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: kural", metin: "*The number of atoms of each element must be the same on both sides of the equation.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: yöntem", metin: "*Balance the equation by changing only the coefficients, not the subscripts.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: yöntem", metin: "*Balance the equation by changing only the coefficients, not the subscripts.*" },
+            { ikon: "½", baslik: "Kesirli katsayı", metin: "Kesir yalnızca O₂, F₂, S₈, P₄ gibi element molekülleri için yazılabilir (H₂ + ½O₂ → H₂O). Bileşiklerde kesir kullanılmaz: 1/6 C₆H₁₂O₆ yanlıştır." }
           ] }
       ]
     },
@@ -100,9 +102,9 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Al(OH)₃ + H₂SO₄ → Al₂(SO₄)₃ + H₂O", durum: "Nötrleşme tepkimesini denkleştir. SO₄²⁻ iki tarafta da aynen duruyor, bu yüzden onu tek parça say.",
           adimlar: ["Al: sol 1, sağ 2 → 2Al(OH)₃.", "SO₄: sol 1, sağ 3 → 3H₂SO₄.", "H: sol 6 + 6 = 12 → sağda H₂O için 6 gerekir: 6H₂O.", "Kontrol: O sol 6 + 12 = 18; sağ 12 + 6 = 18 ✓."],
           sonuc: "==2Al(OH)₃ + 3H₂SO₄ → Al₂(SO₄)₃ + 6H₂O==" },
-        { tip: "ornek", baslik: "Fe₂O₃ + C → Fe + CO₂", durum: "Demir cevherinden demir elde etme. En küçük tam sayılarla denkleştir.",
-          adimlar: ["O: sol 3, sağ 2 → en küçük ortak kat 6: 2Fe₂O₃ (6 O) ve 3CO₂ (6 O).", "Fe: sol 2 × 2 = 4 → sağda 4Fe.", "C: sağda 3 → solda 3C.", "Kontrol: Fe 4 = 4; O 6 = 6; C 3 = 3."],
-          sonuc: "==2Fe₂O₃ + 3C → 4Fe + 3CO₂==" },
+        { tip: "ornek", baslik: "Denklemdeki bilinmeyen X maddesi", durum: "4X + 5O₂ → 4NO + 6H₂O ve 9Fe₂O₃ + 2NH₃ → 6X + N₂ + 3H₂O denklemleri denkleşmiş. İki X'in formülünü bul.",
+          adimlar: ["1. denklem, sağ taraf: N 4, H 12, O 4 + 6 = 10. Sol tarafta O₂'den 10 O var; N ve H'nin hepsi 4X'ten gelmeli: 4X = N₄H₁₂.", "X = NH₃.", "2. denklem, sol: Fe 18, O 27, N 2, H 6. Sağda N₂ ve 3H₂O (3 O) var; geri kalan Fe 18 ve O 24, 6X içinde: X = Fe₃O₄."],
+          sonuc: "==1. denklemde X = NH₃; 2. denklemde X = Fe₃O₄==. Her elementin atom sayısını iki tarafta eşitle; fark X'in içindedir." },
         { tip: "tuzak", metin: "H₂ + O₂ → H₂O denkleminde oksijeni eşitlemek için H₂O₂ yazmak başka bir maddeyi yazmaktır.", yanlis: "O sayısını eşitlemek için formülün indisini değiştirebilirim.", dogru: "==Katsayı değişir, indis asla.== Doğrusu: 2H₂ + O₂ → 2H₂O." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: çok atomlu iyon", metin: "*Treat a polyatomic ion such as SO₄²⁻ as one unit when it appears unchanged on both sides.*" },
@@ -150,25 +152,25 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Aşağıdaki gözlemlerden hangisi bir kimyasal tepkimenin gerçekleştiğini gösterir?",
-      opts: ["Buz küpünün erimesi", "Kaynayan suyun yüzeyinden kabarcık çıkması", "Kabartma tozuna limon suyu eklenince köpürüp CO₂ çıkması", "Tuzun suda çözünmesi"],
+    { q: "Which of the following observations shows that a chemical reaction has taken place?",
+      opts: ["An ice cube melting", "Bubbles rising from the surface of boiling water", "Fizzing and release of CO₂ when lemon juice is added to baking soda", "Salt dissolving in water"],
       a: 2,
       why: "Kabartma tozu ile limon suyu tepkimeye girer ve yeni madde (CO₂) oluşur. B en çekici yanlış şık: kaynayan sudaki kabarcıklar su buharıdır, fiziksel değişimdir." },
-    { q: "___ Al + ___ O₂ → ___ Al₂O₃ tepkimesi en küçük tam sayılarla denkleştirildiğinde katsayılar toplamı kaç olur?",
+    { q: "When the equation ___ Al + ___ O₂ → ___ Al₂O₃ is balanced with the smallest whole-number coefficients, what is the sum of the coefficients?",
       opts: ["6", "7", "8", "9"],
       a: 3,
       why: "4Al + 3O₂ → 2Al₂O₃: 4 + 3 + 2 = 9. En çekici yanlış şık C (8): 4Al + 2O₂ → 2Al₂O₃ gibi hatalı bir denkleştirmeden gelir; orada O sayısı solda 4, sağda 6'dır." },
-    { q: "Diyagramda bir tepkimenin enerji değişimi verilmiştir. Bu tepkimenin aktivasyon enerjisi ve türü için hangisi doğrudur?",
-      fig: { type: "graph", xlabel: "Tepkime ilerlemesi", ylabel: "Enerji (kJ)", xmax: 10, ymax: 10, yticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }], lines: [{ from: [0, 4], to: [3, 4] }, { from: [3, 4], to: [5, 8] }, { from: [5, 8], to: [7, 2] }, { from: [7, 2], to: [10, 2] }], points: [{ q: 1, p: 4, label: "girenler" }, { q: 9, p: 2, label: "ürünler" }] },
-      opts: ["Ea = 80 kJ, endotermik", "Ea = 40 kJ, ekzotermik (ΔH = −20 kJ)", "Ea = 40 kJ, endotermik", "Ea = 20 kJ, ekzotermik"],
+    { q: "The diagram shows the energy change of a reaction. Which statement about the activation energy and the type of this reaction is correct?",
+      fig: { type: "graph", xlabel: "Reaction progress", ylabel: "Energy (kJ)", xmax: 10, ymax: 10, yticks: [{ v: 2, label: "20" }, { v: 4, label: "40" }, { v: 6, label: "60" }, { v: 8, label: "80" }], lines: [{ from: [0, 4], to: [3, 4] }, { from: [3, 4], to: [5, 8] }, { from: [5, 8], to: [7, 2] }, { from: [7, 2], to: [10, 2] }], points: [{ q: 1, p: 4, label: "reactants" }, { q: 9, p: 2, label: "products" }] },
+      opts: ["Ea = 80 kJ, endothermic", "Ea = 40 kJ, exothermic (ΔH = −20 kJ)", "Ea = 40 kJ, endothermic", "Ea = 20 kJ, exothermic"],
       a: 1,
       why: "Ea = tepe − girenler = 80 − 40 = 40 kJ. Ürünler (20 kJ) girenlerden (40 kJ) düşük: ekzotermik, ΔH = 20 − 40 = −20 kJ. A en çekici yanlış şık: tepenin yüksekliğini aktivasyon enerjisi sanır." },
-    { q: "Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O tepkimesi en küçük tam sayılarla denkleştirildiğinde H₂O'nun katsayısı kaç olur?",
+    { q: "When the equation Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ + H₂O is balanced with the smallest whole-number coefficients, what is the coefficient of H₂O?",
       opts: ["3", "4", "6", "12"],
       a: 2,
       why: "3Ca(OH)₂ + 2H₃PO₄ → Ca₃(PO₄)₂ + 6H₂O. H: 6 + 6 = 12 → 6H₂O gerekir; O: 6 + 8 = 14 = 8 + 6 ✓. D en çekici yanlış şık: H atomlarının sayısını (12) katsayı sanır." },
-    { q: "Odun yanması ısı veren (ekzotermik) bir tepkimedir, ama odun kendiliğinden tutuşmaz; kibrit gerekir. Bunun nedeni nedir?",
-      opts: ["Başlamak için aktivasyon enerjisini sağlayacak bir ilk enerji gerekir", "Odunla oksijen hiç çarpışmaz", "Ürünlerin enerjisi girenlerden yüksektir", "Yanma endotermik bir tepkimedir"],
+    { q: "Burning wood is an exothermic reaction, but wood does not ignite on its own; a match is needed. What is the reason?",
+      opts: ["An initial input of energy is needed to supply the activation energy", "Wood and oxygen never collide", "The products have more energy than the reactants", "Combustion is an endothermic reaction"],
       a: 0,
       why: "Ekzotermik tepkimeler de aktivasyon enerjisi ister; kibrit bu enerjiyi sağlar. C en çekici yanlış şık: ürünlerin enerjisi yüksek olsaydı tepkime endotermik olurdu ve ısı vermezdi." }
   ]

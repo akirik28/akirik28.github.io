@@ -70,7 +70,7 @@ window.DEFTER = (function () {
             ] },
           { tip: "tablo", baslik: "Aynı atışın bileşenleri", head: ["t (s)", "x = 15·t (m)", "Düşülen = 5·t² (m)", "vy = 10·t (m/s)"],
             rows: [["0", "0", "0", "0"], ["1", "15", "5", "10"], ["2", "30", "20", "20"]],
-            not: "Yatay hız her an vx = 15 m/s'dir; yalnız düşey hız artar. Sınavda böyle yaz: *The path of the ball is a parabola.*" },
+            not: "Yatay hız her an vx = 15 m/s'dir; yalnız düşey hız artar. Grafikte vx–t yatay bir doğru, vy–t ise eğimi g olan bir doğrudur. Derste olduğu gibi yukarıyı artı alırsan düşey ivme −10 m/s² ve vy eksi çıkar. Sınavda böyle yaz: *The path of the ball is a parabola.*" },
           { tip: "tuzak", metin: "Yörüngeyi \"önce yatay gider, sonra düşer\" diye düşünme; iki hareket aynı anda başlar.",
             yanlis: "Cisim önce yatay ilerler, sonra aşağı düşmeye başlar.",
             dogru: "Cisim ==t = 0'dan itibaren== düşer; yatay ve düşey hareket aynı anda yürür." }
@@ -92,6 +92,13 @@ window.DEFTER = (function () {
               "Kontrol: 0,4 s'de düşen yol 5 × 0,16 = 0,8 m ✓."
             ],
             sonuc: "Süre 0,4 s, yatay uzaklık 1,2 m. Sınavda böyle yaz: *The ball hits the floor 1.2 m away from the table.*" },
+          { tip: "ornek", baslik: "Yardım paketini ne zaman bırakmalı?",
+            durum: "Bir kurtarma uçağı yatay uçuyor (yaklaşık 250 km/h, yani 70 m/s) ve kayalıktaki dağcılara yardım paketi atacak. Dağcılar uçağın 245 m altında. Paket, dağcılardan yatayda ne kadar önce bırakılmalı? (g = 10 m/s²)",
+            adimlar: [
+              "Düşey: 245 = 5·t² → t² = 49 → t = 7 s.",
+              "Yatay: paket uçağın yatay hızını taşır, x = v₀·t = 70 × 7 = 490 m."
+            ],
+            sonuc: "Paket dağcılardan yatayda 490 m önce bırakılmalı. Sınavda böyle yaz: *The package keeps the horizontal velocity of the plane, so it must be dropped 490 m in advance.*" },
           { tip: "tuzak", metin: "Daha hızlı atmak, cismi daha geç ya da daha erken düşürmez.",
             yanlis: "Top 6 m/s ile atılırsa 0,8 s'de düşer.",
             dogru: "Süre yalnız yüksekliğe bağlı: yine ==0,4 s==. Yalnız yatay uzaklık değişir: 6 × 0,4 = 2,4 m." }
@@ -159,23 +166,23 @@ window.DEFTER = (function () {
         ]
       }
     ],
-    sorular: [
-      { q: "20 m yükseklikteki bir kayadan bir top 10 m/s hızla yatay atılıyor (g = 10 m/s², hava direnci yok). Topun havada kalma süresi ve menzili nedir?",
+      sorular: [
+      { q: "A ball is thrown horizontally at 10 m/s from a cliff 20 m high (g = 10 m/s², no air resistance). What are the time of flight and the range?",
         opts: ["1 s; 10 m", "2 s; 20 m", "2 s; 10 m", "4 s; 40 m"], a: 1,
         why: "20 = 5·t² → t = 2 s; menzil R = v₀·t = 10 × 2 = 20 m. C en çekici yanlış: süreyi doğru bulup menzili yalnız hıza (10 m) eşitlemek. D, 2h ÷ g = 4'ü süre sanıp karekök almayı unutur." },
-      { q: "Aynı yükseklikten aynı anda biri serbest bırakılıyor, diğeri 8 m/s ile yatay atılıyor (hava direnci yok). Hangisi doğrudur?",
-        opts: ["Serbest bırakılan önce yere çarpar.", "Yatay atılan daha önce yere çarpar.", "Yatay atılanın düşey ivmesi daha büyüktür.", "İkisi aynı anda yere çarpar."], a: 3,
+      { q: "One ball is dropped from rest and another is thrown horizontally at 8 m/s from the same height at the same moment (no air resistance). Which statement is correct?",
+        opts: ["The dropped ball hits the ground first.", "The horizontally thrown ball hits the ground first.", "The vertical acceleration of the thrown ball is greater.", "Both balls hit the ground at the same time."], a: 3,
         why: "Düşey hareket yatay hızdan bağımsızdır: ikisi de aynı yükseklikten düşey ilk hızsız, ivme g ile iner; süre aynıdır. A en çekici yanlış: yatay hızı olmayan cismin daha çabuk düşeceğini sanmak." },
-      { q: "45 m yüksekteki bir kayadan bir cisim 40 m/s hızla yatay atılıyor (g = 10 m/s²). Yere çarpma anındaki hızının büyüklüğü kaç m/s'dir?",
-        opts: ["50", "70", "30", "10"], a: 0,
+      { q: "An object is thrown horizontally at 40 m/s from a cliff 45 m high (g = 10 m/s²). What is the magnitude of its velocity just before it hits the ground?",
+        opts: ["50 m/s", "70 m/s", "30 m/s", "10 m/s"], a: 0,
         why: "45 = 5·t² → t = 3 s; vy = 10 × 3 = 30 m/s; vx = 40 m/s. v = √(40² + 30²) = 50 m/s. B yanlış: 40 + 30 = 70 yazmak, çünkü bileşenler dik olduğundan doğrudan toplanmaz." },
-      { q: "Tablo, yatay atılan bir cismin konumunu gösteriyor. Cisim t = 2 s'de yere çarptığına göre ilk hızı ve atıldığı yükseklik nedir? (g = 10 m/s²)",
-        fig: { type: "table", head: ["t (s)", "0", "1", "2"], rows: [["x (m)", "0", "12", "24"], ["Düşen yol (m)", "0", "5", "20"]] },
+      { q: "The table shows the positions of an object thrown horizontally. It hits the ground at t = 2 s. What are its initial speed and the height it was thrown from? (g = 10 m/s²)",
+        fig: { type: "table", head: ["t (s)", "0", "1", "2"], rows: [["x (m)", "0", "12", "24"], ["Distance fallen (m)", "0", "5", "20"]] },
         opts: ["24 m/s; 20 m", "12 m/s; 40 m", "12 m/s; 20 m", "6 m/s; 20 m"], a: 2,
         why: "Her saniyede x 12 m artıyor: v₀ = 12 m/s. 2 s'de düşen yol 20 m olduğundan yükseklik 20 m. A yanlış: 24 m, 2 s sonraki yatay uzaklıktır; hız değil." },
-      { q: "Yatay ve sabit hızla uçan bir helikopterden bir yardım paketi bırakılıyor (hava direnci ihmal). Paket düşerken helikopterin hangi konumunda kalır?",
-        opts: ["Helikopterin hemen arkasında kalır.", "Helikopterin tam altında kalır.", "Helikopterin önüne geçer.", "Önce arkada kalır, sonra altına gelir."], a: 1,
-        why: "Paket bırakıldığı anda helikopterin yatay hızına sahiptir ve yatayda ivmesi yoktur: yatayda helikopterle aynı hızla gider, yani tam altında kalır. A en çekici yanlış: gündelik gözlemlerdeki hava direncini hesaba katmak." }
+      { q: "A rescue plane flies horizontally at 70 m/s and wants to drop supplies to climbers on a ridge 245 m below (g = 10 m/s²). How far in advance (horizontal distance) must the supplies be dropped?",
+        opts: ["245 m", "350 m", "490 m", "980 m"], a: 2,
+        why: "245 = 5·t² → t = 7 s; yatay uzaklık x = 70 × 7 = 490 m. A yanlış: düşey yüksekliği yatay uzaklık sanmak. D yanlış: süreyi 14 s bulmak (karekök yerine ikiyle çarpmak)." }
     ]
   };
 })();

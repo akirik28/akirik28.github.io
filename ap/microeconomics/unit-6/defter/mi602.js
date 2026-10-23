@@ -123,7 +123,7 @@ window.DEFTER = (function () {
               "DWL = ½ × 10 × 20 = 100 TL."
             ],
             sonuc: "Fazla üretilen 10 kutu toplumdan 100 TL'lik net değer götürüyor." },
-          { tip: "tuzak", metin: "Amaç dışsallığı tamamen yok etmek değil, MSB = MSC'yi sağlamaktır.", yanlis: "Kirliliği sıfıra indirmek sosyal optimumdur.", dogru: "Optimumda üretim ==azalır ama sıfır olmaz==: kirliliğin son biriminin zararı, kutunun faydasına eşit olunca durulur." }
+          { tip: "tuzak", metin: "Amaç dışsallığı tamamen yok etmek değil, MSB = MSC'yi sağlamaktır.", yanlis: "Kirliliği sıfıra indirmek sosyal optimumdur.", dogru: "Optimumda üretim ==azalır ama sıfır olmaz==: son kutunun toplumsal maliyeti (üretim maliyeti + kirlilik zararı) faydasına eşit olunca durulur." }
         ]
       },
       {

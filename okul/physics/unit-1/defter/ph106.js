@@ -149,7 +149,23 @@ window.DEFTER = (function () {
               "Uçuş süresi: T = 2 × 2 = 4 s.",
               "Menzil: R = v₀x · T = 15 × 4 = 60 m."
             ],
-            sonuc: "H = 20 m, T = 4 s, R = 60 m. Sınavda böyle yaz: *The maximum height is 20 m and the range is 60 m.*" }
+            sonuc: "H = 20 m, T = 4 s, R = 60 m. Sınavda böyle yaz: *The maximum height is 20 m and the range is 60 m.*" },
+          { tip: "ornek", baslik: "Kamyonun kasasına düşen top",
+            durum: "Aynı serbest vuruşta (T = 4 s, R = 60 m) top, vuruş doğrultusunda ve aynı yönde 10 m/s ile giden bir kamyonun kasasına düşüyor. Vuruş anında kamyon topun kaç metre önündeydi?",
+            adimlar: [
+              "Top 4 s sonra yatayda 60 m gider.",
+              "Kamyon aynı 4 s içinde 10 × 4 = 40 m ilerler.",
+              "Buluşmada konumlar eşit: 60 = (başlangıç uzaklığı) + 40 → uzaklık = 20 m."
+            ],
+            sonuc: "Kamyon 20 m önde olmalı. Hedef hareket ediyorsa topun ve hedefin süresi aynıdır: T uçuş süresidir. Sınavda böyle yaz: *The ball and the truck move for the same time, T = 4 s.*" },
+          { tip: "ornek", baslik: "Kayanın kenarından eğik atış",
+            durum: "25 m yüksekliğindeki kayanın kenarından bir taş, 25 m/s hızla yatayla 53° açıyla yukarı atılıyor (sin53° = 0,8; cos53° = 0,6; g = 10 m/s²). Kaç saniyede yere düşer ve kayanın dibinden ne kadar uzağa düşer?",
+            adimlar: [
+              "Bileşenler: v₀x = 15 m/s ve v₀y = 20 m/s.",
+              "Yere çarpma y = 0: 25 + 20t − 5t² = 0 → t² − 4t − 5 = 0 → (t − 5)(t + 1) = 0 → t = 5 s.",
+              "Yatay: x = v₀x · t = 15 × 5 = 75 m."
+            ],
+            sonuc: "5 s ve 75 m. Atış ile iniş aynı seviyede değilse T = 2·v₀y ÷ g kullanılmaz; y = 0 denklemi çözülür. Sınavda böyle yaz: *The stone lands when its height above the ground is zero.*" }
         ]
       },
       {
@@ -169,23 +185,23 @@ window.DEFTER = (function () {
         ]
       }
     ],
-    sorular: [
-      { q: "Bir cisim yerden 50 m/s hızla, yatayla 53° açıyla atılıyor (sin53° = 0,8; cos53° = 0,6; g = 10 m/s²). Cismin en yüksek noktadaki hızı kaç m/s'dir?",
-        opts: ["0", "30", "40", "50"], a: 1,
+      sorular: [
+      { q: "An object is launched from the ground at 50 m/s at an angle of 53° above the horizontal (sin53° = 0.8, cos53° = 0.6, g = 10 m/s²). What is its speed at the highest point of the trajectory?",
+        opts: ["0", "50 m/s", "30 m/s", "40 m/s"], a: 2,
         why: "Tepede düşey bileşen sıfırdır, yatay bileşen sürer: vx = 50 × 0,6 = 30 m/s. A en çekici yanlış: tepede hızın tamamen sıfır olduğunu sanmak." },
-      { q: "Tablo, eğik atılan bir cismin konumunu gösteriyor (g = 10 m/s²). Cisim en yüksek noktaya hangi anda ulaşır ve o andaki yatay hızı nedir?",
+      { q: "The table shows the positions of a projectile launched at an angle (g = 10 m/s²). At what time does it reach its highest point, and what is its horizontal velocity at that moment?",
         fig: { type: "table", head: ["t (s)", "0", "2", "4", "6", "8"], rows: [["x (m)", "0", "60", "120", "180", "240"], ["y (m)", "0", "60", "80", "60", "0"]] },
         opts: ["2 s; 30 m/s", "4 s; 0", "8 s; 30 m/s", "4 s; 30 m/s"], a: 3,
         why: "y değerleri t = 4 s etrafında simetrik (60, 80, 60): tepe t = 4 s'de, H = 80 m. Yatay hız Δx ÷ Δt = 60 ÷ 2 = 30 m/s ve hiç değişmez. B en çekici yanlış: tepede yatay hızı da sıfır sanmak." },
-      { q: "Aynı v₀ hızıyla biri 30°, diğeri 60° açıyla atılan iki cisim için hangisi doğrudur? (Hava direnci yok, aynı seviyeye dönüyorlar.)",
-        opts: ["Menzilleri aynıdır; 60° ile atılan daha yükseğe çıkar ve havada daha uzun kalır.", "30° ile atılanın menzili daha büyüktür.", "60° ile atılanın menzili daha büyüktür.", "Menzilleri aynıdır; 30° ile atılan daha yükseğe çıkar."], a: 0,
+      { q: "Two objects are launched with the same speed v₀, one at 30° and the other at 60° above the horizontal. Which statement is correct? (No air resistance; both land at the launch level.)",
+        opts: ["Their ranges are equal; the 60° object rises higher and stays in the air longer.", "The 30° object has the greater range.", "The 60° object has the greater range.", "Their ranges are equal; the 30° object rises higher."], a: 0,
         why: "30° ve 60° tümler açılardır (toplamları 90°): menzilleri aynıdır. Daha büyük açıda v₀y büyük olduğundan 60°'deki cisim daha yükseğe çıkar ve daha uzun süre havada kalır. D en çekici yanlış: yükseklik ile açı ilişkisini ters kurmak." },
-      { q: "Bir cisim yerden 25 m/s hızla, yatayla 37° açıyla atılıyor (sin37° = 0,6; cos37° = 0,8; g = 10 m/s²). Uçuş süresi ve menzili nedir?",
-        opts: ["1,5 s; 30 m", "3 s; 60 m", "3 s; 75 m", "6 s; 120 m"], a: 1,
+      { q: "A ball is kicked from the ground at 25 m/s at 37° above the horizontal (sin37° = 0.6, cos37° = 0.8, g = 10 m/s²). What are the time of flight and the range?",
+        opts: ["1.5 s; 30 m", "3 s; 60 m", "3 s; 75 m", "6 s; 120 m"], a: 1,
         why: "v₀x = 20 m/s, v₀y = 15 m/s. T = 2·v₀y ÷ g = 3 s; R = v₀x · T = 20 × 3 = 60 m. C en çekici yanlış: menzili 25 × 3 = 75 yazmak, yani v₀'ı yatay hız sanmak." },
-      { q: "Mert topu belirli bir hızla 30° açıyla atınca menzil R oluyor. Aynı hızla fırlatıp yine R kadar menzil elde etmek için hangi açıyı seçmelidir?",
-        opts: ["45°", "50°", "60°", "75°"], a: 2,
-        why: "Aynı menzili tümler açılar verir: 30° + 60° = 90°. A en çekici yanlış: 45° en büyük menzili verir (R'den büyük), aynı menzili değil." }
+      { q: "A stone is thrown from the edge of a 25 m high cliff at 25 m/s, 53° above the horizontal (sin53° = 0.8, cos53° = 0.6, g = 10 m/s²). How far from the base of the cliff does it land?",
+        opts: ["60 m", "100 m", "75 m", "125 m"], a: 2,
+        why: "v₀x = 15, v₀y = 20 m/s. 25 + 20t − 5t² = 0 → t = 5 s; x = 15 × 5 = 75 m. A yanlış: aynı seviyeye dönüş formülü T = 4 s ile 15 × 4 = 60 m bulmak (kayanın yüksekliğini unutmak)." }
     ]
   };
 })();

@@ -81,6 +81,7 @@ window.DEFTER = {
             ["▱ paralelogram", "*Input / Output*", "Veri al (girdi), sonuç yaz (çıktı)"],
             ["▭ dikdörtgen", "*Process*", "İşlem: r ← a MOD b"],
             ["◇ eşkenar dörtgen", "*Decision*", "Evet / Hayır sorusu; iki çıkışı var"],
+            ["⬡ altıgen", "*Loop*", "Döngü sembolü: sayaçlı tekrar, örneğin i = 1, 10, 1"],
             ["→ ok", "*Flow line*", "Adımların sırasını gösterir"]
           ]
         },
@@ -178,6 +179,36 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Doğal dil algoritması ve iki tür akış şeması",
+      kisa: "Aynı döngü karar sembolüyle ya da döngü sembolüyle çizilebilir.",
+      bloklar: [
+        {
+          tip: "adimlar",
+          baslik: "1'den 10'a kadar tam sayıların toplamı (algoritmik doğal dil)",
+          adimlar: [
+            { baslik: "1. Başla", metin: "Akış başlar." },
+            { baslik: "2. T ← 0 ve i ← 1", metin: "T toplamı tutar, i sıradaki sayıdır." },
+            { baslik: "3. T ← T + i", metin: "Sıradaki sayıyı toplama ekle." },
+            { baslik: "4. i ← i + 1", metin: "Sayacı bir artır." },
+            { baslik: "5. i ≤ 10 mu?", metin: "Evet ise 3. adıma dön; hayır ise devam et." },
+            { baslik: "6. T değerini yaz, bitir", metin: "Çıktı 55." }
+          ]
+        },
+        {
+          tip: "tablo",
+          baslik: "Aynı algoritma, iki akış şeması",
+          head: ["", "Akış şeması 1: karar sembolü", "Akış şeması 2: döngü sembolü"],
+          rows: [
+            ["Başlangıç", "⬭ Başla → ▭ T ← 0, i ← 1", "⬭ Başla → ▭ T ← 0"],
+            ["Tekrar eden iş", "▭ T ← T + i, sonra ▭ i ← i + 1", "⬡ i = 1, 10, 1 ve içinde ▭ T ← T + i"],
+            ["Tekrar kararı", "◇ i ≤ 10 mu? Evet: T ← T + i kutusuna geri dön", "Karar sembolü yok: sayaç 10'u geçince döngü kendiliğinden biter"],
+            ["Çıkış", "Hayır: ▱ T yaz → ⬭ Bitir", "▱ T yaz → ⬭ Bitir"]
+          ],
+          not: "İkisi de aynı sonucu verir: 1 + 2 + … + 10 = 10·11 ÷ 2 = 55. Sınavda böyle yaz: *Draw the flowchart using a decision symbol* ve *Draw the flowchart using a loop symbol.* Atama kaynaklarda ← yerine = ile de yazılabilir."
+        }
+      ]
+    },
+    {
       baslik: "Öklid algoritmasını algoritmaya çevirmek",
       kisa: "Bölme ve değiştirme adımlarını bir WHILE döngüsüyle tekrarlarız.",
       bloklar: [
@@ -196,7 +227,7 @@ window.DEFTER = {
           baslik: "Sözde kod",
           head: ["Satır", "Sözde kod"],
           rows: [["1", "INPUT a, b"], ["2", "WHILE b ≠ 0 DO"], ["3", "↳ r ← a MOD b"], ["4", "↳ a ← b"], ["5", "↳ b ← r"], ["6", "PRINT a"]],
-          not: "Sınavda böyle yaz: *The algorithm outputs the GCD of a and b.*"
+          not: "Sınavda böyle yaz: *The algorithm outputs the GCF of a and b.*"
         },
         {
           tip: "grafik",
@@ -288,7 +319,7 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "Algoritma: girdiden çıktıya giden kesin ve sonlu adımlar dizisi.",
-            "Akış şeması: oval başla/bitir, paralelogram girdi/çıktı, dikdörtgen işlem, eşkenar dörtgen karar.",
+            "Akış şeması: oval başla/bitir, paralelogram girdi/çıktı, dikdörtgen işlem, eşkenar dörtgen karar, altıgen döngü. Aynı döngü karar sembolüyle ya da döngü sembolüyle çizilir.",
             "Sözde kod komutları: INPUT, PRINT, ←, IF…THEN…ELSE, WHILE, FOR, MOD, DIV.",
             "← bir atamadır; MOD kalanı, DIV tam bölümü verir.",
             "Karar yapısı koşula göre iki yoldan birini seçer: parçalı fonksiyonlar, diskriminant kontrolü.",
@@ -302,52 +333,52 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Sözde kodu verilen algoritma önce x = 2 ile, sonra x = 4 ile çalıştırılıyor. İki çıktının toplamı kaçtır?",
+      q: "The algorithm in the table is run first with x = 2 and then with x = 4. What is the sum of the two outputs?",
       fig: {
         type: "table",
-        head: ["Satır", "Sözde kod"],
+        head: ["Line", "Pseudocode"],
         rows: [["1", "INPUT x"], ["2", "IF x ≥ 3 THEN y ← 2x − 1"], ["3", "ELSE y ← x²"], ["4", "PRINT y"]],
-        caption: "Algoritma"
+        caption: "Algorithm"
       },
       opts: ["10", "11", "19", "20"],
       a: 1,
       why: "x = 2: 2 ≥ 3 yanlış, y = 2² = 4. x = 4: 4 ≥ 3 doğru, y = 2·4 − 1 = 7. Toplam 11. A, iki girdiye de ilk kolu uygular (3 + 7); C, kolları ters uygular (3 + 16)."
     },
     {
-      q: "Aşağıdaki algoritma n = 36 ile çalıştırılırsa çıktı kaçtır?",
+      q: "What is the output of the algorithm in the table when it is run with n = 36?",
       fig: {
         type: "table",
-        head: ["Satır", "Sözde kod"],
+        head: ["Line", "Pseudocode"],
         rows: [["1", "INPUT n"], ["2", "k ← 0"], ["3", "FOR d FROM 1 TO n DO"], ["4", "↳ IF n MOD d = 0 THEN k ← k + 1"], ["5", "PRINT k"]],
-        caption: "Algoritma"
+        caption: "Algorithm"
       },
       opts: ["6", "8", "9", "12"],
       a: 2,
       why: "k, 36'nın pozitif bölenlerini sayar: 36 = 2²·3² ⇒ (2 + 1)(2 + 1) = 9 (1, 2, 3, 4, 6, 9, 12, 18, 36). B, bölenlerden birini kaçırmaktan çıkar."
     },
     {
-      q: "Aşağıdaki algoritma a = 126 ve b = 84 girdileriyle çalıştırılırsa çıktı kaçtır?",
+      q: "What is the output of the algorithm in the table when it is run with a = 126 and b = 84?",
       fig: {
         type: "table",
-        head: ["Satır", "Sözde kod"],
+        head: ["Line", "Pseudocode"],
         rows: [["1", "INPUT a, b"], ["2", "WHILE b ≠ 0 DO"], ["3", "↳ r ← a MOD b"], ["4", "↳ a ← b"], ["5", "↳ b ← r"], ["6", "PRINT a"]],
-        caption: "Algoritma"
+        caption: "Algorithm"
       },
       opts: ["84", "21", "6", "42"],
       a: 3,
       why: "126 MOD 84 = 42 ⇒ a = 84, b = 42. 84 MOD 42 = 0 ⇒ a = 42, b = 0. b = 0 olunca PRINT 42 (EBOB(126, 84) = 42). A, ilk turdan sonraki a değerini çıktı sanmaktır."
     },
     {
-      q: "INPUT n; s ← 0; WHILE n > 0 DO (s ← s + n MOD 10; n ← n DIV 10); PRINT s algoritması n = 358 ile çalıştırılırsa çıktı kaçtır?",
+      q: "The algorithm INPUT n; s ← 0; WHILE n > 0 DO (s ← s + n MOD 10; n ← n DIV 10); PRINT s is run with n = 358. What does it print?",
       opts: ["16", "8", "35", "3"],
       a: 0,
       why: "358: s = 8, n = 35; sonra s = 8 + 5 = 13, n = 3; sonra s = 13 + 3 = 16, n = 0. Çıktı 16 (rakamlar toplamı). B yalnızca ilk turdan sonraki s'dir, C ise ilk turdan sonraki n."
     },
     {
-      q: "Öklid algoritmasının akış şemasında \"b = 0 mı?\" sorusu hangi şekille gösterilir ve bu şeklin kaç çıkışı vardır?",
-      opts: ["Dikdörtgen; bir çıkış", "Paralelogram; iki çıkış", "Eşkenar dörtgen; iki çıkış (Evet ve Hayır)", "Oval; hiç çıkış yok"],
+      q: "Flowchart 1 builds the loop \"for i = 1 to 10\" with a decision symbol. Which symbol builds the same loop in Flowchart 2?",
+      opts: ["Oval (terminator)", "Parallelogram (input/output)", "Loop symbol (hexagon)", "Rectangle (process)"],
       a: 2,
-      why: "Karar (*decision*) kutusu eşkenar dörtgendir ve Evet ile Hayır olmak üzere iki çıkışı vardır. Dikdörtgen işlem, paralelogram girdi ve çıktı, oval başla ve bitir içindir."
+      why: "Döngü sembolü (altıgen) sayaçlı tekrarı tek kutuda gösterir: i = 1, 10, 1. Oval başla ve bitir, paralelogram girdi ve çıktı, dikdörtgen tek bir işlem içindir."
     }
   ]
 };

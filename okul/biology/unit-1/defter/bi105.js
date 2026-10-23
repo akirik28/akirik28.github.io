@@ -1,35 +1,37 @@
 /* Kitora not defteri · bi105 · 1.5 Kemosentez
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Biology, Tema 1) + MEB Maarif BİY.10 standart içeriği. Blok türleri: /ap/_kit/defter.js başı.
+   Kaynak: öğretmen lecture'ı (1.4 Chemosynthesis) + defter-araclari/kaynak/okul-10-2025-26.md + MEB Maarif BİY.10. Blok türleri: /ap/_kit/defter.js başı.
    Grafik şematiktir: eğrilerin biçimi doğrudur, sayılar göreli birimdir. */
 window.DEFTER = {
   slug: "bi105",
-  amac: "Bu konu ışığın hiç olmadığı yerlerde besin yapan canlıları anlatıyor: *chemosynthesis*. Enerjiyi inorganik maddelerden (H₂S, H₂, NH₃, Fe²⁺) nasıl aldıklarını ve fotosentezle benzerlik ile farklarını öğreneceksin.",
+  amac: "Bu konu ışığın hiç olmadığı yerlerde besin yapan canlıları anlatıyor: *chemosynthesis*. Enerjiyi inorganik maddelerden (H₂S, H₂, NH₄⁺, Fe²⁺…) nasıl aldıklarını ve fotosentezle benzerlik ile farklarını öğreneceksin.",
   bolumler: [
     {
       baslik: "Kemosentez nedir?",
       kisa: "Kemosentezde enerji, inorganik maddelerin oksidasyonundan; karbon CO₂'den gelir.",
       bloklar: [
         { tip: "adimlar", baslik: "Kemosentezin yolu", adimlar: [
-            { baslik: "Yükseltgenme", metin: "Bakteri, inorganik bir maddeyi (H₂S, NH₃, Fe²⁺, H₂) yükseltger; bu tepkime enerji açığa çıkarır." },
+            { baslik: "Yükseltgenme", metin: "Bakteri, inorganik bir maddeyi (H₂S, NH₄⁺, NO₂⁻, Fe²⁺, H₂, CH₄) yükseltger; bu tepkime enerji açığa çıkarır." },
             { baslik: "ATP", metin: "Açığa çıkan enerjinin bir kısmı ATP ve NADH gibi taşıyıcılarda depolanır." },
             { baslik: "CO₂ bağlanır", metin: "ATP ve indirgeyici güçle CO₂ organik maddeye çevrilir (fotosentezdeki gibi Calvin döngüsü)." },
             { baslik: "Besin", metin: "Bakteri kendi organik maddesini yapmış olur: ototroftur." }
           ] },
         { tip: "tuzak", metin: "İnorganik madde bu bakteriler için besin değil, enerji kaynağıdır. Organik molekülün karbonu CO₂'den gelir.", yanlis: "Kemosentez yapan bakteriler inorganik maddeyi yiyerek beslenir, bu yüzden heterotroftur.", dogru: "İnorganik madde yalnızca enerji sağlar; organik madde CO₂'den sentezlenir. Kemosentez yapanlar kemoototroftur." },
-        { tip: "not", metin: "Sınavda böyle yaz: *Chemosynthesis is the production of organic molecules from carbon dioxide using the energy released by the oxidation of inorganic substances.*" }
+        { tip: "not", metin: "Kemosentez yapanlar (*chemoautotrophs*) bulundukları ekosistemin üreticisi ve enerji akışının başlangıcıdır. Klorofil taşımaz, ışık kullanmaz; besin üretimi gece ya da gündüz fark etmez. Sınavda böyle yaz: *Chemosynthesis is the production of organic molecules from carbon dioxide using the energy released by the oxidation of inorganic substances.*" }
       ]
     },
     {
       baslik: "Kemosentetik bakteri grupları",
-      kisa: "Her grup başka bir inorganik maddeyi yükseltger: NH₃, H₂S, H₂ ya da Fe²⁺.",
+      kisa: "Her grup başka bir inorganik maddeyi yükseltger: NH₄⁺, H₂S, H₂ ya da Fe²⁺.",
       bloklar: [
-        { tip: "tablo", head: ["Grup", "Yükseltgenen madde", "Ürün", "Örnek"], rows: [
-            ["Nitrifikasyon (1. basamak)", "NH₃ (amonyak)", "NO₂⁻ (nitrit)", "*Nitrosomonas*"],
-            ["Nitrifikasyon (2. basamak)", "NO₂⁻ (nitrit)", "NO₃⁻ (nitrat)", "*Nitrobacter*"],
-            ["Demir bakterileri", "Fe²⁺", "Fe³⁺", "*Gallionella*"]
-          ], not: "Sınavda böyle yaz: *Nitrifying bacteria oxidize ammonia to nitrite and nitrite to nitrate, and the nitrate can be used by plants.*" },
+        { tip: "tablo", baslik: "Enerji veren yükseltgenme tepkimeleri", head: ["Bakteri", "Tepkime", "Enerji"], rows: [
+            ["Kükürt bakterileri (1)", "2H₂S + O₂ → 2H₂O + 2S", "122 kcal"],
+            ["Kükürt bakterileri (2)", "2S + 3O₂ + 2H₂O → 2H₂SO₄", "286 kcal"],
+            ["Demir bakterileri", "4FeCO₃ + 6H₂O + O₂ → 4Fe(OH)₃ + 4CO₂", "58 kcal"],
+            ["Nitrifikasyon (1): *Nitrosomonas*", "2NH₄⁺ + 3O₂ → 2NO₂⁻ + 4H⁺ + 2H₂O", "enerji açığa çıkar"],
+            ["Nitrifikasyon (2): *Nitrobacter*", "2NO₂⁻ + O₂ → 2NO₃⁻", "enerji açığa çıkar"]
+          ], not: "Sınavda böyle yaz: *Nitrifying bacteria oxidize ammonium to nitrite and nitrite to nitrate, and the nitrate can be used by plants.* Bitkiler azotu NH₄⁺ ve NO₃⁻ olarak alır; lecture'da ikinci bakteri *Nitrobacterium* yazılmıştır." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "🥚", terim: "Sulfur bacteria", tr: "kükürt bakterileri", tanim: "H₂S'yi önce kükürde (S), sonra sülfata (SO₄²⁻) yükseltger ve enerji kazanır. Derin deniz bacalarında ve çürük yumurta kokulu kaynaklarda yaşar.", ornek: "*Beggiatoa*, *Thiobacillus*." },
+            { ikon: "🥚", terim: "Sulfur bacteria", tr: "kükürt bakterileri", tanim: "H₂S'yi önce kükürde (S), sonra sülfürik aside (H₂SO₄) yükseltger ve enerji kazanır. Derin deniz bacalarında yaşar.", ornek: "Tüp solucanlarının dokusundaki bakteriler." },
             { ikon: "🎈", terim: "Hydrogen bacteria", tr: "hidrojen bakterileri", tanim: "H₂'yi oksijenle yükseltger ve su oluşturur; açığa çıkan enerjiyle CO₂'den organik madde yapar.", ornek: "Volkanik gaz çıkışlarının yakınındaki bakteriler." }
           ] }
       ]
@@ -61,10 +63,11 @@ window.DEFTER = {
         { tip: "tablo", head: ["", "*Photosynthesis*", "*Chemosynthesis*"], rows: [
             ["Enerji kaynağı", "Işık", "İnorganik maddelerin oksidasyonu"],
             ["Pigment (klorofil)", "Gerekir", "Gerekmez"],
-            ["Elektron kaynağı", "H₂O", "H₂S, H₂, NH₃, Fe²⁺ gibi maddeler"],
-            ["O₂ çıkışı", "Var (sudan)", "Genellikle yok"],
-            ["Canlılar", "Bitki, alg, siyanobakteri", "Yalnız bazı bakteriler (ve arkeler)"],
-            ["Ortak", "CO₂'den organik madde yapar, ototroftur", "CO₂'den organik madde yapar, ototroftur"]
+            ["Elektron kaynağı", "H₂O (ya da H₂, H₂S)", "H₂S, H₂, NH₄⁺, Fe²⁺ gibi maddeler"],
+            ["O₂", "Üretilir (H₂S kullananlarda S çıkar)", "Kullanılır (yükseltgenmede)"],
+            ["Zaman", "Yalnızca gündüz", "Gece ve gündüz"],
+            ["Canlılar", "Bitki, alg, siyanobakteri, *Euglena*, diatom", "Yalnız bazı bakteriler: nitrit, nitrat, demir, kükürt, hidrojen bakterileri ve arkeler"],
+            ["Ortak", "CO₂'den organik madde yapar; elektron taşıma zinciri (ETC) vardır", "CO₂'den organik madde yapar; elektron taşıma zinciri (ETC) vardır"]
           ], vurgu: 0, not: "Sınavda böyle yaz: *Both processes produce organic molecules from carbon dioxide, but photosynthesis uses light energy whereas chemosynthesis uses chemical energy.*" },
         { tip: "ikili", sol: { ikon: "☀️", baslik: "*Photosynthesis*", maddeler: ["Işık gerekir", "Klorofil gerekir", "O₂ açığa çıkar"] },
           sag: { ikon: "🌋", baslik: "*Chemosynthesis*", maddeler: ["Işık gerekmez", "Klorofil gerekmez", "İnorganik madde yükseltgenir"] },
@@ -95,30 +98,30 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "Kemosentez: inorganik maddelerin oksidasyonundan enerji alıp CO₂'den organik madde yapmak; ışık ve klorofil gerekmez.",
             "İnorganik madde enerji kaynağıdır, besin değil; kemosentez yapanlar kemoototroftur.",
-            "Nitrifikasyon: NH₃ → NO₂⁻ (*Nitrosomonas*), NO₂⁻ → NO₃⁻ (*Nitrobacter*).",
-            "Kükürt bakterileri H₂S'yi, hidrojen bakterileri H₂'yi, demir bakterileri Fe²⁺'yı yükseltger.",
+            "Nitrifikasyon: NH₄⁺ → NO₂⁻ (*Nitrosomonas*), NO₂⁻ → NO₃⁻ (*Nitrobacter*).",
+            "Kükürt bakterileri H₂S'yi (122 kcal), hidrojen bakterileri H₂'yi, demir bakterileri Fe²⁺'yı yükseltger.",
             "Derin deniz bacalarında besin zincirinin tabanı kemosentetik bakterilerdir.",
-            "Ortak: ikisi de CO₂'den organik madde yapar. Fark: enerji kaynağı (ışık / kimyasal), elektron kaynağı (H₂O / H₂S, H₂, NH₃…), klorofil, O₂ çıkışı."
+            "Ortak: ikisi de CO₂'den organik madde yapar. Fark: enerji kaynağı (ışık / kimyasal), klorofil, O₂ (üretilir / kullanılır), zaman (gündüz / gece-gündüz)."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Kemosentez yapan bir bakteri için enerji kaynağı hangisidir?",
-      opts: ["İnorganik bir maddenin oksidasyonu", "Güneş ışığı", "Hazır organik molekül", "Klorofil"], a: 0,
-      why: "Kemosentezde enerji, H₂S, NH₃, Fe²⁺ ya da H₂ gibi maddelerin yükseltgenmesinden gelir. Klorofil ve ışık fotosenteze özgüdür; B şıkkı en çekici yanlıştır." },
-    { q: "Aşağıdaki tabloda iki sürecin bazı özellikleri verilmiştir. Hangi özellik hem fotosentez hem kemosentez için doğrudur?",
-      fig: { type: "table", head: ["Özellik", "Fotosentez", "Kemosentez"], rows: [["Enerji kaynağı", "Işık", "Kimyasal"], ["Elektron kaynağı", "H₂O", "H₂S, H₂, NH₃…"], ["Ürün", "Organik madde", "Organik madde"]] },
-      opts: ["Işık gerekir.", "O₂ mutlaka açığa çıkar.", "CO₂'den organik madde yapılır.", "Klorofil gerekir."], a: 2,
+    { q: "What is the energy source of a bacterium that carries out chemosynthesis?",
+      opts: ["Oxidation of an inorganic substance", "Sunlight", "Ready-made organic molecules", "Chlorophyll"], a: 0,
+      why: "Kemosentezde enerji, H₂S, NH₄⁺, Fe²⁺ ya da H₂ gibi maddelerin yükseltgenmesinden gelir. Klorofil ve ışık fotosenteze özgüdür; B şıkkı en çekici yanlıştır." },
+    { q: "The table gives some features of two processes. Which feature is true for both photosynthesis and chemosynthesis?",
+      fig: { type: "table", head: ["Feature", "Photosynthesis", "Chemosynthesis"], rows: [["Energy source", "Light", "Chemical"], ["Electron source", "H₂O", "H₂S, H₂, NH₄⁺…"], ["Product", "Organic molecules", "Organic molecules"]] },
+      opts: ["Light is required.", "O₂ is always released.", "Organic molecules are made from CO₂.", "Chlorophyll is required."], a: 2,
       why: "İkisi de ototrof süreçtir ve CO₂'den organik madde yapar. Işık ve klorofil yalnız fotosentezde gereklidir; D şıkkı bu yüzden yanlış." },
-    { q: "Okyanus tabanında hiç ışık almayan bir bacanın çevresinde hem H₂S hem de oksijen bulunuyor ve çok sayıda tüp solucanı yaşıyor. Bu besin zincirinin tabanında hangi canlılar olması beklenir?",
-      opts: ["Fotosentez yapan algler", "Ayrıştırıcı mantarlar", "Parazit solucanlar", "H₂S'yi yükseltgeyen kemoototrof bakteriler"], a: 3,
+    { q: "Around a hydrothermal vent on the ocean floor that receives no light, both H₂S and oxygen are present and many tubeworms live there. Which organisms are expected at the base of this food chain?",
+      opts: ["Photosynthetic algae", "Decomposer fungi", "Parasitic worms", "Chemoautotrophic bacteria that oxidize H₂S"], a: 3,
       why: "Işık olmadığından üreticiler fotosentez yapamaz; H₂S yükseltgeyen kemoototroflar organik madde üretir ve solucanlarla birlikte yaşar. A şıkkı yanlış çünkü ışık yok." },
-    { q: "Toprakta *Nitrobacter* bakterileri hangi dönüşümü yaparak enerji kazanır?",
-      opts: ["NH₃ → NO₂⁻", "NO₂⁻ → NO₃⁻", "H₂S → S", "Fe²⁺ → Fe³⁺"], a: 1,
+    { q: "Which conversion is carried out by *Nitrobacter* in the soil to gain energy?",
+      opts: ["NH₄⁺ → NO₂⁻", "NO₂⁻ → NO₃⁻", "H₂S → S", "Fe²⁺ → Fe³⁺"], a: 1,
       why: "*Nitrobacter* nitriti (NO₂⁻) nitrata (NO₃⁻) yükseltger. A şıkkı nitrifikasyonun birinci basamağıdır (*Nitrosomonas*)." },
-    { q: "Hidrojen bakterileri H₂'yi oksijenle yükseltgeyerek su oluşturuyor ve bu enerjiyle CO₂'den şeker yapıyor. H₂ burada ne işe yarar?",
-      opts: ["Karbon kaynağıdır.", "Işık yerine geçer.", "Enerji (ve elektron) kaynağıdır.", "Klorofil yerine geçer."], a: 2,
+    { q: "Hydrogen bacteria oxidize H₂ with oxygen to form water and use this energy to make sugar from CO₂. What is the role of H₂ here?",
+      opts: ["It is the carbon source.", "It replaces light.", "It is the energy (and electron) source.", "It replaces chlorophyll."], a: 2,
       why: "H₂ yükseltgenirken enerji verir; karbon ise CO₂'den gelir. A şıkkı çekici ama şekerin karbonu H₂'den değil CO₂'den alınır." }
   ]
 };

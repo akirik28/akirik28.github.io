@@ -2,7 +2,7 @@
    Kaynak: okul-10-2025-26.md (Precalculus Unit 5) + MEB 10. sınıf programı. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc501",
-  amac: "Bu konu *exponential function* yani üstel fonksiyonu anlatıyor: f(x) = a·b^x. Büyüme ile azalmayı, grafiğin asimptotunu, yüzde ve yarı ömür modellerini, e sayısını ve tabanları eşitleyerek denklem çözmeyi öğreneceksin.",
+  amac: "Bu konu *exponential function* yani üstel fonksiyonu anlatıyor: f(x) = b^x ve A(t) = A₀·b^t modelleri. Büyüme ile azalmayı, grafiğin asimptotunu, yüzde ve yarı ömür modellerini, e sayısını ve tabanları eşitleyerek denklem çözmeyi öğreneceksin.",
   bolumler: [
     {
       baslik: "*Exponential function*: değişken üstte",
@@ -10,13 +10,12 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [
             { t: "f(x)" }, "=",
-            { t: "a", alt: "başlangıç değeri" }, "·",
             { t: "b^x", alt: "b > 0 ve b ≠ 1" }
-          ], aciklama: "x² bir güç fonksiyonudur (taban değişken); 2^x ise üstel fonksiyondur (üs değişken). Sınavda böyle yaz: *Write the function in the form f(x) = a·b^x.*" },
+          ], aciklama: "x² bir güç fonksiyonudur (taban değişken); 2^x ise üstel fonksiyondur (üs değişken). Model biçimi A(t) = A₀·b^t (A₀ ≠ 0): A(t) t anındaki miktar, A₀ başlangıç miktarı, b büyüme ya da azalma çarpanıdır. Sınavda böyle yaz: *Write the function in the form A(t) = A₀·b^t.*" },
         { tip: "kavramlar", kartlar: [
             { ikon: "✖️", terim: "Growth factor", tr: "büyüme çarpanı (b)", tanim: "x bir artınca değer b ile çarpılır. b > 1 ise artar, 0 < b < 1 ise azalır.", ornek: "f(x) = 3^x: her adımda değer 3 katına çıkar." },
-            { ikon: "🏁", terim: "Initial value", tr: "başlangıç değeri (a)", tanim: "x = 0 iken f(0) = a olur; grafik y eksenini (0, a) noktasında keser.", ornek: "f(x) = 5·2^x için y-kesişimi (0, 5)." },
-            { ikon: "〰️", terim: "Horizontal asymptote", tr: "yatay asimptot", tanim: "Eğrinin sonsuza giderken yaklaştığı ama asla kesmediği yatay doğru. a·b^x için y = 0'dır.", ornek: "2^x, x çok küçülünce 0'a yaklaşır ama 0 olmaz." }
+            { ikon: "🏁", terim: "Initial value", tr: "başlangıç değeri (A₀)", tanim: "t = 0 iken A(0) = A₀ olur; grafik y eksenini (0, A₀) noktasında keser.", ornek: "A(t) = 5·2^t için y-kesişimi (0, 5)." },
+            { ikon: "〰️", terim: "Horizontal asymptote", tr: "yatay asimptot", tanim: "Eğrinin sonsuza giderken yaklaştığı ama asla kesmediği yatay doğru. A₀·b^t için y = 0'dır.", ornek: "2^x, x çok küçülünce 0'a yaklaşır ama 0 olmaz." }
           ] },
         { tip: "tablo", baslik: "f(x) = 2^x fonksiyonunun özellikleri", head: ["Özellik", "Değer", "Sınavda böyle yaz"], rows: [
             ["Tanım kümesi (*domain*)", "bütün reel sayılar", "*The domain is all real numbers.*"],
@@ -128,7 +127,7 @@ window.DEFTER = {
             { t: "A(t)" }, "=",
             { t: "A₀", alt: "başlangıç miktarı" }, "·",
             { t: "(1/2)^(t/h)", alt: "t/h = geçen yarı ömür sayısı" }
-          ], aciklama: "h yarı ömürdür (*half-life*): miktarın yarıya indiği süre. A(t) = 1000·(1/2)^(t/4) için h = 4 yıldır." },
+          ], aciklama: "h yarı ömürdür (*half-life*): miktarın yarıya indiği süre. A(t) = 1000·(1/2)^(t/4) için h = 4 yıldır. Genel olarak her h sürede b katına çıkan miktar A(t) = A₀·b^(t/h) ile yazılır: 25 yılda 3 katına çıkan, başta 100 000 kişilik nüfus için P(t) = 100 000·3^(t/25)." },
         { tip: "grafik", baslik: "A(t) = 1000·(1/2)^(t/4)", xlabel: "t (yıl)", ylabel: "A (gram)", xmax: 16, ymax: 10,
           xticks: [{ v: 4, label: "4" }, { v: 8, label: "8" }, { v: 12, label: "12" }, { v: 16, label: "16" }],
           yticks: [{ v: 10, label: "1000" }, { v: 5, label: "500" }, { v: 2.5, label: "250" }, { v: 1.25, label: "125" }],
@@ -163,7 +162,7 @@ window.DEFTER = {
             { t: "A(t)" }, "=",
             { t: "P", alt: "başlangıç" }, "·",
             { t: "e^(rt)", alt: "r > 0 büyüme · r < 0 azalma" }
-          ], aciklama: "e sabit bir sayıdır, değişken değildir. e^0 = 1 ve e^x grafiği 2^x'e benzer: (0, 1)'den geçer, y = 0 asimptotu vardır, her zaman artandır." },
+          ], aciklama: "e sabit bir sayıdır, değişken değildir. e^0 = 1 ve e^x grafiği 2^x'e benzer: (0, 1)'den geçer, y = 0 asimptotu vardır, her zaman artandır. Sürekli modeli A(t) = P·b^t biçimine çevirmek için b = e^r alınır; örnek: C(t) = 150·e^(−0,053t) için b = e^(−0,053) ≈ 0,9484." },
         { tip: "ornek", baslik: "Sürekli faiz", durum: "2000 TL, yıllık %5 sürekli bileşik faizle yatırılıyor: A(t) = 2000·e^(0,05t). Başlangıç değeri nedir? 20 yıl sonra ne olur?",
           adimlar: ["t = 0: A(0) = 2000·e^0 = 2000·1 = 2000 TL.", "t = 20: üs = 0,05·20 = 1.", "A(20) = 2000·e^1 = 2000e.", "e ≈ 2,718 alınırsa A(20) ≈ 2000·2,718 = 5436 TL.", "Üs eksi olsaydı (e^(−0,05t)) model azalma anlatırdı."],
           sonuc: "A(20) ≈ 5436 TL. **Sınavda böyle yaz:** *The initial amount is 2000 TL and the continuous growth rate is 5% per year.*" }
@@ -192,12 +191,12 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "*Exponential function*: f(x) = a·b^x, b > 0 ve b ≠ 1. Tanım kümesi tüm reel sayılar, a > 0 iken değer kümesi y > 0.",
-            "b > 1 büyüme, 0 < b < 1 azalma. Grafik (0, a)'dan geçer ve y = 0 asimptotuna yaklaşır.",
+            "*Exponential function*: f(x) = b^x, b > 0 ve b ≠ 1 (model: A(t) = A₀·b^t). Tanım kümesi tüm reel sayılar, değer kümesi y > 0.",
+            "b > 1 büyüme, 0 < b < 1 azalma. Grafik (0, A₀)'dan geçer ve y = 0 asimptotuna yaklaşır.",
             "a·b^(x−h) + k: h kadar sağa, k kadar yukarı kayar; asimptot y = k olur.",
             "%r artış için b = 1 + r, %r azalış için b = 1 − r. Örnek: V(t) = 4000·0,85^t, her yıl %15 azalma.",
             "Yarı ömür: A(t) = A₀·(1/2)^(t/h). n yarı ömür sonra A₀·(1/2)^n kalır.",
-            "e ≈ 2,718. Sürekli model A(t) = P·e^(rt); r > 0 büyüme, r < 0 azalma.",
+            "e ≈ 2,718. Sürekli model A(t) = P·e^(rt); r > 0 büyüme, r < 0 azalma; b = e^r ile A(t) = P·b^t'ye çevrilir.",
             "Üslü denklemde tabanları eşitle, sonra üsleri eşitle: a^m = a^n ise m = n.",
             "(1/2)^x = 2^(−x) ve (1/2)^(−x) = 2^x: kesirli tabanda işaret hatası yapma."
           ] }
@@ -205,21 +204,21 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Hangisi bir *exponential decay* (üstel azalma) modelidir?",
-      opts: ["f(x) = 2·(3/2)^x", "f(x) = 3·(0,9)^(−x)", "f(x) = 5·(1/4)^x", "f(x) = 6·(1,1)^x"],
+    { q: "Which of the following is an exponential decay model?",
+      opts: ["f(x) = 2·(3/2)^x", "f(x) = 3·(0.9)^(−x)", "f(x) = 5·(1/4)^x", "f(x) = 6·(1.1)^x"],
       a: 2, why: "Azalma için taban 0 ile 1 arasında olmalı: (1/4)^x. En çekici yanlış B'dir: (0,9)^(−x) = (10/9)^x olduğundan efektif taban 1'den büyüktür ve model büyümedir." },
-    { q: "Bir scooter 6000 TL'ye alınıyor ve her yıl değerinin %20'sini kaybediyor. 2 yıl sonra değeri kaç TL olur?",
-      opts: ["3840", "3600", "4800", "240"],
+    { q: "A scooter is bought for 6000 TL and loses 20% of its value every year. What is its value after 2 years?",
+      opts: ["3840 TL", "3600 TL", "4800 TL", "240 TL"],
       a: 0, why: "Azalma çarpanı b = 1 − 0,20 = 0,8. V(2) = 6000·0,8² = 6000·0,64 = 3840. B'deki 3600, %20'yi iki kez düz çıkarmaktan (%40) gelir; üstel azalma bileşik çalışır." },
-    { q: "Tablo bir ilaçtan kalan miktarı gösteriyor ve yarı ömür modeline uyuyor. 20. günde kaç mg kalır?",
-      fig: { type: "table", head: ["Gün", "Kalan miktar (mg)"], rows: [["0", "640"], ["5", "320"], ["10", "160"]], caption: "İlaç miktarı" },
+    { q: "The table shows the amount of a drug remaining in the body and follows a half-life model. How many mg remain on day 20?",
+      fig: { type: "table", head: ["Day", "Amount remaining (mg)"], rows: [["0", "640"], ["5", "320"], ["10", "160"]], caption: "Amount of drug" },
       opts: ["80", "20", "0", "40"],
       a: 3, why: "640 → 320 → 160: miktar 5 günde yarıya iniyor, yarı ömür h = 5. 20 gün = 4 yarı ömür, 640·(1/2)^4 = 640 ÷ 16 = 40 mg. A'daki 80, yalnızca 3 yarı ömür sonrasıdır." },
-    { q: "(1/4)^x = 8 denkleminin çözümü nedir?",
+    { q: "What is the solution of the equation (1/4)^x = 8?",
       opts: ["3/2", "−3/2", "2/3", "−2/3"],
       a: 1, why: "(1/4)^x = 2^(−2x) ve 8 = 2^3 olduğundan −2x = 3, x = −3/2. A, tabanın kesir olmasından doğan eksi işaretini unutan öğrencinin cevabıdır." },
-    { q: "f(x) = 2^(x+1) − 3 fonksiyonunun yatay asimptotu ve değer kümesi hangisidir?",
-      opts: ["y = 3 ; y > 3", "y = −3 ; y > −3", "y = −1 ; y > −1", "x = −1 ; bütün reel sayılar"],
+    { q: "What are the horizontal asymptote and the range of f(x) = 2^(x+1) − 3?",
+      opts: ["y = 3 ; y > 3", "y = −3 ; y > −3", "y = −1 ; y > −1", "x = −1 ; all real numbers"],
       a: 1, why: "x + 1 grafiği yalnızca sola kaydırır, asimptotu değiştirmez. −3 ise grafiği 3 birim aşağı taşır: asimptot y = −3, değer kümesi y > −3. C, sola kaymayı asimptota karıştırır." }
   ]
 };

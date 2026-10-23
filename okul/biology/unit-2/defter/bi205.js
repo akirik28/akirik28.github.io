@@ -1,5 +1,5 @@
 /* Kitora not defteri · bi205 · 2.5 Hava Kirliliği ve Asit Yağmuru
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: Air pollution, Ozone depletion, Acid rain) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi205",
   amac: "Havayı kirleten başlıca maddeleri, iki tür smogu, asit yağmurunun kimyasını ve etkilerini, ozon tabakasının neden incelip nasıl toparlandığını öğreneceksin. pH hesabı ve grafik yorumlama da var.",
@@ -26,7 +26,7 @@ window.DEFTER = {
             { metin: "Havadaki SO₂'nin yükseltgenip H₂SO₄ olması.", cevap: "sag", neden: "Yeni bir madde oluştu: *secondary*." },
             { metin: "Kömür sobasının dumanındaki kurum parçacıkları.", cevap: "sol", neden: "Doğrudan yanmadan çıkar: *primary*." }
           ] },
-        { tip: "not", metin: "Kış aylarında kalitesiz kömürle ısınma, kentlerde SO₂ ve PM10'u yükselten önemli bir kaynaktır. Kapalı ortamda da risk vardır: bacası tıkalı soba ya da şofben, ==kokusuz== bir gaz olan CO zehirlenmesine yol açar." },
+        { tip: "not", metin: "Hava kirliliği, havanın bileşiminin değişmesi ya da orada bulunmaması gereken maddelerin karışmasıdır. Kaynağına göre doğal (yanardağ, orman yangını, çöl tozu) ve yapay (fosil yakıt, fabrika bacası, egzoz) olarak ayrılır. Solunan kirleticiler kronik bronşit, nefes darlığı ve üst solunum yolu enfeksiyonu yapar; toprağa, bitkiye, içme suyuna ve besin zincirine de geçer. Havanın bileşimi yaklaşık %78 N₂ ve %21 O₂ (ek bilgi)." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Carbon monoxide binds to hemoglobin and reduces the oxygen-carrying capacity of the blood.*", metin: "CO etkisi." },
             { ikon: "✍️", baslik: "*Primary pollutants are released directly, whereas secondary pollutants form in the atmosphere.*", metin: "Birincil ve ikincil ayrımı." }
@@ -34,7 +34,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "İki tür smog ve termal inversiyon",
+      baslik: "İki tür smog ve termal inversiyon (ek bilgi)",
       kisa: "Klasik smog soğukta kömür dumanından, fotokimyasal smog güneşte egzozdan oluşur.",
       bloklar: [
         { tip: "ikili", sol: { ikon: "🌫️", baslik: "*Classic smog*", maddeler: ["Soğuk, nemli kış havası", "Kömür ve fuel-oil: SO₂ + is + sis", "Örnek: Londra, 1952"] },
@@ -78,17 +78,17 @@ window.DEFTER = {
             { baslik: "Salınım", metin: "Kömür ve fuel-oil yakan santral ve sanayiden ==SO₂==, araç motorlarından ve santrallerden ==NO / NO₂== havaya karışır." },
             { baslik: "Havada yükseltgenme", metin: "2SO₂ + O₂ → 2SO₃. NO da yükseltgenip NO₂ olur." },
             { baslik: "Suyla tepkime", metin: "SO₃ + H₂O → H₂SO₄ (sülfürik asit). 3NO₂ + H₂O → 2HNO₃ + NO (nitrik asit)." },
-            { baslik: "Çökelme", metin: "Asitler yağmur, kar, sis olarak (*wet deposition*) ya da asidik toz olarak (*dry deposition*) yere iner." },
+            { baslik: "Çökelme", metin: "Asitler yağmur, kar, sis olarak (*wet deposition*) ya da asidik gaz ve parçacık olarak (*dry deposition*) göl, nehir, deniz, orman, yerleşim ve tarım alanlarına iner." },
             { baslik: "Taşınma", metin: "Rüzgâr kirleticiyi yüzlerce kilometre taşır; asit yağmuru kaynağından uzak bir ülkede de görülebilir." }
           ] },
-        { tip: "ornek", baslik: "pH 1 birim farkı kaç kat?", durum: "Temiz yağmurun pH'ı yaklaşık 5,6, bir asit yağmurunun pH'ı 4,6'dır. Asit yağmurunun H⁺ derişimi temiz yağmurunkinden kaç kat fazladır?",
+        { tip: "ornek", baslik: "pH 1 birim farkı kaç kat? (ek bilgi)", durum: "Temiz yağmurun pH'ı yaklaşık 5,6, bir asit yağmurunun pH'ı 4,6'dır. Asit yağmurunun H⁺ derişimi temiz yağmurunkinden kaç kat fazladır?",
           adimlar: [
             "pH = −log[H⁺] olduğundan [H⁺] = 10⁻ᵖᴴ.",
             "Temiz yağmur: [H⁺] = 10⁻⁵·⁶. Asit yağmuru: [H⁺] = 10⁻⁴·⁶.",
             "Oran = 10⁻⁴·⁶ ÷ 10⁻⁵·⁶ = 10¹ = 10.",
             "pH 3,6 olsaydı fark 2 birim, yani 10² = 100 kat olurdu."
           ], sonuc: "pH 1 birim düşünce [H⁺] 10 kat artar: asit yağmuru 10 kat daha asidiktir. *The acid rain is ten times more acidic.*" },
-        { tip: "tuzak", metin: "Temiz yağmur bile hafif asidiktir.", yanlis: "Temiz yağmurun pH'ı 7'dir; asit yağmurunu CO₂ yapar.", dogru: "Atmosferdeki CO₂ suda çözünüp zayıf karbonik asit oluşturduğu için temiz yağmurun pH'ı ==≈ 5,6==dır. Asit yağmuru bunun altındadır ve asıl sorumlular ==SO₂ ve NOₓ==." },
+        { tip: "tuzak", metin: "Temiz yağmur bile hafif asidiktir.", yanlis: "Temiz yağmurun pH'ı 7'dir; asit yağmurunu CO₂ yapar.", dogru: "Atmosferdeki CO₂ suda çözünüp zayıf karbonik asit oluşturduğu için normal yağmurun pH'ı ==≈ 5,5–5,6==dır. Asit yağmuru bunun altındadır; lecture CO ve CO₂'yi de sayar, ama H₂SO₄ ve HNO₃ yapan asıl gazlar ==SO₂ ve NOₓ==." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "*Acid rain forms when sulfur dioxide and nitrogen oxides dissolve in water to form sulfuric and nitric acids.*", metin: "Oluşum cümlesi." },
             { ikon: "✍️", baslik: "*Acid rain has a pH lower than 5.6.*", metin: "Tanım." }
@@ -101,10 +101,10 @@ window.DEFTER = {
       bloklar: [
         { tip: "tablo", baslik: "Neleri bozar?", head: ["Alan", "Ne olur?"],
           rows: [
-            ["Göller", "pH düşer; balık yumurtaları çatlamaz, yetişkin balıklar ölür; toprak, zararlı alüminyumu suya karıştırır"],
-            ["Toprak", "Kalsiyum ve magnezyum gibi besin mineralleri yıkanır; kökler zarar görür"],
+            ["Göller", "pH düşer; yağmur topraktaki ağır metalleri göl ve akarsulara karıştırır. Asitlik ve ağır metal sudaki canlılara doğrudan zehirlidir; ağır metaller besin zinciriyle insana ulaşır"],
+            ["Toprak ve tarım", "Kalsiyum ve magnezyum gibi besin mineralleri yıkanır; kökler zarar görür; tarım alanları bozulur"],
             ["Orman", "Yapraklar zarar görür, ağaçlar zayıflar, hastalıklara açık hâle gelir"],
-            ["Yapılar", "Kireçtaşı ve mermer aşınır: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Metaller paslanır"],
+            ["Yapılar", "Yerleşim yerleri ve tarihi eserler zarar görür; kireçtaşı ve mermer aşınır: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Metaller paslanır"],
             ["İnsan", "SO₂ ve NOₓ solunum yolu hastalıklarını artırır"]
           ] },
         { tip: "grafik", baslik: "Göl pH'ı düşerse (şematik grafik)", xlabel: "Gölün pH'ı", ylabel: "Tür sayısı", xmax: 8, ymax: 10,
@@ -132,10 +132,10 @@ window.DEFTER = {
       kisa: "Stratosferdeki ozon UV'yi süzer; yer seviyesindeki ozon kirleticidir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🛡️", terim: "Ozone layer", tr: "ozon tabakası", tanim: "Stratosferde ozonun (O₃) yoğun olduğu kuşak. UV-C'nin tamamını, UV-B'nin büyük kısmını tutar.", ornek: "Güneş ışığıyla gelen UV'nin yere ulaşan miktarını düşürür." },
-            { ikon: "☀️", terim: "Ultraviolet radiation", tr: "mor ötesi ışın", tanim: "UV-B hücrelerde DNA'ya zarar verir: cilt kanseri, göz merceğinde katarakt, plankton ve bitkilerde büyüme kaybı.", ornek: "Ozon incelince kutuplara yakın bölgelerde UV-B artar." }
+            { ikon: "🛡️", terim: "Ozone layer", tr: "ozon tabakası", tanim: "Ozonun (O₃) %90'ının bulunduğu, yerden yaklaşık 15–50 km yükseklikteki stratosfer kuşağı. Zararlı UV-B ve UV-C ışınlarını tutar.", ornek: "Güneş ışığıyla gelen UV'nin yere ulaşan miktarını düşürür." },
+            { ikon: "☀️", terim: "Ultraviolet radiation", tr: "mor ötesi ışın", tanim: "UV-B hücrelerde DNA'ya zarar verir: cilt kanseri, katarakt, bağışıklık sistemi bozuklukları, plankton ve bitkilerde büyüme kaybı.", ornek: "Ozon incelince kutuplara yakın bölgelerde UV-B artar." }
           ] },
-        { tip: "ikili", sol: { ikon: "🛡️", baslik: "*Stratospheric ozone*", maddeler: ["Yerden yaklaşık 15–35 km yukarıda", "Zararlı UV'nin çoğunu tutar", "Korunması gerekir"] },
+        { tip: "ikili", sol: { ikon: "🛡️", baslik: "*Stratospheric ozone*", maddeler: ["Yerden yaklaşık 15–50 km yukarıda", "Zararlı UV'nin çoğunu tutar", "Korunması gerekir"] },
           sag: { ikon: "😷", baslik: "*Ground-level ozone*", maddeler: ["Troposferde, yer seviyesinde", "Fotokimyasal smogun bileşeni", "Akciğere ve bitkiye zararlı"] },
           oyun: [
             { metin: "Güneşin zararlı UV-B ışınlarının büyük kısmını tutar.", cevap: "sol", neden: "Koruyucu tabaka: *stratospheric ozone*." },
@@ -155,8 +155,8 @@ window.DEFTER = {
       baslik: "Ozon tabakası neden incelir?",
       kisa: "CFC'lerden kopan klor atomu, ozonu tekrar tekrar parçalar.",
       bloklar: [
-        { tip: "adimlar", baslik: "Bir klor atomu nasıl ozon avlar?", adimlar: [
-            { baslik: "CFC yükselir", metin: "Soğutucu ve spreylerde kullanılan *CFC* (kloroflorokarbon) çok kararlıdır; parçalanmadan stratosfere ulaşır." },
+        { tip: "adimlar", baslik: "Bir klor atomu nasıl ozon avlar? (ayrıntı: ek bilgi)", adimlar: [
+            { baslik: "CFC yükselir", metin: "İnsan etkinliğiyle atmosfere salınan *CFC* (kloroflorokarbon) çok kararlıdır; kolayca stratosfere ulaşır." },
             { baslik: "UV klor koparır", metin: "Güçlü UV ışını CFC'yi parçalar ve serbest klor atomu (Cl) çıkar." },
             { baslik: "Ozon parçalanır", metin: "Cl + O₃ → ClO + O₂. Ozon oksijen molekülüne dönüşür, UV'yi artık tutamaz." },
             { baslik: "Klor geri döner", metin: "ClO + O → Cl + O₂. Klor harcanmaz; bir ==katalizör== gibi çalışır, yani tek bir klor atomu binlerce ozon molekülünü parçalayabilir." },
@@ -200,34 +200,34 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir bölgede asit yağmurunun pH'ı 4,6, temiz yağmurun pH'ı 5,6 ölçülmüştür. Asit yağmurunun H⁺ derişimi temiz yağmurunkinden kaç kat fazladır?",
-      opts: ["1 kat", "10 kat", "100 kat", "10 kat daha az"],
+      q: "The pH of acid rain in a region is 4.6 and the pH of normal rain is 5.6. How many times greater is the H⁺ concentration of the acid rain than that of normal rain?",
+      opts: ["1 time", "10 times", "100 times", "10 times less"],
       a: 1,
       why: "pH logaritmik bir ölçektir: 1 birim fark, H⁺ derişiminde 10 kat farktır. pH daha düşük olduğundan derişim fazladır; son şık yönü ters alır."
     },
     {
-      q: "Tabloda bir gölün pH'ı ile gölde yaşayan tür sayısı verilmiştir. Tabloya göre hangi çıkarım doğrudur?",
-      fig: { type: "table", head: ["Göl pH'ı", "7,0", "6,0", "5,0", "4,0"], rows: [["Tür sayısı", 20, 18, 9, 1]], caption: "Göl pH'ı ve tür sayısı" },
-      opts: ["pH düştükçe tür sayısı artmaktadır.", "En büyük tür kaybı pH 7'den 6'ya inerken olmuştur.", "pH 6'dan 4'e inildiğinde tür sayısı 18'den 1'e düşmüştür; asitliğe duyarlı türler kaybolmuştur.", "Göl pH 4'te bile aynı tür sayısını korumaktadır."],
+      q: "The table shows the pH of a lake and the number of species living in it. Which conclusion is correct?",
+      fig: { type: "table", head: ["Lake pH", "7.0", "6.0", "5.0", "4.0"], rows: [["Number of species", 20, 18, 9, 1]], caption: "Lake pH and number of species" },
+      opts: ["The number of species increases as the pH decreases.", "The greatest loss of species occurred between pH 7 and pH 6.", "From pH 6 to pH 4 the number of species falls from 18 to 1; acid-sensitive species disappear.", "The lake keeps the same number of species even at pH 4."],
       a: 2,
       why: "pH 6'dan 4'e inerken tür sayısı 18'den 1'e düşüyor, yani asitleşme türleri ortadan kaldırıyor. pH 7'den 6'ya düşüşte yalnızca 2 tür kaybedilmiştir, bu yüzden ikinci şık yanlıştır."
     },
     {
-      q: "Haziranda öğleden sonra güneşli ve trafiğin yoğun olduğu bir şehirde gözleri yakan kahverengi bir sis oluşmuştur. En olası açıklama hangisidir?",
-      opts: ["Kış smogu: kömür dumanı ve SO₂", "Fotokimyasal smog: NOₓ ve VOC'lerin güneş ışığıyla tepkimesi", "Asit yağmuru: yağmur suyunda karbonik asit", "Ozon tabakasının incelmesi: CFC"],
+      q: "On a sunny June afternoon, a brownish haze that irritates the eyes forms over a city with heavy traffic. What is the most likely explanation?",
+      opts: ["Classic smog: coal smoke and SO₂", "Photochemical smog: reaction of NOₓ and VOCs with sunlight", "Acid rain: carbonic acid in rainwater", "Ozone depletion: CFCs"],
       a: 1,
       why: "Yaz, güneş ve trafik: egzozdaki NOₓ ile VOC'ler ışıkla tepkimeye girip ozon ve oksitleyici maddeler oluşturur (fotokimyasal smog). Kömür dumanı ve SO₂ kış smoguna aittir."
     },
     {
-      q: "CFC'lerin ozon tabakasını incelttiğini anlatan hangi ifade doğrudur?",
-      opts: ["UV ışığıyla CFC'den kopan klor atomu ozonu parçalar ve tepkimede harcanmayıp yeniden kullanılır.", "CFC'ler CO₂ gibi ısıyı tutarak ozonu eritir.", "CFC'ler ozonla birleşip kalıcı bir bileşik oluşturur ve tükenir.", "CFC'ler asit yağmuru oluşturarak ozonu parçalar."],
+      q: "Which statement correctly explains how CFCs deplete the ozone layer?",
+      opts: ["A chlorine atom released from a CFC by UV light breaks down ozone and is not used up in the reaction, so it can be used again.", "CFCs trap heat like CO₂ and melt the ozone.", "CFCs combine with ozone to form a permanent compound and are used up.", "CFCs form acid rain, which breaks down ozone."],
       a: 0,
       why: "Klor atomu bir katalizör gibi çalışır: Cl + O₃ → ClO + O₂ ve ClO + O → Cl + O₂. Bu yüzden tek bir atom çok sayıda ozonu bozar. İkinci şık ozon incelmesi ile küresel ısınmayı karıştırıyor."
     },
     {
-      q: "Rüzgârsız bir kış gecesinde vadideki bir şehirde sıcaklık yükseklikle tabloda gösterildiği gibi değişmektedir. Bu durum ve sonucu hangisidir?",
-      fig: { type: "table", head: ["Yükseklik (m)", "0", "100", "200", "300", "400"], rows: [["Sıcaklık (°C)", 2, 4, 6, 8, 5]], caption: "Yükseklikle sıcaklık değişimi" },
-      opts: ["Normal profil; kirleticiler yükselir ve dağılır.", "Asit yağmuru; yağmurun pH'ı düşer.", "Termal inversiyon; kirleticiler yukarı çıkarak atmosfere dağılır.", "Termal inversiyon; soğuk hava altta kaldığı için kirleticiler yer seviyesinde birikir."],
+      q: "On a windless winter night in a valley city, the temperature changes with height as shown in the table. What is this situation and its result?",
+      fig: { type: "table", head: ["Height (m)", "0", "100", "200", "300", "400"], rows: [["Temperature (°C)", 2, 4, 6, 8, 5]], caption: "Temperature change with height" },
+      opts: ["A normal profile; pollutants rise and disperse.", "Acid rain; the pH of the rain falls.", "A thermal inversion; pollutants rise and spread through the atmosphere.", "A thermal inversion; the cold air stays below, so pollutants build up at ground level."],
       a: 3,
       why: "Sıcaklık 300 m'ye kadar yükseklikle artıyor: yerdeki soğuk hava, üstündeki sıcak tabakanın altında kalıyor (inversiyon). Hava karışmadığı için kirletici yerde hapsolur. Normal profilde sıcaklık yükseldikçe azalırdı."
     }

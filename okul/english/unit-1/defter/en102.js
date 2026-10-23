@@ -1,52 +1,75 @@
 /* Kitora not defteri · en102 · 1.2 Edebi Sanatlar Çantası
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (rubrikte edebi ve yapısal araçlar 7 puan) + MEB 10. sınıf edebiyat standart içeriği. */
+   Kaynak: Kasım sınav rubriği (edebi ve yapısal araçlar 7 puan), Byrd/Woods passage-analysis dersi ve Two Kinds tartışma paketindeki terimler (öğretmen materyali özeti A1, D). Öğretmen belgesinde olmayan terimler "ek bilgi" etiketiyle işaretli. */
 window.DEFTER = {
   slug: "en102",
-  amac: "Pasaj analizinde 7 puan *literary and structural devices* kriterinden geliyor. Burada en çok kullanılan araçları, her birinin pasajda nasıl bulunacağını ve etkisinin nasıl yazılacağını öğreneceksin.",
+  amac: "Pasaj analizinde 7 puan *literary and structural devices* kriterinden geliyor: önemli ve ilgili araçları belirleyip çözümlemek. Öğretmenin kullandığı araç adlarını, pasajda nasıl bulunacaklarını ve etkilerinin nasıl yazılacağını öğreneceksin; araçlar sıralanmaz, analiz edilir.",
   bolumler: [
     {
       baslik: "Araç, kanıt, etki: üç parçalı cümle",
       kisa: "Araç adını söylemek yetmez; kanıtı ve anlama etkisini de yaz.",
       bloklar: [
         { tip: "adimlar", baslik: "Bir aracı puana çevirmek", adimlar: [
-            { baslik: "Araç", metin: "Hangi teknik kullanılmış? *irony, imagery, contrast…*" },
+            { baslik: "Araç", metin: "Hangi teknik kullanılmış? *irony, imagery, diction…*" },
             { baslik: "Kanıt", metin: "Hangi cümle ya da bölüm? Kısa alıntı ya da parafraz." },
             { baslik: "Etki", metin: "Okurda ne yaratıyor, anlama ne katıyor? *This shows…, This makes readers feel…*" }
           ] },
         { tip: "ornek", baslik: "Tek cümleden bir araç analizi", durum: "Kanıt: *Aunt Zeze's Tears*'in son cümlesinde şair, Zézé'nin gözyaşlarını “the most beautiful homage that could be rendered to my poor verses” diye yorumlar.",
           adimlar: ["**Araç:** *irony*. Okur Zézé'nin aşkının boşa çıktığını bilir; şair ise tam tersini söyler.", "**Kanıt:** şairin “homage” (saygı, övgü) sözü ve “my poor verses” ifadesi.", "**Etki:** şair acıyı kendi şiirine övgü sanır; böylece kendini beğenmişliği ve Zézé'yi anlamayışı ortaya çıkar."],
-          sonuc: "*The final line is ironic: Monjardin praises the tears as a tribute to his poetry, which shows that he misreads her pain and thinks only of himself.*" }
+          sonuc: "*The final line is ironic: Monjardin praises the tears as a tribute to his poetry, which shows that he misreads her pain and thinks only of himself.*" },
+        { tip: "tuzak", baslik: "Araçları listeleme", metin: "Rubrik, önemli ve ilgili araçları belirlemeye 7 puan verir. Öğretmenin kuralı: kullanacağın araçları sıralama, kanıtı çözümlerken adlandır; “in the quote” da yazma.", yanlis: "The author uses irony, imagery, symbolism and diction.", dogru: "*The final line is ironic because the poet praises the tears as a tribute to his poetry.*" }
       ]
     },
     {
-      baslik: "Karakter, bakış açısı ve ton",
-      kisa: "Karakteri nasıl tanıdığımız ve anlatıcının tavrı, anlamı belirler.",
+      baslik: "Karakter ve bakış açısı",
+      kisa: "Karakteri nasıl tanıdığımız ve kimin gözünden okuduğumuz anlamı belirler.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧍", terim: "Characterization", tr: "karakterleştirme", tanim: "Direkt: anlatıcı söyler. Dolaylı: söz, davranış, görünüş ve başkalarının tepkisiyle tanırız.", ornek: "Felix için anlatıcı “stupid as a post” der (direkt); yaptıkları ise sabırlı bir plan gösterir (dolaylı)." },
-            { ikon: "👁️", terim: "Point of view", tr: "bakış açısı", tanim: "Öyküyü kimin gözünden okuduğumuz. Üçüncü kişi sınırlı bir karakteri izler; her şeyi bilen anlatıcı herkesin içine girer.", ornek: "Dolores, Zézé'nin içindeki acıyı gösterirken aileyi yargılayan yorumlar da ekler." },
-            { ikon: "🎭", terim: "Tone", tr: "ton", tanim: "Yazarın konuya karşı tavrı: alaycı, acıyan, soğuk, şefkatli. *Mood* ise okurun hissettiği atmosferdir.", ornek: "Felix öyküsünde anlatıcı soğuk ve yargılayıcıdır." },
-            { ikon: "🔤", terim: "Diction", tr: "kelime seçimi", tanim: "Yazarın seçtiği kelimelerin çağrışımı (*connotation*). Aynı şey farklı kelimeyle farklı duygu verir.", ornek: "“faded old maid” sözü acımasız bir etiket taşır." },
-            { ikon: "🪞", terim: "Foil", tr: "zıt karakter", tanim: "Başka bir karakteri öne çıkarmak için ona zıt kurulan karakter.", ornek: "Prenses Hase'nin iyi kalpli annesi ile üvey annesi arasındaki zıtlık." }
+            { ikon: "🎚️", terim: "Round vs flat character", tr: "katmanlı ve tek boyutlu karakter", tanim: "*Round* karakter karmaşık, çelişkili ve değişmeye açıktır; *flat* karakter tek bir özellikle tanıtılır.", ornek: "Felix önce tek yönlü görünür, planı ve sabrı onun katmanlı olduğunu gösterir." },
+            { ikon: "🪞", terim: "Foil", tr: "zıt karakter", tanim: "Başka bir karakteri öne çıkarmak için ona zıt kurulan karakter.", ornek: "Prenses Hase'nin iyi kalpli annesi ile üvey annesi arasındaki zıtlık." },
+            { ikon: "👁️", terim: "Point of view", tr: "bakış açısı", tanim: "Öyküyü kimin gözünden ve hangi zamandan okuduğumuz: birinci ya da üçüncü kişi; yetişkin ve çocuk bakışının karışması da buraya girer.", ornek: "Dolores, Zézé'nin içindeki acıyı gösterirken aileyi yargılayan yorumlar da ekler." }
           ] },
-        { tip: "tuzak", metin: "“The author uses diction” yazmak puan getirmez; hangi kelimeler, hangi çağrışım ve ne etki, onu da yaz.", yanlis: "The author uses characterization to describe Felix.", dogru: "*The narrator calls Felix “stupid as a post”, but his patient plan proves that he is cunning.*" }
+        { tip: "ikili", sol: { ikon: "🔵", baslik: "*Round* karakter", maddeler: ["Karmaşık ve çelişkili", "Olay boyunca değişebilir"] },
+          sag: { ikon: "⬜", baslik: "*Flat* karakter", maddeler: ["Tek bir özellikle tanıtılır", "Genelde değişmez"] },
+          oyun: [
+            { metin: "Hem cömert hem bencil davranabilen, iç çelişkisini gördüğümüz karakter.", cevap: "sol", neden: "Çelişki ve derinlik: *round*." },
+            { metin: "Masaldaki baştan sona yalnızca kötü olan üvey anne.", cevap: "sag", neden: "Tek özellik, değişmez: *flat*." },
+            { metin: "Olay boyunca fikri ve duygusu değişen, okura sürpriz yapan karakter.", cevap: "sol", neden: "Gelişim ve çok yönlülük: *round*." },
+            { metin: "Yalnızca ‘kıskanç komşu’ olarak çizilen ve başka yönü gösterilmeyen yan karakter.", cevap: "sag", neden: "Tek boyutlu: *flat*." }
+          ] }
       ]
     },
     {
-      baslik: "Dil araçları: imge, benzetme, sembol",
-      kisa: "Duyuları ve soyut fikirleri somutlaştıran araçlar.",
+      baslik: "Dil araçları: kelime seçimi, imge, abartı",
+      kisa: "Sözcük seçimi, duyusal tasvir ve abartı, karakterin sesini ve duyguyu kurar.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
+            { ikon: "🔤", terim: "Diction", tr: "kelime seçimi", tanim: "Yazarın seçtiği kelimelerin çağrışımı. Aynı şey farklı kelimeyle farklı duygu verir.", ornek: "“faded old maid” sözü acımasız bir etiket taşır." },
             { ikon: "👃", terim: "Imagery", tr: "imge, canlı tasvir", tanim: "Beş duyuya seslenen tasvir.", ornek: "Zézé'nin “marble cheeks” ve gül dolu masa sahnesi." },
-            { ikon: "➕", terim: "Simile", tr: "benzetme (like/as)", tanim: "İki şeyi “like” ya da “as” ile karşılaştırma.", ornek: "Felix'in aklına giren fikir, *gimlet* (matkap) gibi saplanır." },
-            { ikon: "🔁", terim: "Metaphor", tr: "eğretileme", tanim: "Bir şeyi “like” kullanmadan başka bir şeymiş gibi anlatma.", ornek: "Zézé'nin gözü önünde “a veil of tears” belirir; gözyaşı bir perde gibi anlatılır." },
-            { ikon: "🌹", terim: "Symbol", tr: "sembol", tanim: "Somut bir nesne ya da kişinin soyut bir fikri temsil etmesi.", ornek: "Zézé'nin kemerindeki gül, boşa çıkacak umudu temsil eder." },
-            { ikon: "🔂", terim: "Motif", tr: "yinelenen öğe", tanim: "Öykü boyunca tekrar eden imge, söz ya da durum.", ornek: "Üvey annenin sürekli yinelediği “This is not my child!” sözü." },
-            { ikon: "📜", terim: "Allusion", tr: "ima, gönderme", tanim: "Bilinen bir kişi ya da olaya kısa gönderme.", ornek: "Hase öyküsünde şair Ono-no-Komachi'ye gönderme." }
+            { ikon: "📢", terim: "Hyperbole", tr: "abartı", tanim: "Anlamı güçlendirmek için bilerek yapılan abartı.", ornek: "Felix için “a sort of Hercules” denmesi iriliğini büyütür." },
+            { ikon: "💬", terim: "Colloquial idiom / slang", tr: "günlük deyim, argo", tanim: "Konuşma dilinden deyim ya da argo; karakterin sesini ve havasını gösterir.", ornek: "Bernardo'nun laubali “Felix old boy” hitabı." },
+            { ikon: "⚡", terim: "Oxymoron", tr: "oksimoron", tanim: "Zıt anlamlı iki sözcüğü etki için birleştirmek.", ornek: "Öğretmenin örneği: *Two Kinds* öyküsünde bir çocuk için kullanılan “proudly modest”." }
           ] },
         { tip: "liste", maddeler: [
+            { ikon: "✍️", baslik: "Sınavda böyle yaz (diction)", metin: "*The diction of “[word]” carries a [negative/positive] connotation, which suggests that…*" },
             { ikon: "✍️", baslik: "Sınavda böyle yaz (imge)", metin: "*The imagery of [detail] creates a feeling of [mood] and suggests that [meaning].*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz (sembol)", metin: "*The rose symbolizes [idea], so its fate reflects [theme].*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz (abartı ve deyim)", metin: "*The hyperbole / colloquial idiom [phrase] reveals that [character] is…*" }
+          ] },
+        { tip: "tuzak", metin: "“The author uses diction” yazmak puan getirmez; hangi kelimeler, hangi çağrışım ve ne etki, onu da yaz.", yanlis: "The author uses diction to describe Felix.", dogru: "*The narrator calls Felix “stupid as a post”, but his patient plan proves that he is cunning.*" }
+      ]
+    },
+    {
+      baslik: "Sembol, gönderme ve tekrar",
+      kisa: "Bir nesne, bir gönderme ya da yineleme anlama ek bir katman getirir.",
+      bloklar: [
+        { tip: "kavramlar", kartlar: [
+            { ikon: "🌹", terim: "Symbolism", tr: "sembol kullanımı", tanim: "Somut bir nesne ya da kişinin soyut bir fikri temsil etmesi.", ornek: "Zézé'nin kemerindeki gül, boşa çıkacak umudu temsil eder." },
+            { ikon: "📜", terim: "Allusion", tr: "ima, gönderme", tanim: "Bilinen bir kişi, olay ya da metne kısa gönderme (ör. İncil ya da müzik göndermeleri).", ornek: "Hase öyküsünde şair Ono-no-Komachi'ye gönderme." },
+            { ikon: "🔁", terim: "Repetition", tr: "tekrar", tanim: "Söz, yapı ya da fikrin yinelenmesiyle vurgu yaratmak.", ornek: "Üvey annenin sürekli yinelediği “This is not my child!” sözü." }
+          ] },
+        { tip: "liste", maddeler: [
+            { ikon: "✍️", baslik: "Sınavda böyle yaz (sembol)", metin: "*The rose symbolizes [idea], so its fate reflects [theme].*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz (tekrar)", metin: "*The repetition of “[phrase]” stresses [idea] and shows that…*" }
           ] }
       ]
     },
@@ -81,10 +104,10 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Yapısal araçlar: sıra, yön, bitiş",
-      kisa: "Olayların sırası ve kuruluşu da anlama katkı yapar.",
+      baslik: "Yapısal araçlar: sıra, yavaşlatılan an, bitiş",
+      kisa: "Olayların sırası, yavaşlatılan an ve bitişin hazırlanışı anlama katkı yapar.",
       bloklar: [
-        { tip: "grafik", baslik: "Olay örgüsü: gerilim nasıl yükselir ve düşer?", xlabel: "Öykünün akışı", ylabel: "Gerilim", xmax: 10, ymax: 10,
+        { tip: "grafik", baslik: "Ek bilgi (öğretmen belgesinde yok): olay örgüsünde gerilim nasıl yükselir ve düşer?", xlabel: "Öykünün akışı", ylabel: "Gerilim", xmax: 10, ymax: 10,
           ogeler: [
             { id: "e1", tip: "egri", renk: 0, noktalar: [[0, 1], [0.8, 1.3], [1.6, 1.7]], gizli: true },
             { id: "e2", tip: "egri", renk: 1, noktalar: [[1.6, 1.7], [3, 3.2], [4.5, 5.2], [6, 7.2], [7, 9]], gizli: true },
@@ -101,11 +124,8 @@ window.DEFTER = {
             { metin: "==*Falling action* ve *resolution*:== sonuçlar ve bitiş.", goster: ["e3", "x3"] }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "⚠️", terim: "Foreshadowing", tr: "önceden sezdirme", tanim: "Sonradan olacak şeye erken verilen ipucu.", ornek: "Felix'in “carry it out at the moment when he believed himself perfectly secure” sabrı, planı sezdirir." },
-            { ikon: "⚖️", terim: "Juxtaposition", tr: "yan yana koyma", tanim: "Zıt iki şeyi yan yana vererek farkı vurgulamak.", ornek: "Zézé'nin solgun yüzü ile yeğenlerinin canlı gençliği." },
-            { ikon: "🔚", terim: "Twist ending", tr: "sürpriz son", tanim: "Okurun beklemediği bitiş.", ornek: "Bernardo'nun suçlanması." },
-            { ikon: "🔄", terim: "Repetition", tr: "tekrar", tanim: "Söz, yapı ya da fikrin yinelenmesiyle vurgu yaratmak.", ornek: "Kutlamada “Long live Aunt Zézé! Hurrah for Aunt Zézé!” nidasının tekrarı." },
-            { ikon: "🏃", terim: "Pacing", tr: "tempo", tanim: "Olayların hızlanıp yavaşlaması; uzun hazırlık, ani bitiş.", ornek: "Felix'te aylar süren hazırlık, birkaç satırda biten tuzak." }
+            { ikon: "🔍", terim: "Time manipulation (slowing)", tr: "zamanı yavaşlatma", tanim: "Yazar aksiyonu yavaşlatıp ayrıntıya yaklaşır; okuru o ana odaklar ve anlatı akışını değiştirir.", ornek: "Felix'te bıçak, kapı ve saatin tek tek verildiği tuzak sahnesi." },
+            { ikon: "🎯", terim: "End orientation", tr: "sona yönelim", tanim: "Açılış paragraflarında söylenen bir şeyin sonunda bitişe işaret etmesi.", ornek: "Felix'in girişte kinini “perfectly secure” hissettiği anda uygulaması, sondaki tuzağı hazırlar." }
           ] }
       ]
     },
@@ -113,17 +133,30 @@ window.DEFTER = {
       baslik: "Hangi araç, hangi etki?",
       kisa: "Etki cümlesini önceden hazırla: araçtan sonra gelecek fiili bil.",
       bloklar: [
-        { tip: "tablo", baslik: "Araç → etki kalıpları", head: ["Araç", "Etki fikri", "Sınavda böyle yaz"],
+        { tip: "tablo", baslik: "Araç → etki kalıpları (kalıplar Kitora'nın önerisidir)", head: ["Araç", "Etki fikri", "Sınavda böyle yaz"],
           rows: [
             ["*Irony*", "Eleştiri, acıma, şaşkınlık", "*The irony highlights the gap between…*"],
             ["*Imagery*", "Atmosfer, duygu", "*The vivid imagery of… evokes…*"],
-            ["*Symbol*", "Soyut fikir", "*The [object] symbolizes… and reinforces the theme of…*"],
-            ["*Characterization*", "Karakterin özü", "*Through [action/speech], the author reveals that…*"],
-            ["*Juxtaposition*", "Zıtlık", "*By contrasting… with…, the author stresses…*"],
-            ["*Foreshadowing*", "Beklenti, gerilim", "*This detail hints that… will happen.*"],
-            ["*Tone*", "Yazarın tavrı", "*The detached tone suggests that the narrator…*"]
+            ["*Symbolism*", "Soyut fikir", "*The [object] symbolizes… and reinforces the theme of…*"],
+            ["*Diction*", "Çağrışım, ton", "*The word “[x]” connotes…, which suggests…*"],
+            ["*Hyperbole / idiom*", "Karakterin sesi", "*The exaggeration reveals that [character]…*"],
+            ["*Foil*", "Zıtlık", "*By contrasting… with…, the author stresses…*"],
+            ["*Repetition*", "Vurgu", "*The repeated phrase underscores…*"],
+            ["*Slowing time*", "Odak ve gerilim", "*By slowing the moment, the author focuses us on…*"],
+            ["*End orientation*", "Hazırlanan bitiş", "*The opening hints at the ending when…*"]
           ], vurgu: 0 },
-        { tip: "tuzak", metin: "7 puan için çok araç saymak yerine 2–3 aracı iyi yaz: ad, kanıt, etki, hepsi bir arada.", yanlis: "Pasajda imge, ironi, sembol, ton ve tekrar var.", dogru: "*The irony in the final line shows that…* diye tek aracı kanıt ve etkiyle açıkla." }
+        { tip: "tablo", baslik: "Ek bilgi (öğretmen belgesinde yok): sık çıkan diğer araçlar", head: ["Araç", "Ne?", "Öyküden örnek"],
+          rows: [
+            ["*Simile*", "“like” ya da “as” ile benzetme", "Felix'in fikri “like a gimlet” saplanır"],
+            ["*Metaphor*", "“like” kullanmadan benzetme", "“a veil of tears”"],
+            ["*Motif*", "Öykü boyunca yinelenen öğe", "“This is not my child!”"],
+            ["*Juxtaposition*", "Zıt iki şeyi yan yana koymak", "Zézé'nin solgun yüzü ve yeğenlerinin canlı gençliği"],
+            ["*Foreshadowing*", "Sonradan olacağa erken ipucu", "Felix'in sabırlı kini"],
+            ["*Pacing*", "Olayların hızlanıp yavaşlaması", "Aylar süren hazırlık, kısa tuzak"],
+            ["*Twist ending*", "Beklenmeyen bitiş", "Bernardo'nun suçlanması"],
+            ["*Tone / mood*", "Yazarın tavrı / okurun hissi", "Felix öyküsünde soğuk, yargılayıcı anlatıcı"]
+          ] },
+        { tip: "tuzak", metin: "Rubrik önemli ve ilgili araçları ister: pasajda gerçekten öne çıkan birkaç aracı seç, kanıt ve etkisiyle çöz. Çok araç saymak puan getirmez.", yanlis: "Pasajda imge, ironi, sembol, ton ve tekrar var.", dogru: "*The irony in the final line shows that…* diye tek aracı kanıt ve etkiyle açıkla." }
       ]
     },
     {
@@ -131,37 +164,38 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Araç analizi üç parçalıdır: araç + kanıt + etki.",
-            "*Characterization* direkt ya da dolaylıdır; *tone* yazarın tavrı, *mood* okurun hissidir.",
-            "*Imagery* duyulara, *symbol* soyut fikre, *motif* tekrara dayanır.",
+            "Edebi ve yapısal araçlar 7 puandır: önemli ve ilgili araçları belirle, listeleme, analiz et.",
+            "Araç analizi üç parçalıdır: araç + kanıt + etki; “in the quote” yazma.",
+            "*Characterization* direkt ya da dolaylıdır; *round* karakter katmanlı, *flat* tek boyutludur; *foil* zıt karakterdir.",
+            "*Diction, imagery, hyperbole, colloquial idiom/slang* karakterin sesini ve duyguyu kurar; *oxymoron* zıt iki sözcüğü birleştirir.",
+            "*Symbolism, allusion, repetition* anlama katman ekler.",
             "*Dramatic irony*: okur bilir, karakter bilmez. *Situational irony*: beklenenin tersi olur. *Verbal irony*: tersini söylemek.",
-            "Olay örgüsü: *exposition, rising action, climax, falling action, resolution*.",
-            "*Foreshadowing, juxtaposition, twist ending, repetition, pacing* yapısal araçlardır.",
-            "7 puan için 2–3 aracı iyi yaz; adını, kanıtını ve etkisini ver."
+            "*Time manipulation* (anı yavaşlatma) ve *end orientation* (açılışın bitişe işaret etmesi) yapısal araçlardır.",
+            "*Point of view* kimin gözünden okuduğumuzu belirler."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Pasajda yazar önce Zézé'nin umutlarını uzun uzun anlatır, sonra şair onu fedakâr bir kutsal figür olarak över. Bu hangi araçtır?",
-      opts: ["Simile", "Situational irony", "Alliteration", "Foil"],
+    { q: "In the last scene of Aunt Zeze's Tears, Zézé expects a love poem, but the poet praises her as a self-sacrificing saint. Which device is this?",
+      opts: ["Simile", "Situational irony", "Repetition", "Foil"],
       a: 1,
       why: "Zézé aşk şiiri bekler, tersiyle karşılaşır: beklenen ile gerçekleşen ayrılır. En çekici yanlış şık D: *foil* iki zıt karakterdir, bir durumun ters dönmesi değil." },
-    { q: "“The narrator calls Felix ‘stupid as a post’ but shows him planning for months.” Bu cümle hangi karakterleştirme farkını gösterir?",
-      opts: ["Direkt karakterleştirme ile dolaylı karakterleştirme arasındaki ayrılığı", "Yalnızca direkt karakterleştirmeyi", "Yalnızca bakış açısı değişimini", "Bir simile'yi"],
+    { q: "Which literary term describes a phrase such as \"proudly modest\", which joins two words with opposite meanings for effect?",
+      opts: ["Oxymoron", "Hyperbole", "Simile", "Allusion"],
       a: 0,
-      why: "Anlatıcı doğrudan “stupid” der (direkt); eylemleri dolaylı olarak kurnazlığı gösterir. C yanlış: bakış açısı değişmiyor, anlatıcı aynı." },
-    { q: "Hangi cümle bir araç analizinin tam (araç + kanıt + etki) halidir?",
+      why: "Zıt anlamlı iki sözcüğün birleşmesi *oxymoron*'dur. En çekici yanlış şık B: *hyperbole* bilerek abartmaktır, zıt iki sözcüğü birleştirmek değildir." },
+    { q: "Which sentence is a complete device analysis (device + evidence + effect)?",
       opts: ["The author uses imagery.", "The rose is a symbol.", "The rose at Zézé's belt symbolizes her hope, so its failure reflects her disappointment.", "There is a rose in the passage."],
       a: 2,
-      why: "C araç (*symbol*), kanıt (gül) ve etkiyi (umut ile hayal kırıklığı) içerir. A ve B yalnızca araç adıdır; D sadece gözlemdir." },
-    { q: "Öyküde bir olayın hazırlığı çok uzun, gerçekleşmesi ise birkaç satırda bitiyor. Bu özelliğe ne denir?",
-      opts: ["Motif", "Foreshadowing", "Allusion", "Pacing"],
+      why: "C araç (*symbolism*), kanıt (gül) ve etkiyi (umut ile hayal kırıklığı) içerir. A ve B yalnızca araç adıdır; D sadece gözlemdir." },
+    { q: "A story's opening says a character takes revenge only when he feels completely safe, and the ending shows exactly that. Which term describes this link between the opening and the conclusion?",
+      opts: ["Oxymoron", "Hyperbole", "Slowing time", "End orientation"],
       a: 3,
-      why: "Olayların hız ve yavaşlığı *pacing*'dir. En çekici yanlış şık B: *foreshadowing* ipucu vermektir, tempo değil." },
-    { q: "Bir öğrenci “The imagery makes the story good.” yazıyor. Neden bu cümle düşük puan getirir?",
-      opts: ["Çünkü imge edebi bir araç değildir", "Çünkü kanıt, hangi imge olduğu ve etkisi yoktur", "Çünkü yalnızca şimdiki zaman kullanılmalıdır", "Çünkü araç adı yazılmamıştır"],
+      why: "Açılışta söylenenin sonda bitişe işaret etmesi *end orientation*'dır. En çekici yanlış şık C: *slowing time* bir anı ayrıntıyla uzatmaktır, açılış-bitiş bağı değil." },
+    { q: "A student writes: \"The imagery makes the story good.\" Why does this sentence earn few points under the devices criterion?",
+      opts: ["Because imagery is not a literary device", "Because it gives no evidence from the text and does not explain the effect", "Because only the present tense may be used", "Because the device is not named"],
       a: 1,
-      why: "Araç adı var ama kanıt ve etki eksik; bu yüzden analiz sayılmaz. D yanlış: “imagery” adı yazılmış." }
+      why: "Araç adı var ama kanıt ve etki eksik; bu yüzden analiz sayılmaz. D yanlış: \"imagery\" adı yazılmış." }
   ]
 };

@@ -28,7 +28,7 @@ window.DEFTER = (function () {
         kisa: "Verimli bir piyasaya müdahale toplam rantı yalnızca azaltır.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
-              { ikon: "🛑", terim: "Price ceiling / price floor", tr: "fiyat tavanı / tabanı", tanim: "Tavan: yasal en yüksek fiyat. Taban: yasal en düşük fiyat. Yalnızca denge fiyatını aşan sınırlar etkilidir.", ornek: "Kira artış sınırı (tavan), asgari ücret (taban)." },
+              { ikon: "🛑", terim: "Price ceiling / price floor", tr: "fiyat tavanı / tabanı", tanim: "Tavan: yasal en yüksek fiyat. Taban: yasal en düşük fiyat. Tavan yalnızca denge fiyatının altındaysa, taban yalnızca denge fiyatının üstündeyse etkilidir (bağlayıcıdır).", ornek: "Kira artış sınırı (tavan), asgari ücret (taban)." },
               { ikon: "🧾", terim: "Tax and subsidy", tr: "vergi ve sübvansiyon", tanim: "Vergi maliyeti artırır, sübvansiyon maliyeti düşürür; arz (ya da talep) kayar. Devlet vergiden gelir alır, sübvansiyona para öder.", ornek: "Adet başına 20 TL vergi." },
               { ikon: "🔢", terim: "Quantity control", tr: "miktar kontrolü (kota)", tanim: "Piyasada satılabilecek miktarı yasayla sınırlamak. Miktarı sınırlar, fiyat piyasada oluşur.", ornek: "Taksi plakası sayısını sabitlemek." },
               { ikon: "🕳️", terim: "Deadweight loss", tr: "ölü ağırlık kaybı", tanim: "Müdahale yüzünden gerçekleşmeyen faydalı alışverişlerin yarattığı toplam rant kaybı. Alıcı ve satıcının kaybı eksi devletin kazancıdır.", ornek: "Alıcı ve satıcı 900 TL kaybeder, devlet 800 TL alırsa DWL = 100 TL." }
@@ -225,7 +225,7 @@ window.DEFTER = (function () {
               ["Fark (70 − 30 = 40 TL) × 30 sefer = ==1200 TL kota rantı==. İzin sahibine gider.", ["D", "S", "vq", "pb", "ps", "rent", "tr"]],
               ["30 ile 50 arasındaki seferler yapılmaz: DWL = ==400 TL==.", ["D", "S", "vq", "pb", "ps", "rent", "tr", "dwl", "td"]]
             ] }),
-          { tip: "not", metin: "Fiyat tavanı fiyatı sınırlar, miktar da azalır; kota miktarı sınırlar, fiyat da yükselir. İkisi de ==denge miktarının altında bir miktar== bırakır ve aynı büyüklükte DWL yaratır; ama kota rantı alıcıdan izin sahibine geçer." }
+          { tip: "not", metin: "Fiyat tavanı fiyatı sınırlar, miktar da azalır; kota miktarı sınırlar, fiyat da yükselir. İkisi de ==denge miktarının altında bir miktar== bırakır; bu örnekte ikisi de miktarı 30'a indirdiği için DWL'leri aynıdır (400 TL); ama kota rantı alıcıdan izin sahibine geçer." }
         ]
       },
       {

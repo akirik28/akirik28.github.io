@@ -1,5 +1,5 @@
 /* Kitora not defteri · bi207 · 2.7 Küresel İklim Değişikliği
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: Global Climate Change; Topic 2.4 greenhouse gases) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi207",
   amac: "Küresel iklim değişikliğinin ne olduğunu, neden olduğunu ve nasıl yavaşlatılabileceğini öğreneceksin: sera etkisi, sera gazları, CO₂ ve sıcaklık verileri, geri besleme döngüleri, sonuçlar ve uluslararası anlaşmalar.",
@@ -9,8 +9,8 @@ window.DEFTER = {
       kisa: "Hava durumu kısa süreli, iklim uzun süreli (≈ 30 yıllık) ortalamadır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🌦️", terim: "Climate change", tr: "iklim değişikliği", tanim: "İklimin onlarca yıl ölçeğinde değişmesi. Bugün büyük ölçüde insan faaliyetinin sera gazı salınımından kaynaklanıyor.", ornek: "Türkiye'de ortalama sıcaklıkların son onlarca yılda artması." },
-            { ikon: "🌡️", terim: "Global warming", tr: "küresel ısınma", tanim: "Dünya yüzeyinin ortalama sıcaklığının artması; iklim değişikliğinin ölçülen bir parçası.", ornek: "Sanayi öncesine göre yaklaşık +1,1 °C." }
+            { ikon: "🌦️", terim: "Climate change", tr: "iklim değişikliği", tanim: "BM İklim Değişikliği Çerçeve Sözleşmesi'ne göre, atmosferin bileşimini değiştiren insan faaliyetlerinin yol açtığı, doğal değişkenliğe eklenen iklim değişimi.", ornek: "Türkiye'de ortalama sıcaklıkların son onlarca yılda artması." },
+            { ikon: "🌡️", terim: "Global warming", tr: "küresel ısınma", tanim: "Sera gazlarının artışıyla alt atmosfer ve yüzeyin yapay olarak ısınması; küresel iklim değişikliğine yol açar.", ornek: "Sanayi öncesine göre yaklaşık +1,1 °C." }
           ] },
         { tip: "ikili", sol: { ikon: "⛈️", baslik: "*Weather*", maddeler: ["Kısa süre: saat, gün, hafta", "Belirli yerde atmosferin anlık hâli"] },
           sag: { ikon: "📈", baslik: "*Climate*", maddeler: ["Uzun süre: ≈ 30 yıl ortalaması", "Bir bölgenin tipik hava koşulları"] },
@@ -34,9 +34,9 @@ window.DEFTER = {
         { tip: "adimlar", baslik: "Sera etkisi nasıl işler?", adimlar: [
             { baslik: "Güneş ışığı gelir", metin: "Görünür ışık atmosferden geçer ve yeryüzünü ısıtır." },
             { baslik: "Yer ısı yayar", metin: "Isınan yüzey, uzun dalgalı kızılötesi ışın (ısı) yayar." },
-            { baslik: "Sera gazları tutar", metin: "CO₂, CH₄, N₂O ve su buharı bu ısının bir kısmını soğurur ve her yöne tekrar yayar; bir kısmı yere döner." },
+            { baslik: "Sera gazları tutar", metin: "CO₂, su buharı, ozon, azot oksitler ve CH₄ bu ısının bir kısmını soğurur ve her yöne tekrar yayar; bir kısmı yere döner." },
             { baslik: "Yer daha sıcak kalır", metin: "Doğal sera etkisi olmasa ortalama sıcaklık yaklaşık −18 °C olurdu; etkiyle yaklaşık +15 °C'dir." },
-            { baslik: "İnsan etkisi", metin: "Fosil yakıt yakma ve ormansızlaşma sera gazlarını artırır: ==güçlenmiş sera etkisi== (*enhanced greenhouse effect*)." }
+            { baslik: "İnsan etkisi", metin: "Fosil yakıt kullanımı, sanayileşme, hızlı nüfus artışı, tarım için ormansızlaşma, yanlış arazi kullanımı ve kentleşme sera gazlarını artırır: ==güçlenmiş sera etkisi== (*enhanced greenhouse effect*)." }
           ] },
         { tip: "tablo", baslik: "Başlıca sera gazları", head: ["Gaz", "Başlıca kaynak", "Not"],
           rows: [
@@ -44,7 +44,7 @@ window.DEFTER = {
             ["CH₄ (metan)", "Çeltik tarlaları, geviş getiren hayvanlar, çöp depolama alanları, doğal gaz sızıntısı", "100 yıllık ölçekte CO₂'den yaklaşık 28 kat güçlü; ömrü yaklaşık 12 yıl"],
             ["N₂O", "Kimyasal gübre, hayvancılık, sanayi", "CO₂'den yaklaşık 270 kat güçlü; uzun ömürlü"],
             ["Su buharı", "Buharlaşma", "En bol sera gazı; sıcaklığa bağlı olarak artar (geri besleme)"],
-            ["CFC, HFC", "Soğutucu, sprey", "Az miktarda ama çok güçlü"]
+            ["Ozon (O₃), CFC, HFC", "Yer seviyesi ozon (smog); soğutucu ve sprey", "Lecture sera gazları arasında ozonu da sayar; CFC az miktarda ama çok güçlü"]
           ] },
         { tip: "tuzak", metin: "Sera etkisi ile sera etkisinin güçlenmesi aynı şey değildir.", yanlis: "Sera etkisi zararlıdır; hiç olmasa daha iyi olurdu.", dogru: "Doğal sera etkisi yaşamı mümkün kılar (−18 °C yerine +15 °C). Sorun, etkinin ==insan faaliyetiyle güçlenmesidir==." },
         { tip: "liste", maddeler: [
@@ -54,7 +54,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Kanıtlar: CO₂ ve sıcaklık",
+      baslik: "Kanıtlar: CO₂ ve sıcaklık (ek bilgi: veriler)",
       kisa: "CO₂ sanayi devriminden beri yaklaşık yüzde 50 arttı; sıcaklık yaklaşık 1,1 °C yükseldi.",
       bloklar: [
         { tip: "grafik", baslik: "Atmosferdeki CO₂ (yaklaşık değerler; eksen 270 ppm'den başlar)", xlabel: "Yıl", ylabel: "CO₂ (ppm)", xmax: 7, ymax: 10,
@@ -99,7 +99,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Geri besleme döngüleri",
+      baslik: "Geri besleme döngüleri (ek bilgi)",
       kisa: "Pozitif geri besleme ısınmayı hızlandırır: buz azalır, yer daha çok ısı emer.",
       bloklar: [
         { tip: "adimlar", baslik: "Buz–albedo geri beslemesi", adimlar: [
@@ -133,10 +133,10 @@ window.DEFTER = {
             { onek: "≈ ", deger: 50, sonek: " %", etiket: "CO₂ artışı sanayi öncesine göre (≈ 280 → ≈ 425 ppm)" }
           ] },
         { tip: "liste", maddeler: [
-            { ikon: "🌊", baslik: "Deniz seviyesi yükselir", metin: "İki nedeni var: ısınan suyun genleşmesi (*thermal expansion*) ve kara üzerindeki buzulların, Grönland ve Antarktika buz örtülerinin erimesi." },
+            { ikon: "🌊", baslik: "Deniz seviyesi yükselir", metin: "İki nedeni var: ısınan suyun genleşmesi (*thermal expansion*) ve kara buzullarının erimesi. Kıyı kentleri ve kıyı ekosistemleri zarar görür." },
             { ikon: "🪸", baslik: "Okyanus asitleşir, mercanlar beyazlar", metin: "Okyanus CO₂ çözdükçe pH düşer; kabuklu canlılar ve mercanlar zarar görür." },
-            { ikon: "🦋", baslik: "Türler yer ve zaman değiştirir", metin: "Soğuk seven türler yükseltiye ve kutuplara çekilir; üreme zamanları kayar, besin zinciri uyumu bozulur." },
-            { ikon: "🔥", baslik: "Aşırı hava olayları artar", metin: "Sıcak hava dalgası, kuraklık, orman yangını ve sel. Türkiye'de 2021 yazında Akdeniz ve Ege'de büyük orman yangınları ve Batı Karadeniz'de sel yaşandı." },
+            { ikon: "🦋", baslik: "Habitat kaybı ve türler", metin: "Bitki örtüsü bozulur, bazı türler yaşam alanını kaybeder ve yok olabilir; soğuk seven türler yükseltiye ve kutuplara çekilir." },
+            { ikon: "🔥", baslik: "Aşırı hava olayları artar", metin: "Kuraklık, çölleşme, orman yangını, aşırı yağış, sel, heyelan ve fırtına; göl ve akarsu seviyeleri düşer. Türkiye'de 2021 yazında büyük orman yangınları ve sel yaşandı (ek bilgi)." },
             { ikon: "🌾", baslik: "Su ve gıda güvenliği zorlanır", metin: "Kuraklık ve sel verimi düşürür; tatlı su kaynakları azalır." }
           ] },
         { tip: "tuzak", metin: "Buzun erimesi her zaman deniz seviyesini yükseltmez.", yanlis: "Arktik deniz buzu erirse deniz seviyesi yükselir.", dogru: "Denizde ==yüzen buz== erirse seviye hemen hemen değişmez (içkideki buz gibi). Seviyeyi ==kara üzerindeki buz== (Grönland, Antarktika, dağ buzulları) ve su genleşmesi yükseltir." },
@@ -180,7 +180,7 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "Hava durumu kısa süreli, iklim ≈ 30 yıllık ortalamadır; soğuk bir kış ısınmayı çürütmez.",
             "Sera gazları yerden yayılan kızılötesi ısıyı tutar. Doğal sera etkisi −18 °C yerine +15 °C sağlar; sorun insan kaynaklı güçlenmedir.",
-            "Başlıca gazlar: CO₂ (fosil yakıt, ormansızlaşma), CH₄ (çeltik, hayvancılık, çöp), N₂O (gübre), su buharı, CFC.",
+            "Başlıca gazlar: su buharı, CO₂ (fosil yakıt, ormansızlaşma), CH₄ (çeltik, hayvancılık, çöp), N₂O (gübre), ozon, CFC.",
             "CO₂ ≈ 280 ppm'den ≈ 425 ppm'e çıktı (≈ %50); küresel sıcaklık yaklaşık 1,1 °C arttı.",
             "Pozitif geri besleme değişimi güçlendirir: buz–albedo, permafrost, su buharı.",
             "Deniz seviyesi su genleşmesi ve kara buzulu erimesiyle yükselir; yüzen deniz buzu erimesi yükseltmez.",
@@ -192,33 +192,33 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Tabloda atmosferdeki CO₂ derişimi (yaklaşık) verilmiştir. Tabloya göre hangi çıkarım en doğrudur?",
-      fig: { type: "table", head: ["Yıl", "1850", "1950", "2000", "2020"], rows: [["CO₂ (ppm)", 285, 311, 369, 414]], caption: "Atmosferde CO₂" },
-      opts: ["CO₂ derişimi 1850'den beri azalmıştır.", "CO₂ derişimi sabit kalmıştır.", "CO₂ derişimi yalnızca 2000'den sonra artmıştır.", "CO₂ derişimi sürekli artmış ve artış hızı zamanla yükselmiştir."],
+      q: "The table gives the (approximate) concentration of CO₂ in the atmosphere. Which conclusion is best supported by the table?",
+      fig: { type: "table", head: ["Year", "1850", "1950", "2000", "2020"], rows: [["CO₂ (ppm)", 285, 311, 369, 414]], caption: "Atmospheric CO₂" },
+      opts: ["The CO₂ concentration has decreased since 1850.", "The CO₂ concentration has stayed constant.", "The CO₂ concentration has increased only since 2000.", "The CO₂ concentration has increased continuously and the rate of increase has become greater over time."],
       a: 3,
       why: "1850–1950 arasında yaklaşık 26 ppm, 1950–2000 arasında 58 ppm, 2000–2020 arasında 45 ppm artış var: değer sürekli artıyor ve yıllık artış hızı yükseliyor. İkinci şık yalnızca son dönemi, ilk şık ise yönü yanlış okur."
     },
     {
-      q: "Sera etkisi ile ilgili hangi ifade doğrudur?",
-      opts: ["Sera gazları yerden yayılan kızılötesi ışını tutar; doğal sera etkisi olmasa Dünya'nın ortalama sıcaklığı yaklaşık −18 °C olurdu.", "Sera gazları Güneş ışığını uzaya geri yansıtarak Dünya'yı soğutur.", "Sera etkisi yalnızca insan faaliyetiyle ortaya çıkar.", "Atmosferdeki en bol sera gazı ozondur."],
+      q: "Which statement about the greenhouse effect is correct?",
+      opts: ["Greenhouse gases absorb the infrared radiation emitted by the Earth; without the natural greenhouse effect the average temperature would be about −18 °C.", "Greenhouse gases cool the Earth by reflecting sunlight back into space.", "The greenhouse effect occurs only because of human activities.", "The most abundant greenhouse gas in the atmosphere is ozone."],
       a: 0,
       why: "Sera gazları yerden yayılan uzun dalgalı ısıyı soğurur ve geri yayar; doğal sera etkisi yaşamı mümkün kılar. İnsan etkisi bunu güçlendirir ama doğal bir etki zaten vardır."
     },
     {
-      q: "Aşağıdakilerden hangisi küresel deniz seviyesini yükseltir?",
-      opts: ["Arktik deniz buzunun erimesi", "Grönland buz örtüsünün erimesi ve okyanus suyunun ısınıp genleşmesi", "Denizde yüzen buzdağlarının erimesi", "Okyanuslarda CO₂'nin çözünmesi"],
+      q: "Which of the following raises the global sea level?",
+      opts: ["Melting of Arctic sea ice", "Melting of the Greenland ice sheet and thermal expansion of warming ocean water", "Melting of icebergs floating in the sea", "Dissolving of CO₂ in the oceans"],
       a: 1,
       why: "Kara üzerindeki buzun erimesi denize yeni su ekler; ısınan su da genleşir. Yüzen buz zaten suyun yerini tuttuğu için erimesi seviyeyi belirgin değiştirmez."
     },
     {
-      q: "Hangisi pozitif geri besleme örneğidir?",
-      opts: ["Bitkilerin fotosentezinin artarak atmosferdeki CO₂'yi azaltması", "Yağışın artarak sıcaklığı düşürmesi", "Isınmayla buzun erimesi ve koyu yüzeylerin daha çok Güneş enerjisi emerek daha fazla ısınmaya yol açması", "Okyanusların CO₂ tutması"],
+      q: "Which of the following is an example of a positive feedback loop?",
+      opts: ["Increased photosynthesis by plants lowering atmospheric CO₂", "Increased rainfall lowering the temperature", "Warming melts ice, and darker surfaces absorb more solar energy, causing even more warming", "The oceans absorbing CO₂"],
       a: 2,
       why: "Pozitif geri besleme ilk değişimi güçlendirir: ısınma → buz erir → albedo düşer → daha çok ısınma. Diğer seçenekler ısınmayı azaltan (negatif) etkilerdir."
     },
     {
-      q: "Kıyıdaki bir kent, deniz seviyesinin yükselmesine karşı dalgakıran yapıyor ve belediye binalarının çatılarına güneş paneli kuruyor. Bu iki adım sırasıyla hangi stratejilerdir?",
-      opts: ["Uyum ve azaltım", "Azaltım ve uyum", "İkisi de azaltım", "İkisi de uyum"],
+      q: "A coastal city builds a sea wall against rising sea level and installs solar panels on the roofs of municipal buildings. Which strategies are these two steps, respectively?",
+      opts: ["Adaptation and mitigation", "Mitigation and adaptation", "Both are mitigation", "Both are adaptation"],
       a: 0,
       why: "Dalgakıran, yükselen denizin zararına hazırlık olduğu için uyumdur. Güneş paneli fosil yakıt kullanımını ve CO₂ salınımını azalttığı için azaltımdır."
     }

@@ -2,7 +2,7 @@
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 4: kütlece yüzde, ppm, molarite, iyon derişimi, seyreltme, çözelti hazırlama). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch503",
-  amac: "Bu konu *concentration* yani derişimi anlatıyor: bir çözeltide ne kadar çözünen olduğunu kütlece yüzde, ppm ve molarite ile ifade etmeyi, iyon derişimini bulmayı ve çözeltiyi seyreltmeyi (M₁V₁ = M₂V₂) öğreneceksin.",
+  amac: "Bu konu *concentration* yani derişimi anlatıyor: bir çözeltide ne kadar çözünen olduğunu kütlece yüzde, ppm, molarite ve molalite ile ifade etmeyi, yoğunlukla dönüşüm yapmayı, iyon derişimini bulmayı, çözeltileri karıştırmayı ve seyreltmeyi (M₁V₁ = M₂V₂) öğreneceksin.",
   bolumler: [
     {
       baslik: "Derişim nedir? Dört ölçü",
@@ -54,13 +54,14 @@ window.DEFTER = {
             { t: "m çözünen", alt: "g" }, "÷",
             { t: "m çözelti", alt: "g" }, "×",
             { t: "10⁶" }
-          ], aciklama: "Çok seyreltik çözeltilerde kullanılır. Yüzdeyi ppm'e çevirmek için × 10⁴ (%1 = 10 000 ppm)." },
-        { tip: "ornek", baslik: "İçme suyunda florür", durum: "1 L (yaklaşık 1 kg) içme suyu numunesi 3 mg florür içeriyor. a) Derişimi ppm olarak bul. b) Kütlece yüzde olarak yaz.", adimlar: [
+          ], aciklama: "Çok seyreltik çözeltilerde kullanılır. Yüzdeyi ppm'e çevirmek için × 10⁴ (%1 = 10 000 ppm). Daha da seyreltiklerde ppb (milyarda bir) kullanılır: × 10⁹." },
+        { tip: "ornek", baslik: "İçme suyunda florür", durum: "1 L (yaklaşık 1 kg) içme suyu numunesi 3 mg florür içeriyor. a) Derişimi ppm olarak bul. b) Kütlece yüzde olarak yaz. c) 2 kg suya 11,0 mg sülfürik asit eklenirse derişim kaç ppm olur?", adimlar: [
             "a) 3 mg = 0,003 g; çözelti ≈ 1000 g.",
             "ppm = 0,003 ÷ 1000 × 10⁶ = 3 ppm.",
             "b) % = 3 ÷ 10⁴ = 0,0003 %.",
+            "c) 11,0 mg = 0,0110 g; çözelti ≈ 2000 g. ppm = 0,0110 ÷ 2000 × 10⁶ = 5,5 ppm.",
             "Kontrol: 0,0003 × 10⁴ = 3 ppm ✓"
-          ], sonuc: "3 ppm = %0,0003." },
+          ], sonuc: "a) 3 ppm  b) %0,0003  c) 5,5 ppm." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*One ppm means one gram of solute in one million grams of solution.*" }
           ] }
@@ -88,6 +89,26 @@ window.DEFTER = {
             { baslik: "Karıştır", metin: "Kapağı kapat, ters çevirerek homojen karıştır." }
           ] },
         { tip: "tuzak", metin: "Molaritedeki V çözeltinin son hacmidir; çözücü suyun hacmi değildir.", yanlis: "9 g glikoza 250 mL su eklenir.", dogru: "Balon jojede çizgiye kadar tamamlanır; son hacim 250 mL olur." }
+      ]
+    },
+    {
+      baslik: "Yüzdeden molariteye ve karışımlar",
+      kisa: "Yoğunlukla yüzdeyi molariteye çevir; aynı çözeltileri karıştırırken molleri topla.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "M", alt: "mol/L" }, "=",
+            { t: "10 × d × %", alt: "d: g/mL, %: kütlece yüzde" }, "÷",
+            { t: "M_mol", alt: "g/mol" }
+          ], aciklama: "1 L çözeltinin kütlesi 1000·d gramdır; içinde (% ÷ 100) kadarı çözünendir. Aynı çözünenli iki çözeltiyi karıştırınca: M = (M₁V₁ + M₂V₂) ÷ (V₁ + V₂); mol sayıları toplanır, hacimler toplanır." },
+        { tip: "ornek", baslik: "Yoğunluktan molarite ve karışım", durum: "a) Kütlece %16,0 CH₃OH içeren çözeltinin yoğunluğu 0,90 g/mL. Molaritesi kaçtır? (CH₃OH = 32 g/mol) b) 400 mL 0,6 M KCl ile 600 mL 0,2 M KCl karıştırılırsa son derişim kaç M olur?", adimlar: [
+            "a) 1,00 L çözelti: kütle = 1000 mL × 0,90 g/mL = 900 g.",
+            "a) CH₃OH = 0,160 × 900 = 144 g; n = 144 ÷ 32 = 4,5 mol; M = 4,5 mol ÷ 1,00 L = 4,5 M.",
+            "b) n = 0,6 × 0,4 + 0,2 × 0,6 = 0,24 + 0,12 = 0,36 mol; V = 0,4 + 0,6 = 1,0 L.",
+            "b) M = 0,36 ÷ 1,0 = 0,36 M. Kontrol: iki derişimin (0,2 ile 0,6) arasında ✓"
+          ], sonuc: "a) 4,5 M  b) 0,36 M." },
+        { tip: "liste", maddeler: [
+            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*When two solutions of the same solute are mixed, add the moles and add the volumes.*" }
+          ] }
       ]
     },
     {
@@ -149,6 +170,26 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Molalite: kilogram çözücü başına mol",
+      kisa: "Molalite, 1 kg çözücüdeki mol sayısıdır; sıcaklıkla değişmez.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "m", alt: "molalite (mol/kg)" }, "=",
+            { t: "n", alt: "çözünenin molü" }, "÷",
+            { t: "kg çözücü", alt: "çözeltinin değil, çözücünün kütlesi" }
+          ], aciklama: "Molarite çözeltinin hacmine bağlıdır ve hacim sıcaklıkla genleşir; molalite ise çözücünün kütlesine bağlıdır, kütle sıcaklıkla değişmez. Bu yüzden molalite sıcaklığa bağlı değildir. Molaritenin simgesi M, molalitenin simgesi m'dir." },
+        { tip: "ornek", baslik: "Glikozun molalitesi", durum: "4,35 g glikoz (M = 180 g/mol) 25,0 mL suda çözülüyor (25 °C'de su yoğunluğu 1,00 g/mL). Molalite kaçtır?", adimlar: [
+            "n(glikoz) = 4,35 ÷ 180 ≈ 0,0242 mol.",
+            "Su kütlesi = 25,0 mL × 1,00 g/mL = 25,0 g = 0,0250 kg.",
+            "m = 0,0242 ÷ 0,0250 ≈ 0,97 mol/kg.",
+            "Kontrol: 0,97 × 0,0250 = 0,0242 mol ✓ (Derste cevap 0,964 m verilir; fark ara adımda n'nin 0,0241'e yuvarlanmasından gelir.)"
+          ], sonuc: "Molalite ≈ 0,97 m." },
+        { tip: "liste", maddeler: [
+            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Molality is the number of moles of solute per kilogram of solvent; unlike molarity, it does not change with temperature.*" }
+          ] }
+      ]
+    },
+    {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
@@ -159,28 +200,30 @@ window.DEFTER = {
             "Molarite M = n ÷ V(L); V çözeltinin son hacmidir; n = m ÷ M(mol kütlesi).",
             "İyon derişimi = tuz derişimi × iyon sayısı (tam ayrışan tuzlarda).",
             "Seyreltme: M₁V₁ = M₂V₂; çözünenin mol sayısı değişmez, derişim hacimle ters orantılıdır.",
+            "Yüzdeden molariteye: M = 10·d·% ÷ M_mol. Aynı çözünenli çözeltileri karıştırırken molleri ve hacimleri topla.",
+            "*Molality* (m) = mol çözünen ÷ kg çözücü; sıcaklıkla değişmez (molarite değişir).",
             "Hazırlama: tart, çözdür, balon jojede çizgiye tamamla, karıştır."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "40 g tuz 160 g suda çözülüyor. Çözeltinin kütlece yüzde derişimi kaçtır?",
-      opts: ["%25", "%20", "%40", "%80"], a: 1,
+    { q: "40 g of salt is dissolved in 160 g of water. What is the percent concentration by mass of the solution?",
+      opts: ["25%", "20%", "40%", "80%"], a: 1,
       why: "Çözelti = 40 + 160 = 200 g; % = 40 ÷ 200 × 100 = %20. %25 (A) paydaya yalnız suyun kütlesini yazmaktan çıkar (40 ÷ 160)." },
-    { q: "Bir gölün 2000 kg suyunda 6 g çözünmüş madde bulunmuştur. Derişim kaç ppm'dir?",
-      opts: ["3 ppm", "0,3 ppm", "30 ppm", "6 ppm"], a: 0,
+    { q: "2000 kg of lake water contains 6 g of dissolved substance. What is the concentration in ppm?",
+      opts: ["3 ppm", "0.3 ppm", "30 ppm", "6 ppm"], a: 0,
       why: "ppm = 6 ÷ 2 000 000 × 10⁶ = 3 ppm (yani 6 g ÷ 2000 kg = 3 mg/kg). 6 ppm (D) çözelti kütlesini 2000 kg yerine 1000 kg almaktan çıkar." },
-    { q: "Tabloda bir NaOH çözeltisinin hazırlanışı verilmiştir (NaOH: 40 g/mol). Çözeltinin molaritesi kaçtır?",
-      fig: { type: "table", head: ["Madde", "Değer"], rows: [["Çözünen NaOH", "8 g"], ["Çözelti hacmi", "500 mL"]], caption: "NaOH çözeltisi" },
-      opts: ["0,2 M", "16 M", "0,016 M", "0,4 M"], a: 3,
+    { q: "The table shows how an NaOH solution was prepared (NaOH: 40 g/mol). What is the molarity of the solution?",
+      fig: { type: "table", head: ["Item", "Value"], rows: [["NaOH solute", "8 g"], ["Volume of solution", "500 mL"]], caption: "NaOH solution" },
+      opts: ["0.2 M", "16 M", "0.016 M", "0.4 M"], a: 3,
       why: "n = 8 ÷ 40 = 0,2 mol; V = 0,5 L; M = 0,2 ÷ 0,5 = 0,4 M. 0,2 M (A) hacme bölmeyi unutmaktır; 16 M (B) kütleyi mol kütlesine bölmeden hacme bölmektir." },
-    { q: "Grafik, 0,2 mol çözünen içeren bir çözeltinin hacmiyle derişimini gösteriyor. Çözelti 100 mL iken 2 M'dir. 400 mL'ye seyreltilirse derişim kaç M olur?",
-      fig: { type: "graph", xlabel: "Hacim (mL)", ylabel: "Derişim (M)", xmax: 9, ymax: 3, points: [{ q: 1, p: 2, label: "100 mL · 2 M", guides: true }, { q: 2, p: 1, label: "200 mL · 1 M", guides: true }, { q: 8, p: 0.25, label: "800 mL · 0,25 M", guides: true }], xticks: [{ v: 1, label: "100" }, { v: 2, label: "200" }, { v: 4, label: "400" }, { v: 8, label: "800" }], yticks: [{ v: 0.25, label: "0,25" }, { v: 1, label: "1" }, { v: 2, label: "2" }], caption: "Seyreltme" },
-      opts: ["0,25 M", "1 M", "0,5 M", "2 M"], a: 2,
+    { q: "The graph shows the volume and concentration of a solution containing 0.2 mol of solute. It is 2 M at 100 mL. What is the concentration if it is diluted to 400 mL?",
+      fig: { type: "graph", xlabel: "Volume (mL)", ylabel: "Concentration (M)", xmax: 9, ymax: 3, points: [{ q: 1, p: 2, label: "100 mL · 2 M", guides: true }, { q: 2, p: 1, label: "200 mL · 1 M", guides: true }, { q: 8, p: 0.25, label: "800 mL · 0.25 M", guides: true }], xticks: [{ v: 1, label: "100" }, { v: 2, label: "200" }, { v: 4, label: "400" }, { v: 8, label: "800" }], yticks: [{ v: 0.25, label: "0.25" }, { v: 1, label: "1" }, { v: 2, label: "2" }], caption: "Dilution" },
+      opts: ["0.25 M", "1 M", "0.5 M", "2 M"], a: 2,
       why: "M₂ = M₁V₁ ÷ V₂ = 2 × 100 ÷ 400 = 0,5 M (mol sabit: 0,5 × 0,4 L = 0,2 mol). 1 M (B) 200 mL'deki, 0,25 M (A) 800 mL'deki değerdir." },
-    { q: "0,25 M Na₃PO₄ çözeltisi tam ayrışıyor. Na⁺ ve PO₄³⁻ iyonlarının derişimleri kaç M'dir?",
-      opts: ["0,25 M ve 0,25 M", "0,75 M ve 0,25 M", "0,25 M ve 0,75 M", "0,75 M ve 0,75 M"], a: 1,
+    { q: "A 0.25 M Na₃PO₄ solution dissociates completely. What are the concentrations of the Na⁺ and PO₄³⁻ ions?",
+      opts: ["0.25 M and 0.25 M", "0.75 M and 0.25 M", "0.25 M and 0.75 M", "0.75 M and 0.75 M"], a: 1,
       why: "Na₃PO₄ → 3Na⁺ + PO₄³⁻: [Na⁺] = 3 × 0,25 = 0,75 M; [PO₄³⁻] = 0,25 M. A şıkkı ayrışmada iyon sayısını katsayıyla çarpmamaktır." }
   ]
 };

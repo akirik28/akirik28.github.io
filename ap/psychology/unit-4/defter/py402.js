@@ -34,7 +34,7 @@ window.DEFTER = {
           oyun: [
             { metin: "\"Yeni gelen öğrenciler bana güvenilmez geliyor.\"", cevap: "sol", neden: "Duygu ve inanç: önyargı." },
             { metin: "Yeni gelen öğrencileri takım seçmelerine almamak.", cevap: "sag", neden: "Haksız davranış: ayrımcılık." },
-            { metin: "\"Rakip takımın taraftarları hep kabadır.\"", cevap: "sol", neden: "Genelleme ve olumsuz tutum: önyargı (stereotipe dayanır)." },
+            { metin: "\"Rakip takımın taraftarlarından hoşlanmıyorum, yanlarında huzursuz oluyorum.\"", cevap: "sol", neden: "Genelleme ve olumsuz tutum: önyargı (stereotipe dayanır)." },
             { metin: "Rakip takım taraftarı olan birinin kulüp başvurusunu hiç incelemeden reddetmek.", cevap: "sag", neden: "Eylem: ayrımcılık." }
           ] },
         { tip: "tuzak", metin: "Stereotip zihinde bir kısayoldur ve hem sonuç hem neden olabilir: önyargılı deneyimlerin ürünü olduğu gibi onları da besler.", yanlis: "*Prejudice* ile *discrimination* aynı şeydir.", dogru: "==*Prejudice* tutumdur (duygu), *discrimination* davranıştır.== Stereotip ise düşünce yanıdır; ikisinin de temelinde yer alır." }

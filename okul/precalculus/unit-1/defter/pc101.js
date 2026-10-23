@@ -1,8 +1,8 @@
 /* Kitora not defteri · pc101 · 1.1 Fonksiyonlara Giriş
-   Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Exam hedefleri) + MEB 10. sınıf. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmenin ders sunumu (Unit#1_1 Functions) + Exam 1 objectives; ders notuyla aynı terim ve gösterim. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "pc101",
-  amac: "Bu konu fonksiyonun ne olduğunu ve nasıl sınıflandırıldığını anlatıyor. Tablo, grafik ve denklemden fonksiyon okumayı; birebir, örten, sabit, birim, doğrusal türlerini; çift ve tek fonksiyonu öğreneceksin.",
+  amac: "Bu konu fonksiyonun ne olduğunu ve nasıl sınıflandırıldığını anlatıyor. Tablo, grafik ve formülden fonksiyon okumayı, domain ve range bulmayı; birebir, örten, sabit, birim, doğrusal türlerini; çift ve tek fonksiyonu öğreneceksin.",
   bolumler: [
     {
       baslik: "Fonksiyon nedir?",
@@ -39,15 +39,15 @@ window.DEFTER = {
             {
               ikon: "🎯",
               terim: "Codomain",
-              tr: "değer (hedef) kümesi",
-              tanim: "Çıktıların ait olabileceği hedef küme (B kümesi).",
-              ornek: "f: ℝ → ℝ için codomain ℝ."
+              tr: "hedef küme (ek bilgi)",
+              tanim: "f: A → B yazılışındaki B kümesi. Derste bu küme yalnızca \"B kümesi\" diye anılır; range ise f(A) demektir.",
+              ornek: "f: ℝ → ℝ için hedef küme ℝ."
             },
             {
               ikon: "📤",
               terim: "Range",
               tr: "görüntü kümesi",
-              tanim: "Gerçekten elde edilen çıktıların kümesi; codomain'in bir alt kümesidir.",
+              tanim: "Gerçekten elde edilen çıktıların kümesi f(A); hedef kümenin bir alt kümesidir.",
               ornek: "f(x) = x² için range [0, ∞)."
             }
           ]
@@ -145,6 +145,48 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Formülden domain ve range bulmak",
+      kisa: "Kökün içi ≥ 0 ve payda ≠ 0 koşulundan domain; range'i eşitsizlikle bul.",
+      bloklar: [
+        {
+          tip: "ornek",
+          baslik: "Kök ve kesirli fonksiyonda domain",
+          durum: "f(x) = √(15 − 2x − 8x²) ve g(x) = (4x + 3)/√(x² − 2x − 8) fonksiyonlarının domain'i nedir?",
+          adimlar: [
+            "f: kökün içi ≥ 0 olmalı: 15 − 2x − 8x² ≥ 0, yani 8x² + 2x − 15 ≤ 0.",
+            "Çarpanlara ayır: (4x − 5)(2x + 3) ≤ 0. Kökler x = 5/4 ve x = −3/2; parabol yukarı açık, köklerin arasında ≤ 0.",
+            "g: kök paydada olduğu için içi > 0 olmalı (0 olursa payda sıfırlanır): x² − 2x − 8 > 0.",
+            "(x − 4)(x + 2) > 0: köklerin dışında pozitif, yani x < −2 ya da x > 4."
+          ],
+          sonuc: "D(f) = [−3/2, 5/4] ve D(g) = (−∞, −2) ∪ (4, ∞). Sınavda böyle yaz: *The expression under the square root must be non-negative, and the denominator cannot be zero.*"
+        },
+        {
+          tip: "ornek",
+          baslik: "Domain verilmiş, formülü yaz",
+          durum: "Domain'i [3, 5) olan ve domain'i [−2, 1] ∪ {3} olan birer formül bul.",
+          adimlar: [
+            "[3, 5): x = 3'te kökün içi 0 olabilmeli, x = 5'te payda sıfırlanmalı: f(x) = √((x − 3)/(5 − x)).",
+            "Kontrol: 3 ile 5 arasında (x − 3)/(5 − x) > 0; x = 3'te 0 (tanımlı); x = 5'te payda 0 (tanımsız) ✓.",
+            "[−2, 1] ∪ {3}: kökün içine (x + 2)(1 − x)(x − 3)² yaz. [−2, 1] aralığında ilk iki çarpan ≥ 0'dır.",
+            "x = 3'te (x − 3)² = 0 olduğundan kökün içi 0, tanımlı. Başka x'lerde (x + 2)(1 − x) < 0 ve (x − 3)² > 0 olduğundan içi negatif."
+          ],
+          sonuc: "f(x) = √((x − 3)/(5 − x)) ve g(x) = √((x + 2)(1 − x)(x − 3)²). Tek doğru formül yoktur; kısıtları üreten her ifade olur."
+        },
+        {
+          tip: "tablo",
+          baslik: "Range bulmak: bildiğin sınırdan başla",
+          head: ["Fonksiyon", "Fikir", "Range"],
+          rows: [
+            ["f(x) = 4 − x²", "x² ≥ 0 olduğundan f ≤ 4", "(−∞, 4]"],
+            ["f(x) = √(x + 1) + 3", "kök ≥ 0 olduğundan f ≥ 3", "[3, ∞)"],
+            ["f(x) = 1/(x² + 6)", "x² + 6 ≥ 6 olduğundan 0 < f ≤ 1/6", "(0, 1/6]"],
+            ["f(x) = (x − 3)/(x + 4)", "f(x) = 1 − 7/(x + 4); 7/(x + 4) hiç 0 olamaz", "ℝ ∖ {1}"]
+          ],
+          not: "Başka yol: y = f(x) denklemini x için çöz; x'in gerçek çıkması için y'nin alabileceği değerler range'dir."
+        }
+      ]
+    },
+    {
       baslik: "Grafikten fonksiyon: dikey doğru testi",
       kisa: "Hiçbir dikey doğru grafiği iki noktada kesmiyorsa grafik bir fonksiyondur.",
       bloklar: [
@@ -231,29 +273,29 @@ window.DEFTER = {
               ikon: "1️⃣",
               terim: "One-to-one",
               tr: "birebir (*injective*)",
-              tanim: "Farklı girdiler hep farklı çıktı verir: f(a) = f(b) ise a = b. Yatay doğru grafiği en fazla bir kez keser.",
+              tanim: "f(x₁) = f(x₂) ise x₁ = x₂ olur (her x₁, x₂ için). Yatay doğru testi (*horizontal line test*): her yatay doğru grafiği en fazla bir kez keser.",
               ornek: "f(x) = 2x + 1."
             },
             {
               ikon: "🎯",
               terim: "Onto",
               tr: "örten (*surjective*)",
-              tanim: "Range = codomain: hedef kümedeki her eleman bir girdiden gelir.",
+              tanim: "Her y ∈ B için f(x) = y olan bir x ∈ A vardır; yani f(A) = B, hedefte boşta eleman kalmaz.",
               ornek: "f: ℝ → ℝ, f(x) = x³."
             },
             {
               ikon: "🕳️",
               terim: "Into",
               tr: "içine",
-              tanim: "Örten olmayan fonksiyon: hedef kümede boşta kalan eleman var.",
+              tanim: "Örten olmayan fonksiyon: f(A) ≠ B, hedef kümede boşta kalan eleman var.",
               ornek: "f: ℝ → ℝ, f(x) = x²: −1 hiç çıkmaz."
             },
             {
-              ikon: "🤝",
-              terim: "Many-to-one",
-              tr: "çoktan bire",
-              tanim: "En az iki girdi aynı çıktıyı paylaşır; fonksiyon birebir değildir.",
-              ornek: "f(2) = f(−2) = 4."
+              ikon: "🔁",
+              terim: "Bijective",
+              tr: "birebir ve örten",
+              tanim: "Hem birebir hem örten fonksiyon; ters fonksiyonu olan fonksiyonlar bunlardır.",
+              ornek: "f: ℝ → ℝ, f(x) = 3x − 6."
             }
           ]
         },
@@ -309,25 +351,32 @@ window.DEFTER = {
           baslik: "Fonksiyon türleri",
           head: ["Tür", "Kural", "Grafik", "Birebir?", "Örten (ℝ→ℝ)?"],
           rows: [
-            ["*Constant* (sabit)", "f(x) = c", "yatay doğru", "Hayır", "Hayır (range = {c})"],
-            ["*Identity* (birim)", "f(x) = x", "y = x doğrusu", "Evet", "Evet"],
-            ["*Linear* (doğrusal)", "f(x) = mx + n, m ≠ 0", "eğimi m olan doğru", "Evet", "Evet"],
+            ["*Constant* (sabit)", "f(A) tek elemanlı: f(x) = c", "yatay doğru", "Hayır", "Hayır (range = {c})"],
+            ["*Zero* (sıfır)", "f(x) = 0 (sabit fonksiyonun özel hâli)", "x ekseni", "Hayır", "Hayır"],
+            ["*Identity* (birim)", "A → A, f(x) = x", "y = x doğrusu", "Evet", "Evet"],
             [
-              "*Quadratic* (ikinci derece)",
-              "f(x) = ax² + bx + c, a ≠ 0",
-              "parabol",
-              "Hayır",
-              "Hayır"
+              "*Linear* (doğrusal)",
+              "f(x) = mx + n (m, n ∈ ℝ); m eğim, n y-kesişimi",
+              "eğimi m olan doğru",
+              "m ≠ 0 ise evet",
+              "m ≠ 0 ise evet"
             ],
             [
-              "*Absolute value* (mutlak değer)",
+              "*Polynomial* (polinom)",
+              "f(x) = aₙxⁿ + … + a₁x + a₀; ikinci derecede ax² + bx + c",
+              "ikinci derecede parabol",
+              "Dereceye bağlı; ikinci derecede hayır",
+              "Dereceye bağlı; ikinci derecede hayır"
+            ],
+            [
+              "*Absolute value* (mutlak değer, ek bilgi)",
               "f(x) = |x|",
               "V biçimi",
               "Hayır",
               "Hayır"
             ]
           ],
-          not: "m = 0 olursa doğrusal fonksiyon sabit fonksiyona dönüşür. Sınavda böyle yaz: *f(x) = 5 is a constant function because every input has the same output.*"
+          not: "Derste doğrusal fonksiyon m, n ∈ ℝ ile tanımlanır; m = 0 olursa sabit fonksiyona dönüşür. Sınavda böyle yaz: *f(x) = 5 is a constant function because every input has the same output.*"
         },
         {
           tip: "grafik",
@@ -408,7 +457,7 @@ window.DEFTER = {
             "ya da",
             { t: "f(−x) = −f(x)", alt: "tek (*odd*): orijine göre simetri" }
           ],
-          aciklama: "Eşitlik domain'deki **her** x için doğru olmalı. Sınavda böyle yaz: *f is even because f(−x) = f(x) for all x in the domain.*"
+          aciklama: "Ders tanımı: f: [−a, a] → ℝ için eşitlik **her** x ∈ [−a, a] doğru olmalı; yani domain 0'a göre simetrik olmalı. Sınavda böyle yaz: *f is even because f(−x) = f(x) for all x in the domain.*"
         },
         {
           tip: "grafik",
@@ -511,7 +560,7 @@ window.DEFTER = {
         },
         {
           tip: "tablo",
-          baslik: "İşlem kuralları",
+          baslik: "İşlem kuralları (ek bilgi)",
           head: ["İşlem", "Sonuç", "Örnek"],
           rows: [
             ["çift + çift", "çift", "x² + x⁴"],
@@ -543,6 +592,7 @@ window.DEFTER = {
             "Birebir: f(a) = f(b) ise a = b; yatay doğru testi. Örten: range = codomain.",
             "Sabit f(x) = c, birim f(x) = x, doğrusal f(x) = mx + n.",
             "Tablodan: f(a) değerini oku, domain üst satır, range alt satır; tekrar eden çıktı birebir değil demek.",
+            "Formülden domain: kök içi ≥ 0, payda ≠ 0; kök paydadaysa içi > 0. Range'i sınırlardan bul.",
             "Çift: f(−x) = f(x), y eksenine simetri. Tek: f(−x) = −f(x), orijine simetri.",
             "Sınıflandırma: f(−x) hesapla; ikisi de olmuyorsa hiçbiri.",
             "Sınavda neden yaz: *since f(−x) = f(x), f is even.*"
@@ -553,57 +603,57 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Tabloyla verilen g fonksiyonu için hangisi doğrudur?",
+      q: "The function g is given by the table below. Which statement is true?",
       fig: {
         type: "table",
         head: ["x", "1", "2", "3", "4"],
         rows: [
           ["g(x)", "5", "7", "5", "9"]
         ],
-        caption: "g fonksiyonu"
+        caption: "Function g"
       },
       opts: [
-        "g bir fonksiyon değildir, çünkü 5 iki kez görünüyor.",
-        "g birebirdir, çünkü her x farklı bir değer.",
-        "g(1) = g(3) olduğundan g birebir değildir; range = {5, 7, 9}.",
-        "g'nin range'i {1, 2, 3, 4} kümesidir."
+        "g is not a function because the value 5 appears twice.",
+        "g is one-to-one because every x is different.",
+        "g(1) = g(3), so g is not one-to-one; the range is {5, 7, 9}.",
+        "The range of g is {1, 2, 3, 4}."
       ],
       a: 2,
       why: "Fonksiyon kuralı yalnızca bir girdinin iki çıktısı olmasını yasaklar; iki girdinin aynı çıktıyı paylaşması serbest. g(1) = g(3) = 5 olduğundan g birebir değildir. Range, alt satırdaki değerlerdir: {5, 7, 9}. A seçeneği çekici ama yanlış: 5'in iki kez görünmesi fonksiyonluğu bozmaz."
     },
     {
-      q: "f(x) = x⁵ − 4x³ + 2x fonksiyonu için hangisi doğrudur?",
+      q: "What is the domain of f(x) = √(x² − 2x − 8)?",
       opts: [
-        "Çifttir, çünkü f(−x) = f(x).",
-        "Tektir, çünkü f(−x) = −f(x).",
-        "Hiçbiri, çünkü hem x⁵ hem x³ var.",
-        "Hem çift hem tektir."
+        "[−2, 4]",
+        "(−∞, −2] ∪ [4, ∞)",
+        "(−∞, −2) ∪ (4, ∞)",
+        "ℝ"
       ],
       a: 1,
-      why: "f(−x) = −x⁵ + 4x³ − 2x = −(x⁵ − 4x³ + 2x) = −f(x). Bütün kuvvetler tek olduğundan fonksiyon tektir. C seçeneği çekici: farklı kuvvetler var ama hepsi tek kuvvet; karışık olması için çift kuvvet de gerekirdi."
+      why: "Kökün içi ≥ 0 olmalı: x² − 2x − 8 = (x − 4)(x + 2) ≥ 0. Parabol yukarı açık, köklerin dışında ve köklerde ≥ 0: x ≤ −2 ya da x ≥ 4. Kökün içi 0 olabildiği için uçlar dahil (köşeli parantez). C seçeneği çekici: uçlar hariç olsaydı kök paydada olurdu, burada öyle değil."
     },
     {
-      q: "f: {1, 2, 3} → {a, b, c, d} fonksiyonunda f(1) = a, f(2) = c, f(3) = d veriliyor. Hangisi doğrudur?",
+      q: "Let f: {1, 2, 3} → {a, b, c, d} be defined by f(1) = a, f(2) = c, f(3) = d. Which statement is true?",
       opts: [
-        "f birebirdir ama örten değildir.",
-        "f örtendir ama birebir değildir.",
-        "f hem birebir hem örtendir.",
-        "f ne birebir ne örtendir."
+        "f is one-to-one but not onto.",
+        "f is onto but not one-to-one.",
+        "f is both one-to-one and onto.",
+        "f is neither one-to-one nor onto."
       ],
       a: 0,
-      why: "Üç girdi üç farklı çıktı verdi: birebir. Ama codomain'de d dışında b de var ve hiçbir girdi b'ye gitmiyor: range = {a, c, d} ≠ codomain, yani örten değil. Eleman sayısı da bunu söyler: 3 girdi, 4 hedef; 4 elemanın hepsi dolamaz."
+      why: "Üç girdi üç farklı çıktı verdi: birebir. Ama hedef kümede d dışında b de var ve hiçbir girdi b'ye gitmiyor: f(A) = {a, c, d} ≠ B, yani örten değil. Eleman sayısı da bunu söyler: 3 girdi, 4 hedef; 4 elemanın hepsi dolamaz."
     },
     {
-      q: "g(x) = (k − 3)x² + (k + 1)x fonksiyonu tek fonksiyon olduğuna göre k kaçtır?",
+      q: "The function g(x) = (k − 3)x² + (k + 1)x is an odd function. What is the value of k?",
       opts: ["−1", "0", "1", "3"],
       a: 3,
       why: "g(−x) = (k − 3)x² − (k + 1)x ve −g(x) = −(k − 3)x² − (k + 1)x. Eşit olması için x² katsayısı sıfır olmalı: k − 3 = 0, k = 3. Bu durumda g(x) = 4x tek fonksiyon. k = −1 (A) fonksiyonu çift yapardı: g(x) = −4x²."
     },
     {
-      q: "h(x) = x², tanımlı olduğu kümeler değiştirilerek bijective (birebir ve örten) yapılmak isteniyor. Hangi seçim h'yi bijective yapar?",
+      q: "The function h(x) = x² can be made bijective by choosing a suitable domain and codomain. Which choice makes h bijective?",
       opts: ["h: ℝ → ℝ", "h: [0, ∞) → ℝ", "h: ℝ → [0, ∞)", "h: [0, ∞) → [0, ∞)"],
       a: 3,
-      why: "h(x) = x² birebir olması için domain'in tek işaretli olması gerekir (x ≥ 0); örten olması için codomain range'e, yani [0, ∞)'e eşit olmalı. B seçeneği birebir ama negatif sayılar boşta (örten değil); C seçeneği örten ama h(2) = h(−2) (birebir değil)."
+      why: "h(x) = x² birebir olması için domain'in tek işaretli olması gerekir (x ≥ 0); örten olması için hedef küme range'e, yani [0, ∞)'e eşit olmalı. B seçeneği birebir ama negatif sayılar boşta (örten değil); C seçeneği örten ama h(2) = h(−2) (birebir değil)."
     }
   ]
 };

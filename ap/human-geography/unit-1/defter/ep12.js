@@ -104,7 +104,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🚀", terim: "Time-space compression", tr: "zaman–mekân sıkışması", tanim: "Teknoloji sayesinde mesafenin öneminin azalması. ==*Time-space convergence* ile aynı fikir.==", ornek: "İki şehir arasındaki uçak ve sinyal yolu kısalır; mesafe sanki küçülür." }
           ] },
-        { tip: "tuzak", metin: "İki kavramın adı farklı olduğu için ayrı şeyler sanılabilir.", yanlis: "*Time-space compression* ile *time-space convergence* farklı kavramlardır.", dogru: "==Aynı fikir==: teknoloji mesafeyi kısaltır; kilometre değişmez, zaman azalır." }
+        { tip: "tuzak", metin: "İki kavramın adı farklı olduğu için ayrı şeyler sanılabilir.", yanlis: "*Time-space compression* ile *time-space convergence* farklı kavramlardır.", dogru: "==Çok yakın fikirler==; AP sınavı ikisini çoğu zaman eş anlamlı kullanır. *Convergence* (Janelle) ölçülebilir yolculuk süresinin kısalması, *compression* (Harvey) mesafenin öneminin azalmasının toplumsal-ekonomik sonucudur." }
       ]
     },
     {

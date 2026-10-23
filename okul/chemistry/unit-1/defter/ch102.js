@@ -39,7 +39,8 @@ window.DEFTER = {
           ], not: "Dallanma arttıkça temas yüzeyi küçülür, London kuvveti zayıflar, kaynama noktası düşer." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: büyüklük", metin: "*Argon has a higher boiling point than neon because it has more electrons, so its London dispersion forces are stronger.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: şekil", metin: "*Neopentane boils at a lower temperature than pentane because its compact shape has less surface contact.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: şekil", metin: "*Neopentane boils at a lower temperature than pentane because its compact shape has less surface contact.*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: Cl₂, Br₂, I₂", metin: "*Cl₂ is a gas, Br₂ is a liquid and I₂ is a solid because all three have only London forces, which get stronger as the molecules get larger.*" }
           ] }
       ]
     },
@@ -48,7 +49,7 @@ window.DEFTER = {
       kisa: "Polar moleküller zıt uçlarıyla birbirini çeker; London kuvveti onların üstüne eklenir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🧭", terim: "Dipole-dipole force", tr: "dipol-dipol kuvveti", tanim: "Kalıcı dipolü olan polar moleküllerin zıt uçları (δ⁺ ile δ⁻) arasındaki çekim.", ornek: "HCl ve aseton molekülleri birbirini bu kuvvetle çeker." },
+            { ikon: "🧭", terim: "Dipole-dipole force", tr: "dipol-dipol kuvveti", tanim: "Kalıcı dipolü olan polar moleküllerin zıt uçları (δ⁺ ile δ⁻) arasındaki çekim. Moleküllerin polarlığı (ΔEN) arttıkça kuvvet güçlenir; London kuvvetinden güçlüdür.", ornek: "BrF ile ClF: EN(Br) = 2,8, EN(Cl) = 3,0, EN(F) = 4,0 olduğundan ΔEN BrF'de 1,2, ClF'de 1,0; BrF daha polardır ve daha güçlü dipol-dipol yapar." },
             { ikon: "🌀", terim: "Dipole-induced dipole force", tr: "dipol-indüklenmiş dipol kuvveti", tanim: "Polar molekül, yakındaki apolar molekülün elektron bulutunu bozar (indükler); oluşan dipollerin çekimidir.", ornek: "Suda çözünen O₂ ile H₂O arasında." }
           ] },
         { tip: "tablo", baslik: "Benzer mol kütlesi, farklı kuvvet", head: ["Madde", "Mol kütlesi", "Baskın kuvvet", "Kaynama noktası"], rows: [
@@ -57,10 +58,11 @@ window.DEFTER = {
             ["Bütan C₄H₁₀", "58", "London (apolar)", "−1 °C"],
             ["Aseton CH₃COCH₃", "58", "Dipol-dipol + London", "56 °C"]
           ], not: "Mol kütlesi hemen hemen aynıyken polar olan, kalıcı dipolleri yüzünden daha yüksek kaynar." },
-        { tip: "tuzak", metin: "Polar maddelerde London kuvveti kaybolmaz.", yanlis: "Polar moleküllerde yalnızca dipol-dipol kuvveti vardır, London yoktur.", dogru: "==London kuvveti her maddede vardır.== Polar moleküllerde dipol-dipol onun üstüne eklenir; büyük moleküllerde London kuvveti dipol-dipol'den baskın bile olabilir." },
+        { tip: "tuzak", metin: "Polar maddelerde London kuvveti kaybolmaz.", yanlis: "Polar moleküllerde yalnızca dipol-dipol kuvveti vardır, London yoktur.", dogru: "==London kuvveti her maddede vardır.== Polar moleküllerde dipol-dipol onun üstüne eklenir; büyük moleküllerde London kuvveti dipol-dipol'den baskın bile olabilir: yalnızca London kuvveti olan büyük bir molekül, dipol-dipol kuvveti olan küçük bir moleküle göre daha yüksek kaynayabilir." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: dipol-dipol", metin: "*HCl molecules attract each other through dipole-dipole forces, so HCl boils higher than a nonpolar molecule of similar mass.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: dipol-indüklenmiş dipol", metin: "*Dipole-induced dipole forces occur between a polar molecule and a nonpolar molecule.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: dipol-indüklenmiş dipol", metin: "*Dipole-induced dipole forces occur between a polar molecule and a nonpolar molecule.*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: CH₄ ve CH₃Cl", metin: "*CH₃Cl is polar, so it has dipole-dipole forces in addition to London forces; therefore it has a higher boiling point than nonpolar CH₄.*" }
           ] }
       ]
     },
@@ -97,7 +99,8 @@ window.DEFTER = {
         { tip: "tuzak", metin: "Molekülde hem H hem O (ya da N) bulunması yetmez; H'nin doğrudan F/O/N'ye bağlı olması gerekir.", yanlis: "CH₃CHO'da H ve O var, o hâlde molekülleri arasında hidrojen bağı vardır.", dogru: "CH₃CHO'da H'ler C'ye bağlıdır, O–H bağı yoktur. ==Kendi molekülleri arasında hidrojen bağı kurmaz==; yalnızca dipol-dipol ve London vardır." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: koşul", metin: "*Hydrogen bonds form when hydrogen is bonded directly to fluorine, oxygen or nitrogen.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: kaynama noktası", metin: "*Water has an unusually high boiling point because its molecules form hydrogen bonds.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: kaynama noktası", metin: "*Water has an unusually high boiling point because its molecules form hydrogen bonds.*" },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: HF, HI, HBr, HCl", metin: "*HF has the highest boiling point because of hydrogen bonding; for the others, the boiling point increases HCl < HBr < HI as the molecules get larger and London forces get stronger.*" }
           ] }
       ]
     },
@@ -140,7 +143,8 @@ window.DEFTER = {
           sonuc: "==CH₄ < HCl < H₂O== (yaklaşık 112 K < 188 K < 373 K). Aynı türde kuvvet varsa mol kütlesi büyük olan, mol kütlesi aynıysa dallanması az olan yüksek kaynar." },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: karşılaştırma", metin: "*Water has a higher boiling point than hydrogen sulfide because it forms hydrogen bonds.*" },
-            { ikon: "✍️", baslik: "Sınavda böyle yaz: aynı tür kuvvet", metin: "*Among nonpolar molecules, the one with the larger molar mass has stronger London forces and a higher boiling point.*" }
+            { ikon: "✍️", baslik: "Sınavda böyle yaz: aynı tür kuvvet", metin: "*Among nonpolar molecules, the one with the larger molar mass has stronger London forces and a higher boiling point.*" },
+            { ikon: "🪜", baslik: "Açıklama sorusu: 4 adım", metin: "1) Her maddede hangi kuvvetler var? 2) Güçlerini nasıl karşılaştırırsın (büyüklük, polarlık, hidrojen bağı)? 3) Kuvvet sırası nedir? 4) Bunu sorudaki fiziksel özelliğe (kaynama noktası, hâl) bağla." }
           ] }
       ]
     },
@@ -162,27 +166,28 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Tabloda 16. grup hidrürlerinin kaynama noktaları verilmiştir. H₂O'nun kaynama noktasının diğerlerinden çok yüksek olmasının nedeni nedir?",
-      fig: { type: "table", caption: "16. grup hidrürleri", head: ["Madde", "H₂O", "H₂S", "H₂Se", "H₂Te"], rows: [["Kaynama noktası (°C)", "100", "−60", "−41", "−2"]] },
-      opts: ["H₂O'nun mol kütlesi en büyüktür", "H₂O molekülleri arasında hidrojen bağı vardır", "H₂O apolar bir moleküldür", "Kaynarken H₂O'nun O–H bağları kopar"],
+    { q: "The table shows the boiling points of the Group 16 hydrides. What is the reason for the very high boiling point of H₂O compared with the others?",
+      fig: { type: "table", caption: "Group 16 hydrides", head: ["Substance", "H₂O", "H₂S", "H₂Se", "H₂Te"], rows: [["Boiling point (°C)", "100", "−60", "−41", "−2"]] },
+      opts: ["H₂O has the largest molar mass", "There are hydrogen bonds between H₂O molecules", "H₂O is a nonpolar molecule", "The O–H bonds of H₂O break when it boils"],
       a: 1,
       why: "H₂O'da H doğrudan O'ya bağlıdır; moleküller arasında hidrojen bağı oluşur ve kaynama noktasını çok yükseltir. A en çekici yanlış şık: mol kütlesi H₂O'da aslında en küçüktür (18 g/mol)." },
-    { q: "C₅H₁₂ formülüne sahip üç izomerin kaynama noktaları tabloda verilmiştir. Z'nin kaynama noktasının en düşük olması en iyi nasıl açıklanır?",
-      fig: { type: "table", caption: "C₅H₁₂ izomerleri (hepsi 72 g/mol)", head: ["Madde", "X (düz zincir)", "Y (tek dal)", "Z (küremsi)"], rows: [["Kaynama noktası (°C)", "36", "28", "10"]] },
-      opts: ["Z'nin mol kütlesi daha küçüktür", "Z polar, X apolardır", "Z'de hidrojen bağı vardır", "Z küremsi olduğu için komşu moleküllerle temas yüzeyi azdır, London kuvveti zayıftır"],
+    { q: "The boiling points of three isomers with the formula C₅H₁₂ are given in the table. Which statement best explains why Z has the lowest boiling point?",
+      fig: { type: "table", caption: "C₅H₁₂ isomers (all 72 g/mol)", head: ["Substance", "X (straight chain)", "Y (one branch)", "Z (nearly spherical)"], rows: [["Boiling point (°C)", "36", "28", "10"]] },
+      opts: ["Z has a smaller molar mass", "Z is polar and X is nonpolar", "Z has hydrogen bonds", "Z is nearly spherical, so it has less contact surface with neighboring molecules and weaker London forces"],
       a: 3,
       why: "Mol kütleleri eşit ve üçü de apolardır; fark şekilden gelir. Küremsi molekülün temas yüzeyi küçük, London kuvveti zayıftır. A en çekici yanlış şık: üç izomerin de mol kütlesi aynıdır." },
-    { q: "Aşağıdaki karışımlardan hangisinde moleküller arasında yalnızca London kuvvetleri etkilidir?",
-      opts: ["NaCl ve H₂O", "CH₃OH ve H₂O", "I₂ ve CCl₄", "O₂ ve H₂O"],
+    { q: "In which of the following mixtures are only London forces active between the molecules?",
+      opts: ["NaCl and H₂O", "CH₃OH and H₂O", "I₂ and CCl₄", "O₂ and H₂O"],
       a: 2,
       why: "I₂ ve CCl₄ apolardır; aralarında yalnızca London vardır. D en çekici yanlış şık: O₂ apolar olsa da H₂O polardır, dipol-indüklenmiş dipol kuvveti de etkilidir." },
-    { q: "F₂ (38 g/mol, apolar), HCl (36,5 g/mol, polar) ve HF (20 g/mol) maddelerinin kaynama noktaları için hangi sıralama doğrudur?",
-      opts: ["F₂ < HCl < HF", "HF < HCl < F₂", "HCl < F₂ < HF", "F₂ < HF < HCl"],
+    { q: "The boiling points of F₂, OF₂ and HF are −188 °C, −145 °C and 19.5 °C, respectively. Which explanation best accounts for this order?",
+      fig: { type: "table", caption: "Boiling points", head: ["Substance", "F₂", "OF₂", "HF"], rows: [["Boiling point (°C)", "−188", "−145", "19.5"]] },
+      opts: ["F₂ has only London forces, OF₂ is polar and also has dipole-dipole forces, and HF forms hydrogen bonds", "HF has the largest molar mass of the three", "F₂ has the strongest covalent bond, so it boils at the lowest temperature", "OF₂ forms hydrogen bonds because it contains both O and F"],
       a: 0,
-      why: "F₂ yalnızca London, HCl dipol-dipol + London, HF hidrojen bağı içerir; kuvvet türü sıralaması kütleden daha belirleyicidir: F₂ < HCl < HF. B en çekici yanlış şık: mol kütlesine bakıp HF'yi en düşük sayar." },
-    { q: "Grafikte soygazların kaynama noktaları verilmiştir. Kaynama noktasının He'dan Kr'ye doğru artmasının nedeni aşağıdakilerden hangisidir?",
-      fig: { type: "bar", cats: ["He", "Ne", "Ar", "Kr"], series: [{ name: "Kaynama noktası", values: [4, 27, 87, 120] }], ylabel: "K" },
-      opts: ["Soygazlar arasında hidrojen bağı oluşur", "Atom büyüklüğü ve elektron sayısı arttıkça London kuvvetleri güçlenir", "Soygazlar polar atomlardır", "Kr atomları arasında iyonik bağ vardır"],
+      why: "F₂ apolar (yalnızca London), OF₂ polar (dipol-dipol + London), HF'de H doğrudan F'ye bağlı (hidrojen bağı). Kuvvet türü sıralaması: F₂ < OF₂ < HF. D en çekici yanlış şık: OF₂'de H yoktur, hidrojen bağı kuramaz." },
+    { q: "The graph shows the boiling points of the noble gases. What is the reason for the increase in boiling point from He to Kr?",
+      fig: { type: "bar", cats: ["He", "Ne", "Ar", "Kr"], series: [{ name: "Boiling point", values: [4, 27, 87, 120] }], ylabel: "K" },
+      opts: ["Hydrogen bonds form between noble gas atoms", "London forces get stronger as atomic size and the number of electrons increase", "Noble gases are polar atoms", "There are ionic bonds between Kr atoms"],
       a: 1,
       why: "Soygazlar apolar tek atomludur; elektron bulutu büyüdükçe daha kolay bozulur ve London kuvveti artar. C en çekici yanlış şık: soygaz atomları polar değildir." }
   ]

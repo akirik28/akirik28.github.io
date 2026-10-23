@@ -36,9 +36,10 @@ window.DEFTER = (function () {
         kisa: "Açı, başlangıç kenarından bitiş kenarına saatin tersi yönünde ölçülür.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
-              { ikon: "📐", terim: "Standard position", tr: "standart konum", tanim: "Köşesi orijinde, başlangıç kenarı (*initial side*) pozitif x ekseni üstünde olan açı. Bitiş kenarı (*terminal side*) açının nerede bittiğini gösterir.", ornek: "90° açısının bitiş kenarı pozitif y eksenidir." },
+              { ikon: "📐", terim: "Standard position", tr: "standart konum", tanim: "Köşesi (*vertex*) orijinde, başlangıç kenarı (*initial side*) pozitif x ekseni üstünde olan açı; bitiş kenarı (*terminal side*) açının bittiği yerdir.", ornek: "90° dik (*right*), 40° dar (*acute*), 120° geniş (*obtuse*) açıdır; hepsinin başlangıç kenarı pozitif x eksenidir." },
               { ikon: "🔄", terim: "Positive / negative angle", tr: "pozitif / negatif açı", tanim: "Saatin tersi yönündeki dönüş (*counterclockwise*) pozitif, saat yönündeki dönüş (*clockwise*) negatiftir.", ornek: "−90° açısı çeyrek turu aşağı doğru döner." },
-              { ikon: "🎯", terim: "Coterminal angles", tr: "eş uçlu açılar", tanim: "Bitiş kenarı aynı olan açılar; birbirinden tam tur kadar farklıdır: 360°·k ya da radyanda 2π·k.", ornek: "40°, 400° ve −320° aynı yerde biter." }
+              { ikon: "🎯", terim: "Coterminal angles", tr: "eş uçlu açılar", tanim: "Bitiş kenarı aynı olan açılar; birbirinden tam tur kadar farklıdır: 360°·k ya da radyanda 2π·k.", ornek: "40°, 400° ve −320° aynı yerde biter." },
+              { ikon: "🧭", terim: "Principal angle", tr: "esas ölçü", tanim: "Saatin tersi yönünde ölçülen ve derecede [0°, 360°], radyanda [0, 2π] aralığına düşen açı. Eş uçlu bir açının esas ölçüsünü bulmak için tam tur ekle ya da çıkar.", ornek: "−330° açısının esas ölçüsü 30°." }
             ] },
           { tip: "ornek", baslik: "Eş uçlu açıyı bulmak", durum: "400° ve −50° açılarının 0° ile 360° arasındaki eş uçlu açılarını bul.",
             adimlar: ["400° − 360° = 40°: bir tam tur fazla, çıkar.", "−50° + 360° = 310°: negatif açıya bir tam tur ekle.", "Genel yazılış: θ + 360°·k (k bir tam sayı); radyanda θ + 2πk."],
@@ -51,7 +52,7 @@ window.DEFTER = (function () {
         kisa: "Yarım tur 180° = π radyandır; dönüşüm bu orandan çıkar.",
         bloklar: [
           { tip: "formul", parcalar: [{ t: "π rad", alt: "yarım tur" }, "=", { t: "180°" }],
-            aciklama: "Tam tur: 2π rad = 360°. ==Derece → radyan: π/180 ile çarp. Radyan → derece: 180/π ile çarp.== 1 radyan, yarıçap uzunluğunda bir yayı gören açıdır." },
+            aciklama: "Tam tur: 2π rad = 360°. ==Derece → radyan: π/180 ile çarp. Radyan → derece: 180/π ile çarp.== Radyan tanımı: merkez açı θ = s / r (s yay uzunluğu, r yarıçap); 1 radyan, yarıçap uzunluğunda bir yayı gören açıdır. Derece-dakika dönüşümü: 1° = 60′ olduğundan 25°30′ = 25,5°." },
           { tip: "tablo", baslik: "Sık kullanılan açılar", head: ["Derece", "Radyan", "Derece", "Radyan"],
             rows: [["30°", "π/6", "210°", "7π/6"], ["45°", "π/4", "225°", "5π/4"], ["60°", "π/3", "240°", "4π/3"], ["90°", "π/2", "270°", "3π/2"], ["120°", "2π/3", "300°", "5π/3"], ["135°", "3π/4", "315°", "7π/4"], ["150°", "5π/6", "330°", "11π/6"], ["180°", "π", "360°", "2π"]],
             not: "Hile: payda 6 ise 30°'nin, payda 4 ise 45°'nin, payda 3 ise 60°'nin katlarısın; pay kaç ise o kadar kat." },
@@ -63,14 +64,14 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Yay uzunluğu ve daire dilimi",
-        kisa: "Açı radyan olunca yay uzunluğu s = rθ olur.",
+        kisa: "Açı radyan olunca yay uzunluğu l = rθ olur.",
         bloklar: [
-          { tip: "formul", parcalar: [{ t: "s = rθ", alt: "yay uzunluğu (*arc length*)" }, "ve", { t: "A = ½r²θ", alt: "daire dilimi alanı (*sector area*)" }],
-            aciklama: "θ ==mutlaka radyan== olmalı. Açı derece verilmişse önce π/180 ile çarp." },
+          { tip: "formul", parcalar: [{ t: "l = rθ", alt: "yay uzunluğu (*arc length*)" }, "ve", { t: "S = ½r²θ", alt: "daire dilimi alanı (*sector area*)" }],
+            aciklama: "θ ==mutlaka radyan== olmalı; ayrıca S = ½rl. Derece ile yazılışı: l = (θ/360)·2πr ve S = (θ/360)·πr². Açı derece verilmişse ya radyana çevir ya da bu ikinci biçimi kullan." },
           { tip: "ornek", baslik: "Pizza dilimi", durum: "Yarıçapı 6 cm olan pizzadan 60°'lik bir dilim kesiliyor. Kenar (kabuk) uzunluğu ve dilimin alanı nedir?",
-            adimlar: ["60° = π/3 rad (60 · π/180).", "s = r · θ = 6 · π/3 = 2π cm.", "A = ½ · r² · θ = ½ · 36 · π/3 = 6π cm²."],
-            sonuc: "Kabuk ==2π cm==, alan ==6π cm²==. Sınavda böyle yaz: *The arc length is s = rθ = 6 · π/3 = 2π cm.*" },
-          { tip: "tuzak", metin: "Formüller radyan ister; derece yazarsan sonuç saçmalar.", yanlis: "s = 6 · 60 = 360 cm.", dogru: "Önce 60° = π/3 yap; s = 6 · π/3 = 2π cm." }
+            adimlar: ["60° = π/3 rad (60 · π/180).", "l = r · θ = 6 · π/3 = 2π cm.", "S = ½ · r² · θ = ½ · 36 · π/3 = 6π cm²."],
+            sonuc: "Kabuk ==2π cm==, alan ==6π cm²==. Sınavda böyle yaz: *The arc length is l = rθ = 6 · π/3 = 2π cm.*" },
+          { tip: "tuzak", metin: "Formüller radyan ister; derece yazarsan sonuç saçmalar.", yanlis: "l = 6 · 60 = 360 cm.", dogru: "Önce 60° = π/3 yap; l = 6 · π/3 = 2π cm." }
         ]
       },
       {
@@ -138,9 +139,9 @@ window.DEFTER = (function () {
         kisa: "Sınavdan önce bu listeye bir kez bak.",
         bloklar: [
           { tip: "ozet", maddeler: [
-              "Açı standart konumda orijinde başlar; saatin tersi pozitif. *Coterminal* açılar 360° (2π) farklıdır.",
+              "Açı standart konumda orijinde başlar; saatin tersi pozitif. *Coterminal* açılar 360° (2π) farklıdır; esas ölçü [0°, 360°] aralığındadır.",
               "π rad = 180°. Derece → radyan: π/180; radyan → derece: 180/π.",
-              "Yay uzunluğu s = rθ, daire dilimi alanı A = ½r²θ; θ radyan olmak zorunda.",
+              "Yay uzunluğu l = rθ, daire dilimi alanı S = ½r²θ = ½rl; θ radyan olmak zorunda (derecede l = θ/360 · 2πr).",
               "Birim çemberde θ'nın noktası (cos θ, sin θ); x² + y² = 1 olduğu için sin²θ + cos²θ = 1.",
               "tan θ = sin θ / cos θ; cos θ = 0 olan açılarda (90°, 270°) tanımsız.",
               "sin için 0, 30, 45, 60, 90 → √0/2, √1/2, √2/2, √3/2, √4/2; cos tersten okunur.",
@@ -150,15 +151,15 @@ window.DEFTER = (function () {
       }
     ],
     sorular: [
-      { q: "Hangi açı −50° ile eş uçlu (*coterminal*) bir açıdır?", opts: ["50°", "310°", "130°", "−130°"], a: 1,
+      { q: "Which angle is coterminal with −50°?", opts: ["50°", "310°", "130°", "−130°"], a: 1,
         why: "−50° + 360° = 310°; iki açı tam tur kadar farklı. 50° ise x ekseninin öbür tarafında biter, aynı yer değildir." },
-      { q: "5π/6 radyanlık açının derece karşılığı nedir?", opts: ["75°", "120°", "210°", "150°"], a: 3,
+      { q: "What is the degree measure of an angle of 5π/6 radians?", opts: ["75°", "120°", "210°", "150°"], a: 3,
         why: "5π/6 · 180/π = 5 · 30° = 150°. 210° aklına geliyorsa 7π/6 ile karıştırmış olabilirsin." },
-      { q: "Yarıçapı 9 cm olan bir dairede 120°'lik merkez açının gördüğü yayın uzunluğu kaçtır?", opts: ["3π cm", "12π cm", "6π cm", "1080 cm"], a: 2,
-        why: "120° = 2π/3 rad; s = rθ = 9 · 2π/3 = 6π cm. 1080 cm, açıyı radyana çevirmeden 9 · 120 yapmaktan çıkar." },
-      { q: "Birim çember üzerinde, standart konumdaki θ açısının bitiş kenarı çemberi (−√3/2, 1/2) noktasında kesiyor. Aşağıdakilerden hangisi θ olabilir?", opts: ["150°", "30°", "120°", "210°"], a: 0,
-        why: "x = cos θ = −√3/2 ve y = sin θ = 1/2: nokta 2. bölgede, 30°'lik referans açısıyla; θ = 180° − 30° = 150°. 120° için nokta (−1/2, √3/2) olurdu."},
-      { q: "7π/6 radyanlık açı için sin değeri aşağıdakilerden hangisidir?", opts: ["1/2", "√3/2", "−√3/2", "−1/2"], a: 3,
+      { q: "In a circle of radius 9 cm, a central angle of 120° subtends an arc. What is the length of the arc?", opts: ["3π cm", "12π cm", "6π cm", "1080 cm"], a: 2,
+        why: "120° = 2π/3 rad; l = rθ = 9 · 2π/3 = 6π cm. 1080 cm, açıyı radyana çevirmeden 9 · 120 yapmaktan çıkar." },
+      { q: "The terminal side of an angle θ in standard position meets the unit circle at the point (−√3/2, 1/2). Which of the following could be θ?", opts: ["150°", "30°", "120°", "210°"], a: 0,
+        why: "x = cos θ = −√3/2 ve y = sin θ = 1/2: nokta 2. bölgede, 30°'lik referans açısıyla; θ = 180° − 30° = 150°. 120° için nokta (−1/2, √3/2) olurdu." },
+      { q: "What is the value of sin(7π/6)?", opts: ["1/2", "√3/2", "−√3/2", "−1/2"], a: 3,
         why: "7π/6 = 210°: 3. bölgede, y koordinatı negatif; referans açısı 30° olduğundan sin = −1/2. −√3/2 ise cos 210°'dir." }
     ]
   };

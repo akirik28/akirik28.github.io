@@ -17,7 +17,7 @@ window.DEFTER = (function () {
 
   return {
     slug: "pc404",
-    amac: "Bu konu sinüs, kosinüs ve tanjant grafiklerini anlatıyor: dalganın yüksekliğini (genlik), tekrar uzunluğunu (periyot) ve kaymasını. Bir denklemden grafiği, bir grafikten denklemi yazmayı öğreneceksin.",
+    amac: "Bu konu trigonometrik fonksiyonların grafiklerini anlatıyor: dalganın yüksekliğini (genlik), tekrar uzunluğunu (periyot) ve kaymasını. Altı fonksiyonun tanım ve değer kümesini bilmeyi, denklemden grafiği, grafikten denklemi yazmayı öğreneceksin.",
     bolumler: [
       {
         baslik: "Sinüs ve kosinüs grafiği",
@@ -45,12 +45,12 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Genlik ve periyot: y = A sin(Bx)",
-        kisa: "A dalganın yüksekliğini, B sıklığını belirler: genlik |A|, periyot 2π/|B|.",
+        baslik: "Genlik ve periyot: y = a sin(bx)",
+        kisa: "a dalganın yüksekliğini, b sıklığını belirler: genlik |a|, periyot 2π/|b|.",
         bloklar: [
           { tip: "kavramlar", kartlar: [
               { ikon: "↕️", terim: "Amplitude", tr: "genlik", tanim: "Orta çizgiden tepeye (ya da çukura) olan uzaklık: (maksimum − minimum) / 2. Her zaman pozitiftir.", ornek: "y = 3 sin x dalgası −3 ile 3 arasında gider: genlik 3." },
-              { ikon: "↔️", terim: "Period", tr: "periyot", tanim: "Bir tam dalganın yatay uzunluğu. sin ve cos için 2π/|B|; tan için π/|B|.", ornek: "y = sin 2x her π'de tekrar eder." },
+              { ikon: "↔️", terim: "Period", tr: "periyot", tanim: "Bir tam dalganın yatay uzunluğu. sin ve cos için 2π/|b|; tan için π/|b|.", ornek: "y = sin 2x her π'de tekrar eder." },
               { ikon: "➖", terim: "Midline", tr: "orta çizgi", tanim: "Dalganın tepe ve çukur arasındaki yatay ortası: y = D.", ornek: "y = sin x + 2 için orta çizgi y = 2." }
             ] },
           { tip: "grafik", baslik: "A ve B değişince dalga ne olur?", xlabel: "x (radyan)", ylabel: "y", xmax: 14, ymax: 11, xticks: XT, yticks: YT,
@@ -62,13 +62,13 @@ window.DEFTER = (function () {
             ],
             durumlar: [
               { metin: "Kesikli mor eğri y = sin x referansı. Mavi eğri üstünde oynayacağız." },
-              { metin: "A = 2: genlik 2, dalga iki kat yükselir. Periyot hâlâ 2π.", set: { f: { noktalar: dalga(sin(2, 1, 0, 0)) }, fl: { metin: "y = 2 sin x" } } },
-              { metin: "B = 2: periyot 2π/2 = π; dalga yatayda sıkışır, 4π içinde 4 tur sığar.", set: { f: { noktalar: dalga(sin(2, 2, 0, 0)) }, fl: { metin: "y = 2 sin 2x" } } },
-              { metin: "B = 1/2: periyot 2π/(1/2) = 4π; dalga yatayda gerilir, görünen aralıkta tek tur.", set: { f: { noktalar: dalga(sin(2, 0.5, 0, 0)) }, fl: { metin: "y = 2 sin (x/2)" } } },
-              { metin: "A negatifse eğri x eksenine göre yansır: önce aşağı iner. Genlik yine |A| = 2.", set: { f: { noktalar: dalga(sin(-2, 1, 0, 0)) }, fl: { metin: "y = −2 sin x" } } }
+              { metin: "a = 2: genlik 2, dalga iki kat yükselir. Periyot hâlâ 2π.", set: { f: { noktalar: dalga(sin(2, 1, 0, 0)) }, fl: { metin: "y = 2 sin x" } } },
+              { metin: "b = 2: periyot 2π/2 = π; dalga yatayda sıkışır, 4π içinde 4 tur sığar.", set: { f: { noktalar: dalga(sin(2, 2, 0, 0)) }, fl: { metin: "y = 2 sin 2x" } } },
+              { metin: "b = 1/2: periyot 2π/(1/2) = 4π; dalga yatayda gerilir, görünen aralıkta tek tur.", set: { f: { noktalar: dalga(sin(2, 0.5, 0, 0)) }, fl: { metin: "y = 2 sin (x/2)" } } },
+              { metin: "a negatifse eğri x eksenine göre yansır: önce aşağı iner. Genlik yine |a| = 2.", set: { f: { noktalar: dalga(sin(-2, 1, 0, 0)) }, fl: { metin: "y = −2 sin x" } } }
             ] },
-          { tip: "formul", parcalar: [{ t: "y = A sin(Bx)", alt: "ya da A cos(Bx)" }, "→", { t: "genlik = |A|", alt: "" }, ",", { t: "periyot = 2π / |B|" }],
-            aciklama: "B büyürse dalga sıklaşır, periyot kısalır. Maksimum = |A|, minimum = −|A|." },
+          { tip: "formul", parcalar: [{ t: "y = a sin(bx)", alt: "ya da a cos(bx)" }, "→", { t: "genlik = |a|", alt: "" }, ",", { t: "periyot = 2π / |b|" }],
+            aciklama: "b büyürse dalga sıklaşır, periyot kısalır. Maksimum = |a|, minimum = −|a|; genlik = (Max(y) − Min(y)) / 2." },
           { tip: "ornek", baslik: "Denklemden özellikler", durum: "y = −3 cos(4x) fonksiyonunun genliğini, periyodunu, maksimum ve minimum değerini bul.",
             adimlar: ["Genlik = |−3| = 3.", "Periyot = 2π/4 = π/2.", "Değerler −3 ile 3 arası; eksi işareti dalgayı yansıtır, yani x = 0'da (−3) çukurla başlar."],
             sonuc: "Genlik ==3==, periyot ==π/2==, maksimum 3, minimum −3. Sınavda böyle yaz: *The amplitude is 3 and the period is π/2.*" }
@@ -76,10 +76,10 @@ window.DEFTER = (function () {
       },
       {
         baslik: "Faz kayması ve dikey öteleme",
-        kisa: "(x − C) grafiği C kadar sağa, + D ise D kadar yukarı taşır.",
+        kisa: "x + c yatay kaymayı (c > 0 sola), + d dikey kaymayı getirir.",
         bloklar: [
-          { tip: "formul", parcalar: [{ t: "y = A sin( B (x − C) ) + D", alt: "genel biçim" }],
-            aciklama: "|A| genlik, 2π/|B| periyot, ==C faz kayması (*phase shift*)== (pozitifse sağa), ==D dikey kayma (*vertical shift*)== ve orta çizgi y = D. Maksimum D + |A|, minimum D − |A|." },
+          { tip: "formul", parcalar: [{ t: "y = a sin( b (x + c) ) + d", alt: "genel biçim (cos için de aynı)" }],
+            aciklama: "|a| genlik, 2π/|b| periyot, ==c yatay kayma (*horizontal shift*)== (c pozitifse sola), ==d dikey kayma (*vertical shift*)==: d aynı zamanda dalganın ekseni (*axis of wave*), d = (Max(y) + Min(y)) / 2. Maksimum d + |a|, minimum d − |a|." },
           { tip: "grafik", baslik: "Kayan dalga", xlabel: "x (radyan)", ylabel: "y", xmax: 14, ymax: 11, xticks: XT, yticks: YT,
             ogeler: [
               { id: "mid", tip: "cizgi", renk: 0, kesik: true, from: [0, 5.5], to: [14, 5.5] },
@@ -95,9 +95,9 @@ window.DEFTER = (function () {
               { metin: "Hepsi bir arada: genlik 2, π/2 sağa, 1 yukarı. Orta çizgi y = 1, aralık [−1, 3].", set: { f: { noktalar: dalga(sin(2, 1, PI / 2, 1)) }, mid: { from: [0, 7], to: [14, 7] }, fl: { metin: "2 sin(x − π/2) + 1" } } }
             ] },
           { tip: "ornek", baslik: "Parantezden B'yi çıkar", durum: "y = 3 sin(2x − π) + 1 için genlik, periyot, faz kayması, orta çizgi, maksimum ve minimumu bul.",
-            adimlar: ["2x − π = 2(x − π/2): B = 2, C = π/2 (B parantez dışına alındı).", "Genlik 3; periyot 2π/2 = π; faz kayması π/2 sağa; orta çizgi y = 1.", "Maksimum 1 + 3 = 4; minimum 1 − 3 = −2."],
-            sonuc: "Genlik ==3==, periyot ==π==, faz kayması ==π/2 sağa==, orta çizgi ==y = 1==, değer aralığı [−2, 4]. Sınavda böyle yaz: *The graph is shifted π/2 units to the right and 1 unit up.*" },
-          { tip: "tuzak", metin: "Faz kaymasını bulmadan önce x'in katsayısını parantezin dışına al.", yanlis: "y = sin(2x − π) grafiği π kadar sağa kayar.", dogru: "sin(2x − π) = sin(2(x − π/2)): kayma π/2'dir, yani C = (sabit terim) / B." }
+            adimlar: ["2x − π = 2(x − π/2) = 2(x + c) için b = 2, c = −π/2 (b parantez dışına alındı; c negatif, yani sağa kayma).", "Genlik 3; periyot 2π/2 = π; yatay kayma π/2 sağa; dalga ekseni y = 1.", "Maksimum 1 + 3 = 4; minimum 1 − 3 = −2."],
+            sonuc: "Genlik ==3==, periyot ==π==, yatay kayma ==π/2 sağa== (c = −π/2), eksen ==y = 1==, değer aralığı [−2, 4]. Sınavda böyle yaz: *The graph is shifted π/2 units to the right and 1 unit up.*" },
+          { tip: "tuzak", metin: "Yatay kaymayı bulmadan önce x'in katsayısını parantezin dışına al; x + c biçiminde c pozitifse kayma sola olur.", yanlis: "y = sin(2x − π) grafiği π kadar sağa kayar.", dogru: "sin(2x − π) = sin(2(x − π/2)): kayma π/2 sağa, yani c = −π/2 (sabit terim ÷ b, işaret tersi)." }
         ]
       },
       {
@@ -129,8 +129,8 @@ window.DEFTER = (function () {
               { metin: "cos x = 0 olan yerlerde (x = π/2 + kπ) tan x tanımsız: kırmızı dikey asimptotlar. Dallar bunlara yaklaşır ama değmez.", goster: ["as1", "as2", "as3", "as4"] },
               { metin: "Her dal (kπ, 0) noktasından geçer; (π/4, 1) ve (−π/4, −1) iki yardımcı noktadır. Değer kümesi bütün reel sayılar, tan tek fonksiyon.", goster: ["k1", "k2", "k3"] }
             ] },
-          { tip: "tablo", baslik: "y = A tan(Bx) özetleri", head: ["Özellik", "y = tan x", "y = A tan(Bx)"],
-            rows: [["Periyot", "π", "π/|B|"], ["Asimptotlar", "x = π/2 + kπ", "Bx = π/2 + kπ"], ["Değer kümesi", "ℝ", "ℝ"], ["Genlik", "yok", "yok (A yalnız dikliği değiştirir)"]],
+          { tip: "tablo", baslik: "y = a tan(bx) özetleri", head: ["Özellik", "y = tan x", "y = a tan(bx)"],
+            rows: [["Periyot", "π", "π/|b|"], ["Asimptotlar", "x = π/2 + kπ", "bx = π/2 + kπ"], ["Değer kümesi", "ℝ", "ℝ"], ["Genlik", "yok", "yok (a yalnız dikliği değiştirir)"]],
             not: "Sınavda böyle yaz: *The tangent function has vertical asymptotes where cosine is zero.*" },
           { tip: "ornek", baslik: "Periyot ve asimptot", durum: "y = 2 tan(3x) için periyodu ve asimptotları bul.",
             adimlar: ["Periyot = π/|B| = π/3.", "3x = π/2 + kπ → x = π/6 + kπ/3.", "Örnek asimptotlar: x = π/6, x = π/2, x = −π/6."],
@@ -139,16 +139,28 @@ window.DEFTER = (function () {
         ]
       },
       {
-        baslik: "Grafikten denklem yazmak",
-        kisa: "Maksimum ve minimumdan A ve D'yi, periyottan B'yi bul.",
+        baslik: "Altı fonksiyon, tanım ve değer kümeleri (cot, sec, csc)",
+        kisa: "cot ve tan'ın periyodu π, sec ve csc'nin 2π; sec ve csc |y| ≥ 1 verir.",
         bloklar: [
-          { tip: "formul", parcalar: [{ t: "A = (maks − min) / 2" }, ",", { t: "D = (maks + min) / 2" }, ",", { t: "B = 2π / periyot" }],
+          { tip: "tablo", baslik: "Altı trigonometrik fonksiyon", head: ["Fonksiyon", "Tanım kümesi", "Değer kümesi", "Periyot"],
+            rows: [["sin x", "ℝ", "[−1, 1]", "2π"], ["cos x", "ℝ", "[−1, 1]", "2π"], ["tan x", "x ≠ π/2 + nπ", "ℝ", "π"], ["cot x", "x ≠ nπ", "ℝ", "π"], ["sec x", "x ≠ π/2 + nπ", "(−∞, −1] ∪ [1, ∞)", "2π"], ["csc x", "x ≠ nπ", "(−∞, −1] ∪ [1, ∞)", "2π"]],
+            not: "n bir tam sayıdır. sec x = 1/cos x olduğundan cos x = 0 olan yerlerde asimptot, csc x = 1/sin x olduğundan sin x = 0 olan yerlerde asimptot vardır. Dikkat: sec(x + π) = −sec x olduğu için periyot π değil, 2π'dir. Sınavda böyle yaz: *The range of secant is all real numbers except those in (−1, 1).*" },
+          { tip: "ornek", baslik: "Liman derinliği modeli", durum: "Bir limanın girişindeki su derinliği h(t) = 8 + 4 sin(πt/6) metredir (t gece yarısından sonraki saat, 0 ≤ t ≤ 24). En büyük ve en küçük derinliği bul; h(t) ≥ 8 olduğu t değerlerini yaz.",
+            adimlar: ["a = 4 ve d = 8: en büyük derinlik 8 + 4 = 12 m, en küçük 8 − 4 = 4 m.", "Periyot = 2π / (π/6) = 12 saat.", "h(t) ≥ 8 ⇔ sin(πt/6) ≥ 0. sin, [0, π] aralığında ≥ 0 olur: πt/6 ∈ [0, π] ise t ∈ [0, 6].", "12 saatlik periyotla bir sonraki aralık [12, 18]. t = 24'te sin 4π = 0 olduğundan h(24) = 8: t = 24 de çözümdür."],
+            sonuc: "En derin ==12 m==, en sığ ==4 m==; h(t) ≥ 8 için ==t ∈ [0, 6] ∪ [12, 18] ∪ {24}==. Sınavda böyle yaz: *The depth is at least 8 m when the sine term is non-negative.*" }
+        ]
+      },
+      {
+        baslik: "Grafikten denklem yazmak",
+        kisa: "Maksimum ve minimumdan a ile d'yi, periyottan b'yi bul.",
+        bloklar: [
+          { tip: "formul", parcalar: [{ t: "|a| = (Max(y) − Min(y)) / 2" }, ",", { t: "d = (Max(y) + Min(y)) / 2" }, ",", { t: "b = 2π / periyot" }],
             aciklama: "Grafik x = 0'da orta çizgideyse ve yukarı çıkıyorsa sin, x = 0'da tepedeyse cos kullanmak en kısa yoldur." },
           { tip: "ornek", baslik: "Sinüs biçimi", durum: "Bir dalganın maksimumu 5, minimumu −1, periyodu π; x = 0'da orta çizgiden yukarı doğru geçiyor. Denklemini yaz.",
-            adimlar: ["A = (5 − (−1))/2 = 3.", "D = (5 + (−1))/2 = 2.", "B = 2π/π = 2.", "x = 0'da orta çizgiden yukarı geçtiği için sin: y = 3 sin 2x + 2."],
-            sonuc: "y = ==3 sin 2x + 2==. Sınavda böyle yaz: *The amplitude is 3, the midline is y = 2 and the period is π, so B = 2.*" },
+            adimlar: ["a = (5 − (−1))/2 = 3.", "d = (5 + (−1))/2 = 2.", "b = 2π/π = 2.", "x = 0'da orta çizgiden yukarı geçtiği için sin: y = 3 sin 2x + 2."],
+            sonuc: "y = ==3 sin 2x + 2==. Sınavda böyle yaz: *The amplitude is 3, the midline is y = 2 and the period is π, so b = 2.*" },
           { tip: "ornek", baslik: "Kosinüs biçimi", durum: "Bir dalganın maksimumu x = 0'da 4, ilk minimumu x = π/2'de −2. Denklemini yaz.",
-            adimlar: ["A = (4 − (−2))/2 = 3 ve D = (4 + (−2))/2 = 1.", "Tepeden ilk çukura yarım periyot: π/2 − 0 = π/2, yani periyot π ve B = 2.", "x = 0'da tepe olduğu için cos: y = 3 cos 2x + 1. Kontrol: x = π/2'de 3 cos π + 1 = −2 ✓."],
+            adimlar: ["a = (4 − (−2))/2 = 3 ve d = (4 + (−2))/2 = 1.", "Tepeden ilk çukura yarım periyot: π/2 − 0 = π/2, yani periyot π ve b = 2.", "x = 0'da tepe olduğu için cos: y = 3 cos 2x + 1. Kontrol: x = π/2'de 3 cos π + 1 = −2 ✓."],
             sonuc: "y = ==3 cos 2x + 1==." },
           { tip: "tuzak", metin: "Tepeden çukura olan uzaklık yarım periyottur, bütün periyot değil.", yanlis: "Tepe x = 0, çukur x = π/2 ise periyot π/2'dir.", dogru: "Tepeden çukura yarım dalga: periyot = 2 · (π/2) = π." }
         ]
@@ -159,27 +171,27 @@ window.DEFTER = (function () {
         bloklar: [
           { tip: "ozet", maddeler: [
               "sin ve cos: tanım kümesi ℝ, değer kümesi [−1, 1], periyot 2π; sin tek, cos çift.",
-              "y = A sin(Bx): genlik |A|, periyot 2π/|B|; A < 0 ise x eksenine göre yansıma.",
-              "y = A sin(B(x − C)) + D: C kadar sağa, D kadar yukarı; orta çizgi y = D.",
-              "Faz kaymasını bulmak için önce B'yi parantez dışına al: sin(2x − π) = sin(2(x − π/2)).",
-              "tan x: periyot π, asimptotlar x = π/2 + kπ, değer kümesi ℝ, genlik yok.",
-              "A = (maks − min)/2, D = (maks + min)/2, B = 2π/periyot.",
+              "y = a sin(bx): genlik |a|, periyot 2π/|b|; a < 0 ise x eksenine göre yansıma.",
+              "y = a sin(b(x + c)) + d: c kadar sola (c < 0 ise sağa), d kadar yukarı; dalga ekseni y = d.",
+              "Kaymayı bulmak için önce b'yi parantez dışına al: sin(2x − π) = sin(2(x − π/2)), yani c = −π/2.",
+              "tan x: periyot π, asimptotlar x = π/2 + kπ, değer kümesi ℝ, genlik yok. cot: periyot π; sec ve csc: periyot 2π, |y| ≥ 1.",
+              "|a| = (Max − Min)/2, d = (Max + Min)/2, b = 2π/periyot.",
               "Tepeden çukura yarım periyot vardır; x = 0'da tepe varsa cos seç."
             ] }
         ]
       }
     ],
     sorular: [
-      { q: "Bir dönme dolabın bir kabininin yerden yüksekliği h(t) = 8 sin(πt/30) + 10 metredir (t saniye). Dolap tam bir turu kaç saniyede tamamlar?", opts: ["30 s", "60 s", "15 s", "8 s"], a: 1,
-        why: "Periyot = 2π / (π/30) = 60 s. 30 s yarım turdur; 8, genliktir." },
-      { q: "y = 3 cos x + 1 fonksiyonunun değer kümesi nedir?", opts: ["[−2, 4]", "[−3, 3]", "[1, 3]", "[−2, 3]"], a: 0,
-        why: "Orta çizgi y = 1, genlik 3: minimum 1 − 3 = −2, maksimum 1 + 3 = 4. [−3, 3], dikey kaymayı unutmaktır." },
-      { q: "y = sin(2x − π/3) grafiği y = sin 2x grafiğine göre nasıl kaymıştır?", opts: ["π/3 sola", "π/3 sağa", "π/6 sola", "π/6 sağa"], a: 3,
-        why: "sin(2x − π/3) = sin(2(x − π/6)): kayma π/6 sağa. π/3 cevabı, B = 2'yi parantez dışına almayı unutmaktır." },
-      { q: "Bir dalganın değerleri tabloda verilmiştir ve x = 0'da tepe noktası vardır. Hangi denklem bu dalgaya aittir?", opts: ["y = 3 sin 3x + 2", "y = 3 cos 6x + 2", "y = 3 cos 3x + 2", "y = 6 cos 3x + 2"], a: 2,
-        why: "A = (5 − (−1))/2 = 3, D = 2. Tepeden ilk çukura π/3 = yarım periyot, periyot 2π/3, B = 3. x = 0'da tepe olduğu için cos. B = 6 yanlış, çünkü yarım periyotu bütün periyot sanmaktır.",
-        fig: { type: "table", head: ["Özellik", "Değer"], rows: [["Maksimum", "5 (x = 0'da)"], ["İlk minimum", "−1 (x = π/3'te)"]], caption: "Bir dalganın özellikleri" } },
-      { q: "y = tan 2x fonksiyonunun grafiğinde aşağıdaki doğrulardan hangisi dikey asimptottur?", opts: ["x = π/2", "x = π/4", "x = π", "x = 0"], a: 1,
+      { q: "Which function has domain {x : x ≠ nπ, n ∈ ℤ}, range (−∞, −1] ∪ [1, ∞) and period 2π?", opts: ["y = sec x", "y = csc x", "y = cot x", "y = tan x"], a: 1,
+        why: "csc x = 1/sin x, sin x = 0 olan x = nπ noktalarında tanımsızdır ve |csc x| ≥ 1. sec x'in tanımsız olduğu noktalar π/2 + nπ'dir; cot x ve tan x'in değer kümesi ℝ, periyodu π'dir." },
+      { q: "What is the range of the function y = 3 cos x + 1?", opts: ["[−2, 4]", "[−3, 3]", "[1, 3]", "[−2, 3]"], a: 0,
+        why: "Dalga ekseni y = 1, genlik 3: minimum 1 − 3 = −2, maksimum 1 + 3 = 4. [−3, 3], dikey kaymayı unutmaktır." },
+      { q: "How is the graph of y = sin(2x − π/3) obtained from the graph of y = sin 2x?", opts: ["Shift π/3 to the left", "Shift π/3 to the right", "Shift π/6 to the left", "Shift π/6 to the right"], a: 3,
+        why: "sin(2x − π/3) = sin(2(x − π/6)): kayma π/6 sağa. π/3 cevabı, b = 2'yi parantez dışına almayı unutmaktır." },
+      { q: "The table describes a wave of the form y = a cos(bx) + d with b > 0. Which equation does it match?", opts: ["y = 3 sin 3x + 2", "y = 3 cos 6x + 2", "y = 3 cos 3x + 2", "y = 6 cos 3x + 2"], a: 2,
+        why: "|a| = (5 − (−1))/2 = 3, d = (5 + (−1))/2 = 2. Tepeden ilk çukura π/3 = yarım periyot, periyot 2π/3 ve b = 2π ÷ (2π/3) = 3. x = 0'da tepe olduğu için cos. b = 6 yanlış, çünkü yarım periyotu bütün periyot sanmaktır.",
+        fig: { type: "table", head: ["Feature", "Value"], rows: [["Maximum", "5 (at x = 0)"], ["First minimum", "−1 (at x = π/3)"]], caption: "Features of the wave" } },
+      { q: "Which of the following lines is a vertical asymptote of the graph of y = tan 2x?", opts: ["x = π/2", "x = π/4", "x = π", "x = 0"], a: 1,
         why: "tan 2x, 2x = π/2 + kπ'de tanımsız; x = π/4 + kπ/2. k = 0 için x = π/4. x = π/2, tan x'in asimptotudur ama burada 2x = π olur ve tan π = 0 tanımlıdır." }
     ]
   };

@@ -61,7 +61,7 @@ window.DEFTER = {
           ],
           durumlar: [
             { metin: "Japonya ya 30 telefon ya 10 tişört yapar. PPC düz bir çizgi (sabit fırsat maliyeti)." },
-            { metin: "Eğime bak: 12 telefondan 15'e çıkarken (+3) tişört 6'dan 5'e iniyor (−1). Eğim = 1 tişörtün fırsat maliyeti = **3 telefon**.", goster: ["e1", "e2", "et"] },
+            { metin: "Eğime bak: 12 telefondan 15'e çıkarken (+3) tişört 6'dan 5'e iniyor (−1). Eğim = 1 telefonun fırsat maliyeti = **⅓ tişört** (tersinden: 1 tişört = 3 telefon).", goster: ["e1", "e2", "et"] },
             { metin: "Türkiye 8 telefon ya da 8 tişört yapabilir: 1 telefon = 1 tişört. Çizgisi Japonya'nın içinde (**her şeyde geride**), ama eğimi farklı.", goster: ["tr", "tt"] },
             { metin: "Japonya'nın çizgisi daha yatay: telefon orada daha ucuz. Türkiye'nin çizgisi daha dik: telefon orada pahalı. Dik eğri, x ekseni malının pahalı olduğunu gösterir.", gizle: ["e1", "e2", "et"] }
           ] },

@@ -162,7 +162,7 @@ window.DEFTER = (function () {
           { tip: "tablo", baslik: "Bağlayıcı tavan ve taban", head: ["Piyasa yapısı", "Bağlayıcı fiyat tavanı", "Bağlayıcı fiyat tabanı"], rows: [
               ["Tam rekabet", "Denge fiyatının altında: kıtlık ve DWL", "Denge fiyatının üstünde: fazla arz ve DWL"],
               ["Tekel", "Tekelin fiyatının altında, D = MC fiyatının üstündeyse: fiyat düşer, miktar artar, DWL azalır; D = MC fiyatında etkin miktar", "Tekelin zaten uyguladığı fiyatın altındaki taban bağlayıcı değildir; üstündekinde miktar azalır"],
-              ["Tekelci rekabet", "Firma tekel gibi aşağı eğimli talep görür; tavan ATC'nin altına inerse zarar, uzun dönemde çıkış", "Miktar azalır, fazla arz oluşur"],
+              ["Tekelci rekabet", "Firma tekel gibi aşağı eğimli talep görür; tavan ATC'nin altına inerse zarar, uzun dönemde çıkış", "Fiyat yükselir, satılan miktar azalır; DWL artar"],
               ["Monopson (emek)", "Monopson ücretinin altındaki tavan: arz edilen emek azalır, istihdam düşer", "Taban, monopson ile rekabetçi ücret arasındaysa ücret ve istihdam artar; rekabetçi ücretin üstündeyse istihdam düşer"]
             ] },
           { tip: "tuzak", metin: "Tavanın etkisini önce piyasa yapısına bakarak çöz.", yanlis: "Fiyat tavanı her piyasada kıtlık yaratır.", dogru: "Tekelde tavan, D = MC fiyatına çekilirse ==miktarı artırır== ve DWL'yi azaltır; kıtlık yalnızca tavan bunun da altındaysa doğar. Monopsonda asgari ücret istihdamı artırabilir." }

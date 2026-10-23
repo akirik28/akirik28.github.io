@@ -71,7 +71,7 @@ window.DEFTER = (function () {
             ogeler: LZ,
             durumlar: [
               ac(LID, "Mükemmel eşitlikte her %20'lik hane grubu gelirin %20'sini alır: ==eşitlik doğrusu== (45° çizgi).", ["eq", "teq"]),
-              ac(LID, "Gerçekte alt %20 gelirin yalnızca %5'ini, alt %80 ise %55'ini alır. Noktaları birleştirince ==Lorenz eğrisi== çıkar; çizginin altında kalır ve içbükeydir.", ["eq", "teq", "lzA"]),
+              ac(LID, "Gerçekte alt %20 gelirin yalnızca %5'ini, alt %80 ise %55'ini alır. Noktaları birleştirince ==Lorenz eğrisi== çıkar; çizginin altında kalır ve sağ alt köşeye doğru bükülür.", ["eq", "teq", "lzA"]),
               ac(LID, "Eğri eşitlik doğrusundan ne kadar uzaksa gelir o kadar eşitsizdir. Eşitlik doğrusu ile Lorenz arasındaki ==A== bölgesi büyüdükçe eşitsizlik artar; Lorenz'in altındaki bölge ==B== (Gini'nin hesabı için, sonraki başlık).", ["eq", "teq", "lzA", "ar", "tA", "tB"]),
               ac(LID, "Vergi ve transferlerden sonra (yeşil) alt %20 gelirin %8'ini alır: ==Lorenz eğrisi eşitlik doğrusuna yaklaşır==, eşitsizlik azalır.", ["eq", "teq", "lzA", "lzB", "l1", "l2"]),
               ac(LID, "Uç durum: bir kişi her şeye sahipse Lorenz eğrisi alt ve sağ kenarı izler: ==tam eşitsizlik==.", ["eq", "teq", "x1", "x2", "tx"])
@@ -176,7 +176,7 @@ window.DEFTER = (function () {
           lines: [{ from: [0, 0], to: [10, 10], label: "", dash: true }, { from: [0, 0], to: [5, 1.5], label: "A", color: 2 }, { from: [5, 1.5], to: [8, 4], color: 2 }, { from: [8, 4], to: [10, 10], color: 2 }, { from: [0, 0], to: [5, 3], label: "B", color: 1 }, { from: [5, 3], to: [8, 6], color: 1 }, { from: [8, 6], to: [10, 10], color: 1 }],
           xticks: [{ v: 5, label: "%50" }, { v: 10, label: "%100" }], yticks: [{ v: 5, label: "%50" }, { v: 10, label: "%100" }] },
         opts: ["Ülke B'nin Gini katsayısı daha yüksektir; çünkü eğrisi eşitlik doğrusuna daha yakındır.", "Ülke A'nın Gini katsayısı daha yüksektir; çünkü eğrisi eşitlik doğrusundan daha uzaktır.", "İki ülkenin Gini katsayısı eşittir.", "Ülke B daha zengindir."],
-        a: 1, why: "Lorenz eğrisi eşitlik doğrusundan uzaklaştıkça A bölgesi büyür ve Gini yükselir; A ülkesinin eğrisi daha içbükeydir. A şıkkı ilişkiyi tersine çeviriyor; D şıkkı Gini'yi zenginlik ölçüsü sanıyor." },
+        a: 1, why: "Lorenz eğrisi eşitlik doğrusundan uzaklaştıkça A bölgesi büyür ve Gini yükselir; A ülkesinin eğrisi eşitlik doğrusundan daha fazla bükülmüştür. A şıkkı ilişkiyi tersine çeviriyor; D şıkkı Gini'yi zenginlik ölçüsü sanıyor." },
       { q: "Bir ülkenin Gini katsayısı 0,25'ten 0,40'a çıkıyor. Bu ne anlama gelir?",
         opts: ["Gelir eşitsizliği artmıştır; Lorenz eğrisi eşitlik doğrusundan uzaklaşmıştır.", "Gelir eşitsizliği azalmıştır.", "Ortalama gelir artmıştır.", "Yoksulluk oranı mutlaka artmıştır."],
         a: 0, why: "Gini yükselince dağılım daha eşitsizdir ve Lorenz eğrisi eşitlik doğrusundan uzaklaşır. C ve D şıkları, Gini'nin gelir düzeyi ya da yoksulluk oranı hakkında bilgi verdiğini varsayıyor; oysa yalnızca dağılımı gösterir." },

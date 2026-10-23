@@ -2,7 +2,7 @@
    Kaynak: defter-araclari/kaynak/okul-10-2025-26.md (Chemistry, Exam 3: gazlar) + MEB 10. sınıf standart içeriği (PV = nRT, mol kütlesi, yoğunluk, kısmi basınç). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "ch403",
-  amac: "Bu konu *ideal gas equation* yani PV = nRT denklemini anlatıyor: gaz yasalarının hepsini tek formülde birleştirir. Birimleri doğru seçmeyi, P, V, T ya da n'yi bulmayı, mol kütlesini ve yoğunluğu hesaplamayı, gaz karışımında kısmi basıncı bulmayı öğreneceksin.",
+  amac: "Bu konu *ideal gas equation* yani PV = nRT denklemini anlatıyor: gaz yasalarının hepsini tek formülde birleştirir. Birimleri doğru seçmeyi, mol kütlesini ve yoğunluğu hesaplamayı, kısmi basıncı, Graham yasasını ve su üzerinde toplanan gazı öğreneceksin.",
   bolumler: [
     {
       baslik: "PV = nRT: tek denklem, dört değişken",
@@ -110,18 +110,13 @@ window.DEFTER = {
             { t: "M", alt: "mol kütlesi" }, "=",
             { t: "m × R × T", alt: "kütle × 0,082 × K" }, "÷",
             { t: "P × V", alt: "atm × L" }
-          ], aciklama: "n yerine m ÷ M yazıldı. Yoğunluk için d = m ÷ V = P × M ÷ (R × T) olur." },
+          ], aciklama: "n yerine m ÷ M yazıldı. Yoğunluk için d = m ÷ V = P × M ÷ (R × T) olur. Aynı koşulda yoğunluk mol kütlesiyle orantılıdır (27 °C, 1 atm: He ≈ 0,16 g/L, hava ≈ 1,18 g/L, CO₂ ≈ 1,79 g/L); He havadan hafiftir, CO₂ ağırdır." },
         { tip: "ornek", baslik: "Bilinmeyen gaz hangisi?", durum: "Bir gazın 3,2 g'ı 227 °C ve 1 atm'de 4,1 L hacim kaplıyor. Mol kütlesini bul (R = 0,082).", adimlar: [
             "T = 227 + 273 = 500 K.",
             "n = PV ÷ RT = (1 × 4,1) ÷ (0,082 × 500) = 4,1 ÷ 41 = 0,1 mol.",
             "M = m ÷ n = 3,2 ÷ 0,1 = 32 g/mol (O₂ ile uyumlu).",
             "Kontrol: 0,1 × 32 = 3,2 g ✓"
           ], sonuc: "M = 32 g/mol." },
-        { tip: "tablo", baslik: "Gaz yoğunluğu: d = P × M ÷ (R × T) (27 °C, 1 atm)", head: ["Gaz", "M (g/mol)", "Yoğunluk (g/L)"], rows: [
-            ["He", "4", "0,16"],
-            ["Hava (ortalama)", "29", "1,18"],
-            ["CO₂", "44", "1,79"]
-          ], not: "Aynı koşulda yoğunluk mol kütlesiyle orantılıdır. He havadan hafiftir (balon yükselir), CO₂ havadan ağırdır (alçak yerlerde birikir)." },
         { tip: "liste", maddeler: [
             { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*At the same temperature and pressure, the gas with the greater molar mass has the greater density.*" }
           ] }
@@ -133,6 +128,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧩", terim: "Partial pressure", tr: "kısmi basınç", tanim: "Karışımdaki bir gazın, kabı tek başına doldursaydı yapacağı basınç: Pᵢ = nᵢRT ÷ V.", ornek: "Havadaki O₂'nin payı." },
+            { ikon: "🍰", terim: "Mole fraction", tr: "mol kesri (X)", tanim: "Bir gazın mol sayısının toplam mol sayısına oranı: X_A = n_A ÷ n_toplam. Karışımda X_A + X_B = 1; kısmi basınç P_A = X_A × P_toplam.", ornek: "2 mol N₂ + 1 mol O₂ karışımında X(N₂) = 2/3." },
             { ikon: "➕", terim: "Dalton's law", tr: "Dalton yasası", tanim: "Karışımın toplam basıncı, kısmi basınçların toplamıdır: P(toplam) = P₁ + P₂ + …", ornek: "Mol kesri büyük olan gaz basıncın büyük kısmını verir." }
           ] },
         { tip: "ornek", baslik: "N₂ ve O₂ karışımı", durum: "24,6 L'lik tüpte 27 °C'de 2 mol N₂ ve 1 mol O₂ var (R = 0,082). Toplam basınç ve kısmi basınçlar kaç atm'dir?", adimlar: [
@@ -147,6 +143,61 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Yayılma ve Graham yasası",
+      kisa: "Aynı koşulda hafif gaz hızlı yayılır: hız, mol kütlesinin kareköküyle ters orantılıdır.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "hız₁", alt: "gaz 1" }, "÷",
+            { t: "hız₂", alt: "gaz 2" }, "=",
+            { t: "√(M₂ ÷ M₁)", alt: "mol kütleleri" }
+          ], aciklama: "*Graham's law*: aynı sıcaklık ve basınçta gazın yayılma (ya da sızma, *effusion*) hızı √M ile ters orantılıdır. Aynı mesafeyi alma süresi ise √M ile doğru orantılıdır: t₁ ÷ t₂ = √(M₁ ÷ M₂)." },
+        { tip: "grafik", baslik: "Bağıl yayılma hızı mol kütlesiyle azalır (O₂ = 1)", xlabel: "Mol kütlesi M (×10 g/mol)", ylabel: "Bağıl hız (O₂ = 1)", xmax: 7, ymax: 5,
+          xticks: [{ v: 1, label: "10" }, { v: 2, label: "20" }, { v: 3, label: "30" }, { v: 4, label: "40" }, { v: 6, label: "60" }],
+          yticks: [{ v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }],
+          ogeler: [
+            { id: "c", tip: "egri", renk: 0, noktalar: [[0.2, 4], [0.4, 2.83], [0.8, 2], [1.6, 1.41], [2, 1.26], [3.2, 1], [4.4, 0.85], [6.4, 0.71]], gizli: true },
+            { id: "h2", tip: "nokta", renk: 1, x: 0.2, y: 4, etiket: "H₂", gizli: true },
+            { id: "he", tip: "nokta", renk: 1, x: 0.4, y: 2.83, etiket: "He", gizli: true },
+            { id: "o2", tip: "nokta", renk: 2, x: 3.2, y: 1, etiket: "O₂", kilavuz: true, gizli: true },
+            { id: "co2", tip: "nokta", renk: 3, x: 4.4, y: 0.85, etiket: "CO₂", gizli: true },
+            { id: "so2", tip: "nokta", renk: 3, x: 6.4, y: 0.71, etiket: "SO₂", gizli: true }
+          ],
+          durumlar: [
+            { metin: "Ölçü olarak O₂ alındı (M = 32, bağıl hız = 1). Hız = √(32 ÷ M).", goster: ["c", "o2"] },
+            { metin: "H₂ (M = 2): √(32 ÷ 2) = 4 kat; He (M = 4): √8 ≈ 2,83 kat daha hızlı.", goster: ["h2", "he"] },
+            { metin: "CO₂ (M = 44) ve SO₂ (M = 64) O₂'den yavaştır: ==ağır gaz yavaş yayılır.==", goster: ["co2", "so2"] }
+          ] },
+        { tip: "ornek", baslik: "Balon ne kadar sürede söner?", durum: "Neonla dolu bir balon STP'de yarı hacmine 22 saatte iniyor. Aynı balon helyumla dolu olsaydı kaç saat sürerdi? (Ne = 20, He = 4)", adimlar: [
+            "Sızma süresi √M ile orantılıdır: t(He) ÷ t(Ne) = √(4 ÷ 20) = √0,2 ≈ 0,447.",
+            "t(He) = 22 × 0,447 ≈ 9,84 saat.",
+            "Kontrol: He daha hafif, daha hızlı sızar; süre kısa çıkmalı ✓"
+          ], sonuc: "Yaklaşık 9,84 saat." },
+        { tip: "liste", maddeler: [
+            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*Lighter gas molecules move faster, so they diffuse faster than heavier ones at the same temperature.*" }
+          ] }
+      ]
+    },
+    {
+      baslik: "Su üzerinde toplanan gaz",
+      kisa: "Su üzerinde toplanan gaz ıslaktır: P_toplam = P_gaz + P_su buharı.",
+      bloklar: [
+        { tip: "formul", parcalar: [
+            { t: "P_toplam", alt: "dış basınç" }, "=",
+            { t: "P_gaz", alt: "kuru gaz" }, "+",
+            { t: "P_H₂O", alt: "su buharı (sıcaklığa bağlı)" }
+          ], aciklama: "Tüpteki gaz su buharıyla doymuştur (*wet gas*). Tüpteki su seviyesi dışarıyla eşitlenince P_toplam = P_atm olur; kuru gazın basıncı P_gaz = P_atm − P_H₂O ile bulunur." },
+        { tip: "ornek", baslik: "Su üzerinde toplanan O₂", durum: "23 °C ve 760 mmHg'de su üzerinde 150 mL O₂ toplanıyor. 23 °C'de suyun buhar basıncı 21,1 mmHg'dir. Kuru O₂ NŞA'da kaç mL kaplar?", adimlar: [
+            "P(O₂) = 760 − 21,1 = 738,9 mmHg.",
+            "Birleşik gaz yasası: P₁V₁/T₁ = P₂V₂/T₂ (T₁ = 296 K; NŞA: 760 mmHg, 273 K).",
+            "V₂ = 150 × (738,9 ÷ 760) × (273 ÷ 296) = 150 × 0,972 × 0,922 ≈ 134,5 mL.",
+            "Kontrol: su buharı çıkarıldığı ve soğutulduğu için hacim 150 mL'den küçük olmalı ✓"
+          ], sonuc: "Kuru O₂ NŞA'da yaklaşık 134,5 mL kaplar." },
+        { tip: "liste", maddeler: [
+            { ikon: "💬", baslik: "Sınavda böyle yaz", metin: "*The gas collected over water is mixed with water vapor, so the pressure of the dry gas is the total pressure minus the vapor pressure of water.*" }
+          ] }
+      ]
+    },
+    {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
@@ -157,28 +208,30 @@ window.DEFTER = {
             "Boyle, Charles, Gay-Lussac ve Avogadro, PV = nRT'de bir niceliği sabit tutunca çıkar.",
             "V–T grafiği (sabit P) orijinden geçer; eğim nR ÷ P'dir.",
             "Mol kütlesi: M = mRT ÷ PV; yoğunluk: d = PM ÷ RT.",
-            "*Dalton's law*: P(toplam) = kısmi basınçların toplamı; Pᵢ = nᵢRT ÷ V."
+            "*Dalton's law*: P(toplam) = kısmi basınçların toplamı; Pᵢ = nᵢRT ÷ V = X_i × P(toplam).",
+            "*Graham's law*: hız₁ ÷ hız₂ = √(M₂ ÷ M₁); hafif gaz hızlı yayılır.",
+            "Su üzerinde toplanan gaz ıslaktır: P_gaz = P_atm − P_su buharı."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "12,3 L'lik bir kapta 27 °C'de 2 mol gaz vardır. Gazın basıncı kaç atm'dir? (R = 0,082 L·atm/(mol·K))",
+    { q: "A 12.3 L container holds 2 mol of gas at 27 °C. What is the pressure of the gas in atm? (R = 0.082 L·atm/(mol·K))",
       opts: ["1 atm", "2 atm", "4 atm", "8 atm"], a: 2,
       why: "T = 300 K; P = nRT ÷ V = (2 × 0,082 × 300) ÷ 12,3 = 49,2 ÷ 12,3 = 4 atm. 1 atm (A) 0,5 mol için bulunan değerdir; mol sayısı iki katına çıkınca basınç da iki katına çıkar." },
-    { q: "Bir tüpte 0,1 mol gaz 27 °C ve 760 mmHg'dedir. Gazın hacmi kaç L'dir? (R = 0,082 L·atm/(mol·K))",
-      opts: ["2,46 L", "0,22 L", "24,6 L", "0,0032 L"], a: 0,
+    { q: "A tube contains 0.1 mol of gas at 27 °C and 760 mmHg. What is the volume of the gas in L? (R = 0.082 L·atm/(mol·K))",
+      opts: ["2.46 L", "0.22 L", "24.6 L", "0.0032 L"], a: 0,
       why: "P = 760 mmHg = 1 atm, T = 300 K: V = 0,1 × 0,082 × 300 ÷ 1 = 2,46 L. 0,22 L (B) sıcaklığı °C olarak (27) yazmaktan, 0,0032 L (D) ise 760'ı atm'e çevirmeden kullanmaktan çıkar." },
-    { q: "Bir öğrenci bilinmeyen bir gazı ölçüyor (R = 0,082 L·atm/(mol·K)). Tablodaki verilere göre gazın mol kütlesi kaçtır?",
-      fig: { type: "table", head: ["Ölçüm", "Değer"], rows: [["Kütle", "2,2 g"], ["Hacim", "1,23 L"], ["Sıcaklık", "27 °C"], ["Basınç", "1 atm"]], caption: "Gaz numunesi" },
-      opts: ["22 g/mol", "88 g/mol", "2,2 g/mol", "44 g/mol"], a: 3,
+    { q: "A student measures an unknown gas (R = 0.082 L·atm/(mol·K)). According to the data in the table, what is the molar mass of the gas?",
+      fig: { type: "table", head: ["Measurement", "Value"], rows: [["Mass", "2.2 g"], ["Volume", "1.23 L"], ["Temperature", "27 °C"], ["Pressure", "1 atm"]], caption: "Gas sample" },
+      opts: ["22 g/mol", "88 g/mol", "2.2 g/mol", "44 g/mol"], a: 3,
       why: "n = PV ÷ RT = (1 × 1,23) ÷ (0,082 × 300) = 0,05 mol; M = 2,2 ÷ 0,05 = 44 g/mol (CO₂ ile uyumlu). 22 g/mol (A) mol sayısını 0,1 sanmaktan çıkar." },
-    { q: "Grafikte, aynı basınçta X ve Y gazlarının V–T doğruları çizilmiştir. Y'nin eğimi X'inkinin iki katıdır. Bunun nedeni nedir?",
-      fig: { type: "graph", xlabel: "T (K)", ylabel: "V (×10 L)", xmax: 5, ymax: 9, lines: [{ from: [0, 0], to: [4.8, 3.94], label: "X" }, { from: [0, 0], to: [4.8, 7.87], label: "Y" }], xticks: [{ v: 1, label: "100" }, { v: 3, label: "300" }, { v: 5, label: "500" }], yticks: [{ v: 3.94, label: "39,4" }, { v: 7.87, label: "78,7" }], caption: "V–T doğruları (P sabit)" },
-      opts: ["Y'nin mol sayısı X'in iki katıdır", "Y'nin basıncı X'in iki katıdır", "Y'nin sıcaklığı X'in iki katıdır", "Y'nin hacmi sabittir"], a: 0,
+    { q: "In the graph, the V–T lines of gases X and Y are drawn at the same pressure. The slope of Y is twice the slope of X. What is the reason?",
+      fig: { type: "graph", xlabel: "T (K)", ylabel: "V (×10 L)", xmax: 5, ymax: 9, lines: [{ from: [0, 0], to: [4.8, 3.94], label: "X" }, { from: [0, 0], to: [4.8, 7.87], label: "Y" }], xticks: [{ v: 1, label: "100" }, { v: 3, label: "300" }, { v: 5, label: "500" }], yticks: [{ v: 3.94, label: "39.4" }, { v: 7.87, label: "78.7" }], caption: "V–T lines (constant P)" },
+      opts: ["Y has twice as many moles as X", "The pressure of Y is twice that of X", "The temperature of Y is twice that of X", "The volume of Y is constant"], a: 0,
       why: "V = (nR ÷ P) × T; basınç aynıysa eğim nR ÷ P ile mol sayısı n'e bağlıdır. İkisi için de P aynı verildiğinden iki kat eğim, iki kat mol demektir (Avogadro)." },
-    { q: "24,6 L'lik kapalı bir tüpte 27 °C'de 2 mol N₂ ve 1 mol O₂ vardır (R = 0,082 L·atm/(mol·K)). O₂'nin kısmi basıncı kaç atm'dir?",
-      opts: ["0,5 atm", "1 atm", "2 atm", "3 atm"], a: 1,
+    { q: "A closed 24.6 L tube contains 2 mol of N₂ and 1 mol of O₂ at 27 °C (R = 0.082 L·atm/(mol·K)). What is the partial pressure of O₂ in atm?",
+      opts: ["0.5 atm", "1 atm", "2 atm", "3 atm"], a: 1,
       why: "P(O₂) = nRT ÷ V = (1 × 0,082 × 300) ÷ 24,6 = 1 atm. 3 atm (D) toplam basınçtır; 2 atm (C) N₂'nin kısmi basıncıdır." }
   ]
 };

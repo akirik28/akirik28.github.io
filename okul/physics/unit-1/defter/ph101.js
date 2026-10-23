@@ -9,7 +9,9 @@ window.DEFTER = {
       kisa: "Yol gidilen toplam uzunluktur; yer değiştirme ilk ve son konum farkıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "📍", terim: "Position", tr: "konum (x)", tanim: "Cismin, seçtiğimiz başlangıç noktasına göre yeri. Yönü artı ya da eksi işaretle verilir.", ornek: "Kantin x = 0 ise sınıf doğuda x = +60 m." },
+            { ikon: "📍", terim: "Position", tr: "konum (x)", tanim: "Cismin, seçtiğimiz başlangıç noktasına (*origin*) göre yeri. Orijin ve işaretli eksen birlikte *coordinate system* (koordinat sistemi) oluşturur; yön artı ya da eksi işaretle verilir.", ornek: "Kantin x = 0 ise sınıf doğuda x = +60 m." },
+            { ikon: "🔵", terim: "Particle model", tr: "parçacık modeli", tanim: "Hareket eden cismi, bütün kütlesi tek bir noktada toplanmış gibi düşünen basitleştirme.", ornek: "Koridorda yürüyen Ada'yı tek bir nokta olarak çizeriz." },
+            { ikon: "🛤️", terim: "Trajectory", tr: "yörünge", tanim: "Cismin hareketi boyunca izlediği yolun çizgisi.", ornek: "Düz koridorda yörünge düz bir çizgidir." },
             { ikon: "👣", terim: "Distance", tr: "alınan yol", tanim: "Hareket boyunca gidilen toplam uzunluk. ==Skaler==dir: yönü yoktur ve hiçbir zaman azalmaz.", ornek: "Koridorda 60 m ileri, 20 m geri gidersen yol 80 m." },
             { ikon: "➡️", terim: "Displacement", tr: "yer değiştirme (Δx)", tanim: "Son konum eksi ilk konum: Δx = x₂ − x₁. ==Vektör==dür: büyüklüğü ve yönü vardır.", ornek: "Aynı yürüyüşte yer değiştirme 40 m doğu." }
           ] },
@@ -39,7 +41,7 @@ window.DEFTER = {
             { t: "v", alt: "ortalama hız (m/s)" }, "=",
             { t: "Δx", alt: "yer değiştirme (m)" }, "÷",
             { t: "Δt", alt: "süre (s)" }
-          ], aciklama: "Ortalama sürat için paya yer değiştirme yerine toplam yol yazılır. Birim dönüşümü: km/h → m/s için 3,6'ya böl (36 km/h = 10 m/s)." },
+          ], aciklama: "Ortalama sürat için paya yer değiştirme yerine toplam yol yazılır. Süre aralığı Δt = t₂ − t₁ her zaman pozitiftir. Birim dönüşümü: km/h → m/s için 3,6'ya böl (72 km/h = 20 m/s; 15 m/s = 54 km/h); cm/s → m/s için 100'e böl (27 cm/s = 0,27 m/s)." },
         { tip: "ornek", baslik: "Aynı yürüyüşün sürati ve hızı",
           durum: "Ada'nın kantinden sınıfa gidip çanta için geri dönmesi (60 m ileri, 20 m geri) toplam 20 s sürdü.",
           adimlar: [
@@ -48,6 +50,14 @@ window.DEFTER = {
             "Hız yönlü olduğu için \"doğu\" demeyi unutma."
           ],
           sonuc: "Sürat 4 m/s, hız 2 m/s doğu. Sınavda böyle yaz: *The average speed is 4 m/s, and the average velocity is 2 m/s east.*" },
+        { tip: "ornek", baslik: "Yolun yarısı yavaş, yarısı hızlı",
+          durum: "Bir cisim aynı yönde gidiyor. Yer değiştirmesinin yarısını 6 m/s, kalan yarısını 12 m/s ile alıyor. Ortalama hızı kaçtır?",
+          adimlar: [
+            "Toplam yer değiştirmeye 2d diyelim; her yarı d kadar.",
+            "Süreler: t₁ = d ÷ 6 ve t₂ = d ÷ 12. Toplam süre = d/6 + d/12 = 3d/12 = d/4.",
+            "Ortalama hız = 2d ÷ (d/4) = 8 m/s. İki hızın aritmetik ortalaması olan 9 m/s değil."
+          ],
+          sonuc: "8 m/s. Yavaş kısımda daha çok zaman geçtiği için ortalama, hızlı kısma değil yavaş kısma daha yakındır. Sınavda böyle yaz: *The average velocity is the total displacement divided by the total time.*" },
         { tip: "tuzak", metin: "Pistte tam tur koşan birinin yer değiştirmesi sıfırdır; bu yüzden ortalama hızı da sıfırdır. Ama yol sıfır değildir, yani ortalama sürat sıfır olmaz.",
           yanlis: "Ortalama sürat ile ortalama hız aynı şeydir.",
           dogru: "Hızın büyüklüğü her zaman süratten küçük ya da ona eşittir; eşitlik yalnız yön değiştirmeyen düz harekette olur." }
@@ -137,6 +147,14 @@ window.DEFTER = {
             { metin: "Eğimi bize hızı verir.", cevap: "sol", neden: "x–t'de eğim hızdır. v–t'de eğim ivmedir." },
             { metin: "Yatay çizgi: cisim sabit hızla hareket ediyor.", cevap: "sag", neden: "v–t'de yükseklik hızı gösterir; yatay çizgi hız sabit demektir." }
           ] },
+        { tip: "ornek", baslik: "v–t grafiğinden yol ve yer değiştirme",
+          durum: "Bir cisim önce +10 m/s hızla 4 s, sonra −20 m/s hızla 1 s gidiyor. Yol, yer değiştirme, ortalama hız ve ortalama sürat nedir?",
+          adimlar: [
+            "Alanlar: ilk parça 10 × 4 = +40 m, ikinci parça −20 × 1 = −20 m (eksi yönde).",
+            "Yer değiştirme: 40 + (−20) = +20 m. Yol: 40 + 20 = 60 m (alanların mutlak değerleri toplanır).",
+            "Süre 5 s: ortalama hız = 20 ÷ 5 = 4 m/s, ortalama sürat = 60 ÷ 5 = 12 m/s."
+          ],
+          sonuc: "Yön değiştirdiği için ortalama sürat (12 m/s), ortalama hızın büyüklüğünden (4 m/s) büyük. Sınavda böyle yaz: *The area below the time axis is negative displacement.*" },
         { tip: "liste", maddeler: [
             { ikon: "✍️", baslik: "Sınavda böyle yaz: alan", metin: "*The area under the velocity–time graph gives the displacement.*" },
             { ikon: "✍️", baslik: "Sınavda böyle yaz: sabit hız", metin: "*The object moves at a constant velocity of 2 m/s.*" }
@@ -191,26 +209,26 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Bir koşucu 400 m'lik pistte tam bir tur atıp başladığı noktaya dönüyor ve turu 80 s'de bitiriyor. Ortalama sürat ve ortalama hızı nedir?",
-      opts: ["Sürat 5 m/s, hız 5 m/s", "Sürat 5 m/s, hız 0", "Sürat 0, hız 5 m/s", "Sürat 0, hız 0"], a: 1,
+    { q: "A runner completes exactly one lap of a 400 m track and returns to the starting point. The lap takes 80 s. What are the average speed and the average velocity?",
+      opts: ["Speed 5 m/s, velocity 5 m/s", "Speed 5 m/s, velocity 0", "Speed 0, velocity 5 m/s", "Speed 0, velocity 0"], a: 1,
       why: "Yol 400 m olduğundan sürat 400 ÷ 80 = 5 m/s. Başladığı noktaya döndüğü için yer değiştirme 0, dolayısıyla ortalama hız 0. En çekici yanlış A: sürat ile hızı aynı sanmak." },
-    { q: "Grafik K ve L cisimlerinin konum-zaman grafiğidir. Hangisi doğrudur?",
+    { q: "The graph shows the position-time graphs of objects K and L. Which statement is correct?",
       fig: { type: "graph", xlabel: "t (s)", ylabel: "x (m)", xmax: 11, ymax: 11,
         lines: [{ from: [0, 0], to: [9, 9], label: "K" }, { from: [0, 10], to: [10, 0], label: "L" }],
         xticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }], yticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }] },
-      opts: ["K'nin hızının büyüklüğü L'ninkinden farklıdır.", "L, +x yönünde hareket eder.", "K ile L 10 s sonra karşılaşır.", "K ile L, t = 5 s'de x = 5 m konumunda karşılaşır."], a: 3,
+      opts: ["The speed of K is different from the speed of L.", "L moves in the +x direction.", "K and L meet after 10 s.", "K and L meet at x = 5 m when t = 5 s."], a: 3,
       why: "Çizgiler (5, 5) noktasında kesişir: karşılaşma t = 5 s, x = 5 m. Eğimler +1 ve −1 m/s'dir; büyüklükleri aynı, yönleri zıttır. A yanlış çünkü iki eğimin büyüklüğü eşit; B yanlış çünkü L'nin eğimi negatif." },
-    { q: "36 km/h sabit hızla giden bir araç 20 s'de kaç metre yer değiştirir?",
+    { q: "A car moves at a constant velocity of 36 km/h. How far does it travel in 20 s?",
       opts: ["200 m", "720 m", "180 m", "20 m"], a: 0,
       why: "36 km/h = 36 ÷ 3,6 = 10 m/s olur; Δx = v·t = 10 × 20 = 200 m. En çekici yanlış B: birimi çevirmeden 36 × 20 = 720 yazmak." },
-    { q: "Bir cismin hız-zaman grafiği şekildeki gibidir (0–3 s: 4 m/s, 3–6 s: 2 m/s). Cismin 0–6 s arasındaki yer değiştirmesi kaç metredir?",
+    { q: "The velocity-time graph of an object is shown (4 m/s for 0-3 s, then 2 m/s for 3-6 s). What is the displacement of the object between 0 and 6 s?",
       fig: { type: "graph", xlabel: "t (s)", ylabel: "v (m/s)", xmax: 8, ymax: 6,
         lines: [{ from: [0, 4], to: [3, 4] }, { from: [3, 2], to: [6, 2] }],
         xticks: [{ v: 3, label: "3" }, { v: 6, label: "6" }], yticks: [{ v: 2, label: "2" }, { v: 4, label: "4" }] },
       opts: ["12 m", "9 m", "18 m", "24 m"], a: 2,
       why: "Alanlar toplanır: 4 × 3 = 12 m ve 2 × 3 = 6 m, toplam 18 m. A yalnız ilk parçayı, D bütün süreyi 4 m/s sanır, B ise iki hızın ortalamasını (3 m/s) yanlışlıkla 3 s ile çarpar." },
-    { q: "Doğrusal yolda hareket eden bir cisim için hangisi her zaman doğrudur?",
-      opts: ["Yer değiştirmenin büyüklüğü, alınan yoldan küçüktür.", "Yer değiştirmenin büyüklüğü, alınan yoldan büyük olamaz.", "Ortalama hız, ortalama süratten büyüktür.", "Sabit hızlı harekette hızın yönü sürekli değişir."], a: 1,
-      why: "Yer değiştirme, yolun başı ile sonu arasındaki en kısa fark; yoldan büyük olamaz, tek yönlü harekette ona eşittir. A yanlış: tek yönlü harekette eşitlik vardır, \"her zaman küçüktür\" denemez." }
+    { q: "An object travels half of its displacement at 6 m/s and the other half at 12 m/s in the same direction. What is its average velocity?",
+      opts: ["6 m/s", "8 m/s", "9 m/s", "12 m/s"], a: 1,
+      why: "Yarı yer değiştirmeye d dersek süre d/6 + d/12 = d/4 olur; ortalama hız 2d ÷ (d/4) = 8 m/s. En çekici yanlış C: iki hızın aritmetik ortalamasını almak; yavaş kısımda daha çok zaman geçtiği için ortalama 9'dan küçüktür." }
   ]
 };

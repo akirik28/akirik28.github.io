@@ -1,30 +1,34 @@
 /* Kitora not defteri · en406 · 4.6 İkna Konuşması
-   Okul dersi (10. sınıf English · Unit 4). Hazır konuşma metni vermez; yapı, süre ve kalıp verir. */
+   Okul dersi (10. sınıf English · Unit 4). Hazır konuşma metni vermez; yapı, süre ve kalıp verir.
+   Kaynak: Persuasive Speech belgeleri ve 100 puanlık rubrik (Dr Byrd). "Ek bilgi" etiketli kısımlar öğretmen belgesinde yoktur. */
 window.DEFTER = {
   slug: "en406",
-  amac: "5–6 dakikalık ikna konuşmasını (*persuasive speech*) planlamayı öğreneceksin: zaman bütçesi, açılış ve kapanış, slaytların doğru kullanımı, ses ve beden dili, soru-cevap bölümü.",
+  amac: "Argüman konuşmasını (*persuasive speech*) planlamayı öğreneceksin: 5–6 dakikalık süre ve soru-cevap, PowerPoint yerine poster ve handout, concession ve çözümün konuşmadaki yeri, sunum becerileri, hazır olma kuralları ve 100 puanlık rubrik.",
   bolumler: [
     {
       baslik: "Konuşma bir bakışta",
-      kisa: "5–6 dakika, soru-cevap ve notun büyük payı: ciddiye al.",
+      kisa: "5–6 dakika, soru-cevap, Performans Notu 2'nin %60'ı; essay okunmaz.",
       bloklar: [
         { tip: "sayilar", ogeler: [
-            { deger: 5, sonek: "–6 dk", etiket: "konuşma süresi" },
-            { deger: 60, onek: "%", etiket: "performans notundaki payı" }
+            { deger: 5, sonek: "–6 dk", etiket: "konuşma süresi (5 dakikanın altına inme)" },
+            { deger: 60, sonek: "%", etiket: "Performans Notu 2 payı" },
+            { deger: 100, etiket: "puanlık rubrik" }
           ] },
         { tip: "tablo", baslik: "Essay ile konuşma", head: ["", "Essay", "Konuşma"], rows: [
-            ["Kural", "1500–1700 kelime, *I*/*you* yok", "5–6 dk + soru-cevap; PowerPoint okuması değil"],
-            ["Kaynak", "MLA metin içi atıf ve *Works Cited*", "Sözlü atıf (*According to …*) ve slaytın altında kısa kaynak"],
-            ["Dinleyici", "Okuyucu tekrar okuyabilir", "Dinleyici yalnızca bir kez duyar: açık yapı ve tekrar gerekir"],
-            ["Hazırlık", "Taslak ve düzeltme", "Prova ve zamanlama"]
-          ], not: "*I*/*you* kuralı essay için yazılmış; konuşmada geçerli olup olmadığını öğretmenine sor. Hazır konuşma metni yazdırma: kendi sözlerinle hazırlan." }
+            ["Konu", "Argüman konusu", "Aynı konu; essay okunmaz, yeniden anlatılır"],
+            ["Süre", "1500–1700 kelime", "5–6 dk (Byrd: 5 dk, 6–7 dk de olur; rubrik başlığı 5 dk, en çok 7–8) + sınıfın ve öğretmenin soruları"],
+            ["Kişi", "I ve you yok", "Konuşmada *I* kullanılabilir"],
+            ["Dil", "MLA akademik yazı", "İngilizce analiz ve ikna dili; küfür yok"],
+            ["Görsel", "Yok", "PowerPoint YASAK; poster ve/veya handout"],
+            ["Not payı", "Exam 2, Dönem 2: R/W (%50)", "Performans Notu 2'nin %60'ı"]
+          ], not: "Sınavda böyle yaz: *The speech is based on the essay topic, but it is not a reading of the essay.*" }
       ]
     },
     {
-      baslik: "İskelet ve zaman bütçesi",
-      kisa: "Açılış, tez, üç gerekçe, karşı argüman, çağrı.",
+      baslik: "İçerik ve zaman bütçesi",
+      kisa: "En güçlü noktaları seç; concession ve çözüm de konuşmada olmalı.",
       bloklar: [
-        { tip: "grafik", baslik: "Örnek zaman bütçesi (5:30)", xlabel: "Dakika", ylabel: "", xmax: 6.5, ymax: 5,
+        { tip: "grafik", baslik: "Ek bilgi: örnek zaman bütçesi (5:30)", xlabel: "Dakika", ylabel: "", xmax: 6.5, ymax: 5,
           xticks: [{ v: 0, label: "0" }, { v: 1, label: "1" }, { v: 2, label: "2" }, { v: 3, label: "3" }, { v: 4, label: "4" }, { v: 5, label: "5" }, { v: 6, label: "6" }],
           ogeler: [
             { id: "m5", tip: "cizgi", from: [5, 0], to: [5, 5], kesik: true, renk: 0, gizli: true },
@@ -35,111 +39,141 @@ window.DEFTER = {
             { id: "a2", tip: "alan", renk: 2, noktalar: [[0.5, 0], [1, 0], [1, 0], [0.5, 0]], gizli: true },
             { id: "a3", tip: "alan", renk: 3, noktalar: [[1, 0], [2, 0], [2, 0], [1, 0]], gizli: true },
             { id: "a4", tip: "alan", renk: 1, noktalar: [[2, 0], [3, 0], [3, 0], [2, 0]], gizli: true },
-            { id: "a5", tip: "alan", renk: 2, noktalar: [[3, 0], [3.75, 0], [3.75, 0], [3, 0]], gizli: true },
-            { id: "a6", tip: "alan", renk: 3, noktalar: [[3.75, 0], [4.75, 0], [4.75, 0], [3.75, 0]], gizli: true },
-            { id: "a7", tip: "alan", renk: 1, noktalar: [[4.75, 0], [5.5, 0], [5.5, 0], [4.75, 0]], gizli: true },
+            { id: "a5", tip: "alan", renk: 2, noktalar: [[3, 0], [4, 0], [4, 0], [3, 0]], gizli: true },
+            { id: "a6", tip: "alan", renk: 3, noktalar: [[4, 0], [4.5, 0], [4.5, 0], [4, 0]], gizli: true },
+            { id: "a7", tip: "alan", renk: 1, noktalar: [[4.5, 0], [5, 0], [5, 0], [4.5, 0]], gizli: true },
+            { id: "a8", tip: "alan", renk: 2, noktalar: [[5, 0], [5.5, 0], [5.5, 0], [5, 0]], gizli: true },
             { id: "l1", tip: "yazi", x: 0.25, y: 1.4, metin: "Hook", gizli: true },
             { id: "l2", tip: "yazi", x: 0.75, y: 1.4, metin: "Tez", gizli: true },
-            { id: "l3", tip: "yazi", x: 1.5, y: 1.4, metin: "G1", gizli: true },
-            { id: "l4", tip: "yazi", x: 2.5, y: 1.4, metin: "G2", gizli: true },
-            { id: "l5", tip: "yazi", x: 3.375, y: 1.4, metin: "G3", gizli: true },
-            { id: "l6", tip: "yazi", x: 4.25, y: 1.4, metin: "Karşı", gizli: true },
-            { id: "l7", tip: "yazi", x: 5.125, y: 1.4, metin: "Çağrı", gizli: true }
+            { id: "l3", tip: "yazi", x: 1.5, y: 1.4, metin: "N1", gizli: true },
+            { id: "l4", tip: "yazi", x: 2.5, y: 1.4, metin: "N2", gizli: true },
+            { id: "l5", tip: "yazi", x: 3.5, y: 1.4, metin: "N3", gizli: true },
+            { id: "l6", tip: "yazi", x: 4.25, y: 1.4, metin: "Conc.", gizli: true },
+            { id: "l7", tip: "yazi", x: 4.75, y: 1.4, metin: "Çözüm", gizli: true },
+            { id: "l8", tip: "yazi", x: 5.25, y: 1.4, metin: "Son", gizli: true }
           ],
           durumlar: [
             { metin: "Süre sınırı 5–6 dakika. Konuşmayı iki çizgi arasına yerleştir.", goster: ["m5", "m6", "t5", "t6"] },
-            { metin: "Açılış (*hook*) 0:30 ve tez ile yol haritası 0:30.", goster: ["a1", "a2", "l1", "l2"], set: {
+            { metin: "Açılış (*hook*) 0:30 ve kısa, net tez 0:30.", goster: ["a1", "a2", "l1", "l2"], set: {
                 a1: { noktalar: [[0, 0], [0.5, 0], [0.5, 3], [0, 3]] }, a2: { noktalar: [[0.5, 0], [1, 0], [1, 3], [0.5, 3]] } } },
-            { metin: "Üç gerekçe: 1:00 + 1:00 + 0:45.", goster: ["a3", "a4", "a5", "l3", "l4", "l5"], set: {
-                a3: { noktalar: [[1, 0], [2, 0], [2, 3], [1, 3]] }, a4: { noktalar: [[2, 0], [3, 0], [3, 3], [2, 3]] }, a5: { noktalar: [[3, 0], [3.75, 0], [3.75, 3], [3, 3]] } } },
-            { metin: "Karşı argüman ve çürütme: 1:00.", goster: ["a6", "l6"], set: { a6: { noktalar: [[3.75, 0], [4.75, 0], [4.75, 3], [3.75, 3]] } } },
-            { metin: "Kapanış ve çağrı 0:45. Toplam 5:30: sınırların içinde. Soru-cevap ayrıca.", goster: ["a7", "l7"], set: { a7: { noktalar: [[4.75, 0], [5.5, 0], [5.5, 3], [4.75, 3]] } } }
+            { metin: "Üç ana nokta: her biri 1:00, kaynağını söyle.", goster: ["a3", "a4", "a5", "l3", "l4", "l5"], set: {
+                a3: { noktalar: [[1, 0], [2, 0], [2, 3], [1, 3]] }, a4: { noktalar: [[2, 0], [3, 0], [3, 3], [2, 3]] }, a5: { noktalar: [[3, 0], [4, 0], [4, 3], [3, 3]] } } },
+            { metin: "Concession 0:30 ve çözüm 0:30.", goster: ["a6", "a7", "l6", "l7"], set: {
+                a6: { noktalar: [[4, 0], [4.5, 0], [4.5, 3], [4, 3]] }, a7: { noktalar: [[4.5, 0], [5, 0], [5, 3], [4.5, 3]] } } },
+            { metin: "Sade ve güçlü sonuç 0:30. Toplam 5:30: sınırların içinde. Soru-cevap ayrıca.", goster: ["a8", "l8"], set: { a8: { noktalar: [[5, 0], [5.5, 0], [5.5, 3], [5, 3]] } } }
           ] },
-        { tip: "tablo", baslik: "Bölümler ne yapar?", head: ["Bölüm", "≈ Süre", "Amaç", "Kalıp"], rows: [
-            ["*Hook*", "0:30", "Dikkat çek", "*Imagine …* / *What if …?*"],
-            ["Tez", "0:30", "İddiayı ve yol haritasını söyle", "*Schools should … because …*"],
-            ["Gerekçe 1–3", "2:45", "Her biri tek gerekçe + kanıt", "*The first reason is … According to …*"],
-            ["Karşı argüman", "1:00", "Kabul et ve çürüt", "*Critics argue …; however …*"],
-            ["Çağrı", "0:45", "Tezi hatırlat, eyleme çağır", "*It is time to …*"]
-          ] }
+        { tip: "tablo", baslik: "Bölümler ne yapar?", head: ["Bölüm", "≈ Süre (örnek)", "Amaç"], rows: [
+            ["Açılış ve tez", "1:00", "Kısa, net giriş ve nokta atışı tez"],
+            ["Ana noktalar", "3:00", "En güçlü noktaları seç, kaynaklarını belirt"],
+            ["Concession", "0:30", "Karşı görüşe pay ver"],
+            ["Çözüm", "0:30", "Somut öneri sun"],
+            ["Sonuç", "0:30", "Sade ve güçlü bitir"]
+          ], not: "Sırayı değiştirebilir, bazı şeyleri çıkarabilir, yeni şey ekleyebilirsin. Süreler yalnız örnektir. Sınavda böyle yaz: *According to [source], … Admittedly, … however, … One solution is …*" }
       ]
     },
     {
       baslik: "Açılış ve kapanış",
-      kisa: "İlk 30 saniye dinleyiciyi yakalar, son 30 saniye hatırlatır.",
+      kisa: "İlk cümle dikkat çeker, son cümle tezi ve çözümü hatırlatır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "❓", terim: "Rhetorical question", tr: "retorik soru", tanim: "Cevabı dinleyicinin zihninde veren soru.", ornek: "*What if tomorrow's first class began an hour later?*" },
-            { ikon: "📊", terim: "Surprising statistic", tr: "şaşırtıcı veri", tanim: "Kaynaklı tek bir çarpıcı rakam; kaynağını söyle.", ornek: "*According to [source], [figure] …*" },
-            { ikon: "📖", terim: "Anecdote", tr: "kısa hikâye", tanim: "10–15 saniyelik gerçek ve kısa bir örnek.", ornek: "*Consider a student who …*" },
-            { ikon: "💥", terim: "Bold claim", tr: "cesur iddia", tanim: "Dinleyiciyi düşündüren kısa, net bir cümle.", ornek: "*Sleep is not a luxury.*" }
+            { ikon: "❓", terim: "Rhetorical question", tr: "retorik soru (ek bilgi)", tanim: "Ek bilgi: cevabı dinleyicinin zihninde veren soru.", ornek: "*What if tomorrow's first class began an hour later?*" },
+            { ikon: "📊", terim: "Surprising statistic", tr: "şaşırtıcı veri (ek bilgi)", tanim: "Ek bilgi: kaynaklı tek bir çarpıcı rakam; kaynağını söyle.", ornek: "*According to [source], [figure] …*" },
+            { ikon: "📖", terim: "Anecdote", tr: "kısa hikâye (ek bilgi)", tanim: "Ek bilgi: 10–15 saniyelik gerçek ve kısa bir örnek.", ornek: "*Consider a student who …*" },
+            { ikon: "💥", terim: "Bold claim", tr: "cesur iddia (ek bilgi)", tanim: "Ek bilgi: dinleyiciyi düşündüren kısa, net bir cümle.", ornek: "*Sleep is not a luxury.*" }
           ] },
         { tip: "liste", baslik: "Kapanış kalıpları", maddeler: [
             { ikon: "🔁", baslik: "Tezi hatırlat", metin: "*For these reasons, schools should …*" },
-            { ikon: "📣", baslik: "Eyleme çağır", metin: "*It is time for [audience] to …*" },
+            { ikon: "🛠️", baslik: "Çözümü hatırlat", metin: "*The most practical step is to …*" },
             { ikon: "🔄", baslik: "Açılışa dön", metin: "Başta sorduğun soruya cevap ver; döngü kapanır." }
           ] },
-        { tip: "tuzak", metin: "Zayıf giriş ve zayıf bitiş en çok hatırlanan hatalardır.", yanlis: "*Hello, today I will talk about…* ve sonda yalnızca \"That's all\".", dogru: "İlk cümlede dikkat çek, son cümlede tezi ve çağrıyı hatırlat." }
+        { tip: "tuzak", metin: "Zayıf giriş ve zayıf bitiş en çok hatırlanan hatalardır.", yanlis: "*Hello, today I will talk about…* ve sonda yalnızca “That's all”.", dogru: "İlk cümlede dikkat çek, son cümlede tezi ve çözümü hatırlat." }
       ]
     },
     {
-      baslik: "Slaytlar destek olmalı",
-      kisa: "Slayt görsel destektir; konuşma slayttan okunmaz.",
+      baslik: "Görsel destek: PowerPoint yok, poster ve handout var",
+      kisa: "PowerPoint yasak; poster ve/veya her dinleyici için handout kullan.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "🖼️", baslik: "İyi slayt", maddeler: ["Tek fikir, büyük görsel ya da grafik", "Altında kısa kaynak"] },
-          sag: { ikon: "📜", baslik: "Kötü slayt", maddeler: ["Çok metin, küçük punto", "Konuşma metnini sesli okumak"] },
+        { tip: "ikili", sol: { ikon: "🖼️", baslik: "İzinli destek", maddeler: ["Poster ve/veya handout", "Küçük palm card"] },
+          sag: { ikon: "🚫", baslik: "Yasak ya da sorunlu", maddeler: ["PowerPoint", "Metni kâğıttan ya da ekrandan okumak"] },
           oyun: [
-            { metin: "Slayt başına tek görsel ve birkaç kelime.", cevap: "sol", neden: "Dinleyici seni dinler, slaytı değil." },
-            { metin: "Bütün konuşma metni slayta yazılmış ve sesli okunuyor.", cevap: "sag", neden: "Kural: PowerPoint okuması değil." },
-            { metin: "Veriyi gösteren sade bir grafik ve altında kısa kaynak (Demir 45).", cevap: "sol", neden: "Kanıt görselle desteklenmiş, kaynak belirtilmiş." },
-            { metin: "Her slaytta 10 madde ve küçük punto.", cevap: "sag", neden: "Okunmaz; dinleyici dağılır." }
+            { metin: "Poster hazırlayıp ana noktaları göstermek.", cevap: "sol", neden: "Poster izinli ve yeterli bir görsel destek." },
+            { metin: "Her dinleyici için bir sayfalık handout.", cevap: "sol", neden: "Handout izinli." },
+            { metin: "Slayt hazırlayıp PowerPoint ile sunmak.", cevap: "sag", neden: "Dr Byrd PowerPoint'i yasaklıyor." },
+            { metin: "Küçük bir palm card'a anahtar kelimeler yazıp göz temasını korumak.", cevap: "sol", neden: "Palm card okumayı değil hatırlatmayı sağlar." },
+            { metin: "Essay'i baştan sona kâğıttan okumak.", cevap: "sag", neden: "Konuşma essay'in okunması değildir." }
           ] },
-        { tip: "liste", baslik: "Slayt ilkeleri", maddeler: [
-            { ikon: "1️⃣", baslik: "Slayt başına tek fikir", metin: "Konuşmanın ana noktasıyla eşleşsin." },
-            { ikon: "🔤", baslik: "Büyük ve okunur punto", metin: "Arka sıradaki rahat okuyabilmeli." },
-            { ikon: "🔗", baslik: "Kaynak belirt", metin: "Görsel ve veri için slayt altında kısa kaynak yaz." },
-            { ikon: "👀", baslik: "Dinleyiciye bak", metin: "Ekrana dönüp okuma." }
+        { tip: "liste", baslik: "Görsel malzeme ilkeleri", maddeler: [
+            { ikon: "5️⃣", baslik: "Puanı küçük: 5", metin: "Rubrikte destekleyici materyal yalnız 5 puan." },
+            { ikon: "🎯", baslik: "Süs değil destek", metin: "Görsel, argümanı sürdürmeli." },
+            { ikon: "🔗", baslik: "Kaynak belirt", metin: "Veri ve görsellerin kaynağını söyle." },
+            { ikon: "✍️", baslik: "Sınavda böyle yaz:", metin: "*The poster supports the argument by showing …*" }
           ] }
       ]
     },
     {
-      baslik: "Ses, beden dili ve prova",
-      kisa: "Yavaş, net ve göz teması kuran konuşma ikna eder.",
+      baslik: "Sunum: coşku, göz teması, beden dili, doğru İngilizce",
+      kisa: "Coşkulu, okumayan, doğal ve doğru İngilizceyle konuş.",
       bloklar: [
         { tip: "tablo", baslik: "Sunum becerileri", head: ["Beceri", "Yap", "Yapma"], rows: [
-            ["Hız", "Önemli yerde yavaşla", "Heyecandan hızlı konuşma"],
-            ["Ses", "Arka sıraya duyulacak kadar yüksek ve net", "Mırıldanma"],
-            ["Göz teması", "Sınıfın farklı yerlerine bak", "Slayta ya da kâğıda bak"],
-            ["Duraklama", "Önemli cümleden önce ve sonra kısa dur", "Boşluğu dolgu sözcükle doldurma (*um*, *like*)"],
-            ["Duruş", "Dik dur, jestleri sakin kullan", "Sallanma, cebe saklanma"]
-          ] },
+            ["Coşku", "Konuya ilgi göster, sesinde enerji olsun", "Monoton konuşma"],
+            ["Göz teması", "Küçük palm card kullan, dinleyiciye bak", "Kâğıttan ya da ekrandan okuma"],
+            ["Beden dili", "Doğal jest kullan", "Heykel gibi durma, sallanma"],
+            ["İngilizce", "Önce yaz, kontrol et, geri bildirim al", "Hazırlıksız ve hatalı konuşma"],
+            ["Ton", "Doğal ton; konuşmada *I* kullanılabilir", "Küfür"]
+          ], not: "Sınavda böyle yaz: *The speaker maintains eye contact and uses a natural tone.*" },
         { tip: "adimlar", baslik: "Prova planı", adimlar: [
-            { baslik: "Anahtar kelimelere indir", metin: "Metni ezberleme; ana noktaları kısa ipuçlarına çevir. Not kartı kuralını öğretmeninden öğren." },
-            { baslik: "Sesli ve zamanlayıcıyla prova yap", metin: "İlk koşuda süreyi ölç." },
-            { baslik: "Kaydet ve dinle", metin: "Telefonda Voice Memo ile kaydet; dolgu sözcükleri ve hızı fark et." },
-            { baslik: "Birine söyle", metin: "Arkadaşından en çok neyi anlamadığını sor." },
-            { baslik: "Süreyi 5–6 dk'ya ayarla", metin: "Uzunsa gerekçelerden kısalt; kısaysa kanıtı derinleştir." },
-            { baslik: "Slaytlarla tam prova", metin: "Soru-cevabı da dene." }
+            { baslik: "Ana noktalara indir", metin: "Metni ezberleme; palm card'a anahtar kelimeler yaz." },
+            { baslik: "Kamera karşısında prova yap", metin: "Kendini izle; okuyor musun, sallanıyor musun?" },
+            { baslik: "Süreyi ayarla", metin: "5–6 dk; uzunsa noktaları kısalt, kısaysa kanıtı derinleştir." },
+            { baslik: "İngilizceyi kontrol ettir", metin: "Önce yaz, düzelt, geri bildirim al." },
+            { baslik: "Soru-cevabı da dene", metin: "Zor sorulara cevap hazırla." }
           ] }
       ]
     },
     {
-      baslik: "Soru-cevap bölümü",
-      kisa: "Soruyu dinle, kanıtla cevapla, bilmiyorsan dürüst ol.",
+      baslik: "Soru-cevap, sıra ve hazır olma",
+      kisa: "Sorulara kanıtla cevap ver; sıra gelince hazır ol; hazırlıksızlık −10.",
       bloklar: [
-        { tip: "adimlar", adimlar: [
-            { baslik: "Dinle", metin: "Soruyu bitmeden kesme; gerekirse netleştir." },
-            { baslik: "Soruyu tekrarla", metin: "Hem herkes duyar hem düşünme süresi kazanırsın." },
-            { baslik: "Kanıtla cevapla", metin: "Kaynağına ya da verine dayan." },
+        { tip: "adimlar", baslik: "Soru-cevap bölümü", adimlar: [
+            { baslik: "Dinle", metin: "Soruyu bitmeden kesme; gerekirse netleştir: *Could you clarify what you mean by …?*" },
+            { baslik: "Soruyu tekrarla", metin: "Herkes duyar, sen de düşünme süresi kazanırsın." },
+            { baslik: "Kanıtla cevapla", metin: "Kaynağına dayan: *That is a fair question. According to …*" },
             { baslik: "Tezle bağla", metin: "Cevabı iddianın içine geri bağla." },
-            { baslik: "Bilmiyorsan dürüst ol", metin: "Uydurma; bildiğin kanıta dön." }
+            { baslik: "Bilmiyorsan dürüst ol", metin: "Uydurma: *The sources I found do not cover that, but the evidence does suggest …*" }
           ] },
-        { tip: "liste", baslik: "Soru-cevap kalıpları", maddeler: [
-            { ikon: "💬", baslik: "*That is a fair question. According to …*", metin: "Saygıyla başla, kanıta geç." },
-            { ikon: "💬", baslik: "*Could you clarify what you mean by …?*", metin: "Soruyu netleştir." },
-            { ikon: "💬", baslik: "*The sources I found do not cover that, but the evidence does suggest …*", metin: "Bilmediğini dürüstçe söyle." }
+        { tip: "liste", baslik: "Sıra ve hazır olma kuralları", maddeler: [
+            { ikon: "📋", baslik: "Sıra", metin: "Sıran sınıf sunum listesinde yazılıdır; ilk günden hazır ol." },
+            { ikon: "⚠️", baslik: "−10 puan", metin: "Hazır değilsen ya da posteri unuttuysan −10 puan." },
+            { ikon: "🏥", baslik: "Rapor", metin: "Belgeli bir rapor ya da resmî doktor raporu varsa ceza yok; bir sonraki sunum gününe kalırsın." }
           ] },
-        { tip: "tuzak", metin: "Zor soruya kişiye saldırarak cevap vermek *ad hominem* olur.", yanlis: "Bu soru çok saçma.", dogru: "Soruyu ciddiye al, kanıtla cevapla; bilmiyorsan dürüstçe söyle." }
+        { tip: "tuzak", metin: "Zor soruya kişiye saldırarak cevap vermek kanıt değildir.", yanlis: "Bu soru çok saçma.", dogru: "Soruyu ciddiye al, kanıtla cevapla; bilmiyorsan dürüstçe söyle." }
+      ]
+    },
+    {
+      baslik: "100 puanlık rubrik",
+      kisa: "İçerik 30, organizasyon 10, İngilizce 30, teknik 30 puan.",
+      bloklar: [
+        { tip: "sayilar", ogeler: [
+            { deger: 30, etiket: "içerik" },
+            { deger: 10, etiket: "organizasyon" },
+            { deger: 30, etiket: "İngilizce" },
+            { deger: 30, etiket: "teknik" }
+          ] },
+        { tip: "tablo", baslik: "Persuasive speech rubriği", head: ["Grup", "Ölçüt", "Puan"], rows: [
+            ["İçerik", "Tez net ve özlü", "5"],
+            ["İçerik", "İkna edici içerik: ana noktalar, yeterli araştırma, konuşmacı görüşü, concession(lar) ve çözüm(ler)", "15"],
+            ["İçerik", "Noktalar net örneklerle desteklenmiş", "10"],
+            ["Organizasyon", "Açık giriş, gelişme, sonuç", "8"],
+            ["Organizasyon", "Geçişler", "2"],
+            ["İngilizce", "Dilbilgisi", "15"],
+            ["İngilizce", "Telaffuz", "5"],
+            ["İngilizce", "Sözcük", "5"],
+            ["İngilizce", "Doğal konuşma ritmi", "5"],
+            ["Teknik", "İzleyiciye bakma, okumama", "10"],
+            ["Teknik", "Beden dili", "5"],
+            ["Teknik", "Ses: coşkulu, monoton değil, ilgiyi sürdürür", "10"],
+            ["Teknik", "Destekleyici materyal: argümanı sürdürür, süs değil", "5"]
+          ], vurgu: 1, not: "Hazır değilsen ya da posteri unuttuysan toplamdan −10 düşer. Sınavda böyle yaz: *The speaker presents a clear thesis, a concession, and a solution.*" }
       ]
     },
     {
@@ -147,34 +181,34 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Konuşma 5–6 dakika sürer, soru-cevap içerir ve performans notunun %60'ıdır.",
-            "İskelet: *hook* → tez → üç gerekçe → karşı argüman → çağrı; zamanı baştan bütçele.",
-            "Slayt destek olur; PowerPoint'i okumak yasaktır.",
-            "Kaynakları sözlü söyle (*According to …*) ve slaytın altına kısa yaz.",
-            "İlk 30 saniye dikkat çekmeli, son 30 saniye tezi ve çağrıyı hatırlatmalı.",
-            "Prova: zamanlayıcıyla, sesli, kayıtlı ve bir dinleyiciyle yap.",
-            "Soru-cevap: dinle, tekrarla, kanıtla cevapla, tezle bağla; bilmiyorsan uydurma.",
-            "Konuşma senin emeğin olmalı; hazır konuşmayı yapay zekâya yazdırma."
+            "Konuşma essay konun üzerinedir ama essay'in okunması değildir; 5–6 dakika + sınıfın ve öğretmenin soruları.",
+            "Performans Notu 2'nin %60'ı; rubrik 100 puandır.",
+            "Kısa net giriş, nokta atışı tez, en güçlü noktalar, kaynaklar, concession(lar), çözüm(ler) ve sade güçlü sonuç.",
+            "PowerPoint yasak; poster ve/veya her dinleyici için handout; görsel malzeme rubrikte yalnız 5 puan.",
+            "Coşku, göz teması (küçük palm card), beden dili, doğru İngilizce; konuşmada *I* serbest, essay'de değil; küfür yok.",
+            "Rubrik: içerik 30 (5/15/10), organizasyon 10 (8/2), İngilizce 30 (15/5/5/5), teknik 30 (10/5/10/5).",
+            "Sırana ilk günden hazır ol: hazır değilsen ya da posteri unuttuysan −10; belgeli rapor varsa ceza yok.",
+            "Bilmediğin soruya veri uydurma; dürüst ol ve kanıta dön."
           ] }
       ]
     }
   ],
   sorular: [
-    { q: "Bir öğrencinin ilk provası 4 dakika 10 saniye sürdü. Konuşma kuralı 5–6 dakikadır. Ne yapmalıdır?",
-      opts: ["Konuşmayı kısaltmalıdır.", "Yaklaşık 50 saniye ile 1 dakika 50 saniye arasında içerik eklemelidir.", "Süre yeterli, hiçbir şey yapmamalıdır.", "Süreyi uzatmak için slaytları yüksek sesle okumalıdır."], a: 1,
-      why: "5:00 − 4:10 = 0:50; 6:00 − 4:10 = 1:50. Slaytları okumak kurala aykırı ve çekici ama yanlış bir çözümdür." },
-    { q: "Aşağıdaki plan toplam kaç dakikadır ve doğru düzeltme hangisidir?",
-      fig: { type: "table", head: ["Bölüm", "Süre"], rows: [["Hook", "0:30"], ["Tez", "0:30"], ["Gerekçe 1", "1:30"], ["Gerekçe 2", "1:30"], ["Gerekçe 3", "1:00"], ["Karşı argüman", "1:00"], ["Kapanış", "0:30"]] },
-      opts: ["Toplam 6:30; en az 30 sn, en çok 1 dk 30 sn kısaltılmalı.", "Toplam 5:30; değişiklik gerekmez.", "Toplam 6:30; yeterli, çünkü 6 dk civarı kabul edilir.", "Toplam 7:00; yarıya indirilmeli."], a: 0,
-      why: "0:30 + 0:30 + 1:30 + 1:30 + 1:00 + 1:00 + 0:30 = 6:30. 6 dakikayı aşar; 5–6 aralığına girmek için 30 sn ile 1:30 arasında kısaltmak gerekir. 5:30 çekici bir yanlıştır." },
-    { q: "Bir öğrenci bütün konuşmasını slaytlara yazıp ekrana bakarak okuyor. Asıl sorun hangisidir?",
-      opts: ["Slaytlarda çok az renk var.", "Soru-cevap bölümü çok uzun.", "Slayt konuşmanın yerini almış; kural PowerPoint okuması olmamasıdır.", "Konuşma kaynak içermiyor."], a: 2,
-      why: "Slayt görsel destek olmalı, konuşma metni olmamalı. Okuma kuralı ihlal edilmiştir; diğer şıklar bu senaryoda bilgi verilmeyen ayrıntılardır." },
-    { q: "Bir dinleyici, öğrencinin hiç bulmadığı bir istatistiği soruyor. En iyi cevap hangisidir?",
-      opts: ["Kendinden emin biçimde yaklaşık bir sayı uydurmak.", "Soruyu saçma bulduğunu söylemek.", "Soruya cevap vermeyi reddetmek.", "\"The sources I found do not cover that, but the evidence does suggest …\" diyerek bildiği kanıta dönmek."], a: 3,
-      why: "Uydurma veri akademik dürüstlük ihlalidir. Dürüst bir cevap ve kanıta dönüş hem güvenilirlik (*ethos*) kazandırır hem soruyu ciddiye alır." },
-    { q: "Aşağıdakilerden hangisi güçlü bir kapanıştır?",
-      opts: ["\"That's all, thank you.\"", "Tezi hatırlatan, eyleme çağıran ve açılıştaki soruya dönen bir kapanış.", "Yeni bir argüman ve yeni bir istatistik eklemek.", "Konuşma süresi için özür dilemek."], a: 1,
-      why: "Kapanış tezi hatırlatır, eyleme çağırır ve döngüyü kapatır. Yeni argüman eklemek çekici ama dinleyiciyi dağıtır; \"That's all\" ise tezi hatırlatmaz." }
+    { q: "A student's first rehearsal of the persuasive speech takes 4 minutes 10 seconds. The speech must last 5 to 6 minutes. What should the student do?",
+      opts: ["Shorten the speech.", "Read the poster aloud to fill the time.", "Do nothing; the time is acceptable.", "Add between 50 seconds and 1 minute 50 seconds of content."], a: 3,
+      why: "5:00 − 4:10 = 0:50 ve 6:00 − 4:10 = 1:50. Süreyi poster okuyarak doldurmak çekicidir ama konuşma okuma değildir; Dr Byrd ayrıca 5 dakikanın altına inilmemesini ister." },
+    { q: "Which visual support is allowed in the persuasive speech?",
+      opts: ["A PowerPoint presentation", "A poster and/or a handout for every listener", "A video that the speaker reads aloud", "No visual support is allowed at all"], a: 1,
+      why: "PowerPoint yasaktır; poster ve/veya her dinleyici için handout kullanılabilir. “Hiçbir görsel yok” çekicidir ama yanlıştır: görsel materyal rubrikte 5 puandır." },
+    { q: "A student scored as shown below but forgot the poster on presentation day and has no medical report. What is the final score out of 100?",
+      fig: { type: "table", head: ["Category", "Score"], rows: [["Content (out of 30)", 25], ["Organization (out of 10)", 8], ["English (out of 30)", 24], ["Technical (out of 30)", 23]] },
+      opts: ["70", "80", "75", "90"], a: 0,
+      why: "25 + 8 + 24 + 23 = 80; poster unutulduğu için −10 uygulanır: 70. 80 çekici yanlıştır çünkü cezayı unutur. Belgeli rapor olsaydı ceza olmazdı." },
+    { q: "Which statement about the pronoun I is correct for this project?",
+      opts: ["I is banned in both the essay and the speech.", "I is required in the essay.", "I may be used in the speech but not in the written essay.", "I is only banned in the introduction of the speech."], a: 2,
+      why: "Yazılı essay'de I ve you yoktur, ama konuşmada doğal ton için I kullanılabilir. İlk şık çekicidir çünkü essay kuralını konuşmaya da yayar." },
+    { q: "Which items are scored together in the 15-point persuasive content criterion of the speech rubric?",
+      opts: ["Eye contact, body language and voice", "Grammar, pronunciation and vocabulary", "Main points, enough research, the speaker's opinion, concession(s) and solution(s)", "Poster design and handout layout"], a: 2,
+      why: "İkna edici içerik 15 puandır: ana noktalar, yeterli araştırma, konuşmacının görüşü, concession ve çözümler. Birinci şık teknik, ikinci şık İngilizce, dördüncüsü destekleyici materyaldir." }
   ]
 };

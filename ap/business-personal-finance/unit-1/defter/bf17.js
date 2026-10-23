@@ -17,7 +17,7 @@ window.DEFTER = {
             { ikon: "🏛️", terim: "Business structure", tr: "işletme yapısı", tanim: "İşletmenin yasal yapısı; kimin sahip olduğunu, kimin karar verdiğini ve borçtan kimin sorumlu olduğunu belirler.", ornek: "Şahıs şirketi, limited şirket, anonim şirket." }
           ] },
         { tip: "harita", merkez: "Dört yasal yapı", dallar: [
-            { baslik: "1 · *Sole proprietorship*", alt: "Tek sahip; şahıs şirketine yakın. ABD'de işletmelerin yaklaşık %65'i, en yaygın yapı" },
+            { baslik: "1 · *Sole proprietorship*", alt: "Tek sahip; şahıs şirketine yakın. ABD'de işletmelerin yaklaşık %70'i, en yaygın yapı" },
             { baslik: "2 · *Partnership*", alt: "İki ya da daha fazla sahip" },
             { baslik: "3 · *LLC*", alt: "Limited şirkete yakın" },
             { baslik: "4 · *Corporation*", alt: "Anonim şirkete yakın" }

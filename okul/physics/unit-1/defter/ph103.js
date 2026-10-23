@@ -79,6 +79,14 @@ window.DEFTER = {
             { metin: "Hız 4 m/s'den 12 m/s'e 2 s'de çıkıyor. Yer değiştirmeyi bul.", cevap: "sol", neden: "İvme yok ama süre var: ④ numaralı denklem." },
             { metin: "Top 10 m/s ile giderken 2 m/s² ile hızlanarak 25 m yol alıyor. Son hızı bul.", cevap: "sag", neden: "Süre yok: ③ ile v² = 100 + 100 = 200." }
           ] },
+        { tip: "ornek", baslik: "Konum denkleminden bilgi okumak",
+          durum: "Bir cismin konum denklemi x = 4 + 6t − t² (x metre, t saniye). Başlangıç konumunu, ilk hızı, ivmeyi ve hareketin türünü bul; 4 s sonundaki yer değiştirmeyi yaz.",
+          adimlar: [
+            "Genel biçim x = x₀ + v₀·t + ½·a·t² ile karşılaştır: x₀ = 4 m, v₀ = +6 m/s ve ½·a = −1 olduğundan a = −2 m/s².",
+            "Hız denklemi: v = v₀ + a·t = 6 − 2t. Başta v artı, a eksi: zıt yön, yani cisim yavaşlıyor; t = 3 s'de hız sıfır olur, sonra eksi yönde hızlanır.",
+            "4 s sonundaki konum: x = 4 + 24 − 16 = 12 m. Yer değiştirme: Δx = 12 − 4 = +8 m (aynı sonuç Δx = 6 × 4 − ½ × 2 × 16 = 8 m)."
+          ],
+          sonuc: "x₀ = 4 m, v₀ = 6 m/s, a = −2 m/s², Δx = +8 m. Sınavda böyle yaz: *Comparing with x = x₀ + v₀t + ½at², we read the initial position, initial velocity and acceleration.*" },
         { tip: "tuzak", metin: "Fren yapan araç için ivmeyi artı yazarsan sonuç yanlış çıkar.",
           yanlis: "Fren yapan araçta a = +5 m/s² yazılır.",
           dogru: "Hareket yönünü artı seçtiysen yavaşlama ==a = −5 m/s²== olur. İşaret, yön seçiminden gelir." }
@@ -162,23 +170,20 @@ window.DEFTER = {
     }
   ],
   sorular: [
-    { q: "Durgun halden a = 3 m/s² ile hızlanan bir motosiklet 4 s'de kaç metre yer değiştirir?",
+    { q: "A motorcycle starts from rest and speeds up with a = 3 m/s². How far does it travel in 4 s?",
       opts: ["12 m", "24 m", "48 m", "36 m"], a: 1,
       why: "v₀ = 0 olduğundan Δx = ½·a·t² = ½ × 3 × 16 = 24 m. En çekici yanlış C: ½'yi unutup 3 × 16 = 48 yazmak." },
-    { q: "30 m/s hızla giden bir araç 5 m/s² ile yavaşlayarak duruyor. Durma yolu kaç metredir?",
+    { q: "A car moving at 30 m/s slows down at 5 m/s² until it stops. What is its stopping distance?",
       opts: ["45 m", "60 m", "90 m", "180 m"], a: 2,
       why: "Süre sorulmuyor: ③ ile 0 = 30² + 2 × (−5) × Δx → 10·Δx = 900 → Δx = 90 m. D yanlış: 2'yi unutup 900 ÷ 5 = 180 yazmak." },
-    { q: "Bir top 4 m/s hızla giderken 2 m/s² ivmeyle hızlanıyor ve bu sırada 12 m yol alıyor. Topun son hızı kaç m/s'dir?",
-      opts: ["8", "10", "28", "16"], a: 0,
+    { q: "A ball moving at 4 m/s speeds up with an acceleration of 2 m/s² and covers 12 m during this time. What is its final velocity?",
+      opts: ["8 m/s", "10 m/s", "28 m/s", "16 m/s"], a: 0,
       why: "Süre yok: ③ ile v² = 4² + 2 × 2 × 12 = 16 + 48 = 64 → v = 8 m/s. C yanlış: karesiz hesap (4 + 24)." },
-    { q: "Durgun halden sabit ivmeyle hareket eden bir cisim 1. saniyede 2 m yol alıyor. 3. saniyede (yalnız o saniyede) kaç metre yol alır?",
+    { q: "An object starts from rest and moves with constant acceleration. It covers 2 m in the 1st second. How far does it move during the 3rd second only?",
       opts: ["6 m", "8 m", "10 m", "18 m"], a: 2,
       why: "Durgun halden ardışık saniyelerde yollar 1 : 3 : 5 oranındadır. 1. saniye 2 m ise 3. saniye 2 × 5 = 10 m. D yanlış: ilk 3 s'in toplamı 2 × 9 = 18 m." },
-    { q: "Bir aracın hız-zaman grafiği şekildeki gibidir. Aracın ivmesi ve 0–4 s arasındaki yer değiştirmesi nedir?",
-      fig: { type: "graph", xlabel: "t (s)", ylabel: "v (m/s)", xmax: 6, ymax: 12,
-        lines: [{ from: [0, 2], to: [4, 10] }],
-        xticks: [{ v: 4, label: "4" }], yticks: [{ v: 2, label: "2" }, { v: 10, label: "10" }] },
-      opts: ["a = 4 m/s², Δx = 24 m", "a = 2 m/s², Δx = 40 m", "a = 2 m/s², Δx = 8 m", "a = 2 m/s², Δx = 24 m"], a: 3,
-      why: "Eğim (10 − 2) ÷ 4 = 2 m/s²; alan (2 + 10) ÷ 2 × 4 = 24 m. A eğimi yanlış alır, B son hızla (10 × 4) hesap yapar, C ilk hızla (2 × 4)." }
+    { q: "The position of an object is given by x = 4 + 6t − t² (x in m, t in s). Which statement is correct?",
+      opts: ["The initial velocity is 4 m/s and the acceleration is −1 m/s².", "The initial velocity is 6 m/s and the acceleration is −2 m/s².", "The initial velocity is 6 m/s and the acceleration is −1 m/s².", "The initial velocity is 6 m/s and the acceleration is +2 m/s²."], a: 1,
+      why: "x = x₀ + v₀·t + ½·a·t² ile karşılaştır: v₀ = 6 m/s, ½·a = −1 olduğundan a = −2 m/s². En çekici yanlış C: katsayıyı ½ ile çarpmadan doğrudan ivme sanmak." }
   ]
 };

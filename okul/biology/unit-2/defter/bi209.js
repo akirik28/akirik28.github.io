@@ -1,8 +1,8 @@
 /* Kitora not defteri · bi209 · 2.9 Ayak İzleri, Sürdürülebilirlik ve Atık Yönetimi
-   Kaynak: okul-10-2025-26.md (Biology Tema 2) + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
+   Kaynak: öğretmen lecture'ı (2.5–2.9 Lecture Notes: ecological sustainability, ecological footprint, waste management) + okul-10-2025-26.md + MEB Maarif BİY.10.2. Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "bi209",
-  amac: "Doğaya ne kadar yük bindirdiğimizi ölçen üç ayak izini (karbon, ekolojik, su), sürdürülebilirliğin ne demek olduğunu, başlıca uluslararası anlaşmaları ve atık yönetimini öğreneceksin. Küçük hesaplarla kendi ayak izini yorumlayabileceksin.",
+  amac: "Doğaya ne kadar yük bindirdiğimizi ölçen üç ayak izini (karbon, ekolojik, su), ekolojik sürdürülebilirliğin ne demek olduğunu, başlıca uluslararası anlaşmaları ve atık yönetimini (kompost, biyometanizasyon, yakma, düzenli depolama) öğreneceksin. Küçük hesaplarla kendi ayak izini yorumlayabileceksin.",
   bolumler: [
     {
       baslik: "Ayak izi nedir?",
@@ -10,20 +10,17 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "☁️", terim: "Carbon footprint", tr: "karbon ayak izi", tanim: "Bir kişinin, ürünün ya da etkinliğin doğrudan ve dolaylı yoldan saldığı toplam sera gazı (CO₂ eşdeğeri, kg ya da ton).", ornek: "Uçak yolculuğu, evde ısınma, yenilen et." },
-            { ikon: "🌍", terim: "Ecological footprint", tr: "ekolojik ayak izi", tanim: "Tükettiğin kaynakları üretmek ve atığını (özellikle CO₂'yi) yutmak için gereken biyolojik olarak verimli kara ve su alanı. Birimi küresel hektar (*gha*).", ornek: "Yiyecek, giysi, enerji, yapılaşma için gereken toplam alan." },
+            { ikon: "🌍", terim: "Ecological footprint", tr: "ekolojik ayak izi", tanim: "Kişi ya da toplumun doğal kaynakları doğrudan ve dolaylı tüketmesinin ölçüsü: kullanılan kaynakları yenilemek ve atığı zararsız kılmak için gereken kara ve su alanı. Birimi küresel hektar (*gha*).", ornek: "Yiyecek, giysi, enerji, yapılaşma için gereken toplam alan." },
             { ikon: "💧", terim: "Water footprint", tr: "su ayak izi", tanim: "Bir ürünün ya da kişinin tükettiği toplam tatlı su; üretim zincirindeki su da dahildir (litre).", ornek: "Bir pamuklu tişörtün üretimi için kullanılan su." }
           ] },
-        { tip: "harita", merkez: "Günlük hayatta ayak izi", dallar: [
-            { baslik: "Ulaşım", alt: "Araba ve uçak çok CO₂ verir; yürüyüş, bisiklet, toplu taşıma az" },
-            { baslik: "Beslenme", alt: "Kırmızı et ve israf izi büyütür; mevsiminde, yerel, bitkisel gıda küçültür" },
-            { baslik: "Enerji", alt: "Isıtma, soğutma, elektrik; verimli cihaz ve yenilenebilir enerji" },
-            { baslik: "Tüketim", alt: "Her yeni giysi ve telefonun üretim izi vardır" },
-            { baslik: "Atık", alt: "Çöp ve plastik; azaltma, yeniden kullanma, geri dönüşüm" }
+        { tip: "harita", merkez: "Ayak izini küçültmek", dallar: [
+            { baslik: "Ulaşım", alt: "Özel araç yerine toplu taşıma, bisiklet, yürüyüş" },
+            { baslik: "Beslenme", alt: "Organik, doğal, yerel gıda; gıda israfını önle" },
+            { baslik: "Enerji", alt: "Yenilenebilir kaynak (güneş, rüzgâr, dalga), tasarruflu cihaz" },
+            { baslik: "Atık", alt: "Azalt, yeniden kullan (ikinci el, takas), geri dönüştür, kompostla" },
+            { baslik: "Su", alt: "Verimli kullan, kullanılmış suyu arıt ve yeniden kullan" }
           ] },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*A footprint measures the impact of human activities on the environment.*", metin: "Genel tanım." },
-            { ikon: "✍️", baslik: "*The carbon footprint is the total amount of greenhouse gases produced by an activity.*", metin: "Karbon ayak izi." }
-          ] }
+        { tip: "not", metin: "Gıda israfı üretimden tüketime her aşamada önlenmelidir: taşımada güneş enerjili araç, baca gazı filtresi, atık su arıtma, ambalaj atığı ayrıştırma, gıda atığından biyoetanol ve biyogaz, hayvansal atığın gübre, bitkisel atığın kompost olarak kullanımı. Sınavda böyle yaz: *A footprint measures the impact of human activities on the environment.* *The carbon footprint is the total amount of greenhouse gases produced by an activity.*" }
       ]
     },
     {
@@ -35,7 +32,7 @@ window.DEFTER = {
             { t: "Faaliyet miktarı", alt: "km, kWh, kg" }, "×",
             { t: "Emisyon faktörü", alt: "kg CO₂ / birim" }
           ], aciklama: "Emisyon faktörü, bir birim faaliyetin saldığı CO₂ miktarıdır." },
-        { tip: "ornek", baslik: "Okul yolu: araba mı otobüs mü?", durum: "Okula gidiş-dönüş 10 km, yılda 200 okul günü. Basitleştirilmiş örnek faktörler: araba (tek yolcu) 0,2 kg CO₂/km, otobüs 0,1 kg CO₂/yolcu-km, bisiklet 0. Yıllık ayak izi farkı nedir?",
+        { tip: "ornek", baslik: "Okul yolu: araba mı otobüs mü? (ek bilgi: örnek değerler)", durum: "Okula gidiş-dönüş 10 km, yılda 200 okul günü. Basitleştirilmiş örnek faktörler: araba (tek yolcu) 0,2 kg CO₂/km, otobüs 0,1 kg CO₂/yolcu-km, bisiklet 0. Yıllık ayak izi farkı nedir?",
           adimlar: [
             "Yıllık mesafe = 10 km × 200 gün = 2000 km.",
             "Araba: 2000 × 0,2 = 400 kg CO₂. Otobüs: 2000 × 0,1 = 200 kg CO₂. Bisiklet: 0.",
@@ -77,12 +74,9 @@ window.DEFTER = {
             { metin: "Ülke B: talep 3, biyokapasite 3. Tam denge.", set: { fb: { noktalar: [[4.2, 0], [5.0, 0], [5.0, 3], [4.2, 3]] } }, goster: ["lfb", "rb"] },
             { metin: "Ülke C: talep 5, biyokapasite 2. Talep arzı aşıyor: ==*ecological deficit*== (ekolojik açık). Açık; ithalatla, kaynakları tüketerek ve atmosferde CO₂ biriktirerek kapatılır.", set: { fc: { noktalar: [[6.7, 0], [7.5, 0], [7.5, 5], [6.7, 5]] } }, goster: ["lfc", "rc"] }
           ] },
-        { tip: "not", metin: "Dünya ölçeğinde insanlık, doğanın yıllık yenileme kapasitesinin üzerinde kaynak kullanıyor: yaklaşık 1,7 Dünya'ya denk. ==*Earth Overshoot Day*== (ekolojik taşma günü), yıl içinde yıllık kaynak bütçesinin tükendiği gündür; son yıllarda temmuz ve ağustosa denk geliyor." },
-        { tip: "tuzak", metin: "Ekolojik ayak izi ile karbon ayak izi sık karıştırılır.", yanlis: "Ekolojik ayak izi yalnızca CO₂ salınımıdır.", dogru: "Ekolojik ayak izi tarım, otlak, orman ürünü, balıkçılık, yapılaşma alanı ve CO₂'yi yutmak için gereken orman alanını içerir. ==Karbon ayak izi onun bir bileşenidir== (çoğu zaman en büyük payı)." },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*An ecological deficit occurs when the ecological footprint is larger than the biocapacity.*", metin: "Ekolojik açık." },
-            { ikon: "✍️", baslik: "*Humanity is using more resources than the Earth can regenerate in a year.*", metin: "Küresel durum." }
-          ] }
+        { tip: "not", metin: "Biyokapasite, Dünya'nın tükettiğimiz kaynakları yenileme ve atığı tolere etme gücüdür; ayak izi ile biyokapasite arasındaki fark ekolojik açıktır. Türkiye'de ekolojik ayak izinin %82'si kişisel tüketimden gelir, asıl kaynak gıdadır. Kurumların karbon salınımını azaltması bireysel çabadan daha etkilidir. Sınavda böyle yaz: *An ecological deficit occurs when the ecological footprint is larger than the biocapacity.*" },
+        { tip: "not", metin: "(Ek bilgi) Dünya ölçeğinde insanlık, doğanın yıllık yenileme kapasitesinin üzerinde kaynak kullanıyor: yaklaşık 1,7 Dünya'ya denk. ==*Earth Overshoot Day*== (ekolojik taşma günü), yıl içinde yıllık kaynak bütçesinin tükendiği gündür; son yıllarda temmuz ve ağustosa denk geliyor." },
+        { tip: "tuzak", metin: "Ekolojik ayak izi ile karbon ayak izi sık karıştırılır.", yanlis: "Ekolojik ayak izi yalnızca CO₂ salınımıdır.", dogru: "Ekolojik ayak izi tarım, otlak, orman ürünü, balıkçılık, yapılaşma alanı ve CO₂'yi yutmak için gereken orman alanını içerir. ==Karbon ayak izi onun bir bileşenidir== (çoğu zaman en büyük payı)." }
       ]
     },
     {
@@ -95,7 +89,7 @@ window.DEFTER = {
             { ikon: "⚪", terim: "Grey water", tr: "gri su", tanim: "Kirleticiyi kabul edilebilir düzeye seyreltmek için gereken temiz su miktarı.", ornek: "Boyama atık suyunu seyreltmek için gereken su." },
             { ikon: "🚢", terim: "Virtual water", tr: "sanal su", tanim: "Ürünün üretiminde harcanan ama ürünün içinde görünmeyen su. Ürün ticaretiyle ülkeler arasında taşınır.", ornek: "Ülkeye pamuk ya da et ithal etmek, o ürünün suyunu ithal etmektir." }
           ] },
-        { tip: "tablo", baslik: "Ürünlerin yaklaşık su ayak izi (küresel ortalama)", head: ["Ürün", "Yaklaşık su (litre)", "Neden bu kadar?"],
+        { tip: "tablo", baslik: "Ürünlerin yaklaşık su ayak izi (küresel ortalama; ek bilgi)", head: ["Ürün", "Yaklaşık su (litre)", "Neden bu kadar?"],
           rows: [
             ["1 kg sığır eti", "≈ 15 000", "Yem bitkisi sulaması ve uzun yetiştirme süresi"],
             ["1 pamuklu tişört", "≈ 2 700", "Pamuk sulaması, boyama ve işleme"],
@@ -120,11 +114,11 @@ window.DEFTER = {
       kisa: "Sürdürülebilirlik, bugünün ihtiyacını gelecek nesillerin hakkını gözeterek karşılamaktır.",
       bloklar: [
         { tip: "harita", merkez: "Sürdürülebilir kalkınma (*sustainable development*)", dallar: [
-            { baslik: "Çevre", alt: "Ekosistemleri ve yenilenebilir kaynakları koru" },
+            { baslik: "Çevre (ekolojik sürdürülebilirlik)", alt: "Kaynakları yenilenme hızının altında kullan; ekosistem dengesini ve biyoçeşitliliği koru" },
             { baslik: "Toplum", alt: "Sağlık, eğitim, eşitlik" },
             { baslik: "Ekonomi", alt: "Kalıcı üretim ve adil gelir" },
             { baslik: "Tanım (1987)", alt: "Brundtland raporu *Ortak Geleceğimiz*: bugünün ihtiyaçları, gelecek kuşakların ihtiyaçlarını tehlikeye atmadan karşılanır" },
-            { baslik: "SKH (*SDGs*)", alt: "BM, 2015: 17 hedef, 2030'a kadar" },
+            { baslik: "SKH (*SDGs*)", alt: "BM 2030 Gündemi, 2015: 17 hedef, 169 alt hedef, 2030'a kadar" },
             { baslik: "Döngüsel ekonomi", alt: "Al–yap–at yerine ürünü uzun kullan, atığı kaynağa çevir (*circular economy*)" }
           ] },
         { tip: "ikili", sol: { ikon: "✅", baslik: "*Sustainable*", maddeler: ["Kaynak yenilendiği hızda kullanılır"] },
@@ -146,10 +140,7 @@ window.DEFTER = {
             ["Paris Anlaşması", "2015", "Isınmayı 2 °C'nin çok altında, 1,5 °C'ye yakın tutma çabası"],
             ["BM Sürdürülebilir Kalkınma Hedefleri", "2015", "2030'a kadar 17 hedef"]
           ] },
-        { tip: "liste", maddeler: [
-            { ikon: "✍️", baslik: "*Sustainability means meeting present needs without compromising the ability of future generations to meet their own needs.*", metin: "Brundtland tanımı." },
-            { ikon: "✍️", baslik: "*International agreements help countries cooperate to solve global environmental problems.*", metin: "Anlaşmaların amacı." }
-          ] }
+        { tip: "not", metin: "Türkiye'den örnek: Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'nın Sıfıra Yakın Enerjili Binalar Projesi (Türkiye Yüzyılı projeleri). Sıfır enerjili bina, yıl içinde tükettiği kadar enerjiyi yenilenebilir kaynaklardan (güneş paneli, rüzgâr, ısı pompası) üretir; fosil yakıt bağımlılığını ve sera gazını azaltır. Anayasa'nın 56. maddesi herkese sağlıklı ve dengeli çevrede yaşama hakkı verir; çevreyi korumak devletin ve vatandaşların ödevidir. Sınavda böyle yaz: *Sustainability means meeting present needs without compromising the ability of future generations to meet their own needs.*" }
       ]
     },
     {
@@ -180,6 +171,19 @@ window.DEFTER = {
       ]
     },
     {
+      baslik: "Atık bertaraf yöntemleri",
+      kisa: "Ayrılan atıktan geri kalan; kompost, biyometanizasyon, yakma ya da düzenli depolamayla işlenir.",
+      bloklar: [
+        { tip: "tablo", baslik: "Atık bertarafı: ayırmadan sonra", head: ["Yöntem", "Nasıl yapılır?", "Ürün / yarar"], rows: [
+            ["Kompost (*composting*)", "Organik atık denetimli koşullarda biyolojik olarak ayrıştırılır", "Humus benzeri kompost: toprağı iyileştirir, mikroorganizmaları artırır, atık hacmini azaltır, patojen ve kokuyu giderir"],
+            ["Biyometanizasyon (*biomethanation*)", "Organik atık oksijensiz ortamda parçalanır", "Biyogaz (metan + CO₂): elektrik, ısı ve yakıt; organik gübre; fosil yakıt ve sera gazı azalır"],
+            ["Yakma (*incineration*)", "Katı atık yakılarak hacmi azaltılır", "Isı enerjisi buhar türbininde elektriğe çevrilir; baca gazı zarar vermeyecek biçimde arıtılmalı"],
+            ["Düzenli depolama (*sanitary landfill*)", "Atık serilir, sıkıştırılır, üstü örtülür", "Sızıntı suyu yeraltı suyuna karışmaz, gaz toplanır; dolunca kapatılır"]
+          ], not: "Sınavda böyle yaz: *Composting converts organic waste into a stable, humus-like product that improves the soil.*" },
+        { tip: "not", metin: "Atık kaynağında ayrılmalıdır: geri dönüşebilir atık, mutfak atığı ve diğer atık karıştırılmaz. Düzensiz çöp alanları hastalık, toprak ve su kirliliği, koku, zararlı canlı, heyelan ve metan patlaması riski taşır; eski düzensiz alanlar kapatılıp rehabilite edilmelidir. Bu yüzden atık yönetimi önleme, azaltma, ayırma, toplama, taşıma, geri dönüşüm ve bertarafı birlikte kapsar." }
+      ]
+    },
+    {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
@@ -188,9 +192,9 @@ window.DEFTER = {
             "Ekolojik ayak izi: gereken üretken alan (gha). Talep biyokapasiteyi aşarsa ekolojik açık; insanlık yaklaşık 1,7 Dünya kullanıyor.",
             "Su ayak izi: mavi (sulama suyu), yeşil (yağmur suyu), gri (kirliliği seyreltme suyu); sanal su ürünün içindeki sudur.",
             "Sığır eti ve pamuk gibi ürünlerin su ayak izi çok büyüktür.",
-            "Sürdürülebilirlik: bugünün ihtiyacını gelecek kuşakların hakkını tehlikeye atmadan karşılamak; çevre, toplum, ekonomi.",
+            "Sürdürülebilirlik: bugünün ihtiyacını gelecek kuşakların hakkını tehlikeye atmadan karşılamak; çevre (ekolojik), toplum, ekonomi. Örnek: Sıfıra Yakın Enerjili Binalar.",
             "Anlaşmalar: Montreal 1987 (ozon), Basel 1989 (atık), Rio 1992, Kyoto 1997, Stockholm 2001 (kalıcı kirleticiler), Paris 2015, SKH 2015.",
-            "Atık hiyerarşisi: önle/azalt → yeniden kullan → geri dönüştür/kompost → enerji geri kazanımı → düzenli depolama.",
+            "Atık hiyerarşisi: önle/azalt → yeniden kullan → geri dönüştür/kompost → enerji geri kazanımı → düzenli depolama. Bertaraf: kompost, biyometanizasyon, yakma, düzenli depolama.",
             "Döngüsel ekonomi atığı kaynağa çevirir; en iyi atık oluşmayan atıktır."
           ] }
       ]
@@ -198,35 +202,35 @@ window.DEFTER = {
   ],
   sorular: [
     {
-      q: "Bir öğrenci okula gidiş-dönüş 8 km yol gitmektedir ve yılda 200 gün okula gider. Arabayla (0,2 kg CO₂/km) ve otobüsle (0,1 kg CO₂/yolcu-km) gidiş arasındaki yıllık karbon ayak izi farkı kaç kg CO₂'dir?",
+      q: "A student travels 8 km to and from school and goes to school 200 days a year. What is the difference in annual carbon footprint, in kg CO₂, between travelling by car (0.2 kg CO₂/km) and by bus (0.1 kg CO₂ per passenger-km)?",
       opts: ["80", "160", "320", "480"],
       a: 1,
       why: "Yıllık mesafe 8 × 200 = 1600 km. Araba 1600 × 0,2 = 320 kg, otobüs 1600 × 0,1 = 160 kg; fark 320 − 160 = 160 kg. 320 yalnızca arabanın ayak izidir; fark değil."
     },
     {
-      q: "Tabloda üç ülkenin kişi başına ekolojik ayak izi ve biyokapasitesi verilmiştir (gha). Hangi ülke ekolojik açık vermektedir?",
-      fig: { type: "table", head: ["Ülke", "X", "Y", "Z"], rows: [["Ayak izi", 2, 3, 5], ["Biyokapasite", 4, 3, 2]], caption: "Kişi başına gha" },
-      opts: ["Yalnızca X", "Yalnızca Y", "Yalnızca Z", "Hepsi"],
+      q: "The table shows the ecological footprint and biocapacity per person of three countries (gha). Which country has an ecological deficit?",
+      fig: { type: "table", head: ["Country", "X", "Y", "Z"], rows: [["Ecological footprint", 2, 3, 5], ["Biocapacity", 4, 3, 2]], caption: "gha per person" },
+      opts: ["X only", "Y only", "Z only", "All of them"],
       a: 2,
       why: "Ekolojik açık, ayak izinin biyokapasiteden büyük olduğu durumdur. Yalnızca Z'de 5 > 2. X'te rezerv, Y'de denge vardır."
     },
     {
-      q: "Bir pamuk tarlasının barajdan gelen suyla sulanması, tarlada bitkinin kullandığı yağmur suyu ve boyama atık suyunu seyreltmek için gereken su sırasıyla hangi su ayak izi bileşenleridir?",
-      opts: ["Yeşil, mavi, gri", "Gri, yeşil, mavi", "Mavi, gri, yeşil", "Mavi, yeşil, gri"],
+      q: "Irrigating a cotton field with water from a dam, the rainwater used by the plants in the field, and the water needed to dilute dyeing wastewater are, respectively, which components of the water footprint?",
+      opts: ["Green, blue, grey", "Grey, green, blue", "Blue, grey, green", "Blue, green, grey"],
       a: 3,
       why: "Yüzey ve yeraltı suyu kullanımı mavi su, toprakta tutulan yağmur suyu yeşil su, kirliliği seyreltmek için gereken su gri sudur."
     },
     {
-      q: "Atık hiyerarşisine göre aşağıdakilerden hangisi en çok tercih edilen seçenektir?",
-      opts: ["Atığı düzenli depolama alanına göndermek", "Atığı yakıp enerji elde etmek", "Atık oluşmasını önlemek ya da azaltmak", "Plastik atığı geri dönüştürmek"],
+      q: "According to the waste hierarchy, which of the following is the most preferred option?",
+      opts: ["Sending the waste to a landfill", "Burning the waste to obtain energy", "Preventing or reducing the creation of waste", "Recycling plastic waste"],
       a: 2,
       why: "Hiyerarşide en iyi seçenek atığı hiç oluşturmamak ya da azaltmaktır. Geri dönüşüm de enerji ve su harcar ve ancak sonra gelir; yakma ve depolama en alt sıradadır."
     },
     {
-      q: "Bir balıkçılık kooperatifi, yıllık av miktarını balık stokunun yılda kendini yenileme miktarının altında tutmaktadır. Bu uygulama için hangisi söylenebilir?",
-      opts: ["Sürdürülebilirdir; kaynak, yenilenme hızından fazla tüketilmemektedir.", "Sürdürülemezdir; av hiçbir zaman yapılmamalıdır.", "Sürdürülebilirdir ama yalnızca ekolojik açık varsa.", "Sürdürülemezdir; çünkü stok yenilenmektedir."],
+      q: "Which waste disposal method breaks organic waste down without oxygen and produces biogas that can be used for electricity and heat?",
+      opts: ["Biomethanation", "Composting", "Incineration", "Sanitary landfilling without gas collection"],
       a: 0,
-      why: "Sürdürülebilirlik, kaynağı yenilenme hızının altında kullanmaktır. Son şık çelişkilidir: stok yenileniyorsa kullanım sürdürülebilirdir."
+      why: "Biyometanizasyon organik atığı oksijensiz ortamda parçalayıp metan ve CO₂ içeren biyogaz üretir. Kompost oksijenli, denetimli bir ayrışmadır ve biyogaz vermez; yakma atığı yakarak hacmini azaltır."
     }
   ]
 };
