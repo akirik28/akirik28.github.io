@@ -675,6 +675,115 @@ window.KIT = {
           "why": "*Activation-synthesis theory*, rüyaları *REM* sırasındaki rastgele beyin sapı etkinliğinin korteks tarafından anlamlandırılması olarak görür; saçma geçişler bu yüzden doğaldır. Gizli istekler yorumu bu kuramın değil, eski psikanalitik yaklaşımın iddiasıdır."
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "1.6-1",
+      "slug": "py109",
+      "title": "Duyumun İlkeleri ve Beden Duyuları",
+      "en": "Sensation Principles and Body Senses",
+      "accent": "#5BC0EB",
+      "defter": "py106",
+      "defterBaslik": "Duyum",
+      "seconds": 257,
+      "terms": [
+        "Sensation",
+        "Perception",
+        "Transduction",
+        "Absolute threshold",
+        "Difference threshold (JND)",
+        "Weber's law",
+        "Signal detection theory",
+        "Sensory adaptation",
+        "Sensory interaction",
+        "Synesthesia",
+        "Gate-control theory",
+        "Vestibular sense",
+        "Kinesthesis"
+      ],
+      "questions": [
+        {
+          "q": "Bir deneyde katılımcılar 200 gramlık bir zarfa eklenen ağırlığı ancak 10 gram eklenince fark edebiliyor. *Weber's law* doğruysa, aynı katılımcı 800 gramlık bir paketteki farkı fark etmek için yaklaşık ne kadar ek ağırlığa ihtiyaç duyar?",
+          "opts": [
+            "10 gram",
+            "20 gram",
+            "40 gram",
+            "80 gram"
+          ],
+          "a": 2,
+          "why": "Fark eşiği sabit bir orandır: 10 / 200 = yüzde 5. 800 gramın yüzde 5'i 40 gramdır. 10 gram demek, eşiği sabit bir miktar sanmak olur; bu *Weber's law*'un tam tersidir."
+        },
+        {
+          "q": "Tablo, bir işitme testinde bir katılımcının farklı şiddetteki sesleri duyma oranını gösteriyor. Bu katılımcının *absolute threshold*'u en iyi hangi değerdir?",
+          "opts": [
+            "2 birim",
+            "4 birim",
+            "6 birim",
+            "8 birim"
+          ],
+          "a": 1,
+          "why": "*Absolute threshold*, bir uyaranın denemelerin yüzde 50'sinde fark edildiği düzeydir. Tabloda yüzde 50, 4 birimde. 8 birimde ses hep duyuluyor ama eşik en düşük yarı yarıya fark edilen düzeydir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ses şiddeti (birim)",
+              "Duyulduğu denemelerin oranı"
+            ],
+            "rows": [
+              [
+                "2",
+                "%10"
+              ],
+              [
+                "4",
+                "%50"
+              ],
+              [
+                "6",
+                "%85"
+              ],
+              [
+                "8",
+                "%100"
+              ]
+            ],
+            "caption": "İşitme testi · örnek veri"
+          }
+        },
+        {
+          "q": "Bir hastane radyoloğu yorgun olduğu gece nöbetlerinde gerçekten var olan küçük tümörleri gündüze göre daha sık gözden kaçırıyor. *Signal detection theory*'ye göre bu hangi sonucun artmasıdır?",
+          "opts": [
+            "*Hit*",
+            "*False alarm*",
+            "*Correct rejection*",
+            "*Miss*"
+          ],
+          "a": 3,
+          "why": "Sinyal (tümör) gerçekten varken fark edilmemesi *miss*'tir. *Signal detection theory*, fark etmenin yorgunluk gibi durumlara da bağlı olduğunu söyler. Var olmayan bir tümörü görmek *false alarm* olurdu."
+        },
+        {
+          "q": "Yeni taşındığı evin yanından tren geçen Zeynep ilk günlerde her trende uyanıyor; bir ay sonra treni neredeyse hiç fark etmiyor. Bu durumu en iyi hangi kavram açıklar?",
+          "opts": [
+            "*Sensory adaptation*",
+            "*Transduction*",
+            "*Synesthesia*",
+            "*Weber's law*"
+          ],
+          "a": 0,
+          "why": "Tekrar eden, değişmeyen bir uyarana karşı duyarlılığın zamanla azalması *sensory adaptation*'dır. Beyin sabit uyaranları susturarak yeni değişimlere dikkat ayırır."
+        },
+        {
+          "q": "Bir araştırmacı katılımcıların burunlarını mandalla kapatıp gözleri bağlıyken onlara elma ve çiğ patates dilimleri tattırıyor. Katılımcılar ikisini çoğu zaman ayırt edemiyor. Araştırmacı hangi sonuca varmalıdır?",
+          "opts": [
+            "Dildeki tat alıcıları elmayı algılayamaz",
+            "Koku, tatların ayırt edilmesine önemli katkı yapar; bu bir *sensory interaction* örneğidir",
+            "Koku sinyalleri *thalamus*'tan geçmediği için tat da kaybolur",
+            "Katılımcılar *vestibular sense* kaybı yaşamıştır"
+          ],
+          "a": 1,
+          "why": "Burun kapanınca iki yiyecek ayırt edilemiyorsa, lezzetin büyük kısmı kokudan geliyordur; bir duyunun ötekini etkilemesi *sensory interaction*'dır. Kokunun *thalamus*'u atlaması doğru bir bilgidir ama bu sonucu açıklamaz."
+        }
+      ]
     }
   ],
   "final": []
