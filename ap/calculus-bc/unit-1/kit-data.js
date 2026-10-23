@@ -1,7 +1,7 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/cb1N/questions.json) */
 window.KIT = {
   "store": "calcbc-u1:v1:",
-  "course": "Calculus BC",
+  "course": "AP Calculus BC",
   "unitLabel": "Unit 1 — Limits and Continuity",
   "denemeler": {
     "url": "deneme/",
@@ -1257,5 +1257,6 @@ window.KIT = {
       ]
     }
   ],
-  "final": []
+  "final": [],
+  "defter": false
 };

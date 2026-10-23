@@ -1,7 +1,7 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/cb2N/questions.json) */
 window.KIT = {
   "store": "calcbc-u2:v1:",
-  "course": "Calculus BC",
+  "course": "AP Calculus BC",
   "unitLabel": "Unit 2 — Differentiation: Definition and Fundamental Properties",
   "episodes": [
     {
@@ -1277,5 +1277,6 @@ window.KIT = {
       ]
     }
   ],
-  "final": []
+  "final": [],
+  "defter": false
 };

@@ -1,7 +1,7 @@
 /* Bu dosya üretilir: ap-videolar/tools/build-kit-data.mjs (elle düzenleme; kaynak: src/episodes/cb3N/questions.json) */
 window.KIT = {
   "store": "calcbc-u3:v1:",
-  "course": "Calculus BC",
+  "course": "AP Calculus BC",
   "unitLabel": "Unit 3 — Differentiation: Composite, Implicit, and Inverse Functions",
   "episodes": [
     {
@@ -886,5 +886,6 @@ window.KIT = {
       ]
     }
   ],
-  "final": []
+  "final": [],
+  "defter": false
 };
