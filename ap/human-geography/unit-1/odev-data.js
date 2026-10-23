@@ -270,7 +270,7 @@ window.ODEV = {
         "functional region"
       ],
       "a": 4,
-      "why": "Milkshed bir merkezin (süt çiftliği) etrafında, bir akışla (süt dağıtımı) tanımlanır: functional region. Watershed (su toplama havzası) da aynı mantıkla functional sayılır."
+      "why": "Milkshed bir merkezin (süt çiftliği) etrafında, bir akışla (süt dağıtımı) tanımlanır: functional region."
     },
     {
       "src": "Worksheet · Quiz 2025 · Birinci Quiz",
@@ -477,7 +477,7 @@ window.ODEV = {
         "Census tract"
       ],
       "a": 4,
-      "why": "Mahalle büyüklüğündeki en küçük sayım birimi census tract'tir. Eyalet, ilçe ya da şehir ortalaması mahalleler arasındaki farkı gizler."
+      "why": "Census tract, mahalle büyüklüğündeki küçük sayım birimlerinden biridir (block ve block group daha da küçüktür). Eyalet, ilçe ya da şehir ortalaması mahalleler arasındaki farkı gizler."
     },
     {
       "src": "College Board tarzı",
