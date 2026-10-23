@@ -1,0 +1,21 @@
+Derbi maçı, tribünler dolu. Biri ayağa kalkıyor, yanındaki kalkıyor, sonra onun yanındaki; dalga stadı bir uçtan öbür uca dolaşıyor. Dikkat et: kimse yarım kalkmaz. Ya tam kalkarsın ya hiç. Beynindeki 86 milyar sinir hücresi de tam olarak böyle haberleşir. Bugün o dalganın içine giriyoruz.
+
+Sinir hücresine neuron denir. Elini ve kolunu düşün. Parmaklar dendrites: komşu nöronlardan mesaj alır. Avuç cell body: hücrenin merkezi, gelen mesajları toplar. Kol axon: sinyali uzağa taşır. Parmak uçların gibi en uçtaki terminal buttons da kimyasal haberciyi bir sonraki hücreye bırakır. Etraftaki yardımcı hücreler de glial cells: nöronları besler, korur, yalıtır.
+
+Nöron dinlenirken bile şarjlı bir pil gibidir. İçi dışına göre biraz eksi yüklüdür; buna resting potential denir, yaklaşık eksi 70 milivolt. Dendritlere mesajlar gelir; bazısı yükü artırır, bazısı azaltır. Hücre hepsini toplar. Toplam threshold'u, yani eşiği aşarsa nöron ateşlenir; yaklaşık eksi 55 milivolt. Eşiği aşamayan mesaj sessizce söner, hiçbir şey olmaz.
+
+Eşik aşılınca action potential, yani aksiyon potansiyeli başlar. Aksonun zarındaki kapılar açılır, artı yüklü iyonlar içeri dolar ve hücrenin içi kısa bir an artıya döner. Buna depolarization denir. Bu değişim, tribündeki dalga gibi akson boyunca bir sonraki bölüme geçer. Arkasında kapılar kapanır, hücre eski yüküne geri döner.
+
+İki kural var. Birincisi all-or-none: nöron ya tam güçle ateşlenir ya hiç. Sifonu düşün; düğmeye ne kadar sert basarsan bas, sifon aynı şekilde boşalır. Peki sert bir dürtme ile hafif bir dokunuşu nasıl ayırt ediyoruz? Güçlü uyaran sinyali büyütmez; nöronu daha sık ateşletir ve daha çok nöronu devreye sokar. İkincisi refractory period: ateşlemeden hemen sonra nöron kısa bir süre yeniden ateşlenemez, sifon deposunun dolmasını beklemek gibi.
+
+Bazı aksonların üstünde kablo kılıfı gibi bir yalıtım vardır: myelin sheath. Sinyal miyelinin boşluklarından sıçrayarak ilerler; bu yüzden çok daha hızlıdır. Merdivenden tek tek inmek yerine üçer üçer atlamak gibi. Bağışıklık sistemi miyelini yıpratırsa ne olur? Multiple sclerosis hastalığında sinyaller yavaşlar ya da kesilir; kas güçsüzlüğü, görme sorunları ve uyuşma görülebilir.
+
+Sinyal aksonun ucuna geldi. Ama nöronlar birbirine dokunmaz; aralarında küçücük bir boşluk vardır: synapse. Uçtaki düğmeler bu boşluğa neurotransmitters, yani kimyasal haberciler bırakır. Haberciler karşıdaki nöronun receptor sites'larına oturur, anahtarın kilide oturması gibi. Her anahtar her kilide uymaz. Yani nöronun içinde elektrik, nöronlar arasında kimya.
+
+Boşlukta kalan fazla haberciye ne olur? Gönderen nöron onları geri emer; buna reuptake denir. Elektrikli süpürge gibi. Haberciler iki tür mesaj taşır. Excitatory mesaj alıcıyı ateşlemeye yaklaştırır, gaz pedalı gibi. Inhibitory mesaj uzaklaştırır, fren gibi. Alıcı nöron gaz ve frenleri toplar; eşik aşılırsa yeni dalga başlar.
+
+AP senden ne bekliyor? Sırayı bilmeni: dendrit, hücre gövdesi, akson, terminal düğmeleri, sinaps. Ve bir senaryoda eşik, all-or-none, refractory period, miyelin ve reuptake fikirlerini kullanmanı. İyon pompalarının ayrıntısını ya da milivoltları ezberlemen gerekmiyor; eksi 70 ve eksi 55 sadece fikir versin. Kilit soru hep şu: eşik aşıldı mı?
+
+Toparlayalım. Dendrites alır, axon taşır, terminal buttons bırakır. Eşik aşılırsa action potential oluşur; depolarization aksonda dalga gibi ilerler. All-or-none: güçlü uyaran daha büyük değil, daha sık ateşleme demektir. Myelin hızlandırır; zarar görürse multiple sclerosis. Sinapsta kimyasal haberciler kilide oturur; fazlası reuptake ile geri alınır.
+
+Şimdi bir soru. Bir araştırmacı bir nörona önce eşiği az farkla geçen, sonra çok daha güçlü bir uyaran veriyor. Güçlü uyaranda ne değişir? Cevap: aksiyon potansiyellerinin boyu aynı kalır ama nöron daha sık ateşlenir. All-or-none kuralı yüzünden şiddet sinyalin boyuyla değil, sıklığıyla kodlanır.

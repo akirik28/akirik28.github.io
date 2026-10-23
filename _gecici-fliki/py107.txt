@@ -1,0 +1,21 @@
+Bir hasta ekranın ortasındaki noktaya bakıyor. Ekranın sol yanında bir an "anahtar" kelimesi yanıp sönüyor. "Ne gördün?" diye soruluyor. "Hiçbir şey" diyor. Ama perdenin altındaki eşyaları sol eliyle yokladığında, tereddütsüz anahtarı seçiyor. Gördüğünü söyleyemiyor ama elinde tutuyor. Nasıl olabilir? Cevap beynin ortasındaki bir köprüde.
+
+Beynin iki yarım küresi var, İstanbul'un iki yakası gibi. Aralarındaki köprü corpus callosum: iki tarafı birbirine bağlayan, milyonlarca aksondan oluşan kalın bir kablo demeti. Normalde bir taraf bir şey öğrenince köprüden anında öbürüne haber verir. Peki köprü kapanırsa? İki yaka birbirinden habersiz çalışmaya başlar.
+
+İki yaka aynı işi yapmaz; buna hemispheric specialization ya da lateralization denir. Çoğu insanda dil ağırlıklı olarak sol yarım kürededir: konuşmak, okumak, sıralı düşünmek. Sağ yarım küre uzamsal işlerde, yüzleri tanımada ve bir sesin duygusal tonunu yakalamada öne çıkar. Dikkat: sol beyinli ya da sağ beyinli insan diye bir şey yok. İki taraf her işte birlikte çalışır.
+
+Şimdi baştaki hasta. Çok ağır epilepsi nöbetlerini durdurmak için doktorlar bazı hastalarda corpus callosum'u kesmiş; bunlara split-brain hastaları denir. Görme de çapraz çalışır: sol görme alanındaki kelime sağ yarım küreye gider. Konuşma ise çoğunlukla solda. Köprü kesik olduğu için sağ taraf kelimeyi söyleyemez. Ama sol eli sağ yarım küre yönetir; o yüzden el anahtarı bulur.
+
+Dil için iki ünlü bölge var, ikisi de çoğunlukla solda. Frontal lobe'daki Broca's area konuşmayı üretir. Hasar görürse kişi ne söylendiğini anlar ama zorlanarak, kesik kesik konuşur: "Su… ben… iç." Temporal lobe'daki Wernicke's area ise dili anlamayı sağlar. Hasar görürse konuşma akıcıdır ama anlamsız: "Mavi sandalye dün bisikletle koştu." İkisine de aphasia, yani dil bozukluğu denir.
+
+İyi haber: beyin sabit bir makine değil. Plasticity, yani plastisite, beynin yeni bağlantılar kurarak kendini yeniden düzenleyebilmesi demek. Bir yarım küresi ameliyatla alınan küçük çocuklar bile zamanla konuşmayı ve yürümeyi büyük ölçüde geri kazanabilir. Braille okuyan görme engelli birinde görme korteksi dokunmaya yardım eder. Gitar çalmayı öğrenmek bile bağlantıları güçlendirir. Ne kadar gençsen beyin o kadar esnektir.
+
+Peki bölgelerin ne yaptığını nereden biliyoruz? İlk yol case study: tek bir kişiyi derinlemesine incelemek. 1848'de demiryolu işçisi Phineas Gage'in kafasından bir demir çubuk geçti; ön lobu zarar gördü. Hayatta kaldı ama sabırsız ve dürtüsel biri oldu. Sorun: tek kişiden genelleme yapmak risklidir. İkinci yol lesioning: hayvan araştırmalarında bir bölgeyi bilerek bozup neyin kaybolduğuna bakmak.
+
+Bugün kafayı açmadan da bakabiliyoruz. EEG kafa derisine konan elektrotlarla beynin elektriksel etkinliğini ölçer. Milisaniyeler içinde ne zaman tepki verildiğini çok iyi gösterir ama yeri kabaca söyler. fMRI kan oksijenindeki değişimi izler; hangi bölgenin çalıştığını keskin biçimde gösterir ama birkaç saniye geriden gelir. PET ise hafif radyoaktif şeker kullanır; en çok şeker yakan bölgeler parlar.
+
+AP senden ne bekliyor? Bir araştırma sorusuna en uygun yöntemi seçmeni ve sonucu yorumlamanı: zamanlama mı lazım, yer mi, tek ilginç bir vaka mı? Bir de split-brain senaryosunda hangi yarım kürenin neyi gördüğünü izlemeni. Makinelerin fiziğini ya da her bölgenin koordinatını ezberlemen gerekmiyor. Sol beyinli, sağ beyinli efsanesini şıklarda görürsen ele.
+
+Toparlayalım. Corpus callosum iki yarım küreyi bağlar; çoğu insanda dil solda, uzamsal ve yüz işleri sağda öne çıkar. Split-brain hastasında sol görme alanındaki bilgi sağ yarım küreye gider; söylenemez ama sol elle gösterilebilir. Broca konuşmayı üretir, Wernicke anlamayı sağlar. Plasticity beynin kendini yeniden düzenlemesidir. EEG zamanı, fMRI yeri iyi gösterir.
+
+Şimdi bir soru. Bir araştırmacı, insanlar tanıdık yüzlere bakarken beynin tam olarak hangi bölgesinin daha çok çalıştığını görmek istiyor. En uygun yöntem hangisi? Cevap: fMRI. Soru zamanlama değil yer soruyor; fMRI çalışan bölgeyi kan akışındaki değişimden keskin biçimde gösterir. EEG ise zamanlamaya uygundur.
