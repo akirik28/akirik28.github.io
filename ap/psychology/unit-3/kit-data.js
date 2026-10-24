@@ -214,6 +214,112 @@ window.KIT = {
     },
     {
       "no": 3,
+      "code": "3.3",
+      "slug": "py303",
+      "title": "Toplumsal Cinsiyet ve Cinsel Yönelim",
+      "en": "Gender and Sexual Orientation",
+      "accent": "#E86A92",
+      "defter": "py303",
+      "sessiz": true,
+      "seconds": 320,
+      "terms": [
+        "Sex",
+        "Gender",
+        "Intersex",
+        "Gender identity",
+        "Gender role",
+        "Cisgender",
+        "Transgender",
+        "Gender typing",
+        "Gender schema",
+        "Sexual orientation",
+        "Kinsey scale",
+        "Non-experimental method"
+      ],
+      "questions": [
+        {
+          "q": "Bir sağlık formunda \"kromozom yapısı, hormon düzeyleri ve üreme organları\" sorulurken, bir sosyoloji ödevinde \"toplumun kadınlardan ve erkeklerden beklediği davranışlar\" tartışılıyor. Bu iki konu sırasıyla hangi kavramlara karşılık gelir?",
+          "opts": [
+            "*Gender*; *sex*",
+            "*Sex*; *gender*",
+            "*Sexual orientation*; *gender identity*",
+            "*Gender identity*; *gender role*"
+          ],
+          "a": 1,
+          "why": "Kromozom, hormon ve organlar biyolojik özelliklerdir: *sex*. Toplumun cinsiyetlere yüklediği beklentiler ise *gender*'ın konusudur (özellikle *gender role*)."
+        },
+        {
+          "q": "Beş yaşındaki Lale, bir resimde ameliyat yapan bir kadın görünce \"Kadınlar doktor olmaz, o hemşire\" diyor ve resmi bu yönde hatırlıyor. Lale'nin yorumunu en iyi hangisi açıklar?",
+          "opts": [
+            "*Gender schema*",
+            "*Sexual orientation*",
+            "*Intersex*",
+            "*Cisgender*"
+          ],
+          "a": 0,
+          "why": "Lale'nin kafasındaki \"kadınlar şunu yapar, erkekler bunu yapar\" çerçevesi gelen bilgiyi süzüyor ve çarpıtıyor. Bu bir *gender schema*'dır; *gender typing* sürecinin parçasıdır."
+        },
+        {
+          "q": "Hangi ifade doğrudur?",
+          "opts": [
+            "Bir kişinin *gender identity*'sini bilmek, onun *sexual orientation*'ını da gösterir",
+            "*Gender role*'ler bütün kültürlerde aynıdır",
+            "*Transgender* bir kişinin kimliği, doğumda atanan cinsiyetle uyumlu değildir",
+            "*Sexual orientation*'ın tek ve kesin bir nedeni belirlenmiştir"
+          ],
+          "a": 2,
+          "why": "*Transgender*, kimliğin doğumda atanan cinsiyetle uyumlu olmamasıdır. Kimlik ile yönelim bağımsız boyutlardır; roller kültürden kültüre değişir; yönelimin tek bir nedeni bulunmamıştır."
+        },
+        {
+          "q": "Bir psikolog, kız ve erkek öğrencilerin empati puanlarını karşılaştırmak istiyor. Bu çalışma neden büyük olasılıkla *non-experimental* olur?",
+          "opts": [
+            "Empati ölçülemeyen bir değişkendir",
+            "Örneklem her zaman çok küçük olur",
+            "Deneyler yalnızca hayvanlarla yapılabilir",
+            "Psikolog katılımcıları cinsiyet gruplarına rastgele atayamaz"
+          ],
+          "a": 3,
+          "why": "Deney için bağımsız değişkenin psikolog tarafından atanması gerekir. Cinsiyet katılımcıların zaten sahip olduğu bir özelliktir; rastgele atanamaz. Bu yüzden var olan gruplar karşılaştırılır ve sonuç yalnızca ilişki gösterir."
+        },
+        {
+          "q": "Bir psikolog, 300 kız ve 300 erkek öğrenciye uzamsal döndürme testi veriyor. Tablodaki sonuçlara göre en uygun yorum hangisidir?",
+          "opts": [
+            "Her erkek öğrenci her kız öğrenciden yüksek puan alır",
+            "Gruplar arasındaki ortalama farkı, grup içindeki çeşitliliğe göre küçüktür",
+            "Fark, cinsiyetin uzamsal beceriye neden olduğunu kanıtlar",
+            "İki grubun puanları hiç örtüşmez"
+          ],
+          "a": 1,
+          "why": "Ortalamalar arasındaki fark 59 − 56 = 3 puan. Oysa her grubun içindeki puanlar 30–88 ve 28–90 gibi çok geniş bir aralıkta; grup içi çeşitlilik gruplar arası farktan çok büyük ve puanlar büyük ölçüde örtüşüyor. Çalışma deneysel olmadığı için neden-sonuç çıkarımı da yapılamaz.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Grup",
+              "Öğrenci",
+              "Ortalama puan",
+              "En düşük – en yüksek"
+            ],
+            "rows": [
+              [
+                "Kız",
+                "300",
+                "56",
+                "28 – 90"
+              ],
+              [
+                "Erkek",
+                "300",
+                "59",
+                "30 – 88"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 4,
       "code": "3.5",
       "slug": "py306",
       "title": "İletişim ve Dil Gelişimi",
