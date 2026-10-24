@@ -611,7 +611,7 @@ window.DENEME = {
           "q": "The table shows selected values of g(x) = (x² − 1)/|x − 1|. Which of the following statements is consistent with the table?",
           "o": [
             "lim as x→1 of g(x) = 2",
-            "lim as x→1⁻ of g(x) = −2, so lim as x→1 of g(x) does not exist",
+            "lim as x→1⁻ of g(x) = −2 and lim as x→1⁺ of g(x) = 2, so lim as x→1 of g(x) does not exist",
             "lim as x→1 of g(x) = 0",
             "lim as x→1⁺ of g(x) = −2"
           ],

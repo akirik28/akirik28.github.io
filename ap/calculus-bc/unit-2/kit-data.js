@@ -292,7 +292,7 @@ window.KIT = {
             "f(x + h) yanlış açılmış; doğrusu x² + h² − 3x − 3h"
           ],
           "a": 1,
-          "why": "f(x) = x² − 3x'in tamamı çıkarılmalı: −(x² − 3x) = −x² + 3x. O zaman pay 2xh + h² − 3h, h'ye bölüp h → 0: 2x − 3. Öğrencinin yazdığıyla −6x sabit terimi kalır ve h'ye bölünce limit sonsuza kaçar."
+          "why": "f(x) = x² − 3x'in tamamı çıkarılmalı: −(x² − 3x) = −x² + 3x. O zaman pay 2xh + h² − 3h, h'ye bölüp h → 0: 2x − 3. Öğrencinin yazdığıyla h'den bağımsız −6x terimi kalır; h'ye bölünce −6x/h olur ve x ≠ 0 için limit yoktur (bir yandan +∞, öbür yandan −∞)."
         }
       ]
     },

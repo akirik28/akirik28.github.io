@@ -842,7 +842,7 @@ window.DENEME = {
             "The difference is statistically significant, because the two groups had the same number of students."
           ],
           "a": 1,
-          "w": "18/1000 = %1.8 < %5: bu kadar büyük bir fark yalnızca random assignment'taki şansla nadiren çıkar, o yüzden fark statistically significant. '18 denemede çıktı, demek ki şans olabilir' tuzaktır: ölçüt 'hiç çıkmaması' değil, %5'ten az çıkmasıdır. Farkın gözle 'küçük' görünmesi de ölçüt değildir."
+          "w": "18/1000 = %1.8, olağan %5 eşiğinin çok altında: bu kadar büyük bir fark yalnızca random assignment'taki şansla nadiren çıkar, o yüzden fark statistically significant. '18 denemede çıktı, demek ki şans olabilir' tuzaktır: AP'de eşik verilmemişse genellikle %5 kullanılır; ölçüt 'hiç çıkmaması' değil, bu eşikten az çıkmasıdır. Farkın gözle 'küçük' görünmesi de ölçüt değildir."
         }
       ]
     },
@@ -1224,7 +1224,7 @@ window.DENEME = {
             "The difference is not statistically significant, because the simulation proves that music has no effect."
           ],
           "a": 1,
-          "w": "2 ya da daha büyük fark veren deneme sayısı 5 + 3 + 1 = 9; 9/50 = %18. Bu %5'ten çok büyük: böyle bir fark yalnızca random assignment'taki şansla kolayca çıkabilir → not statistically significant. 'Simulation proves no effect' ise fazla ileri gider: anlamlı çıkmaması etkinin olmadığını kanıtlamaz, yalnızca ikna edici kanıt olmadığını söyler.",
+          "w": "2 ya da daha büyük fark veren deneme sayısı 5 + 3 + 1 = 9; 9/50 = %18. Bu, eşik verilmediğinde kullanılan olağan %5'ten (hatta %10'dan) çok büyük: böyle bir fark yalnızca random assignment'taki şansla kolayca çıkabilir → not statistically significant. 'Simulation proves no effect' ise fazla ileri gider: anlamlı çıkmaması etkinin olmadığını kanıtlamaz, yalnızca ikna edici kanıt olmadığını söyler.",
           "fig": {
             "type": "dot",
             "values": [
@@ -2155,7 +2155,7 @@ window.DENEME = {
         },
         {
           "t": "1H-3",
-          "q": "In an experiment, 30 patients were randomly assigned to a new physical-therapy program or to the standard program, with 15 patients in each group. The mean improvement in grip strength was 4 kilograms greater for the new-program group. To see whether a difference this large could happen by chance alone, a researcher simulated the random assignment 100 times, assuming that the program has no effect. The dotplot shows the 100 simulated differences in mean improvement (new − standard), rounded to the nearest kilogram. Based on the simulation, is the observed difference statistically significant?",
+          "q": "In an experiment, 30 patients were randomly assigned to a new physical-therapy program or to the standard program, with 15 patients in each group. The mean improvement in grip strength was 4 kilograms greater for the new-program group. To see whether a difference this large could happen by chance alone, a researcher simulated the random assignment 100 times, assuming that the program has no effect. The dotplot shows the 100 simulated differences in mean improvement (new − standard), rounded to the nearest kilogram. Based on the simulation, and using 5% as the cutoff for a result that is unlikely to occur by chance alone, is the observed difference statistically significant?",
           "o": [
             "Yes, because only 4 of the 100 simulated differences are equal to 4, and 4% is less than 5%.",
             "No, because 7 of the 100 simulated differences are 4 or greater, so a difference this large is not unusual when only chance is involved.",
@@ -2163,7 +2163,7 @@ window.DENEME = {
             "No, because the simulated differences are centered at 0, which shows that the new program has no effect."
           ],
           "a": 1,
-          "w": "Sorulacak soru: yalnızca rastgele atamanın şansıyla 4 ya da DAHA BÜYÜK bir fark ne sıklıkla çıkar? Dotplot'ta 4'te 4, 5'te 2, 6'da 1 nokta var: 7/100 = %7. Bu %5'ten büyük olduğu için fark şansla açıklanabilir → not statistically significant. Yalnızca tam 4'e eşit olanları sayıp %4 bulmak en çekici hatadır. Simülasyonun 0'da merkezlenmesi ise \"etki yok\" varsayımıyla kurulduğu içindir; programın etkisiz olduğunu kanıtlamaz.",
+          "w": "Sorulacak soru: yalnızca rastgele atamanın şansıyla 4 ya da DAHA BÜYÜK bir fark ne sıklıkla çıkar? Dotplot'ta 4'te 4, 5'te 2, 6'da 1 nokta var: 7/100 = %7. Bu, kökte verilen %5 eşiğinden büyük olduğu için fark şansla açıklanabilir → not statistically significant. Yalnızca tam 4'e eşit olanları sayıp %4 bulmak en çekici hatadır. Simülasyonun 0'da merkezlenmesi ise \"etki yok\" varsayımıyla kurulduğu içindir; programın etkisiz olduğunu kanıtlamaz.",
           "fig": {
             "type": "dot",
             "values": [

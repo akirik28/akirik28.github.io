@@ -312,7 +312,7 @@ window.DENEME = {
             "y − 4 = (3/4)(x + 3)"
           ],
           "a": 0,
-          "w": "dy/dx = −x/y; (3, −4)'te −3/(−4) = 3/4. Nokta-eğim biçimi: y − (−4) = (3/4)(x − 3). −3/4 iki eksiden birini kaybeder; 4/3 yarıçapın eğimidir (teğet yarıçapa diktir); son şık noktanın işaretlerini ters koyar."
+          "w": "dy/dx = −x/y; (3, −4)'te −3/(−4) = 3/4. Nokta-eğim biçimi: y − (−4) = (3/4)(x − 3). −3/4 iki eksiden birini kaybeder; 4/3, −x/y yerine −y/x alır (x ile y'yi karıştırır); yarıçapın eğimi −4/3'tür, teğet ona dik olduğu için 3/4; son şık noktanın işaretlerini ters koyar."
         },
         {
           "t": "3.2-2",
