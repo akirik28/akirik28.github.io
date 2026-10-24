@@ -4,7 +4,7 @@
    localStorage anahtarlarını kullanır; v2 canlıya geçince iki taraf aynı oturumu görür.
    Sunucu: Supabase "satist" projesi, ap_* tabloları; tablolara yalnızca fonksiyonlarla erişilir.
      ap_kayit / ap_giris              hesap aç, giriş yap → { id, ad } | { hata }
-     ap_profil / ap_profil_kaydet     sınıf, seçmeliler, not takibi, quizler ve notlar
+     ap_profil / ap_profil_kaydet     okul, sınıf, seçmeliler, not takibi, quizler ve notlar
      ap_not_gir                       öğrenci kendi quiz notunu girer
      ap_cek / ap_yaz                  ilerleme kayıtları (anahtarında hesap kimliği geçenler)
      ap_quiz_ekle / _sil / _ozet      yönetici: quiz aç, sil, özet
@@ -175,6 +175,7 @@
   function engel(p) {
     if (!p) return "kurulum";
     if (!p.onay || !p.sinif || p.katilim == null) return "kurulum";
+    if ("okul" in p && !p.okul) return "kurulum";   /* okul alanı olmayan eski önbellek profili okul yüzünden yönlendirilmez */
     if (p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "kurulum";
     if (p.katilim && p.bekleyen && p.bekleyen.length) return "not";
     return null;
@@ -204,8 +205,10 @@
     profil: profil,
     profilYenile: profilYenile,
     engel: engel,
-    profilKaydet: function (sinif, secmeliler, katilim) {
-      return cagir("ap_profil_kaydet", { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim }).then(profilYenile);
+    profilKaydet: function (sinif, secmeliler, katilim, okul) {
+      var a = { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim };
+      if (okul) a.p_okul = okul;   /* "robert" | "uaa" | "koc" */
+      return cagir("ap_profil_kaydet", a).then(profilYenile);
     },
     notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
     /* geri bildirim: hesapsız da gönderilebilir (o zaman isimsiz kaydedilir) */
@@ -232,6 +235,7 @@
         gecersiz_puan: "Not, 0 ile quizin tam puanı arasında olmalı.",
         secmeli_gerekli: "En az bir ders seç.",
         sinif_gerekli: "Kaçıncı sınıf olduğunu seç.",
+        okul_gerekli: "Okulunu seç.",
         katilim_gerekli: "Bir şeyler eksik; sayfayı yenileyip tekrar dene.",
         katilimci_degil: "Not takibin kapalı.",
         ders_yok: "Bu quizin dersi senin derslerin arasında yok.",

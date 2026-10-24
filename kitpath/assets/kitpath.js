@@ -838,8 +838,10 @@
     var step = param("adim") === "2" ? 2 : 1;
     var grade = p.sinif === 10 && step === 1 ? 10 : 11, el = [];   /* profilden "11. sınıf" seçilince ?adim=2 ile gelir */
     Object.keys(SEC).forEach(function (key) { if ((p.secmeliler || []).indexOf(SEC[key]) > -1) el.push(key); });
+    var okul = p.okul || null;
     var root = $('[data-k="ob"]'), devam = devamAdresi();
-    fill('.ob__step[data-step="1"] h1', "Selam " + esc(ilkAd(ME.name)) + '! <span class="hl">Kaçıncı sınıftasın?</span>');
+    if (step === 2 && !okul) step = 1;   /* okul seçilmeden ikinci adıma geçilmez */
+    fill('.ob__step[data-step="1"] h1', "Selam " + esc(ilkAd(ME.name)) + '! <span class="hl">Seni tanıyalım.</span>');
     $('[data-k="go"]').href = devam || ROOT + "kitlerim/";
     var kaydediliyor = false;
     function render() {
@@ -847,6 +849,7 @@
       $('[data-k="ob-progress"]').setAttribute("aria-label", "Adım " + step + " / 3");
       $$(".ob__step", root).forEach(function (s) { s.hidden = +s.dataset.step !== step; });
       $$("[data-grade]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.grade === grade)); });
+      $$("[data-okul]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.okul === okul)); });
       $$("[data-el]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(el.indexOf(b.dataset.el) > -1)); });
       $$("[data-for-grade]", root).forEach(function (x) { x.hidden = +x.dataset.forGrade !== grade; });
       $('[data-k="back"]').style.visibility = step > 1 ? "visible" : "hidden";
@@ -864,7 +867,7 @@
       var liste = grade === 11 ? el.map(function (x) { return SEC[x]; }).concat(korunan) : [];
       var fwd = $('[data-k="fwd"]');
       kaydediliyor = true; fwd.disabled = true; fwd.textContent = "Kaydediliyor…";
-      H.profilKaydet(grade, liste, !(p && p.katilim === false)).then(function (p2) {
+      H.profilKaydet(grade, liste, !(p && p.katilim === false), okul).then(function (p2) {
         p = p2 || p; step = 3; kaydediliyor = false; fwd.disabled = false; fwd.textContent = "Devam →"; render();
       }, function (x) {
         kaydediliyor = false; fwd.disabled = false; fwd.textContent = "Devam →"; toast(H.hataMetni(x));
@@ -873,6 +876,7 @@
     root.addEventListener("click", function (e) {
       if (kaydediliyor) return;
       var g = e.target.closest("[data-grade]"); if (g) { grade = +g.dataset.grade; render(); }
+      var ok = e.target.closest("[data-okul]"); if (ok) { okul = ok.dataset.okul; render(); }
       var x = e.target.closest("[data-el]");
       if (x) {
         var id = x.dataset.el, k = el.indexOf(id);
@@ -881,7 +885,7 @@
       }
       if (e.target.closest('[data-k="back"]')) { step = Math.max(1, step - 1); render(); }
       if (e.target.closest('[data-k="fwd"]')) {
-        if (step === 1) { step = 2; render(); return; }
+        if (step === 1) { if (!okul) { toast("Önce okulunu seç"); return; } step = 2; render(); return; }
         if (grade === 11 && !el.length) { toast("Matematik dersin dahil, en az birini seç"); return; }
         kaydet();
       }
@@ -1700,7 +1704,7 @@
         if (!ac) return satir;
         var notlar = s.notlar || [];
         return satir + '<tr class="yon-detay"><td colspan="5"><div class="yon-detay__ic">' +
-          '<div class="stack" style="gap:6px"><span class="mono muted">HESAP</span><span>Açılış: ' + esc(tarihUzun(s.olusturma)) + '</span><span>Not takibi: ' + (s.katilim === true ? "açık" : "kapalı") + '</span></div>' +
+          '<div class="stack" style="gap:6px"><span class="mono muted">HESAP</span><span>Okul: ' + esc(OKUL_AD[s.okul] || "seçilmedi") + '</span><span>Açılış: ' + esc(tarihUzun(s.olusturma)) + '</span><span>Not takibi: ' + (s.katilim === true ? "açık" : "kapalı") + '</span></div>' +
           '<div class="stack" style="gap:6px"><span class="mono muted">DERSLER</span>' + ((s.secmeliler || []).length ? '<span class="yon-dersler" style="flex-wrap:wrap">' + s.secmeliler.map(function (x) { return '<span class="yon-ders" style="--c:' + COLORS[C.dersRengi(x)] + '">' + esc(x) + '</span>'; }).join("") + '</span>' : '<span class="muted">Ders seçmemiş</span>') + '</div>' +
           '<div class="stack" style="gap:6px"><span class="mono muted">NOTLAR</span>' + (notlar.length ? notlar.map(function (n) { return '<span>' + esc(n.baslik) + ' · <strong>' + sayi(n.puan) + '</strong> / ' + sayi(n.max_puan) + '</span>'; }).join("") : '<span class="muted">Henüz not yok</span>') + '</div>' +
           '</div></td></tr>';
@@ -1833,6 +1837,7 @@
   };
 
   /* yönetim yardımcıları (gerçek ve örnek ekran) */
+  var OKUL_AD = { robert: "Robert Kolej", uaa: "Üsküdar Amerikan Lisesi", koc: "Koç Lisesi" };
   function yonStat(n, etiket, alt, ton) {
     return '<div class="card stat yon-stat"' + (ton ? ' data-ton="' + ton + '"' : "") + '><b>' + esc(n == null ? "—" : n) + '</b><span style="font-weight:600">' + esc(etiket) + '</span><span class="muted" style="font-size:13px">' + esc(alt || "") + '</span></div>';
   }

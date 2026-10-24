@@ -24,9 +24,16 @@
       <section class="ob__step" data-step="1">
         <div class="stack" style="gap:10px">
           <span class="eyebrow">// Adım 1 / 3</span>
-          <h1 class="display" tabindex="-1" style="font-size:clamp(38px,5vw,56px)">Selam Ada! <span class="hl">Kaçıncı sınıftasın?</span></h1>
-          <p class="lead" style="font-size:17px">Rafını buna göre dizeceğiz. Sonra profilinden değiştirebilirsin.</p>
+          <h1 class="display" tabindex="-1" style="font-size:clamp(38px,5vw,56px)">Selam Ada! <span class="hl">Seni tanıyalım.</span></h1>
+          <p class="lead" style="font-size:17px">Rafını okuluna ve sınıfına göre dizeceğiz.</p>
         </div>
+        <h2 class="h3 ob__soru">Okulun hangisi?</h2>
+        <div class="okul-grid" role="group" aria-label="Okulun">
+          <button type="button" class="pick pick--okul" data-okul="robert" aria-pressed="false"><span class="okul-rozet" style="--c:#C2413A">RC</span><strong>Robert Kolej</strong></button>
+          <button type="button" class="pick pick--okul" data-okul="uaa" aria-pressed="false"><span class="okul-rozet" style="--c:#3D7BFF">ÜAL</span><strong>Üsküdar Amerikan Lisesi</strong></button>
+          <button type="button" class="pick pick--okul" data-okul="koc" aria-pressed="false"><span class="okul-rozet" style="--c:#E0A43F">KL</span><strong>Koç Lisesi</strong></button>
+        </div>
+        <h2 class="h3 ob__soru">Kaçıncı sınıftasın?</h2>
         <div class="pick-grid">
           <button type="button" class="pick" data-grade="10" aria-pressed="false"><span class="pick__big">10</span><span class="stack" style="gap:4px"><strong style="font-size:17px">10. sınıf</strong><span class="muted" style="font-size:14px">Ortak dersler otomatik eklenir</span></span></button>
           <button type="button" class="pick" data-grade="11" aria-pressed="true"><span class="pick__big">11</span><span class="stack" style="gap:4px"><strong style="font-size:17px">11. sınıf</strong><span class="muted" style="font-size:14px">Seçmeli AP derslerini sen seçersin</span></span></button>

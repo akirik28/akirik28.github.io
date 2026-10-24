@@ -1098,3 +1098,10 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 /* yönetici: öğrenci ↔ yönetim geçiş düğmesi (başlıkta) */
 .yon-gec { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 @media (max-width: 720px) { .yon-gec span { display: none; } .yon-gec { padding-left: 10px; padding-right: 10px; } }
+
+/* hoş geldin: okul seçimi */
+.ob__soru { margin: 6px 0 -6px; font-size: 20px; }
+.okul-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pick--okul { flex-direction: row; align-items: center; gap: 12px; padding: 16px 18px; text-align: left; font-size: 16px; line-height: 1.25; }
+.okul-rozet { flex: 0 0 auto; width: 46px; height: 46px; border-radius: 14px; background: var(--c); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: var(--f-display); font-weight: 800; font-size: 14px; letter-spacing: -.02em; }
+@media (max-width: 720px) { .okul-grid { grid-template-columns: 1fr; } }
