@@ -51,7 +51,7 @@
     matematik: ["AP Calculus BC/AB", "Calculus"],
     secmeli: ["Honours Comparative Literature", "Computer Science", "Innovation & Entrepreneurship Management", "Honours Human Geography",
       "Honours World History", "Ekonomi", "Psikoloji", "AP Statistics", "Advanced Biology 1", "Advanced Chemistry 1", "Advanced Physics 1",
-      "AP Chemistry", "AP Physics C: Mechanics", "Fundamentals of Science"],
+      "AP Chemistry", "AP Physics C: Mechanics", "AP Physics C: Electricity and Magnetism", "Fundamentals of Science"],
     ap: ["AP Macroeconomics", "AP Microeconomics", "AP Psychology"],
     onuncu: ["Precalculus and Trigonometry", "Chemistry 10", "Physics 10", "Biology 10", "English 10"]
   };
@@ -88,6 +88,8 @@
     calc: { ad: "Calculus BC", renk: "calc", art: "calc", grup: "ap" },
     psych: { ad: "Psychology", renk: "psych", art: "psych", grup: "ap" },
     csa: { ad: "Computer Science A", renk: "csa", art: "csa", grup: "ap" },
+    physc: { ad: "Physics C: Mechanics", kisa: "Physics C: Mech", renk: "physc", art: "phys", grup: "ap" },
+    physem: { ad: "Physics C: Electricity and Magnetism", kisa: "Physics C: E&M", renk: "physc", art: "phys", grup: "ap" },
     /* 10. sınıf okul dersleri (okul/<ders>/unit-N/, geçen yılın müfredatı) */
     precalc: { ad: "Precalculus and Trigonometry", kisa: "Precalculus", renk: "precalc", art: "calc", grup: "okul" },
     chem: { ad: "Chemistry", renk: "chem", art: "cep", grup: "okul" },
@@ -145,6 +147,19 @@
     ["csa-u2", "csa", 2, "ap/computer-science-a/unit-2/", "ikisi", "Selection and Iteration"],
     ["csa-u3", "csa", 3, "ap/computer-science-a/unit-3/", "defter/defter-liste.js", "Class Creation"],
     ["csa-u4", "csa", 4, "ap/computer-science-a/unit-4/", "defter/defter-liste.js", "Data Collections"],
+    ["physc-u1", "physc", 1, "ap/physics-c-mechanics/unit-1/", "kit-data.js", "Kinematics"],
+    ["physc-u2", "physc", 2, "ap/physics-c-mechanics/unit-2/", "defter/defter-liste.js", "Force and Translational Dynamics"],
+    ["physc-u3", "physc", 3, "ap/physics-c-mechanics/unit-3/", "defter/defter-liste.js", "Work, Energy, and Power"],
+    ["physc-u4", "physc", 4, "ap/physics-c-mechanics/unit-4/", "defter/defter-liste.js", "Linear Momentum"],
+    ["physc-u5", "physc", 5, "ap/physics-c-mechanics/unit-5/", "defter/defter-liste.js", "Torque and Rotational Dynamics"],
+    ["physc-u6", "physc", 6, "ap/physics-c-mechanics/unit-6/", "defter/defter-liste.js", "Energy and Momentum of Rotating Systems"],
+    ["physc-u7", "physc", 7, "ap/physics-c-mechanics/unit-7/", "defter/defter-liste.js", "Oscillations"],
+    ["physem-u8", "physem", 8, "ap/physics-c-electricity-magnetism/unit-8/", "defter/defter-liste.js", "Electric Charges, Fields, and Gauss's Law"],
+    ["physem-u9", "physem", 9, "ap/physics-c-electricity-magnetism/unit-9/", "defter/defter-liste.js", "Electric Potential"],
+    ["physem-u10", "physem", 10, "ap/physics-c-electricity-magnetism/unit-10/", "defter/defter-liste.js", "Conductors and Capacitors"],
+    ["physem-u11", "physem", 11, "ap/physics-c-electricity-magnetism/unit-11/", "defter/defter-liste.js", "Electric Circuits"],
+    ["physem-u12", "physem", 12, "ap/physics-c-electricity-magnetism/unit-12/", "defter/defter-liste.js", "Magnetic Fields and Electromagnetism"],
+    ["physem-u13", "physem", 13, "ap/physics-c-electricity-magnetism/unit-13/", "defter/defter-liste.js", "Electromagnetic Induction"],
     /* 10. sınıf okul defterleri (kitsiz; listede KIT.okul ve KIT.not var) */
     ["pre-u1", "precalc", 1, "okul/precalculus/unit-1/", "defter/defter-liste.js", "Functions"],
     ["pre-u2", "precalc", 2, "okul/precalculus/unit-2/", "defter/defter-liste.js", "Quadratics"],
@@ -169,6 +184,8 @@
     ["eng-u4", "eng", 4, "okul/english/unit-4/", "defter/defter-liste.js", "Research and Argument"],
     ["eng-u5", "eng", 5, "okul/english/unit-5/", "defter/defter-liste.js", "MEB Skills Exams"]
   ].map(function (r) { return { id: r[0], ders: r[1], unit: r[2], path: r[3], liste: r[4], baslik: r[5] }; });
+  /* ilk = dersin ilk ünitesi (E&M CED gibi 8'den başlar; misafire açık olan ve kısa durumda sayılan ünite) */
+  DEFTER_UNITELER.forEach(function (u) { u.ilk = !DEFTER_UNITELER.some(function (x) { return x.ders === u.ders && x.unit < u.unit; }); });
   function defterUnite(id) { var i; for (i = 0; i < DEFTER_UNITELER.length; i++) if (DEFTER_UNITELER[i].id === id) return DEFTER_UNITELER[i]; return null; }
   /* ünitenin bölüm listesi (window.KIT); kitsiz ünitede KIT.kitYok = true */
   function defterListesi(u) {
@@ -178,7 +195,7 @@
   function defterOku(u, slug) { var key = "def:" + u.id + slug; return onbellek[key] || (onbellek[key] = genel(KOK + u.path + "defter/" + slug + ".js", "DEFTER")); }
   /* bir dersin bütün ünitelerinde kaç defter var, kaçı okundu (Kitlerim ve panel kartları için) */
   function defterDurumu(ders, hepsi) {
-    var us = DEFTER_UNITELER.filter(function (u) { return u.ders === ders && (hepsi || u.unit === 1); });
+    var us = DEFTER_UNITELER.filter(function (u) { return u.ders === ders && (hepsi || u.ilk); });
     return Promise.all(us.map(function (u) { return defterListesi(u).then(null, function () { return null; }); })).then(function (ls) {
       var r = { n: 0, o: 0 };
       ls.forEach(function (K) { if (!K) return; var m = okunanlar(K.store); (K.episodes || []).forEach(function (e) { r.n++; if (m[e.slug]) r.o++; }); });
@@ -210,6 +227,7 @@
     { id: "psych", tur: "ap", title: "AP Psychology", code: "AP · PSYCH", renk: "psych", ders: "psych", okul: ["AP Psychology", "Psikoloji"], ara: "psych psychology psikoloji brain neuron behavior memory learning beyin davranış" },
     { id: "csa", tur: "ap", title: "AP Computer Science A", code: "AP · CS", renk: "csa", ders: "csa", okul: ["Computer Science"], ara: "csa computer science java programming code kod yazılım object method" },
     { id: "physc", tur: "ap", title: "AP Physics C: Mechanics", code: "AP · PHYS", renk: "physc", ders: "physc", okul: ["AP Physics C: Mechanics"], ara: "physics c mechanics fizik kinematics newton force energy momentum rotation kuvvet enerji hareket" },
+    { id: "physem", tur: "ap", title: "AP Physics C: Electricity and Magnetism", code: "AP · PHYS", renk: "physc", ders: null, defter: "physem", okul: ["AP Physics C: Electricity and Magnetism"], ara: "physics c electricity magnetism e&m fizik elektrik manyetizma gauss potential capacitor circuit induction devre" },
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" },
     { id: "cep-eng10", tur: "cep", title: "English 10: sınav ve konuşma provası", code: "CEP KİTİ · İNGİLİZCE", renk: "eng", ders: null, href: "cep/english-10/", sinif: 10, okul: ["English 10"], ara: "english ingilizce speaking oedipus catcher passage analysis paragraph essay persuasive speech konuşma sınavı prova" }
   ];
@@ -238,7 +256,7 @@
   var QUIZ_DERS = {
     "AP Macroeconomics": ["macro"], "AP Microeconomics": ["micro"], "Ekonomi": ["macro", "micro"],
     "AP Statistics": ["stats"], "AP Calculus BC/AB": ["calc"], "Calculus": ["calc"],
-    "Honours Human Geography": ["hug"], "AP Psychology": ["psych"], "Psikoloji": ["psych"], "Computer Science": ["csa"], "AP Physics C: Mechanics": ["physc"],
+    "Honours Human Geography": ["hug"], "AP Psychology": ["psych"], "Psikoloji": ["psych"], "Computer Science": ["csa"], "AP Physics C: Mechanics": ["physc"], "AP Physics C: Electricity and Magnetism": ["physem"],
     "Precalculus and Trigonometry": ["precalc"], "Chemistry 10": ["chem"], "Physics 10": ["phys"], "Biology 10": ["bio"], "English 10": ["eng"]
   };
   function kilitler(p) {
