@@ -106,6 +106,114 @@ window.KIT = {
     },
     {
       "no": 2,
+      "code": "3.2",
+      "slug": "py302",
+      "title": "Yaşam Boyu Fiziksel Gelişim",
+      "en": "Physical Development Across the Lifespan",
+      "accent": "#B77AD9",
+      "defter": "py302",
+      "sessiz": true,
+      "seconds": 338,
+      "terms": [
+        "Teratogen",
+        "Fetal alcohol spectrum disorders",
+        "Rooting reflex",
+        "Grasping reflex",
+        "Gross motor skills",
+        "Fine motor skills",
+        "Visual cliff",
+        "Critical period",
+        "Imprinting",
+        "Puberty",
+        "Primary sex characteristics",
+        "Secondary sex characteristics"
+      ],
+      "questions": [
+        {
+          "q": "Bir hemşire, yenidoğanın yanağına parmağıyla hafifçe dokunuyor. Bebek başını o yöne çevirip ağzını açıyor. Hemşire hangi refleksi gözlemliyor?",
+          "opts": [
+            "*Grasping*",
+            "*Moro*",
+            "*Sucking*",
+            "*Rooting*"
+          ],
+          "a": 3,
+          "why": "Yanağa dokunulunca başı o yöne çevirip ağzı açmak *rooting* refleksidir; bebeğin besin kaynağını bulmasına yardım eder. *Grasping* avuca, *Moro* ani ses ya da destek kaybına verilen tepkidir."
+        },
+        {
+          "q": "İki yaşındaki Arya merdiveni tırabzana tutunarak çıkabiliyor ama boncukları ipe dizmekte zorlanıyor. Bu durum için en doğru ifade hangisidir?",
+          "opts": [
+            "Arya'nın *gross motor* becerileri *fine motor* becerilerinden daha gelişmiş",
+            "Arya'nın *fine motor* becerileri *gross motor* becerilerinden daha gelişmiş",
+            "Arya *critical period*'u kaçırmış",
+            "Arya'da bir *teratogen* etkisi olduğu kesindir"
+          ],
+          "a": 0,
+          "why": "Merdiven çıkmak büyük kasların işidir (*gross motor*); boncuk dizmek küçük kasların koordinasyonunu ister (*fine motor*). Bu yaşta ince motor becerilerin geride olması olağandır; kesin bir sorun çıkarımı yapılamaz."
+        },
+        {
+          "q": "Hamileliği boyunca düzenli olarak alkol kullanan bir annenin çocuğunda okul çağında öğrenme güçlükleri ve dikkat sorunları görülüyor. Bu tablo en çok hangisiyle ilişkilidir?",
+          "opts": [
+            "*Imprinting*",
+            "*Fetal alcohol spectrum disorders*",
+            "*Adolescent growth spurt*",
+            "Yaşa bağlı *reaction time* artışı"
+          ],
+          "a": 1,
+          "why": "Alkol bir *teratogen*'dir: anne karnındaki bebeğe ulaşır. Ortaya çıkabilen öğrenme, davranış ve bazen yüz yapısı farklılıkları *fetal alcohol spectrum disorders* olarak adlandırılır."
+        },
+        {
+          "q": "Aşağıdakilerden hangisi bir *secondary sex characteristic*'tir?",
+          "opts": [
+            "Yumurtalıkların olgunlaşması",
+            "Testislerin sperm üretmeye başlaması",
+            "Ergenlikte sesin kalınlaşması",
+            "Rahmin gelişmesi"
+          ],
+          "a": 2,
+          "why": "Sesin kalınlaşması üreme organı değildir ama ergenlikte belirginleşir; bu yüzden ikincil cinsiyet özelliğidir. Yumurtalık, testis ve rahim doğrudan üremeyle ilgili birincil özelliklerdir."
+        },
+        {
+          "q": "Bir psikolog, ana dilinden farklı ikinci bir dili öğrenmeye başlama yaşı ile o dildeki telaffuz puanını inceliyor. Tablodaki desen en çok hangi kavramla tutarlıdır?",
+          "opts": [
+            "*Sensitive period*: dil en kolay erken yaşlarda edinilir, sonra edinim zorlaşır",
+            "*Imprinting*: insanlar ilk duydukları dile bağlanır ve başka dil öğrenemez",
+            "*Maturation*: telaffuz yaşla birlikte kendiliğinden iyileşir",
+            "Geç başlayanlar dili hiç öğrenemez"
+          ],
+          "a": 0,
+          "why": "Ortalama telaffuz puanı başlama yaşı arttıkça düşüyor: 4 yaşta 92, 10 yaşta 78, 16 yaşta 61 (iki adımda 14 ve 17 puan düşüş). Bu, dil için bir duyarlı dönem fikriyle uyumludur. Ama geç başlayanlar da öğreniyor; öğrenme imkânsız değil, daha zor. Veri ilişkisel olduğu için başka etkenler de rol oynayabilir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Başlama yaşı",
+              "Kişi",
+              "Ortalama telaffuz puanı (100 üzerinden)"
+            ],
+            "rows": [
+              [
+                "4",
+                "30",
+                "92"
+              ],
+              [
+                "10",
+                "30",
+                "78"
+              ],
+              [
+                "16",
+                "30",
+                "61"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 3,
       "code": "3.5",
       "slug": "py306",
       "title": "İletişim ve Dil Gelişimi",
