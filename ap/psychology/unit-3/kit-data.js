@@ -429,6 +429,112 @@ window.KIT = {
     },
     {
       "no": 5,
+      "code": "3.4-2",
+      "slug": "py305",
+      "title": "Somuttan Soyuta: Vygotsky ve Yetişkin Zihni",
+      "en": "Concrete and Formal Thought, Vygotsky, and the Aging Mind",
+      "accent": "#5BC0EB",
+      "defter": "py304",
+      "defterBaslik": "Yaşam Boyu Bilişsel Gelişim",
+      "sessiz": true,
+      "seconds": 332,
+      "terms": [
+        "Concrete operational stage",
+        "Formal operational stage",
+        "Conservation",
+        "Reversibility",
+        "Zone of proximal development (ZPD)",
+        "Scaffolding",
+        "Fluid intelligence",
+        "Crystallized intelligence",
+        "Dementia"
+      ],
+      "questions": [
+        {
+          "q": "On beş yaşındaki Defne, bir sarkacın salınım hızını neyin etkilediğini bulmak için ip uzunluğunu değiştirirken ağırlığı ve bırakma yüksekliğini sabit tutuyor; sonra aynı şeyi ağırlık için yapıyor. Defne'nin düşünme biçimi Piaget'nin hangi evresine en uygundur?",
+          "opts": [
+            "*Sensorimotor*",
+            "*Preoperational*",
+            "*Concrete operational*",
+            "*Formal operational*"
+          ],
+          "a": 3,
+          "why": "Her seferinde tek bir değişkeni değiştirip ötekileri sabit tutmak, sistemli hipotez sınamadır. Soyut ve sistemli akıl yürütme *formal operational* evrenin işaretidir; *concrete operational* çocuk daha çok rastgele dener."
+        },
+        {
+          "q": "Altı yaşındaki Eymen tek başına 10 parçalık yapbozları bitirebiliyor ama 30 parçalık bir yapbozda takılıyor. Ablası \"önce kenar parçalarını bul\" deyip birkaç ipucu verince 30 parçalığı bitiriyor. 100 parçalık yapbozu ise ablasının yardımıyla bile tamamlayamıyor. Eymen'in ZPD'si en iyi hangisidir?",
+          "opts": [
+            "10 parçalık yapbozlar",
+            "30 parçalık yapbozlar",
+            "100 parçalık yapbozlar",
+            "Tek başına yapamadığı bütün yapbozlar"
+          ],
+          "a": 1,
+          "why": "ZPD, çocuğun tek başına yapamadığı ama yardımla yapabildiği aralıktır: 30 parçalık yapboz. 10 parçalığı zaten tek başına yapıyor; 100 parçalık ise yardımla bile ulaşamadığı için ZPD'nin dışında. Ablanın ipuçları *scaffolding*'dir."
+        },
+        {
+          "q": "Bir öğretmen, yeni bir matematik konusunda önce öğrencilerle birlikte çözümlü örnekler yapıyor, sonra yalnızca ipuçları veriyor, en sonunda öğrencilerin tek başına çözmesini istiyor. Bu yaklaşım en çok hangi kavramı yansıtır?",
+          "opts": [
+            "*Scaffolding*",
+            "*Egocentrism*",
+            "*Conservation*",
+            "*Crystallized intelligence*"
+          ],
+          "a": 0,
+          "why": "Desteğin öğrenci ustalaştıkça adım adım geri çekilmesi *scaffolding*'dir. Vygotsky'ye göre bu destek, öğrencinin ZPD'si içinde verildiğinde en etkilidir."
+        },
+        {
+          "q": "Hangi ifade yaşlanma ve biliş hakkında doğrudur?",
+          "opts": [
+            "Yaşlılıkta bütün bilişsel yetenekler aynı hızda azalır",
+            "Bir ismi geç hatırlamak, *dementia*'nın kesin işaretidir",
+            "*Crystallized intelligence* genellikle yetişkinlik boyunca korunur, *fluid intelligence* ise azalma eğilimindedir",
+            "*Dementia* yaşlanmanın kaçınılmaz ve normal bir parçasıdır"
+          ],
+          "a": 2,
+          "why": "Birikmiş bilgi ve kelime hazinesi (*crystallized*) korunurken, yeni problemleri hızla çözme (*fluid*) yaşla azalma eğilimindedir. *Dementia* günlük yaşamı bozan bir bozukluktur, normal yaşlanma değildir; ara sıra isim unutmak normaldir."
+        },
+        {
+          "q": "Bir psikolog, aynı 120 kişiyi 30, 50 ve 70 yaşlarında iki testle ölçüyor. Tablodaki ortalamalara göre en iyi yorum hangisidir?",
+          "opts": [
+            "Bulmaca puanları korunmuş, kelime puanları düşmüştür",
+            "İki puan da yaşla aynı oranda düşmüştür",
+            "Bulmaca puanı (*fluid*) düşerken kelime puanı (*crystallized*) artmış ya da korunmuştur",
+            "Puanlar *cohort effect* nedeniyle yorumlanamaz, çünkü tasarım kesitseldir"
+          ],
+          "a": 2,
+          "why": "Bulmaca puanı 80 → 70 → 58 (toplam 22 puan düşüş), kelime puanı 65 → 72 → 73 (8 puan artış). Hiç görülmemiş bulmacalar *fluid intelligence*'ı, kelime bilgisi *crystallized intelligence*'ı ölçer. Aynı kişiler izlendiği için tasarım *longitudinal*'dır; kesitsel değildir, bu yüzden D yanlıştır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yaş (aynı kişiler)",
+              "Yeni şekil bulmacası",
+              "Kelime bilgisi"
+            ],
+            "rows": [
+              [
+                "30",
+                "80",
+                "65"
+              ],
+              [
+                "50",
+                "70",
+                "72"
+              ],
+              [
+                "70",
+                "58",
+                "73"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 6,
       "code": "3.5",
       "slug": "py306",
       "title": "İletişim ve Dil Gelişimi",
