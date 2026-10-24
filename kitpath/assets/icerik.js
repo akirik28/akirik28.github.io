@@ -210,7 +210,8 @@
     { id: "psych", tur: "ap", title: "AP Psychology", code: "AP · PSYCH", renk: "psych", ders: "psych", okul: ["AP Psychology", "Psikoloji"], ara: "psych psychology psikoloji brain neuron behavior memory learning beyin davranış" },
     { id: "csa", tur: "ap", title: "AP Computer Science A", code: "AP · CS", renk: "csa", ders: "csa", okul: ["Computer Science"], ara: "csa computer science java programming code kod yazılım object method" },
     { id: "physc", tur: "ap", title: "AP Physics C: Mechanics", code: "AP · PHYS", renk: "physc", ders: "physc", okul: ["AP Physics C: Mechanics"], ara: "physics c mechanics fizik kinematics newton force energy momentum rotation kuvvet enerji hareket" },
-    { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" }
+    { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" },
+    { id: "cep-eng10", tur: "cep", title: "English 10: sınav ve konuşma provası", code: "CEP KİTİ · İNGİLİZCE", renk: "eng", ders: null, href: "cep/english-10/", sinif: 10, okul: ["English 10"], ara: "english ingilizce speaking oedipus catcher passage analysis paragraph essay persuasive speech konuşma sınavı prova" }
   ];
   function rafKey(id) { return "kitora:v1:" + (id || kim()) + ":kitlerim"; }
   function raf(profil) {
