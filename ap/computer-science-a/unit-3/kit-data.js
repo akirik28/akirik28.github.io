@@ -799,6 +799,93 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 10,
+      "code": "3.9-2",
+      "slug": "cs310",
+      "title": "FRQ 2: Bir Sınıfı Baştan Sona Yazmak",
+      "en": "Class Design FRQ: Writing a Whole Class",
+      "accent": "#FF7DB8",
+      "defter": "cs307",
+      "defterBaslik": "this Anahtar Sözcüğü",
+      "sessiz": true,
+      "seconds": 293,
+      "terms": [
+        "Class design",
+        "Specification",
+        "Instance variable",
+        "Constructor",
+        "Accessor",
+        "Mutator",
+        "toString",
+        "Method header"
+      ],
+      "questions": [
+        {
+          "q": "Belirtim: \"PiggyBank sınıfı kumbaradaki parayı (TL, tam sayı) tutar. Para eklenebilir ve şimdiye kadar kaç kez para eklendiği öğrenilebilir.\" En uygun alan bildirimi hangisidir?",
+          "opts": [
+            "private int money; private int deposits;",
+            "private int money; private boolean deposits;",
+            "public int money;",
+            "private int money(); private int deposits();"
+          ],
+          "a": 0,
+          "why": "İki bilgi tutulmalı: para miktarı ve ekleme sayısı; ikisi de *int*. B'de sayı *boolean* ile tutulamaz; C'de alan eksik ve *public*; D metot gibi görünen geçersiz bir yazım."
+        },
+        {
+          "q": "Bir öğrenci printJob'u aşağıdaki gibi yazmış. paper 20 iken printJob(20) ne döndürür ve bu davranış belirtime (\"kâğıt yetiyorsa basar\") uygun mu?",
+          "opts": [
+            "true döndürür; uygundur.",
+            "false döndürür; uygun değildir, kâğıt tam olarak yetiyordu.",
+            "true döndürür; uygun değildir.",
+            "false döndürür; uygundur."
+          ],
+          "a": 1,
+          "why": "20 >= 20 doğru olduğu için *false* döner ve hiçbir şey basılmaz. Ama 20 kâğıt 20 sayfaya yeter; koşul pages > paper olmalıydı.",
+          "fig": {
+            "type": "code",
+            "code": "public boolean printJob(int pages) {\n  if (pages >= paper) { return false; }\n  paper -= pages;\n  printed += pages;\n  return true;\n}"
+          }
+        },
+        {
+          "q": "Örnek tabloda p.toString() çağrısının \"paper 5, printed 55\" döndürmesi bekleniyor. toString'in gövdesi hangisi olmalı?",
+          "opts": [
+            "System.out.println(\"paper \" + paper + \", printed \" + printed);",
+            "return paper + printed;",
+            "return \"paper \" + paper + \", printed \" + printed;",
+            "return \"paper\" + paper + \"printed\" + printed;"
+          ],
+          "a": 2,
+          "why": "*toString* yazıyı döndürmeli ve biçim örnekle aynı olmalı. A döndürmez, yazdırır; B iki *int*'i toplar (60) ve *String* değildir; D boşlukları ve virgülü kaçırır: \"paper5printed55\"."
+        },
+        {
+          "q": "SchoolPrinter bölümde yazıldığı gibi. Aşağıdaki kod ne yazdırır?",
+          "opts": [
+            "paper -5, printed 75",
+            "paper 15, printed 75",
+            "paper 45, printed 15",
+            "paper 15, printed 45"
+          ],
+          "a": 3,
+          "why": "40 → printJob(15): 25 kalır, 15 basıldı. printJob(30): 30 > 25, *false*, değişiklik yok. addPaper(20): 45. printJob(30): 15 kalır, 45 basıldı.",
+          "fig": {
+            "type": "code",
+            "code": "SchoolPrinter p = new SchoolPrinter(40);\np.printJob(15);\np.printJob(30);\np.addPaper(20);\np.printJob(30);\nSystem.out.println(p);"
+          }
+        },
+        {
+          "q": "Belirtim: \"Constructor yalnızca başlangıçtaki kâğıt sayısını alır; basılan sayfa sayısı 0'dan başlar.\" Hangi constructor doğrudur?",
+          "opts": [
+            "public SchoolPrinter(int paper, int printed) { this.paper = paper; this.printed = printed; }",
+            "public SchoolPrinter(int p) { paper = p; printed = 0; }",
+            "public void SchoolPrinter(int p) { paper = p; }",
+            "public SchoolPrinter(int p) { int paper = p; }"
+          ],
+          "a": 1,
+          "why": "B başlığı belirtime uyar ve iki alanı da doğru atar. A belirtimde olmayan bir parametre ekler; C'de *void* olduğu için *constructor* değildir; D yerel değişken tanımlar, alan 0 kalır."
+        }
+      ]
     }
   ],
   "final": []
