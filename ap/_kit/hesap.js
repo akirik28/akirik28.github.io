@@ -12,7 +12,7 @@
 /* GitHub Pages kopyası kapandı: akirik28.github.io'da "süresi doldu" deyip kitpath.org'a gönder (bkz. /assets/js/kitpath-tasindi.js) */
 (function () {
   if (!/(^|\.)akirik28\.github\.io$/.test(location.hostname)) return;
-  if (!/^\/(kitpath|kitora|ap|cep)(\/|$)/.test(location.pathname)) return;
+  if (!/^\/(kitpath|kitora|ap|cep|okul|crucible)(\/|$)/.test(location.pathname)) return;
   var hedef = "https://kitpath.org" + location.pathname + location.search + location.hash;
   function goster() {
     if (document.getElementById("kitpath-tasindi")) return;
