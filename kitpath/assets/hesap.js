@@ -13,6 +13,7 @@
      ap_geribildirim_gonder           herkes: hata / öneri / beğendim mesajı (hesapsızsa isimsiz)
      ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
      ap_cikis                         oturum anahtarını siler (yönetici çağrıları p_token ister)
+     ap_seviye_durum / _kaydet        seviye sınavı takvimi, geçmiş ve sonuç kaydı (yönetici: ap_yonetici_seviye / _ayar)
    Yerelde:
      ap-hesap:v1:hesaplar   bu cihazda açılmış hesaplar [{ id, name, email }]
      ap-hesap:v1:oturum     açık oturumun kimliği ("Çıkış yap"a kadar)
@@ -181,7 +182,7 @@
     return null;
   }
 
-  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar)|geribildirim_(liste|okundu))$/;
+  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar|seviye|seviye_ayar)|geribildirim_(liste|okundu))$/;
 
   window.HESAP = {
     hesaplar: hesaplar,
@@ -209,6 +210,11 @@
       var a = { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim };
       if (okul) a.p_okul = okul;   /* "robert" | "uaa" | "koc" */
       return cagir("ap_profil_kaydet", a).then(profilYenile);
+    },
+    /* seviye sınavları: takvim + geçmiş; sonucu kaydet (tur penceresi açıkken, ders başına turda bir kez) */
+    seviyeDurum: function () { return cagir("ap_seviye_durum", {}); },
+    seviyeKaydet: function (d) {
+      return cagir("ap_seviye_kaydet", { p_ders: d.ders, p_unite: d.unite, p_dogru: d.dogru, p_toplam: d.toplam, p_detay: d.detay || {}, p_sure_ms: d.sure_ms || null });
     },
     notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
     /* geri bildirim: hesapsız da gönderilebilir (o zaman isimsiz kaydedilir) */
@@ -247,7 +253,10 @@
         oturum_gerekli: "Güvenlik için bir kez yeniden giriş yapman gerekiyor.",
         mesaj_gerekli: "Birkaç kelime yaz.",
         gecersiz_tur: "Önce türünü seç: hata, öneri ya da beğendim.",
-        cok_fazla: "Kısa sürede çok mesaj gitti; biraz sonra tekrar dene."
+        cok_fazla: "Kısa sürede çok mesaj gitti; biraz sonra tekrar dene.",
+        seviye_kapali: "Seviye sınavı şu an kapalı.",
+        zaten_yapildi: "Bu turun sınavını bu derste zaten çözdün.",
+        gecersiz: "Bir şeyler ters gitti; sayfayı yenileyip tekrar dene."
       })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
     },
     yaz: isaretle,

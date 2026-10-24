@@ -1,5 +1,6 @@
 /* Kitpath deneme ekranı (Bluebook kopyası). kitpath.js'teki pages.deneme veriyi yükler ve KPBluebook.basla(o) çağırır.
    o = { k, no, DEN, T, C, ROOT, ad, md, esc, fmt, tabloHTML, sekilKoy, param }
+   isteğe bağlı (seviye sınavı): sonucUrl, geriUrl, baslik, yonerge (HTML), bitti(S, Q) → Promise (sonuç sayfasına geçmeden önce beklenir)
    Kayıt biçimi (C.deneme / C.denemeYaz) eski ekranla aynı: ans, mark, x, elim, hideT, i, review, done, score, used;
    yeni alanlar: hl (soru başına vurgulu metin), paused/left (Kaydet ve çık'ta süre durur), desmos (hesap makinesi durumu). */
 (function () {
@@ -117,8 +118,8 @@
     var k = o.k, no = o.no, DEN = o.DEN, T = o.T, C = o.C, md = o.md, esc = o.esc, fmt = o.fmt, ROOT = o.ROOT;
     var Q = (T.questions || []).filter(function (q) { return !!q && typeof q.q === "string" && Array.isArray(q.o) && q.o.length >= 2 && typeof q.a === "number"; });
     var N = Q.length, MIN = T.minutes > 0 ? T.minutes : N;
-    var sonucUrl = ROOT + "sonuc/?kit=" + k.id + "&n=" + no;
-    var uniteUrl = ROOT + "unite/?kit=" + k.id + "&sekme=deneme";
+    var sonucUrl = o.sonucUrl || ROOT + "sonuc/?kit=" + k.id + "&n=" + no;
+    var uniteUrl = o.geriUrl || ROOT + "unite/?kit=" + k.id + "&sekme=deneme";
     if (!N) { hata("Bu denemede soru yok.", uniteUrl, "Üniteye dön"); return; }
     var S = C.deneme(k, no);
     var gecersiz = !S || S.ans.length !== N || !Array.isArray(S.mark) || !Array.isArray(S.x) || (T.rev == null ? S.rev != null : S.rev !== T.rev);
@@ -129,7 +130,7 @@
       if (T.rev != null) S.rev = T.rev;
       C.denemeYaz(k, no, S);
     }
-    if (o.param("yeni") !== null) history.replaceState(null, "", "?kit=" + k.id + "&n=" + no);
+    if (o.param("yeni") !== null && !o.sonucUrl) history.replaceState(null, "", "?kit=" + k.id + "&n=" + no);
     if (S.done) { location.replace(sonucUrl); return; }
     if (!S.started) { S.started = Date.now(); S.endAt = S.started + MIN * 60000; }
     if (S.paused) { S.endAt = Date.now() + Math.max(0, S.left || 0); S.paused = false; delete S.left; }
@@ -140,7 +141,8 @@
     var app = iskelet(esc);
     var WARN = MIN > 5 ? 300 : 60, uyarildi = false;
     var calcVar = T.calc != null ? !!T.calc : DEN.calc != null ? !!DEN.calc : !!HESAPLI_DERS[k.ders];
-    var baslik = "Deneme " + no + (T.level ? ": " + T.level : "");
+    var baslik = o.baslik || "Deneme " + no + (T.level ? ": " + T.level : "");
+    var tur = o.turAd || "deneme";   /* metinlerde: "deneme" ya da "test" */
     var unitShort = String(DEN.unit || "").split(/\s+[—–-]\s+/)[0] || "Unit " + k.unit;
     var acik = null;      /* "nav" | "menu" | "dir" */
     var modal = null, hlAktif = null, tipT = 0;
@@ -149,7 +151,7 @@
     $('[data-k="who"]').textContent = o.ad || "Misafir";
     $('[data-k="navtitle"]').textContent = baslik + " Questions";
     $('[data-k="calc"]').hidden = !calcVar;
-    $('[data-k="dirtext"]').innerHTML = '<h2>' + esc(baslik) + ' · ' + esc((DEN.course || "") + " · " + unitShort) + '</h2>' +
+    $('[data-k="dirtext"]').innerHTML = o.yonerge ? o.yonerge : '<h2>' + esc(baslik) + ' · ' + esc((DEN.course || "") + " · " + unitShort) + '</h2>' +
       '<p>This practice set has <strong>' + N + ' multiple-choice questions</strong> and a time limit of <strong>' + MIN + ' minutes</strong>. Each question has one best answer. Select it, then use <strong>Next</strong> to move on.</p>' +
       '<p>You can move between questions, mark questions for review, and eliminate answer choices with the <strong>ABC</strong> tool. Unanswered questions count as incorrect, so answer every question before time runs out.</p>' +
       (calcVar ? '<p>A graphing calculator is available from <strong>Calculator</strong> at the top of the screen.</p>' : '') +
@@ -164,7 +166,10 @@
       S.done = true; S.auto = !!auto; S.score = c; S.review = false;
       S.used = Math.min(MIN * 60000, Date.now() - S.started);
       save(); if (C.calisti) C.calisti();
-      location.replace(sonucUrl);
+      if (!o.bitti) { location.replace(sonucUrl); return; }
+      var gitti = false, git_ = function () { if (!gitti) { gitti = true; location.replace(sonucUrl); } };
+      setTimeout(git_, 6000);
+      try { Promise.resolve(o.bitti(S, Q)).then(git_, git_); } catch (e) { git_(); }
     }
 
     /* ----- çizim ----- */
@@ -194,7 +199,7 @@
     function incelemeHTML() {
       return '<section class="bbk-review" aria-labelledby="bbk-rv-h"><h1 id="bbk-rv-h">Check Your Work</h1>' +
         '<p>Click on any question to return to it and review your answer.</p>' +
-        '<p>Click <strong>Submit</strong> when you have completed the deneme.</p>' +
+        '<p>Click <strong>Submit</strong> when you have completed the ' + tur + '.</p>' +
         '<div class="bbk-rcard"><div class="bbk-rcard__head"><h2>' + esc(baslik) + ' Questions</h2><div class="bbk-legend"><span><i class="box"></i>Unanswered</span><span>' + I.flag + 'For Review</span></div></div>' +
         '<div class="bbk-rgrid">' + hucreler(false) + '</div></div></section>';
     }
@@ -312,7 +317,7 @@
         '<button type="button" class="bbk-yes" data-mk="no">Close</button>');
     }
     function cikis() {
-      var v = modalAc("Save and Exit", '<p>Your progress has been saved, and you have not yet submitted the deneme.</p><p>The timer stops while you are away; when you come back you continue with <strong>' + esc(fmt(Math.max(0, (S.endAt - Date.now()) / 1000))) + '</strong> left.</p><p>Do you want to exit the deneme?</p>',
+      var v = modalAc("Save and Exit", '<p>Your progress has been saved, and you have not yet submitted the ' + tur + '.</p><p>The timer stops while you are away; when you come back you continue with <strong>' + esc(fmt(Math.max(0, (S.endAt - Date.now()) / 1000))) + '</strong> left.</p><p>Do you want to exit the ' + tur + '?</p>',
         '<button type="button" class="bbk-no" data-mk="no">No</button><button type="button" class="bbk-yes" data-mk="yes">Yes</button>', true);
       v.querySelector('[data-mk="yes"]').onclick = function () {
         hlKaydet(); calcKaydet();
@@ -322,7 +327,7 @@
     }
     function gonder() {
       var bos = S.ans.filter(function (v) { return v < 0; }).length;
-      var v = modalAc("Submit Deneme", (bos ? '<p>You have <strong>' + bos + ' unanswered question' + (bos > 1 ? "s" : "") + '</strong>. Unanswered questions count as incorrect.</p>' : '<p>You answered all ' + N + ' questions.</p>') +
+      var v = modalAc(o.turAd ? "Submit Test" : "Submit Deneme", (bos ? '<p>You have <strong>' + bos + ' unanswered question' + (bos > 1 ? "s" : "") + '</strong>. Unanswered questions count as incorrect.</p>' : '<p>You answered all ' + N + ' questions.</p>') +
         '<p>Once you submit, you can\'t change your answers. Are you sure you want to submit?</p>',
         '<button type="button" class="bbk-no" data-mk="no">No</button><button type="button" class="bbk-yes" data-mk="yes">Yes, Submit</button>', true);
       v.querySelector('[data-mk="yes"]').onclick = function () { bitir(false); };
