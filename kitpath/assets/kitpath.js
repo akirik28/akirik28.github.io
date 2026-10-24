@@ -290,7 +290,7 @@
   var UNITE_MOTIF = {
     macro: ["ppc", "cycle", "adas", "bank", "phillips", "trade"],
     micro: ["scale", "shortage", "costu", "monopoly", "labor", "smoke"],
-    stats: ["hist", "scatter", "survey", "dice", "sampling", "pie", "ci", "chisq", "slope"],
+    stats: ["hist", "dice", "pie", "ci", "slope"],
     hug: ["compass", "pyramid", "speech", "borders", "field", "skyline", "factory"],
     bpf: ["bulb", "megaphone", "piggy", "orgchart", "target"],
     calc: ["limit", "derivgraph", "gears", "car", "extrema", "area", "slopefield", "disks", "rose", "series"],
