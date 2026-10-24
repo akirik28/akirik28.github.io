@@ -2121,7 +2121,7 @@
       var us = sevUniteler(ders).filter(function (u) { return u.unit <= U; });
       return Promise.all(us.map(function (u) {
         if (u.banka) return C.seviyeBankasi(u).then(function (B) {
-          return (B.questions || []).filter(sevGecerli).map(function (q) { return { id: q.id || (u.id + ":" + q.q.slice(0, 40)), q: q.q, o: q.o, a: q.a, w: q.w || "", fig: q.fig, t: q.t || "", zor: Math.max(1, Math.min(5, +q.zor || 3)), u: u.unit, konu: (B.topics || {})[q.t] || q.t || "", hesap: q.hesap }; });
+          return (B.questions || []).filter(sevGecerli).map(function (q) { return { id: q.id || (u.id + ":" + q.q.slice(0, 40)), q: q.q, o: q.o, a: q.a, w: q.w || "", fig: q.fig, t: q.t || "", zor: Math.max(1, Math.min(5, +q.zor || 3)), u: u.unit, konu: (B.topics || {})[q.t] || q.t || "", hesap: q.hesap, set: q.set || null }; });
         }, function () { return u.deneme ? sevDenemeden(u) : []; });
         return sevDenemeden(u);
       })).then(function (ls) { return [].concat.apply([], ls); });
@@ -2148,7 +2148,8 @@
     for (var i = 0; out.length < n && i < kal.length; i++) out.push(kal[i][1]);
     return out.sort();
   }
-  /* modül seçimi: üniteler arasında eşit pay (artan sorular son ünitelere), her yuvaya hedef zorluğa en yakın soru */
+  /* modül seçimi: üniteler arasında eşit pay (artan sorular son ünitelere), her yuvaya hedef zorluğa en yakın soru.
+     Aynı uyarıcıyı paylaşan set soruları (q.set) birlikte ve ardışık gelir; set üyeleri yuva sayısından düşülür. */
   function sevSec(havuz, n, karisim, rnd, kullanilan) {
     var uns = []; havuz.forEach(function (q) { if (uns.indexOf(q.u) < 0) uns.push(q.u); }); uns.sort(function (a, b) { return a - b; });
     if (!uns.length) return [];
@@ -2156,13 +2157,20 @@
     uns.forEach(function (u, i) { pay[u] = taban + (i >= uns.length - artan ? 1 : 0); });
     var yuvalar = []; uns.forEach(function (u) { for (var i = 0; i < pay[u]; i++) yuvalar.push(u); });
     var kul = {}; Object.keys(kullanilan || {}).forEach(function (k) { kul[k] = 1; });
-    var aday = sevKaristir(havuz.slice(), rnd), sec = [];
-    yuvalar.forEach(function (u, i) {
-      var z = hedef[i] || 3, en = null, enF = 9;
-      aday.forEach(function (q) { if (kul[q.id]) return; var f = Math.abs(q.zor - z) + (q.u === u ? 0 : 3); if (f < enF) { enF = f; en = q; } });
-      if (en) { kul[en.id] = 1; sec.push(en); }
-    });
-    return sevKaristir(sec, rnd);
+    var aday = sevKaristir(havuz.slice(), rnd), gruplar = [], adet = 0, deneme = 0;
+    var uyeler = function (q) { return q.set ? havuz.filter(function (x) { return x.set === q.set && x.u === q.u; }) : [q]; };
+    while (adet < n && deneme++ < n * 3) {
+      var u = yuvalar[Math.min(adet, yuvalar.length - 1)], z = hedef[adet] || 3, kalan = n - adet, en = null, enF = 99;
+      aday.forEach(function (q) {
+        if (kul[q.id]) return;
+        var g = uyeler(q); if (g.length > kalan || g.some(function (x) { return kul[x.id]; })) return;
+        var f = Math.abs(q.zor - z) + (q.u === u ? 0 : 3) + (g.length > 1 ? .3 : 0);
+        if (f < enF) { enF = f; en = q; }
+      });
+      if (!en) continue;
+      var grup = uyeler(en); grup.forEach(function (x) { kul[x.id] = 1; }); gruplar.push(grup); adet += grup.length;
+    }
+    return [].concat.apply([], sevKaristir(gruplar, rnd));
   }
   /* Rasch MAP kestirimi: θ, önsel N(0, 1.5²); b = zor − 3 */
   function sevTeta(cevaplar) {
