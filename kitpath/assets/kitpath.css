@@ -1094,3 +1094,7 @@ html.df-acik, html.df-acik body { overflow: hidden; }
   .yon-tablo tr > :nth-child(3), .yon-tablo tr > :nth-child(4) { display: none; }
   .yon-tablo .yon-detay td { display: table-cell; }
 }
+
+/* yönetici: öğrenci ↔ yönetim geçiş düğmesi (başlıkta) */
+.yon-gec { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+@media (max-width: 720px) { .yon-gec span { display: none; } .yon-gec { padding-left: 10px; padding-right: 10px; } }

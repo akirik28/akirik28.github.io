@@ -372,11 +372,14 @@
       var acikNav = '<nav class="nav" aria-label="Ana menü">' +
         '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a>' +
         '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a></nav>';
+      /* yönetici hesabı: öğrenci sayfalarından yönetime tek tıkla geç (yönetimde "Öğrenci görünümü" geri getirir) */
+      var pr = HESAPLI && H.profil ? H.profil() : null;
+      var yonBtn = pr && pr.yonetici ? '<a class="btn btn--ghost btn--sm yon-gec" href="' + ROOT + 'yonetim/" title="Yönetim ekranına geç"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Yönetim</span></a>' : "";
       html = HESAPLI
-        ? '<div class="k-header__left">' + brand + appNav + '</div><div class="k-header__right">' + streak + toggleBtn + avatar + '</div>'
+        ? '<div class="k-header__left">' + brand + appNav + '</div><div class="k-header__right">' + yonBtn + streak + toggleBtn + avatar + '</div>'
         : '<div class="k-header__left">' + brand + acikNav + '</div><div class="k-header__right">' + toggleBtn + '<a class="btn btn--link hide-sm" href="' + ROOT + 'giris/?mod=giris">Giriş yap</a><a class="btn btn--primary btn--sm" href="' + ROOT + 'giris/">Hesap aç</a></div>';
     } else if (v === "admin") {
-      html = '<div class="k-header__left">' + brand + '<span class="badge-admin">YÖNETİM</span></div><div class="k-header__right">' + toggleBtn + '<a class="btn btn--ghost btn--sm" href="' + ROOT + 'panel/">Öğrenci görünümü</a></div>';
+      html = '<div class="k-header__left">' + brand + '<span class="badge-admin">YÖNETİM</span></div><div class="k-header__right">' + toggleBtn + '<a class="btn btn--ghost btn--sm yon-gec" href="' + ROOT + 'panel/" title="Öğrenci ekranına geç"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/></svg><span>Öğrenci görünümü</span></a></div>';
     } else if (v === "plain") {
       html = '<div class="k-header__left"><a class="btn btn--link" href="' + esc(el.dataset.back || ROOT + 'index.html') + '">← ' + esc(el.dataset.backLabel || "Ana sayfa") + '</a></div><div class="k-header__right">' + toggleBtn + '</div>';
     }
