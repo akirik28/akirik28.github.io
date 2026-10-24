@@ -39,7 +39,7 @@
             <label class="field">Son tarih<input name="tarih" type="datetime-local"></label>
             <label class="field">Kaç üzerinden<input name="uzerinden" type="number" min="1" value="20" inputmode="numeric"></label>
           </div>
-          <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Son tarih geçince, notu girilmeyen öğrencinin kitleri <strong>not girilene kadar</strong> kilitlenir. Öğrenci bunu panelinde görür. Hesabını son tarihten <strong>sonra</strong> açan öğrenciye bu quiz sorulmaz.</span></div>
+          <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Son tarih geçince, notu girilmeyen öğrencinin kitleri <strong>not girilene kadar</strong> kilitlenir. Öğrenci bunu panelinde görür. Hesabını son tarihten <strong>sonra</strong> açan öğrenciye bu quiz sorulmaz. Quizler yalnızca <strong>Üsküdar Amerikan Lisesi 11. sınıf</strong> öğrencileri içindir; 10. sınıflara ve diğer okullara sorulmaz.</span></div>
           <div class="row" style="justify-content:flex-end;gap:10px">
             <button type="reset" class="btn btn--ghost">Temizle</button>
             <button type="submit" class="btn btn--primary">Quizi yayınla</button>
@@ -73,6 +73,12 @@
           <button type="button" class="filter" data-ogr-suz="10" aria-pressed="false">10. sınıf</button>
           <button type="button" class="filter" data-ogr-suz="kilitli" aria-pressed="false">Not bekleyen</button>
           <button type="button" class="filter" data-ogr-suz="yarim" aria-pressed="false">Kurulumu yarım</button>
+        </div>
+        <div class="row" style="gap:6px;flex-direction:row;flex-wrap:wrap;margin-top:-12px" role="group" aria-label="Okul">
+          <button type="button" class="filter" data-ogr-okul="hepsi" aria-pressed="true">Bütün okullar</button>
+          <button type="button" class="filter" data-ogr-okul="uaa" aria-pressed="false">Üsküdar Amerikan</button>
+          <button type="button" class="filter" data-ogr-okul="robert" aria-pressed="false">Robert Kolej</button>
+          <button type="button" class="filter" data-ogr-okul="koc" aria-pressed="false">Koç Lisesi</button>
         </div>
         <div class="card yon-tablo-kart">
           <div class="table-box"><table class="table yon-tablo" style="min-width:600px"><thead><tr><th>Öğrenci</th><th>Sınıf</th><th>Dersler</th><th>Son giriş</th><th style="text-align:right">Durum</th></tr></thead><tbody data-k="ogr-liste"></tbody></table></div>

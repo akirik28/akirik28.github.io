@@ -49,6 +49,8 @@
   function git(yol) { location.replace(ROOT + yol); }
   function buradan() { return location.pathname + location.search; }
   /* ?devam= yalnızca bu sitenin içine döner */
+  /* quiz ve not takibi yalnızca Üsküdar Amerikan 11. sınıflarda (okulu bilinmeyen eski önbellek profili ÜAL sayılır) */
+  function notTakibi() { var p = HESAPLI && H.profil ? H.profil() : null; return !p || ((p.okul || "uaa") === "uaa" && (p.sinif == null || p.sinif === 11)); }
   function devamAdresi() { var d = param("devam"); return d && /^\/(?!\/)/.test(d) ? d : null; }
   function girisGerek() { location.replace(ROOT + "giris/?mod=giris&devam=" + encodeURIComponent(buradan())); }
   /* kitlerden önce: kurulum eksikse onboarding. Süresi geçmiş quiz notu artık yalnızca kendi dersini kilitler (kilitliMi) */
@@ -364,7 +366,7 @@
       '<a href="' + ROOT + 'panel/"' + (active === "panel" ? ' aria-current="page"' : "") + '>Panelim</a>' +
       '<a href="' + ROOT + 'kitlerim/"' + (active === "kitlerim" ? ' aria-current="page"' : "") + '>Kitlerim</a>' +
       '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a>' +
-      '<a href="' + ROOT + 'notlarim/"' + (active === "notlarim" ? ' aria-current="page"' : "") + '>Notlarım</a>' +
+      (notTakibi() ? '<a href="' + ROOT + 'notlarim/"' + (active === "notlarim" ? ' aria-current="page"' : "") + '>Notlarım</a>' : "") +
       '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a></nav>';
     var html = "";
     /* tek menü: giriş yapılmışsa her sayfada aynı uygulama menüsü, yapılmamışsa aynı herkese açık menü */
@@ -393,7 +395,7 @@
     var item = function (key, href, icon, label) { return '<a href="' + ROOT + href + '"' + (a === key ? ' aria-current="page"' : "") + '>' + icon + label + '</a>'; };
     el.className = "bottom-nav";
     el.setAttribute("aria-label", "Alt menü");
-    el.innerHTML = item("panel", "panel/", I.home, "Panelim") + item("kitlerim", "kitlerim/", I.books, "Kitlerim") + item("defterler", "defterler/", I.defter, "Defterler") + item("notlarim", "notlarim/", I.note, "Notlar") + item("profil", "profil/", I.user, "Profil");
+    el.innerHTML = item("panel", "panel/", I.home, "Panelim") + item("kitlerim", "kitlerim/", I.books, "Kitlerim") + item("defterler", "defterler/", I.defter, "Defterler") + (notTakibi() ? item("notlarim", "notlarim/", I.note, "Notlar") : "") + item("profil", "profil/", I.user, "Profil");
   }
 
   /* ---------- kitler: katalog + bu hesabın (ya da misafirin) ilerlemesi ---------- */
@@ -1016,6 +1018,7 @@
         '<span class="btn btn--primary" style="align-self:flex-start;margin-top:6px">' + (o.bitenler >= o.n ? "Denemelere geç →" : "Devam et →") + '</span>';
     }
     fill('[data-k="quizzes"]', yak.length ? yak.slice(0, 3).map(quizSatiri).join("") : bosQuiz());
+    var qk = $('[data-k="quizzes"]'); if (qk && qk.closest(".quiz-list")) qk.closest(".quiz-list").hidden = !notTakibi();
     panelP = p;
     panelEk(r, C.takvim(), C.raf(p).filter(function (x) { return x.rafta && x.hazir; }).sort(function (a, b) { return b.varsayilan - a.varsayilan; }).map(function (x) {
       var d = x.kit.ders ? dersler().filter(function (y) { return y.id === x.kit.ders; })[0] : null;
@@ -1417,6 +1420,11 @@
 
   /* ---------- Notlarım sayfası ---------- */
   pages.notlarim = function () {
+    if (HESAPLI && !notTakibi()) {
+      var mm = $("main") || $("#main");
+      if (mm) mm.innerHTML = '<section class="card empty" style="margin-top:24px"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:28px">burası sana kapalı</span><h1 class="h2" style="font-size:30px">Quiz ve not takibi Üsküdar Amerikan Lisesi 11. sınıflar içindir.</h1><p class="muted">Bütün kitler ve defterler sana açık; rafından devam edebilirsin.</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'kitlerim/">Kitlerime git</a></div></section>';
+      return;
+    }
     var f = "hepsi", satir = [];
     function tablo() {
       var adlar = [];
@@ -1688,7 +1696,7 @@
       return H.yonetim("ap_quiz_ozet", {}).then(function (o) { ozet = o; quizzes = o.quizler || []; list(); }, function (err) { yetkisiz(err); throw err; });
     }
     /* öğrenciler sekmesi */
-    var ogrSatir = null, ogrSuz = "hepsi", ogrAra = "", ogrAcik = {};
+    var ogrSatir = null, ogrSuz = "hepsi", ogrOkul = "hepsi", ogrAra = "", ogrAcik = {};
     function ogrDurum(s) {
       if (s.bekleyen > 0) return ["chip--hot", "Kilitli · " + s.bekleyen + " not"];
       if (s.yonetici) return ["chip--info", "Yönetici"];
@@ -1704,8 +1712,10 @@
     function ogrCiz() {
       if (!ogrSatir) return;
       $$("[data-ogr-suz]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.ogrSuz === ogrSuz)); });
+      $$("[data-ogr-okul]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.ogrOkul === ogrOkul)); });
       var a = ogrAra.toLocaleLowerCase("tr-TR");
       var l = ogrSatir.filter(function (s) {
+        if (ogrOkul !== "hepsi" && (s.okul || "") !== ogrOkul) return false;
         if (ogrSuz === "11" || ogrSuz === "10") { if (String(s.sinif) !== ogrSuz) return false; }
         else if (ogrSuz === "kilitli") { if (!(s.bekleyen > 0)) return false; }
         else if (ogrSuz === "yarim") { if (s.sinif) return false; }
@@ -1714,7 +1724,7 @@
       fill('[data-k="ogr-liste"]', l.length ? l.map(function (s) {
         var d = ogrDurum(s), ac = !!ogrAcik[s.id];
         var satir = '<tr class="yon-satir" data-ogr="' + esc(s.id) + '" tabindex="0" aria-expanded="' + ac + '"><td><span class="row" style="align-items:center;gap:10px;flex-wrap:nowrap"><span class="mini-av" style="--c:' + renk(s.id) + '">' + esc(initials(s.ad)) + '</span><span class="stack" style="gap:1px;min-width:0"><strong style="font-size:15px">' + esc(s.ad) + '</strong><span class="muted yon-eposta">' + esc(s.email) + '</span></span></span></td>' +
-          '<td class="muted">' + (s.sinif ? s.sinif + "." : "–") + '</td><td>' + ogrDersler(s) + '</td><td class="muted" style="font-size:13px;white-space:nowrap">' + esc(goreli(s.son_giris)) + '</td><td style="text-align:right"><span class="chip ' + d[0] + '">' + esc(d[1]) + '</span></td></tr>';
+          '<td class="muted" style="white-space:nowrap">' + (s.sinif ? s.sinif + "." : "–") + (s.okul ? ' <span class="yon-okul" data-okul="' + esc(s.okul) + '" title="' + esc(OKUL_AD[s.okul] || "") + '">' + esc(OKUL_KISA[s.okul] || "") + '</span>' : "") + '</td><td>' + ogrDersler(s) + '</td><td class="muted" style="font-size:13px;white-space:nowrap">' + esc(goreli(s.son_giris)) + '</td><td style="text-align:right"><span class="chip ' + d[0] + '">' + esc(d[1]) + '</span></td></tr>';
         if (!ac) return satir;
         var notlar = s.notlar || [];
         return satir + '<tr class="yon-detay"><td colspan="5"><div class="yon-detay__ic">' +
@@ -1729,7 +1739,8 @@
       var aktif = ogrSatir.filter(function (s) { return s.son_giris && new Date(s.son_giris) > g7; }).length;
       var kil = ogrSatir.filter(function (s) { return s.bekleyen > 0; }).length;
       var on = ogrSatir.filter(function (s) { return s.sinif === 10; }).length, onbir = ogrSatir.filter(function (s) { return s.sinif === 11; }).length;
-      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
+      var okSay = function (o) { return ogrSatir.filter(function (s) { return s.okul === o; }).length; };
+      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(okSay("uaa"), "Üsküdar Amerikan", "Robert " + okSay("robert") + " · Koç " + okSay("koc")), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
       var c = $('[data-k="ogr-sayi"]'); if (c) { c.textContent = String(n); c.hidden = !n; }
     }
     function ogrYukle() {
@@ -1790,6 +1801,7 @@
       }
       var sz = e.target.closest("[data-gb-suz]"); if (sz) { gbSuz = sz.dataset.gbSuz; gbCiz(); }
       var os = e.target.closest("[data-ogr-suz]"); if (os) { ogrSuz = os.dataset.ogrSuz; ogrCiz(); }
+      var oo = e.target.closest("[data-ogr-okul]"); if (oo) { ogrOkul = oo.dataset.ogrOkul; ogrCiz(); }
       var or_ = e.target.closest("[data-ogr]"); if (or_) { var oid = or_.dataset.ogr; ogrAcik[oid] = !ogrAcik[oid]; ogrCiz(); var yeni = $('[data-ogr="' + oid + '"]'); if (yeni) yeni.focus(); }
       var ok_ = e.target.closest("[data-gb-okundu]");
       if (ok_) {
@@ -1852,6 +1864,7 @@
 
   /* yönetim yardımcıları (gerçek ve örnek ekran) */
   var OKUL_AD = { robert: "Robert Kolej", uaa: "Üsküdar Amerikan Lisesi", koc: "Koç Lisesi" };
+  var OKUL_KISA = { robert: "RC", uaa: "ÜAL", koc: "KL" };
   function yonStat(n, etiket, alt, ton) {
     return '<div class="card stat yon-stat"' + (ton ? ' data-ton="' + ton + '"' : "") + '><b>' + esc(n == null ? "—" : n) + '</b><span style="font-weight:600">' + esc(etiket) + '</span><span class="muted" style="font-size:13px">' + esc(alt || "") + '</span></div>';
   }
@@ -1877,7 +1890,7 @@
       var c = COLORS[x.d.renk || x.d.art] || "var(--macro)";
       return '<article class="card yon-kit" style="--c:' + c + '"><div class="row" style="align-items:center;justify-content:space-between;gap:10px"><span class="mono muted">' + esc(x.d.code) + '</span>' + (x.d.not ? '<span class="chip chip--warn">' + esc(x.d.not) + '</span>' : (x.d.video ? '<span class="chip chip--plain">Videolu</span>' : "")) + '</div>' +
         '<h2 class="h3" style="font-size:22px;margin:0">' + esc(x.d.title) + '</h2>' +
-        '<div class="yon-uniteler">' + x.u.map(function (k) { return '<a class="yon-unite" href="' + esc(C.KOK + k.path) + '" target="_blank" rel="noopener">Unit ' + k.unit + '</a>'; }).join("") + '</div>' +
+        '<div class="yon-uniteler">' + x.u.map(function (k) { return '<a class="yon-unite" href="' + ROOT + 'unite/?kit=' + esc(k.id) + '">Unit ' + k.unit + '</a>'; }).join("") + '</div>' +
         '<a class="btn btn--ghost btn--sm" style="align-self:flex-start" href="' + ROOT + 'ders/?d=' + esc(x.id) + '">Ders sayfası →</a></article>';
     }).join(""));
   }

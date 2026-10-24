@@ -1111,3 +1111,11 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .ap-sec__b { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 10px 16px; font-size: 15px; }
 .ap-sec__b::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
 .ap-sec__b[aria-pressed="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); }
+
+/* yönetim: okul etiketi */
+.yon-okul { display: inline-block; margin-left: 4px; padding: 2px 7px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: #fff; background: #3D7BFF; vertical-align: 1px; }
+.yon-okul[data-okul="robert"] { background: #C2413A; }
+.yon-okul[data-okul="koc"] { background: #B07A1E; }
+
+/* alt menü: öğe sayısı değişebilir (Notlar yalnızca ÜAL 11. sınıfta) — hepsi tek sırada */
+.bottom-nav { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
