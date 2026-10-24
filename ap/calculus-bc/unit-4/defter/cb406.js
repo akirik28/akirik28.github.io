@@ -98,7 +98,7 @@ window.DEFTER = {
           ],
           durumlar: [
             { metin: "ln x / x biçimi ∞/∞. L'Hôpital: (1/x) / 1 = 1/x → 0." },
-            { metin: "x ≈ 3'te en yüksek (≈ 0,37); sonra düşmeye başlıyor.", goster: ["p1"] },
+            { metin: "x = e ≈ 2,72'de en yüksek (1/e ≈ 0,37); sonra düşmeye başlıyor.", goster: ["p1"] },
             { metin: "x = 10: 0,23. Payda x, pay ln x'ten çok daha hızlı büyüyor.", gizle: ["p1"], goster: ["p2"] },
             { metin: "x = 20: 0,15. Değer 0'a yaklaşıyor ama hiç sıfır olmuyor.", gizle: ["p2"], goster: ["p3"] }
           ] },

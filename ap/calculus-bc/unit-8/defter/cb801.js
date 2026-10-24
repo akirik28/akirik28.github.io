@@ -337,7 +337,7 @@ window.DEFTER = {
             {
               ikon: "🧾",
               baslik: "Cümle kalıbı",
-              metin: "\"Ortalama değer, 0'dan 6'ya saatte 15 °C'dir\" gibi yaz: ne, hangi aralıkta, hangi birimle."
+              metin: "\"0 ≤ t ≤ 6 saat aralığında ortalama sıcaklık 15 °C'dir\" gibi yaz: ne, hangi aralıkta, hangi birimle."
             },
             {
               ikon: "📐",

@@ -146,7 +146,7 @@ window.DEFTER = {
               ikon: "✍️",
               terim: "Leibniz notation",
               tr: "Leibniz gösterimi",
-              tanim: "d²y/dx², d³y/dx³ biçiminde yazılır. Dördüncüden sonra üs parantez içinde yazılır: f⁽⁴⁾.",
+              tanim: "d²y/dx², d³y/dx³ biçiminde yazılır. (Üslü gösterimde dördüncü türevden itibaren üs parantez içine alınır: f⁽⁴⁾.)",
               ornek: "d⁴y/dx⁴ = f⁽⁴⁾(x)."
             },
             {
@@ -163,7 +163,7 @@ window.DEFTER = {
           baslik: "Üç gösterim",
           head: ["y gösterimi", "f gösterimi", "Leibniz"],
           rows: [["y′", "f′(x)", "dy/dx"], ["y″", "f″(x)", "d²y/dx²"], ["y‴", "f‴(x)", "d³y/dx³"], ["y⁽⁴⁾", "f⁽⁴⁾(x)", "d⁴y/dx⁴"], ["y⁽ⁿ⁾", "f⁽ⁿ⁾(x)", "dⁿy/dxⁿ"]],
-          not: "Dördüncüden sonra üs parantez içinde olur; f⁽⁴⁾ dördüncü türevdir, f⁴ (dördüncü kuvvet) değil."
+          not: "Dördüncü türevden itibaren üs parantez içinde olur; f⁽⁴⁾ dördüncü türevdir, f⁴ (dördüncü kuvvet) değil."
         }
       ]
     },

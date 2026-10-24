@@ -183,7 +183,7 @@ window.DEFTER = {
               { id: "t", tip: "cizgi", renk: 2, from: [2.6, 0.4], to: [3.2, 5.8], etiket: "eğim 9", gizli: true }
             ],
             durumlar: [
-              { metin: "Konum eğrisi: parçacık +x yönünde gider, geri döner, yine ilerler." },
+              { metin: "Konum eğrisi: parçacık önce −x yönünde gider (x = 2 m'den −2 m'ye), t = 2 s'de döner, sonra +x yönünde ilerler." },
               { metin: "t = 0 ve t = 3 s'de x = 2 m. Kesen doğru yatay: ortalama hız ==0==.", goster: ["A", "B", "s"] },
               { metin: "t = 3 s'de teğet çok dik: eğim v(3) = ==9 m/s==.", goster: ["t"] }
             ] }

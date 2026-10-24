@@ -62,7 +62,7 @@ window.DEFTER = {
             { metin: "0 < t < 1: konum artıyor, eğim pozitif, v > 0. Araç sağa gidiyor.", goster: ["y1"] },
             { metin: "t = 1: eğri tepe noktasında, teğet yatay, v = 0. Araç yön değiştirir (v işaret değiştirir).", goster: ["p1"] },
             { metin: "1 < t < 3: konum azalıyor, v < 0. Araç sola gidiyor.", goster: ["y2"] },
-            { metin: "t = 2: eğrinin büküldüğü yer, a = 0. Hız burada en negatif (v = −3): sürat en büyük.", goster: ["p3"] },
+            { metin: "t = 2: eğrinin büküldüğü yer, a = 0. Hız burada en negatif (v = −3): sola giderken sürat en büyük.", goster: ["p3"] },
             { metin: "t = 3: dip noktası, v = 0, yön yine değişiyor. Sonra t > 3'te v > 0: araç yeniden sağa gidiyor.", goster: ["p2", "y3"] }
           ] },
         { tip: "tablo", baslik: "Dört aralık, dört bilgi", head: ["Aralık", "v", "a", "Yön", "Sürat"],

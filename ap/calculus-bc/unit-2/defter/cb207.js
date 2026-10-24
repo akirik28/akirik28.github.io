@@ -568,7 +568,7 @@ window.DEFTER = {
           adimlar: [
             "(1) Kalıp: [f(a + h) − f(a)]/h. Burada f(x) = sin x, a = π/3.",
             "(1) Limit f′(π/3) = cos(π/3) = 1/2.",
-            "(2) Payda f(e + h) = ln(e + h) var; çıkarılan 1 de f(e) = ln e.",
+            "(2) Payın içinde f(e + h) = ln(e + h) var; çıkarılan 1 de f(e) = ln e.",
             "(2) f(x) = ln x, a = e: limit f′(e) = 1/e."
           ],
           sonuc: "(1) 1/2   (2) 1/e"

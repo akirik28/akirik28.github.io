@@ -131,7 +131,7 @@ window.DEFTER = {
               ],
               renk: 0
             },
-            { id: "tg", tip: "cizgi", from: [1, 0.8], to: [1, 7.2], renk: 2, gizli: true },
+            { id: "tg", tip: "cizgi", from: [0.6, 0.8], to: [1.4, 7.2], renk: 2, gizli: true },
             { id: "p", tip: "nokta", x: 1, y: 4, renk: 2, gizli: true },
             { id: "al", tip: "yazi", x: 2.6, y: 6, metin: "a = 8 m/s²", gizli: true }
           ],

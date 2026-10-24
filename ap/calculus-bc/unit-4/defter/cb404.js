@@ -182,9 +182,9 @@ window.DEFTER = {
       opts: ["8 cm/s", "1/2 cm/s", "2π cm/s", "2 cm/s"],
       a: 3,
       why: "Bardağın yarıçapı sabittir: V = 16πh ⇒ dV/dt = 16π · dh/dt ⇒ 32π = 16π · dh/dt ⇒ dh/dt = 2. A şıkkı en çekici yanlış: πr² yerine πr alıp 32π / 4π = 8 bulmak. Sabit yarıçap türevde sıfır katkı verir ama formülde yine r² olarak durur." },
-    { q: "Bir kavşaktan aynı anda ayrılan iki scooter: biri doğuya 2 m/s, öteki kuzeye 1,5 m/s hızla gidiyor. Bir an sonra x = 6 m, y = 8 m ve aralarındaki uzaklık z = 10 m ise z hangi hızla artar?",
-      opts: ["3,5 m/s", "2,4 m/s", "1,75 m/s", "14 m/s"],
+    { q: "Bir kavşaktan aynı anda ayrılan iki scooter: biri doğuya 2 m/s, öteki kuzeye 1,5 m/s hızla gidiyor. Bir an sonra x = 8 m, y = 6 m ve aralarındaki uzaklık z = 10 m ise z hangi hızla artar?",
+      opts: ["3,5 m/s", "2,5 m/s", "1,75 m/s", "14 m/s"],
       a: 1,
-      why: "x · x′ + y · y′ = z · z′ ⇒ 6 · 2 + 8 · 1,5 = 10 · z′ ⇒ 24 = 10 · z′ ⇒ z′ = 2,4. A şıkkı en çekici yanlış: hızları 2 + 1,5 diye toplamak, dik hareketin bileşke etkisini atlar." }
+      why: "x · x′ + y · y′ = z · z′ ⇒ 8 · 2 + 6 · 1,5 = 10 · z′ ⇒ 25 = 10 · z′ ⇒ z′ = 2,5 (iki hız dik olduğu için z′ = √(2² + 1,5²) = 2,5 her an sabittir). A şıkkı en çekici yanlış: hızları 2 + 1,5 diye toplamak, dik hareketin bileşke etkisini atlar." }
   ]
 };

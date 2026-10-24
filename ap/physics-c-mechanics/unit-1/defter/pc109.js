@@ -122,7 +122,7 @@ window.DEFTER = {
               ikon: "🧰",
               terim: "Kinematic equations",
               tr: "kinematik denklemler",
-              tanim: "Sabit ivme için dört denklem; hepsi a = sabit varsayımından çıkar ve formül kâğıdında verilir.",
+              tanim: "Sabit ivme için dört denklem; hepsi a = sabit varsayımından çıkar. İlk üçü formül kâğıdında verilir; ½(v₀ + v)t biçimini ortalama hızdan kendin yazarsın.",
               ornek: "Zaman verilmemişse v² = v₀² + 2a(x − x₀) kullan."
             }
           ]

@@ -309,12 +309,12 @@ window.DEFTER = {
         {
           tip: "ikili",
           sol: { ikon: "0️⃣", baslik: "Limit 0", maddeler: ["Hızlı olan paydada", "Pay geride kalır"] },
-          sag: { ikon: "♾️", baslik: "Limit ∞", maddeler: ["Hızlı olan payda", "Pay payı yutar"] },
+          sag: { ikon: "♾️", baslik: "Limit ∞", maddeler: ["Hızlı olan payın içinde", "Pay payı yutar"] },
           oyun: [
             { metin: "lim x→∞ x¹⁰⁰ / 2ˣ", cevap: "sol", neden: "Üstel (2ˣ) paydada ve kuvvetten hızlı." },
             { metin: "lim x→∞ (ln x) / x", cevap: "sol", neden: "Kuvvet (x) paydada ve logaritmadan hızlı." },
-            { metin: "lim x→∞ 2ˣ / x¹⁰⁰", cevap: "sag", neden: "Hızlı olan üstel artık payda." },
-            { metin: "lim x→∞ x / (ln x)", cevap: "sag", neden: "Hızlı olan kuvvet payda." },
+            { metin: "lim x→∞ 2ˣ / x¹⁰⁰", cevap: "sag", neden: "Hızlı olan üstel artık payın içinde." },
+            { metin: "lim x→∞ x / (ln x)", cevap: "sag", neden: "Hızlı olan kuvvet payın içinde." },
             { metin: "lim x→∞ (ln x) / 2ˣ", cevap: "sol", neden: "Hızlı olan 2ˣ paydada." }
           ]
         }

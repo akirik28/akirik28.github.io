@@ -137,7 +137,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Sınav için bilmen gereken", head: ["Düzey", "Konu"], rows: [
             ["✎ Yazman gereken", "(double) sum / count ile ortalama; (int) (x + 0.5) ile yuvarlama; double'dan int'e atamada (int)"],
             ["👁 Okuman gereken", "*Overflow* sonucu (MAX_VALUE + 1) ve *round-off*'lu double çıktıları"],
-            ["✗ Bilmen gerekmeyen", "MAX_VALUE rakamlarını ezberlemek (Quick Reference'ta var), long / float, binary gösterim"]
+            ["✗ Bilmen gerekmeyen", "MAX_VALUE rakamlarını ezberlemek (sabitlerin adı Quick Reference'ta var), long / float, binary gösterim"]
           ] },
         { tip: "ozet", maddeler: [
             "(int) ondalığı keser, yuvarlamaz: 99.9 → 99, -3.99 → -3 (sıfıra doğru).",

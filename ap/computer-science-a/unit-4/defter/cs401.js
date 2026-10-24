@@ -387,7 +387,7 @@ window.DEFTER = {
               "metin": "Okulda her sınıf seviyesinde 100 öğrenci var: her seviye %25."
             },
             {
-              "metin": "Anket yalnızca 12. sınıfların olduğu kuyrukta yapıldı. 20 katılımcının dağılımı:",
+              "metin": "Anket 12. sınıfların ağırlıkta olduğu kuyrukta yapıldı. 20 katılımcının dağılımı:",
               "set": {
                 "b1": {
                   "noktalar": [

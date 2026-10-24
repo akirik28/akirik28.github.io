@@ -160,6 +160,6 @@ window.DEFTER = {
       why: "Hızın altındaki alan, o aralıkta birikmiş değişimdir: giren öğrenci sayısı. Yemekhanedeki sayı için başlangıçtaki öğrenci sayısı da eklenmelidir; hızlanma ise grafiğin eğimidir." },
     { q: "Bir su deposunun miktarı Q(t) litre, değişim hızı r(t) L/dk. t = 0'da Q = 5. r(t) grafiği ile t ekseni arasında, eksenin üstünde kalan alan 10 L, altında kalan alan 6 L ise t = 8'de Q kaçtır?",
       opts: ["11", "9", "21", "1"], a: 1,
-      why: "Net değişim 10 − 6 = +4, son miktar 5 + 4 = 9. 21, alanları işaretsiz toplamaktır (5 + 10 + 6); 11, eksi alanı artı sanmaktır (5 + 6); 1 ise işaretleri ters kullanmaktır (5 − 10 + 6)." }
+      why: "Net değişim 10 − 6 = +4, son miktar 5 + 4 = 9. 21, alanları işaretsiz toplamaktır (5 + 10 + 6); 11, üstteki alanı unutup alttaki alanı artı eklemektir (5 + 6); 1 ise işaretleri ters kullanmaktır (5 − 10 + 6)." }
   ]
 };

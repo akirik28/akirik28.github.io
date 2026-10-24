@@ -45,7 +45,7 @@ window.DEFTER = {
       bloklar: [
         {"tip":"ornek","baslik":"Okul servisi","durum":"Servis 30 dakikada (0,5 saat) 20 km gidiyor. Hızı hiç 40 km/sa olmuş mu?","adimlar":["Konum fonksiyonu s(t) (saat cinsinden) sürekli ve türevlenebilir.","Ortalama hız: (20 − 0)/(0,5 − 0) = 40 km/sa.","MVT: (0; 0,5) aralığında s′(c) = 40 olan bir c vardır.","Yani servis en az bir anda tam 40 km/sa hızla gidiyordu."],"sonuc":"Evet: en az bir anda hız tam 40 km/sa"},
         {"tip":"tablo","baslik":"f türevlenebilir; f(0) = 3, f(2) = 7, f(5) = 19","head":["Aralık","Ortalama eğim","MVT ne garanti eder"],"rows":[["[0, 2]","(7 − 3)/(2 − 0) = 2","(0, 2)'de f′(c) = 2 olan c var"],["[2, 5]","(19 − 7)/(5 − 2) = 4","(2, 5)'te f′(c) = 4 olan c var"],["[0, 5]","(19 − 3)/(5 − 0) = 3,2","(0, 5)'te f′(c) = 3,2 olan c var"]],"vurgu":2},
-        {"tip":"tuzak","metin":"MVT yalnızca tam ortalama eğimi garanti eder. Ortalamaya yakın başka bir değeri ya da c'nin yerini tablodan bilemezsin.","yanlis":"[0, 5] için f′(c) = 3 olan bir c vardır (3,2'ye yakın).","dogru":"Yalnızca f′(c) = 3,2 garantidir. Başka değer için ek bilgi gerekir."}
+        {"tip":"tuzak","metin":"MVT her aralığın ortalama eğimini garanti eder; f′ sürekliyse bu eğimler arasındaki her değer de (IVT) garantidir. Bu aralığın dışındaki bir değeri ya da c'nin tam yerini tablodan bilemezsin.","yanlis":"[0, 5] için f′(c) = 5 olan bir c vardır (ortalamalara yakın).","dogru":"Tablodan f′(c) = 2, 4 ve 3,2 garanti edilir (f′ sürekliyse 2 ile 4 arasındaki her değer de). 5 gibi bir değer için ek bilgi gerekir."}
       ]
     },
     {
