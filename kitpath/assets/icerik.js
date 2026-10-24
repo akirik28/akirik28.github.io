@@ -16,6 +16,8 @@
   /* yerel deneme: kitora-ui-v2/_test/ayna/ sitenin aynası (kitpath/, ap/, okul/, assets/); yayına girmemiş içerik burada denenir */
   var AYNA = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && location.pathname.match(/^.*\/_test\/ayna\//);
   if (AYNA) KOK = location.origin + AYNA[0];
+  /* Kitpath uygulaması (kitpath-app) bu dosyayı canlıdan yükler ve önce window.KITPATH_KOK = "https://kitpath.org/" atar */
+  if (typeof window.KITPATH_KOK === "string" && /^https:\/\/[^/]+\/$/.test(window.KITPATH_KOK)) KOK = window.KITPATH_KOK;
 
   var DERSLER = {
     macro: { title: "Macroeconomics", code: "AP · ECON", art: "macro", rot: "-1.4deg", video: true, ad: "AP Macroeconomics" },
