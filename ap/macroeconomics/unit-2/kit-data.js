@@ -717,7 +717,7 @@ window.KIT = {
       "title": "İşsizliğin Türleri ve Doğal Oran",
       "en": "Types of Unemployment",
       "accent": "#B9E552",
-      "seconds": 264,
+      "seconds": 323,
       "terms": [
         "Frictional unemployment",
         "Structural unemployment",
@@ -986,7 +986,7 @@ window.KIT = {
       "title": "Enflasyon Kime Zarar Verir?",
       "en": "Costs of Inflation",
       "accent": "#5C8DFF",
-      "seconds": 260,
+      "seconds": 312,
       "terms": [
         "Purchasing power",
         "Nominal income",
@@ -1112,7 +1112,7 @@ window.KIT = {
       "title": "Real ve Nominal GDP",
       "en": "Real vs Nominal GDP",
       "accent": "#F6B94A",
-      "seconds": 275,
+      "seconds": 334,
       "terms": [
         "Nominal GDP",
         "Real GDP",
@@ -1242,7 +1242,7 @@ window.KIT = {
       "title": "İş Çevrimi",
       "en": "Business Cycles",
       "accent": "#2FD6B9",
-      "seconds": 248,
+      "seconds": 297,
       "terms": [
         "Business cycle",
         "Peak",
