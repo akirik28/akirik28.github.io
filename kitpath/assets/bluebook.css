@@ -298,3 +298,5 @@ mark.bbk-hl.is-active { outline: 2px solid var(--bk-ink); outline-offset: 1px; }
 .bbk-arasi p { margin: 0; color: #3a3a3a; line-height: 1.55; }
 .bbk-arasi__tr { font-size: 14px; color: #595959 !important; }
 .bbk-arasi__geri { color: #324DC7; font-size: 14px; }
+.bbk-arasi__et { margin: 6px 0 -6px !important; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #595959 !important; }
+.bbk-arasi__sayac { font-size: 48px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: #1e1e1e; }

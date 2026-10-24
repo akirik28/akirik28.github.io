@@ -2071,9 +2071,10 @@
   var SEV_AD = ["", "Başlangıç", "Gelişiyor", "Orta", "İyi", "Çok iyi"];
   var SEV_DUZEY = { "Isınma": 1, "Temel": 2, "Orta": 3, "Zor": 4, "Çok zor": 5 };
   var SEV_MODUL = 15;   /* modül başına soru (2 modül) */
-  /* soru başına dakika: gerçek AP çoktan seçmeli bölümünün temposu (2025-26 sınav formatları) */
-  var SEV_TEMPO = { calc: 105 / 45, stats: 90 / 40, csa: 90 / 42, physc: 2, physem: 2, macro: 70 / 60, micro: 70 / 60, psych: 90 / 75, hug: 1, bpf: 1.2 };
-  function sevDakika(ders, n) { return Math.ceil(n * (SEV_TEMPO[ders] || 1.5)); }
+  /* 15 soruluk modülün süresi (dk): AP temposunun ~%60'ı (Ada: AP süreleri uzun geldi). Öğrenci beklemeden bitirebilir. */
+  var SEV_SURE = { calc: 20, stats: 20, csa: 20, physc: 18, physem: 18, macro: 12, micro: 12, psych: 12, hug: 10, bpf: 12 };
+  var SEV_MOLA = 5;   /* modüller arası mola (dk), atlanabilir */
+  function sevDakika(ders, n) { return Math.max(5, Math.round((SEV_SURE[ders] || 15) * n / 15)); }
   var SEV_KARISIM = { m1: { 1: .1, 2: .25, 3: .3, 4: .25, 5: .1 }, kolay: { 1: .25, 2: .35, 3: .3, 4: .1 }, zor: { 2: .1, 3: .3, 4: .35, 5: .25 } };
   function sevYukle(tazele) {
     if (!HESAPLI || !H.seviyeDurum) return Promise.resolve(null);
@@ -2270,7 +2271,7 @@
         '<span class="sev-durum" data-d="' + st[0] + '"><i></i>' + esc(st[1]) + '</span>' +
         '<h1 class="display" style="font-size:clamp(42px,5vw,60px)"><span class="hl">Seviye sınavı</span></h1>' +
         '<p class="lead" style="max-width:560px">Yeni bir tur açıldığında her ders için kısa, uyarlanabilir bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
-      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sorular oraya kadar olan bütün konulardan gelir.</span></li><li><b>2</b><span><strong>2 modül · ' + n + ' soru · AP temposunda</strong>Süre gerçek AP ile aynı; ikinci modül, birinci modüldeki performansına göre kolay ya da zor gelir.</span></li><li><b>3</b><span><strong>Seviyeni gör</strong>0–100 seviye puanı, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
+      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sorular oraya kadar olan bütün konulardan gelir.</span></li><li><b>2</b><span><strong>2 modül · ' + n + ' soru · arada 5 dk mola</strong>İkinci modül, birinci modüldeki performansına göre kolay ya da zor gelir. Süreyi beklemek zorunda değilsin, bitirince gönder.</span></li><li><b>3</b><span><strong>Seviyeni gör</strong>0–100 seviye puanı, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
       (on ? '<div class="note rise d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Şu an açık tur yok; öğrenciler sınav çözemiyor. Sen önizleme çözebilirsin, sonucu kaydedilmez. Yeni tur açmak için <a href="' + ROOT + 'yonetim/?gorunum=seviye">Yönetim → Seviye sınavı</a>.</span></div>' : "") +
       '<section class="stack rise d1" style="gap:16px"><div class="section__head"><h2 class="h3" style="font-size:26px">Dersler</h2><span class="muted" style="font-size:14px">' + (acik ? "Bu turda her dersten bir sınav çözebilirsin." : on ? "Önizleme: istediğin dersten dene." : "Tur açılınca buradan başlarsın.") + '</span></div>' +
       '<div class="sev-dersler">' + dersler.map(function (x) {
@@ -2301,7 +2302,7 @@
         '<p class="muted" style="font-size:13px;margin:0" data-sev-bilgi></p><a class="btn btn--primary" data-sev-git href="#">' + (on ? "Önizlemeyi başlat" : "Sınava başla") + ' →</a>';
       function bilgi(u) {
         var hazir = us.filter(function (q) { return q.unit <= u; }).map(function (q) { return q.unit; });
-        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + n + " soru: 2 modül × " + SEV_MODUL + " soru, her modül " + sevDakika(x, SEV_MODUL) + " dakika (gerçek AP temposu)." + (hazir.length < u ? " Şimdilik soru olan üniteler: " + hazir.join(", ") + "." : "") + " Kaydet ve çık ile ara verebilirsin; süre durur.");
+        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + n + " soru: 2 modül × " + SEV_MODUL + " soru, her modül en fazla " + sevDakika(x, SEV_MODUL) + " dakika, arada isteğe bağlı 5 dakika mola." + (hazir.length < u ? " Şimdilik soru olan üniteler: " + hazir.join(", ") + "." : "") + " Kaydet ve çık ile ara verebilirsin; süre durur.");
         $("[data-sev-git]", kur).href = ROOT + "seviye/sinav/?ders=" + x + "&u=" + u + (on ? "&yeni" : "");
       }
       bilgi(oner);
@@ -2409,7 +2410,9 @@
             yonerge: '<h2>' + esc(baslik) + ' · AP ' + esc(sevAd(ders)) + ' · Unit 1–' + U + '</h2>' +
               (modul === 1 ? '<p>This level check has <strong>two modules</strong> of ' + SEV_MODUL + ' questions each. Module 1 has a mix of easier and harder questions; how you do on it decides whether Module 2 is easier or harder.</p>'
                            : '<p>Module 2 was built from your Module 1 answers. Harder questions count for more, so do your best on each one.</p>') +
-              '<p>This module has <strong>' + Q.length + ' multiple-choice questions</strong> and a time limit of <strong>' + dk + ' minutes</strong>. It is <strong>optional and not graded</strong>. Unanswered questions count as incorrect; when time runs out, your answers are submitted automatically.</p>',
+              '<p>This module has <strong>' + Q.length + ' multiple-choice questions</strong> and a time limit of <strong>' + dk + ' minutes</strong>. You do not have to wait for the timer: when you are done, go to the review page and select <strong>Submit</strong>.</p>' +
+              (modul === 1 ? '<p>After Module 1 you get an optional <strong>' + SEV_MOLA + '-minute break</strong>; you can skip it and continue right away.</p>' : '') +
+              '<p>It is <strong>optional and not graded</strong>. Unanswered questions count as incorrect; when time runs out, your answers are submitted automatically.</p>',
             bitti: function (S) {
               if (modul === 1) {
                 var teta1 = sevTeta(sevCevaplar(set.M1, S)), yol = teta1 >= 0 ? "zor" : "kolay", kul = {};
@@ -2429,9 +2432,19 @@
           });
         };
         if (modul === 2 && !S2) {
-          var app = $(".bbk-app");
-          app.innerHTML = '<main class="bbk-main"><div class="bbk-arasi"><span class="bbk-arasi__ic" aria-hidden="true">✓</span><h1>Module 1 complete</h1><p>Module 2 is ready and was built from your answers. It has ' + set.M2.length + ' questions and a ' + dk + '-minute timer that starts when you continue.</p><p class="bbk-arasi__tr">Modül 1 bitti. Modül 2, cevaplarına göre hazırlandı; süre "Continue"a basınca başlar. İstersen biraz ara ver.</p><button type="button" class="bbk-btn" data-k="m2">Continue to Module 2</button><a class="bbk-arasi__geri" href="' + geri + '">Save and exit</a></div></main>';
-          $('[data-k="m2"]').addEventListener("click", basla);
+          /* modüller arası mola: SEV_MOLA dk geri sayım; istenirse hemen geçilir, süre bitince Modül 2 kendiliğinden başlar */
+          var molaK = sevYerel("mola", ders, tur), molaSon = lsOku(molaK);
+          if (!molaSon) { molaSon = Date.now() + SEV_MOLA * 60000; lsYaz(molaK, molaSon); }
+          var app = $(".bbk-app"), zaman = null, gecildi = false;
+          var gec = function () { if (gecildi) return; gecildi = true; if (zaman) clearInterval(zaman); lsYaz(molaK, null); basla(); };
+          app.innerHTML = '<main class="bbk-main"><div class="bbk-arasi"><span class="bbk-arasi__ic" aria-hidden="true">✓</span><h1>Module 1 complete</h1>' +
+            '<p class="bbk-arasi__et">Break</p><div class="bbk-arasi__sayac" role="timer" aria-live="off" data-k="mola">' + fmt(SEV_MOLA * 60) + '</div>' +
+            '<p>Take a short break. Module 2 (' + set.M2.length + ' questions, ' + dk + ' minutes) was built from your answers and starts automatically when the break ends.</p>' +
+            '<p class="bbk-arasi__tr">Modül 1 bitti. ' + SEV_MOLA + ' dakika mola; beklemek zorunda değilsin, istediğin an devam edebilirsin. Mola bitince Modül 2 kendiliğinden başlar.</p>' +
+            '<button type="button" class="bbk-btn" data-k="m2">Skip break · Continue to Module 2</button><a class="bbk-arasi__geri" href="' + geri + '">Save and exit</a></div></main>';
+          $('[data-k="m2"]').addEventListener("click", gec);
+          var tik = function () { var k = (molaSon - Date.now()) / 1000, el = $('[data-k="mola"]'); if (el) el.textContent = fmt(Math.max(0, k)); if (k <= 0) gec(); };
+          tik(); zaman = setInterval(tik, 1000);
           return;
         }
         basla();
