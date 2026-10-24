@@ -231,13 +231,15 @@
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" },
     { id: "cep-eng10", tur: "cep", title: "English 10: sınav ve konuşma provası", code: "CEP KİTİ · İNGİLİZCE", renk: "eng", ders: null, href: "cep/english-10/", sinif: 10, okul: ["English 10"], ara: "english ingilizce speaking oedipus catcher passage analysis paragraph essay persuasive speech konuşma sınavı prova" }
   ];
+  /* hesabın okulu ÜAL mi (hesapsız ya da okulu bilinmiyorsa evet) — 10. sınıf okul derslerini kimin göreceği */
+  function ualMi() { var H = window.HESAP, p = H && H.aktif && H.aktif() && H.profil ? H.profil() : null; return !p || (p.okul || "uaa") === "uaa"; }
   function rafKey(id) { return "kitora:v1:" + (id || kim()) + ":kitlerim"; }
   function raf(profil) {
     var r = oku(rafKey()) || {}, eklenen = Array.isArray(r.eklenen) ? r.eklenen : [], gizli = Array.isArray(r.gizli) ? r.gizli : [];
     var sec = (profil && profil.secmeliler) || [];
-    return KATALOG.map(function (k) {
-      /* ÜAL: ders adları ve 10. sınıf ortak dersleri; diğer okullar: onboarding'de seçilen AP'ler (katalog adıyla) */
-      var ual = !profil || (profil.okul || "uaa") === "uaa";
+    /* ÜAL: ders adları ve 10. sınıf ortak dersleri; diğer okullar: yalnızca AP'ler (10. sınıf okul dersleri hiç görünmez) */
+    var ual = !profil || (profil.okul || "uaa") === "uaa";
+    return KATALOG.filter(function (k) { return ual || !(k.tur === "okul" || k.sinif === 10); }).map(function (k) {
       var varsayilan = k.okul.some(function (d) { return sec.indexOf(d) > -1; }) || sec.indexOf(k.title) > -1 || (ual && !!k.sinif && !!profil && profil.sinif === k.sinif);
       var basladi = !!k.ders && KITLER.some(function (x) { return x.ders === k.ders && ozet(x); });
       var rafta = (varsayilan && gizli.indexOf(k.id) < 0) || eklenen.indexOf(k.id) > -1 || (basladi && !varsayilan && gizli.indexOf(k.id) < 0);
@@ -470,7 +472,7 @@
   window.KICERIK = {
     QUIZ_DERS: QUIZ_DERS, kilitler: kilitler,
     DEFTER_DERS: DEFTER_DERS, DEFTER_UNITELER: DEFTER_UNITELER, defterUnite: defterUnite, defterListesi: defterListesi, defterDurumu: defterDurumu, defterOku: defterOku, okunanlar: okunanlar, okundu: okundu, sonDefter: sonDefter,
-    KATALOG: KATALOG, raf: raf, rafaEkle: rafaEkle, raftanCikar: raftanCikar,
+    KATALOG: KATALOG, ualMi: ualMi, raf: raf, rafaEkle: rafaEkle, raftanCikar: raftanCikar,
     KOK: KOK, DERSLER: DERSLER, KITLER: KITLER, OKUL: OKUL, SECMELI: SECMELI, dersRengi: dersRengi,
     kit: kit, url: url, kitVerisi: kitVerisi, denemeVerisi: denemeVerisi, defterVerisi: defterVerisi, sekiller: sekiller,
     qid: qid, md: md, kim: kim, oku: oku, yaz: yaz,

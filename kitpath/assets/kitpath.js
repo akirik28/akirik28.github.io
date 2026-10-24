@@ -1153,8 +1153,9 @@
   /* "AP Macroeconomics" ya da "10. sınıf · Chemistry" */
   function dersEtiketi(d) { return d.grup === "okul" ? "10. sınıf · " + d.ad : "AP " + d.ad; }
   function defterMerkezi(kok, bitti) {
-    var tum = Object.keys(C.DEFTER_DERS), son = C.sonDefter(), f = param("ders") || (son && son.ders) || "";
-    if (tum.indexOf(f) < 0) f = param("grup") === "okul" || (!param("grup") && HESAPLI && (H.profil() || {}).sinif === 10) ? "precalc" : "macro";
+    var ual = C.ualMi();   /* diğer okullar: 10. sınıf okul defterleri gösterilmez */
+    var tum = Object.keys(C.DEFTER_DERS).filter(function (d) { return ual || C.DEFTER_DERS[d].grup !== "okul"; }), son = C.sonDefter(), f = param("ders") || (son && son.ders) || "";
+    if (tum.indexOf(f) < 0) f = ual && (param("grup") === "okul" || (!param("grup") && HESAPLI && (H.profil() || {}).sinif === 10)) ? "precalc" : "macro";
     var grup = C.DEFTER_DERS[f].grup;
     function grupDersleri(g) { return tum.filter(function (d) { return C.DEFTER_DERS[d].grup === g; }); }
     document.title = "Defterler · Kitpath";
@@ -1166,7 +1167,7 @@
     var grid = $('[data-k="df-uniteler"]'), sonuc = $('[data-k="df-sonuc"]'), inp = $('[data-k="df-q"]');
     /* ders rafı: AP ve okul dersleri iki sıra görsel kart; seçili olan kalkar, altında üniteleri açılır */
     function cipler() {
-      fill('[data-k="df-raf"]', ["ap", "okul"].map(function (g) {
+      fill('[data-k="df-raf"]', (ual ? ["ap", "okul"] : ["ap"]).map(function (g) {
         return '<div class="df-raf__grup"><span class="eyebrow">// ' + (g === "ap" ? "AP sınavları" : "10. sınıf okul dersleri") + '</span><div class="df-raf__sira">' + grupDersleri(g).map(function (d) {
           var D = C.DEFTER_DERS[d], col = COLORS[D.renk], n = C.DEFTER_UNITELER.filter(function (x) { return x.ders === d; }).length;
           return '<button type="button" class="df-ders" data-ders="' + d + '" aria-pressed="' + (d === f) + '" style="--c:' + col + '"><span class="df-ders__band" aria-hidden="true"><span class="bob-dot"></span>' + dersCizimi(d, col) + '<span class="df-ders__tik">' + I.check + '</span></span>' +
