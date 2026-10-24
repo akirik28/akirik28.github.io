@@ -1105,3 +1105,9 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .pick--okul { flex-direction: row; align-items: center; gap: 12px; padding: 16px 18px; text-align: left; font-size: 16px; line-height: 1.25; }
 .okul-rozet { flex: 0 0 auto; width: 46px; height: 46px; border-radius: 14px; background: var(--c); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: var(--f-display); font-weight: 800; font-size: 14px; letter-spacing: -.02em; }
 @media (max-width: 720px) { .okul-grid { grid-template-columns: 1fr; } }
+
+/* hoş geldin: diğer okullar için AP seçimi */
+.ap-sec { display: flex; flex-wrap: wrap; gap: 10px; }
+.ap-sec__b { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 10px 16px; font-size: 15px; }
+.ap-sec__b::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
+.ap-sec__b[aria-pressed="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); }

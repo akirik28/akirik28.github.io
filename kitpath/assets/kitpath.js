@@ -836,9 +836,13 @@
     if (!HESAPLI) { girisGerek(); return; }
     var p = H.profil() || {}, SEC = C.SECMELI, adlar = { calc: "AP Calculus BC", calcx: "Calculus", stats: "AP Statistics" };
     var step = param("adim") === "2" ? 2 : 1;
-    var grade = p.sinif === 10 && step === 1 ? 10 : 11, el = [];   /* profilden "11. sınıf" seçilince ?adim=2 ile gelir */
+    var grade = p.sinif === 10 && step === 1 ? 10 : (p.sinif === 9 || p.sinif === 12) && p.okul && p.okul !== "uaa" ? p.sinif : 11, el = [];   /* profilden "11. sınıf" seçilince ?adim=2 ile gelir */
     Object.keys(SEC).forEach(function (key) { if ((p.secmeliler || []).indexOf(SEC[key]) > -1) el.push(key); });
     var okul = p.okul || null;
+    /* ÜAL dışındaki okullar: seçmeli yok, yalnızca AP önerisi (katalog adlarıyla kaydedilir) */
+    var AP_LISTE = C.KATALOG.filter(function (k) { return k.tur === "ap"; });
+    var apSec = (p.secmeliler || []).filter(function (d) { return AP_LISTE.some(function (k) { return k.title === d; }); });
+    fill('[data-k="ap-sec"]', AP_LISTE.map(function (k) { return '<button type="button" class="filter ap-sec__b" data-ap="' + esc(k.title) + '" aria-pressed="false" style="--c:' + (COLORS[k.renk] || "var(--macro)") + '">' + esc(k.title.replace(/^AP\s+/, "")) + '</button>'; }).join(""));
     var root = $('[data-k="ob"]'), devam = devamAdresi();
     if (step === 2 && !okul) step = 1;   /* okul seçilmeden ikinci adıma geçilmez */
     fill('.ob__step[data-step="1"] h1', "Selam " + esc(ilkAd(ME.name)) + '! <span class="hl">Seni tanıyalım.</span>');
@@ -851,12 +855,19 @@
       $$("[data-grade]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.grade === grade)); });
       $$("[data-okul]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.okul === okul)); });
       $$("[data-el]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(el.indexOf(b.dataset.el) > -1)); });
-      $$("[data-for-grade]", root).forEach(function (x) { x.hidden = +x.dataset.forGrade !== grade; });
+      var ual = okul === "uaa";
+      $$("[data-okul-disi]", root).forEach(function (b) { b.hidden = !okul || ual; });
+      $$("[data-for-grade]", root).forEach(function (x) { x.hidden = !ual || +x.dataset.forGrade !== grade; });
+      $$("[data-for-okul]", root).forEach(function (x) { x.hidden = ual; });
+      $$("[data-ual]", root).forEach(function (x) { x.textContent = !okul || ual ? x.dataset.ual : x.dataset.diger; });
+      $$("[data-ap]", root).forEach(function (b) { b.setAttribute("aria-pressed", String(apSec.indexOf(b.dataset.ap) > -1)); });
       $('[data-k="back"]').style.visibility = step > 1 ? "visible" : "hidden";
       $('[data-k="fwd"]').hidden = step === 3;
       $('[data-k="go"]').hidden = step !== 3;
       var ap = el.filter(function (x) { return x !== "calcx"; });
-      fill('[data-k="summary"]', grade === 11
+      fill('[data-k="summary"]', !ual
+        ? (apSec.length ? apSec.map(function (x) { return x.replace(/^AP\s+/, ""); }).join(", ") + " rafının en üstünde. Bütün AP kitleri herkese açık." : "Bütün AP kitleri herkese açık; istediğini rafına ekleyebilirsin.")
+        : grade === 11
         ? (ap.length ? ap.map(function (x) { return adlar[x]; }).join(" ve ") + " rafının en üstünde. Macro, HuG ve Business de herkese açık." : "Macro, HuG ve Business herkese açık; seçmeli AP kitlerin hazır olunca rafına düşer.")
         : "10. sınıf ortak derslerin rafında. Macro, HuG ve Business de herkese açık.");
       var h = $(".ob__step:not([hidden]) h1", root);
@@ -864,10 +875,11 @@
     }
     function kaydet() {
       var korunan = (p.secmeliler || []).filter(function (d) { return Object.keys(SEC).every(function (x) { return SEC[x] !== d; }) && C.OKUL.onuncu.indexOf(d) < 0; });
-      var liste = grade === 11 ? el.map(function (x) { return SEC[x]; }).concat(korunan) : [];
+      var liste = okul !== "uaa" ? apSec.slice() : grade === 11 ? el.map(function (x) { return SEC[x]; }).concat(korunan) : [];
       var fwd = $('[data-k="fwd"]');
       kaydediliyor = true; fwd.disabled = true; fwd.textContent = "Kaydediliyor…";
-      H.profilKaydet(grade, liste, !(p && p.katilim === false), okul).then(function (p2) {
+      /* not takibi (quiz kilidi) yalnızca ÜAL quizleri için */
+      H.profilKaydet(grade, liste, okul === "uaa" ? !(p && p.katilim === false) : false, okul).then(function (p2) {
         p = p2 || p; step = 3; kaydediliyor = false; fwd.disabled = false; fwd.textContent = "Devam →"; render();
       }, function (x) {
         kaydediliyor = false; fwd.disabled = false; fwd.textContent = "Devam →"; toast(H.hataMetni(x));
@@ -876,7 +888,8 @@
     root.addEventListener("click", function (e) {
       if (kaydediliyor) return;
       var g = e.target.closest("[data-grade]"); if (g) { grade = +g.dataset.grade; render(); }
-      var ok = e.target.closest("[data-okul]"); if (ok) { okul = ok.dataset.okul; render(); }
+      var ok = e.target.closest("[data-okul]"); if (ok) { okul = ok.dataset.okul; if (okul === "uaa" && (grade < 10 || grade > 11)) grade = 11; render(); }
+      var apb = e.target.closest("[data-ap]"); if (apb) { var ai = apSec.indexOf(apb.dataset.ap); if (ai > -1) apSec.splice(ai, 1); else apSec.push(apb.dataset.ap); render(); }
       var x = e.target.closest("[data-el]");
       if (x) {
         var id = x.dataset.el, k = el.indexOf(id);
@@ -886,7 +899,7 @@
       if (e.target.closest('[data-k="back"]')) { step = Math.max(1, step - 1); render(); }
       if (e.target.closest('[data-k="fwd"]')) {
         if (step === 1) { if (!okul) { toast("Önce okulunu seç"); return; } step = 2; render(); return; }
-        if (grade === 11 && !el.length) { toast("Matematik dersin dahil, en az birini seç"); return; }
+        if (okul === "uaa" && grade === 11 && !el.length) { toast("Matematik dersin dahil, en az birini seç"); return; }
         kaydet();
       }
     });

@@ -176,7 +176,7 @@
     if (!p) return "kurulum";
     if (!p.onay || !p.sinif || p.katilim == null) return "kurulum";
     if ("okul" in p && !p.okul) return "kurulum";   /* okul alanı olmayan eski önbellek profili okul yüzünden yönlendirilmez */
-    if (p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "kurulum";
+    if ((p.okul || "uaa") === "uaa" && p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "kurulum";   /* seçmeli yalnızca ÜAL'de */
     if (p.katilim && p.bekleyen && p.bekleyen.length) return "not";
     return null;
   }

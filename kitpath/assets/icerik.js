@@ -236,7 +236,9 @@
     var r = oku(rafKey()) || {}, eklenen = Array.isArray(r.eklenen) ? r.eklenen : [], gizli = Array.isArray(r.gizli) ? r.gizli : [];
     var sec = (profil && profil.secmeliler) || [];
     return KATALOG.map(function (k) {
-      var varsayilan = k.okul.some(function (d) { return sec.indexOf(d) > -1; }) || (!!k.sinif && !!profil && profil.sinif === k.sinif);
+      /* ÜAL: ders adları ve 10. sınıf ortak dersleri; diğer okullar: onboarding'de seçilen AP'ler (katalog adıyla) */
+      var ual = !profil || (profil.okul || "uaa") === "uaa";
+      var varsayilan = k.okul.some(function (d) { return sec.indexOf(d) > -1; }) || sec.indexOf(k.title) > -1 || (ual && !!k.sinif && !!profil && profil.sinif === k.sinif);
       var basladi = !!k.ders && KITLER.some(function (x) { return x.ders === k.ders && ozet(x); });
       var rafta = (varsayilan && gizli.indexOf(k.id) < 0) || eklenen.indexOf(k.id) > -1 || (basladi && !varsayilan && gizli.indexOf(k.id) < 0);
       return { kit: k, varsayilan: varsayilan, eklendi: !varsayilan && eklenen.indexOf(k.id) > -1, rafta: rafta, hazir: !!k.ders || !!k.href || !!k.defter };

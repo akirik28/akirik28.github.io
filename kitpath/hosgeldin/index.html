@@ -35,8 +35,10 @@
         </div>
         <h2 class="h3 ob__soru">Kaçıncı sınıftasın?</h2>
         <div class="pick-grid">
-          <button type="button" class="pick" data-grade="10" aria-pressed="false"><span class="pick__big">10</span><span class="stack" style="gap:4px"><strong style="font-size:17px">10. sınıf</strong><span class="muted" style="font-size:14px">Ortak dersler otomatik eklenir</span></span></button>
-          <button type="button" class="pick" data-grade="11" aria-pressed="true"><span class="pick__big">11</span><span class="stack" style="gap:4px"><strong style="font-size:17px">11. sınıf</strong><span class="muted" style="font-size:14px">Seçmeli AP derslerini sen seçersin</span></span></button>
+          <button type="button" class="pick" data-grade="9" data-okul-disi aria-pressed="false" hidden><span class="pick__big">9</span><span class="stack" style="gap:4px"><strong style="font-size:17px">9. sınıf</strong><span class="muted" style="font-size:14px">Hazırlık dahil</span></span></button>
+          <button type="button" class="pick" data-grade="10" aria-pressed="false"><span class="pick__big">10</span><span class="stack" style="gap:4px"><strong style="font-size:17px">10. sınıf</strong><span class="muted" style="font-size:14px" data-ual="Ortak dersler otomatik eklenir" data-diger="AP'lerini bir sonraki adımda seçersin">Ortak dersler otomatik eklenir</span></span></button>
+          <button type="button" class="pick" data-grade="11" aria-pressed="true"><span class="pick__big">11</span><span class="stack" style="gap:4px"><strong style="font-size:17px">11. sınıf</strong><span class="muted" style="font-size:14px" data-ual="Seçmeli AP derslerini sen seçersin" data-diger="AP'lerini bir sonraki adımda seçersin">Seçmeli AP derslerini sen seçersin</span></span></button>
+          <button type="button" class="pick" data-grade="12" data-okul-disi aria-pressed="false" hidden><span class="pick__big">12</span><span class="stack" style="gap:4px"><strong style="font-size:17px">12. sınıf</strong><span class="muted" style="font-size:14px">Sınav yılı</span></span></button>
         </div>
       </section>
 
@@ -65,6 +67,12 @@
           <h1 class="display" tabindex="-1" style="font-size:clamp(36px,5vw,52px)">Derslerin <span class="hl">hazır!</span></h1>
           <p class="lead" style="font-size:17px">10. sınıfların ortak dersleri otomatik eklendi. Seçmeli AP'ler 11. sınıfta açılıyor.</p>
         </div>
+        <div class="stack" style="gap:10px" data-for-okul="diger" hidden>
+          <span class="eyebrow">// Adım 2 / 3</span>
+          <h1 class="display" tabindex="-1" style="font-size:clamp(36px,5vw,52px)">Hangi <span class="hl">AP'lere</span> hazırlanıyorsun?</h1>
+          <p class="lead" style="font-size:17px">Seçtiklerin rafının en üstüne gelir. Bütün kitler herkese açık; istersen boş geçebilirsin.</p>
+        </div>
+        <div class="ap-sec" role="group" aria-label="AP dersleri" data-for-okul="diger" data-k="ap-sec" hidden></div>
       </section>
 
       <section class="ob__step" data-step="3" hidden style="align-items:center;text-align:center">
