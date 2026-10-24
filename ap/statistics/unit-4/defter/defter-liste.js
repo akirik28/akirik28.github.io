@@ -1,98 +1,90 @@
-/* Bu dosya üretilir: defter-araclari/ek-uniteler.mjs (konu listesi; video kiti yok) */
+/* Bu dosya üretilir: defter-araclari/stats5.mjs (AP Statistics 2026-27, 5 ünite) */
 window.KIT = {
   "kitYok": true,
-  "store": "stat-u4:v1:",
+  "yeniDuzen": "2026-27",
+  "store": "stat5-u4:v1:",
   "course": "AP Statistics",
-  "unitLabel": "Unit 4 — Probability, Random Variables, and Probability Distributions",
+  "unitLabel": "Unit 4 — Inference for Quantitative Data: Means",
   "episodes": [
     {
       "no": 1,
-      "code": "4.1–4.2",
-      "slug": "st401",
-      "title": "Rastgelelik ve Simülasyon",
-      "en": "Random Patterns and Estimating Probabilities Using Simulation",
+      "code": "4.1",
+      "slug": "st506",
+      "title": "Örneklem Ortalamasının Dağılımı",
+      "en": "Sampling Distributions for Sample Means",
       "accent": "#B77AD9",
       "questions": []
     },
     {
       "no": 2,
-      "code": "4.3",
-      "slug": "st402",
-      "title": "Olasılığa Giriş",
-      "en": "Introduction to Probability",
+      "code": "4.2",
+      "slug": "st701",
+      "title": "Ortalama İçin Güven Aralığı (t)",
+      "en": "Should I Worry About Error? Constructing a Confidence Interval for a Mean",
       "accent": "#E86A92",
       "questions": []
     },
     {
       "no": 3,
-      "code": "4.4",
-      "slug": "st403",
-      "title": "Ayrık Olaylar",
-      "en": "Mutually Exclusive Events",
+      "code": "4.3",
+      "slug": "st702",
+      "title": "Güven Aralığıyla Ortalama Hakkında İddia",
+      "en": "Justifying a Claim About a Population Mean Based on a Confidence Interval",
       "accent": "#5BC0EB",
       "questions": []
     },
     {
       "no": 4,
-      "code": "4.5",
-      "slug": "st404",
-      "title": "Koşullu Olasılık",
-      "en": "Conditional Probability",
+      "code": "4.4–4.5",
+      "slug": "st703",
+      "title": "Ortalama İçin t Testi",
+      "en": "Setting Up and Carrying Out a Test for a Population Mean",
       "accent": "#9BC53D",
       "questions": []
     },
     {
       "no": 5,
-      "code": "4.6",
-      "slug": "st405",
-      "title": "Bağımsız Olaylar ve Birleşim",
-      "en": "Independent Events and Unions of Events",
+      "code": "4.2–4.5",
+      "slug": "st704",
+      "title": "Eşleştirilmiş Veri",
+      "en": "Paired Data (Matched Pairs) Inference",
       "accent": "#F25F5C",
       "questions": []
     },
     {
       "no": 6,
-      "code": "4.7",
-      "slug": "st406",
-      "title": "Rastgele Değişkenler ve Olasılık Dağılımları",
-      "en": "Random Variables and Probability Distributions",
+      "code": "4.6",
+      "slug": "st507",
+      "title": "Ortalama Farkının Dağılımı",
+      "en": "Sampling Distributions for Differences in Sample Means",
       "accent": "#F6B94A",
       "questions": []
     },
     {
       "no": 7,
-      "code": "4.8",
-      "slug": "st407",
-      "title": "Rastgele Değişkenin Ortalaması ve Standart Sapması",
-      "en": "Mean and Standard Deviation of Random Variables",
+      "code": "4.7–4.8",
+      "slug": "st705",
+      "title": "İki Ortalama Farkı İçin Güven Aralığı",
+      "en": "Confidence Intervals for the Difference of Two Means",
       "accent": "#7C95FF",
       "questions": []
     },
     {
       "no": 8,
-      "code": "4.9",
-      "slug": "st408",
-      "title": "Rastgele Değişkenleri Birleştirmek",
-      "en": "Combining Random Variables",
+      "code": "4.9–4.10",
+      "slug": "st706",
+      "title": "İki Ortalama Farkı Testi",
+      "en": "Setting Up and Carrying Out a Test for the Difference of Two Means",
       "accent": "#3FB5A0",
       "questions": []
     },
     {
       "no": 9,
-      "code": "4.10–4.11",
-      "slug": "st409",
-      "title": "Binom Dağılımı",
-      "en": "The Binomial Distribution and Its Parameters",
+      "code": "Seçim",
+      "slug": "st707",
+      "title": "Doğru Çıkarım Yöntemini Seçmek",
+      "en": "Selecting, Implementing, and Communicating Inference Procedures",
       "accent": "#FF8A65",
-      "questions": []
-    },
-    {
-      "no": 10,
-      "code": "4.12",
-      "slug": "st410",
-      "title": "Geometrik Dağılım",
-      "en": "The Geometric Distribution",
-      "accent": "#B77AD9",
       "questions": []
     }
   ]

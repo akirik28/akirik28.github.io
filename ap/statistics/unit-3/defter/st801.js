@@ -59,7 +59,7 @@ window.DEFTER = {
             { metin: "Kantin kuyruğundaki öğrencilerin haftanın 5 gününe eşit dağılıp dağılmadığı.", cevap: "sag", neden: "Beş kategori, eşit dağılım iddiası: *goodness-of-fit*." },
             { metin: "Yeni bir içeceğin satılan paketlerin yarısından fazlasını oluşturduğu iddiası.", cevap: "sol", neden: "Tek bir oran, tek yönlü hipotez: *z-test for one proportion*." }
           ] },
-        { tip: "tablo", baslik: "Ünite 8’in yol haritası: hangi durumda hangi test?", head: ["Veri nasıl toplandı?", "Kaç kategorik değişken?", "Test"], rows: [
+        { tip: "tablo", baslik: "Ki-kare yol haritası: hangi durumda hangi test?", head: ["Veri nasıl toplandı?", "Kaç kategorik değişken?", "Test"], rows: [
             ["Tek örneklem", "Bir değişken; iddia edilen dağılımla kıyas", "==Uyum iyiliği (bu defter)=="],
             ["Birkaç ayrı grup / örneklem", "Bir değişken; gruplar aynı dağılımda mı?", "Homojenlik (st804)"],
             ["Tek örneklem", "İki değişken; ilişki var mı?", "Bağımsızlık (st804)"]

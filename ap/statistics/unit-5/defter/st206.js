@@ -92,7 +92,7 @@ window.DEFTER = {
         { tip: "tablo", baslik: "Regresyon çıktısı: ders çalışma saati ve deneme puanı", head: ["Predictor", "Coef", "SE Coef", "T", "P"], rows: [
             ["Constant", "40,00", "3,79", "10,54", "0,000"],
             ["Hours", "4,00", "0,71", "5,66", "0,000"]
-          ], not: "S = 6,16     R-Sq = 64,0%     (n = 20). T ve P sütunları eğim için çıkarım yaparken (Unit 9) kullanılacak." },
+          ], not: "S = 6,16     R-Sq = 64,0%     (n = 20). T ve P sütunları eğim için çıkarımda kullanılır; bu konu 2026-27 müfredatından çıkarıldı." },
         { tip: "ornek", baslik: "Çıktıdan model", durum: "Yukarıdaki çıktıyı okuyup modeli ve sayıları bulalım.",
           adimlar: ["Coef sütunu: Constant = 40 (kesişim a), Hours = 4 (eğim b). Model: ŷ = 40 + 4·Hours.", "R-Sq = %64: r² = 0,64. Eğim pozitif olduğundan r = +0,80.", "S = 6,16: artıkların standart sapması; tahminler gerçek puandan tipik olarak yaklaşık 6,2 puan sapar."],
           sonuc: "Eğim: çalışma süresi 1 saat arttığında tahmin edilen deneme puanı ortalama 4 artar. r² = 0,64: puan değişiminin yaklaşık %64'ü çalışma süresiyle doğrusal modelle açıklanır." },

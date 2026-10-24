@@ -17,7 +17,7 @@ window.DEFTER = {
             ["Ortalama (mean)", "μ", "x̄"],
             ["Standard deviation", "σ", "s"],
             ["Büyüklük (size)", "N", "n"]
-          ], not: "Parameter için Yunan harfi, statistic için Latin harfi kullanılır; p̂ ‘p şapka’ diye okunur." },
+          ], not: "Parameter'lar çoğunlukla Yunan harfiyle (μ, σ), statistic'ler Latin harfiyle (x̄, s) yazılır; oranda ise parameter p, statistic p̂ ('p şapka') olur." },
         { tip: "ikili", sol: { ikon: "🌍", baslik: "*Parameter*", maddeler: ["Popülasyonun tamamını anlatır", "Sabittir, bilinmeyebilir", "Sembol: p, μ, σ"] },
           sag: { ikon: "🥄", baslik: "*Statistic*", maddeler: ["Örneklemden hesaplanır", "Her örneklemde değişir", "Sembol: p̂, x̄, s"] },
           oyun: [

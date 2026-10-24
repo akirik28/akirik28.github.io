@@ -27,7 +27,7 @@ window.DEFTER = {
       kisa: "Aralık = p̂ ± z∗ × SE; z∗ güven düzeyinden gelir.",
       bloklar: [
         {"tip":"formul","parcalar":[{"t":"p̂","alt":"örneklem oranı"},"±",{"t":"z∗","alt":"kritik değer"},"×",{"t":"√( p̂(1 − p̂) / n )","alt":"standard error"}],"aciklama":"Merkez örneklem oranıdır; \"z∗ × SE\" kısmı *margin of error*'dır."},
-        {"tip":"tablo","baslik":"Sık kullanılan kritik değerler","head":["Güven düzeyi","z∗","Her kuyrukta"],"rows":[["%90","1,645","%5"],["%95","1,960","%2,5"],["%99","2,576","%0,5"]],"not":"AP formül sayfasında z∗ tablosu yok; bu üç değeri ezberle ya da hesap makinesinde invNorm kullan."},
+        {"tip":"tablo","baslik":"Sık kullanılan kritik değerler","head":["Güven düzeyi","z∗","Her kuyrukta"],"rows":[["%90","1,645","%5"],["%95","1,960","%2,5"],["%99","2,576","%0,5"]],"not":"Bu üç değeri ezberle; sınavda ayrıca formül sayfasındaki t tablosunun (Table B) ∞ satırından, Table A'dan ya da invNorm ile bulabilirsin."},
         {"tip":"kavramlar","kartlar":[{"ikon":"🎚️","terim":"Critical value","tr":"kritik değer","tanim":"Standart normal eğride ortadaki %C'yi kesen z değeri. Güven düzeyi arttıkça büyür.","ornek":"%95 için z∗ = 1,96."},{"ikon":"↔️","terim":"Margin of error","tr":"hata payı","tanim":"Tahminin iki yanındaki pay: ==z∗ × SE==. Aralığın yarı genişliği.","ornek":"1,96 × 0,04 ≈ 0,078."},{"ikon":"📈","terim":"Confidence level","tr":"güven düzeyi","tanim":"Yöntemin, uzun vadede gerçek parametreyi yakalama yüzdesi.","ornek":"%95: 100 aralığın yaklaşık 95'i başarılı."}]}
       ]
     },

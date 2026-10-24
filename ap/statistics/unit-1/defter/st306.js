@@ -117,7 +117,7 @@ window.DEFTER = {
     { q: "60 gönüllü öğrenci kura ile iki gruba ayrılıyor: biri yeni bir uyku programını izliyor, diğeri normal uyuyor. Program grubunun sınav puanları anlamlı ölçüde yüksek çıkıyor. Hangi sonuç uygundur?",
       opts: ["Program, bütün lise öğrencilerinde puanı artırır", "Program bu gönüllülerde puan artışına neden olmuştur; genelleme gönüllülere benzeyenlerle sınırlıdır", "Fark yalnızca ilişkidir; neden-sonuç söylenemez", "Fark anlamlı olduğu için etki kesinlikle büyüktür"],
       a: 1,
-      why: "Rastgele atama var: neden-sonuç çıkarılabilir; ama katılımcılar gönüllü, rastgele seçilmedi: genelleme sınırlı. C en çekici yanlış şık: neden-sonuç yorumunu gözlemsel çalışmalar için saklamak gerekir; bu bir deney." },
+      why: "Rastgele atama var: neden-sonuç çıkarılabilir; ama katılımcılar gönüllü, rastgele seçilmedi: genelleme sınırlı. C en çekici yanlış şık: \"yalnızca ilişki, neden-sonuç yok\" yorumu gözlemsel çalışmalar içindir; bu ise rastgele atamalı bir deney." },
     { q: "Bir okulun öğrencilerinden rastgele seçilen 200 kişiye anket yapılıyor. Telefon süresi arttıkça uyku süresinin azaldığı ve bu ilişkinin anlamlı olduğu bulunuyor. Hangi sonuç uygundur?",
       opts: ["Telefon kullanımı uykuyu azaltır; bu bütün okul için geçerlidir", "İlişki yalnızca bu 200 kişi için geçerlidir", "Telefon süresini azaltmak uykuyu artıracaktır", "İlişki okula genellenebilir ama gözlemsel çalışma olduğu için neden-sonuç söylenemez"],
       a: 3,

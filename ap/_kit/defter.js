@@ -189,7 +189,7 @@
           el("span", { class: "d-card-t", text: ep.title }),
           el("span", { class: "d-card-en", lang: "en", text: ep.en || "" })
         ]),
-        el("span", { class: "d-card-f", html: lk ? LOCK + " hesapla açılır" : read[ep.slug] ? "✓ okundu" : (ep.terms ? ep.terms.length + " kavram" : "") }),
+        el("span", { class: "d-card-f", html: ep.disi ? "kapsam dışı" : lk ? LOCK + " hesapla açılır" : read[ep.slug] ? "✓ okundu" : (ep.terms ? ep.terms.length + " kavram" : "") }),
         el("i", { class: "d-card-band", "aria-hidden": "true" })
       ]);
       grid.appendChild(card);
@@ -235,6 +235,7 @@
       el("h1", {}, [el("span", { class: "d-ttl", text: ep.title })]),
       ep.en ? el("p", { class: "d-en", lang: "en", text: ep.en }) : null,
       NOT ? el("p", { class: "d-not", text: NOT }) : null,
+      ep.not ? el("p", { class: "d-not", text: ep.not }) : null,
       el("div", { class: "d-about" }, [
         el("p", { class: "d-about-k", text: "Bu defterde" }),
         el("p", { class: "d-about-t", html: md(D.amac || D.ozet || "") }),

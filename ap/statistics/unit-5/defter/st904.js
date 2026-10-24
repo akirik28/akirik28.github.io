@@ -141,7 +141,7 @@ window.DEFTER = {
           ] },
         { tip: "tuzak", baslik: "Yöntem adını ve koşulları atlama", metin: "Sınavda yöntemin adı ve koşullar ayrı puandır. “Eşli” ile “iki örneklem”i, “homojenlik” ile “bağımsızlık”ı karıştırmak ya da koşul kontrolünü yazmamak puan kaybettirir.",
           yanlis: "“Bir t testi yaptım, p = 0,03, H₀ reddedildi.”",
-          dogru: "“Eşli t testi; farklar yaklaşık normal; t = 2,53, df = 9, p = 0,03 < 0,05 ⇒ … ikna edici kanıt var.”" }
+          dogru: "“Eşli t testi; farklar yaklaşık normal; t = 2,53, df = 9, p ≈ 0,016 < 0,05 ⇒ … ikna edici kanıt var.”" }
       ]
     },
     {
