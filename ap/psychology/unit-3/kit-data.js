@@ -320,6 +320,115 @@ window.KIT = {
     },
     {
       "no": 4,
+      "code": "3.4-1",
+      "slug": "py304",
+      "title": "Piaget: Şemalar ve Erken Evreler",
+      "en": "Piaget: Schemas, Sensorimotor, and Preoperational Thought",
+      "accent": "#5BC0EB",
+      "defter": "py304",
+      "defterBaslik": "Yaşam Boyu Bilişsel Gelişim",
+      "sessiz": true,
+      "seconds": 305,
+      "terms": [
+        "Schema",
+        "Assimilation",
+        "Accommodation",
+        "Sensorimotor stage",
+        "Object permanence",
+        "Preoperational stage",
+        "Pretend play",
+        "Egocentrism",
+        "Animism",
+        "Conservation",
+        "Reversibility",
+        "Theory of mind"
+      ],
+      "questions": [
+        {
+          "q": "Üç yaşındaki Toprak, gördüğü her uçan şeye \"kuş\" diyor. Bir gün bir uçak görüp yine \"kuş!\" diye bağırıyor. Toprak'ın bu davranışı Piaget'nin hangi kavramına örnektir?",
+          "opts": [
+            "*Accommodation*",
+            "*Assimilation*",
+            "*Conservation*",
+            "*Object permanence*"
+          ],
+          "a": 1,
+          "why": "Toprak yeni bilgiyi (uçak) var olan şemasına (\"uçan şey = kuş\") sığdırıyor. Bu *assimilation*'dır. Şemasını değiştirip \"uçak\" diye yeni bir kategori açsaydı *accommodation* olurdu."
+        },
+        {
+          "q": "Dokuz aylık bir bebek, annesi oyuncak arabasını yastığın arkasına sakladığında yastığı itip arabayı arıyor. Bu davranış neyin geliştiğini gösterir?",
+          "opts": [
+            "*Theory of mind*",
+            "*Egocentrism*",
+            "*Reversibility*",
+            "*Object permanence*"
+          ],
+          "a": 3,
+          "why": "Gözden kaybolan nesnenin hâlâ var olduğunu bilmek ve onu aramak *object permanence*'tır; *sensorimotor* evrenin temel kazanımıdır."
+        },
+        {
+          "q": "Dört yaşındaki Bora, saklambaç oynarken yalnızca gözlerini kapatıyor ve \"Beni göremezsiniz!\" diyor. Bu davranışı en iyi hangisi açıklar?",
+          "opts": [
+            "*Egocentrism*",
+            "*Animism*",
+            "*Conservation*",
+            "*Accommodation*"
+          ],
+          "a": 0,
+          "why": "Bora kendisi göremediği için başkalarının da onu göremeyeceğini düşünüyor; başkasının bakış açısını ayırt edemiyor. Bu *preoperational* evreye özgü *egocentrism*'dir."
+        },
+        {
+          "q": "Bir çocuk, aynı sayıda bozuk paranın biri sık, biri seyrek dizildiği iki sıraya bakıyor ve \"İkisi aynı, çünkü hiçbir şey eklenmedi ya da çıkarılmadı; paraları yeniden sıkıştırırsam aynı olur\" diyor. Çocuğun gösterdiği beceriler ve olası evresi hangisidir?",
+          "opts": [
+            "*Animism* ve *egocentrism*; *preoperational*",
+            "*Object permanence*; *sensorimotor*",
+            "*Conservation* ve *reversibility*; *concrete operational*",
+            "Varsayımsal düşünme; *formal operational*"
+          ],
+          "a": 2,
+          "why": "Dizilişi değişse de sayının aynı kaldığını bilmek *conservation*'dır; \"yeniden sıkıştırırsam aynı olur\" demek *reversibility*'dir. İkisi birlikte *concrete operational* evrenin işaretidir."
+        },
+        {
+          "q": "Bir psikolog farklı yaşlardaki çocuklara yanlış inanç görevini (bilye sepetten kutuya taşınır, sahibi bunu görmez) uyguluyor ve \"Sahibi bilyeyi nerede arar?\" diye soruyor. Tablodaki sonuçlar en iyi neyi gösterir?",
+          "opts": [
+            "*Object permanence* 5 yaşına kadar gelişmez",
+            "*Theory of mind* yaklaşık 4–5 yaş civarında belirgin biçimde gelişir",
+            "3 yaşındaki çocuklar *conservation* görevinde başarılıdır",
+            "Çocuklar yaşla birlikte daha *egocentric* hâle gelir"
+          ],
+          "a": 1,
+          "why": "\"Sepette\" diyenlerin oranı 3 yaşta 6/30 = %20, 4 yaşta 15/30 = %50, 5 yaşta 24/30 = %80. Başkasının yanlış bir inanca sahip olabileceğini anlamak, yani *theory of mind*, 4–5 yaş civarında belirgin biçimde artıyor. Bu, *egocentrism*'in azalmasıyla tutarlıdır.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Yaş",
+              "Çocuk",
+              "\"Sepette\" diyen"
+            ],
+            "rows": [
+              [
+                "3",
+                "30",
+                "6"
+              ],
+              [
+                "4",
+                "30",
+                "15"
+              ],
+              [
+                "5",
+                "30",
+                "24"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
+    },
+    {
+      "no": 5,
       "code": "3.5",
       "slug": "py306",
       "title": "İletişim ve Dil Gelişimi",
