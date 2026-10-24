@@ -852,7 +852,7 @@ window.KIT = {
       "title": "Fiyat Endeksleri ve Enflasyon",
       "en": "Price Indices and Inflation",
       "accent": "#FF7DB8",
-      "seconds": 281,
+      "seconds": 338,
       "terms": [
         "Inflation",
         "Deflation",
