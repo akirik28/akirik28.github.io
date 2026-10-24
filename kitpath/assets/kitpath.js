@@ -31,6 +31,8 @@
   }
   function fmt(sec) { sec = Math.max(0, Math.round(sec)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
   function sayi(n) { return n == null ? "—" : String(Math.round(Number(n) * 10) / 10).replace(".", ","); }
+  /* sayıya yönelme eki: Deneme 2'ye, 3'e, 6'ya, 10'a */
+  function ekYe(n) { return ["'a", "'e", "'ye", "'e", "'e", "'e", "'ya", "'ye", "'e", "'a"][Math.abs(n) % 10]; }
   var AYLAR = ["OCA", "ŞUB", "MAR", "NİS", "MAY", "HAZ", "TEM", "AĞU", "EYL", "EKİ", "KAS", "ARA"];
   function tarihUzun(iso) { return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long" }); }
   function saatli(iso) { var d = new Date(iso); return d.toLocaleDateString("tr-TR", { weekday: "long" }) + " " + d.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" }); }
@@ -85,7 +87,7 @@
   }
   function kilitPerde(quizler, ust, kucuk) {
     return perdeKabuk(ust || "Bu ders şimdilik kilitli",
-      quizler.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + " quizinin son tarihi geçti. Notunu gir, ders hemen açılsın. Şimdilik yalnızca ilk video açık.",
+      quizler.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + (quizler.length > 1 ? " quizlerinin" : " quizinin") + " son tarihi geçti. Notunu gir, ders hemen açılsın. Şimdilik yalnızca ilk video açık.",
       quizler.map(function (q) {
         return '<form data-quiz="' + esc(q.id) + '" data-max="' + q.max_puan + '" novalidate><input class="grade-in" name="puan" type="text" inputmode="decimal" autocomplete="off" placeholder="Not" aria-label="' + esc(q.baslik) + ' notun, ' + sayi(q.max_puan) + ' üzerinden" style="width:92px"><span class="mono">/ ' + sayi(q.max_puan) + '</span><button type="submit" class="btn btn--primary btn--sm">Notu gir, kilidi aç</button></form>';
       }).join(""), kucuk);
@@ -476,8 +478,7 @@
       C.rafaEkle(b.dataset.kitEkleAna); kartlar(); toast(C.DERSLER[b.dataset.kitEkleAna].title + " rafına eklendi");
     });
     marquee();
-    var cep = $(".cep-card");
-    if (cep && C) cep.href = C.KOK + "crucible/";
+    if (C) $$(".cep-card").forEach(function (a) { a.href = C.KOK + (a.dataset.cep || "crucible/"); });
     if (HESAPLI) $$('a[href="giris/"]').forEach(function (a) { a.href = ROOT + "panel/"; a.textContent = "Panelime git"; });
   };
 
@@ -871,8 +872,8 @@
       fill('[data-k="summary"]', !ual
         ? (apSec.length ? apSec.map(function (x) { return x.replace(/^AP\s+/, ""); }).join(", ") + " rafının en üstünde. Bütün AP kitleri herkese açık." : "Bütün AP kitleri herkese açık; istediğini rafına ekleyebilirsin.")
         : grade === 11
-        ? (ap.length ? ap.map(function (x) { return adlar[x]; }).join(" ve ") + " rafının en üstünde. Macro, HuG ve Business de herkese açık." : "Macro, HuG ve Business herkese açık; seçmeli AP kitlerin hazır olunca rafına düşer.")
-        : "10. sınıf ortak derslerin rafında. Macro, HuG ve Business de herkese açık.");
+        ? (ap.length ? ap.map(function (x) { return adlar[x]; }).join(" ve ") + " rafının en üstünde. Öteki AP kitleri de (Macro, Micro, HuG, Psychology, CSA, Physics C, Business…) herkese açık." : "Bütün AP kitleri herkese açık; seçtiğin dersler rafının en üstüne gelir.")
+        : "10. sınıf ortak derslerin rafında. Bütün AP kitleri de herkese açık.");
       var h = $(".ob__step:not([hidden]) h1", root);
       if (h && document.activeElement && document.activeElement.closest && document.activeElement.closest(".ob__nav")) h.focus();
     }
@@ -962,7 +963,7 @@
   /* süresi geçmiş quiz için öğrencinin not kutuları (panel ve Notlarım) */
   function notKutusu(bek) {
     fill('[data-k="alert"] .alert__body', '<strong>' + esc(bek.map(function (q) { return q.ders; }).filter(function (d, i, a) { return a.indexOf(d) === i; }).join(", ")) + ' kısa bir mola verdi.</strong><span style="font-size:15px;line-height:1.55">' +
-      bek.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + ' quizinin son tarihi geçti. O dersin kitleri ve defterleri kilitli (yalnızca 1. video açık); diğer derslerin açık. Notunu buraya yaz ya da hocan girsin, kilit hemen açılır.</span>' +
+      bek.map(function (q) { return esc(q.ders + " · " + q.baslik); }).join(", ") + (bek.length > 1 ? ' quizlerinin' : ' quizinin') + ' son tarihi geçti. O dersin kitleri ve defterleri kilitli (yalnızca 1. video açık); diğer derslerin açık. Notunu buraya yaz ya da hocan girsin, kilit hemen açılır.</span>' +
       bek.map(function (q) {
         return '<form class="row" style="align-items:center;gap:10px;flex-wrap:wrap" data-quiz="' + esc(q.id) + '" data-max="' + q.max_puan + '" novalidate><strong style="font-size:14px;flex:1 1 200px">' + esc(q.baslik) + '</strong>' +
           '<input class="grade-in" name="puan" type="text" inputmode="decimal" autocomplete="off" placeholder="Not" aria-label="' + esc(q.baslik) + ' notun, ' + sayi(q.max_puan) + ' üzerinden" style="width:96px"><span class="mono">/ ' + sayi(q.max_puan) + '</span>' +
@@ -1040,7 +1041,7 @@
   function kitKarti(r) {
     var k = r.kit, col = COLORS[k.renk], d = k.ders ? dersler().filter(function (x) { return x.id === k.ders; })[0] : null;
     var o = d && d.son && d.son.o, pct = d ? d.pct : 0;
-    var alt = !r.hazir ? "Kiti yolda; hazır olunca burada açılır." : d ? (o ? (o.bitenler >= o.n ? "Unit " + d.son.k.unit + " bitti!" : "Sıradaki: Bölüm " + (o.cur + 1) + " · " + o.curTitle) : "Henüz başlamadın") : k.defter ? "Not defterleri · geçen yılın müfredatı" : "Yazılıdan önce tek, odaklı paket.";
+    var alt = !r.hazir ? "Kiti yolda; hazır olunca burada açılır." : d ? (o ? (o.bitenler >= o.n ? "Unit " + d.son.k.unit + " bitti!" : "Sıradaki: Bölüm " + (o.cur + 1) + " · " + o.curTitle) : "Henüz başlamadın") : k.defter ? (k.tur === "okul" ? "Not defterleri · geçen yılın müfredatı" : "Not defterleri · " + C.DEFTER_UNITELER.filter(function (x) { return x.ders === k.defter; }).length + " ünite") : "Yazılıdan önce tek, odaklı paket.";
     var href = d ? ROOT + d.href : k.defter ? ROOT + "defterler/?ders=" + k.defter : k.href ? C.KOK + k.href : null;
     var chips = (r.varsayilan ? '<span class="chip chip--info" style="font-size:11px">sınıfından</span>' : "") + (r.eklendi ? '<span class="chip chip--ok" style="font-size:11px">eklendi</span>' : "") + (!r.hazir ? '<span class="chip chip--warn" style="font-size:11px">yakında</span>' : "") + (k.ders && C.DERSLER[k.ders] && C.DERSLER[k.ders].not ? '<span class="chip chip--warn" style="font-size:11px">' + esc(C.DERSLER[k.ders].not) + '</span>' : "");
     var ad = k.title.replace(/^AP\s+/, "").replace(/:.*$/, "");
@@ -1186,12 +1187,12 @@
       fill('[data-k="df-secili"]', '<span class="df-secili__dot" style="--c:' + COLORS[C.DEFTER_DERS[f].renk] + '" aria-hidden="true"></span><h2 class="h3" style="font-size:26px">' + esc(dersEtiketi(C.DEFTER_DERS[f])) + '</h2><span class="hand" style="font-size:22px">ünite seç, defterini aç</span>');
       var us = C.DEFTER_UNITELER.filter(function (x) { return x.ders === f; });
       fill(grid, us.map(function (x) {
-        var col = uniteRengi(x), kilitli = !HESAPLI && x.unit > 1;
+        var col = uniteRengi(x), kilitli = !HESAPLI && !x.ilk;
         return '<a class="kit-card" href="' + ROOT + 'defterler/?u=' + x.id + '" style="--c:' + col + ';--rot:0deg"><div class="kit-card__band"><span class="bob-dot" aria-hidden="true"></span><span class="kit-card__code">UNIT ' + x.unit + '</span>' + uniteArt(x.ders, x.unit, col, C.DEFTER_DERS[x.ders].art) + '</div>' +
           '<div class="kit-card__body"><span class="kit-card__title" style="font-size:20px">' + esc(x.baslik) + '</span><span class="kit-card__meta" data-say="' + x.id + '">' + (kilitli ? '<span class="row" style="align-items:center;gap:6px">' + I.lock + " Ücretsiz hesapla açılır</span>" : "…") + '</span></div>' + (kilitliMi(x.ders) ? kilitRozet() : "") + '</a>';
       }).join(""));
       us.forEach(function (x) {
-        if (!HESAPLI && x.unit > 1) return;
+        if (!HESAPLI && !x.ilk) return;
         C.defterListesi(x).then(function (K) {
           var oku_ = C.okunanlar(K.store), n = (K.episodes || []).length, o = (K.episodes || []).filter(function (e) { return oku_[e.slug]; }).length;
           fill('[data-say="' + x.id + '"]', n + " defter" + (o ? " · " + o + " okundu ✓" : ""));
@@ -1214,7 +1215,7 @@
       var q = trSade(inp.value.trim()), my = ++jeton;
       grid.hidden = !!q; sonuc.hidden = !q;
       if (q.length < 2) { sonuc.innerHTML = q ? '<p class="muted">Biraz daha yaz…</p>' : ""; return; }
-      var us = C.DEFTER_UNITELER.filter(function (x) { return x.ders === f && (HESAPLI || x.unit === 1); });
+      var us = C.DEFTER_UNITELER.filter(function (x) { return x.ders === f && (HESAPLI || x.ilk); });
       var bul = [], derin = [];
       function ciz(durum) {
         if (my !== jeton) return;
@@ -1222,7 +1223,7 @@
         sonuc.innerHTML = '<div class="row" style="align-items:center;justify-content:space-between"><span class="mono muted">' + esc(C.DEFTER_DERS[f].ad.toUpperCase()) + ' · ' + satir.length + ' SONUÇ</span><span class="mono muted">' + esc(durum || "") + '</span></div>' +
           (satir.length ? satir.map(function (r) {
             return '<a class="df-hit card" href="' + r.href + '" style="--c:' + r.renk + '"><span class="df-hit__sq" aria-hidden="true"></span><span class="stack" style="gap:3px;min-width:0"><strong>' + esc(r.baslik) + '</strong><span class="muted" style="font-size:13px">' + r.alt + '</span></span><span class="mono muted">' + esc(r.etiket) + '</span></a>';
-          }).join("") : (durum ? "" : '<div class="stack" style="gap:8px;padding:20px 0"><span class="hand" style="font-size:26px">bulamadık…</span><span class="muted">Başka bir kelime dene ya da yukarıdan dersi değiştir.' + (HESAPLI ? "" : " Hesapsız yalnızca Unit 1 defterlerinde arıyorsun.") + '</span></div>'));
+          }).join("") : (durum ? "" : '<div class="stack" style="gap:8px;padding:20px 0"><span class="hand" style="font-size:26px">bulamadık…</span><span class="muted">Başka bir kelime dene ya da yukarıdan dersi değiştir.' + (HESAPLI ? "" : " Hesapsız yalnızca ilk ünitenin defterlerinde arıyorsun.") + '</span></div>'));
       }
       function vurgu(metin) {
         var t = trSade(metin), i = t.indexOf(q); if (i < 0) return esc(metin.slice(0, 120));
@@ -1545,9 +1546,9 @@
       var sonraki = tests.filter(function (t) { return t.no === no + 1; })[0];
       var zi = zayif ? Object.keys(DEN.topics || {}).indexOf(zayif) : -1;
       fill($(".lead", sc), yanlis.length
-        ? yanlis.length + " yanlışın var" + (zayif ? "; en çok <strong style=\"color:var(--ink)\">" + esc((DEN.topics || {})[zayif] || zayif) + "</strong> konusunda. " + esc(zayif) + " bölümüne bir kez daha bakıp " + (sonraki ? "Deneme " + sonraki.no + "'ye" : "tekrar denemeye") + " geçebilirsin." : ".")
-        : "Hiç yanlışın yok!" + (sonraki ? " Deneme " + sonraki.no + "'ye hazırsın." : " Bütün denemeleri bitirdin."));
-      fill($(":scope > .stack > .row", sc), (zayif ? '<a class="btn btn--primary" href="' + ROOT + 'unite/?kit=' + k.id + (zi > -1 ? "&b=" + zi : "") + '">' + esc(zayif) + '\'i tekrar izle</a>' : "") +
+        ? yanlis.length + " yanlışın var" + (zayif ? "; en çok <strong style=\"color:var(--ink)\">" + esc((DEN.topics || {})[zayif] || zayif) + "</strong> konusunda. " + esc(zayif) + " bölümüne bir kez daha bakıp " + (sonraki ? "Deneme " + sonraki.no + ekYe(sonraki.no) : "tekrar denemeye") + " geçebilirsin." : ".")
+        : "Hiç yanlışın yok!" + (sonraki ? " Deneme " + sonraki.no + ekYe(sonraki.no) + " hazırsın." : " Bütün denemeleri bitirdin."));
+      fill($(":scope > .stack > .row", sc), (zayif ? '<a class="btn btn--primary" href="' + ROOT + 'unite/?kit=' + k.id + (zi > -1 ? "&b=" + zi : "") + '">' + esc(zayif) + ' bölümünü tekrar izle</a>' : "") +
         (sonraki ? '<a class="btn btn--' + (zayif ? "ghost" : "primary") + '" href="' + ROOT + 'deneme/?kit=' + k.id + '&n=' + sonraki.no + '">Deneme ' + sonraki.no + ': ' + esc(sonraki.level || "") + ' →</a>' : "") +
         '<a class="btn btn--ghost" href="' + ROOT + 'deneme/?kit=' + k.id + '&n=' + no + '&yeni=1">Tekrar çöz</a>');
       var r = C.istatistik(), tst = $(".score .toast");
@@ -1581,7 +1582,7 @@
       var r = C.istatistik(), tk = C.takvim();
       fill('[data-k="p-avatar"]', esc(initials(ME.name)));
       fill('[data-k="p-ad"]', esc(ME.name));
-      fill('[data-k="p-sinif"]', (p.sinif ? p.sinif + ". sınıf · " : "") + "UAA");
+      fill('[data-k="p-sinif"]', (p.sinif ? p.sinif + ". sınıf" : "") + (OKUL_KISA[p.okul || "uaa"] ? (p.sinif ? " · " : "") + OKUL_KISA[p.okul || "uaa"] : ""));
       fill('[data-k="p-eposta"]', esc(ME.email || ""));
       fill('[data-k="p-dersler"]', (p.secmeliler || []).map(function (d) { return '<span class="chip" style="--c:' + COLORS[C.dersRengi(d)] + ';font-size:13px;font-weight:500">' + esc(d) + '</span>'; }).join(""));
       fill('[data-k="s-bolum"]', r.bolum);
@@ -1709,7 +1710,7 @@
         fill('[data-k="sev-yon"]',
           '<div class="card card--pad stack sev-yon-durum" data-acik="' + !!t.acik + '" style="gap:14px"><div class="row" style="align-items:center;gap:12px;flex-wrap:wrap"><span class="sev-durum" data-d="' + (t.acik ? "acik" : "kapali") + '"><i></i>' + (t.acik ? "Tur " + t.tur + " açık" : "Kapalı") + '</span><strong style="font-size:16px">' + esc(durum) + '</strong></div>' +
           (t.acik ? '<div class="row" style="gap:10px;flex-wrap:wrap"><button type="button" class="btn--danger-link" data-sev-yon-kapat>Turu şimdi kapat</button></div>'
-                : '<div class="row" style="gap:12px;align-items:flex-end;flex-wrap:wrap"><label class="field" style="flex:0 1 240px">Tur ne kadar açık kalsın?<select data-k="sev-gun"><option value="3">3 gün</option><option value="7" selected>7 gün</option><option value="14">14 gün</option><option value="">Ben kapatana kadar</option></select></label><button type="button" class="btn btn--primary" data-sev-yon-ac>Tur ' + ((t.tur || 0) + 1) + '\'i başlat</button></div><p class="muted" style="font-size:13px;margin:0">Başlattığın an bütün öğrencilere açılır ve sitenin üstünde bildirim çıkar. Ders başına turda bir sınav, 20 soru; sonuçlar ve gelişim grafikleri tur tur birikir.</p>') + '</div>' +
+                : '<div class="row" style="gap:12px;align-items:flex-end;flex-wrap:wrap"><label class="field" style="flex:0 1 240px">Tur ne kadar açık kalsın?<select data-k="sev-gun"><option value="3">3 gün</option><option value="7" selected>7 gün</option><option value="14">14 gün</option><option value="">Ben kapatana kadar</option></select></label><button type="button" class="btn btn--primary" data-sev-yon-ac>Tur ' + ((t.tur || 0) + 1) + '\'i başlat</button></div><p class="muted" style="font-size:13px;margin:0">Başlattığın an bütün öğrencilere açılır ve sitenin üstünde bildirim çıkar. Ders başına turda bir sınav, 30 soru (2 modül × 15); sonuçlar ve gelişim grafikleri tur tur birikir.</p>') + '</div>' +
           '<div class="card card--pad stack" style="gap:12px"><div class="section__head"><h2 class="h3">Önizle</h2><span class="muted" style="font-size:13px">kaydedilmez · bütün ünitelerden</span></div><div class="row" style="gap:8px;flex-wrap:wrap">' +
             sevDersler().map(function (x) { return '<a class="filter" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)" href="' + ROOT + 'seviye/sinav/?ders=' + x + '&u=' + maxU(x) + '&yeni"><span class="dot" style="--c:' + sevRenk(x) + ';width:9px;height:9px;border-radius:3px"></span>' + esc(sevAd(x)) + '</a>'; }).join("") + '</div></div>' +
           '<div class="card card--pad stack" style="gap:12px"><h2 class="h3">Turlar</h2>' + (ozet.length ? '<div class="table-box"><table class="table" style="min-width:480px"><thead><tr><th>Tur</th><th>Ders</th><th>Katılan</th><th>Ortalama</th><th style="text-align:right">Ort. seviye</th></tr></thead><tbody>' +

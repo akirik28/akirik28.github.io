@@ -142,7 +142,7 @@
     var WARN = MIN > 5 ? 300 : 60, uyarildi = false;
     var calcVar = T.calc != null ? !!T.calc : DEN.calc != null ? !!DEN.calc : !!HESAPLI_DERS[k.ders];
     var baslik = o.baslik || "Deneme " + no + (T.level ? ": " + T.level : "");
-    var tur = o.turAd || "deneme";   /* metinlerde: "deneme" ya da "test" */
+    var tur = o.turAd || "practice test";   /* metinlerde: "practice test" ya da seviye sınavının verdiği ad */
     var unitShort = String(DEN.unit || "").split(/\s+[—–-]\s+/)[0] || "Unit " + k.unit;
     var acik = null;      /* "nav" | "menu" | "dir" */
     var modal = null, hlAktif = null, tipT = 0;
@@ -293,14 +293,16 @@
     }
     function kisayollar() {
       var c = MAC ? { a: "Command + Ctrl + ", b: "Command + Option + ", m: "Command + Shift + V" } : { a: "Ctrl + Alt + ", b: "Ctrl + Alt + Shift + ", m: "Ctrl + Shift + V" };
+      /* harf aralığı sorulardaki en çok şık sayısından (A–D ya da A–E) */
+      var SIK = Q.reduce(function (m, q) { return Math.max(m, q.o.length); }, 2), SON = String.fromCharCode(64 + SIK);
       var rows = [
         ["Open/Close Keyboard Shortcuts", "F1"],
         ["Back", c.a + "B"], ["Next", c.a + "X"], ["Open/Close Question Menu", c.a + "G"],
         ["Hide/Show Timer", c.b + "T"], ["Mark for Review", c.m],
         ["Open/Close Calculator", calcVar ? c.b + "C" : "N/A"],
         ["Option Eliminator Mode", c.b + "O"],
-        ["Select/Deselect Option A–E", c.a + "1 … 5  (or the letter keys A–E)"],
-        ["Eliminate Option A–E", c.b + "1 … 5"],
+        ["Select/Deselect Option A–" + SON, c.a + "1 … " + SIK + "  (or the letter keys A–" + SON + ")"],
+        ["Eliminate Option A–" + SON, c.b + "1 … " + SIK],
         ["Close a menu or window", "Esc"]
       ];
       modalAc("Keyboard Shortcuts", '<p>Keyboard shortcuts for ' + (MAC ? "Mac" : "Windows") + '. They do not work while you type in a note.</p><table class="bbk-keys"><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody>' +
@@ -327,7 +329,7 @@
     }
     function gonder() {
       var bos = S.ans.filter(function (v) { return v < 0; }).length;
-      var v = modalAc(o.turAd ? "Submit Test" : "Submit Deneme", (bos ? '<p>You have <strong>' + bos + ' unanswered question' + (bos > 1 ? "s" : "") + '</strong>. Unanswered questions count as incorrect.</p>' : '<p>You answered all ' + N + ' questions.</p>') +
+      var v = modalAc(o.turAd ? "Submit Test" : "Submit Practice Test", (bos ? '<p>You have <strong>' + bos + ' unanswered question' + (bos > 1 ? "s" : "") + '</strong>. Unanswered questions count as incorrect.</p>' : '<p>You answered all ' + N + ' questions.</p>') +
         '<p>Once you submit, you can\'t change your answers. Are you sure you want to submit?</p>',
         '<button type="button" class="bbk-no" data-mk="no">No</button><button type="button" class="bbk-yes" data-mk="yes">Yes, Submit</button>', true);
       v.querySelector('[data-mk="yes"]').onclick = function () { bitir(false); };

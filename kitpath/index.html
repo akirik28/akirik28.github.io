@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/kitpath.css?v=47">
+<link rel="stylesheet" href="assets/kitpath.css?v=48">
 </head>
 <body data-page="home" data-root="">
 <a class="skip" href="#main">İçeriğe geç</a>
@@ -63,8 +63,8 @@
         <div class="seg tabs-row" role="tablist" aria-label="Kit türü"><button type="button" role="tab" data-tgo="sinav" aria-selected="true">Sınav Kitleri</button><button type="button" role="tab" id="cep" data-tgo="cep" aria-selected="false">Cep Kitleri</button></div>
       </div>
       <div class="kit-grid" data-k="courses" data-tpanel="sinav"></div>
-      <div data-tpanel="cep" hidden>
-      <a class="card cep-card" href="#">
+      <div data-tpanel="cep" hidden style="display:grid;gap:20px">
+      <a class="card cep-card" href="#" data-cep="crucible/">
         <span class="cep-card__icon" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14h26l8 8v28H16z"/><path d="M24 30h18M24 38h18M24 46h10"/></svg></span>
         <span class="cep-card__body">
           <span class="mono muted">CEP KİTİ · İNGİLİZCE</span>
@@ -73,18 +73,27 @@
         </span>
         <span class="btn btn--primary btn--sm">Aç →</span>
       </a>
+      <a class="card cep-card" href="#" data-cep="cep/english-10/" style="--cep:#9A6A45">
+        <span class="cep-card__icon" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18h22a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6H26l-8 7v-7h-4a6 6 0 0 1-6-6v-8a6 6 0 0 1 6-6z"/><path d="M46 26h4a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6h-2v6l-7-6h-7"/></svg></span>
+        <span class="cep-card__body">
+          <span class="mono muted">CEP KİTİ · İNGİLİZCE</span>
+          <span class="h3" style="font-size:28px">English 10: sınav ve konuşma provası</span>
+          <span class="muted" style="font-size:15px">Yazılıdan önce speaking ve paragraf provası.</span>
+        </span>
+        <span class="btn btn--primary btn--sm">Aç →</span>
+      </a>
       </div>
     </section>
   </main>
 
   <footer class="k-footer">
-    <span>Kitpath · UAA öğrencileri için</span>
+    <span>Kitpath · Hazır kitler, tek rafta</span>
     <span class="mono">İlerlemen hesabına kaydedilir.</span>
   </footer>
 </div>
-<script src="assets/data.js?v=47"></script>
-<script src="assets/hesap.js?v=47"></script>
-<script src="assets/icerik.js?v=47"></script>
-<script src="assets/kitpath.js?v=47"></script>
+<script src="assets/data.js?v=48"></script>
+<script src="assets/hesap.js?v=48"></script>
+<script src="assets/icerik.js?v=48"></script>
+<script src="assets/kitpath.js?v=48"></script>
 </body>
 </html>

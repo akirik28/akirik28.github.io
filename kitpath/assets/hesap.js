@@ -234,7 +234,7 @@
       return ({
         gecersiz_email: "E-posta adresi hatalı görünüyor.",
         ad_gerekli: "Adını yaz.",
-        kisa_sifre: "Şifre en az 6 karakter olmalı.",
+        kisa_sifre: "Şifre en az 8 karakter olmalı.",
         email_kayitli: "Bu e-postayla zaten bir hesap var. Giriş yap'ı dene.",
         hatali_giris: "E-posta ya da şifre yanlış.",
         kilitli: "Çok fazla yanlış deneme oldu. 15 dakika sonra tekrar dene.",

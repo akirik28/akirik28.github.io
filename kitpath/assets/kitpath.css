@@ -1195,3 +1195,6 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .sev-panel .sev-gelisim { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 @media (max-width: 720px) { .sev-fig { margin-left: 0; } }
 .sev-soru__q, .sev-acik > div { white-space: pre-line; }
+
+/* ---------- 4. tur denetim (2026-10-25): dönük şeritler (marquee) mobilde yatay kaydırma açmasın ---------- */
+html, body { overflow-x: clip; }
