@@ -275,18 +275,28 @@
     wiggle: function () { var p = "M8 82 C 30 -8, 60 110, 80 40 S 110 10, 124 28"; return '<path d="M6 50 H126" stroke-width="2" opacity=".7"/><path d="' + p + '"/><circle class="a-tw" cx="24" cy="50" r="4" fill="#FFFFFF" stroke="none"/><circle class="a-tw" style="animation-delay:.6s" cx="56" cy="50" r="4" fill="#FFFFFF" stroke="none"/><circle class="a-tw" style="animation-delay:1.2s" cx="84" cy="50" r="4" fill="#FFFFFF" stroke="none"/><g>' + uNok(5) + uGit(p, 5) + '</g>'; },
     unitcircle: function () { return '<path d="M18 50 H104 M60 8 V92" stroke-width="2" opacity=".7"/><circle cx="60" cy="50" r="34"/><g><path d="M60 50 L94 50"/><circle cx="94" cy="50" r="5" fill="#FFFFFF" stroke="none"/>' + uRot(60, 50, 6, true) + '</g>' + uYaz(104, 30, "θ", 16); },
     expo: function () { var p = "M12 86 C 60 84, 90 70, 116 8"; return uEks + '<path d="M20 92 C 22 60, 50 30, 124 24" opacity=".55"/><path d="' + p + '"/><g>' + uNok(6) + uGit(p, 4) + '</g>' + uYaz(26, 20, "eˣ", 14); },
+    derivgraph: function () { var f = "M10 70 C 36 20, 60 20, 72 46 S 104 84, 122 40"; return '<path d="M6 54 H126" stroke-width="2" opacity=".6"/><path d="' + f + '"/><path d="M10 30 C 30 52, 48 70, 62 62 S 92 30, 122 74" stroke-width="2.5" stroke-dasharray="5 5" opacity=".8"/>' + uYaz(100, 18, "f\u2032", 14) + '<g>' + uNok(5) + uGit(f, 5) + '</g>'; },
+    shortage: function () { return uEks + '<path d="M22 84 L112 16"/><path d="M22 16 L112 84"/><path d="M10 66 H124" stroke-width="2" stroke-dasharray="4 4"/><g class="a-bounce"><path d="M46 72 H88" stroke-width="2.5"/><path d="M46 68 V76 M88 68 V76" stroke-width="2.5"/></g>' + uYaz(96, 62, "tavan", 10) + '<circle class="a-tw" cx="67" cy="50" r="5" fill="#FFFFFF" stroke="none"/>'; },
+    compass: function () { return '<path d="M10 24 L44 14 L84 24 L120 14 V78 L84 88 L44 78 L10 88 Z" stroke-width="2.5"/><path d="M44 14 V78 M84 24 V88" stroke-width="1.5" opacity=".6"/><g><circle cx="64" cy="50" r="18" fill="#FFFFFF" fill-opacity=".2"/><path d="M64 34 L69 50 L64 66 L59 50 Z" fill="#FFFFFF" stroke="none"/>' + uSal(64, 50, 25, 3) + '</g>' + uYaz(60, 30, "N", 10); },
+    collision: function () { return '<path d="M6 76 H124"/><g><circle r="13" fill="#FFFFFF" fill-opacity=".85" stroke="none"/>' + uGit("M22 62 L52 62", 2) + '</g><g><circle r="10" stroke-width="3"/>' + uGit("M108 65 L76 65", 2) + '</g>' + uYaz(44, 24, "p = mv", 13); },
+    torque: function () { return '<g><path d="M36 50 L112 50" stroke-width="8"/><path d="M104 40 V60" stroke-width="3"/>' + uSal(36, 50, 18, 3) + '</g><path d="M26 44 L36 38 L46 44 L46 56 L36 62 L26 56 Z" fill="#FFFFFF" stroke="none"/><path class="a-ants" d="M92 22 A 52 52 0 0 1 108 74" stroke-width="2" stroke-dasharray="4 4"/>' + uYaz(14, 92, "τ = rF", 12); },
+    spinner: function () { return '<g><circle cx="58" cy="50" r="36"/><path d="M58 14 V86 M22 50 H94 M33 25 L83 75 M83 25 L33 75" stroke-width="2"/><circle cx="58" cy="50" r="6" fill="#FFFFFF" stroke="none"/><circle cx="58" cy="14" r="5" fill="#FFFFFF" stroke="none"/>' + uRot(58, 50, 3) + '</g>' + uYaz(102, 30, "ω", 18); },
+    spring: function () { return '<path d="M20 8 H110" stroke-width="4"/><path d="M65 8 V16 L52 22 L78 30 L52 38 L78 46 L52 54 L65 60 V66" stroke-width="2.5"><animate attributeName="d" values="M65 8 V16 L52 22 L78 30 L52 38 L78 46 L52 54 L65 60 V66;M65 8 V12 L52 15 L78 19 L52 23 L78 27 L52 31 L65 34 V40;M65 8 V16 L52 22 L78 30 L52 38 L78 46 L52 54 L65 60 V66" dur="2s" repeatCount="indefinite"/></path><rect x="50" y="66" width="30" height="22" rx="4" fill="#FFFFFF" stroke="none"><animate attributeName="y" values="66;40;66" dur="2s" repeatCount="indefinite"/></rect><path d="M96 30 V90" stroke-width="1.5" stroke-dasharray="3 4" opacity=".6"/>' + uYaz(100, 92, "x(t)", 11); },
+    atom: function () { return '<circle cx="65" cy="50" r="7" fill="#FFFFFF" stroke="none"/><ellipse cx="65" cy="50" rx="44" ry="15" stroke-width="2"/><ellipse cx="65" cy="50" rx="44" ry="15" stroke-width="2" transform="rotate(60 65 50)"/><ellipse cx="65" cy="50" rx="44" ry="15" stroke-width="2" transform="rotate(-60 65 50)"/><circle r="4.5" fill="#FFFFFF" stroke="none">' + uYol("M21 50 A44 15 0 1 1 109 50 A44 15 0 1 1 21 50", 2.4) + '</circle>'; },
+    dna: function () { var a = "", i; for (i = 0; i < 7; i++) { var x = 14 + i * 17; a += '<path d="M' + x + ' 30 V70" stroke-width="2" opacity=".7"><animate attributeName="d" values="M' + x + ' 30 V70;M' + x + ' 46 V54;M' + x + ' 30 V70" dur="3s" begin="' + (i * .25) + 's" repeatCount="indefinite"/></path>'; } return a + '<path class="a-ants" d="M6 30 C 26 30, 40 70, 60 70 S 94 30, 124 30" stroke-dasharray="7 4"/><path class="a-ants" d="M6 70 C 26 70, 40 30, 60 30 S 94 70, 124 70" stroke-dasharray="7 4"/>'; },
+    quill: function () { return '<path d="M10 84 H70" stroke-width="2" opacity=".6"/><path class="a-loop" d="M14 76 C 24 66, 32 82, 42 72 S 58 66, 66 74" stroke-width="2.5"/><g><path d="M70 74 C 76 50, 96 22, 120 10 C 116 34, 96 60, 70 74 Z" fill="#FFFFFF" fill-opacity=".35"/><path d="M70 74 L104 30" stroke-width="2"/>' + uSal(70, 74, 5, 2.4) + '</g>'; },
     flow: function () { var p = "M65 14 L65 41 L65 72 L110 72 L110 41 L90 41"; return '<rect x="42" y="6" width="46" height="16" rx="8"/><path d="M65 22 V32"/><rect x="42" y="32" width="46" height="18" rx="3"/><path d="M65 50 V58"/><path d="M65 58 L84 72 L65 86 L46 72 Z"/><path d="M84 72 H110 V41 H88" stroke-width="2" stroke-dasharray="3 4"/><g>' + uNok(4.5) + uYol(p, 4) + '</g>'; }
   };
   var UNITE_MOTIF = {
     macro: ["ppc", "cycle", "adas", "bank", "phillips", "trade"],
-    micro: ["scale", "=macro", "costu", "monopoly", "labor", "smoke"],
+    micro: ["scale", "shortage", "costu", "monopoly", "labor", "smoke"],
     stats: ["hist", "scatter", "survey", "dice", "sampling", "pie", "ci", "chisq", "slope"],
-    hug: ["=hug", "pyramid", "speech", "borders", "field", "skyline", "factory"],
+    hug: ["compass", "pyramid", "speech", "borders", "field", "skyline", "factory"],
     bpf: ["bulb", "megaphone", "piggy", "orgchart", "target"],
-    calc: ["limit", "=calc", "gears", "car", "extrema", "area", "slopefield", "disks", "rose", "series"],
+    calc: ["limit", "derivgraph", "gears", "car", "extrema", "area", "slopefield", "disks", "rose", "series"],
     psych: ["neuron", "brain", "stairs", "people", "heart"],
     csa: ["objects", "loop", "classbox", "array"],
-    physc: ["projectile", "forces", "coaster", "circuit"],
+    physc: ["projectile", "forces", "coaster", "collision", "torque", "spinner", "spring"],
     precalc: ["mapping", "parabola", "wiggle", "unitcircle", "expo", "flow"],
     chem: ["imf", "flask", "molegrid", "gasbox", "beaker"],
     phys: ["forces", "coaster", "circuit", "wave"],
@@ -305,7 +315,7 @@
   }
   function uniteRenk(ders, unit) { return uniteTonu(COLORS[(C && C.DEFTER_DERS[ders] && C.DEFTER_DERS[ders].renk) || (C && C.DERSLER && C.DERSLER[ders] && (C.DERSLER[ders].renk || C.DERSLER[ders].art)) || ders] || COLORS.macro, unit); }
   /* ders kartı çizimi: ortak belge simgesi yerine dersin kendi motifi */
-  var DERS_MOTIF = { chem: "flask", bio: "leaf", eng: "book", precalc: "unitcircle", phys: "wave" };
+  var DERS_MOTIF = { chem: "atom", bio: "dna", eng: "quill", precalc: "rose", phys: "spinner" };
   function dersCizimi(ders, color) {
     var m = DERS_MOTIF[ders]; if (m && MOTIF[m]) return uSvg(MOTIF[m](color));
     var D = C && C.DEFTER_DERS[ders]; return art((D && D.art) || ders, color);
