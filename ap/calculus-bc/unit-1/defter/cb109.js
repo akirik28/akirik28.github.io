@@ -109,7 +109,7 @@ window.DEFTER = {
           durumlar: [
             { metin: "x büyüdükçe 3x²/6x² baskın olur. (Kesikli mor çizgi: gerçek x ekseni, y = 0.)" },
             { metin: "x = 10'da 0,4160; x = 100'de 0,4917; x = 1000'de 0,4992: değerler 1/2'ye sokulur.", goster: ["p"] },
-            { metin: "y = 1/2 bir ==yatay asimptot==; eğri ona asla tam değmeden yaklaşır.", goster: ["ha", "th"] }
+            { metin: "y = 1/2 bir ==yatay asimptot==; x > 0 tarafında eğri ona hep alttan yaklaşır (x = −0,1'de ise asimptotu keser).", goster: ["ha", "th"] }
           ]
         }
       ]
@@ -215,7 +215,7 @@ window.DEFTER = {
         },
         {
           tip: "tuzak",
-          metin: "Karekök her zaman pozitiftir. Bu yüzden x negatifken √(x²) değeri −x'tir, x değil.",
+          metin: "Karekök hiçbir zaman negatif olmaz. Bu yüzden x negatifken √(x²) değeri −x'tir, x değil.",
           yanlis: "√(x²) = x, her iki uçta da aynı asimptot.",
           dogru: "√(x²) = |x|; x → −∞'da |x| = −x ve asimptot −3/2."
         }
@@ -321,7 +321,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "e sayısı ve 1^∞ belirsizliği",
+      baslik: "e sayısı ve 1^∞ belirsizliği (bonus)",
       kisa: "(1 + 1/x)ˣ, x → ∞ iken e ≈ 2,718'e gider; 1^∞ belirsizdir.",
       bloklar: [
         {

@@ -238,7 +238,7 @@ window.DEFTER = {
               baslik: "cos y'yi x cinsinden yaz",
               metin: "Dik üçgen: karşı kenar x, hipotenüs 1, komşu kenar √(1 − x²). Yani cos y = √(1 − x²)."
             },
-            { baslik: "Sonuç", metin: "dy/dx = 1/√(1 − x²). Kökün önüne eksi gelmez: bu aralıkta cos y ≥ 0." }
+            { baslik: "Sonuç", metin: "dy/dx = 1/√(1 − x²), −1 < x < 1. Kökün önüne eksi gelmez: bu aralıkta cos y ≥ 0 (x = ±1'de cos y = 0 olur, türev yoktur)." }
           ]
         },
         {

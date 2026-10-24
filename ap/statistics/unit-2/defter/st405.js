@@ -39,7 +39,7 @@ window.DEFTER = {
           durumlar: [
             { metin: "A şeridi karenin %60'ını kaplıyor: P(A) = 0,6. Dikey şerit, tam yükseklikte.", goster: ["a", "ya"] },
             { metin: "B şeridi yatay ve karenin %50'sini kaplıyor: P(B) = 0,5. Şerit hem A'nın içinde hem dışında aynı oranda.", goster: ["b", "yb"] },
-            { metin: "A'nın içinde B yine yarısı: P(B | A) = 3/6 = 0,5 = P(B). Kesişim 6 × 5 = 30 birim, yani ==0,6 × 0,5 = 0,30==.", goster: ["kes", "yk"] }
+            { metin: "A'nın içinde B yine yarısı: P(B | A) = 30/60 = 0,5 = P(B). Kesişim 6 × 5 = 30 birim, yani ==0,6 × 0,5 = 0,30==.", goster: ["kes", "yk"] }
           ] },
         { tip: "formul", parcalar: [{ t: "P(B | A)", alt: "A verilmişken B" }, "=", { t: "P(B)", alt: "A'dan bağımsız B" }], aciklama: "Bu, bağımsızlığın tanımıdır. Üç ifade denktir: P(B | A) = P(B), P(A | B) = P(A) ve P(A ve B) = P(A) × P(B). Birini göstermek yeter." }
       ]
@@ -87,7 +87,7 @@ window.DEFTER = {
         { tip: "ornek", baslik: "İki bağımsız şans", durum: "Deniz'in bir testten geçme olasılığı 0,6, Ece'nin 0,5; testler birbirinden bağımsız. En az birinin geçme olasılığı nedir?",
           adimlar: ["Formülle: P(A veya B) = 0,6 + 0,5 − 0,6 × 0,5 = 1,1 − 0,3 = 0,8.", "Kısa yol: hiçbiri geçmez = (1 − 0,6) × (1 − 0,5) = 0,4 × 0,5 = 0,2.", "En az biri = 1 − 0,2 = 0,8."],
           sonuc: "P(en az biri geçer) = ==0,8==. İki yol da aynı sonucu verir." },
-        { tip: "ornek", baslik: "Ayran kapağına dönüş", durum: "4.1'deki ayran sorusunu hesapla: her kapağın ödüllü olma olasılığı 0,2 ve kapaklar bağımsız. 4 ayrandan en az birinden ödül çıkma olasılığı nedir?",
+        { tip: "ornek", baslik: "Ayran kapağına dönüş", durum: "2.3'teki (Rastgelelik ve Simülasyon) ayran sorusunu hesapla: her kapağın ödüllü olma olasılığı 0,2 ve kapaklar bağımsız. 4 ayrandan en az birinden ödül çıkma olasılığı nedir?",
           adimlar: ["Bir kapağın ödülsüz olma olasılığı 1 − 0,2 = 0,8.", "Dördünün de ödülsüz olması (bağımsız): 0,8 × 0,8 × 0,8 × 0,8 = 0,8⁴ = 0,4096.", "En az bir ödül = 1 − 0,4096 = 0,5904."],
           sonuc: "P(en az bir ödül) = 0,5904 ≈ ==0,59==. Simülasyondaki tahmin (6/10 = 0,6) bu değere yakındı." }
       ]

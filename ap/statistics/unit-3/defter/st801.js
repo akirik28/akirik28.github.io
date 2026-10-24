@@ -9,7 +9,7 @@ window.DEFTER = {
       kisa: "Gözlenen sayılar, iddia doğruysa beklenen sayılardan şansla ne kadar uzaklaşır?",
       bloklar: [
         { tip: "hikaye", ikon: "🥪", baslik: "Kantinin iddiası",
-          metin: "Kantin müdürü diyor ki: “Satılan tostların %40’ı kaşarlı, %30’u sucuklu, %20’si karışık, %10’u vegan.” Bir hafta boyunca 200 tost sayıyorsun: 70 kaşarlı, 72 sucuklu, 38 karışık, 20 vegan. ==Bu fark şans eseri mi, yoksa iddia mı yanlış?==" },
+          metin: "Kantin müdürü diyor ki: “Satılan tostların %40’ı kaşarlı, %30’u sucuklu, %20’si karışık, %10’u vegan.” Bir haftanın satışları arasından rastgele 200 tost seçiyorsun: 70 kaşarlı, 72 sucuklu, 38 karışık, 20 vegan. ==Bu fark şans eseri mi, yoksa iddia mı yanlış?==" },
         { tip: "kavramlar", kartlar: [
             { ikon: "🔢", terim: "Observed count", tr: "gözlenen sayı", tanim: "Örneklemde gerçekten saydığın sayı.", ornek: "200 tostun 70’i kaşarlı çıktı." },
             { ikon: "🎯", terim: "Expected count", tr: "beklenen sayı", tanim: "İddia doğru olsaydı ortalamada bekleyeceğin sayı. Tam sayı olmak zorunda değil.", ornek: "%40 iddiasıyla 200 tostta 80 kaşarlı beklenir." },
@@ -130,7 +130,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Kapsam dışı konunun özeti (2026-27 sınavında sorulmaz).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Uyum iyiliği testi, tek bir kategorik değişkenin dağılımını iddia edilen dağılımla kıyaslar (üç ya da daha çok kategori).",

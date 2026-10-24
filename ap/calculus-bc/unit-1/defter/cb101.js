@@ -38,11 +38,11 @@ window.DEFTER = {
             { metin: "Q = (1,5; 11,25) olunca eğim 12,5.", set: { sek: { from: [0.8, 2.5], to: [2, 17.5] }, q: { x: 1.5, y: 11.25 }, m: { metin: "eğim = 12,5" } } },
             { metin: "Q = (1,1; 6,05): eğim 10,5.", set: { sek: { from: [0.8, 2.9], to: [2, 15.5] }, q: { x: 1.1, y: 6.05 }, m: { metin: "eğim = 10,5" } } },
             { metin: "Q = (1,01; 5,1005): eğim 10,05. Doğru artık eğriye yapışıyor.", set: { sek: { from: [0.8, 2.99], to: [2, 15.05] }, q: { x: 1.01, y: 5.1005 }, m: { metin: "eğim = 10,05" } } },
-            { metin: "Sınırda doğru eğriye tek noktada dokunan **teğet**e oturur: eğimi ==10==.", set: { sek: { from: [0.8, 3], to: [2, 15] }, m: { metin: "teğet: eğim = 10" } }, gizle: ["q"] }
+            { metin: "Sınırda doğru P'deki **teğet**e oturur: eğimi ==10==.", set: { sek: { from: [0.8, 3], to: [2, 15] }, m: { metin: "teğet: eğim = 10" } }, gizle: ["q"] }
           ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "✂️", terim: "Secant line", tr: "sekant (kesen) doğru", tanim: "Eğrinin iki noktasından geçen doğru. Eğimi ortalama değişim hızıdır.", ornek: "P = (1, 5) ve Q = (2, 20) arasındaki doğrunun eğimi 15." },
-            { ikon: "🎯", terim: "Tangent line", tr: "teğet doğru", tanim: "Eğriye bir noktada dokunan doğru. Eğimi anlık değişim hızıdır (türev, Unit 2).", ornek: "P = (1, 5) noktasındaki teğetin eğimi 10." }
+            { ikon: "🎯", terim: "Tangent line", tr: "teğet doğru", tanim: "Sekant doğruların, ikinci nokta P'ye yaklaşırken oturduğu sınır doğru. Eğimi anlık değişim hızıdır (türev, Unit 2).", ornek: "P = (1, 5) noktasındaki teğetin eğimi 10." }
           ] }
       ]
     },
@@ -71,7 +71,7 @@ window.DEFTER = {
           rows: [["f(x)", "5,9", "5,99", "5,999", "tanımsız", "6,001", "6,01", "6,1"]], not: "Soldan da sağdan da değerler 6'ya yaklaşıyor." },
         { tip: "kavramlar", kartlar: [
             { ikon: "🧭", terim: "Limit", tr: "limit", tanim: "lim(x→3) f(x) = 6: x'i 3'e yeterince yakın (ama 3'e eşit olmayan) seçersen f(x)'i 6'ya istediğin kadar yaklaştırırsın. Limit bir **gerçel sayıdır**.", ornek: "lim(x→3) (x² − 9)/(x − 3) = 6" },
-            { ikon: "🕳️", terim: "Hole", tr: "delik", tanim: "Fonksiyonun tanımsız olduğu ama çevresinin tek bir noktaya gittiği yer. Limiti engellemez.", ornek: "(3, 6) noktasında açık daire." },
+            { ikon: "🕳️", terim: "Hole", tr: "delik", tanim: "Grafikte tek bir noktanın eksik olduğu yer: çevredeki değerler o noktaya gider ama grafik o noktadan geçmez (f(c) tanımsız ya da başka yerde olabilir). Limiti engellemez.", ornek: "(3, 6) noktasında açık daire." },
             { ikon: "🎭", terim: "Indeterminate form 0/0", tr: "belirsiz biçim 0/0", tanim: "Yerine koyunca çıkan 0/0 bir cevap değil, bir ipucudur: altında limit saklı olabilir.", ornek: "x = 3 koyunca 0/0 çıktı; sadeleştirince limit 6." }
           ] },
         { tip: "tuzak", metin: "0/0 gördüğünde durma. Sadeleştir ve yeniden bak; yerine koymanın sonucu 0/0 ise limit hakkında henüz hiçbir şey bilmiyorsun.", yanlis: "0/0 çıktı, o halde limit yok (ya da limit 0).", dogru: "0/0 bir *indeterminate form*; çalışmaya devam etme işareti." }

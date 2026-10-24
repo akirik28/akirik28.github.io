@@ -27,7 +27,7 @@ window.DEFTER = {
           durumlar: [
             { metin: "Sekiz öğrencinin (çalışma saati, quiz doğru sayısı) noktaları: pozitif, doğrusal bir örüntü." },
             { metin: "Noktalara uyan doğru ŷ = 1 + x. Doğru noktaların hepsinden geçmez; örüntünün özetidir.", goster: ["ln", "lbl"] },
-            { metin: "Tahmin: x = 6 saat için ŷ = 1 + 6 = 7 doğru. Mert aslında 8 yapmış; tahmin gerçekten farklı.", goster: ["pr"] }
+            { metin: "Tahmin: x = 6 saat için ŷ = 1 + 6 = 7 doğru. Bu veride 6 saat çalışan öğrenci aslında 8 yapmış; tahmin gerçekten farklı.", goster: ["pr"] }
           ] }
       ]
     },

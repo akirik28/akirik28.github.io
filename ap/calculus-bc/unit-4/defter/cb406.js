@@ -31,7 +31,7 @@ window.DEFTER = {
             { t: "lim f′(x) / g′(x)", alt: "ayrı ayrı türevler" }
           ], aciklama: "Sağdaki limit sayı ya da ±∞ olarak varsa soldaki de aynı değerdir. ==Sağdaki limit yine 0/0 ya da ∞/∞ çıkarsa kuralı yeniden uygulayabilirsin.==" },
         { tip: "adimlar", baslik: "Her L'Hôpital sorusunda", adimlar: [
-            { baslik: "Yerine koy", metin: "Limit değerini yaz; 0/0 ya da ∞/∞ mi, kontrol et." },
+            { baslik: "Yerine koy", metin: "Pay ve paydanın limitlerini AYRI AYRI yaz (örn. lim (x² − 4) = 0 ve lim (x − 2) = 0); ikisi de 0 ya da ikisi de ±∞ ise kural uygulanır. \"= 0/0\" bir değer değildir, eşitlik olarak yazma." },
             { baslik: "Pay ve paydayı ayrı türet", metin: "f′(x) ve g′(x) bul; bölüm kuralı kullanma." },
             { baslik: "Yeni oranın limitini al", metin: "Tekrar yerine koy. Sayı çıktıysa bitti, yine belirsizse kuralı tekrarla." }
           ] },
@@ -91,8 +91,8 @@ window.DEFTER = {
         { tip: "grafik", baslik: "f(x) = ln x / x", xlabel: "x", ylabel: "y", xmax: 20, ymax: 0.5,
           xticks: [{ v: 5, label: "5" }, { v: 10, label: "10" }, { v: 15, label: "15" }, { v: 20, label: "20" }], yticks: [{ v: 0.1, label: "0,1" }, { v: 0.3, label: "0,3" }, { v: 0.5, label: "0,5" }],
           ogeler: [
-            { id: "c", tip: "egri", renk: 0, noktalar: [[1, 0], [2, 0.347], [3, 0.366], [4, 0.347], [5, 0.322], [6, 0.299], [7, 0.278], [8, 0.26], [9, 0.244], [10, 0.23], [11, 0.218], [12, 0.207], [13, 0.197], [14, 0.189], [15, 0.181], [16, 0.173], [17, 0.167], [18, 0.161], [19, 0.155], [20, 0.15]] },
-            { id: "p1", tip: "nokta", renk: 2, x: 3, y: 0.366, etiket: "en yüksek ≈ 0,37", gizli: true },
+            { id: "c", tip: "egri", renk: 0, noktalar: [[1, 0], [2, 0.347], [2.718, 0.368], [3, 0.366], [4, 0.347], [5, 0.322], [6, 0.299], [7, 0.278], [8, 0.26], [9, 0.244], [10, 0.23], [11, 0.218], [12, 0.207], [13, 0.197], [14, 0.189], [15, 0.181], [16, 0.173], [17, 0.167], [18, 0.161], [19, 0.155], [20, 0.15]] },
+            { id: "p1", tip: "nokta", renk: 2, x: 2.718, y: 0.368, etiket: "en yüksek ≈ 0,37", gizli: true },
             { id: "p2", tip: "nokta", renk: 3, x: 10, y: 0.23, etiket: "0,23", gizli: true },
             { id: "p3", tip: "nokta", renk: 1, x: 20, y: 0.15, etiket: "0,15", gizli: true }
           ],
@@ -160,7 +160,7 @@ window.DEFTER = {
       baslik: "Kuralın sınırları",
       kisa: "Biçim belirsiz değilse ya da oranın limiti yoksa kural sonuç vermez.",
       bloklar: [
-        { tip: "ikili", sol: { ikon: "✅", baslik: "*Uygulanır*", maddeler: ["Yerine koyunca 0/0 ya da ∞/∞", "Pay ve payda türevlenebilir"] },
+        { tip: "ikili", sol: { ikon: "✅", baslik: "*Uygulanır*", maddeler: ["Yerine koyunca 0/0 ya da ∞/∞", "Pay ve payda türevlenebilir, g′(x) ≠ 0 (a'nın yakınında)"] },
           sag: { ikon: "🚫", baslik: "*Uygulanmaz*", maddeler: ["Yerine koyunca sayı ya da k/0 çıkar", "Önce yerine koy; çözüm orada olabilir"] },
           oyun: [
             { metin: "lim sin x / x, x → 0", cevap: "sol", neden: "0/0 biçimi." },

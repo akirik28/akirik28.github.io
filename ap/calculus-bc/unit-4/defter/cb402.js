@@ -12,7 +12,7 @@ window.DEFTER = {
             { t: "x(t)", alt: "konum" }, "→",
             { t: "v(t) = x′(t)", alt: "hız" }, "→",
             { t: "a(t) = v′(t) = x″(t)", alt: "ivme" }
-          ], aciklama: "Her adımda bir kez türev alırsın. Ters yönde, ivmeden hıza ve hızdan konuma, integral gider (Unit 6'da)." },
+          ], aciklama: "Her adımda bir kez türev alırsın. Ters yönde, ivmeden hıza ve hızdan konuma, integral gider (integral Unit 6'da, hareket uygulamaları Unit 8'de)." },
         { tip: "kavramlar", kartlar: [
             { ikon: "📍", terim: "Position", tr: "konum", tanim: "Cismin sayı doğrusu üzerinde t anındaki yeri: x(t).", ornek: "x(2) = 5: 2. saniyede cisim 5 m noktasında." },
             { ikon: "➡️", terim: "Velocity", tr: "hız (yönlü)", tanim: "Konumun değişim hızı, v(t) = x′(t). İşareti yönü, büyüklüğü hızlılığı verir.", ornek: "v = −3: cisim negatif yönde saniyede 3 m gidiyor." },

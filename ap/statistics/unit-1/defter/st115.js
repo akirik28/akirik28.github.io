@@ -84,7 +84,7 @@ window.DEFTER = {
             "Hasta bilirse: *placebo effect* sonuçları bozar.",
             "Doktor bilirse: farkında olmadan ilaç alan gözü daha iyileşmiş görür.",
             "İkisi de bilmezse ölçüm tarafsız kalır.",
-            "Tohum, fare, makine gibi birimler zaten bilmez; araştırmacı da bilmiyorsa deney double-blind sayılır."
+            "Tohum, fare, makine gibi birimlerde placebo etkisi olmaz; bu deneylerde önemli olan, yanıtı ölçen kişinin kimin hangi treatment'ı aldığını bilmemesidir (blinding)."
           ],
           sonuc: "*Double-blind*: hem hasta hem değerlendiren doktor kör. Cevapta iki tarafı da yaz: “Neither the subjects nor those measuring the response know who got which treatment.”" }
       ]
@@ -148,7 +148,7 @@ window.DEFTER = {
             "Tam 10 yazı gelen atış dizisi sayısı: C(20,10) = 184 756.",
             "Tüm olası diziler: 2²⁰ = 1 048 576.",
             "Olasılık: 184 756 ÷ 1 048 576 ≈ 0.1762, yani yaklaşık %18.",
-            "Örneğin 12'ye 8 gibi eşit olmayan bölünmeler çok daha olası."
+            "Eşit olmayan bir bölünme (11–9, 12–8, …) gelme olasılığı toplamda yaklaşık %82."
           ],
           sonuc: "Tam 10–10 bölünme olasılığı yalnızca yaklaşık %18." },
         { tip: "ikili",

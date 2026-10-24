@@ -20,7 +20,7 @@ window.KIT = {
       "code": "4.2",
       "slug": "st701",
       "title": "Ortalama İçin Güven Aralığı (t)",
-      "en": "Should I Worry About Error? Constructing a Confidence Interval for a Mean",
+      "en": "Constructing a Confidence Interval for a Population Mean or Population Mean Difference",
       "accent": "#E86A92",
       "questions": []
     },
@@ -29,7 +29,7 @@ window.KIT = {
       "code": "4.3",
       "slug": "st702",
       "title": "Güven Aralığıyla Ortalama Hakkında İddia",
-      "en": "Justifying a Claim About a Population Mean Based on a Confidence Interval",
+      "en": "Justifying a Claim Based on a Confidence Interval for a Population Mean or Population Mean Difference",
       "accent": "#5BC0EB",
       "questions": []
     },
@@ -38,7 +38,7 @@ window.KIT = {
       "code": "4.4–4.5",
       "slug": "st703",
       "title": "Ortalama İçin t Testi",
-      "en": "Setting Up and Carrying Out a Test for a Population Mean",
+      "en": "Setting Up and Carrying Out a Test for a Population Mean or Population Mean Difference",
       "accent": "#9BC53D",
       "questions": []
     },
@@ -47,7 +47,7 @@ window.KIT = {
       "code": "4.2–4.5",
       "slug": "st704",
       "title": "Eşleştirilmiş Veri",
-      "en": "Paired Data (Matched Pairs) Inference",
+      "en": "Paired Data: Population Mean Difference",
       "accent": "#F25F5C",
       "questions": []
     },
@@ -56,7 +56,7 @@ window.KIT = {
       "code": "4.6",
       "slug": "st507",
       "title": "Ortalama Farkının Dağılımı",
-      "en": "Sampling Distributions for Differences in Sample Means",
+      "en": "Sampling Distributions for the Difference Between Two Sample Means",
       "accent": "#F6B94A",
       "questions": []
     },
@@ -65,7 +65,7 @@ window.KIT = {
       "code": "4.7–4.8",
       "slug": "st705",
       "title": "İki Ortalama Farkı İçin Güven Aralığı",
-      "en": "Confidence Intervals for the Difference of Two Means",
+      "en": "Confidence Intervals for the Difference Between Two Population Means",
       "accent": "#7C95FF",
       "questions": []
     },
@@ -74,7 +74,7 @@ window.KIT = {
       "code": "4.9–4.10",
       "slug": "st706",
       "title": "İki Ortalama Farkı Testi",
-      "en": "Setting Up and Carrying Out a Test for the Difference of Two Means",
+      "en": "Setting Up and Carrying Out a Test for the Difference Between Two Population Means",
       "accent": "#3FB5A0",
       "questions": []
     },

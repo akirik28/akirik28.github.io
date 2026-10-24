@@ -56,7 +56,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "tablo", baslik: "Oran prosedürleri (z)", head: ["Prosedür", "Parametre", "SE (aralık)", "Large Counts"], rows: [
             ["1-Prop z", "p", "√( p̂(1 − p̂)/n )", "np̂ ≥ 10 ve n(1 − p̂) ≥ 10 (testte p₀ ile: np₀ ≥ 10, n(1 − p₀) ≥ 10)"],
-            ["2-Prop z", "p₁ − p₂", "√( p̂₁(1 − p̂₁)/n₁ + p̂₂(1 − p̂₂)/n₂ )", "Her grupta başarı ve başarısızlık sayısı ≥ 10 (testte SE'de birleştirilmiş p̂_c)"]
+            ["2-Prop z", "p₁ − p₂", "√( p̂₁(1 − p̂₁)/n₁ + p̂₂(1 − p̂₂)/n₂ )", "Aralıkta: her grupta başarı ve başarısızlık sayısı ≥ 10. Testte: n₁p̂_c, n₁(1 − p̂_c), n₂p̂_c, n₂(1 − p̂_c) ≥ 10 (SE'de de p̂_c kullanılır)."]
           ] },
         { tip: "tablo", baslik: "Ortalama prosedürleri (t)", head: ["Prosedür", "Parametre", "SE", "df"], rows: [
             ["1-Sample t", "μ", "s/√n", "n − 1"],
@@ -159,7 +159,7 @@ window.DEFTER = {
     { q: "Bir antrenör, aynı 15 sporcunun antrenmandan önceki ve sonraki dinlenme nabızlarını ölçüyor ve ortalama nabız değişimi için %95 güven aralığı kurmak istiyor. Hangi prosedür uygundur?",
       opts: ["İki örneklemli *t* aralığı (μ₁ − μ₂)", "İki oranlı *z* aralığı", "Eşleştirilmiş *t* aralığı (farklar üzerinde, μ_d)", "Tek oranlı *z* aralığı"], a: 2,
       why: "Aynı sporcular iki kez ölçüldüğü için veri eşleştirilmiş; her sporcunun farkı alınır ve μ_d için tek örneklemli *t* aralığı kurulur. İki örneklemli *t*, bağımsız iki grup gerektirir." },
-    { q: "Bir araştırmacı, iki farklı sınıftan alınan rastgele örneklemlerde ders kitabını okuyanların oranlarını karşılaştırmak için iki oranlı *z* testi düşünüyor. Özet aşağıdadır. Large Counts koşulu bu veriler için sağlanır mı?",
+    { q: "Bir araştırmacı, iki farklı sınıftan alınan rastgele örneklemlerde ders kitabını okuyanların oranları arasındaki fark için iki oranlı *z* güven aralığı (p₁ − p₂) kurmak istiyor. Özet aşağıdadır. Large Counts koşulu bu veriler için sağlanır mı?",
       fig: { type: "table", head: ["Grup", "n", "Başarı", "Başarısızlık"], rows: [["A sınıfı", "40", "6", "34"], ["B sınıfı", "50", "20", "30"]], caption: "Okuyan / okumayan öğrenci sayıları" },
       opts: ["Evet; her iki grupta n ≥ 30.", "Evet; toplam başarı sayısı 26 ≥ 10.", "Hayır; çünkü iki grubun örneklem büyüklükleri eşit değil.", "Hayır; A sınıfındaki başarı sayısı 10'dan küçük (6)."], a: 3,
       why: "Large Counts her grupta hem başarı hem başarısızlık sayısının ≥ 10 olmasını ister. A sınıfında başarı 6 < 10 olduğu için koşul sağlanmaz. Toplam başarıya bakmak ya da n ≥ 30 aramak yanlıştır." },

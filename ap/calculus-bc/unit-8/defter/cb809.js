@@ -12,7 +12,7 @@ window.DEFTER = {
           tip: "hikaye",
           ikon: "🥾",
           baslik: "Haritada iki nokta",
-          metin: "Haritada iki köy arasındaki kuş uçuşu mesafe 4 km, ama patika virajlarla dolanıyor ve yürüyünce 5 km tutuyor. Patikanın uzunluğunu bulmak için patikayı bir ip gibi düzeltip ölçmen gerekir. Eğrinin uzunluğu işte budur: ==arc length==, yani *arc length*."
+          metin: "Haritada iki köy arasındaki kuş uçuşu mesafe 4 km, ama patika virajlarla dolanıyor ve yürüyünce 5 km tutuyor. Patikanın uzunluğunu bulmak için patikayı bir ip gibi düzeltip ölçmen gerekir. Eğrinin uzunluğu işte budur: ==yay uzunluğu==, yani *arc length*."
         },
         {
           tip: "kavramlar",

@@ -304,7 +304,7 @@ window.DEFTER = {
           },
           oyun: [
             {
-              metin: "Bir araç konumdan ibaretken hızının ortalama değeri.",
+              metin: "Aracın yalnızca konum fonksiyonu s(t) biliniyor; [a, b]'deki ortalama hızı (s(b) − s(a))/(b − a).",
               cevap: "sag",
               neden: "Konumun ortalama değişim hızı = hızın ortalama değeri."
             },

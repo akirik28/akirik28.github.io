@@ -38,10 +38,10 @@ window.DEFTER = {
             { t: "C(n, x)", alt: "x başarının yerleşme sayısı" }, "·",
             { t: "p^x", alt: "x başarı" }, "·",
             { t: "(1 − p)^(n − x)", alt: "kalanlar başarısız" }
-          ], aciklama: "C(n, x) = n! ÷ (x! (n − x)!). Hesap makinesinde nCr tuşu ya da binompdf kullanılır; sınavda ikisi de kabul edilir." },
+          ], aciklama: "C(n, x) = n! ÷ (x! (n − x)!). Hesap makinesinde nCr tuşu ya da binompdf kullanılır. Sınavda yalnızca komutu yazmak yetmez: dağılımı ve parametreleri adlandır (X ~ Binomial(n = 5, p = 0,6), P(X = 3)), sonra değeri yaz." },
         { tip: "ornek", baslik: "Deniz 5 atışta tam 3 isabet", durum: "Deniz'in her serbest atışı %60 isabet (p = 0,6), 5 atış yapıyor. Tam 3 isabet olasılığı nedir?",
           adimlar: ["BINS tamam: n = 5, p = 0,6, x = 3.", "Yol sayısı: C(5, 3) = 10.", "Üç isabet: 0,6³ = 0,216. İki ıska: 0,4² = 0,16.", "P(X = 3) = 10 · 0,216 · 0,16 = 0,3456."],
-          sonuc: "P(X = 3) = 0,3456. Yani 5 atışın yaklaşık %34,6'sında tam 3 isabet olur." }
+          sonuc: "P(X = 3) = 0,3456. Yani Deniz çok sayıda 5'lik atış serisi yaparsa, serilerin yaklaşık %34,6'sında tam 3 isabet olur." }
       ]
     },
     {
@@ -75,7 +75,7 @@ window.DEFTER = {
             { metin: "Altı çubuk: 0, 1, 2, 3, 4, 5 isabet. Her biri formülle hesaplanır.", set: { b0: { noktalar: [[0.65, 0], [1.35, 0], [1.35, 0.1024], [0.65, 0.1024]] }, b1: { noktalar: [[1.65, 0], [2.35, 0], [2.35, 0.768], [1.65, 0.768]] }, b2: { noktalar: [[2.65, 0], [3.35, 0], [3.35, 2.304], [2.65, 2.304]] }, b3: { noktalar: [[3.65, 0], [4.35, 0], [4.35, 3.456], [3.65, 3.456]] }, b4: { noktalar: [[4.65, 0], [5.35, 0], [5.35, 2.592], [4.65, 2.592]] }, b5: { noktalar: [[5.65, 0], [6.35, 0], [6.35, 0.7776], [5.65, 0.7776]] } }, goster: ["v0", "v1", "v2", "v3", "v4", "v5"] },
             { metin: "Tam 3 isabet: en yüksek çubuk, 0,3456.", goster: ["h3", "e3"] },
             { metin: "\"En az 4\" olayı: 4 ve 5 çubuklarını topla: ==0,2592 + 0,0778 ≈ 0,337==.", gizle: ["h3", "e3"], goster: ["h4", "h5", "e4"] },
-            { metin: "Ortalama μ = np = 5 · 0,6 = 3: dağılımın dengesi 3. çubukta.", gizle: ["h4", "h5", "e4"], goster: ["mu"] }
+            { metin: "Ortalama μ = np = 5 · 0,6 = 3: dağılım x = 3 çubuğunda dengede.", gizle: ["h4", "h5", "e4"], goster: ["mu"] }
           ] },
         { tip: "tablo", baslik: "Hesap makinesi (TI-84) komutları", head: ["Olasılık", "Komut"], rows: [
             ["P(X = x)", "binompdf(n, p, x)"],
@@ -83,7 +83,7 @@ window.DEFTER = {
             ["P(X < x)", "binomcdf(n, p, x − 1)"],
             ["P(X ≥ x)", "1 − binomcdf(n, p, x − 1)"],
             ["P(X > x)", "1 − binomcdf(n, p, x)"]
-          ], not: "Sınavda yazarken komutla birlikte n, p ve x değerlerini göster: binompdf(5, 0.6, 3)." },
+          ], not: "Sınavda komutu tek başına yazma; dağılımı ve parametreleri etiketle: X ~ Binomial(n = 5, p = 0,6), P(X = 3) = binompdf(n = 5, p = 0.6, x = 3) ≈ 0,346." },
         { tip: "ornek", baslik: "En az 4 isabet", durum: "Aynı Deniz: n = 5, p = 0,6. Tüm P(4) ve P(5)'i hesaplamadan P(X ≥ 4) nasıl bulunur?",
           adimlar: ["\"En az 4\" = 1 − (3 ya da daha az).", "P(X ≤ 3) = binomcdf(5, 0.6, 3) = 0,01024 + 0,0768 + 0,2304 + 0,3456 = 0,66304.", "P(X ≥ 4) = 1 − 0,66304 = 0,33696."],
           sonuc: "P(X ≥ 4) ≈ 0,337. Doğrudan toplama (0,2592 + 0,07776) da aynı sonucu verir." }
@@ -100,11 +100,11 @@ window.DEFTER = {
         { tip: "formul", parcalar: [
             { t: "σ_X", alt: "standart sapma" }, "=",
             { t: "√( n · p · (1 − p) )", alt: "np(1−p) varyanstır" }
-          ], aciklama: "Bu iki formül yalnız binom (BINS tamam) için geçerli. Genel formül Σ x · P(x) her dağılım için çalışır ama burada gerekmez." },
+          ], aciklama: "σ = √(np(1−p)) formülü yalnız binom (BINS tamam) için geçerli. Genel formül Σ x · P(x) her dağılım için çalışır ama burada gerekmez." },
         { tip: "ornek", baslik: "Atış sayısı için μ ve σ", durum: "Deniz'in 5 atışında isabet sayısı X ~ Binomial(5; 0,6). Ortalama ve standart sapma kaçtır? Yorumla.",
           adimlar: ["μ_X = np = 5 · 0,6 = 3 isabet. (Tablodan Σ x · P(x) = 3 çıkar; kontrol.)", "σ_X = √(5 · 0,6 · 0,4) = √1,2 ≈ 1,10 isabet.", "Yorum: Çok sayıda 5'li atış serisinde ortalama isabet 3'e yaklaşır; tek bir serinin isabet sayısı 3'ten tipik olarak yaklaşık 1,1 uzaktadır."],
           sonuc: "μ_X = 3, σ_X ≈ 1,10. Bağlamla yorumla: \"uzun vadede\" ve \"tipik olarak\"." },
-        { tip: "tuzak", baslik: "Binom formülünü her yere yapıştırma", metin: "μ = np ve σ = √(np(1−p)) yalnızca X gerçekten binomsa geçerli. Önce BINS'i kontrol et.", yanlis: "Torbadan geri koymadan çekilen kırmızı bilye sayısı için de μ = np kullanılır.", dogru: "Bağımsızlık bozuksa (iadesiz çekim, küçük popülasyon) bu formüller kullanılamaz. Genel yol: tabloyla Σ x · P(x)." }
+        { tip: "tuzak", baslik: "Binom formülünü her yere yapıştırma", metin: "Binom formüllerini (olasılık formülü ve σ = √(np(1−p))) yalnızca X gerçekten binomsa kullan. Önce BINS'i kontrol et.", yanlis: "Torbadan geri koymadan çekilen kırmızı bilye sayısı için de σ = √(np(1−p)) kullanılır.", dogru: "Bağımsızlık bozuksa (iadesiz çekim, küçük popülasyon) X binom değildir: binom olasılık formülü ve σ = √(np(1−p)) kullanılamaz. Genel yol: dağılım tablosunu kurup Σ x · P(x) ve Σ (x − μ)² · P(x) hesaplamak." }
       ]
     },
     {
@@ -133,7 +133,7 @@ window.DEFTER = {
             "p < 0,5 sağa çarpık, p = 0,5 simetrik, p > 0,5 sola çarpık; n büyüdükçe daha simetrik.",
             "Başarı, saymak istediğin sonuçtur; olumlu olması gerekmez.",
             "İadesiz seçimde n ≤ N'in %10'u ise bağımsızlık yaklaşık sağlanır (10% koşulu).",
-            "İlk başarıya kadar sayıyorsan binom değil, geometrik dağılım (sonraki konu)."
+            "İlk başarıya kadar sayıyorsan X binom değildir (n sabit değil); bu geometrik bir durumdur ve 2026-27 sınavında sorulmaz."
           ] }
       ]
     }

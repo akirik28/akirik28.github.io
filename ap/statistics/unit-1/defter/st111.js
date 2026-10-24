@@ -43,7 +43,7 @@ window.DEFTER = {
             { metin: "Kıyıya gitme sıklığı sağlığı etkiler mi? Kıyıya gitme sıklığı.", cevap: "sol", neden: "Etkisini merak ettiğimiz değişken." },
             { metin: "D vitamini düzeyi diyabet durumunu etkiler mi? Diyabet durumu.", cevap: "sag", neden: "Sonuç ölçülen değişken: *response*." }
           ] },
-        { tip: "tuzak", baslik: "Eski adlar ve eksik tanım", metin: "AP'de “*independent*” ve “*dependent*” denmez; istatistikte başka anlamları var. Değişkeni tanımlarken ölçülen şeyi yaz.", yanlis: "“Independent variable: uyku süresi.” ya da “Explanatory variable: the coast.”", dogru: "“Explanatory variable: uyku süresi.” ya da “Explanatory variable: how often they visit the coast.”" }
+        { tip: "tuzak", baslik: "Eski adlar ve eksik tanım", metin: "AP'de “*explanatory*” ve “*response*” kullanılır; “*independent*” sözcüğünün istatistikte başka bir anlamı (bağımsız olaylar) var, karışıklık yaratır. Değişkeni tanımlarken ölçülen şeyi yaz.", yanlis: "“Independent variable: uyku süresi.” ya da “Explanatory variable: the coast.”", dogru: "“Explanatory variable: uyku süresi.” ya da “Explanatory variable: how often they visit the coast.”" }
       ]
     },
     {
@@ -96,7 +96,7 @@ window.DEFTER = {
             { ikon: "📋", terim: "Survey", tr: "anket", tanim: "İnsanlara standart bir soru seti sorarak veri toplayan *observational study*.", ornek: "200 liseliye telefon süresini ve not ortalamasını sormak." }
           ] },
         { tip: "ikili", ayirici: "vs",
-          sol: { ikon: "🧪", baslik: "*Experiment*", maddeler: ["Araştırmacı *treatment* atar", "Neden-sonuç için en güvenilir yol", "“causes”, “leads to” diyebilirsin"] },
+          sol: { ikon: "🧪", baslik: "*Experiment*", maddeler: ["Araştırmacı *treatment* atar", "Neden-sonuç için en güvenilir yol", "Rastgele atama yapıldıysa “causes”, “leads to” diyebilirsin"] },
           sag: { ikon: "🔭", baslik: "*Observational study*", maddeler: ["*Treatment* yok, yalnızca gözlem", "Neden-sonuç çıkmaz", "“associated with”, “tend to” de"] },
           oyun: [
             { metin: "Arkadaşlarına geceleri kaç saat uyuduklarını sorup quiz puanlarıyla karşılaştırmak.", cevap: "sag", neden: "Kimse atanmadı; uyku süresini herkes kendisi seçti." },
@@ -167,7 +167,7 @@ window.DEFTER = {
     },
     {
       baslik: "Neden-sonuç ne zaman söylenir?",
-      kisa: "Neden-sonuç yalnızca experiment'ten çıkar; gözlemde “ilişkili” de.",
+      kisa: "Neden-sonuç yalnızca rastgele atamalı experiment'ten çıkar; gözlemde “ilişkili” de.",
       bloklar: [
         { tip: "ornek", baslik: "Telefon ve notlar", durum: "Bir araştırmacı 200 liseliye günde kaç saat telefon kullandığını ve not ortalamasını soruyor. Telefonu çok kullananların ortalaması daha düşük. Çalışmanın türü ne, hangi sonuç uygun?",
           adimlar: [

@@ -95,7 +95,7 @@ window.DEFTER = {
             ["P(X ≤ k)", "geometcdf(p, k)"],
             ["P(X > k)", "1 − geometcdf(p, k)"],
             ["P(X ≥ k)", "1 − geometcdf(p, k − 1)"]
-          ], not: "Sınavda komutu ve p, k değerlerini yaz: geometpdf(0.25, 3)." },
+          ], not: "Komutu yazarken p ve k'yi etiketle: P(X = 3) = geometpdf(p = 0.25, k = 3). (Bu konu 2026-27 sınavında sorulmaz.)" },
         { tip: "ornek", baslik: "İlk üç alışta kupon, ya da beşten fazla alış", durum: "p = 0,25. (a) Kuponun en çok 3. alışta çıkma olasılığı nedir? (b) 5'ten fazla alış gerekme olasılığı nedir?",
           adimlar: ["(a) P(X ≤ 3) = 1 − 0,75³ = 1 − 0,421875 = 0,578125. Kontrol: 0,25 + 0,1875 + 0,140625 = 0,578125.", "(b) \"5'ten fazla\" = ilk 5 alışta kupon yok: P(X > 5) = 0,75⁵ = 0,2373.", "Her iki durumda tamamlayıcı kural çalışıyor: P(X > k) = (1 − p)^k."],
           sonuc: "(a) ≈ 0,578  (b) ≈ 0,237. \"En çok / en az\" sorularında önce olayın hangi yönde olduğuna bak." }
@@ -121,7 +121,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konunun özeti.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Geometrik değişken: bağımsız, aynı p'li denemelerde ilk başarıya kadar deneme sayısı; X = 1, 2, 3, …",

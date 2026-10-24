@@ -106,7 +106,7 @@ window.DEFTER = {
           ], not: "Rakamlar tekrar edebilir: her ayran kapağı birbirinden bağımsız." },
         { tip: "ornek", baslik: "Ayran kapağı simülasyonu", durum: "Kantindeki ayranların %20'sinin kapağından ödül çıkıyor. Ece 4 ayran alırsa en az birinden ödül çıkma olasılığını simülasyonla tahmin et.",
           adimlar: ["Süreç: 4 ayran almak. Olay: en az bir kapaktan ödül çıkması. Bir deneme = 4 ayran.", "Atama: 0 ve 1 ödüllü (2/10 = 0,2), 2–9 ödülsüz (8/10 = 0,8). Rakamlar tekrar edebilir.", "Deneme: tablodan 4 rakam seç, içinde 0 ya da 1 varsa \"Evet\" yaz. 10 denemeyi tekrarla.", "Sayım: Evet çıkan denemeler 2, 3, 5, 7, 9, 10: toplam 6.", "Tahmin: 6/10 = 0,6."],
-          sonuc: "Tahmini olasılık yaklaşık ==0,6==. Gerçek değer 1 − 0,8⁴ = 0,5904 (4.6'da göreceksin); 10 deneme az olduğu için tahmin tam çıkmadı, deneme sayısı artınca yaklaşır." },
+          sonuc: "Tahmini olasılık yaklaşık ==0,6==. Gerçek değer 1 − 0,8⁴ = 0,5904 (2.7 Bağımsız Olaylar'da göreceksin); 10 deneme az olduğu için tahmin tam çıkmadı, deneme sayısı artınca yaklaşır." },
         { tip: "tuzak", baslik: "Simülasyon bir kanıt değil, tahmin", metin: "Aynı simülasyonu bir daha çalıştırsan 5/10 ya da 7/10 da çıkabilir. Çıkan sayıyı gerçek olasılık gibi sunma ya da tek bir denemeyle sonuç çıkarma.", yanlis: "Simülasyonda 0,6 çıktı, o halde gerçek olasılık tam olarak 0,6'dır.", dogru: "0,6, gerçek olasılığın bir ==tahminidir==; deneme sayısı arttıkça gerçeğe yaklaşır." }
       ]
     },

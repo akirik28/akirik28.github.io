@@ -10,7 +10,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🧮", terim: "Sample mean", tr: "örneklem ortalaması (x̄)", tanim: "Örneklemdeki değerlerin ortalaması; örneklemden örnekleme değişir.", ornek: "25 öğrencinin haftalık harçlıklarının ortalaması." },
-            { ikon: "📐", terim: "Standard error", tr: "standart hata (SE)", tanim: "σ bilinmediğinde σ ÷ √n yerine s ÷ √n ile hesaplanan, x̄'nin SD'sinin tahmini; sonraki ünitelerde kullanılır.", ornek: "s = 18, n = 36: SE = 18 ÷ 6 = 3." }
+            { ikon: "📐", terim: "Standard error", tr: "standart hata (SE)", tanim: "σ bilinmediğinde σ ÷ √n yerine s ÷ √n ile hesaplanan, x̄'nin SD'sinin tahmini; bu ünitenin güven aralığı ve t testi derslerinde kullanılır.", ornek: "s = 18, n = 36: SE = 18 ÷ 6 = 3." }
           ] },
         { tip: "formul", parcalar: [{ t: "μ_x̄", alt: "x̄'nin mean'i" }, "=", { t: "μ", alt: "popülasyon mean'i" }], aciklama: "x̄, μ için yansız bir tahmin edicidir: ortalamada doğru yere toplanır." },
         { tip: "formul", parcalar: [{ t: "σ_x̄", alt: "x̄'nin SD'si" }, "=", { t: "σ ÷ √n", alt: "σ: popülasyon SD'si, n: örneklem büyüklüğü" }], aciklama: "Formül, çekimsiz seçimde n ≤ N ÷ 10 ise geçerlidir. Kare kök paydada kalır: n değil √n." }
@@ -109,7 +109,7 @@ window.DEFTER = {
       opts: ["0,8", "4", "5", "20"],
       a: 1,
       why: "σ_x̄ = σ ÷ √n = 20 ÷ √25 = 20 ÷ 5 = 4. 0,8, n ile bölmenin (20 ÷ 25) sonucu; 20 ise n = 1 iken geçerli olan değerdir." },
-    { q: "Bir popülasyondan n = 16 kişilik örneklemler alınırken x̄'nin standard deviation'ı s₁'dir. Örneklem büyüklüğü n = 64 yapılırsa x̄'nin standard deviation'ı nasıl değişir?",
+    { q: "Bir popülasyondan n = 16 kişilik örneklemler alınırken x̄'nin standard deviation'ı σ_x̄'dir. Örneklem büyüklüğü n = 64 yapılırsa x̄'nin standard deviation'ı nasıl değişir?",
       opts: ["4 katına çıkar.", "2 katına çıkar.", "Yarıya iner.", "Dörtte birine iner."],
       a: 2,
       why: "σ_x̄ = σ ÷ √n; n 4 katına çıkınca √n 2 katına çıkar ve SD yarıya iner. D, SD'nin n ile ters orantılı olduğunu sanmaktır." },
@@ -120,11 +120,11 @@ window.DEFTER = {
     { q: "Bir sınıf düzeyinde 250 öğrenci var. Bu düzeyden rastgele 40 öğrenci seçilip bir değişkenin ortalaması alınıyor ve popülasyonun şekli bilinmiyor. Hangi koşul sağlanmaz?",
       opts: ["Rastgele seçim", "10% koşulu (n ≤ N ÷ 10)", "n ≥ 30 koşulu", "Hiçbiri; üç koşul da sağlanır."],
       a: 1,
-      why: "10% koşulu: 0,10 × 250 = 25 ve n = 40 > 25, bozuk. n = 40 ≥ 30 sağlanır; seçim rastgele olduğu için random da tamam. En çekici yanlış şık C: n ≥ 30 sağlandığı için yeterli sanılır." },
+      why: "10% koşulu: 0,10 × 250 = 25 ve n = 40 > 25, bozuk. n = 40 ≥ 30 sağlanır; seçim rastgele olduğu için random da tamam. En çekici yanlış şık D: n ≥ 30 sağlandığı için bütün koşulların tamam olduğunu sanmak; oysa 10% koşulu ayrı bir koşuldur." },
     { q: "Bir araştırmacı farklı n değerleriyle çok sayıda rastgele örneklem çekip x̄ değerlerinin standard deviation'ını tabloda özetledi. Popülasyonun standard deviation'ı (σ) yaklaşık kaçtır?",
       fig: { type: "table", caption: "x̄ değerlerinin SD'si (benzetim)", head: ["n", "x̄'nin SD'si"], rows: [["5", "8,9"], ["20", "4,5"], ["80", "2,2"]] },
       opts: ["10", "15", "40", "20"],
       a: 3,
-      why: "σ ≈ σ_x̄ × √n: 8,9 × √5 ≈ 19,9; 4,5 × √20 ≈ 20,1; 2,2 × √80 ≈ 19,7. Üç satır da σ ≈ 20 verir. En çekici yanlış şık 10: tablodaki SD’leri √n ile çarpmadan, değerlerin ortasına bakarak tahmin etmek." }
+      why: "σ ≈ σ_x̄ × √n: 8,9 × √5 ≈ 19,9; 4,5 × √20 ≈ 20,1; 2,2 × √80 ≈ 19,7. Üç satır da σ ≈ 20 verir. En çekici yanlış şık 10: σ ≈ SD × √n hesabında satırları karıştırmak (ör. 4,5 × √5 ≈ 10 ya da 2,2 × √20 ≈ 9,8)." }
   ]
 };

@@ -48,7 +48,7 @@ window.DEFTER = {
       kisa: "Standart sapma, değerlerin mean'den tipik uzaklığıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🎯", terim: "Standard deviation", tr: "standart sapma (s)", tanim: "Bütün değerleri kullanan ölçü: değerlerin *mean*'den ==tipik uzaklığı==. Formül: sₓ = √[ Σ(xᵢ − x̄)² ÷ (n − 1) ].", ornek: "Geliş süreleri mean'den ortalama 4 dakika sapıyor." },
+            { ikon: "🎯", terim: "Standard deviation", tr: "standart sapma (s)", tanim: "Bütün değerleri kullanan ölçü: değerlerin *mean*'den ==tipik uzaklığı==. Formül: sₓ = √[ Σ(xᵢ − x̄)² ÷ (n − 1) ].", ornek: "Geliş süreleri mean'den tipik olarak 4 dakika sapıyor." },
             { ikon: "↕️", terim: "Deviation", tr: "sapma", tanim: "Bir değerin mean'den farkı: xᵢ − x̄. Sapmaların toplamı hep sıfırdır.", ornek: "30 − 35 = −5." },
             { ikon: "🟦", terim: "Variance", tr: "varyans (s²)", tanim: "Sapma karelerinin toplamı bölü (n − 1). Birimi kare: dakika².", ornek: "80 ÷ 5 = 16 dakika²." }
           ] },
@@ -107,7 +107,7 @@ window.DEFTER = {
             { baslik: "4 · *Resistant* değildir", metin: "Kareler yüzünden *mean*'den bile hassastır: sapma 2 ise karesi 4, sapma 10 ise karesi 100; sapma 5 kat büyür, kare 25 kat." },
             { baslik: "5 · Yalnızca mean ile birlikte kullanılır", metin: "s, mean çevresindeki yayılımı ölçer." }
           ] },
-        { tip: "tuzak", baslik: "\"Verinin tamamı mean ± s içindedir\"", metin: "s tipik uzaklıktır; en uzak değer değildir.", yanlis: "Bütün değerler mean ± s aralığında kalır.", dogru: "s, mean'den tipik (ortalama bir) uzaklığı verir; bazı değerler bandın dışında olabilir." }
+        { tip: "tuzak", baslik: "\"Verinin tamamı mean ± s içindedir\"", metin: "s tipik uzaklıktır; en uzak değer değildir.", yanlis: "Bütün değerler mean ± s aralığında kalır.", dogru: "s, mean'den tipik uzaklığı verir; bazı değerler bandın dışında olabilir." }
       ]
     },
     {

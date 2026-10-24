@@ -189,7 +189,7 @@ window.DEFTER = {
         {
           tip: "kavramlar",
           kartlar: [
-            { ikon: "➗", terim: "Nonzero over zero", tr: "sıfırdan farklı sayı bölü sıfır", tanim: "Pay k ≠ 0 iken payda 0'a giderse ifade sınırsız büyür. Limit yok ama dikey asimptot adayı var.", ornek: "x → 3 iken (x + 1)/(x − 3) için 4/0 çıkar." },
+            { ikon: "➗", terim: "Nonzero over zero", tr: "sıfırdan farklı sayı bölü sıfır", tanim: "Pay k ≠ 0 iken payda 0'a giderse ifade sınırsız büyür: tek taraflı limitler ±∞, x = c dikey asimptottur.", ornek: "x → 3 iken (x + 1)/(x − 3) için 4/0 çıkar." },
             { ikon: "➕", terim: "Sign analysis", tr: "işaret analizi", tanim: "Payın ve paydanın işaretine bakarak ±∞'u belirlemek. Payda 0⁺ (küçük pozitif) ya da 0⁻ (küçük negatif) olabilir.", ornek: "x → 3⁺ iken x − 3 küçük pozitif; x → 3⁻ iken küçük negatif." }
           ]
         },

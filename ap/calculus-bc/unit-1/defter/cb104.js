@@ -16,7 +16,7 @@ window.DEFTER = {
             { baslik: "0/0", metin: "*Indeterminate form*: cevap değil, çalışmaya devam sinyali." }
           ] },
         { tip: "kavramlar", kartlar: [
-            { ikon: "📥", terim: "Direct substitution", tr: "doğrudan yerine koyma", tanim: "Limitte ilk deneme: x yerine c yaz. Sayı çıkıyorsa limit odur.", ornek: "lim x→2 (x + 1)/(x + 3) = 3/5" },
+            { ikon: "📥", terim: "Direct substitution", tr: "doğrudan yerine koyma", tanim: "Limitte ilk deneme: x yerine c yaz. Fonksiyon c'de sürekliyse (polinom, paydası sıfır olmayan rasyonel, kök, trig, üstel, ln) çıkan sayı limittir; parçalı ya da noktası ayrı tanımlı fonksiyonda önce iki tarafa bak.", ornek: "lim x→2 (x + 1)/(x + 3) = 3/5" },
             { ikon: "🎭", terim: "Indeterminate form", tr: "belirsiz biçim", tanim: "0/0 gibi, limit hakkında tek başına bilgi vermeyen biçim. Sadeleştirmeden karar verilmez.", ornek: "x = 3 için (x² − 9)/(x − 3) = 0/0, limit ise 6." }
           ] },
         { tip: "tuzak", metin: "0/0 gördüğünde \"limit yok\" ya da \"limit 0\" deme. Önce cebirle sadeleştir, sonra yeniden yerine koy.", yanlis: "Yerine koyunca 0/0 çıktı, limit yok.", dogru: "0/0 yalnızca daha çalışman gerektiğini söyler." }
@@ -184,7 +184,7 @@ window.DEFTER = {
       kisa: "Önce yerine koy; 0/0 çıkarsa biçime göre aleti seç.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Önce yerine koy: sayı çıkarsa cevap o; sıfır olmayan sayı / 0 asimptot işareti; 0/0 ise *indeterminate form*.",
+            "Önce yerine koy: fonksiyon orada sürekliyse sayı çıkarsa cevap o; sıfır olmayan sayı / 0 asimptot işareti; 0/0 ise *indeterminate form*.",
             "0/0 limit yok demek değildir; sadeleştirmeden karar verme. Sadeleştirme x ≠ c olduğu için serbesttir.",
             "Polinomda çarpanlara ayır, küp farkı için a³ − b³ = (a − b)(a² + ab + b²) formülünü kullan.",
             "Köklü ifadede eşlenikle çarp; kesirli kesirde ortak payda kullan.",

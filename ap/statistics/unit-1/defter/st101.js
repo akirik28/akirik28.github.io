@@ -142,7 +142,7 @@ window.DEFTER = {
       baslik: "Havalimanları: hepsini birlikte uygula",
       kisa: "Önce birim, sonra değişkenler, sonra her değişkenin türü.",
       bloklar: [
-        { tip: "tablo", baslik: "Beş büyük havalimanı (yaklaşık 2024)", head: ["Airport", "Country", "Code", "Runways", "Passengers (millions)"], rows: [
+        { tip: "tablo", baslik: "Dünyanın en yoğun havalimanlarından beşi (yaklaşık 2024)", head: ["Airport", "Country", "Code", "Runways", "Passengers (millions)"], rows: [
             ["Atlanta", "USA", "ATL", "5", "108"],
             ["Dubai", "UAE", "DXB", "2", "92"],
             ["Tokyo Haneda", "Japan", "HND", "4", "86"],

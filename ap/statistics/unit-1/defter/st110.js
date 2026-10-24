@@ -34,7 +34,7 @@ window.DEFTER = {
           oyun: [
             { metin: "A şubesinin median'ı 70. B şubesinin median'ı 78.", cevap: "sag", neden: "İki sayı yan yana ama aralarında karşılaştırma sözcüğü yok: iki ayrı liste." },
             { metin: "B şubesinin median'ı A şubesinin median'ından daha yüksek.", cevap: "sol", neden: "*Higher than* iki grubu açıkça bağlıyor: gerçek karşılaştırma." },
-            { metin: "Liverpool'un gol sayıları United'ınkinden daha değişken (range 8, range 3).", cevap: "sol", neden: "*More variable* sözcüğü ve iki sayı birlikte: karşılaştırma." },
+            { metin: "Liverpool'un gol sayıları United'ınkinden daha değişken (IQR 2,5; IQR 1,5).", cevap: "sol", neden: "*More variable* sözcüğü ve iki sayı birlikte: karşılaştırma." },
             { metin: "United'ın range'i 3. Liverpool'un range'i 8.", cevap: "sag", neden: "Sayılar doğru ama hangisinin daha değişken olduğu yazmıyor." },
             { metin: "Her iki hattın tipik yolculuk süresi benzer (median 30 dakika).", cevap: "sol", neden: "*Similar to* de bir karşılaştırma ifadesidir." }
           ] }
@@ -90,7 +90,7 @@ window.DEFTER = {
             "*Outliers*: Liverpool'da üst sınır = 4 + 1.5 × 2.5 = 7.75, alt sınır = 1.5 − 3.75 = −2.25. 9 > 7.75 olduğu için ==high outlier==. United'da sınırlar −1.25 ve 4.75; hepsi içeride.",
             "*Shape*: United kabaca simetrik, Liverpool sağa çarpık."
           ],
-          sonuc: "“United's goals scored are roughly symmetric, while Liverpool's are skewed to the right. Liverpool has a high outlier at 9 goals; United has none. Liverpool's median (3) is greater than United's (2), and Liverpool's goals vary more (range 8 vs. 3).” 4/4." }
+          sonuc: "“United's goals scored are roughly symmetric, while Liverpool's are skewed to the right. Liverpool has a high outlier at 9 goals; United has none. Liverpool's median (3) is greater than United's (2), and Liverpool's goals vary more (IQR 2.5 vs. 1.5).” 4/4." }
       ]
     },
     {
@@ -234,7 +234,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "📌", terim: "Relative position", tr: "göreli konum", tanim: "Bir değerin kendi dağılımı içindeki yeri. *z-score* ya da *percentile* ile ölçülür.", ornek: "84 puan, sınıf ortalamasının 1 standart sapma üstünde." },
             { ikon: "📐", terim: "z-score", tr: "z-puanı", tanim: "Bir değerin ortalamadan kaç *standard deviation* uzakta olduğu: (değer − *mean*) ÷ *standard deviation*.", ornek: "İstatistik quiz'inde z = (84 − 76) ÷ 8 = 1." },
-            { ikon: "📈", terim: "Percentile", tr: "yüzdelik dilim", tanim: "Dağılımın yüzde kaçının bu değere eşit ya da ondan küçük olduğunu söyler.", ornek: "88. *percentile*: öğrencilerin %88'i bu puanda ya da altında." }
+            { ikon: "📈", terim: "Percentile", tr: "yüzdelik", tanim: "Dağılımın yüzde kaçının bu değere eşit ya da ondan küçük olduğunu söyler.", ornek: "88. *percentile*: öğrencilerin %88'i bu puanda ya da altında." }
           ] },
         { tip: "ornek", baslik: "84 mü, 90 mı daha iyi?", durum: "İstatistik quiz: 84, *mean* 76, *standard deviation* 8. Kimya sınavı: 90, *mean* 85, *standard deviation* 10.",
           adimlar: [

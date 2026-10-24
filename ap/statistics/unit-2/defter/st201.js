@@ -10,7 +10,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🔎", terim: "Explanatory variable", tr: "açıklayıcı değişken", tanim: "Sonucu ==açıklamak ya da tahmin etmek== için kullandığın değişken.", ornek: "Okul kantininde sınıf düzeyi (9. ya da 10. sınıf)." },
-            { ikon: "🎯", terim: "Response variable", tr: "sonuç değişkeni", tanim: "Açıklanmaya ya da tahmin edilmeye çalışılan ==sonuç==.", ornek: "Kantinde seçilen yiyecek (tost, simit, salata)." },
+            { ikon: "🎯", terim: "Response variable", tr: "yanıt (sonuç) değişkeni", tanim: "Açıklanmaya ya da tahmin edilmeye çalışılan ==sonuç==.", ornek: "Kantinde seçilen yiyecek (tost, simit, salata)." },
             { ikon: "🔗", terim: "Association", tr: "ilişki", tanim: "Bir değişkeni bilmek diğerinin değerleri hakkında ==bilgi veriyorsa== değişkenler ilişkilidir.", ornek: "9. sınıflar tostu 10. sınıflardan daha sık seçiyorsa sınıf ile seçim ilişkilidir." }
           ] },
         { tip: "ikili", sol: { ikon: "🔎", baslik: "*Explanatory variable*", maddeler: ["Açıklamak, tahmin etmek için kullanılır", "Sorunun \"şuna göre\" kısmı"] },
@@ -101,7 +101,7 @@ window.DEFTER = {
             { metin: "10. sınıf sütunu: 60 kişi, toplamın %60'ı. Sütun daha geniş; dilimleri %25, %50, %25.", goster: ["mt10", "ms10", "ml10", "my4", "my5", "my6"] },
             { metin: "Her dikdörtgenin ==alanı== hücrenin toplamdaki payıdır: 9. sınıf-tost = %40 × %50 = %20, yani 20 öğrenci." }
           ] },
-        { tip: "tuzak", baslik: "Yığılmış çubuk ile mozaik aynı şey değil", metin: "Yığılmış çubuk grafiğinde bütün çubuklar eşit yüksekliktedir; çubuklar arasında genişlik farkı yoktur.", yanlis: "Çubuk grafiği gruplardaki kişi sayısını da gösterir.", dogru: "Yığılmış çubuk yalnızca her grubun ==kendi içindeki== dağılımını gösterir. Grup büyüklüğü için *mosaic plot* ya da tablodaki toplamlar gerekir." }
+        { tip: "tuzak", baslik: "Yığılmış çubuk ile mozaik aynı şey değil", metin: "Yığılmış çubuk grafiğinde bütün çubuklar eşit yüksekliktedir; çubuklar arasında genişlik farkı yoktur.", yanlis: "Yığılmış çubuk grafiği gruplardaki kişi sayısını da gösterir.", dogru: "Yığılmış çubuk yalnızca her grubun ==kendi içindeki== dağılımını gösterir. Grup büyüklüğü için *mosaic plot* ya da tablodaki toplamlar gerekir." }
       ]
     },
     {

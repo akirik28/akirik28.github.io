@@ -85,7 +85,7 @@ window.DEFTER = {
             { metin: "Aynı 40 öğrencinin sınav öncesi ve sonrası ders çalışma süreleri.", cevap: "sag", neden: "Bağımsız iki örneklem değil: eşli veri." },
             { metin: "100 öğrencilik bir sınıf düzeyinden rastgele 30 öğrenci.", cevap: "sag", neden: "10%: 30 > 10." }
           ] },
-        { tip: "tuzak", baslik: "Eşli veride bu formül kullanılmaz", metin: "Aynı kişilerin iki ölçümü (önce–sonra) bağımsız iki örneklem değildir.", yanlis: "40 öğrencinin önce ve sonra süreleri için σ = √(σ₁²/n + σ₂²/n).", dogru: "Eşli veride her kişinin farkı alınır ve o farkların tek bir dağılımı incelenir (sonraki ünitelerde)." }
+        { tip: "tuzak", baslik: "Eşli veride bu formül kullanılmaz", metin: "Aynı kişilerin iki ölçümü (önce–sonra) bağımsız iki örneklem değildir.", yanlis: "40 öğrencinin önce ve sonra süreleri için σ = √(σ₁²/n + σ₂²/n).", dogru: "Eşli veride her kişinin farkı alınır ve o farkların tek bir dağılımı incelenir (bu ünitedeki “Eşleştirilmiş Veri” dersinde gördüğün gibi)." }
       ]
     },
     {

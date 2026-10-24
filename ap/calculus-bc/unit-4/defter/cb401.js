@@ -11,7 +11,7 @@ window.DEFTER = {
         { tip: "hikaye", ikon: "🔋", baslik: "Şarj yüzdesi",
           metin: "Saat 15.00'te telefonun %40 dolu. Şarj aletindeyken dakikada 2 puan artıyor. İki ayrı bilgi var: **şarj ne kadar** (%40) ve **şarj ne hızla artıyor** (dakikada 2 puan). Türev ikincisini verir." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "⚡", terim: "Instantaneous rate of change", tr: "anlık değişim hızı", tanim: "Bir niceliğin tam belirli bir anda ne kadar hızlı değiştiği. f′(a) bu hızdır.", ornek: "P′(15) = 2: saat 15.00'te şarj dakikada 2 puan artıyor." },
+            { ikon: "⚡", terim: "Instantaneous rate of change", tr: "anlık değişim hızı", tanim: "Bir niceliğin tam belirli bir anda ne kadar hızlı değiştiği. f′(a) bu hızdır.", ornek: "P′(0) = 2: t, saat 15.00'ten bu yana geçen dakika olsun; 15.00'te (t = 0) şarj dakikada 2 puan artıyor." },
             { ikon: "↔️", terim: "Average rate of change", tr: "ortalama değişim hızı", tanim: "Bir aralıktaki toplam değişimin aralık uzunluğuna bölümü: (f(b) − f(a)) / (b − a).", ornek: "15.00'te %40, 15.10'da %60 ise ortalama hız 20/10 = 2 puan/dk." },
             { ikon: "📏", terim: "Difference quotient", tr: "fark oranı", tanim: "Ortalama hızı veren (f(a + h) − f(a)) / h oranı. h küçülürse f′(a)'ya yaklaşır.", ornek: "h = 1 dakika alınca fark oranı anlık hıza çok yakın çıkar." }
           ] }
@@ -42,8 +42,8 @@ window.DEFTER = {
         { tip: "ikili", sol: { ikon: "📍", baslik: "*f(a)*: değerin kendisi", maddeler: ["O andaki miktar", "Birimi: çıktının birimi (örn. yüzde)"] },
           sag: { ikon: "🏃", baslik: "*f′(a)*: değişim hızı", maddeler: ["O andaki artış ya da azalış hızı", "Birimi: çıktı / girdi (örn. puan/dk)"] },
           oyun: [
-            { metin: "Saat 15.00'te telefonun şarjı %40.", cevap: "sol", neden: "Bir miktar bildiriyor: P(15) = 40." },
-            { metin: "Saat 15.00'te şarj dakikada 2 puan artıyor.", cevap: "sag", neden: "Hızdan söz ediyor: P′(15) = 2." },
+            { metin: "Saat 15.00'te telefonun şarjı %40.", cevap: "sol", neden: "Bir miktar bildiriyor: P(0) = 40 (t = 0: saat 15.00)." },
+            { metin: "Saat 15.00'te şarj dakikada 2 puan artıyor.", cevap: "sag", neden: "Hızdan söz ediyor: P′(0) = 2." },
             { metin: "Kuyrukta 25 kişi var.", cevap: "sol", neden: "Bir sayı veriyor, değişimden söz etmiyor." },
             { metin: "Kuyruk dakikada 4 kişi uzuyor.", cevap: "sag", neden: "Değişim hızı: dakikada +4 kişi." },
             { metin: "Fidan şu an 40 cm.", cevap: "sol", neden: "Boyun kendisi: H(t) = 40." }

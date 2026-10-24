@@ -24,7 +24,7 @@ window.DEFTER = {
       kisa: "M, (n + 1). türevin mutlak değerini aralıkta aşmayan bir sayıdır.",
       bloklar: [
         { tip: "adimlar", baslik: "Dört hamle", adimlar: [
-            { baslik: "Türevi seç", metin: "Pₙ n. dereceden ise (n + 1). türeve bak: P₃ için f⁗ = f⁽⁴⁾." },
+            { baslik: "Türevi seç", metin: "Pₙ n. dereceden ise (n + 1). türeve bak: P₃ için f⁽⁴⁾." },
             { baslik: "Aralığı belirle", metin: "a ile x arasındaki bütün t değerleri; x = a'dan büyük ya da küçük olabilir." },
             { baslik: "M'yi bul", metin: "|f⁽ⁿ⁺¹⁾(t)|'nin bu aralıktaki en büyük değeri ya da kolay bir üst sınır (örneğin |sin t| ≤ 1)." },
             { baslik: "Yerine koy", metin: "M/(n + 1)! · |x − a|ⁿ⁺¹ hesapla." }
@@ -119,7 +119,7 @@ window.DEFTER = {
             "M'yi aralıktaki en kötü noktada bul: ln x için 6/t⁴ en büyük a'da, eᵗ ise x uç noktasında.",
             "Hata ≤ ε isteniyorsa sınırı ε ile karşılaştırıp en küçük n'yi bul (deneme-yanılma ya da eşitsizlik).",
             "sin x ve cos x'te bir terim sıfırsa bir üst derecenin sınırını kullanmak daha sıkı bir sınır verir.",
-            "Alterne seride hata sınırı ilk atılan terimdir; Taylor polinomlarında Lagrange kullanılır."
+            "Alterne seride hata sınırı ilk atılan terimdir. Taylor polinomunda Lagrange her zaman kullanılabilir; seri o x'te şartları sağlayan bir alterne seriyse (alterne, azalan, 0'a giden) alterne seri sınırı da kullanılabilir."
           ] }
       ]
     }

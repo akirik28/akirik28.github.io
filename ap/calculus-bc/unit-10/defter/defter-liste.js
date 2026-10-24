@@ -73,7 +73,7 @@ window.KIT = {
       "code": "10.9",
       "slug": "cb1008",
       "title": "Mutlak ve Koşullu Yakınsaklık",
-      "en": "Absolute or Conditional Convergence",
+      "en": "Determining Absolute or Conditional Convergence",
       "accent": "#F25F5C",
       "questions": []
     },

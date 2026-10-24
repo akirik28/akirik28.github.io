@@ -11,7 +11,7 @@ window.KIT = {
       "code": "2.1",
       "slug": "st201",
       "title": "İki Kategorik Değişkeni Göstermek",
-      "en": "Are Variables Related? Representing Two Categorical Variables",
+      "en": "Tabular and Graphical Representations for the Distributions of Two Categorical Variables",
       "accent": "#3FB5A0",
       "questions": []
     },
@@ -20,7 +20,7 @@ window.KIT = {
       "code": "2.2",
       "slug": "st202",
       "title": "İki Kategorik Değişken İçin İstatistikler",
-      "en": "Statistics for Two Categorical Variables",
+      "en": "Summary Statistics for Two Categorical Variables",
       "accent": "#FF8A65",
       "questions": []
     },
@@ -29,7 +29,7 @@ window.KIT = {
       "code": "2.3",
       "slug": "st401",
       "title": "Rastgelelik ve Simülasyon",
-      "en": "Random Patterns and Estimating Probabilities Using Simulation",
+      "en": "Estimating Probabilities Using Simulation",
       "accent": "#B77AD9",
       "questions": []
     },
@@ -74,7 +74,7 @@ window.KIT = {
       "code": "2.8",
       "slug": "st406",
       "title": "Rastgele Değişkenler ve Olasılık Dağılımları",
-      "en": "Random Variables and Probability Distributions",
+      "en": "Introduction to Random Variables and Probability Distributions",
       "accent": "#F6B94A",
       "questions": []
     },
@@ -83,7 +83,7 @@ window.KIT = {
       "code": "2.9",
       "slug": "st407",
       "title": "Rastgele Değişkenin Ortalaması ve Standart Sapması",
-      "en": "Mean and Standard Deviation of Random Variables",
+      "en": "Parameters of Random Variables",
       "accent": "#7C95FF",
       "questions": []
     },
@@ -92,7 +92,7 @@ window.KIT = {
       "code": "2.10",
       "slug": "st409",
       "title": "Binom Dağılımı",
-      "en": "The Binomial Distribution and Its Parameters",
+      "en": "The Binomial Distribution",
       "accent": "#3FB5A0",
       "questions": []
     },
@@ -101,7 +101,7 @@ window.KIT = {
       "code": "2.11",
       "slug": "st501",
       "title": "Normal Dağılıma Yeniden Bakış",
-      "en": "Why Is My Sample Not Like Yours? The Normal Distribution, Revisited",
+      "en": "The Normal Distribution",
       "accent": "#FF8A65",
       "questions": []
     },
@@ -110,7 +110,7 @@ window.KIT = {
       "code": "2.12",
       "slug": "st502",
       "title": "Merkezi Limit Teoremi",
-      "en": "The Central Limit Theorem",
+      "en": "Sampling Distributions and the Central Limit Theorem",
       "accent": "#B77AD9",
       "questions": []
     },

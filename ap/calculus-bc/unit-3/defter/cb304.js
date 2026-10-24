@@ -28,7 +28,7 @@ window.DEFTER = {
           ] },
         { tip: "kavramlar", kartlar: [
             { ikon: "🕵️", terim: "Implicit differentiation", tr: "kapalı türev", tanim: "y'yi çözmeden, iki tarafın x'e göre türevini alma yöntemi. Yeni bir kural değil, zincir kuralıdır.", ornek: "x² + y² = 25 için iki tarafı da x'e göre türet." },
-            { ikon: "⭕", terim: "Circle", tr: "çember", tanim: "Merkezi orijinde, yarıçapı r olan çember x² + y² = r². Her x için iki y değeri olduğundan fonksiyon değildir.", ornek: "x² + y² = 25: yarıçap 5." }
+            { ikon: "⭕", terim: "Circle", tr: "çember", tanim: "Merkezi orijinde, yarıçapı r olan çember x² + y² = r². −r < x < r aralığındaki her x için iki y değeri olduğundan fonksiyon değildir.", ornek: "x² + y² = 25: yarıçap 5." }
           ] }
       ]
     },
@@ -167,7 +167,7 @@ window.DEFTER = {
           adimlar: [
             "Her iki tarafı türet: sec²y · dy/dx = 1.",
             "dy/dx = 1/sec²y = cos²y.",
-            "Dik üçgen: y açısının karşısı x, komşusu 1, hipotenüs √(1 + x²).",
+            "sec²y = 1 + tan²y = 1 + x² özdeşliğinden (ya da x > 0 için dik üçgenden: karşı x, komşu 1, hipotenüs √(1 + x²)).",
             "cos y = 1/√(1 + x²), yani cos²y = 1/(1 + x²)."
           ], sonuc: "dy/dx = 1/(1 + x²): arctan x'in türevi, ters trigonometri bölümünde (3.4) yine karşımıza çıkacak" }
       ]

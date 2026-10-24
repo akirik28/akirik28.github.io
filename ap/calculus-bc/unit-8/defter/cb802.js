@@ -145,7 +145,7 @@ window.DEFTER = {
               tip: "alan",
               renk: 0,
               gizli: true,
-              noktalar: [[3, 2], [3, 2], [3.1, 2.21], [3.2, 2.44], [3.3, 2.69], [3.4, 2.96], [3.5, 3.25], [3.6, 3.56], [3.7, 3.89], [3.8, 4.24], [3.9, 4.61], [4, 5]]
+              noktalar: [[3, 2], [3, 2], [3.1, 2.21], [3.2, 2.44], [3.3, 2.69], [3.4, 2.96], [3.5, 3.25], [3.6, 3.56], [3.7, 3.89], [3.8, 4.24], [3.9, 4.61], [4, 5], [4, 2]]
             },
             {
               id: "t3",
@@ -240,7 +240,7 @@ window.DEFTER = {
           },
           oyun: [
             {
-              metin: "Bir öğrenci okuldan çıkıp evine döndü; başlangıç ile bitiş aynı nokta.",
+              metin: "Bir öğrenci evinden okula gidip yine evine döndü; başlangıç ile bitiş aynı nokta.",
               cevap: "sol",
               neden: "Bitiş − başlangıç = 0: yer değiştirme sıfır."
             },

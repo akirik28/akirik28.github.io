@@ -61,7 +61,7 @@ window.DEFTER = {
             { metin: "∫ x·ln x dx", cevap: "sag", neden: "x, ln x'in türevi değil; u = ln x, dv = x dx." },
             { metin: "∫ cos x·sin⁴x dx", cevap: "sol", neden: "cos x, sin x'in türevi: u = sin x." }
           ] },
-        { tip: "tuzak", metin: "Her çarpım kısmi integrasyon değildir. Önce çarpanlardan biri diğerinin iç türeviyse diye bak; öyleyse u-substitution çok daha kısa.", yanlis: "∫ x·e^(x²) dx çarpım olduğundan kısmi integrasyon uygula.", dogru: "u = x² seç: ½ e^(x²) + C. Kısmi integrasyonla ∫ x² e^(x²)… gibi daha zor bir integrale gidersin." }
+        { tip: "tuzak", metin: "Her çarpım kısmi integrasyon değildir. Önce çarpanlardan biri diğerinin iç türeviyse diye bak; öyleyse u-substitution çok daha kısa.", yanlis: "∫ x·e^(x²) dx çarpım olduğundan kısmi integrasyon uygula.", dogru: "u = x² seç: ½ e^(x²) + C. Kısmi integrasyonla (u = e^(x²), dv = x dx) ∫ x³ e^(x²) dx gibi daha zor bir integrale gidersin." }
       ]
     },
     {

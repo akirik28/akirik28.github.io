@@ -101,7 +101,7 @@ window.DEFTER = {
             ["Sₙ gerçek toplamı az mı fazla mı tahmin eder?", "aₙ₊₁'in işaretine bak: pozitifse az, negatifse fazla"],
             ["S hangi aralıkta?", "Sₙ ile Sₙ₊₁ arasında"]
           ], vurgu: 1, not: "Önce şartları (alterne, azalan, 0'a giden) tek cümleyle yaz; sınavda puan buradan da gelir." },
-        { tip: "not", metin: "Bu kural yalnız alterne serilerde geçerlidir. Alterne olmayan serilerde ve Taylor polinomlarında hata için bir sonraki konudaki *Lagrange error bound* kullanılır." }
+        { tip: "not", metin: "Bu kural yalnız şartları sağlayan alterne serilerde geçerlidir. Bir Taylor polinomunun hatası için ileride *Lagrange error bound* göreceksin; ama Taylor serisi o x'te şartları sağlayan bir alterne seriyse (alterne, azalan, 0'a giden) bu kural da kullanılabilir (AP'de sık sorulur)." }
       ]
     },
     {

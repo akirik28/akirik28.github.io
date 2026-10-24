@@ -115,7 +115,7 @@ window.DEFTER = {
       opts: ["0,70", "0,80", "0,15", "0,90"],
       a: 0,
       why: "P(A veya B) = 0,50 + 0,30 − 0,10 = 0,70. B en çekici yanlış şık: 0,50 + 0,30 toplamında kesişimin iki kez sayıldığını görmez." },
-    { q: "A ve B ayrık iki olay, P(A) = 0,40 ve P(B) = 0,35. Ne A ne de B'nin gerçekleşmemesi olasılığı nedir?",
+    { q: "A ve B ayrık iki olay, P(A) = 0,40 ve P(B) = 0,35. A'nın da B'nin de gerçekleşmemesi (hiçbirinin olmaması) olasılığı nedir?",
       opts: ["0,75", "0,14", "0,25", "0,60"],
       a: 2,
       why: "A ve B ayrık: P(A veya B) = 0,40 + 0,35 = 0,75; hiçbiri olmaz = 1 − 0,75 = 0,25. B şıkkı 0,40 × 0,35 = 0,14'tür, bu yanlış bir çarpma. A ise birleşimin kendisidir, tamlayıcı değil." },

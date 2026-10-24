@@ -150,7 +150,7 @@ window.DEFTER = {
       a: 2,
       fig: { type: "bar", cats: ["1", "2", "3"], series: [{ name: "Dağılım A", values: [0.2, 0.6, 0.2] }, { name: "Dağılım B", values: [0.4, 0.2, 0.4] }], ylabel: "P(x)" },
       why: "İkisi de 2 etrafında simetrik, yani μ = 2. A: σ² = 0,2(1) + 0,2(1) = 0,4. B: σ² = 0,4(1) + 0,4(1) = 0,8. B'nin olasılığı uçlarda, ortalamadan uzakta toplandığı için yayılımı daha büyük. A şıkkı ters yöne gidiyor: ortada yığılan A daha az yayılmış." },
-    { q: "Bir kulüp standında bilet 6 TL. Zar atılıyor: 6 gelirse 24 TL ödül, değilse ödül yok. Oyuncunun uzun vadede çevirme başına ortalama net kazancı kaçtır?",
+    { q: "Bir kulüp standında bilet 6 TL. Zar atılıyor: 6 gelirse 24 TL ödül, değilse ödül yok. Oyuncunun uzun vadede oyun başına ortalama net kazancı kaçtır?",
       opts: ["+4 TL", "+2 TL", "−2 TL", "−4 TL"],
       a: 2, why: "Ortalama ödül = 24(1/6) + 0(5/6) = 4 TL. Net kazanç = ödül − bilet; ortalaması 4 − 6 = −2 TL. B şıkkı işareti ters çevirir; A ise bileti hiç çıkarmaz (ortalama ödül, net kazanç değil). En çekici yanlış şık A." }
   ]

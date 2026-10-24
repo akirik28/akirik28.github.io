@@ -39,7 +39,7 @@ window.DEFTER = {
       kisa: "P-değeri, H₀ doğruyken bu kadar uç bir t gelme olasılığıdır.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🎯", terim: "P-value", tr: "P-değeri", tanim: "H₀ doğruysa, gözlenen kadar ya da Hₐ yönünde ondan daha uç bir sonucu elde etme ==olasılığı==. Küçük P-değeri, H₀'a karşı güçlü kanıttır.", ornek: "P ≈ 0,032: şişeler gerçekten ortalama 500 mL ise bu kadar düşük bir x̄ görmek %3,2 olasılıklı." }
+            { ikon: "🎯", terim: "P-value", tr: "P-değeri", tanim: "H₀ doğruysa, gözlenen kadar ya da Hₐ yönünde ondan daha uç bir sonucu elde etme ==olasılığı==. Küçük P-değeri, H₀'a karşı güçlü kanıttır.", ornek: "P ≈ 0,032: şişeler gerçekten ortalama 500 mL ise, rastgele 16 şişede 497 mL ya da daha düşük bir x̄ görme olasılığı yaklaşık 0,032." }
           ] },
         { tip: "grafik", baslik: "Şişe örneği: P-değeri alanı (df = 15)", xlabel: "t", ylabel: "Yoğunluk", xmax: 8, ymax: 5,
           xticks: [{ v: 1, label: "−3" }, { v: 2, label: "−2" }, { v: 3, label: "−1" }, { v: 4, label: "0" }, { v: 5, label: "1" }, { v: 6, label: "2" }, { v: 7, label: "3" }],

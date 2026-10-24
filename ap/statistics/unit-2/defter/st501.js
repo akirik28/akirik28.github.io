@@ -33,7 +33,7 @@ window.DEFTER = {
       baslik: "Örnekleme değişkenliği: *sampling variability*",
       kisa: "Parameter sabittir; statistic her örneklemde değişir.",
       bloklar: [
-        { tip: "ornek", baslik: "Üç arkadaş, üç farklı sonuç", durum: "Okulun %40'ı sabah kahvaltı etmiyor ama bunu kimse bilmiyor (p = 0,40). Üç arkadaş bağımsız olarak 50'şer öğrenciye soruyor: 18, 22 ve 21 kişi kahvaltı etmediğini söylüyor.",
+        { tip: "ornek", baslik: "Üç arkadaş, üç farklı sonuç", durum: "Okulun %40'ı sabah kahvaltı etmiyor ama bunu kimse bilmiyor (p = 0,40). Üç arkadaş bağımsız olarak rastgele seçtikleri 50'şer öğrenciye soruyor: 18, 22 ve 21 kişi kahvaltı etmediğini söylüyor.",
           adimlar: ["Ece: p̂ = 18 ÷ 50 = 0,36.", "Kerem: p̂ = 22 ÷ 50 = 0,44.", "Deniz: p̂ = 21 ÷ 50 = 0,42.", "Üçü de aynı popülasyonu sordu ama üç farklı sayı buldu; gerçek oran p = 0,40 hep aynı kaldı."],
           sonuc: "==Statistic (p̂) örneklemden örnekleme değişir; parameter (p) değişmez.== Fark, birinin hata yapmasından değil, şanstan geliyor." },
         { tip: "kavramlar", kartlar: [
@@ -112,11 +112,11 @@ window.DEFTER = {
             { baslik: "3 · z-score hesapla", metin: "z = (statistic − mean) ÷ SD; tablo ya da normalcdf kullan." },
             { baslik: "4 · Bağlamla yorumla", metin: "Olasılığı cümleyle yaz: ‘n kişilik rastgele bir örneklemde … olma olasılığı yaklaşık …’." }
           ] },
-        { tip: "tablo", baslik: "Ünitenin haritası: hangi statistic, hangi normal model?", head: ["Statistic", "Mean", "SD", "Normal olması için"], rows: [
-            ["p̂ (5.5)", "p", "√(p(1−p)/n)", "np ≥ 10 ve n(1−p) ≥ 10"],
-            ["p̂₁ − p̂₂ (5.6)", "p₁ − p₂", "√(p₁(1−p₁)/n₁ + p₂(1−p₂)/n₂)", "dört sayının hepsi ≥ 10"],
-            ["x̄ (5.7)", "μ", "σ/√n", "popülasyon normal ya da n ≥ 30"],
-            ["x̄₁ − x̄₂ (5.8)", "μ₁ − μ₂", "√(σ₁²/n₁ + σ₂²/n₂)", "iki popülasyon normal ya da n₁, n₂ ≥ 30"]
+        { tip: "tablo", baslik: "Yol haritası: hangi statistic, hangi normal model?", head: ["Statistic", "Mean", "SD", "Normal olması için"], rows: [
+            ["p̂ (3.2)", "p", "√(p(1−p)/n)", "np ≥ 10 ve n(1−p) ≥ 10"],
+            ["p̂₁ − p̂₂ (3.9)", "p₁ − p₂", "√(p₁(1−p₁)/n₁ + p₂(1−p₂)/n₂)", "dört sayının hepsi ≥ 10"],
+            ["x̄ (4.1)", "μ", "σ/√n", "popülasyon normal ya da n ≥ 30"],
+            ["x̄₁ − x̄₂ (4.6)", "μ₁ − μ₂", "√(σ₁²/n₁ + σ₂²/n₂)", "iki popülasyon normal ya da n₁, n₂ ≥ 30"]
           ], not: "Her satır için ayrıca rastgele örnekleme (ya da randomized experiment) ve 10% koşulu gerekir." }
       ]
     },

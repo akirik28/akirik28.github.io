@@ -125,10 +125,10 @@ window.DEFTER = {
           sonuc: "Skewed right, tek tepe 1'de, 5–9 arası boşluk; 9 ve 10 aykırı görünüyor; ==median = 2 gol==; 1'den 10'a." },
         { tip: "tablo", baslik: "Sınav kalıbı (İngilizce)", head: ["Parça", "Cümle"], rows: [
             ["Shape", "The distribution of goals scored is skewed to the right, with a single peak at 1 goal and a gap between 5 and 9 goals."],
-            ["Outliers", "The games with 9 and 10 goals scored appear to be outliers."],
+            ["Outliers", "The games with 9 and 10 goals scored appear to be possible outliers."],
             ["Center", "The median is 2 goals scored."],
             ["Variability", "The number of goals scored varies from 1 to 10."]
-          ], not: "Dört cümlede de \"goals scored\" geçiyor: bağlam bu. \"Appear to be\" dersin, çünkü kesin kural ileride gelecek." }
+          ], not: "Dört cümlede de \"goals scored\" geçiyor: bağlam bu. \"Appear to be\" dersin, çünkü kesin kural ileride gelecek. 1,5 × IQR kuralını öğrenince kontrol edeceğiz: sınır 9,75 çıkar, yalnız 10 outlier." }
       ]
     },
     {

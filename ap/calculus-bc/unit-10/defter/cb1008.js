@@ -34,7 +34,7 @@ window.DEFTER = {
             ["yakınsar", "yakınsar (kendiliğinden)", "mutlak yakınsak"],
             ["ıraksar", "yakınsar", "koşullu yakınsak"],
             ["ıraksar", "ıraksar", "ıraksak"]
-          ], vurgu: 1, not: "Σ|aₙ| yakınsarken Σaₙ'nin ıraksaması mümkün değil; o satır tabloda yok. Pozitif terimli bir seride Σ|aₙ| = Σaₙ olduğundan ayrım anlamsızdır." }
+          ], vurgu: 1, not: "Σ|aₙ| yakınsarken Σaₙ'nin ıraksaması mümkün değil; o satır tabloda yok. Pozitif terimli bir seride Σ|aₙ| = Σaₙ olduğundan yakınsıyorsa her zaman mutlak yakınsaktır; koşullu yakınsak olamaz." }
       ]
     },
     {

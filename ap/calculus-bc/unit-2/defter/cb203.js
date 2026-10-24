@@ -588,7 +588,7 @@ window.DEFTER = {
               ]
             },
             {
-              metin: "Noktaları birleştirince bir parabol çıkıyor: f′ grafiği. f artarken eksenin üstünde, azalırken altında; tepe ve çukurda eksene değiyor.",
+              metin: "Noktaları birleştirince bir parabol çıkıyor: f′ grafiği. f artarken eksenin üstünde, azalırken altında; tepe ve çukurda ekseni kesiyor (işaret değiştiriyor).",
               goster: [
                 "c"
               ]
@@ -616,7 +616,7 @@ window.DEFTER = {
             [
               "Tepe ya da çukur",
               "0",
-              "Eksene değiyor"
+              "Ekseni kesiyor"
             ]
           ]
         }
@@ -675,7 +675,7 @@ window.DEFTER = {
               ikon: "🧮",
               terim: "Calculator active",
               tr: "hesap makineli bölüm",
-              tanim: "AP'nin hesap makinesinin serbest olduğu bölüm. Ondalık cevaplar en az üç basamak doğru yazılır.",
+              tanim: "AP'nin hesap makinesinin serbest olduğu bölüm. Ondalık cevaplar virgülden sonra üç basamak doğru yazılır (yuvarlanarak ya da kesilerek).",
               ornek: "0,80472… → 0,805."
             }
           ]
@@ -702,7 +702,7 @@ window.DEFTER = {
             "d/dx (5 − e^(2x)) komutunu bu x'te çalıştır.",
             "Sonuç −10: grafik orada aşağı iniyor, eksi işaret mantıklı."
           ],
-          sonuc: "Eğim ==−10==. Ondalıklı bir sonuç çıksaydı en az üç basamak yazmalıydın."
+          sonuc: "Eğim ==−10==. Ondalıklı bir sonuç çıksaydı virgülden sonra üç basamak yazmalıydın."
         }
       ]
     },
@@ -720,7 +720,7 @@ window.DEFTER = {
             "Grafikten: teğeti çiz, üzerindeki iki ızgara noktasıyla eğimi oku. Doğru parçasında türev, parçanın eğimidir.",
             "f artarken f′ > 0, azalırken f′ < 0, tepe ve çukurda f′ = 0.",
             "Grafik f′ ise y değeri eğimdir; teğetin noktası f'den gelir.",
-            "Hesap makinesi: önce kesişimi sakla, sonra sayısal türev; ondalık cevaplar en az üç basamak."
+            "Hesap makinesi: önce kesişimi sakla, sonra sayısal türev; ondalık cevaplar virgülden sonra üç basamak."
           ]
         }
       ]

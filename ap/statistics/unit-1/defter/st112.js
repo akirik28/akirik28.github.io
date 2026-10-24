@@ -39,7 +39,7 @@ window.DEFTER = {
             { metin: "Bir sınıfta servisle gelenlerin oranını tahmin et.", cevap: "sol", neden: "“Tahmin et”: *estimation*." }
           ] },
         { tip: "tablo", baslik: "Yönü sözcükler belirler", head: ["Sözcükler", "Yön", "Sembol"], rows: [
-            ["increase, more than, greater than, at least", "tek yönlü (artış)", ">"],
+            ["increase, more than, greater than, exceeds", "tek yönlü (artış)", ">"],
             ["decrease, less than, fewer", "tek yönlü (azalış)", "<"],
             ["difference, change, not the same, relationship", "iki yönlü (*not equal*)", "≠"],
             ["majority (çoğunluk)", "yarıdan fazla", "p > 0.50"]

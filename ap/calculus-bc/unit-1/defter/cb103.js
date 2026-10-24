@@ -27,7 +27,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "➗", terim: "Quotient rule", tr: "bölüm kuralı", tanim: "Bölümün limiti limitlerin bölümüdür; yalnız paydanın limiti sıfır olmamalıdır.", ornek: "f / g için 4 / (−3) = −4/3" },
-            { ikon: "⬆️", terim: "Power rule", tr: "kuvvet kuralı", tanim: "Kuvvet ve kök de içeri geçer: f²'nin limiti (limit f)², √f'nin limiti √(limit f).", ornek: "f² → 16 ve √f → 2" }
+            { ikon: "⬆️", terim: "Power rule", tr: "kuvvet kuralı", tanim: "Kuvvet ve kök de içeri geçer: f²'nin limiti (limit f)², √f'nin limiti √(limit f) (çift dereceli kökte limit f > 0 olmalı).", ornek: "f² → 16 ve √f → 2" }
           ] },
         { tip: "tablo", baslik: "Aynı f ve g ile diğer kalıplar", head: ["İfade", "Limit", "Neden"],
           rows: [["f / g", "−4/3", "payda limiti −3, sıfır değil"], ["f²", "16", "kuvvet"], ["√f", "2", "√4"], ["|g|", "3", "mutlak değer: |−3|"], ["2^g", "1/8", "2⁻³ = 1/8"], ["ln f", "ln 4", "içerinin limiti pozitif olmalı"], ["cos g", "cos(−3)", "kosinüs sürekli"]], vurgu: 0,
@@ -47,7 +47,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "📥", terim: "Direct substitution", tr: "doğrudan yerine koyma", tanim: "Fonksiyon c'de sürekliyse limit = f(c): x yerine c yazılır. Rasyonel fonksiyonda payda sıfır olmamalıdır.", ornek: "lim x→1 (x + 3)/(x + 1) = 4/2 = 2" },
-            { ikon: "📐", terim: "Polynomial", tr: "polinom", tanim: "x'in tam kuvvetlerinden oluşan ifade. Her yerde sürekli olduğu için limiti yerine koyarak bulunur.", ornek: "x³ + 2x − 5" }
+            { ikon: "📐", terim: "Polynomial", tr: "polinom", tanim: "x'in negatif olmayan tam sayı kuvvetlerinden (x⁰, x¹, x², …) oluşan ifade. Her yerde sürekli olduğu için limiti yerine koyarak bulunur.", ornek: "x³ + 2x − 5" }
           ] },
         { tip: "grafik", baslik: "lim x→−1 (x³ + 2x − 5); kesikli çizgiler gerçek eksenlerdir", xlabel: "x", ylabel: "y", xmax: 4, ymax: 24,
           xticks: [{ v: 0, label: "−2" }, { v: 1, label: "−1" }, { v: 2, label: "0" }, { v: 3, label: "1" }, { v: 4, label: "2" }],
@@ -188,11 +188,11 @@ window.DEFTER = {
       bloklar: [
         { tip: "ozet", maddeler: [
             "Toplam, fark, çarpım ve sabit katın limiti limitlerin toplamı, farkı, çarpımı ve sabit katıdır.",
-            "Bölümde paydanın limiti sıfır olmamalı; kuvvet, kök, mutlak değer, üstel ve ln içeri geçer (ln için içerinin limiti pozitif).",
+            "Bölümde paydanın limiti sıfır olmamalı; kuvvet, kök, mutlak değer, üstel ve ln içeri geçer (kök ve ln için içerinin limiti pozitif).",
             "Polinom ve rasyonel fonksiyonlarda payda sıfır değilse yerine koy (*direct substitution*).",
             "Grafik, tablo ve formül karışık gelirse: grafikten oku, tabloda tahmin et, formülde yerine koy, sonra birleştir.",
             "Parçanın limiti yoksa toplamın da yok deme; tek taraflı limitleri hesapla.",
-            "Bileşkede önce içerinin limitini ve hangi yönden geldiğini bul; dış fonksiyonun c'deki değerini kullanma.",
+            "Bileşkede önce iç limit L'yi ve hangi yönden gelindiğini bul. Dış fonksiyon L'de sürekliyse sonuç f(L); L'de sıçrıyorsa f(L)'yi değil, o yönden f'nin tek taraflı limitini kullan.",
             "Payda limiti 0 ise bölüm kuralı yok: 0/0 → sadeleştir (Bölüm 4), k/0 → asimptot (Bölüm 8)."
           ] }
       ]

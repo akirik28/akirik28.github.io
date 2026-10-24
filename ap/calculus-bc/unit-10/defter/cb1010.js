@@ -138,7 +138,7 @@ window.DEFTER = {
     { q: "Tablo, bir f fonksiyonunun x = 0'daki türev değerlerini veriyor. f'nin 4. dereceden Maclaurin polinomu hangisidir?",
       fig: { type: "table", head: ["k", "0", "1", "2", "3", "4"], rows: [["f⁽ᵏ⁾(0)", "2", "0", "−6", "0", "24"]], caption: "x = 0'da türevler" },
       opts: ["2 − 6x² + 24x⁴", "2 − 3x² + 4x⁴", "2 − 3x² + 24x⁴", "2 − 3x² + x⁴"], a: 3,
-      why: "Katsayılar: 2; 0; −6/2! = −3; 0; 24/4! = 1. Polinom 2 − 3x² + x⁴. A şıkkı hiç bölmez; C şıkkı yalnız x² terimini böler ve x⁴ terimini unutur." },
+      why: "Katsayılar: 2; 0; −6/2! = −3; 0; 24/4! = 1. Polinom 2 − 3x² + x⁴. A şıkkı hiç bölmez; C şıkkı yalnız x² terimini 2!'e böler, x⁴ katsayısını 4!'e bölmeyi unutur." },
     { q: "f'nin x = 3 merkezli ikinci dereceden Taylor polinomu P₂(x) = 5 − 2(x − 3)² olsun. Hangisi doğrudur?",
       opts: ["f″(3) = −2 ve f'nin x = 3'te yerel minimumu vardır", "f″(3) = −4 ve f'nin x = 3'te yerel minimumu vardır", "f″(3) = −4 ve f'nin x = 3'te yerel maksimumu vardır", "f″(3) = −2 ve f'nin x = 3'te yerel maksimumu vardır"], a: 2,
       why: "(x − 3) terimi yok, yani f′(3) = 0: kritik nokta. (x − 3)² katsayısı f″(3)/2! = −2 olduğundan f″(3) = −4 < 0 ve yerel maksimum. D şıkkı katsayıyı doğrudan f″(3) sanmak; −2'yi 2! ile çarpmayı unutmak." },

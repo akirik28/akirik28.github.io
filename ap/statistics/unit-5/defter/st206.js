@@ -23,7 +23,7 @@ window.DEFTER = {
             { id: "sse", tip: "yazi", x: 4.6, y: 0.7, metin: "toplam = 4", gizli: true }
           ],
           durumlar: [
-            { metin: "Beş nokta: (1, 2), (2, 1), (3, 4), (4, 3), (5, 5). Hangi doğru bunlara en iyi uyar?" },
+            { metin: "Beş nokta (x: haftalık antrenman günü, y: enerji puanı): (1, 2), (2, 1), (3, 4), (4, 3), (5, 5). Hangi doğru bunlara en iyi uyar?" },
             { metin: "Doğru ŷ = x: artıklar 1, −1, 1, −1, 0. Kareler toplamı 4.", goster: ["l1", "sse"], set: { sse: { metin: "toplam = 4" } } },
             { metin: "Düz doğru ŷ = 3: artıklar −1, −2, 1, 0, 2. Kareler toplamı 10; daha kötü.", gizle: ["l1"], goster: ["l2"], set: { sse: { metin: "toplam = 10" } } },
             { metin: "ŷ = 0,6 + 0,8x: artıklar 0,6; −1,2; 1,0; −0,8; 0,4. Kareler toplamı ==3,6==. Hiçbir doğru bundan küçük değil: LSRL budur.", gizle: ["l2"], goster: ["l3"], set: { sse: { metin: "toplam = 3,6" } } }
@@ -77,7 +77,7 @@ window.DEFTER = {
     },
     {
       baslik: "s: tahmin hatasının tipik büyüklüğü",
-      kisa: "s artıkların standart sapmasıdır; tahminlerin gerçekten tipik sapmasıdır.",
+      kisa: "s artıkların standart sapmasıdır; gerçek değerlerin tahminlerden tipik sapmasıdır.",
       bloklar: [
         { tip: "formul", parcalar: [{ t: "s" }, "=", { t: "√ ( Σ ( y − ŷ )² / ( n − 2 ) )", alt: "artıkların kareler toplamı ÷ (n − 2), sonra karekök" }], aciklama: "Payda n − 2'dir çünkü iki parametre (a ve b) tahmin edildi. s, y ile aynı birimdedir." },
         { tip: "ornek", baslik: "Beş nokta için s", durum: "LSRL ŷ = 0,6 + 0,8x'in artıkları 0,6; −1,2; 1,0; −0,8; 0,4. Kareler toplamı 3,6.",

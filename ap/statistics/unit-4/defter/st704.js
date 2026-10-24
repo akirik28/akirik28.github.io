@@ -77,7 +77,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [{ t: "x̄_d", alt: "farkların ortalaması" }, "±", { t: "t∗", alt: "df = n − 1" }, "·", { t: "s_d/√n", alt: "SE (n: çift sayısı)" }],
           aciklama: "Parametre μ_d: bütün çiftler için ortalama fark. Aralık 0'ı içeriyorsa μ_d = 0 makul bir değerdir." },
-        { tip: "ornek", baslik: "Telefon dışarıda olunca puan değişiyor mu?", durum: "Okuldan rastgele seçilen 9 öğrenci, aynı tür iki testi çözdü; hangi testte telefonun yanında olacakları yazı-turayla belirlendi. Farklar (dışarıda − yanında): x̄_d = 3, s_d = 3 puan; farkların nokta grafiği yaklaşık simetrik, uç değer yok. %95 güven aralığı kur.",
+        { tip: "ornek", baslik: "Telefon dışarıda olunca puan değişiyor mu?", durum: "Okuldan rastgele seçilen 9 öğrenci, aynı tür iki testi çözdü; telefonun hangi oturumda (birinci mi ikinci mi) yanlarında olacağı her öğrenci için yazı-turayla belirlendi. Farklar (dışarıda − yanında): x̄_d = 3, s_d = 3 puan; farkların nokta grafiği yaklaşık simetrik, uç değer yok. %95 güven aralığı kur.",
           adimlar: [
             "State: μ_d = okuldaki öğrenciler için ortalama puan farkı (telefon dışarıda − telefon yanında). %95 aralık kuracağız.",
             "Plan: *paired t interval for μ_d*. Random: öğrenciler rastgele seçildi, test sırası rastgele atandı. 10%: 9, okulun %10'undan az. Normal: n = 9 < 30 ama farkların grafiği yaklaşık simetrik, uç değer yok.",

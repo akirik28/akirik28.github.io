@@ -65,7 +65,7 @@ window.DEFTER = {
             { metin: "Her gün kumbaraya o günün numarası kadar TL atıyorsun: 1 + 2 + 3 + …" },
             { metin: "S₁ = 1, S₂ = 3, S₃ = 6, S₄ = 10.", goster: ["t1", "t2", "t3", "t4"] },
             { metin: "S₅ = 15, S₆ = 21, S₇ = 28, S₈ = 36: adımlar giderek büyüyor.", goster: ["t5", "t6", "t7", "t8"] },
-            { metin: "Noktalar hiçbir çizgiye sıkışmıyor, sonsuza kaçıyor: ==limit yok==, seri ıraksaktır." }
+            { metin: "Noktalar hiçbir çizgiye sıkışmıyor, sonsuza kaçıyor: ==sonlu limit yok== (Sₙ → ∞), seri ıraksaktır." }
           ] },
         { tip: "tablo", baslik: "Üç seri, üç davranış", head: ["Seri", "S₁, S₂, S₃, S₄", "Kısmi toplamlar", "Sonuç"], rows: [["1 + 2 + 3 + 4 + …", "1, 3, 6, 10", "sonsuza büyür", "ıraksar"], ["1 − 1 + 1 − 1 + …", "1, 0, 1, 0", "iki değer arasında gidip gelir", "ıraksar"], ["½ + ¼ + ⅛ + …", "0,5; 0,75; 0,875; 0,9375", "1'e yaklaşır", "yakınsar (toplam 1)"]], vurgu: 2 }
       ]
@@ -76,7 +76,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "ornek", baslik: "Σ 1/(n(n+1)) (n = 1'den ∞'a): teleskopik seri", durum: "Sₙ'i bul, seri yakınsak mı ve toplamı kaç?", adimlar: ["Kesirlere ayır: 1/(n(n+1)) = 1/n − 1/(n+1).", "Aç: Sₙ = (1 − ½) + (½ − ⅓) + … + (1/n − 1/(n+1)).", "Ortadaki terimler birbirini götürür: Sₙ = 1 − 1/(n+1).", "Limit: n → ∞ iken 1/(n+1) → 0, yani Sₙ → 1."], sonuc: "Seri yakınsar; Σ 1/(n(n+1)) = 1" },
         { tip: "ornek", baslik: "Sₙ = 3n/(n+1) verilmiş", durum: "Σ aₙ yakınsak mı? a₁ ve a₂ kaç?", adimlar: ["Limit: lim 3n/(n+1) = 3. Sonlu bir sayı, seri yakınsar ve toplamı 3.", "a₁ = S₁ = 3/2.", "a₂ = S₂ − S₁ = 6/3 − 3/2 = 2 − 3/2 = 1/2.", "Genel terim: aₙ = Sₙ − Sₙ₋₁ = 3/(n(n+1))."], sonuc: "Σ aₙ = 3; a₁ = 3/2, a₂ = 1/2" },
-        { tip: "tuzak", metin: "Terimlerin limiti ile kısmi toplamların limiti iki ayrı şeydir. Dizi 0'a giderken seri 1'e gidebilir; terimler 1'e giderken seri sonsuza gidebilir.", yanlis: "1/2, 1/4, 1/8, … dizisi 0'a gidiyor, yani toplam da 0'dır.", dogru: "Dizinin (aₙ) limiti 0, serinin toplamı (lim Sₙ) 1. Seri için hep ==Sₙ'in limitine== bak." }
+        { tip: "tuzak", metin: "Terimlerin limiti ile kısmi toplamların limiti iki ayrı şeydir. Dizi 0'a giderken seri 1'e gidebilir; terimler 1'e giderken seri sonsuza gider.", yanlis: "1/2, 1/4, 1/8, … dizisi 0'a gidiyor, yani toplam da 0'dır.", dogru: "Dizinin (aₙ) limiti 0, serinin toplamı (lim Sₙ) 1. Seri için hep ==Sₙ'in limitine== bak." }
       ]
     },
     {

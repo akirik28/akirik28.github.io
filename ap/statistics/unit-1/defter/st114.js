@@ -10,7 +10,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🚶", terim: "Convenience sample", tr: "kolay ulaşılan örneklem", tanim: "Ulaşması en kolay bireylerden oluşan örneklem.", ornek: "Marmaray çıkışındaki 50 kişiden 46'sı toplu taşımacı (%92); arabadakilere hiç sorulmadı." },
-            { ikon: "↗️", terim: "Bias", tr: "yanlılık (sapma)", tanim: "Yöntemin, bilmek istediğin değeri ==sistematik olarak aynı yönde== (hep fazla ya da hep eksik) tahmin etmesi. Tek bir örneklemin şanssızlığı değildir.", ornek: "Her hafta aynı sıradan sayan bahçıvanın tahmini hep fazla çıkar." },
+            { ikon: "↗️", terim: "Bias", tr: "yanlılık (sapma)", tanim: "Yöntemin, bilmek istediğin değeri ==sistematik olarak aynı yönde== (ortalamada fazla ya da ortalamada eksik) tahmin etmesi. Tek bir örneklemin şanssızlığı değildir.", ornek: "Her hafta aynı sıradan sayan bahçıvanın tahmini hep fazla çıkar." },
             { ikon: "⬆️", terim: "Overestimate", tr: "fazla tahmin", tanim: "Tahminin gerçek değerden büyük çıkması.", ornek: "212 > gerçek toplam." },
             { ikon: "⬇️", terim: "Underestimate", tr: "eksik tahmin", tanim: "Tahminin gerçek değerden küçük çıkması.", ornek: "Yoğun kişilerin cevap vermediği ankette boş vakit tahmini düşebilir." }
           ] },
@@ -101,7 +101,7 @@ window.DEFTER = {
           sonuc: "Kalan 1683 kişi farklı düşünüyorsa sonuç kayar; ortalama boş vakit *overestimate* edilir." },
         { tip: "ikili",
           sol: { ikon: "📬", baslik: "*Nonresponse*", maddeler: ["Araştırmacı kişiyi SEÇTİ", "Kişi cevap vermedi ya da ulaşılamadı", "Rastgele örneklemde de olur"] },
-          sag: { ikon: "🙋", baslik: "*Voluntary response*", maddeler: ["Kimse seçilmedi", "İsteyen kendisi katıldı", "Cevap vermeyen yok; herkes katıldı"] },
+          sag: { ikon: "🙋", baslik: "*Voluntary response*", maddeler: ["Kimse seçilmedi", "İsteyen kendisi katıldı", "Örneklem yalnızca katılanlardan oluşur; katılmayanlar *nonresponse* sayılmaz"] },
           oyun: [
             { metin: "Rastgele seçilen 500 kullanıcıya e-posta gitti, 90'ı cevapladı.", cevap: "sol", neden: "Araştırmacı seçti, çoğu cevap vermedi." },
             { metin: "Okul hesabında anket paylaşıldı, isteyen oy verdi.", cevap: "sag", neden: "Kimse seçilmedi; gönüllüler katıldı." },

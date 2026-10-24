@@ -34,7 +34,7 @@ window.DEFTER = {
             { metin: "S₅ … S₈: tek indisliler (üst) azalıyor, çift indisliler (alt) artıyor.", goster: ["s5", "s6", "s7", "s8"] },
             { metin: "Zikzak daralıyor ve bir değere oturuyor (≈ 0,69): ==seri yakınsar==.", goster: ["L"] }
           ] },
-        { tip: "formul", parcalar: [{ t: "S₂ < S₄ < S₆ < …", alt: "çift indisliler artar" }, "<", { t: "S", alt: "serinin toplamı" }, "<", { t: "… < S₅ < S₃ < S₁", alt: "tek indisliler azalır" }], aciklama: "Testin koşulları sağlanınca toplam her zaman ardışık iki kısmi toplamın arasındadır. Bu gözlem bir sonraki defterdeki hata sınırının temelidir." }
+        { tip: "formul", parcalar: [{ t: "S₂ < S₄ < S₆ < …", alt: "çift indisliler artar" }, "<", { t: "S", alt: "serinin toplamı" }, "<", { t: "… < S₅ < S₃ < S₁", alt: "tek indisliler azalır" }], aciklama: "Testin koşulları sağlanınca toplam her zaman ardışık iki kısmi toplamın arasındadır. Bu gözlem ileride göreceğin alterne seri hata sınırının (10.10) temelidir." }
       ]
     },
     {

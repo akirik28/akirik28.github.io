@@ -111,7 +111,7 @@ window.DEFTER = {
             "0–4 dakika alanı: ½ · 4 · 4 = +8 L.",
             "4–6 dakika alanı: ½ · 2 · 2 = 2, işaret eksi: −2 L.",
             "Net değişim: 8 − 2 = +6 L. Son miktar: 20 + 6 = 26 L.",
-            "En dolu an hızın artıdan eksiye geçtiği t = 4: 20 + 8 = 28 L."
+            "Adaylar: Q(0) = 20, Q(4) = 28, Q(6) = 26. En dolu an t = 4: 28 L (hız orada artıdan eksiye geçiyor)."
           ], sonuc: "6. dakikada 26 L; en çok t = 4'te 28 L." },
         { tip: "tuzak", metin: "Alan bir **değişimdir**, miktarın kendisi değil. Başlangıç değerini eklemeden depodaki miktarı bulamazsın.", yanlis: "Net alan 6 olduğuna göre depoda 6 L su var.", dogru: "Alan +6 L değişim verir; depoda 20 + 6 = 26 L var." }
       ]
@@ -138,7 +138,7 @@ window.DEFTER = {
             "Alanın birimi = hızın birimi × yatay eksenin birimi (L/dk · dk = L).",
             "Eksenin üstündeki alan artı, altındaki alan eksidir; net değişim bunların toplamıdır.",
             "Son miktar = başlangıç miktarı + işaretli alan. Alanın kendisi miktar değildir.",
-            "Hız artıdan eksiye geçince miktar en yüksek değerine ulaşır.",
+            "Hız artıdan eksiye geçince miktar yerel maksimuma ulaşır; en yüksek (mutlak) değer için bu anı uç noktalardaki miktarla karşılaştır.",
             "Grafiğin eğimi hızın kendi değişim hızıdır; alan ile karıştırma."
           ] }
       ]

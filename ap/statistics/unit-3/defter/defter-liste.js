@@ -11,7 +11,7 @@ window.KIT = {
       "code": "3.1",
       "slug": "st503",
       "title": "Yanlı ve Yansız Tahminler",
-      "en": "Biased and Unbiased Point Estimates",
+      "en": "Estimators",
       "accent": "#FF8A65",
       "questions": []
     },
@@ -29,7 +29,7 @@ window.KIT = {
       "code": "3.3",
       "slug": "st601",
       "title": "Oran İçin Güven Aralığı",
-      "en": "Why Be Normal? Constructing a Confidence Interval for a Proportion",
+      "en": "Constructing a Confidence Interval for a Population Proportion",
       "accent": "#E86A92",
       "questions": []
     },
@@ -56,7 +56,7 @@ window.KIT = {
       "code": "3.6",
       "slug": "st604",
       "title": "p-Değerini Yorumlamak",
-      "en": "Interpreting p-Values",
+      "en": "p-Values",
       "accent": "#F25F5C",
       "questions": []
     },
@@ -65,7 +65,7 @@ window.KIT = {
       "code": "3.7",
       "slug": "st605",
       "title": "Oran Testini Sonuçlandırmak",
-      "en": "Concluding a Test for a Population Proportion",
+      "en": "Carrying Out a Test for a Population Proportion",
       "accent": "#F6B94A",
       "questions": []
     },
@@ -110,7 +110,7 @@ window.KIT = {
       "code": "3.14",
       "slug": "st803",
       "title": "İki Yönlü Tabloda Beklenen Sayılar",
-      "en": "Expected Counts in Two-Way Tables",
+      "en": "Setting Up a Chi-Square Test for Homogeneity or Independence",
       "accent": "#E86A92",
       "questions": []
     },

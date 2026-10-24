@@ -26,7 +26,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "🎯", terim: "Unbiased estimator", tr: "yansız tahmin edici", tanim: "Sampling distribution'ının mean'i ==parameter'a eşit== olan statistic; ortalamada doğru yere nişan alır.", ornek: "x̄ için μ_x̄ = μ; p̂ için μ_p̂ = p." },
-            { ikon: "↗️", terim: "Biased estimator", tr: "yanlı tahmin edici", tanim: "Sampling distribution'ının mean'i parameter'a eşit olmayan statistic; hep düşük ya da hep yüksek tahmin eder.", ornek: "Örneklem maksimumu, popülasyon maksimumunu hep düşük tahmin eder." }
+            { ikon: "↗️", terim: "Biased estimator", tr: "yanlı tahmin edici", tanim: "Sampling distribution'ının mean'i parameter'a eşit olmayan statistic; sistematik olarak (ortalamada) düşük ya da yüksek tahmin eder.", ornek: "Örneklem maksimumu popülasyon maksimumunu asla aşamaz, bazen de altında kalır: ortalamada düşük tahmin eder." }
           ] },
         { tip: "grafik", baslik: "Yanlılık ve değişkenlik: dört durum", xlabel: "Statistic'in değeri", ylabel: "", xmax: 12, ymax: 10,
           xticks: [{ v: 5, label: "param." }],
@@ -46,7 +46,7 @@ window.DEFTER = {
           sag: { ikon: "↗️", baslik: "*Biased*", maddeler: ["Mean ≠ parameter", "Örnek: örneklem maksimumu, range"] },
           oyun: [
             { metin: "x̄ ile μ'yü tahmin etmek (rastgele örneklem).", cevap: "sol", neden: "μ_x̄ = μ: yansız." },
-            { metin: "Örneklem maksimumuyla popülasyon maksimumunu tahmin etmek.", cevap: "sag", neden: "Örneklem maksimumu popülasyon maksimumundan büyük olamaz: hep düşük kalır." },
+            { metin: "Örneklem maksimumuyla popülasyon maksimumunu tahmin etmek.", cevap: "sag", neden: "Örneklem maksimumu popülasyon maksimumundan büyük olamaz, bazen küçük çıkar: ortalamada düşük kalır." },
             { metin: "p̂ ile p'yi tahmin etmek (rastgele örneklem).", cevap: "sol", neden: "μ_p̂ = p: yansız." },
             { metin: "Sağa çarpık popülasyonda örneklem median'ıyla μ'yü tahmin etmek.", cevap: "sag", neden: "Median, çarpık popülasyonda mean'in altında kalır: μ için yanlı." },
             { metin: "Örneklem range'iyle popülasyon range'ini tahmin etmek.", cevap: "sag", neden: "Örneklem range'i popülasyon range'ini ortalamada küçük bulur: yanlı." }
@@ -65,7 +65,7 @@ window.DEFTER = {
             ["Ortalaması", "5", "2,5", "11,25"]
           ], vurgu: 4, not: "Parameter'lar: μ = (1 + 2 + 3 + 14) ÷ 4 = 5; popülasyon maksimumu = 14." },
         { tip: "ornek", baslik: "Hangisi yansız?", durum: "Tablodaki her statistic'in dört örneklemdeki ortalamasını (yani sampling distribution'ın mean'ini) ilgili parameter'la karşılaştır.",
-          adimlar: ["Mean: (2 + 5,67 + 6 + 6,33) ÷ 4 = 5 = μ. Eşit: yansız.", "Median: (2 + 2 + 3 + 3) ÷ 4 = 2,5. μ = 5'ten küçük: μ için yanlı (hep düşük kalıyor).", "Maximum: (3 + 14 + 14 + 14) ÷ 4 = 11,25. Popülasyon maksimumu 14'ten küçük: yanlı (hep düşük)."],
+          adimlar: ["Mean: (2 + 5,67 + 6 + 6,33) ÷ 4 = 5 = μ. Eşit: yansız.", "Median: (2 + 2 + 3 + 3) ÷ 4 = 2,5. μ = 5'ten küçük: μ için yanlı (ortalamada düşük kalıyor).", "Maximum: (3 + 14 + 14 + 14) ÷ 4 = 11,25. Popülasyon maksimumu 14'ten küçük: yanlı (ortalamada düşük)."],
           sonuc: "==x̄ yansızdır; örneklem median'ı (çarpık popülasyonda μ için) ve örneklem maksimumu yanlıdır.==" }
       ]
     },
@@ -106,7 +106,7 @@ window.DEFTER = {
             { name: "Tahmin edici B", min: 45, q1: 53, med: 56, q3: 59, max: 66 }
           ], label: "Statistic değeri (gerçek parameter = 50)" } },
         { tip: "ornek", baslik: "A mı B mi?", durum: "Gerçek parameter 50. Her tahmin edici için 1.000 örneklemden statistic hesaplandı; kutu grafikleri yukarıda.",
-          adimlar: ["A'nın median'ı 50 ve kutusu 50'nin çevresinde simetrik: merkez parameter'a yakın → yansız görünüyor.", "B'nin median'ı 56 ve bütün kutu 50'nin sağında: merkez kaymış → yanlı (fazla tahmin ediyor).", "Kutu genişlikleri benzer (IQR: A için 53 − 47 = 6, B için 59 − 53 = 6): değişkenlik farkı yok."],
+          adimlar: ["A'nın median'ı 50 ve kutusu 50'nin çevresinde simetrik: merkez parameter'a yakın → yansız görünüyor.", "B'nin median'ı 56 ve bütün kutu 50'nin sağında: merkez kaymış → yanlı (fazla tahmin ediyor).", "Kutu genişlikleri aynı (IQR: A için 53 − 47 = 6, B için 59 − 53 = 6): değişkenlik benzer (B'nin range'i biraz daha büyük: 21'e karşı 16)."],
           sonuc: "==A yansız görünüyor, B yanlı.== Yorumu bağlamla yaz: ‘B, parameter'ı sistematik olarak olduğundan fazla tahmin ediyor.’" }
       ]
     },
@@ -116,7 +116,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "ozet", maddeler: [
             "*Point estimate*: parameter'ı tahmin etmek için örneklemden hesaplanan tek sayı (p̂ → p, x̄ → μ, s → σ).",
-            "*Unbiased estimator*: sampling distribution'ının mean'i parameter'a eşittir; *biased*: eşit değildir (hep düşük ya da hep yüksek).",
+            "*Unbiased estimator*: sampling distribution'ının mean'i parameter'a eşittir; *biased*: eşit değildir (sistematik olarak düşük ya da yüksek).",
             "p̂ ve x̄ (ve farkları p̂₁ − p̂₂, x̄₁ − x̄₂) yansız tahmin edicilerdir; örneklem maksimumu ve range'i yanlıdır.",
             "Yanlılık merkezle (kayma), değişkenlik yayılımla (SD) ilgilidir; ikisi birbirinden bağımsızdır.",
             "n artınca değişkenlik azalır, yanlılık azalmaz; yanlılığı rastgele örnekleme ya da yansız statistic giderir.",
@@ -143,10 +143,10 @@ window.DEFTER = {
     { q: "Popülasyonda 2, 4 ve 9 değerleri var; range = 9 − 2 = 7. Bu popülasyondan n = 2 olan tüm olası örneklemler (iadesiz) çekilip her birinin range'i hesaplanıyor. Bu range'lerin ortalaması ve sonuç nedir?",
       opts: ["≈ 4,67; örneklem range'i popülasyon range'ini ortalamada düşük bulur (yanlı).", "7; örneklem range'i yansızdır.", "≈ 4,67; örneklem range'i yansızdır.", "7; örneklem range'i yanlıdır."],
       a: 0,
-      why: "Örneklemler (2,4), (2,9), (4,9) için range'ler 2, 7 ve 5; ortalama (2 + 7 + 5) ÷ 3 ≈ 4,67 < 7. Ortalama parameter'a eşit olmadığı için range yanlıdır (hep düşük tahmin)." },
+      why: "Örneklemler (2,4), (2,9), (4,9) için range'ler 2, 7 ve 5; ortalama (2 + 7 + 5) ÷ 3 ≈ 4,67 < 7. Ortalama parameter'a eşit olmadığı için range yanlıdır (ortalamada düşük tahmin; hiçbir örneklemde 7'yi aşmaz)." },
     { q: "Aşağıdaki tahmin edici–parameter çiftlerinden hangisi yanlı bir tahmin edici örneğidir?",
       opts: ["p̂, p için", "x̄, μ için", "x̄₁ − x̄₂, μ₁ − μ₂ için", "Örneklem maksimumu, popülasyon maksimumu için"],
       a: 3,
-      why: "p̂, x̄ ve x̄₁ − x̄₂ yansızdır. Örneklem maksimumu hiçbir zaman popülasyon maksimumundan büyük olamaz ve çoğu zaman küçüktür: ortalamada düşük kalır, yanlıdır." }
+      why: "p̂, x̄ ve x̄₁ − x̄₂ yansızdır. Örneklem maksimumu hiçbir zaman popülasyon maksimumundan büyük olamaz ve bazen küçüktür: ortalamada düşük kalır, yanlıdır." }
   ]
 };

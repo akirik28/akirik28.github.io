@@ -1,5 +1,5 @@
-/* Kitpath not defteri · st804 · 8.5–8.6 Homojenlik ve Bağımsızlık Testleri
-   Kaynak: AP Statistics CED Unit 8 (Topic 8.5–8.6). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · st804 · 3.14–3.15 Homojenlik ve Bağımsızlık Testleri
+   Kaynak: AP Statistics CED Unit 3 (Topic 3.14–3.15). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st804",
   amac: "Bu konu iki yönlü tablolar için ki-kare testlerini anlatıyor: gruplar aynı dağılıma mı sahip (*homogeneity*), iki kategorik değişken ilişkisiz mi (*independence*)? Hipotezleri, koşulları, χ² ve p-değerini, sonucun bağlamla yazılışını öğreneceksin.",
@@ -99,7 +99,7 @@ window.DEFTER = {
             ["p ≤ α", "H₀’ı reddederiz: dağılımın en az bir grupta farklı olduğuna dair ikna edici kanıt var.", "H₀’ı reddederiz: iki değişkenin ilişkili olduğuna dair ikna edici kanıt var."],
             ["p > α", "H₀’ı reddedemeyiz: dağılımların farklı olduğuna dair ikna edici kanıt yok.", "H₀’ı reddedemeyiz: iki değişkenin ilişkili olduğuna dair ikna edici kanıt yok."]
           ], not: "Cümleye grupların ve değişkenlerin adını ekle (okul, favori platform gibi)." },
-        { tip: "tuzak", baslik: "İlişki neden-sonuç değildir", metin: "Bağımsızlık testi yalnızca ilişkiyi gösterir. Neden-sonuç iddiası ancak rastgele atamalı deneyle (homojenlik tasarımı) yapılabilir. Ayrıca “reddedemedik” demek “bağımsız olduğu kanıtlandı” demek değildir.",
+        { tip: "tuzak", baslik: "İlişki neden-sonuç değildir", metin: "Bağımsızlık testi yalnızca ilişkiyi gösterir. Neden-sonuç iddiası ancak rastgele atamalı deneyle (gruplara rastgele atama yapılan homojenlik testi) yapılabilir; ayrı rastgele örneklemlerden gelen homojenlik testi de yalnızca fark gösterir. Ayrıca “reddedemedik” demek “bağımsız olduğu kanıtlandı” demek değildir.",
           yanlis: "p büyük çıktı, yani okul ile platform kesinlikle ilişkisizdir.",
           dogru: "İlişki olduğuna dair ikna edici kanıt bulamadık; ilişkisizlik kanıtlanmadı." }
       ]

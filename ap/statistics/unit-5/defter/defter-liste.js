@@ -11,7 +11,7 @@ window.KIT = {
       "code": "5.1",
       "slug": "st203",
       "title": "Saçılım Grafiği",
-      "en": "Representing the Relationship Between Two Quantitative Variables",
+      "en": "Graphical Representations Between Two Quantitative Variables",
       "accent": "#E86A92",
       "questions": []
     },
@@ -38,7 +38,7 @@ window.KIT = {
       "code": "5.5",
       "slug": "st206",
       "title": "En Küçük Kareler Regresyonu",
-      "en": "Least Squares Regression",
+      "en": "Least-Squares Regression",
       "accent": "#F25F5C",
       "questions": []
     },
@@ -94,7 +94,7 @@ window.KIT = {
       "en": "Selecting an Appropriate Inference Procedure",
       "accent": "#B77AD9",
       "questions": [],
-      "not": "2026-27 müfredatından çıkarıldı: sınavda sorulmaz. Meraklısı için duruyor.",
+      "not": "Eğim testi ve uyum iyiliği 2026-27’de çıkarıldı; kapsamdaki yöntem seçimi için Unit 4’teki “Doğru Çıkarım Yöntemini Seçmek” defterine bak.",
       "disi": true
     }
   ]

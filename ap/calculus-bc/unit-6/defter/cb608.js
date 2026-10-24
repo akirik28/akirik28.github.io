@@ -150,7 +150,7 @@ window.DEFTER = {
       q: "∫ 6/(x² + 9) dx integralinin değeri aşağıdakilerden hangisidir?",
       opts: ["2 arctan(x/3) + C", "6 arctan(x/3) + C", "18 arctan(x/3) + C", "3 ln(x² + 9) + C"],
       a: 0,
-      why: "∫ dx/(x² + 9) = (1/3) arctan(x/3) olduğundan 6·(1/3) = 2. B şıkkı 1/a katsayısını unutur. D şıkkı pay x olsaydı doğru olurdu (ln), ama pay sabit."
+      why: "∫ dx/(x² + 9) = (1/3) arctan(x/3) olduğundan 6·(1/3) = 2. B şıkkı 1/a katsayısını unutur. D şıkkı pay 6x olsaydı doğru olurdu (ln), ama pay sabit."
     },
     {
       q: "Bir kantinde dakikada servis edilen kişi sayısı r(t) = (t² + 3t + 5)/(t + 1) olup tabloda gösterilmiştir. İlk dakikada servis edilen toplam kişi sayısı kaçtır?",

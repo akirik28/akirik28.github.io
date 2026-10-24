@@ -43,7 +43,7 @@ window.DEFTER = {
     },
     {
       baslik: "Merkez ve yayılım",
-      kisa: "Mean aynı kalır, SD σ/√n olur; ayrıntı 5.7'de.",
+      kisa: "Mean aynı kalır, SD σ/√n olur; ayrıntı 4.1'de.",
       bloklar: [
         { tip: "formul", parcalar: [{ t: "μ_x̄", alt: "x̄'nin mean'i" }, "=", { t: "μ", alt: "popülasyon mean'i" }], aciklama: "x̄ doğru yerin çevresinde toplanır: yanlılık yok. CLT şekil hakkındadır, merkezi kaydırmaz." },
         { tip: "formul", parcalar: [{ t: "σ_x̄", alt: "x̄'nin SD'si" }, "=", { t: "σ ÷ √n", alt: "σ: popülasyon SD'si" }], aciklama: "n büyüdükçe payda büyür, SD küçülür. SD'yi yarıya indirmek için n'yi 4 katına çıkar." },

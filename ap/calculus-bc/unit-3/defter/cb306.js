@@ -282,7 +282,7 @@ window.DEFTER = {
               ikon: "📈",
               terim: "Increasing function",
               tr: "artan fonksiyon",
-              tanim: "x büyüdükçe f(x) büyür. Hep artan fonksiyon bire birdir, tersi her yerde vardır.",
+              tanim: "x büyüdükçe f(x) büyür. Hep artan fonksiyon bire birdir; tersi, f'nin aldığı bütün değerlerde (görüntü kümesinde) tanımlıdır.",
               ornek: "f′(x) = 3x² + 2 > 0 olduğundan x³ + 2x + 1 hep artandır."
             },
             {

@@ -267,9 +267,9 @@ window.DEFTER = {
         {
           tip: "ornek",
           baslik: "h = f·g: h′(3) pozitif mi negatif mi?",
-          durum: "f'nin grafiği x = 3'te x eksenini yukarıdan aşağı kesiyor. g(3) = 2 ve g artıyor.",
+          durum: "f'nin grafiği x = 3'te x eksenini yukarıdan aşağı kesiyor ve f′(3) < 0. g(3) = 2 ve g artıyor.",
           adimlar: [
-            "Eksenden yukarıdan aşağı kesmek: f(3) = 0 ve f′(3) < 0.",
+            "Grafik eksende: f(3) = 0; teğet aşağı eğimli: f′(3) < 0 (verildi).",
             "h′(3) = f′(3)·g(3) + f(3)·g′(3).",
             "f(3) = 0 olduğu için ikinci terim tamamen sıfır; g′(3)'ü bilmeye gerek yok.",
             "Kalan terim: f′(3)·g(3) = (negatif)(pozitif) = negatif."

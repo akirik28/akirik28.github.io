@@ -137,25 +137,25 @@ window.DEFTER = {
     },
     {
       baslik: "Fazla mı eksik mi? Tahminin yönü",
-      kisa: "Artma-azalma sol ve sağın, içbükeylik yamuk ve orta noktanın yönünü belirler.",
+      kisa: "Artma-azalma sol ve sağın, konkavlık yamuk ve orta noktanın yönünü belirler.",
       bloklar: [
         { tip: "tablo", baslik: "Hangi durumda hangi yöne yanılır?", head: ["Yöntem", "Fazla tahmin (*overestimate*)", "Eksik tahmin (*underestimate*)"],
           rows: [
             ["Sol toplam", "f azalan", "f artan"],
             ["Sağ toplam", "f artan", "f azalan"],
-            ["Yamuk toplamı", "f içbükey yukarı (*concave up*)", "f içbükey aşağı (*concave down*)"],
-            ["Orta nokta toplamı", "f içbükey aşağı", "f içbükey yukarı"]
-          ], not: "Sol ve sağ için f'nin aralıkta hep artan ya da hep azalan olması gerekir." },
+            ["Yamuk toplamı", "f konkav yukarı (*concave up*)", "f konkav aşağı (*concave down*)"],
+            ["Orta nokta toplamı", "f konkav aşağı", "f konkav yukarı"]
+          ], not: "Sol ve sağ için f'nin aralıkta hep artan ya da hep azalan, yamuk ve orta nokta için de aralıkta hep konkav yukarı ya da hep konkav aşağı olması gerekir." },
         { tip: "ikili", sol: { ikon: "⬆️", baslik: "*Overestimate*", maddeler: ["Tahmin gerçekten büyük", "Dikdörtgenler eğriden taşar"] },
           sag: { ikon: "⬇️", baslik: "*Underestimate*", maddeler: ["Tahmin gerçekten küçük", "Dikdörtgenler eğrinin altında kalır"] },
           oyun: [
-            { metin: "f(x) = x² (artan, içbükey yukarı) için sol toplam.", cevap: "sag", neden: "Artan fonksiyonda sol uç düşüktür: eksik." },
+            { metin: "f(x) = x² (artan, konkav yukarı) için sol toplam.", cevap: "sag", neden: "Artan fonksiyonda sol uç düşüktür: eksik." },
             { metin: "f(x) = x² için sağ toplam.", cevap: "sol", neden: "Artan fonksiyonda sağ uç yüksektir: fazla." },
-            { metin: "f(x) = x² için yamuk toplamı.", cevap: "sol", neden: "İçbükey yukarı eğride kirişler eğrinin üstünde kalır: fazla." },
-            { metin: "f(x) = x² için orta nokta toplamı.", cevap: "sag", neden: "İçbükey yukarıda orta nokta toplamı eksik kalır." },
-            { metin: "f(x) = √x (artan, içbükey aşağı) için yamuk toplamı.", cevap: "sag", neden: "İçbükey aşağıda kirişler eğrinin altında kalır: eksik." }
+            { metin: "f(x) = x² için yamuk toplamı.", cevap: "sol", neden: "Konkav yukarı eğride kirişler eğrinin üstünde kalır: fazla." },
+            { metin: "f(x) = x² için orta nokta toplamı.", cevap: "sag", neden: "Konkav yukarıda orta nokta toplamı eksik kalır." },
+            { metin: "f(x) = √x (artan, konkav aşağı) için yamuk toplamı.", cevap: "sag", neden: "Konkav aşağıda kirişler eğrinin altında kalır: eksik." }
           ] },
-        { tip: "tuzak", metin: "Yamuk ve orta nokta aynı yönde yanılmaz; biri fazlaysa öteki eksiktir. \"Sağ her zaman fazladır\" kuralı da yalnızca artan fonksiyonlar için doğrudur.", yanlis: "Sağ toplam her zaman fazla tahmin eder; yamuk ve orta nokta da aynı yöne sapar.", dogru: "Sağ toplam, f azalansa eksik tahmin eder. Yamuk ve orta nokta içbükeyliğe bakar ve zıt yönlere sapar." }
+        { tip: "tuzak", metin: "Konkavlık aralıkta değişmiyorsa yamuk ve orta nokta aynı yönde yanılmaz; biri fazlaysa öteki eksiktir. \"Sağ her zaman fazladır\" kuralı da yalnızca artan fonksiyonlar için doğrudur.", yanlis: "Sağ toplam her zaman fazla tahmin eder; yamuk ve orta nokta da aynı yöne sapar.", dogru: "Sağ toplam, f azalansa eksik tahmin eder. Yamuk ve orta nokta konkavlığa bakar ve zıt yönlere sapar." }
       ]
     },
     {
@@ -166,7 +166,7 @@ window.DEFTER = {
             { ikon: "Σ", terim: "Summation notation", tr: "toplam gösterimi", tanim: "Σ işareti, altındaki indis başlangıcından üstündeki bitişe kadar terimleri toplar. i sayaç (*index*) görevi görür.", ornek: "Σ (i = 1…4) i² = 1 + 4 + 9 + 16 = 30." }
           ] },
         { tip: "formul", parcalar: [{ t: "Sol toplam", alt: "i = 0 … n − 1" }, "=", { t: "Σ f(a + iΔx) · Δx", alt: "i = 0'dan n − 1'e" }, "ve", { t: "Sağ toplam", alt: "i = 1 … n" }, "=", { t: "Σ f(a + iΔx) · Δx", alt: "i = 1'den n'ye" }],
-          aciklama: "Her ikisinde Δx = (b − a)/n. Fark yalnızca indisin başlangıç ve bitişidir: sol ucu 1. dikdörtgen, sağ ucu n. dikdörtgen kapsar." },
+          aciklama: "Her ikisinde Δx = (b − a)/n. Fark yalnızca indisin başlangıç ve bitişidir: sol toplam x = a'daki değeri (i = 0) kullanır ama x = b'yi kullanmaz; sağ toplam x = b'yi (i = n) kullanır ama x = a'yı kullanmaz." },
         { tip: "ornek", baslik: "x² için sağ ve sol toplamı Σ ile yaz", durum: "[0, 4] aralığı, n = 4, Δx = 1, f(x) = x².",
           adimlar: [
             "x noktaları: a + iΔx = 0 + i · 1 = i.",
@@ -206,7 +206,7 @@ window.DEFTER = {
             "Yükseklik sol uçtan, sağ uçtan ya da ortadan alınır; yamukta iki uç ortalanır.",
             "Aralıklar eşit değilse her dikdörtgenin genişliği kendisine aittir; tabloda orta nokta kurulamaz.",
             "Artan f: sol eksik, sağ fazla. Azalan f: tersi.",
-            "İçbükey yukarı: yamuk fazla, orta nokta eksik. İçbükey aşağı: yamuk eksik, orta nokta fazla.",
+            "Konkav yukarı: yamuk fazla, orta nokta eksik. Konkav aşağı: yamuk eksik, orta nokta fazla.",
             "Σ gösterimi: sol toplam i = 0…n−1, sağ toplam i = 1…n.",
             "∫ₐᵇ f(x)dx = lim (n→∞) Σ f(xᵢ)Δx; f sürekliyse bu limit vardır.",
             "Bir limiti integrale çevirirken Δx = (b − a)/n ve xᵢ = a + iΔx eşleşmesini kullan.",
@@ -220,9 +220,9 @@ window.DEFTER = {
       fig: { type: "table", head: ["t (s)", "0", "2", "4", "6"], rows: [["v (m/s)", "5", "7", "8", "6"]], caption: "Bir arabanın hızı" },
       opts: ["40 m", "41 m", "42 m", "52 m"], a: 2,
       why: "Üç alt aralık, her biri 2 saniye. Sağ uçlardaki hızlar 7, 8, 6: (7 + 8 + 6) · 2 = 42. 40 sol toplamdır, 41 yamuk toplamı, 52 ise dört değeri de toplamaktır (5 + 7 + 8 + 6 = 26, 26 · 2)." },
-    { q: "f, [1, 5] aralığında artan ve içbükey aşağı (concave down) bir fonksiyondur. n = 4 alt aralıkla kurulan Riemann toplamları için hangisi doğrudur?",
+    { q: "f, [1, 5] aralığında artan ve konkav aşağı (concave down) bir fonksiyondur. n = 4 alt aralıkla kurulan Riemann toplamları için hangisi doğrudur?",
       opts: ["Sol: eksik, sağ: fazla, yamuk: fazla, orta nokta: eksik", "Sol: eksik, sağ: fazla, yamuk: eksik, orta nokta: fazla", "Sol: fazla, sağ: eksik, yamuk: eksik, orta nokta: fazla", "Sol: eksik, sağ: fazla, yamuk: eksik, orta nokta: eksik"], a: 1,
-      why: "Artan fonksiyonda sol eksik, sağ fazla. İçbükey aşağıda kirişler eğrinin altında kalır (yamuk eksik), orta noktadaki teğet benzeri dikdörtgen ise eğrinin üstüne taşar (orta nokta fazla). A şıkkı içbükey yukarı durumunun cevabıdır; D şıkkı yamuk ve orta noktayı aynı yöne koyduğu için yanlıştır." },
+      why: "Artan fonksiyonda sol eksik, sağ fazla. Konkav aşağıda kirişler eğrinin altında kalır (yamuk eksik), orta noktadaki teğet benzeri dikdörtgen ise eğrinin üstüne taşar (orta nokta fazla). A şıkkı konkav yukarı durumunun cevabıdır; D şıkkı yamuk ve orta noktayı aynı yöne koyduğu için yanlıştır." },
     { q: "lim (n→∞) Σ (i = 1…n) √(1 + 3i/n) · (3/n) limiti hangi belirli integrale eşittir?",
       opts: ["∫₁⁴ √x dx", "∫₀³ √x dx", "∫₁³ √x dx", "∫₁⁴ 3√x dx"], a: 0,
       why: "Δx = 3/n olduğundan b − a = 3; xᵢ = 1 + 3i/n olduğundan a = 1, dolayısıyla b = 4; integrant √x. Dış 3 zaten Δx'tir, ayrıca yazılmaz (D). B ve C şıkları sınırları yanlış kurar." },

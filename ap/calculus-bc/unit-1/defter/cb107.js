@@ -18,8 +18,8 @@ window.DEFTER = {
           tip: "kavramlar",
           kartlar: [
             { ikon: "🛤️", terim: "Continuous on an interval", tr: "aralıkta sürekli", tanim: "Aralığın her noktasında sürekli olmak.", ornek: "y = sin x her aralıkta süreklidir." },
-            { ikon: "🗺️", terim: "Domain", tr: "tanım kümesi", tanim: "Fonksiyonun tanımlı olduğu x değerleri. Süreklilik yalnızca tanım kümesinde sorulur.", ornek: "ln x için tanım kümesi (0, ∞)." },
-            { ikon: "📈", terim: "Polynomial function", tr: "polinom fonksiyon", tanim: "x'in tam kuvvetlerinden oluşan fonksiyon. Her yerde süreklidir.", ornek: "x³ − 3x, (−∞, ∞) üzerinde süreklidir." },
+            { ikon: "🗺️", terim: "Domain", tr: "tanım kümesi", tanim: "Fonksiyonun tanımlı olduğu x değerleri. Tanımlı olmadığı noktada fonksiyon sürekli olamaz; süreklilik aralıkları tanım kümesinin içinden seçilir.", ornek: "ln x için tanım kümesi (0, ∞)." },
+            { ikon: "📈", terim: "Polynomial function", tr: "polinom fonksiyon", tanim: "x'in negatif olmayan tam sayı kuvvetlerinden (x⁰, x¹, x², …) oluşan fonksiyon. Her yerde süreklidir.", ornek: "x³ − 3x, (−∞, ∞) üzerinde süreklidir." },
             { ikon: "➗", terim: "Rational function", tr: "rasyonel fonksiyon", tanim: "İki polinomun oranı. Paydayı sıfır yapan noktalar hariç süreklidir.", ornek: "1/(x − 2), x ≠ 2 için süreklidir." }
           ]
         },

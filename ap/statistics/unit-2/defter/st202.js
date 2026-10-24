@@ -73,7 +73,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🔄", terim: "Simpson's paradox", tr: "Simpson paradoksu", tanim: "Gruplar ayrı ayrı bakıldığında görülen ilişki, gruplar ==birleştirilince tersine dönebilir==. Nedeni genellikle grup bileşimini değiştiren üçüncü bir değişkendir.", ornek: "Ada her mesafede Deniz'den iyi atıyor; ama toplam yüzdede Deniz önde görünüyor." }
           ] },
-        { tip: "grafik", baslik: "Serbest atış isabet oranı: Ada (mavi), Deniz (kırmızı)", xlabel: "Atış türü", ylabel: "İsabet", xmax: 9, ymax: 10,
+        { tip: "grafik", baslik: "Atış isabet oranı: Ada (mavi), Deniz (kırmızı)", xlabel: "Atış türü", ylabel: "İsabet", xmax: 9, ymax: 10,
           xticks: [{ v: 1.5, label: "Yakın" }, { v: 4.5, label: "Uzak" }, { v: 7.5, label: "Toplam" }],
           yticks: [{ v: 0, label: "0" }, { v: 5, label: "%50" }, { v: 10, label: "%100" }],
           ogeler: [

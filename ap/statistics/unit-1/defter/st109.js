@@ -79,7 +79,7 @@ window.DEFTER = {
           sonuc: "==Mean 80,88; SD 17,54.== Skewed left dağılım skewed left kalır. Çıkarma ve bölme de aynı kurallar: x − a, x ÷ b." },
         { tip: "ornek", baslik: "Negatif çarpan", durum: "28, 34, 35, 36, 42 puanları −2 ile çarpılıyor: −56, −68, −70, −72, −84.",
           adimlar: ["Mean: 35 × (−2) = −70.", "Range: −56 − (−84) = 28 = 2 × 14.", "SD: 5 × 2 = 10 (−10 değil)."],
-          sonuc: "Yayılım asla negatif olamaz: ==yeni SD = |b| × SD==. b negatifse grafik aynalanır." },
+          sonuc: "Yayılım asla negatif olamaz: ==yeni SD = |b| × SD==. b negatifse grafik aynalanır (çarpıklığın yönü tersine döner)." },
         { tip: "ikili", sol: { ikon: "✖️", baslik: "×b ile çarpılır", maddeler: ["*Mean*, *median*", "Q1, Q3, min, max"] },
           sag: { ikon: "↔️", baslik: "|b| ile çarpılır", maddeler: ["*Range*, *IQR*, *standard deviation*", "(Shape değişmez)"] },
           oyun: [
@@ -96,7 +96,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "tablo", baslik: "Dönüşümler ve ölçüler", head: ["İşlem", "Center & location", "Variability", "Shape"], rows: [
             ["x + a (ya da x − a)", "a kadar kayar", "değişmez", "değişmez"],
-            ["b · x (ya da x ÷ b)", "b ile çarpılır", "|b| ile çarpılır", "değişmez (b < 0 ise ayna görüntüsü)"],
+            ["b · x (ya da x ÷ b)", "b ile çarpılır", "|b| ile çarpılır", "b > 0 ise değişmez; b < 0 ise ayna görüntüsü (çarpıklığın yönü tersine döner)"],
             ["a + b · x", "a + b · eski", "|b| · eski", "değişmez"]
           ], not: "Center & location: mean, median, Q1, Q3, min, max. Variability: range, IQR, SD. Yeni SD = |b| × eski SD; toplama sabiti karışmaz." },
         { tip: "ikili", sol: { ikon: "✅", baslik: "Doğru ifade", maddeler: ["Kurala uyar", "Hesapla doğrulanır"] },
@@ -163,7 +163,7 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "*Transforming data*: her değere aynı işlemi uygulamak (x + a ya da b · x).",
             "Sabit eklemek/çıkarmak: mean, median, Q1, Q3, min, max a kadar kayar; range, IQR, SD ve *shape* değişmez.",
-            "Sabitle çarpmak/bölmek: merkez ve konum b ile, yayılım |b| ile çarpılır; *shape* değişmez (b < 0 ise ayna görüntüsü).",
+            "Sabitle çarpmak/bölmek: merkez ve konum b ile, yayılım |b| ile çarpılır; *shape* b > 0 ise değişmez; b < 0 ise ayna görüntüsü (çarpıklığın yönü tersine döner).",
             "SD asla negatif olmaz: yeni SD = |b| × SD.",
             "Yüzde zam bir çarpmadır (×1,1); sabit zam bir toplamadır.",
             "Birim değiştirirken: °F = 1,8 × °C + 32 ⇒ mean 20 → 68, SD 5 → 9 (32 SD'ye eklenmez).",

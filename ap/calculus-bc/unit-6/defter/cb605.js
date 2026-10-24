@@ -156,7 +156,7 @@ window.DEFTER = {
       why: "Antitürev x³ + x. [x³ + x]₀² = (8 + 2) − 0 = 10. 8, x terimini unutmaktır; 13, integral almadan fonksiyonun x = 2'deki değerini (3 · 4 + 1) yazmaktır." },
     { q: "∫₁^e 2/x dx değeri kaçtır?",
       opts: ["2", "1", "2e", "e − 1"], a: 0,
-      why: "Antitürev 2 ln x. 2 ln e − 2 ln 1 = 2 · 1 − 0 = 2. 1, çarpan 2'yi unutmaktır; e − 1, ∫ eˣ dx gibi davranmaktır." },
+      why: "Antitürev 2 ln x. 2 ln e − 2 ln 1 = 2 · 1 − 0 = 2. 1, çarpan 2'yi unutmaktır; e − 1, 2/x'in antitürevi yerine x yazıp [x]₁^e = e − 1 hesaplamaktır." },
     { q: "Düz bir koridorda hareket eden bir robotun hızı v(t) = 2t − 6 m/s (0 ≤ t ≤ 6). Robotun 0–6 saniyede aldığı toplam yol kaç metredir?",
       opts: ["0", "9", "18", "36"], a: 2,
       why: "v(t) = 0 olan an t = 3. ∫₀³ |2t − 6| dt = 9 ve ∫₃⁶ (2t − 6) dt = 9: toplam yol 18 m. ∫₀⁶ v dt = 0 yer değiştirmedir; robot başladığı yere dönmüştür. 9 yalnızca bir yarıdır." },

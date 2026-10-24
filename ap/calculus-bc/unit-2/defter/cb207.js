@@ -377,7 +377,7 @@ window.DEFTER = {
     },
     {
       baslik: "Hepsi bir arada: türev tablosu",
-      kisa: "Önceki bölümün kuralları aynen geçerli; listeye dört yeni türev eklendi.",
+      kisa: "Önceki bölümün kuralları aynen geçerli; listeye altı yeni türev eklendi.",
       bloklar: [
         {
           tip: "tablo",
@@ -479,7 +479,7 @@ window.DEFTER = {
         {
           tip: "tuzak",
           baslik: "Derece modu",
-          metin: "Trigonometrik türevlerde değerleri birim çemberden oku. Hesap makinesi derece modundaysa cos π yerine cos 180° mantığıyla yanlış sonuç alırsın.",
+          metin: "Trigonometrik türevlerde değerleri birim çemberden oku. Hesap makinesi derece modundaysa cos(π) yazınca π'yi 3,14 derece sanır ve cos(3,14°) ≈ 0,9985 verir; doğru değer −1.",
           yanlis: "Hesap makinesi DEG modunda cos(π) hesaplamak.",
           dogru: "RAD modu: cos π = −1."
         }

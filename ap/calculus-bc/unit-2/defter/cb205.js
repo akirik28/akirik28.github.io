@@ -89,7 +89,7 @@ window.DEFTER = {
               ikon: "🧱",
               terim: "Constant",
               tr: "sabit",
-              tanim: "x içermeyen sayı. Türevi 0'dır, çünkü yatay doğrunun eğimi yoktur.",
+              tanim: "x içermeyen sayı. Türevi 0'dır, çünkü y = c yatay bir doğrudur ve eğimi 0'dır.",
               ornek: "d/dx 5 = 0; d/dx x = 1."
             }
           ]

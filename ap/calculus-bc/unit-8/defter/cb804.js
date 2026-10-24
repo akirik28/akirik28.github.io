@@ -28,7 +28,7 @@ window.DEFTER = {
               t: "dx"
             }
           ],
-          aciklama: "Burada ==f(x) ≥ g(x)== olmalı. Eksenin altında kalan bölgelerde de çalışır: fark yine pozitiftir, çünkü iki eğri de aynı miktar aşağıdadır."
+          aciklama: "Burada ==f(x) ≥ g(x)== olmalı. Eksenin altında kalan bölgelerde de çalışır: fark yine pozitiftir, çünkü her x'te f(x) ≥ g(x); dilimin yüksekliği f − g, eğrilerin eksene göre yerinden bağımsızdır."
         },
         {
           tip: "kavramlar",

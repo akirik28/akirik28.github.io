@@ -301,7 +301,7 @@ window.DEFTER = {
           tip: "tuzak",
           metin: "Yarım daire sorusunda s çaptır, yarıçap değil. Alanı ½ π s² yazarsan sonuç 4 kat büyük çıkar.",
           yanlis: "Çapı s olan yarım dairenin alanı π s² / 2.",
-          dogru: "Yarıçap s/2: A = ½ · π (s/2)² = π s² / 8. Kesit çemberse A = π s² / 4."
+          dogru: "Yarıçap s/2: A = ½ · π (s/2)² = π s² / 8. Kesit (çapı s olan) tam daireyse A = π s² / 4."
         }
       ]
     },

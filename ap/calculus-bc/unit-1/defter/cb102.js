@@ -11,7 +11,7 @@ window.DEFTER = {
         { tip: "hikaye", ikon: "🌉", baslik: "Ortada buluşmayan köprü",
           metin: "İki ekip köprüyü iki yakadan yapıyor. Soldaki ekip 3 metre yükseklikte, sağdaki 4 metrede geliyor. Ortadaki yükseklik kaç? Tek bir cevap yok: işte limitin olmadığı bir durum." },
         { tip: "kavramlar", kartlar: [
-            { ikon: "⚪", terim: "Open circle", tr: "açık (içi boş) daire", tanim: "Fonksiyonun oraya gitmediği yeri gösterir; ama değerlerin yaklaştığı yer olabilir.", ornek: "(2, 3) açık daire: sol kol buraya tırmanıyor." },
+            { ikon: "⚪", terim: "Open circle", tr: "açık (içi boş) daire", tanim: "Fonksiyonun o x'te bu değeri almadığını gösterir (f(c) tanımsız ya da başka bir değer olabilir); değerler yine de oraya yaklaşıyor olabilir.", ornek: "(2, 3) açık daire: sol kol buraya tırmanıyor." },
             { ikon: "⚫", terim: "Closed circle", tr: "dolu nokta", tanim: "Fonksiyonun o x'teki gerçek değeridir. Limiti etkilemez.", ornek: "f(2) = 1: ayrık dolu nokta, limit değişmez." }
           ] }
       ]
@@ -45,7 +45,7 @@ window.DEFTER = {
             { id: "y3t", tip: "yazi", x: 6.9, y: 3.3, metin: "y = 3", hiza: "end", gizli: true }
           ],
           durumlar: [
-            { metin: "Kural: ○ içi boş daire = gidilmeyen yer, ● dolu nokta = gerçek değer. Hep aynı soru: nokta nereye gidiyor?" },
+            { metin: "Kural: ○ içi boş daire = fonksiyonun almadığı değer (değerler oraya yaklaşır), ● dolu nokta = gerçek değer. Hep aynı soru: nokta nereye gidiyor?" },
             { metin: "x = 2: soldan 3'e tırmanıyor, sağdan 4'ten iniyor. Farklı → limit ==yok==. Ayrık f(2) = 1 limiti etkilemez.", goster: ["kl1", "kr1", "kt1", "kt2"] },
             { metin: "x = 4: soldan 2, sağdan 2 → limit 2. Dolu nokta da burada: f(4) = 2.", gizle: ["kl1", "kr1", "kt1", "kt2"], goster: ["kl2", "kr2", "kt3"] },
             { metin: "x = 5: yalnızca bir delik. İki yandan 3'e gidiyor: limit 3, f(5) tanımsız.", gizle: ["kl2", "kr2", "kt3"], goster: ["kl3", "kr3", "kt4"] },
@@ -81,7 +81,7 @@ window.DEFTER = {
         { tip: "kavramlar", kartlar: [
             { ikon: "🚫", terim: "Does not exist (DNE)", tr: "limit yok", tanim: "Limitin gerçel bir sayı olarak var olmaması. Üç nedeni vardır: sıçrama, sınırsız büyüme, salınım.", ornek: "x → 2 iken sol 3, sağ 4." },
             { ikon: "🪜", terim: "Jump", tr: "sıçrama", tanim: "Soldan ve sağdan limitin farklı olduğu kopukluk.", ornek: "x = 2'de 3'ten 4'e atlayan grafik." },
-            { ikon: "🚀", terim: "Unbounded", tr: "sınırsız", tanim: "Değerlerin sonsuza büyümesi ya da küçülmesi. ∞ yazılır ama sayı değildir.", ornek: "1 / (x − 1)² x → 1 iken büyür; limit yok." },
+            { ikon: "🚀", terim: "Unbounded", tr: "sınırsız", tanim: "Değerlerin sınırsız büyümesi (+∞) ya da sınırsız azalması (−∞). ∞ yazılır ama sayı değildir.", ornek: "1 / (x − 1)² x → 1 iken büyür; limit yok." },
             { ikon: "🌀", terim: "Oscillation", tr: "salınım", tanim: "Değerlerin hiçbir sayıya yerleşmeden gidip gelmesi.", ornek: "sin(1/x), x → 0: −1 ile 1 arasında gidip gelir." }
           ] },
         { tip: "ikili", sol: { ikon: "✅", baslik: "Limit **var**", maddeler: ["İki taraf aynı gerçel sayıya gider", "f(c) tanımsız ya da farklı olabilir"] },

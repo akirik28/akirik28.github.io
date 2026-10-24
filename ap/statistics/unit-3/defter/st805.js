@@ -1,8 +1,8 @@
-/* Kitpath not defteri · st805 · 8.7 Kategorik Veride Yöntem Seçimi
-   Kaynak: AP Statistics CED Unit 8 (Topic 8.7; Unit 6'daki z yöntemlerini de kapsar). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · st805 · Kategorik Veride Yöntem Seçimi
+   Kaynak: AP Statistics CED Unit 3 (yöntem seçimi; konular 3.3–3.15). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st805",
-  amac: "Bu konu kategorik veride doğru çıkarım yöntemini seçmeyi anlatıyor: tek oran z, iki oran z, ki-kare uyum iyiliği, homojenlik ve bağımsızlık. Sorudaki veri durumuna bakarak yöntemi, hipotezleri ve koşulları seçmeyi öğreneceksin.",
+  amac: "Bu konu kategorik veride doğru çıkarım yöntemini seçmeyi anlatıyor: tek oran z, iki oran z, ki-kare homojenlik ve bağımsızlık. (Ki-kare uyum iyiliği 2026-27 sınavından çıkarıldı.) Sorudaki veri durumuna bakarak yöntemi, hipotezleri ve koşulları seçmeyi öğreneceksin.",
   bolumler: [
     {
       baslik: "Önce soruya bak: üç soru",
@@ -16,23 +16,21 @@ window.DEFTER = {
         { tip: "harita", merkez: "Kategorik veri: hangi çıkarım?", dallar: [
             { baslik: "1 grup, 2 sonuç", alt: "Tek oran z (aralık ya da test)" },
             { baslik: "2 grup, 2 sonuç", alt: "İki oran z (aralık ya da test)" },
-            { baslik: "1 örneklem, 3+ kategori, iddia", alt: "χ² uyum iyiliği" },
             { baslik: "Birkaç grup, 1 değişken", alt: "χ² homojenlik" },
             { baslik: "1 örneklem, 2 değişken", alt: "χ² bağımsızlık" }
           ] }
       ]
     },
     {
-      baslik: "Beş yöntem tek tabloda",
+      baslik: "Dört yöntem tek tabloda",
       kisa: "Her yöntemin parametresi, H₀’ı ve büyük sayı koşulu farklıdır.",
       bloklar: [
         { tip: "tablo", baslik: "Kategorik veri için çıkarım yöntemleri", head: ["Yöntem", "Veri durumu", "H₀", "Büyük sayı koşulu"], rows: [
-            ["Tek oran z", "1 örneklem, 2 sonuç", "p = p₀", "np ≥ 10 ve n(1 − p) ≥ 10"],
+            ["Tek oran z", "1 örneklem, 2 sonuç", "p = p₀", "Aralık: np̂, n(1 − p̂) ≥ 10; test: np₀, n(1 − p₀) ≥ 10"],
             ["İki oran z", "2 grup, 2 sonuç", "p₁ = p₂", "Her grupta başarı ve başarısızlık ≥ 10"],
-            ["χ² uyum iyiliği", "1 örneklem, 1 değişken, iddia edilen dağılım", "Dağılım iddia edildiği gibi", "Bütün E ≥ 5; df = k − 1"],
             ["χ² homojenlik", "Birkaç ayrı örneklem, 1 değişken", "Dağılım gruplarda aynı", "Bütün E ≥ 5; df = (r − 1)(c − 1)"],
             ["χ² bağımsızlık", "1 örneklem, 2 değişken", "Değişkenler bağımsız", "Bütün E ≥ 5; df = (r − 1)(c − 1)"]
-          ], vurgu: 2, not: "Hepsinde ortak koşullar: *Random* ve %10 (bağımsızlık). Hepsinde 4 adım: State, Plan, Do, Conclude." },
+          ], not: "Hepsinde ortak koşullar: *Random* ve %10 (bağımsızlık; yerine koymadan örneklemede, rastgele atamalı deneyde gerekmez). Hepsinde 4 adım: State, Plan, Do, Conclude." },
         { tip: "kavramlar", kartlar: [
             { ikon: "↔️", terim: "Confidence interval", tr: "güven aralığı", tanim: "Bir parametre için makul değerleri verir. Yalnızca z yöntemleri (tek oran, iki oran farkı) aralık üretir.", ornek: "İki sınıfın ödev yapma oranları farkı için %95 aralık." },
             { ikon: "⚖️", terim: "Significance test", tr: "anlamlılık testi", tanim: "Bir iddiaya karşı kanıt arar ve p-değeri verir. Hem z hem χ² yöntemleri bunu yapar.", ornek: "Dağılım gruplarda aynı mı? p-değerine bak." }
@@ -88,11 +86,11 @@ window.DEFTER = {
             { id: "p4", tip: "yazi", x: 11, y: 2.2, metin: "df = 4: p ≈ 0,136", gizli: true }
           ],
           durumlar: [
-            { metin: "df = 2 (örneğin 3 kategorili uyum iyiliği) ve χ² = 7: sağ kuyruk alanı çok küçük." },
+            { metin: "df = 2 (örneğin 2×3 tablo) ve χ² = 7: sağ kuyruk alanı çok küçük." },
             { metin: "Alan p ≈ 0,030 < 0,05 ⇒ H₀ reddedilir.", goster: ["obs", "a2", "p2"] },
             { metin: "Aynı χ² = 7 ile df = 4 (örneğin 3×3 tablo): eğri sağa kaydı; sağ kuyruk alanı ≈ 0,136 > 0,05 ⇒ H₀ reddedilemez.", goster: ["c4", "a4", "p4"] }
           ] },
-        { tip: "not", metin: "df’yi tablo boyutundan çıkar: uyum iyiliğinde df = k − 1, homojenlik ve bağımsızlıkta df = (r − 1)(c − 1). Yanlış df ile χ² doğru hesaplansa bile p-değeri ve karar yanlış çıkar." }
+        { tip: "not", metin: "df’yi tablo boyutundan çıkar: homojenlik ve bağımsızlıkta df = (r − 1)(c − 1). Yanlış df ile χ² doğru hesaplansa bile p-değeri ve karar yanlış çıkar." }
       ]
     },
     {
@@ -102,7 +100,6 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "Önce üç soru: kaç örneklem / grup, kaç kategorik değişken ve kaç kategori, tahmin mi test mi?",
             "1 grup, 2 sonuç: tek oran z. 2 grup, 2 sonuç: iki oran z. Bunlar güven aralığı da verir.",
-            "1 örneklem, 1 değişken, 3+ kategori, iddia edilen dağılım: χ² uyum iyiliği (df = k − 1).",
             "Birkaç ayrı örneklem ya da rastgele atanmış grup, tek değişken: χ² homojenlik. Tek örneklem, iki değişken: χ² bağımsızlık (df = (r − 1)(c − 1)).",
             "χ² testleri yalnızca test yapar; Hₐ yön içermez (“en az biri farklı / ilişkili”).",
             "Koşullar: *Random*, %10; z için np ve n(1 − p) en az 10, χ² için bütün E en az 5.",

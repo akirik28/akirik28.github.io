@@ -58,7 +58,7 @@ window.DEFTER = {
             { id: "sifir", tip: "cizgi", renk: 1, kesik: true, from: [5, 0], to: [5, 6.6], etiket: "", gizli: true },
             { id: "yok", tip: "yazi", renk: 1, x: 5, y: 6.9, metin: "etki yok", gizli: true },
             { id: "obs", tip: "nokta", renk: 2, x: 6, y: 4.46, etiket: "+1", gizli: true },
-            { id: "kuyruk", tip: "alan", renk: 2, noktalar: [[7.6, 0], [7.6, 0.81], [8, 0.42], [9, 0.05], [10, 0]], gizli: true }
+            { id: "kuyruk", tip: "alan", renk: 2, noktalar: [[8.5, 0], [8.5, 0.15], [8.75, 0.095], [9, 0.05], [9.25, 0.014], [9.5, 0], [10, 0]], gizli: true }
           ],
           durumlar: [
             { metin: "Uygulamanın etkisi yokken bile rastgele atama yüzünden iki grubun ortalaması az çok farklı çıkar. Eğri: yalnızca ==şansla== oluşan farkların dağılımı.", goster: ["zil", "sifir", "yok"] },
@@ -74,13 +74,13 @@ window.DEFTER = {
       kisa: "Önce anlamlı mı, sonra rastgele atama mı, sonra rastgele seçim mi diye sor.",
       bloklar: [
         { tip: "adimlar", baslik: "Üç soru, üç parça", adimlar: [
-            { baslik: "1 · Fark anlamlı mı?", metin: "Şansla kolayca açıklanamıyorsa, uygulama ile fark arasında gerçek bir bağ var demektir." },
+            { baslik: "1 · Fark anlamlı mı?", metin: "Şansla kolayca açıklanamıyorsa, farkın yalnızca şanstan gelmediğine dair güçlü (convincing) kanıt var demektir." },
             { baslik: "2 · Rastgele atama var mı?", metin: "Varsa fark treatment'a bağlanabilir; neden-sonuç cümlesi kurulur." },
             { baslik: "3 · Rastgele seçim var mı?", metin: "Varsa sonuç seçildikleri population'a; yoksa yalnızca çalışmadaki birimlere benzeyenlere genellenir." }
           ] },
         { tip: "ornek", baslik: "Uygulama deneyinin sonuç cümlesi", durum: "Çalışma uygulaması deneyinde 20 gönüllü öğrenci kura ile iki gruba ayrıldı; uygulama grubunun ortalaması 3,5 puan yüksek çıktı ve fark anlamlı bulundu.",
           adimlar: ["Fark anlamlı: 1000 yeniden atamanın hiçbirinde bu kadar büyük fark çıkmadı.", "Rastgele atama var: neden-sonuç çıkarılabilir.", "Birimler gönüllü, okuldan rastgele seçilmemiş: genelleme sınırlı."],
-          sonuc: "\"Fark şansla açıklanamayacak kadar büyük ve öğrenciler rastgele atandığı için uygulama, bu gönüllülerde quiz puanının artmasına neden olmuştur. Katılımcılar gönüllü olduğundan sonuç ancak onlara benzeyen öğrencilere genellenebilir.\"" }
+          sonuc: "\"Fark şansla kolayca açıklanamayacak kadar büyük ve öğrenciler rastgele atandığı için, uygulamanın bu gönüllülerde quiz puanını artırdığına dair güçlü kanıt (convincing evidence) var. Katılımcılar gönüllü olduğundan sonuç ancak onlara benzeyen öğrencilere genellenebilir.\"" }
       ]
     },
     {

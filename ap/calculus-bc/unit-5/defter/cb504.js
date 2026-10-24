@@ -49,7 +49,7 @@ window.DEFTER = {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
-        {"tip":"ozet","maddeler":["Kapalı [a, b] üzerinde sürekli f için mutlak max ve min vardır; yeri uç noktalarda ya da kritik noktalardadır.","Aday testi: uç noktaları ve (a, b) içindeki kritik noktaları listele, f'yi hesapla, en büyüğü ve en küçüğü seç.","Kritik nokta: f′ = 0 ya da tanımsız (f tanımlı). Tanımsız türev de aday üretir (x^(2/3), x = 0).","Yerel maksimum mutlak olmak zorunda değil; uç noktaları atlama.","Cevap hem değeri hem yeri (x) isteyebilir: \"mutlak max 9\" ile \"x = 3\" aynı şey değil.","Açık ya da sonsuz aralıkta aday testi yetmez: işaret analizi ve uçlardaki limit davranışına bak.","Tek kritik nokta ve orada − → + ise o nokta aralıkta mutlak minimum, + → − ise mutlak maksimumdur.","Aralık değişirse adaylar ve sonuç değişir."]}
+        {"tip":"ozet","maddeler":["Kapalı [a, b] üzerinde sürekli f için mutlak max ve min vardır; yeri uç noktalarda ya da kritik noktalardadır.","Aday testi: uç noktaları ve (a, b) içindeki kritik noktaları listele, f'yi hesapla, en büyüğü ve en küçüğü seç.","Kritik nokta: f′ = 0 ya da tanımsız (f tanımlı). Tanımsız türev de aday üretir (x^(2/3), x = 0).","Yerel maksimum mutlak olmak zorunda değil; uç noktaları atlama.","Cevap hem değeri hem yeri (x) isteyebilir: \"mutlak max 9\" ile \"x = 3\" aynı şey değil.","Açık ya da sonsuz aralıkta aday testi yetmez: işaret analizi ve uçlardaki limit davranışına bak.","f aralıkta sürekliyse ve aralıktaki tek kritik nokta c'de f′ − → + ise f(c) mutlak minimum, + → − ise mutlak maksimumdur.","Aralık değişirse adaylar ve sonuç değişir."]}
       ]
     }
   ],

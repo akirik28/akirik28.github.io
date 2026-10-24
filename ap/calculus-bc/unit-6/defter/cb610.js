@@ -46,7 +46,7 @@ window.DEFTER = {
             "İntegre et: (1/3) ln|x − 1| − (1/3) ln|x + 2| + C = (1/3) ln|(x − 1)/(x + 2)| + C.",
             "Kontrol: türev (1/3)(1/(x − 1) − 1/(x + 2)) = (1/3)·3/((x − 1)(x + 2)). ✓"
           ], sonuc: "(1/3) ln|(x − 1)/(x + 2)| + C" },
-        { tip: "ornek", baslik: "∫ (3x + 5)/((x + 1)(x + 3)) dx", durum: "Payda sabit değil, x'li bir pay var.",
+        { tip: "ornek", baslik: "∫ (3x + 5)/((x + 1)(x + 3)) dx", durum: "Pay sabit değil, x'li bir pay var.",
           adimlar: [
             "3x + 5 = A(x + 3) + B(x + 1).",
             "x = −1: −3 + 5 = 2 = 2A → A = 1.  x = −3: −9 + 5 = −4 = −2B → B = 2.",

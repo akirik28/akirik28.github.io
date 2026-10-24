@@ -51,7 +51,7 @@ window.DEFTER = {
             { metin: "İki ayrı zarın üst yüzleri.", cevap: "sol", neden: "Bir zar diğerini etkilemez: bağımsız." },
             { metin: "Aynı öğrencinin matematik ve fizik sınav puanları.", cevap: "sag", neden: "İlişkili olma eğilimi var: bağımlı." }
           ] },
-        { tip: "not", metin: "Sınavda bağımsızlığı söylemeden σ'yı birleştirme. Soru \"bağımsız\" diyorsa ya da rastgele ve ayrı denemelerden söz ediyorsa kuralı kullan. Ortalamayı birleştirmek için bağımsızlık gerekmediğini unutma." }
+        { tip: "not", metin: "Bağımsızlığı söylemeden σ'yı birleştirme. Problem \"bağımsız\" diyorsa ya da rastgele ve ayrı denemelerden söz ediyorsa kuralı kullan. Ortalamayı birleştirmek için bağımsızlık gerekmediğini unutma." }
       ]
     },
     {
@@ -117,7 +117,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konunun özeti.",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Ortalamalar her zaman toplanır ya da çıkarılır: μ_(X±Y) = μ_X ± μ_Y; bağımsızlık gerekmez.",

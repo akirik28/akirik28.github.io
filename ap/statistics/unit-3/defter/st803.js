@@ -1,5 +1,5 @@
-/* Kitpath not defteri · st803 · 8.4 İki Yönlü Tabloda Beklenen Sayılar
-   Kaynak: AP Statistics CED Unit 8 (Topic 8.4). Blok türleri: /ap/_kit/defter.js başı. */
+/* Kitpath not defteri · st803 · 3.14 İki Yönlü Tabloda Beklenen Sayılar
+   Kaynak: AP Statistics CED Unit 3 (Topic 3.14). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "st803",
   amac: "Bu konu iki yönlü tablolarda beklenen sayıların nasıl bulunduğunu anlatıyor: (satır toplamı × sütun toplamı) ÷ genel toplam. Kenar toplamlarını okumayı, df = (r − 1)(c − 1) formülünü ve Large Counts koşulunu öğreneceksin.",
@@ -90,7 +90,7 @@ window.DEFTER = {
         { tip: "ornek", baslik: "Large Counts kontrolü", durum: "Beklenen sayılar tablosundaki en küçük değere bak.",
           adimlar: ["Altı beklenen sayı: 30, 18, 12, 20, 12, 8.", "En küçüğü 8 ≥ 5 ✓, yani *Large Counts* sağlanır.", "*Random* ve %10 koşulları, verinin nasıl toplandığına bakılarak değerlendirilir (st804)."],
           sonuc: "Bütün beklenen sayılar en az 5; ki-kare yaklaşımı güvenilir." },
-        { tip: "tuzak", baslik: "df’yi hücre sayısından bulma", metin: "Uyum iyiliğindeki df = kategori − 1 kuralını iki yönlü tabloya taşıma. Burada satır ve sütun sayıları ayrı ayrı hesaba girer.",
+        { tip: "tuzak", baslik: "df’yi hücre sayısından bulma", metin: "Hücre sayısından 1 çıkarma. İki yönlü tabloda satır ve sütun sayıları ayrı ayrı hesaba girer.",
           yanlis: "Altı hücre var, df = 6 − 1 = 5.",
           dogru: "df = (r − 1)(c − 1) = (2 − 1)(3 − 1) = 2." }
       ]
@@ -136,10 +136,10 @@ window.DEFTER = {
       a: 2,
       why: "df = (r − 1)(c − 1) = (3 − 1)(4 − 1) = 6. 12 hücre sayısıdır, 11 ise hücre sayısı − 1 hatasıdır; 7 ise 3 + 4 olur ama df toplam değil çarpımdır." },
     { q: "Aşağıdaki tablo bir iki yönlü ki-kare testi için hesaplanan beklenen sayıları veriyor. Hangi ifade doğrudur?",
-      fig: { type: "table", head: ["Beklenen sayı", "Sütun 1", "Sütun 2", "Sütun 3"], rows: [["Satır 1", 12, 8, 4.5], ["Satır 2", 18, 12, 6.5]], caption: "Beklenen sayılar" },
-      opts: ["*Large Counts* sağlanmıyor çünkü bir beklenen sayı 5’ten küçük.", "*Large Counts* sağlanıyor çünkü toplam 61 ve 5’ten büyük.", "*Large Counts* sağlanıyor çünkü gözlenen sayılar büyük olabilir.", "*Large Counts* beklenen sayılara değil satır toplamlarına bakar."],
+      fig: { type: "table", head: ["Beklenen sayı", "Sütun 1", "Sütun 2", "Sütun 3"], rows: [["Satır 1", 12, 8, 4], ["Satır 2", 18, 12, 6]], caption: "Beklenen sayılar" },
+      opts: ["*Large Counts* sağlanmıyor çünkü bir beklenen sayı 5’ten küçük.", "*Large Counts* sağlanıyor çünkü toplam 60 ve 5’ten büyük.", "*Large Counts* sağlanıyor çünkü gözlenen sayılar büyük olabilir.", "*Large Counts* beklenen sayılara değil satır toplamlarına bakar."],
       a: 0,
-      why: "Koşul, her beklenen sayının en az 5 olmasını ister. 4,5 < 5 olduğundan sağlanmıyor. Gözlenen sayılara ya da toplamlara bakmak koşulun anlamını değiştirir." },
+      why: "Koşul, her beklenen sayının en az 5 olmasını ister. 4 < 5 olduğundan sağlanmıyor. Gözlenen sayılara ya da toplamlara bakmak koşulun anlamını değiştirir." },
     { q: "Bir iki yönlü tabloda “9. sınıf ve servis” hücresinde gözlenen sayı 36, beklenen sayı 30’dur. Bu, nasıl yorumlanır?",
       opts: ["30 öğrenci bu hücrede olmalıydı ve 6 öğrenci yanlış sayılmıştır.", "Beklenen sayı gözlenenden küçük olduğu için H₀ otomatik reddedilir.", "Beklenen sayı, gözlenen sayıya eşit olmak zorundadır.", "İki değişken ilişkisiz olsaydı bu hücrede ortalamada 30 öğrenci beklenirdi; gözlenen sayı bunun 6 üzerinde."],
       a: 3,

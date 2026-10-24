@@ -48,7 +48,7 @@ window.DEFTER = {
       kisa: "10%: n ≤ N ÷ 10; Large Counts: np ≥ 10 ve n(1−p) ≥ 10.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🔟", terim: "10% condition", tr: "10% koşulu", tanim: "Örneklem rastgele olmalı ve çekimsiz seçimde n ≤ N ÷ 10 olmalı; böylece gözlemler yaklaşık bağımsızdır ve σ_p̂ formülü geçerlidir.", ornek: "1.200 öğrencilik okuldan en çok 120 kişi." },
+            { ikon: "🔟", terim: "10% condition", tr: "10% koşulu", tanim: "İadesiz seçimde n ≤ N ÷ 10 olmalı; böylece gözlemler yaklaşık bağımsızdır ve σ_p̂ formülü geçerlidir. (Örneklemin rastgele olması ayrı bir koşuldur: Random.)", ornek: "1.200 öğrencilik okuldan en çok 120 kişi." },
             { ikon: "📏", terim: "Large Counts", tr: "büyük sayımlar koşulu", tanim: "np ≥ 10 ve n(1−p) ≥ 10 ise p̂'nin dağılımı ==yaklaşık normaldir==.", ornek: "p = 0,40, n = 100: np = 40 ve n(1−p) = 60, ikisi de ≥ 10." }
           ] },
         { tip: "sekil", baslik: "Large Counts bozulunca: p = 0,05, n = 20 (np = 1)", fig: { type: "bar", cats: ["0,00", "0,05", "0,10", "0,15", "0,20", "0,25+"], series: [{ name: "Olasılık (%)", values: [35.8,37.7,18.9,6,1.3,0.3] }], ylabel: "Olasılık (%)" } },
@@ -84,10 +84,10 @@ window.DEFTER = {
         { tip: "ozet", maddeler: [
             "p̂ = x ÷ n; p̂'nin sampling distribution'ının mean'i μ_p̂ = p (yansız).",
             "SD: σ_p̂ = √(p(1−p) ÷ n); n'yi 4 katına çıkarmak SD'yi yarıya indirir.",
-            "10% koşulu: rastgele örneklem ve çekimsiz seçimde n ≤ N ÷ 10 (bağımsızlık).",
+            "Random: rastgele örneklem. 10% koşulu: iadesiz seçimde n ≤ N ÷ 10 (bağımsızlık).",
             "Large Counts: np ≥ 10 ve n(1−p) ≥ 10 ise p̂ yaklaşık normaldir; n ≥ 30 kuralı oranlar için geçerli değildir.",
             "Olasılık: z = (p̂ − p) ÷ σ_p̂, tablo ya da normalcdf; ‘büyüktür’ için 1'den çıkar.",
-            "Gerçek p bilinmiyorsa p̂ ile hesaplanan SD’ye *standard error* denir (sonraki ünitelerde).",
+            "Gerçek p bilinmiyorsa p̂ ile hesaplanan SD’ye *standard error* denir (sonraki konularda, 3.3).",
             "Çok düşük olasılıklı bir p̂, iddia edilen p'den şüphelenmek için bir nedendir."
           ] }
       ]
@@ -97,7 +97,7 @@ window.DEFTER = {
     { q: "Bir okulda öğrencilerin %30'u (p = 0,30) kütüphane üyesi. Okulun çok büyük olduğunu varsayarak, rastgele seçilen n = 100 öğrencilik örneklemde p̂'nin standard deviation'ı yaklaşık kaçtır?",
       opts: ["0,046", "0,21", "0,0021", "0,30"],
       a: 0,
-      why: "σ_p̂ = √(p(1−p) ÷ n) = √(0,30 × 0,70 ÷ 100) = √0,0021 ≈ 0,046. 0,0021 karekökü almamaktır (varyans); 0,21 ise payda n'yi unutmaktır." },
+      why: "σ_p̂ = √(p(1−p) ÷ n) = √(0,30 × 0,70 ÷ 100) = √0,0021 ≈ 0,046. 0,0021 karekökü almamaktır (varyans); 0,21 ise p(1 − p)'nin kendisidir: hem n'ye bölmeyi hem karekök almayı unutmak." },
     { q: "Aşağıdaki durumlardan hangisinde p̂'nin sampling distribution'ı için normal model uygundur? (Örneklemler rastgele ve popülasyonlar çok büyük.)",
       opts: ["n = 40, p = 0,10", "n = 300, p = 0,02", "n = 100, p = 0,95", "n = 200, p = 0,30"],
       a: 3,

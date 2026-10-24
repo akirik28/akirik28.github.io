@@ -11,7 +11,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "kavramlar", kartlar: [
             { ikon: "✅", terim: "Plausible value", tr: "makul değer", tanim: "Güven aralığının ==içinde== kalan sayı. Veri, ortalamanın bu değer olmasıyla çelişmiyor.", ornek: "Aralık (8,78; 10,02) ise 9, 9,5 ve 10 makuldür." },
-            { ikon: "🚫", terim: "Convincing evidence", tr: "ikna edici kanıt", tanim: "İddia edilen değer aralığın ==dışında== kalıyorsa, ortalamanın o değer olduğuna dair kanıt zayıftır; ortalamanın ondan farklı olduğuna dair kanıt vardır.", ornek: "Aralık (8,78; 10,02) iken 11 saat iddiası." }
+            { ikon: "🚫", terim: "Convincing evidence", tr: "ikna edici kanıt", tanim: "İddia edilen değer aralığın ==dışında== kalıyorsa o değer makul değildir; gerçek ortalamanın ondan farklı olduğuna dair ikna edici kanıt vardır.", ornek: "Aralık (8,78; 10,02) iken 11 saat iddiası." }
           ] },
         { tip: "grafik", baslik: "Pil ömrü: aralık ve üç iddia", xlabel: "Ortalama pil ömrü (saat)", ylabel: "", xmax: 12, ymax: 5,
           xticks: [{ v: 0, label: "8" }, { v: 3, label: "9" }, { v: 6, label: "10" }, { v: 9, label: "11" }, { v: 12, label: "12" }],

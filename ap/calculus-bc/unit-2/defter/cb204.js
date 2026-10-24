@@ -2,7 +2,7 @@
    Kaynak: ap-videolar/src/episodes/cb204 (script.ts + notes.md). Blok türleri: /ap/_kit/defter.js başı. */
 window.DEFTER = {
   slug: "cb204",
-  amac: "Bu konu türevin nerede var olup nerede bozulduğunu anlatıyor: köşe, sivri uç, dikey teğet ve süreksizlik. Türevlenebilir ise sürekli teoremini, tersinin yanlış olduğunu ve grafikte bu noktaları ayırmayı öğreneceksin.",
+  amac: "Bu konu türevin nerede var olup nerede bozulduğunu anlatıyor: köşe, sivri uç, dikey teğet ve süreksizlik. Türevlenebilir ise sürekli teoremini, karşıtının yanlış olduğunu ve grafikte bu noktaları ayırmayı öğreneceksin.",
   bolumler: [
     {
       baslik: "Yakınlaşınca doğru: *local linearity*",
@@ -12,7 +12,7 @@ window.DEFTER = {
           tip: "hikaye",
           ikon: "🔬",
           baslik: "Mikroskopla bak",
-          metin: "Eğrinin bir noktasına mikroskopla yaklaş: yaklaştıkça eğri düzleşir ve bir doğruya benzer. Mutlak değer grafiğinin sivri ucuna yaklaşırsan, ne kadar yakınlaşsan da köşe köşe kalır. İlkinde türev var, ikincisinde yok."
+          metin: "Eğrinin bir noktasına mikroskopla yaklaş: yaklaştıkça eğri düzleşir ve bir doğruya benzer. Mutlak değer grafiğinin köşesine yaklaşırsan, ne kadar yakınlaşsan da köşe köşe kalır. İlkinde türev var, ikincisinde yok."
         },
         {
           tip: "kavramlar",
@@ -149,7 +149,7 @@ window.DEFTER = {
             }
           ],
           durumlar: [
-            { metin: "|x − 2| grafiği x = 2'de sivri bir köşe yapıyor." },
+            { metin: "|x − 2| grafiği x = 2'de bir köşe (corner) yapıyor." },
             {
               metin: "Soldan yaklaşırken fark bölümü hep −1: sol kol eğimi −1 olan bir doğru.",
               goster: [
@@ -422,7 +422,7 @@ window.DEFTER = {
               ]
             },
             {
-              metin: "Fark bölümü sağdan (3 − 2)/h = 1/h → ∞. Tek bir teğet çizilemez: ==süreksiz noktada türev yok==.",
+              metin: "Fark bölümü sağdan [f(2 + h) − 2]/h ≈ (3 − 2)/h = 1/h → +∞. Tek bir teğet çizilemez: ==süreksiz noktada türev yok==.",
               goster: [
                 "q"
               ]
@@ -460,7 +460,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Tersi yanlış: sürekli olmak yetmez",
+      baslik: "Karşıtı yanlış: sürekli olmak yetmez",
       kisa: "Türevlenebilir ⇒ sürekli doğru; sürekli ⇒ türevlenebilir yanlış.",
       bloklar: [
         {
@@ -490,7 +490,7 @@ window.DEFTER = {
             {
               metin: "f, x = 4'te süreksiz; o halde f′(4) yoktur.",
               cevap: "sol",
-              neden: "Teoremin karşıtı: sürekli değilse türevlenebilir değil."
+              neden: "Teoremin karşıt tersi (contrapositive): sürekli değilse türevlenebilir değil."
             },
             {
               metin: "f, x = 1'de sürekli; o halde f′(1) vardır.",
@@ -513,7 +513,7 @@ window.DEFTER = {
           tip: "tuzak",
           metin: "Sınavda en sık mantık hatası, teoremin yönünü çevirmektir.",
           yanlis: "Sürekli olan her fonksiyon türevlenebilirdir.",
-          dogru: "Okun yönü tek: ==türevlenebilir ⇒ sürekli==. Tersi için karşı örnek |x − 2|."
+          dogru: "Okun yönü tek: ==türevlenebilir ⇒ sürekli==. Karşıtı için karşı örnek |x − 2|."
         }
       ]
     },

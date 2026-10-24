@@ -405,7 +405,7 @@ window.DEFTER = {
             ]
           ],
           vurgu: 3,
-          not: "Eğim = 4 + h. h = 0 koyarsak 0/0 çıkar; bu yüzden oraya yürümeyiz, limitle yaklaşırız."
+          not: "Sadeleşince eğim = 4 + h. Ama fark bölümüne [f(3 + h) − f(3)]/h doğrudan h = 0 koyarsak 0/0 çıkar; bu yüzden oraya yürümeyiz, limitle yaklaşırız."
         },
         {
           tip: "kavramlar",

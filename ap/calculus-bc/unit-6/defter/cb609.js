@@ -135,7 +135,7 @@ window.DEFTER = {
             "Kısmi integrasyon çarpım kuralının tersidir: ∫ u dv = uv − ∫ v du.",
             "Belirli integral: ∫ₐᵇ u dv = [uv]ₐᵇ − ∫ₐᵇ v du; uv'ye sınırları koymayı unutma.",
             "u: türev alınca sadeleşen (ln x, ters trig., x). dv: integrali kolay olan (eˣ dx, sin x dx).",
-            "LIATE bir kuraldır: Logaritmik, Ters trig., Cebirsel, Trig., Üstel.",
+            "LIATE pratik bir sıralamadır (kesin kural değil): Logaritmik, Ters trig., Cebirsel, Trig., Üstel.",
             "ln x ve arctan x tek başına: u = fonksiyonun kendisi, dv = dx.",
             "Tekrarlı integralde her adımda kuvvet düşer; tablo yöntemi aynı sonucu kısaltır.",
             "eˣ sin x ve eˣ cos x döngüseldir: iki kez uygula, I'yı denklemden çöz.",

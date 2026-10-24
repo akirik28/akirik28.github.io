@@ -53,7 +53,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "formul", parcalar: [{ t: "lim aₙ / bₙ = L", alt: "aₙ, bₙ > 0" }, "→", { t: "0 < L < ∞", alt: "pozitif ve sonlu" }, "⇒", { t: "Σ aₙ ve Σ bₙ aynı kaderde", alt: "ikisi yakınsar ya da ikisi ıraksar" }], aciklama: "*Limit comparison test*: terimler yaklaşık olarak L·bₙ gibi davranır. Eşitsizlik göstermek zor olduğunda bu test işe yarar." },
         { tip: "adimlar", baslik: "bₙ'yi baskın terimlerden seç", adimlar: [{ baslik: "Pay ve paydanın baskın terimi", metin: "En büyük kuvvetleri (ya da en hızlı büyüyen terimleri) bul." }, { baslik: "bₙ = baskın pay ÷ baskın payda", metin: "Sadeleştir: p-serisi ya da geometrik seri çıkmalı." }, { baslik: "L'yi hesapla", metin: "lim aₙ/bₙ. Pozitif ve sonlu ise bₙ'nin kaderi aₙ'nin kaderidir." }] },
-        { tip: "tuzak", metin: "Limit karşılaştırmada L pozitif ve sonlu olmalı. L = 0 ya da L = ∞ çıkarsa bu test sonuç vermez; terimlerin pozitif olması da şart.", yanlis: "L = 0 çıktı, iki seri aynı kaderi paylaşır.", dogru: "L = 0 ya da ∞ ise başka bir bₙ seç ya da başka bir test kullan." }
+        { tip: "tuzak", metin: "Limit karşılaştırmada L pozitif ve sonlu olmalı. L = 0 ya da L = ∞ çıkarsa testin AP'de kullanılan bu biçimi sonuç vermez; terimlerin pozitif olması da şart.", yanlis: "L = 0 çıktı, iki seri aynı kaderi paylaşır.", dogru: "L = 0 ya da ∞ ise başka bir bₙ seç ya da başka bir test kullan." }
       ]
     },
     {
@@ -97,7 +97,7 @@ window.DEFTER = {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
-        { tip: "ozet", maddeler: ["Her iki testte de terimler pozitif olmalı.", "Doğrudan karşılaştırma: 0 ≤ aₙ ≤ bₙ; büyük yakınsarsa küçük yakınsar, küçük ıraksarsa büyük ıraksar.", "Ters yön (büyük ıraksıyor ya da küçük yakınsıyor) sonuç vermez.", "Limit karşılaştırma: lim aₙ/bₙ = L, 0 < L < ∞ ise iki seri aynı kaderde.", "L = 0 ya da ∞ ise bu test sonuç vermez.", "bₙ'yi baskın terimlerden seç ve p-serisi ya da geometrik seri çıkar.", "Doğrudan karşılaştırmanın yönü bozuksa (ör. 1/(2ⁿ − 1)) limit karşılaştırmaya geç."] }
+        { tip: "ozet", maddeler: ["Her iki testte de terimler pozitif olmalı.", "Doğrudan karşılaştırma: 0 ≤ aₙ ≤ bₙ; büyük yakınsarsa küçük yakınsar, küçük ıraksarsa büyük ıraksar.", "Ters yön (büyük ıraksıyor ya da küçük yakınsıyor) sonuç vermez.", "Limit karşılaştırma: lim aₙ/bₙ = L, 0 < L < ∞ ise iki seri aynı kaderde.", "L = 0 ya da ∞ ise testin bu biçimi sonuç vermez.", "bₙ'yi baskın terimlerden seç ve p-serisi ya da geometrik seri çıkar.", "Doğrudan karşılaştırmanın yönü bozuksa (ör. 1/(2ⁿ − 1)) limit karşılaştırmaya geç."] }
       ]
     }
   ],

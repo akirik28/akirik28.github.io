@@ -30,7 +30,7 @@ window.DEFTER = {
       bloklar: [
         { tip: "tablo", baslik: "Kategorik veri", head: ["Yöntem", "Parametre / H₀", "İstatistik", "df", "Koşul"], rows: [
             ["Tek oran z", "p = p₀", "z = (p̂ − p₀) ÷ √(p₀(1 − p₀) ÷ n)", "–", "np ≥ 10, n(1 − p) ≥ 10"],
-            ["İki oran z", "p₁ = p₂", "z = (p̂₁ − p̂₂) ÷ √(p̂c(1 − p̂c)(1/n₁ + 1/n₂))", "–", "Her grupta başarı ve başarısızlık ≥ 10"],
+            ["İki oran z", "p₁ = p₂", "z = (p̂₁ − p̂₂) ÷ √(p̂c(1 − p̂c)(1/n₁ + 1/n₂))", "–", "Testte n₁p̂c, n₁(1 − p̂c), n₂p̂c, n₂(1 − p̂c) ≥ 10; aralıkta her grupta başarı ve başarısızlık ≥ 10"],
             ["χ² uyum iyiliği", "Dağılım iddia edildiği gibi", "χ² = Σ (O − E)² / E", "k − 1", "Bütün E ≥ 5"],
             ["χ² homojenlik / bağımsızlık", "Dağılım aynı / değişkenler bağımsız", "χ² = Σ (O − E)² / E", "(r − 1)(c − 1)", "Bütün E ≥ 5"]
           ], not: "Hepsinde *Random* ve %10 (bağımsızlık) koşulları da var. z yöntemleri güven aralığı verir; ki-kare vermez." },
@@ -118,8 +118,8 @@ window.DEFTER = {
             ["Tostların %40, %30, %20, %10 olduğu iddiası", "pᵢ iddia edildiği gibi", "χ² uyum iyiliği"],
             ["Çalışma saati ile puanın gerçek eğimi", "β = 0", "Eğim için t testi / aralığı"]
           ], not: "Aynı kalıp: parametre ve H₀ yöntemi belli eder." },
-        { tip: "ornek", baslik: "Eşli t testini baştan sona kur", durum: "Rastgele seçilen 10 öğrenci kahveden önce ve 30 dakika sonra reaksiyon testi yapıyor (ms). Fark = önce − sonra. Farkların ortalaması 8 ms, SD’si 10 ms; farkların dağılımı yaklaşık simetrik, uç değer yok. Kahve reaksiyonu hızlandırıyor mu? α = 0,05.",
-          adimlar: ["State: μ_d = bütün öğrenciler için (önce − sonra) farkının gerçek ortalaması. H₀: μ_d = 0; Hₐ: μ_d > 0; α = 0,05.", "Plan: eşli t testi, df = 10 − 1 = 9. *Random* ✓, %10 ✓, *Normal* ✓ (n < 30 ama farklar yaklaşık simetrik, uç değer yok).", "Do: t = (8 − 0) ÷ (10 ÷ √10) ≈ 2,53; df = 9; p ≈ 0,016.", "Conclude: p ≈ 0,016 < 0,05 olduğundan H₀’ı reddederiz. Kahvenin öğrencilerin reaksiyon süresini ortalamada kısalttığına dair ikna edici kanıt vardır."],
+        { tip: "ornek", baslik: "Eşli t testini baştan sona kur", durum: "Rastgele seçilen 10 öğrenci kahveden önce ve 30 dakika sonra reaksiyon testi yapıyor (ms). Fark = önce − sonra. Farkların ortalaması 8 ms, SD’si 10 ms; farkların dağılımı yaklaşık simetrik, uç değer yok. Kahveden sonra reaksiyon süresi ortalamada daha kısa mı? α = 0,05.",
+          adimlar: ["State: μ_d = bütün öğrenciler için (önce − sonra) farkının gerçek ortalaması. H₀: μ_d = 0; Hₐ: μ_d > 0; α = 0,05.", "Plan: eşli t testi, df = 10 − 1 = 9. *Random* ✓, %10 ✓, *Normal* ✓ (n < 30 ama farklar yaklaşık simetrik, uç değer yok).", "Do: t = (8 − 0) ÷ (10 ÷ √10) ≈ 2,53; df = 9; p ≈ 0,016.", "Conclude: p ≈ 0,016 < 0,05 olduğundan H₀’ı reddederiz. Öğrencilerin reaksiyon süresinin kahveden 30 dakika sonra, öncesine göre ortalamada daha kısa olduğuna dair ikna edici kanıt vardır (kontrol grubu olmadığından bunu yalnızca kahveye bağlayamayız)."],
           sonuc: "t ≈ 2,53, df = 9, p ≈ 0,016 ⇒ H₀ reddedilir. (İki yönlü %95 aralık: 8 ± 2,262 × 3,16 ≈ (0,85; 15,15) ms.)" }
       ]
     },

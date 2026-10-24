@@ -25,7 +25,7 @@ window.DEFTER = {
       kisa: "Dönüm noktasında konkavlık değişir: f″ işaret değiştirir.",
       bloklar: [
         {"tip":"kavramlar","kartlar":[{"ikon":"🔄","terim":"Point of inflection","tr":"dönüm (büküm) noktası","tanim":"f'nin sürekli olduğu ve konkavlığın değiştiği nokta. f″ orada işaret değiştirir (0 olur ya da tanımsızdır).","ornek":"f(x) = x³ − 3x²: (1, −2)."}]},
-        {"tip":"not","metin":"Dönüm noktasında f′ yerel maksimum ya da minimum olur: eğimin artışı azalışa (ya da tersine) döner. Bu yüzden f′ grafiğinin tepe ve çukurları, f'nin dönüm noktalarıdır."},
+        {"tip":"not","metin":"f′ dönüm noktasında tanımlıysa orada yerel maksimum ya da minimum olur: eğimin artışı azalışa (ya da tersine) döner. Bu yüzden f′ grafiğinin tepe ve çukurları, f'nin dönüm noktalarıdır."},
         {"tip":"tuzak","metin":"f″(c) = 0 olması tek başına dönüm noktası kanıtlamaz. f″'nin gerçekten işaret değiştirmesi gerekir.","yanlis":"f(x) = x⁴: f″(0) = 0 olduğundan x = 0 dönüm noktasıdır.","dogru":"f″ = 12x² iki yanda da pozitif: konkavlık değişmez, dönüm noktası yok."}
       ]
     },
@@ -51,7 +51,7 @@ window.DEFTER = {
       baslik: "Toparlayalım",
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
-        {"tip":"ozet","maddeler":["f″ > 0 ise f′ artandır ve f konkav yukarı (∪) olur; f″ < 0 ise f′ azalandır ve f konkav aşağı (∩) olur.","Konkavlık için f″ = 0 ya da tanımsız noktalarla aralıkları böl, her aralıkta f″ işaretini test et.","Dönüm noktası: konkavlığın değiştiği, f″ işaretinin değiştiği nokta. f″(c) = 0 tek başına yetmez (f(x) = x⁴).","Dönüm noktasında f′ yerel ekstremumdur (f′ grafiğinin tepe/çukuru).","İkinci türev testi: f′(c) = 0 ve f″(c) > 0 ise yerel min; f″(c) < 0 ise yerel max.","f″(c) = 0 ise test sonuç vermez: x⁴ (min), −x⁴ (max), x³ (ekstremum yok) hepsinde f″(0) = 0.","Sınav gerekçesi: \"f″ changes sign at x = c\" (dönüm) ya da \"f′(c) = 0 and f″(c) > 0\" (min)."]}
+        {"tip":"ozet","maddeler":["f″ > 0 ise f′ artandır ve f konkav yukarı (∪) olur; f″ < 0 ise f′ azalandır ve f konkav aşağı (∩) olur.","Konkavlık için f″ = 0 ya da tanımsız noktalarla aralıkları böl, her aralıkta f″ işaretini test et.","Dönüm noktası: konkavlığın değiştiği, f″ işaretinin değiştiği nokta. f″(c) = 0 tek başına yetmez (f(x) = x⁴).","Dönüm noktasında f′ tanımlıysa orada yerel ekstremumdur (f′ grafiğinin tepe/çukuru).","İkinci türev testi: f′(c) = 0 ve f″(c) > 0 ise yerel min; f″(c) < 0 ise yerel max.","f″(c) = 0 ise test sonuç vermez: x⁴ (min), −x⁴ (max), x³ (ekstremum yok) hepsinde f″(0) = 0.","Sınav gerekçesi: \"f″ changes sign at x = c\" (dönüm) ya da \"f′(c) = 0 and f″(c) > 0\" (min)."]}
       ]
     }
   ],

@@ -349,7 +349,7 @@ window.DEFTER = {
             baslik: "*Leibniz* gösterimi",
             maddeler: [
               "dy/dx ya da d/dx f(x)",
-              "\"y'deki küçücük değişim bölü x'teki küçücük değişim\"",
+              "\"y'deki küçücük değişim bölü x'teki küçücük değişim\": Δy/Δx'in Δx → 0 iken limiti",
               "Birimi de gösterir: y metre, x saniye ise m/s"
             ]
           },

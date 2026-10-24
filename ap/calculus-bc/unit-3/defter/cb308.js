@@ -206,7 +206,7 @@ window.DEFTER = {
             { metin: "f″(x) = 12x² − 12x: derece 2.", goster: ["s2", "p2"] },
             { metin: "f‴(x) = 24x − 12: derece 1.", goster: ["s3", "p3"] },
             { metin: "f⁽⁴⁾(x) = 24: sabit, derece 0.", goster: ["s4", "p4"] },
-            { metin: "f⁽⁵⁾(x) = 0 ve sonraki bütün türevler de 0.", goster: ["s5", "p5"] }
+            { metin: "f⁽⁵⁾(x) = 0 ve sonraki bütün türevler de 0 (sıfır polinomu; derecesi tanımsız, grafikte ayrı renkle gösterildi).", goster: ["s5", "p5"] }
           ]
         },
         {
@@ -350,8 +350,8 @@ window.DEFTER = {
         {
           tip: "tuzak",
           baslik: "dy/dx'i yerine koy",
-          metin: "Kapalı ikinci türevde sonuçta dy/dx kalmamalı: yerine ilk bulduğun ifadeyi koy, sonra gerekirse eğri denklemiyle sadeleştir.",
-          yanlis: "d²y/dx² = 2 − dy/dx (dy/dx'i bırakmak) ya da d²y/dx² = 2 demek.",
+          metin: "Soru x ve y cinsinden istiyorsa sonuçta dy/dx kalmamalı: yerine ilk bulduğun ifadeyi koy, sonra gerekirse eğri denklemiyle sadeleştir.",
+          yanlis: "d²y/dx² = 2 demek (−y'nin türevi olan −dy/dx'i unutmak, y'yi sabit sanmak) ya da \"x ve y cinsinden\" istenen soruda 2 − dy/dx'te bırakmak.",
           dogru: "dy/dx yerine 2x − y yaz: 2 − 2x + y."
         }
       ]

@@ -60,7 +60,7 @@ window.DEFTER = {
         {
           tip: "kavramlar",
           kartlar: [
-            { ikon: "🧭", terim: "Intermediate Value Theorem (IVT)", tr: "ara değer teoremi", tanim: "Sürekli bir fonksiyon, uç değerleri arasındaki her değeri en az bir kez alır.", ornek: "Sıcaklık 8'den 20'ye sürekli çıktıysa 15'i bir an görmüştür." },
+            { ikon: "🧭", terim: "Intermediate Value Theorem (IVT)", tr: "ara değer teoremi", tanim: "[a, b] kapalı aralığında sürekli bir fonksiyon, f(a) ile f(b) arasındaki her değeri en az bir kez alır.", ornek: "Sıcaklık 8'den 20'ye sürekli çıktıysa 15'i bir an görmüştür." },
             { ikon: "🛤️", terim: "Continuous on [a, b]", tr: "[a, b]'de sürekli", tanim: "İçeride sürekli, uçlarda tek taraflı limit f değerine eşit.", ornek: "x³ + x − 3, [1, 2]'de süreklidir." },
             { ikon: "🔒", terim: "Closed interval", tr: "kapalı aralık", tanim: "Uç noktaları da içeren [a, b] aralığı.", ornek: "[1, 2] aralığı 1 ve 2'yi de kapsar." },
             { ikon: "🎚️", terim: "Intermediate value", tr: "ara değer", tanim: "f(a) ile f(b) arasındaki herhangi bir k sayısı.", ornek: "f(a) = 2, f(b) = 7 ise k = 4,5 bir ara değerdir." }

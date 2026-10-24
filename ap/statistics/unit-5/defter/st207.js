@@ -78,7 +78,7 @@ window.DEFTER = {
             ["+ (3,5; 8) aykırı nokta", "0,63", "2,09", "0,54"],
             ["+ (9; 7) kaldıraçlı, trendde", "0,62", "1,51", "0,99"],
             ["+ (9; 2) kaldıraçlı, trend dışı", "0,07", "3,12", "0,15"]
-          ], vurgu: 3, not: "Eğim ve r en çok son satırda değişti: o nokta etkili. Aykırı nokta (3,5; 8) kesişimi ve r'yi değiştirdi, eğimi değiştirmedi." },
+          ], vurgu: 3, not: "Eğim ve r en çok son satırda değişti: o nokta çok etkili. Aykırı nokta (3,5; 8) eğimi değiştirmedi ama r'yi 0,97'den 0,54'e düşürdü; tanıma göre o da r üzerinde etkilidir." },
         { tip: "ikili", sol: { ikon: "🪶", baslik: "Eğimi pek değiştirmez", maddeler: ["x'i ortalamaya yakın ya da trendin üzerinde"] },
           sag: { ikon: "🧲", baslik: "Eğimi çok değiştirir", maddeler: ["x'i uçta ve trendin dışında"] },
           oyun: [
@@ -131,7 +131,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konuyu bir cümlede toparlayan liste (bu konu 2026-27 sınavında yok).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Artık grafiğinde desen (U, eğri) varsa doğrusal model uygun değildir; r² yüksek olsa bile.",

@@ -109,10 +109,10 @@ window.DEFTER = {
             "H″ < 0: büyüme yavaşlıyor, H aşağı bükülür; teğet eğrinin üstünde.",
             "Tahmin gerçek değerden büyüktür."
           ], sonuc: "H(12) ≈ 41,6 cm; gerçek boy 41,6'dan küçük (overestimate)" },
-        { tip: "ornek", baslik: "Tablodan doğrusallaştırma", durum: "g(3) = 7 ve g′ tablosu: g′(2) = −1, g′(3) = −2, g′(4) = −3. g(3,1)'i tahmin et ve türünü söyle.",
+        { tip: "ornek", baslik: "Tablodan doğrusallaştırma", durum: "g(3) = 7 ve g′ tablosu: g′(2) = −1, g′(3) = −2, g′(4) = −3; g′, 2 ≤ x ≤ 4 aralığında azalan bir fonksiyon. g(3,1)'i tahmin et ve türünü söyle.",
           adimlar: [
             "L(3,1) = g(3) + g′(3) · 0,1 = 7 + (−2) · 0,1 = 6,8.",
-            "g′ değerleri azalıyor (−1, −2, −3): g″ < 0, aşağı bükülür.",
+            "g′ azalan olduğu için g aşağı bükülür.",
             "Teğet üstte kalır: tahmin büyük."
           ], sonuc: "g(3,1) ≈ 6,8; gerçek değer 6,8'den küçük" }
       ]
@@ -159,11 +159,11 @@ window.DEFTER = {
       opts: ["3,012", "3,333", "3,037", "4,000"],
       a: 2,
       why: "f(27) = 3, f′(27) = (1/3) · 27^(−2/3) = 1/27. L(28) = 3 + 1/27 ≈ 3,037. A şıkkı en çekici yanlış: 27^(−2/3) = 1/9 yerine 1/27 alınırsa f′(27) = 1/81 ve tahmin 3,012 çıkar." },
-    { q: "Tabloda f(2) = 6 ve bazı f′ değerleri verilmiştir. f(2,4) için doğrusallaştırma tahmini ve türü nedir? (f′ tablodaki aralıkta sürekli)",
+    { q: "Tabloda f(2) = 6 ve bazı f′ değerleri verilmiştir; f′, 1 ≤ x ≤ 3 aralığında azalan bir fonksiyondur. f(2,4) için doğrusallaştırma tahmini ve türü nedir?",
       fig: { type: "table", head: ["x", "1", "2", "3"], rows: [["f′(x)", "2,5", "1,5", "0,5"]], caption: "f(2) = 6" },
       opts: ["6,6; gerçek değerden küçük", "6,6; tablo ile karar verilemez", "7,0; gerçek değerden büyük", "6,6; gerçek değerden büyük"],
       a: 3,
-      why: "L(2,4) = 6 + 1,5 · 0,4 = 6,6. f′ azalıyor (2,5 → 1,5 → 0,5), yani f″ < 0, teğet üstte: tahmin büyük. B şıkkı en çekici yanlış: tablo yeterli bilgi veriyor; f′ azalıyorsa f″ < 0 olduğundan karar verilebilir." },
+      why: "L(2,4) = 6 + 1,5 · 0,4 = 6,6. Kök f′'nün azalan olduğunu söylüyor; bu yüzden f grafiği aşağı bükülür ve teğet eğrinin üstünde kalır: tahmin büyük. B şıkkı en çekici yanlış: üç tablo değeri tek başına bükeyliği belirlemezdi, ama kök f′'nün azalan olduğunu söylediği için karar verilebilir." },
     { q: "Bir çayın sıcaklığı T(t) °C, t dakika. T(10) = 30, T′(10) = −2 ve soğuma gittikçe yavaşlıyor (T″ > 0). 12. dakikadaki sıcaklık için doğrusallaştırma tahmini ve gerçek değerle ilişkisi hangisidir?",
       opts: ["26 °C; gerçek sıcaklık 26 °C'den düşüktür.", "26 °C; gerçek sıcaklık 26 °C'den yüksektir.", "34 °C; gerçek sıcaklık 34 °C'den düşüktür.", "26 °C; gerçek sıcaklık kesinlikle 26 °C'dir."],
       a: 1,

@@ -209,8 +209,8 @@ window.DEFTER = {
           tip: "tablo",
           baslik: "Her türde hangi şart bozulur?",
           head: ["Tür", "1 · f(c) tanımlı", "2 · limit var", "3 · limit = f(c)"],
-          rows: [["Delik", "✗", "✓", "✗"], ["Yerinden oynamış nokta", "✓", "✓", "✗"], ["Sıçrama", "✓", "✗", "✗"], ["Sonsuz", "çoğu zaman ✗", "✗", "✗"], ["Salınım", "çoğu zaman ✗", "✗", "✗"]],
-          not: "AP en çok ilk üçünü sorar: delik, sıçrama ve asimptot."
+          rows: [["Delik", "✗", "✓", "✗"], ["Yerinden oynamış nokta", "✓", "✓", "✗"], ["Sıçrama", "olabilir / olmayabilir", "✗", "✗"], ["Sonsuz", "çoğu zaman ✗", "✗", "✗"], ["Salınım", "çoğu zaman ✗", "✗", "✗"]],
+          not: "AP en çok üç türü sorar: giderilebilir (delik/oynamış nokta), sıçrama ve dikey asimptot (sonsuz)."
         },
         {
           tip: "ikili",

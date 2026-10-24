@@ -103,7 +103,7 @@ window.DEFTER = {
           rows: [
             ["f(x) = Σ xⁿ/n", "1", "[−1, 1)"],
             ["f′(x) = Σ xⁿ⁻¹ = 1 + x + x² + …", "1", "(−1, 1)"],
-            ["∫ f(x) dx = Σ xⁿ⁺¹ / (n(n + 1))", "1", "[−1, 1]"]
+            ["∫₀ˣ f(t) dt = Σ xⁿ⁺¹ / (n(n + 1))", "1", "[−1, 1]"]
           ], vurgu: 1, not: "Türevde −1 ucu kaybolur, integralde 1 ucu kazanılır. Her yeni seri için uçlar yeniden sınanmalı." },
         { tip: "tuzak", metin: "Türev ve integral, yarıçapı korur. Uç noktaların davranışını korumak zorunda değildir.", yanlis: "f(x)'in aralığı [−1, 1) ise f′(x)'in aralığı da [−1, 1).", dogru: "R = 1 korunur ama f′ için uçlar yeniden sınanır: aralık (−1, 1)." }
       ]
