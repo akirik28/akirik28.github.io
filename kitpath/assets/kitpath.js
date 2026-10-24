@@ -2070,7 +2070,10 @@
   var SEV = { p: null, d: null, dizin: null };
   var SEV_AD = ["", "Başlangıç", "Gelişiyor", "Orta", "İyi", "Çok iyi"];
   var SEV_DUZEY = { "Isınma": 1, "Temel": 2, "Orta": 3, "Zor": 4, "Çok zor": 5 };
-  var SEV_MODUL = 10;   /* modül başına soru (2 modül) */
+  var SEV_MODUL = 15;   /* modül başına soru (2 modül) */
+  /* soru başına dakika: gerçek AP çoktan seçmeli bölümünün temposu (2025-26 sınav formatları) */
+  var SEV_TEMPO = { calc: 105 / 45, stats: 90 / 40, csa: 90 / 42, physc: 2, physem: 2, macro: 70 / 60, micro: 70 / 60, psych: 90 / 75, hug: 1, bpf: 1.2 };
+  function sevDakika(ders, n) { return Math.ceil(n * (SEV_TEMPO[ders] || 1.5)); }
   var SEV_KARISIM = { m1: { 1: .1, 2: .25, 3: .3, 4: .25, 5: .1 }, kolay: { 1: .25, 2: .35, 3: .3, 4: .1 }, zor: { 2: .1, 3: .3, 4: .35, 5: .25 } };
   function sevYukle(tazele) {
     if (!HESAPLI || !H.seviyeDurum) return Promise.resolve(null);
@@ -2260,14 +2263,14 @@
     var dersler = sevDersler().sort(function (a, b) { return (raf.indexOf(b) > -1) - (raf.indexOf(a) > -1); });
     var son = function (x) { var l = g.filter(function (r) { return r.ders === x; }); return l[l.length - 1] || null; };
     var buTur = function (x) { return acik && g.some(function (r) { return r.ders === x && r.tur === t.tur; }); };
-    var n = SEV_MODUL * 2, dk = Math.round(n * 1.5);
+    var n = SEV_MODUL * 2;
     document.title = "Seviye sınavı · Kitpath";
     kok.innerHTML =
       '<section class="sev-hero rise"><div class="stack" style="gap:14px;flex:1 1 380px">' +
         '<span class="sev-durum" data-d="' + st[0] + '"><i></i>' + esc(st[1]) + '</span>' +
         '<h1 class="display" style="font-size:clamp(42px,5vw,60px)"><span class="hl">Seviye sınavı</span></h1>' +
         '<p class="lead" style="max-width:560px">Yeni bir tur açıldığında her ders için kısa, uyarlanabilir bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
-      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sorular oraya kadar olan bütün konulardan gelir.</span></li><li><b>2</b><span><strong>2 modül · ' + n + ' soru · ~' + dk + ' dk</strong>İkinci modül, birinci modüldeki performansına göre kolay ya da zor gelir.</span></li><li><b>3</b><span><strong>Seviyeni gör</strong>0–100 seviye puanı, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
+      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sorular oraya kadar olan bütün konulardan gelir.</span></li><li><b>2</b><span><strong>2 modül · ' + n + ' soru · AP temposunda</strong>Süre gerçek AP ile aynı; ikinci modül, birinci modüldeki performansına göre kolay ya da zor gelir.</span></li><li><b>3</b><span><strong>Seviyeni gör</strong>0–100 seviye puanı, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
       (on ? '<div class="note rise d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Şu an açık tur yok; öğrenciler sınav çözemiyor. Sen önizleme çözebilirsin, sonucu kaydedilmez. Yeni tur açmak için <a href="' + ROOT + 'yonetim/?gorunum=seviye">Yönetim → Seviye sınavı</a>.</span></div>' : "") +
       '<section class="stack rise d1" style="gap:16px"><div class="section__head"><h2 class="h3" style="font-size:26px">Dersler</h2><span class="muted" style="font-size:14px">' + (acik ? "Bu turda her dersten bir sınav çözebilirsin." : on ? "Önizleme: istediğin dersten dene." : "Tur açılınca buradan başlarsın.") + '</span></div>' +
       '<div class="sev-dersler">' + dersler.map(function (x) {
@@ -2298,7 +2301,7 @@
         '<p class="muted" style="font-size:13px;margin:0" data-sev-bilgi></p><a class="btn btn--primary" data-sev-git href="#">' + (on ? "Önizlemeyi başlat" : "Sınava başla") + ' →</a>';
       function bilgi(u) {
         var hazir = us.filter(function (q) { return q.unit <= u; }).map(function (q) { return q.unit; });
-        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + n + " soru (2 modül × " + SEV_MODUL + "), yaklaşık " + dk + " dakika." + (hazir.length < u ? " Şimdilik soru olan üniteler: " + hazir.join(", ") + "." : "") + " Kaydet ve çık ile ara verebilirsin; süre durur.");
+        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + n + " soru: 2 modül × " + SEV_MODUL + " soru, her modül " + sevDakika(x, SEV_MODUL) + " dakika (gerçek AP temposu)." + (hazir.length < u ? " Şimdilik soru olan üniteler: " + hazir.join(", ") + "." : "") + " Kaydet ve çık ile ara verebilirsin; süre durur.");
         $("[data-sev-git]", kur).href = ROOT + "seviye/sinav/?ders=" + x + "&u=" + u + (on ? "&yeni" : "");
       }
       bilgi(oner);
@@ -2383,8 +2386,8 @@
       var setK = sevYerel("set", ders, tur), k1 = sevKey(ders, tur, 1), k2 = sevKey(ders, tur, 2);
       if (param("yeni") !== null && (on || modul === 1)) { if (on) { lsYaz(setK, null); C.yaz(k1, null); C.yaz(k2, null); } history.replaceState(null, "", "?ders=" + ders + "&u=" + U); }
       var set = lsOku(setK);
-      var hazir = set && set.U === U && set.M1 && set.M1.length ? Promise.resolve(set) : sevHavuz(ders, U).then(function (havuz) {
-        set = { U: U, tur: tur, M1: sevSec(havuz, SEV_MODUL, SEV_KARISIM.m1, sevRng(ders + ":" + tur + ":" + U + ":m1"), {}), M2: null, yol: null };
+      var hazir = set && set.U === U && set.M1 && set.M1.length && (set.n || 10) === SEV_MODUL ? Promise.resolve(set) : sevHavuz(ders, U).then(function (havuz) {
+        set = { U: U, tur: tur, n: SEV_MODUL, M1: sevSec(havuz, SEV_MODUL, SEV_KARISIM.m1, sevRng(ders + ":" + tur + ":" + U + ":m1"), {}), M2: null, yol: null };
         lsYaz(setK, set); C.yaz(k1, null); C.yaz(k2, null);
         return set;
       });
@@ -2395,7 +2398,7 @@
         if (modul === 1 && S1 && S1.done) { location.replace("?ders=" + ders + "&u=" + U + "&modul=2"); return; }
         if (modul === 2 && !(S1 && S1.done && set.M2)) { location.replace("?ders=" + ders + "&u=" + U); return; }
         if (modul === 2 && S2 && S2.done) { location.replace(sonucUrl); return; }
-        var Q = modul === 1 ? set.M1 : set.M2, dk = Math.max(8, Math.round(Q.length * 1.5));
+        var Q = modul === 1 ? set.M1 : set.M2, dk = sevDakika(ders, Q.length);
         var baslik = (on ? "Seviye Sınavı · Önizleme" : "Seviye Sınavı · Tur " + tur) + " · Modül " + modul;
         var Cw = { deneme: function () { return C.oku(modul === 1 ? k1 : k2); }, denemeYaz: function (k, no, S) { C.yaz(modul === 1 ? k1 : k2, S); }, calisti: C.calisti };
         var basla = function () {
