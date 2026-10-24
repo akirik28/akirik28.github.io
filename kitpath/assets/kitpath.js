@@ -367,7 +367,7 @@
       '<a href="' + ROOT + 'kitlerim/"' + (active === "kitlerim" ? ' aria-current="page"' : "") + '>Kitlerim</a>' +
       '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a>' +
       (notTakibi() ? '<a href="' + ROOT + 'notlarim/"' + (active === "notlarim" ? ' aria-current="page"' : "") + '>Notlarım</a>' : "") +
-      ((sevYonetici() || sevTakvimOnbellek().acik) ? '<a href="' + ROOT + 'seviye/"' + (active === "seviye" ? ' aria-current="page"' : "") + '>Seviye</a>' : "") +
+      ((sevYonetici() || sevTakvimOnbellek().acik || sevTakvimOnbellek().gecmis) ? '<a href="' + ROOT + 'seviye/"' + (active === "seviye" ? ' aria-current="page"' : "") + '>Seviye</a>' : "") +
       '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a></nav>';
     var html = "";
     /* tek menü: giriş yapılmışsa her sayfada aynı uygulama menüsü, yapılmamışsa aynı herkese açık menü */
@@ -1700,18 +1700,16 @@
     function sevYon() {
       fill('[data-k="sev-yon"]', '<p class="muted">Yükleniyor…</p>');
       H.yonetim("ap_yonetici_seviye", {}).then(function (d) {
-        var a = d.ayar || {}, t = d.takvim || {}, acik = !!a.acik, ozet = d.ozet || [], son = d.son || [];
-        var n = $('[data-k="sev-durum-n"]'); if (n) { n.textContent = acik ? "AÇIK" : "KAPALI"; n.hidden = false; }
-        var d0 = new Date(Date.now() + 14 * 864e5); d0.setHours(9, 0, 0, 0);
-        var varsayilan = new Date(d0.getTime() - d0.getTimezoneOffset() * 6e4).toISOString().slice(0, 16);
-        var durum = !acik ? "Kapalı. Öğrenciler sayfayı, menü bağlantısını ve bildirimi görmüyor; sadece sen önizleyebilirsin."
-          : !t.basladi ? "Açık · ilk tur " + new Date(t.sonraki).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + "'de başlayacak."
-          : "Açık · Tur " + t.tur + (t.pencere_acik ? " şu an açık (" + new Date(t.tur_bitis).toLocaleDateString("tr-TR", { day: "numeric", month: "long" }) + "'e kadar)" : " kapandı") + " · sonraki tur " + new Date(t.sonraki).toLocaleDateString("tr-TR", { day: "numeric", month: "long" }) + ".";
+        var t = d.takvim || {}, ozet = d.ozet || [], son = d.son || [];
+        var n = $('[data-k="sev-durum-n"]'); if (n) { n.textContent = t.acik ? "AÇIK" : "KAPALI"; n.hidden = false; }
+        var durum = !t.basladi ? "Henüz hiç tur açılmadı. Sen yeni tur açana kadar öğrenciler sınav çözemez, bildirim de görmez."
+          : t.acik ? "Tur " + t.tur + " açık" + (t.tur_bitis ? " · " + new Date(t.tur_bitis).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + "'de kendiliğinden kapanacak." : " · sen kapatana kadar açık kalacak.")
+          : "Tur " + t.tur + " kapandı. Yeni tur açana kadar öğrenciler sınav çözemez.";
         var maxU = function (x) { var u = sevUniteler(x); return u[u.length - 1].unit; };
         fill('[data-k="sev-yon"]',
-          '<div class="card card--pad stack sev-yon-durum" data-acik="' + acik + '" style="gap:14px"><div class="row" style="align-items:center;gap:12px;flex-wrap:wrap"><span class="sev-durum" data-d="' + (acik ? "acik" : "kapali") + '"><i></i>' + (acik ? "Açık" : "Kapalı") + '</span><strong style="font-size:16px">' + esc(durum) + '</strong></div>' +
-          (acik ? '<div class="row" style="gap:10px;flex-wrap:wrap"><button type="button" class="btn--danger-link" data-sev-yon-kapat data-bas="' + esc(a.baslangic || "") + '">Seviye sınavlarını kapat</button></div>'
-                : '<div class="row" style="gap:12px;align-items:flex-end;flex-wrap:wrap"><label class="field" style="flex:0 1 260px">İlk turun başlangıcı<input type="datetime-local" data-k="sev-bas" value="' + varsayilan + '"></label><button type="button" class="btn btn--primary" data-sev-yon-ac>Seviye sınavlarını aç</button></div><p class="muted" style="font-size:13px;margin:0">Varsayılan: bugünden 2 hafta sonra. Her tur 7 gün açık kalır, iki haftada bir yeni tur başlar; ders başına turda bir sınav, 20 soru.</p>') + '</div>' +
+          '<div class="card card--pad stack sev-yon-durum" data-acik="' + !!t.acik + '" style="gap:14px"><div class="row" style="align-items:center;gap:12px;flex-wrap:wrap"><span class="sev-durum" data-d="' + (t.acik ? "acik" : "kapali") + '"><i></i>' + (t.acik ? "Tur " + t.tur + " açık" : "Kapalı") + '</span><strong style="font-size:16px">' + esc(durum) + '</strong></div>' +
+          (t.acik ? '<div class="row" style="gap:10px;flex-wrap:wrap"><button type="button" class="btn--danger-link" data-sev-yon-kapat>Turu şimdi kapat</button></div>'
+                : '<div class="row" style="gap:12px;align-items:flex-end;flex-wrap:wrap"><label class="field" style="flex:0 1 240px">Tur ne kadar açık kalsın?<select data-k="sev-gun"><option value="3">3 gün</option><option value="7" selected>7 gün</option><option value="14">14 gün</option><option value="">Ben kapatana kadar</option></select></label><button type="button" class="btn btn--primary" data-sev-yon-ac>Tur ' + ((t.tur || 0) + 1) + '\'i başlat</button></div><p class="muted" style="font-size:13px;margin:0">Başlattığın an bütün öğrencilere açılır ve sitenin üstünde bildirim çıkar. Ders başına turda bir sınav, 20 soru; sonuçlar ve gelişim grafikleri tur tur birikir.</p>') + '</div>' +
           '<div class="card card--pad stack" style="gap:12px"><div class="section__head"><h2 class="h3">Önizle</h2><span class="muted" style="font-size:13px">kaydedilmez · bütün ünitelerden</span></div><div class="row" style="gap:8px;flex-wrap:wrap">' +
             sevDersler().map(function (x) { return '<a class="filter" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)" href="' + ROOT + 'seviye/sinav/?ders=' + x + '&u=' + maxU(x) + '&yeni"><span class="dot" style="--c:' + sevRenk(x) + ';width:9px;height:9px;border-radius:3px"></span>' + esc(sevAd(x)) + '</a>'; }).join("") + '</div></div>' +
           '<div class="card card--pad stack" style="gap:12px"><h2 class="h3">Turlar</h2>' + (ozet.length ? '<div class="table-box"><table class="table" style="min-width:480px"><thead><tr><th>Tur</th><th>Ders</th><th>Katılan</th><th>Ortalama</th><th style="text-align:right">Ort. seviye</th></tr></thead><tbody>' +
@@ -1827,17 +1825,16 @@
       }
       var sa = e.target.closest("[data-sev-yon-ac]");
       if (sa) {
-        var tar = $('[data-k="sev-bas"]'), bas = tar && tar.value ? new Date(tar.value) : null;
-        if (!bas || isNaN(bas)) { toast("Başlangıç tarihini seç"); return; }
-        if (!confirm("Seviye sınavları açılsın mı?\n\nİlk tur " + bas.toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + "'de başlayacak; sonra iki haftada bir yeni tur açılır ve öğrencilere bildirim gider.")) return;
+        var gs = $('[data-k="sev-gun"]'), gun = gs && gs.value ? +gs.value : null;
+        if (!confirm("Yeni seviye sınavı turu başlatılsın mı?\n\nBütün öğrencilere hemen açılır ve sitenin üstünde bildirim çıkar. " + (gun ? gun + " gün sonra kendiliğinden kapanır." : "Sen kapatana kadar açık kalır."))) return;
         sa.disabled = true;
-        H.yonetim("ap_yonetici_seviye_ayar", { p_acik: true, p_baslangic: bas.toISOString() }).then(function () { toast("Seviye sınavları açıldı"); sevYon(); }, function (x) { sa.disabled = false; toast(H.hataMetni(x)); });
+        H.yonetim("ap_yonetici_seviye_tur", { p_islem: "ac", p_gun: gun }).then(function () { toast("Yeni tur başladı; öğrencilere açıldı"); sevYon(); }, function (x) { sa.disabled = false; toast(H.hataMetni(x)); });
       }
       var sk = e.target.closest("[data-sev-yon-kapat]");
       if (sk) {
-        if (!confirm("Seviye sınavları kapatılsın mı? Öğrenciler sayfayı ve bildirimi görmez; geçmiş sonuçlar silinmez.")) return;
+        if (!confirm("Açık tur şimdi kapatılsın mı? Öğrenciler bu turun sınavını artık çözemez; çözülen sonuçlar silinmez.")) return;
         sk.disabled = true;
-        H.yonetim("ap_yonetici_seviye_ayar", { p_acik: false, p_baslangic: sk.dataset.bas || null }).then(function () { toast("Seviye sınavları kapatıldı"); sevYon(); }, function (x) { sk.disabled = false; toast(H.hataMetni(x)); });
+        H.yonetim("ap_yonetici_seviye_tur", { p_islem: "kapat" }).then(function () { toast("Tur kapatıldı"); sevYon(); }, function (x) { sk.disabled = false; toast(H.hataMetni(x)); });
       }
       var sz = e.target.closest("[data-gb-suz]"); if (sz) { gbSuz = sz.dataset.gbSuz; gbCiz(); }
       var os = e.target.closest("[data-ogr-suz]"); if (os) { ogrSuz = os.dataset.ogrSuz; ogrCiz(); }
@@ -2063,8 +2060,8 @@
   }
 
   /* ---------- seviye sınavları ----------
-     İki haftada bir her ders için isteğe bağlı gelişim sınavı. Takvim ve açık/kapalı ayarı sunucuda (ap_ayarlar 'seviye');
-     Ada yönetimden açana kadar KAPALI — kapalıyken yalnızca yönetici "önizleme" çözebilir (kaydedilmez).
+     Her ders için isteğe bağlı gelişim sınavı. Turları yalnızca Ada yönetimden açar / kapatır (ap_ayarlar 'seviye');
+     tur açık değilken öğrenci çözemez, yalnızca yönetici "önizleme" çözebilir (kaydedilmez).
      Sorular, öğrencinin işaretlediği üniteye kadar olan ünitelerin deneme bankalarından tura göre sabit tohumla seçilir. */
   var SEV = { p: null, d: null };
   var SEV_YOK = { hug: 1 };   /* deneme bankası olmayan dersler */
@@ -2072,7 +2069,7 @@
   function sevYukle(tazele) {
     if (!HESAPLI || !H.seviyeDurum) return Promise.resolve(null);
     if (SEV.p && !tazele) return SEV.p;
-    SEV.p = H.seviyeDurum().then(function (d) { SEV.d = d; try { sessionStorage.setItem("kp-sev", JSON.stringify(d && d.takvim || {})); } catch (e) {} return d; }, function () { return null; });
+    SEV.p = H.seviyeDurum().then(function (d) { SEV.d = d; try { var t = (d && d.takvim) || {}; sessionStorage.setItem("kp-sev", JSON.stringify({ acik: !!t.acik, gecmis: !!(d && d.gecmis && d.gecmis.length) })); } catch (e) {} return d; }, function () { return null; });
     return SEV.p;
   }
   function sevTakvimOnbellek() { try { return JSON.parse(sessionStorage.getItem("kp-sev") || "null") || {}; } catch (e) { return {}; } }
@@ -2137,10 +2134,10 @@
       var yapilan = (d.gecmis || []).filter(function (g) { return g.tur === t.tur; }).map(function (g) { return g.ders; });
       var kalan = sevDersler().filter(function (x) { return yapilan.indexOf(x) < 0; });
       if (!kalan.length || $(".sev-bant")) return;
-      var gun = Math.max(0, Math.ceil((new Date(t.tur_bitis) - Date.now()) / 864e5));
+      var gun = t.tur_bitis ? Math.max(0, Math.ceil((new Date(t.tur_bitis) - Date.now()) / 864e5)) : null;
       var h = $('[data-k="header"]'); if (!h) return;
       h.insertAdjacentHTML("afterend", '<aside class="sev-bant" role="status"><span class="sev-bant__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>' +
-        '<span class="sev-bant__m"><strong>Seviye sınavı zamanı · Tur ' + t.tur + '</strong><span>' + (gun <= 1 ? "Bugün son gün" : gun + " gün içinde kapanıyor") + ' · nerede olduğunu gör, gelişimini takip et</span></span>' +
+        '<span class="sev-bant__m"><strong>Seviye sınavı açıldı · Tur ' + t.tur + '</strong><span>' + (gun == null ? "Tur açık" : gun <= 1 ? "Bugün son gün" : gun + " gün içinde kapanıyor") + ' · nerede olduğunu gör, gelişimini takip et</span></span>' +
         '<a class="btn btn--primary btn--sm" href="' + ROOT + 'seviye/">Başla</a><button type="button" class="sev-bant__x" aria-label="Bu tur için gizle">×</button></aside>');
       $(".sev-bant__x").addEventListener("click", function () { lsYaz(gizli, 1); var b = $(".sev-bant"); if (b) b.remove(); });
     });
@@ -2180,10 +2177,9 @@
     });
   };
   function sevDurumMetni(t, yon) {
-    if (!t || !t.acik) return yon ? ["kapali", "Kapalı · yalnızca sen önizleyebilirsin"] : ["kapali", "Yakında"];
-    if (!t.basladi) return ["bekliyor", "İlk tur " + sevTarih(t.sonraki) + "'de başlıyor"];
-    if (t.pencere_acik) { var g = Math.max(0, Math.ceil((new Date(t.tur_bitis) - Date.now()) / 864e5)); return ["acik", "Tur " + t.tur + " açık · " + (g <= 1 ? "bugün son gün" : g + " gün kaldı")]; }
-    return ["bekliyor", "Sonraki tur " + sevTarih(t.sonraki) + "'de"];
+    if (t && t.acik) { if (!t.tur_bitis) return ["acik", "Tur " + t.tur + " açık"]; var g = Math.max(0, Math.ceil((new Date(t.tur_bitis) - Date.now()) / 864e5)); return ["acik", "Tur " + t.tur + " açık · " + (g <= 1 ? "bugün son gün" : g + " gün kaldı")]; }
+    if (yon) return ["kapali", (t && t.basladi ? "Tur " + t.tur + " kapandı" : "Kapalı") + " · yalnızca sen önizleyebilirsin"];
+    return t && t.basladi ? ["bekliyor", "Tur " + t.tur + " kapandı · yeni tur açılınca haber vereceğiz"] : ["kapali", "Yakında"];
   }
   function sevMerkez(kok, d) {
     var t = d.takvim || {}, yon = sevYonetici(), acik = sevAcikMi(t), on = !acik && yon;
@@ -2197,9 +2193,9 @@
       '<section class="sev-hero rise"><div class="stack" style="gap:14px;flex:1 1 380px">' +
         '<span class="sev-durum" data-d="' + st[0] + '"><i></i>' + esc(st[1]) + '</span>' +
         '<h1 class="display" style="font-size:clamp(42px,5vw,60px)"><span class="hl">Seviye sınavı</span></h1>' +
-        '<p class="lead" style="max-width:560px">İki haftada bir, her ders için kısa bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
+        '<p class="lead" style="max-width:560px">Yeni bir tur açıldığında her ders için kısa bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
       '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sınav, oraya kadar olan konulardan gelir.</span></li><li><b>2</b><span><strong>20 soru · ~30 dk</strong>Gerçek sınav ekranı; süre, işaretleme, eleme.</span></li><li><b>3</b><span><strong>Gelişimini gör</strong>Seviye, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
-      (on ? '<div class="note rise d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Seviye sınavları <strong>kapalı</strong>; öğrenciler bu sayfayı görmüyor. Sen önizleme çözebilirsin, sonucu kaydedilmez. Açmak için <a href="' + ROOT + 'yonetim/?gorunum=seviye">Yönetim → Seviye</a>.</span></div>' : "") +
+      (on ? '<div class="note rise d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Şu an açık tur yok; öğrenciler sınav çözemiyor. Sen önizleme çözebilirsin, sonucu kaydedilmez. Yeni tur açmak için <a href="' + ROOT + 'yonetim/?gorunum=seviye">Yönetim → Seviye sınavı</a>.</span></div>' : "") +
       '<section class="stack rise d1" style="gap:16px"><div class="section__head"><h2 class="h3" style="font-size:26px">Dersler</h2><span class="muted" style="font-size:14px">' + (acik ? "Bu turda her dersten bir sınav çözebilirsin." : on ? "Önizleme: istediğin dersten dene." : "Tur açılınca buradan başlarsın.") + '</span></div>' +
       '<div class="sev-dersler">' + dersler.map(function (x) {
         var s = son(x), renk = sevRenk(x), yapti = buTur(x), us = sevUniteler(x);
@@ -2317,7 +2313,7 @@
           k: { id: "sev-" + ders, ders: ders, unit: U }, no: tur, DEN: { course: "AP " + sevAd(ders), unit: "Unit 1–" + U },
           T: { no: tur, minutes: dk, questions: Q }, C: Cw, ROOT: ROOT, ad: ME ? ME.name : "", md: md, esc: esc, fmt: fmt, tabloHTML: tabloHTML, sekilKoy: sekilKoy, param: param,
           baslik: baslik, turAd: "test", geriUrl: geri, sonucUrl: geri + "?sonuc=" + ders + "&tur=" + tur,
-          yonerge: '<h2>' + esc(baslik) + ' · AP ' + esc(sevAd(ders)) + ' · Unit 1–' + U + '</h2><p>This level check has <strong>' + Q.length + ' multiple-choice questions</strong> from Units 1–' + U + ' and a time limit of <strong>' + dk + ' minutes</strong>.</p><p>It is <strong>optional and not graded</strong>: it shows where you are and tracks your progress every two weeks. Answer every question; unanswered questions count as incorrect.</p><p>When time runs out, your answers are submitted automatically.</p>',
+          yonerge: '<h2>' + esc(baslik) + ' · AP ' + esc(sevAd(ders)) + ' · Unit 1–' + U + '</h2><p>This level check has <strong>' + Q.length + ' multiple-choice questions</strong> from Units 1–' + U + ' and a time limit of <strong>' + dk + ' minutes</strong>.</p><p>It is <strong>optional and not graded</strong>: it shows where you are and tracks your progress from round to round. Answer every question; unanswered questions count as incorrect.</p><p>When time runs out, your answers are submitted automatically.</p>',
           bitti: function (S, QQ) {
             var det = sevDetay(S, QQ);
             lsYaz(sevYerel("sonuc", ders, tur), { detay: det, tarih: Date.now() });

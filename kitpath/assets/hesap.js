@@ -13,7 +13,7 @@
      ap_geribildirim_gonder           herkes: hata / öneri / beğendim mesajı (hesapsızsa isimsiz)
      ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
      ap_cikis                         oturum anahtarını siler (yönetici çağrıları p_token ister)
-     ap_seviye_durum / _kaydet        seviye sınavı takvimi, geçmiş ve sonuç kaydı (yönetici: ap_yonetici_seviye / _ayar)
+     ap_seviye_durum / _kaydet        seviye sınavı takvimi, geçmiş ve sonuç kaydı (yönetici: ap_yonetici_seviye / _tur)
    Yerelde:
      ap-hesap:v1:hesaplar   bu cihazda açılmış hesaplar [{ id, name, email }]
      ap-hesap:v1:oturum     açık oturumun kimliği ("Çıkış yap"a kadar)
@@ -182,7 +182,7 @@
     return null;
   }
 
-  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar|seviye|seviye_ayar)|geribildirim_(liste|okundu))$/;
+  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar|seviye|seviye_tur)|geribildirim_(liste|okundu))$/;
 
   window.HESAP = {
     hesaplar: hesaplar,
