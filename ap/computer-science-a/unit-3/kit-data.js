@@ -713,6 +713,92 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 9,
+      "code": "3.9-1",
+      "slug": "cs309",
+      "title": "this Anahtar Sözcüğü",
+      "en": "The this Keyword",
+      "accent": "#F6B94A",
+      "defter": "cs307",
+      "defterBaslik": "this Anahtar Sözcüğü",
+      "sessiz": true,
+      "seconds": 293,
+      "terms": [
+        "this",
+        "Current object",
+        "this.field",
+        "Shadowing",
+        "Pass this as an argument",
+        "return this",
+        "static context"
+      ],
+      "questions": [
+        {
+          "q": "Pet sınıfında private String name; ve private int age; alanları var. Constructor public Pet(String name, int age) başlığıyla yazılacak. Gövdesi hangisi olmalı?",
+          "opts": [
+            "name = name; age = age;",
+            "this.name = name; this.age = age;",
+            "name = this.name; age = this.age;",
+            "this.name = this.name; age = age;"
+          ],
+          "a": 1,
+          "why": "Soldaki this.name alanı, sağdaki name parametreyi gösterir: değer parametreden alana akar. A'da gölge yüzünden alanlar atanmaz; C ters yöndedir; D'de iki satır da alanı değiştirmez."
+        },
+        {
+          "q": "b.pairWith(c) çağrısı çalışırken pairWith metodunun içinde this kimdir?",
+          "opts": [
+            "c",
+            "Player sınıfının kendisi",
+            "b",
+            "null"
+          ],
+          "a": 2,
+          "why": "*this*, metodu çalıştıran nesnedir; noktanın solundaki nesne b'dir. c ise parametre (other) olarak gelir."
+        },
+        {
+          "q": "Aşağıdaki Plant sınıfı için System.out.println(new Plant(\"fesleğen\", 12)); ne yazdırır?",
+          "opts": [
+            "fesleğen 12",
+            "null 12",
+            "null 0",
+            "Kod derlenmez."
+          ],
+          "a": 1,
+          "why": "kind = this.kind; ters atamadır: parametre, alanın değerini (null) alır; alan *null* kalır. this.height = height; doğrudur: 12. Kod derlenir.",
+          "fig": {
+            "type": "code",
+            "code": "private String kind;\nprivate int height;\npublic Plant(String kind, int height) {\n  kind = this.kind;\n  this.height = height;\n}\npublic String toString() { return kind + \" \" + height; }"
+          }
+        },
+        {
+          "q": "Bir sınıfta private static int count; var. public static int total() { return this.count; } yazılırsa ne olur?",
+          "opts": [
+            "count'u döndürür.",
+            "0 döndürür.",
+            "Çalışma anında NullPointerException fırlatılır.",
+            "Kod derlenmez: static metotta this kullanılamaz."
+          ],
+          "a": 3,
+          "why": "*static* metot hiçbir nesne adına çalışmaz; *this* yoktur ve derleyici hata verir. Doğrusu return count; ya da sınıf adıyla erişmektir."
+        },
+        {
+          "q": "a ve b iki ayrı Player nesnesi ve ikisinin de puanı 4. Aşağıdaki pick metoduyla kod ne yazdırır?",
+          "opts": [
+            "true",
+            "false",
+            "Kod derlenmez.",
+            "null"
+          ],
+          "a": 0,
+          "why": "b.pick(a) içinde *this* b, *other* a'dır. 4 > 4 yanlış; *return other*, yani a döner. w ile a aynı nesneyi gösterir: true.",
+          "fig": {
+            "type": "code",
+            "code": "public Player pick(Player other) {\n  if (points > other.points) { return this; }\n  return other;\n}\n// istemci:\nPlayer w = b.pick(a);\nSystem.out.println(w == a);"
+          }
+        }
+      ]
     }
   ],
   "final": []
