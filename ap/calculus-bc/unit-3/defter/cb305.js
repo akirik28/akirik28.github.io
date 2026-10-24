@@ -239,7 +239,7 @@ window.DEFTER = {
               goster: ["v1", "v2", "vp1", "vp2"]
             },
             {
-              metin: "Dört temas noktası elipsi çevreleyen bir dikdörtgen çizer; araba burada tam yatay ya da tam dikey gider."
+              metin: "Dört teğet doğrusu (x = ±3, y = ±2) elipsi çevreleyen bir dikdörtgen çizer; araba temas noktalarında tam yatay ya da tam dikey gider."
             }
           ]
         }
@@ -261,7 +261,7 @@ window.DEFTER = {
           baslik: "Aynı eğri: dikey teğetler",
           durum: "Aynı eğrinin dikey teğetlerinin olduğu noktaları bul.",
           adimlar: ["Dikey: payda sıfır → x + 2y = 0 → x = −2y.", "Eğriye koy: 4y² − 2y² + y² = 3 → 3y² = 3 → y = ±1.", "Noktalar: y = 1 için x = −2; y = −1 için x = 2 → (−2, 1) ve (2, −1).", "Pay kontrolü: 2x + y = −4 + 1 = −3 ve 4 − 1 = 3; sıfır değil."],
-          sonuc: "Dikey teğetler (−2, 1) ve (2, −1) noktalarında. Dört nokta eğriyi çevreleyen kareyi çizer."
+          sonuc: "Dikey teğetler (−2, 1) ve (2, −1) noktalarında. Dört teğet doğrusu (x = ±2, y = ±2) eğriyi çevreleyen kareyi çizer."
         },
         {
           tip: "grafik",

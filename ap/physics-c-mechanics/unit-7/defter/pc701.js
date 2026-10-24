@@ -142,7 +142,7 @@ window.DEFTER = {
             {
               metin: "Sürtünmesiz düşey yayda asılı blok; denge konumundan çekip bırakıyorsun.",
               cevap: "sol",
-              neden: "Denge konumu mg kadar aşağı kayar, ama bu konumdan ölçülen yer değiştirmeyle kuvvet yine orantılıdır."
+              neden: "Denge konumu mg/k kadar aşağı kayar, ama bu konumdan ölçülen yer değiştirmeyle kuvvet yine orantılıdır."
             },
             {
               metin: "Geri çağırıcı kuvvet F = −5x³ (N).",

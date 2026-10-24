@@ -377,7 +377,7 @@ window.DEFTER = {
       q: "A ball is dropped from rest from a height of 5 m. Neglecting air resistance and using g = 10 m/s², what is its speed just before it hits the ground?",
       opts: ["5 m/s", "7 m/s", "10 m/s", "25 m/s"],
       a: 2,
-      why: "mgh = ½mv² ⇒ v = √(2gh) = √(2 × 10 × 5) = 10 m/s. 7 m/s 2 çarpanını unutmaktır (√(gh)); 25 m/s karekök almayı unutmaktır."
+      why: "mgh = ½mv² ⇒ v = √(2gh) = √(2 × 10 × 5) = 10 m/s. 7 m/s 2 çarpanını unutmaktır (√(gh)); 25 m/s ½gh hesaplamaktır (½ × 10 × 5); karekök almayı unutan 100 bulurdu."
     },
     {
       q: "A 1.0 kg particle moves along the x-axis with potential energy U(x) shown. Its total mechanical energy is 6 J, shown by the dashed line. What is the particle's speed at x = 2 m?",

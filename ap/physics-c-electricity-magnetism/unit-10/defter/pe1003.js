@@ -29,8 +29,8 @@ window.DEFTER = {
               ikon: "🔢",
               terim: "Dielectric constant",
               tr: "dielektrik sabiti",
-              tanim: "κ = ε/ε₀, yani malzemenin permitivitesinin boşluğunkine oranı. Alan κ kat zayıflar: κ = E₀/E.",
-              ornek: "κ = 4 olan malzeme alanı 4 kat azaltır; hava için κ ≈ 1."
+              tanim: "κ = ε/ε₀, yani malzemenin permitivitesinin boşluğunkine oranı. Plaka yükü sabitken (izole kondansatör) alan κ kat zayıflar: κ = E₀/E.",
+              ornek: "κ = 4 olan malzeme (aynı plaka yükünde) alanı 4 kat azaltır; hava için κ ≈ 1."
             }
           ]
         },
@@ -50,7 +50,7 @@ window.DEFTER = {
             baslik: "Dielektrik",
             maddeler: [
               "Yükler yerinden kayar ama serbest değil",
-              "İçeride alan kalır: E = E₀/κ",
+              "İçeride alan kalır (Q sabitken E = E₀/κ)",
               "Dış alanı kısmen yok eder"
             ]
           },
@@ -63,7 +63,7 @@ window.DEFTER = {
             {
               metin: "İçeride alan sıfıra inmez, κ kat azalır.",
               cevap: "sag",
-              neden: "Bağlı yükler yalnızca kısmen kayar: E = E₀/κ."
+              neden: "Bağlı yükler yalnızca kısmen kayar: Q sabitken E = E₀/κ."
             },
             {
               metin: "Yüzeyde bağlı yükler oluşur ama malzemeyi terk etmez.",
@@ -314,10 +314,10 @@ window.DEFTER = {
             { id: "d3", tip: "nokta", x: 2.5, y: 2.213, renk: 0 },
             { id: "d4", tip: "nokta", x: 2, y: 1.77, renk: 0 },
             { id: "fit", tip: "cizgi", from: [0, 0], to: [11, 9.735], renk: 1, etiket: "hava", gizli: true },
-            { id: "q1", tip: "nokta", x: 2, y: 1.77, renk: 2, etiket: "(2,0; 17,7)", gizli: true },
-            { id: "q2", tip: "nokta", x: 10, y: 8.85, renk: 2, etiket: "(10,0; 88,5)", gizli: true },
-            { id: "dx", tip: "cizgi", from: [2, 1.77], to: [10, 1.77], renk: 2, kesik: true, gizli: true },
-            { id: "dy", tip: "cizgi", from: [10, 1.77], to: [10, 8.85], renk: 2, kesik: true, gizli: true },
+            { id: "q1", tip: "nokta", x: 1, y: 0.885, renk: 2, etiket: "(1,0; 8,85)", gizli: true },
+            { id: "q2", tip: "nokta", x: 11, y: 9.735, renk: 2, etiket: "(11,0; 97,35)", gizli: true },
+            { id: "dx", tip: "cizgi", from: [1, 0.885], to: [11, 0.885], renk: 2, kesik: true, gizli: true },
+            { id: "dy", tip: "cizgi", from: [11, 0.885], to: [11, 9.735], renk: 2, kesik: true, gizli: true },
             { id: "diel", tip: "cizgi", from: [0, 0], to: [2.8, 9.912], renk: 3, etiket: "κ = 4", gizli: true }
           ],
           durumlar: [
@@ -327,11 +327,11 @@ window.DEFTER = {
               goster: ["fit"]
             },
             {
-              metin: "Eğimi doğru üzerindeki iki uzak noktadan hesapla: (2,0; 17,7 pF) ve (10,0; 88,5 pF).",
+              metin: "Eğimi en iyi doğru üzerindeki iki uzak noktadan hesapla (veri noktalarından değil): (1,0; 8,85 pF) ve (11,0; 97,35 pF).",
               goster: ["q1", "q2", "dx", "dy"]
             },
             {
-              metin: "Eğim = (88,5 − 17,7) pF / (10,0 − 2,0)×10² m⁻¹ = 8,85×10⁻¹⁴ F·m. ε₀ = eğim/A = 8,85×10⁻¹⁴/0,0100 = 8,85×10⁻¹² F/m."
+              metin: "Eğim = (97,35 − 8,85) pF / (11,0 − 1,0)×10² m⁻¹ = 8,85×10⁻¹⁴ F·m. ε₀ = eğim/A = 8,85×10⁻¹⁴/0,0100 = 8,85×10⁻¹² F/m."
             },
             {
               metin: "Aralığı tamamen dielektrikle doldurunca aynı d'de C dört kat: eğim κε₀A. Eğimlerin oranı κ'yı verir: 35,4/8,85 = 4.",
@@ -356,7 +356,7 @@ window.DEFTER = {
           tip: "ozet",
           maddeler: [
             "*Dielectric*: yükleri serbest olmayan yalıtkan; dış alanda polarize olur, yüzeylerde bağlı yükler oluşur.",
-            "Bağlı yüklerin alanı dış alana zıttır: E = E₀/κ; κ = ε/ε₀ = E₀/E.",
+            "Bağlı yüklerin alanı dış alana zıttır; Q sabitken E = E₀/κ; κ = ε/ε₀.",
             "Dielektrik her durumda kapasitansı κ kat artırır: C = κC₀.",
             "İzole (Q sabit): ΔV, E ve U κ kat azalır; Q değişmez.",
             "Pile bağlı (ΔV sabit): Q ve U κ kat artar; E değişmez.",

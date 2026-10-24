@@ -98,7 +98,7 @@ window.DEFTER = {
               "ikon": "🏁",
               "terim": "Steady state",
               "tr": "kararlı hâl",
-              "tanim": "t ≫ τ olunca büyüklüklerin artık değişmediği durum. Dolu kondansatörde ΔV_C = ε ve kol akımı 0'dır.",
+              "tanim": "t ≫ τ olunca büyüklüklerin artık değişmediği durum. Dolu kondansatörün kolunda akım 0'dır; pil, R ve C'nin tek ilmekte seri olduğu devrede ΔV_C = ε olur.",
               "ornek": "Telefon %100'e gelince şarj akımı kesilir."
             }
           ]
@@ -375,7 +375,7 @@ window.DEFTER = {
           "baslik": "t = 0 ve t ≫ τ anlarında kondansatör",
           "metin": "Yüksüz kondansatör devreye ilk konduğunda ΔV_C = 0'dır; tel gibidir ve en büyük akım o an akar. Çok uzun süre sonra tam dolar ve kolundaki akım sıfırdır.",
           "yanlis": "t = 0'da yüksüz kondansatörden akım geçmez; uzun süre sonra kondansatör kolunda hâlâ akım vardır.",
-          "dogru": "t = 0'da kol akımı en büyüktür (ΔV_C = 0); t ≫ τ'da kol akımı 0 ve ΔV_C = ε. Sınavda böyle yaz: *At t = 0 the uncharged capacitor acts like a wire; a long time later it acts like an open circuit.*"
+          "dogru": "t = 0'da kol akımı en büyüktür (ΔV_C = 0); t ≫ τ'da kol akımı 0'dır (seri tek RC ilmeğinde ΔV_C = ε). Sınavda böyle yaz: *At t = 0 the uncharged capacitor acts like a wire; a long time later it acts like an open circuit.*"
         }
       ]
     },

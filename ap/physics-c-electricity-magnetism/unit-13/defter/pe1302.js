@@ -11,7 +11,7 @@ window.DEFTER = {
         {
           tip: "formul",
           parcalar: [
-            { t: "ε = B ℓ v", alt: "alan alanı büyütür" },
+            { t: "ε = B ℓ v", alt: "hareket ilmeğin yüzeyini büyütür" },
             "→",
             { t: "I = ε / R", alt: "Ohm" },
             "→",
@@ -65,7 +65,7 @@ window.DEFTER = {
               cevap: "sag",
               neden: "İlmekten alan geçmiyor, akı sıfır ve sabit."
             },
-            { metin: "Çubuk raylarda ilerliyor.", cevap: "sol", neden: "Alan değişiyor: ε = Bℓv." }
+            { metin: "Çubuk raylarda ilerliyor.", cevap: "sol", neden: "İlmeğin yüzey alanı değişiyor (B sabit): ε = Bℓv." }
           ]
         },
         {

@@ -134,7 +134,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konuyu bir cümlede toparlayan liste (bu konu 2026-27 sınavında yok).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Örneklem doğrusu ŷ = a + bx; popülasyon doğrusunun eğimi β. Aralık β için kurulur.",

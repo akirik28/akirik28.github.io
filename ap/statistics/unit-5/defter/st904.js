@@ -146,7 +146,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Yöntem seçimi listesi (eğim testi ve uyum iyiliği 2026-27’de çıkarıldı; yöntem seçmek sınavda var).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "Üç soru: veri kategorik mi sayısal mı? kaç grup ve nasıl toplandı? tahmin mi test mi?",

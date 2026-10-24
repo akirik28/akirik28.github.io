@@ -258,7 +258,7 @@ window.DEFTER = {
               goster: ["rr", "tr"]
             },
             {
-              metin: "Elektron (negatif): aynı alan ve sürat, kuvvet ters. Üstten girince aşağı itilir ve ==saat yönünde== döner.",
+              metin: "Elektron (negatif): aynı alan ve sürat, kuvvet ters. Üstten girince aşağı itilir ve ==saat yönünde== döner; kütlesi çok küçük olduğundan çemberi protonunkinden ~1836 kat küçüktür (r = mv/|q|B).",
               goster: ["el", "v2", "f2", "te"]
             }
           ]

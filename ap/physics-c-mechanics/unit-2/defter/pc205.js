@@ -117,7 +117,7 @@ window.DEFTER = {
           baslik: "Statik sürtünmeyi hep μ_s N sanmak",
           metin: "2025 sınavında bu konudaki en yaygın hata buydu. Statik sürtünme yalnız kayma eşiğinde μ_s N olur; öncesinde itmeyi dengeleyecek kadardır. Kinetik sürtünme için de aynı malzeme ve aynı normal kuvvette değer aynıdır; hızdan, alandan ya da dönmeden bağımsızdır.",
           yanlis: "Blok durgun, o hâlde f_s = μ_s N.",
-          dogru: "f_s itmeye eşit (30 N itmeye karşı 30 N); yalnızca f_s ≤ μ_s N koşulu sağlanmalıdır."
+          dogru: "f_s itmeye eşit (μ_s N = 50 N olan 10 kg'lık kasada 30 N itmeye karşı 30 N); yalnızca f_s ≤ μ_s N koşulu sağlanmalıdır."
         },
         {
           tip: "not",

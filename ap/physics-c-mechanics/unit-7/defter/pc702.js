@@ -26,7 +26,7 @@ window.DEFTER = {
               ikon: "🧮",
               terim: "Second-order differential equation",
               tr: "ikinci mertebeden diferansiyel denklem",
-              tanim: "İkinci türevi, fonksiyonun kendisiyle orantılı bağlayan denklem. SHM'nin ayırt edici işareti budur.",
+              tanim: "İçinde fonksiyonun ikinci türevi bulunan denklem. SHM'de bu denklem özel bir biçim alır: ikinci türev, fonksiyonun negatifiyle orantılıdır (d²x/dt² = −ω²x); SHM'nin ayırt edici işareti budur.",
               ornek: "d²x/dt² = −ω²x: ivme konumun eksilisiyle orantılı."
             },
             {

@@ -767,8 +767,8 @@ window.KANIT = {
     "pdfPage": 47,
     "who": "Tituba",
     "find": "and there was Goody Good",
-    "what": "Sarah Good'un adını ilk veren, tehdit ve yönlendirme altındaki Tituba'dır (s.44-46).",
-    "use": "Sarah Good was first named by Tituba, who spoke under threats of whipping and hanging (Miller __).",
+    "what": "Sarah Good'un adını önce Putnam soru olarak söyler (\"Sarah Good? ... Or Osburn?\"); Tituba bunu tehdit altında tekrarlar (s.44-46).",
+    "use": "Tituba named Sarah Good only after Putnam suggested the name and she was threatened with whipping and hanging (Miller __).",
     "bookPage": 44,
     "bookPageSource": "foto"
    },

@@ -103,7 +103,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konuyu bir cümlede toparlayan liste (bu konu 2026-27 sınavında yok).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "H₀: β = 0 (doğrusal ilişki yok); Hₐ: β ≠ 0, β < 0 ya da β > 0. Hipotezler β içindir, b için değil.",

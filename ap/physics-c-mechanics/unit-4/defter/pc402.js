@@ -327,7 +327,7 @@ window.DEFTER = {
       why: "p_x = 6, p_y = 8 kg·m/s ⇒ p = 10 kg·m/s; v = 10/4 = 2,5 m/s. 3,5 m/s büyüklükleri toplayıp (14) 4 kg'a bölmektir."
     },
     {
-      q: "A projectile launched on level ground would land 80 m from the launch point. At the highest point of its path it explodes into two pieces of equal mass. One piece falls straight down. Where does the other piece land? (Neglect air resistance.)",
+      q: "A projectile launched on level ground would land 80 m from the launch point. At the highest point of its path it explodes into two pieces of equal mass. Immediately after the explosion, one piece is momentarily at rest and then falls straight down. Where does the other piece land? (Neglect air resistance.)",
       opts: ["120 m", "80 m", "100 m", "160 m"],
       a: 0,
       why: "Dik düşen parça tepenin altına, x = 40 m'ye iner. Kütle merkezi yine 80 m'de iner: (40 + x)/2 = 80 ⇒ x = 120 m."

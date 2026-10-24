@@ -234,7 +234,7 @@ window.DEFTER = {
       },
       opts: ["0", "2 N in the +x direction", "4 N in the −x direction", "8 N in the −x direction"],
       a: 2,
-      why: "4–6 s arasında eğim a = (0 − 4)/2 = −2 m/s². ΣF = ma = 2×(−2) = −4 N, yani −x yönünde 4 N. 8 N, kütleyi iki kez çarpmaktan gelir; 0 ise 'hız sıfıra iniyor' diye net kuvveti sıfır saymak olur."
+      why: "4–6 s arasında eğim a = (0 − 4)/2 = −2 m/s². ΣF = ma = 2×(−2) = −4 N, yani −x yönünde 4 N. 8 N, Δv'yi Δt'ye bölmeyi unutup m·Δv almaktan (2 × 4) gelir; 0 ise 'hız sıfıra iniyor' diye net kuvveti sıfır saymak olur."
     },
     {
       q: "A crate is pushed across a rough horizontal floor at constant velocity. Which statement about the horizontal forces on the crate is correct?",

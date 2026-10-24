@@ -198,7 +198,7 @@ window.DEFTER = {
               goster: ["pb"]
             },
             { metin: "Emf eğimdir: ε = −dΦ/dt = BAω sinωt. Akının eğimi çizilince ==sinüs== çıkar.", goster: ["emf"] },
-            { metin: "Akı sıfırdan geçerken |ε| en büyük (T/4); akı en büyükken (0, T/2) ε = 0.", goster: ["pc"] },
+            { metin: "Akı sıfırdan geçerken |ε| en büyük (T/4); akının büyüklüğü |Φ| en büyükken (0, T/2) ε = 0.", goster: ["pc"] },
             {
               metin: "Bir turda emf iki kez sıfırdan geçip yön değiştirir, |ε| iki kez tepe yapar. ==Doğrusal artmaz.== ε_max = BAω.",
               gizle: ["pa", "pb"]

@@ -35,7 +35,7 @@ window.DEFTER = {
             maddeler: [
               "Skaler; işareti var (+ ya da −)",
               "Birimi joule (J)",
-              "Uzaklıkla 1/r gibi azalır",
+              "Büyüklüğü uzaklıkla 1/r gibi azalır",
               "Yük çiftine aittir"
             ]
           },
@@ -307,7 +307,7 @@ window.DEFTER = {
             "*Electric potential energy*, bir dış kuvvetin yükleri sonsuzdan getirmek için yaptığı iştir; sonsuzda U_E = 0.",
             "İki nokta yük için U_E = kq₁q₂/r; skalerdir, birimi joule.",
             "Yükleri işaretleriyle yaz: aynı işaret U_E > 0 (itme), zıt işaret U_E < 0 (çekim, bağlı sistem).",
-            "U_E uzaklıkla 1/r gibi, kuvvet 1/r² gibi azalır.",
+            "U_E'nin büyüklüğü uzaklıkla 1/r gibi, kuvvetinki 1/r² gibi azalır.",
             "Çok yüklü sistemde her çifti bir kez topla; n yükte n(n−1)/2 çift vardır.",
             "Eşkenar üçgen örneğinde (a = 0,20 m, ±2,0 μC) U_E = −0,18 J.",
             "Yükleri sırayla getirirken yapılan işlerin toplamı çift toplamına eşittir; sıra önemsizdir.",

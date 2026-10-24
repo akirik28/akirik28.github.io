@@ -400,7 +400,7 @@ window.DEFTER = {
       q: "The table shows the magnitude of the electric field at several distances r from the center of a charged sphere of radius 10 cm. Which of the following best describes the sphere?",
       opts: [
         "A uniformly charged insulating sphere",
-        "A conducting sphere carrying the same charge",
+        "A charged conducting sphere",
         "A point charge located at the center",
         "A neutral sphere"
       ],

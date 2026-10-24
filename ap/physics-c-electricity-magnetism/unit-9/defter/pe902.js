@@ -50,7 +50,7 @@ window.DEFTER = {
             ikon: "🔋",
             baslik: "Potansiyel enerji (U_E)",
             maddeler: [
-              "Yükün kendi enerjisi",
+              "Yük–alan (yük çifti) sisteminin enerjisi",
               "Birimi joule",
               "U_E = qV; q'ya bağlı",
               "q'nun işareti U_E'nin işaretini çevirir"
@@ -506,7 +506,7 @@ window.DEFTER = {
           baslik: "Negatif yük nereye gider?",
           metin: "Pozitif yük serbest bırakılınca düşük V'ye gider. Negatif yük ise yüksek V'ye doğru ivmelenir, çünkü ona etkiyen kuvvet E'nin tersidir.",
           yanlis: "Serbest bırakılan her yük alçak potansiyele gider.",
-          dogru: "Pozitif yük alçak V'ye, negatif yük yüksek V'ye gider (ikisi de kendi U_E = qV değerini azaltır). Sınavda böyle yaz: \"The field is perpendicular to the equipotentials and points toward decreasing V; a negative charge moves toward higher V.\""
+          dogru: "Pozitif yük alçak V'ye, negatif yük yüksek V'ye gider (ikisinde de sistemin U_E = qV değeri azalır). Sınavda böyle yaz: \"The field is perpendicular to the equipotentials and points toward decreasing V; a negative charge moves toward higher V.\""
         }
       ]
     },

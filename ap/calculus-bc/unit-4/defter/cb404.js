@@ -14,7 +14,7 @@ window.DEFTER = {
           ] },
         { tip: "formul", parcalar: [
             { t: "A = πr²", alt: "denklem" }, "⇒",
-            { t: "dA/dt = 2πr", alt: "A'nın r'ye türevi" }, "×",
+            { t: "dA/dt", alt: "alanın hızı" }, "=", { t: "2πr", alt: "dA/dr: A'nın r'ye türevi" }, "×",
             { t: "dr/dt", alt: "r'nin hızı" }
           ], aciklama: "Zincir kuralı: r de t'nin fonksiyonudur. ==Her değişkeni türetirken yanına kendi hızını çarp.==" }
       ]

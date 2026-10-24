@@ -209,7 +209,7 @@ window.DEFTER = {
             { metin: "Makaranın iki yanındaki ip parçalarında gerilme eşittir.", cevap: "sol", neden: "İdeal makara kütlesiz ve sürtünmesiz: yalnız yönü değiştirir." },
             { metin: "Asılı ağır zincirin en üst halkasında gerilme en büyüktür.", cevap: "sag", neden: "En üst halka, altındaki bütün kütleyi taşır." },
             { metin: "İpe bağlı iki bloğun ivmelerinin büyüklüğü aynıdır.", cevap: "sol", neden: "Uzamayan ip iki ucu aynı hızla hareket ettirir." },
-            { metin: "Sınav 'kütlesiz ip' demedi ve ipin ağırlığı önemli.", cevap: "sag", neden: "Kütleli ipte T her yerde aynı alınamaz; yine de aksi belirtilmedikçe ip idealdir." }
+            { metin: "Soru ipin kütlesini veriyor (ör. 2 kg'lık asılı halat) ve ipin ağırlığı önemli.", cevap: "sag", neden: "Kütleli ipte T her yerde aynı alınamaz; yine de aksi belirtilmedikçe ip idealdir." }
           ]
         },
         {

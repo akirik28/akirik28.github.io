@@ -192,8 +192,8 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Temas eden iletkenler",
-      kisa: "Temas eden iletkenlerin potansiyeli eşitlenir; yük yarıçapla orantılı paylaşılır.",
+      baslik: "Bağlanan iletkenler",
+      kisa: "Bağlanan iletkenlerin potansiyeli eşitlenir; uzak kürelerde yük yarıçapla orantılı paylaşılır.",
       bloklar: [
         {
           tip: "formul",
@@ -212,7 +212,7 @@ window.DEFTER = {
           durum: "Küre 1'e +8,0 nC verilmiş, küre 2 nötr. İnce bir iletken telle birleştirilip ayrılıyor (küreler uzak). Son yükleri, ortak potansiyeli ve yüzey yük yoğunluklarını bul.",
           adimlar: [
             "Yük korunur: q₁ + q₂ = 8,0 nC.",
-            "Temasta V₁ = V₂ → q₁/r₁ = q₂/r₂ → q₂ = 3q₁ (r₂ = 3r₁).",
+            "Bağlantıda V₁ = V₂ → q₁/r₁ = q₂/r₂ → q₂ = 3q₁ (r₂ = 3r₁).",
             "q₁ + 3q₁ = 8,0 nC → q₁ = 2,0 nC ve q₂ = 6,0 nC.",
             "Ortak potansiyel: V = kq₁/r₁ = (9×10⁹)(2,0×10⁻⁹)/0,020 = 900 V. Kontrol: kq₂/r₂ = 54/0,060 = 900 V.",
             "σ = q/(4πr²): σ₁ ≈ 4,0×10⁻⁷ C/m² ve σ₂ ≈ 1,3×10⁻⁷ C/m²; küçük kürede 3 kat yoğun."
@@ -375,7 +375,7 @@ window.DEFTER = {
             "İletken eşpotansiyeldir: içerideki V sabittir ve yüzeyle aynıdır; sıfır olmak zorunda değil (örnekte 720 V).",
             "Yüzeyin hemen dışında alan yüzeye diktir (E = σ/ε₀); sivri uç ve kenarlarda yük yoğunluğu fazladır.",
             "Dış alanda iletken polarize olur; iç alan sıfırlanır. Kapalı iletken kabuğun içi dış alanlardan korunur (*electrostatic shielding*).",
-            "Temas eden iletkenler aynı potansiyele gelir: q₁/r₁ = q₂/r₂, yani yük yarıçapla orantılı paylaşılır.",
+            "Bağlanan iletkenler aynı potansiyele gelir; birbirinden uzak (ince telle bağlı) kürelerde q₁/r₁ = q₂/r₂, yani yük yarıçapla orantılı paylaşılır.",
             "σ yarıçapla ters orantılıdır: küçük küre daha az yük taşır ama daha yoğundur.",
             "*Ground*: potansiyeli 0 olan, sınırsız yük alıp verebilen referans.",
             "Dış yük varken topraklama zıt işaretli yük indükler; toprak teli ve dış yük çekilince yük iletkende kalır."
@@ -443,7 +443,7 @@ window.DEFTER = {
         "The field is zero because a conductor cannot be placed in an electric field."
       ],
       a: 1,
-      why: "Kabuğun yüzeyindeki yükler yeniden dağılır ve içeride dış alanı tam sıfırlayan bir alan üretir: electrostatic shielding. En çekici yanlış şık A: kabuğun net yükünün sıfır olması içerideki alanın sıfır olmadığı anlamına gelmez."
+      why: "Kabuğun yüzeyindeki yükler yeniden dağılır ve içeride dış alanı tam sıfırlayan bir alan üretir: electrostatic shielding. En çekici yanlış şık A: kabuğun net yükü sıfır olsa da yüzeyinde zıt işaretli yükler toplanır; bu yükler içerideki dış alanı tamamen sıfırlar."
     }
   ]
 };

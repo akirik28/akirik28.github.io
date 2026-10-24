@@ -280,17 +280,17 @@ window.DEFTER = {
           tip: "kavramlar",
           kartlar: [
             {
-              ikon: "🧊",
+              ikon: "📉",
               terim: "Exponential decay",
               tr: "üstel sönme",
               tanim: "Değerin kendisiyle orantılı azalması: v = v₀e^(−kt). Sıfıra yaklaşır ama hiç tam sıfır olmaz.",
-              ornek: "Buzda kayan disk: v = 10e^(−0,5t) m/s."
+              ornek: "Hıza orantılı dirençle (F = −kv) yavaşlayan disk: v = 10e^(−0,5t) m/s."
             }
           ]
         },
         {
           tip: "ornek",
-          baslik: "Buzda kayan disk",
+          baslik: "Hıza orantılı dirençle yavaşlayan disk",
           durum: "Diskin hızı v = 10e^(−0,5t) m/s ve x(0) = 0. x(t)'yi bul; disk en fazla nereye varır?",
           adimlar: [
             "x = ∫10e^(−0,5t) dt = −20e^(−0,5t) + C (iç fonksiyonun türevi −0,5; ona böl).",
@@ -346,7 +346,7 @@ window.DEFTER = {
             { id: "p4", tip: "nokta", x: 4, y: 17.293, renk: 3, etiket: "17,3 m", kilavuz: true, gizli: true }
           ],
           durumlar: [
-            { metin: "Disk sürtünmeyle yavaşlıyor: v = 10e^(−0,5t) hızla sönüyor (10 → 0)." },
+            { metin: "Disk hızıyla orantılı bir direnç kuvvetiyle (F = −kv) yavaşlıyor: v = 10e^(−0,5t) hızla sönüyor (10 → 0)." },
             { metin: "Hız eğrisinin altındaki alan konumdur: x = 20(1 − e^(−0,5t)) yükselir.", goster: ["x"] },
             {
               metin: "x, kesikli çizgiye (20 m) yaklaşır ama onu ==geçemez==: hızın altındaki toplam alan 20 m.",

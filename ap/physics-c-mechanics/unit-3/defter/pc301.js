@@ -437,7 +437,7 @@ window.DEFTER = {
       },
       opts: ["2.5 m/s", "5.0 m/s", "5.5 m/s", "12.5 m/s"],
       a: 1,
-      why: "İş = grafiğin altındaki alan = ½(2)(10) + (4)(10) = 50 J. ½(4)v² = 50 ⇒ v = 5 m/s. 5,5 m/s tüm yolda 10 N varmış gibi 60 J almaktır; 12,5 m/s ise karekökü almayı unutmaktır (50/4)."
+      why: "İş = grafiğin altındaki alan = ½(2)(10) + (4)(10) = 50 J. ½(4)v² = 50 ⇒ v = 5 m/s. 5,5 m/s tüm yolda 10 N varmış gibi 60 J almaktır; 12,5 m/s ise ½ çarpanını atıp karekökü de almadan W/m'yi hız sanmaktır (50/4)."
     },
     {
       q: "A person drags a crate 10 m along a horizontal floor with a constant 50 N force directed 37° above the horizontal. (sin 37° = 0.6, cos 37° = 0.8.) How much work does the person's force do?",

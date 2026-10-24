@@ -296,7 +296,7 @@ window.DEFTER = {
             { metin: "U_G = −GMm/r. Sıfır noktası sonsuzda seçilir; bağlı sistemde U hep negatiftir." },
             { metin: "Yüzeyde (r = R) U = −1 birim: çukurun dibi, uzaklaşmak enerji ister.", goster: ["p1"] },
             {
-              metin: "r = 2R'de U = −½: mesafe iki katına çıkınca U yarıya iner ve sıfıra yaklaşır.",
+              metin: "r = 2R'de U = −½: mesafe iki katına çıkınca |U| yarıya iner; U artar ve sıfıra yaklaşır.",
               goster: ["p2"]
             },
             {

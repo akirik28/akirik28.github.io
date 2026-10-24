@@ -228,7 +228,7 @@ window.DEFTER = {
               terim: "Air resistance",
               tr: "hava direnci",
               tanim: "Havanın harekete karşı koyan etkisi. Unit 1'de ihmal edilir; Unit 2'de gelecek.",
-              ornek: "Paraşüt açılınca hava direnci ağırlığı dengeler."
+              ornek: "Paraşüt açıldıktan bir süre sonra hava direnci ağırlığı dengeler ve hız sabitlenir (terminal hız)."
             },
             {
               ikon: "➕",

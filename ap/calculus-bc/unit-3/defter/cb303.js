@@ -132,7 +132,7 @@ window.DEFTER = {
             "İç türev: g′(x) = 2x + 2, g′(1) = 4.",
             "Çarp: (−1/2) · 4."
           ], sonuc: "h′(1) = −2" },
-        { tip: "tuzak", metin: "İç değer tam 2 çıksaydı (x² + 2x = 2 için x = −1 ± √3), tam köşeye düşerdi ve türev olmazdı. Grafikte köşeyi görünce türev yok de.", yanlis: "Köşede iki eğimin ortalamasını al.", dogru: "Köşede f′ yoktur (DNE); parçanın eğimi yalnızca köşe olmayan noktalarda geçerlidir." }
+        { tip: "tuzak", metin: "İç değer tam 2 çıksaydı (x² + 2x = 2 için x = −1 ± √3), tam köşeye düşerdi ve türev olmazdı. Köşede f′ yoktur; iç türev sıfır değilse (burada g′ = ±2√3) h′ de yoktur.", yanlis: "Köşede iki eğimin ortalamasını al.", dogru: "Köşede f′ yoktur (DNE); parçanın eğimi yalnızca köşe olmayan noktalarda geçerlidir." }
       ]
     },
     {

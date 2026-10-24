@@ -5,7 +5,7 @@ window.DEFTER = {
   bolumler: [
     {
       baslik: "Tork nedir?",
-      kisa: "Tork kuvvetin dönme etkisidir; eksene dik bileşenden doğar.",
+      kisa: "Tork kuvvetin dönme etkisidir; kuvvetin r'ye (eksenden uygulama noktasına uzanan konum vektörüne) dik bileşeninden doğar.",
       bloklar: [
         {
           tip: "kavramlar",

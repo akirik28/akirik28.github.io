@@ -133,7 +133,7 @@ window.DEFTER = {
             "T = 60 / 10 = 6,0 s.",
             "T = 2π√(ℓ/g) → ℓ = gT² / (4π²).",
             "ℓ = 9,8 × 6,0² / (4π²) = 352,8 / 39,48 = 8,94 m.",
-            "Açıyı küçük tut (yaklaşık 10° altı) ve birçok salınımı say: sayma hatası T'ye bölünerek küçülür."
+            "Açıyı küçük tut (yaklaşık 10° altı) ve birçok salınımı say: kronometre hatası salınım sayısına bölünerek küçülür."
           ],
           sonuc: "ℓ ≈ 8,9 m"
         },

@@ -248,7 +248,7 @@ window.DEFTER = {
       },
       opts: ["0.025 N/m", "2.5 N/m", "40 N/m", "400 N/m"],
       a: 2,
-      why: "k = eğim = ΔF/Δx = 10 N / 0,25 m = 40 N/m. 0,025 N/m oranı ters çevirmek (Δx/F), 2,5 N/m ise Δx = 0,25 m yerine 2,5 m okumaktan çıkar."
+      why: "k = eğim = ΔF/Δx = 10 N / 0,25 m = 40 N/m. 0,025 N/m oranı ters çevirmek (Δx/F), 2,5 N/m ise ΔF ile Δx'i bölmek yerine çarpmaktan (10 × 0,25) çıkar."
     },
     {
       q: "Two ideal springs with spring constants 200 N/m and 300 N/m are connected end to end (in series). The equivalent spring constant of the combination is",

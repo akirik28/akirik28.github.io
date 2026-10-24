@@ -129,7 +129,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konuyu bir cümlede toparlayan liste (bu konu 2026-27 sınavında yok).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "χ² = Σ (O − E)² / E; her kategorinin katkısı (bileşen) sıfır ya da pozitiftir.",

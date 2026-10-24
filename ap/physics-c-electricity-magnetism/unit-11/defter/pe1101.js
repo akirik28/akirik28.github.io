@@ -439,15 +439,15 @@ window.DEFTER = {
       "why": "R = ΔV/I: 2,0; 2,5; 3,0 ve yaklaşık 3,5 Ω. R artıyor, yani eleman ohmic değil. D en çekici yanlış: I'nın artması R'nin sabit olduğunu göstermez; ohmic için ΔV/I sabit olmalı."
     },
     {
-      "q": "A cylindrical wire of radius R carries a current with current density J = kr, where r is the distance from the axis of the wire and k is a constant. What is the total current in the wire?",
+      "q": "A cylindrical wire of radius R carries a current with current density J = kr², where r is the distance from the axis of the wire and k is a constant. What is the total current in the wire?",
       "opts": [
-        "2πkR³/3",
-        "πkR³",
-        "πkR²",
-        "2πkR³"
+        "πkR⁴/2",
+        "2πkR⁴",
+        "πkR⁴",
+        "2πkR³/3"
       ],
       "a": 0,
-      "why": "dA = 2πr dr olduğundan I = ∫₀^R (kr)(2πr dr) = 2πkR³/3. B en çekici yanlış: J'yi dış yüzeydeki değeriyle (kR) sabit sayıp kR × πR² alır."
+      "why": "dA = 2πr dr olduğundan I = ∫₀^R (kr²)(2πr dr) = 2πk ∫₀^R r³ dr = 2πk · R⁴/4 = πkR⁴/2. En çekici yanlış D: J'yi kr sanıp 2πkR³/3 bulmak; B ise ∫r³ dr'yi R⁴/4 yerine R⁴ almaktır."
     },
     {
       "q": "A battery, a resistor R, and a bulb are connected in series. A switch S is connected in parallel with the bulb, as shown, and S is initially open. When S is closed, which of the following occurs? (Assume an ideal battery and an ohmic bulb.)",

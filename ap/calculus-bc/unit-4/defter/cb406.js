@@ -9,7 +9,7 @@ window.DEFTER = {
       kisa: "Yerine koyunca 0/0 ya da ∞/∞ çıkıyorsa limit henüz belli değildir.",
       bloklar: [
         { tip: "kavramlar", kartlar: [
-            { ikon: "🔢", terim: "Direct substitution", tr: "doğrudan yerine koyma", tanim: "Limitte x'e yaklaştığı değeri doğrudan yazmak. Sonuç sayı çıkıyorsa limit odur.", ornek: "lim (x² + 1) / (x + 1), x → 1: 2/2 = 1." },
+            { ikon: "🔢", terim: "Direct substitution", tr: "doğrudan yerine koyma", tanim: "Limitte x'e yaklaştığı değeri doğrudan yazmak. Fonksiyon o noktada sürekliyse (ör. paydası sıfır olmayan rasyonel ifade) çıkan sayı limittir.", ornek: "lim (x² + 1) / (x + 1), x → 1: 2/2 = 1." },
             { ikon: "❓", terim: "Indeterminate form", tr: "belirsiz biçim", tanim: "Yerine koyunca 0/0 ya da ∞/∞ gibi sonucu belli olmayan biçim. Limit varsa da bir yöntemle bulunmalı.", ornek: "lim (x² − 4) / (x − 2), x → 2: 0/0." },
             { ikon: "🪄", terim: "L'Hospital's Rule", tr: "L'Hôpital kuralı", tanim: "0/0 ya da ∞/∞ biçiminde pay ve paydanın ayrı ayrı türevlerinin oranını almak.", ornek: "lim (x² − 4)/(x − 2) = lim 2x/1 = 4." }
           ] },
@@ -108,7 +108,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Çarpım ve fark: önce bölüme çevir",
+      baslik: "Çarpım ve fark: önce bölüme çevir (ek konu: AP yalnızca 0/0 ve ∞/∞ sorar)",
       kisa: "0 · ∞ ve ∞ − ∞ biçimlerini bölüme çevirip kuralı uygula.",
       bloklar: [
         { tip: "tablo", baslik: "Bölüme çevirme tarifi", head: ["Biçim", "Ne yap?", "Sonra"],
@@ -133,7 +133,7 @@ window.DEFTER = {
       ]
     },
     {
-      baslik: "Üstlü biçimler: logaritma al",
+      baslik: "Üstlü biçimler: logaritma al (ek konu: AP yalnızca 0/0 ve ∞/∞ sorar)",
       kisa: "y = f^g için ln y = g · ln f yaz, limiti bul, sonra e'ye taşı.",
       bloklar: [
         { tip: "formul", parcalar: [
@@ -182,7 +182,7 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Önce doğrudan yerine koy; sayı çıkıyorsa limit odur.",
+            "Önce doğrudan yerine koy; fonksiyon o noktada sürekliyse çıkan sayı limittir.",
             "0/0 ya da ∞/∞ çıkarsa lim f/g = lim f′/g′ (sağdaki limit varsa).",
             "Pay ve paydayı ayrı türet; bölüm kuralı yok. Gerekirse kuralı tekrarla.",
             "Büyüme hızı: eˣ > polinom > ln x. Payda hızlıysa limit 0.",

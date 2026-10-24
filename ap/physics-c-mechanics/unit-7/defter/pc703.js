@@ -484,7 +484,7 @@ window.DEFTER = {
       q: "A block of mass m on a horizontal spring of spring constant k oscillates with speed v₀ at the equilibrium position. What is the speed of the block when its displacement is half the amplitude?",
       opts: ["v₀/2", "v₀/√2", "3v₀/4", "(√3/2)v₀"],
       a: 3,
-      why: "Dengede ½mv₀² = ½kA². x = A/2'de U = ½k(A/2)² = ¼ · ½kA², yani K = ¾ · ½mv₀². ½mv² = ¾ · ½mv₀² → v = (√3/2)v₀ ≈ 0,87v₀. v₀/2 enerjiyi çizgisel sanmak (K = ½E); 3v₀/4 ise hızı K ile orantılı almak."
+      why: "Dengede ½mv₀² = ½kA². x = A/2'de U = ½k(A/2)² = ¼ · ½kA², yani K = ¾ · ½mv₀². ½mv² = ¾ · ½mv₀² → v = (√3/2)v₀ ≈ 0,87v₀. v₀/2 hızın konumla doğrusal azaldığını sanmak (v = v₀(1 − x/A)); v₀/√2 enerjiyi konumla doğrusal sanmak (K = ½E); 3v₀/4 ise hızı K ile orantılı almak."
     },
     {
       q: "The table gives the kinetic energy of an undamped block-spring system, released from rest at x = A, at several times. What is the period of the oscillation?",

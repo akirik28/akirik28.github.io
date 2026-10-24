@@ -248,13 +248,13 @@ window.DEFTER = {
       q: "A small cart travels on the inside of a vertical circular loop of radius 2.5 m. Use g = 10 m/s². What is the minimum speed the cart must have at the top of the loop to stay in contact with the track?",
       opts: ["5 m/s", "2.5 m/s", "6.25 m/s", "25 m/s"],
       a: 0,
-      why: "Temas kaybolurken N = 0 ve yalnız ağırlık merkezcil ivmeyi sağlar: mg = mv²/r ⇒ v = √(gr) = √25 = 5 m/s. 6,25 m/s gr'yi ikinci kez çarpmaktan, 2,5 m/s r'yi doğrudan hız sanmaktan gelir."
+      why: "Temas kaybolurken N = 0 ve yalnız ağırlık merkezcil ivmeyi sağlar: mg = mv²/r ⇒ v = √(gr) = √25 = 5 m/s. 6,25 m/s r'nin karesini almaktan (2,5²), 2,5 m/s r'yi doğrudan hız sanmaktan, 25 m/s ise karekök almayı unutmaktan (gr) gelir."
     },
     {
       q: "Satellite 1 orbits a planet in a circular orbit of radius r with a period of 2 hours. Satellite 2 orbits the same planet in a circular orbit of radius 4r. The period of satellite 2 is",
       opts: ["4 hours", "8 hours", "16 hours", "32 hours"],
       a: 2,
-      why: "T² ∝ R³: T₂/T₁ = 4^(3/2) = 8, yani 2×8 = 16 saat. 8 saat yalnız yarıçap oranının karekökünü (2×4) alarak, 32 saat ise orantıyı T ∝ R² sanarak çıkar."
+      why: "T² ∝ R³: T₂/T₁ = 4^(3/2) = 8, yani 2×8 = 16 saat. 8 saat orantıyı T ∝ R sanmaktan (2×4), 4 saat T ∝ √R sanmaktan (2×2), 32 saat ise T ∝ R² sanmaktan çıkar."
     },
     {
       q: "A disk rotates with constant angular speed ω. A small block moves around with the disk at different radii r. The graph shows the block's centripetal acceleration a_c versus r. What is the period of the disk's rotation?",

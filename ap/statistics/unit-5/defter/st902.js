@@ -130,7 +130,7 @@ window.DEFTER = {
     },
     {
       baslik: "Toparlayalım",
-      kisa: "Sınavdan önce bu listeye bir kez bak.",
+      kisa: "Konuyu bir cümlede toparlayan liste (bu konu 2026-27 sınavında yok).",
       bloklar: [
         { tip: "ozet", maddeler: [
             "β = 0, doğrusal ilişki yok demektir; aralığın 0’ı içerip içermediği ilk bakılacak şeydir.",
