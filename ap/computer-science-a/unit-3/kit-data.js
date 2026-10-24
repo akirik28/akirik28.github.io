@@ -618,6 +618,101 @@ window.KIT = {
           "why": "*static* metot sınıf adıyla çağrılır: ClassName.method(). D derlenmez: *count* *private* olduğu için başka bir sınıftan ona doğrudan erişilemez."
         }
       ]
+    },
+    {
+      "no": 8,
+      "code": "3.8",
+      "slug": "cs308",
+      "title": "Kapsam ve Erişim",
+      "en": "Scope and Access",
+      "accent": "#7C95FF",
+      "defter": "cs306",
+      "defterBaslik": "static Üyeler, Kapsam ve Erişim",
+      "sessiz": true,
+      "seconds": 296,
+      "terms": [
+        "Scope",
+        "Local variable",
+        "Parameter",
+        "Instance variable",
+        "Block",
+        "Shadowing",
+        "private",
+        "Access"
+      ],
+      "questions": [
+        {
+          "q": "Aşağıdaki kod için hangisi doğrudur?",
+          "opts": [
+            "14 9 yazdırır.",
+            "14 0 yazdırır.",
+            "Derlenmez: sq son satırda görünmez.",
+            "Derlenmez: sum döngünün içinde değiştirilemez."
+          ],
+          "a": 2,
+          "why": "sq, döngü bloğunun içinde tanımlandı; blok bitince yok olur. Son satırdaki sq derleme hatasıdır (cannot find symbol). sum ise döngüden önce tanımlandığı için her yerde görünür.",
+          "fig": {
+            "type": "code",
+            "code": "int sum = 0;\nfor (int i = 1; i <= 3; i++) {\n  int sq = i * i;\n  sum += sq;\n}\nSystem.out.println(sum + \" \" + sq);"
+          }
+        },
+        {
+          "q": "Clock sınıfında private int hour; alanı ve aşağıdaki constructor var; getHour hour'u döndürüyor. new Clock(9).getHour() ne döndürür?",
+          "opts": [
+            "9",
+            "0",
+            "null",
+            "Kod derlenmez."
+          ],
+          "a": 1,
+          "why": "Parametrenin adı alanla aynı olduğu için içeride hour, parametreyi gösterir (*shadowing*). Parametre kendine atanır; alan varsayılan 0 kalır. Kod derlenir.",
+          "fig": {
+            "type": "code",
+            "code": "public Clock(int hour) {\n  hour = hour;\n}"
+          }
+        },
+        {
+          "q": "Aşağıdaki sınıf parçasında bir Lamp nesnesi için önce raise(), sonra getLevel() çağrılıyor. getLevel() ne döndürür?",
+          "opts": [
+            "9",
+            "8",
+            "6",
+            "5"
+          ],
+          "a": 3,
+          "why": "raise içindeki int level = 8; yeni bir yerel değişken tanımlar ve alanı gölgeler. level++ yerel değişkeni 9 yapar; alan 5 kalır.",
+          "fig": {
+            "type": "code",
+            "code": "private int level = 5;\npublic void raise() {\n  int level = 8;\n  level++;\n}\npublic int getLevel() { return level; }"
+          }
+        },
+        {
+          "q": "Thermostat sınıfının içinde public boolean isWarmerThan(Thermostat other) { return temp > other.temp; } yazılıyor; temp private. Hangisi doğrudur?",
+          "opts": [
+            "Geçerlidir: kod Thermostat sınıfının içinde olduğu için other'ın private alanına erişebilir.",
+            "Derlenmez: başka bir nesnenin private alanına erişilemez.",
+            "Yalnızca other == this ise geçerlidir.",
+            "Derlenir ama çalışma anında hata verir."
+          ],
+          "a": 0,
+          "why": "*private* sınıf düzeyinde bir kuraldır: aynı sınıfın kodu, o sınıftan herhangi bir nesnenin *private* alanına erişebilir. Başka bir sınıftan t.temp yazmak ise derlenmez."
+        },
+        {
+          "q": "Aşağıdaki iki metot aynı sınıfta; temp bir instance variable. cool metodu için hangisi doğrudur?",
+          "opts": [
+            "temp'i 0 yapar.",
+            "Derlenmez: step yalnızca warmUp içinde görünür.",
+            "temp'i, warmUp'a en son verilen step kadar azaltır.",
+            "temp'i next'e eşitler."
+          ],
+          "a": 1,
+          "why": "step, warmUp'ın parametresidir; kapsamı yalnız o metottur. cool içinde step diye bir değişken yok: derleme hatası (cannot find symbol).",
+          "fig": {
+            "type": "code",
+            "code": "public void warmUp(int step) {\n  int next = temp + step;\n  temp = next;\n}\npublic void cool() {\n  temp = temp - step;\n}"
+          }
+        }
+      ]
     }
   ],
   "final": []
