@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Talep Yasası",
       "en": "The Law of Demand",
       "accent": "#B9E552",
-      "seconds": 267,
+      "seconds": 313,
       "terms": [
         "Demand",
         "Quantity demanded",
@@ -155,7 +155,7 @@ window.KIT = {
       "title": "Talebi Kaydıran Etkenler",
       "en": "Demand Shifters",
       "accent": "#FF7DB8",
-      "seconds": 274,
+      "seconds": 320,
       "terms": [
         "Change in demand",
         "Increase in demand",
@@ -312,7 +312,7 @@ window.KIT = {
       "title": "Arz Yasası ve Arzı Kaydıranlar",
       "en": "Supply",
       "accent": "#5C8DFF",
-      "seconds": 276,
+      "seconds": 325,
       "terms": [
         "Supply",
         "Quantity supplied",
@@ -536,7 +536,7 @@ window.KIT = {
       "title": "Talebin Fiyat Esnekliği",
       "en": "Price Elasticity of Demand",
       "accent": "#FF6F61",
-      "seconds": 268,
+      "seconds": 324,
       "terms": [
         "Price elasticity of demand",
         "Elasticity coefficient",
@@ -688,7 +688,7 @@ window.KIT = {
       "title": "Toplam Gelir Testi ve Esneklik",
       "en": "Total Revenue Test and Determinants of Elasticity",
       "accent": "#A98BFF",
-      "seconds": 265,
+      "seconds": 323,
       "terms": [
         "Total revenue",
         "Total revenue test",
@@ -838,7 +838,7 @@ window.KIT = {
       "title": "Arzın Fiyat Esnekliği",
       "en": "Price Elasticity of Supply",
       "accent": "#58C9FF",
-      "seconds": 246,
+      "seconds": 294,
       "terms": [
         "Price elasticity of supply",
         "Quantity supplied",
@@ -984,7 +984,7 @@ window.KIT = {
       "title": "Çapraz ve Gelir Esnekliği",
       "en": "Cross-Price and Income Elasticity",
       "accent": "#B9E552",
-      "seconds": 267,
+      "seconds": 320,
       "terms": [
         "Cross-price elasticity of demand",
         "Substitutes",
@@ -1105,7 +1105,7 @@ window.KIT = {
       "title": "Denge, Fazla ve Kıtlık",
       "en": "Equilibrium and Disequilibrium",
       "accent": "#F6B94A",
-      "seconds": 241,
+      "seconds": 279,
       "terms": [
         "Equilibrium",
         "Equilibrium price",
@@ -1290,7 +1290,7 @@ window.KIT = {
       "title": "Tüketici ve Üretici Artığı",
       "en": "Consumer and Producer Surplus",
       "accent": "#FF7DB8",
-      "seconds": 254,
+      "seconds": 303,
       "terms": [
         "Willingness to pay",
         "Consumer surplus",
@@ -1452,7 +1452,7 @@ window.KIT = {
       "title": "Dengenin Değişmesi ve Çift Kayma",
       "en": "Changes in Equilibrium",
       "accent": "#2FD6B9",
-      "seconds": 254,
+      "seconds": 303,
       "terms": [
         "Change in demand",
         "Change in supply",
@@ -1619,7 +1619,7 @@ window.KIT = {
       "title": "Fiyat Tavanı ve Fiyat Tabanı",
       "en": "Price Ceilings and Price Floors",
       "accent": "#5C8DFF",
-      "seconds": 239,
+      "seconds": 284,
       "terms": [
         "Price ceiling",
         "Price floor",
@@ -1785,7 +1785,7 @@ window.KIT = {
       "title": "Vergiler, Sübvansiyonlar ve Vergi Yükü",
       "en": "Taxes, Subsidies and Tax Incidence",
       "accent": "#F6B94A",
-      "seconds": 246,
+      "seconds": 298,
       "terms": [
         "Excise tax",
         "Per-unit tax",
@@ -1946,7 +1946,7 @@ window.KIT = {
       "title": "Uluslararası Ticaret ve Gümrük Vergisi",
       "en": "International Trade and Public Policy",
       "accent": "#2FD6B9",
-      "seconds": 243,
+      "seconds": 293,
       "terms": [
         "Autarky",
         "World price",
