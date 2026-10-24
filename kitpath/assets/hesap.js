@@ -9,6 +9,7 @@
      ap_cek / ap_yaz                  ilerleme kayıtları (anahtarında hesap kimliği geçenler)
      ap_quiz_ekle / _sil / _ozet      yönetici: quiz aç, sil, özet
      ap_yonetici_ogrenciler / _not    yönetici: quizi alan öğrenciler adlarıyla, not gir / düzelt
+     ap_yonetici_hesaplar             yönetici: bütün hesaplar (öğrenci listesi, notlar, bekleyen quiz sayısı)
      ap_geribildirim_gonder           herkes: hata / öneri / beğendim mesajı (hesapsızsa isimsiz)
      ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
    Yerelde:
@@ -151,7 +152,7 @@
     return null;
   }
 
-  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not)|geribildirim_(liste|okundu))$/;
+  var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar)|geribildirim_(liste|okundu))$/;
 
   window.HESAP = {
     hesaplar: hesaplar,

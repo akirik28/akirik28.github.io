@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/kitpath.css?v=45">
+<link rel="stylesheet" href="../assets/kitpath.css?v=46">
 </head>
 <body data-page="yonetim" data-root="../">
 <a class="skip" href="#main">İçeriğe geç</a>
@@ -19,14 +19,15 @@
   <div class="admin" style="padding-bottom:64px">
     <nav class="card admin__nav" aria-label="Yönetim menüsü">
       <button type="button" data-view="quiz" aria-current="page">Quizler</button>
-      <button type="button" data-view="not">Not girişi <span class="count">2</span></button>
+      <button type="button" data-view="not">Not girişi <span class="count" data-k="not-sayi" hidden></span></button>
       <button type="button" data-view="gb">Geri bildirim <span class="count" data-k="gb-sayi" hidden></span></button>
-      <button type="button" data-view="ogr">Öğrenciler</button>
+      <button type="button" data-view="ogr">Öğrenciler <span class="count count--plain" data-k="ogr-sayi" hidden></span></button>
       <button type="button" data-view="kit">Kitler</button>
     </nav>
 
     <main class="admin__main" id="main">
       <section class="admin__view" data-view="quiz">
+        <div class="stats yon-ozet" data-k="quiz-ozet" aria-live="polite"></div>
         <div class="section__head"><h1 class="display" style="font-size:44px;letter-spacing:-.03em"><span class="hl">Quizler</span></h1><button type="button" class="btn btn--primary" data-k="quiz-ac" aria-expanded="false" aria-controls="yeni-quiz">+ Yeni quiz</button></div>
         <form class="card card--pad stack" style="gap:18px" data-k="new-quiz" id="yeni-quiz" novalidate hidden>
           <h2 class="h3">Yeni quiz</h2>
@@ -38,7 +39,7 @@
             <label class="field">Son tarih<input name="tarih" type="datetime-local"></label>
             <label class="field">Kaç üzerinden<input name="uzerinden" type="number" min="1" value="20" inputmode="numeric"></label>
           </div>
-          <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Son tarih geçince, notu girilmeyen öğrencinin kitleri <strong>not girilene kadar</strong> kilitlenir. Öğrenci bunu panelinde görür.</span></div>
+          <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Son tarih geçince, notu girilmeyen öğrencinin kitleri <strong>not girilene kadar</strong> kilitlenir. Öğrenci bunu panelinde görür. Hesabını son tarihten <strong>sonra</strong> açan öğrenciye bu quiz sorulmaz.</span></div>
           <div class="row" style="justify-content:flex-end;gap:10px">
             <button type="reset" class="btn btn--ghost">Temizle</button>
             <button type="submit" class="btn btn--primary">Quizi yayınla</button>
@@ -60,14 +61,40 @@
         </div>
         <div class="stack" style="gap:12px" data-k="gb-liste" aria-live="polite"></div>
       </section>
+      <section class="admin__view" data-view="ogr" hidden>
+        <div class="section__head">
+          <div><span class="mono muted">HESAPLAR</span><h1 class="display" style="font-size:40px;letter-spacing:-.03em"><span class="hl">Öğrenciler</span></h1></div>
+          <label class="yon-ara"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" data-k="ogr-ara" placeholder="İsim ya da e-posta ara" aria-label="Öğrenci ara" autocomplete="off"></label>
+        </div>
+        <div class="stats yon-ozet" data-k="ogr-ozet" aria-live="polite"></div>
+        <div class="row" style="gap:6px;flex-direction:row;flex-wrap:wrap" role="group" aria-label="Süz">
+          <button type="button" class="filter" data-ogr-suz="hepsi" aria-pressed="true">Hepsi</button>
+          <button type="button" class="filter" data-ogr-suz="11" aria-pressed="false">11. sınıf</button>
+          <button type="button" class="filter" data-ogr-suz="10" aria-pressed="false">10. sınıf</button>
+          <button type="button" class="filter" data-ogr-suz="kilitli" aria-pressed="false">Not bekleyen</button>
+          <button type="button" class="filter" data-ogr-suz="yarim" aria-pressed="false">Kurulumu yarım</button>
+        </div>
+        <div class="card yon-tablo-kart">
+          <div class="table-box"><table class="table yon-tablo" style="min-width:600px"><thead><tr><th>Öğrenci</th><th>Sınıf</th><th>Dersler</th><th>Son giriş</th><th style="text-align:right">Durum</th></tr></thead><tbody data-k="ogr-liste"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="admin__view" data-view="kit" hidden>
+        <div class="section__head">
+          <div><span class="mono muted">YAYINDAKİ KİTLER</span><h1 class="display" style="font-size:40px;letter-spacing:-.03em"><span class="hl">Kitler</span></h1></div>
+          <span class="muted" style="font-size:14px" data-k="kit-sayi"></span>
+        </div>
+        <div class="yon-kitler" data-k="kit-liste"></div>
+      </section>
+
       <section class="admin__view" data-view="not" hidden>
         <div class="section__head">
-          <div><span class="mono muted">NOT GİRİŞİ · 100 ÜZERİNDEN · SON TARİH 20 EKİM</span><h1 class="display" style="font-size:40px;letter-spacing:-.03em">AP Human Geography · <span class="hl">Unit 1</span></h1></div>
+          <div><span class="mono muted">NOT GİRİŞİ</span><h1 class="display" style="font-size:40px;letter-spacing:-.03em"><span class="hl">Quiz seç</span></h1></div>
           <span class="hand accent" data-k="locked-note" aria-live="polite"></span>
         </div>
         <div class="card stack" style="gap:8px;padding:20px 26px">
           <div class="row" style="align-items:center;gap:14px;flex-wrap:nowrap;padding-bottom:10px"><div class="progress"><span data-k="entered-bar" style="--c:#3D7BFF"></span></div><span class="mono" data-k="entered"></span></div>
-          <div class="table-box"><table class="table" style="min-width:560px"><thead><tr><th>Öğrenci</th><th>Sınıf</th><th>Kit durumu</th><th style="text-align:right">Not / 100</th></tr></thead><tbody data-k="students"></tbody></table></div>
+          <div class="table-box"><table class="table" style="min-width:560px"><thead><tr><th>Öğrenci</th><th>Sınıf</th><th>Kit durumu</th><th style="text-align:right">Not</th></tr></thead><tbody data-k="students"></tbody></table></div>
           <div class="row" style="justify-content:flex-end;gap:10px;padding-top:10px">
             <button type="button" class="btn btn--ghost" data-k="to-quiz">← Quizler</button>
             <button type="button" class="btn--danger-link" data-k="delete-quiz" style="margin-right:auto;order:-1">Quizi sil</button>
@@ -78,9 +105,9 @@
     </main>
   </div>
 </div>
-<script src="../assets/data.js?v=45"></script>
-<script src="../assets/hesap.js?v=45"></script>
-<script src="../assets/icerik.js?v=45"></script>
-<script src="../assets/kitpath.js?v=45"></script>
+<script src="../assets/data.js?v=46"></script>
+<script src="../assets/hesap.js?v=46"></script>
+<script src="../assets/icerik.js?v=46"></script>
+<script src="../assets/kitpath.js?v=46"></script>
 </body>
 </html>

@@ -1055,3 +1055,42 @@ html.df-acik, html.df-acik body { overflow: hidden; }
   .gb-pencere { right: 0; left: 0; bottom: 0; width: 100%; max-height: 92vh; border-radius: 24px 24px 0 0; }
 }
 @media print { .gb-fab, .gb-pencere, .gb-perde { display: none !important; } }
+
+/* ---------- yönetim: özet kartları, öğrenciler, kitler (.yon-) ---------- */
+.yon-ozet { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.yon-ozet:empty { display: none; }
+.yon-stat { padding: 18px 20px; gap: 4px; }
+.yon-stat b { font-size: 34px; }
+.yon-stat[data-ton="hot"] b { color: var(--hot-ink); }
+.admin__nav .count--plain { background: var(--track); color: var(--ink); }
+.yon-ara { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); flex: 0 1 300px; }
+.yon-ara:focus-within { border-color: var(--ink); }
+.yon-ara input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 14px; outline: none; }
+.yon-tablo-kart { padding: 10px 26px; }
+.yon-tablo th, .yon-tablo td { vertical-align: middle; padding-right: 14px; }
+.yon-tablo th:last-child, .yon-tablo td:last-child { padding-right: 0; }
+.yon-satir { cursor: pointer; transition: background .15s; }
+.yon-satir:hover, .yon-satir:focus-visible { background: var(--surface-2); outline: none; }
+.yon-satir[aria-expanded="true"] td { border-bottom: 0; }
+.yon-eposta { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
+.yon-ders { max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+.yon-dersler { display: inline-flex; align-items: center; gap: 6px; flex-wrap: nowrap; }
+.yon-ders { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: var(--track); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.yon-ders::before { content: ""; width: 8px; height: 8px; border-radius: 3px; background: var(--c, var(--muted)); }
+.yon-detay td { border-top: 0; padding-top: 0; }
+.yon-detay__ic { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; padding: 14px 16px 18px; border-radius: 14px; background: var(--surface-2); font-size: 14px; animation: kIn .3s var(--ease) both; }
+.yon-kitler { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.yon-kit { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-top: 6px solid var(--c); }
+.yon-uniteler { display: flex; flex-wrap: wrap; gap: 6px; }
+.yon-unite { padding: 6px 12px; border-radius: 10px; background: var(--track); color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; }
+.yon-unite:hover { background: var(--c); color: #1A1206; }
+@media (max-width: 720px) {
+  .yon-ara { flex-basis: 100%; }
+  .yon-eposta { max-width: 112px; }
+  .yon-tablo-kart { padding: 6px 14px; }
+  .yon-tablo { min-width: 0 !important; }
+  .yon-tablo th, .yon-tablo td { padding-right: 8px; }
+  .yon-tablo .chip { white-space: nowrap; }
+  .yon-tablo tr > :nth-child(3), .yon-tablo tr > :nth-child(4) { display: none; }
+  .yon-tablo .yon-detay td { display: table-cell; }
+}
