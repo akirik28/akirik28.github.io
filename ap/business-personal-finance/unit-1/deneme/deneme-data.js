@@ -685,13 +685,13 @@ window.DENEME = {
           "t": "1.6",
           "q": "According to the course's classification, which list contains only external stakeholders of a business?",
           "o": [
-            "Customers, suppliers, and investors",
+            "Customers, suppliers, and community members",
             "Owners, managers, and employees",
             "Customers, employees, and suppliers",
             "Investors, owners, and government agencies"
           ],
           "a": 0,
-          "w": "Müşteriler, tedarikçiler ve yatırımcılar işletmenin dışındadır: *external stakeholders*. İçinde hem yatırımcıların hem sahiplerin geçtiği liste çeldiricidir: derste sahipler, yöneticiler ve çalışanlar *internal*, yatırımcılar ise *external* sayılır."
+          "w": "Müşteriler, tedarikçiler ve çevredeki toplum işletmenin dışındadır: *external stakeholders*. Sahiplerin geçtiği liste çeldiricidir: sahipler, yöneticiler ve çalışanlar *internal stakeholders*'tır."
         },
         {
           "t": "1.8",
@@ -1240,12 +1240,12 @@ window.DENEME = {
           "q": "ThermoNest builds home heat pumps in its own country using only domestic parts. This year four things happen: (1) the government puts a 30% tariff on imported heat pumps; (2) a recession begins and unemployment rises; (3) a new building code requires every new house to have a heat pump; (4) a rival develops a heat pump that is 40% more efficient than ThermoNest's. Which choice correctly pairs an opportunity and a threat with their PESTEL factors?",
           "o": [
             "Opportunity: the tariff on imports (political); threat: the rival's new heat pump (technological)",
-            "Opportunity: the new building code (political); threat: the recession that has begun (economic)",
+            "Opportunity: the new building code (legal); threat: the tariff on imports (political)",
             "Opportunity: the recession that has begun (economic); threat: the tariff on imports (political)",
             "Opportunity: the rival's new heat pump (technological); threat: the new building code (legal)"
           ],
           "a": 0,
-          "w": "*Tariff* ithal ürünü pahalılaştırıp yerli üreticiye yarar, yani *political* bir *opportunity*; rakibin daha verimli ürünü ise *technological* bir *threat*'tir. Yapı yönetmeliğini *political* sayan şık çeldiricidir: yönetmelik gerçekten fırsattır, ama uyulması zorunlu bir kural olduğu için *legal* etkendir."
+          "w": "*Tariff* ithal ürünü pahalılaştırıp yerli üreticiye yarar, yani *political* bir *opportunity*; rakibin daha verimli ürünü ise *technological* bir *threat*'tir. Yapı yönetmeliği gerçekten bir fırsattır; ama onu tarifeyle eşleştiren şık çeldiricidir: ThermoNest yalnızca yerli parça kullanır, ithal ürüne konan *tariff* ona zarar vermez, rakiplerini pahalılaştırır."
         }
       ]
     }

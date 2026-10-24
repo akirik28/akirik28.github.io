@@ -747,7 +747,7 @@ window.KIT = {
             "0 m/s²"
           ],
           "a": 2,
-          "why": "t = 7, (6, 10) ile (8, 4) arasındaki parçada. İvme eğimdir: (4 − 10)/(8 − 6) = −6/2 = −3 m/s². 4 m/s, o andaki hızdır, ivme değil.",
+          "why": "t = 7, (6, 10) ile (8, 4) arasındaki parçada. İvme eğimdir: (4 − 10)/(8 − 6) = −6/2 = −3 m/s². 4 m/s, parçanın sonundaki (t = 8 s) hızdır; t = 7'de hız 7 m/s'dir ve hız ivme değildir. −6 ise Δv'yi Δt'ye bölmeyi unutmaktır.",
           "fig": {
             "type": "graph",
             "xlabel": "t (s)",

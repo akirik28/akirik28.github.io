@@ -972,15 +972,15 @@ window.KIT = {
           }
         },
         {
-          "q": "Bir hastane radyoloğu yorgun olduğu gece nöbetlerinde gerçekten var olan küçük tümörleri gündüze göre daha sık gözden kaçırıyor. *Signal detection theory*'ye göre bu hangi sonucun artmasıdır?",
+          "q": "Bir ses mühendisi, dinleyicilerin iki şarkının ses düzeyi arasındaki farkı denemelerin yarısında fark edebildiği en küçük artışı arıyor. Mühendis hangi kavramı ölçüyor?",
           "opts": [
-            "*Hit*",
-            "*False alarm*",
-            "*Correct rejection*",
-            "*Miss*"
+            "*Absolute threshold*",
+            "*Transduction*",
+            "*Sensory adaptation*",
+            "*Difference threshold* (*JND*)"
           ],
           "a": 3,
-          "why": "Sinyal (tümör) gerçekten varken fark edilmemesi *miss*'tir. *Signal detection theory*, fark etmenin yorgunluk gibi durumlara da bağlı olduğunu söyler. Var olmayan bir tümörü görmek *false alarm* olurdu."
+          "why": "İki uyaran arasında, denemelerin yüzde 50'sinde fark edilen en küçük fark *difference threshold*'dur (*JND*). *Absolute threshold* tek bir uyaranın yarı yarıya fark edildiği en zayıf düzeydir; burada şarkılar zaten duyuluyor, ölçülen şey aradaki fark. *Transduction* ise uyaranın sinir sinyaline çevrilmesidir."
         },
         {
           "q": "Yeni taşındığı evin yanından tren geçen Zeynep ilk günlerde her trende uyanıyor; bir ay sonra treni neredeyse hiç fark etmiyor. Bu durumu en iyi hangi kavram açıklar?",

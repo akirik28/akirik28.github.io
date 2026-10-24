@@ -981,7 +981,7 @@ window.DENEME = {
             "−6/x³ + 1/(3∛(x²))"
           ],
           "a": 3,
-          "w": "Önce üs biçimine çevir: 3x⁻² + x^(1/3). Türev: −6x⁻³ + (1/3)x^(−2/3) = −6/x³ + 1/(3∛(x²)). −3/x³ katsayıyı üsle çarpmayı unutur; +6/x³ negatif üsten gelen eksiyi kaybeder. 3/∛(x²) ise 1/3 ile çarpacağına 3 ile çarpar."
+          "w": "Önce üs biçimine çevir: 3x⁻² + x^(1/3). Türev: −6x⁻³ + (1/3)x^(−2/3) = −6/x³ + 1/(3∛(x²)). −3/x³ üssü öne indirirken yalnız eksiyi alır, 2 çarpanını unutur (3·(−1)·x⁻³); +6/x³ negatif üsten gelen eksiyi kaybeder. 3/∛(x²) ise 1/3 ile çarpacağına 3 ile çarpar."
         },
         {
           "t": "2.6",
@@ -1720,7 +1720,7 @@ window.DENEME = {
             "18"
           ],
           "a": 1,
-          "w": "[f(2 − h) − f(2)]/(−h) → f′(2) = 6. Bizim ifade bunun −1/3 katı: [f(2 − h) − f(2)]/(3h) = −(1/3)·[f(2 − h) − f(2)]/(−h) → −6/3 = −2. 2, −h'den gelen eksiyi kaybeder; −6, 3'e bölmeyi unutur; 18 ise 3'e böleceğine çarpar."
+          "w": "[f(2 − h) − f(2)]/(−h) → f′(2) = 6. Bizim ifade bunun −1/3 katı: [f(2 − h) − f(2)]/(3h) = −(1/3)·[f(2 − h) − f(2)]/(−h) → −6/3 = −2. 2, −h'den gelen eksiyi kaybeder; −6, 3'e bölmeyi unutur; 18 ise hem −h'den gelen eksiyi kaybeder hem de 3'e böleceğine çarpar."
         },
         {
           "t": "2.2",
@@ -2802,7 +2802,7 @@ window.DENEME = {
             "2"
           ],
           "a": 0,
-          "w": "y′ = [cos x(1 + cos x) − sin x(−sin x)]/(1 + cos x)² = (cos x + cos²x + sin²x)/(1 + cos x)² = 1/(1 + cos x). x = π/3: 1/(1 + 1/2) = 2/3. 2, sadeleştirmede 1/(1 − cos x) bulan işaret hatası. 4/3 = 1/sin²(π/3), paydayı (1 + cos x)² yerine sin²x alır. 1 ise sadeleşmiş türevi π/3 yerine π/2'de hesaplar."
+          "w": "y′ = [cos x(1 + cos x) − sin x(−sin x)]/(1 + cos x)² = (cos x + cos²x + sin²x)/(1 + cos x)² = 1/(1 + cos x). x = π/3: 1/(1 + 1/2) = 2/3. 2, sadeleştirmede 1/(1 − cos x) bulan işaret hatası. 4/3 = 1/sin²(π/3): payı 1'e indirip cos x terimini kaybeder, paydayı da (1 + cos x)² yerine sin²x alır. 1 ise sadeleşmiş türevi π/3 yerine π/2'de hesaplar."
         },
         {
           "t": "2.10",

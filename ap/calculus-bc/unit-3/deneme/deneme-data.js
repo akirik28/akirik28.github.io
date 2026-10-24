@@ -300,7 +300,7 @@ window.DENEME = {
             "3"
           ],
           "a": 1,
-          "w": "*Implicit differentiation*: 3x² + 2y·dy/dx = 0 → dy/dx = −3x²/(2y). (2, 2)'de −12/4 = −3. −12 paydaki 2y'yi unutur; −1/3 kesri ters çevirir; 3 eksiyi kaybeder."
+          "w": "*Implicit differentiation*: 3x² + 2y·dy/dx = 0 → dy/dx = −3x²/(2y). (2, 2)'de −12/4 = −3. −12 paydadaki 2y'yi unutur; −1/3 kesri ters çevirir; 3 eksiyi kaybeder."
         },
         {
           "t": "3.2-2",
@@ -905,7 +905,7 @@ window.DENEME = {
             "x/(x² + 1)"
           ],
           "a": 3,
-          "w": "Önce logaritma kuralı: ln(√u) = (1/2)ln u. Türev (1/2)·2x/(x² + 1) = x/(x² + 1). 2x/(x² + 1) 1/2 çarpanını unutur; 1/(2√(x² + 1)) ln'in türevini atlar; x/√(x² + 1) ise √(x² + 1)'in türevidir, ln'i unutur."
+          "w": "Önce logaritma kuralı: ln(√u) = (1/2)ln u. Türev (1/2)·2x/(x² + 1) = x/(x² + 1). 2x/(x² + 1) 1/2 çarpanını unutur; 1/(2√(x² + 1)) ln'i atlayıp √(x² + 1)'in türevini alır ve iç türev 2x'i de unutur; x/√(x² + 1) ise √(x² + 1)'in türevidir, ln'i unutur."
         },
         {
           "t": "3.1-2",
@@ -981,7 +981,7 @@ window.DENEME = {
             "2"
           ],
           "a": 2,
-          "w": "k = [g(x)]⁻¹: k′(x) = −g′(x)/[g(x)]². x = 1'de g(1) = 2, g′(1) = −2: −(−2)/4 = 1/2. −1/2 = 1/g′(1), türevin tersini alır; 2 paydanın karesini unutur; 1/4 = 1/[g(1)]², iç türevi atlar.",
+          "w": "k = [g(x)]⁻¹: k′(x) = −g′(x)/[g(x)]². x = 1'de g(1) = 2, g′(1) = −2: −(−2)/4 = 1/2. −1/2 = 1/g′(1), türevin tersini alır; 2 paydayı tamamen unutur (yalnız −g′(1)); 1/4 = 1/[g(1)]², iç türevle birlikte eksi işaretini de atlar.",
           "fig": {
             "type": "table",
             "head": [
@@ -1698,7 +1698,7 @@ window.DENEME = {
             "−2 or 6"
           ],
           "a": 2,
-          "w": "y′ = k/(2√(kx + 3)). x = 1'de k/(2√(k + 3)) = 1 → k = 2√(k + 3). Kare al: k² = 4k + 12 → (k − 6)(k + 2) = 0. Ama k = 2√(…) ≥ 0 olmalı; k = −2 karenin getirdiği yabancı köktür (orada eğim −1). Yalnız k = 6: eğim 6/(2·3) = 1. 2, paydaki kökü unutup k/2 = 1 çözer."
+          "w": "y′ = k/(2√(kx + 3)). x = 1'de k/(2√(k + 3)) = 1 → k = 2√(k + 3). Kare al: k² = 4k + 12 → (k − 6)(k + 2) = 0. Ama k = 2√(…) ≥ 0 olmalı; k = −2 karenin getirdiği yabancı köktür (orada eğim −1). Yalnız k = 6: eğim 6/(2·3) = 1. 2, paydadaki kökü unutup k/2 = 1 çözer."
         },
         {
           "t": "3.1-1",
@@ -1722,7 +1722,7 @@ window.DENEME = {
             "12"
           ],
           "a": 2,
-          "w": "Üç katman: kök, f, x². k′(x) = f′(x²)·2x/(2√(f(x²))). x = 2'de iç değer 4: k′(2) = 6·4/(2·3) = 4. 1 en içteki 2x'i unutur; 2 iç türevi 2x yerine 2 alır; 12 paydaki √f(4) = 3'ü unutur."
+          "w": "Üç katman: kök, f, x². k′(x) = f′(x²)·2x/(2√(f(x²))). x = 2'de iç değer 4: k′(2) = 6·4/(2·3) = 4. 1 en içteki 2x'i unutur; 2 iç türevi 2x yerine 2 alır; 12 paydadaki √f(4) = 3'ü unutur."
         },
         {
           "t": "3.1-2",
@@ -1734,7 +1734,7 @@ window.DENEME = {
             "1/ln 2"
           ],
           "a": 3,
-          "w": "y′ = 2^(−x) + x·2^(−x)·ln 2·(−1) = 2^(−x)(1 − x ln 2). 2^(−x) > 0, bu yüzden 1 − x ln 2 = 0 → x = 1/ln 2 (≈ 1,44). 1, ln 2 çarpanını unutur (aˣ'in türevi aˣ değildir); ln 2 denklemi ters çözer; 1/(2 ln 2) iç türev −1'i 2 sanır."
+          "w": "y′ = 2^(−x) + x·2^(−x)·ln 2·(−1) = 2^(−x)(1 − x ln 2). 2^(−x) > 0, bu yüzden 1 − x ln 2 = 0 → x = 1/ln 2 (≈ 1,44). 1, ln 2 çarpanını unutur (aˣ'in türevi aˣ değildir); ln 2 denklemi ters çözer; 1/(2 ln 2) iç türev −1'i −2 sanır."
         },
         {
           "t": "3.1-2",
@@ -1746,7 +1746,7 @@ window.DENEME = {
             "8/3"
           ],
           "a": 1,
-          "w": "f′(x) = (2e^(2x) − 2e^(−2x))/(e^(2x) + e^(−2x)). x = (ln 3)/2'de e^(2x) = 3 ve e^(−2x) = 1/3: 2(3 − 1/3)/(3 + 1/3) = 2(8/3)/(10/3) = 8/5. 4/5 iç türevlerdeki 2'leri unutur; 8/3 paydayı unutur; 2, e^(−2x)'in türevindeki eksiyi kaybeder."
+          "w": "f′(x) = (2e^(2x) − 2e^(−2x))/(e^(2x) + e^(−2x)). x = (ln 3)/2'de e^(2x) = 3 ve e^(−2x) = 1/3: 2(3 − 1/3)/(3 + 1/3) = 2(8/3)/(10/3) = 8/5. 4/5 iç türevlerdeki 2'leri unutur; 8/3 hem paydayı hem iç türevlerdeki 2'leri unutur; 2, e^(−2x)'in türevindeki eksiyi kaybeder."
         },
         {
           "t": "3.1-2",
@@ -1998,7 +1998,7 @@ window.DENEME = {
             "(1 − y·e^(xy))/(x·e^(xy) − 1)"
           ],
           "a": 3,
-          "w": "Türev: e^(xy)·(y + x·dy/dx) = 1 + dy/dx (üsteki xy bir çarpım). dy/dx'li terimleri bir tarafa topla: dy/dx(x·e^(xy) − 1) = 1 − y·e^(xy). (1 − e^(xy))/(e^(xy) − 1) üssün iç türevini (y + x·dy/dx) unutur; (y·e^(xy) − 1)/(…) payın işaretini ters çevirir; 1/(x·e^(xy) − 1) çarpım kuralının y·e^(xy) terimini atlar."
+          "w": "Türev: e^(xy)·(y + x·dy/dx) = 1 + dy/dx (üsteki xy bir çarpım). dy/dx'li terimleri bir tarafa topla: dy/dx(x·e^(xy) − 1) = 1 − y·e^(xy). (1 − e^(xy))/(e^(xy) − 1) üssün iç türevini y + x·dy/dx yerine 1 + dy/dx alır (xy'yi x + y gibi türevler); (y·e^(xy) − 1)/(…) payın işaretini ters çevirir; 1/(x·e^(xy) − 1) çarpım kuralının y·e^(xy) terimini atlar."
         },
         {
           "t": "3.2-2",
@@ -2124,7 +2124,7 @@ window.DENEME = {
             "192"
           ],
           "a": 1,
-          "w": "Örüntü: f′ = (1 + 2x)e^(2x), f″ = (4 + 4x)e^(2x), f‴ = (12 + 8x)e^(2x); genel olarak f⁽ⁿ⁾(x) = (n·2ⁿ⁻¹ + 2ⁿx)e^(2x). x = 0'da n·2ⁿ⁻¹; n = 5 için 5·16 = 80. 160 = 5·2⁵, üssü bir fazla alır; 32 = 2⁵, çarpım kuralından gelen n çarpanını unutur; 192 = 6·2⁵."
+          "w": "Örüntü: f′ = (1 + 2x)e^(2x), f″ = (4 + 4x)e^(2x), f‴ = (12 + 8x)e^(2x); genel olarak f⁽ⁿ⁾(x) = (n·2ⁿ⁻¹ + 2ⁿx)e^(2x). x = 0'da n·2ⁿ⁻¹; n = 5 için 5·16 = 80. 160 = 5·2⁵, üssü bir fazla alır; 32 = 2⁵, x çarpanını yok sayıp yalnızca e^(2x)'in beşinci türevini alır; 192 = 6·2⁵."
         },
         {
           "t": "3.5–3.6",

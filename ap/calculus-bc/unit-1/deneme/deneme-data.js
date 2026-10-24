@@ -2233,7 +2233,7 @@ window.DENEME = {
             "1/3"
           ],
           "a": 0,
-          "w": "u = ∛x de: x − 8 = u³ − 8 = (u − 2)(u² + 2u + 4). Kesir 1/(u² + 2u + 4) olur ve u → 2: 1/(4 + 4 + 4) = 1/12. Diğer şıklar küp farkının ikinci çarpanını eksik yazmaktan gelir: yalnız u² (1/4), yalnız u + 4 (1/6) ya da kare kök kalıbını (1/(2u) gibi) taşımak."
+          "w": "u = ∛x de: x − 8 = u³ − 8 = (u − 2)(u² + 2u + 4). Kesir 1/(u² + 2u + 4) olur ve u → 2: 1/(4 + 4 + 4) = 1/12. 1/4 ve 1/6, küp farkının ikinci çarpanını eksik yazmaktan gelir: yalnız u² (1/4), yalnız u + 4 (1/6). 1/3 ise küp kökün üssünü (x^(1/3)) cevap sanmaktır."
         },
         {
           "t": "1.6–1.7",

@@ -89,7 +89,11 @@ window.KIT = {
             "0.30000000000000004"
           ],
           "a": 2,
-          "why": "0.1 + 0.2 aslında 0.30000000000000004 olarak saklanır (*round-off*). 0.3 ile tam eşit olmadığı için == *false* verir."
+          "why": "0.1 + 0.2 aslında 0.30000000000000004 olarak saklanır (*round-off*). 0.3 ile tam eşit olmadığı için == *false* verir.",
+          "fig": {
+            "type": "code",
+            "code": "System.out.println(0.1 + 0.2 == 0.3);"
+          }
         }
       ]
     },
