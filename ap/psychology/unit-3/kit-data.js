@@ -640,6 +640,119 @@ window.KIT = {
           }
         }
       ]
+    },
+    {
+      "no": 7,
+      "code": "3.6-1",
+      "slug": "py307",
+      "title": "Çevre, Ebeveynlik ve Bağlanma",
+      "en": "Ecological Systems, Parenting, and Attachment",
+      "accent": "#F25F5C",
+      "defter": "py306",
+      "defterBaslik": "Yaşam Boyu Sosyal-Duygusal Gelişim",
+      "sessiz": true,
+      "seconds": 334,
+      "terms": [
+        "Ecological systems theory",
+        "Microsystem",
+        "Mesosystem",
+        "Exosystem",
+        "Macrosystem",
+        "Chronosystem",
+        "Authoritarian parenting",
+        "Authoritative parenting",
+        "Permissive parenting",
+        "Attachment",
+        "Contact comfort",
+        "Separation anxiety",
+        "Temperament",
+        "Strange Situation",
+        "Secure attachment",
+        "Insecure attachment"
+      ],
+      "questions": [
+        {
+          "q": "Annesinin çalıştığı hastane yeni bir nöbet sistemine geçiyor; annesi artık hafta sonları evde olamıyor ve yedi yaşındaki Arda'nın hafta sonu etkinlikleri azalıyor. Arda hastanede hiç bulunmuyor. Bu etki Bronfenbrenner'ın hangi sistemine örnektir?",
+          "opts": [
+            "*Microsystem*",
+            "*Mesosystem*",
+            "*Exosystem*",
+            "*Chronosystem*"
+          ],
+          "a": 2,
+          "why": "Arda'nın içinde bulunmadığı ama kararlarıyla onu dolaylı olarak etkileyen ortam *exosystem*'dir. *Mesosystem* Arda'nın kendi ortamları (ör. ev ile okul) arasındaki ilişkilerdir."
+        },
+        {
+          "q": "Bir ebeveyn net kurallar koyuyor, kuralların nedenlerini açıklıyor, çocuğun itirazlarını dinliyor ve gerektiğinde kuralları birlikte gözden geçiriyor. Bu hangi ebeveynlik stilidir?",
+          "opts": [
+            "*Authoritative*",
+            "*Authoritarian*",
+            "*Permissive*",
+            "*Neglectful*"
+          ],
+          "a": 0,
+          "why": "Yüksek kontrol (net kurallar) ile yüksek sıcaklığı (gerekçe, dinleme) birleştiren stil *authoritative*'dir. *Authoritarian* da kural koyar ama gerekçe vermez ve sorgulamaya izin vermez."
+        },
+        {
+          "q": "Harlow'un yavru maymunlarla yaptığı çalışmanın temel bulgusu hangisidir?",
+          "opts": [
+            "Yavrular, kendilerini besleyen anneye en güçlü biçimde bağlanır",
+            "Bağlanmada yumuşak temasın sağladığı rahatlık, beslenmeden daha belirleyicidir",
+            "Bağlanma tamamen doğuştan gelen *temperament* ile belirlenir",
+            "Yavrular ayrılığa hiç tepki göstermez"
+          ],
+          "a": 1,
+          "why": "Yavrular süt veren tel anneye değil, yumuşak bez anneye sarıldı ve korkunca ona koştu. Bu, *contact comfort*'un bağlanmada beslenmeden önemli olduğunu gösterir."
+        },
+        {
+          "q": "*Strange Situation*'da bir bebek, annesi odadan çıkınca yüksek sesle ağlıyor. Annesi dönünce hemen kucağına gidiyor, kısa sürede sakinleşip yeniden oyuncaklarıyla oynamaya başlıyor. En uygun değerlendirme hangisidir?",
+          "opts": [
+            "*Insecure-anxious*, çünkü ayrılıkta çok ağladı",
+            "*Insecure-avoidant*, çünkü annesine bağımlı",
+            "*Insecure-disorganized*, çünkü tepkileri değişti",
+            "*Secure*, çünkü kavuşmada rahatladı ve oyuna döndü"
+          ],
+          "a": 3,
+          "why": "Ayrılıkta ağlamak güvenli bağlanmış bebeklerde de görülür. Belirleyici olan kavuşma tepkisidir: anneye yönelip çabuk sakinleşmek ve keşfe dönmek *secure* bağlanmanın işaretidir."
+        },
+        {
+          "q": "Bir psikolog, 400 ergen ve ebeveynleriyle anket yapıyor. Tabloya göre en uygun sonuç hangisidir?",
+          "opts": [
+            "*Authoritative* ebeveynlik, ergenlerin özgüvenini kesin olarak artırır",
+            "*Authoritative* ebeveynlik daha yüksek özgüvenle ilişkilidir; ama tasarım neden-sonuç göstermez",
+            "*Permissive* ebeveynlik en yüksek özgüvenle ilişkilidir",
+            "Ebeveynlik stili ile özgüven arasında hiçbir ilişki yoktur"
+          ],
+          "a": 1,
+          "why": "Ortalama özgüven *authoritative* grupta 7,6; *permissive* grupta 6,1; *authoritarian* grupta 5,4. *Authoritative* en yüksek, ama bu bir anket, yani korelasyon. Çocuğun mizacı ebeveyni etkilemiş olabilir; kültür ve başka değişkenler de karışabilir.",
+          "fig": {
+            "type": "table",
+            "head": [
+              "Ebeveynlik stili",
+              "Ergen",
+              "Ortalama özgüven (10 üzerinden)"
+            ],
+            "rows": [
+              [
+                "Authoritarian",
+                "130",
+                "5,4"
+              ],
+              [
+                "Authoritative",
+                "150",
+                "7,6"
+              ],
+              [
+                "Permissive",
+                "120",
+                "6,1"
+              ]
+            ],
+            "caption": "Örnek veri"
+          }
+        }
+      ]
     }
   ],
   "final": []
