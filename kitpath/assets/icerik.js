@@ -307,6 +307,9 @@
   function kitVerisi(k) { var key = "kit:" + k.id; return onbellek[key] || (onbellek[key] = genel(url(k, "kit-data.js"), "KIT")); }
   function denemeVerisi(k) { var key = "den:" + k.id; return onbellek[key] || (onbellek[key] = genel(url(k, "deneme/deneme-data.js"), "DENEME")); }
   function defterVerisi(k, slug) { var key = "def:" + k.id + slug; return onbellek[key] || (onbellek[key] = genel(url(k, "defter/" + slug + ".js"), "DEFTER")); }
+  /* seviye sınavı soru bankaları: dizin (hangi ünitede kaç soru) ve ünite bankası (ap/<ders>/unit-N/seviye/banka.js) */
+  function seviyeDizini() { return onbellek.svd || (onbellek.svd = genel(KOK + "ap/seviye-bankalar.js", "SEVIYE_BANKALAR").then(null, function () { return {}; })); }
+  function seviyeBankasi(u) { var key = "svb:" + u.id; return onbellek[key] || (onbellek[key] = genel(KOK + u.path + "seviye/banka.js", "SEVIYE_BANKA")); }
   function sekiller() { return betik(KOK + "ap/_kit/figs.js").then(function () { return window.APFig || null; }, function () { return null; }); }
 
   /* ---------------- kit.js ile aynı soru kimliği ---------------- */
@@ -474,7 +477,7 @@
     DEFTER_DERS: DEFTER_DERS, DEFTER_UNITELER: DEFTER_UNITELER, defterUnite: defterUnite, defterListesi: defterListesi, defterDurumu: defterDurumu, defterOku: defterOku, okunanlar: okunanlar, okundu: okundu, sonDefter: sonDefter,
     KATALOG: KATALOG, ualMi: ualMi, raf: raf, rafaEkle: rafaEkle, raftanCikar: raftanCikar,
     KOK: KOK, DERSLER: DERSLER, KITLER: KITLER, OKUL: OKUL, SECMELI: SECMELI, dersRengi: dersRengi,
-    kit: kit, url: url, kitVerisi: kitVerisi, denemeVerisi: denemeVerisi, defterVerisi: defterVerisi, sekiller: sekiller,
+    kit: kit, url: url, kitVerisi: kitVerisi, denemeVerisi: denemeVerisi, seviyeDizini: seviyeDizini, seviyeBankasi: seviyeBankasi, defterVerisi: defterVerisi, sekiller: sekiller,
     qid: qid, md: md, kim: kim, oku: oku, yaz: yaz,
     durum: durum, bolum: bolum, soruDurumu: soruDurumu, bittiMi: bittiMi, kaydet: kaydet, ozet: ozet,
     deneme: deneme, denemeYaz: denemeYaz,

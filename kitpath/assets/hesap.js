@@ -214,7 +214,7 @@
     /* seviye sınavları: takvim + geçmiş; sonucu kaydet (tur penceresi açıkken, ders başına turda bir kez) */
     seviyeDurum: function () { return cagir("ap_seviye_durum", {}); },
     seviyeKaydet: function (d) {
-      return cagir("ap_seviye_kaydet", { p_ders: d.ders, p_unite: d.unite, p_dogru: d.dogru, p_toplam: d.toplam, p_detay: d.detay || {}, p_sure_ms: d.sure_ms || null });
+      return cagir("ap_seviye_kaydet", { p_ders: d.ders, p_unite: d.unite, p_dogru: d.dogru, p_toplam: d.toplam, p_detay: d.detay || {}, p_sure_ms: d.sure_ms || null, p_olcek: d.olcek == null ? null : d.olcek });
     },
     notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
     /* geri bildirim: hesapsız da gönderilebilir (o zaman isimsiz kaydedilir) */

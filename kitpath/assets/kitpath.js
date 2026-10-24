@@ -1699,7 +1699,7 @@
     /* seviye sınavı sekmesi: aç / kapat, takvim, önizleme, tur özetleri */
     function sevYon() {
       fill('[data-k="sev-yon"]', '<p class="muted">Yükleniyor…</p>');
-      H.yonetim("ap_yonetici_seviye", {}).then(function (d) {
+      Promise.all([H.yonetim("ap_yonetici_seviye", {}), sevDizin()]).then(function (rr) { var d = rr[0];
         var t = d.takvim || {}, ozet = d.ozet || [], son = d.son || [];
         var n = $('[data-k="sev-durum-n"]'); if (n) { n.textContent = t.acik ? "AÇIK" : "KAPALI"; n.hidden = false; }
         var durum = !t.basladi ? "Henüz hiç tur açılmadı. Sen yeni tur açana kadar öğrenciler sınav çözemez, bildirim de görmez."
@@ -2062,66 +2062,129 @@
   /* ---------- seviye sınavları ----------
      Her ders için isteğe bağlı gelişim sınavı. Turları yalnızca Ada yönetimden açar / kapatır (ap_ayarlar 'seviye');
      tur açık değilken öğrenci çözemez, yalnızca yönetici "önizleme" çözebilir (kaydedilmez).
-     Sorular, öğrencinin işaretlediği üniteye kadar olan ünitelerin deneme bankalarından tura göre sabit tohumla seçilir. */
-  var SEV = { p: null, d: null };
-  var SEV_YOK = { hug: 1 };   /* deneme bankası olmayan dersler */
+     İki modüllü uyarlanabilir sınav (Bluebook): Modül 1 karışık zorlukta; Modül 1'den kestirilen yeteneğe göre
+     Modül 2 kolay ya da zor yoldan gelir. Puan, Rasch modeliyle (soru zorluğu 1–5 → b = zor − 3) kestirilen yetenekten
+     0–100 ölçeğine çevrilir; aynı doğru sayısı zor yolda daha yüksek puan eder.
+     Sorular: ünitenin seviye bankası (ap/<ders>/unit-N/seviye/banka.js, her soruda zor) varsa o; yoksa deneme bankası
+     (testin düzeyi → zorluk). Seçim tura + üniteye göre sabit tohumlu; aynı turda herkes aynı Modül 1'i görür. */
+  var SEV = { p: null, d: null, dizin: null };
   var SEV_AD = ["", "Başlangıç", "Gelişiyor", "Orta", "İyi", "Çok iyi"];
+  var SEV_DUZEY = { "Isınma": 1, "Temel": 2, "Orta": 3, "Zor": 4, "Çok zor": 5 };
+  var SEV_MODUL = 10;   /* modül başına soru (2 modül) */
+  var SEV_KARISIM = { m1: { 1: .1, 2: .25, 3: .3, 4: .25, 5: .1 }, kolay: { 1: .25, 2: .35, 3: .3, 4: .1 }, zor: { 2: .1, 3: .3, 4: .35, 5: .25 } };
   function sevYukle(tazele) {
     if (!HESAPLI || !H.seviyeDurum) return Promise.resolve(null);
     if (SEV.p && !tazele) return SEV.p;
-    SEV.p = H.seviyeDurum().then(function (d) { SEV.d = d; try { var t = (d && d.takvim) || {}; sessionStorage.setItem("kp-sev", JSON.stringify({ acik: !!t.acik, gecmis: !!(d && d.gecmis && d.gecmis.length) })); } catch (e) {} return d; }, function () { return null; });
+    SEV.p = Promise.all([H.seviyeDurum().then(null, function () { return null; }), C.seviyeDizini()]).then(function (r) {
+      var d = r[0]; SEV.d = d; SEV.dizin = r[1] || {};
+      try { var t = (d && d.takvim) || {}; sessionStorage.setItem("kp-sev", JSON.stringify({ acik: !!t.acik, gecmis: !!(d && d.gecmis && d.gecmis.length) })); } catch (e) {}
+      return d;
+    });
     return SEV.p;
   }
+  function sevDizin() { return SEV.dizin ? Promise.resolve(SEV.dizin) : C.seviyeDizini().then(function (z) { SEV.dizin = z || {}; return SEV.dizin; }); }
   function sevTakvimOnbellek() { try { return JSON.parse(sessionStorage.getItem("kp-sev") || "null") || {}; } catch (e) { return {}; } }
   function sevAcikMi(t) { return !!(t && t.acik && t.basladi && t.pencere_acik); }
-  function sevDersler() { return Object.keys(C.DERSLER).filter(function (id) { return !SEV_YOK[id] && C.KITLER.some(function (k) { return k.ders === id; }); }); }
-  function sevUniteler(ders) { return C.KITLER.filter(function (k) { return k.ders === ders; }).sort(function (a, b) { return a.unit - b.unit; }); }
-  function sevSeviye(y) { return y >= 85 ? 5 : y >= 70 ? 4 : y >= 55 ? 3 : y >= 40 ? 2 : 1; }
-  function sevRenk(ders) { var d = C.DERSLER[ders]; return COLORS[(d && (d.renk || d.art)) || "macro"] || COLORS.macro; }
-  function sevAd(ders) { var d = C.DERSLER[ders]; return d ? d.title : ders; }
+  /* ünite: seviye bankası ya da (videolu ünitede) deneme bankası olan bütün üniteler; HuG kitinde deneme yok */
+  function sevTumUniteler(ders) {
+    var z = SEV.dizin || {};
+    return C.DEFTER_UNITELER.filter(function (u) { return u.ders === ders; }).sort(function (a, b) { return a.unit - b.unit; }).map(function (u) {
+      var k = C.kit(u.id);
+      return { id: u.id, ders: ders, unit: u.unit, path: u.path, baslik: u.baslik, banka: !!z[u.id], deneme: !!k && ders !== "hug", kit: k };
+    });
+  }
+  function sevUniteler(ders) { return sevTumUniteler(ders).filter(function (u) { return u.banka || u.deneme; }); }
+  function sevDersler() { return Object.keys(C.DEFTER_DERS).filter(function (d) { return C.DEFTER_DERS[d].grup === "ap" && sevUniteler(d).length; }); }
+  function sevAd(ders) { var d = C.DEFTER_DERS[ders] || C.DERSLER[ders]; return d ? (d.ad || d.title) : ders; }
+  function sevKod(ders) { var d = C.DERSLER[ders]; return d ? d.code : "AP"; }
+  function sevRenk(ders) { var d = C.DEFTER_DERS[ders] || C.DERSLER[ders]; return COLORS[(d && (d.renk || d.art)) || "macro"] || COLORS.macro; }
   function sevYonetici() { var p = HESAPLI && H.profil ? H.profil() : null; return !!(p && p.yonetici); }
   /* yerel kayıtlar: S (Bluebook durumu, cihazlar arası eşitlenir) ve soru seti / sonuç (yalnızca bu cihazda) */
-  function sevKey(ders, tur) { return "kitpath:v1:" + C.kim() + ":seviye:" + ders + ":" + tur; }
+  function sevKey(ders, tur, m) { return "kitpath:v1:" + C.kim() + ":seviye:" + ders + ":" + tur + ":m" + m; }
   function sevYerel(ad, ders, tur) { return "kitpath:v1:seviye-" + ad + ":" + C.kim() + "-" + ders + "-" + tur; }
   function lsOku(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
-  function lsYaz(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function lsYaz(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function sevRng(seed) {
     var h = 2166136261 >>> 0, i;
     for (i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); }
     return function () { h = (h + 0x6D2B79F5) | 0; var t = h; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   }
   function sevKaristir(a, rnd) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  /* soru seti: her üniteye eşit pay, artan sorular son ünitelere; aynı tur + ünite = aynı sınav */
-  function sevSinavKur(ders, U, tur, adet) {
-    var us = sevUniteler(ders).filter(function (u) { return u.unit <= U; });
-    return Promise.all(us.map(function (u) { return C.denemeVerisi(u).then(function (D) { return { u: u, D: D }; }, function () { return null; }); })).then(function (rs) {
-      rs = rs.filter(Boolean);
-      var rnd = sevRng(ders + ":" + tur + ":" + U);
-      var havuz = rs.map(function (r) {
-        var gor = {}, l = [];
-        (r.D.tests || []).forEach(function (T) { (T.questions || []).forEach(function (q) {
-          if (!q || typeof q.q !== "string" || !Array.isArray(q.o) || q.o.length < 2 || typeof q.a !== "number" || gor[q.q]) return;
-          gor[q.q] = 1;
-          l.push({ q: q.q, o: q.o, a: q.a, w: q.w || "", fig: q.fig, t: q.t || "", u: r.u.unit, konu: (r.D.topics || {})[q.t] || q.t || "" });
-        }); });
-        return sevKaristir(l, rnd);
-      }).filter(function (l) { return l.length; });
-      var n = havuz.length, Q = [];
-      if (!n) return { Q: [], uniteler: [] };
-      var taban = Math.floor(adet / n), artan = adet - taban * n;
-      havuz.forEach(function (l, i) { Q = Q.concat(l.slice(0, taban + (i >= n - artan ? 1 : 0))); });
-      if (Q.length < adet) havuz.forEach(function (l) { l.forEach(function (q) { if (Q.length < adet && Q.indexOf(q) < 0) Q.push(q); }); });
-      return { Q: sevKaristir(Q, rnd), uniteler: rs.map(function (r) { return r.u.unit; }) };
+  function sevGecerli(q) { return q && typeof q.q === "string" && Array.isArray(q.o) && q.o.length >= 2 && typeof q.a === "number" && q.a >= 0 && q.a < q.o.length; }
+  /* havuz: seçilen üniteye kadar bütün soru adayları (zorluk + ünite + konu ile) */
+  function sevHavuz(ders, U) {
+    return sevDizin().then(function () {
+      var us = sevUniteler(ders).filter(function (u) { return u.unit <= U; });
+      return Promise.all(us.map(function (u) {
+        if (u.banka) return C.seviyeBankasi(u).then(function (B) {
+          return (B.questions || []).filter(sevGecerli).map(function (q) { return { id: q.id || (u.id + ":" + q.q.slice(0, 40)), q: q.q, o: q.o, a: q.a, w: q.w || "", fig: q.fig, t: q.t || "", zor: Math.max(1, Math.min(5, +q.zor || 3)), u: u.unit, konu: (B.topics || {})[q.t] || q.t || "", hesap: q.hesap }; });
+        }, function () { return u.deneme ? sevDenemeden(u) : []; });
+        return sevDenemeden(u);
+      })).then(function (ls) { return [].concat.apply([], ls); });
     });
   }
-  function sevDetay(S, Q) {
+  function sevDenemeden(u) {
+    return C.denemeVerisi(u.kit).then(function (D) {
+      var gor = {}, l = [];
+      (D.tests || []).forEach(function (T) {
+        var zor = SEV_DUZEY[T.level] || Math.max(1, Math.min(5, T.no || 3));
+        (T.questions || []).forEach(function (q) {
+          if (!sevGecerli(q) || gor[q.q]) return; gor[q.q] = 1;
+          l.push({ id: u.id + ":d" + T.no + ":" + l.length, q: q.q, o: q.o, a: q.a, w: q.w || "", fig: q.fig, t: q.t || "", zor: zor, u: u.unit, konu: (D.topics || {})[q.t] || q.t || "" });
+        });
+      });
+      return l;
+    }, function () { return []; });
+  }
+  /* karışımı n zorluk hedefine çevir (en büyük kalan yöntemi) */
+  function sevHedefler(karisim, n) {
+    var ks = Object.keys(karisim), out = [], kal = [];
+    ks.forEach(function (k) { var v = karisim[k] * n, t = Math.floor(v); for (var i = 0; i < t; i++) out.push(+k); kal.push([v - t, +k]); });
+    kal.sort(function (a, b) { return b[0] - a[0]; });
+    for (var i = 0; out.length < n && i < kal.length; i++) out.push(kal[i][1]);
+    return out.sort();
+  }
+  /* modül seçimi: üniteler arasında eşit pay (artan sorular son ünitelere), her yuvaya hedef zorluğa en yakın soru */
+  function sevSec(havuz, n, karisim, rnd, kullanilan) {
+    var uns = []; havuz.forEach(function (q) { if (uns.indexOf(q.u) < 0) uns.push(q.u); }); uns.sort(function (a, b) { return a - b; });
+    if (!uns.length) return [];
+    var hedef = sevKaristir(sevHedefler(karisim, n), rnd), pay = {}, taban = Math.floor(n / uns.length), artan = n - taban * uns.length;
+    uns.forEach(function (u, i) { pay[u] = taban + (i >= uns.length - artan ? 1 : 0); });
+    var yuvalar = []; uns.forEach(function (u) { for (var i = 0; i < pay[u]; i++) yuvalar.push(u); });
+    var kul = {}; Object.keys(kullanilan || {}).forEach(function (k) { kul[k] = 1; });
+    var aday = sevKaristir(havuz.slice(), rnd), sec = [];
+    yuvalar.forEach(function (u, i) {
+      var z = hedef[i] || 3, en = null, enF = 9;
+      aday.forEach(function (q) { if (kul[q.id]) return; var f = Math.abs(q.zor - z) + (q.u === u ? 0 : 3); if (f < enF) { enF = f; en = q; } });
+      if (en) { kul[en.id] = 1; sec.push(en); }
+    });
+    return sevKaristir(sec, rnd);
+  }
+  /* Rasch MAP kestirimi: θ, önsel N(0, 1.5²); b = zor − 3 */
+  function sevTeta(cevaplar) {
+    var t = 0, s2 = 2.25, i, k;
+    for (k = 0; k < 40; k++) {
+      var g = -t / s2, h = -1 / s2;
+      for (i = 0; i < cevaplar.length; i++) { var p = 1 / (1 + Math.exp(-(t - (cevaplar[i].zor - 3)))); g += cevaplar[i].dogru - p; h -= p * (1 - p); }
+      var adim = g / h; t -= adim; t = Math.max(-4, Math.min(4, t));
+      if (Math.abs(adim) < 1e-4) break;
+    }
+    return t;
+  }
+  function sevOlcek(teta) { return Math.max(0, Math.min(100, Math.round(55 + 15 * teta))); }
+  function sevSeviye(y) { return y >= 85 ? 5 : y >= 70 ? 4 : y >= 55 ? 3 : y >= 40 ? 2 : 1; }
+  function sevCevaplar(Q, S) { return Q.map(function (q, i) { return { zor: q.zor || 3, dogru: S && S.ans[i] === q.a ? 1 : 0 }; }); }
+  function sevDetay(set, S1, S2) {
+    var Q = set.M1.concat(set.M2 || []), ans = (S1 ? S1.ans : []).concat(S2 ? S2.ans : []);
     var b = {}, k = {}, d = 0;
     Q.forEach(function (q, i) {
-      var ok = S.ans[i] === q.a ? 1 : 0; d += ok;
+      var ok = ans[i] === q.a ? 1 : 0; d += ok;
       var bu = b[q.u] || (b[q.u] = [0, 0]); bu[0] += ok; bu[1]++;
       var kk = q.u + "|" + q.t, ko = k[kk] || (k[kk] = [0, 0, q.konu, q.u]); ko[0] += ok; ko[1]++;
     });
-    return { dogru: d, toplam: Q.length, birim: b, konu: k };
+    var c1 = sevCevaplar(set.M1, S1), c2 = sevCevaplar(set.M2 || [], S2), teta = sevTeta(c1.concat(c2));
+    var say = function (c) { return [c.reduce(function (s, x) { return s + x.dogru; }, 0), c.length]; };
+    return { dogru: d, toplam: Q.length, birim: b, konu: k, yol: set.yol, m1: say(c1), m2: say(c2), teta: Math.round(teta * 100) / 100, olcek: sevOlcek(teta) };
   }
 
   /* üst bildirim: tur açık, öğrencinin çözmediği ders var ve bu tur için kapatılmadıysa */
@@ -2142,6 +2205,15 @@
       $(".sev-bant__x").addEventListener("click", function () { lsYaz(gizli, 1); var b = $(".sev-bant"); if (b) b.remove(); });
     });
   }
+  /* panel: seviye sınavı geçmişi varsa gelişim grafiği */
+  function sevPanel() {
+    if (!HESAPLI || !C || body.dataset.page !== "panel") return;
+    sevYukle().then(function (d) {
+      var g = (d && d.gecmis) || [], kok = $('[data-k="full"]');
+      if (!g.length || !kok || $(".sev-panel")) return;
+      kok.insertAdjacentHTML("beforeend", '<section class="card card--pad stack sev-panel rise" style="gap:14px" aria-labelledby="sevp-h"><div class="section__head"><div><span class="mono muted">SEVİYE SINAVI</span><h2 class="h3" id="sevp-h" style="font-size:24px">Gelişimin</h2></div><a class="btn btn--link" style="font-size:14px" href="' + ROOT + 'seviye/">Bütün sonuçlar →</a></div>' + sevGelisim(g) + '</section>');
+    });
+  }
 
   /* çizimler */
   function sevHalka(y, renk, boy) {
@@ -2157,9 +2229,9 @@
     var izgara = [0, 25, 50, 75, 100].map(function (v) { return '<line x1="' + px + '" x2="' + (px + w) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="var(--line)" stroke-dasharray="3 4"/><text x="' + (px - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end" class="sev-eksen">' + v + '</text>'; }).join("");
     var yol = seri.map(function (p, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(p.y).toFixed(1); }).join(" ");
     var alan = yol + " L" + x(n - 1).toFixed(1) + " " + (py + h) + " L" + x(0).toFixed(1) + " " + (py + h) + " Z";
-    var noktalar = seri.map(function (p, i) { return '<g><circle cx="' + x(i) + '" cy="' + y(p.y) + '" r="5" fill="var(--surface)" stroke="' + renk + '" stroke-width="3"><title>' + esc(p.ad + ": %" + sayi(p.y)) + '</title></circle><text x="' + x(i) + '" y="' + (py + h + 16) + '" text-anchor="middle" class="sev-eksen">' + esc(p.ad) + '</text></g>'; }).join("");
+    var noktalar = seri.map(function (p, i) { return '<g><circle cx="' + x(i) + '" cy="' + y(p.y) + '" r="5" fill="var(--surface)" stroke="' + renk + '" stroke-width="3"><title>' + esc(p.ad + ": " + sayi(p.y)) + '</title></circle><text x="' + x(i) + '" y="' + (py + h + 16) + '" text-anchor="middle" class="sev-eksen">' + esc(p.ad) + '</text></g>'; }).join("");
     return '<svg class="sev-cizgi" viewBox="0 0 ' + gen + ' ' + (yuk + 8) + '" role="img" aria-label="Gelişim grafiği">' + izgara +
-      '<path d="' + alan + '" fill="' + renk + '" opacity=".12"/><path d="' + yol + '" fill="none" stroke="' + renk + '" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>' + noktalar + '</svg>';
+      '<path d="' + alan + '" fill="' + renk + '" opacity=".14"/><path d="' + yol + '" fill="none" stroke="' + renk + '" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>' + noktalar + '</svg>';
   }
   function sevRozet(sev) { return '<span class="sev-rozet" data-s="' + sev + '"><b>' + sev + '</b><span>' + esc(SEV_AD[sev] || "") + '</span></span>'; }
   function sevTarih(iso) { return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long" }); }
@@ -2188,44 +2260,49 @@
     var dersler = sevDersler().sort(function (a, b) { return (raf.indexOf(b) > -1) - (raf.indexOf(a) > -1); });
     var son = function (x) { var l = g.filter(function (r) { return r.ders === x; }); return l[l.length - 1] || null; };
     var buTur = function (x) { return acik && g.some(function (r) { return r.ders === x && r.tur === t.tur; }); };
+    var n = SEV_MODUL * 2, dk = Math.round(n * 1.5);
     document.title = "Seviye sınavı · Kitpath";
     kok.innerHTML =
       '<section class="sev-hero rise"><div class="stack" style="gap:14px;flex:1 1 380px">' +
         '<span class="sev-durum" data-d="' + st[0] + '"><i></i>' + esc(st[1]) + '</span>' +
         '<h1 class="display" style="font-size:clamp(42px,5vw,60px)"><span class="hl">Seviye sınavı</span></h1>' +
-        '<p class="lead" style="max-width:560px">Yeni bir tur açıldığında her ders için kısa bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
-      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sınav, oraya kadar olan konulardan gelir.</span></li><li><b>2</b><span><strong>20 soru · ~30 dk</strong>Gerçek sınav ekranı; süre, işaretleme, eleme.</span></li><li><b>3</b><span><strong>Gelişimini gör</strong>Seviye, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
+        '<p class="lead" style="max-width:560px">Yeni bir tur açıldığında her ders için kısa, uyarlanabilir bir sınav. Geldiğin üniteyi işaretle, Bluebook ekranında çöz; seviyeni ve hangi konularda güçlendiğini tur tur gör. Zorunlu değil, not değil: sadece senin için.</p>' +
+      '</div><ol class="sev-adimlar"><li><b>1</b><span><strong>Üniteni işaretle</strong>Sorular oraya kadar olan bütün konulardan gelir.</span></li><li><b>2</b><span><strong>2 modül · ' + n + ' soru · ~' + dk + ' dk</strong>İkinci modül, birinci modüldeki performansına göre kolay ya da zor gelir.</span></li><li><b>3</b><span><strong>Seviyeni gör</strong>0–100 seviye puanı, ünite ve konu kırılımı, turdan tura grafik.</span></li></ol></section>' +
       (on ? '<div class="note rise d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>Şu an açık tur yok; öğrenciler sınav çözemiyor. Sen önizleme çözebilirsin, sonucu kaydedilmez. Yeni tur açmak için <a href="' + ROOT + 'yonetim/?gorunum=seviye">Yönetim → Seviye sınavı</a>.</span></div>' : "") +
       '<section class="stack rise d1" style="gap:16px"><div class="section__head"><h2 class="h3" style="font-size:26px">Dersler</h2><span class="muted" style="font-size:14px">' + (acik ? "Bu turda her dersten bir sınav çözebilirsin." : on ? "Önizleme: istediğin dersten dene." : "Tur açılınca buradan başlarsın.") + '</span></div>' +
       '<div class="sev-dersler">' + dersler.map(function (x) {
-        var s = son(x), renk = sevRenk(x), yapti = buTur(x), us = sevUniteler(x);
-        var seri = g.filter(function (r) { return r.ders === x; }).map(function (r) { return r.yuzde; });
+        var s = son(x), renk = sevRenk(x), yapti = buTur(x), us = sevUniteler(x), tum = sevTumUniteler(x);
+        var seri = g.filter(function (r) { return r.ders === x; }).map(function (r) { return +r.yuzde; });
         var mini = seri.length > 1 ? '<svg class="sev-mini" viewBox="0 0 80 24" aria-hidden="true"><polyline fill="none" stroke="' + renk + '" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="' + seri.map(function (v, i) { return (i * 80 / (seri.length - 1)).toFixed(1) + "," + (22 - v * 20 / 100).toFixed(1); }).join(" ") + '"/></svg>' : "";
         var alt = yapti ? '<a class="btn btn--ghost btn--sm" href="?sonuc=' + x + '&tur=' + t.tur + '">Sonucu gör</a>' : (acik || on) ? '<button type="button" class="btn btn--primary btn--sm" data-sev-ac="' + x + '">' + (on ? "Önizle" : "Başla") + '</button>' : "";
-        return '<article class="card sev-ders" style="--c:' + renk + '" data-sev-ders="' + x + '"><div class="sev-ders__ust"><span class="mono muted">' + esc(C.DERSLER[x].code) + '</span>' + (yapti ? '<span class="chip chip--ok">Bu tur çözüldü</span>' : s ? '<span class="chip chip--plain">Tur ' + s.tur + '</span>' : "") + '</div>' +
+        return '<article class="card sev-ders" style="--c:' + renk + '" data-sev-ders="' + x + '"><div class="sev-ders__ust"><span class="mono muted">' + esc(sevKod(x)) + '</span>' + (yapti ? '<span class="chip chip--ok">Bu tur çözüldü</span>' : s ? '<span class="chip chip--plain">Tur ' + s.tur + '</span>' : "") + '</div>' +
           '<h3 class="h3" style="font-size:22px;margin:0">' + esc(sevAd(x)) + '</h3>' +
-          '<div class="sev-ders__orta">' + (s ? sevRozet(s.seviye) + '<span class="stack" style="gap:2px"><strong style="font-size:20px">%' + sayi(s.yuzde) + '</strong><span class="muted" style="font-size:12px">son sonuç · Unit 1–' + s.unite + '</span></span>' + mini : '<span class="muted" style="font-size:14px">Henüz sınav yok · ' + us.length + ' ünite hazır</span>') + '</div>' +
+          '<div class="sev-ders__orta">' + (s ? sevRozet(s.seviye) + '<span class="stack" style="gap:2px"><strong style="font-size:20px">' + sayi(s.yuzde) + '<span class="muted" style="font-size:13px"> / 100</span></strong><span class="muted" style="font-size:12px">son seviye puanı · Unit 1–' + s.unite + '</span></span>' + mini : '<span class="muted" style="font-size:14px">Henüz sınav yok · ' + us.length + '/' + tum.length + ' ünitede soru hazır</span>') + '</div>' +
           '<div class="sev-ders__alt">' + alt + (s ? '<a class="btn btn--link" style="font-size:14px" href="?sonuc=' + x + '&tur=' + s.tur + '">Geçmiş →</a>' : "") + '</div>' +
           '<div class="sev-kur" data-sev-kur hidden></div></article>';
       }).join("") + '</div></section>' +
-      (g.length ? '<section class="card card--pad stack rise d2" style="gap:14px"><div class="section__head"><h2 class="h3" style="font-size:24px">Gelişimin</h2><span class="muted" style="font-size:14px">turdan tura doğru yüzdesi</span></div>' + sevGelisim(g) + '</section>' : "");
+      (g.length ? '<section class="card card--pad stack rise d2" style="gap:14px"><div class="section__head"><h2 class="h3" style="font-size:24px">Gelişimin</h2><span class="muted" style="font-size:14px">turdan tura seviye puanı</span></div>' + sevGelisim(g) + '</section>' : "");
     kok.addEventListener("click", function (e) {
       var b = e.target.closest("[data-sev-ac]"); if (!b) return;
       var kart = b.closest("[data-sev-ders]"), x = kart.dataset.sevDers, kur = $("[data-sev-kur]", kart);
       $$("[data-sev-kur]", kok).forEach(function (k) { if (k !== kur) k.hidden = true; });
       if (!kur.hidden) { kur.hidden = true; return; }
-      var us = sevUniteler(x), oner = 1;
-      us.forEach(function (u) { var o = C.ozet(u); if (o && o.bitenler > 0) oner = Math.max(oner, u.unit); });
+      var tum = sevTumUniteler(x), us = tum.filter(function (u) { return u.banka || u.deneme; }), oner = us[0].unit;
+      us.forEach(function (u) { var o = u.kit && C.ozet(u.kit); if (o && o.bitenler > 0) oner = Math.max(oner, u.unit); });
       var s = son(x); if (s) oner = Math.max(oner, s.unite);
-      oner = Math.min(oner, us[us.length - 1].unit);
-      kur.innerHTML = '<span class="mono muted">HANGİ ÜNİTEYE KADAR GELDİN?</span><div class="sev-uniteler" role="radiogroup" aria-label="Ünite">' + us.map(function (u) { return '<button type="button" role="radio" class="sev-u" data-u="' + u.unit + '" aria-checked="' + (u.unit === oner) + '">Unit ' + u.unit + '</button>'; }).join("") + '</div>' +
+      if (!us.some(function (u) { return u.unit === oner; })) oner = us[us.length - 1].unit;
+      kur.innerHTML = '<span class="mono muted">HANGİ ÜNİTEYE KADAR GELDİN?</span><div class="sev-uniteler" role="radiogroup" aria-label="Ünite">' + tum.map(function (u) {
+          var var_ = u.banka || u.deneme;
+          return '<button type="button" role="radio" class="sev-u" data-u="' + u.unit + '" aria-checked="' + (u.unit === oner) + '"' + (var_ ? "" : ' disabled title="Bu ünitenin soruları hazırlanıyor"') + '>Unit ' + u.unit + '</button>';
+        }).join("") + '</div>' +
         '<p class="muted" style="font-size:13px;margin:0" data-sev-bilgi></p><a class="btn btn--primary" data-sev-git href="#">' + (on ? "Önizlemeyi başlat" : "Sınava başla") + ' →</a>';
       function bilgi(u) {
-        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + ((t.soru) || 20) + " soru · yaklaşık " + Math.round(((t.soru) || 20) * 1.5) + " dakika. Başladıktan sonra süre işler; Kaydet ve çık ile ara verebilirsin.");
-        $("[data-sev-git]", kur).href = ROOT + "seviye/sinav/?ders=" + x + "&u=" + u;
+        var hazir = us.filter(function (q) { return q.unit <= u; }).map(function (q) { return q.unit; });
+        fill($("[data-sev-bilgi]", kur), "Unit 1–" + u + " konularından " + n + " soru (2 modül × " + SEV_MODUL + "), yaklaşık " + dk + " dakika." + (hazir.length < u ? " Şimdilik soru olan üniteler: " + hazir.join(", ") + "." : "") + " Kaydet ve çık ile ara verebilirsin; süre durur.");
+        $("[data-sev-git]", kur).href = ROOT + "seviye/sinav/?ders=" + x + "&u=" + u + (on ? "&yeni" : "");
       }
       bilgi(oner);
-      kur.onclick = function (ev) { var ub = ev.target.closest("[data-u]"); if (!ub) return; $$("[data-u]", kur).forEach(function (q) { q.setAttribute("aria-checked", String(q === ub)); }); bilgi(+ub.dataset.u); };
+      kur.onclick = function (ev) { var ub = ev.target.closest("[data-u]"); if (!ub || ub.disabled) return; $$("[data-u]", kur).forEach(function (q) { q.setAttribute("aria-checked", String(q === ub)); }); bilgi(+ub.dataset.u); };
       kur.hidden = false;
     });
   }
@@ -2234,93 +2311,127 @@
     return '<div class="sev-gelisim">' + dersler.map(function (x) {
       var l = g.filter(function (r) { return r.ders === x; }), ilk = l[0], son = l[l.length - 1], fark = l.length > 1 ? son.yuzde - ilk.yuzde : null;
       return '<div class="sev-gelisim__d"><div class="row" style="align-items:center;gap:10px;justify-content:space-between"><strong><span class="dot" style="--c:' + sevRenk(x) + ';width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:8px"></span>' + esc(sevAd(x)) + '</strong>' +
-        (fark != null ? '<span class="chip ' + (fark >= 0 ? "chip--ok" : "chip--hot") + '">' + (fark >= 0 ? "+" : "") + sayi(fark) + ' puan</span>' : '<span class="muted" style="font-size:13px">ilk tur</span>') + '</div>' +
+        (fark != null ? '<span class="chip ' + (fark >= 0 ? "chip--ok" : "chip--hot") + '">' + (fark >= 0 ? "+" : "") + sayi(fark) + ' puan</span>' : '<span class="muted" style="font-size:13px">ilk tur · ' + sayi(son.yuzde) + '</span>') + '</div>' +
         sevCizgi(l.map(function (r) { return { ad: "T" + r.tur, y: +r.yuzde }; }), sevRenk(x)) + '</div>';
     }).join("") + '</div>';
   }
   function sevSonuc(kok, d, ders, tur) {
     var g = (d.gecmis || []).filter(function (r) { return r.ders === ders; });
     var kayit = g.filter(function (r) { return r.tur === tur; })[0] || null;
-    var yerel = lsOku(sevYerel("sonuc", ders, tur)), set = lsOku(sevYerel("set", ders, tur)), S = C.oku(sevKey(ders, tur));
+    var yerel = lsOku(sevYerel("sonuc", ders, tur)), set = lsOku(sevYerel("set", ders, tur));
+    var S1 = C.oku(sevKey(ders, tur, 1)), S2 = C.oku(sevKey(ders, tur, 2));
     var det = kayit ? kayit.detay : yerel && yerel.detay;
     var onizleme = tur === 0;
-    if (!det) { kok.innerHTML = '<section class="card empty"><div class="stack" style="gap:12px"><h1 class="h2">Bu sonucu bulamadım.</h1><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'seviye/">Seviye sınavına dön</a></div></section>'; return; }
-    var dogru = kayit ? kayit.dogru : det.dogru, toplam = kayit ? kayit.toplam : det.toplam, y = toplam ? Math.round(1000 * dogru / toplam) / 10 : 0, sev = kayit ? kayit.seviye : sevSeviye(y);
+    if (!det || det.olcek == null && det.toplam == null) { kok.innerHTML = '<section class="card empty"><div class="stack" style="gap:12px"><h1 class="h2">Bu sonucu bulamadım.</h1><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'seviye/">Seviye sınavına dön</a></div></section>'; return; }
+    var dogru = det.dogru, toplam = det.toplam, puan = kayit ? +kayit.yuzde : det.olcek != null ? det.olcek : Math.round(100 * dogru / toplam), sev = kayit ? kayit.seviye : sevSeviye(puan);
     var renk = sevRenk(ders), onceki = g.filter(function (r) { return r.tur < tur; }).pop();
-    var fark = onceki ? y - onceki.yuzde : null;
+    var fark = onceki ? puan - onceki.yuzde : null;
     var konular = Object.keys(det.konu || {}).map(function (k) { var v = det.konu[k]; return { ad: v[2] || k.split("|")[1], u: v[3], d: v[0], t: v[1], y: v[1] ? v[0] / v[1] : 0 }; });
-    var zayif = konular.filter(function (k) { return k.y < .6; }).sort(function (a, b) { return a.y - b.y; }).slice(0, 4);
+    var zayif = konular.filter(function (k) { return k.y < .6; }).sort(function (a, b) { return a.y - b.y || b.t - a.t; }).slice(0, 4);
     var guclu = konular.filter(function (k) { return k.y >= .99 && k.t >= 2; }).slice(0, 4);
+    var yolChip = det.yol ? '<span class="chip ' + (det.yol === "zor" ? "chip--info" : "chip--plain") + '" style="font-size:13px">Modül 2: ' + (det.yol === "zor" ? "zor yol" : "kolay yol") + '</span>' : "";
+    var mod = det.m1 ? '<div class="sev-moduller"><div><span class="mono muted">MODÜL 1 · KARIŞIK</span><b>' + det.m1[0] + '/' + det.m1[1] + '</b></div><div><span class="mono muted">MODÜL 2 · ' + (det.yol === "zor" ? "ZOR" : "KOLAY") + '</span><b>' + det.m2[0] + '/' + det.m2[1] + '</b></div></div>' : "";
     document.title = "Sonuç · Seviye sınavı · Kitpath";
     kok.innerHTML =
       '<a class="btn btn--link rise" style="align-self:flex-start" href="' + ROOT + 'seviye/">← Seviye sınavı</a>' +
-      '<section class="card sev-sonuc rise" style="--c:' + renk + '"><div class="sev-sonuc__sol">' + sevHalka(y, renk, 168) + '<div class="sev-sonuc__ortala"><b>%' + sayi(y) + '</b><span>' + dogru + ' / ' + toplam + ' doğru</span></div></div>' +
-        '<div class="stack" style="gap:10px;flex:1 1 320px"><span class="mono muted">' + esc(C.DERSLER[ders].code) + ' · ' + (onizleme ? "ÖNİZLEME" : "TUR " + tur) + (kayit ? " · " + esc(sevTarih(kayit.tarih).toLocaleUpperCase("tr-TR")) : "") + '</span>' +
+      '<section class="card sev-sonuc rise" style="--c:' + renk + '"><div class="sev-sonuc__sol">' + sevHalka(puan, renk, 168) + '<div class="sev-sonuc__ortala"><b>' + sayi(puan) + '</b><span>seviye puanı</span></div></div>' +
+        '<div class="stack" style="gap:10px;flex:1 1 320px"><span class="mono muted">' + esc(sevKod(ders)) + ' · ' + (onizleme ? "ÖNİZLEME" : "TUR " + tur) + (kayit ? " · " + esc(sevTarih(kayit.tarih).toLocaleUpperCase("tr-TR")) : "") + '</span>' +
         '<h1 class="display" style="font-size:clamp(34px,4vw,48px)">' + esc(sevAd(ders)) + '</h1>' +
-        '<div class="row" style="gap:14px;align-items:center;flex-wrap:wrap">' + sevRozet(sev) + (fark != null ? '<span class="chip ' + (fark >= 0 ? "chip--ok" : "chip--hot") + '" style="font-size:13px">' + (fark >= 0 ? "▲ +" : "▼ ") + sayi(fark) + ' puan · önceki tur %' + sayi(onceki.yuzde) + '</span>' : "") + (kayit && kayit.sure_ms ? '<span class="muted" style="font-size:14px">' + fmt(kayit.sure_ms / 1000) + ' dakika</span>' : "") + '</div>' +
-        '<p class="muted" style="margin:0">' + esc(sev >= 4 ? "Bu ünitelerde sağlamsın. Bir sonraki turda yeni üniteleri ekleyerek zorlamaya devam et." : sev === 3 ? "Temel oturmuş; aşağıdaki konuları tekrar edersen bir üst seviyeye çıkarsın." : "Başlangıç için gayet normal. Aşağıdaki konulardan başla; iki hafta sonra farkı göreceksin.") + '</p>' +
+        '<div class="row" style="gap:12px;align-items:center;flex-wrap:wrap">' + sevRozet(sev) + '<span class="muted" style="font-size:14px">' + dogru + ' / ' + toplam + ' doğru</span>' + yolChip + (fark != null ? '<span class="chip ' + (fark >= 0 ? "chip--ok" : "chip--hot") + '" style="font-size:13px">' + (fark >= 0 ? "▲ +" : "▼ ") + sayi(fark) + ' · önceki tur ' + sayi(onceki.yuzde) + '</span>' : "") + (kayit && kayit.sure_ms ? '<span class="muted" style="font-size:14px">' + fmt(kayit.sure_ms / 1000) + ' dk</span>' : "") + '</div>' +
+        mod +
+        '<p class="muted" style="margin:0">' + esc(sev >= 4 ? "Bu ünitelerde sağlamsın. Bir sonraki turda yeni üniteleri ekleyerek kendini zorlamaya devam et." : sev === 3 ? "Temel oturmuş; aşağıdaki konuları tekrar edersen bir üst seviyeye çıkarsın." : "Başlangıç için gayet normal. Aşağıdaki konulardan başla; bir sonraki turda farkı göreceksin.") + '</p>' +
         (onizleme ? '<span class="chip chip--warn" style="align-self:flex-start">Önizleme · kaydedilmedi</span>' : "") + '</div></section>' +
       '<section class="sev-iki rise d1"><div class="card card--pad stack" style="gap:14px"><h2 class="h3">Ünitelere göre</h2>' +
         Object.keys(det.birim || {}).sort(function (a, b) { return a - b; }).map(function (u) { var v = det.birim[u], p = v[1] ? Math.round(100 * v[0] / v[1]) : 0; return '<div class="sev-bar"><span class="mono">UNIT ' + u + '</span><div class="progress"><span style="--w:' + p + '%;--c:' + uniteTonu(renk, +u) + '"></span></div><span class="mono">' + v[0] + '/' + v[1] + '</span></div>'; }).join("") + '</div>' +
         '<div class="card card--pad stack" style="gap:14px"><h2 class="h3">Odaklanman gerekenler</h2>' +
-        (zayif.length ? zayif.map(function (k) { var kit = sevUniteler(ders).filter(function (u) { return u.unit === k.u; })[0]; return '<a class="sev-konu" href="' + (kit ? ROOT + 'unite/?kit=' + kit.id : "#") + '"><span class="sev-konu__p" data-z="true">' + k.d + '/' + k.t + '</span><span class="stack" style="gap:2px;min-width:0"><strong>' + esc(k.ad) + '</strong><span class="muted" style="font-size:12px">Unit ' + k.u + ' · üniteye git →</span></span></a>'; }).join("") : '<p class="muted" style="margin:0">Belirgin bir zayıf konu yok, tebrikler!</p>') +
+        (zayif.length ? zayif.map(function (k) { var su = sevTumUniteler(ders).filter(function (u) { return u.unit === k.u; })[0], href = su ? (su.kit ? ROOT + "unite/?kit=" + su.kit.id : ROOT + "defterler/?u=" + su.id) : "#"; return '<a class="sev-konu" href="' + href + '"><span class="sev-konu__p">' + k.d + '/' + k.t + '</span><span class="stack" style="gap:2px;min-width:0"><strong>' + esc(k.ad) + '</strong><span class="muted" style="font-size:12px">Unit ' + k.u + ' · ' + (su && su.kit ? "üniteye git" : "defterine git") + ' →</span></span></a>'; }).join("") : '<p class="muted" style="margin:0">Belirgin bir zayıf konu yok, tebrikler!</p>') +
         (guclu.length ? '<span class="mono muted" style="margin-top:6px">GÜÇLÜ OLDUKLARIN</span><div class="row" style="gap:6px;flex-wrap:wrap">' + guclu.map(function (k) { return '<span class="chip chip--ok">' + esc(k.ad) + '</span>'; }).join("") + '</div>' : "") + '</div></section>' +
       (g.length > 1 ? '<section class="card card--pad stack rise d2" style="gap:12px"><div class="section__head"><h2 class="h3">Gelişimin</h2><span class="muted" style="font-size:14px">' + esc(sevAd(ders)) + ' · bütün turlar</span></div>' + sevCizgi(g.map(function (r) { return { ad: "T" + r.tur, y: +r.yuzde }; }), renk) + '</section>' : "") +
-      (set && S && S.done ? '<section class="card card--pad stack rise d2" style="gap:14px"><div class="section__head"><h2 class="h3">Soruları incele</h2><div class="row" style="gap:6px;flex-direction:row" role="group" aria-label="Süz"><button type="button" class="filter" data-sev-f="yanlis" aria-pressed="true">Yanlışlar</button><button type="button" class="filter" data-sev-f="hepsi" aria-pressed="false">Hepsi</button></div></div><div class="stack" style="gap:12px" data-sev-sorular></div></section>' : "");
-    if (set && S && S.done) {
-      var f = "yanlis";
+      (set && S1 && S1.done && S2 && S2.done ? '<section class="card card--pad stack rise d2" style="gap:14px"><div class="section__head"><h2 class="h3">Soruları incele</h2><div class="row" style="gap:6px;flex-direction:row" role="group" aria-label="Süz"><button type="button" class="filter" data-sev-f="yanlis" aria-pressed="true">Yanlışlar</button><button type="button" class="filter" data-sev-f="hepsi" aria-pressed="false">Hepsi</button></div></div><div class="stack" style="gap:12px" data-sev-sorular></div></section>' : "");
+    if (set && S1 && S1.done && S2 && S2.done) {
+      var Q = set.M1.concat(set.M2 || []), ans = S1.ans.concat(S2.ans), f = "yanlis", ZA = ["", "Isınma", "Temel", "Orta", "Zor", "Çok zor"];
       var ciz = function () {
         $$("[data-sev-f]", kok).forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.sevF === f)); });
-        var html = set.Q.map(function (q, i) {
-          var c = S.ans[i], ok = c === q.a;
+        var html = Q.map(function (q, i) {
+          var c = ans[i], ok = c === q.a;
           if (f === "yanlis" && ok) return "";
           return '<details class="sev-soru" data-ok="' + ok + '"><summary><span class="sev-soru__n">' + (i + 1) + '</span><span class="sev-soru__q">' + md(q.q) + '</span><span class="chip ' + (ok ? "chip--ok" : c < 0 ? "chip--plain" : "chip--hot") + '">' + (ok ? "Doğru" : c < 0 ? "Boş" : "Yanlış") + '</span></summary>' +
+            (q.fig ? '<div class="sev-fig" data-sev-fig="' + i + '"></div>' : "") +
             '<ol class="sev-secenek" type="A">' + q.o.map(function (o, j) { return '<li data-dogru="' + (j === q.a) + '" data-sen="' + (j === c) + '">' + md(o) + '</li>'; }).join("") + '</ol>' +
-            (q.w ? '<div class="sev-acik"><span class="mono muted">AÇIKLAMA</span><div>' + md(q.w) + '</div></div>' : "") + '<span class="muted" style="font-size:12px">Unit ' + q.u + ' · ' + esc(q.konu) + '</span></details>';
+            (q.w ? '<div class="sev-acik"><span class="mono muted">AÇIKLAMA</span><div>' + md(q.w) + '</div></div>' : "") + '<span class="muted" style="font-size:12px">' + (i < SEV_MODUL ? "Modül 1" : "Modül 2") + ' · Unit ' + q.u + ' · ' + esc(q.konu) + ' · ' + (ZA[q.zor] || "") + '</span></details>';
         }).join("");
         fill("[data-sev-sorular]", html || '<p class="muted">Yanlışın yok!</p>');
+        $$("[data-sev-fig]", kok).forEach(function (el) { var q = Q[+el.dataset.sevFig]; if (q.fig.type === "table") el.innerHTML = tabloHTML(q.fig); else sekilKoy(el, q.fig); });
       };
-      ciz();
+      C.sekiller().then(ciz, ciz);
       kok.addEventListener("click", function (e) { var b = e.target.closest("[data-sev-f]"); if (b) { f = b.dataset.sevF; ciz(); } });
     }
   }
 
-  /* ---------- seviye/sinav/ : Bluebook ekranında sınav ---------- */
+  /* ---------- seviye/sinav/ : iki modül, Bluebook ekranı ---------- */
   pages["seviye-sinav"] = function () {
     var BB = window.KPBluebook, geri = ROOT + "seviye/";
     if (!C || !BB) return;
     if (!HESAPLI) { girisGerek(); return; }
-    var ders = param("ders"), U = parseInt(param("u"), 10) || 1;
-    if (sevDersler().indexOf(ders) < 0) { BB.hata("Bu ders için seviye sınavı yok.", geri, "Seviye sınavına dön"); return; }
+    var ders = param("ders"), U = parseInt(param("u"), 10) || 1, modul = param("modul") === "2" ? 2 : 1;
     sevYukle(true).then(function (d) {
+      if (sevDersler().indexOf(ders) < 0) { BB.hata("Bu ders için seviye sınavı yok.", geri, "Seviye sınavına dön"); return; }
       var t = (d && d.takvim) || {}, acik = sevAcikMi(t), on = !acik;
       if (on && !sevYonetici()) { BB.hata("Seviye sınavı şu an açık değil.", geri, "Seviye sınavına dön"); return; }
-      var tur = on ? 0 : t.tur;
-      if (!on && ((d && d.gecmis) || []).some(function (g) { return g.ders === ders && g.tur === tur; })) { location.replace(geri + "?sonuc=" + ders + "&tur=" + tur); return; }
-      var setK = sevYerel("set", ders, tur), sKey = sevKey(ders, tur), set = lsOku(setK);
-      var hazir = set && set.U === U && set.Q && set.Q.length ? Promise.resolve(set) : sevSinavKur(ders, U, on ? "onizleme" : tur, t.soru || 20).then(function (r) {
-        set = { U: U, Q: r.Q, uniteler: r.uniteler, tur: tur }; lsYaz(setK, set);
-        var eski = C.oku(sKey); if (eski) C.yaz(sKey, null);
+      var tur = on ? 0 : t.tur, sonucUrl = geri + "?sonuc=" + ders + "&tur=" + tur;
+      if (!on && ((d && d.gecmis) || []).some(function (g) { return g.ders === ders && g.tur === tur; })) { location.replace(sonucUrl); return; }
+      var setK = sevYerel("set", ders, tur), k1 = sevKey(ders, tur, 1), k2 = sevKey(ders, tur, 2);
+      if (param("yeni") !== null && (on || modul === 1)) { if (on) { lsYaz(setK, null); C.yaz(k1, null); C.yaz(k2, null); } history.replaceState(null, "", "?ders=" + ders + "&u=" + U); }
+      var set = lsOku(setK);
+      var hazir = set && set.U === U && set.M1 && set.M1.length ? Promise.resolve(set) : sevHavuz(ders, U).then(function (havuz) {
+        set = { U: U, tur: tur, M1: sevSec(havuz, SEV_MODUL, SEV_KARISIM.m1, sevRng(ders + ":" + tur + ":" + U + ":m1"), {}), M2: null, yol: null };
+        lsYaz(setK, set); C.yaz(k1, null); C.yaz(k2, null);
         return set;
       });
       Promise.all([hazir, C.sekiller()]).then(function (rs) {
-        var s = rs[0], Q = s.Q;
-        if (!Q.length) { BB.hata("Bu ders için soru bulunamadı.", geri, "Seviye sınavına dön"); return; }
-        if (on && param("yeni") !== null) C.yaz(sKey, null);
-        var dk = Math.max(10, Math.round(Q.length * 1.5)), baslik = on ? "Seviye Sınavı · Önizleme" : "Seviye Sınavı · Tur " + tur;
-        var Cw = { deneme: function () { return C.oku(sKey); }, denemeYaz: function (k, no, S) { C.yaz(sKey, S); }, calisti: C.calisti };
-        BB.basla({
-          k: { id: "sev-" + ders, ders: ders, unit: U }, no: tur, DEN: { course: "AP " + sevAd(ders), unit: "Unit 1–" + U },
-          T: { no: tur, minutes: dk, questions: Q }, C: Cw, ROOT: ROOT, ad: ME ? ME.name : "", md: md, esc: esc, fmt: fmt, tabloHTML: tabloHTML, sekilKoy: sekilKoy, param: param,
-          baslik: baslik, turAd: "test", geriUrl: geri, sonucUrl: geri + "?sonuc=" + ders + "&tur=" + tur,
-          yonerge: '<h2>' + esc(baslik) + ' · AP ' + esc(sevAd(ders)) + ' · Unit 1–' + U + '</h2><p>This level check has <strong>' + Q.length + ' multiple-choice questions</strong> from Units 1–' + U + ' and a time limit of <strong>' + dk + ' minutes</strong>.</p><p>It is <strong>optional and not graded</strong>: it shows where you are and tracks your progress from round to round. Answer every question; unanswered questions count as incorrect.</p><p>When time runs out, your answers are submitted automatically.</p>',
-          bitti: function (S, QQ) {
-            var det = sevDetay(S, QQ);
-            lsYaz(sevYerel("sonuc", ders, tur), { detay: det, tarih: Date.now() });
-            if (on) return null;
-            return H.seviyeKaydet({ ders: ders, unite: U, dogru: det.dogru, toplam: det.toplam, detay: det, sure_ms: S.used }).then(function () { SEV.p = null; }, function () {});
-          }
-        });
+        set = rs[0];
+        if (!set.M1.length) { BB.hata("Bu ders için soru bulunamadı.", geri, "Seviye sınavına dön"); return; }
+        var S1 = C.oku(k1), S2 = C.oku(k2);
+        if (modul === 1 && S1 && S1.done) { location.replace("?ders=" + ders + "&u=" + U + "&modul=2"); return; }
+        if (modul === 2 && !(S1 && S1.done && set.M2)) { location.replace("?ders=" + ders + "&u=" + U); return; }
+        if (modul === 2 && S2 && S2.done) { location.replace(sonucUrl); return; }
+        var Q = modul === 1 ? set.M1 : set.M2, dk = Math.max(8, Math.round(Q.length * 1.5));
+        var baslik = (on ? "Seviye Sınavı · Önizleme" : "Seviye Sınavı · Tur " + tur) + " · Modül " + modul;
+        var Cw = { deneme: function () { return C.oku(modul === 1 ? k1 : k2); }, denemeYaz: function (k, no, S) { C.yaz(modul === 1 ? k1 : k2, S); }, calisti: C.calisti };
+        var basla = function () {
+          BB.basla({
+            k: { id: "sev-" + ders, ders: ders, unit: U }, no: modul, DEN: { course: "AP " + sevAd(ders), unit: "Unit 1–" + U },
+            T: { no: modul, minutes: dk, questions: Q }, C: Cw, ROOT: ROOT, ad: ME ? ME.name : "", md: md, esc: esc, fmt: fmt, tabloHTML: tabloHTML, sekilKoy: sekilKoy, param: param,
+            baslik: baslik, turAd: "module", geriUrl: geri, sonucUrl: modul === 1 ? "?ders=" + ders + "&u=" + U + "&modul=2" : sonucUrl,
+            yonerge: '<h2>' + esc(baslik) + ' · AP ' + esc(sevAd(ders)) + ' · Unit 1–' + U + '</h2>' +
+              (modul === 1 ? '<p>This level check has <strong>two modules</strong> of ' + SEV_MODUL + ' questions each. Module 1 has a mix of easier and harder questions; how you do on it decides whether Module 2 is easier or harder.</p>'
+                           : '<p>Module 2 was built from your Module 1 answers. Harder questions count for more, so do your best on each one.</p>') +
+              '<p>This module has <strong>' + Q.length + ' multiple-choice questions</strong> and a time limit of <strong>' + dk + ' minutes</strong>. It is <strong>optional and not graded</strong>. Unanswered questions count as incorrect; when time runs out, your answers are submitted automatically.</p>',
+            bitti: function (S) {
+              if (modul === 1) {
+                var teta1 = sevTeta(sevCevaplar(set.M1, S)), yol = teta1 >= 0 ? "zor" : "kolay", kul = {};
+                set.M1.forEach(function (q) { kul[q.id] = 1; });
+                return sevHavuz(ders, U).then(function (havuz) {
+                  set.yol = yol; set.teta1 = Math.round(teta1 * 100) / 100;
+                  set.M2 = sevSec(havuz, SEV_MODUL, SEV_KARISIM[yol], sevRng(ders + ":" + tur + ":" + U + ":m2:" + yol + ":" + C.kim()), kul);
+                  lsYaz(setK, set);
+                });
+              }
+              var det = sevDetay(set, C.oku(k1), S);
+              lsYaz(sevYerel("sonuc", ders, tur), { detay: det, tarih: Date.now() });
+              if (on) return null;
+              var s1 = C.oku(k1);
+              return H.seviyeKaydet({ ders: ders, unite: U, dogru: det.dogru, toplam: det.toplam, olcek: det.olcek, detay: det, sure_ms: (s1 && s1.used || 0) + (S.used || 0) }).then(function () { SEV.p = null; }, function () {});
+            }
+          });
+        };
+        if (modul === 2 && !S2) {
+          var app = $(".bbk-app");
+          app.innerHTML = '<main class="bbk-main"><div class="bbk-arasi"><span class="bbk-arasi__ic" aria-hidden="true">✓</span><h1>Module 1 complete</h1><p>Module 2 is ready and was built from your answers. It has ' + set.M2.length + ' questions and a ' + dk + '-minute timer that starts when you continue.</p><p class="bbk-arasi__tr">Modül 1 bitti. Modül 2, cevaplarına göre hazırlandı; süre "Continue"a basınca başlar. İstersen biraz ara ver.</p><button type="button" class="bbk-btn" data-k="m2">Continue to Module 2</button><a class="bbk-arasi__geri" href="' + geri + '">Save and exit</a></div></main>';
+          $('[data-k="m2"]').addEventListener("click", basla);
+          return;
+        }
+        basla();
       }, function () { BB.hata("Sınav şu an yüklenemedi. İnternetini kontrol edip sayfayı yenile.", geri, "Seviye sınavına dön"); });
     });
   };
@@ -2332,5 +2443,6 @@
   if (pages[page]) pages[page]();
   geriBildirim();
   sevBant();
+  sevPanel();
   window.Kitora = { theme: theme, art: art, toast: toast };
 })();
