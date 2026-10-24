@@ -1194,3 +1194,4 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .sev-fig { margin: 0 0 8px 40px; max-width: 520px; }
 .sev-panel .sev-gelisim { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 @media (max-width: 720px) { .sev-fig { margin-left: 0; } }
+.sev-soru__q, .sev-acik > div { white-space: pre-line; }
