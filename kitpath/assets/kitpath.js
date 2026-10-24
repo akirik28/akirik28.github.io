@@ -1628,6 +1628,11 @@
     }
     H.yonetim("ap_geribildirim_liste", {}).then(function (d) { gbSatir = (d && d.satirlar) || []; gbSayi(); }, function () {});
     function yetkisiz(err) {
+      if (/oturum_gerekli/.test(String(err && err.message))) {
+        fill(".admin", '<section class="card empty" style="grid-column:1/-1"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:30px">bir adım kaldı</span><h1 class="h2" style="font-size:32px">Güvenlik için yeniden giriş yap.</h1><p class="muted">Yönetim ekranı artık her girişte verilen oturum anahtarıyla açılıyor. Bir kez çıkış yapıp tekrar girmen yeterli.</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'giris/?mod=giris&devam=' + encodeURIComponent(location.pathname + location.search) + '" data-k="yeniden-giris">Yeniden giriş yap</a></div></section>');
+        var yg = $('[data-k="yeniden-giris"]'); if (yg) yg.addEventListener("click", function () { H.cikis(); });
+        return;
+      }
       var y = /yetki/.test(String(err && err.message));
       fill(".admin", '<section class="card empty" style="grid-column:1/-1"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:30px">' + (y ? "burası öğretmen odası" : "hay aksi") + '</span><h1 class="h2" style="font-size:32px">' + (y ? "Bu sayfa yönetici hesabı içindir." : "Bağlantı kurulamadı.") + '</h1><p class="muted">' + (y ? "Hesabın yönetici değil." : "İnternetini kontrol edip sayfayı yenile.") + '</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'panel/">Panelime dön</a></div></section>');
     }

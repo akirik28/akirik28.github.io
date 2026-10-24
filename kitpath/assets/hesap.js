@@ -12,9 +12,11 @@
      ap_yonetici_hesaplar             yönetici: bütün hesaplar (öğrenci listesi, notlar, bekleyen quiz sayısı)
      ap_geribildirim_gonder           herkes: hata / öneri / beğendim mesajı (hesapsızsa isimsiz)
      ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
+     ap_cikis                         oturum anahtarını siler (yönetici çağrıları p_token ister)
    Yerelde:
      ap-hesap:v1:hesaplar   bu cihazda açılmış hesaplar [{ id, name, email }]
      ap-hesap:v1:oturum     açık oturumun kimliği ("Çıkış yap"a kadar)
+     ap-hesap:v1:anahtar:<id> girişte gelen oturum anahtarı (yönetici işlemleri için)
      ap-hesap:v1:profil:<id> sunucudan son gelen profil
      ap-hesap:v1:bekleyen   sunucuya henüz gitmemiş kayıt anahtarları
    ========================================================================== */
@@ -123,6 +125,7 @@
     if (typeof d.id !== "string") throw new Error("sunucu");
     var h = { id: d.id, name: String(d.ad || ""), email: String(email).trim().toLowerCase() };
     ekle(h); ls(AKTIF, h.id);
+    if (typeof d.token === "string") ls(anahtarKey(h.id), d.token); else ld(anahtarKey(h.id));
     if (yeni) misafirdenAl(h.id);
     return sinirli(Promise.all([cek(h.id), profilYenile()]), 4000).then(function () { return h; });
   }
@@ -130,6 +133,8 @@
   /* ---------------- profil ---------------- */
   function aktifId() { var h = bul(lg(AKTIF)); return h ? h.id : null; }
   function profilKey(id) { return P + "profil:" + id; }
+  /* oturum anahtarı: girişte sunucudan gelir; yönetici işlemleri yalnızca bununla çalışır */
+  function anahtarKey(id) { return P + "anahtar:" + id; }
   function profil() { var id = aktifId(); return id ? oku(lg(profilKey(id)), null) : null; }
   function cagir(f, args) {
     var id = aktifId();
@@ -167,7 +172,12 @@
     giris: function (email, sifre) {
       return rpc("ap_giris", { p_email: email, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, false); });
     },
-    cikis: function () { if (Object.keys(bekleyen()).length) gonder(true); ld(AKTIF); },
+    cikis: function () {
+      if (Object.keys(bekleyen()).length) gonder(true);
+      var id = lg(AKTIF), t = id ? lg(anahtarKey(id)) : null;
+      if (t) { rpc("ap_cikis", { p_token: t }, true).then(null, function () {}); ld(anahtarKey(id)); }
+      ld(AKTIF);
+    },
     profil: profil,
     profilYenile: profilYenile,
     engel: engel,
@@ -182,7 +192,10 @@
     },
     yonetim: function (f, args) {
       if (!YONETIM.test(f)) return Promise.reject(new Error("gecersiz"));
-      return cagir(f, args || {});
+      var id = aktifId(), t = id ? lg(anahtarKey(id)) : null, b = { p_token: t }, k;
+      if (!t) return Promise.reject(new Error(id ? "oturum_gerekli" : "oturum_yok"));
+      for (k in args) if (Object.prototype.hasOwnProperty.call(args, k)) b[k] = args[k];
+      return cagir(f, b);
     },
     hataMetni: function (e) {
       var k = String(e && e.message || "");
@@ -204,6 +217,7 @@
         gecersiz_max: "Tam puan 1 ile 1000 arasında olmalı.",
         eksik: "Başlık, ders ve son tarihi doldur.",
         oturum_yok: "Önce giriş yap.",
+        oturum_gerekli: "Güvenlik için bir kez yeniden giriş yapman gerekiyor.",
         mesaj_gerekli: "Birkaç kelime yaz.",
         gecersiz_tur: "Önce türünü seç: hata, öneri ya da beğendim.",
         cok_fazla: "Kısa sürede çok mesaj gitti; biraz sonra tekrar dene."
