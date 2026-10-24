@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Kıtlık ve Ekonomist Gibi Düşünmek",
       "en": "Scarcity",
       "accent": "#F6B94A",
-      "seconds": 276,
+      "seconds": 320,
       "terms": [
         "Scarcity",
         "Shortage",
@@ -156,7 +156,7 @@ window.KIT = {
       "title": "Fırsat Maliyeti ve PPC",
       "en": "Opportunity Cost and the PPC",
       "accent": "#2FD6B9",
-      "seconds": 239,
+      "seconds": 287,
       "terms": [
         "Opportunity cost",
         "Trade-offs",
@@ -364,7 +364,7 @@ window.KIT = {
       "title": "PPC'nin Şekli ve Kayması",
       "en": "PPC Shape and Shifts",
       "accent": "#58C9FF",
-      "seconds": 263,
+      "seconds": 310,
       "terms": [
         "Constant opportunity cost",
         "Law of increasing opportunity cost",
@@ -544,7 +544,7 @@ window.KIT = {
       "title": "Mutlak ve Karşılaştırmalı Üstünlük",
       "en": "Absolute vs Comparative Advantage",
       "accent": "#FF6F61",
-      "seconds": 268,
+      "seconds": 334,
       "terms": [
         "Absolute advantage",
         "Comparative advantage",
@@ -706,7 +706,7 @@ window.KIT = {
       "title": "Uzmanlaşma ve Ticaretten Kazanç",
       "en": "Specialization and Gains from Trade",
       "accent": "#A98BFF",
-      "seconds": 257,
+      "seconds": 319,
       "terms": [
         "Specialization",
         "Comparative advantage",
@@ -876,7 +876,7 @@ window.KIT = {
       "title": "Talep Yasası",
       "en": "The Law of Demand",
       "accent": "#B9E552",
-      "seconds": 267,
+      "seconds": 313,
       "terms": [
         "Demand",
         "Quantity demanded",
@@ -1016,7 +1016,7 @@ window.KIT = {
       "title": "Talebi Kaydıran Etkenler",
       "en": "Demand Shifters",
       "accent": "#FF7DB8",
-      "seconds": 274,
+      "seconds": 320,
       "terms": [
         "Change in demand",
         "Increase in demand",
@@ -1173,7 +1173,7 @@ window.KIT = {
       "title": "Arz Yasası ve Arzı Kaydıranlar",
       "en": "Supply",
       "accent": "#5C8DFF",
-      "seconds": 276,
+      "seconds": 325,
       "terms": [
         "Supply",
         "Quantity supplied",
@@ -1397,7 +1397,7 @@ window.KIT = {
       "title": "Denge, Fazla ve Kıtlık",
       "en": "Equilibrium and Disequilibrium",
       "accent": "#F6B94A",
-      "seconds": 241,
+      "seconds": 279,
       "terms": [
         "Equilibrium",
         "Equilibrium price",
@@ -1582,7 +1582,7 @@ window.KIT = {
       "title": "Dengenin Değişmesi ve Çift Kayma",
       "en": "Changes in Equilibrium",
       "accent": "#2FD6B9",
-      "seconds": 254,
+      "seconds": 303,
       "terms": [
         "Change in demand",
         "Change in supply",

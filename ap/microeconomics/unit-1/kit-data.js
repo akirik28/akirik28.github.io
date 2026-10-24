@@ -15,7 +15,7 @@ window.KIT = {
       "title": "Kıtlık ve Ekonomist Gibi Düşünmek",
       "en": "Scarcity",
       "accent": "#F6B94A",
-      "seconds": 276,
+      "seconds": 320,
       "terms": [
         "Scarcity",
         "Shortage",
@@ -156,7 +156,7 @@ window.KIT = {
       "title": "Ekonomik Sistemler ve Kaynak Dağılımı",
       "en": "Resource Allocation and Economic Systems",
       "accent": "#B9E552",
-      "seconds": 263,
+      "seconds": 321,
       "terms": [
         "Resource allocation",
         "Economic system",
@@ -292,7 +292,7 @@ window.KIT = {
       "title": "Fırsat Maliyeti ve PPC",
       "en": "Opportunity Cost and the PPC",
       "accent": "#2FD6B9",
-      "seconds": 239,
+      "seconds": 287,
       "terms": [
         "Opportunity cost",
         "Trade-offs",
@@ -500,7 +500,7 @@ window.KIT = {
       "title": "PPC'nin Şekli ve Kayması",
       "en": "PPC Shape and Shifts",
       "accent": "#58C9FF",
-      "seconds": 263,
+      "seconds": 310,
       "terms": [
         "Constant opportunity cost",
         "Law of increasing opportunity cost",
@@ -680,7 +680,7 @@ window.KIT = {
       "title": "Mutlak ve Karşılaştırmalı Üstünlük",
       "en": "Absolute vs Comparative Advantage",
       "accent": "#FF6F61",
-      "seconds": 268,
+      "seconds": 334,
       "terms": [
         "Absolute advantage",
         "Comparative advantage",
@@ -842,7 +842,7 @@ window.KIT = {
       "title": "Uzmanlaşma ve Ticaretten Kazanç",
       "en": "Specialization and Gains from Trade",
       "accent": "#A98BFF",
-      "seconds": 257,
+      "seconds": 319,
       "terms": [
         "Specialization",
         "Comparative advantage",
@@ -1012,7 +1012,7 @@ window.KIT = {
       "title": "Fayda-Maliyet Analizi",
       "en": "Cost-Benefit Analysis",
       "accent": "#FF7DB8",
-      "seconds": 244,
+      "seconds": 296,
       "terms": [
         "Rational decision-making",
         "Cost-benefit analysis",
@@ -1147,7 +1147,7 @@ window.KIT = {
       "title": "Marjinal Analiz ve Fayda",
       "en": "Marginal Analysis and Utility",
       "accent": "#5C8DFF",
-      "seconds": 257,
+      "seconds": 307,
       "terms": [
         "Marginal",
         "Marginal analysis",
@@ -1345,7 +1345,7 @@ window.KIT = {
       "title": "Tüketici Seçimi ve Fayda Maksimizasyonu",
       "en": "Consumer Choice and Utility Maximization",
       "accent": "#FF6F61",
-      "seconds": 260,
+      "seconds": 304,
       "terms": [
         "Budget constraint",
         "Budget line",
