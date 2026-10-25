@@ -77,6 +77,21 @@
     });
   }
 
+  /* öğrenci çağrıları oturum anahtarıyla (p_token) gider. Sunucu anahtarı reddederse (süresi dolmuş / silinmiş anahtar):
+     anahtar silinir, "yeniden giriş" bildirimi tetiklenir ve istek anahtarsız bir kez daha denenir — geçiş aşamasında
+     (kitpath-guvenlik/1-gecis.sql) bu çalışır; anahtar zorunlu olunca (2-zorunlu.sql) öğrenci yeniden giriş yapar. */
+  function anahtarKey(id) { return P + "anahtar:" + id; }
+  function anahtarYok() { try { window.dispatchEvent(new Event("kitpath:anahtar-yok")); } catch (e) {} }
+  function rpcA(f, govde, keepalive) {
+    var t = govde && govde.p_id ? lg(anahtarKey(govde.p_id)) : null;
+    if (!t) return rpc(f, govde, keepalive);
+    var b = {}, k; for (k in govde) if (Object.prototype.hasOwnProperty.call(govde, k)) b[k] = govde[k];
+    b.p_token = t;
+    function tekrar() { ld(anahtarKey(govde.p_id)); anahtarYok(); var c = {}, j; for (j in govde) if (j !== "p_token" && Object.prototype.hasOwnProperty.call(govde, j)) c[j] = govde[j]; return rpc(f, c, keepalive); }
+    return rpc(f, b, keepalive).then(function (d) { return d && d.hata === "oturum_gerekli" ? tekrar() : d; },
+      function (e) { if (/oturum_gerekli/.test(String(e && e.message))) return tekrar(); throw e; });
+  }
+
   /* ---------------- gönderilecekler kuyruğu ---------------- */
   function bekleyen() { var b = oku(lg(BEK), {}); return b && typeof b === "object" ? b : {}; }
   function bekleyenYaz(b) { ls(BEK, JSON.stringify(b)); }
@@ -97,7 +112,7 @@
       var id = sahibi(k);
       if (!id) return null;
       var v = lg(k);
-      return rpc("ap_yaz", { p_id: id, p_anahtar: k, p_deger: v }, keepalive).then(function () {
+      return rpcA("ap_yaz", { p_id: id, p_anahtar: k, p_deger: v }, keepalive).then(function () {
         var simdi = bekleyen();
         if (lg(k) === v) { delete simdi[k]; bekleyenYaz(simdi); }   /* gönderirken değiştiyse kuyrukta kalsın */
       }, function (e) {
@@ -110,7 +125,7 @@
 
   /* ---------------- sunucudan çek ---------------- */
   function cek(id) {
-    return rpc("ap_cek", { p_id: id }).then(function (rows) {
+    return rpcA("ap_cek", { p_id: id }).then(function (rows) {
       var b = bekleyen(), sunucu = {};
       (Array.isArray(rows) ? rows : []).forEach(function (r) {
         if (!r || typeof r.anahtar !== "string" || r.anahtar.indexOf(":" + id + ":") < 0) return;
@@ -151,6 +166,7 @@
     if (typeof d.id !== "string") throw new Error("sunucu");
     var h = { id: d.id, name: String(d.ad || ""), email: String(email).trim().toLowerCase() };
     ekle(h); ls(AKTIF, h.id);
+    if (typeof d.token === "string") ls(anahtarKey(h.id), d.token); else ld(anahtarKey(h.id));
     if (yeni) devral(h);
     return sinirli(Promise.all([cek(h.id), profilYenile()]), 4000).then(function () { return h; });
   }
@@ -166,7 +182,7 @@
     if (!id) return Promise.reject(new Error("oturum_yok"));
     var b = { p_id: id }, k;
     for (k in args) if (Object.prototype.hasOwnProperty.call(args, k)) b[k] = args[k];
-    return rpc(f, b).then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
+    return rpcA(f, b).then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
   }
   function profilYenile() {
     var id = aktifId();
@@ -201,7 +217,12 @@
     giris: function (email, sifre) {
       return rpc("ap_giris", { p_email: email, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, false); });
     },
-    cikis: function () { if (Object.keys(bekleyen()).length) gonder(true); ld(AKTIF); },
+    cikis: function () {
+      if (Object.keys(bekleyen()).length) gonder(true);
+      var id = lg(AKTIF), t = id ? lg(anahtarKey(id)) : null;
+      if (t) { rpc("ap_cikis", { p_token: t }, true).then(null, function () {}); ld(anahtarKey(id)); }
+      ld(AKTIF);
+    },
     profil: profil,
     profilYenile: profilYenile,
     engel: engel,
@@ -231,7 +252,8 @@
         katilim_gerekli: "Bir şeyler eksik; sayfayı yenileyip tekrar dene.",
         yetki_yok: "Bu işlem için yönetici hesabı gerekiyor.",
         gecersiz_max: "Tam puan 1 ile 1000 arasında olmalı.",
-        eksik: "Başlık, ders ve son tarihi doldur."
+        eksik: "Başlık, ders ve son tarihi doldur.",
+        oturum_gerekli: "Güvenlik için bir kez yeniden giriş yapman gerekiyor."
       })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
     },
     yaz: isaretle,
