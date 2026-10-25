@@ -1424,7 +1424,7 @@
   pages.notlarim = function () {
     if (HESAPLI && !notTakibi()) {
       var mm = $("main") || $("#main");
-      if (mm) mm.innerHTML = '<section class="card empty" style="margin-top:24px"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:28px">burası sana kapalı</span><h1 class="h2" style="font-size:30px">Quiz ve not takibi Üsküdar Amerikan Lisesi 11. sınıflar içindir.</h1><p class="muted">Bütün kitler ve defterler sana açık; rafından devam edebilirsin.</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'kitlerim/">Kitlerime git</a></div></section>';
+      if (mm) mm.innerHTML = '<section class="card empty" style="margin-top:24px"><div class="stack" style="flex:1 1 320px;gap:12px"><span class="hand" style="color:var(--macro);font-size:28px">burası sana kapalı</span><h1 class="h2" style="font-size:30px">Quiz ve not takibi Üsküdar American Academy 11. sınıflar içindir.</h1><p class="muted">Bütün kitler ve defterler sana açık; rafından devam edebilirsin.</p><a class="btn btn--primary" style="align-self:flex-start" href="' + ROOT + 'kitlerim/">Kitlerime git</a></div></section>';
       return;
     }
     var f = "hepsi", satir = [];
@@ -1764,7 +1764,7 @@
       var kil = ogrSatir.filter(function (s) { return s.bekleyen > 0; }).length;
       var on = ogrSatir.filter(function (s) { return s.sinif === 10; }).length, onbir = ogrSatir.filter(function (s) { return s.sinif === 11; }).length;
       var okSay = function (o) { return ogrSatir.filter(function (s) { return s.okul === o; }).length; };
-      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(okSay("uaa"), "Üsküdar Amerikan", "Robert " + okSay("robert") + " · Koç " + okSay("koc")), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
+      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(okSay("uaa"), "Üsküdar American Academy", "Robert " + okSay("robert") + " · Hisar " + okSay("koc")), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
       var c = $('[data-k="ogr-sayi"]'); if (c) { c.textContent = String(n); c.hidden = !n; }
     }
     function ogrYukle() {
@@ -1902,8 +1902,8 @@
   };
 
   /* yönetim yardımcıları (gerçek ve örnek ekran) */
-  var OKUL_AD = { robert: "Robert Kolej", uaa: "Üsküdar Amerikan Lisesi", koc: "Koç Lisesi" };
-  var OKUL_KISA = { robert: "RC", uaa: "ÜAL", koc: "KL" };
+  var OKUL_AD = { robert: "Robert College", uaa: "Üsküdar American Academy", koc: "Hisar School" };
+  var OKUL_KISA = { robert: "RC", uaa: "UAA", koc: "HS" };
   function yonStat(n, etiket, alt, ton) {
     return '<div class="card stat yon-stat"' + (ton ? ' data-ton="' + ton + '"' : "") + '><b>' + esc(n == null ? "—" : n) + '</b><span style="font-weight:600">' + esc(etiket) + '</span><span class="muted" style="font-size:13px">' + esc(alt || "") + '</span></div>';
   }
@@ -2461,12 +2461,28 @@
     });
   };
 
+  /* ---------- güvenlik: oturum anahtarı olmayan hesaba nazik "bir kez yeniden giriş yap" şeridi ----------
+     24 Ekim'den önce giriş yapıp oturumda kalanlarda anahtar yok; ilerlemeleri sunucuda durur, yeniden girince her şey gelir. */
+  function anahtarSerit(zorla) {
+    if (!HESAPLI || !H || !H.anahtarVar || /^(giris|hosgeldin|deneme|seviye-sinav)$/.test(body.dataset.page)) return;
+    if (!zorla && (H.anahtarVar() || (function () { try { return sessionStorage.getItem("kp-anahtar-serit") === "1"; } catch (e) { return false; } })())) return;
+    if ($(".anahtar-serit")) return;
+    var h = $('[data-k="header"]'); if (!h) return;
+    h.insertAdjacentHTML("afterend", '<aside class="anahtar-serit" role="status"><span class="anahtar-serit__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>' +
+      '<span class="anahtar-serit__m"><strong>Güvenlik güncellemesi</strong><span>Hesabını korumak için bir kez çıkış yapıp tekrar giriş yap. İlerlemen kaybolmaz.</span></span>' +
+      '<a class="btn btn--primary btn--sm" href="' + ROOT + 'giris/?mod=giris&devam=' + encodeURIComponent(buradan()) + '" data-k="anahtar-giris">Yeniden giriş yap</a><button type="button" class="anahtar-serit__x" aria-label="Şimdilik gizle">×</button></aside>');
+    $('[data-k="anahtar-giris"]').addEventListener("click", function () { H.cikis(); });
+    $(".anahtar-serit__x").addEventListener("click", function () { try { sessionStorage.setItem("kp-anahtar-serit", "1"); } catch (e) {} var x = $(".anahtar-serit"); if (x) x.remove(); });
+  }
+  window.addEventListener("kitpath:anahtar-yok", function () { anahtarSerit(true); });
+
   /* ---------- başlat ---------- */
   header();
   bottomNav();
   var page = body.dataset.page;
   if (pages[page]) pages[page]();
   geriBildirim();
+  anahtarSerit();
   sevBant();
   sevPanel();
   window.Kitora = { theme: theme, art: art, toast: toast };

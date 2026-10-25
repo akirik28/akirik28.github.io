@@ -84,6 +84,21 @@
     });
   }
 
+  /* öğrenci çağrıları oturum anahtarıyla (p_token) gider. Sunucu anahtarı reddederse (süresi dolmuş / silinmiş anahtar):
+     anahtar silinir, "yeniden giriş" bildirimi tetiklenir ve istek anahtarsız bir kez daha denenir — geçiş aşamasında
+     (kitpath-guvenlik/1-gecis.sql) bu çalışır; anahtar zorunlu olunca (2-zorunlu.sql) öğrenci yeniden giriş yapar. */
+  function anahtarKey(id) { return P + "anahtar:" + id; }
+  function anahtarYok() { try { window.dispatchEvent(new Event("kitpath:anahtar-yok")); } catch (e) {} }
+  function rpcA(f, govde, keepalive) {
+    var t = govde && govde.p_id ? lg(anahtarKey(govde.p_id)) : null;
+    if (!t) return rpc(f, govde, keepalive);
+    var b = {}, k; for (k in govde) if (Object.prototype.hasOwnProperty.call(govde, k)) b[k] = govde[k];
+    b.p_token = t;
+    function tekrar() { ld(anahtarKey(govde.p_id)); anahtarYok(); var c = {}, j; for (j in govde) if (j !== "p_token" && Object.prototype.hasOwnProperty.call(govde, j)) c[j] = govde[j]; return rpc(f, c, keepalive); }
+    return rpc(f, b, keepalive).then(function (d) { return d && d.hata === "oturum_gerekli" ? tekrar() : d; },
+      function (e) { if (/oturum_gerekli/.test(String(e && e.message))) return tekrar(); throw e; });
+  }
+
   /* ---------------- gönderilecekler kuyruğu (canlı hesap.js ile aynı) ---------------- */
   function bekleyen() { var b = oku(lg(BEK), {}); return b && typeof b === "object" ? b : {}; }
   function bekleyenYaz(b) { ls(BEK, JSON.stringify(b)); }
@@ -105,7 +120,7 @@
       if (!id) return null;
       var v = lg(k);
       if (v == null) { var s0 = bekleyen(); delete s0[k]; bekleyenYaz(s0); return null; }   /* silinen kayıt: sunucuya boş değer gönderme */
-      return rpc("ap_yaz", { p_id: id, p_anahtar: k, p_deger: v }, keepalive).then(function () {
+      return rpcA("ap_yaz", { p_id: id, p_anahtar: k, p_deger: v }, keepalive).then(function () {
         var simdi = bekleyen();
         if (lg(k) === v) { delete simdi[k]; bekleyenYaz(simdi); }
       }, function (e) {
@@ -117,7 +132,7 @@
   window.addEventListener("online", function () { gonder(); });
 
   function cek(id) {
-    return rpc("ap_cek", { p_id: id }).then(function (rows) {
+    return rpcA("ap_cek", { p_id: id }).then(function (rows) {
       var b = bekleyen(), sunucu = {};
       (Array.isArray(rows) ? rows : []).forEach(function (r) {
         if (!r || typeof r.anahtar !== "string" || r.anahtar.indexOf(":" + id + ":") < 0) return;
@@ -157,15 +172,14 @@
   /* ---------------- profil ---------------- */
   function aktifId() { var h = bul(lg(AKTIF)); return h ? h.id : null; }
   function profilKey(id) { return P + "profil:" + id; }
-  /* oturum anahtarı: girişte sunucudan gelir; yönetici işlemleri yalnızca bununla çalışır */
-  function anahtarKey(id) { return P + "anahtar:" + id; }
+  /* oturum anahtarı: girişte sunucudan gelir (anahtarKey, rpcA yukarıda) */
   function profil() { var id = aktifId(); return id ? oku(lg(profilKey(id)), null) : null; }
   function cagir(f, args) {
     var id = aktifId();
     if (!id) return Promise.reject(new Error("oturum_yok"));
     var b = { p_id: id }, k;
     for (k in args) if (Object.prototype.hasOwnProperty.call(args, k)) b[k] = args[k];
-    return rpc(f, b).then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
+    return rpcA(f, b).then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
   }
   function profilYenile() {
     var id = aktifId();
@@ -187,6 +201,8 @@
   window.HESAP = {
     hesaplar: hesaplar,
     bul: bul,
+    /* açık oturumda oturum anahtarı var mı (yoksa "bir kez yeniden giriş yap" şeridi gösterilir) */
+    anahtarVar: function () { var id = lg(AKTIF); return !!(id && lg(anahtarKey(id))); },
     aktif: function () { return bul(lg(AKTIF)); },
     yenile: function () { var h = bul(lg(AKTIF)); return h ? sinirli(cek(h.id), 3000).then(function () { return h; }) : Promise.resolve(null); },
     /* yeni hesap: ad + soyad + e-posta + şifre; sunucu tek "ad" alanı tutar ("Ad Soyad", en çok 40 harf) */
@@ -219,7 +235,7 @@
     notGir: function (quiz, puan) { return cagir("ap_not_gir", { p_quiz: quiz, p_puan: puan }).then(profilYenile); },
     /* geri bildirim: hesapsız da gönderilebilir (o zaman isimsiz kaydedilir) */
     geriBildirim: function (tur, mesaj, sayfa, cihaz) {
-      return rpc("ap_geribildirim_gonder", { p_id: aktifId(), p_tur: tur, p_mesaj: mesaj, p_sayfa: sayfa, p_tarayici: cihaz || "" })
+      return rpcA("ap_geribildirim_gonder", { p_id: aktifId(), p_tur: tur, p_mesaj: mesaj, p_sayfa: sayfa, p_tarayici: cihaz || "" })
         .then(function (d) { if (d && d.hata) throw new Error(d.hata); return d; });
     },
     yonetim: function (f, args) {
