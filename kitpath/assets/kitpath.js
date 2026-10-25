@@ -1764,7 +1764,7 @@
       var kil = ogrSatir.filter(function (s) { return s.bekleyen > 0; }).length;
       var on = ogrSatir.filter(function (s) { return s.sinif === 10; }).length, onbir = ogrSatir.filter(function (s) { return s.sinif === 11; }).length;
       var okSay = function (o) { return ogrSatir.filter(function (s) { return s.okul === o; }).length; };
-      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(okSay("uaa"), "Üsküdar American Academy", "Robert " + okSay("robert") + " · Hisar " + okSay("koc")), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
+      fill('[data-k="ogr-ozet"]', [yonStat(n, "hesap", onbir + " tane 11. sınıf · " + on + " tane 10. sınıf"), yonStat(okSay("uaa"), "Üsküdar American Academy", "Robert " + okSay("robert") + " · Hisar " + okSay("koc") + " · Diğer " + okSay("diger")), yonStat(aktif, "son 7 gün", "giriş yapan"), yonStat(kil, "kilitli", kil ? "notu bekleniyor" : "herkes açık", kil ? "hot" : "")].join(""));
       var c = $('[data-k="ogr-sayi"]'); if (c) { c.textContent = String(n); c.hidden = !n; }
     }
     function ogrYukle() {
@@ -1902,8 +1902,8 @@
   };
 
   /* yönetim yardımcıları (gerçek ve örnek ekran) */
-  var OKUL_AD = { robert: "Robert College", uaa: "Üsküdar American Academy", koc: "Hisar School" };
-  var OKUL_KISA = { robert: "RC", uaa: "UAA", koc: "HS" };
+  var OKUL_AD = { robert: "Robert College", uaa: "Üsküdar American Academy", koc: "Hisar School", diger: "Diğer okul" };
+  var OKUL_KISA = { robert: "RC", uaa: "UAA", koc: "HS", diger: "Diğer" };
   function yonStat(n, etiket, alt, ton) {
     return '<div class="card stat yon-stat"' + (ton ? ' data-ton="' + ton + '"' : "") + '><b>' + esc(n == null ? "—" : n) + '</b><span style="font-weight:600">' + esc(etiket) + '</span><span class="muted" style="font-size:13px">' + esc(alt || "") + '</span></div>';
   }

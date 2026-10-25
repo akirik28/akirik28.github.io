@@ -1101,7 +1101,7 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 
 /* hoş geldin: okul seçimi */
 .ob__soru { margin: 6px 0 -6px; font-size: 20px; }
-.okul-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.okul-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .pick--okul { flex-direction: row; align-items: center; gap: 12px; padding: 16px 18px; text-align: left; font-size: 16px; line-height: 1.25; }
 .okul-rozet { flex: 0 0 auto; width: 46px; height: 46px; border-radius: 14px; background: var(--c); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: var(--f-display); font-weight: 800; font-size: 14px; letter-spacing: -.02em; }
 @media (max-width: 720px) { .okul-grid { grid-template-columns: 1fr; } }
@@ -1116,6 +1116,7 @@ html.df-acik, html.df-acik body { overflow: hidden; }
 .yon-okul { display: inline-block; margin-left: 4px; padding: 2px 7px; border-radius: 999px; font-family: var(--f-mono); font-size: 10px; font-weight: 500; color: #fff; background: #3D7BFF; vertical-align: 1px; }
 .yon-okul[data-okul="robert"] { background: #C2413A; }
 .yon-okul[data-okul="koc"] { background: #B07A1E; }
+.yon-okul[data-okul="diger"] { background: #6B7385; }
 
 /* alt menü: öğe sayısı değişebilir (Notlar yalnızca ÜAL 11. sınıfta) — hepsi tek sırada */
 .bottom-nav { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
