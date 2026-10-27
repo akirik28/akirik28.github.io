@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script src="/ap/_kit/hesap.js?v=8"></script><script src="/kitpath/kapi.js?v=4"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Crucible Act 3 Cep Kiti</title>
+<meta name="description" content="The Crucible Act 3 quizi için çalışma kiti: Mr Lloyd'un Old Vic videosundan kesitler, kesit soruları, karakter rehberi, olay sırası, kim söyledi ve Act 2 tarzında deneme testi.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e3b1f'/%3E%3Cg fill='%23e2b746' transform='rotate(-40 30 30)'%3E%3Crect x='14' y='14' width='30' height='13' rx='3'/%3E%3Crect x='26.5' y='27' width='5' height='26' rx='2.5'/%3E%3C/g%3E%3Crect x='30' y='48' width='24' height='6' rx='2' fill='%23e2b746'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script>try{var t=localStorage.getItem('cep-crucible-act3-tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+:root{
+--bg:#f3ecdf;--bg2:#e9dfcc;--card:#fffaf1;--card2:#f7efe1;--ink:#2a2017;--ink2:#6a5a49;--ink3:#93826e;
+--line:#dccdb3;--wood:#6e3b1f;--wood2:#8d4e27;--wood3:#4a2714;--brass:#a77a12;--brass2:#d3a531;--brassink:#3a2a05;
+--ok:#2c7a4b;--okbg:#e3f1e6;--bad:#b0362a;--badbg:#f8e3df;--warn:#a8670f;--warnbg:#f8ecd6;
+--shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 30px -18px rgba(60,30,10,.45);
+--r:14px;--serif:'Instrument Serif',Georgia,'Times New Roman',serif;--sans:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+--line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+--ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}}
+:root[data-theme="dark"]{
+--bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+--line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+--ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans);min-height:100vh;overflow-x:hidden;
+background-image:radial-gradient(1200px 500px at 80% -10%,color-mix(in srgb,var(--brass) 10%,transparent),transparent 60%);}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brass2);outline-offset:2px}
+h1,h2,h3{margin:0;font-weight:400}
+a{color:var(--brass)}
+[lang="en"]{hyphens:manual}
+/* top bar */
+.top{position:sticky;top:0;z-index:30;color:#f6e9cf;background:linear-gradient(180deg,#3b1f0f,#5a2f17 55%,#4a2612);border-bottom:2px solid #c99a2e;box-shadow:0 6px 18px -10px rgba(0,0,0,.6)}
+.top-in{max-width:980px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1;color:inherit;text-decoration:none}
+.brand svg{width:32px;height:32px;flex:none;color:#e2b746}
+.brand b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;line-height:1;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.score{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;flex:none}
+.score b{font-family:var(--mono);font-size:14px;font-weight:500}
+.score span{font-size:11px;opacity:.8}
+.bar{width:84px;height:4px;border-radius:4px;background:rgba(0,0,0,.3);margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#e2b746,#f6dc8a);width:0;transition:width .5s}
+.iconbtn{width:36px;height:36px;border-radius:10px;border:1px solid rgba(226,183,70,.4);background:rgba(0,0,0,.18);color:#f6e9cf;display:grid;place-items:center;flex:none;text-decoration:none}
+.iconbtn svg{width:18px;height:18px}
+/* tabs */
+.tabs{position:sticky;top:var(--toph,54px);z-index:25;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs-in{max-width:980px;margin:0 auto;display:flex;gap:4px;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid transparent;background:none;border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab .n{font-family:var(--mono);font-size:11px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);font-weight:500}
+.tab[aria-current="page"]{background:var(--card);border-color:var(--line);color:var(--ink);box-shadow:var(--shadow)}
+.tab[aria-current="page"] .n{background:var(--brass);color:var(--brassink)}
+main{max-width:980px;margin:0 auto;padding:18px 16px 80px}
+.view{display:none}.view.on{display:block;animation:vin .3s ease}
+@keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* generic */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.card+.card{margin-top:14px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.h1{font-family:var(--serif);font-style:italic;font-size:clamp(30px,6vw,46px);line-height:1.02;margin:4px 0 8px}
+.h2{font-family:var(--serif);font-style:italic;font-size:clamp(23px,4.4vw,30px);line-height:1.1;margin:2px 0 6px}
+.lead{color:var(--ink2);margin:0 0 6px;max-width:66ch}
+.muted{color:var(--ink2)}.small{font-size:13px}.tiny{font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card2);border-radius:11px;padding:9px 15px;font-weight:650;font-size:15px;display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;transition:transform .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn.pri{background:linear-gradient(180deg,var(--brass2),var(--brass));border-color:color-mix(in srgb,var(--brass) 70%,#000);color:var(--brassink)}
+.btn.wood{background:linear-gradient(180deg,var(--wood2),var(--wood));border-color:var(--wood3);color:#f8ead0}
+.btn.sm{padding:6px 11px;font-size:13px;border-radius:9px}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600;color:var(--ink2)}
+.chip.ok{color:var(--ok);background:var(--okbg)}.chip.bad{color:var(--bad);background:var(--badbg)}.chip.warn{color:var(--warn);background:var(--warnbg)}
+.chip.brass{color:var(--brassink);background:var(--brass2);border-color:var(--brass)}
+.note{border-left:3px solid var(--brass);background:var(--card2);padding:10px 12px;border-radius:0 10px 10px 0;font-size:14px;color:var(--ink2)}
+.note b{color:var(--ink)}
+ul.dots{margin:6px 0 0;padding-left:20px}ul.dots li{margin:3px 0}
+/* kesit stepper */
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 14px}
+.step{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:6px 10px;font-size:13px;font-weight:650;color:var(--ink2);display:flex;gap:6px;align-items:center}
+.step .m{font-family:var(--mono);font-size:11px}
+.step.on{background:var(--brass2);border-color:var(--brass);color:var(--brassink)}
+.step.done:not(.on){color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+.tc{font-family:var(--mono);font-size:13px;color:var(--brass);white-space:nowrap}
+.scenes{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.scenes li{display:flex;gap:10px;align-items:baseline}
+.scenes button{border:0;background:none;padding:0;font:inherit}
+.scenes button.tc{text-decoration:underline dotted;text-underline-offset:3px}
+/* player */
+.player{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0d0a07}
+.ratio{position:relative;width:100%;aspect-ratio:16/9;background:#0d0a07}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poster{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#f3e2bf;padding:16px;background:radial-gradient(60% 70% at 50% 30%,#3d2414,#0d0a07)}
+.poster .big{font-family:var(--serif);font-style:italic;font-size:clamp(22px,5vw,34px);line-height:1.1}
+.poster .tiny{opacity:.8}
+.pbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;background:var(--card2);border-top:1px solid var(--line);font-size:13px}
+.pbar .clock{font-family:var(--mono);font-size:14px;color:var(--ink)}
+.pbar .grow{flex:1}
+/* questions */
+.qs{display:grid;gap:12px;margin-top:14px}
+.q{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card)}
+.q .qn{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.q .qt{font-weight:650;margin:4px 0 10px}
+.q .qt q,.quote{font-family:var(--serif);font-style:italic;font-size:1.12em;font-weight:400}
+.opts{display:grid;gap:6px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--card2);border-radius:10px;padding:9px 12px;font-size:15px;display:flex;gap:10px;align-items:flex-start;line-height:1.35}
+.opt .k{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-top:2px;flex:none}
+.opt:hover:not(:disabled){border-color:var(--brass)}
+.opt.sel{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass) inset}
+.opt.ok{border-color:var(--ok);background:var(--okbg);color:var(--ink)}
+.opt.bad{border-color:var(--bad);background:var(--badbg);color:var(--ink)}
+.opt:disabled{cursor:default}
+.exp{margin-top:10px;font-size:14px;padding:10px 12px;border-radius:10px;background:var(--card2);border:1px dashed var(--line)}
+.exp b.ok{color:var(--ok)}.exp b.bad{color:var(--bad)}
+.multi{font-size:12px;color:var(--warn);font-weight:700;letter-spacing:.04em}
+/* characters */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}
+.fbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:650;color:var(--ink2)}
+.fbtn.on{background:var(--wood);color:#f8ead0;border-color:var(--wood3)}
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.ch{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.ch h3{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.1}
+.ch .who{font-size:14px;color:var(--ink2);margin:4px 0 8px}
+.ch .a3{font-size:14px}
+.ch .a3 b{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:2px 7px;display:inline-block;margin-top:6px}
+.tag.on{background:var(--okbg);color:var(--ok)}.tag.ment{background:var(--warnbg);color:var(--warn)}.tag.off{background:var(--bg2);color:var(--ink3)}
+/* order */
+.pool,.seq{display:grid;gap:6px}
+.ev{text-align:left;border:1px solid var(--line);background:var(--card2);border-radius:10px;padding:9px 12px;font-size:14.5px;display:flex;gap:10px;line-height:1.35}
+.ev .k{font-family:var(--mono);font-size:12px;color:var(--brass);flex:none;min-width:1.6em}
+.ev.ok{border-color:var(--ok);background:var(--okbg)}.ev.bad{border-color:var(--bad);background:var(--badbg)}
+.timeline{list-style:none;margin:10px 0 0;padding:0;border-left:2px solid var(--brass);display:grid;gap:10px}
+.timeline li{padding-left:14px;position:relative;font-size:14.5px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--brass2);border:2px solid var(--card)}
+/* symbols */
+.syms{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.sym{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.sym h3{font-weight:700;font-size:16px}
+.sym p{margin:6px 0 0;font-size:14px;color:var(--ink2)}
+/* test */
+.result{font-family:var(--serif);font-style:italic;font-size:clamp(34px,8vw,56px);line-height:1}
+.sticky-submit{position:sticky;bottom:12px;display:flex;justify-content:center;margin-top:14px}
+@media (max-width:560px){.card{padding:14px}.score .bar{width:64px}.brand span{display:none}.q{padding:12px}}
+@media print{.top,.tabs,.player,.sticky-submit{display:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="/kitpath/kitlerim/" title="Kitpath">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="currentColor" transform="rotate(-40 30 30)"><rect x="14" y="14" width="30" height="13" rx="3"/><rect x="26.5" y="27" width="5" height="26" rx="2.5"/></g><rect x="30" y="48" width="24" height="6" rx="2" fill="currentColor"/></svg>
+      <div style="min-width:0"><span>The Crucible · Act 3</span><b>Mahkeme odası</b></div>
+    </a>
+    <div class="score" title="İlk denemede doğru cevapladığın sorular"><b id="scoreTxt">0/0</b><span>ilk denemede doğru</span><div class="bar"><i id="scoreBar"></i></div></div>
+    <button class="iconbtn" id="themeBtn" aria-label="Tema değiştir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+<nav class="tabs" id="tabs"><div class="tabs-in" id="tabsIn"></div></nav>
+
+<main>
+<!-- ============ BAŞLA ============ -->
+<section class="view" id="v-basla">
+  <div class="card">
+    <div class="eyebrow" lang="en">Arthur Miller · The Crucible · Act Three</div>
+    <h1 class="h1">Act 3 quiz kiti</h1>
+    <p class="lead">Quiz test olacak: <b>kim kime ne dedi</b>, <b>olaylar ve sıraları</b>, <b>yorum</b> (tema, sembol, edebi sanat, safsata). Sorular Mr Lloyd'un Act 2 sınavının tarzında, İngilizce; açıklamalar Türkçe.</p>
+    <div class="row" style="margin-top:12px">
+      <button class="btn pri" data-go="kesit">▶ Kesit 1'den başla</button>
+      <button class="btn" data-go="karakter">Karakterler</button>
+      <button class="btn" data-go="test">Deneme testi</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Önerilen sıra (≈ 2 saat)</h2>
+    <ul class="dots">
+      <li><b>Karakterler</b> (10 dk): Act 3'te kim sahnede, kim sadece anılıyor?</li>
+      <li><b>Kesitler</b> (≈ 75 dk): 7 video kesiti. Her kesiti izle, hemen altındaki soruları çöz. Yanlışta doğrusu ve nedeni açılır.</li>
+      <li><b>Olay sırası</b> ve <b>Kim söyledi</b> (20 dk): sınavdaki "who is talking to whom" soruları buradan gelir.</li>
+      <li><b>Semboller ve terimler</b> (10 dk), sonra <b>Deneme testi</b> (30 soru, sonda puan).</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 class="h2">Act 3 bir bakışta</h2>
+    <p class="lead" style="max-width:none">Yer: Salem toplantı evinin yan odası (vestry room), artık mahkemenin bekleme odası. Proctor, Mary Warren'ı kızların numara yaptığını söylemesi için mahkemeye getirir. Danforth her savunmayı mahkemeye saldırı gibi görür; Giles tutuklanır, 91 imzacıya sorgu emri çıkar. Proctor son çare olarak Abigail'le ilişkisini itiraf eder, ama Elizabeth onun adını korumak için yalan söyler. Abigail "sarı kuş" numarasıyla Mary'yi çökertir; Mary, Proctor'u "Devil's man" diye suçlar. Perde Proctor'un tutuklanması ve Hale'in mahkemeyi bırakmasıyla biter.</p>
+  </div>
+  <div class="card">
+    <h2 class="h2">Video hakkında</h2>
+    <p class="note">Kesitler Mr Lloyd'un Classroom'da paylaştığı <b>“The Crucible: Old Vic”</b> kaydından, onun Drive dosyasından oynatılır; video buraya kopyalanmadı. Oynatmak için tarayıcında <b>okul Google hesabınla</b> (<span lang="en">@my.uaa.k12.tr</span>) giriş yapmış olmalısın. Oynatıcı açılmazsa “Drive'da aç” düğmesini kullan ya da Classroom'dan videoyu açıp kesitin başladığı dakikaya git. Act 3 videoda <span class="tc">1:52:05</span>'te başlar, <span class="tc">2:36:30</span>'da biter.</p>
+    <p class="small muted" style="margin:10px 0 0">Kesit bitiş zamanını oynatıcı kendisi bilmez; kesiti başlatınca sayaç çalışır ve süre dolunca video kapanıp sorular öne çıkar.</p>
+  </div>
+</section>
+
+<!-- ============ KARAKTERLER ============ -->
+<section class="view" id="v-karakter">
+  <div class="card">
+    <div class="eyebrow">Karakter rehberi</div>
+    <h2 class="h2">Bütün karakterler ve Act 3'teki işleri</h2>
+    <p class="lead">Yeşil = Act 3'te sahnede. Turuncu = sahnede yok ama Act 3'te adı geçiyor ya da sesi duyuluyor. Gri = Act 3'te yok.</p>
+    <div class="filters" id="charFilters"></div>
+    <div class="chars" id="chars"></div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Karakter kontrolü</h2>
+    <p class="lead">Kısa ısınma: Act 3'te kim ne iş yapıyor?</p>
+    <div class="qs" id="charQs"></div>
+  </div>
+</section>
+
+<!-- ============ KESİTLER ============ -->
+<section class="view" id="v-kesit">
+  <div class="steps" id="steps"></div>
+  <div id="kesitBox"></div>
+</section>
+
+<!-- ============ OLAY SIRASI ============ -->
+<section class="view" id="v-sira">
+  <div class="card">
+    <div class="eyebrow">Olay sırası</div>
+    <h2 class="h2">Act 3'ü sıraya diz</h2>
+    <p class="lead">Olaylara oyundaki sırayla dokun. Yanlış dokunursan seçtiklerini geri alabilirsin. Hepsini dizince “Kontrol et”.</p>
+    <div class="row" style="margin:6px 0 10px"><button class="btn sm" id="ordUndo">↩ Geri al</button><button class="btn sm" id="ordReset">Karıştır, baştan</button><button class="btn sm pri" id="ordCheck" disabled>Kontrol et</button><span class="small muted" id="ordInfo"></span></div>
+    <div class="seq" id="ordSeq"></div>
+    <div class="eyebrow" style="margin:14px 0 6px">Kalan olaylar</div>
+    <div class="pool" id="ordPool"></div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Doğru sıra (zaman damgalı)</h2>
+    <p class="lead">Önce kendin diz, sonra buradan kontrol et. Saatler videodaki yerdir; dokununca o kesit açılır.</p>
+    <details><summary class="btn sm" style="list-style:none">Doğru sırayı göster</summary><ol class="timeline" id="timeline"></ol></details>
+  </div>
+</section>
+
+<!-- ============ KİM SÖYLEDİ ============ -->
+<section class="view" id="v-kim">
+  <div class="card">
+    <div class="eyebrow">Kim söyledi · kime söyledi</div>
+    <h2 class="h2">Who is talking to whom?</h2>
+    <p class="lead">Act 2 sınavındaki gibi: kısa bir replik verilir, konuşanı ve kime/kimden bahsettiğini seçersin. Replikler kısa tutuldu; tamamı kitabında.</p>
+    <div class="row"><button class="btn sm" id="kimShuffle">Karıştır</button><span class="small muted" id="kimInfo"></span></div>
+    <div class="qs" id="kimQs"></div>
+  </div>
+</section>
+
+<!-- ============ SEMBOLLER ============ -->
+<section class="view" id="v-sembol">
+  <div class="card">
+    <div class="eyebrow">Yorum</div>
+    <h2 class="h2">Semboller, temalar, ironi</h2>
+    <div class="syms" id="syms"></div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Terim → Act 3'teki örnek</h2>
+    <p class="lead">Mr Lloyd'un “Literary Elements & Fallacies” listesinden, Act 3'te karşılığı olanlar.</p>
+    <div class="syms" id="terms"></div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Yorum soruları</h2>
+    <div class="qs" id="yorumQs"></div>
+  </div>
+</section>
+
+<!-- ============ DENEME TESTİ ============ -->
+<section class="view" id="v-test">
+  <div class="card">
+    <div class="eyebrow" lang="en">Practice quiz · Act 3</div>
+    <h2 class="h2">Deneme testi</h2>
+    <p class="lead">Act 2 sınavının biçiminde: çoktan seçmeli, bazı sorular birden fazla doğru cevaplı (“Select ALL”). Cevaplar sen bitirene kadar gösterilmez. 30 soru, 33 puan (çok seçmelilerde her doğru şık 1 puan, her yanlış şık −1). Hedef: 28/33.</p>
+    <div class="row"><button class="btn sm" id="testNew">Yeni karışık sıra</button><span class="small muted" id="testInfo"></span></div>
+  </div>
+  <div class="qs" id="testQs"></div>
+  <div class="sticky-submit"><button class="btn pri" id="testSubmit">Testi bitir, puanla</button></div>
+  <div id="testResult"></div>
+</section>
+</main>
+
+<script src="veri.js?v=1"></script>
+<script>
+/* ===================== DURUM ===================== */
+const SK='cep-crucible-act3-v1';
+let S={};try{S=JSON.parse(localStorage.getItem(SK)||'{}')||{};}catch(e){S={};}
+S.r=S.r||{};S.kesit=S.kesit||0;
+const save=()=>{try{localStorage.setItem(SK,JSON.stringify(S));}catch(e){}};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
+function shuffled(n,seed){const a=[...Array(n).keys()];let x=seed||1;for(let i=n-1;i>0;i--){x=(Math.imul(x,1103515245)+12345)>>>0;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+const LET='ABCDEFG';
+
+function allPracticeKeys(){const k=[];CHARQ.forEach((_,i)=>k.push('c'+i));KESIT.forEach(K=>K.q.forEach((_,i)=>k.push(K.id+'-'+i)));KIM.forEach((_,i)=>k.push('kim'+i));YORUM.forEach((_,i)=>k.push('y'+i));return k;}
+function updScore(){const keys=allPracticeKeys();const ok=keys.filter(k=>S.r[k]==='ok').length;$('#scoreTxt').textContent=ok+'/'+keys.length;$('#scoreBar').style.width=(100*ok/keys.length)+'%';}
+
+/* Alıştırma sorusu: anında geri bildirim, yanlışta doğruyu göster + tekrar sor */
+function practiceQ(box,key,item,num,round){
+  const seed=hash(key+(round||''));const order=shuffled(item.o.length,seed);
+  const d=document.createElement('div');d.className='q';
+  const prev=S.r[key];
+  d.innerHTML=`<div class="qn">${num}${prev?` · <span style="color:var(--${prev==='ok'?'ok':'bad'})">${prev==='ok'?'ilk denemede doğru':'ilk denemede yanlış'}</span>`:''}</div><div class="qt" lang="en">${item.q}</div><div class="opts"></div><div class="fb"></div>`;
+  const opts=d.querySelector('.opts');
+  order.forEach((oi,pos)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="k">${LET[pos]}</span><span lang="en">${item.o[oi]}</span>`;b.dataset.i=oi;opts.appendChild(b);
+    b.onclick=()=>{const ok=oi===item.a;[...opts.children].forEach(x=>{x.disabled=true;if(+x.dataset.i===item.a)x.classList.add('ok');});if(!ok)b.classList.add('bad');
+      if(!S.r[key]){S.r[key]=ok?'ok':'bad';save();updScore();}
+      const fb=d.querySelector('.fb');fb.innerHTML=`<div class="exp"><b class="${ok?'ok':'bad'}">${ok?'Doğru.':'Yanlış.'}</b> ${item.e}${ok?'':' <div class="row" style="margin-top:8px"><button class="btn sm again">Aynı soruyu tekrar sor</button></div>'}</div>`;
+      const ag=fb.querySelector('.again');if(ag)ag.onclick=()=>{const n=practiceQ(box,key,item,num,(round||0)+1);d.replaceWith(n);};
+    };});
+  return d;
+}
+
+/* ===================== GÖRÜNÜMLER ===================== */
+const VIEWS=[['basla','Başla','·'],['karakter','Karakterler','1'],['kesit','Kesitler + sorular','2'],['sira','Olay sırası','3'],['kim','Kim söyledi','4'],['sembol','Semboller ve terimler','5'],['test','Deneme testi','6']];
+$('#tabsIn').innerHTML=VIEWS.map(([v,t,n])=>`<button class="tab" data-v="${v}"><span class="n">${n}</span>${t}</button>`).join('');
+function go(v){if(S.view==='kesit'&&v!=='kesit'&&typeof renderKesit==='function')renderKesit();stopPlayer();VIEWS.forEach(([x])=>$('#v-'+x).classList.toggle('on',x===v));document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v?'page':'false'));S.view=v;save();window.scrollTo({top:0});const t=document.querySelector(`.tab[data-v="${v}"]`);if(t)t.scrollIntoView({inline:'center',block:'nearest'});}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-v],[data-go]');if(!t)return;go(t.dataset.v||t.dataset.go);});
+const setTop=()=>document.documentElement.style.setProperty('--toph',$('#top').offsetHeight+'px');addEventListener('resize',setTop);setTop();
+
+/* tema */
+$('#themeBtn').onclick=()=>{const cur=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('cep-crucible-act3-tema',n);}catch(e){}};
+
+/* karakterler */
+let charF='all';
+function renderChars(){
+  const F=[['all','Hepsi'],['on','Act 3\'te sahnede'],['ment','Adı geçiyor'],['off','Act 3\'te yok']];
+  $('#charFilters').innerHTML=F.map(([k,t])=>`<button class="fbtn${charF===k?' on':''}" data-f="${k}">${t} <span class="tiny">${k==='all'?CHARS.length:CHARS.filter(c=>c.s===k).length}</span></button>`).join('');
+  $('#charFilters').querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{charF=b.dataset.f;renderChars();});
+  const TG={on:['on','Act 3\'te sahnede'],ment:['ment','Adı geçiyor'],off:['off','Act 3\'te yok']};
+  $('#chars').innerHTML=CHARS.filter(c=>charF==='all'||c.s===charF).map(c=>`<div class="ch"><h3 lang="en">${c.n}</h3><div class="who">${c.d}</div><div class="a3"><b>Act 3</b><br>${c.a}</div><span class="tag ${TG[c.s][0]}">${TG[c.s][1]}</span></div>`).join('');
+}
+renderChars();
+CHARQ.forEach((it,i)=>$('#charQs').appendChild(practiceQ($('#charQs'),'c'+i,it,'Soru '+(i+1))));
+
+/* kesitler + oynatıcı */
+let timer=null,left=0,running=false;
+function stopPlayer(){clearInterval(timer);timer=null;running=false;}
+function renderKesit(){
+  stopPlayer();
+  $('#steps').innerHTML=KESIT.map((K,i)=>{const done=K.q.every((_,j)=>S.r[K.id+'-'+j]);return `<button class="step${i===S.kesit?' on':''}${done?' done':''}" data-k="${i}"><span class="m">${i+1}</span>${done?'✓ ':''}${hms(K.bas).slice(0,4)}</button>`;}).join('');
+  $('#steps').querySelectorAll('.step').forEach(b=>b.onclick=()=>{S.kesit=+b.dataset.k;save();renderKesit();window.scrollTo({top:0});});
+  const K=KESIT[S.kesit],dur=K.son-K.bas;
+  const box=$('#kesitBox');
+  box.innerHTML=`<div class="card"><div class="eyebrow">Kesit ${S.kesit+1} / ${KESIT.length}</div><h2 class="h2">${K.t}</h2>
+   <div class="row small"><span class="tc">${hms(K.bas)} → ${hms(K.son)}</span><span class="muted">≈ ${Math.round(dur/60)} dk</span></div>
+   <div class="player"><div class="ratio" id="ratio"><div class="poster"><div><div class="big">▶ Kesiti başlat</div><div class="tiny" style="margin-top:6px">${hms(K.bas)}'dan başlar · okul Google hesabın açık olmalı</div><button class="btn pri" id="playBtn" style="margin-top:12px">Videoyu yükle</button></div></div></div>
+    <div class="pbar"><span>Kesit sonuna:</span><span class="clock" id="clock">${hms(dur).slice(2)}</span><button class="btn sm" id="pauseBtn" disabled>⏸ Sayacı durdur</button><span class="grow"></span><a class="btn sm" id="openBtn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/${VID}/view?t=${K.bas}">Drive'da aç ↗</a></div></div>
+   <p class="tiny muted" style="margin:8px 0 0">Oynatıcıda ▶'e bas. Sayaç sen “Videoyu yükle” deyince başlar; video duraklatırsan sayacı da durdur. Süre dolunca video kapanır.</p></div>
+   <div class="card"><h3 class="h2" style="font-size:22px">Bu kesitte</h3><ul class="dots">${K.ozet.map(x=>`<li>${x}</li>`).join('')}</ul>
+   <div class="eyebrow" style="margin-top:12px">Önemli sahneler · dokun, oradan oynat</div><ul class="scenes">${K.sahne.map(([z,t])=>`<li><button class="tc" data-z="${sec(z)}">${z}</button><span>${t}</span></li>`).join('')}</ul></div>
+   <div class="card"><h3 class="h2" style="font-size:22px">Sorular</h3><p class="small muted" style="margin:0">Önce kesiti izle. Yanlışta doğrusu ve nedeni açılır; aynı soruyu karışık sırayla tekrar sorabilirsin.</p><div class="qs" id="kq"></div>
+   <div class="row" style="margin-top:14px">${S.kesit>0?'<button class="btn" id="prevK">← Önceki kesit</button>':''}<span style="flex:1"></span>${S.kesit<KESIT.length-1?'<button class="btn pri" id="nextK">Sonraki kesit →</button>':'<button class="btn pri" data-go="sira">Olay sırasına geç →</button>'}</div></div>`;
+  K.q.forEach((it,i)=>$('#kq').appendChild(practiceQ($('#kq'),K.id+'-'+i,it,'Kesit '+(S.kesit+1)+' · Soru '+(i+1))));
+  const load=(from)=>{stopPlayer();const r=$('#ratio');r.innerHTML=`<iframe src="https://drive.google.com/file/d/${VID}/preview?t=${from}" allow="autoplay; fullscreen" allowfullscreen title="The Crucible, Old Vic — kesit ${S.kesit+1}"></iframe>`;
+    left=K.son-from;$('#openBtn').href=`https://drive.google.com/file/d/${VID}/view?t=${from}`;const pb=$('#pauseBtn');pb.disabled=false;pb.textContent='⏸ Sayacı durdur';tick();running=true;timer=setInterval(()=>{if(!running)return;left--;tick();if(left<=0)endSeg();},1000);};
+  const tick=()=>{$('#clock').textContent=hms(Math.max(0,left)).slice(2);};
+  const endSeg=()=>{stopPlayer();$('#ratio').innerHTML=`<div class="poster"><div><div class="big">Kesit bitti</div><div class="tiny" style="margin-top:6px">Şimdi aşağıdaki soruları çöz.</div><button class="btn pri" id="toQ" style="margin-top:12px">Sorulara git ↓</button></div></div>`;$('#pauseBtn').disabled=true;$('#toQ').onclick=()=>$('#kq').scrollIntoView({behavior:'smooth'});};
+  $('#playBtn').onclick=()=>load(K.bas);
+  $('#pauseBtn').onclick=e=>{running=!running;e.target.textContent=running?'⏸ Sayacı durdur':'▶ Sayaca devam';};
+  box.querySelectorAll('.scenes [data-z]').forEach(b=>b.onclick=()=>{load(+b.dataset.z);$('#ratio').scrollIntoView({behavior:'smooth',block:'center'});});
+  const p=$('#prevK'),n=$('#nextK');if(p)p.onclick=()=>{S.kesit--;save();renderKesit();window.scrollTo({top:0});};if(n)n.onclick=()=>{S.kesit++;save();renderKesit();window.scrollTo({top:0});};
+}
+renderKesit();
+
+/* olay sırası */
+let ord={pool:[],seq:[],checked:false};
+function ordReset(){ord={pool:shuffled(OLAY.length,(Date.now()%100000)+1),seq:[],checked:false};renderOrd();}
+function renderOrd(){
+  $('#ordSeq').innerHTML=ord.seq.length?ord.seq.map((i,p)=>`<div class="ev${ord.checked?(i===p?' ok':' bad'):''}"><span class="k">${p+1}.</span><span>${OLAY[i].t}${ord.checked&&i!==p?` <span class="tiny muted">(doğru yeri: ${i+1})</span>`:''}</span></div>`).join(''):'<p class="small muted" style="margin:0">Henüz seçmedin. Aşağıdan ilk olayı seç.</p>';
+  $('#ordPool').innerHTML=ord.pool.filter(i=>!ord.seq.includes(i)).map(i=>`<button class="ev" data-i="${i}"><span class="k">+</span><span>${OLAY[i].t}</span></button>`).join('')||'<p class="small muted" style="margin:0">Hepsi dizildi.</p>';
+  $('#ordPool').querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{if(ord.checked)return;ord.seq.push(+b.dataset.i);renderOrd();});
+  $('#ordCheck').disabled=ord.seq.length!==OLAY.length||ord.checked;
+  if(ord.checked){const ok=ord.seq.filter((i,p)=>i===p).length;$('#ordInfo').textContent=`${ok}/${OLAY.length} doğru yerde`;S.ordBest=Math.max(S.ordBest||0,ok);save();}else $('#ordInfo').textContent=S.ordBest?`En iyi: ${S.ordBest}/${OLAY.length}`:'';
+}
+$('#ordUndo').onclick=()=>{if(ord.checked)return;ord.seq.pop();renderOrd();};
+$('#ordReset').onclick=ordReset;
+$('#ordCheck').onclick=()=>{ord.checked=true;renderOrd();};
+$('#timeline').innerHTML=OLAY.map(o=>`<li><button class="tc" style="border:0;background:none;padding:0;text-decoration:underline dotted" data-k="${o.k}">${o.z}</button> · ${o.t}</li>`).join('');
+$('#timeline').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{S.kesit=+b.dataset.k;save();go('kesit');renderKesit();});
+ordReset();
+
+/* kim söyledi */
+function renderKim(seed){
+  const box=$('#kimQs');box.innerHTML='';
+  const order=seed?shuffled(KIM.length,seed):[...KIM.keys()];
+  order.forEach((i,p)=>{const it=KIM[i];box.appendChild(practiceQ(box,'kim'+i,{q:`<q lang="en">${esc(it.r)}</q><br><span style="font-weight:600;font-size:14px">Who is talking, and to/about whom?</span>`,o:it.o,a:0,e:it.e},'Replik '+(p+1)));});
+  const done=KIM.filter((_,i)=>S.r['kim'+i]).length;$('#kimInfo').textContent=`${done}/${KIM.length} denendi`;
+}
+$('#kimShuffle').onclick=()=>renderKim((Date.now()%100000)+1);
+renderKim(0);
+
+/* semboller */
+$('#syms').innerHTML=SEMBOL.map(s=>`<div class="sym"><h3>${s.h}</h3><p>${s.p}</p></div>`).join('');
+$('#terms').innerHTML=TERIM.map(s=>`<div class="sym"><h3 lang="en">${s.h}</h3><p>${s.p}</p></div>`).join('');
+YORUM.forEach((it,i)=>$('#yorumQs').appendChild(practiceQ($('#yorumQs'),'y'+i,it,'Soru '+(i+1))));
+
+/* deneme testi */
+let T={order:[],ans:{},done:false,seed:1};
+function testNew(){T={order:shuffled(TEST.length,(Date.now()%100000)+1),ans:{},done:false,seed:(Date.now()%100000)+1};renderTest();}
+function renderTest(){
+  const box=$('#testQs');box.innerHTML='';$('#testResult').innerHTML='';
+  T.order.forEach((qi,p)=>{const it=TEST[qi];const oo=shuffled(it.o.length,hash('t'+qi+T.seed));const d=document.createElement('div');d.className='q';
+    const correct=it.m?it.a:[it.a];const sel=T.ans[qi]||[];
+    d.innerHTML=`<div class="qn">Question ${p+1}${it.m?' · <span class="multi">Select ALL that apply</span>':''}</div><div class="qt" lang="en">${it.q}</div><div class="opts"></div>`;
+    const opts=d.querySelector('.opts');
+    oo.forEach((oi,pos)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="k">${LET[pos]}</span><span lang="en">${it.o[oi]}</span>`;
+      if(sel.includes(oi))b.classList.add('sel');
+      if(T.done){b.disabled=true;if(correct.includes(oi))b.classList.add('ok');else if(sel.includes(oi))b.classList.add('bad');}
+      b.onclick=()=>{if(T.done)return;let s=T.ans[qi]||[];if(it.m){s=s.includes(oi)?s.filter(x=>x!==oi):[...s,oi];}else s=[oi];T.ans[qi]=s;opts.querySelectorAll('.opt').forEach((x,k)=>x.classList.toggle('sel',s.includes(oo[k])));upInfo();};
+      opts.appendChild(b);});
+    if(T.done){const pts=qPts(qi);d.insertAdjacentHTML('beforeend',`<div class="exp"><b class="${pts.p===pts.max?'ok':'bad'}">${pts.p}/${pts.max} puan.</b> ${it.e}</div>`);}
+    box.appendChild(d);});
+  upInfo();
+  $('#testSubmit').style.display=T.done?'none':'';
+}
+function qPts(qi){const it=TEST[qi],s=T.ans[qi]||[];if(!it.m)return{p:s[0]===it.a?1:0,max:1};const good=s.filter(x=>it.a.includes(x)).length,bad=s.length-good;return{p:Math.max(0,good-bad),max:it.a.length};}
+function upInfo(){const n=Object.keys(T.ans).filter(k=>(T.ans[k]||[]).length).length;$('#testInfo').textContent=T.done?'Bitti. Yanlışların kırmızı.':`${n}/${TEST.length} cevaplandı`;}
+$('#testNew').onclick=testNew;
+$('#testSubmit').onclick=()=>{const n=Object.keys(T.ans).filter(k=>(T.ans[k]||[]).length).length;if(n<TEST.length&&!confirm(`${TEST.length-n} soru boş. Yine de bitirilsin mi?`))return;T.done=true;
+  let p=0,max=0;TEST.forEach((_,qi)=>{const r=qPts(qi);p+=r.p;max+=r.max;});
+  S.test=(S.test||[]).concat([{p,max,t:Date.now()}]).slice(-10);save();renderTest();
+  const best=Math.max(...S.test.map(x=>x.p));
+  $('#testResult').innerHTML=`<div class="card" style="margin-top:14px;text-align:center"><div class="eyebrow">Sonuç</div><div class="result">${p}/${max}</div><p class="lead" style="margin:8px auto 0">${p/max>=.85?'Quize hazırsın. Yanlışlarının açıklamalarını bir kez daha oku.':p/max>=.65?'İyi gidiyorsun. Kırmızı soruların kesitlerine dön, sonra testi yeni sırayla tekrar çöz.':'Önce kesitleri ve “Kim söyledi”yi bitir, sonra testi tekrar çöz.'} · En iyi: ${best}/${max}</p><div class="row" style="justify-content:center;margin-top:10px"><button class="btn pri" id="again2">Yeni sırayla tekrar</button></div></div>`;
+  $('#again2').onclick=()=>{testNew();window.scrollTo({top:0});};
+  $('#testResult').scrollIntoView({behavior:'smooth'});};
+testNew();
+
+updScore();
+go(VIEWS.some(([v])=>v===S.view)?S.view:'basla');
+</script>
+</body>
+</html>
