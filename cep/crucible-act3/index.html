@@ -159,7 +159,7 @@ ul.dots{margin:6px 0 0;padding-left:20px}ul.dots li{margin:3px 0}
   <div class="top-in">
     <a class="brand" href="/kitpath/kitlerim/" title="Kitpath">
       <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="currentColor" transform="rotate(-40 30 30)"><rect x="14" y="14" width="30" height="13" rx="3"/><rect x="26.5" y="27" width="5" height="26" rx="2.5"/></g><rect x="30" y="48" width="24" height="6" rx="2" fill="currentColor"/></svg>
-      <div style="min-width:0"><span>The Crucible · Act 3</span><b>Mahkeme odası</b></div>
+      <div style="min-width:0"><span lang="en">The Crucible · Act 3</span><b>Mahkeme odası</b></div>
     </a>
     <div class="score" title="İlk denemede doğru cevapladığın sorular"><b id="scoreTxt">0/0</b><span>ilk denemede doğru</span><div class="bar"><i id="scoreBar"></i></div></div>
     <button class="iconbtn" id="themeBtn" aria-label="Tema değiştir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -274,7 +274,7 @@ ul.dots{margin:6px 0 0;padding-left:20px}ul.dots li{margin:3px 0}
   <div class="card">
     <div class="eyebrow" lang="en">Practice quiz · Act 3</div>
     <h2 class="h2">Deneme testi</h2>
-    <p class="lead">Act 2 sınavının biçiminde: çoktan seçmeli, bazı sorular birden fazla doğru cevaplı (“Select ALL”). Cevaplar sen bitirene kadar gösterilmez. 30 soru, 33 puan (çok seçmelilerde her doğru şık 1 puan, her yanlış şık −1). Hedef: 28/33.</p>
+    <p class="lead">Act 2 sınavının biçiminde: çoktan seçmeli, bazı sorular birden fazla doğru cevaplı (“Select ALL”). Cevaplar sen bitirene kadar gösterilmez. 30 soru, 33 puan (çok seçmelilerde her doğru şık 1 puan, her yanlış şık −1; bir soruda puan 0'ın altına düşmez). Hedef: 28/33.</p>
     <div class="row"><button class="btn sm" id="testNew">Yeni karışık sıra</button><span class="small muted" id="testInfo"></span></div>
   </div>
   <div class="qs" id="testQs"></div>
@@ -348,9 +348,9 @@ function renderKesit(){
   const box=$('#kesitBox');
   box.innerHTML=`<div class="card"><div class="eyebrow">Kesit ${S.kesit+1} / ${KESIT.length}</div><h2 class="h2">${K.t}</h2>
    <div class="row small"><span class="tc">${hms(K.bas)} → ${hms(K.son)}</span><span class="muted">≈ ${Math.round(dur/60)} dk</span></div>
-   <div class="player"><div class="ratio" id="ratio"><div class="poster"><div><div class="big">▶ Kesiti başlat</div><div class="tiny" style="margin-top:6px">${hms(K.bas)}'dan başlar · okul Google hesabın açık olmalı</div><button class="btn pri" id="playBtn" style="margin-top:12px">Videoyu yükle</button></div></div></div>
+   <div class="player"><div class="ratio" id="ratio"><div class="poster"><div><div class="big">▶ Kesiti başlat</div><div class="tiny" style="margin-top:6px">Başlangıç ${hms(K.bas)} · okul Google hesabın açık olmalı</div><button class="btn pri" id="playBtn" style="margin-top:12px">Videoyu yükle</button></div></div></div>
     <div class="pbar"><span>Kesit sonuna:</span><span class="clock" id="clock">${hms(dur).slice(2)}</span><button class="btn sm" id="pauseBtn" disabled>⏸ Sayacı durdur</button><span class="grow"></span><a class="btn sm" id="openBtn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/${VID}/view?t=${K.bas}">Drive'da aç ↗</a></div></div>
-   <p class="tiny muted" style="margin:8px 0 0">Oynatıcıda ▶'e bas. Sayaç sen “Videoyu yükle” deyince başlar; video duraklatırsan sayacı da durdur. Süre dolunca video kapanır.</p></div>
+   <p class="tiny muted" style="margin:8px 0 0">Oynatıcıda ▶'e bas. <b>Video baştan açılırsa</b> alttaki çubuğu sürükleyip <b>${hms(K.bas)}</b> noktasına gel (Drive bazen başlangıç dakikasını atlamaz). Sayaç sen “Videoyu yükle” deyince başlar; video duraklatırsan sayacı da durdur. Süre dolunca video kapanır. Video hiç açılmazsa “Drive'da aç” ile okul hesabınla aç.</p></div>
    <div class="card"><h3 class="h2" style="font-size:22px">Bu kesitte</h3><ul class="dots">${K.ozet.map(x=>`<li>${x}</li>`).join('')}</ul>
    <div class="eyebrow" style="margin-top:12px">Önemli sahneler · dokun, oradan oynat</div><ul class="scenes">${K.sahne.map(([z,t])=>`<li><button class="tc" data-z="${sec(z)}">${z}</button><span>${t}</span></li>`).join('')}</ul></div>
    <div class="card"><h3 class="h2" style="font-size:22px">Sorular</h3><p class="small muted" style="margin:0">Önce kesiti izle. Yanlışta doğrusu ve nedeni açılır; aynı soruyu karışık sırayla tekrar sorabilirsin.</p><div class="qs" id="kq"></div>
@@ -406,7 +406,7 @@ function renderTest(){
   const box=$('#testQs');box.innerHTML='';$('#testResult').innerHTML='';
   T.order.forEach((qi,p)=>{const it=TEST[qi];const oo=shuffled(it.o.length,hash('t'+qi+T.seed));const d=document.createElement('div');d.className='q';
     const correct=it.m?it.a:[it.a];const sel=T.ans[qi]||[];
-    d.innerHTML=`<div class="qn">Question ${p+1}${it.m?' · <span class="multi">Select ALL that apply</span>':''}</div><div class="qt" lang="en">${it.q}</div><div class="opts"></div>`;
+    d.innerHTML=`<div class="qn" lang="en">Question ${p+1}${it.m?' · <span class="multi">Select ALL that apply</span>':''}</div><div class="qt" lang="en">${it.q}</div><div class="opts"></div>`;
     const opts=d.querySelector('.opts');
     oo.forEach((oi,pos)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="k">${LET[pos]}</span><span lang="en">${it.o[oi]}</span>`;
       if(sel.includes(oi))b.classList.add('sel');
