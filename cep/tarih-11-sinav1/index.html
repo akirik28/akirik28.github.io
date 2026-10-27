@@ -288,6 +288,17 @@ ul.dots{margin:6px 0 0;padding-left:20px}ul.dots li{margin:3px 0}
       <p class="small muted">Nedenler · elçilik, matbaa, Tercüme Heyeti, Tulumbacı Ocağı, çiçek aşısı, çini · toplumsal değişim · Patrona Halil İsyanı</p>
     </div>
   </div>
+  <script>
+  /* video dosyası henüz yayında değilse boş oynatıcı yerine kısa not göster */
+  document.querySelectorAll('.vid video').forEach(function(v){
+    v.addEventListener('error',function(){
+      var n=document.createElement('div');n.className='small muted';
+      n.style.cssText='padding:28px 16px;border:1px dashed currentColor;border-radius:12px;text-align:center;opacity:.8';
+      n.textContent='Bu video hazırlanıyor, sınavdan önce burada olacak. Bu arada diğer sekmelerle çalışabilirsin.';
+      v.replaceWith(n);
+    });
+  });
+  </script>
   <style>
     .vids{display:grid;gap:14px;margin-top:14px}
     .vid h3{margin:8px 0 10px;font-size:19px;line-height:1.25}
