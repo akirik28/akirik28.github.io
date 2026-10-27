@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script src="/ap/_kit/hesap.js?v=8"></script><script src="/kitpath/kapi.js?v=4"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AP Calc BC: Exam 1 hazırlık kiti</title>
+<meta name="description" content="AP Calculus BC Exam 1 (5 Kasım) için hazırlık kiti: konu kontrol listesi ve sitedeki video, defter, deneme bağlantıları; formül kartları; sık hatalar; 30 soruluk karışık deneme ve kendin puanladığın açık uçlu sorular.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e3b1f'/%3E%3Cpath d='M10 48 C22 46 28 16 54 14' fill='none' stroke='%23e2b746' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M14 40 L46 22' stroke='%23f6e9cf' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script>try{var t=localStorage.getItem('cep-calcbc-exam1-tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+:root{
+--bg:#f3ecdf;--bg2:#e9dfcc;--card:#fffaf1;--card2:#f7efe1;--ink:#2a2017;--ink2:#6a5a49;--ink3:#93826e;
+--line:#dccdb3;--wood:#6e3b1f;--wood2:#8d4e27;--wood3:#4a2714;--brass:#a77a12;--brass2:#d3a531;--brassink:#3a2a05;
+--ok:#2c7a4b;--okbg:#e3f1e6;--bad:#b0362a;--badbg:#f8e3df;--warn:#a8670f;--warnbg:#f8ecd6;
+--shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 30px -18px rgba(60,30,10,.45);
+--r:14px;--serif:'Instrument Serif',Georgia,'Times New Roman',serif;--sans:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+--line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+--ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}}
+:root[data-theme="dark"]{
+--bg:#14100c;--bg2:#1b1510;--card:#211a14;--card2:#2a2119;--ink:#f2e8d7;--ink2:#bba98f;--ink3:#8a7a66;
+--line:#3a2e23;--wood:#8d4e27;--wood2:#a65f31;--wood3:#2a170b;--brass:#e0b443;--brass2:#f0c95e;--brassink:#2a1d02;
+--ok:#62c48a;--okbg:#17301f;--bad:#ec6c5e;--badbg:#3a1a16;--warn:#e7a948;--warnbg:#36260f;
+--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -20px rgba(0,0,0,.8);color-scheme:dark;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans);min-height:100vh;overflow-x:hidden;
+background-image:radial-gradient(1200px 500px at 80% -10%,color-mix(in srgb,var(--brass) 10%,transparent),transparent 60%);}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brass2);outline-offset:2px}
+h1,h2,h3{margin:0;font-weight:400}
+a{color:var(--brass)}
+[lang="en"]{hyphens:manual}
+/* top bar */
+.top{position:sticky;top:0;z-index:30;color:#f6e9cf;background:linear-gradient(180deg,#3b1f0f,#5a2f17 55%,#4a2612);border-bottom:2px solid #c99a2e;box-shadow:0 6px 18px -10px rgba(0,0,0,.6)}
+.top-in{max-width:980px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1;color:inherit;text-decoration:none}
+.brand svg{width:32px;height:32px;flex:none;color:#e2b746}
+.brand b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;line-height:1;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.score{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;flex:none}
+.score b{font-family:var(--mono);font-size:14px;font-weight:500}
+.score span{font-size:11px;opacity:.8}
+.bar{width:84px;height:4px;border-radius:4px;background:rgba(0,0,0,.3);margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#e2b746,#f6dc8a);width:0;transition:width .5s}
+.iconbtn{width:36px;height:36px;border-radius:10px;border:1px solid rgba(226,183,70,.4);background:rgba(0,0,0,.18);color:#f6e9cf;display:grid;place-items:center;flex:none;text-decoration:none}
+.iconbtn svg{width:18px;height:18px}
+/* tabs */
+.tabs{position:sticky;top:var(--toph,54px);z-index:25;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs-in{max-width:980px;margin:0 auto;display:flex;gap:4px;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid transparent;background:none;border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab .n{font-family:var(--mono);font-size:11px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);font-weight:500}
+.tab[aria-current="page"]{background:var(--card);border-color:var(--line);color:var(--ink);box-shadow:var(--shadow)}
+.tab[aria-current="page"] .n{background:var(--brass);color:var(--brassink)}
+main{max-width:980px;margin:0 auto;padding:18px 16px 80px}
+.view{display:none}.view.on{display:block;animation:vin .3s ease}
+@keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* generic */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.card+.card{margin-top:14px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.h1{font-family:var(--serif);font-style:italic;font-size:clamp(30px,6vw,46px);line-height:1.02;margin:4px 0 8px}
+.h2{font-family:var(--serif);font-style:italic;font-size:clamp(23px,4.4vw,30px);line-height:1.1;margin:2px 0 6px}
+.lead{color:var(--ink2);margin:0 0 6px;max-width:66ch}
+.muted{color:var(--ink2)}.small{font-size:13px}.tiny{font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card2);border-radius:11px;padding:9px 15px;font-weight:650;font-size:15px;display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;transition:transform .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn.pri{background:linear-gradient(180deg,var(--brass2),var(--brass));border-color:color-mix(in srgb,var(--brass) 70%,#000);color:var(--brassink)}
+.btn.wood{background:linear-gradient(180deg,var(--wood2),var(--wood));border-color:var(--wood3);color:#f8ead0}
+.btn.sm{padding:6px 11px;font-size:13px;border-radius:9px}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600;color:var(--ink2)}
+.chip.ok{color:var(--ok);background:var(--okbg)}.chip.bad{color:var(--bad);background:var(--badbg)}.chip.warn{color:var(--warn);background:var(--warnbg)}
+.chip.brass{color:var(--brassink);background:var(--brass2);border-color:var(--brass)}
+.note{border-left:3px solid var(--brass);background:var(--card2);padding:10px 12px;border-radius:0 10px 10px 0;font-size:14px;color:var(--ink2)}
+.note b{color:var(--ink)}
+ul.dots{margin:6px 0 0;padding-left:20px}ul.dots li{margin:3px 0}
+/* questions */
+.qs{display:grid;gap:12px;margin-top:14px}
+.q{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card)}
+.q .qn{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.q .qt{font-weight:650;margin:4px 0 10px}
+.q .qt q,.quote{font-family:var(--serif);font-style:italic;font-size:1.12em;font-weight:400}
+.opts{display:grid;gap:6px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--card2);border-radius:10px;padding:9px 12px;font-size:15px;display:flex;gap:10px;align-items:flex-start;line-height:1.35}
+.opt .k{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-top:2px;flex:none}
+.opt:hover:not(:disabled){border-color:var(--brass)}
+.opt.sel{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass) inset}
+.opt.ok{border-color:var(--ok);background:var(--okbg);color:var(--ink)}
+.opt.bad{border-color:var(--bad);background:var(--badbg);color:var(--ink)}
+.opt:disabled{cursor:default}
+.exp{margin-top:10px;font-size:14px;padding:10px 12px;border-radius:10px;background:var(--card2);border:1px dashed var(--line)}
+.exp b.ok{color:var(--ok)}.exp b.bad{color:var(--bad)}
+.multi{font-size:12px;color:var(--warn);font-weight:700;letter-spacing:.04em}
+/* kontrol listesi */
+.prog{display:flex;align-items:center;gap:10px;margin:8px 0 2px}
+.prog .pb{flex:1;height:8px;border-radius:8px;background:var(--bg2);overflow:hidden}
+.prog .pb i{display:block;height:100%;background:linear-gradient(90deg,var(--brass),var(--brass2));transition:width .4s}
+.objs{display:grid;gap:8px;margin-top:12px}
+.obj{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:var(--card2)}
+.obj.on{border-color:color-mix(in srgb,var(--ok) 45%,var(--line));background:color-mix(in srgb,var(--okbg) 70%,var(--card2))}
+.hz{flex:none;width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;color:transparent;font-weight:800;font-size:17px;margin-top:1px}
+.hz:hover{border-color:var(--brass)}
+.obj.on .hz{background:var(--ok);border-color:var(--ok);color:#fff}
+.ob-m{min-width:0;flex:1}
+.ob-t{font-weight:650;line-height:1.3}
+.ced{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--brassink);background:var(--brass2);border-radius:6px;padding:1px 6px;margin-right:6px;white-space:nowrap}
+.ob-d{font-size:13.5px;color:var(--ink2);margin-top:2px}
+.ob-l{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}
+.lk{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:650;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:3px 9px}
+.lk:hover{border-color:var(--brass)}
+.lk .m{font-family:var(--mono);font-size:11px;color:var(--ink3);font-weight:500}
+.lk.v::before{content:"▶";font-size:9px;color:var(--brass)}
+.lk.d::before{content:"✎";font-size:12px;color:var(--brass)}
+.mini{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.mini li{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-size:14px}
+.out{opacity:.85}
+.out .ced{background:var(--bg2);color:var(--ink3)}
+/* formül kartları */
+.syms{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.sym{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.sym h3{font-weight:700;font-size:16px;margin-bottom:4px}
+.sym p,.sym li{font-size:14.5px;margin:6px 0 0;color:var(--ink)}
+.sym ul,.sym ol{margin:4px 0 0;padding-left:20px}
+.sym .key{border-left:3px solid var(--brass);padding:4px 8px;background:var(--card2);border-radius:0 8px 8px 0;font-size:13.5px}
+.unit-h{display:flex;align-items:baseline;gap:10px;margin:18px 0 8px}
+.unit-h:first-child{margin-top:0}
+/* matematik */
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 2px}
+.fr>span:first-child{border-bottom:1.2px solid currentColor;padding:0 3px 1px}
+.fr>span:last-child{padding:1px 3px 0}
+.lim{white-space:nowrap}
+.lim sub{font-size:.68em}
+.pw{display:inline-flex;flex-direction:column;vertical-align:middle;border-left:2px solid currentColor;border-radius:6px 0 0 6px;padding:2px 0 2px 8px;margin:0 6px 0 2px;line-height:1.35}
+sup{font-size:.7em;line-height:0}
+.fig{margin:2px 0 12px;overflow-x:auto;max-width:100%}
+.qs{grid-template-columns:minmax(0,1fr)}.q,.card,.ob-m{min-width:0}
+.cap{font-size:12px;color:var(--ink3);margin-top:4px;font-weight:500}
+table.dt{border-collapse:collapse;font-family:var(--mono);font-size:13.5px;font-weight:400;background:var(--card)}
+table.dt th,table.dt td{border:1px solid var(--line);padding:5px 9px;text-align:center;white-space:nowrap}
+table.dt th{background:var(--card2);font-weight:600}
+.sym table.dt{font-family:var(--sans);font-size:13.5px;width:100%}
+.sym table.dt td{text-align:left;white-space:normal}
+svg.gr{width:100%;max-width:420px;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.g-grid{stroke:var(--line);stroke-width:1}
+.g-ax{stroke:var(--ink2);stroke-width:1.4}
+.g-as{stroke:var(--ink3);stroke-width:1.3;stroke-dasharray:5 4}
+.g-f{fill:none;stroke:var(--brass);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.g-d{fill:var(--brass);stroke:var(--brass)}
+.g-h{fill:var(--card);stroke:var(--brass);stroke-width:2}
+.g-t{fill:var(--ink2);font:500 10.5px var(--mono)}
+.g-i{font-style:italic;font-family:var(--serif);font-size:14px}
+/* sonuç */
+.res-u{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:12px}
+.res-u div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card2);text-align:left}
+.res-u b{font-family:var(--mono);font-size:18px;display:block}
+/* açık uçlu */
+.frq ol{margin:8px 0 0;padding-left:22px}.frq li{margin:6px 0}
+.rub{display:grid;gap:6px;margin-top:10px}
+.rub label{display:flex;gap:10px;align-items:flex-start;font-size:14px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--card);cursor:pointer}
+.rub input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--ok);flex:none}
+details.ans{margin-top:12px}
+details.ans>summary{list-style:none;cursor:pointer;display:inline-flex}
+details.ans>summary::-webkit-details-marker{display:none}
+.ansbox{margin-top:10px;border:1px dashed var(--line);border-radius:12px;padding:12px 14px;background:var(--card2);font-size:14.5px}
+.ansbox p{margin:6px 0}
+.hatalar{display:grid;gap:8px;margin-top:10px;counter-reset:h}
+.hatalar div{border:1px solid var(--line);border-radius:12px;padding:10px 12px 10px 44px;background:var(--card);position:relative;counter-increment:h}
+.hatalar div::before{content:counter(h);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--badbg);color:var(--bad);font:600 12px/22px var(--mono);text-align:center}
+.hatalar b{display:block}
+.hatalar span{font-size:14px;color:var(--ink2)}
+.result{font-family:var(--serif);font-style:italic;font-size:clamp(34px,8vw,56px);line-height:1}
+.sticky-submit{position:sticky;bottom:12px;display:flex;justify-content:center;margin-top:14px}
+@media (max-width:560px){.card{padding:14px}.score .bar{width:64px}.brand span{display:none}.q{padding:12px}.obj{gap:10px;padding:10px}.hz{width:30px;height:30px}table.dt th,table.dt td{padding:4px 6px;font-size:12.5px}}
+@media print{.top,.tabs,.sticky-submit{display:none}.view{display:block!important}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="/kitpath/kitlerim/" title="Kitpath">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 50 C22 48 28 16 56 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M12 42 L48 22" stroke="#f6e9cf" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="32" r="4.5" fill="#f6e9cf"/></svg>
+      <div style="min-width:0"><span lang="en">AP Calculus BC · Exam 1</span><b>Exam 1 hazırlık kiti</b></div>
+    </a>
+    <div class="score" title="Kontrol listesinde “hazırım” işaretlediğin konular"><b id="scoreTxt">0/24</b><span>konu hazır</span><div class="bar"><i id="scoreBar"></i></div></div>
+    <button class="iconbtn" id="themeBtn" aria-label="Tema değiştir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+<nav class="tabs" id="tabs"><div class="tabs-in" id="tabsIn"></div></nav>
+
+<main>
+<!-- ============ BAŞLA ============ -->
+<section class="view" id="v-basla">
+  <div class="card">
+    <div class="eyebrow" lang="en">AP Calculus BC · Exam 1 · 5 Kasım 2026</div>
+    <h1 class="h1">AP Calc BC: Exam 1 hazırlık kiti</h1>
+    <p class="lead">Sınav listesindeki 24 konu tek sayfada. Her konunun yanında sitedeki <b>video</b> ve <b>not defteri</b> bağlantısı var; hazır olduklarını işaretle, eksiklere oradan dön. Sonra formül kartları, sık hatalar ve <b>30 soruluk karışık deneme</b>. Sorular İngilizce, açıklamalar Türkçe; hesap makinesi yok.</p>
+    <p class="small" id="geriSayim" style="margin:8px 0 0"></p>
+    <div class="row" style="margin-top:12px">
+      <button class="btn pri" data-go="liste">Kontrol listesine başla</button>
+      <button class="btn" data-go="kart">Formül kartları</button>
+      <button class="btn" data-go="test">Karışık deneme</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2 class="h2">Sınava ne giriyor?</h2>
+    <ul class="dots">
+      <li><b>Unit 1 · Limits and Continuity:</b> 13 konunun hepsi (1.2–1.16).</li>
+      <li><b>Unit 2 · Differentiation (Derivatives and their rules):</b> 9 konunun hepsi (2.2–2.10). Türevin tanımından tan, cot, sec, csc türevlerine kadar.</li>
+      <li><b>Unit 3:</b> yalnız <b>Chain Rule</b> (3.1) ve <b>Implicit Differentiation</b> (3.2).</li>
+    </ul>
+    <p class="note" style="margin-top:10px"><b>Sınav dışı:</b> ters fonksiyonların türevi (3.3), ters trigonometrik türevler (3.4), yöntem seçimi ve yüksek mertebeden türevler (3.5–3.6). Unit 3 kitindeki bu bölümleri şimdilik atlayabilirsin.</p>
+    <p class="small muted" style="margin:10px 0 0">26 Ekim'deki türev kuralları quizi (power, trig, exp, log, toplam/fark, çarpım, bölüm, zincir) bu konuların tam ortası: kurallar sınavın her yerinde kullanılacak.</p>
+  </div>
+  <div class="card">
+    <h2 class="h2">Önerilen plan (≈ 3 saat, birkaç güne böl)</h2>
+    <ul class="dots">
+      <li><b>Kontrol listesi</b> (15 dk): her konuyu oku, emin olduklarını “hazırım” diye işaretle.</li>
+      <li><b>Eksik konular</b> (≈ 60 dk): işaretlemediğin konuların videosunu izle ya da not defterini oku. Her video ≈ 4–5 dk.</li>
+      <li><b>Formül kartları ve sık hatalar</b> (20 dk): kâğıda kendin yazarak tekrar et.</li>
+      <li><b>Karışık deneme</b> (60 dk, süre tut): 30 soru. Sonda konu konu sonuç ve tekrar bağlantıları çıkar.</li>
+      <li><b>Açık uçlu</b> (25 dk): 2 FRQ tarzı soru, örnek cevap ve puanlama ölçütüyle kendini puanla.</li>
+      <li>Vakit kalırsa ünitelerin süreli <b>denemeleri</b> (bağlantılar kontrol listesinde).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ KONTROL LİSTESİ ============ -->
+<section class="view" id="v-liste">
+  <div class="card">
+    <div class="eyebrow">Kontrol listesi</div>
+    <h2 class="h2">Exam 1'deki 24 konu</h2>
+    <p class="lead">Konuyu biliyorsan soldaki kutuya dokun. Bilmiyorsan videoyu izle ya da not defterini oku. İşaretlerin bu tarayıcıda saklanır. Karışık denemeyi çözünce her konunun yanında son sonucun görünür.</p>
+    <div class="prog"><div class="pb"><i id="progBar"></i></div><span class="small" id="progTxt"></span></div>
+    <div class="row" style="margin-top:8px"><button class="btn sm" id="sadeceEksik">Sadece eksikleri göster</button></div>
+  </div>
+  <div id="listeBox"></div>
+  <div class="card">
+    <div class="eyebrow">Listede adı yok</div>
+    <h2 class="h2">Destek konular</h2>
+    <p class="lead">Bu başlıklar sınav listesinde ayrıca yazmıyor ama listedeki konuların içinde kullanılıyor; aynı videolarda anlatılıyor.</p>
+    <ul class="mini" id="destekList"></ul>
+  </div>
+  <div class="card out">
+    <div class="eyebrow">Sınav dışı</div>
+    <h2 class="h2">Unit 3'te bu sınava girmeyenler</h2>
+    <ul class="mini" id="disiList"></ul>
+  </div>
+</section>
+
+<!-- ============ FORMÜL KARTLARI ============ -->
+<section class="view" id="v-kart">
+  <div class="card">
+    <div class="eyebrow">Formül ve kural kartları</div>
+    <h2 class="h2">Sınavdan önce bir kez yaz</h2>
+    <p class="lead">Kartları okumak yetmez: kapat, kâğıda kendin yaz, sonra karşılaştır. Gerekçe isteyen sorularda (süreklilik, IVT, türevlenebilirlik) kalıp cümleleri kullan.</p>
+  </div>
+  <div class="card" id="kartBox"></div>
+</section>
+
+<!-- ============ SIK HATALAR ============ -->
+<section class="view" id="v-hata">
+  <div class="card">
+    <div class="eyebrow">Sık yapılan hatalar</div>
+    <h2 class="h2">Puan kaybettiren 14 şey</h2>
+    <div class="hatalar" id="hataBox"></div>
+  </div>
+</section>
+
+<!-- ============ KARIŞIK DENEME ============ -->
+<section class="view" id="v-test">
+  <div class="card">
+    <div class="eyebrow" lang="en">Practice exam · Units 1–3.2 · No calculator</div>
+    <h2 class="h2">Karışık deneme</h2>
+    <p class="lead">30 çoktan seçmeli soru, konular karışık sırada (Unit 1: 13, Unit 2: 11, Unit 3: 6). Hesap makinesi yok, önerilen süre 60 dk. Cevaplar sen bitirene kadar gösterilmez; sonda konu konu sonuç ve tekrar edilecek bölümlerin bağlantıları çıkar.</p>
+    <div class="row"><button class="btn sm" id="testNew">Yeni karışık sıra</button><span class="small muted" id="testInfo"></span></div>
+  </div>
+  <div class="qs" id="testQs"></div>
+  <div class="sticky-submit"><button class="btn pri" id="testSubmit">Testi bitir, puanla</button></div>
+  <div id="testResult"></div>
+</section>
+
+<!-- ============ AÇIK UÇLU ============ -->
+<section class="view" id="v-acik">
+  <div class="card">
+    <div class="eyebrow" lang="en">Free response · Self-scored</div>
+    <h2 class="h2">Açık uçlu sorular</h2>
+    <p class="lead">Sınavda işlem ve gerekçe de puanlanır. Önce cevabını kâğıda tam yaz, sonra örnek cevabı aç ve ölçütteki her madde için kendine puan ver (her madde 1 puan).</p>
+  </div>
+  <div id="acikBox"></div>
+</section>
+</main>
+
+<script src="veri.js?v=1"></script>
+<script>
+/* ===================== DURUM ===================== */
+const SK='cep-calcbc-exam1-v1';
+let S={};try{S=JSON.parse(localStorage.getItem(SK)||'{}')||{};}catch(e){S={};}
+S.hz=S.hz||{};S.obj=S.obj||{};S.rub=S.rub||{};
+const save=()=>{try{localStorage.setItem(SK,JSON.stringify(S));}catch(e){}};
+const $=s=>document.querySelector(s);
+function hash(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
+function shuffled(n,seed){const a=[...Array(n).keys()];let x=seed||1;for(let i=n-1;i>0;i--){x=(Math.imul(x,1103515245)+12345)>>>0;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+const LET='ABCDEFG';
+const vidUrl=s=>ROOT+'unit-'+EP[s].u+'/#'+s, defUrl=s=>ROOT+'unit-'+EP[s].u+'/defter/?b='+s, denUrl=u=>ROOT+'unit-'+u+'/deneme/';
+const links=eps=>eps.map(s=>`<a class="lk v" href="${vidUrl(s)}">Video <span class="m">${EP[s].k}</span></a><a class="lk d" href="${defUrl(s)}">Defter <span class="m">${EP[s].k}</span></a>`).join('');
+const epTitle=eps=>eps.map(s=>EP[s].t).join(' · ');
+
+function updScore(){const ok=OBJ.filter((_,i)=>S.hz[i]).length;$('#scoreTxt').textContent=ok+'/'+OBJ.length;$('#scoreBar').style.width=(100*ok/OBJ.length)+'%';
+  const pt=$('#progTxt');if(pt){pt.textContent=ok+'/'+OBJ.length+' hazır';$('#progBar').style.width=(100*ok/OBJ.length)+'%';}}
+
+/* ===================== GÖRÜNÜMLER ===================== */
+const VIEWS=[['basla','Başla','·'],['liste','Kontrol listesi','1'],['kart','Formül kartları','2'],['hata','Sık hatalar','3'],['test','Karışık deneme','4'],['acik','Açık uçlu','5']];
+$('#tabsIn').innerHTML=VIEWS.map(([v,t,n])=>`<button class="tab" data-v="${v}"><span class="n">${n}</span>${t}</button>`).join('');
+function go(v){VIEWS.forEach(([x])=>$('#v-'+x).classList.toggle('on',x===v));document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v?'page':'false'));S.view=v;save();window.scrollTo({top:0});const t=document.querySelector(`.tab[data-v="${v}"]`);if(t)t.scrollIntoView({inline:'center',block:'nearest'});}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-v],[data-go]');if(!t)return;go(t.dataset.v||t.dataset.go);});
+const setTop=()=>document.documentElement.style.setProperty('--toph',$('#top').offsetHeight+'px');addEventListener('resize',setTop);setTop();
+
+/* tema */
+$('#themeBtn').onclick=()=>{const cur=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('cep-calcbc-exam1-tema',n);}catch(e){}};
+
+/* geri sayım */
+(()=>{const d=new Date();d.setHours(0,0,0,0);const n=Math.round((new Date(2026,10,5)-d)/864e5);
+  $('#geriSayim').innerHTML=n>1?`Sınava <b>${n} gün</b> var (5 Kasım Perşembe).`:n===1?'Sınav <b>yarın</b> (5 Kasım Perşembe).':n===0?'Sınav <b>bugün</b>. Başarılar!':'';})();
+
+/* kontrol listesi */
+let sadeceEksik=false;
+function resChip(i){const r=S.obj[i];if(!r)return '';return `<span class="chip ${r[0]===r[1]?'ok':'bad'}" title="Son karışık denemedeki sonucun">deneme: ${r[0]}/${r[1]}</span>`;}
+function renderListe(){
+  let h='';
+  [1,2,3].forEach(u=>{
+    const items=OBJ.map((o,i)=>[o,i]).filter(([o,i])=>o.u===u&&(!sadeceEksik||!S.hz[i]));
+    h+=`<div class="card"><div class="eyebrow" lang="en">Unit ${u}</div><h2 class="h2" lang="en">${UNITS[u].replace(/^Unit \d · /,'')}</h2>`;
+    h+=`<div class="objs">${items.length?items.map(([o,i])=>`<div class="obj${S.hz[i]?' on':''}"><button class="hz" data-hz="${i}" aria-pressed="${!!S.hz[i]}" aria-label="${o.c} hazırım">✓</button><div class="ob-m"><div class="ob-t"><span class="ced">${o.c}</span><span lang="en">${o.en}</span></div><div class="ob-d">${o.tr}</div><div class="ob-l">${links(o.ep)}${resChip(i)}</div></div></div>`).join(''):'<p class="small muted" style="margin:0">Bu ünitede eksik konu kalmadı.</p>'}</div>`;
+    h+=`<p class="small" style="margin:12px 0 0"><a href="${ROOT}unit-${u}/">Unit ${u} kitinin tamamı</a> · <a href="${denUrl(u)}">Unit ${u} süreli denemeleri (5 deneme, 20'şer soru)</a>${u===3?'<br><span class="muted">Unit 3 denemelerinde her denemenin 20 sorusundan 7\'si sınav dışı konulardan (3.3–3.6); onları boş geçebilirsin.</span>':''}</p></div>`;
+  });
+  $('#listeBox').innerHTML=h;
+  $('#listeBox').querySelectorAll('[data-hz]').forEach(b=>b.onclick=()=>{const i=+b.dataset.hz;if(S.hz[i])delete S.hz[i];else S.hz[i]=1;save();updScore();renderListe();});
+  updScore();
+}
+$('#sadeceEksik').onclick=e=>{sadeceEksik=!sadeceEksik;e.target.textContent=sadeceEksik?'Hepsini göster':'Sadece eksikleri göster';renderListe();};
+$('#destekList').innerHTML=DESTEK.map(([c,en,s])=>`<li><span class="ced">${c}</span><span lang="en">${en}</span>${links([s])}</li>`).join('');
+$('#disiList').innerHTML=DISI.map(([c,en,s])=>`<li><span class="ced">${c}</span><span lang="en">${en}</span></li>`).join('');
+renderListe();
+
+/* formül kartları */
+$('#kartBox').innerHTML=[1,2,3].map(u=>`<div class="unit-h"><span class="eyebrow" lang="en">Unit ${u}</span><span class="small muted" lang="en">${UNITS[u].replace(/^Unit \d · /,'')}</span></div><div class="syms">${KART.filter(k=>k.u===u).map(k=>`<div class="sym"><h3>${k.h}</h3>${k.b}</div>`).join('')}</div>`).join('');
+
+/* sık hatalar */
+$('#hataBox').innerHTML=HATA.map(([b,s])=>`<div><b>${b}</b><span>${s}</span></div>`).join('');
+
+/* karışık deneme */
+let T={order:[],ans:{},done:false,seed:1};
+function testNew(){T={order:shuffled(TEST.length,(Date.now()%100000)+1),ans:{},done:false,seed:(Date.now()%100000)+1};renderTest();}
+function renderTest(){
+  const box=$('#testQs');box.innerHTML='';$('#testResult').innerHTML='';
+  T.order.forEach((qi,p)=>{const it=TEST[qi];const oo=shuffled(it.o_.length,hash('t'+qi+T.seed));const d=document.createElement('div');d.className='q';
+    const sel=T.ans[qi];const ob=OBJ[it.o];
+    d.innerHTML=`<div class="qn" lang="en">Question ${p+1}${T.done?` · <span style="text-transform:none;letter-spacing:0">${ob.c} ${ob.en}</span>`:''}</div><div class="qt" lang="en">${it.q}</div><div class="opts"></div>`;
+    const opts=d.querySelector('.opts');
+    oo.forEach((oi,pos)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="k">${LET[pos]}</span><span lang="en">${it.o_[oi]}</span>`;
+      if(sel===oi)b.classList.add('sel');
+      if(T.done){b.disabled=true;if(oi===it.a)b.classList.add('ok');else if(sel===oi)b.classList.add('bad');}
+      b.onclick=()=>{if(T.done)return;T.ans[qi]=oi;opts.querySelectorAll('.opt').forEach((x,k)=>x.classList.toggle('sel',oo[k]===oi));upInfo();};
+      opts.appendChild(b);});
+    if(T.done){const ok=sel===it.a;d.insertAdjacentHTML('beforeend',`<div class="exp"><b class="${ok?'ok':'bad'}">${ok?'Doğru.':sel==null?'Boş.':'Yanlış.'}</b> ${it.e} <span class="row" style="margin-top:8px;display:flex">${links(ob.ep.slice(0,1))}</span></div>`);}
+    box.appendChild(d);});
+  upInfo();
+  $('#testSubmit').style.display=T.done?'none':'';
+}
+function upInfo(){const n=Object.keys(T.ans).length;$('#testInfo').textContent=T.done?'Bitti. Yanlışların kırmızı, altlarında açıklama var.':`${n}/${TEST.length} cevaplandı`;}
+$('#testNew').onclick=testNew;
+$('#testSubmit').onclick=()=>{const n=Object.keys(T.ans).length;if(n<TEST.length&&!confirm(`${TEST.length-n} soru boş. Yine de bitirilsin mi?`))return;T.done=true;
+  const per={};let p=0;TEST.forEach((it,qi)=>{const ok=T.ans[qi]===it.a;if(ok)p++;per[it.o]=per[it.o]||[0,0];per[it.o][0]+=ok?1:0;per[it.o][1]++;});
+  S.obj=per;S.test=(S.test||[]).concat([{p,max:TEST.length,t:Date.now()}]).slice(-10);save();renderTest();renderListe();
+  const best=Math.max(...S.test.map(x=>x.p));
+  const uS=[1,2,3].map(u=>{let a=0,b=0;Object.keys(per).forEach(o=>{if(OBJ[o].u===u){a+=per[o][0];b+=per[o][1];}});return `<div><span class="small muted">Unit ${u}</span><b>${a}/${b}</b></div>`;}).join('');
+  const zayif=Object.keys(per).filter(o=>per[o][0]<per[o][1]).map(Number).sort((x,y)=>x-y);
+  $('#testResult').innerHTML=`<div class="card" style="margin-top:14px"><div style="text-align:center"><div class="eyebrow">Sonuç</div><div class="result">${p}/${TEST.length}</div><p class="lead" style="margin:8px auto 0">${p>=26?'Sınava hazırsın. Yanlışlarının açıklamalarını bir kez daha oku.':p>=20?'İyi gidiyorsun. Aşağıdaki konuları tekrar et, sonra testi yeni sırayla çöz.':'Önce aşağıdaki konuların videolarını ya da defterlerini bitir, sonra testi tekrar çöz.'} · En iyi: ${best}/${TEST.length}</p></div>
+    <div class="res-u">${uS}</div>
+    ${zayif.length?`<h3 class="h2" style="font-size:22px;margin-top:16px">Şu bölümleri tekrar et</h3><div class="objs">${zayif.map(o=>`<div class="obj"><div class="ob-m"><div class="ob-t"><span class="ced">${OBJ[o].c}</span><span lang="en">${OBJ[o].en}</span> <span class="chip bad">${per[o][0]}/${per[o][1]}</span></div><div class="ob-d">${OBJ[o].tr}</div><div class="ob-l">${links(OBJ[o].ep)}</div></div></div>`).join('')}</div><p class="small muted" style="margin:10px 0 0">Kontrol listesinde bu konuların yanında da sonucun görünüyor.</p>`:'<p class="lead" style="text-align:center;margin-top:12px">Hiç yanlış yok. Açık uçlu sorulara geç.</p>'}
+    <div class="row" style="justify-content:center;margin-top:14px"><button class="btn pri" id="again2">Yeni sırayla tekrar</button><button class="btn" data-go="acik">Açık uçlu sorular</button></div></div>`;
+  $('#again2').onclick=()=>{testNew();window.scrollTo({top:0});};
+  $('#testResult').scrollIntoView({behavior:'smooth'});};
+testNew();
+
+/* açık uçlu */
+function renderAcik(){
+  $('#acikBox').innerHTML=ACIK.map((A,i)=>{const got=A.rub.filter((_,j)=>S.rub[i+'-'+j]).length;
+    return `<div class="card frq"><div class="eyebrow">Soru ${i+1} · <span lang="en">${A.t}</span></div><div class="qt" lang="en" style="margin-top:8px">${A.q}</div>
+    <details class="ans"${got?' open':''}><summary class="btn sm">Örnek cevap ve puanlama ölçütü</summary>
+      <div class="ansbox" lang="tr">${A.cevap}</div>
+      <div class="eyebrow" style="margin-top:12px">Kendini puanla · <span id="pt${i}">${got}/${A.rub.length}</span></div>
+      <div class="rub">${A.rub.map((r,j)=>`<label><input type="checkbox" data-r="${i}-${j}"${S.rub[i+'-'+j]?' checked':''}><span>${r}</span></label>`).join('')}</div>
+      <div class="ob-l" style="margin-top:10px"><span class="small muted">Eksik puan aldıysan:</span>${[...new Set(A.o.flatMap(o=>OBJ[o].ep.slice(0,1)))].map(s=>links([s])).join('')}</div>
+    </details></div>`;}).join('');
+  $('#acikBox').querySelectorAll('[data-r]').forEach(c=>c.onchange=()=>{const k=c.dataset.r;if(c.checked)S.rub[k]=1;else delete S.rub[k];save();const i=+k.split('-')[0];$('#pt'+i).textContent=ACIK[i].rub.filter((_,j)=>S.rub[i+'-'+j]).length+'/'+ACIK[i].rub.length;});
+}
+renderAcik();
+
+updScore();
+go(VIEWS.some(([v])=>v===S.view)?S.view:'basla');
+</script>
+</body>
+</html>
