@@ -233,6 +233,7 @@
     { id: "physc", tur: "ap", title: "AP Physics C: Mechanics", code: "AP · PHYS", renk: "physc", ders: "physc", okul: ["AP Physics C: Mechanics"], ara: "physics c mechanics fizik kinematics newton force energy momentum rotation kuvvet enerji hareket" },
     { id: "physem", tur: "ap", title: "AP Physics C: Electricity and Magnetism", code: "AP · PHYS", renk: "physc", ders: null, defter: "physem", okul: ["AP Physics C: Electricity and Magnetism"], ara: "physics c electricity magnetism e&m fizik elektrik manyetizma gauss potential capacitor circuit induction devre" },
     { id: "crucible", tur: "cep", title: "The Crucible: savunma paketi", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "crucible/", okul: [], ara: "crucible arthur miller salem abigail proctor english ingilizce" },
+    { id: "cep-crucible-act3", tur: "cep", title: "The Crucible: Act 3 quiz kiti", code: "CEP KİTİ · İNGİLİZCE", renk: "cep", ders: null, href: "cep/crucible-act3/", okul: [], ara: "crucible act 3 three arthur miller quiz court danforth proctor abigail mary warren hale giles english ingilizce" },
     { id: "cep-eng10", tur: "cep", title: "English 10: sınav ve konuşma provası", code: "CEP KİTİ · İNGİLİZCE", renk: "eng", ders: null, href: "cep/english-10/", sinif: 10, okul: ["English 10"], ara: "english ingilizce speaking oedipus catcher passage analysis paragraph essay persuasive speech konuşma sınavı prova" }
   ];
   /* hesabın okulu ÜAL mi (hesapsız ya da okulu bilinmiyorsa evet) — 10. sınıf okul derslerini kimin göreceği */
