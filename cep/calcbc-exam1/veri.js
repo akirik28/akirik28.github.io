@@ -223,3 +223,11 @@ const ACIK=[
   cevap:`<p><b>(a)</b> h′(x) = [f′(x)g(x) − f(x)g′(x)]/[g(x)]². h′(2) = [4·1 − 1·(−3)]/1² = <b>7</b>.</p><p><b>(b)</b> k′(1) = f′(g(1))·g′(1) = f′(2)·5 = 4·5 = <b>20</b>.</p><p><b>(c)</b> 2x + 3y + 3x·${F('dy','dx')} + 3y²·${F('dy','dx')} = 0 → ${F('dy','dx')} = −${F('2x + 3y','3x + 3y²')}. (1, 1)'de ${F('dy','dx')} = −5/6. Teğet: <b>y − 1 = −(5/6)(x − 1)</b>.</p>`,
   rub:['(a) Bölüm kuralı doğru kuruldu (pay sırası doğru)','(a) Cevap 7','(b) f′(g(1))·g′(1) yazıldı (f′, g(1) = 2\'de okundu)','(b) Cevap 20','(c) Kapalı türev doğru (3xy için çarpım, y³ için zincir) ve dy/dx = −5/6','(c) Teğet doğrusu y − 1 = −(5/6)(x − 1)']}
 ];
+
+/* ---------- video süreleri (saniye; ffprobe ile ölçüldü, 28 Ekim 2026) ----------
+   Dosyalar: ROOT + 'unit-N/video/cbXXX.mp4', kapak aynı adla .jpg */
+const SURE={
+ cb101:266,cb102:273,cb103:280,cb104:290,cb105:265,cb106:266,cb107:267,cb108:261,cb109:275,cb110:274,
+ cb201:274,cb202:278,cb203:267,cb204:250,cb205:283,cb206:279,cb207:267,cb208:289,cb209:286,cb210:272,
+ cb301:274,cb302:277,cb303:292,cb304:274,cb305:279
+};
