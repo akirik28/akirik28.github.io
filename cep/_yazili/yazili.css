@@ -549,3 +549,65 @@ button.y-olay:active { transform: scale(.985); }
   .y-yan, .y-ust, .y-alt, .y-sayfa, .y-perde { display: none !important; }
   .y-app { display: block; padding: 0; }
 }
+
+/* ---------- MEB biçimi prova: tür/güçlük çipleri, kısa cevap, kademeli puan, şekiller ---------- */
+.y-cipler { display: flex; flex-wrap: wrap; gap: 6px; margin: -4px 0 12px; }
+.y-cipler .y-cip { font-size: 12.5px; }
+.y-cip--kolay { background: var(--ok-bg); color: var(--ok); }
+.y-cip--orta { background: color-mix(in srgb, #2563EB 14%, transparent); color: #2563EB; }
+.y-cip--zor { background: color-mix(in srgb, #C2410C 14%, transparent); color: #C2410C; }
+:root[data-theme="dark"] .y-cip--orta { color: #93B4FF; }
+:root[data-theme="dark"] .y-cip--zor { color: #FDBA8C; }
+.y-yaz--kisa { min-height: 72px; }
+.y-olcut .y-kademe { border: 0; background: none; }
+.y-kademe fieldset { margin: 0; padding: 0; border: 0; min-width: 0; display: grid; gap: 6px; }
+.y-kademe legend { padding: 0 0 6px; font-size: 15px; font-weight: 600; line-height: 1.45; }
+.y-kad { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-items: start; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; }
+.y-kad input { grid-row: span 2; margin: 3px 0 0; width: 18px; height: 18px; accent-color: var(--d); }
+.y-kad-ust { font-size: 13.5px; color: var(--muted); }
+.y-kad-ust b { color: var(--ink); }
+.y-kad-metin { font-size: 15px; line-height: 1.45; }
+.y-kad.on { border-color: var(--d); box-shadow: inset 0 0 0 1px var(--d); }
+.y-kad:focus-within { outline: 2px solid #2563EB; outline-offset: 2px; }
+.y-sekil { margin: 12px 0 4px; }
+.y-sekil svg { display: block; width: 100%; height: auto; max-height: 360px; }
+.y-sekil figcaption { margin-top: 6px; font-size: 13.5px; color: var(--muted); text-align: center; }
+/* şekil sınıfları (iki temada da okunur) */
+.y-sekil .s-yazi { fill: var(--ink); font: 600 13px var(--f-body); }
+.y-sekil .s-soluk { fill: var(--muted); font: 500 12px var(--f-body); }
+.y-sekil .s-cizgi { stroke: var(--line-2); fill: none; }
+.y-sekil .s-kalin { stroke: var(--ink); fill: none; stroke-width: 1.5; }
+.y-sekil .s-kara { fill: var(--surface); stroke: var(--line-2); }
+.y-sekil .s-su { fill: #60A5FA; }
+.y-sekil .s-su-cizgi { stroke: #3B82F6; fill: none; stroke-width: 2.5; }
+.y-sekil .s-yesil { fill: #22C55E; }
+.y-sekil .s-kirmizi { fill: #EF4444; }
+.y-sekil .s-mor { fill: #8B5CF6; }
+.y-sekil .s-gri { fill: #94A3B8; }
+.y-sekil .s-cubuk { fill: #2563EB; }
+.y-sekil .s-cubuk2 { fill: #0F766E; }
+.y-kaynak table { border-collapse: collapse; margin: 10px 0; font-size: 14.5px; background: var(--surface); }
+.y-kaynak th, .y-kaynak td { border: 1px solid var(--line-2); padding: 6px 10px; text-align: left; vertical-align: top; }
+.y-kaynak th { background: var(--surface-2); font-weight: 600; }
+.y-kaynak .y-tablo-kap { overflow-x: auto; }
+
+/* düz madde listesi (Sınavda çıkabilecekler, yazılı kağıdı adımları) */
+.y-madde { margin: 0; padding-left: 22px; display: grid; gap: 8px; line-height: 1.55; }
+.y-madde li::marker { color: var(--a, var(--muted)); font-weight: 700; }
+
+/* yazılı kağıdı: ekranda kağıt görünümü, yazdırırken yalnızca kağıt */
+.y-kagit { background: #fff; color: #111; border-radius: var(--r-md); padding: 22px 20px; box-shadow: 0 1px 0 var(--line); }
+.y-kagit h2 { font-size: 19px; margin: 0; }
+.y-kagit .ust { border-bottom: 2px solid #111; padding-bottom: 10px; margin-bottom: 18px; }
+.y-kagit .ust p { margin: 4px 0 0; }
+.y-kagit .kim { display: flex; gap: 18px; margin-top: 12px; flex-wrap: wrap; }
+.y-kagit .kim span { flex: 1 1 140px; border-bottom: 1px solid #999; padding-bottom: 2px; }
+.y-kagit .s { margin: 0 0 26px; break-inside: avoid; }
+.y-kagit .s h3 { font-size: 15px; margin: 0 0 6px; }
+.y-kagit .y-kaynak { margin: 8px 0; }
+.y-kagit .c { border-bottom: 1px solid #bbb; height: 30px; }
+@media print {
+  body * { visibility: hidden !important; }
+  .y-kagit, .y-kagit * { visibility: visible !important; }
+  .y-kagit { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; padding: 0; }
+}

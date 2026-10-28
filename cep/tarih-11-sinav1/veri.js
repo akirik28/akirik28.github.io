@@ -391,57 +391,277 @@ const MC=[
 ];
 
 /* Ortak yazılı provası: 2 deneme × 6 açık uçlu soru. o = puanlama ölçütü [puan, ölçüt] */
+const PROVA_SURUM="meb1";
 const PROVA=[
  {ad:"Deneme 1",s:[
-  {c:"1.1",p:15,k:"1683'te Osmanlı ordusu Viyana önlerinden çekilmek zorunda kaldı. Ertesi yıl Avusturya, Lehistan, Venedik ve Papalık bir araya geldi; Rusya da bu birliğe katıldı. Osmanlı yaklaşık on altı yıl boyunca birden çok cephede savaştı.",
-   q:"Metinden hareketle II. Viyana Kuşatması'nın başarısızlığının Karlofça Antlaşması'na nasıl yol açtığını neden-sonuç ilişkisi içinde açıklayınız. Karlofça'nın Osmanlı tarihi açısından önemini yazınız.",
-   c2:"Kuşatmanın başarısızlığı Osmanlı'nın zayıfladığını gösterdi ve Avrupa devletleri 1684'te Kutsal İttifak'ı kurdu. Osmanlı Avusturya, Lehistan, Venedik ve Rusya'ya karşı aynı anda uzun savaşlar verdi; 1697 Zenta yenilgisinden sonra barış istemek zorunda kaldı ve 1699'da Karlofça imzalandı. Karlofça ile Osmanlı ilk kez geniş topraklar (Macaristan, Erdel, Mora, Podolya) kaybetti, Orta Avrupa'daki üstünlüğü sona erdi ve Avrupa'da savunmaya geçti.",
-   o:[[5,"Kutsal İttifak'ın kurulmasını ve çok cepheli uzun savaşları neden olarak gösterdi."],[4,"Savaşların yenilgiyle (ör. Zenta) Karlofça'ya bağlandığını açıkladı."],[6,"Önemi doğru yazdı: ilk büyük toprak kaybı / Orta Avrupa üstünlüğünün sonu / savunmaya geçiş (en az ikisi)."]]},
-  {c:"1.1",p:15,k:"Tablo · Prut (1711): Azak Osmanlı'ya geri verildi; Rusya İstanbul'da sürekli elçi bulundurmayacak. — Pasarofça (1718): Belgrad, Temeşvar ve Küçük Eflak Avusturya'ya bırakıldı; Mora Osmanlı'da kaldı.",
-   q:"Tablodaki iki antlaşmayı Osmanlı açısından sonuçları bakımından karşılaştırınız. Pasarofça'nın Osmanlı dış politikasında yarattığı değişikliği açıklayınız.",
-   c2:"Prut Osmanlı için kazançlıdır: 1700'de kaybedilen Azak geri alındı ve Rusya'nın İstanbul'daki etkisi sınırlandı. Pasarofça'da ise Mora korunsa da Belgrad ve çevresi Avusturya'ya bırakıldı; antlaşma bir kayıptır. Pasarofça'dan sonra Osmanlı, Karlofça'da kaybedilenleri geri alma politikasını bıraktı, Avrupa ile barışı korumaya ve onu tanımaya yöneldi; bu da Lale Devri'ni başlattı.",
-   o:[[4,"Prut'un kazançlı olduğunu kanıtla (Azak) belirtti."],[4,"Pasarofça'nın kayıp olduğunu (Belgrad) ve Mora'nın korunduğunu belirtti."],[7,"Politika değişikliğini açıkladı: geri alma → barışı koruma / Batı'yı tanıma (Lale Devri bağlantısı tam puan)."]]},
-  {c:"1.1",p:20,k:"Kronoloji · 1700: Azak Rusya'ya geçti. 1711: Azak geri alındı. 1739: Rusya'nın Karadeniz'de gemi bulundurması yasaklandı. 1774: Rus ticaret gemileri Karadeniz ve Boğazlarda serbest oldu. 1783: Kırım Rusya'ya katıldı.",
-   q:"a) Rusya'nın sıcak denizlere inme politikasını tanımlayınız. b) Kronolojiden yararlanarak bu politikanın 1700–1783 arasında nasıl ilerlediğini açıklayınız. c) Küçük Kaynarca'nın Karadeniz açısından sonucunu yazınız.",
-   c2:"a) Rusya'nın donmayan denizlere, yani Karadeniz'e, Boğazlara ve Akdeniz'e ulaşmayı hedefleyen dış politikasıdır. b) Rusya 1700'de Azak ile Karadeniz'e ilk adımı attı; 1711 Prut ve 1739 Belgrad ile geri itildi; 1774'te Karadeniz ve Boğazlarda ticaret serbestliği kazandı ve 1783'te Kırım'ı ilhak ederek Karadeniz'e yerleşti. c) Karadeniz Osmanlı gölü olmaktan çıktı; Rusya hem ticaret hem donanma için Karadeniz'e açıldı.",
-   o:[[4,"Politikayı doğru tanımladı (Karadeniz / Boğazlar / Akdeniz)."],[10,"İlerlemeyi en az üç tarihli adımla açıkladı; duraklamaları (Prut, Belgrad) da gösterdi."],[6,"Küçük Kaynarca sonucu: Karadeniz Osmanlı gölü olmaktan çıktı / Boğazlardan geçiş."]]},
-  {c:"1.2",p:15,k:"Sultan III. Ahmed, Paris'e gönderdiği Yirmisekiz Mehmed Çelebi'den Fransa'nın imar, eğitim ve kurumlarını dikkatle incelemesini ve uygulanabilir olanları yazıp bildirmesini istedi. (Kendi cümlelerimizle özetlenmiştir.)",
-   q:"Bu görevlendirmenin Lale Devri'ndeki hangi anlayışı yansıttığını, dönemin tarihsel bağlamıyla (Pasarofça) ilişkilendirerek açıklayınız.",
-   c2:"Görevlendirme, Avrupa'yı yakından tanıma ve onu örnek alma anlayışını yansıtır. Pasarofça yenilgisi Avrupa'nın üstünlüğünü göstermişti; Osmanlı da savaş yerine barışı koruyup Avrupa'nın gücünün kaynağını öğrenmek istedi. Bu nedenle geçici elçiler gönderildi, gözlemler Sefaretname'de toplandı ve İstanbul'daki yeniliklere ilham oldu.",
-   o:[[5,"Avrupa'yı tanıma / örnek alma anlayışını belirtti."],[5,"Pasarofça yenilgisi ve barış politikasıyla bağ kurdu."],[5,"Geçici elçilik / Sefaretname / yeniliklere etkisi gibi somut bir sonuç yazdı."]]},
-  {c:"1.2",p:15,k:"Lale Devri yenilikleri: matbaa · Tulumbacı Ocağı · çiçek aşısı · Tercüme Heyeti · çini ve kumaş atölyeleri · Sadabad Kasrı",
-   q:"Bu yeniliklerden halkın günlük hayatını doğrudan etkileyen ikisini ve uzun vadeli etki bırakan ikisini seçerek nedenleriyle açıklayınız.",
-   c2:"Günlük hayat: Tulumbacı Ocağı, sık yangınlara karşı şehri korudu; çiçek aşısı salgın hastalığa karşı halkın sağlığını korudu. Uzun vade: matbaa bilginin daha hızlı ve ucuz yayılmasını sağladı; Tercüme Heyeti önemli eserleri Türkçeye kazandırıp bilgiye erişimi genişletti. (Çini ve kumaş atölyeleri de yerli üretimi desteklediği için uzun vadeli örnek olarak kabul edilir.)",
-   o:[[6,"Günlük hayat için iki uygun yenilik + gerekçe (her biri 3)."],[6,"Uzun vade için iki uygun yenilik + gerekçe (her biri 3)."],[3,"Açıklamalar neden-sonuç diliyle, tarihsel terimler doğru kullanılarak yazıldı."]]},
-  {c:"1.2",p:20,k:"1730 sonbaharında İran cephesinden kötü haberler gelirken İstanbul'da pahalılık artmıştı. Saray çevresinin gösterişli eğlenceleri halk arasında konuşuluyordu. Patrona Halil'in önderliğindeki yeniçeri ve esnaf ayaklandı.",
-   q:"a) Patrona Halil İsyanı'nın nedenlerini siyasi/askerî, ekonomik ve toplumsal açıdan birer örnekle açıklayınız. b) İsyanın sonuçlarını ve Lale Devri'ne etkisini yazınız.",
-   c2:"a) Siyasi/askerî: İran cephesinde Tebriz ve Hemedan'ın kaybedilmesi ve padişahın sefere çıkmaması. Ekonomik: ağır vergiler ve pahalılık. Toplumsal: saray çevresindeki israf ve lüksün halkın tepkisini çekmesi, yeniliklere karşı çevrelerin kışkırtması. b) Damat İbrahim Paşa öldürüldü, III. Ahmed tahttan indirildi ve I. Mahmud tahta çıktı; Sadabad gibi köşkler tahrip edildi. Lale Devri sona erdi, yenilik hareketleri bir süre duraksadı.",
-   o:[[12,"Üç boyutta birer doğru neden (her biri 4)."],[5,"En az iki sonuç (İbrahim Paşa'nın ölümü, III. Ahmed'in tahttan inmesi, köşklerin tahribi)."],[3,"Lale Devri'nin sona erdiğini / yeniliklerin duraksadığını belirtti."]]}
+  /* 1 · 1.1 · kolay · kısa · 10 */
+  {c:"1.1",p:10,zor:"kolay",tur:"kisa",
+   k:`<p>Karlofça Antlaşması'ndan (1699) özet: Macaristan ve Erdel Avusturya'ya, Mora ve Dalmaçya kıyıları Venedik'e, Podolya Lehistan'a bırakıldı. Antlaşma, 1683'te Viyana önünden çekilen Osmanlı'nın Kutsal İttifak'a karşı verdiği on altı yıllık savaşı sona erdirdi. <i>(Özetlenmiştir.)</i></p>`,
+   q:"Kaynaktan yararlanarak Karlofça Antlaşması'nın Osmanlı Devleti'nin Avrupa'daki konumu üzerindeki iki sonucunu yazınız.",
+   c2:"Osmanlı Devleti ilk kez geniş topraklar kaybetti. Orta Avrupa'daki üstünlüğü sona erdi ve Avrupa'da savunma durumuna geçti.",
+   o:[{m:"Karlofça'nın sonuçlarını kaynakla ilişkilendirerek yazabilme",l:[
+     [10,"İki ayrı sonucu doğru yazdı (her biri 5): ilk büyük/geniş toprak kaybı; Orta Avrupa üstünlüğünün sona ermesi veya savunmaya geçiş."],
+     [5,"Yalnızca bir sonucu doğru yazdı."],
+     [2,"Sonuç yazmadı; yalnızca kaynaktaki bırakılan bölgeleri sıraladı."],
+     [0,"Boş, ilgisiz veya yanlış cevap (ör. yalnızca 'savaş çıktı' yazdı)."]]}]},
+
+  /* 2 · 1.1 · orta · açık · 15 · ŞEKİL */
+  {c:"1.1",p:15,zor:"orta",tur:"acik",
+   k:`<figure class="y-sekil"><svg viewBox="0 0 600 340" role="img" aria-label="Şematik harita: Karlofça (1699) ve Pasarofça (1718) antlaşmalarında Osmanlı'nın bıraktığı yerler ve Osmanlı'da kalan Mora">
+<rect x="1" y="1" width="598" height="338" rx="10" class="s-cizgi"/>
+<rect x="8" y="8" width="75" height="230" rx="10" class="s-su" opacity=".35"/>
+<text x="14" y="126" class="s-soluk">Adriyatik</text>
+<rect x="95" y="15" width="160" height="95" rx="6" class="s-kara"/>
+<rect x="103" y="24" width="12" height="12" class="s-kirmizi"/>
+<text x="121" y="35" class="s-yazi">Macaristan</text>
+<text x="103" y="58" class="s-soluk">Karlofça:</text>
+<text x="103" y="74" class="s-soluk">Avusturya'ya</text>
+<rect x="265" y="15" width="140" height="95" rx="6" class="s-kara"/>
+<rect x="273" y="24" width="12" height="12" class="s-kirmizi"/>
+<text x="291" y="35" class="s-yazi">Erdel</text>
+<text x="273" y="58" class="s-soluk">Karlofça:</text>
+<text x="273" y="74" class="s-soluk">Avusturya'ya</text>
+<rect x="430" y="15" width="160" height="95" rx="6" class="s-kara"/>
+<rect x="438" y="24" width="12" height="12" class="s-kirmizi"/>
+<text x="456" y="35" class="s-yazi">Podolya</text>
+<text x="438" y="58" class="s-soluk">Karlofça:</text>
+<text x="438" y="74" class="s-soluk">Lehistan'a</text>
+<rect x="95" y="125" width="150" height="100" rx="6" class="s-kara"/>
+<rect x="103" y="134" width="12" height="12" class="s-mor"/>
+<text x="121" y="145" class="s-yazi">Belgrad</text>
+<text x="103" y="166" class="s-soluk">ve Kuzey Sırbistan</text>
+<text x="103" y="188" class="s-soluk">Pasarofça:</text>
+<text x="103" y="204" class="s-soluk">Avusturya'ya</text>
+<rect x="255" y="125" width="140" height="100" rx="6" class="s-kara"/>
+<rect x="263" y="134" width="12" height="12" class="s-mor"/>
+<text x="281" y="145" class="s-yazi">Temeşvar</text>
+<text x="263" y="166" class="s-soluk">Karlofça: Osmanlı'da</text>
+<text x="263" y="188" class="s-soluk">Pasarofça:</text>
+<text x="263" y="204" class="s-soluk">Avusturya'ya</text>
+<rect x="405" y="125" width="185" height="100" rx="6" class="s-kara"/>
+<rect x="413" y="134" width="12" height="12" class="s-mor"/>
+<text x="431" y="145" class="s-yazi">Küçük Eflak</text>
+<text x="413" y="168" class="s-soluk">Pasarofça: Avusturya'ya</text>
+<rect x="95" y="245" width="170" height="82" rx="6" class="s-kara"/>
+<rect x="103" y="254" width="12" height="12" class="s-yesil"/>
+<text x="121" y="265" class="s-yazi">Mora</text>
+<text x="103" y="284" class="s-soluk">1699: Venedik'e</text>
+<text x="103" y="300" class="s-soluk">1715: geri alındı</text>
+<text x="103" y="316" class="s-soluk">1718: Osmanlı'da kaldı</text>
+<rect x="290" y="256" width="12" height="12" class="s-kirmizi"/>
+<text x="310" y="267" class="s-soluk">Karlofça'da (1699) bırakılan</text>
+<rect x="290" y="278" width="12" height="12" class="s-mor"/>
+<text x="310" y="289" class="s-soluk">Pasarofça'da (1718) bırakılan</text>
+<rect x="290" y="300" width="12" height="12" class="s-yesil"/>
+<text x="310" y="311" class="s-soluk">Pasarofça'da Osmanlı'da kalan</text>
+</svg><figcaption>Şematik harita, ölçeksiz</figcaption></figure>`,
+   q:"a) Haritadan yararlanarak Karlofça ve Pasarofça antlaşmalarında Osmanlı Devleti'nin bıraktığı yerleri karşılaştırınız. b) Pasarofça'dan sonra Osmanlı dış politikasında ortaya çıkan değişimi açıklayınız.",
+   c2:"a) Karlofça'da Osmanlı, Orta Avrupa'daki Macaristan ve Erdel'i Avusturya'ya, Podolya'yı Lehistan'a bıraktı. Pasarofça'da ise Belgrad, Temeşvar ve Küçük Eflak Avusturya'ya geçti; bu kayıplar Tuna boyunda ve Balkanlar'a daha yakın bölgelerdedir; Mora ise Osmanlı'da kaldı. b) Karlofça'dan sonra kaybedilenleri geri alma politikası izlenmişti (Prut, Mora). Pasarofça'dan sonra bu politika bırakıldı; Osmanlı barışı korumaya ve Avrupa'yı tanımaya yöneldi.",
+   o:[
+    {ad:"a",m:"Haritadan iki antlaşmanın sonuçlarını karşılaştırabilme",l:[
+     [7,"Her antlaşmadan en az iki yeri doğru yazdı ve bir farkı belirtti (Karlofça: Macaristan, Erdel, Podolya / Pasarofça: Belgrad, Temeşvar, Küçük Eflak; Mora'nın Pasarofça'da Osmanlı'da kalması)."],
+     [4,"İki antlaşmadan da doğru yerler yazdı ancak karşılaştırma yapmadı; ya da karşılaştırmayı tek antlaşmanın bilgisiyle yaptı."],
+     [2,"Yalnızca bir antlaşmanın kaybettirdiği yerleri yazdı."],
+     [0,"Haritayı kullanmadı, yerleri yanlış antlaşmaya bağladı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Pasarofça sonrası politika değişimini açıklayabilme",l:[
+     [8,"Kaybedilenleri geri alma politikasının bırakıldığını ve yerine barışı koruma/Avrupa'yı tanıma yönelişinin (Lale Devri) geldiğini açıkladı."],
+     [4,"Yalnızca 'barış yapıldı/barış istendi' yazdı; önceki politikayla karşılaştırmadı."],
+     [0,"'Savaşlara devam edildi' gibi yanlış cevap veya ilgisiz cevap."]]}]},
+
+  /* 3 · 1.1 · zor · açık · 20 */
+  {c:"1.1",p:20,zor:"zor",tur:"acik",
+   k:`<p><b>Kronoloji</b> <i>(özet)</i></p><p><b>1700</b> · Azak ve çevresi Rusya'ya bırakıldı.<br><b>1711</b> · Prut'ta Azak geri alındı.<br><b>1739</b> · Azak'ın surları yıkılacak, Rusya Karadeniz'de gemi bulunduramayacak.<br><b>1768</b> · Osmanlı–Rus Savaşı başladı.<br><b>1770</b> · Çeşme Baskını: Osmanlı donanması yakıldı.<br><b>1774</b> · Rus ticaret gemileri Karadeniz ve Boğazlarda serbest bırakıldı.<br><b>1783</b> · Rusya Kırım'ı ilhak etti.</p>`,
+   q:"a) Kronolojiden yararlanarak Rusya'nın sıcak denizlere inme politikasını tanımlayınız ve 1700–1783 arasındaki aşamalarını açıklayınız. b) 1739–1774 arasındaki olaylardan çıkarımda bulunarak Osmanlı Devleti'nin bu politikayı neden kalıcı olarak durduramadığını yorumlayınız.",
+   c2:"a) Sıcak denizlere inme politikası, Rusya'nın donmayan denizlere, yani Karadeniz'e ve Boğazlar yoluyla Akdeniz'e ulaşma hedefidir. Rusya 1700'de Azak ile Karadeniz yolunda ilk adımı attı; Prut (1711) ve Belgrad'da (1739) geri itildi. 1774'te Karadeniz ve Boğazlarda ticaret serbestliği kazandı, 1783'te Kırım'ı ilhak etti. b) 1739–1768 arasındaki uzun barış orduyu yenilemek için iyi değerlendirilmedi. 1770'te Çeşme'de donanma yok oldu ve savaş yenilgiyle Küçük Kaynarca'ya (1774) götürdü; Rusya Kırım'ı da aldı.",
+   o:[
+    {ad:"a",m:"Politikayı tanımlayıp kronolojiyle aşamalandırabilme",l:[
+     [10,"Politikayı doğru tanımladı (Karadeniz, Boğazlar, Akdeniz'e ulaşma) ve en az üç aşamayı tarih sırasıyla, ilerleme ile geri itilmeyi (Prut, Belgrad) göstererek açıkladı."],
+     [6,"Üç aşamayı doğru sıraladı ancak politikayı tanımlamadı ya da yalnızca ilerleyişi anlattı."],
+     [3,"Bir veya iki olayı kronolojiden aktardı; aşamalar arasında ilişki kurmadı."],
+     [0,"Kronolojiyi kullanmadı, politikayı yanlış tanımladı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"1739–1774 olaylarından çıkarım yapabilme",l:[
+     [10,"En az iki neden gösterdi (her biri 5): 1739–1768 barışının orduyu yenilemek için iyi kullanılmaması; Çeşme'de donanmanın yok olması; yenilgilerin Küçük Kaynarca'ya yol açması. Kronolojideki tarihlere dayandırdı."],
+     [5,"Bir nedeni doğru yazdı (ör. Çeşme) ancak gerekçelendirmedi ya da kronolojiyle ilişkilendirmedi."],
+     [0,"'Rusya çok güçlüydü' gibi dayanaksız genelleme veya ilgisiz cevap."]]}]},
+
+  /* 4 · 1.2 · kolay · kısa · 10 */
+  {c:"1.2",p:10,zor:"kolay",tur:"kisa",
+   k:`<p>1727'de İbrahim Müteferrika ve Said Efendi'nin kuracağı matbaaya izin verildi; dinî kitapların basılmasına izin verilmedi. İlk basılan kitap, 1729'da çıkan Vankulu Lügati oldu. <i>(Özetlenmiştir.)</i></p>`,
+   q:"Kaynaktan yararlanarak matbaanın kurulmasının bilginin yayılmasına katkısını ve izin verilirken getirilen sınırlamayı yazınız.",
+   c2:"Matbaa, kitapların daha hızlı ve ucuz çoğaltılıp yayılmasının yolunu açtı. Ancak dinî kitapların basılmasına izin verilmedi.",
+   o:[{m:"Matbaanın katkısı ve sınırlamasını kaynakla yazabilme",l:[
+     [10,"Katkıyı (bilginin hızlı/ucuz yayılması, kitap çoğaltma) ve sınırlamayı (dinî kitaplar basılmayacaktı) doğru yazdı (her biri 5)."],
+     [5,"Yalnızca katkıyı veya yalnızca sınırlamayı doğru yazdı."],
+     [2,"Yalnızca matbaayı kimin kurduğunu ya da ilk kitabın adını yazdı."],
+     [0,"Boş veya ilgisiz cevap (ör. matbaanın Osmanlı'da hiç olmadığını yazmak)."]]}]},
+
+  /* 5 · 1.2 · orta · açık · 20 · tablo */
+  {c:"1.2",p:20,zor:"orta",tur:"acik",
+   k:`<table><thead><tr><th>Yenilik</th><th>Kısa açıklama</th></tr></thead><tbody>
+<tr><td>Geçici elçilik</td><td>Paris, Viyana ve Moskova gibi başkentlere görevli gönderildi; gözlemler Sefaretname'de toplandı.</td></tr>
+<tr><td>Tulumbacı Ocağı</td><td>İstanbul'daki yangınlara karşı itfaiye teşkilatı kuruldu.</td></tr>
+<tr><td>Çiçek aşısı</td><td>Çiçek hastalığına karşı aşılama uygulaması dikkat çekti.</td></tr>
+<tr><td>Tercüme Heyeti</td><td>Önemli eserleri Türkçeye çevirmek için kurul oluşturuldu.</td></tr>
+<tr><td>Çini ve kumaş atölyeleri</td><td>Yerli üretimi canlandırmak için atölyeler açıldı.</td></tr></tbody></table>`,
+   q:"a) Tablodan iki yenilik seçerek her birinin dönemin hangi ihtiyacına cevap verdiğini açıklayınız. b) Tablodaki yeniliklerden hiçbirinin orduyla ilgili olmamasından çıkarımda bulunarak Lale Devri'nin genel niteliğini yorumlayınız.",
+   c2:"a) Tulumbacı Ocağı, sık yaşanan yangınlardan şehri ve halkı korumak için kuruldu. Tercüme Heyeti, Doğu'daki ve Batı'daki önemli eserleri Türkçeye kazandırarak bilgiye erişimi genişletmek için kuruldu. b) Yeniliklerin hepsi diplomasi, bilgi, kent hayatı, sağlık ve üretim alanındadır; tabloda ordu için bir yenilik yoktur. Lale Devri, Pasarofça'dan sonra barışın korunduğu, Avrupa'nın tanındığı ve kültürel/toplumsal alanda yeniliklerin yapıldığı bir dönemdi; ordunun yenilenmesi dönemin öncelikleri arasında olmadı.",
+   o:[
+    {ad:"a",m:"Yeniliği ihtiyaçla ilişkilendirerek açıklayabilme",l:[
+     [12,"İki yeniliği de doğru seçti ve her birini dönemin ihtiyacıyla açıkladı (her biri 6): ör. Tulumbacı → yangınlara karşı kent güvenliği; çiçek aşısı → salgın ve halk sağlığı; Tercüme Heyeti → Doğu'daki ve Batı'daki bilgiye erişimi genişletme; geçici elçilik → Avrupa'yı yerinde tanıma."],
+     [6,"Yalnızca bir yeniliği ihtiyaçla açıkladı; diğerini açıklamadı ya da yanlış açıkladı."],
+     [3,"İki yeniliği yalnızca tablodan aynen aktardı; ihtiyaç belirtmedi."],
+     [0,"Yenilikleri tabloda olmayan örneklerle değiştirdi veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Tablodan çıkarımla dönemin niteliğini yorumlayabilme",l:[
+     [8,"Yeniliklerin askerî olmayan alanlarda toplandığını belirtti ve bunu barış politikası ile Avrupa'yı tanıma amacına bağlayarak dönemi yorumladı."],
+     [4,"Askerî alanda yenilik olmadığını belirtti, ancak nedenini ya da dönemin niteliğini yorumlamadı."],
+     [0,"Tabloyu tekrarladı veya ordu ıslahatı yapıldığını yazdı."]]}]},
+
+  /* 6 · 1.2 · zor · açık · 25 · iki görüş */
+  {c:"1.2",p:25,zor:"zor",tur:"acik",
+   k:`<p><b>Görüş A:</b> Lale Devri adı, sarayda lale merakının, şenliklerin ve mesire eğlencelerinin öne çıktığı bir yaşamı anlatır. Gösterişli harcamalar, halkın geçim sıkıntısı artarken yapılmıştır. Dönem, devletin sorunlarını çözmekten çok onlardan uzaklaşan bir zevk ve eğlence dönemidir.</p><p><b>Görüş B:</b> Aynı dönemde Avrupa'ya elçiler gönderildi, matbaa kuruldu, Tercüme Heyeti oluşturuldu. Bu girişimler, Osmanlı'nın Avrupa'yı tanıyarak kendini yenileme çabasının ilk örnekleridir. Bu yüzden dönem, Batı'ya açılma ve ilk ıslahat dönemi olarak görülmelidir. <i>(İki görüş özetlenmiştir.)</i></p>`,
+   q:"a) İki görüşün hangi kanıtlara dayandığını belirterek aralarındaki farkı karşılaştırınız. b) Patrona Halil İsyanı'nın nedenlerinden yararlanarak hangi görüşün dönemi daha iyi açıkladığını, ya da iki görüşün birbirini nasıl tamamladığını gerekçelendirerek yorumlayınız.",
+   c2:"a) Görüş A saray eğlencelerine, israfa ve halkın geçim sıkıntısına dayanır; dönemi zevk ve eğlence olarak görür. Görüş B geçici elçiliklere, matbaaya ve Tercüme Heyeti'ne dayanır; dönemi Batı'ya açılma ve yenilenme çabası olarak görür. İkisi de aynı dönemin farklı yönlerine bakar. b) 1730 isyanında İran cephesindeki yenilgiler, pahalılık ve saraydaki israf halkın tepkisini çekti. Bu nedenler A'yı destekler: eğlence ve israf toplumda hoşnutsuzluk yarattı. Ancak yenilikler de vardı ve bunlar B'yi destekler; bazı çevrelerin (yeniçeri ve ulemadan) yeniliklere tepkisi de hoşnutsuzluğu körükledi. Bu yüzden iki görüş birbirini tamamlar: dönem hem yenilik hem de eğlence ve israf dönemidir.",
+   o:[
+    {ad:"a",m:"İki yorumu kanıtlarıyla karşılaştırabilme",l:[
+     [10,"Her görüşün dayandığı kanıtları (A: eğlence, israf, halkın sıkıntısı; B: elçilikler, matbaa, Tercüme Heyeti) doğru belirtti ve farkı açıkladı."],
+     [5,"İki görüşü özetledi ancak kanıtları ayırmadı ya da yalnızca bir görüşün kanıtını belirtti."],
+     [2,"Görüşlerden yalnızca birini özetledi."],
+     [0,"Kaynağı kullanmadı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"İsyan nedenleriyle yorumları değerlendirebilme",l:[
+     [15,"En az iki isyan nedenini (israf/pahalılık ve yeni vergiler, İran cephesi yenilgileri ve Tebriz'in kaybı, sadrazamın yakınlarını görevlendirmesi, bazı çevrelerin yeniliklere tepkisi) kanıt olarak kullandı ve bir görüşü seçerek ya da iki görüşü tamamlayıcı göstererek tutarlı gerekçelendirdi."],
+     [9,"Bir görüş seçti ve gerekçe gösterdi, ancak yalnızca bir isyan nedeni kullandı ya da diğer görüşü hiç değerlendirmedi."],
+     [4,"Görüş belirtti ama isyan nedenleriyle ilişkilendirmedi (gerekçesiz yargı)."],
+     [0,"'İkisi de doğru/yanlış' gibi gerekçesiz cevap veya ilgisiz cevap."]]}]}
  ]},
  {ad:"Deneme 2",s:[
-  {c:"1.1",p:15,k:"Olaylar (karışık): Belgrad Antlaşması · Karlofça Antlaşması · Kerden Antlaşması · Prut Antlaşması · Pasarofça Antlaşması · Küçük Kaynarca Antlaşması",
-   q:"a) Antlaşmaları kronolojik sıraya diziniz. b) Bunlardan Osmanlı'nın Avrupa devletleriyle imzaladığı ve kazançlı çıktığı iki antlaşmayı gerekçesiyle yazınız. c) Kerden Antlaşması'nın Osmanlı–İran sınırı açısından sonucunu belirtiniz.",
-   c2:"a) Karlofça (1699) → Prut (1711) → Pasarofça (1718) → Belgrad (1739) → Kerden (1746) → Küçük Kaynarca (1774). b) Prut: Azak geri alındı. Belgrad: Belgrad, Kuzey Sırbistan ve Küçük Eflak geri alındı; Rusya'nın Karadeniz'e çıkışı engellendi. c) Sınır 1639 Kasr-ı Şirin hattına döndü; doğuda uzun süre barış sağlandı.",
-   o:[[5,"Sıra tamamen doğru (bir yer hatası 3, daha fazlası 0)."],[6,"Prut ve Belgrad'ı gerekçeyle yazdı (her biri 3)."],[4,"Kerden: 1639 Kasr-ı Şirin sınırına dönüş."]]},
-  {c:"1.1",p:15,k:"1770 yazında Rus donanması Baltık Denizi'nden çıkıp Avrupa'yı dolaştı ve Cebelitarık'tan Akdeniz'e geçti. Ege'de, Çeşme limanında toplanmış Osmanlı donanmasını bir gecede ateşe verdi.",
-   q:"a) Çeşme Baskını'nın Osmanlı'nın donanması ve askerî gücü üzerindeki etkilerini açıklayınız. b) Olayın Rusya'nın hedefleri hakkında ne gösterdiğini yorumlayınız.",
-   c2:"a) Osmanlı donanması büyük ölçüde yok oldu, Ege ve Akdeniz kıyıları savunmasız kaldı; savaş Küçük Kaynarca yenilgisine sürüklendi. Deniz subayı yetiştirmek için Mühendishane-i Bahrî-i Hümâyûn açıldı. b) Rusya'nın yalnız Karadeniz'de değil Akdeniz'de de güç gösterebildiğini, sıcak denizlere ulaşma hedefinde kararlı olduğunu gösterir.",
-   o:[[5,"Donanmanın yok olması ve savunmanın zayıflaması."],[3,"Sonraki gelişmeyle bağ (Küçük Kaynarca veya Mühendishane-i Bahrî-i Hümâyûn)."],[7,"Rusya'nın Akdeniz / sıcak denizler hedefiyle ilişkilendirdi."]]},
-  {c:"1.1",p:20,k:"Küçük Kaynarca Antlaşması'ndan maddeler: (1) Kırım siyasi bakımdan bağımsız olacak, dinî bakımdan halifeye bağlı kalacak. (2) Rus ticaret gemileri Karadeniz'de ve Boğazlarda serbestçe dolaşacak. (3) Rusya, Ortodoks halk adına Osmanlı nezdinde söz söyleyebilecek. (4) Osmanlı Rusya'ya savaş tazminatı ödeyecek.",
-   q:"a) Maddelerden hareketle antlaşmanın Osmanlı için 'ilk' olan iki sonucunu yazınız. b) Üçüncü maddenin ileride Osmanlı'yı nasıl etkilediğini açıklayınız. c) Birinci maddedeki halifelik vurgusunun nedenini yorumlayınız.",
-   c2:"a) Halkı Müslüman bir toprak (Kırım) ilk kez Osmanlı'dan ayrıldı; Osmanlı ilk kez savaş tazminatı ödedi. (Halifeliğin ilk kez bir antlaşmada siyasi araç olması da kabul edilir.) b) Rusya, Ortodoksları koruma iddiasıyla Osmanlı'nın iç işlerine karışma fırsatı buldu; bu durum Balkanlardaki sorunları büyüttü. c) Osmanlı, siyasi olarak kaybettiği Kırım ile manevi bağını halifelik yoluyla korumak ve Rus etkisini sınırlamak istedi.",
-   o:[[8,"İki doğru 'ilk' (her biri 4)."],[6,"İç işlerine karışma / Ortodoksları koruma bahanesi açıklandı."],[6,"Halifeliğin manevi bağı koruma amacı açıklandı."]]},
-  {c:"1.2",p:15,k:"Tarihçi A: 18. yüzyıl, Batılılaşmanın başladığı dönemdir; başlangıcı Lale Devri'ndedir ve bu dönemde toplumda derin bir değişim yaşanmıştır. — Tarihçi B: Osmanlılar güçlü oldukları dönemde de yararlı gördükleri Batı yeniliklerini çekinmeden almıştır; Karlofça'dan sonra ise bu ilgi bir zorunluluğa dönüşmüştür. (İki görüş kendi cümlelerimizle özetlenmiştir.)",
-   q:"İki tarihçinin Osmanlı'nın Batı'ya yönelişi hakkındaki görüşlerinin benzer ve farklı yönlerini açıklayınız.",
-   c2:"Benzer: İkisi de 18. yüzyılda Osmanlı'nın Batı'ya yöneldiğini ve bunun önemli bir değişim olduğunu kabul eder. Farklı: Tarihçi A Batılılaşmayı Lale Devri ile başlayan bir kırılma olarak görür. Tarihçi B ise Batı'dan yararlanmanın öteden beri var olduğunu, Karlofça yenilgisinden sonra bunun zorunluluğa dönüştüğünü vurgular; yani süreklilik ve zorunluluk üzerinde durur.",
-   o:[[5,"Bir benzerliği doğru yazdı."],[8,"Farkı iki tarafı da göstererek açıkladı (Lale Devri kırılması ↔ eskiden beri süren ilgi / Karlofça zorunluluğu)."],[2,"Görüşleri metne dayandırdı, kendi yorumunu kanıtla ayırdı."]]},
-  {c:"1.2",p:15,k:"18. yüzyılda Avrupa'da Osmanlı kıyafetleri, çadırları ve süslemeleri moda oldu. İstanbul'da ise varlıklı evlerde koltuk ve iskemle kullanılmaya, devlet adamlarının portreleri yaptırılmaya başlandı. İngiliz elçisinin eşi, İstanbul'da gördüğü çiçek aşılamasını ülkesinde tanıttı.",
-   q:"a) Lale Devri'nde Osmanlı–Avrupa kültürel etkileşiminin karşılıklı olduğunu iki kanıtla açıklayınız. b) Bu etkileşimi taşıyan iki toplumsal grup yazınız.",
-   c2:"a) Avrupa'da Turquerie denen Osmanlı modası yayıldı; aynı dönemde Osmanlı'da Batı tarzı eşya ve portre yaygınlaştı. Ayrıca çiçek aşılaması Osmanlı'dan İngiltere'ye aktarıldı. Etki iki yönlüdür. b) Saray erkânı ve bürokratlar, elçiler, Galata ve İzmir gibi limanlardaki Avrupalı tüccarlar, gayrimüslim iş insanları, Batılı gezginler (herhangi ikisi).",
-   o:[[10,"Her iki yönden de kanıt gösterdi (Avrupa'ya giden + Osmanlı'ya gelen); her kanıt 5."],[5,"İki uygun grup."]]},
-  {c:"1.2",p:20,k:"Lale Devri'nde yönetimde kalem ehli öne çıktı, Avrupa'ya geçici elçiler gönderildi; İstanbul'da şenlikler, mesire yerleri ve lale bahçeleri yaygınlaştı, Nedim ve Levni dönemin yaşamını eserlerine taşıdı. Buna karşılık orduyu yenileyen bir düzenleme yapılmadı.",
-   q:"a) Lale Devri'nde devlet hayatında ve toplum hayatında meydana gelen değişimlere ikişer örnek veriniz. b) Değişimlerin askerî alana yansımamasını dönemin tarihsel bağlamı içinde yorumlayınız.",
-   c2:"a) Devlet: geçici elçilikler ve Sefaretname; kalem ehlinin güçlenmesi; matbaa ve Tercüme Heyeti; Tulumbacı Ocağı. Toplum: Çırağan eğlenceleri ve mesire kültürü; lale merakı ve ticareti; Batı tarzı eşya ve portreler; Nedim ve Levni'nin eserleri. b) Pasarofça'dan sonra hedef savaş değil barışı korumaktı; yönetim önceliği Avrupa'yı tanımaya, diplomasiye ve kültüre verdi. Ayrıca yeniçeriler gibi güçlü çevrelerin tepkisinden çekinildi. Bu eksiklik İran cephesindeki yenilgilerde ve Patrona Halil İsyanı'nda kendini gösterdi.",
-   o:[[6,"Devlet hayatından iki doğru örnek (her biri 3)."],[6,"Toplum hayatından iki doğru örnek (her biri 3)."],[8,"Askerî alanın dışarıda kalmasını barış politikası ve/veya iç tepkilerle bağlamına oturtarak yorumladı."]]}
+  /* 1 · 1.1 · kolay · kısa · 10 */
+  {c:"1.1",p:10,zor:"kolay",tur:"kisa",
+   k:`<p>1769'da Baltık Denizi'nden yola çıkan Rus donanması Avrupa'yı dolaşarak Akdeniz'e ulaştı. 1770 yazında Ege'de, Çeşme limanında toplanmış Osmanlı donanmasını ateşe verdi. <i>(Özetlenmiştir.)</i></p>`,
+   q:"Çeşme Baskını'nın Osmanlı donanmasına etkisini ve bu olayın ardından deniz subayı yetiştirmek için açılan okulun adını yazınız.",
+   c2:"Osmanlı donanması büyük ölçüde yok oldu ve Ege–Akdeniz kıyıları savunmasız kaldı. Deniz subayı yetiştirmek için Mühendishane-i Bahrî-i Hümâyûn açıldı.",
+   o:[{m:"Çeşme'nin etkisini ve sonraki gelişmeyi yazabilme",l:[
+     [10,"Etkiyi (donanmanın büyük ölçüde yok olması/Ege ve Akdeniz'in savunmasız kalması) ve okulun adını (Mühendishane-i Bahrî-i Hümâyûn) doğru yazdı (her biri 5)."],
+     [5,"Yalnızca etkiyi veya yalnızca okulun adını doğru yazdı."],
+     [0,"Boş veya ilgisiz cevap (ör. Osmanlı donanmasının galip geldiğini yazmak)."]]}]},
+
+  /* 2 · 1.1 · orta · açık · 20 · tablo */
+  {c:"1.1",p:20,zor:"orta",tur:"acik",
+   k:`<table><thead><tr><th>Antlaşma</th><th>Arabulucu devlet</th><th>Osmanlı açısından sonuç</th></tr></thead><tbody>
+<tr><td>Karlofça (1699)</td><td>İngiltere ve Hollanda</td><td>Macaristan, Erdel, Podolya, Mora ve Dalmaçya kıyıları bırakıldı.</td></tr>
+<tr><td>Pasarofça (1718)</td><td>İngiltere ve Hollanda</td><td>Belgrad, Temeşvar ve Küçük Eflak bırakıldı; Mora kaldı.</td></tr>
+<tr><td>Belgrad (1739)</td><td>Fransa</td><td>Belgrad geri alındı. 1740'ta Fransa'ya verilen kapitülasyonlar sürekli hâle getirildi.</td></tr></tbody></table><p><i>(Özetlenmiştir.)</i></p>`,
+   q:"a) Tablodan çıkarımda bulunarak Osmanlı Devleti'nin Karlofça'dan itibaren neden arabulucu devletlere başvurduğunu açıklayınız. b) Belgrad Antlaşması'ndan sonra Fransa'ya verilen ayrıcalığı kısa ve uzun vadeli sonuçları bakımından yorumlayınız.",
+   c2:"a) Üç antlaşmada da büyük devletler arabulucu oldu. Bu, Osmanlı'nın askerî gücünün tek başına yetmediğini ve barışın diplomasiyle sağlanması gerektiğini gösterir. Osmanlı, büyük devletlerin rekabetinden yararlanarak varlığını korumaya çalıştı (denge politikası). b) Kısa vadede Fransa'nın arabuluculuğu sayesinde Belgrad geri alındı. Uzun vadede kapitülasyonların sürekli hâle gelmesi Osmanlı'nın ekonomik olarak Avrupa'ya bağımlı olmasına zemin hazırladı.",
+   o:[
+    {ad:"a",m:"Tablodan diplomasinin önemini çıkarabilme",l:[
+     [10,"Arabulucu devletlerin (İngiltere, Hollanda, Fransa) rolünü gösterdi ve nedeni açıkladı: askerî gücün tek başına yetmemesi ve büyük devletlerin rekabetinden yararlanma/denge politikası."],
+     [5,"Arabulucu devletleri yazdı veya 'güçsüz olduğu için' dedi; diplomasinin önemini ya da denge politikasını açıklamadı."],
+     [0,"Tabloyu kullanmadı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Kapitülasyonların kısa ve uzun vadeli sonuçlarını yorumlayabilme",l:[
+     [10,"Kısa vadeli sonucu (arabuluculuğun karşılığı; Belgrad'ın geri alınması/Fransa'nın desteği) ve uzun vadeli sonucu (ekonomik bağımlılığa zemin) doğru yazdı (her biri 5)."],
+     [5,"Yalnızca kısa veya yalnızca uzun vadeli sonucu doğru yazdı."],
+     [0,"Kapitülasyonu yanlış yorumladı (ör. Osmanlı'ya ekonomik üstünlük sağladığını yazdı) veya ilgisiz cevap verdi."]]}]},
+
+  /* 3 · 1.1 · zor · açık · 20 · ŞEKİL + metin */
+  {c:"1.1",p:20,zor:"zor",tur:"acik",
+   k:`<figure class="y-sekil"><svg viewBox="0 0 600 340" role="img" aria-label="Şematik harita: Rusya, Azak Denizi, Kırım, Karadeniz, İstanbul ve Boğazlar ile Rus ticaret gemilerinin Karadeniz'den Boğazlara yönelen oku">
+<defs><marker id="okRusGemi" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="s-cubuk"/></marker></defs>
+<rect x="1" y="1" width="598" height="338" rx="10" class="s-cizgi"/>
+<rect x="10" y="10" width="580" height="62" rx="6" class="s-kara"/>
+<text x="24" y="36" class="s-yazi">RUSYA</text>
+<text x="24" y="56" class="s-soluk">1700: Azak, 1783: Kırım'ın ilhakı</text>
+<ellipse cx="300" cy="190" rx="205" ry="72" class="s-su" opacity=".35"/>
+<text x="258" y="200" class="s-yazi">KARADENİZ</text>
+<ellipse cx="520" cy="108" rx="48" ry="18" class="s-su" opacity=".35"/>
+<text x="496" y="112" class="s-soluk">Azak Denizi</text>
+<ellipse cx="365" cy="124" rx="46" ry="19" class="s-kara"/>
+<text x="345" y="128" class="s-yazi">Kırım</text>
+<path d="M385 146 C330 168 240 205 150 252" class="s-kalin" marker-end="url(#okRusGemi)"/>
+<text x="395" y="165" class="s-soluk">Rus ticaret gemileri</text>
+<text x="395" y="182" class="s-soluk">(1774: serbest dolaşım)</text>
+<rect x="10" y="292" width="580" height="38" rx="6" class="s-kara"/>
+<text x="24" y="316" class="s-yazi">OSMANLI TOPRAKLARI</text>
+<circle cx="140" cy="268" r="7" class="s-mor"/>
+<text x="156" y="272" class="s-yazi">İstanbul ve Boğazlar</text>
+</svg><figcaption>Şematik harita, ölçeksiz</figcaption></figure>
+<p><b>Küçük Kaynarca Antlaşması'ndan (1774) maddeler</b> <i>(özet)</i>: Kırım siyasi bakımdan bağımsız olacak, dinî bakımdan halifeye bağlı kalacak. Rus ticaret gemileri Karadeniz'de ve Boğazlarda serbestçe dolaşacak. Rusya, Ortodoks halk adına Osmanlı nezdinde söz söyleyebilecek.</p>`,
+   q:"a) Haritayı ve kaynaktaki maddeleri kullanarak Küçük Kaynarca Antlaşması'nın Rusya'nın sıcak denizlere inme politikası açısından önemini açıklayınız. b) Kırım maddesindeki halifelik vurgusunun Osmanlı açısından nedenini 1783'te yaşananlarla ilişkilendirerek yorumlayınız.",
+   c2:"a) Rusya'nın hedefi Karadeniz ve Boğazlar üzerinden sıcak denizlere ulaşmaktı. Antlaşmayla Rus ticaret gemileri Karadeniz'de ve Boğazlardan serbestçe geçebildi; Kırım'ın bağımsızlığı da Rusya'nın bölgedeki etkisini artırdı. Karadeniz Osmanlı gölü olmaktan çıktı. b) Osmanlı, Kırım'ın siyasi bağımsızlığını kabul etmek zorunda kaldı; halifelik vurgusuyla dinî ve manevi bağı korumak istedi. Ancak bu bağ Rusya'yı durdurmadı; Rusya 1783'te Kırım'ı ilhak etti.",
+   o:[
+    {ad:"a",m:"Antlaşmanın Rus politikası açısından önemini haritayla açıklayabilme",l:[
+     [10,"Ticaret gemilerinin Karadeniz ve Boğazlarda serbestliğini (haritadaki oku kullanarak) sıcak denizlere inme hedefiyle ilişkilendirdi ve Karadeniz'in Osmanlı gölü olmaktan çıktığını ya da Kırım'ın Rus etkisine açılmasını belirtti."],
+     [6,"Serbest dolaşım maddesini doğru yazdı ancak politikayla ilişkilendirmedi; ya da politikayı anlattı, maddeleri kullanmadı."],
+     [3,"Yalnızca haritadaki yerleri ya da maddeleri aktardı."],
+     [0,"Haritayı ve kaynağı kullanmadı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Halifelik vurgusunu ve 1783'ü yorumlayabilme",l:[
+     [10,"Nedeni (siyasi bağımsızlık kabul edilirken dinî/manevi bağı korumak ve Rus etkisini sınırlamak) ve sonucu (1783'te Rusya'nın Kırım'ı ilhak etmesi, manevi bağın yetmemesi) ilişkilendirerek yazdı."],
+     [5,"Yalnızca nedeni ya da yalnızca 1783 ilhakını yazdı; ilişkilendirmedi."],
+     [0,"Halifeliğin Kırım'ı Osmanlı'ya bağladığı gibi yanlış cevap veya ilgisiz cevap."]]}]},
+
+  /* 4 · 1.2 · kolay · kısa · 10 */
+  {c:"1.2",p:10,zor:"kolay",tur:"kisa",
+   k:`<p><b>Kronoloji</b> <i>(özet)</i><br><b>1718</b> · Pasarofça Antlaşması imzalandı.<br><b>1720</b> · Yirmisekiz Mehmed Çelebi geçici elçi olarak Paris'e gönderildi.<br><b>1727</b> · Matbaa kurma izni verildi.<br><b>1730</b> · Patrona Halil İsyanı çıktı.</p>`,
+   q:"Kronolojiden yararlanarak Lale Devri'nin başlangıcını ve sonunu belirleyen olayları yıllarıyla yazınız.",
+   c2:"Lale Devri 1718'de Pasarofça Antlaşması ile başladı ve 1730'da Patrona Halil İsyanı ile sona erdi.",
+   o:[{m:"Dönemin sınırlarını kronolojiden belirleyebilme",l:[
+     [10,"Başlangıç: Pasarofça Antlaşması (1718); son: Patrona Halil İsyanı (1730). Olay ve yıl doğru (her biri 5)."],
+     [6,"İki olayı da doğru yazdı ancak yıllardan birini yazmadı ya da yanlış yazdı."],
+     [3,"Yalnızca bir olayı (yılıyla) doğru yazdı."],
+     [0,"1720 veya 1727 gibi dönem içi olayları sınır olarak gösterdi ya da boş bıraktı."]]}]},
+
+  /* 5 · 1.2 · orta · açık · 15 */
+  {c:"1.2",p:15,zor:"orta",tur:"acik",
+   k:`<p>Pasarofça Antlaşması'ndan sonra III. Ahmed ve Sadrazam Nevşehirli Damat İbrahim Paşa, kaybedilen toprakları geri almaya çalışmak yerine barışı korumayı seçti. Osmanlı yöneticileri Avrupa'nın askerî ve teknik üstünlüğünü artık açıkça görüyordu. Bu nedenle Avrupa'yı yakından tanımak için Paris, Viyana ve başka başkentlere elçiler gönderildi. Yönetimde bürokratlar (kalem ehli) önem kazandı. <i>(Özetlenmiştir.)</i></p>`,
+   q:"a) Metinden yararlanarak Lale Devri'nin ortaya çıkış nedenlerinden ikisini yazınız. b) Geçici elçiliklerin gönderilmesini ve kalem ehlinin önem kazanmasını bu nedenlerle ilişkilendiriniz.",
+   c2:"a) Pasarofça yenilgisi Avrupa'nın üstünlüğünü gösterdi; Osmanlı yöneticileri kaybedilenleri geri alma yerine barışı korumayı seçti. b) Barış ortamında Avrupa'yı tanımak için geçici elçiler gönderildi ve gözlemler Sefaretname'de toplandı. Savaş yerine diplomasi ve yenilik öne çıktığı için askerî kesimin etkisi azaldı, bürokratlar yönetimde önem kazandı.",
+   o:[
+    {ad:"a",m:"Metinden nedenleri belirleyebilme",l:[
+     [6,"İki nedeni doğru yazdı (her biri 3): Avrupa'nın üstünlüğünün görülmesi/Pasarofça yenilgisi; barışı koruma politikası."],
+     [3,"Yalnızca bir nedeni doğru yazdı."],
+     [0,"Neden yerine dönemin yeniliklerini yazdı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Sonuçları nedenlerle ilişkilendirebilme",l:[
+     [9,"Geçici elçilikleri Avrupa'yı tanıma isteğine, kalem ehlinin önem kazanmasını barış/diplomasi politikasına bağlayarak açıkladı (her biri yaklaşık yarı puan)."],
+     [5,"İki sonuçtan yalnızca birini nedenle ilişkilendirdi."],
+     [2,"Elçiliklerin ve kalem ehlinin ne olduğunu yazdı; nedenle ilişki kurmadı."],
+     [0,"Boş veya ilgisiz cevap."]]}]},
+
+  /* 6 · 1.2 · zor · açık · 25 */
+  {c:"1.2",p:25,zor:"zor",tur:"acik",
+   k:`<p><b>Kaynak 1:</b> İstanbul'da Kâğıthane mesiresi ve Sadabad çevresinde şenlikler düzenlendi; Çırağan eğlenceleri ve helva sohbetleri yaygınlaştı. Nedim şiirlerinde, Levni minyatürlerinde bu yaşamı anlattı. Varlıklı evlerde koltuk, iskemle ve portre kullanımı arttı.</p><p><b>Kaynak 2:</b> Aynı yıllarda Avrupa'da Osmanlı kıyafetleri ve süslemeleri moda oldu. İngiltere'nin İstanbul elçisinin eşi Lady Mary Wortley Montagu, İstanbul'da gördüğü çiçek aşılamasını ülkesinde tanıttı. Öte yandan pahalılık ve vergi yükü artıyor, geçim sıkıntısı çeken halk saraydaki gösterişe tepki duyuyordu. <i>(İki kaynak özetlenmiştir.)</i></p>`,
+   q:"a) Kaynaklardan hareketle Lale Devri'nde Osmanlı–Avrupa kültürel etkileşiminin karşılıklı olduğunu iki örnekle gösteriniz. b) Bu dönemde toplum hayatındaki değişimin tüm toplumsal kesimlere aynı biçimde yansıyıp yansımadığını yorumlayınız.",
+   c2:"a) Avrupa'dan Osmanlı'ya gelen etki: varlıklı evlerde koltuk, iskemle ve portre kullanımı. Osmanlı'dan Avrupa'ya giden etki: Avrupa'da Osmanlı kıyafet ve süslemelerinin moda olması ve çiçek aşılamasının İngiltere'ye tanıtılması. b) Değişim her kesime aynı biçimde yansımadı. Eğlence, mesire ve Batı tarzı eşya daha çok saray çevresinde ve varlıklılarda görüldü. Halk ise pahalılık ve vergi yükü altındaydı ve saraydaki gösterişe tepki duydu. Bu hoşnutsuzluk, yenilik karşıtı çevrelerin kışkırtmasıyla birleşerek 1730'da Patrona Halil İsyanı'na zemin hazırladı.",
+   o:[
+    {ad:"a",m:"Karşılıklı etkileşimi iki yönde örneklendirebilme",l:[
+     [10,"Her iki yönden birer doğru örnek verdi (her biri 5): Osmanlı'ya gelen (koltuk, iskemle, portre) ve Avrupa'ya giden (Turquerie/Osmanlı modası, çiçek aşılaması)."],
+     [5,"Örneklerin ikisini de aynı yönden verdi ya da yalnızca bir yönden örnek verdi."],
+     [0,"Kaynakları kullanmadı veya ilgisiz cevap verdi."]]},
+    {ad:"b",m:"Toplumsal kesimlere göre farklı etkiyi yorumlayabilme",l:[
+     [15,"Değişimin saray çevresi/varlıklılarda yoğunlaştığını, halkın ise geçim sıkıntısı yaşadığını kaynaklardan göstererek belirtti ve bu farkın sonucunu (halkın tepkisi, 1730 isyanı) yorumladı."],
+     [10,"Farklı kesimlere yansıdığını iki kesimi karşılaştırarak yazdı; sonucu (tepki/isyan) yorumlamadı."],
+     [5,"Yalnızca bir kesimin yaşamını (saray veya halk) anlattı."],
+     [0,"'Herkes aynı şekilde etkilendi' gibi kaynağa aykırı veya ilgisiz cevap."]]}]}
  ]}
 ];
+
+/* Sınavda çıkabilecekler: Senaryo 6 kazanımlarına göre kısa not (yeni bilgi yok; kitteki içeriğin özeti) */
+const MUHTEMEL={
+  giris:'Ortak yazılı Senaryo 6: TAR.11.1.1\'den 3, TAR.11.1.2\'den 3 soru. Sorular açık uçlu ve kısa cevaplı; çoğunda bir metin, harita ya da tablo verilir.',
+  ciktilar:[
+    {c:'1.1',ad:'1683–1789 savaşlar ve antlaşmalar',n:3,m:[
+      '<b>Antlaşmaların sırası ve tarafları:</b> Karlofça 1699, İstanbul 1700, Prut 1711, Pasarofça 1718, Belgrad 1739, Kerden 1746, Küçük Kaynarca 1774.',
+      '<b>Maddeden sonuç çıkarma:</b> verilen maddenin hangi antlaşmaya ait olduğu ve Osmanlı için ne anlama geldiği. Karlofça ilk büyük toprak kaybı, Küçük Kaynarca\'nın “ilk”leri.',
+      '<b>Diplomasinin önemi:</b> askerî güç yetmeyince arabulucuya başvurma. Karlofça ve Pasarofça\'da İngiltere ile Hollanda, Belgrad\'da Fransa.',
+      '<b>Dış politikanın üç aşaması:</b> önce kaybedilenleri geri alma, Pasarofça\'dan sonra barış ve denge, Küçük Kaynarca\'dan sonra kalan toprakları koruma.',
+      '<b>Rusya ve Karadeniz:</b> Azak (1700), Belgrad\'daki gemi yasağı (1739), Küçük Kaynarca: Rusya\'nın sıcak denizlere inme politikası.',
+      '<b>Harita:</b> bir antlaşmayla kaybedilen ya da geri alınan yerleri haritada gösterme.'
+    ]},
+    {c:'1.2',ad:'Lale Devri',n:3,m:[
+      '<b>Nedenler:</b> Pasarofça yenilgisi, III. Ahmed ve Nevşehirli Damat İbrahim Paşa\'nın barış politikası, Avrupa\'yı tanıma isteği.',
+      '<b>Yenilikler:</b> geçici elçilikler ve Sefaretname, matbaa, Tercüme Heyeti, Tulumbacı Ocağı, çiçek aşısı, çini atölyesi. Hangisinin hangi alanda olduğunu bil.',
+      '<b>Toplumsal değişim:</b> saray ve çevresinde Batı etkisi, eğlence ve mimari.',
+      '<b>Patrona Halil İsyanı (1730):</b> nedenleri ve Lale Devri\'ni bitirmesi.',
+      '<b>İki yorum:</b> “zevk ve eğlence dönemi” mi, “ilk ıslahat dönemi” mi? Verilen kaynağa göre bir yorumu gerekçeyle savunma.'
+    ]}
+  ],
+  tip:['Kısa cevaplı: bir tarih, ad ya da antlaşma yaz (10 puan civarı).','Kaynak sorusu: metni, haritayı ya da tabloyu oku; sonuç ya da neden yaz.','Neden–sonuç: “Bu antlaşma Osmanlı dış politikasını nasıl etkiledi?” gibi iki-üç cümlelik cevap.']
+};

@@ -12,19 +12,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="../_yazili/yazili.js?v=2"></script>
-<link rel="stylesheet" href="../_yazili/yazili.css?v=2">
+<script src="../_yazili/yazili.js?v=4"></script>
+<link rel="stylesheet" href="../_yazili/yazili.css?v=4">
 </head>
 <body style="--ders:#B4532A">
 <noscript><p style="padding:24px;font-family:system-ui">Bu kit JavaScript ile çalışır. Tarayıcında JavaScript'i aç.</p></noscript>
-<script src="veri.js?v=1"></script>
-<script src="../_yazili/tarih-semasi.js?v=2"></script>
+<script src="veri.js?v=3"></script>
+<script src="../_yazili/tarih-semasi.js?v=4"></script>
 <script>
 YAZILI.tarihKiti({
   sk:'cep-tarih-11-sinav1-v1',           /* eski kitle aynı anahtar: ilerleme kaybolmaz */
   ad:'1. yazılı kiti', ders:'Tarih 11 · Ünite 1', baslik:'1. yazılıya hazırlan', geri:'/kitpath/kitlerim/',
   senaryoAd:'Senaryo 6',
-  veri:{SINAV,SENARYO,RUBRIK,EK,KRONO,KART,YY17,ANT,ESLE,HARITA_NOKTA,HARITA_SORU,LALE,MC,PROVA},
+  veri:{SINAV,SENARYO,RUBRIK,EK,KRONO,KART,YY17,ANT,ESLE,HARITA_NOKTA,HARITA_SORU,LALE,MC,PROVA,MUHTEMEL:typeof MUHTEMEL!=="undefined"?MUHTEMEL:null,PROVA_SURUM:typeof PROVA_SURUM!=="undefined"?PROVA_SURUM:null},
   ciktiAd:{"1.1":"TAR.11.1.1","1.2":"TAR.11.1.2","17":"17. yy tekrar"},
   adlar:{savaslar:'Savaşlar ve antlaşmalar',lale:'Lale Devri'},
   videolar:[
@@ -32,14 +32,20 @@ YAZILI.tarihKiti({
     {id:'th102',src:'video/th102.mp4',kapak:'video/th102.jpg',sure:456,etiket:'TAR.11.1.1 · 2/2',baslik:"1718–1789: Belgrad'dan Küçük Kaynarca'ya",aciklama:'Belgrad · İran ve Kerden · Çeşme Baskını · Küçük Kaynarca ve "ilk"leri · sıcak denizler politikası · yedi antlaşmanın sırası'},
     {id:'th103',src:'video/th103.mp4',kapak:'video/th103.jpg',sure:421,etiket:'TAR.11.1.2',baslik:'Lale Devri: Neden, Yenilikler, Patrona Halil',aciklama:'Nedenler · elçilik, matbaa, Tercüme Heyeti, Tulumbacı Ocağı, çiçek aşısı, çini · toplumsal değişim · Patrona Halil İsyanı'}
   ],
+  akis:[{video:'th101',defter:'th101'},{test:[0,1,2,3,4,5,6,7,8,9],ad:'1683–1718 testi'},{video:'th102',defter:'th102'},{test:[10,11,13,15,16,17,18,19,21,22,23,27],ad:'1718–1789 testi'},{video:'th103',defter:'th103'},{test:[28,30,33,35,38,41,43,46,48,51],ad:'Lale Devri testi'}],
   metin:{
+    akis:'Sırayla git: videoyu izle (yanında defteri var), ardından kısa testi çöz. Üç video, üç test.',
+    muhtemel:'Yazılıdan önce bir kez oku: Senaryo 6\'da hangi konudan ne sorulabilir.',
+    kagit:'Senaryo 6 düzeninde 6 soru, 100 puan. Kağıdı aç, 40 dakikada kağıda çöz, sonra örnek cevaplarla puanla.',
+
     plan:"Sıradaki adımı aç; bitirdikçe liste kendini günceller.",
     videolar:'Bir videoya dokun, burada açılır; soru gelince durdur ve cevabı yüksek sesle söyle.',
     kronoloji:'1683–1789 olaylarına en eskiden en yeniye doğru dokun, sonra kontrol et.',
     cizelge:'1683–1789 çizelgesi',
     savaslar:'Her antlaşmanın kiminle, ne zaman, neden yapıldığını ve Osmanlı için sonucunu öğren; sonra alıştırmaları çöz.',
     lale:'1718–1730: nedenleri, yenilikleri ve Patrona Halil İsyanı\'nı Pasarofça ve barış politikasıyla bağlayarak öğren.',
-    provaMetin:'Senaryo 6 biçiminde 6 soru, 100 puan: kaynağı oku, cevabını yaz, örnek cevapla kendini puanla. 40 dakika tut.',
+    test:'Ortak yazılıda çoktan seçmeli soru çıkmaz; bu adım konuları pekiştirmek için. Asıl sınav biçimi Yazılı provası.',
+    provaMetin:'Asıl sınav biçimi bu: Senaryo 6 düzeninde 6 açık uçlu ve kısa cevaplı soru, kolaydan zora, 100 puan. 40 dakika tut, cevabını yaz, sonra örnek cevaba bakıp her bölüm için tam, kısmi ya da sıfır puanı seç.',
     sonGun:'Hafif tekrar: kronoloji çizelgesi ve antlaşma kartları, erken uyu'
   }
 });

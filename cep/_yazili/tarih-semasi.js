@@ -14,19 +14,21 @@
     var SINAV = V.SINAV, SENARYO = V.SENARYO || [], RUBRIK = V.RUBRIK || [], EK = V.EK || [],
       KRONO = V.KRONO || null, KART = V.KART || [], YY17 = V.YY17 || [], ANT = V.ANT || null, ESLE = V.ESLE || [],
       HARITA_NOKTA = V.HARITA_NOKTA || [], HARITA_SORU = V.HARITA_SORU || [], LALE = V.LALE || null, MC = V.MC || null, PROVA = V.PROVA || null,
-      KONU = V.KONU || null, ESLE_GRUP = V.ESLE_GRUP || null;
+      KONU = V.KONU || null, ESLE_GRUP = V.ESLE_GRUP || null, MUHTEMEL = V.MUHTEMEL || null, AKIS = cfg.akis || null;
     var esc = Y.esc, A = cfg.adlar || {}, M = cfg.metin || {};
 
     /* ---------- durum (anahtar ve alanlar eski kitle aynı) ---------- */
     var SK = cfg.sk, S = {};
     try { S = JSON.parse(localStorage.getItem(SK) || "{}") || {}; } catch (e) { S = {}; }
     S.r = S.r || {}; S.chk = S.chk || {}; S.es = S.es || {}; S.pv = S.pv || {}; S.pd = S.pd || 0; S.mcF = S.mcF || "all";
-    S.vid = S.vid || {}; S.kf = S.kf || {}; S.mcRun = S.mcRun || {}; S.ko = S.ko || {};
+    S.vid = S.vid || {}; S.kf = S.kf || {}; S.mcRun = S.mcRun || {}; S.ko = S.ko || {}; S.vt = S.vt || {}; S.vtRun = S.vtRun || {}; S.mu = S.mu || 0;
     if (ESLE_GRUP && (typeof S.esSeed !== "object" || !S.esSeed)) S.esSeed = {};
     if (PROVA && S.pd >= PROVA.length) S.pd = 0;
+    /* prova soruları değişince eski cevaplar yeni sorulara karışmasın */
+    if (V.PROVA_SURUM && S.pvSurum !== V.PROVA_SURUM) { S.pv = {}; S.pd = 0; S.pvSurum = V.PROVA_SURUM; }
     function save() { try { localStorage.setItem(SK, JSON.stringify(S)); } catch (e) {} }
     var CN = cfg.ciktiAd || {};
-    var ESKI = { kapsam: "plan", video: "videolar", krono: "kronoloji", savas: "savaslar", lale: "lale", test: "test", prova: "prova" };
+    var ESKI = { kapsam: "plan", video: AKIS ? "akis" : "videolar", krono: "kronoloji", savas: "savaslar", lale: "lale", test: "test", prova: "prova" };
     if (KONU) KONU.forEach(function (k) { ESKI[k.id] = "konular"; });
 
     function allKeys() {
@@ -40,7 +42,7 @@
     function mark(key, ok) { if (!S.r[key]) { S.r[key] = ok ? "ok" : "bad"; save(); } }
     function ilkDogru() { var k = allKeys(); return [k.filter(function (x) { return S.r[x] === "ok"; }).length, k.length]; }
     function pvState(d, q) { S.pv[d] = S.pv[d] || {}; S.pv[d][q] = S.pv[d][q] || { t: "", o: false, c: [] }; return S.pv[d][q]; }
-    function qScore(d, q) { var st = pvState(d, q), s = PROVA[d].s[q]; return s.o.reduce(function (a, x, j) { return a + (st.c[j] ? x[0] : 0); }, 0); }
+    function qScore(d, q) { var st = pvState(d, q), s = PROVA[d].s[q]; return Y.olcutPuan(s.o, st.c); }
     function grupCevap(g) { return Object.keys(S.es[g.id] || {}).length; }
     var tumKavram = [];
     if (KONU) KONU.forEach(function (k) { (k.kavram || []).forEach(function (c, i) { tumKavram.push(k.id + ":" + i); }); });
@@ -51,6 +53,8 @@
       kronoloji: function () { var b = S.ordBest || {}, en = null; Object.keys(b).forEach(function (n) { if (!en || b[n] / n > en[0] / en[1]) en = [b[n], +n]; }); return en || [0, KRONO.length]; },
       savaslar: function () { return [Object.keys(S.es).length + HARITA_SORU.filter(function (_, i) { return S.r["h" + i]; }).length, ESLE.length + HARITA_SORU.length]; },
       lale: function () { return [LALE.kavram.filter(function (_, i) { return S.kf[i]; }).length, LALE.kavram.length]; },
+      akis: function () { return [AKIS.filter(akisBitti).length, AKIS.length]; },
+      muhtemel: function () { return [S.mu ? 1 : 0, 1]; },
       konular: function () { return [KONU.filter(function (k) { return S.ko[k.id]; }).length, KONU.length]; },
       esle: function () { var a = 0, b = 0; ESLE_GRUP.forEach(function (g) { a += grupCevap(g); b += g.soru.length; }); return [a, b]; },
       test: function () { return [MC.filter(function (_, i) { return S.r["m" + i]; }).length, MC.length]; },
@@ -244,7 +248,7 @@
 
     /* ================= KONULAR (Coğrafya vb.) ================= */
     var KR = ["yesil", "mor", "turuncu", "mavi"];
-    function konular(g, alt) {
+    function konular(g, alt, akisSonra) {
       var k = null; KONU.forEach(function (x) { if (x.id === alt) k = x; });
       if (!k) {
         g.innerHTML = '<ol class="y-yol" style="margin-top:0">' + KONU.map(function (x, i) {
@@ -261,9 +265,9 @@
           t.sat.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>" + (t.not ? '<p class="y-mini y-soluk" style="margin:6px 0 8px">' + t.not + "</p>" : "") + "</div>";
       });
       if (k.vaka && k.vaka.length) h += Y.katla("Vaka kartları", '<div class="y-izgara" style="margin-top:0">' + k.vaka.map(function (v) { return '<div class="y-kv"><h3>' + v.h + "</h3>" + v.satir.map(function (r) { return "<p><b>" + r[0] + ":</b> " + r[1] + "</p>"; }).join("") + "</div>"; }).join("") + "</div>", k.vaka.length + " örnek olay");
-      h += '<div class="y-alt" style="border:0;padding-top:0"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-okudum><span>' + (sonraki ? "Okudum, sonraki konu: " + esc(sonraki.ad) : "Okudum, eşleştirmeye geç") + "</span>" + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
+      h += '<div class="y-alt" style="border:0;padding-top:0"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-okudum><span>' + (akisSonra ? "Okudum, sıradaki: " + esc(akisSonra.ad) : sonraki ? "Okudum, sonraki konu: " + esc(sonraki.ad) : "Okudum, eşleştirmeye geç") + "</span>" + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
       g.innerHTML = h;
-      g.querySelector("[data-okudum]").onclick = function () { S.ko[k.id] = 1; save(); Y.yenile(); Y.git(sonraki ? "konular" : "esle", sonraki ? sonraki.id : null); };
+      g.querySelector("[data-okudum]").onclick = function () { S.ko[k.id] = 1; save(); Y.yenile(); if (akisSonra) Y.git(akisSonra.id, akisSonra.alt); else Y.git(sonraki ? "konular" : "esle", sonraki ? sonraki.id : null); };
     }
 
     /* ================= EŞLEŞTİRME VE KAVRAMLAR ================= */
@@ -323,37 +327,130 @@
       });
     }
 
+
+    /* ================= VİDEO + TEST AKIŞI =================
+       cfg.akis: [{video:"th101", defter:"th101"} | {konu:"mekan"} | {test:[MC sırası...], ad:"..."}]; video ya da konudan sonra kısa test gelir. */
+    function akisVideo(id) { var v = null; (cfg.videolar || []).forEach(function (x) { if (x.id === id) v = x; }); return v; }
+    function akisKonu(id) { var k = null; (KONU || []).forEach(function (x) { if (x.id === id) k = x; }); return k; }
+    function akisBitti(x, i) { return x.video ? !!S.vid[x.video] : x.konu ? !!S.ko[x.konu] : S.vt[i] != null; }
+    function akisSatir(x) {
+      if (x.video) { var v = akisVideo(x.video); return ["Video", v.baslik, Math.round((v.sure || 0) / 60) + " dk" + (x.defter ? " · defteriyle" : "")]; }
+      if (x.konu) { var k = akisKonu(x.konu); return ["Konu", k.ad, k.k + " · okuma"]; }
+      return ["Test", x.ad, x.test.length + " soru"];
+    }
+    function akisSonra(i) {
+      var x = AKIS[i + 1];
+      return x ? { id: "akis", alt: String(i + 1), ad: akisSatir(x)[0] + ": " + akisSatir(x)[1] } : { id: MUHTEMEL ? "muhtemel" : "prova", ad: MUHTEMEL ? "Sınavda çıkabilecekler" : "Yazılı kağıdı" };
+    }
+    function akis(g, alt) {
+      var i = alt ? +alt : -1, x = AKIS[i];
+      if (!x) {
+        g.innerHTML = '<ol class="y-yol" style="margin-top:0">' + AKIS.map(function (x, i) {
+          var b = akisBitti(x, i), s = akisSatir(x);
+          return '<li><a class="y-yol-satir y-renk' + (b ? " bitti" : "") + '" style="--a:var(--r-' + (x.test ? "mavi" : x.konu ? "yesil" : "kirmizi") + ')" href="#akis/' + i + '" data-git="akis/' + i + '"><span class="y-adim-no">' + (b ? Y.svg(Y.ikon.tik, 15) : i + 1) + '</span><span class="m"><b>' + esc(s[0] + ": " + s[1]) + "</b><span>" + esc(s[2]) + '</span></span><span class="say">' + (x.test && b ? S.vt[i] : "") + "</span></a></li>";
+        }).join("") + "</ol>";
+        return;
+      }
+      var son = akisSonra(i), git = son.id + (son.alt ? "/" + son.alt : "");
+      var ust = '<div class="y-satir" style="margin-bottom:14px"><a class="y-lnk" href="#akis" data-git="akis">← Akışın tamamı</a><span class="y-mini y-soluk">' + (i + 1) + " / " + AKIS.length + "</span></div>";
+      var sonBtn = function (ana) { return '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><a class="y-btn' + (ana ? " y-btn--ana" : "") + ' y-btn--genis" href="#' + git + '" data-git="' + git + '"><span>Sıradaki: ' + esc(son.ad) + "</span>" + Y.svg(Y.ikon.ileri, 18) + "</a></div>"; };
+      if (x.konu) { konular(g, x.konu, son); g.insertAdjacentHTML("afterbegin", ust); var tk = g.querySelector('[data-git="konular"]'); if (tk) tk.parentNode.remove(); return; }
+      if (x.video) {
+        g.innerHTML = ust + "<div data-v></div>" + (x.defter ? '<a class="y-btn y-btn--genis" style="margin-top:12px" href="' + (cfg.defterYol || "defter/?b=") + x.defter + '">' + Y.svg(Y.ikon.liste, 18) + "<span>Defteri aç: videonun notları</span></a>" : "") + sonBtn(true);
+        Y.videolar(g.querySelector("[data-v]"), { gruplar: [{ baslik: "", videolar: [akisVideo(x.video)] }], durum: S.vid, kaydet: save, ac: x.video });
+        return;
+      }
+      g.innerHTML = ust + "<div data-oyn></div>" + sonBtn(false);
+      S.vtRun[i] = S.vtRun[i] || {};
+      Y.oynatici(g.querySelector("[data-oyn]"), {
+        havuz: x.test, durum: S.vtRun[i], kaydet: save,
+        soru: function (qi) { var m = MC[qi]; return { q: m.q, o: m.o, a: m.a || 0, e: m.e }; },
+        kontrol: function (qi, ok) { mark("m" + qi, ok); },
+        mesaj: function (p, n, tur) { return p === n ? (tur === "yanlis" ? "Hepsini düzelttin." : "Hepsi doğru.") : "Yanlışlarını bir kez daha çöz, sonra devam et."; },
+        ozet: function (r) { if (S.vt[i] == null) { S.vt[i] = (x.test.length - r.yanlis.length) + "/" + x.test.length; save(); Y.yenile(); } return ""; }
+      });
+    }
+
+    /* ================= SINAVDA ÇIKABİLECEKLER (not) ================= */
+    function muhtemel(g) {
+      var h = (MUHTEMEL.giris ? '<p class="y-not" style="margin-bottom:14px">' + MUHTEMEL.giris + "</p>" : "") + MUHTEMEL.ciktilar.map(function (c) {
+        return '<div class="y-kart" style="margin-bottom:14px"><h2 class="y-h2">' + esc(CN[c.c] || c.c) + (c.ad ? ": " + esc(c.ad) : "") + '</h2><p class="y-mini y-soluk" style="margin-top:2px">Sınavda ' + c.n + " soru</p><ul class=\"y-madde\" style=\"margin-top:10px\">" + c.m.map(function (m) { return "<li>" + m + "</li>"; }).join("") + "</ul></div>";
+      }).join("") + (MUHTEMEL.tip ? '<div class="y-kart" style="margin-bottom:14px"><h2 class="y-h2">Soru biçimleri</h2><ul class="y-madde" style="margin-top:10px">' + MUHTEMEL.tip.map(function (m) { return "<li>" + m + "</li>"; }).join("") + "</ul></div>" : "") +
+        '<div class="y-alt" style="border:0;padding-top:0"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-oku><span>Okudum, yazılı kağıdına geç</span>' + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
+      g.innerHTML = h;
+      g.querySelector("[data-oku]").onclick = function () { S.mu = 1; save(); Y.yenile(); Y.git("prova"); };
+    }
+
     /* ================= YAZILI PROVASI ================= */
+    /* ================= YAZILI KAĞIDI =================
+       Öğrenci kağıdı açar (yazdırır ya da ekrandan bakıp kağıda çözer), sonra her soruyu örnek cevapla tam / kısmi / sıfır puanlar. */
+    function kagitHTML(d) {
+      var P = PROVA[d];
+      return '<div class="y-kagit"><div class="ust"><h2>' + esc(cfg.ders + " · " + P.ad) + "</h2><p>Süre 40 dakika · " + P.s.reduce(function (a, x) { return a + x.p; }, 0) + " puan · Cevaplarını kağıda yaz.</p>" + '<div class="kim"><span>Ad soyad:</span><span>Sınıf / no:</span><span>Puan:</span></div></div>' +
+        P.s.map(function (x, q) {
+          var c = "", satir = x.tur === "kisa" ? 3 : 8; for (var k = 0; k < satir; k++) c += '<div class="c"></div>';
+          return '<div class="s"><h3>' + (q + 1) + ". soru (" + x.p + " puan)</h3>" + (x.k ? '<div class="y-kaynak">' + x.k + "</div>" : "") + '<div class="y-soru">' + x.q + "</div>" + c + "</div>";
+        }).join("") + "</div>";
+    }
+    /* kağıt kitin içinde açılır (yeni sekme bazı telefonlarda engelleniyor); yazdırırken yalnızca .y-kagit basılır */
+    function kagitAc(g, d) {
+      g.innerHTML = '<div class="y-satir y-satir--ara" style="margin-bottom:14px"><button type="button" class="y-lnk" data-geri>← Geri</button><button type="button" class="y-btn" data-yazdir>Yazdır / PDF</button></div>' + kagitHTML(d) +
+        '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>' + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
+      window.scrollTo(0, 0);
+    }
     var pvKonum = {};
     function prova(g) {
       var d = S.pd;
       pvKonum[d] = pvKonum[d] || { i: 0 };
-      Y.prova(g, {
-        sorular: PROVA[d].s.map(function (s) { return { ust: esc(CN[s.c] || s.c), puan: s.p, kaynak: s.k, q: s.q, ornek: s.c2, olcut: s.o }; }),
-        durum: function (q) { return pvState(d, q); }, kaydet: save, konum: pvKonum[d], toplamAd: PROVA[d].ad,
-        diger: function () {
-          return Y.diger((PROVA.length > 1 ? '<span class="grup">Deneme seç:</span>' + PROVA.map(function (p, i) { return i === d ? "" : '<button type="button" class="y-lnk" data-d="' + i + '">' + esc(p.ad) + "</button>"; }).join("") : "") +
-            '<button type="button" class="y-lnk" data-sifir>' + esc(PROVA[d].ad) + "'i sıfırla</button>");
-        }
-      });
-      g.addEventListener("click", function (e) {
+      S.pk = S.pk || {};
+      var diger = function () {
+        return Y.diger((PROVA.length > 1 ? '<span class="grup">Başka kağıt:</span>' + PROVA.map(function (p, i) { return i === d ? "" : '<button type="button" class="y-lnk" data-d="' + i + '">' + esc(p.ad) + "</button>"; }).join("") : "") +
+          '<button type="button" class="y-lnk" data-kagit>Kağıdı yeniden aç</button><button type="button" class="y-lnk" data-sifir>' + esc(PROVA[d].ad) + " puanlarını sil</button>");
+      };
+      if (!S.pk[d]) {
+        var top = PROVA[d].s.reduce(function (a, x) { return a + x.p; }, 0);
+        g.innerHTML = '<div class="y-kart"><h2 class="y-h2">' + esc(PROVA[d].ad) + '</h2><p class="y-mini y-soluk" style="margin-top:2px">' + PROVA[d].s.length + " soru · " + top + " puan · 40 dakika</p>" +
+          '<ol class="y-madde" style="margin-top:12px"><li>Kağıdı aç. Yazdır ya da ekrana bakarak boş bir kağıda çöz.</li><li>40 dakika tut; deftere ve nota bakma.</li><li>Bitince buraya dön: her soruda örnek cevaba bak, kendine tam, kısmi ya da sıfır puan ver.</li></ol>' +
+          '<button type="button" class="y-btn" style="margin-top:14px" data-kagit>' + Y.svg(Y.ikon.kalem, 18) + "<span>Yazılı kağıdını aç</span></button></div>" +
+          '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>' + Y.svg(Y.ikon.ileri, 18) + "</button></div>" + diger();
+      } else {
+        Y.prova(g, {
+          kagit: true,
+          sorular: PROVA[d].s.map(function (s) { return { ust: esc(CN[s.c] || s.c), puan: s.p, zor: s.zor, tur: s.tur, kaynak: s.k, q: s.q, ornek: s.c2, olcut: s.o }; }),
+          durum: function (q) { return pvState(d, q); }, kaydet: save, konum: pvKonum[d], toplamAd: PROVA[d].ad, diger: diger
+        });
+      }
+      g.onclick = function (e) {
         var b = e.target.closest("[data-d]"); if (b) { S.pd = +b.getAttribute("data-d"); save(); g.innerHTML = ""; prova(g); return; }
-        if (e.target.closest("[data-sifir]")) { if (!confirm(PROVA[S.pd].ad + " için yazdıkların ve puanların silinsin mi?")) return; S.pv[S.pd] = {}; save(); Y.yenile(); g.innerHTML = ""; prova(g); }
-      });
+        if (e.target.closest("[data-kagit]")) { kagitAc(g, S.pd); return; }
+        if (e.target.closest("[data-yazdir]")) { window.print(); return; }
+        if (e.target.closest("[data-geri]")) { g.innerHTML = ""; prova(g); return; }
+        if (e.target.closest("[data-puanla]")) { S.pk[S.pd] = 1; save(); g.innerHTML = ""; prova(g); return; }
+        if (e.target.closest("[data-sifir]")) { if (!confirm(PROVA[S.pd].ad + " için verdiğin puanlar silinsin mi?")) return; S.pv[S.pd] = {}; S.pk[S.pd] = 0; save(); Y.yenile(); g.innerHTML = ""; prova(g); }
+      };
     }
 
     /* ================= KUR ================= */
     var ara = ["yesil", "mor", "turuncu"], ai = 0;
     function araRenk() { return ara[(ai++) % ara.length]; }
     var adimlar = [{ id: "plan", ad: "Plan", renk: "lacivert", ikon: "plan", baslik: cfg.baslik || cfg.ad, metin: M.plan || "Sıradaki adımı aç; bitirdikçe liste kendini günceller.", ciz: plan }];
-    if ((cfg.videolar || []).length) adimlar.push({ id: "videolar", ad: "Videolar", renk: "kirmizi", ikon: "video", kisa: cfg.videolar.length + " video, toplam ≈ " + Math.round(cfg.videolar.reduce(function (a, v) { return a + (v.sure || 0); }, 0) / 60) + " dk", metin: M.videolar || "Bir videoya dokun, burada açılır. %80'ini izleyince “izlendi” sayılır.", ciz: videolar, ilerleme: P.videolar });
+    if ((cfg.videolar || []).length && !AKIS) adimlar.push({ id: "videolar", ad: "Videolar", renk: "kirmizi", ikon: "video", kisa: cfg.videolar.length + " video, toplam ≈ " + Math.round(cfg.videolar.reduce(function (a, v) { return a + (v.sure || 0); }, 0) / 60) + " dk", metin: M.videolar || "Bir videoya dokun, burada açılır. %80'ini izleyince “izlendi” sayılır.", ciz: videolar, ilerleme: P.videolar });
+    /* akış varsa sıra: Video + test → Sınavda çıkabilecekler → Yazılı kağıdı; eski adımlar arkada "ek çalışma" olarak durur */
+    if (AKIS) {
+      adimlar.push({ id: "akis", ad: "Video + test", renk: "kirmizi", ikon: "video", kisa: AKIS.length + " adım: " + (AKIS.some(function (x) { return x.video; }) ? "video" : "konu") + ", ardından kısa test", metin: M.akis || "Sırayla git: önce izle ya da oku, ardından kısa testi çöz.", ciz: akis, ilerleme: P.akis });
+      if (MUHTEMEL) adimlar.push({ id: "muhtemel", ad: "Sınavda çıkabilecekler", renk: "turuncu", ikon: "liste", kisa: "Kısa not: ne sorulabilir", metin: M.muhtemel || "Yazılıdan önce bir kez oku.", ciz: muhtemel, ilerleme: P.muhtemel });
+      if (PROVA) adimlar.push({ id: "prova", ad: "Yazılı kağıdı", renk: "petrol", ikon: "kalem", kisa: PROVA.length + " kağıt: kağıtta çöz, sonra puanla", metin: M.kagit || "Kağıdı aç, 40 dakikada çöz, sonra örnek cevaplarla puanla.", ciz: prova, ilerleme: P.prova });
+    }
+    var ekBas = adimlar.length;
     if (KRONO) adimlar.push({ id: "kronoloji", ad: "Kronoloji", renk: araRenk(), ikon: "saat", kisa: "Olayları sıraya diz", metin: M.kronoloji || "Olaylara en eskiden en yeniye doğru dokun, sonra kontrol et.", ciz: kronoloji, ilerleme: P.kronoloji });
     if (ANT) adimlar.push({ id: "savaslar", ad: A.savaslar || "Savaşlar ve antlaşmalar", renk: araRenk(), ikon: "bayrak", kisa: "Antlaşma kartları, eşleştirme, harita", metin: M.savaslar || "", ciz: savaslar, ilerleme: P.savaslar });
     if (LALE) adimlar.push({ id: "lale", ad: A.lale || "Lale Devri", renk: araRenk(), ikon: "cicek", kisa: "Nedenler, yenilikler, kavram kartları", metin: M.lale || "", ciz: lale, ilerleme: P.lale });
     if (KONU) adimlar.push({ id: "konular", ad: A.konular || "Konular", renk: araRenk(), ikon: "liste", kisa: KONU.length + " konu: özet, tablo, vaka", metin: M.konular || "Bir konuyu aç, oku; bitince “Okudum”a dokun.", ciz: konular, ilerleme: P.konular });
     if (ESLE_GRUP) adimlar.push({ id: "esle", ad: A.esle || "Eşleştirme ve kavramlar", renk: araRenk(), ikon: "kart", kisa: ESLE_GRUP.length + " alıştırma ve kavram kartları", metin: M.esle || "Bir alıştırmayı aç ve her maddenin doğru karşılığına dokun.", ciz: esle, ilerleme: P.esle });
     if (MC) adimlar.push({ id: "test", ad: "Çoktan seçmeli", renk: "mavi", ikon: "soru", kisa: MC.length + " soru, anında açıklama", metin: M.test || "Şıkka dokununca cevabın kontrol edilir; açıklamayı okuyup devam et.", ciz: test, ilerleme: P.test });
-    if (PROVA) adimlar.push({ id: "prova", ad: "Yazılı provası", renk: "petrol", ikon: "kalem", kisa: PROVA.length + " deneme, örnek cevap ve ölçüt", metin: M.provaMetin || "Kaynağı oku, cevabını yaz, örnek cevabı aç ve ölçütlerle kendini puanla. 40 dakika tut.", ciz: prova, ilerleme: P.prova });
+    if (PROVA && !AKIS) adimlar.push({ id: "prova", ad: "Yazılı provası", renk: "petrol", ikon: "kalem", kisa: PROVA.length + " deneme, örnek cevap ve ölçüt", metin: M.provaMetin || "Kaynağı oku, cevabını yaz, örnek cevabı aç ve ölçütlerle kendini puanla. 40 dakika tut.", ciz: prova, ilerleme: P.prova });
+
+    if (AKIS) adimlar.slice(ekBas).forEach(function (a) { a.kisa = "Ek çalışma · " + (a.kisa || ""); });
 
     Y.kur({
       ad: cfg.ad, ders: cfg.ders, sinav: SINAV.tarih, sinavMetin: SINAV.gun, geri: cfg.geri,

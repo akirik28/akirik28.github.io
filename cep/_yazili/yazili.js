@@ -426,35 +426,50 @@
   }
 
   /* ---------------- açık uçlu prova ---------------- */
+  /* Ölçüt iki biçimde olabilir: [puan, metin] işaret kutusu, ya da MEB tarzı kademe
+     {ad, m, l:[[tam puan, metin], [kısmi puan, metin], …, [0, sıfır metni]]} (c[j] = seçilen kademenin sırası). */
+  function olcutPuan(olcut, c) {
+    return olcut.reduce(function (a, x, j) {
+      if (Array.isArray(x)) return a + (c[j] === true ? x[0] : 0);
+      var k = c[j]; return a + (typeof k === "number" && x.l[k] ? x.l[k][0] : 0);
+    }, 0);
+  }
+  function kademeAd(l, k) { return k === 0 ? "Tam" : l[k][0] === 0 ? "Sıfır" : "Kısmi"; }
+  var ZOR = { kolay: "Kolay", orta: "Orta", zor: "Zor" };
   function prova(kutu, o) {
     var w = D.createElement("div"); w.className = "y-prova"; kutu.appendChild(w);
     var konum = o.konum || { i: 0 }, uyar = false;
-    function puan(i) { var st = o.durum(i); return o.sorular[i].olcut.reduce(function (a, x, j) { return a + (st.c[j] ? x[0] : 0); }, 0); }
+    function puan(i) { return olcutPuan(o.sorular[i].olcut, o.durum(i).c); }
     function toplam() { var t = 0, m = 0; o.sorular.forEach(function (s, i) { t += puan(i); m += s.puan; }); return [t, m]; }
     function ciz(anim) {
       if (konum.i >= o.sorular.length) konum.i = 0;
       var i = konum.i, s = o.sorular[i], st = o.durum(i), n = o.sorular.length, tp = toplam();
+      if (o.kagit && !st.o) { st.o = true; o.kaydet(); }
       w.innerHTML = '<div class="y-oyn-ust"><span>Soru <b>' + (i + 1) + "</b> / " + n + " · " + s.puan + " puan</span><span>" + esc(o.toplamAd || "Toplam") + ": <b>" + tp[0] + " / " + tp[1] + "</b></span></div>" +
         '<div class="y-noktalar">' + o.sorular.map(function (x, k) {
-          var sk = o.durum(k), c = sk.o ? (puan(k) >= x.puan ? "ok" : puan(k) > 0 ? "sec" : "bad") : sk.t ? "sec" : "";
+          var sk = o.durum(k), c = (o.kagit ? sk.c.some(function (v) { return v != null && v !== false; }) : sk.o) ? (puan(k) >= x.puan ? "ok" : puan(k) > 0 ? "sec" : "bad") : sk.t ? "sec" : "";
           return '<button type="button" class="y-nokta ' + c + (k === i ? " simdi" : "") + '" data-p="' + k + '" aria-label="Soru ' + (k + 1) + '">' + (k + 1) + "</button>";
         }).join("") + "</div>" +
         '<div class="y-soru-kart' + (anim ? " y-gir" : "") + '">' + (s.ust ? '<div class="y-soru-etiket">' + s.ust + "</div>" : "") +
+        (s.zor || s.tur ? '<div class="y-cipler">' + (s.tur ? '<span class="y-cip">' + (s.tur === "kisa" ? "Kısa cevaplı" : "Açık uçlu") + "</span>" : "") + (ZOR[s.zor] ? '<span class="y-cip y-cip--' + s.zor + '">' + ZOR[s.zor] + "</span>" : "") + "</div>" : "") +
         (s.kaynak ? '<div class="y-kaynak">' + s.kaynak + "</div>" : "") +
         '<div class="y-soru"' + (s.lang ? ' lang="' + s.lang + '"' : "") + ">" + s.q + "</div>" +
-        '<textarea class="y-yaz" placeholder="Cevabını buraya yaz… (bu cihazda saklanır)" aria-label="Soru ' + (i + 1) + ' için cevabın">' + esc(st.t) + "</textarea>" +
-        (st.o ? '<div class="y-ornek"><div class="bas">Örnek cevap</div>' + s.ornek + "</div>" +
+        (o.kagit ? "" : '<textarea class="y-yaz' + (s.tur === "kisa" ? " y-yaz--kisa" : "") + '" placeholder="Cevabını buraya yaz… (bu cihazda saklanır)" aria-label="Soru ' + (i + 1) + ' için cevabın">' + esc(st.t) + "</textarea>") +
+        (st.o ? '<div class="y-ornek"><div class="bas">Örnek cevap' + (o.kagit ? ": kağıdındakiyle karşılaştır" : "") + '</div>' + s.ornek + "</div>" +
           '<div class="y-olcut-bas">Kendini puanla: ' + puan(i) + " / " + s.puan + '</div><ul class="y-olcut">' + s.olcut.map(function (x, j) {
             var id = yeniId();
+            if (!Array.isArray(x)) return '<li class="y-kademe"><fieldset><legend>' + (x.ad ? "<b>" + x.ad + ")</b> " : "") + (x.m || "") + "</legend>" + x.l.map(function (L, k) {
+              return '<label class="y-kad' + (st.c[j] === k ? " on" : "") + '"><input type="radio" name="' + id + '" data-j="' + j + '" data-k="' + k + '"' + (st.c[j] === k ? " checked" : "") + '><span class="y-kad-ust"><b>' + kademeAd(x.l, k) + "</b> · " + L[0] + ' p</span><span class="y-kad-metin">' + L[1] + "</span></label>";
+            }).join("") + "</fieldset></li>";
             return '<li class="' + (st.c[j] ? "on" : "") + '"><label class="y-tik" for="' + id + '"><input type="checkbox" id="' + id + '" data-j="' + j + '"' + (st.c[j] ? " checked" : "") + '><span class="y-kutu">' + IK.tik + '</span><span class="y-tik-metin">' + x[1] + '</span><span class="p">' + x[0] + " p</span></label></li>";
           }).join("") + "</ul>" + (s.ek ? '<div class="y-ekler">' + s.ek + "</div>" : "") : "") +
         '<p class="y-mini y-soluk" data-uyari style="margin-top:10px"></p></div>' +
         '<div class="y-oyn-alt">' + (!st.o ? '<button type="button" class="y-btn y-btn--ana y-btn--genis" data-goster><span>Örnek cevabı göster</span></button>'
           : i < n - 1 ? '<button type="button" class="y-btn y-btn--ana y-btn--genis" data-sonraki><span>Sonraki soru</span>' + svg(IK.ileri, 18) + "</button>" : "") + "</div>" + (o.diger ? o.diger() : "");
       var ta = w.querySelector("textarea");
-      ta.addEventListener("input", function () { st.t = ta.value; o.kaydet(); });
+      if (ta) ta.addEventListener("input", function () { st.t = ta.value; o.kaydet(); });
       w.querySelectorAll("[data-j]").forEach(function (cb) {
-        cb.addEventListener("change", function () { st.c[+cb.getAttribute("data-j")] = cb.checked; o.kaydet(); yenile(); var j = cb.getAttribute("data-j"); ciz(); var y = w.querySelector('[data-j="' + j + '"]'); if (y) y.focus({ preventScroll: true }); });
+        cb.addEventListener("change", function () { st.c[+cb.getAttribute("data-j")] = cb.type === "radio" ? +cb.getAttribute("data-k") : cb.checked; o.kaydet(); yenile(); var j = cb.getAttribute("data-j"); ciz(); var y = w.querySelector('[data-j="' + j + '"]:checked') || w.querySelector('[data-j="' + j + '"]'); if (y) y.focus({ preventScroll: true }); });
       });
     }
     function ustuGor() { var r = w.getBoundingClientRect(); if (r.top < 60) w.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }
@@ -475,7 +490,7 @@
 
   window.YAZILI = {
     kur: kur, git: git, yenile: yenile, hashAyarla: hashAyarla,
-    planUst: planUst, gunlukPlan: gunlukPlan, liste: liste, videolar: videolar, cevir: cevir, oynatici: oynatici, prova: prova,
+    olcutPuan: olcutPuan, planUst: planUst, gunlukPlan: gunlukPlan, liste: liste, videolar: videolar, cevir: cevir, oynatici: oynatici, prova: prova,
     diger: diger, katla: katla, esc: esc, hash: hash, karistir: karistir, tohum: tohum, sure: sure, gunKaldi: gunKaldi, sayacMetni: sayacMetni, ikon: IK, svg: svg,
     temaDegistir: temaDegistir
   };

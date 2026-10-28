@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="../_yazili/yazili.js?v=2"></script>
-<link rel="stylesheet" href="../_yazili/yazili.css?v=2">
+<script src="../_yazili/yazili.js?v=4"></script>
+<link rel="stylesheet" href="../_yazili/yazili.css?v=4">
 </head>
 <body style="--ders:#3D5BD9">
 <noscript><p style="padding:24px;font-family:system-ui">Bu kit JavaScript ile çalışır. Tarayıcında JavaScript'i aç.</p></noscript>
@@ -25,7 +25,7 @@ const Y=YAZILI;
 /* ===================== DURUM (anahtar eski kitle aynı: ilerleme kaybolmaz) ===================== */
 const SK='cep-calcbc-exam1-v1';
 let S={};try{S=JSON.parse(localStorage.getItem(SK)||'{}')||{};}catch(e){S={};}
-S.hz=S.hz||{};S.obj=S.obj||{};S.rub=S.rub||{};S.vid=S.vid||{};S.kc=S.kc||{};S.hk=S.hk||{};S.run=S.run||{};S.acik=S.acik||{};
+S.vt=S.vt||{};S.vtRun=S.vtRun||{};S.pk=S.pk||0;S.mu=S.mu||0;S.hz=S.hz||{};S.obj=S.obj||{};S.rub=S.rub||{};S.vid=S.vid||{};S.kc=S.kc||{};S.hk=S.hk||{};S.run=S.run||{};S.acik=S.acik||{};
 const save=()=>{try{localStorage.setItem(SK,JSON.stringify(S));}catch(e){}};
 const esc=Y.esc, U=[1,2,3];
 
@@ -38,9 +38,47 @@ const uVid=u=>VID.filter(v=>v.u===u);
 const unitAd=u=>UNITS[u].replace(/^Unit \d · /,'');
 const vlink=s=>`<a class="y-vlink" href="#videolar/${s}" data-git="videolar/${s}">▶ ${EP[s].k} · ${esc(EP[s].t)}</a>`;
 
+
+/* ===================== VİDEO + TEST AKIŞI: her videonun yanında defteri, birkaç videoda bir o videoların soruları ===================== */
+const GRUP=[['cb101','cb102','cb103'],['cb104','cb105','cb106','cb107'],['cb108','cb109','cb110'],['cb201','cb202','cb203','cb204'],['cb205','cb206','cb207'],['cb208','cb209','cb210'],['cb301','cb302','cb303','cb304','cb305']];
+const vidSoru=s=>TEST.map((t,i)=>i).filter(i=>OBJ[TEST[i].o].ep[0]===s);
+const AKIS=[];
+GRUP.forEach((g,gi)=>{g.filter(s=>VID.some(v=>v.id===s)).forEach(s=>AKIS.push({video:s}));const t=[].concat(...g.map(vidSoru));if(t.length)AKIS.push({test:t,ad:`${EP[g[0]].k.split(/[–,]/)[0]} – ${EP[g[g.length-1]].k.split(/[–,]/).pop().trim()} testi`});});
+const akisBitti=(x,i)=>x.video?izlendi(x.video):S.vt[i]!=null;
+const defterYol=s=>ROOT+'unit-'+EP[s].u+'/defter/?b='+s;
+function akisSatir(x){return x.video?['Video',`${EP[x.video].k} · ${EP[x.video].t}`,Math.max(1,Math.round((SURE[x.video]||0)/60))+' dk · defteriyle']:['Test',x.ad,x.test.length+' soru'];}
+function akis(g,alt){
+  const i=alt?+alt:-1,x=AKIS[i];
+  if(!x){g.innerHTML='<ol class="y-yol" style="margin-top:0">'+AKIS.map((x,i)=>{const b=akisBitti(x,i),s=akisSatir(x);
+    return `<li><a class="y-yol-satir y-renk${b?' bitti':''}" style="--a:var(--r-${x.test?'mavi':'kirmizi'})" href="#akis/${i}" data-git="akis/${i}"><span class="y-adim-no">${b?Y.svg(Y.ikon.tik,15):i+1}</span><span class="m"><b>${esc(s[0]+': '+s[1])}</b><span>${esc(s[2])}</span></span><span class="say">${x.test&&b?S.vt[i]:''}</span></a></li>`;}).join('')+'</ol>';return;}
+  const n=AKIS[i+1],git=n?'akis/'+(i+1):'muhtemel',nAd=n?akisSatir(n)[0]+': '+akisSatir(n)[1]:'Sınavda çıkabilecekler';
+  const ust=`<div class="y-satir y-satir--ara" style="margin-bottom:14px"><a class="y-lnk" href="#akis" data-git="akis">← Akışın tamamı</a><span class="y-mini y-soluk">${i+1} / ${AKIS.length}</span></div>`;
+  const son=ana=>`<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><a class="y-btn${ana?' y-btn--ana':''} y-btn--genis" href="#${git}" data-git="${git}"><span>Sıradaki: ${esc(nAd)}</span>${Y.svg(Y.ikon.ileri,18)}</a></div>`;
+  if(x.video){g.innerHTML=ust+'<div data-v></div>'+`<a class="y-btn y-btn--genis" style="margin-top:12px" href="${defterYol(x.video)}">${Y.svg(Y.ikon.liste,18)}<span>Defteri aç: videonun notları</span></a>`+son(true);
+    Y.videolar(g.querySelector('[data-v]'),{gruplar:[{baslik:'',videolar:VID.filter(v=>v.id===x.video)}],durum:S.vid,kaydet:save,ac:x.video});return;}
+  g.innerHTML=ust+'<div data-oyn></div>'+son(false);
+  S.vtRun[i]=S.vtRun[i]||{};
+  Y.oynatici(g.querySelector('[data-oyn]'),{havuz:x.test,durum:S.vtRun[i],kaydet:save,
+    soru:qi=>{const t=TEST[qi];return {q:t.q,o:t.o_,a:t.a,e:t.e,lang:'en'};},
+    etiket:qi=>{const o=OBJ[TEST[qi].o];return `<span class="y-kod">${o.c}</span> <span lang="en">${o.en}</span>`;},
+    mesaj:(p,n,tur)=>p===n?(tur==='yanlis'?'Hepsini düzelttin.':'Hepsi doğru.'):'Yanlışının videosuna bir daha bak, sonra tekrar çöz.',
+    ozet:r=>{if(S.vt[i]==null){S.vt[i]=(x.test.length-r.yanlis.length)+'/'+x.test.length;save();Y.yenile();}return '';}});
+}
+
+/* ===================== SINAVDA ÇIKABİLECEKLER: öğretmenin Exam 1 hedefleri ===================== */
+function muhtemel(g){
+  g.innerHTML='<p class="y-not" style="margin-bottom:14px">Exam 1 kapsamı: Unit 1 ve Unit 2\'nin tamamı, Unit 3\'ten zincir kuralı ve kapalı türev. Aşağıdakiler öğretmenin hedef listesi.</p>'+
+    U.map(u=>`<div class="y-kart" style="margin-bottom:14px"><h2 class="y-h2" lang="en">Unit ${u} · ${esc(unitAd(u))}</h2><ul class="y-madde" style="margin-top:10px">${OBJ.filter(o=>o.u===u).map(o=>`<li><b>${o.c}</b> ${o.tr}</li>`).join('')}</ul></div>`).join('')+
+    `<div class="y-kart" style="margin-bottom:14px"><h2 class="y-h2">Soru biçimleri</h2><ul class="y-madde" style="margin-top:10px"><li>Çoktan seçmeli: grafik ya da tablodan limit, türev kuralları, süreklilik.</li><li>Açık uçlu: işlemini adım adım göster; cevabı bir cümleyle gerekçelendir (ör. IVT'nin koşulları).</li></ul></div>`+
+    `<div class="y-alt" style="border:0;padding-top:0"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-oku><span>Okudum, yazılı kağıdına geç</span>${Y.svg(Y.ikon.ileri,18)}</button></div>`;
+  g.querySelector('[data-oku]').onclick=()=>{S.mu=1;save();Y.yenile();Y.git('acik');};
+}
+
 /* ===================== İLERLEME ===================== */
 const say=o=>Object.keys(o).length;
 const P={
+  akis:()=>[AKIS.filter(akisBitti).length,AKIS.length],
+  muhtemel:()=>[S.mu?1:0,1],
   videolar:()=>[VID.filter(v=>izlendi(v.id)).length,VID.length],
   konular:()=>[OBJ.filter((_,i)=>S.hz[i]).length,OBJ.length],
   kartlar:()=>[KART.filter((_,i)=>S.kc[i]).length,KART.length],
@@ -148,28 +186,45 @@ function deneme(g){
   });
 }
 
+function kagitHTML(){
+  return '<div class="y-kagit" lang="en"><div class="ust"><h2>AP Calculus BC · Exam 1 · Free response</h2><p>No calculator · '+ACIK.reduce((a,A)=>a+A.rub.length,0)+' points · Show your work on paper.</p><div class="kim"><span>Name:</span><span>Class / no:</span><span>Score:</span></div></div>'+
+    ACIK.map((A,q)=>{let c='';for(let k=0;k<10;k++)c+='<div class="c"></div>';return `<div class="s"><h3>${q+1}. ${A.t} (${A.rub.length} points)</h3><div class="y-soru">${A.q}</div>${c}</div>`;}).join('')+'</div>';
+}
 function acik(g){
-  Y.prova(g,{
-    sorular:ACIK.map((A,i)=>({ust:`<span lang="en">${A.t}</span>`,puan:A.rub.length,q:A.q,lang:'en',ornek:A.cevap,olcut:A.rub.map(r=>[1,r]),
-      ek:'Eksik puan aldıysan: '+[...new Set(A.o.map(o=>OBJ[o].ep[0]))].map(vlink).join(' · ')})),
-    durum:acikDurum,kaydet:acikKaydet,konum:S.acikKonum||(S.acikKonum={i:0}),toplamAd:'Toplam'
-  });
+  if(!S.pk){
+    g.innerHTML=`<div class="y-kart"><h2 class="y-h2">Yazılı kağıdı</h2><p class="y-mini y-soluk" style="margin-top:2px">${ACIK.length} açık uçlu soru · hesap makinesi yok</p><ol class="y-madde" style="margin-top:12px"><li>Kağıdı aç. Yazdır ya da ekrana bakarak boş bir kağıda çöz.</li><li>İşlemini adım adım yaz; deftere ve nota bakma.</li><li>Bitince buraya dön: örnek cevaba bakıp her ölçüt için kendini puanla.</li></ol><button type="button" class="y-btn" style="margin-top:14px" data-kagit>${Y.svg(Y.ikon.kalem,18)}<span>Yazılı kağıdını aç</span></button></div>`+
+      `<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>${Y.svg(Y.ikon.ileri,18)}</button></div>`;
+  }else{
+    Y.prova(g,{kagit:true,
+      sorular:ACIK.map((A,i)=>({ust:`<span lang="en">${A.t}</span>`,puan:A.rub.length,q:A.q,lang:'en',ornek:A.cevap,olcut:A.rub.map(r=>[1,r]),
+        ek:'Eksik puan aldıysan: '+[...new Set(A.o.map(o=>OBJ[o].ep[0]))].map(vlink).join(' · ')})),
+      durum:acikDurum,kaydet:acikKaydet,konum:S.acikKonum||(S.acikKonum={i:0}),toplamAd:'Toplam',
+      diger:()=>Y.diger('<button type="button" class="y-lnk" data-kagit>Kağıdı yeniden aç</button>')});
+  }
+  g.onclick=e=>{
+    if(e.target.closest('[data-kagit]')){g.innerHTML=`<div class="y-satir y-satir--ara" style="margin-bottom:14px"><button type="button" class="y-lnk" data-geri>← Geri</button><button type="button" class="y-btn" data-yazdir>Yazdır / PDF</button></div>`+kagitHTML()+`<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>${Y.svg(Y.ikon.ileri,18)}</button></div>`;scrollTo(0,0);return;}
+    if(e.target.closest('[data-yazdir]')){print();return;}
+    if(e.target.closest('[data-geri]')){g.innerHTML='';acik(g);return;}
+    if(e.target.closest('[data-puanla]')){S.pk=1;save();g.innerHTML='';acik(g);}
+  };
 }
 
 /* ===================== KUR ===================== */
-const ESKI={basla:'plan',liste:'konular',kart:'kartlar',hata:'hatalar',test:'deneme',acik:'acik'};
+const ESKI={basla:'plan',video:'akis',liste:'konular',kart:'kartlar',hata:'hatalar',test:'deneme',acik:'acik'};
 Y.kur({
   ad:'Exam 1 hazırlık kiti',ders:'AP Calculus BC',sinav:'2026-11-05',sinavMetin:'5 Kasım 2026 Perşembe',geri:'/kitpath/kitlerim/',
   ilkAdim:()=>S.adim||ESKI[S.view]||'plan',
   adimKaydet:id=>{if(S.adim!==id){S.adim=id;save();}},
   adimlar:[
     {id:'plan',ad:'Plan',renk:'lacivert',ikon:'plan',baslik:"Exam 1'e hazırlan",metin:'Sıradaki adımı aç; bitirdikçe liste kendini günceller.',ciz:plan},
-    {id:'videolar',ad:'Videolar',renk:'kirmizi',ikon:'video',kisa:`${VID.length} kısa video, toplam ≈ ${toplamDk} dk`,metin:'Bir videoya dokun, burada açılır. %80\'ini izleyince “izlendi” sayılır.',ciz:videolar,ilerleme:P.videolar},
-    {id:'konular',ad:'Konu konu',renk:'yesil',ikon:'liste',kisa:'Bildiğin konuları işaretle',metin:'Bildiğin konuya dokunup işaretle; bilmediğinin ▶ videosunu aç.',ciz:konular,ilerleme:P.konular},
-    {id:'kartlar',ad:'Formül kartları',renk:'mor',ikon:'kart',kisa:'Kâğıda yaz, sonra kartı çevir',metin:'Kartın içini önce kâğıda yaz, sonra karta dokunup karşılaştır.',ciz:kartlar,ilerleme:P.kartlar},
-    {id:'hatalar',ad:'Sık hatalar',renk:'turuncu',ikon:'uyari',kisa:'Puan kaybettiren hataları oku',metin:'Her hatayı oku; anladığına dokunup işaretle.',ciz:hatalar,ilerleme:P.hatalar},
-    {id:'deneme',ad:'Deneme',renk:'mavi',ikon:'soru',kisa:`${TEST.length} soru, ≈ 60 dk`,baslik:'Karışık deneme',metin:'Hesap makinesi yok, ≈ 60 dk. Şıkka dokununca cevabın kontrol edilir; açıklamayı okuyup devam et.',ciz:deneme,ilerleme:P.deneme},
-    {id:'acik',ad:'Açık uçlu',renk:'petrol',ikon:'kalem',kisa:'2 soru, kendini puanla',baslik:'Açık uçlu sorular',metin:'Cevabını yaz, örnek cevabı aç ve ölçütlerle kendini puanla (her madde 1 puan).',ciz:acik,ilerleme:P.acik}
+    {id:'akis',ad:'Video + test',renk:'kirmizi',ikon:'video',kisa:`${VID.length} video, her birinin defteri; aralarda kısa testler`,metin:'Sırayla git: videoyu izle (yanında defteri var), birkaç videoda bir kısa testi çöz.',ciz:akis,ilerleme:P.akis},
+    {id:'muhtemel',ad:'Sınavda çıkabilecekler',renk:'turuncu',ikon:'liste',kisa:'Kısa not: Exam 1 hedefleri',metin:'Yazılıdan önce bir kez oku.',ciz:muhtemel,ilerleme:P.muhtemel},
+    {id:'acik',ad:'Yazılı kağıdı',renk:'petrol',ikon:'kalem',kisa:'Kağıtta çöz, sonra puanla',baslik:'Yazılı kağıdı',metin:'Kağıdı aç, kağıda çöz, sonra örnek cevaplarla puanla.',ciz:acik,ilerleme:P.acik},
+    {id:'deneme',ad:'Deneme',renk:'mavi',ikon:'soru',kisa:`Ek çalışma · ${TEST.length} soru, ≈ 60 dk`,baslik:'Karışık deneme',metin:'Hesap makinesi yok, ≈ 60 dk. Şıkka dokununca cevabın kontrol edilir; açıklamayı okuyup devam et.',ciz:deneme,ilerleme:P.deneme},
+    {id:'kartlar',ad:'Formül kartları',renk:'mor',ikon:'kart',kisa:'Ek çalışma · kâğıda yaz, sonra kartı çevir',metin:'Kartın içini önce kâğıda yaz, sonra karta dokunup karşılaştır.',ciz:kartlar,ilerleme:P.kartlar},
+    {id:'hatalar',ad:'Sık hatalar',renk:'turuncu',ikon:'uyari',kisa:'Ek çalışma · puan kaybettiren hatalar',metin:'Her hatayı oku; anladığına dokunup işaretle.',ciz:hatalar,ilerleme:P.hatalar},
+    {id:'konular',ad:'Konu konu',renk:'yesil',ikon:'liste',kisa:'Ek çalışma · bildiğin konuları işaretle',metin:'Bildiğin konuya dokunup işaretle; bilmediğinin ▶ videosunu aç.',ciz:konular,ilerleme:P.konular},
+    {id:'videolar',ad:'Tüm videolar',renk:'kirmizi',ikon:'video',kisa:`Ek çalışma · ${VID.length} video, ≈ ${toplamDk} dk`,metin:'Bir videoya dokun, burada açılır.',ciz:videolar,ilerleme:P.videolar}
   ]
 });
 })();
