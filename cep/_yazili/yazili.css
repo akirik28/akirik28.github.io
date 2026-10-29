@@ -661,3 +661,16 @@ button.y-olay:active { transform: scale(.985); }
 @media print { .y-yazdir-gecici { position: static; } .y-kg-sayac { display: none !important; } }
 .y-kagit .y-kaynak { background: #F3F4F6; color: #111; border-color: #D1D5DB; }
 .y-kagit .y-soru { color: #111; }
+
+/* misafir (hesapsız ziyaretçi): plan açık, adımlar hesap ister */
+.y-misafir-rozet { display: flex; flex-wrap: wrap; gap: 8px; }
+.y-misafir-rozet span { font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: color-mix(in srgb, var(--r-yesil) 14%, transparent); color: var(--r-yesil); }
+.y-misafir-rozet span + span { background: color-mix(in srgb, var(--d, var(--r-lacivert)) 14%, transparent); color: var(--d, var(--r-lacivert)); }
+.y-misafir { display: grid; gap: 14px; justify-items: start; max-width: 560px; }
+.y-misafir p { margin: 0; line-height: 1.55; }
+.y-misafir .y-btn { margin-top: 6px; }
+.y-misafir-ikon { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: color-mix(in srgb, var(--d, var(--r-lacivert)) 12%, transparent); color: var(--d, var(--r-lacivert)); }
+.y-misafir-alt { gap: 18px; flex-wrap: wrap; }
+.y-misafir-serit { display: grid; gap: 10px; padding: 16px 18px; margin-bottom: 16px; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface); }
+.y-misafir-serit p { margin: 0; line-height: 1.5; }
+.y-misafir-serit .y-satir { gap: 16px; flex-wrap: wrap; align-items: center; justify-content: flex-start; }

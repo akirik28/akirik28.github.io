@@ -64,6 +64,7 @@
     saat: S0 + '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
     bayrak: S0 + '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>',
     cicek: S0 + '<path d="M12 21v-8M12 13c-3 0-5-2-5-5 2 0 3 1 3.5 2C11 7 11.5 5 12 3c.5 2 1 4 1.5 7 .5-1 1.5-2 3.5-2 0 3-2 5-5 5zM12 18c-2-2-4-2-5-1M12 18c2-2 4-2 5-1"/></svg>',
+    kilit: S0 + '<rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>',
     cevir: S0 + '<path d="M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5"/></svg>'
   };
 
@@ -135,6 +136,30 @@
   function git(id, alt) { var h = "#" + id + (alt ? "/" + alt : ""); if (location.hash === h) goster(id, alt); else location.hash = h; }
   function hashAyarla(id, alt) { try { history.replaceState(null, "", "#" + id + (alt ? "/" + alt : "")); } catch (e) {} }
 
+  /* ---------------- misafir: hesabı yoksa plan açık, adımlar hesap ister (kapi.js data-misafir="plan") ---------------- */
+  function misafir() { return !!window.KAPI_MISAFIR && !(window.HESAP && window.HESAP.aktif && window.HESAP.aktif()); }
+  function girisAdres(mod, id, alt) {
+    var d = location.pathname + location.search + "#" + id + (alt ? "/" + alt : "");
+    return "/kitpath/giris/?" + (mod ? "mod=" + mod + "&" : "") + "devam=" + encodeURIComponent(d);
+  }
+  var ROZET = '<div class="y-misafir-rozet"><span>Tamamen bedava</span><span>Yazılıya özel</span></div>';
+  function kapiCiz(g, a, alt) {
+    g.innerHTML = '<div class="y-kart y-misafir">' + ROZET +
+      '<span class="y-misafir-ikon">' + svg(IK.kilit, 30) + "</span>" +
+      '<h2 class="y-h2">Bu adımı açmak için ücretsiz hesap aç</h2>' +
+      "<p>Kitpath tamamen bedava. Bu kit sadece bu yazılı için hazırlandı" + (K.sinavMetin ? ": " + esc(K.sinavMetin) : "") + ".</p>" +
+      '<p class="y-soluk">Hesabın olunca ilerlemen kaydedilir; telefondan da bilgisayardan da kaldığın yerden devam edersin.</p>' +
+      '<a class="y-btn y-btn--ana y-btn--buyuk y-btn--genis y-renk" href="' + esc(girisAdres("", a.id, alt)) + '"><span>Ücretsiz hesap aç</span>' + svg(IK.ileri, 20) + "</a>" +
+      '<div class="y-satir y-misafir-alt"><a class="y-lnk" href="' + esc(girisAdres("giris", a.id, alt)) + '">Hesabım var, giriş yap</a>' +
+      '<a class="y-lnk" href="#' + K.adimlar[0].id + '" data-git="' + K.adimlar[0].id + '">Plana dön</a></div></div>';
+  }
+  function misafirSerit(kutu) {
+    kutu.insertAdjacentHTML("beforeend", '<div class="y-misafir-serit">' + ROZET +
+      "<p><b>Planın aşağıda.</b> Adımları açmak için ücretsiz hesap aç; ilerlemen hesabına kaydedilir.</p>" +
+      '<div class="y-satir"><a class="y-btn y-btn--ana y-renk" href="' + esc(girisAdres("", K.adimlar[0].id)) + '">Ücretsiz hesap aç</a>' +
+      '<a class="y-lnk" href="' + esc(girisAdres("giris", K.adimlar[0].id)) + '">Giriş yap</a></div></div>');
+  }
+
   function goster(id, alt) {
     var i = adimBul(id), a = K.adimlar[i], onceki = simdi == null ? -1 : adimBul(simdi), ayni = simdi === id;
     simdi = id;
@@ -146,11 +171,12 @@
     s.appendChild(bas);
     if (a.metin) { var p = D.createElement("p"); p.className = "y-lead"; p.innerHTML = a.metin; s.appendChild(p); }
     var g = D.createElement("div"); g.className = "y-govde"; s.appendChild(g);
-    a.ciz(g, alt);
+    var mis = i > 0 && misafir();
+    if (mis) kapiCiz(g, a, alt); else a.ciz(g, alt);
     var n = K.adimlar[i + 1], nav = D.createElement("nav"); nav.className = "y-alt"; nav.setAttribute("aria-label", "Sonraki adım");
     nav.innerHTML = n ? '<a class="y-btn y-btn--sonraki y-renk"' + renkStil(n.renk) + ' href="#' + n.id + '" data-git="' + n.id + '"><span>Sonraki adım: ' + esc(n.ad) + "</span>" + svg(IK.ileri, 18) + "</a>"
       : '<a class="y-lnk" href="' + esc(K.geri) + '">Kitlerime dön</a>';
-    if (i > 0) s.appendChild(nav);
+    if (i > 0 && !mis) s.appendChild(nav);
     if (!ayni && !reduce) { s.classList.add("y-giris"); if (onceki > i) s.classList.add("geri"); }
     if (!alt || a.id !== "videolar") window.scrollTo(0, 0);
     D.querySelectorAll(".y-adim").forEach(function (b) { if (b.getAttribute("data-adim") === id) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
@@ -181,6 +207,7 @@
     var n = gunKaldi(K.sinav), sira = null;
     for (var i = 1; i < K.adimlar.length; i++) { if (!bittiMi(K.adimlar[i])) { sira = K.adimlar[i]; break; } }
     if (!sira) sira = K.adimlar[K.adimlar.length - 1];
+    if (misafir()) misafirSerit(kutu);
     kutu.insertAdjacentHTML("beforeend",
       '<div class="y-geri-sayim"><b>' + (n > 0 ? n : n === 0 ? "0" : "–") + "</b><div><strong>" + (n > 1 ? "gün kaldı" : n === 1 ? "gün kaldı: sınav yarın" : n === 0 ? "Sınav bugün" : "Sınav geçti") + "</strong><span>" + esc(K.sinavMetin) + "</span></div></div>" +
       '<a class="y-btn y-btn--ana y-btn--buyuk y-btn--genis y-renk"' + renkStil(sira.renk) + ' href="#' + sira.id + '" data-git="' + sira.id + '"><span>Sıradaki adım: ' + esc(sira.ad) + "</span>" + svg(IK.ileri, 20) + "</a>" +
