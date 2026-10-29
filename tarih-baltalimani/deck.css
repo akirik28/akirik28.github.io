@@ -1,0 +1,262 @@
+/* ============================================================
+   1838 Baltalimanı — sunumun görünümü (motor: /assets/deck/)
+   Boğaz'ın koyu deniz yeşili · pirinç (ticaret, mühür) · kâğıt (belge)
+   kırmızı (açık pazar) · camgöbeği (büyüme)
+   ============================================================ */
+:root {
+  --deck-bg: #08171B;
+  --ui-accent: #D9A441;
+  --sea: #08171B;
+  --sea2: #0F2A31;
+  --ink: #F2EBDD;
+  --mute: #8EA4A6;
+  --brass: #D9A441;
+  --brass2: #F0C978;
+  --red: #E0634E;
+  --teal: #5FC3BC;
+  --paper: #EFE3C6;
+  --paper-ink: #2A2117;
+  --line: rgba(242,235,221,.16);
+}
+body.deck { font-family: "Archivo", system-ui, sans-serif; color: var(--ink); }
+.scene { background: radial-gradient(1500px 900px at 50% 125%, #123A40 0%, var(--sea) 62%); }
+
+/* ---------- ortak ---------- */
+.kick { position: absolute; left: 140px; top: 96px; font: 500 22px/1 "DM Mono", monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); }
+.kick i { font-style: normal; color: var(--mute); }
+.h2 { position: absolute; left: 140px; top: 146px; margin: 0; font: 800 82px/1.04 "Archivo", sans-serif; letter-spacing: -.02em; max-width: 1640px; }
+.h2.sm { font-size: 70px; }
+.ser { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: 0; }
+.brass { color: var(--brass); } .teal { color: var(--teal); } .red { color: var(--red); } .mute { color: var(--mute); }
+.foot { position: absolute; left: 140px; right: 140px; top: 940px; margin: 0; font: 400 30px/1.4 "Archivo"; color: rgba(242,235,221,.88); }
+.foot b { color: var(--brass2); font-weight: 700; }
+.foot small { margin-left: 16px; font: 500 18px "DM Mono"; color: var(--mute); letter-spacing: .06em; }
+.foot.c { text-align: center; }
+canvas.sea { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; }
+.glow { position: absolute; border-radius: 50%; filter: blur(100px); opacity: .5; pointer-events: none; }
+.glow.g1 { width: 820px; height: 820px; left: -200px; top: -240px; background: #3B2A0E; }
+.glow.g2 { width: 900px; height: 700px; right: -200px; bottom: -200px; background: #0E4448; }
+
+/* ---------- 01 kapak ---------- */
+.cv-year { position: absolute; left: 140px; top: 168px; font: 900 150px/1 "Archivo"; letter-spacing: .02em; color: var(--brass); }
+.cv-title { position: absolute; left: 132px; top: 312px; margin: 0; font: 900 168px/1 "Archivo"; letter-spacing: -.04em; }
+.cv-q { position: absolute; left: 142px; top: 500px; font: 400 58px/1.1 "Instrument Serif", serif; font-style: italic; color: var(--brass2); }
+.cv-meta { position: absolute; left: 142px; top: 608px; display: flex; gap: 60px; font: 500 21px/1.5 "DM Mono", monospace; letter-spacing: .08em; color: var(--mute); }
+.cv-meta b { display: block; font: 700 30px/1.3 "Archivo"; letter-spacing: 0; color: var(--ink); }
+.cv-ship { position: absolute; left: 1330px; top: 370px; width: 440px; height: 440px; }
+.cv-ship .mast { fill: none; stroke: var(--brass2); stroke-width: 5; stroke-linecap: round; }
+.cv-ship .sail { fill: var(--paper); opacity: .95; }
+.cv-ship .sail.s2 { opacity: .78; }
+.cv-ship .flag { fill: var(--red); }
+.cv-ship .hull { fill: #3A2A1A; stroke: var(--brass); stroke-width: 4; stroke-linejoin: round; }
+.cv-ship .deck-l { stroke: var(--brass); stroke-width: 2; opacity: .6; }
+.cv-ship .crate rect { fill: #8A6A3A; stroke: #F0C978; stroke-width: 2; }
+#ship { transform-box: view-box; transform-origin: 210px 330px; }
+.waves { position: absolute; left: 0; bottom: 0; width: 1920px; height: 300px; }
+.waves .w { stroke: none; }
+.waves .w1 { fill: rgba(95,195,188,.16); }
+.waves .w2 { fill: rgba(95,195,188,.24); }
+.waves .w3 { fill: #0B2328; }
+
+/* ---------- 02 içindekiler ---------- */
+.toc { position: absolute; left: 140px; right: 140px; top: 330px; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(3, 180px); column-gap: 80px; row-gap: 22px; }
+.toc li { position: relative; padding: 30px 34px 0 130px; border-radius: 24px; background: rgba(255,255,255,.035); border: 1px solid var(--line); }
+.toc li b { position: absolute; left: 34px; top: 30px; font: 900 64px/1 "Archivo"; color: var(--brass); }
+.toc li h3 { margin: 6px 0 10px; font: 800 44px/1.05 "Archivo"; }
+.toc li p { margin: 0; font: 400 26px/1.35 "Archivo"; color: var(--mute); }
+
+/* ---------- 03 soru ---------- */
+.rq { position: absolute; left: 140px; top: 190px; width: 1640px; margin: 0; font: 400 76px/1.12 "Instrument Serif", serif; font-style: italic; }
+.rq .teal, .rq .red { font: inherit; }
+.hyp { position: absolute; left: 140px; top: 600px; width: 1640px; padding: 34px 44px 36px; border-left: 8px solid var(--brass); background: rgba(217,164,65,.09); border-radius: 0 24px 24px 0; }
+.hyp .tag { font: 500 22px/1 "DM Mono"; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin-bottom: 18px; }
+.hyp p { margin: 0; font: 400 34px/1.45 "Archivo"; color: rgba(242,235,221,.92); }
+.hyp b { color: var(--brass2); }
+
+/* ---------- 04 sanayi ---------- */
+.factory { position: absolute; left: 120px; top: 320px; width: 700px; height: 560px; overflow: visible; }
+.factory path { fill: none; stroke: var(--brass2); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.factory #gear circle { fill: none; stroke: var(--teal); stroke-width: 10; stroke-dasharray: 14 9; }
+.factory #gear circle + circle { stroke-width: 4; stroke-dasharray: none; }
+.factory .smoke circle { fill: rgba(200,210,205,.22); }
+.chain { position: absolute; left: 920px; top: 330px; width: 860px; display: grid; gap: 22px; }
+.chain > div { position: relative; padding: 22px 30px 22px 36px; border-radius: 20px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+.chain > div::after { content: "↓"; position: absolute; left: 50%; bottom: -26px; margin-left: -10px; font: 700 26px/1 "Archivo"; color: var(--brass); }
+.chain > div:last-child::after { content: none; }
+.chain b { display: block; font: 800 36px/1.1 "Archivo"; }
+.chain span { display: block; margin-top: 6px; font: 400 24px/1.35 "Archivo"; color: var(--mute); }
+.chain .hot { border-color: var(--brass); background: rgba(217,164,65,.12); }
+.chain .hot b { color: var(--brass2); }
+
+/* ---------- 05 yed-i vâhid ---------- */
+.def { position: absolute; left: 140px; top: 262px; width: 1640px; margin: 0; font: 400 32px/1.4 "Archivo"; color: rgba(242,235,221,.85); }
+.flow { position: absolute; top: 400px; height: 440px; width: 790px; padding: 90px 30px 0; box-sizing: border-box; border-radius: 28px; border: 1px solid var(--line); background: rgba(255,255,255,.03); display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.flow.before { left: 140px; }
+.flow.after { left: 990px; border-color: rgba(95,195,188,.45); background: rgba(95,195,188,.06); }
+.flow .ph { position: absolute; left: 30px; top: 28px; font: 500 22px/1 "DM Mono"; letter-spacing: .18em; text-transform: uppercase; color: var(--brass); }
+.flow .ph.teal { color: var(--teal); }
+.flow .node { width: 196px; min-height: 120px; margin-top: 60px; padding: 22px 10px; box-sizing: border-box; border-radius: 18px; background: rgba(242,235,221,.08); border: 2px solid rgba(242,235,221,.3); text-align: center; font: 800 32px/1.1 "Archivo"; }
+.flow .node small { display: block; margin-top: 8px; font: 400 21px/1.2 "Archivo"; color: var(--mute); }
+.flow .node.st { border-color: var(--brass); background: rgba(217,164,65,.14); }
+.flow .node.uk { width: 250px; border-color: var(--teal); background: rgba(95,195,188,.14); }
+.flow .arr { position: relative; width: 60px; height: 4px; margin-top: 120px; background: var(--brass); }
+.flow .arr::after { content: ""; position: absolute; right: -4px; top: -9px; border: 11px solid transparent; border-left: 16px solid var(--brass); border-right: 0; }
+.flow .arr.long { width: 180px; background: var(--teal); }
+.flow .arr.long::after { border-left-color: var(--teal); }
+.flow .stamp { position: absolute; left: 50%; top: 296px; margin-left: -230px; width: 460px; text-align: center; }
+.flow .stamp span { display: inline-block; white-space: nowrap; transform: rotate(-7deg); padding: 14px 26px; border: 5px solid var(--red); border-radius: 12px; font: 800 34px/1 "Archivo"; letter-spacing: .06em; text-transform: uppercase; color: var(--red); background: rgba(8,23,27,.82); }
+
+/* ---------- 06 harita ---------- */
+.map { position: absolute; left: 110px; top: 280px; width: 900px; height: 680px; }
+.map .coast path { fill: none; stroke: rgba(95,195,188,.55); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.map .sea-l { font: 500 22px "DM Mono"; letter-spacing: .4em; fill: rgba(95,195,188,.5); }
+.map .route { fill: none; stroke: rgba(224,99,78,.8); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.map .cities circle { fill: var(--ink); }
+.map .cities circle.cap { fill: var(--brass); }
+.map .cities circle.eg { fill: var(--red); }
+.map .cities text { font: 600 25px "Archivo"; fill: var(--ink); }
+.map .army { fill: var(--red); stroke: #FFD8CF; stroke-width: 3; }
+.map .note { font: 500 17px "DM Mono"; fill: var(--mute); letter-spacing: .06em; }
+.side { position: absolute; left: 1080px; top: 300px; width: 700px; display: grid; gap: 22px; }
+.side.s2 { top: 640px; }
+.side > div { padding: 22px 28px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--line); font: 400 27px/1.4 "Archivo"; color: rgba(242,235,221,.88); }
+.side b { display: block; margin-bottom: 6px; font: 500 20px/1.2 "DM Mono"; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
+.side .hot { border-color: var(--brass); background: rgba(217,164,65,.13); font-size: 30px; color: var(--ink); }
+.side .hot b { display: inline; margin: 0; font: inherit; letter-spacing: 0; text-transform: none; color: var(--brass2); font-weight: 800; }
+
+/* ---------- 07 belge ---------- */
+.paper-w { position: absolute; left: 140px; top: 262px; width: 1060px; height: 740px; }
+.paper { position: relative; width: 100%; height: 100%; box-sizing: border-box; padding: 40px 56px; border-radius: 8px; transform: rotate(-.8deg); color: var(--paper-ink);
+  background: radial-gradient(900px 500px at 20% 0%, #F7EDD6 0%, var(--paper) 55%, #E2D2AE 100%); box-shadow: 0 40px 80px rgba(0,0,0,.45), inset 0 0 60px rgba(120,90,40,.25); }
+.paper .ph-k { font: 500 19px/1 "DM Mono"; letter-spacing: .2em; text-transform: uppercase; color: #7A5A2A; }
+.paper .ph-t { margin: 12px 0 22px; font: 400 52px/1 "Instrument Serif", serif; font-style: italic; }
+.arts { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; border-top: 2px solid rgba(42,33,23,.25); padding-top: 18px; }
+.arts li { position: relative; padding-left: 150px; font: 400 25px/1.38 "Archivo"; min-height: 70px; }
+.arts li b { position: absolute; left: 0; top: 2px; width: 134px; font: 800 22px/1.2 "Archivo"; color: #8B3A22; }
+.paper .sig { margin-top: 22px; padding-top: 14px; border-top: 2px solid rgba(42,33,23,.25); font: 400 22px/1.4 "Archivo"; }
+.paper .pnote { margin-top: 8px; font: 500 16px/1.3 "DM Mono"; color: #7A5A2A; letter-spacing: .04em; }
+.paper .seal { position: absolute; right: 44px; bottom: 30px; width: 120px; height: 120px; }
+.paper .seal span { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #D2604A, #9C2E1F 70%); box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 0 0 8px rgba(255,255,255,.12); font: 800 28px "Archivo"; color: #FFE6D8; transform: rotate(12deg); }
+.facts { position: absolute; left: 1270px; top: 280px; width: 510px; display: grid; gap: 18px; }
+.facts > div { padding: 20px 26px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--line); font: 800 32px/1.15 "Archivo"; }
+.facts i { display: block; margin-bottom: 8px; font: 500 18px/1 "DM Mono"; font-style: normal; letter-spacing: .18em; text-transform: uppercase; color: var(--brass); }
+.facts small { display: block; margin-top: 6px; font: 400 22px/1.3 "Archivo"; color: var(--mute); }
+.facts .hot { border-color: var(--teal); background: rgba(95,195,188,.1); }
+.facts .hot i { color: var(--teal); }
+
+/* ---------- 08 yorum ---------- */
+.mx { position: absolute; left: 140px; right: 140px; top: 300px; }
+.mh, .mr { display: grid; grid-template-columns: 470px 1fr 1fr 1fr; column-gap: 16px; }
+.mh span { padding: 0 0 16px; font: 500 21px/1.2 "DM Mono"; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); text-align: center; }
+.mr { margin-bottom: 16px; }
+.mr > * { padding: 22px 20px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid var(--line); min-height: 140px; box-sizing: border-box; }
+.mr > b { font: 800 32px/1.15 "Archivo"; display: flex; flex-direction: column; justify-content: center; }
+.mr > b i { margin-top: 8px; font: 500 19px/1 "DM Mono"; font-style: normal; letter-spacing: .14em; color: var(--mute); }
+.mr span { text-align: center; font: 900 42px/1 "Archivo"; }
+.mr span em { display: block; margin-top: 12px; font: 400 23px/1.3 "Archivo"; font-style: normal; color: rgba(242,235,221,.86); }
+.mr .up { color: var(--teal); } .mr .dn { color: var(--red); } .mr .mid { color: var(--brass); }
+.verdict { position: absolute; left: 140px; right: 140px; top: 900px; margin: 0; text-align: center; font: 400 50px/1.15 "Instrument Serif", serif; font-style: italic; }
+.verdict span { font: inherit; }
+
+/* ---------- 09 grafik ---------- */
+.chart { position: absolute; left: 140px; top: 300px; width: 900px; height: 640px; }
+.chart .grid { position: absolute; left: 0; right: 0; top: 0; height: 470px; }
+.chart .grid i { position: absolute; left: 0; right: 0; bottom: calc(var(--v) / 12 * 440px); border-top: 1px dashed rgba(242,235,221,.15); }
+.chart .bar { position: absolute; bottom: 170px; width: 200px; height: calc(var(--v) / 12 * 440px); }
+.chart .bar:nth-of-type(2) { left: 60px; } .chart .bar:nth-of-type(3) { left: 350px; } .chart .bar:nth-of-type(4) { left: 640px; }
+.chart .fill { position: absolute; inset: 0; border-radius: 14px 14px 0 0; }
+.chart .fill.imp { background: linear-gradient(var(--teal), rgba(95,195,188,.45)); }
+.chart .fill.exp { background: linear-gradient(var(--red), rgba(224,99,78,.45)); }
+.chart .fill.tr { background: linear-gradient(var(--brass), rgba(217,164,65,.45)); }
+.chart .bar b { position: absolute; left: 0; right: 0; top: -70px; text-align: center; font: 900 56px/1 "Archivo"; }
+.chart .bar span { position: absolute; left: -20px; right: -20px; top: calc(100% + 20px); text-align: center; font: 800 30px/1.1 "Archivo"; }
+.chart .bar span small { display: block; margin-top: 6px; font: 400 21px/1.2 "Archivo"; color: var(--mute); }
+.chart .src { position: absolute; left: 0; right: -40px; bottom: 0; font: 500 17px/1.4 "DM Mono"; color: var(--mute); letter-spacing: .03em; }
+.read { position: absolute; left: 1140px; top: 320px; width: 640px; display: grid; gap: 18px; }
+.read > div { padding: 20px 26px; border-left: 5px solid var(--line); font: 400 30px/1.35 "Archivo"; color: rgba(242,235,221,.9); }
+.read > div:nth-child(1) { border-color: var(--teal); } .read > div:nth-child(2) { border-color: var(--red); }
+.read b { font-weight: 900; color: var(--ink); }
+.read-hot { position: absolute; left: 1140px; top: 690px; width: 640px; box-sizing: border-box; padding: 26px 30px; border-radius: 20px; background: rgba(217,164,65,.12); border: 1px solid var(--brass); font: 400 29px/1.38 "Archivo"; }
+.read-hot b { color: var(--brass2); }
+.read-hot small { display: block; margin-top: 12px; font: 500 18px/1.3 "DM Mono"; letter-spacing: .06em; color: var(--teal); }
+
+/* ---------- 10 domino ---------- */
+.dom { position: absolute; left: 140px; right: 140px; top: 330px; display: grid; grid-template-columns: repeat(12, 1fr); }
+.dom > div { position: relative; height: 470px; }
+.dom i { position: absolute; left: 50%; top: 0; width: 62px; height: 150px; margin-left: -31px; box-sizing: border-box; border-radius: 10px; background: linear-gradient(160deg, #F2E6C8, #CDB98C); border: 2px solid #8A6A3A; display: grid; place-items: center; font: 800 22px "DM Mono"; font-style: normal; color: #5A3F1E; transform-origin: 100% 100%; }
+.dom .d0 i { background: linear-gradient(160deg, #F0C978, #B9862E); }
+.dom b { position: absolute; left: 4px; right: 4px; top: 250px; text-align: center; font: 800 24px/1.15 "Archivo"; }
+.dom .d0 b { color: var(--brass2); }
+.dom span { position: absolute; left: 0; right: 0; top: 320px; text-align: center; font: 500 17px/1.3 "DM Mono"; color: var(--mute); }
+.dom > div::before { content: ""; position: absolute; left: 50%; top: 186px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--brass); }
+.axis { position: absolute; left: 140px; top: 513px; width: 1640px; height: 40px; }
+.axis path { fill: none; stroke: rgba(217,164,65,.6); stroke-width: 3; }
+
+/* ---------- 11 terazi ---------- */
+.scale { position: absolute; left: 240px; top: 270px; width: 1440px; height: 320px; }
+.scale .post { fill: none; stroke: var(--brass); stroke-width: 8; stroke-linecap: round; }
+.scale .bm { fill: none; stroke: var(--brass2); stroke-width: 10; stroke-linecap: round; }
+.scale .pv { fill: var(--brass); }
+.scale .str { fill: none; stroke: rgba(240,201,120,.7); stroke-width: 3; }
+.scale .pan.l { fill: rgba(224,99,78,.75); }
+.scale .pan.r { fill: rgba(95,195,188,.75); }
+#beam { transform-box: view-box; transform-origin: 720px 70px; }
+#panL { transform-box: view-box; transform-origin: 260px 70px; }
+#panR { transform-box: view-box; transform-origin: 1180px 70px; }
+.view { position: absolute; top: 610px; width: 780px; box-sizing: border-box; padding: 28px 34px; border-radius: 22px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+.view.l { left: 140px; border-top: 6px solid var(--red); }
+.view.r { left: 1000px; border-top: 6px solid var(--teal); }
+.view .vk { font: 500 21px/1 "DM Mono"; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+.view.l .vk { color: var(--red); } .view.r .vk { color: var(--teal); }
+.view p { margin: 0; font: 400 28px/1.42 "Archivo"; color: rgba(242,235,221,.9); }
+#domino .foot { top: 800px; }
+#terazi .foot { top: 950px; font: 400 40px/1.2 "Instrument Serif", serif; font-style: italic; }
+#terazi .foot span { font: inherit; }
+
+/* ---------- 12 sahadan ---------- */
+.slot { position: absolute; left: 140px; top: 270px; width: 1100px; height: 619px; box-sizing: border-box; border: 3px dashed rgba(217,164,65,.6); border-radius: 24px; background: repeating-linear-gradient(135deg, rgba(255,255,255,.02) 0 22px, rgba(255,255,255,.045) 22px 44px); display: grid; place-items: center; text-align: center; }
+.slot b { display: block; font: 800 40px/1.2 "Archivo"; color: var(--brass2); }
+.slot span { display: block; margin-top: 12px; font: 500 22px/1.3 "DM Mono"; letter-spacing: .08em; color: var(--mute); }
+.slot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 22px; }
+.spots { position: absolute; left: 1300px; top: 270px; width: 480px; display: grid; gap: 20px; }
+.spots > div { padding: 22px 26px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--line); font: 400 25px/1.38 "Archivo"; color: rgba(242,235,221,.88); }
+.spots b { display: block; margin-bottom: 6px; font: 800 30px/1.15 "Archivo"; color: var(--ink); }
+.own { position: absolute; left: 140px; top: 920px; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--teal); background: rgba(95,195,188,.1); font: 500 20px/1 "DM Mono"; letter-spacing: .1em; color: var(--teal); }
+
+/* ---------- 13 sonuç ---------- */
+.end-big { position: absolute; left: 140px; top: 190px; width: 1640px; margin: 0; font: 400 84px/1.1 "Instrument Serif", serif; font-style: italic; }
+.end-big span { font: inherit; }
+.end-pts { position: absolute; left: 140px; right: 140px; top: 500px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+.end-pts > div { padding: 30px 32px; min-height: 300px; box-sizing: border-box; border-radius: 22px; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-top: 6px solid var(--c); font: 400 29px/1.42 "Archivo"; color: rgba(242,235,221,.9); }
+.end-pts b { display: block; margin-bottom: 14px; font: 800 38px/1.1 "Archivo"; color: var(--c); }
+.end-line { position: absolute; left: 140px; right: 140px; top: 880px; margin: 0; font: 400 30px/1.45 "Archivo"; color: rgba(242,235,221,.88); }
+.end-line b { color: var(--brass2); }
+
+/* ---------- 14 sorular ---------- */
+.qscene { background: radial-gradient(1100px 800px at 50% 50%, #133A3E 0%, var(--sea) 70%); }
+.qbig { position: absolute; right: 80px; top: -120px; height: 1200px; overflow: hidden; font: 400 1100px/1 "Instrument Serif", serif; font-style: italic; color: rgba(217,164,65,.07); pointer-events: none; }
+.qlabel { position: absolute; left: 140px; top: 120px; font: 500 24px/1 "DM Mono", monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); }
+.qs { position: absolute; left: 140px; top: 250px; width: 1520px; display: grid; gap: 90px; }
+.q { position: relative; padding-left: 130px; }
+.q i { position: absolute; left: 0; top: 10px; width: 90px; height: 90px; border-radius: 50%; display: grid; place-items: center; background: var(--brass); color: var(--sea); font: 900 50px/1 "Archivo"; font-style: normal; }
+.q p { margin: 0; font: 400 80px/1.1 "Instrument Serif", serif; font-style: italic; }
+.q p span { font: inherit; }
+
+/* ---------- 15 kaynakça ---------- */
+.refs { position: absolute; left: 140px; right: 140px; top: 260px; columns: 2; column-gap: 70px; margin: 0; padding: 0; list-style: none; }
+.refs li { break-inside: avoid; margin: 0 0 20px; font: 400 23px/1.4 "Archivo"; color: rgba(242,235,221,.86); padding-left: 52px; position: relative; }
+.refs li b { color: var(--ink); }
+.refs li::before { content: attr(data-n); position: absolute; left: 0; top: 2px; font: 500 18px "DM Mono"; color: var(--brass); }
+.refs-n { position: absolute; left: 140px; top: 990px; font: 500 18px/1 "DM Mono"; letter-spacing: .06em; color: var(--mute); }
+
+/* ---------- 16 form ---------- */
+.form { position: absolute; left: 140px; right: 140px; top: 250px; display: grid; grid-template-columns: 330px 1fr; border-top: 1px solid var(--line); }
+.form > div { padding: 17px 0; border-bottom: 1px solid var(--line); font: 400 24px/1.42 "Archivo"; color: rgba(242,235,221,.88); }
+.form > div.k { font: 500 19px/1.5 "DM Mono"; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); padding-right: 30px; }
+.form q { font-family: "Instrument Serif", serif; font-style: italic; font-size: 27px; color: var(--brass2); }
+.form b { color: var(--ink); }
+.light { display: inline-flex; gap: 10px; align-items: center; margin-right: 14px; font-weight: 700; color: var(--ink); }
+.light i { width: 18px; height: 18px; border-radius: 50%; display: inline-block; }
+.hl-ai { background: linear-gradient(transparent 12%, rgba(240,201,120,.42) 12%, rgba(240,201,120,.42) 88%, transparent 88%); color: #FFF6E0; padding: 0 .12em; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; background-size: 0% 100%; background-repeat: no-repeat; transition: background-size 1.1s cubic-bezier(.16,1,.3,1); }
+.scene.is-on .hl-ai, .deck-still .hl-ai { background-size: 100% 100%; }
+.ai-badge { position: absolute; right: 140px; top: 90px; display: inline-flex; gap: 10px; align-items: center; padding: 10px 18px; border-radius: 999px; background: rgba(240,201,120,.16); border: 1px solid rgba(240,201,120,.5); font: 500 18px/1 "DM Mono", monospace; letter-spacing: .12em; color: var(--brass2); }
