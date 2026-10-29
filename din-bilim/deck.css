@@ -62,7 +62,7 @@ canvas.stars { position: absolute; inset: 0; width: 1920px; height: 1080px; poin
 .two .sub { position: absolute; left: 120px; right: 120px; top: 740px; text-align: center; font: 400 32px/1.4 "Archivo"; color: rgba(243,234,215,.8); }
 .two-q { position: absolute; left: 0; right: 0; top: 120px; text-align: center; z-index: 3; font: 400 66px/1.1 "Instrument Serif", serif; font-style: italic; }
 .seam { position: absolute; left: 959px; top: 0; bottom: 0; width: 2px; background: linear-gradient(transparent, var(--gold), var(--sky), transparent); z-index: 2; }
-.beam { position: absolute; left: 50%; top: 180px; width: 6px; height: 160px; margin-left: -3px; border-radius: 3px; background: linear-gradient(var(--sky2), transparent); filter: blur(1px); }
+.beam { position: absolute; left: 50%; top: 236px; width: 6px; height: 160px; margin-left: -3px; border-radius: 3px; background: linear-gradient(var(--sky2), transparent); filter: blur(1px); }
 .flame { position: absolute; left: 50%; top: 270px; width: 40px; height: 60px; margin-left: -20px; border-radius: 50% 50% 45% 45%; background: radial-gradient(circle at 50% 70%, #FFE6A8, #E8B65A 55%, transparent 70%); filter: blur(2px); }
 
 /* ---------- 03 tanımlar ---------- */
@@ -128,7 +128,7 @@ canvas.stars { position: absolute; inset: 0; width: 1920px; height: 1080px; poin
 .ev { position: absolute; top: 380px; width: 380px; }
 .ev .dot { position: absolute; left: -12px; top: 128px; width: 28px; height: 28px; border-radius: 50%; background: var(--night); border: 4px solid var(--rose); }
 .ev .yr { font: 900 74px/1 "Archivo"; color: var(--rose); letter-spacing: -.02em; }
-.ev h4 { margin: 70px 0 10px; font: 700 34px/1.15 "Archivo"; }
+.ev h4 { margin: 92px 0 10px; font: 700 34px/1.15 "Archivo"; }
 .ev p { margin: 0; font: 400 25px/1.4 "Archivo"; color: rgba(243,234,215,.82); }
 .myth { position: absolute; left: 140px; right: 140px; bottom: 90px; display: flex; gap: 30px; align-items: center; padding: 28px 34px; border-radius: 22px; background: rgba(240,138,126,.08); border: 1px solid rgba(240,138,126,.35); }
 .myth b { font: 800 30px "Archivo"; color: var(--rose); white-space: nowrap; }
@@ -142,7 +142,7 @@ canvas.stars { position: absolute; inset: 0; width: 1920px; height: 1080px; poin
 .sch p { margin: 0; font: 400 25px/1.4 "Archivo"; color: rgba(243,234,215,.85); }
 .sch .big { position: absolute; right: 26px; top: 22px; font: 900 44px/1 "Archivo"; color: var(--sky); }
 .sch .big small { font-size: 22px; color: var(--mute); font-weight: 500; }
-.civ-orbit { position: absolute; right: 60px; top: 40px; width: 300px; height: 300px; opacity: .8; }
+.civ-orbit { position: absolute; right: 80px; top: 30px; width: 250px; height: 250px; opacity: .8; }
 
 /* ---------- 10 gazzali / ibn rüşd ---------- */
 .duel { position: absolute; left: 140px; right: 140px; top: 330px; display: grid; grid-template-columns: 1fr 120px 1fr; }
@@ -234,3 +234,11 @@ canvas.univ { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px
 .qr-bg { fill: none; stroke: rgba(243,234,215,.12); stroke-width: 10; }
 .qr-fg { fill: none; stroke: var(--gold); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 540.4; stroke-dashoffset: 0; }
 .qr-t { font: 700 54px "Archivo"; fill: var(--ink); text-anchor: middle; transform: rotate(90deg); transform-origin: 100px 100px; }
+/* kontrol düzeltmeleri */
+.qring { bottom: auto; top: 300px; }
+.def .ar { padding-right: 120px; }
+.verse { grid-template-columns: 340px 1fr; }
+.verse .ref { white-space: nowrap; }
+.qring { top: auto; bottom: 120px; }
+.qbig { height: 800px; overflow: hidden; }
+.tree .br text { font-size: 25px; }
