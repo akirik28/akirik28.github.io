@@ -154,14 +154,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Su: yaklaşık %97,5 tuzlu, %2,5 tatlı. Tatlı suyun yaklaşık %69'u buzulda, %30'u yer altında, %1'i yüzeyde.",
-            "Su döngüsü: buharlaşma, yoğuşma, yağış, akış, sızma.",
-            "Kenar deniz geniş boğazla, iç deniz boğazla okyanusa bağlanır.",
-            "Göller: yerlikaya (çukur önce), set (engel önce), relikt (kalıntı). Baraj gölü yapay set gölüdür.",
-            "Açık havza denize ulaştırır, kapalı havza ulaştıramaz.",
-            "Kaynak türleri: karstik, artezyen, yamaç, fay, gayzer.",
-            "Sınıflandırma: yere göre, kimyasal özelliğe göre, fiziksel özelliğe göre.",
-            "Her gruba metinden örnek koy; gerekçeyi tek cümleyle yaz."
+            "Su: ~%97,5 tuzlu; tatlı suyun ~%69'u buzulda",
+            "Döngü: buharlaşma, yoğuşma, yağış, akış, sızma",
+            "Göller: yerlikaya, set, relikt; baraj = yapay set",
+            "Açık havza denize ulaşır, kapalı havza ulaşmaz",
+            "Sınıflandırma: yere, kimyasal, fiziksel özelliğe göre"
           ] }
       ]
     }

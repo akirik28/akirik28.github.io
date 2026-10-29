@@ -132,13 +132,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Felsefi soru: varlık, bilgi, değerler üzerine derin anlam arayışı.",
-            "Beş özellik: kavramsal derinlik, açık uçluluk, evrensellik, kurucu olma, tutarlılık.",
-            "Gerekçede özelliğin adını yaz; “derin soru” demek yetmez.",
-            "Bilim parçalara ayırır ve deneyle sınar; felsefe bütüncül bakar, değerleri de sorgular.",
-            "Din inanca ve vahye, sanat duygu ve coşkuya dayanır; felsefe ve bilim akla.",
-            "Bireysel işlev: eleştirel düşünme, karar alma. Toplumsal işlev: adalet, dayanışma, kapsayıcılık.",
-            "Felsefe öğrenmek başkasının cevabını bilmek; felsefe yapmak kendi cevabını gerekçelendirmek."
+            "Felsefi soru: kavramsal derinlik, açık uçluluk, evrensellik, kurucu olma, tutarlılık",
+            "Bilim parça + deney; felsefe bütüncül + değerler",
+            "Din inanç, sanat duygu; felsefe ve bilim akıl",
+            "İşlev: bireysel eleştirel düşünme, toplumsal adalet",
+            "Felsefe öğrenmek ≠ felsefe yapmak"
           ] }
       ]
     }

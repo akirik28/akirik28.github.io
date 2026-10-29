@@ -131,14 +131,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Zincir: Viyana (1683), Kutsal İttifak (1684), çok cephe, Zenta (1697), Karlofça (1699).",
-            "Karlofça 1699: Macaristan ve Erdel Avusturya'ya, Mora ve Dalmaçya Venedik'e, Podolya ve Ukrayna Lehistan'a. Temeşvar kaldı.",
-            "Karlofça'nın önemi: toprak, üstünlük, savunma.",
-            "İstanbul 1700: Azak Rusya'ya bırakıldı; Rusya Azak Denizi'ne ulaştı.",
-            "Prut 1711: Azak geri alındı ama Rusya kalıcı biçimde zayıflatılamadı.",
-            "Pasarofça 1718: Belgrad, Kuzey Sırbistan, Temeşvar, Küçük Eflak Avusturya'ya; Mora Osmanlı'da kaldı.",
-            "Pasarofça'dan sonra geri alma politikası bırakıldı, Lale Devri başladı.",
-            "Arabulucular: Karlofça ve Pasarofça için İngiltere-Hollanda, Belgrad için Fransa."
+            "Karlofça 1699: ilk büyük toprak kaybı",
+            "Karlofça: Macaristan, Erdel Avusturya'ya; Mora Venedik'e",
+            "Azak: İstanbul 1700 Rusya'ya, Prut 1711 geri",
+            "Pasarofça 1718: Belgrad, Temeşvar Avusturya'ya; Lale Devri başlar",
+            "Arabulucu: İngiltere-Hollanda (Karlofça, Pasarofça)"
           ] }
       ]
     }

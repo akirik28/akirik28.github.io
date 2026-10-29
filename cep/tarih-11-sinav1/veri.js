@@ -645,23 +645,22 @@ const PROVA=[
 
 /* Sınavda çıkabilecekler: Senaryo 6 kazanımlarına göre kısa not (yeni bilgi yok; kitteki içeriğin özeti) */
 const MUHTEMEL={
-  giris:'Ortak yazılı Senaryo 6: TAR.11.1.1\'den 3, TAR.11.1.2\'den 3 soru. Sorular açık uçlu ve kısa cevaplı; çoğunda bir metin, harita ya da tablo verilir.',
+  giris:'Senaryo 6: 1.1\'den 3, 1.2\'den 3 soru.',
   ciktilar:[
     {c:'1.1',ad:'1683–1789 savaşlar ve antlaşmalar',n:3,m:[
-      '<b>Antlaşmaların sırası ve tarafları:</b> Karlofça 1699, İstanbul 1700, Prut 1711, Pasarofça 1718, Belgrad 1739, Kerden 1746, Küçük Kaynarca 1774.',
-      '<b>Maddeden sonuç çıkarma:</b> verilen maddenin hangi antlaşmaya ait olduğu ve Osmanlı için ne anlama geldiği. Karlofça ilk büyük toprak kaybı, Küçük Kaynarca\'nın “ilk”leri.',
-      '<b>Diplomasinin önemi:</b> askerî güç yetmeyince arabulucuya başvurma. Karlofça ve Pasarofça\'da İngiltere ile Hollanda, Belgrad\'da Fransa.',
-      '<b>Dış politikanın üç aşaması:</b> önce kaybedilenleri geri alma, Pasarofça\'dan sonra barış ve denge, Küçük Kaynarca\'dan sonra kalan toprakları koruma.',
-      '<b>Rusya ve Karadeniz:</b> Azak (1700), Belgrad\'daki gemi yasağı (1739), Küçük Kaynarca: Rusya\'nın sıcak denizlere inme politikası.',
-      '<b>Harita:</b> bir antlaşmayla kaybedilen ya da geri alınan yerleri haritada gösterme.'
+      '<b>Sıra:</b> Karlofça, İstanbul, Prut, Pasarofça, Belgrad, Kerden, Küçük Kaynarca',
+      '<b>Madde → antlaşma:</b> maddeyi tanı, sonucunu yaz',
+      '<b>Arabulucu:</b> İngiltere-Hollanda; Belgrad\'da Fransa',
+      '<b>Üç aşama:</b> geri alma → denge → koruma',
+      '<b>Rusya:</b> Azak, Karadeniz, sıcak denizler politikası'
     ]},
     {c:'1.2',ad:'Lale Devri',n:3,m:[
-      '<b>Nedenler:</b> Pasarofça yenilgisi, III. Ahmed ve Nevşehirli Damat İbrahim Paşa\'nın barış politikası, Avrupa\'yı tanıma isteği.',
-      '<b>Yenilikler:</b> geçici elçilikler ve Sefaretname, matbaa, Tercüme Heyeti, Tulumbacı Ocağı, çiçek aşısı, çini atölyesi. Hangisinin hangi alanda olduğunu bil.',
-      '<b>Toplumsal değişim:</b> saray ve çevresinde Batı etkisi, eğlence ve mimari.',
-      '<b>Patrona Halil İsyanı (1730):</b> nedenleri ve Lale Devri\'ni bitirmesi.',
-      '<b>İki yorum:</b> “zevk ve eğlence dönemi” mi, “ilk ıslahat dönemi” mi? Verilen kaynağa göre bir yorumu gerekçeyle savunma.'
+      '<b>Nedenler:</b> Pasarofça yenilgisi, barış, Avrupa\'yı tanıma',
+      '<b>Yenilikler:</b> elçilik, matbaa, Tercüme Heyeti, Tulumbacı, aşı, çini',
+      '<b>Toplum:</b> saray çevresinde Batı etkisi',
+      '<b>Patrona Halil 1730:</b> Lale Devri biter',
+      '<b>Yorum:</b> eğlence mi, ıslahat mı? Gerekçeyle savun'
     ]}
   ],
-  tip:['Kısa cevaplı: bir tarih, ad ya da antlaşma yaz (10 puan civarı).','Kaynak sorusu: metni, haritayı ya da tabloyu oku; sonuç ya da neden yaz.','Neden–sonuç: “Bu antlaşma Osmanlı dış politikasını nasıl etkiledi?” gibi iki-üç cümlelik cevap.']
+  tip:['Kısa cevap: tarih, ad ya da antlaşma','Kaynak: metin, harita, tablo oku; sonuç yaz','Neden–sonuç: iki-üç cümle']
 };

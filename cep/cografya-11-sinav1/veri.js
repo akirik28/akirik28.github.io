@@ -852,33 +852,34 @@ const PROVA=[
 
 /* Sınavda çıkabilecekler: Senaryo 3 kazanımlarına göre kısa not (kitteki konu özetlerinden) */
 const MUHTEMEL={
-  giris:'Ortak yazılı Senaryo 3: COĞ.11.1.1\'den 2, COĞ.11.2.1\'den 1, COĞ.11.3.1\'den 2, COĞ.11.3.2\'den 1 soru. Sorularda çoğunlukla harita, grafik, tablo ya da CBS ekranı verilir.',
+  giris:'Senaryo 3: 1.1\'den 2, 2.1\'den 1, 3.1\'den 2, 3.2\'den 1.',
   ciktilar:[
     {c:'1.1',ad:'Mekânsal sorunlar ve coğrafya',n:2,m:[
-      '<b>Sorunu tanıma:</b> metindeki ya da haritadaki sorunu (taşkın, plansız kentleşme, ormansızlaşma, su yetersizliği) ve nedenlerini yazma.',
-      '<b>Sınıflandırma:</b> ölçeğe göre yerel / bölgesel / küresel, tematik olarak sosyal / ekonomik / çevresel / politik, kentsel–kırsal.',
-      '<b>Coğrafyanın katkısı, üç basamak:</b> tespit ve izleme, etki analizi, çözüm ve planlama. Her basamağa soruya özgü bir örnek yaz.',
-      '<b>Hangi alt dal?</b> ve <b>diğer bilimlerle iş birliği</b> (şehir planlama, jeoloji, ziraat…).'
+      '<b>Sorun:</b> sorunu ve nedenlerini yaz',
+      '<b>Ölçek:</b> yerel / bölgesel / küresel',
+      '<b>Tema:</b> sosyal, ekonomik, çevresel, politik',
+      '<b>Üç basamak:</b> tespit → etki analizi → çözüm',
+      '<b>Alt dal</b> ve diğer bilimlerle iş birliği'
     ]},
     {c:'2.1',ad:'Web tabanlı CBS',n:1,m:[
-      '<b>CBS ekranı okuma:</b> katman, öz nitelik tablosu, lejant.',
-      '<b>İşlemler:</b> birleştirme, çakıştırma, sorgulama, genelleştirme, sembolleştirme. Verilen işlemi adlandır ve sonucunu yaz.',
-      '<b>Uygun yer seçimi:</b> katmanları çakıştırıp ölçütlere uyan alanı bulma.',
-      '<b>Özellikler ve sınırlılıklar:</b> kurulum yok, her yerden erişim, güncel; ama genel ağ şart, analiz imkânı daha sınırlı.'
+      '<b>Ekran:</b> katman, öz nitelik tablosu, lejant',
+      '<b>İşlemler:</b> birleştirme, çakıştırma, sorgulama, genelleştirme, sembolleştirme',
+      '<b>Yer seçimi:</b> katmanları çakıştır, ölçüte uyanı bul',
+      '<b>Artı/eksi:</b> kurulum yok, her yerden; genel ağ şart'
     ]},
     {c:'3.1',ad:'Su kaynaklarını sınıflandırma',n:2,m:[
-      '<b>Sınıflandırma ölçütleri:</b> bulunduğu yere göre (yer üstü, yer altı), kimyasal özelliğe göre (tatlı, tuzlu, acı, mineralli), fiziksel özelliğe göre (sıcak, soğuk). Her birine örnek ver.',
-      '<b>Su döngüsü:</b> buharlaşma, yoğuşma, yağış, akış, sızma; şemada eksik aşamayı yazma.',
-      '<b>Suyun dağılışı:</b> yaklaşık %97,5 tuzlu, %2,5 tatlı; tatlı suyun çoğu buzullarda.',
-      '<b>Göller:</b> oluşumuna göre tektonik, volkanik, karstik, set gölleri; Türkiye\'den örnekler.',
-      '<b>Akarsu kavramları:</b> havza, debi, rejim, açık ve kapalı havza.'
+      '<b>Ölçütler:</b> yer, kimyasal, fiziksel özellik; örnek ver',
+      '<b>Su döngüsü:</b> şemada eksik aşamayı yaz',
+      '<b>Dağılış:</b> ~%97,5 tuzlu, ~%2,5 tatlı',
+      '<b>Göller:</b> tektonik, volkanik, karstik, set',
+      '<b>Akarsu:</b> havza, debi, rejim, açık/kapalı havza'
     ]},
     {c:'3.2',ad:'Türkiye\'de su kaynaklarının etkileri',n:1,m:[
-      '<b>Dört boyutlu etki:</b> çevresel, ekonomik, politik, sosyokültürel. Verilen örnek (baraj, göl, GAP, Tuz Gölü) için her boyuta bir etki yaz.',
-      '<b>Sınıraşan ve sınır oluşturan sular:</b> Fırat, Dicle, Aras, Meriç… farkını bil.',
-      '<b>Türkiye akarsularının özellikleri:</b> boyları kısa, akış hızı ve hidroelektrik potansiyeli yüksek, rejimleri düzensiz.',
-      '<b>Su yönetimi önlemleri:</b> damla sulama, atık su arıtma, havza yönetimi, tasarruf.'
+      '<b>Dört boyut:</b> çevresel, ekonomik, politik, sosyokültürel',
+      '<b>Sınıraşan / sınır oluşturan:</b> farkını bil',
+      '<b>Akarsular:</b> kısa, hızlı, rejim düzensiz, hidroelektrik yüksek',
+      '<b>Önlemler:</b> damla sulama, arıtma, havza yönetimi, tasarruf'
     ]}
   ],
-  tip:['Kısa cevaplı: bir kavram, işlem ya da örnek yaz.','Görsel sorusu: harita, grafik ya da CBS ekranını oku, değişimi ve nedenini yaz.','Açık uçlu: bir sorun ya da su kaynağı için etkileri ve çözümü iki-üç cümleyle yaz.']
+  tip:['Kısa cevap: kavram, işlem ya da örnek','Görsel: harita, grafik oku; değişim ve neden','Açık uçlu: etki + çözüm, iki-üç cümle']
 };

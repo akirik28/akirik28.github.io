@@ -149,14 +149,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Web tabanlı CBS: tarayıcıyla, genel ağ üzerinden; bileşenleri kullanıcı, genel ağ, sunucu.",
-            "Kritik işlemler sunucuda yapılır; bulut bilişim temeldir.",
-            "Her veri bir katmandır; ayrıntılar öz nitelik tablosundadır.",
-            "Beş işlem: birleştirme, çakıştırma, sorgulama, genelleştirme, sembolleştirme (B-Ç-S-G-S).",
-            "Web: kurulum yok, her yerden erişim, güncel, çoğu ücretsiz; ama genel ağ şart, analiz daha sınırlı.",
-            "Harita çalışması: oku, çözümle, çıkarım yap, oluştur.",
-            "Çıkarım veriye dayanır; kanıtsız genelleme yapma.",
-            "Yer seçimi: ölçütleri belirle, katmanları çakıştır, uyan alanı bul."
+            "Web CBS: kullanıcı + genel ağ + sunucu",
+            "Her veri bir katman; ayrıntı öz nitelik tablosunda",
+            "B-Ç-S-G-S: birleştirme, çakıştırma, sorgulama, genelleştirme, sembolleştirme",
+            "Web: kurulum yok, her yerden erişim; genel ağ şart",
+            "Yer seçimi: ölçüt → katmanları çakıştır → uyan alan"
           ] }
       ]
     }

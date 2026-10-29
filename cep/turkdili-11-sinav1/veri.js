@@ -266,39 +266,32 @@ const PROVA=[
 ];
 
 const MUHTEMEL={
-  giris:"Ortak yazılı Senaryo 1: 5 soru, 100 puan. Okumadan 4 soru (TDE2.2'den 1, TDE2.3'ten 2, TDE2.4'ten 1), yazmadan 1 soru (e-posta). Okuma sorularında genellikle temaya uygun bir Karagöz parçası, bir mektup ya da bir dilekçe verilir; parça kitaptakinden farklı olabilir.",
+  giris:"Senaryo 1: 5 soru; 4 okuma, 1 e-posta.",
   ciktilar:[
     {c:"2.2",ad:"Anlam oluşturma",n:1,m:[
-      "<b>Mektupta:</b> konu, ana düşünce, gönderenin alıcıya ne demek istediği; bir cümleyle yaz.",
-      "<b>Dilekçede:</b> istek ile gerekçeleri ayırt et; isteği bir cümleyle yaz.",
-      "<b>Karagöz parçasında:</b> yanlış anlaşılan sözü ve asıl anlamını bul; parçanın iletisini yaz.",
-      "<b>Kanıt:</b> yorumunu her zaman metinden bir ifadeyle destekle."
+      "<b>Mektup:</b> konu, ana düşünce; bir cümle",
+      "<b>Dilekçe:</b> isteği gerekçeden ayır",
+      "<b>Karagöz:</b> yanlış anlaşılan söz, asıl anlam",
+      "<b>Kanıt:</b> her yorumu metinden destekle"
     ]},
     {c:"2.3",ad:"Çözümleme",n:2,m:[
-      "<b>Karagöz:</b> bölümler (mukaddime, muhavere, fasıl, bitiş) ve parçanın hangi bölüm olduğu, gerekçesiyle; perde gazeli, göstermelik, bitişteki kalıp sözler.",
-      "<b>Kişiler:</b> Hacivat ile Karagöz'ün karşıtlığı (bilgiç-süslü dil / sade-halk dili); Tiryaki, Çelebi, Tuzsuz Deli Bekir, Zenne gibi tiplerin özellikleri.",
-      "<b>Güldürü kaynakları:</b> söz oyunu ve yanlış anlama, ağız taklidi, abartı, hareket.",
-      "<b>Mektup:</b> türü (özel, resmî, edebî, açık) ve yapı unsurları (yer-tarih, hitap, giriş, gelişme, sonuç, kapanış, imza).",
-      "<b>Dilekçe:</b> bölümler ve yerleri; hatalı bir dilekçede yanlışları bulup düzeltme.",
-      "<b>Anlatım:</b> anlatım biçimi (öyküleyici, betimleyici, açıklayıcı, tartışmacı) ve düşünceyi geliştirme yolları (tanımlama, örnekleme, karşılaştırma, tanık gösterme, sayısal veri, benzetme), metinden örnekle."
+      "<b>Karagöz bölümleri:</b> mukaddime, muhavere, fasıl, bitiş",
+      "<b>Kişiler:</b> Hacivat süslü dil, Karagöz halk dili",
+      "<b>Güldürü:</b> söz oyunu, ağız taklidi, abartı, hareket",
+      "<b>Mektup, dilekçe:</b> tür, bölümler, hatayı düzelt",
+      "<b>Anlatım:</b> biçim, geliştirme yolu; metinden örnek"
     ]},
     {c:"2.4",ad:"Okuma sürecini değerlendirme",n:1,m:[
-      "<b>Amaca uygunluk:</b> bir metin alıcısına ve amacına uygun mu? Metinden iki kanıtla yargıya var.",
-      "<b>Görüş bildirme:</b> verilen bir yargıya katıl ya da karşı çık; gerekçeni metinden ve türün özelliklerinden kur.",
-      "<b>Düzeltme önerisi:</b> amaca ulaşmayan bir metinde neyin nasıl değişmesi gerektiğini yaz (mektuptan dilekçeye dönüştürme gibi)."
+      "<b>Amaca uygunluk:</b> iki kanıtla yargıya var",
+      "<b>Görüş:</b> katıl ya da karşı çık, gerekçele",
+      "<b>Düzeltme:</b> neyin nasıl değişeceğini yaz"
     ]},
     {c:"4",ad:"E-posta yazma",n:1,m:[
-      "<b>Biçim:</b> konu satırı, “Sayın ...,” hitabı, giriş (kendini tanıt ve amacını söyle), gelişme (bilgi ve istek), sonuç (teşekkür, beklenti), “Saygılarımla,” ve imza, ek bilgisi.",
-      "<b>İçerik:</b> tarih, saat, yer gibi nesnel bilgiler; açık bir istek; konu dışına çıkma.",
-      "<b>Dil:</b> resmî ve saygılı; emoji, kısaltma, argo, tamamen büyük harf yok; yazım ve noktalama doğru.",
-      "<b>Puanı en çok götüren eksikler:</b> boş ya da belirsiz konu satırı, samimi hitap, isteğin yazılmaması, imza ve ekin unutulması."
+      "<b>Biçim:</b> konu, “Sayın ...,”, giriş-gelişme-sonuç, “Saygılarımla,”, imza",
+      "<b>İçerik:</b> nesnel bilgi, açık istek",
+      "<b>Dil:</b> resmî; emoji, kısaltma, argo yok",
+      "<b>Puan kaybı:</b> boş konu, samimi hitap, eksik imza-ek"
     ]}
   ],
-  tip:[
-    "Kısa cevaplı: bir mektubun ana düşüncesini, bir dilekçedeki isteği ya da gerekçeyi yaz.",
-    "Açık uçlu çözümleme: Karagöz parçasının bölümünü, güldürü unsurunu, kişilerin dilini metinden örnekle açıkla.",
-    "Hata bulma: kurallara uymayan bir dilekçedeki yanlışları bulup düzelt.",
-    "Değerlendirme: bir metnin amacına uygunluğunu ya da bir görüşü metinden kanıtla değerlendir.",
-    "Yazma: verilen duruma uygun resmî bir e-posta yaz (konu, hitap, giriş-gelişme-sonuç, kapanış, imza, ek)."
-  ]
+  tip:["Kısa cevap: ana düşünce, istek ya da gerekçe","Çözümleme ve hata bulma: metinden örnekle","Yazma: duruma uygun resmî e-posta"]
 };

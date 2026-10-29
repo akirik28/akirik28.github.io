@@ -362,28 +362,26 @@ const PROVA=[
 
 /* ================= SINAVDA ÇIKABİLECEKLER ================= */
 const MUHTEMEL={
- giris:"Senaryo 3: FEL.10.1.1'den 3, FEL.10.2.1'den 1, FEL.10.2.2'den 2 soru; toplam 6 soru. Sorular çoğunlukla bir metin, diyalog ya da tablo üzerinden gelir; bazılarında kelime sınırı vardır. Puan, kavramı doğru adlandırmaya ve gerekçeye gelir.",
- ciktilar:[
-  {c:"1.1",ad:"Felsefenin anlamı, gelişimi ve işlevi",n:3,m:[
-   "<b>Anlamı:</b> philia + sophia = bilgelik sevgisi; Pythagoras; filozof bilge değil, bilgeliği seven. D/Y tablosunda “bütün filozoflar hikmet sahibidir” yanlıştır.",
-   "<b>Ortak tanım mümkün mü?</b> Verilen tanımları karşılaştır, ortak öğeyi bul, gerekçeli görüş yaz (kelime sınırına dikkat).",
-   "<b>Felsefi düşüncenin özellikleri:</b> diyalogdaki sözü özelliğe bağla: hayret, merak, şüphe, sorgulama, eleştirellik, refleksiflik, tutarlılık, evrensellik, yığılımlı ilerleme.",
-   "<b>Gelişim:</b> eski medeniyetlerin birikimi, Antik Yunan'da sistemleşme, dönemlerin ana çizgisi; doğuşu tek nedene bağlanamaz.",
-   "<b>Felsefi soru:</b> verilen soruları ✓/✗ ile ayır, gerekçeye özellik adını yaz (kavramsal derinlik, açık uçluluk, evrensellik, kurucu olma, tutarlılık).",
-   "<b>Felsefe–bilim–din–sanat:</b> birer benzerlik ve fark; <b>işlev:</b> bireysel ve toplumsal birer örnek, “felsefe öğrenmek ≠ felsefe yapmak”."]},
-  {c:"2.1",ad:"Düşünme ve dil",n:1,m:[
-   "<b>Üç görüş:</b> özdeşlik, bağımsızlık, karşılıklı etkileşim. Verilen örneği hangisinin açıkladığını gerekçeyle yaz.",
-   "<b>İmge → kavram → dil:</b> metindeki aşamaları adlandır.",
-   "<b>Nedensel ilişki:</b> “Kelime dağarcığı zenginleşirse…” biçiminde neden-sonuç kur, sonra ilişkileri tutarlı bir paragrafta birleştir."]},
-  {c:"2.2",ad:"Mantık ve argümantasyon",n:2,m:[
-   "<b>Standart form:</b> metni P1, P2, C olarak yaz; “bu nedenle, o hâlde” sonucu, “çünkü” öncülü haber verir.",
-   "<b>Yeniden ifade:</b> anlamı değiştirmeden, ekleme ve abartı yapmadan kendi cümlenle.",
-   "<b>Safsata:</b> türünü adıyla yaz ve bir cümleyle gerekçelendir (13 tür).",
-   "<b>Kavramlar:</b> önerme, doğruluk, tutarlılık, geçerlilik, akıl ilkeleri; tümdengelim, tümevarım, analoji; görüş ile argüman farkı."]}
- ],
- tip:[
-  "Kısa cevaplı: D/Y tablosu ve doğrusunu yazma, özellik ya da safsata türü adlandırma, P1-P2-C yazma.",
-  "Metin/diyalog sorusu: verilen sözü bir kavrama bağla ve gerekçesini metinden göster.",
-  "Açık uçlu: gerekçeli görüş yaz; kelime sınırı varsa uy, kavramları doğru yerde kullan."
- ]
+  giris:"Senaryo 3: 1.1'den 3, 2.1'den 1, 2.2'den 2 soru.",
+  ciktilar:[
+    {c:"1.1",ad:"Felsefenin anlamı, gelişimi ve işlevi",n:3,m:[
+      "<b>Anlam:</b> bilgelik sevgisi; filozof bilgeliği seven",
+      "<b>Ortak tanım:</b> karşılaştır, ortak öğeyi bul, gerekçe yaz",
+      "<b>Özellikler:</b> diyalogdaki sözü özelliğe bağla",
+      "<b>Felsefi soru:</b> ✓/✗ ayır, özellik adını yaz",
+      "<b>Bilim–din–sanat ve işlev:</b> benzerlik, fark, örnek"
+    ]},
+    {c:"2.1",ad:"Düşünme ve dil",n:1,m:[
+      "<b>Üç görüş:</b> özdeşlik, bağımsızlık, karşılıklı etkileşim",
+      "<b>Aşamalar:</b> imge → kavram → dil",
+      "<b>Neden-sonuç:</b> tutarlı bir paragrafta kur"
+    ]},
+    {c:"2.2",ad:"Mantık ve argümantasyon",n:2,m:[
+      "<b>Standart form:</b> P1, P2, C",
+      "<b>Yeniden ifade:</b> anlam aynı, ekleme yok",
+      "<b>Safsata:</b> adını yaz, bir cümle gerekçe",
+      "<b>Kavramlar:</b> önerme, geçerlilik, tümdengelim, tümevarım, analoji"
+    ]}
+  ],
+  tip:["Kısa cevap: D/Y, özellik ya da safsata adı","Metin/diyalog: sözü kavrama bağla, metinden göster","Açık uçlu: gerekçeli görüş, kelime sınırına uy"]
 };

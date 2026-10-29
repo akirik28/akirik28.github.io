@@ -91,14 +91,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Dilekçe: isteği ya da şikâyeti yetkili makama bildiren imzalı resmî yazı.",
-            "Tarih sağ üstte; makam adı üst ortada, büyük harfle ve yönelme ekiyle.",
-            "Sıra: kendini tanıtma, gerekçe, istek, “gereğini arz ederim”, ad soyad ve imza (sağ alt), adres (sol alt), ekler (en alt).",
-            "Tek konu; kısa, nesnel, saygılı dil; mecaz, öfke ve ünlem yok.",
-            "Sık hatalar: “Sayın Müdürüm”, kendini tanıtmama, duygusal dil, birden çok konu, samimi kapanış, eksik tarih-imza-adres.",
-            "İstek genellikle son cümlede “... hususunda” kalıbıyla gelir; gerekçeler açıklamadadır.",
-            "Mektup samimi ve öznel, dilekçe resmî ve nesnel: alıcı değişince dil değişir.",
-            "Arzuhal, Osmanlıcada dilekçedir; arzuhalci dilekçe yazan kişidir."
+            "Dilekçe: yetkili makama imzalı, resmî istek",
+            "Tarih sağ üst; makam üst orta, büyük harf",
+            "İmza sağ alt, adres sol alt, ekler en alt",
+            "İstek son cümlede: “... hususunda”, “gereğini arz ederim”",
+            "Hata: “Sayın Müdürüm”, duygusal dil, birden çok konu"
           ] }
       ]
     }

@@ -103,14 +103,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Sıra: yer-tarih, hitap, giriş, gelişme, sonuç, kapanış, imza.",
-            "Dört tür: özel, resmî, edebî, açık mektup.",
-            "Gazetede herkes okusun diye yayımlanan mektup, kişiye seslense de açık mektuptur.",
-            "Özel mektup içten ve öznel; konudan konuya geçilebilir. Kalıp ifade resmî yazışmanın özelliğidir.",
-            "Anlatım biçimleri: öyküleyici, betimleyici, açıklayıcı, tartışmacı.",
-            "Düşünceyi geliştirme yolları: tanımlama, örneklendirme, tanık gösterme, karşılaştırma, sayısal veri, benzetme.",
-            "Okumadan önce yer-tarih, hitap ve imzadan amacı tahmin et.",
-            "Konu ile ana düşünce farklıdır; ana düşünce tek cümle ve kanıtlıdır."
+            "Sıra: yer-tarih, hitap, giriş, gelişme, sonuç, kapanış, imza",
+            "Türler: özel, resmî, edebî, açık (gazetede yayımlanan)",
+            "Anlatım: öyküleyici, betimleyici, açıklayıcı, tartışmacı",
+            "Geliştirme: tanımlama, örneklendirme, tanık gösterme, karşılaştırma, sayısal veri, benzetme",
+            "Konu ≠ ana düşünce: tek cümle, kanıtlı"
           ] }
       ]
     }

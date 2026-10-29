@@ -94,13 +94,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Düşünme: anlamlandırma, sorgulama, çıkarım. Dil: kavramları temsil eden sembol sistemi.",
-            "Üç görüş: özdeşlik (aynıdır), bağımsızlık (yalnızca araç), karşılıklı etkileşim (birbirini etkiler).",
-            "Kelimesiz düşünme örneği bağımsızlığı, iki yönlü etki örneği etkileşimi destekler.",
-            "Yapı taşları sırayla: imge, kavram, dil.",
-            "Dil canlıdır: düşünce gelişince yeni kelime doğar.",
-            "Dil ortak uzlaşmaya dayanır; herkes kendi anlamını yüklese iletişim çöker.",
-            "Paragrafta görüşünü söyle, metinden aşamayı göster, neden-sonuç kur."
+            "Üç görüş: özdeşlik, bağımsızlık, karşılıklı etkileşim",
+            "Kelimesiz düşünme → bağımsızlık; iki yönlü etki → etkileşim",
+            "Sıra: imge → kavram → dil",
+            "Dil canlı: düşünce gelişir, yeni kelime doğar",
+            "Paragraf: görüş + metinden aşama + neden-sonuç"
           ] }
       ]
     }

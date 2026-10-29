@@ -130,15 +130,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Alanlar: Kime, Bilgi (CC), Gizli (BCC), Konu, Ek. Adresleri gizlemek için BCC.",
-            "Konu satırı kısa ve amacı açık olur; asla boş bırakılmaz.",
-            "Sıra: konu, hitap, giriş, gelişme, sonuç, kapanış, imza, ek.",
-            "Hitap ve kapanıştan sonra virgül: “Sayın Yetkili,” “Saygılarımla,”",
-            "Ek gönderiyorsan metinde belirt; eklemediysen ekten söz etme.",
-            "Resmî, saygılı dil; emoji, kısaltma, argo ve tamamen büyük harf yok.",
-            "Tarih, saat, yer gibi bilgiler nesnel; gerekçe ve teşekkür ölçülü öznel.",
-            "Puan: biçim 10, içerik 10, dil ve kurallar 10.",
-            "Göndermeden önce alıcı, konu, ek, yazım ve noktalamayı kontrol et."
+            "Alanlar: Kime, Bilgi (CC), Gizli (BCC), Konu, Ek",
+            "Konu satırı kısa, açık; asla boş değil",
+            "Sıra: konu, hitap, giriş, gelişme, sonuç, kapanış, imza, ek",
+            "Virgül: “Sayın Yetkili,” ve “Saygılarımla,”",
+            "Emoji, kısaltma, argo, tamamen büyük harf yok"
           ] }
       ]
     }

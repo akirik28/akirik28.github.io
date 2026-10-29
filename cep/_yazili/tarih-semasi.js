@@ -381,53 +381,36 @@
       g.querySelector("[data-oku]").onclick = function () { S.mu = 1; save(); Y.yenile(); Y.git("prova"); };
     }
 
-    /* ================= YAZILI PROVASI ================= */
-    /* ================= YAZILI KAĞIDI =================
-       Öğrenci kağıdı açar (yazdırır ya da ekrandan bakıp kağıda çözer), sonra her soruyu örnek cevapla tam / kısmi / sıfır puanlar. */
+    /* ================= YAZILI KAĞIDI (v3, ortak Y.kagit) ================= */
+    function topPuan(d) { return PROVA[d].s.reduce(function (a, x) { return a + x.p; }, 0); }
     function kagitHTML(d) {
       var P = PROVA[d];
-      return '<div class="y-kagit"><div class="ust"><h2>' + esc(cfg.ders + " · " + P.ad) + "</h2><p>Süre 40 dakika · " + P.s.reduce(function (a, x) { return a + x.p; }, 0) + " puan · Cevaplarını kağıda yaz.</p>" + '<div class="kim"><span>Ad soyad:</span><span>Sınıf / no:</span><span>Puan:</span></div></div>' +
+      return '<div class="y-kagit"><div class="ust"><h2>' + esc(cfg.ders + " · " + P.ad) + "</h2><p>Süre 40 dakika · " + topPuan(d) + " puan</p>" + '<div class="kim"><span>Ad soyad:</span><span>Sınıf / no:</span><span>Puan:</span></div></div>' +
         P.s.map(function (x, q) {
-          var c = "", satir = x.tur === "kisa" ? 3 : 8; for (var k = 0; k < satir; k++) c += '<div class="c"></div>';
-          return '<div class="s"><h3>' + (q + 1) + ". soru (" + x.p + " puan)</h3>" + (x.k ? '<div class="y-kaynak">' + x.k + "</div>" : "") + '<div class="y-soru">' + x.q + "</div>" + c + "</div>";
+          var c = "", satir = x.tur === "kisa" ? 3 : 7; for (var k = 0; k < satir; k++) c += '<div class="c"></div>';
+          return '<div class="s"><h3>' + (q + 1) + ". soru <small>(" + x.p + " puan)</small></h3>" + (x.k ? '<div class="y-kaynak">' + x.k + "</div>" : "") + '<div class="y-soru">' + x.q + "</div>" + c + "</div>";
         }).join("") + "</div>";
     }
-    /* kağıt kitin içinde açılır (yeni sekme bazı telefonlarda engelleniyor); yazdırırken yalnızca .y-kagit basılır */
-    function kagitAc(g, d) {
-      g.innerHTML = '<div class="y-satir y-satir--ara" style="margin-bottom:14px"><button type="button" class="y-lnk" data-geri>← Geri</button><button type="button" class="y-btn" data-yazdir>Yazdır / PDF</button></div>' + kagitHTML(d) +
-        '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>' + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
-      window.scrollTo(0, 0);
+    function konuVideo(c) {
+      var ad = CN[c] || c, v = (cfg.videolar || []).filter(function (x) { return (x.etiket || "").indexOf(ad) >= 0; })[0];
+      if (!v || !AKIS) return null;
+      var i = -1; AKIS.forEach(function (x, k) { if (i < 0 && x.video === v.id) i = k; });
+      return i < 0 ? null : { alt: "akis/" + i, baslik: v.baslik };
     }
-    var pvKonum = {};
     function prova(g) {
-      var d = S.pd;
-      pvKonum[d] = pvKonum[d] || { i: 0 };
-      S.pk = S.pk || {};
-      var diger = function () {
-        return Y.diger((PROVA.length > 1 ? '<span class="grup">Başka kağıt:</span>' + PROVA.map(function (p, i) { return i === d ? "" : '<button type="button" class="y-lnk" data-d="' + i + '">' + esc(p.ad) + "</button>"; }).join("") : "") +
-          '<button type="button" class="y-lnk" data-kagit>Kağıdı yeniden aç</button><button type="button" class="y-lnk" data-sifir>' + esc(PROVA[d].ad) + " puanlarını sil</button>");
-      };
-      if (!S.pk[d]) {
-        var top = PROVA[d].s.reduce(function (a, x) { return a + x.p; }, 0);
-        g.innerHTML = '<div class="y-kart"><h2 class="y-h2">' + esc(PROVA[d].ad) + '</h2><p class="y-mini y-soluk" style="margin-top:2px">' + PROVA[d].s.length + " soru · " + top + " puan · 40 dakika</p>" +
-          '<ol class="y-madde" style="margin-top:12px"><li>Kağıdı aç. Yazdır ya da ekrana bakarak boş bir kağıda çöz.</li><li>40 dakika tut; deftere ve nota bakma.</li><li>Bitince buraya dön: her soruda örnek cevaba bak, kendine tam, kısmi ya da sıfır puan ver.</li></ol>' +
-          '<button type="button" class="y-btn" style="margin-top:14px" data-kagit>' + Y.svg(Y.ikon.kalem, 18) + "<span>Yazılı kağıdını aç</span></button></div>" +
-          '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-puanla><span>Çözdüm, puanlayalım</span>' + Y.svg(Y.ikon.ileri, 18) + "</button></div>" + diger();
-      } else {
-        Y.prova(g, {
-          kagit: true,
-          sorular: PROVA[d].s.map(function (s) { return { ust: esc(CN[s.c] || s.c), puan: s.p, zor: s.zor, tur: s.tur, kaynak: s.k, q: s.q, ornek: s.c2, olcut: s.o }; }),
-          durum: function (q) { return pvState(d, q); }, kaydet: save, konum: pvKonum[d], toplamAd: PROVA[d].ad, diger: diger
-        });
-      }
-      g.onclick = function (e) {
-        var b = e.target.closest("[data-d]"); if (b) { S.pd = +b.getAttribute("data-d"); save(); g.innerHTML = ""; prova(g); return; }
-        if (e.target.closest("[data-kagit]")) { kagitAc(g, S.pd); return; }
-        if (e.target.closest("[data-yazdir]")) { window.print(); return; }
-        if (e.target.closest("[data-geri]")) { g.innerHTML = ""; prova(g); return; }
-        if (e.target.closest("[data-puanla]")) { S.pk[S.pd] = 1; save(); g.innerHTML = ""; prova(g); return; }
-        if (e.target.closest("[data-sifir]")) { if (!confirm(PROVA[S.pd].ad + " için verdiğin puanlar silinsin mi?")) return; S.pv[S.pd] = {}; S.pk[S.pd] = 0; save(); Y.yenile(); g.innerHTML = ""; prova(g); }
-      };
+      var d = S.pd, P = PROVA[d];
+      S.ks = S.ks || {}; S.pk = S.pk || {};
+      if (!S.ks[d]) S.ks[d] = { a: S.pk[d] ? "puan" : "", t0: 0, i: 0 };
+      Y.kagit(g, {
+        ad: P.ad, bilgi: "<b>" + P.s.length + "</b> soru · <b>" + topPuan(d) + "</b> puan · <b>40</b> dk", sure: 40,
+        kagitHTML: function () { return kagitHTML(d); },
+        sorular: P.s.map(function (s) { return { c: s.c, puan: s.p, q: s.q, kaynak: s.k, ornek: s.c2, olcut: s.o }; }),
+        durum: function (q) { return pvState(d, q); }, kaydet: save, K: S.ks[d],
+        sifirla: function () { S.pv[d] = {}; S.pk[d] = 0; },
+        konuAd: function (c) { var m = MUHTEMEL && MUHTEMEL.ciktilar.filter(function (x) { return x.c === c; })[0]; return m && m.ad ? m.ad : CN[c] || c; }, video: konuVideo,
+        digerUst: PROVA.length > 1 ? '<span class="grup">Başka kağıt:</span>' + PROVA.map(function (p, i) { return i === d ? "" : '<button type="button" class="y-lnk" data-d="' + i + '">' + esc(p.ad) + "</button>"; }).join("") : "",
+        tikla: function (t) { if (!t.hasAttribute("data-d")) return false; S.pd = +t.getAttribute("data-d"); save(); prova(g); return true; }
+      });
     }
 
     /* ================= KUR ================= */
@@ -439,7 +422,7 @@
     if (AKIS) {
       adimlar.push({ id: "akis", ad: "Video + test", renk: "kirmizi", ikon: "video", kisa: AKIS.length + " adım: " + (AKIS.some(function (x) { return x.video; }) ? "video" : "konu") + ", ardından kısa test", metin: M.akis || "Sırayla git: önce izle ya da oku, ardından kısa testi çöz.", ciz: akis, ilerleme: P.akis });
       if (MUHTEMEL) adimlar.push({ id: "muhtemel", ad: "Sınavda çıkabilecekler", renk: "turuncu", ikon: "liste", kisa: "Kısa not: ne sorulabilir", metin: M.muhtemel || "Yazılıdan önce bir kez oku.", ciz: muhtemel, ilerleme: P.muhtemel });
-      if (PROVA) adimlar.push({ id: "prova", ad: "Yazılı kağıdı", renk: "petrol", ikon: "kalem", kisa: PROVA.length + " kağıt: kağıtta çöz, sonra puanla", metin: M.kagit || "Kağıdı aç, 40 dakikada çöz, sonra örnek cevaplarla puanla.", ciz: prova, ilerleme: P.prova });
+      if (PROVA) adimlar.push({ id: "prova", ad: "Yazılı kağıdı", renk: "petrol", ikon: "kalem", kisa: "Kağıtta çöz, sonra puanla", metin: M.kagit || "Kağıdı aç, 40 dakikada çöz, sonra örnek cevaplarla puanla.", ciz: prova, ilerleme: P.prova });
     }
     var ekBas = adimlar.length;
     if (KRONO) adimlar.push({ id: "kronoloji", ad: "Kronoloji", renk: araRenk(), ikon: "saat", kisa: "Olayları sıraya diz", metin: M.kronoloji || "Olaylara en eskiden en yeniye doğru dokun, sonra kontrol et.", ciz: kronoloji, ilerleme: P.kronoloji });

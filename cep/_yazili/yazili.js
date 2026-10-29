@@ -488,9 +488,86 @@
     return { yenile: function () { ciz(); }, toplam: toplam };
   }
 
+
+  /* ---------------- yazılı kağıdı (v3): kağıt + sayaç → tek dokunuşla puanla → sonuç ----------------
+     o: { ad, bilgi, not, sure (dk; yoksa geçen süre), kagitHTML(), sorular:[{c, puan, q, kaynak, ornek, olcut, ek, lang}],
+          durum(q) → {c:[], o}, kaydet(), K (durum: {a:""|"coz"|"puan"|"son", t0, i}), sifirla(), konuAd(c), video(c) → {alt, baslik},
+          digerUst (html), tikla(button) → true ise işlendi } */
+  var kgSayac = null, kgSon = null;
+  function kagit(g, o) {
+    if (kgSayac) { clearInterval(kgSayac); kgSayac = null; }
+    var K = o.K, S = o.sorular, n = S.length, h;
+    function puan(q) { return olcutPuan(S[q].olcut, o.durum(q).c); }
+    function bitti(q) { var st = o.durum(q); return S[q].olcut.every(function (x, j) { return Array.isArray(x) || typeof st.c[j] === "number"; }) && (S[q].olcut.some(function (x) { return !Array.isArray(x); }) || st.o); }
+    var top = S.reduce(function (a, x) { return a + x.puan; }, 0);
+    var dg = diger((o.digerUst || "") + (K.a ? '<button type="button" class="y-lnk" data-kagit>Kağıda bak</button>' : "") + '<button type="button" class="y-lnk" data-yazdir>Yazdır / PDF</button>' + (K.a ? '<button type="button" class="y-lnk" data-sifir>Baştan çöz</button>' : ""));
+    if (!K.a) {
+      h = '<div class="y-kg-bas"><div class="y-kg-ikon" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div><h2 class="y-h2">' + esc(o.ad) + '</h2><p class="y-kg-bilgi">' + o.bilgi + "</p></div></div>" +
+        '<p class="y-kg-not">' + (o.not || "Bir kağıt ve kalem al. Deftere bakma.") + "</p>" +
+        '<button type="button" class="y-btn y-btn--ana y-btn--genis y-btn--buyuk" data-basla>' + svg(IK.kalem, 20) + "<span>Başla</span></button>" + dg;
+    } else if (K.a === "coz") {
+      h = '<div class="y-kg-sayac" data-sayac><span class="t" data-kalan></span><button type="button" class="y-btn y-btn--ana" data-bitir><span>Bitirdim</span></button></div>' + o.kagitHTML() +
+        '<div style="margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis y-btn--buyuk" data-bitir><span>Bitirdim, puanlayalım</span>' + svg(IK.ileri, 18) + "</button></div>" + dg;
+    } else if (K.a === "puan") {
+      if (K.i >= n) K.i = n - 1;
+      var q = K.i, s = S[q], st = o.durum(q), L = s.lang ? ' lang="' + s.lang + '"' : "";
+      h = '<div class="y-kg-ust"><span>Soru <b>' + (q + 1) + "</b> / " + n + '</span><span class="y-kg-p">' + puan(q) + " / " + s.puan + " puan</span></div>" +
+        '<div class="y-noktalar">' + S.map(function (x, k) { var c = bitti(k) ? (puan(k) >= x.puan ? "ok" : puan(k) > 0 ? "sec" : "bad") : ""; return '<button type="button" class="y-nokta ' + c + (k === q ? " simdi" : "") + '" data-p="' + k + '" aria-label="Soru ' + (k + 1) + '">' + (k + 1) + "</button>"; }).join("") + "</div>" +
+        '<div class="y-soru-kart' + (kgSon !== q ? " y-gir" : "") + '"><details class="y-kg-soru"><summary>' + (q + 1) + ". soruyu gör</summary>" + (s.kaynak ? '<div class="y-kaynak">' + s.kaynak + "</div>" : "") + '<div class="y-soru"' + L + ">" + s.q + "</div></details>" +
+        '<div class="y-ornek"' + L + '><div class="bas">Örnek cevap</div>' + s.ornek + "</div>" +
+        '<p class="y-kg-sor">' + (s.olcut.some(function (x) { return !Array.isArray(x); }) ? "Senin cevabın buna ne kadar yakın?" : "Kağıdında olanlara dokun:") + "</p>" +
+        s.olcut.map(function (x, j) {
+          var sc = st.c[j];
+          if (Array.isArray(x)) return '<button type="button" class="y-kg-tik' + (sc ? " on" : "") + '" data-t="' + j + '" aria-pressed="' + !!sc + '"' + L + '><span class="y-kutu">' + IK.tik + "</span><span>" + x[1] + "</span><b>" + x[0] + " p</b></button>";
+          return '<div class="y-kg-olcut">' + (s.olcut.length > 1 ? '<div class="y-kg-oad">' + (x.ad ? "<b>" + esc(x.ad) + ")</b> " : "") + (x.m || "") + "</div>" : "") +
+            '<div class="y-kg-sec" role="group">' + x.l.map(function (Lv, k) {
+              var tur = k === 0 ? "tam" : Lv[0] === 0 ? "sifir" : "kismi";
+              return '<button type="button" class="y-kg-b y-kg-b--' + tur + (sc === k ? " on" : "") + '" data-j="' + j + '" data-k="' + k + '" aria-pressed="' + (sc === k) + '"><b>' + kademeAd(x.l, k) + "</b><span>" + Lv[0] + "</span></button>";
+            }).join("") + "</div>" + (typeof sc === "number" && x.l[sc] ? '<p class="y-kg-acik">' + x.l[sc][1] + "</p>" : "") + "</div>";
+        }).join("") + (s.ek && puan(q) < s.puan && bitti(q) ? '<div class="y-ekler">' + s.ek + "</div>" : "") + "</div>" +
+        '<div style="margin-top:16px">' + (bitti(q) || s.olcut.every(Array.isArray) ? '<button type="button" class="y-btn y-btn--ana y-btn--genis y-btn--buyuk" data-ileri><span>' + (q < n - 1 ? "Sonraki soru" : "Sonucu gör") + "</span>" + svg(IK.ileri, 18) + "</button>" : "") + "</div>" + dg;
+    } else {
+      var tp = 0, kon = {}, sira = [];
+      S.forEach(function (x, k) { var p = puan(k); tp += p; var c = x.c == null ? "" : x.c; if (!kon[c]) { kon[c] = [0, 0]; sira.push(c); } kon[c][0] += p; kon[c][1] += x.puan; });
+      var zayif = sira.slice().sort(function (a, b) { return (kon[b][1] - kon[b][0]) - (kon[a][1] - kon[a][0]); })[0];
+      var kv = zayif != null && kon[zayif][0] < kon[zayif][1] && o.video ? o.video(zayif) : null;
+      h = '<div class="y-kg-sonuc"><div class="y-kg-buyuk"><b>' + tp + "</b><span>/ " + top + "</span></div><p>" + (tp >= top * 0.85 ? "Çok iyi. Yazılıya hazırsın." : tp >= top * 0.6 ? "İyi. Eksik konuya bir kez daha bak." : "Eksik konunun videosunu tekrar izle, sonra yeniden çöz.") + "</p></div>" +
+        (sira.length > 1 ? '<div class="y-kart">' + sira.map(function (c) { var v = kon[c]; return '<div class="y-kg-konu"><div class="y-satir y-satir--ara"><span>' + esc(o.konuAd ? o.konuAd(c) : c) + "</span><b>" + v[0] + " / " + v[1] + '</b></div><div class="y-kg-bar"><i style="width:' + Math.round(100 * v[0] / v[1]) + '%"></i></div></div>'; }).join("") + "</div>" : "") +
+        (kv ? '<button type="button" class="y-btn y-btn--ana y-btn--genis y-btn--buyuk" style="margin-top:16px" data-video="' + esc(kv.alt) + '">' + svg(IK.ileri, 18) + "<span>Tekrar izle: " + esc(kv.baslik) + "</span></button>" : "") +
+        '<div class="y-satir" style="margin-top:14px"><button type="button" class="y-btn" data-geri-puan><span>Puanlarıma bak</span></button><button type="button" class="y-btn" data-sifir><span>Baştan çöz</span></button></div>' + dg;
+    }
+    g.innerHTML = h; kgSon = K.a === "puan" ? K.i : null;
+    if (K.a === "coz") {
+      var kal = g.querySelector("[data-kalan]"), kutu = g.querySelector("[data-sayac]");
+      var tik = function () {
+        if (!g.isConnected) { clearInterval(kgSayac); kgSayac = null; return; }
+        if (o.sure) { var m = K.t0 + o.sure * 60000 - Date.now(); kal.textContent = m > 0 ? dkSn(m) + " kaldı" : "Süre bitti"; kutu.classList.toggle("bitti", m <= 0); }
+        else kal.textContent = dkSn(Date.now() - K.t0) + " geçti";
+      };
+      tik(); kgSayac = setInterval(tik, 1000);
+    }
+    function yeniden(ust) { o.kaydet(); kagit(g, o); if (ust) window.scrollTo(0, 0); }
+    g.onclick = function (e) {
+      var t = e.target.closest("button"); if (!t) return;
+      if (o.tikla && o.tikla(t)) return;
+      if (t.hasAttribute("data-yazdir")) { if (K.a !== "coz") { var gc = D.createElement("div"); gc.className = "y-yazdir-gecici"; gc.innerHTML = o.kagitHTML(); D.body.appendChild(gc); window.print(); gc.remove(); } else window.print(); return; }
+      if (t.hasAttribute("data-basla")) { K.a = "coz"; K.t0 = Date.now(); K.i = 0; yeniden(true); return; }
+      if (t.hasAttribute("data-kagit")) { K.a = "coz"; if (!K.t0) K.t0 = Date.now(); yeniden(true); return; }
+      if (t.hasAttribute("data-bitir")) { K.a = "puan"; K.i = 0; yeniden(true); return; }
+      if (t.hasAttribute("data-p")) { K.i = +t.getAttribute("data-p"); yeniden(); return; }
+      if (t.hasAttribute("data-j")) { var st = o.durum(K.i); st.c[+t.getAttribute("data-j")] = +t.getAttribute("data-k"); st.o = bitti(K.i); yeniden(); yenile(); return; }
+      if (t.hasAttribute("data-t")) { var st2 = o.durum(K.i), j = +t.getAttribute("data-t"); st2.c[j] = !st2.c[j]; st2.o = true; yeniden(); yenile(); return; }
+      if (t.hasAttribute("data-ileri")) { o.durum(K.i).o = true; if (K.i < n - 1) K.i++; else K.a = "son"; yeniden(true); yenile(); return; }
+      if (t.hasAttribute("data-geri-puan")) { K.a = "puan"; K.i = 0; yeniden(); return; }
+      if (t.hasAttribute("data-video")) { var v = t.getAttribute("data-video").split("/"); git(v[0], v[1]); return; }
+      if (t.hasAttribute("data-sifir")) { if (!confirm(o.ad + " baştan çözülsün mü? Verdiğin puanlar silinir.")) return; K.a = ""; K.t0 = 0; K.i = 0; o.sifirla(); yeniden(true); yenile(); }
+    };
+  }
+  function dkSn(ms) { var t = Math.max(0, Math.round(ms / 1000)); return Math.floor(t / 60) + ":" + ("0" + (t % 60)).slice(-2); }
+
   window.YAZILI = {
     kur: kur, git: git, yenile: yenile, hashAyarla: hashAyarla,
-    olcutPuan: olcutPuan, planUst: planUst, gunlukPlan: gunlukPlan, liste: liste, videolar: videolar, cevir: cevir, oynatici: oynatici, prova: prova,
+    olcutPuan: olcutPuan, planUst: planUst, gunlukPlan: gunlukPlan, liste: liste, videolar: videolar, cevir: cevir, oynatici: oynatici, prova: prova, kagit: kagit,
     diger: diger, katla: katla, esc: esc, hash: hash, karistir: karistir, tohum: tohum, sure: sure, gunKaldi: gunKaldi, sayacMetni: sayacMetni, ikon: IK, svg: svg,
     temaDegistir: temaDegistir
   };

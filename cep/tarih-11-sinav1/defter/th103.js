@@ -144,14 +144,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Lale Devri: 1718 Pasarofça ile 1730 Patrona Halil İsyanı arası. III. Ahmed ve Damat İbrahim Paşa.",
-            "Nedenler: yenilgi, barış, pencere, kalem.",
-            "Yenilikler: MET bir TAÇ (Matbaa, Elçilik, Tercüme Heyeti; Tulumbacı Ocağı, Aşı, Çini).",
-            "Elçilikler geçiciydi; sürekli elçilik III. Selim döneminde.",
-            "Matbaa: ilk Türk matbaası, 1727 izin, 1729 ilk kitap Vankulu Lügati; dinî kitap basılmadı.",
-            "Toplum: etkileşim karşılıklı; değişim İstanbul ve saray çevresinde; ordu ıslahatı yok.",
-            "İsyanın nedenleri İPİ: İran, pahalılık, israf.",
-            "Sonuçlar: paşa öldürüldü, padişah indirildi, köşkler yıkıldı; matbaa sürdü."
+            "Lale Devri: 1718 Pasarofça – 1730 Patrona Halil",
+            "III. Ahmed + Damat İbrahim Paşa: barış",
+            "MET bir TAÇ: Matbaa, Elçilik, Tercüme; Tulumbacı, Aşı, Çini",
+            "Matbaa: 1727 izin, 1729 Vankulu Lügati",
+            "İsyan nedenleri İPİ: İran, pahalılık, israf"
           ] }
       ]
     }

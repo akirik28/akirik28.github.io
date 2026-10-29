@@ -143,14 +143,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Philosophia = philia (sevmek) + sophia (bilgelik): bilgelik sevgisi.",
-            "Terimi ilk kullanan Pythagoras; filozof bilge değil, bilgeliği sevendir.",
-            "Tanımlar farklı; ortak yön akla dayalı arayış. Ortak tanım sorusunda gerekçe yaz.",
-            "Felsefi düşünme: kavramı açıklar, görüşü gerekçelendirir, doğru sanılanı sorgular.",
-            "Özellikler: hayret, merak, eleştirel, şüphe, sorgulama, rasyonel, refleksif, sistemli, evrensel, tutarlı, yığılımlı ilerleme.",
-            "Refleksif: düşünme üzerine düşünme. Eleştirel: bilgiyi değerlendirme.",
-            "Felsefe tek nedene ve tek kültüre bağlanamaz; Antik Yunan'da sistemleşti.",
-            "Beş dönem: dinle etkileşim, akla güven, kendi aklını kullanma, yeni akımlar."
+            "Philosophia = philia + sophia: bilgelik sevgisi",
+            "Pythagoras: filozof bilge değil, bilgeliği seven",
+            "Tanımlar farklı; ortak yön: akla dayalı arayış",
+            "Özellikler: hayret, merak, şüphe, eleştirel, refleksif, tutarlı, evrensel",
+            "Tek nedene bağlanamaz; Antik Yunan'da sistemleşti"
           ] }
       ]
     }

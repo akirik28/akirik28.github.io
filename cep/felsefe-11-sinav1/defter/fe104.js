@@ -177,14 +177,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Akıl ilkeleri: özdeşlik, çelişmezlik, üçüncü hâlin imkânsızlığı, yeter-sebep.",
-            "Önerme doğru ya da yanlış yargı bildirir; soru, emir, dilek, ünlem önerme değildir.",
-            "Geçerlilik biçimle ilgilidir; öncül yanlışsa sonuç yanlış olabilir.",
-            "Tümdengelim zorunlu sonuç verir; tümevarım ve analojide sonuç olasıdır.",
-            "Görüş kanıt istemez; argüman öncülden sonuç çıkarır.",
-            "Standart form: P1, P2, C. “Bu nedenle” sonucu, “çünkü” öncülü haber verir.",
-            "Yeniden ifade: iddia ve gerekçe aynı kalır; ekleme, abartı, kopyalama yok.",
-            "13 safsata: adını yaz, bir cümleyle gerekçelendir."
+            "Akıl ilkeleri: özdeşlik, çelişmezlik, üçüncü hâlin imkânsızlığı, yeter-sebep",
+            "Önerme: doğru/yanlış yargı; soru, emir önerme değil",
+            "Tümdengelim zorunlu; tümevarım ve analoji olası",
+            "P1, P2, C: “bu nedenle” sonuç, “çünkü” öncül",
+            "13 safsata: adını yaz, bir cümle gerekçe"
           ] }
       ]
     }

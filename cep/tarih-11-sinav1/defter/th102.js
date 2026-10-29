@@ -155,14 +155,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Belgrad 1739 (Fransa arabulucu): Belgrad, Kuzey Sırbistan, Küçük Eflak geri; Azak Rusya'da kaldı ama surları yıkıldı.",
-            "Belgrad'ın bedeli: 1740 kapitülasyonlar ve boşa giden 1739–1768 barışı.",
-            "Kerden 1746: sınır 1639 Kasr-ı Şirin hattına döndü. 1724 ise Osmanlı-Rusya paylaşımıdır.",
-            "Çeşme 1770: Osmanlı donanması yakıldı; deniz subayı okulu kuruldu.",
-            "Küçük Kaynarca 1774: Kırım bağımsız, Boğazlar Rus gemilerine açık, tazminat, Ortodoks maddesi.",
-            "Üç “ilk”: Müslüman halklı toprak, savaş tazminatı, halifelik. Karadeniz Osmanlı gölü olmaktan çıktı.",
-            "Rusya: Azak ileri, Prut geri, Belgrad fren, Küçük Kaynarca ileri, Kırım ileri.",
-            "Sıra: Karlofça, İstanbul, Prut, Pasarofça, Belgrad, Kerden, Küçük Kaynarca."
+            "Belgrad 1739: Fransa arabulucu, Belgrad geri, kapitülasyon bedeli",
+            "Kerden 1746: sınır Kasr-ı Şirin hattına döndü",
+            "Çeşme 1770: Osmanlı donanması yakıldı",
+            "Küçük Kaynarca 1774: Kırım bağımsız, Boğazlar Ruslara açık",
+            "Üç ilk: Müslüman halklı toprak, tazminat, halifelik"
           ] }
       ]
     }

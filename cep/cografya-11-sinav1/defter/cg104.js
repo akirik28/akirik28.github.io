@@ -151,14 +151,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Türkiye akarsuları: sarp, kısa, hızlı, debisi düşük, rejimi düzensiz, HES'e uygun, ulaşıma elverişsiz.",
-            "Sınıraşan: Fırat, Dicle, Kura, Aras, Çoruh, Meriç, Asi. Sınır oluşturan: Meriç, Aras, Arpaçay.",
-            "Kara suları: Karadeniz ve Akdeniz'de 12, Ege'de 6 deniz mili.",
-            "Münhasır ekonomik bölge 200 deniz miline kadar; Mavi Vatan bir doktrindir.",
-            "Dört boyut: çevresel, ekonomik, politik, sosyokültürel (çevre, para, devlet, insan).",
-            "Vaka sorusunda her boyuta bir etki yaz.",
-            "Önlemler: modern sulama, arıtma, havza yönetimi, tasarruf, su kültürü.",
-            "GAP: sulu tarım ve enerji kazandırır; arazi örtüsünü değiştirir; Fırat ve Dicle politik iş birliği ister."
+            "Akarsular: kısa, hızlı, rejimi düzensiz, HES'e uygun",
+            "Sınıraşan: Fırat, Dicle, Kura, Aras, Çoruh, Meriç, Asi",
+            "Sınır oluşturan: Meriç, Aras, Arpaçay",
+            "Her boyuta bir etki: çevresel, ekonomik, politik, sosyokültürel",
+            "Önlemler: modern sulama, arıtma, havza yönetimi, tasarruf"
           ] }
       ]
     }

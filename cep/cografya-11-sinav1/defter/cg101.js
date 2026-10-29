@@ -144,14 +144,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Mekânsal sorun: yerel, bölgesel ya da küresel ölçekte çıkan fiziksel, sosyal, ekonomik, çevresel problem.",
-            "Üç ölçüt: ölçek, tematik içerik, mekânın niteliği. Kentsel-kırsal ölçek değildir.",
-            "Alt dalı bulmak için sorunun ana konusuna bak.",
-            "Cevap kalıbı: tespit ve izleme → etki analizi ve modelleme → çözüm ve planlama.",
-            "Her basamağa soruya özgü bir örnek yaz.",
-            "Coğrafya veriyi konumla birleştirir, dağılışı gösterir, diğer bilimlerle çalışır.",
-            "Iğdır: çukur konum + sıcaklık terselmesi + kalitesiz yakıt.",
-            "Gri altyapı suyu uzaklaştırır; yeşil altyapı (sünger şehir) kaynağında tutar."
+            "Mekânsal sorun: yerel, bölgesel ya da küresel problem",
+            "Üç ölçüt: ölçek, tematik içerik, mekânın niteliği",
+            "Cevap kalıbı: tespit → etki analizi → çözüm",
+            "Her basamağa soruya özgü bir örnek yaz",
+            "Alt dal: sorunun ana konusuna bak"
           ] }
       ]
     }

@@ -121,15 +121,11 @@ window.DEFTER = {
       kisa: "Sınavdan önce bu listeye bir kez bak.",
       bloklar: [
         { tip: "ozet", maddeler: [
-            "Karagöz, perde arkasında ışıkla oynatılan gölge oyunudur; oynatıcısı hayalîdir.",
-            "Bölümler sırayla: mukaddime, muhavere, fasıl, bitiş. Göstermelik bölüm değildir.",
-            "Perde gazeli mukaddimede, “sürç-i lisan” bitişte geçer.",
-            "Yalnız Hacivat ile Karagöz konuşuyorsa muhavere; başka tip ve asıl olay varsa fasıl.",
-            "Hacivat bilgiç ve süslü konuşur; Karagöz sade halk Türkçesi konuşur, pratik zekâlıdır.",
-            "Zenne, kadın tiplerinin genel adıdır.",
-            "Güldürü: söz oyunu ve yanlış anlama (en önemlisi), ağız taklidi, abartı, hareket.",
-            "Karagöz güldürürken eleştirir; perde gazeli ibret vurgular.",
-            "Orhan Gazi dönemindeki öldürülme anlatısı bir efsanedir."
+            "Bölümler: mukaddime, muhavere, fasıl, bitiş",
+            "Perde gazeli mukaddimede, “sürç-i lisan” bitişte",
+            "Yalnız Hacivat-Karagöz: muhavere; başka tip + olay: fasıl",
+            "Hacivat bilgiç, süslü; Karagöz sade halk Türkçesi",
+            "Güldürü: söz oyunu, yanlış anlama, ağız taklidi, abartı, hareket"
           ] }
       ]
     }
