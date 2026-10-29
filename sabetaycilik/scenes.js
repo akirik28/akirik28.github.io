@@ -11,15 +11,15 @@
   /* yıldızlı gökyüzü + kayan yıldız */
   function Sky(cv, seed, n) {
     var r = rng(seed), g = cv.getContext("2d"), S = [], shoot = null;
-    for (var i = 0; i < n; i++) S.push({ x: r() * 1920, y: r() * 1080, s: r() * 1.8 + .3, p: r() * 6.28, v: .4 + r() * 1.6, c: r() < .14 ? "233,162,59" : r() < .3 ? "88,199,184" : "243,234,215" });
+    for (var i = 0; i < n; i++) S.push({ x: r() * 1920, y: r() * 1080, s: r() * 1.8 + .3, p: r() * 6.28, v: .4 + r() * 1.6, c: r() < .2 ? "158,43,37" : r() < .45 ? "31,111,106" : "90,62,38" });
     this.draw = function (t) {
       g.clearRect(0, 0, 1920, 1080);
       for (var i = 0; i < S.length; i++) {
-        var a = S[i], o = .35 + .45 * (.5 + .5 * Math.sin(t * a.v + a.p));
+        var a = S[i], o = .12 + .22 * (.5 + .5 * Math.sin(t * a.v + a.p));
         g.fillStyle = "rgba(" + a.c + "," + o.toFixed(3) + ")";
-        g.beginPath(); g.arc((a.x + t * a.s * 3) % 1920, a.y, a.s, 0, 6.283); g.fill();
+        g.beginPath(); g.arc((a.x + Math.sin(t * .3 + a.p) * 30) % 1920, (a.y - t * a.s * 6 + 1080 * 4) % 1080, a.s * 1.4, 0, 6.283); g.fill();
       }
-      if (!shoot && r() < .006) shoot = { x: 200 + r() * 1500, y: r() * 400, life: 0 };
+      if (false && !shoot && r() < .006) shoot = { x: 200 + r() * 1500, y: r() * 400, life: 0 };
       if (shoot) {
         shoot.life += .016; var L = shoot.life, sx = shoot.x + L * 900, sy = shoot.y + L * 360;
         var grd = g.createLinearGradient(sx, sy, sx - 160, sy - 64);
