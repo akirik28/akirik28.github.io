@@ -13,6 +13,22 @@ window.SITE = {
 
 window.SUNUMLAR = [
   {
+    klasor: "din-bilim",
+    baslik: "Din ve Bilim · Çatışma mı, diyalog mu?",
+    baslikEn: "Religion and Science · Conflict or dialogue?",
+    altBaslik: "Kavramlar, Kur'an'da akıl ve tefekkür, Barbour'un dört modeli, Galileo, İslam medeniyetinde bilim, Lemaître ve sınıfa üç soru",
+    altBaslikEn: "Key terms, reason in the Qur'an, Barbour's four models, Galileo, science in Islamic civilization, Lemaître and three questions for the class",
+    konu: "11. sınıf Din Kültürü ve Ahlak Bilgisi · 2. Ünite: Din, Felsefe, Bilim ve Sanat",
+    konuEn: "Grade 11 Religious Culture and Ethics · Unit 2: Religion, Philosophy, Science and Art (in Turkish)",
+    tarih: "2026-10-29",
+    sure: "≈12 dk", sureEn: "≈12 min",
+    ekran: 15,
+    ekip: "Ada Sarp Kırık", ekipEn: "Ada Sarp Kırık",
+    tur: "web", dil: "TR", renk: "#E8B65A",
+    kareler: ["#E8B65A", "#7FB2FF", "#E8B65A", "#7FB2FF", "#E8B65A", "#F08A7E", "#7FB2FF"],
+    notlar: "Yapay zekâ ile hazırlandı; son ekranda Yapay Zekâ Şeffaflık Formu var."
+  },
+  {
     klasor: "stem-buds-tanitim",
     baslik: "STEM & BUDS'a Hoş Geldin · 6. ve 7. sınıf tanıtım toplantısı",
     baslikEn: "Welcome to STEM & BUDS · intro meeting for grades 6 and 7",
