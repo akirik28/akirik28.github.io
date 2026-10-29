@@ -22,11 +22,11 @@ window.SUNUMLAR = [
     konuEn: "Grade 11 Religious Culture and Ethics · Unit 2: Religion, Philosophy, Science and Art (in Turkish)",
     tarih: "2026-10-29",
     sure: "≈12 dk", sureEn: "≈12 min",
-    ekran: 15,
+    ekran: 14,
     ekip: "Ada Sarp Kırık", ekipEn: "Ada Sarp Kırık",
     tur: "web", dil: "TR", renk: "#E8B65A",
     kareler: ["#E8B65A", "#7FB2FF", "#E8B65A", "#7FB2FF", "#E8B65A", "#F08A7E", "#7FB2FF"],
-    notlar: "Yapay zekâ ile hazırlandı; son ekranda Yapay Zekâ Şeffaflık Formu var."
+    notlar: ""
   },
   {
     klasor: "stem-buds-tanitim",
