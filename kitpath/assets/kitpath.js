@@ -15,6 +15,11 @@
     precalc: "#E0A43F", chem: "#E0534A", phys: "#5A67D8", bio: "#5FA83A", eng: "#9A6A45" };
   var HESAPLI = !!(H && H.aktif());
   var ME = HESAPLI ? H.aktif() : null;
+  if (ME && !String(ME.name || "").trim()) ME = { id: ME.id, email: ME.email, name: adYedek(ME.email) };
+  function adYedek(e) {
+    var s = String(e || "").split("@")[0].replace(/[._-]+/g, " ").replace(/\d+/g, "").trim();
+    return s ? s.charAt(0).toLocaleUpperCase("tr-TR") + s.slice(1) : "Öğrenci";
+  }
 
   /* ---------- yardımcılar ---------- */
   function $(sel, el) { return (el || document).querySelector(sel); }
@@ -52,7 +57,7 @@
   function buradan() { return location.pathname + location.search; }
   /* ?devam= yalnızca bu sitenin içine döner */
   /* quiz ve not takibi yalnızca Üsküdar Amerikan 11. sınıflarda (okulu bilinmeyen eski önbellek profili ÜAL sayılır) */
-  function notTakibi() { var p = HESAPLI && H.profil ? H.profil() : null; return !p || ((p.okul || "uaa") === "uaa" && (p.sinif == null || p.sinif === 11)); }
+  function notTakibi() { var p = HESAPLI && H.profil ? H.profil() : null; return !p || ((p.okul || "uaa") === "uaa" && p.sinif === 11); }
   function devamAdresi() { var d = param("devam"); return d && /^\/(?!\/)/.test(d) ? d : null; }
   function girisGerek() { location.replace(ROOT + "giris/?mod=giris&devam=" + encodeURIComponent(buradan())); }
   /* kitlerden önce: kurulum eksikse onboarding. Süresi geçmiş quiz notu artık yalnızca kendi dersini kilitler (kilitliMi) */
@@ -462,6 +467,16 @@
   var pages = {};
 
   pages.kitler = function () { pages.home(); };
+  pages.yasal = function () {
+    if (!$('[data-belge="kvkk"]')) return;
+    function goster() {
+      var kv = /^#kvk/.test(location.hash);
+      $$("[data-belge]").forEach(function (m) { m.hidden = (m.dataset.belge === "kvkk") !== kv; });
+      if (location.hash === "#kvkk") window.scrollTo(0, 0);
+    }
+    goster();
+    window.addEventListener("hashchange", goster);
+  };
   pages.home = function () {
     if (location.hash === "#yazili") { location.replace(ROOT + "yazililar/"); return; }
     function hashSekme() { var t = $('[data-tgo="' + (location.hash === "#cep" ? "cep" : "sinav") + '"]'); if (t && location.hash) t.click(); }
@@ -556,6 +571,18 @@
     var sl = param("slug"); if (sl) EPS.forEach(function (e, i) { if (e.slug === sl) s.cur = i; });
     var tab = "defter", qi = 0, pick = null;
     var player = $('[data-k="player"]'), playerHTML = player.innerHTML, izlemeYazildi = false;
+    /* oynatma hızı: AP kitiyle aynı değerler; seçilen hız kitin kaydında (s.speed) tutulur, AP kitiyle ortak */
+    var HIZLAR = [1, 1.25, 1.5, 2, 3];
+    if (HIZLAR.indexOf(s.speed) < 0) s.speed = 1;
+    function hizUygula(v) { v = v || $("video", player); if (!v) return; try { v.defaultPlaybackRate = s.speed; v.playbackRate = s.speed; } catch (e) {} }
+    function hizCiz() {
+      fill('[data-k="hiz"]', HIZLAR.map(function (h) { return '<button type="button" data-hiz="' + h + '" aria-pressed="' + (s.speed === h) + '">' + String(h).replace(".", ",") + '×</button>'; }).join(""));
+      var et = $(".player__bar > span:last-child", player); if (et) et.textContent = String(s.speed).replace(".", ",") + "x";   /* kapaktaki hız etiketi */
+    }
+    $('[data-k="hiz"]').addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-hiz]"); if (!b) return;
+      s.speed = +b.dataset.hiz; save(); hizCiz(); hizUygula();
+    });
     var vb = typeof KIT.videoBase === "string" && KIT.videoBase ? KIT.videoBase : "video/";
     if (!/^(https?:)?\/\//.test(vb) && vb.charAt(0) !== "/") vb = C.url(k, vb);
     if (vb.charAt(vb.length - 1) !== "/") vb += "/";
@@ -633,6 +660,7 @@
       var x = ep();
       player.innerHTML = playerHTML;
       player.dataset.soon = String(!x.seconds);
+      hizCiz();
       izlemeYazildi = false;
       fill('[data-k="player-tag"]', esc(x.code) + " · " + (x.seconds ? fmt(x.seconds) : "yakında"));
       fill('[data-k="player-time"]', "0:00 / " + (x.seconds ? fmt(x.seconds) : "—"));
@@ -780,6 +808,10 @@
       v.setAttribute("aria-label", x.title + " videosu");
       v.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:3";
       v.addEventListener("ended", izlendi);
+      v.addEventListener("loadedmetadata", function () { hizUygula(v); });
+      /* tarayıcının kendi hız menüsünden değişirse düğmeler de ona uysun */
+      v.addEventListener("ratechange", function () { if (v.playbackRate !== s.speed && HIZLAR.indexOf(v.playbackRate) > -1) { s.speed = v.playbackRate; save(); hizCiz(); } });
+      hizUygula(v);
       v.addEventListener("timeupdate", function () { if (!izlemeYazildi && v.duration && v.currentTime / v.duration > .9) { izlemeYazildi = true; izlendi(); } });
       v.addEventListener("error", function () { player.innerHTML = playerHTML; player.dataset.soon = "true"; });
       player.appendChild(v);
@@ -804,10 +836,12 @@
     var form = $('[data-k="auth-form"]');
     var devam = devamAdresi();
     if (HESAPLI && !param("mod")) { location.replace(devam || ROOT + "panel/"); return; }
+    var YENI = !!(H && H.hukuk);   /* Hukuk ekranları anahtarı (hesap.js) */
+    if (YENI) fill('[data-k="kayit-alt"]', "Ücretsiz. E-posta ve şifre yeter.");
     function render() {
       $$('[role="tab"]', form).forEach(function (t) { t.setAttribute("aria-selected", String(t.dataset.mod === mode)); });
       $$("[data-only]", form).forEach(function (el) {
-        var on = el.dataset.only === mode;
+        var on = el.dataset.only === mode && (!el.dataset.hukuk || (el.dataset.hukuk === "yeni") === YENI);
         el.hidden = !on;
         $$("input", el).forEach(function (i) { i.disabled = !on; });
       });
@@ -821,13 +855,13 @@
     form.addEventListener("click", function (e) {
       var t = e.target.closest('[role="tab"]');
       if (t) { mode = t.dataset.mod; history.replaceState(null, "", qs()); render(); }
+      if (!YENI && e.target.closest(".field__hint")) { e.preventDefault(); toast("Şifreni sıfırlamak için yöneticiye yaz."); }
       if (e.target.closest('[data-k="pw-toggle"]')) {
         var pw = $('[data-k="pw"]'), b = e.target.closest('[data-k="pw-toggle"]');
         var show = pw.type === "password";
         pw.type = show ? "text" : "password"; b.textContent = show ? "Gizle" : "Göster";
         b.setAttribute("aria-pressed", String(show));
       }
-      if (e.target.closest(".field__hint")) { e.preventDefault(); toast("Şifreni sıfırlamak için yöneticiye yaz."); }
     });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -840,26 +874,25 @@
         input.setAttribute("aria-invalid", "true");
       }
       $$("input:not([disabled])", form).forEach(function (i) { i.removeAttribute("aria-invalid"); });
-      if (mode === "kayit") {
-        if (!$('[name="ad"]').value.trim()) err($('[name="ad"]'), "Adını yaz");
-        if (!$('[name="soyad"]').value.trim()) err($('[name="soyad"]'), "Soyadını yaz");
-      }
       var em = $('[name="eposta"]');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())) err(em, "Geçerli bir e-posta yaz");
       var pw = $('[data-k="pw"]');
       if (mode === "kayit" && pw.value.length < 8) err(pw, "Şifre en az 8 karakter olmalı");
       if (mode === "giris" && pw.value.length < 6) err(pw, "Şifreni yaz");
+      if (mode === "kayit" && !YENI) {
+        if (!$('[name="ad"]').value.trim()) err($('[name="ad"]'), "Adını yaz");
+        if (!$('[name="soyad"]').value.trim()) err($('[name="soyad"]'), "Soyadını yaz");
+      }
       if (!ok) { var first = $('[aria-invalid="true"]', form); if (first) first.focus(); return; }
       if (!H) { toast("Hesap sistemi yüklenemedi; sayfayı yenile"); return; }
       var cta = $('[data-k="cta"]'), eski = cta.textContent;
       cta.disabled = true; cta.textContent = mode === "kayit" ? "Hesabın açılıyor…" : "Giriş yapılıyor…";
       var is = mode === "kayit"
-        ? H.kayit($('[name="ad"]').value, $('[name="soyad"]').value, em.value.trim(), pw.value)
+        ? (YENI ? H.kayit("", "", em.value.trim(), pw.value) : H.kayit($('[name="ad"]').value, $('[name="soyad"]').value, em.value.trim(), pw.value))
         : H.giris(em.value.trim(), pw.value);
       is.then(function () {
-        var p = H.profil();
-        if (mode === "kayit" || H.engel(p) === "kurulum") location.replace(ROOT + "hosgeldin/" + (devam ? "?devam=" + encodeURIComponent(devam) : ""));
-        else location.replace(devam || ROOT + "panel/");
+        if (!YENI && (mode === "kayit" || H.engel(H.profil()) === "kurulum")) location.replace(ROOT + "hosgeldin/" + (devam ? "?devam=" + encodeURIComponent(devam) : ""));
+        else location.replace(devam || ROOT + "panel/");   /* anahtar açıkken kurulum zorunlu değil: panelde "Sınıfını seç · Atla" */
       }, function (x) {
         cta.disabled = false; cta.textContent = eski;
         var m = document.createElement("p"); m.className = "field__err"; m.dataset.k = "form-err"; m.setAttribute("role", "alert"); m.style.textAlign = "center";
@@ -953,11 +986,21 @@
   pages.panel = function () {
     if (!HESAPLI) { ornekSerit("Bu bir örnek panel. Giriş yapınca kendi ilerlemen, quizlerin ve notların burada görünür."); panelOrnek(); return; }
     if (engelKontrol(true)) return;
+    kurulumKarti();
     panelCiz(H.profil());
     H.profilYenile().then(panelCiz, function () { toast("Bağlantı kurulamadı; son kaydedilen bilgiler gösteriliyor"); });
     notFormu(panelCiz);
   };
 
+  /* kurulum (okul, sınıf, dersler) isteğe bağlı: eksikse panelin üstünde "Seç · Atla" */
+  function kurulumKarti() {
+    if (!H.hukuk) return;
+    var p = H.profil(), k = "kp-kurulum-atla:" + ME.id, m = $("#main");
+    if (!m || $(".kurulum-kart") || !H.kurulumEksik || !H.kurulumEksik(p)) return;
+    try { if (localStorage.getItem(k) === "1") return; } catch (e) {}
+    m.insertAdjacentHTML("afterbegin", '<section class="card card--pad kurulum-kart rise" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px"><div class="stack" style="gap:4px;flex:1 1 260px"><strong style="font-size:17px">Sınıfını seç, sana uygun kitleri öne alalım</strong><span class="muted" style="font-size:14px">İstersen sonra Profil\'den de seçebilirsin.</span></div><div class="row" style="gap:8px"><a class="btn btn--primary btn--sm" href="' + ROOT + 'hosgeldin/">Seç</a><button type="button" class="btn btn--ghost btn--sm" data-k="kurulum-atla">Atla</button></div></section>');
+    $('[data-k="kurulum-atla"]').addEventListener("click", function () { try { localStorage.setItem(k, "1"); } catch (e) {} var x = $(".kurulum-kart"); if (x) x.remove(); });
+  }
   function bosQuiz() {
     return '<div class="row" style="align-items:center;gap:16px;flex-wrap:nowrap"><svg class="a-sway" width="70" height="70" viewBox="0 0 64 64" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="14" width="44" height="40" rx="8"/><path d="M10 26h44M22 8v10M42 8v10"/><path d="M24 40l6 6 11-12" stroke="#2FA37A" stroke-width="3"/></svg>' +
       '<div class="stack" style="gap:4px"><strong>Takvim boş</strong><span class="muted" style="font-size:14px;line-height:1.5">Hocan yeni bir quiz açınca burada görünür.</span><span class="hand" style="font-size:20px;color:var(--accent-ink)">keyfine bak!</span></div></div>';
@@ -1613,6 +1656,7 @@
     theme.apply(theme.pref());
     if (!HESAPLI) { ornekSerit("Bu bir örnek profil. Giriş yapınca kendi bilgilerin, serin ve notların burada görünür."); profilOrnek(); return; }
     var p = H.profil() || {};
+    profilHesap();
     function ciz() {
       var r = C.istatistik(), tk = C.takvim();
       fill('[data-k="p-avatar"]', esc(initials(ME.name)));
@@ -2496,6 +2540,150 @@
     });
   };
 
+  /* ---------- Hukuk ekranları: profil hesabı bölümü, hesabı sil, bir kerelik koşul penceresi, alt bilgi ---------- */
+  var IKON_X = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  var IKON_SIL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  function profilHesap() {
+    var kok = $('[data-k="p-hesap"]'); if (!kok || !H.hukuk) return;
+    var p = H.profil() || {};
+    var adVar = "kosul_onay" in p;   /* yeni sunucu fonksiyonları (1-hukuk.sql) yayındaysa */
+    kok.innerHTML = '<hr style="border:0;height:1px;background:var(--line);margin:0;width:100%">' +
+      (adVar ? '<form class="stack" style="gap:8px" data-k="ad-form"><label class="field">Adın<input name="ad" type="text" autocomplete="name" maxlength="40" value="' + esc(String(p.ad || "")) + '" placeholder="Adın ve soyadın"></label><button type="submit" class="btn btn--ghost btn--sm" style="align-self:flex-start">Kaydet</button></form>' : "") +
+      '<div class="stack" style="gap:6px"><span style="font-size:13px;font-weight:600">Gizlilik ve koşullar</span><div class="row" style="gap:4px 14px;font-size:14px"><a href="' + ROOT + 'gizlilik/" style="text-decoration:underline">Gizlilik</a><a href="' + ROOT + 'gizlilik/#kvkk" style="text-decoration:underline">KVKK aydınlatma</a><a href="' + ROOT + 'kosullar/" style="text-decoration:underline">Kullanım koşulları</a></div></div>' +
+      '<section class="tehlike" id="sil" aria-labelledby="sil-h"><h3 id="sil-h">Hesabını sil</h3><p class="muted" style="margin:0;font-size:14px;line-height:1.5">Hesabın ve ona bağlı bütün kayıtlar kalıcı olarak silinir.</p><button type="button" class="btn btn--ghost btn--sm" style="align-self:flex-start;color:var(--bad);border-color:color-mix(in srgb, var(--bad) 45%, transparent)" data-k="sil-ac">Hesabımı sil…</button></section>';
+    var af = $('[data-k="ad-form"]');
+    if (af) af.addEventListener("submit", function (e) {
+      e.preventDefault(); var v = af.ad.value.trim(); if (!v) { toast("Adını yaz"); return; }
+      H.adKaydet(v).then(function () { toast("Adın kaydedildi"); setTimeout(function () { location.reload(); }, 700); }, function (x) { toast(H.hataMetni(x)); });
+    });
+    $('[data-k="sil-ac"]').addEventListener("click", silDiyalog);
+    if (location.hash === "#sil") setTimeout(silDiyalog, 300);
+  }
+  function silDiyalog() {
+    if ($(".ortu")) return;
+    var o = document.createElement("div"); o.className = "ortu";
+    o.innerHTML = '<div class="diyalog" role="dialog" aria-modal="true" aria-labelledby="sil-d-h"></div>';
+    document.body.appendChild(o);
+    var d = $(".diyalog", o), onceki = document.activeElement;
+    function kapat() { o.remove(); if (onceki && onceki.focus) onceki.focus(); }
+    o.addEventListener("click", function (e) { if (e.target === o) kapat(); });
+    document.addEventListener("keydown", function esc_(e) { if (e.key === "Escape" && document.body.contains(o)) { kapat(); document.removeEventListener("keydown", esc_); } });
+    function bas(baslik, adim) { return '<div class="diyalog__bas"><div class="stack" style="gap:4px"><span class="mono muted">ADIM ' + adim + ' / 2</span><h2 class="h3" id="sil-d-h" style="font-size:24px">' + baslik + '</h2></div><button type="button" class="icon-btn" data-k="d-kapat" aria-label="Kapat">' + IKON_X + '</button></div>'; }
+    function adim1() {
+      d.innerHTML = bas("Hesabını silmek üzeresin", 1) +
+        '<p style="margin:0">Bunlar kalıcı olarak silinir; geri getiremeyiz:</p><ul class="silinecek">' +
+        ["Hesabın (e-posta, ad, şifre)", "Kitlerdeki ilerlemen, serin ve rozetlerin", "Quiz notların ve seviye sınavı sonuçların", "E-posta kayıtların", "Gönderdiğin geri bildirimler"].map(function (x) { return "<li>" + IKON_SIL + "<span>" + x + "</span></li>"; }).join("") + "</ul>" +
+        '<div class="row" style="gap:10px;justify-content:flex-end;flex-wrap:wrap"><button type="button" class="btn btn--primary" data-k="d-vazgec">Vazgeç</button><button type="button" class="btn btn--ghost" style="color:var(--bad)" data-k="d-devam">Devam et</button></div>';
+      $('[data-k="d-kapat"]', d).onclick = kapat; $('[data-k="d-vazgec"]', d).onclick = kapat; $('[data-k="d-devam"]', d).onclick = adim2;
+      $('[data-k="d-vazgec"]', d).focus();
+    }
+    function adim2() {
+      d.innerHTML = bas("Şifrenle onayla", 2) +
+        '<form class="stack" style="gap:14px" data-k="d-form" novalidate><div class="field"><label for="sil-pw">Şifren</label><span class="pw"><input id="sil-pw" type="password" autocomplete="current-password" required><button type="button" data-k="d-goster" aria-pressed="false">Göster</button></span></div>' +
+        '<label class="onay onay--tek" data-k="d-onay"><input type="checkbox" name="anladim"><span>Anladım: hesabım ve bütün kayıtlarım kalıcı olarak silinecek.</span></label>' +
+        '<div class="row" style="gap:10px;justify-content:flex-end;flex-wrap:wrap"><button type="button" class="btn btn--ghost" data-k="d-vazgec">Vazgeç</button><button type="submit" class="btn btn--sil" data-k="d-sil">Hesabımı sil</button></div></form>';
+      $('[data-k="d-kapat"]', d).onclick = kapat; $('[data-k="d-vazgec"]', d).onclick = kapat;
+      var pw = $("#sil-pw", d);
+      $('[data-k="d-goster"]', d).onclick = function () { var g = pw.type === "password"; pw.type = g ? "text" : "password"; this.textContent = g ? "Gizle" : "Göster"; this.setAttribute("aria-pressed", String(g)); };
+      $('[data-k="d-form"]', d).addEventListener("submit", function (e) {
+        e.preventDefault();
+        $$(".field__err", d).forEach(function (x) { x.remove(); });
+        var on = $('[data-k="d-onay"]', d); on.dataset.hata = "false";
+        function hata(el, m) { var s = document.createElement("span"); s.className = "field__err"; s.setAttribute("role", "alert"); s.textContent = m; el.insertAdjacentElement("afterend", s); }
+        if (!pw.value) { hata(pw.closest(".pw"), "Şifreni yaz"); pw.focus(); return; }
+        if (!$('[name="anladim"]', d).checked) { on.dataset.hata = "true"; hata(on, "Silmek için kutuyu işaretle"); return; }
+        var b = $('[data-k="d-sil"]', d); b.disabled = true; b.textContent = "Siliniyor…";
+        H.hesapSil(pw.value).then(function () {
+          d.innerHTML = '<div class="stack" style="gap:12px;align-items:flex-start"><h2 class="h3" style="font-size:24px">Hesabın silindi</h2><p class="muted" style="margin:0">Hesabın ve bütün kayıtların silindi. E-posta adresine kısa bir bilgi maili gönderdik. İstersen bu cihazda misafir olarak devam edebilirsin.</p><a class="btn btn--primary" href="' + ROOT + 'index.html">Ana sayfaya dön</a></div>';
+        }, function (x) { b.disabled = false; b.textContent = "Hesabımı sil"; hata(b.parentNode, H.hataMetni(x)); });
+      });
+      pw.focus();
+    }
+    adim1();
+  }
+  /* var olan hesap: Gizlilik ve Kullanım koşulları bir kez kısa bir bilgiyle gösterilir, "Tamam" kabul sayılır (kutu yok; Ada, 30 Eki).
+     Yeni hesaplarda kayıt anında dolar. Yalnızca sunucu yeni alanı döndürüyorsa ("kosul_onay" profilde varsa) açılır. */
+  function kosulPenceresi() {
+    if (!HESAPLI || !H.hukuk || /^(yasal|sifre|hesap-sil|giris|deneme|seviye-sinav)$/.test(body.dataset.page) || $(".kosul-ortu")) return;
+    var p = H.profil();
+    if (!p || !("kosul_onay" in p) || p.kosul_onay) return;
+    var o = document.createElement("div"); o.className = "ortu kosul-ortu";
+    o.innerHTML = '<div class="diyalog" role="dialog" aria-modal="true" aria-labelledby="kosul-h"><h2 class="h3" id="kosul-h" style="font-size:24px">Gizlilik ve kullanım koşulları</h2>' +
+      '<p style="margin:0;line-height:1.6">Kitpath\'in <a href="' + ROOT + 'gizlilik/" target="_blank" rel="noopener" style="text-decoration:underline">gizlilik politikası</a> ve <a href="' + ROOT + 'kosullar/" target="_blank" rel="noopener" style="text-decoration:underline">kullanım koşulları</a> artık yayında.</p>' +
+      '<button type="button" class="btn btn--primary btn--block" data-k="k-devam">Tamam</button>' +
+      '<p class="kabul-satiri">"Tamam"a basarak bunları kabul etmiş olursun.</p></div>';
+    document.body.appendChild(o);
+    var b = $('[data-k="k-devam"]', o);
+    b.addEventListener("click", function () {
+      b.disabled = true;
+      H.kosulOnayla().then(function () { o.remove(); }, function (x) { b.disabled = false; toast(H.hataMetni(x)); });
+    });
+    b.focus();
+  }
+  /* alt bilgi: bütün sayfalarda (giriş, sınav ekranları ve yönetim hariç) */
+  function altBilgi() {
+    if (!H || !H.hukuk || /^(giris|hosgeldin|deneme|seviye-sinav|yonetim)$/.test(body.dataset.page)) return;
+    var w = $(".wrap"); if (!w || $(".alt-bilgi")) return;
+    var a = function (h, t) { return '<a href="' + ROOT + h + '">' + t + '</a>'; };
+    w.insertAdjacentHTML("beforeend", '<footer class="alt-bilgi"><div class="alt-bilgi__ust"><nav class="alt-bilgi__linkler" aria-label="Alt bilgi">' +
+      a("gizlilik/", "Gizlilik") + a("gizlilik/#kvkk", "KVKK aydınlatma") + a("kosullar/", "Kullanım koşulları") + '<a href="mailto:iletisim@kitpath.org">iletisim@kitpath.org</a></nav></div>' +
+      '<p class="alt-bilgi__not">Kitpath bağımsız bir öğrenci projesidir; adı geçen okullarla resmî bağı yoktur. AP®, College Board\'un tescilli markasıdır; College Board ile bağlantımız yoktur ve College Board tarafından desteklenmez. Tamamen ücretsiz.</p></footer>');
+  }
+
+  /* ---------- şifremi unuttum: /sifre/ (istek) ve /sifre/?t=… (yeni şifre) ---------- */
+  pages.sifre = function () {
+    var kok = $('[data-k="sifre"]'), t = param("t");
+    if (!kok) return;
+    function pwAlan(id, ac) { return '<div class="field"><label for="' + id + '">' + ac + '</label><span class="pw"><input id="' + id + '" type="password" autocomplete="new-password" minlength="8" placeholder="En az 8 karakter" required><button type="button" data-k="goster" aria-pressed="false">Göster</button></span></div>'; }
+    function goster() { var b = $('[data-k="goster"]', kok), i = $(".pw input", kok); if (b && i) b.onclick = function () { var g = i.type === "password"; i.type = g ? "text" : "password"; b.textContent = g ? "Gizle" : "Göster"; b.setAttribute("aria-pressed", String(g)); }; }
+    function hata(el, m) { $$(".field__err", kok).forEach(function (x) { x.remove(); }); var s = document.createElement("p"); s.className = "field__err"; s.setAttribute("role", "alert"); s.textContent = m; el.insertAdjacentElement("afterend", s); }
+    if (t) {
+      kok.innerHTML = '<span class="mono muted">ŞİFREMİ UNUTTUM</span><h1 class="display" style="font-size:34px">Yeni şifreni belirle</h1><form class="stack" style="gap:16px" novalidate>' + pwAlan("yeni-pw", "Yeni şifre") +
+        '<button type="submit" class="btn btn--primary btn--lg btn--block">Şifremi değiştir</button><p class="muted" style="margin:0;font-size:13px">Şifren değişince öteki cihazlardaki oturumların kapanır.</p></form>';
+      goster();
+      $("form", kok).addEventListener("submit", function (e) {
+        e.preventDefault();
+        var i = $("#yeni-pw", kok), b = $("button[type=submit]", kok);
+        if (i.value.length < 8) { hata(i.closest(".field"), "Şifre en az 8 karakter olmalı"); i.focus(); return; }
+        b.disabled = true; b.textContent = "Kaydediliyor…";
+        H.sifreYenile(t, i.value).then(function () {
+          try { history.replaceState(null, "", location.pathname); } catch (x) {}
+          kok.innerHTML = '<h1 class="display" style="font-size:34px">Şifren değişti</h1><p class="muted" style="margin:0">Bu cihazda giriş yaptın. Öteki cihazlarda yeni şifrenle tekrar giriş yapman gerekecek.</p><a class="btn btn--primary btn--lg btn--block" href="' + ROOT + 'panel/">Panelime git</a>';
+        }, function (x) {
+          b.disabled = false; b.textContent = "Şifremi değiştir";
+          hata(b, H.hataMetni(x));
+          if (/gecersiz_baglanti/.test(String(x && x.message))) $(".field__err", kok).insertAdjacentHTML("afterend", '<a class="btn btn--ghost btn--block" href="' + ROOT + 'sifre/">Yeni bağlantı iste</a>');
+        });
+      });
+      return;
+    }
+    function istek(eposta) {
+      kok.innerHTML = '<span class="mono muted">ŞİFREMİ UNUTTUM</span><h1 class="display" style="font-size:34px">Şifreni sıfırla</h1><p class="muted" style="margin:0">Hesabının e-postasını yaz; sıfırlama bağlantısı gönderelim.</p>' +
+        '<form class="stack" style="gap:16px" novalidate><label class="field">E-posta<input name="eposta" type="email" autocomplete="email" inputmode="email" placeholder="ornek@eposta.com" value="' + esc(eposta || "") + '" required></label><button type="submit" class="btn btn--primary btn--lg btn--block">Bağlantı gönder</button></form>' +
+        '<a class="btn btn--link" href="' + ROOT + 'giris/?mod=giris">← Girişe dön</a>';
+      $("form", kok).addEventListener("submit", function (e) {
+        e.preventDefault();
+        var i = $('[name="eposta"]', kok), v = i.value.trim(), b = $("button[type=submit]", kok);
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { hata(i, "Geçerli bir e-posta yaz"); i.focus(); return; }
+        b.disabled = true; b.textContent = "Gönderiliyor…";
+        H.sifreIste(v).then(function () { gonderildi(v); }, function () { b.disabled = false; b.textContent = "Bağlantı gönder"; hata(b, "Şu an gönderemedik; biraz sonra tekrar dene."); });
+      });
+    }
+    function gonderildi(eposta) {
+      kok.innerHTML = '<span class="mono muted">ŞİFREMİ UNUTTUM</span><h1 class="display" style="font-size:34px">Mailini kontrol et</h1><p style="margin:0;line-height:1.6"><strong>' + esc(eposta) + '</strong> ile kayıtlı bir hesap varsa sıfırlama bağlantısını gönderdik. Bağlantı 1 saat geçerli.</p><p class="muted" style="margin:0;font-size:14px">Gelmediyse Spam klasörüne bak.</p>' +
+        '<button type="button" class="btn btn--ghost btn--block" data-k="yeniden" disabled>Yeniden gönder (60)</button><a class="btn btn--link" href="' + ROOT + 'giris/?mod=giris">← Girişe dön</a>';
+      var b = $('[data-k="yeniden"]', kok), n = 60, z = setInterval(function () { n--; if (n <= 0) { clearInterval(z); b.disabled = false; b.textContent = "Yeniden gönder"; } else b.textContent = "Yeniden gönder (" + n + ")"; }, 1000);
+      b.onclick = function () { clearInterval(z); istek(eposta); };
+    }
+    istek(param("e") || "");
+  };
+  /* Google Play'in istediği herkese açık adres: giriş yapılmışsa Profil → Hesabını sil'e götürür */
+  pages["hesap-sil"] = function () {
+    if (HESAPLI) { location.replace(ROOT + "profil/#sil"); return; }
+    var a = $('[data-k="sil-giris"]');
+    if (a) a.href = ROOT + "giris/?mod=giris&devam=" + encodeURIComponent(new URL(ROOT + "profil/", location.href).pathname + "#sil");
+  };
+
   /* ---------- güvenlik: oturum anahtarı olmayan hesaba nazik "bir kez yeniden giriş yap" şeridi ----------
      24 Ekim'den önce giriş yapıp oturumda kalanlarda anahtar yok; ilerlemeleri sunucuda durur, yeniden girince her şey gelir. */
   function anahtarSerit(zorla) {
@@ -2516,6 +2704,13 @@
   bottomNav();
   var page = body.dataset.page;
   if (pages[page]) pages[page]();
+  altBilgi();
+  kosulPenceresi();
+  /* önbellekteki profil yeni alanlardan önceyse oturumda bir kez tazele (sunucu güncellenince pencere gelsin) */
+  if (HESAPLI && H.hukuk && H.profil && H.profil() && !("kosul_onay" in H.profil())) {
+    var tz = false; try { tz = sessionStorage.getItem("kp-profil-tazelendi") === "1"; sessionStorage.setItem("kp-profil-tazelendi", "1"); } catch (e) {}
+    if (!tz) H.profilYenile().then(kosulPenceresi, function () {});
+  }
   geriBildirim();
   anahtarSerit();
   sevBant();

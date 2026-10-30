@@ -1209,3 +1209,94 @@ html, body { overflow-x: clip; }
 .anahtar-serit__x { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; border: 0; background: transparent; color: var(--muted); font-size: 22px; line-height: 1; }
 .anahtar-serit__x:hover { background: var(--surface-2); color: var(--ink); }
 @media (max-width: 720px) { .anahtar-serit { flex-wrap: wrap; } .anahtar-serit__m { flex-basis: calc(100% - 100px); } }
+
+/* ================= Hukuk ekranları (30 Eki; Tasarım taslağı sirket/tasarim/hukuk-ekranlari) =================
+   Fosforlu kalem ve sarı yok; durum için bilgi (mavi), tamam (yeşil), tehlike (kırmızı). */
+.btn--sil { background: var(--bad); color: #FFFDF8; border-color: var(--bad); }
+[data-theme="dark"] .btn--sil { color: #0D1220; }
+.kutu { display: flex; gap: 12px; padding: 14px 16px; border-radius: var(--r-sm); font-size: 14px; line-height: 1.5; }
+.kutu--info { background: var(--info-bg); color: var(--info-ink); }
+.kutu--ok { background: var(--ok-bg); color: var(--ok); }
+.kutu--bad { background: var(--bad-bg); color: var(--bad); }
+.kutu svg { flex-shrink: 0; margin-top: 1px; }
+.doldur { font-family: var(--f-mono); font-size: .82em; padding: 1px 6px; border-radius: 6px; background: var(--info-bg); color: var(--info-ink); -webkit-box-decoration-break: clone; box-decoration-break: clone; overflow-wrap: anywhere; }
+.kabul-satiri { margin: 0; font-size: 13px; line-height: 1.5; color: var(--muted); text-align: center; }
+.kabul-satiri a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+/* onay kutusu satırı: bütün satır tıklanır (en az 52 px), kutu 24 px */
+.onaylar { display: flex; flex-direction: column; border: 1.5px solid var(--line); border-radius: var(--r-md); background: var(--surface); overflow: hidden; }
+.onay { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; min-height: 52px; cursor: pointer; font-size: 15px; line-height: 1.45; font-weight: 400; }
+.onay--tek { border: 1.5px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+.onay input { appearance: none; -webkit-appearance: none; flex-shrink: 0; width: 24px; height: 24px; margin: 0; border-radius: 7px; border: 2px solid var(--muted); background: var(--surface); display: grid; place-items: center; cursor: pointer; }
+.onay input::after { content: ""; width: 12px; height: 7px; border: solid var(--btn-ink); border-width: 0 0 2.6px 2.6px; transform: translateY(-1.5px) rotate(-45deg); opacity: 0; }
+.onay input:checked { background: var(--btn); border-color: var(--btn); }
+.onay input:checked::after { opacity: 1; }
+.onay input:focus-visible { outline: 2.5px solid var(--info-ink); outline-offset: 2px; }
+.onay[data-hata="true"] { background: var(--bad-bg); }
+.onay[data-hata="true"] input { border-color: var(--bad); }
+.onay a { text-decoration: underline; text-underline-offset: 3px; }
+/* yasal sayfalar (gizlilik, koşullar): masaüstünde solda içindekiler, telefonda açılır kutu */
+.yasal { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 48px; padding: 16px 0 40px; align-items: start; }
+.yasal > * { min-width: 0; }
+.yasal__bas { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
+.yasal__bas h1 { font-size: clamp(36px, 5vw, 56px); }
+.yasal__icindekiler { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
+.yasal__icindekiler a { padding: 8px 12px; border-radius: 10px; color: var(--muted); }
+.yasal__icindekiler a:hover { color: var(--ink); }
+.yasal__ac { display: none; }
+.metin { max-width: 720px; font-size: 17px; line-height: 1.7; }
+.metin h2 { font-family: var(--f-display); font-weight: 800; font-size: 26px; letter-spacing: -.02em; line-height: 1.2; margin: 40px 0 12px; scroll-margin-top: 20px; }
+.metin h2:first-child { margin-top: 0; }
+.metin p { margin: 0 0 14px; }
+.metin ul { margin: 0 0 14px; padding-left: 22px; }
+.metin li { margin: 4px 0; }
+.metin li::marker { color: var(--muted); }
+.metin a { text-decoration: underline; text-underline-offset: 3px; }
+.metin .tablo { overflow-x: auto; margin: 0 0 18px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--surface); }
+.metin table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.metin th { text-align: left; font: 500 11px var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; background: var(--surface-2); }
+.metin td { padding: 12px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+.kisaca { padding: 22px 24px; border-radius: var(--r-lg); background: var(--surface); box-shadow: var(--shadow); margin-bottom: 28px; }
+.kisaca ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+.kisaca li { display: flex; gap: 10px; font-size: 15px; line-height: 1.45; margin: 0; }
+.kisaca li svg { flex-shrink: 0; margin-top: 2px; color: var(--ok); }
+.sekmeler { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-2); align-self: flex-start; }
+.sekmeler a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 14px; color: var(--muted); }
+.sekmeler a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, .08); }
+/* alt bilgi: bütün sayfalarda (kitpath.js ekler) */
+.alt-bilgi { border-top: 1px solid var(--line); margin-top: 24px; padding: 28px 0 36px; font-size: 14px; }
+.alt-bilgi__ust { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; }
+.alt-bilgi__linkler { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-left: -12px; }
+.alt-bilgi__linkler a { padding: 10px 12px; border-radius: 999px; font-weight: 500; }
+.alt-bilgi__linkler a:hover, .alt-bilgi__linkler a[aria-current="page"] { background: var(--surface-2); }
+.alt-bilgi__not { margin: 14px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; max-width: 760px; }
+/* tehlikeli bölge, diyalog, tek kart sayfa */
+.tehlike { border: 1.5px solid color-mix(in srgb, var(--bad) 35%, var(--line)); border-radius: var(--r-md); padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.tehlike h3 { font-size: 15px; font-weight: 700; color: var(--bad); margin: 0; }
+.ortu { position: fixed; inset: 0; background: rgba(13, 18, 32, .55); display: grid; place-items: center; padding: 24px; z-index: 80; }
+.diyalog { width: 100%; max-width: 520px; max-height: calc(100vh - 48px); overflow: auto; background: var(--surface); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: 28px; display: flex; flex-direction: column; gap: 18px; }
+.diyalog__bas { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.silinecek { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.silinecek li { display: flex; gap: 10px; align-items: flex-start; }
+.silinecek li svg { flex-shrink: 0; margin-top: 3px; color: var(--bad); }
+.tek { min-height: calc(100vh - 220px); display: grid; place-items: center; padding: 24px 0 48px; }
+.tek__kart { width: 100%; max-width: 480px; padding: 32px; display: flex; flex-direction: column; gap: 18px; }
+@media (max-width: 720px) {
+  .yasal { grid-template-columns: 1fr; gap: 20px; padding-top: 4px; }
+  .yasal__icindekiler { display: none; }
+  .yasal__ac { display: block; border: 1.5px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+  .yasal__ac summary { min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font-weight: 600; cursor: pointer; list-style: none; }
+  .yasal__ac summary::-webkit-details-marker { display: none; }
+  .yasal__ac nav { display: flex; flex-direction: column; padding: 0 8px 8px; }
+  .yasal__ac nav a { padding: 11px 10px; border-radius: 10px; color: var(--muted); font-size: 15px; }
+  .metin { font-size: 16px; line-height: 1.65; }
+  .metin h2 { font-size: 22px; margin-top: 32px; }
+  .kisaca { padding: 18px; }
+  .kisaca ul { grid-template-columns: 1fr; }
+  .sekmeler { align-self: stretch; }
+  .sekmeler a { flex: 1; justify-content: center; padding: 0 10px; }
+  .alt-bilgi { padding-bottom: 24px; }
+  .ortu { place-items: end center; padding: 0; }
+  .diyalog { max-width: none; border-radius: 28px 28px 0 0; padding: 22px 20px 28px; max-height: 92vh; }
+  .tek { place-items: start center; padding-top: 8px; min-height: 0; }
+  .tek__kart { padding: 22px 20px; }
+}

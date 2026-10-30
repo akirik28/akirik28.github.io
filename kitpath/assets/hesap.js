@@ -14,6 +14,10 @@
      ap_geribildirim_liste / _okundu  yönetici: gelen geri bildirimler
      ap_cikis                         oturum anahtarını siler (yönetici çağrıları p_token ister)
      ap_seviye_durum / _kaydet        seviye sınavı takvimi, geçmiş ve sonuç kaydı (yönetici: ap_yonetici_seviye / _tur)
+     ap_kosul_onayla                  var olan hesap: koşulları bir kez kabul eder (kitpath-hukuk/1-hukuk.sql)
+     ap_ad_kaydet                     Profil: adını yaz (kayıtta sorulmuyor)
+     ap_sifre_yenile                  şifre sıfırlama bağlantısından yeni şifre (oturum anahtarı döner)
+     hesap-epostasi (Edge Function)   şifre sıfırlama maili isteği; hesabı silme + "silindi" bilgi maili
    Yerelde:
      ap-hesap:v1:hesaplar   bu cihazda açılmış hesaplar [{ id, name, email }]
      ap-hesap:v1:oturum     açık oturumun kimliği ("Çıkış yap"a kadar)
@@ -50,6 +54,11 @@
   var API = "https://injjkkulpcvinrglzhjd.supabase.co/rest/v1/rpc/";
   var KEY = "sb_publishable_ESPPnGFiTXokLqmql-zPTg_siER2Hjp";   /* herkese açık anahtar */
   var P = "ap-hesap:v1:", LISTE = P + "hesaplar", AKTIF = P + "oturum", BEK = P + "bekleyen";
+  var FN = API.replace("/rest/v1/rpc/", "/functions/v1/hesap-epostasi");
+  /* Hukuk ekranları anahtarı (site + uygulama). false iken her şey bugünkü gibi: alt bilgi, koşul kutusu / penceresi,
+     şifremi unuttum, hesabı sil görünmez; kayıtta ad sorulur ve kurulum zorunludur. Açmak için sıra:
+     kitpath-hukuk/1-hukuk.sql → hesap-epostasi fonksiyonu → metinlerdeki [boşluklar] dolu → true → yayın (Ada'nın onayıyla). */
+  var HUKUK = false;
 
   function lg(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function ls(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
@@ -186,14 +195,32 @@
     if (!id) return Promise.resolve(null);
     return cagir("ap_profil", {}).then(function (p) { ls(profilKey(id), JSON.stringify(p)); return p; });
   }
-  /* kitlerden önce tamamlanması gereken adım: "kurulum" (sınıf / seçmeli) ya da "not" (süresi geçmiş quiz) */
+  /* kitlerden önce tamamlanması gereken adım: yalnızca "not" (süresi geçmiş quiz). Sınıf / okul / ders kurulumu artık
+     zorunlu değil (Ada, 30 Eki: "2 saniyede oturum"); panelde "Sınıfını seç · Atla" kartı ve Profil'de sorulur. */
+  function kurulumEksik(p) {
+    if (!p) return true;
+    if (!p.onay || !p.sinif || p.katilim == null) return true;
+    if ("okul" in p && !p.okul) return true;
+    if ((p.okul || "uaa") === "uaa" && p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return true;
+    return false;
+  }
   function engel(p) {
-    if (!p) return "kurulum";
-    if (!p.onay || !p.sinif || p.katilim == null) return "kurulum";
-    if ("okul" in p && !p.okul) return "kurulum";   /* okul alanı olmayan eski önbellek profili okul yüzünden yönlendirilmez */
-    if ((p.okul || "uaa") === "uaa" && p.sinif >= 11 && (!p.secmeliler || !p.secmeliler.length)) return "kurulum";   /* seçmeli yalnızca ÜAL'de */
-    if (p.katilim && p.bekleyen && p.bekleyen.length) return "not";
+    if (!HUKUK && kurulumEksik(p)) return "kurulum";   /* eski davranış: kurulum bitmeden kitler açılmaz */
+    if (p && p.katilim && p.bekleyen && p.bekleyen.length) return "not";
     return null;
+  }
+  /* bu cihazdan bir hesabın bütün izlerini sil (hesap silinince) */
+  function yereldenSil(id) {
+    anahtarlar().forEach(function (k) { if (k && (k.indexOf(":" + id + ":") > -1 || k === anahtarKey(id) || k === profilKey(id))) ld(k); });
+    ls(LISTE, JSON.stringify(hesaplar().filter(function (h) { return h.id !== id; })));
+    if (lg(AKTIF) === id) ld(AKTIF);
+    var b = bekleyen(), k; for (k in b) if (k.indexOf(":" + id + ":") > -1) delete b[k]; bekleyenYaz(b);
+  }
+  function fn(govde) {
+    if (!window.fetch) return Promise.reject(new Error("baglanti_yok"));
+    return window.fetch(FN, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(govde) }).then(function (r) {
+      return r.text().then(function (t) { var d = t ? oku(t, null) : null; if (d && d.hata) throw new Error(d.hata); if (!r.ok || !d || !d.ok) throw new Error("http_" + r.status); return d; });
+    });
   }
 
   var YONETIM = /^ap_(quiz_(ekle|sil|ozet|notlari)|yonetici_(ogrenciler|not|hesaplar|seviye|seviye_tur)|geribildirim_(liste|okundu))$/;
@@ -206,9 +233,14 @@
     aktif: function () { return bul(lg(AKTIF)); },
     yenile: function () { var h = bul(lg(AKTIF)); return h ? sinirli(cek(h.id), 3000).then(function () { return h; }) : Promise.resolve(null); },
     /* yeni hesap: ad + soyad + e-posta + şifre; sunucu tek "ad" alanı tutar ("Ad Soyad", en çok 40 harf) */
+    hukuk: HUKUK,
     kayit: function (ad, soyad, email, sifre) {
       var tam = (String(ad || "").trim() + " " + String(soyad || "").trim()).trim();
-      return rpc("ap_kayit", { p_email: email, p_ad: tam, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, true); });
+      return rpc("ap_kayit", { p_email: email, p_ad: tam, p_sifre: sifre }).then(function (d) {
+        /* sunucu henüz ad istiyorsa (1-hukuk.sql öncesi): e-postanın başını ad olarak bir kez daha dene */
+        if (d && d.hata === "ad_gerekli" && !tam) return rpc("ap_kayit", { p_email: email, p_ad: String(email).split("@")[0].slice(0, 40), p_sifre: sifre });
+        return d;
+      }).then(function (d) { return oturumAc(d, email, true); });
     },
     giris: function (email, sifre) {
       return rpc("ap_giris", { p_email: email, p_sifre: sifre }).then(function (d) { return oturumAc(d, email, false); });
@@ -222,6 +254,32 @@
     profil: profil,
     profilYenile: profilYenile,
     engel: engel,
+    kurulumEksik: kurulumEksik,
+    /* var olan hesap: koşulları ve gizliliği bir kez kabul et (yeni hesaplarda kayıt anında dolar) */
+    kosulOnayla: function () { return cagir("ap_kosul_onayla", {}).then(profilYenile); },
+    /* Profil → Adın (kayıtta sorulmuyor): sunucuya yaz, bu cihazdaki hesap listesinde de güncelle */
+    adKaydet: function (ad) {
+      return cagir("ap_ad_kaydet", { p_ad: String(ad || "").trim() }).then(function (d) {
+        var h = bul(lg(AKTIF)); if (h) { h.name = d.ad; ekle(h); }
+        return profilYenile();
+      });
+    },
+    /* şifremi unuttum: her zaman aynı cevap (hesap var mı belli olmaz); mail Edge Function'dan gider */
+    sifreIste: function (email) { return fn({ islem: "sifre", email: String(email || "").trim() }); },
+    sifreYenile: function (belirtec, sifre) {
+      return rpc("ap_sifre_yenile", { p_belirtec: belirtec, p_sifre: sifre }).then(function (d) {
+        if (d && d.hata) throw new Error(d.hata);
+        Object.keys(bekleyen()).length && gonder(true);
+        return oturumAc(d, d && d.email, false);
+      });
+    },
+    /* hesabı sil: şifre + oturum anahtarı; sunucuda bütün ap_* kayıtları silinir, sonra bu cihazdaki izler */
+    hesapSil: function (sifre) {
+      var id = aktifId(), t = id ? lg(anahtarKey(id)) : null;
+      if (!id) return Promise.reject(new Error("oturum_yok"));
+      if (!t) return Promise.reject(new Error("oturum_gerekli"));
+      return fn({ islem: "sil", id: id, token: t, sifre: sifre }).then(function (d) { yereldenSil(id); return d; });
+    },
     profilKaydet: function (sinif, secmeliler, katilim, okul) {
       var a = { p_sinif: sinif, p_secmeliler: secmeliler, p_katilim: katilim };
       if (okul) a.p_okul = okul;   /* "robert" | "uaa" | "koc" */
@@ -272,6 +330,9 @@
         cok_fazla: "Kısa sürede çok mesaj gitti; biraz sonra tekrar dene.",
         seviye_kapali: "Seviye sınavı şu an kapalı.",
         zaten_yapildi: "Bu turun sınavını bu derste zaten çözdün.",
+        hatali_sifre: "Şifre yanlış.",
+        gecersiz_baglanti: "Bu bağlantının süresi dolmuş ya da daha önce kullanılmış. Yeni bir bağlantı iste.",
+        yonetici_silinmez: "Yönetici hesabı buradan silinemez.",
         gecersiz: "Bir şeyler ters gitti; sayfayı yenileyip tekrar dene."
       })[k] || "Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.";
     },

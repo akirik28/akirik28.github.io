@@ -29,7 +29,7 @@
         ikon: '<path d="M10 52h44"/><path d="M16 52V36M28 52V20M40 52V30M52 52V42"/>' },
 
       /* ---------- 10. sınıf (İçerik raporları: sirket/raporlar/icerik-*-10-*.md; href'ler yayında kesinleşir) ---------- */
-      { id: "biyoloji-10", sinif: 10, ders: "Biyoloji", tarih: "2026-11-03", canli: false, href: "cep/biyoloji-10-sinav1/", renk: "#2E9E5B",
+      { id: "biyoloji-10", sinif: 10, ders: "Biyoloji", tarih: "2026-11-03", canli: true, href: "cep/biyoloji-10-sinav1/", renk: "#2E9E5B",
         baslik: "Biyoloji 10: 1. yazılı kiti", etiket: "YAZILI KİTİ · 10. SINIF BİYOLOJİ", aciklama: "Enerji, ATP ve fotosentez deneyleri: defter, test ve yazılı kağıdı.",
         ikon: '<path d="M14 50C14 26 30 14 52 12c-2 22-14 38-38 38z"/><path d="M14 50l22-22"/>' },
       { id: "kimya-10", sinif: 10, ders: "Kimya", tarih: "2026-11-04", canli: false, href: "cep/kimya-10-sinav1/", renk: "#C2413A",

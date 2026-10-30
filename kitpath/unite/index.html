@@ -9,7 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/kitpath.css?v=50">
+<link rel="stylesheet" href="../assets/kitpath.css?v=51">
+<style>
+  /* oynatma hızı: AP kitlerindeki .speed düğmeleriyle aynı değerler ve aynı biçim */
+  .hiz-sec { display: flex; align-self: flex-start; padding: 3px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
+  .hiz-sec[hidden], .player[data-soon="true"] + .hiz-sec { display: none; }
+  .hiz-sec button { min-height: 36px; padding: 6px 12px; border: 0; border-radius: 999px; background: none; font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); cursor: pointer; transition: color .2s, background-color .2s; }
+  .hiz-sec button:hover { color: var(--ink); }
+  .hiz-sec button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
+</style>
 </head>
 <body data-page="unite" data-root="../">
 <a class="skip" href="#main">İçeriğe geç</a>
@@ -72,6 +80,7 @@
           <div class="player__bar"><span data-k="player-time"></span><div class="progress"><span style="--w:0%"></span></div><span class="player__cc">CC</span><span>1x</span></div>
           <div class="player__soon"><span class="hand">video yakında!</span><span style="font-weight:500">Bu bölümün defteri hazır, yandan çalışabilirsin.</span></div>
         </div>
+        <div class="hiz-sec" role="group" aria-label="Oynatma hızı" data-k="hiz" data-lpanel="video"></div>
 
         <section class="card card--pad check-q" aria-labelledby="kd-h" data-lpanel="sorular" hidden>
           <div class="check-q__head">
@@ -102,9 +111,9 @@
 </div>
 <nav data-k="bottom-nav" data-active="kitler"></nav>
 <script src="../assets/data.js?v=49"></script>
-<script src="../assets/hesap.js?v=49"></script>
+<script src="../assets/hesap.js?v=50"></script>
 <script src="../assets/icerik.js?v=50"></script>
 <script src="../assets/defter.js?v=49"></script>
-<script src="../assets/kitpath.js?v=51"></script>
+<script src="../assets/kitpath.js?v=53"></script>
 </body>
 </html>
