@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yazılılar · Kitpath</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<script src="../assets/tema.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kitpath.css?v=50">
+<style>
+  .yaz-tarih { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .yaz-tarih svg { width: 16px; height: 16px; flex: none; }
+  .yaz-tarih__kalan { font-weight: 500; color: var(--muted); }
+  .yaz-tarih[data-yakin] .yaz-tarih__kalan { color: var(--ink); font-weight: 600; }
+  .cep-card[data-gecti] { opacity: .6; }
+  .yaz-sec button { flex: none; white-space: nowrap; padding: 10px 18px; }
+  .yaz-bos { max-width: 760px; padding: 28px; display: grid; gap: 8px; }
+</style>
+</head>
+<body data-page="yazililar" data-root="../">
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="wrap">
+  <header class="k-header" data-k="header" data-variant="app" data-active="yazililar"></header>
+
+  <main id="main" class="stack" style="gap:24px;padding-bottom:64px">
+    <section class="hello rise">
+      <div class="stack" style="gap:6px"><h1 class="display" style="font-size:clamp(44px,5vw,60px)"><span class="hl">Yazılılar</span></h1>
+      <p class="muted" style="margin:0;font-size:15px" data-k="yaz-donem"></p></div>
+      <div class="seg tabs-row yaz-sec" role="tablist" aria-label="Sınıf"><button type="button" role="tab" data-yaz-sinif="10" aria-selected="false">10. sınıf</button><button type="button" role="tab" data-yaz-sinif="11" aria-selected="true">11. sınıf</button></div>
+    </section>
+    <div class="rise d1" data-k="yaz-liste" role="tabpanel" style="display:grid;gap:20px"></div>
+  </main>
+</div>
+<nav data-k="bottom-nav" data-active="yazililar"></nav>
+<script src="../assets/data.js?v=49"></script>
+<script src="../assets/hesap.js?v=49"></script>
+<script src="../assets/icerik.js?v=50"></script>
+<script src="../assets/yazililar.js?v=1"></script>
+<script src="../assets/kitpath.js?v=51"></script>
+</body>
+</html>

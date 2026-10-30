@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kitpath · E-posta tercihi</title>
+<!-- Kitpath maillerindeki Evet / Hayır / Çık bağlantılarının sayfası (kitpath-eposta/duzeltme-2026-10-30).
+     Supabase, fonksiyonların GET yanıtındaki HTML'i düz metin gösterdiği için sayfa burada; kayıt düğmeyle POST ?api=1. -->
+<style>
+  :root { color-scheme: light; --bg: #F6F1E7; --kart: #FFFDF8; --ink: #1F2A44; --soluk: #5B5F6B; --dugme: #1F2A44; --dugme-ink: #F6F1E7; --hl: #F5D85E; --hata: #9C2F1C; }
+  @media (prefers-color-scheme: dark) { :root { color-scheme: dark; --bg: #0D1220; --kart: #161D30; --ink: #E8ECF4; --soluk: #A3ADC2; --dugme: #9BD483; --dugme-ink: #0D1220; --hl: rgba(143,207,122,.38); --hata: #F4A08A; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; padding: 24px 16px; }
+  main { width: 100%; max-width: 440px; background: var(--kart); border-radius: 24px; padding: 28px 24px; text-align: center; box-shadow: 0 14px 34px rgba(31,42,68,.10); }
+  .logo { width: 56px; height: 56px; margin: 0 auto 14px; background: #1F2A44; border-radius: 15px; color: #F6F1E7; font-weight: 800; font-size: 30px; line-height: 56px; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 8px; text-wrap: balance; }
+  h1 span { background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 92%, transparent 92%); }
+  p { color: var(--soluk); margin: 0 0 18px; }
+  button { background: var(--dugme); color: var(--dugme-ink); border: 0; border-radius: 999px; padding: 14px 26px; font: 600 16px Inter, system-ui, sans-serif; cursor: pointer; }
+  button:disabled { opacity: .55; cursor: progress; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #C2602A; outline-offset: 3px; }
+  .ikincil { display: inline-block; margin-top: 16px; color: var(--ink); font-weight: 600; }
+  .hata { color: var(--hata); font-size: 14px; margin: 14px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo" aria-hidden="true">K</div>
+  <h1 id="baslik">Kitpath</h1>
+  <p id="metin">Bu sayfa Kitpath maillerindeki bağlantılar içindir.</p>
+  <div id="eylem"></div>
+  <p class="hata" id="hata" hidden></p>
+  <a class="ikincil" href="https://kitpath.org/kitpath/">Kitpath'e git</a>
+</main>
+<script>
+(() => {
+  const FN = "https://injjkkulpcvinrglzhjd.supabase.co/functions/v1/";
+  const API = { kampanya: FN + "kampanya-epostasi?api=1", hatirlatma: FN + "hatirlatma-epostasi?api=1" };
+  const q = new URLSearchParams(location.search);
+  const k = q.get("k"), islem = q.get("islem"), b = q.get("b") || "";
+  const gecerli = API[k] && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(b);
+  const $ = (id) => document.getElementById(id);
+
+  // her durum: başlık, açıklama ve (varsa) düğme → hangi işlem, başarınca hangi duruma geçilir
+  const D = {
+    kampanya: {
+      "evet": ["Plan maili istiyor musun?", "Yazılı haftasında sınavdan önceki akşam 19:00'da kısa bir 20 dakikalık plan maili gelir. İstediğin zaman tek tıkla çıkabilirsin.", "Evet, istiyorum", "evet", "evet-tamam"],
+      "evet-tamam": ["Tamam!", "Sınav akşamları kısa bir plan maili gelecek. Her mailin altından tek tıkla çıkabilirsin."],
+      "hayir-tamam": ["Tamam, mail gelmeyecek", "Kitpath'ten sana bir daha mail gönderilmeyecek. Kitler yine de açık.", "Fikrimi değiştirdim, plan maili istiyorum", "evet", "evet-tamam"],
+      "cik-tamam": ["Mailler kapandı", "Artık Kitpath'ten yazılı haftası maili almayacaksın.", "Yanlışlıkla bastım, geri aç", "gel", "gel-tamam"],
+      "gel": ["Mailleri yeniden aç", "Sınav akşamları kısa bir plan maili gelir.", "Mailleri aç", "gel", "gel-tamam"],
+      "gel-tamam": ["Mailler açıldı", "Sınav akşamları kısa bir plan maili gelecek."],
+    },
+    hatirlatma: {
+      "cik-tamam": ["Hatırlatmalar kapandı", "Artık Kitpath'ten hatırlatma e-postası almayacaksın.", "Yanlışlıkla bastım, geri aç", "gel", "gel-tamam"],
+      "gel": ["Hatırlatmaları aç", "Bir süre uğramazsan sana kısa bir e-posta gelir.", "Hatırlatmaları aç", "gel", "gel-tamam"],
+      "gel-tamam": ["Hatırlatmalar açıldı", "Bir süre uğramazsan sana kısa bir e-posta gelecek."],
+    },
+  };
+  const GECERSIZ = ["Bağlantı geçersiz", "Bu bağlantı artık çalışmıyor. Kitpath'teki kitlere yine de girebilirsin."];
+
+  function goster(durum) {
+    const d = (gecerli && D[k][durum]) || GECERSIZ;
+    $("baslik").textContent = "";
+    const s = document.createElement("span"); s.textContent = d[0]; $("baslik").append(s);
+    $("metin").textContent = d[1];
+    $("eylem").textContent = "";
+    $("hata").hidden = true;
+    if (!d[2]) return;
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.textContent = d[2];
+    btn.addEventListener("click", async () => {
+      btn.disabled = true; $("hata").hidden = true;
+      try {
+        // text/plain: tarayıcı ön istek (OPTIONS) atmaz; fonksiyon gövdeyi JSON olarak okur
+        const r = await fetch(API[k], { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify({ islem: d[3], b }) });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok && j.ok) goster(d[4]);
+        else if (r.ok) goster("__gecersiz");
+        else throw new Error(String(r.status));
+      } catch (e) {
+        btn.disabled = false;
+        $("hata").hidden = false;
+        $("hata").textContent = "Kaydedilemedi. İnternet bağlantını kontrol edip yeniden dene.";
+      }
+    });
+    $("eylem").append(btn);
+  }
+  goster(islem);
+})();
+</script>
+</body>
+</html>

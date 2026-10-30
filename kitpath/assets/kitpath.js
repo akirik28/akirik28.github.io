@@ -141,6 +141,7 @@
     books: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.8-1 3 15-3.8 1z"/></svg>',
     defter: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11M9 8h6"/></svg>',
     note: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg>',
+    yazili: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13l2 2 4-4"/></svg>',
     user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>',
     back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
     ara: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',
@@ -367,6 +368,7 @@
     var appNav = '<nav class="nav" aria-label="Ana menü">' +
       '<a href="' + ROOT + 'panel/"' + (active === "panel" ? ' aria-current="page"' : "") + '>Panelim</a>' +
       '<a href="' + ROOT + 'kitlerim/"' + (active === "kitlerim" ? ' aria-current="page"' : "") + '>Kitlerim</a>' +
+      '<a href="' + ROOT + 'yazililar/"' + (active === "yazililar" ? ' aria-current="page"' : "") + '>Yazılılar</a>' +
       '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a>' +
       (notTakibi() ? '<a href="' + ROOT + 'notlarim/"' + (active === "notlarim" ? ' aria-current="page"' : "") + '>Notlarım</a>' : "") +
       ((sevYonetici() || sevTakvimOnbellek().acik || sevTakvimOnbellek().gecmis) ? '<a href="' + ROOT + 'seviye/"' + (active === "seviye" ? ' aria-current="page"' : "") + '>Seviye</a>' : "") +
@@ -376,6 +378,7 @@
     if (v === "public" || v === "app" || v === "unit") {
       var acikNav = '<nav class="nav" aria-label="Ana menü">' +
         '<a href="' + ROOT + 'kitler/"' + (active === "kitler" ? ' aria-current="page"' : "") + '>Tüm kitler</a>' +
+        '<a href="' + ROOT + 'yazililar/"' + (active === "yazililar" ? ' aria-current="page"' : "") + '>Yazılılar</a>' +
         '<a href="' + ROOT + 'defterler/"' + (active === "defterler" ? ' aria-current="page"' : "") + '>Defterler</a></nav>';
       /* yönetici hesabı: öğrenci sayfalarından yönetime tek tıkla geç (yönetimde "Öğrenci görünümü" geri getirir) */
       var pr = HESAPLI && H.profil ? H.profil() : null;
@@ -398,7 +401,7 @@
     var item = function (key, href, icon, label) { return '<a href="' + ROOT + href + '"' + (a === key ? ' aria-current="page"' : "") + '>' + icon + label + '</a>'; };
     el.className = "bottom-nav";
     el.setAttribute("aria-label", "Alt menü");
-    el.innerHTML = item("panel", "panel/", I.home, "Panelim") + item("kitlerim", "kitlerim/", I.books, "Kitlerim") + item("defterler", "defterler/", I.defter, "Defterler") + (notTakibi() ? item("notlarim", "notlarim/", I.note, "Notlar") : "") + item("profil", "profil/", I.user, "Profil");
+    el.innerHTML = item("panel", "panel/", I.home, "Panelim") + item("kitlerim", "kitlerim/", I.books, "Kitlerim") + item("yazililar", "yazililar/", I.yazili, "Yazılılar") + item("defterler", "defterler/", I.defter, "Defterler") + (notTakibi() ? item("notlarim", "notlarim/", I.note, "Notlar") : "") + item("profil", "profil/", I.user, "Profil");
   }
 
   /* ---------- kitler: katalog + bu hesabın (ya da misafirin) ilerlemesi ---------- */
@@ -460,6 +463,7 @@
 
   pages.kitler = function () { pages.home(); };
   pages.home = function () {
+    if (location.hash === "#yazili") { location.replace(ROOT + "yazililar/"); return; }
     function hashSekme() { var t = $('[data-tgo="' + (location.hash === "#cep" ? "cep" : "sinav") + '"]'); if (t && location.hash) t.click(); }
     setTimeout(hashSekme, 0);
     window.addEventListener("hashchange", hashSekme);
@@ -480,6 +484,37 @@
     marquee();
     if (C) $$(".cep-card").forEach(function (a) { a.href = C.KOK + (a.dataset.cep || "crucible/"); });
     if (HESAPLI) $$('a[href="giris/"]').forEach(function (a) { a.href = ROOT + "panel/"; a.textContent = "Panelime git"; });
+  };
+
+  /* ---------- yazılılar: sınıf seçici + o sınıfın yayındaki yazılı kitleri (liste: assets/yazililar.js) ---------- */
+  pages.yazililar = function () {
+    var Y = window.KITPATH_YAZILILAR; if (!Y) return;
+    var takvim = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>';
+    var kok = C ? C.KOK : "/";
+    var p = HESAPLI && H.profil ? H.profil() : null;
+    var s = +param("sinif") || +(location.hash || "").slice(1) || (p && (p.sinif === 10 || p.sinif === 11) ? p.sinif : 0);
+    if (s !== 10 && s !== 11) s = Y.liste(11).length || !Y.liste(10).length ? 11 : 10;
+    fill('[data-k="yaz-donem"]', esc(Y.donem));
+    function ciz() {
+      $$("[data-yaz-sinif]").forEach(function (b) { b.setAttribute("aria-selected", String(+b.dataset.yazSinif === s)); });
+      var l = Y.liste(s);
+      fill('[data-k="yaz-liste"]', l.length ? l.map(function (k) {
+        var n = Y.kalan(k);
+        return '<a class="card cep-card" href="' + esc(kok + k.href) + '" style="--cep:' + k.renk + '"' + (n < 0 ? " data-gecti" : "") + '>' +
+          '<span class="cep-card__icon" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">' + k.ikon + '</svg></span>' +
+          '<span class="cep-card__body"><span class="mono muted">' + esc(k.etiket) + '</span><span class="h3" style="font-size:28px">' + esc(k.baslik) + '</span>' +
+          '<span class="muted" style="font-size:15px">' + esc(k.aciklama) + '</span>' +
+          '<span class="yaz-tarih"' + (n >= 0 && n <= 2 ? " data-yakin" : "") + '>' + takvim + 'Sınav: ' + esc(Y.tarihYazi(k)) + '<span class="yaz-tarih__kalan">· ' + esc(Y.kalanYazi(k)) + '</span></span></span>' +
+          '<span class="btn btn--primary btn--sm">Aç →</span></a>';
+      }).join("") : '<div class="card yaz-bos"><span class="hand accent" style="font-size:26px">' + s + '. sınıf</span><strong style="font-size:18px">' + esc(Y.bos[s]) + '</strong><span class="muted" style="font-size:15px">Her kit sınavdan en az bir gün önce burada olur.</span></div>');
+    }
+    ciz();
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-yaz-sinif]"); if (!b) return;
+      s = +b.dataset.yazSinif; ciz();
+      try { history.replaceState(null, "", "#" + s); } catch (x) {}
+    });
+    window.addEventListener("hashchange", function () { var h = +location.hash.slice(1); if (h === 10 || h === 11) { s = h; ciz(); } });
   };
 
   pages.unite = function () {
