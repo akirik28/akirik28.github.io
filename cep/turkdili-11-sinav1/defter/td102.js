@@ -89,7 +89,7 @@ window.DEFTER = {
       baslik: "Model cevap: ana düşünce ve kanıt",
       kisa: "Ana düşünce tek cümle; kanıt metinden gelir.",
       bloklar: [
-        { tip: "ornek", baslik: "Elif'e mektup", durum: "“Sevgili Elif, “Bende yazma yeteneği yok.” demişsin. Benim ilk defterim de yarım cümlelerle doluydu; her akşam bir sayfa yazdım. Yetenek bir tohumdur ama onu büyüten emektir.” Ana düşüncenin ne olduğunu ve gönderenin neye karşı çıktığını kanıtla yaz.",
+        { tip: "ornek", baslik: "Elif'e mektup", durum: "“Sevgili Elif, ‘Bende yazma yeteneği yok.’ demişsin. Benim ilk defterim de yarım cümlelerle doluydu; her akşam bir sayfa yazdım. Yetenek bir tohumdur ama onu büyüten emektir.” Ana düşüncenin ne olduğunu ve gönderenin neye karşı çıktığını kanıtla yaz.",
           adimlar: [
             "Konu: yazma yeteneği. Bu ana düşünce değildir.",
             "Alıcının düşüncesi: “Bende yazma yeteneği yok.” Gönderen buna karşı çıkıyor.",
@@ -118,7 +118,7 @@ window.DEFTER = {
       a: 2,
       why: "Sanatçıların sanat ve edebiyat üzerine düşüncelerini yansıttığı, sonradan kitaplaşan mektuplar edebî mektuptur. Özel mektup en çekici yanlış şık: kişiye yazılsa da burada ayırt edici olan edebî düşünce ve kitaplaşmadır." },
     { q: "Bir okur, belediye başkanına seslenen mektubunu gazetenin okur köşesinde yayımlatıyor. Mektup hangi türdedir ve neden?",
-      opts: ["Özel mektup; çünkü bir kişiye seslenir.", "Açık mektup; çünkü herkesin okuması için yayımlanır.", "Edebî mektup; çünkü kamuoyuna yöneliktir.", "Resmî mektup; çünkü bir kuruma yazılmıştır."],
+      opts: ["Özel mektup; çünkü bir kişiye seslenir.", "Açık mektup; çünkü herkesin okuması için yayımlanır.", "Edebî mektup; çünkü kamuoyuna yönelik, sanatlı bir dille yazılmıştır.", "Resmî mektup; çünkü bir kuruma ya da makama hitaben yazılmıştır."],
       a: 1,
       why: "Açık mektup bir kişiye ya da kuruma seslenir ama herkesin okuması için yayımlanır. Resmî mektup en çekici yanlış şık: resmî mektup kurumlar arasında yazılır, yayımlanmaz." },
     { q: "Aşağıdakilerden hangisi bir mektubun bölümlerini doğru sırayla verir?",
@@ -130,7 +130,7 @@ window.DEFTER = {
       a: 0,
       why: "“... yazıdır” kalıbıyla mektubun ne olduğu söylenmiştir: tanımlama. Benzetme “gibi” ile iki şeyi yan yana koyar; tanık gösterme tanınmış birinin sözünü getirir." },
     { q: "“Sevgili Deniz, ‘Okumayı sevmiyorum.’ demişsin. Ben de başta sevmiyordum; her gün on sayfa okuyunca alıştım ve sonra bırakamadım. Alışkanlık sabırla kazanılır.” Bu mektup parçasının ana düşüncesi hangisidir?",
-      opts: ["Kitap okumayı herkes sever.", "Okuma alışkanlığı sabırla ve düzenli okumayla kazanılır.", "Okumak yalnızca on sayfayla sınırlıdır.", "Sevmediğin şeyi hemen bırakmalısın."],
+      opts: ["Kitap okumayı herkes sever, bu yüzden okumak hiç zor değildir.", "Okuma alışkanlığı sabırla kazanılır.", "Okumak yalnızca on sayfayla sınırlıdır.", "Sevmediğin şeyi hemen bırakmalısın."],
       a: 1,
       why: "Gönderen kendi deneyimini örnek verip alıcının düşüncesine karşı çıkar ve son cümlede ana düşünceyi söyler. Konu “okumak” olabilir ama ana düşünce tam bir yargı cümlesidir." }
   ]
