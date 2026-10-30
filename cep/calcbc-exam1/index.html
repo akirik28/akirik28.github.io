@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="../_yazili/yazili.js?v=6"></script>
-<link rel="stylesheet" href="../_yazili/yazili.css?v=6">
+<script src="../_yazili/yazili.js?v=8"></script>
+<link rel="stylesheet" href="../_yazili/yazili.css?v=7">
 </head>
 <body style="--ders:#3D5BD9">
 <noscript><p style="padding:24px;font-family:system-ui">Bu kit JavaScript ile çalışır. Tarayıcında JavaScript'i aç.</p></noscript>
@@ -200,9 +200,11 @@ function acik(g){
     ad:'Exam 1 · Free response',bilgi:`<b>${ACIK.length}</b> soru · <b>${ACIK.reduce((a,A)=>a+A.rub.length,0)}</b> puan · hesap makinesi yok`,
     not:'Bir kağıt ve kalem al. İşlemini adım adım yaz.',
     kagitHTML:kagitHTML,
-    sorular:ACIK.map(A=>({puan:A.rub.length,q:A.q,lang:'en',ornek:A.cevap,olcut:A.rub.map(r=>[1,r]),
+    sorular:ACIK.map(A=>({c:A.t,puan:A.rub.length,q:A.q,lang:'en',ornek:A.cevap,olcut:A.rub.map(r=>[1,r]),
       ek:'Eksik puan aldıysan: '+[...new Set(A.o.map(o=>OBJ[o].ep[0]))].map(vlink).join(' · ')})),
     durum:acikDurum,kaydet:acikKaydet,K:S.ks,
+    /* sonuç ekranı: en çok puan kaybedilen sorunun ilk konusunun videosu, akıştaki yeriyle (yanında defteri) */
+    konuAd:c=>c,video:c=>{const A=ACIK.find(x=>x.t===c);if(!A)return null;const ep=OBJ[A.o[0]].ep[0],i=AKIS.findIndex(x=>x.video===ep);return {alt:i<0?'videolar/'+ep:'akis/'+i,baslik:EP[ep].k+' · '+EP[ep].t};},
     sifirla:()=>{ACIK.forEach((_,i)=>{const st=acikDurum(i);st.c=st.c.map(()=>false);st.o=false;});S.pk=0;}
   });
 }

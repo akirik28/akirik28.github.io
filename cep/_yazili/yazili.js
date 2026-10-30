@@ -118,6 +118,8 @@
     D.addEventListener("keydown", function (e) { if (e.key === "Escape" && el.sayfa.classList.contains("acik")) sayfa(false); });
     window.addEventListener("hashchange", rota);
     rota();
+    /* sorulu izle: oturumu olan öğrenci bir yazılı kitine ilk girdiğinde bir kez tanıtım */
+    if (soruluVar()) sorulu(function () { window.SoruluIzle.otoTanitim(); });
   }
   function sayfa(ac) {
     el.sayfa.classList.toggle("acik", ac); el.perde.classList.toggle("acik", ac);
@@ -127,7 +129,8 @@
   function rota() {
     var h = decodeURIComponent(location.hash.replace(/^#/, "")), p = h.split("/"), id = p[0], alt = p.slice(1).join("/") || null;
     if (adimBul(id) < 0) {
-      id = (K.ilkAdim && K.ilkAdim()) || K.adimlar[0].id; alt = null;
+      /* misafir kayıtlı adıma değil plana gelir (kayıtlı adım kilitli olur) */
+      id = (!misafir() && K.ilkAdim && K.ilkAdim()) || K.adimlar[0].id; alt = null;
       if (adimBul(id) < 0) id = K.adimlar[0].id;
       try { history.replaceState(null, "", "#" + id); } catch (e) {}
     }
@@ -163,7 +166,7 @@
   function goster(id, alt) {
     var i = adimBul(id), a = K.adimlar[i], onceki = simdi == null ? -1 : adimBul(simdi), ayni = simdi === id;
     simdi = id;
-    if (K.adimKaydet) K.adimKaydet(id);
+    if (K.adimKaydet && !misafir()) K.adimKaydet(id);
     var s = el.sahne;
     s.innerHTML = ""; s.className = "y-sahne y-renk"; s.setAttribute("style", "--a:var(--r-" + (a.renk || "lacivert") + ")");
     var bas = D.createElement("div"); bas.className = "y-sahne-bas";
@@ -265,6 +268,25 @@
 
   /* ---------------- video ızgarası (kartın tamamı tıklanır) ---------------- */
   var varMi = {};
+  /* oynatma hızı: AP kitleriyle aynı değerler; seçilen hız bütün yazılı kitlerinde ortak hatırlanır */
+  var HIZLAR = [1, 1.25, 1.5, 2, 3];
+  function hiz() { var h = parseFloat(lg("kp-yazili-hiz")); return HIZLAR.indexOf(h) > -1 ? h : 1; }
+  function hizUygula(vd) { try { vd.defaultPlaybackRate = hiz(); vd.playbackRate = hiz(); } catch (e) {} }
+  function hizHTML() {
+    return '<div class="y-hiz" role="group" aria-label="Oynatma hızı">' + HIZLAR.map(function (h) {
+      return '<button type="button" data-hiz="' + h + '" aria-pressed="' + (hiz() === h) + '">' + String(h).replace(".", ",") + "×</button>";
+    }).join("") + "</div>";
+  }
+  /* sorulu izle: kitte duraklar.js varsa (window.SORULU_DURAKLAR; İçerik'in eşlemesi gelen kitler) ve öğrencinin oturumu
+     açıksa ortak modül /assets/js/sorulu-izle.js bir kez yüklenir. Misafirde ne düğme ne tanıtım. */
+  function soruluVar() { var d = window.SORULU_DURAKLAR; return !!d && Object.keys(d).length > 0 && !misafir(); }
+  var soruluYuk = null;
+  function sorulu(cb) {
+    if (window.SoruluIzle) { cb(); return; }
+    if (!soruluYuk) soruluYuk = new Promise(function (ok, no) { var s = D.createElement("script"); s.src = "/assets/js/sorulu-izle.js?v=1"; s.onload = ok; s.onerror = no; D.head.appendChild(s); });
+    soruluYuk.then(cb, function () {});
+  }
+  function hizIsaretle(kutu) { var h = hiz(); kutu.querySelectorAll("[data-hiz]").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.getAttribute("data-hiz") === h)); }); }
   function dosyaKontrol(src, cb) {
     if (varMi[src] != null) { cb(varMi[src]); return; }
     if (!/^https?:/.test(location.protocol) || !window.fetch) return;
@@ -304,11 +326,16 @@
       k.classList.add("acik"); k.removeAttribute("role"); k.removeAttribute("tabindex");
       var kap = k.querySelector(".y-vkapak"), sonraki = hepsi[i + 1];
       var ar = D.createElement("div"); ar.className = "y-varac";
-      ar.innerHTML = '<button type="button" class="y-lnk" data-kapat>Kapat</button>' + (sonraki ? '<button type="button" class="y-btn y-btn--ana" data-sonraki><span>Sonraki video</span>' + svg(IK.ileri, 18) + "</button>" : "");
+      ar.innerHTML = (varMi[v.src] === false ? "" : hizHTML()) + '<button type="button" class="y-lnk" data-kapat>Kapat</button>' + (sonraki ? '<button type="button" class="y-btn y-btn--ana" data-sonraki><span>Sonraki video</span>' + svg(IK.ileri, 18) + "</button>" : "");
       k.insertBefore(ar, k.querySelector(".y-vmeta"));
       ar.querySelector("[data-kapat]").onclick = function (e) { e.stopPropagation(); kapat(k); hashAyarla(simdi, null); };
       var sb = ar.querySelector("[data-sonraki]"); if (sb) sb.onclick = function (e) { e.stopPropagation(); ac(sonraki.id); hashAyarla(simdi, sonraki.id); };
-      function hazirlaniyor(x) { varMi[v.src] = false; var nn = D.createElement("div"); nn.className = "y-hazirlaniyor"; nn.innerHTML = "<div><b>Bu video hazırlanıyor</b>Sınavdan önce burada olacak. Bu arada diğer adımlarla çalışabilirsin.</div>"; x.replaceWith(nn); }
+      ar.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-hiz]"); if (!b) return;
+        e.stopPropagation(); ls("kp-yazili-hiz", b.getAttribute("data-hiz")); hizIsaretle(ar);
+        var vv = k.querySelector("video"); if (vv) hizUygula(vv);
+      });
+      function hazirlaniyor(x) { var hz = ar.querySelector(".y-hiz"); if (hz) hz.remove(); varMi[v.src] = false; var nn = D.createElement("div"); nn.className = "y-hazirlaniyor"; nn.innerHTML = "<div><b>Bu video hazırlanıyor</b>Sınavdan önce burada olacak. Bu arada diğer adımlarla çalışabilirsin.</div>"; x.replaceWith(nn); }
       if (varMi[v.src] === false) hazirlaniyor(kap);
       else {
         var w = D.createElement("div"); w.className = "y-voyn";
@@ -317,7 +344,17 @@
         vd.addEventListener("error", function () { hazirlaniyor(w); });
         vd.addEventListener("timeupdate", function () { if (vd.duration && vd.currentTime / vd.duration >= 0.8 && !o.durum[id]) isaretle(id); });
         vd.addEventListener("ended", function () { if (!o.durum[id]) isaretle(id); });
+        vd.addEventListener("loadedmetadata", function () { hizUygula(vd); });
+        /* tarayıcının kendi hız menüsünden değişirse düğmeler de ona uysun */
+        vd.addEventListener("ratechange", function () { if (vd.playbackRate !== hiz() && HIZLAR.indexOf(vd.playbackRate) > -1) { ls("kp-yazili-hiz", String(vd.playbackRate)); hizIsaretle(ar); } });
+        hizUygula(vd);
         vd.src = v.src; kap.replaceWith(w);
+        var dur = window.SORULU_DURAKLAR && window.SORULU_DURAKLAR[v.id];
+        if (dur && dur.length && soruluVar()) sorulu(function () {
+          var hz = ar.querySelector(".y-hiz"), b = window.SoruluIzle.dugme();
+          if (hz) hz.insertAdjacentElement("afterend", b); else ar.insertBefore(b, ar.firstChild);
+          window.SoruluIzle.bagla(vd, dur, { yer: w });
+        });
         var p = vd.play(); if (p && p.catch) p.catch(function () {});
       }
       setTimeout(function () { k.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }, 30);

@@ -21,7 +21,7 @@
     var SK = cfg.sk, S = {};
     try { S = JSON.parse(localStorage.getItem(SK) || "{}") || {}; } catch (e) { S = {}; }
     S.r = S.r || {}; S.chk = S.chk || {}; S.es = S.es || {}; S.pv = S.pv || {}; S.pd = S.pd || 0; S.mcF = S.mcF || "all";
-    S.vid = S.vid || {}; S.kf = S.kf || {}; S.mcRun = S.mcRun || {}; S.ko = S.ko || {}; S.vt = S.vt || {}; S.vtRun = S.vtRun || {}; S.mu = S.mu || 0;
+    S.vid = S.vid || {}; S.kf = S.kf || {}; S.mcRun = S.mcRun || {}; S.ko = S.ko || {}; S.vt = S.vt || {}; S.vtRun = S.vtRun || {}; S.df = S.df || {}; S.mu = S.mu || 0;
     if (ESLE_GRUP && (typeof S.esSeed !== "object" || !S.esSeed)) S.esSeed = {};
     if (PROVA && S.pd >= PROVA.length) S.pd = 0;
     /* prova soruları değişince eski cevaplar yeni sorulara karışmasın */
@@ -329,13 +329,16 @@
 
 
     /* ================= VİDEO + TEST AKIŞI =================
-       cfg.akis: [{video:"th101", defter:"th101"} | {konu:"mekan"} | {test:[MC sırası...], ad:"..."}]; video ya da konudan sonra kısa test gelir. */
+       cfg.akis: [{video:"th101", defter:"th101"} | {konu:"mekan"} | {test:[MC sırası...], ad:"..."} | {defter:"fz302", ad:"...", dk:15}];
+       video ya da konudan sonra kısa test gelir. Yalnız defter adımı: videosu olmayan defter; "Okudum" ile biter (S.df). */
     function akisVideo(id) { var v = null; (cfg.videolar || []).forEach(function (x) { if (x.id === id) v = x; }); return v; }
     function akisKonu(id) { var k = null; (KONU || []).forEach(function (x) { if (x.id === id) k = x; }); return k; }
-    function akisBitti(x, i) { return x.video ? !!S.vid[x.video] : x.konu ? !!S.ko[x.konu] : S.vt[i] != null; }
+    function yalnizDefter(x) { return !!x.defter && !x.video && !x.konu && !x.test; }
+    function akisBitti(x, i) { return x.video ? !!S.vid[x.video] : x.konu ? !!S.ko[x.konu] : yalnizDefter(x) ? !!S.df[x.defter] : S.vt[i] != null; }
     function akisSatir(x) {
       if (x.video) { var v = akisVideo(x.video); return ["Video", v.baslik, Math.round((v.sure || 0) / 60) + " dk" + (x.defter ? " · defteriyle" : "")]; }
       if (x.konu) { var k = akisKonu(x.konu); return ["Konu", k.ad, k.k + " · okuma"]; }
+      if (yalnizDefter(x)) return ["Defter", x.ad || x.defter, (x.dk ? x.dk + " dk · " : "") + "okuma"];
       return ["Test", x.ad, x.test.length + " soru"];
     }
     function akisSonra(i) {
@@ -347,7 +350,7 @@
       if (!x) {
         g.innerHTML = '<ol class="y-yol" style="margin-top:0">' + AKIS.map(function (x, i) {
           var b = akisBitti(x, i), s = akisSatir(x);
-          return '<li><a class="y-yol-satir y-renk' + (b ? " bitti" : "") + '" style="--a:var(--r-' + (x.test ? "mavi" : x.konu ? "yesil" : "kirmizi") + ')" href="#akis/' + i + '" data-git="akis/' + i + '"><span class="y-adim-no">' + (b ? Y.svg(Y.ikon.tik, 15) : i + 1) + '</span><span class="m"><b>' + esc(s[0] + ": " + s[1]) + "</b><span>" + esc(s[2]) + '</span></span><span class="say">' + (x.test && b ? S.vt[i] : "") + "</span></a></li>";
+          return '<li><a class="y-yol-satir y-renk' + (b ? " bitti" : "") + '" style="--a:var(--r-' + (x.test ? "mavi" : x.konu || yalnizDefter(x) ? "yesil" : "kirmizi") + ')" href="#akis/' + i + '" data-git="akis/' + i + '"><span class="y-adim-no">' + (b ? Y.svg(Y.ikon.tik, 15) : i + 1) + '</span><span class="m"><b>' + esc(s[0] + ": " + s[1]) + "</b><span>" + esc(s[2]) + '</span></span><span class="say">' + (x.test && b ? S.vt[i] : "") + "</span></a></li>";
         }).join("") + "</ol>";
         return;
       }
@@ -358,6 +361,13 @@
       if (x.video) {
         g.innerHTML = ust + "<div data-v></div>" + (x.defter ? '<a class="y-btn y-btn--genis" style="margin-top:12px" href="' + (cfg.defterYol || "defter/?b=") + x.defter + '">' + Y.svg(Y.ikon.liste, 18) + "<span>Defteri aç: videonun notları</span></a>" : "") + sonBtn(true);
         Y.videolar(g.querySelector("[data-v]"), { gruplar: [{ baslik: "", videolar: [akisVideo(x.video)] }], durum: S.vid, kaydet: save, ac: x.video });
+        return;
+      }
+      if (yalnizDefter(x)) {
+        g.innerHTML = ust + '<div class="y-kart"><h2 class="y-h2">' + esc(x.ad || x.defter) + '</h2><p class="y-mini y-soluk" style="margin-top:4px">Bu adımın videosu yok: defteri oku, sonra devam et.</p>' +
+          '<a class="y-btn y-btn--genis" style="margin-top:14px" href="' + (cfg.defterYol || "defter/?b=") + x.defter + '">' + Y.svg(Y.ikon.liste, 18) + "<span>Defteri aç</span></a></div>" +
+          '<div class="y-alt" style="border:0;padding-top:0;margin-top:16px"><button type="button" class="y-btn y-btn--ana y-btn--genis" data-okudum><span>Okudum, sıradaki: ' + esc(son.ad) + "</span>" + Y.svg(Y.ikon.ileri, 18) + "</button></div>";
+        g.querySelector("[data-okudum]").onclick = function () { S.df[x.defter] = 1; save(); Y.yenile(); Y.git(son.id, son.alt); };
         return;
       }
       g.innerHTML = ust + "<div data-oyn></div>" + sonBtn(false);
